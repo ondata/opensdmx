@@ -30,7 +30,7 @@ def _check_api_reachable() -> None:
         err_console.print(
             "[red]⚠ ISTAT API non raggiungibile.[/red] "
             "L'IP potrebbe essere bloccato (rate limit: max 5 req/min). "
-            "Riprova tra qualche ora."
+            "Il blocco può durare 1-2 giorni."
         )
         raise typer.Exit(1)
 
