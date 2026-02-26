@@ -28,9 +28,9 @@ def _check_api_reachable() -> None:
             client.head(get_base_url())
     except (httpx.ConnectTimeout, httpx.NetworkError):
         err_console.print(
-            "[red]⚠ ISTAT API non raggiungibile.[/red] "
-            "L'IP potrebbe essere bloccato (rate limit: max 5 req/min). "
-            "Il blocco può durare 1-2 giorni."
+            "[red]⚠ ISTAT API unreachable.[/red] "
+            "Your IP may be blocked (rate limit: max 5 req/min). "
+            "The block can last 1-2 days."
         )
         raise typer.Exit(1)
 

@@ -19,7 +19,7 @@ def _rate_limit_check() -> None:
             elapsed = time.time() - last
             if elapsed < _MIN_INTERVAL:
                 wait = _MIN_INTERVAL - elapsed
-                print(f"[istatpy] Rate limit: attendo {wait:.1f}s...")
+                print(f"[istatpy] Rate limit: waiting {wait:.1f}s...")
                 time.sleep(wait)
         except (ValueError, OSError):
             pass
