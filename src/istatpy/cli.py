@@ -6,14 +6,39 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+import httpx
 import typer
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+from .base import _RATE_LIMIT_FILE, get_base_url
+
 app = typer.Typer(help="istatpy — ISTAT SDMX REST API CLI")
 console = Console()
 err_console = Console(stderr=True)
+
+
+def _check_api_reachable() -> None:
+    """If no rate-limit log exists, do a lightweight HEAD check on the API."""
+    if _RATE_LIMIT_FILE.exists():
+        return
+    try:
+        with httpx.Client(timeout=5.0) as client:
+            client.head(get_base_url())
+    except (httpx.ConnectTimeout, httpx.NetworkError):
+        err_console.print(
+            "[red]⚠ ISTAT API non raggiungibile.[/red] "
+            "L'IP potrebbe essere bloccato (rate limit: max 5 req/min). "
+            "Riprova tra qualche ora."
+        )
+        raise typer.Exit(1)
+
+
+@app.callback(invoke_without_command=True)
+def _startup(ctx: typer.Context) -> None:
+    if ctx.invoked_subcommand is not None:
+        _check_api_reachable()
 
 
 @app.command()
