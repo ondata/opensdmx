@@ -1,10 +1,10 @@
-# istatPy - Piano di sviluppo
+# istatPy - Development Plan
 
-## Obiettivo
-Versione Python del pacchetto R `istatR`, gestita con `uv`.
-API ISTAT SDMX REST: `https://esploradati.istat.it/SDMXWS/rest`
+## Goal
+Python port of the R package `istatR`, managed with `uv`.
+ISTAT SDMX REST API: `https://esploradati.istat.it/SDMXWS/rest`
 
-## Struttura progetto
+## Project structure
 ```
 istatPy/
 ├── pyproject.toml
@@ -14,137 +14,129 @@ istatPy/
 └── src/
     └── istatpy/
         ├── __init__.py
-        ├── base.py       # Config API, funzioni HTTP
-        ├── utils.py      # Helper XML, make_url_key
+        ├── base.py       # API config, HTTP functions
+        ├── utils.py      # XML helpers, make_url_key
         ├── discovery.py  # all_available, search_dataset, IstatDataset
         └── retrieval.py  # get_data, istat_get, parse_time_period
 ```
 
-## Dipendenze
-- `httpx` - HTTP (con retry via `tenacity`)
-- `lxml` - parsing XML con namespace
-- `polars` - DataFrame (al posto di tibble/dplyr)
-- `duckdb` - query SQL su dati
-- `plotnine` - grafici statici
+## Dependencies
+- `httpx` - HTTP (with retry via `tenacity`)
+- `lxml` - XML parsing with namespace support
+- `polars` - DataFrame (instead of tibble/dplyr)
+- `duckdb` - SQL queries on data
+- `plotnine` - static charts
 
-## Fasi
+## Phases
 
-### Fase 1 - Setup progetto
-- [x] `uv init istatPy` nella cartella padre
-- [x] Aggiungere dipendenze con `uv add`
-- [x] Creare struttura `src/istatpy/`
+### Phase 1 - Project setup
+- [x] `uv init istatPy` in parent directory
+- [x] Add dependencies with `uv add`
+- [x] Create `src/istatpy/` structure
 
-### Fase 2 - base.py
+### Phase 2 - base.py
 - [x] Config: `BASE_URL`, `AGENCY_ID`, `TIMEOUT`
 - [x] `istat_timeout()` - get/set timeout
-- [x] `istat_request()` - HTTP con retry (3 tentativi)
-- [x] `istat_request_xml()` - risposta XML con namespace
-- [x] `istat_request_csv()` - risposta CSV → Polars DataFrame
+- [x] `istat_request()` - HTTP with retry (3 attempts)
+- [x] `istat_request_xml()` - XML response with namespace
+- [x] `istat_request_csv()` - CSV response → Polars DataFrame
 
-### Fase 3 - utils.py
-- [x] `xml_text_safe()` - estrai testo XML sicuro
-- [x] `xml_attr_safe()` - estrai attributo XML sicuro
-- [x] `make_url_key()` - costruisce chiave filtro SDMX
-- [x] `get_name_by_lang()` - nome per lingua da XML
+### Phase 3 - utils.py
+- [x] `xml_text_safe()` - safe XML text extraction
+- [x] `xml_attr_safe()` - safe XML attribute extraction
+- [x] `make_url_key()` - builds SDMX filter key
+- [x] `get_name_by_lang()` - name by language from XML
 
-### Fase 4 - discovery.py
-- [x] `all_available()` - lista tutti i dataset ISTAT
-- [x] `search_dataset(keyword)` - cerca per parola chiave
-- [x] Funzioni standalone (non classe):
-  - `istat_dataset()` - crea dict dataset
-  - `print_dataset()` - stampa info
-  - `dimensions_info()` - info dimensioni
-  - `get_dimension_values()` - valori disponibili
-  - `get_available_values()` - tutti i valori disponibili
-  - `set_filters()` - imposta filtri
-  - `reset_filters()` - azzera filtri
-- [x] `_get_dimensions()` - interno
+### Phase 4 - discovery.py
+- [x] `all_available()` - list all ISTAT datasets
+- [x] `search_dataset(keyword)` - search by keyword
+- [x] Standalone functions (not a class):
+  - `istat_dataset()` - create dataset dict
+  - `print_dataset()` - print summary
+  - `dimensions_info()` - dimension metadata
+  - `get_dimension_values()` - available values
+  - `get_available_values()` - all available values
+  - `set_filters()` - set filters
+  - `reset_filters()` - reset filters
+- [x] `_get_dimensions()` - internal
 
-### Fase 5 - retrieval.py
-- [x] `parse_time_period(x)` - parse formati SDMX: YYYY, YYYY-MM, YYYY-Qn, YYYY-Sn, YYYY-Wnn, YYYY-MM-DD
-- [x] `get_data(dataset, ...)` - recupera dati con filtri
-- [x] `istat_get(dataflow_id, ...)` - shortcut all-in-one
+### Phase 5 - retrieval.py
+- [x] `parse_time_period(x)` - parse SDMX formats: YYYY, YYYY-MM, YYYY-Qn, YYYY-Sn, YYYY-Wnn, YYYY-MM-DD
+- [x] `get_data(dataset, ...)` - fetch data with filters
+- [x] `istat_get(dataflow_id, ...)` - all-in-one shortcut
 
-### Fase 6 - __init__.py
-- [x] Esporta API pubblica
+### Phase 6 - __init__.py
+- [x] Export public API
 
-### Fase 7 - Documentazione
-- [x] README.md con esempi (incluso plot disoccupazione con plotnine)
+### Phase 7 - Documentation
+- [x] README.md with examples (including unemployment plot with plotnine)
 - [x] LOG.md
 
-## Domande aperte
-- Nome pacchetto: `istatpy` o `istat-py`?
-- Usare `httpx` invece di `requests` (async support)?
+---
+
+## Phase 8 - Rate limiting + Dataflow cache
+
+### Context
+ISTAT enforces a limit of **5 queries/minute per IP**. Exceeding it triggers a block lasting 1-2 days.
+
+### Part 1 — Rate limiter in `base.py`
+
+- [x] Add `_rate_limit_check()` to `base.py`
+  - Stores last call timestamp in OS temp dir (`istatpy_rate_limit.log`)
+  - If `elapsed < 12s`: prints warning and `time.sleep(12 - elapsed)`
+  - Overwrites the log with the current timestamp after each call
+- [x] Call `_rate_limit_check()` inside `_do_request()` in `istat_request()`
+
+### Part 2 — Dataflow list cache in `discovery.py`
+
+- [x] Add `_load_cached_dataflows()` to `discovery.py`
+  - Cache in OS temp dir (`istatpy_dataflows.parquet`), TTL 24h
+  - If file exists and is < 24h old: read parquet (0 API calls)
+  - If expired or missing: call API, save parquet, return DataFrame
+- [x] `all_available()` uses the cache
 
 ---
 
-## Fase 8 - Rate limiting + Cache dataflow
+## Phase 9 - CLI
 
-### Contesto
-ISTAT: limite **5 query/minuto per IP**. Superato → blocco 1-2 giorni.
+### Goal
+Implement an `istatpy` CLI with 4 commands using Typer + Rich.
 
-### Phase 1 — Rate limiter in `base.py`
-
-- [x] Aggiungere `_rate_limit_check()` in `base.py`
-  - Timestamp in `/tmp/istatpy_rate_limit.log`
-  - Se `elapsed < 12s`: stampa avviso e `time.sleep(12 - elapsed)`
-  - Sovrascrive il log con timestamp corrente dopo ogni chiamata
-- [x] Chiamare `_rate_limit_check()` dentro `_do_request()` in `istat_request()`
-
-### Phase 2 — Cache lista dataflow in `discovery.py`
-
-- [x] Aggiungere `_load_cached_dataflows()` in `discovery.py`
-  - Cache in `/tmp/istatpy_dataflows.parquet`, TTL 24h
-  - Se file esiste ed è < 24h: legge il parquet (0 query API)
-  - Se scaduto o assente: chiama API, salva parquet, ritorna DataFrame
-- [x] `all_available()` usa la cache
-
----
-
----
-
-## Fase 9 - CLI
-
-### Obiettivo
-Implementare una CLI `istatpy` con 4 comandi usando Typer + Rich.
-
-### Phase 1 — Dipendenze
+### Part 1 — Dependencies
 - [x] `uv add typer rich`
 
-### Phase 2 — Crea `src/istatpy/cli.py`
-- [x] Typer app con 4 comandi:
-  - `search <keyword>` → tabella Rich df_id + df_description
-  - `info <dataset_id>` → pannello Rich metadati + tabella dimensioni
-  - `values <dataset_id> <dim>` → tabella Rich id + name
-  - `get <dataset_id> [--DIM VALUE ...] [--out FILE]` → CSV stdout o file (csv/parquet/json)
-- [x] Gestione errori con messaggi Rich e `raise typer.Exit(1)`
+### Part 2 — Create `src/istatpy/cli.py`
+- [x] Typer app with 4 commands:
+  - `search <keyword>` → Rich table with df_id + df_description
+  - `info <dataset_id>` → Rich panel with metadata + dimensions table
+  - `values <dataset_id> <dim>` → Rich table with id + name
+  - `get <dataset_id> [--DIM VALUE ...] [--out FILE]` → CSV to stdout or file (csv/parquet/json)
+- [x] Error handling with Rich messages and `raise typer.Exit(1)`
+- [x] API reachability check at startup (lightweight HEAD request if no rate-limit log)
 
-### Phase 3 — Aggiorna `__init__.py`
-- [x] Importa `main` da `cli.py` e aggiungila a `__all__`
+### Part 3 — Update `__init__.py`
+- [x] Import `main` from `cli.py`
 
-### Phase 4 — Test
+### Part 4 — Tests
 - [x] `uv run istatpy --help`
 - [x] `uv run istatpy search --help`
 - [x] `uv run istatpy info --help`
 - [x] `uv run istatpy values --help`
 - [x] `uv run istatpy get --help`
 
-### Phase 5 — LOG.md
-- [x] Aggiorna LOG.md
-
-### Domande aperte
-- nessuna
+### Part 5 — LOG.md
+- [x] Update LOG.md
 
 ---
 
 ## Review
 
-- Struttura a 4 moduli: `base`, `utils`, `discovery`, `retrieval`
-- API identica a istatR: stesse funzioni, stessi nomi
-- Dataset rappresentato come `dict` Python (equivalente alla lista S3 di R)
-- DataFrame: Polars al posto di tibble
-- HTTP: httpx + tenacity per retry automatico
-- XML: lxml con namespace-aware XPath
-- `parse_time_period` gestisce tutti i formati SDMX via Polars `map_elements`
-- `set_filters` e `reset_filters` restituiscono un nuovo dict (immutabilità)
-- README include esempio completo con plotnine
+- 4-module structure: `base`, `utils`, `discovery`, `retrieval`
+- API mirrors istatR: same functions, same names
+- Dataset represented as a Python `dict` (equivalent to R S3 list)
+- DataFrame: Polars instead of tibble
+- HTTP: httpx + tenacity for automatic retry
+- XML: lxml with namespace-aware XPath
+- `parse_time_period` handles all SDMX formats via Polars `map_elements`
+- `set_filters` and `reset_filters` return a new dict (immutability)
+- README includes full example with plotnine
