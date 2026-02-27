@@ -85,7 +85,12 @@ def search_dataset(keyword: str) -> pl.DataFrame:
 
 def _get_dimensions(structure_id: str) -> dict:
     """Fetch dimension metadata for a data structure definition."""
-    path = f"datastructure/{get_agency_id()}/{structure_id}"
+    from .db_cache import get_cached_dims, save_dims
+    cached = get_cached_dims(structure_id)
+    if cached is not None:
+        return cached
+
+    path = f"datastructure/ALL/{structure_id}"
     content = istat_request_xml(path)
     root, ns = xml_parse(content)
 
@@ -111,28 +116,33 @@ def _get_dimensions(structure_id: str) -> dict:
         }
 
     # Sort by position
-    return dict(sorted(
+    result = dict(sorted(
         ((k, v) for k, v in dims.items() if v["position"] is not None),
         key=lambda item: item[1]["position"]
     ))
+    save_dims(structure_id, result)
+    return result
 
 
 def _get_dimension_description(codelist_id: str | None) -> str | None:
     """Fetch the description of a codelist."""
     if not codelist_id:
         return None
+    from .db_cache import get_cached_codelist_info, is_codelist_info_cached, save_codelist_info
+    if is_codelist_info_cached(codelist_id):
+        return get_cached_codelist_info(codelist_id)
     try:
-        path = f"codelist/{get_agency_id()}/{codelist_id}"
+        path = f"codelist/ALL/{codelist_id}"
         content = istat_request_xml(path)
         root, ns = xml_parse(content)
         struct_ns = ns.get("structure", "")
         tag = f"{{{struct_ns}}}Codelist" if struct_ns else "Codelist"
         codelist_node = root.find(f".//{tag}")
-        if codelist_node is not None:
-            return get_name_by_lang(codelist_node, "en", ns)
+        description = get_name_by_lang(codelist_node, "en", ns) if codelist_node is not None else None
     except Exception:
-        pass
-    return None
+        description = None
+    save_codelist_info(codelist_id, description)
+    return description
 
 
 def istat_dataset(dataflow_identifier: str) -> dict:
@@ -237,7 +247,12 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
         warnings.warn(f"No codelist found for dimension: {dimension_id}", stacklevel=2)
         return pl.DataFrame({"id": [], "name": []})
 
-    path = f"codelist/{get_agency_id()}/{codelist_id}"
+    from .db_cache import get_cached_codelist_values, save_codelist_values
+    cached = get_cached_codelist_values(codelist_id)
+    if cached is not None:
+        return pl.DataFrame(cached, schema={"id": pl.Utf8, "name": pl.Utf8})
+
+    path = f"codelist/ALL/{codelist_id}"
     content = istat_request_xml(path)
     root, ns = xml_parse(content)
 
@@ -251,6 +266,7 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
             "name": get_name_by_lang(code_node, "en", ns),
         })
 
+    save_codelist_values(codelist_id, records)
     return pl.DataFrame(records, schema={"id": pl.Utf8, "name": pl.Utf8})
 
 
