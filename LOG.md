@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-04-01 (2)
+
+- New `opensdmx constraints <dataflow_id> [dimension]` CLI command
+  - No dimension: summary table (`dimension_id`, `n_values`, `sample` first 3 codes)
+  - With dimension: full `id`/`name` table of codes actually present, labels from codelist
+  - `--provider` flag supported; empty result surfaces as explicit error
+  - Reuses existing `get_available_values()` + 7-day SQLite cache — zero new infrastructure
+
 ## 2026-04-01
 
 - Test CLI ISTAT completati: `search`, `info`, `values`, `get`, `get --out`, `get --last-n`, `get` valori multipli, `plot`, `plot` con opzioni — tutti ok

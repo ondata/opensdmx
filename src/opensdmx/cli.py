@@ -208,6 +208,101 @@ def values(
 
 
 @app.command()
+def constraints(
+    dataset_id: str = typer.Argument(..., help="Dataset ID"),
+    dimension: Optional[str] = typer.Argument(None, help="Dimension ID (optional); if omitted shows all dimensions"),
+    provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+):
+    """Show constrained (actually present) values for a dataflow's dimensions.
+
+    Without DIMENSION: shows all dimensions with their count and a short sample.
+    With DIMENSION: shows the full list of codes present in the dataflow for that
+    dimension, enriched with human-readable labels from the codelist.
+    """
+    _apply_provider(provider)
+    import polars as pl
+
+    from . import load_dataset
+    from .discovery import get_available_values, get_dimension_values
+
+    try:
+        with console.status("[dim]Loading dataset...[/dim]"):
+            ds = load_dataset(dataset_id)
+    except Exception as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    try:
+        with console.status("[dim]Fetching constraints...[/dim]"):
+            avail = get_available_values(ds)
+    except Exception as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    if not avail:
+        err_console.print(
+            "[red]Error:[/red] No constrained values returned. "
+            "This provider may not support the availableconstraint endpoint."
+        )
+        raise typer.Exit(1)
+
+    if dimension is None:
+        # Summary mode: one row per dimension
+        table = Table(title=f"Constraints: {dataset_id}", show_lines=False)
+        table.add_column("dimension_id", style="cyan", no_wrap=True)
+        table.add_column("n_values", justify="right")
+        table.add_column("sample")
+
+        for dim_id, df in avail.items():
+            codes = df["id"].to_list()
+            table.add_row(dim_id, str(len(codes)), ", ".join(codes[:3]))
+
+        console.print(table)
+        return
+
+    # Single-dimension mode
+    valid_dims = list(ds["dimensions"].keys())
+    dim_upper = {d.upper(): d for d in valid_dims}
+    actual_dim = dim_upper.get(dimension.upper())
+    if actual_dim is None:
+        err_console.print(
+            f"[red]Error:[/red] Dimension '{dimension}' not found.\n"
+            f"Valid dimensions: {', '.join(valid_dims)}"
+        )
+        raise typer.Exit(1)
+
+    if actual_dim not in avail:
+        err_console.print(
+            f"[yellow]No constrained values found for dimension:[/yellow] {actual_dim}"
+        )
+        raise typer.Exit(1)
+
+    constrained_codes = avail[actual_dim]["id"].to_list()
+
+    try:
+        with console.status("[dim]Fetching labels...[/dim]"):
+            labels_df = get_dimension_values(ds, actual_dim)
+    except Exception:
+        labels_df = pl.DataFrame({"id": [], "name": []}, schema={"id": pl.Utf8, "name": pl.Utf8})
+
+    constrained_df = pl.DataFrame({"id": constrained_codes})
+    if not labels_df.is_empty():
+        result_df = constrained_df.join(labels_df, on="id", how="left")
+        result_df = result_df.with_columns(pl.col("name").fill_null("—"))
+    else:
+        result_df = constrained_df.with_columns(pl.lit("—").alias("name"))
+
+    table = Table(title=f"{dataset_id} / {actual_dim} (constrained)", show_lines=False)
+    table.add_column("id", style="cyan", no_wrap=True)
+    table.add_column("name")
+
+    for row in result_df.iter_rows(named=True):
+        table.add_row(row["id"] or "", row["name"] or "—")
+
+    console.print(table)
+
+
+@app.command()
 def embed(
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
