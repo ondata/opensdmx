@@ -4,8 +4,9 @@ version = "0.2.0"
 description = "Simple Python interface to any SDMX 2.1 REST API (Eurostat, ISTAT, and more)"
 readme = "README.md"
 authors = [
-    { name = "aborruso", email = "aborruso@gmail.com" }
+    { name = "Andrea Borruso", email = "aborruso@gmail.com" }
 ]
+license = { text = "MIT" }
 requires-python = ">=3.12"
 dependencies = [
     "duckdb>=1.4.4",
