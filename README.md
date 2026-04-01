@@ -1,106 +1,107 @@
-# istatpy
+# opensdmx
 
-Python interface to the Italian National Institute of Statistics (ISTAT) SDMX REST API.
-
-## Acknowledgements
-
-Special thanks to [@jfulponi](https://github.com/jfulponi) for the R package [istatR](https://github.com/jfulponi/istatR), which inspired this project and provided the foundation for the API design.
-
-Also inspired by the Python package [istatapi](https://github.com/Attol8/istatapi) by [@Attol8](https://github.com/Attol8).
+Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eurostat**. Built-in support for ISTAT, OECD, ECB, World Bank, and more.
 
 ## Installation
 
 ```bash
-uv add istatpy
+uv add opensdmx
 # or
-pip install istatpy
+pip install opensdmx
 ```
 
 ## Quick start
 
 ```python
-import istatpy
+import opensdmx
 
-# List all available datasets
-datasets = istatpy.all_available()
+# Default provider: Eurostat
+datasets = opensdmx.all_available()
 print(datasets.head())
 
 # Search by keyword
-unemp = istatpy.search_dataset("unemployment")
+results = opensdmx.search_dataset("unemployment")
 
-# One-liner retrieval
-data = istatpy.istat_get(
-    "139_176",
-    FREQ="M",
-    TIPO_DATO="ISAV",
-    PAESE_PARTNER="WORLD",
-    start_period="2022-01-01",
-)
+# One-liner retrieval (Eurostat default)
+data = opensdmx.fetch("une_rt_m", freq="M", geo="IT", sex="T", age="TOTAL")
+
+# Switch provider
+opensdmx.set_provider("istat")
+opensdmx.set_provider("oecd")
+opensdmx.set_provider("ecb")
 ```
 
-## API
+## Providers
+
+```python
+import opensdmx
+
+# Built-in presets
+opensdmx.set_provider("eurostat")   # default
+opensdmx.set_provider("istat")
+opensdmx.set_provider("oecd")
+opensdmx.set_provider("ecb")
+opensdmx.set_provider("worldbank")
+
+# Custom provider
+opensdmx.set_provider("https://mysdmx.org/rest", agency_id="XYZ", rate_limit=1.0)
+
+# Check active provider
+opensdmx.get_provider()  # returns dict with base_url, agency_id, rate_limit, language
+```
+
+## Python API
 
 | Function | Description |
 |---|---|
-| `all_available()` | List all ISTAT datasets → Polars DataFrame |
+| `set_provider(name_or_url, ...)` | Set active provider (`'eurostat'`, `'istat'`, or custom URL) |
+| `get_provider()` | Return active provider config dict |
+| `all_available()` | List all datasets → Polars DataFrame |
 | `search_dataset(keyword)` | Search by keyword in description |
-| `istat_dataset(id)` | Create a dataset object (dict) |
+| `load_dataset(id)` | Create a dataset object (dict) |
 | `print_dataset(ds)` | Print dataset summary |
 | `dimensions_info(ds)` | Dimension metadata → Polars DataFrame |
-| `get_dimension_values(ds, dim)` | Values for a dimension |
-| `get_available_values(ds)` | All available values (via constraint API) |
+| `get_dimension_values(ds, dim)` | Codelist values for a dimension |
+| `get_available_values(ds)` | Values actually present in the data (via `availableconstraint`) |
 | `set_filters(ds, **kwargs)` | Set dimension filters |
 | `reset_filters(ds)` | Reset all filters to `"."` (all) |
 | `get_data(ds, ...)` | Retrieve data → Polars DataFrame |
-| `istat_get(id, ...)` | Shortcut combining all steps |
-| `istat_timeout(seconds)` | Get/set API timeout (default: 300 s) |
+| `fetch(id, ..., **filters)` | One-liner: load dataset + set filters + get data |
+| `set_timeout(seconds)` | Get/set API timeout (default: 300 s) |
+| `parse_time_period(series)` | Convert SDMX time strings to dates |
 
-## Example: Italian Unemployment Rate
+### `get_data` and `fetch` parameters
+
+| Parameter | Type | Description |
+|---|---|---|
+| `start_period` | `str` | Start date: `"2020"`, `"2020-Q1"`, `"2020-01"` |
+| `end_period` | `str` | End date (same formats) |
+| `last_n_observations` | `int` | Return only last N observations per series |
+| `first_n_observations` | `int` | Return only first N observations per series |
+
+## Example: EU Unemployment Rate
 
 ```python
-import istatpy
-from plotnine import (
-    ggplot, aes, geom_line, geom_point,
-    labs, theme_minimal, scale_x_date,
-)
+import opensdmx
+from plotnine import ggplot, aes, geom_line, geom_point, labs, theme_minimal, scale_x_date
 
-# Build dataset
-ds = istatpy.istat_dataset("151_1178")
-ds = istatpy.set_filters(
-    ds,
-    FREQ="Q",
-    REF_AREA="IT",
-    DATA_TYPE="UNEM_R",
-    SEX="9",
-    AGE="Y_GE15",
-)
+# Eurostat monthly unemployment by sex and age
+ds = opensdmx.load_dataset("une_rt_m")
+ds = opensdmx.set_filters(ds, freq="M", geo="IT", sex="T", age="TOTAL", s_adj="SA", unit="PC_ACT")
+data = opensdmx.get_data(ds, start_period="2015", last_n_observations=60)
 
-data = istatpy.get_data(ds)
-
-# Remove duplicates and convert OBS_VALUE to float
 import polars as pl
-data = (
-    data
-    .unique(subset=["TIME_PERIOD"])
-    .sort("TIME_PERIOD")
-    .with_columns(pl.col("OBS_VALUE").cast(pl.Float64))
-)
+data = data.with_columns(pl.col("OBS_VALUE").cast(pl.Float64))
 
-# Plot with plotnine
 plot = (
     ggplot(data.to_pandas(), aes(x="TIME_PERIOD", y="OBS_VALUE"))
     + geom_line(color="#1f77b4", size=1)
     + geom_point(color="#1f77b4", size=0.8)
-    + labs(
-        title="Italian Unemployment Rate (Quarterly, Seasonally Adjusted)",
-        x="Year",
-        y="Unemployment Rate (%)",
-        caption="Source: ISTAT",
-    )
+    + labs(title="Italy Unemployment Rate (Monthly)", x="Year", y="Rate (%)")
     + scale_x_date(date_breaks="2 years", date_labels="%Y")
     + theme_minimal()
 )
-plot.save("unemployment_rate.png", dpi=150, width=10, height=5)
+plot.save("unemployment.png", dpi=150, width=10, height=5)
 ```
 
 ## CLI
@@ -108,34 +109,46 @@ plot.save("unemployment_rate.png", dpi=150, width=10, height=5)
 Install globally:
 
 ```bash
-uv tool install istatpy
+uv tool install opensdmx
 ```
 
 ### Commands
 
+All commands accept `--provider` (`-p`) to select the provider.
+
 | Command | Description |
 |---|---|
-| `istatpy search <keyword>` | Keyword search in dataset descriptions |
-| `istatpy search --semantic <query>` | Semantic search (multilingual, requires `istatpy embed`) |
-| `istatpy embed` | Build semantic embeddings cache via Ollama |
-| `istatpy info <id>` | Show dataset metadata and dimensions |
-| `istatpy values <id> <dim>` | Show available values for a dimension |
-| `istatpy get <id> [--DIM VALUE] [--out file]` | Download data (CSV/parquet/JSON) |
-| `istatpy plot <id> [--DIM VALUE] [--out file]` | Plot data as line chart |
-| `istatpy wizard` | Interactive wizard to discover, filter and get download URL |
+| `opensdmx search <keyword> [-p provider]` | Keyword search in dataset descriptions |
+| `opensdmx search --semantic <query>` | Semantic search (requires `opensdmx embed`) |
+| `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
+| `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
+| `opensdmx values <id> <dim> [-p provider]` | Show codelist values for a dimension |
+| `opensdmx constraints <id> [dim] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`) |
+| `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file] [-p provider]` | Download data (CSV/parquet/JSON) |
+| `opensdmx plot <id> [--DIM VALUE] [--out file] [-p provider]` | Plot data as line chart |
+| `opensdmx guide [query] [-p provider]` | AI-guided dataset discovery and filter selection |
+| `opensdmx blacklist [-p provider]` | List and remove datasets from the unavailability blacklist |
 
-### Wizard
+### Examples
 
 ```bash
-istatpy wizard
+# Eurostat (default)
+opensdmx search "unemployment"
+opensdmx info une_rt_m
+opensdmx constraints une_rt_m
+opensdmx constraints une_rt_m geo
+opensdmx get une_rt_m --freq M --geo IT --out data.csv
+
+# Other providers
+opensdmx search "disoccupazione" --provider istat
+opensdmx get 151_929 --provider istat --FREQ A --REF_AREA IT --out data.csv
+opensdmx search "GDP" --provider oecd
+opensdmx search "inflation" --provider ecb
+
+# AI-guided discovery
+opensdmx guide "youth unemployment in Europe"
+opensdmx guide --provider istat "disoccupazione giovanile"
 ```
-
-Step-by-step interactive flow:
-
-1. Type a query in any language (Italian or English)
-2. Select a dataset from paginated results
-3. For each dimension: fuzzy-filter values and choose one (or skip with "all")
-4. Get the SDMX download URL and `curl` command
 
 ### Semantic search setup
 
@@ -143,33 +156,33 @@ Requires [Ollama](https://ollama.com) with the `nomic-embed-text-v2-moe` model:
 
 ```bash
 ollama pull nomic-embed-text-v2-moe
-istatpy embed   # run once, builds /tmp/istatpy_embeddings.parquet
-istatpy search --semantic "disoccupazione"   # cross-language search
+opensdmx embed              # build embeddings for default provider (eurostat)
+opensdmx embed -p istat     # build embeddings for ISTAT
+opensdmx search --semantic "unemployment"
 ```
 
 ### Caching
 
+Cache is namespaced per provider under `~/.cache/opensdmx/{AGENCY_ID}/`.
+
 | File | Content | TTL |
 |---|---|---|
-| `/tmp/istatpy_dataflows.parquet` | Full catalog (4714 datasets) | 24h |
-| `/tmp/istatpy_embeddings.parquet` | Semantic embeddings (768-dim) | manual |
-| `/tmp/istatpy_cache.db` | Dimensions and codelist values (SQLite) | 7 days |
-
-## API Reference
-
-- Base URL: `https://esploradati.istat.it/SDMXWS/rest`
-- Agency ID: `IT1`
-- Docs: [developers.italia.it](https://developers.italia.it/it/api/istat-sdmx-rest)
+| `~/.cache/opensdmx/ESTAT/dataflows.parquet` | Eurostat catalog | 24h |
+| `~/.cache/opensdmx/ESTAT/cache.db` | Dimensions, codelists, constraints (SQLite) | 7 days |
+| `~/.cache/opensdmx/IT1/dataflows.parquet` | ISTAT catalog | 24h |
+| `~/.cache/opensdmx/IT1/cache.db` | ISTAT SQLite cache | 7 days |
 
 ## Timeout
 
-The ISTAT API can be slow. Default timeout is 300 seconds.
-
 ```python
-istatpy.istat_timeout()      # get current timeout
-istatpy.istat_timeout(600)   # set to 10 minutes
+opensdmx.set_timeout()      # get current timeout (default: 300s)
+opensdmx.set_timeout(600)   # set to 10 minutes
 ```
+
+## Acknowledgements
+
+Inspired by [istatR](https://github.com/jfulponi/istatR) by [@jfulponi](https://github.com/jfulponi) and [istatapi](https://github.com/Attol8/istatapi) by [@Attol8](https://github.com/Attol8).
 
 ## License
 
-Apache License 2.0
+MIT License — Copyright (c) 2026 Andrea Borruso
