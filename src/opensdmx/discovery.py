@@ -52,14 +52,22 @@ def all_available() -> pl.DataFrame:
     agency_id = get_agency_id()
     language = get_provider()["language"]
 
-    path = f"dataflow/{agency_id}"
+    catalog_agency = get_provider().get("catalog_agency", agency_id)
+    path = f"dataflow/{catalog_agency}"
     dataflow_params = get_provider().get("dataflow_params", {})
     content = sdmx_request_xml(path, **dataflow_params)
     root, ns = xml_parse(content)
 
     records = []
     for df in root.iter("{" + ns.get("structure", "") + "}Dataflow") if "structure" in ns else []:
-        df_id = xml_attr_safe(df, "id")
+        df_id_raw = xml_attr_safe(df, "id")
+        df_agency = xml_attr_safe(df, "agencyID")
+        # For providers with catalog_agency, store full "{agencyID},{df_id}" as df_id
+        # so the data URL (data/{df_id}) resolves correctly
+        if catalog_agency != agency_id and df_agency:
+            df_id = f"{df_agency},{df_id_raw}"
+        else:
+            df_id = df_id_raw
         version = xml_attr_safe(df, "version")
         df_description = get_name_by_lang(df, language, ns) or get_name_by_lang(df, "en", ns)
 
@@ -307,7 +315,8 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     else:
         path = f"{constraint_endpoint}/{df_id}"
     try:
-        content = sdmx_request_xml(path, references="none")
+        constraint_params = provider.get("constraint_params", {"references": "none"})
+        content = sdmx_request_xml(path, **constraint_params)
         root, ns = xml_parse(content)
 
         common_ns = ns.get("common", "")

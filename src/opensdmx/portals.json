@@ -25,7 +25,9 @@
   "oecd": {
     "name": "OECD",
     "base_url": "https://sdmx.oecd.org/public/rest",
-    "agency_id": "OECD"
+    "agency_id": "OECD",
+    "catalog_agency": "all",
+    "constraint_params": {}
   },
   "insee": {
     "name": "INSEE (France)",

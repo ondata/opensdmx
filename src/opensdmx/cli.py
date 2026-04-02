@@ -114,7 +114,7 @@ def search(
 
     if df.is_empty():
         err_console.print(f"[yellow]No datasets found for:[/yellow] {keyword}")
-        raise typer.Exit(1)
+        raise typer.Exit(0)
 
     table = Table(title=f"Search: {keyword}", show_lines=False)
     table.add_column("df_id", style="cyan", no_wrap=True)

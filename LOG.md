@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-04-02
+
+- Fix OECD provider support: `search`, `info`, `constraints`, `get` ora funzionano
+  - `portals.json`: aggiunto `catalog_agency: "all"` (endpoint `/dataflow/all`) e `constraint_params: {}` (no `references=none` che dava 500)
+  - `discovery.py`: usa `catalog_agency` per il path del catalogo; salva `df_id` come `{agencyID},{id}` (es. `OECD.SDD.STES,DSD_STES@DF_CLI`) per costruire correttamente gli URL dati
+  - Provider Eurostat e ISTAT invariati
+
 ## 2026-04-01 (2)
 
 - New `opensdmx constraints <dataflow_id> [dimension]` CLI command
