@@ -30,6 +30,28 @@ def _version_callback(value: bool) -> None:
 _PROVIDER_HELP = "Provider name ('eurostat', 'istat') or custom base URL"
 
 
+def _parse_extra_filters(ctx: typer.Context) -> dict:
+    """Parse extra --KEY VALUE args from context as dimension filters.
+
+    Supports multiple values per dimension:
+      --geo IT --geo FR  →  {"geo": "IT+FR"}
+      --geo IT+FR        →  {"geo": "IT+FR"}
+    """
+    accumulated: dict[str, list[str]] = {}
+    extra = ctx.args
+    i = 0
+    while i < len(extra):
+        arg = extra[i]
+        if arg.startswith("--") and i + 1 < len(extra):
+            key = arg[2:]
+            accumulated.setdefault(key, []).append(extra[i + 1])
+            i += 2
+        else:
+            err_console.print(f"[red]Unexpected argument:[/red] {arg}")
+            raise typer.Exit(1)
+    return {k: "+".join(v) if len(v) > 1 else v[0] for k, v in accumulated.items()}
+
+
 def _apply_provider(provider: str | None) -> None:
     """Call set_provider if a provider option was given."""
     if provider:
@@ -59,7 +81,12 @@ def _startup(
     ctx: typer.Context,
     version: bool = typer.Option(False, "--version", "-V", callback=_version_callback, is_eager=True, help="Show version and exit"),
 ) -> None:
-    if ctx.invoked_subcommand is not None and not _HELP_FLAGS.intersection(sys.argv):
+    if ctx.invoked_subcommand is None:
+        from importlib.metadata import version as _version
+        console.print(f"opensdmx {_version('opensdmx')}\n")
+        console.print(ctx.get_help())
+        raise typer.Exit()
+    if not _HELP_FLAGS.intersection(sys.argv):
         _check_api_reachable()
 
 
@@ -72,7 +99,16 @@ def search(
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Show expanded query (semantic mode only)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Search datasets by keyword (or semantically with --semantic)."""
+    """Search datasets by keyword (or semantically with --semantic).
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx search unemployment
+      opensdmx search --semantic disoccupazione --n 5
+      opensdmx search population --provider istat
+    """
     _apply_provider(provider)
 
     if semantic:
@@ -80,15 +116,11 @@ def search(
         try:
             df = semantic_search(keyword, n=n, expand=not no_expand, verbose=verbose)
         except FileNotFoundError:
-            import questionary as _q
-            build_now = _q.confirm(
-                "Embeddings cache not found. Build it now? (requires Ollama)"
-            ).ask()
-            if not build_now:
-                raise typer.Exit(1)
-            from .embed import build_embeddings
-            build_embeddings(progress=True)
-            df = semantic_search(keyword, n=n, expand=not no_expand, verbose=verbose)
+            err_console.print(
+                "[red]Error:[/red] Embeddings cache not found.\n"
+                "Build it first:  opensdmx embed"
+            )
+            raise typer.Exit(1)
         except Exception as e:
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)
@@ -131,7 +163,15 @@ def info(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Show metadata and dimensions for a dataset."""
+    """Show metadata and dimensions for a dataset.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx info NAMA_10_GDP
+      opensdmx info DCIS_POPRES1 --provider istat
+    """
     _apply_provider(provider)
     from . import dimensions_info, load_dataset
     try:
@@ -182,7 +222,15 @@ def values(
     dim: str = typer.Argument(..., help="Dimension ID (e.g. FREQ)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Show available values for a dimension."""
+    """Show available values for a dimension.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx values NAMA_10_GDP FREQ
+      opensdmx values DCIS_POPRES1 ITTER107 --provider istat
+    """
     _apply_provider(provider)
     from . import get_dimension_values, load_dataset
     try:
@@ -218,6 +266,14 @@ def constraints(
     Without DIMENSION: shows all dimensions with their count and a short sample.
     With DIMENSION: shows the full list of codes present in the dataflow for that
     dimension, enriched with human-readable labels from the codelist.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx constraints NAMA_10_GDP
+      opensdmx constraints NAMA_10_GDP FREQ
+      opensdmx constraints DCIS_POPRES1 ITTER107 --provider istat
     """
     _apply_provider(provider)
     import polars as pl
@@ -306,7 +362,15 @@ def constraints(
 def embed(
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Build semantic embeddings cache for the dataset catalog."""
+    """Build semantic embeddings cache for the dataset catalog.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx embed
+      opensdmx embed --provider istat
+    """
     _apply_provider(provider)
     from .embed import build_embeddings
     try:
@@ -327,23 +391,21 @@ def get(
     first_n: Optional[int] = typer.Option(None, "--first-n", help="Return only first N observations per series"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Get data for a dataset. Extra --DIM VALUE pairs are used as filters."""
+    """Get data for a dataset. Extra --DIM VALUE pairs are used as filters.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx get NAMA_10_GDP
+      opensdmx get NAMA_10_GDP --FREQ A --GEO IT --out data.csv
+      opensdmx get NAMA_10_GDP --start-period 2010 --end-period 2023 --out data.parquet
+      opensdmx get DCIS_POPRES1 --ITTER107 IT --provider istat
+    """
     _apply_provider(provider)
     from . import get_data, load_dataset, set_filters
 
-    # Parse extra args as --KEY VALUE pairs (dimension filters)
-    extra = ctx.args
-    filters = {}
-    i = 0
-    while i < len(extra):
-        arg = extra[i]
-        if arg.startswith("--") and i + 1 < len(extra):
-            key = arg[2:]
-            filters[key] = extra[i + 1]
-            i += 2
-        else:
-            err_console.print(f"[red]Unexpected argument:[/red] {arg}")
-            raise typer.Exit(1)
+    filters = _parse_extra_filters(ctx)
 
     try:
         with console.status("[dim]Fetching data...[/dim]"):
@@ -352,6 +414,11 @@ def get(
                 ds = set_filters(ds, **filters)
             df = get_data(ds, start_period=start_period, end_period=end_period,
                           last_n_observations=last_n, first_n_observations=first_n)
+    except httpx.HTTPStatusError as e:
+        err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
+        if e.response.status_code in (400, 404):
+            err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
+        raise typer.Exit(1)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
@@ -394,24 +461,18 @@ def plot(
 
     from . import get_data, load_dataset, set_filters
 
-    extra = ctx.args
-    filters = {}
-    i = 0
-    while i < len(extra):
-        arg = extra[i]
-        if arg.startswith("--") and i + 1 < len(extra):
-            key = arg[2:]
-            filters[key] = extra[i + 1]
-            i += 2
-        else:
-            err_console.print(f"[red]Unexpected argument:[/red] {arg}")
-            raise typer.Exit(1)
+    filters = _parse_extra_filters(ctx)
 
     try:
         ds = load_dataset(dataset_id)
         if filters:
             ds = set_filters(ds, **filters)
         df = get_data(ds, start_period=start_period, end_period=end_period)
+    except httpx.HTTPStatusError as e:
+        err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
+        if e.response.status_code in (400, 404):
+            err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
+        raise typer.Exit(1)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
@@ -444,16 +505,28 @@ def plot(
     console.print(f"[green]Saved:[/green] {out}")
 
 
-@app.command()
+@app.command(hidden=True)
 def guide(
     query: Optional[str] = typer.Argument(None, help="Goal in natural language"),
+    dataset: Optional[str] = typer.Option(None, "--dataset", "-d", help="Dataset ID to use directly (skip interactive selection)"),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Non-interactive: auto-confirm all prompts and download data.csv"),
+    out: Path = typer.Option(Path("data.csv"), "--out", help="Output file when --yes is set"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Guided dataset discovery: semantic search + AI multi-turn conversation for filters."""
+    """Guided dataset discovery: semantic search + AI multi-turn conversation for filters.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx guide "unemployment Italy"
+      opensdmx guide "PIL Italia" --dataset NAMA_10_GDP --yes
+      opensdmx guide "popolazione" --provider istat --yes --out pop.csv
+    """
     _apply_provider(provider)
     import questionary
 
-    from .ai import guide_session
+    from .ai import ChangeDataset, guide_session
     from .base import get_agency_id, get_base_url
     from .discovery import load_dataset, set_filters
     from .embed import semantic_search
@@ -461,6 +534,9 @@ def guide(
 
     # Step 1: get query
     if not query:
+        if yes:
+            err_console.print("[red]Error:[/red] QUERY argument required when using --yes.")
+            raise typer.Exit(1)
         query = questionary.text("What do you want to analyze? (any language):").ask()
         if not query:
             raise typer.Exit(0)
@@ -471,6 +547,18 @@ def guide(
     page_size = 10
     df_results = None
     _reuse_ds = False
+    _failed_context = ""
+    ds = None
+
+    # If --dataset given, load it directly and skip interactive selection
+    if dataset:
+        console.print(f"\n[cyan]Loading dataset[/cyan] [bold]{dataset}[/bold]...")
+        try:
+            ds = load_dataset(dataset)
+        except Exception as e:
+            err_console.print(f"[red]Error:[/red] {e}")
+            raise typer.Exit(1)
+        _reuse_ds = True
 
     while True:
 
@@ -481,14 +569,11 @@ def guide(
                     try:
                         df_results = semantic_search(query, n=100)
                     except FileNotFoundError:
-                        build_now = questionary.confirm(
-                            "Embeddings cache not found. Build it now? (requires Ollama)"
-                        ).ask()
-                        if not build_now:
-                            raise typer.Exit(1)
-                        from .embed import build_embeddings
-                        build_embeddings(progress=True)
-                        df_results = semantic_search(query, n=100)
+                        err_console.print(
+                            "[red]Error:[/red] Embeddings cache not found.\n"
+                            "Build it first:  opensdmx embed"
+                        )
+                        raise typer.Exit(1)
 
                 slice_ = df_results.slice(page * page_size, page_size)
                 if slice_.is_empty():
@@ -550,19 +635,20 @@ def guide(
                 expand=False,
             ))
 
-            confirm = questionary.select(
-                "Continue with this dataset?",
-                choices=[
-                    questionary.Choice("Yes, continue", value="yes"),
-                    questionary.Choice("No, go back to selection", value="back"),
-                    questionary.Choice("Exit", value="no"),
-                ],
-            ).ask()
+            if not yes:
+                confirm = questionary.select(
+                    "Continue with this dataset?",
+                    choices=[
+                        questionary.Choice("Yes, continue", value="yes"),
+                        questionary.Choice("No, go back to selection", value="back"),
+                        questionary.Choice("Exit", value="no"),
+                    ],
+                ).ask()
 
-            if confirm is None or confirm == "no":
-                raise typer.Exit(0)
-            if confirm == "back":
-                continue
+                if confirm is None or confirm == "no":
+                    raise typer.Exit(0)
+                if confirm == "back":
+                    continue
 
             from .db_cache import save_invalid_dataset
 
@@ -581,16 +667,33 @@ def guide(
                     "is not available via API. It will be excluded from future searches.[/yellow]"
                 )
                 save_invalid_dataset(ds["df_id"], ds.get("df_description"))
-                df_results = df_results.filter(df_results["df_id"] != ds["df_id"])
+                if df_results is not None:
+                    df_results = df_results.filter(df_results["df_id"] != ds["df_id"])
+                if yes:
+                    err_console.print("[red]Error:[/red] Selected dataset is not available via API.")
+                    raise typer.Exit(1)
                 continue
 
         else:
             _reuse_ds = False
 
+        assert ds is not None  # always set: either via --dataset or the selection loop above
+
         try:
-            result = guide_session(ds, query)
+            result = guide_session(ds, query, failed_context=_failed_context)
+            _failed_context = ""
         except SystemExit:
             raise typer.Exit(0)
+        except ChangeDataset:
+            _reuse_ds = False
+            _failed_context = ""
+            page = 0
+            df_results = None
+            if yes:
+                err_console.print("[red]Error:[/red] AI requested dataset change; not supported in --yes mode.")
+                raise typer.Exit(1)
+            console.print("[dim]Torno alla selezione dataset...[/dim]\n")
+            continue
         except Exception as e:
             import traceback
             err_console.print(f"[red]Error:[/red] {e}")
@@ -600,6 +703,8 @@ def guide(
         from .discovery import get_available_values
 
         filters = result["filters"]
+        start_period = result.get("start_period") or ""
+        end_period = result.get("end_period") or ""
         active = {}
         for k, v in filters.items():
             codes = v if isinstance(v, list) else ([v] if v else [])
@@ -629,6 +734,16 @@ def guide(
                     correction_notes.append(
                         f"{dim_id}: codes {bad_codes} do not exist, use one of: {valid_codes[:20]}"
                     )
+                if yes:
+                    # Auto-ask AI to fix
+                    notes = "; ".join(correction_notes)
+                    query = (
+                        f"{query}\n\n"
+                        f"CORRECTION NEEDED: {notes}. "
+                        "Use ONLY the listed available codes."
+                    )
+                    _reuse_ds = True
+                    continue
                 confirm_invalid = questionary.select(
                     "What would you like to do?",
                     choices=[
@@ -661,13 +776,12 @@ def guide(
 
         _sample_ok = True
         try:
-            _sresp = _httpx.get(
-                url.replace("?format=csv", "?format=csv&lastNObservations=1"),
-                timeout=30.0,
-                headers={"Accept": "text/csv"},
-            )
-            if _sresp.status_code >= 400 or "Error" in _sresp.text[:200]:
+            from .retrieval import get_data as _get_data
+            _sample_df = _get_data(ds, last_n_observations=1)
+            if _sample_df.is_empty():
                 _sample_ok = False
+            elif not set(ds["dimensions"].keys()).intersection(_sample_df.columns):
+                _sample_ok = False  # error response parsed as CSV
         except Exception:
             _sample_ok = False
 
@@ -676,6 +790,10 @@ def guide(
                 "\n[yellow]⚠ Filter combination does not return data.[/yellow] "
                 "Some values may not be available for the chosen area or period."
             )
+            if yes:
+                _failed_context = ", ".join(f"{k}={v}" for k, v in active.items())
+                _reuse_ds = True
+                continue
             confirm_combo = questionary.select(
                 "What would you like to do?",
                 choices=[
@@ -687,12 +805,7 @@ def guide(
             if confirm_combo is None or confirm_combo == "no":
                 raise typer.Exit(0)
             if confirm_combo == "ai_fix":
-                failed_filters = ", ".join(f"{k}={v}" for k, v in active.items())
-                query = (
-                    f"{query}\n\n"
-                    f"NOTE: previous combination ({failed_filters}) returned no data. "
-                    "Verify with test_filter_combination and propose a working combination."
-                )
+                _failed_context = ", ".join(f"{k}={v}" for k, v in active.items())
                 _reuse_ds = True
                 continue
 
@@ -702,18 +815,35 @@ def guide(
             f"--{k} {'+'.join(v) if isinstance(v, list) else v}"
             for k, v in active.items()
         )
-        cli_cmd = f"opensdmx get {ds['df_id']} {cli_args} --out data.csv".strip()
+        period_args = ""
+        if start_period:
+            period_args += f" --start-period {start_period}"
+        if end_period:
+            period_args += f" --end-period {end_period}"
+        cli_cmd = f"opensdmx get {ds['df_id']} {cli_args}{period_args} --out data.csv".strip()
 
         console.print(Panel(
             f"[bold]Dataset:[/bold]\n  {ds['df_id']}  {ds['df_description']}\n\n"
             f"[bold]Filters:[/bold]\n{filter_summary}\n\n"
             f"[bold]Reason:[/bold]\n  {result['reasoning']}\n\n"
             f"[bold]URL:[/bold]\n{url}\n\n"
-            f"[bold]Download:[/bold]\ncurl -s \"{url}\" -o data.csv\n\n"
             f"[bold]CLI:[/bold]\n{cli_cmd}",
             title="Result",
             expand=False,
         ))
+
+        # --yes mode: auto-download and exit
+        if yes:
+            console.print(f"[cyan]Downloading data...[/cyan]")
+            try:
+                from . import get_data as _get_data
+                _df = _get_data(ds)
+                _df.write_csv(str(out))
+                console.print(f"[green]Saved:[/green] {out.resolve()}")
+            except Exception as e:
+                err_console.print(f"[red]Download error:[/red] {e}")
+                raise typer.Exit(1)
+            raise typer.Exit(0)
 
         while True:
             post_action = questionary.select(
@@ -752,7 +882,9 @@ def guide(
                     "What do you want to change? (e.g. geographic area, period, filter values...):"
                 ).ask()
                 if mod_input:
-                    query = f"{query}\n\nREQUESTED CHANGE: {mod_input}"
+                    current_filter_str = ", ".join(f"{k}={v}" for k, v in active.items())
+                    period_str = f", period={start_period}–{end_period}" if start_period or end_period else ""
+                    query = f"{query}\n\nCURRENT WORKING FILTERS: {current_filter_str}{period_str}\nREQUESTED CHANGE: {mod_input}"
                 _reuse_ds = True
                 break
 
@@ -764,12 +896,28 @@ def guide(
 
 @app.command()
 def blacklist(
+    remove: Optional[list[str]] = typer.Option(None, "--remove", help="Dataset ID to remove from blacklist (repeatable)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """List and manage datasets marked as unavailable."""
+    """List and manage datasets marked as unavailable.
+
+    Default provider: eurostat. Use --provider to switch.
+
+    Examples:
+
+      opensdmx blacklist
+      opensdmx blacklist --remove NAMA_10_GDP
+      opensdmx blacklist --remove NAMA_10_GDP --remove STS_INPR_M
+    """
     _apply_provider(provider)
-    import questionary
     from .db_cache import delete_invalid_dataset, list_invalid_datasets
+
+    # Non-interactive remove via --remove flag
+    if remove:
+        for df_id in remove:
+            delete_invalid_dataset(df_id)
+            console.print(f"[green]Removed:[/green] {df_id}")
+        return
 
     entries = list_invalid_datasets()
     if not entries:
@@ -788,6 +936,7 @@ def blacklist(
 
     console.print(table)
 
+    import questionary
     choices = [
         questionary.Choice(
             title=f"{e['df_id']}  {e['description'] or ''}",
