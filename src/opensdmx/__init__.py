@@ -2,6 +2,7 @@
 
 from .base import get_provider, set_provider, set_timeout
 from .discovery import (
+    ConstraintsUnavailable,
     all_available,
     dimensions_info,
     get_available_values,
@@ -16,6 +17,7 @@ from .retrieval import fetch, get_data, parse_time_period
 from .cli import main
 
 __all__ = [
+    "ConstraintsUnavailable",
     "set_provider",
     "get_provider",
     "all_available",

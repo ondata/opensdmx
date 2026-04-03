@@ -279,7 +279,7 @@ def constraints(
     import polars as pl
 
     from . import load_dataset
-    from .discovery import get_available_values, get_dimension_values
+    from .discovery import ConstraintsUnavailable, get_available_values, get_dimension_values
 
     try:
         with console.status("[dim]Loading dataset...[/dim]"):
@@ -291,6 +291,13 @@ def constraints(
     try:
         with console.status("[dim]Fetching constraints...[/dim]"):
             avail = get_available_values(ds)
+    except ConstraintsUnavailable:
+        err_console.print(
+            f"[yellow]⚠ Constraints not available for [bold]{dataset_id}[/bold] "
+            f"(dataflow is hidden or not yet public).[/yellow]\n"
+            f"Data is still accessible:  opensdmx get {dataset_id} ..."
+        )
+        raise typer.Exit(0)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)

@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+
+class ConstraintsUnavailable(Exception):
+    """Raised when the availableconstraint endpoint returns 500 (hidden/not-yet-public dataflow)."""
+
 import time
 import warnings
 
@@ -342,6 +346,9 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
         return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
     except Exception as e:
+        import httpx
+        if isinstance(e, httpx.HTTPStatusError) and e.response.status_code == 500:
+            raise ConstraintsUnavailable(df_id) from e
         warnings.warn(f"Could not retrieve available values: {e}", stacklevel=2)
         return {}
 
