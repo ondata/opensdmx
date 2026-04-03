@@ -6,13 +6,30 @@ Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eur
 
 ## Installation
 
+**As a CLI tool** (recommended — available system-wide):
+
+```bash
+uv tool install opensdmx
+```
+
+**As a library** (for use in Python projects):
+
 ```bash
 uv add opensdmx
 # or
 pip install opensdmx
 ```
 
-## Quick start
+## CLI quick start
+
+```bash
+opensdmx search "unemployment"
+opensdmx info une_rt_m
+opensdmx constraints une_rt_m geo
+opensdmx get une_rt_m --freq M --geo IT --sex T --out data.csv
+```
+
+## Python quick start
 
 ```python
 import opensdmx
@@ -107,12 +124,6 @@ plot.save("unemployment.png", dpi=150, width=10, height=5)
 ```
 
 ## CLI
-
-Install globally:
-
-```bash
-uv tool install opensdmx
-```
 
 ### Commands
 
