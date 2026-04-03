@@ -88,7 +88,9 @@ Wait for the user's choice before proceeding.
 
 ## Phase 2 — Schema: explore the chosen dataflow
 
-Once the user has chosen, retrieve the real constraints and structure for the dataflow.
+Once the user has chosen, retrieve the structure and available codes for the dataflow.
+
+### Default flow (Eurostat, OECD, ECB, etc.)
 
 Step 1 — get the codes **actually present** in the dataflow (real constraints):
 ```bash
@@ -114,6 +116,38 @@ know are valid and `opensdmx constraints` doesn't provide enough detail.
 
 **Never use `opensdmx values` to validate filter codes.** A code present in the codelist
 may return no data if it doesn't exist in this specific dataflow.
+
+### ISTAT fast flow (recommended)
+
+ISTAT's `availableconstraint` endpoint is extremely slow and often times out on large
+datasets (e.g. municipal-level data with thousands of territory codes). Use this faster
+flow instead:
+
+Step 1 — get dimension order and structure:
+```bash
+opensdmx info <dataflow_id> --provider istat
+```
+
+Step 2 — explore codelist values for the dimensions you need to filter:
+```bash
+opensdmx values <dataflow_id> REF_AREA --provider istat
+opensdmx values <dataflow_id> DATA_TYPE --provider istat
+```
+
+`values` returns the full codelist (all theoretically possible codes). For ISTAT this is
+usually reliable enough because ISTAT codelists tend to be well-aligned with actual data.
+Use `grep -i` to find specific codes (e.g. city names, indicators).
+
+Step 3 — go directly to `get` with filters and verify with a narrow query:
+```bash
+opensdmx get <dataflow_id> --provider istat --REF_AREA <code> --last-n 1
+```
+
+If the query returns a 404 or empty result, the code may not be present in this dataflow.
+**Only then** fall back to `opensdmx constraints` to check which codes are actually
+available — but be aware it may take 30–60+ seconds or time out on large datasets.
+
+### Extract from both flows
 
 Parse the output and extract:
 - **Dimension list** in order (position matters for URL construction later)
@@ -318,7 +352,7 @@ explain the ones that are populated. Skip columns that are entirely empty.
 
 | Provider | Notes |
 |----------|-------|
-| ISTAT | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs (e.g. `25_74_DF_DCIS_NATI2_1`) |
+| ISTAT | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs (e.g. `25_74_DF_DCIS_NATI2_1`); **use the ISTAT fast flow** (info → values → get) instead of constraints — the `availableconstraint` endpoint is very slow and often times out on large datasets |
 | Eurostat | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
 | OECD | Use `--provider oecd`; good for international comparisons |
 | ECB | Use `--provider ecb`; financial and monetary data |
@@ -330,6 +364,15 @@ Country codes follow ISO 3166-1 alpha-2: `IT` (Italy), `DE` (Germany), `FR` (Fra
 `opensdmx constraints` before using — not all codes are present in every dataset.
 
 **Territory resolution (ISTAT)**
-ISTAT uses numeric REF_AREA codes. Run `opensdmx constraints <dataflow_id> REF_AREA`
-to see the codes present in that specific dataflow, then cross-reference with ISTAT
-documentation to identify regions or provinces. Never guess territory codes.
+ISTAT uses numeric REF_AREA codes (6-digit municipal codes, province codes, region codes,
+and aggregate codes like `ITG12` for provinces or `SLL_*` for labour market areas).
+Use `opensdmx values <dataflow_id> REF_AREA --provider istat` to browse the full
+codelist — pipe through `grep -i` to find specific cities or territories:
+
+```bash
+opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo\|matera"
+```
+
+Avoid `opensdmx constraints <dataflow_id> REF_AREA --provider istat` on municipal-level
+datasets — the `availableconstraint` endpoint is very slow with thousands of codes.
+Use `values` + `grep` to find codes, then verify with a narrow `get` query.
