@@ -22,3 +22,8 @@ data.csv
 tasks/
 tmp/
 tmp.md
+
+# OpenSpec (local only)
+openspec/
+.github/skills/openspec-*/
+.github/prompts/opsx-*
