@@ -2,6 +2,8 @@
 
 Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eurostat**. Built-in support for ISTAT, OECD, ECB, World Bank, and more.
 
+> **Best used with AI.** opensdmx works well on its own, but it shines when driven by an AI agent: the CLI is designed to be composed, queried, and orchestrated step by step. For a guided, interactive experience — dataset discovery, schema exploration, filter selection, and data retrieval — pair it with the [`sdmx-explorer`](skills/sdmx-explorer/SKILL.md) Agent Skill included in this repo.
+
 ## Installation
 
 ```bash
