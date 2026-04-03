@@ -42,9 +42,10 @@ def xml_text_safe(node, xpath: str, ns: dict, default: str | None = None) -> str
 def get_name_by_lang(node, lang: str = "en", ns: dict | None = None) -> str | None:
     """Return the Name element text for the given language, falling back to first Name."""
     ns = ns or {}
-    names = node.findall(".//common:Name", ns)
+    names = []
+    if "common" in ns:
+        names = node.findall(".//common:Name", ns)
     if not names:
-        # Try without namespace
         names = node.findall(".//Name")
 
     for name_node in names:

@@ -148,12 +148,6 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
             active = {k: (v[0] if len(v) == 1 else v) for k, v in filters.items() if v}
             test_ds = set_filters(ds, **active)
             df = get_data(test_ds, last_n_observations=1)
-            # Log for debugging
-            import datetime
-            with open("/tmp/guide_debug.log", "a") as _f:
-                _f.write(f"\n[{datetime.datetime.now().isoformat()}]\n")
-                _f.write(f"filters: {filters}\n")
-                _f.write(f"df.shape: {df.shape}, columns: {list(df.columns)[:6]}\n")
             if df.is_empty():
                 return False, "Nessun dato per questa combinazione di filtri."
             # Check response has expected dataset columns (not an XML error parsed as CSV)

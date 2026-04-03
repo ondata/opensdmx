@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-04-03 (2)
+
+- Fix: removed production debug log (`/tmp/guide_debug.log`) from `ai.py`
+- Fix: `get_name_by_lang` crashed on XML without "common" namespace
+- Feat: test suite from 4 to 35 tests — coverage on `utils.py`, `parse_time_period()`, `make_url_key()`
+- Feat: CI with GitHub Actions (pytest + ruff on push/PR)
+- Production-readiness evaluation in `docs/evaluation.md`
+
 ## 2026-04-03
 
 - Feat: cache TTL configurabile via env vars (`OPENSDMX_DATAFLOWS_CACHE_TTL`, `OPENSDMX_METADATA_CACHE_TTL`, `OPENSDMX_CONSTRAINTS_CACHE_TTL`); default sensati, `.env.example` aggiunto
