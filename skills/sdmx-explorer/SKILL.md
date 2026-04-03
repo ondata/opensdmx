@@ -16,7 +16,7 @@ compatibility: >
   Requires the opensdmx CLI (opensdmx search, info, constraints, values, get, plot).
 metadata:
   author: ondata
-  version: "1.1"
+  version: "1.2"
 ---
 
 # SDMX Explorer — Guided Dataset Discovery
@@ -307,6 +307,34 @@ If the user says yes to **README**:
   - Flag legend: list all `OBS_FLAG` values found in the data with their meaning
   - Units: clearly state the unit of measurement for `OBS_VALUE`
   - Any caveats noted during analysis (gaps, estimated values, provisional data)
+
+### Step 5 — Visualization
+
+After downloading data, offer to create charts using `opensdmx plot`.
+The plot command uses plotnine (Python's ggplot2) and accepts both dataflow IDs
+and local files (.csv, .tsv, .parquet).
+
+For the complete visualization reference — Grammar of Graphics concepts, data
+preparation rules, DuckDB examples, iterative chart quality loop, and common
+fixes — see [references/visualization.md](references/visualization.md).
+
+**Supported chart types** (via `--geom`):
+- `line` (default): line chart with points — best for time series
+- `bar`: vertical bar chart — best for comparing values across categories over time;
+  with `--color` produces stacked bars
+- `barh`: horizontal bar chart — best for rankings; bars are automatically sorted
+  by value (lowest at bottom, highest at top)
+- `point`: scatter plot — best for correlations between two numeric variables
+
+For other chart types (heatmaps, faceted plots), write a short Python script
+using plotnine directly.
+
+Key points:
+- Always prepare data with DuckDB before plotting (separate units, limit series,
+  remove aggregates, use year strings for annual data)
+- After generating a chart, read the image and evaluate it — if it's not good,
+  fix it yourself before showing the user
+- Multiple focused charts are better than one overloaded chart
 
 ---
 

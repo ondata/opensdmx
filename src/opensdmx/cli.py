@@ -451,6 +451,7 @@ def plot(
     x: str = typer.Option("TIME_PERIOD", "--x", help="Column for X axis"),
     y: str = typer.Option("OBS_VALUE", "--y", help="Column for Y axis"),
     color: Optional[str] = typer.Option(None, "--color", help="Column for color grouping"),
+    geom: str = typer.Option("line", "--geom", help="Chart type: line, bar, barh, point"),
     title: Optional[str] = typer.Option(None, "--title", help="Chart title (default: dataset description)"),
     xlabel: Optional[str] = typer.Option(None, "--xlabel", help="X axis label (default: column name)"),
     ylabel: Optional[str] = typer.Option(None, "--ylabel", help="Y axis label (default: column name)"),
@@ -461,7 +462,7 @@ def plot(
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Plot data as a line chart.
+    """Plot data as a chart (line, bar, horizontal bar, or scatter).
 
     INPUT can be a dataflow ID (fetches from SDMX) or a local file
     (.csv, .tsv, .parquet). Extra --DIM VALUE pairs are used as filters
@@ -470,11 +471,13 @@ def plot(
     Examples:
 
       opensdmx plot une_rt_m --freq M --geo IT --color geo
-      opensdmx plot /tmp/road_deaths.csv --color geo --title "Road deaths"
+      opensdmx plot /tmp/data.csv --color geo --title "Road deaths"
+      opensdmx plot /tmp/ranking.csv --geom barh --x geo --title "Rate by country"
+      opensdmx plot /tmp/data.csv --geom bar --x year --color geo
     """
     import matplotlib
     matplotlib.use("Agg")
-    from plotnine import aes, geom_line, geom_point, ggplot, labs, scale_x_date, theme_minimal
+    from plotnine import aes, coord_flip, geom_col, geom_line, geom_point, ggplot, labs, scale_x_date, theme_minimal
 
     import polars as pl
 
@@ -521,21 +524,53 @@ def plot(
     df = df.with_columns(pl.col(y).cast(pl.Float64, strict=False))
     pdf = df.to_pandas()
 
-    aes_mapping = aes(x=x, y=y, color=color) if color else aes(x=x, y=y)
-    p = (
-        ggplot(pdf, aes_mapping)
-        + geom_line(size=1)
-        + geom_point(size=1.5)
-        + labs(
+    if geom not in ("line", "bar", "barh", "point"):
+        err_console.print(f"[red]Error:[/red] unknown --geom '{geom}'. Use: line, bar, barh, point")
+        raise typer.Exit(1)
+
+    if geom in ("bar", "barh"):
+        import pandas as pd
+
+        # Sort categories by value for readable bar charts
+        if geom == "barh":
+            order = pdf.groupby(x)[y].sum().sort_values().index.tolist()
+            pdf[x] = pd.Categorical(pdf[x], categories=order, ordered=True)
+            if color:
+                aes_mapping = aes(x=x, y=y, fill=color)
+            else:
+                aes_mapping = aes(x=x, y=y)
+            p = ggplot(pdf, aes_mapping) + geom_col() + coord_flip()
+            p = p + labs(
+                title=title or ds_description,
+                x=xlabel or x,
+                y=ylabel or y,
+            )
+        else:
+            if color:
+                aes_mapping = aes(x=x, y=y, fill=color)
+            else:
+                aes_mapping = aes(x=x, y=y)
+            p = ggplot(pdf, aes_mapping) + geom_col()
+            p = p + labs(
+                title=title or ds_description,
+                x=xlabel or x,
+                y=ylabel or y,
+            )
+        p = p + theme_minimal()
+    else:
+        aes_mapping = aes(x=x, y=y, color=color) if color else aes(x=x, y=y)
+        p = ggplot(pdf, aes_mapping)
+        if geom == "point":
+            p = p + geom_point(size=2)
+        else:
+            p = p + geom_line(size=1) + geom_point(size=1.5)
+        p = p + labs(
             title=title or ds_description,
             x=xlabel or x,
             y=ylabel or y,
-        )
-        + theme_minimal()
-    )
-
-    if hasattr(pdf[x], "dt"):
-        p = p + scale_x_date(date_breaks="2 years", date_labels="%Y")
+        ) + theme_minimal()
+        if hasattr(pdf[x], "dt"):
+            p = p + scale_x_date(date_breaks="2 years", date_labels="%Y")
 
     p.save(str(out), dpi=150, width=width, height=height)
     console.print(f"[green]Saved:[/green] {out}")
