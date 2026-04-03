@@ -1,9 +1,9 @@
-# opensdmx
-
 [![PyPI version](https://img.shields.io/pypi/v/opensdmx)](https://pypi.org/project/opensdmx/)
 [![GitHub](https://img.shields.io/badge/github-aborruso%2Fopensdmx-blue?logo=github)](https://github.com/aborruso/opensdmx)
 [![deepwiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aborruso/opensdmx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+# opensdmx
 
 Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eurostat**. Built-in support for ISTAT, OECD, ECB, World Bank, and more.
 
