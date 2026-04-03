@@ -174,12 +174,21 @@ opensdmx search --semantic "unemployment"
 
 Cache is namespaced per provider under `~/.cache/opensdmx/{AGENCY_ID}/`.
 
-| File | Content | TTL |
+| File | Content | Default TTL |
 |---|---|---|
-| `~/.cache/opensdmx/ESTAT/dataflows.parquet` | Eurostat catalog | 24h |
-| `~/.cache/opensdmx/ESTAT/cache.db` | Dimensions, codelists, constraints (SQLite) | 7 days |
-| `~/.cache/opensdmx/IT1/dataflows.parquet` | ISTAT catalog | 24h |
-| `~/.cache/opensdmx/IT1/cache.db` | ISTAT SQLite cache | 7 days |
+| `dataflows.parquet` | Dataset catalog | 7 days |
+| `cache.db` — structures + codelists | Dimensions, codelist descriptions and values | 30 days |
+| `cache.db` — constraints | Available constraint values per dataflow | 7 days |
+
+TTL values can be overridden via environment variables:
+
+| Variable | Default | Duration |
+|---|---|---|
+| `OPENSDMX_DATAFLOWS_CACHE_TTL` | `604800` | 7 days |
+| `OPENSDMX_METADATA_CACHE_TTL` | `2592000` | 30 days |
+| `OPENSDMX_CONSTRAINTS_CACHE_TTL` | `604800` | 7 days |
+
+See `.env.example` for a ready-to-use template.
 
 ## Timeout
 
