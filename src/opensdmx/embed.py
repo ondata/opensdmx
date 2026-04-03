@@ -22,8 +22,8 @@ def _check_ollama() -> None:
         models = ollama.list().models
     except Exception:
         raise RuntimeError(
-            f"Ollama server not reachable. Start it with:  ollama serve\n"
-            f"Tip: use keyword search instead:  opensdmx search <keyword>"
+            "Ollama server not reachable. Start it with:  ollama serve\n"
+            "Tip: use keyword search instead:  opensdmx search <keyword>"
         )
     available = [m.model for m in models if m.model is not None]
     # accept exact match or model name without tag (e.g. "nomic-embed-text-v2-moe:latest")

@@ -291,7 +291,7 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
             current_filters = _to_dict(valid_scenarios[idx].filters)
             current_start = valid_scenarios[idx].start_period
             current_end = valid_scenarios[idx].end_period
-            console.print(f"\n[bold cyan]AI:[/bold cyan]")
+            console.print("\n[bold cyan]AI:[/bold cyan]")
             console.print(Markdown(
                 f"You selected **Scenario {_word}: {valid_scenarios[idx].name}**.\n\n"
                 f"Suggested period: {current_start}–{current_end}. OK or would you like to change it?\n\n"

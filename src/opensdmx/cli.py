@@ -461,31 +461,57 @@ def plot(
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
-    """Plot data for a dataset as a line chart. Extra --DIM VALUE pairs are used as filters."""
-    _apply_provider(provider)
+    """Plot data as a line chart.
+
+    INPUT can be a dataflow ID (fetches from SDMX) or a local file
+    (.csv, .tsv, .parquet). Extra --DIM VALUE pairs are used as filters
+    when fetching from SDMX.
+
+    Examples:
+
+      opensdmx plot une_rt_m --freq M --geo IT --color geo
+      opensdmx plot /tmp/road_deaths.csv --color geo --title "Road deaths"
+    """
     import matplotlib
     matplotlib.use("Agg")
     from plotnine import aes, geom_line, geom_point, ggplot, labs, scale_x_date, theme_minimal
 
     import polars as pl
 
-    from . import get_data, load_dataset, set_filters
+    # Detect file input vs dataflow ID
+    input_path = Path(dataset_id)
+    ds_description = dataset_id
+    if input_path.suffix.lower() in (".csv", ".tsv", ".parquet") and input_path.exists():
+        try:
+            if input_path.suffix.lower() == ".parquet":
+                df = pl.read_parquet(input_path)
+            else:
+                separator = "\t" if input_path.suffix.lower() == ".tsv" else ","
+                df = pl.read_csv(input_path, separator=separator, infer_schema_length=10000)
+            ds_description = input_path.stem
+        except Exception as e:
+            err_console.print(f"[red]Error reading file:[/red] {e}")
+            raise typer.Exit(1)
+    else:
+        _apply_provider(provider)
+        from . import get_data, load_dataset, set_filters
 
-    filters = _parse_extra_filters(ctx)
+        filters = _parse_extra_filters(ctx)
 
-    try:
-        ds = load_dataset(dataset_id)
-        if filters:
-            ds = set_filters(ds, **filters)
-        df = get_data(ds, start_period=start_period, end_period=end_period)
-    except httpx.HTTPStatusError as e:
-        err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
-        if e.response.status_code in (400, 404):
-            err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
-        raise typer.Exit(1)
-    except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
-        raise typer.Exit(1)
+        try:
+            ds = load_dataset(dataset_id)
+            if filters:
+                ds = set_filters(ds, **filters)
+            df = get_data(ds, start_period=start_period, end_period=end_period)
+            ds_description = ds["df_description"]
+        except httpx.HTTPStatusError as e:
+            err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
+            if e.response.status_code in (400, 404):
+                err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
+            raise typer.Exit(1)
+        except Exception as e:
+            err_console.print(f"[red]Error:[/red] {e}")
+            raise typer.Exit(1)
 
     if x not in df.columns or y not in df.columns:
         err_console.print(f"[red]Error:[/red] columns '{x}' or '{y}' not found in data.")
@@ -501,7 +527,7 @@ def plot(
         + geom_line(size=1)
         + geom_point(size=1.5)
         + labs(
-            title=title or ds["df_description"],
+            title=title or ds_description,
             x=xlabel or x,
             y=ylabel or y,
         )
@@ -844,7 +870,7 @@ def guide(
 
         # --yes mode: auto-download and exit
         if yes:
-            console.print(f"[cyan]Downloading data...[/cyan]")
+            console.print("[cyan]Downloading data...[/cyan]")
             try:
                 from . import get_data as _get_data
                 _df = _get_data(ds)

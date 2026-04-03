@@ -33,4 +33,5 @@ __all__ = [
     "fetch",
     "set_timeout",
     "parse_time_period",
+    "main",
 ]

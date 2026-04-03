@@ -29,10 +29,13 @@ dependencies = [
 opensdmx = "opensdmx:main"
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "ruff>=0.11"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff.lint]
+ignore = ["E402"]
 
 [build-system]
 requires = ["uv_build>=0.9.7,<0.10.0"]

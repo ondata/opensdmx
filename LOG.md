@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-03 (4)
+
+- Fix: CI workflow — add ruff to dev dependencies, fix f-string and F401 lint errors
+- Fix: configure ruff to ignore E402 (intentional import patterns)
+- Feat: `plot` command accepts local files (.csv, .tsv, .parquet) as input
+
 ## 2026-04-03 (3)
 
 - Translate all remaining Italian UI strings in `ai.py` and `cli.py` to English
