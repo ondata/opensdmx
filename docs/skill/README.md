@@ -43,3 +43,5 @@ Review and confirm with **Yes** to proceed.
 ## Usage
 
 Once installed, use `/sdmx-explorer` in the selected agents to start an interactive SDMX exploration session using opensdmx.
+
+To explore the skill's full capabilities before or after installing, see the [skill definition](../../skills/sdmx-explorer/SKILL.md).
