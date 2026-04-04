@@ -18,10 +18,11 @@ def xml_parse(content: bytes):
     """
     root = etree.fromstring(content)
     ns = {}
-    for prefix, uri in root.nsmap.items():
-        if prefix is not None:
-            canonical = _NS_CANONICAL.get(uri, prefix)
-            ns[canonical] = uri
+    for element in root.iter():
+        for prefix, uri in element.nsmap.items():
+            if prefix is not None and uri not in ns.values():
+                canonical = _NS_CANONICAL.get(uri, prefix)
+                ns[canonical] = uri
     return root, ns
 
 

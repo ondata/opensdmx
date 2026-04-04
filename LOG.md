@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-04 (6)
+
+- fix(utils): xml_parse() now collects namespaces from all elements (not just root) — fixes World Bank support where `structure` ns is declared on a child element — closes #4
+
 ## 2026-04-04 (5)
 
 - fix(bundesbank): add `metadata_prefix: "metadata"` to portals.json; add `_struct_path()` helper in discovery.py to prepend prefix to dataflow/datastructure/codelist paths — fixes #3
