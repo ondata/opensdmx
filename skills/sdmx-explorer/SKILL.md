@@ -96,6 +96,18 @@ Then run `opensdmx info <id>` on each one **in parallel** to check their dimensi
 list. Keep only the candidates that contain **all expected dimensions**.
 Discard candidates missing a required dimension — even if the title looks right.
 
+**If page 1 (20 results) yields no strong candidates**, paginate before giving up:
+
+```bash
+opensdmx search "unemployment" --page 2   # results 21-40
+opensdmx search "unemployment" --page 3   # results 41-60
+```
+
+The title shows the total available (e.g. `21-40 of 114`), so you know how many
+pages exist. Keep paginating until you find at least 3 plausible candidates or
+exhaust the results. Only after exhausting pagination should you try a different
+keyword or provider. Use `--all` only as a last resort (may produce very long output).
+
 ```bash
 # Example: verify age and sex are present
 opensdmx info UNE_RT_A       # ✓ has age, sex, geo → keep
