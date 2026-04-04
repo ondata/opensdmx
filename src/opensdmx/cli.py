@@ -444,6 +444,7 @@ def get(
     ctx: typer.Context,
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     out: Optional[Path] = typer.Option(None, "--out", help="Output file (.csv/.parquet/.json)"),
+    query_file: Optional[Path] = typer.Option(None, "--query-file", help="Save query as YAML file for later reuse"),
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     last_n: Optional[int] = typer.Option(None, "--last-n", help="Return only last N observations per series"),
@@ -461,6 +462,7 @@ def get(
       opensdmx get NAMA_10_GDP --FREQ A --GEO IT --out data.csv
       opensdmx get NAMA_10_GDP --start-period 2010 --end-period 2023 --out data.parquet
       opensdmx get DCIS_POPRES1 --ITTER107 IT --provider istat
+      opensdmx get TIPSUN20 --sex T --age Y15-74 --out data.csv --query-file unemployment.yaml
     """
     _apply_provider(provider)
     from . import get_data, load_dataset, set_filters
@@ -517,6 +519,107 @@ def get(
             df.write_csv(out)
         else:
             err_console.print(f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json")
+            raise typer.Exit(1)
+        console.print(f"[green]Saved:[/green] {out}")
+
+    if query_file is not None:
+        import yaml
+        from .utils import build_query_dict
+        query_dict = build_query_dict(
+            ds=ds, filters=filters,
+            start_period=start_period, end_period=end_period,
+            last_n=last_n, first_n=first_n, provider=provider,
+        )
+        with open(query_file, "w") as fh:
+            yaml.dump(query_dict, fh, allow_unicode=True, sort_keys=False, default_flow_style=False)
+        console.print(f"[green]Query saved:[/green] {query_file}")
+
+
+@app.command()
+def run(
+    query_file: Path = typer.Argument(..., help="YAML query file (created with --query-file)"),
+    out: Optional[Path] = typer.Option(None, "--out", help="Output file (.csv/.parquet/.json) — default: stdout"),
+    provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+):
+    """Run a query from a YAML file saved with --query-file.
+
+    Examples:
+
+      opensdmx run unemployment.yaml
+      opensdmx run unemployment.yaml --out results.csv
+      opensdmx run query.yaml --out results.parquet
+    """
+    import yaml
+    from . import get_data, load_dataset, set_filters
+
+    if not query_file.exists():
+        err_console.print(f"[red]Error:[/red] file not found: {query_file}")
+        raise typer.Exit(1)
+
+    try:
+        with open(query_file) as fh:
+            q = yaml.safe_load(fh)
+    except Exception as e:
+        err_console.print(f"[red]Error reading YAML:[/red] {e}")
+        raise typer.Exit(1)
+
+    # Provider resolution: CLI flag > alias (if known) > URL + agency_id > env/default
+    if provider:
+        _apply_provider(provider)
+    else:
+        from .base import PROVIDERS, set_provider
+        alias = q.get("provider")
+        if alias and alias in PROVIDERS:
+            set_provider(alias)
+        elif q.get("provider_url"):
+            set_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
+        else:
+            _apply_provider(None)
+
+    dataset_id = q.get("dataset")
+    if not dataset_id:
+        err_console.print("[red]Error:[/red] 'dataset' field missing in query file")
+        raise typer.Exit(1)
+
+    filters = {dim: info["value"] for dim, info in (q.get("filters") or {}).items()}
+    start_period = q.get("start_period")
+    end_period = q.get("end_period")
+    last_n = q.get("last_n")
+    first_n = q.get("first_n")
+
+    try:
+        import warnings as _warnings
+        with console.status("[dim]Loading dataset...[/dim]"):
+            ds = load_dataset(dataset_id)
+            if filters:
+                with _warnings.catch_warnings(record=True) as _caught:
+                    _warnings.simplefilter("always")
+                    ds = set_filters(ds, **filters)
+                for _w in _caught:
+                    err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+
+        with console.status("[dim]Fetching data...[/dim]"):
+            df = get_data(ds, start_period=start_period, end_period=end_period,
+                          last_n_observations=last_n, first_n_observations=first_n)
+    except httpx.HTTPStatusError as e:
+        err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
+        raise typer.Exit(1)
+    except Exception as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    if out is None:
+        sys.stdout.write(df.write_csv())
+    else:
+        suffix = out.suffix.lower()
+        if suffix == ".parquet":
+            df.write_parquet(out)
+        elif suffix == ".json":
+            df.write_ndjson(out)
+        elif suffix == ".csv":
+            df.write_csv(out)
+        else:
+            err_console.print(f"[red]Error:[/red] unsupported format '{suffix}'. Supported: .csv, .parquet, .json")
             raise typer.Exit(1)
         console.print(f"[green]Saved:[/green] {out}")
 

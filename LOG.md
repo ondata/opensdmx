@@ -1,5 +1,17 @@
 # LOG
 
+## 2026-04-04 (12)
+
+- chore: bump version to v0.3.0
+- feat: add `--query-file` option to `get` command — saves query as YAML for later reuse
+- feat: add `run` command — executes a query from a YAML file, output to stdout or `--out`
+- feat: YAML captures provider alias, provider_url, agency_id, filters with labels from cache
+- feat: `run` resolves provider via alias → URL+agency_id fallback chain
+- feat: add `build_query_dict()` helper in `utils.py`
+- dep: add `pyyaml` dependency
+- docs: update README with query file workflow and `run` command
+- docs: update sdmx-explorer skill to suggest saving queries as YAML templates
+
 ## 2026-04-04 (11)
 
 - chore: bump version to v0.2.9

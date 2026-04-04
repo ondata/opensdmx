@@ -32,6 +32,12 @@ opensdmx search "unemployment"
 opensdmx info une_rt_m
 opensdmx constraints une_rt_m geo
 opensdmx get une_rt_m --freq M --geo IT --sex T --out data.csv
+
+# Save a query for later reuse
+opensdmx get TIPSUN20 --sex T --age Y15-74 --start-period 2020 --query-file unemployment.yaml
+
+# Re-run from the saved query
+opensdmx run unemployment.yaml --out results.csv
 ```
 
 ## Python quick start
@@ -165,7 +171,8 @@ All commands accept `--provider` (`-p`) to select the provider.
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
 | `opensdmx values <id> <dim> [-p provider]` | Show codelist values for a dimension (case-insensitive) |
 | `opensdmx constraints <id> [dim] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`) |
-| `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file.csv\|.parquet\|.json] [-p provider]` | Download data |
+| `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file] [--query-file file.yaml] [-p provider]` | Download data; optionally save the query as YAML |
+| `opensdmx run <query.yaml> [--out file] [-p provider]` | Re-run a query saved with `--query-file` |
 | `opensdmx plot <id\|file.csv> [--DIM VALUE] [--geom line\|bar\|barh\|point\|scatter] [--out file] [-p provider]` | Plot data as chart |
 | `opensdmx blacklist [-p provider]` | List and remove datasets from the unavailability blacklist |
 
@@ -190,6 +197,56 @@ opensdmx get 151_929 --provider istat --FREQ A --REF_AREA IT --out data.csv
 opensdmx search "GDP" --provider oecd
 opensdmx search "inflation" --provider ecb
 ```
+
+### Query files
+
+Save any `get` command as a YAML file with `--query-file`. The file captures the full query — provider, dataset, filters with human-readable descriptions, and time range — so it can be re-run, shared, or version-controlled.
+
+```bash
+# Save query
+opensdmx get TIPSUN20 \
+  --sex T --age Y15-74 --unit PC_ACT \
+  --geo "AT+BE+DE+ES+FR+IT" \
+  --start-period 2020 --end-period 2024 \
+  --query-file unemployment_eu.yaml
+```
+
+The generated YAML:
+
+```yaml
+provider: eurostat
+provider_url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1
+agency_id: ESTAT
+dataset: TIPSUN20
+description: Unemployment rate - annual data
+filters:
+  sex:
+    value: T
+    description: Total
+  age:
+    value: Y15-74
+    description: From 15 to 74 years
+  unit:
+    value: PC_ACT
+    description: Percentage of population in the labour force
+  geo:
+    value: AT+BE+DE+ES+FR+IT
+    description: ''
+start_period: '2020'
+end_period: '2024'
+last_n: null
+first_n: null
+```
+
+Re-run with `run` — output goes to stdout by default, or to a file with `--out`:
+
+```bash
+opensdmx run unemployment_eu.yaml
+opensdmx run unemployment_eu.yaml --out results.csv
+opensdmx run unemployment_eu.yaml --out results.parquet
+```
+
+Provider resolution order: `--provider` CLI flag → alias in YAML → `provider_url` + `agency_id` in YAML → environment variable. This means query files work with any provider, including custom URLs.
 
 ### Semantic search setup
 

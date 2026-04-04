@@ -1,6 +1,6 @@
 [project]
 name = "opensdmx"
-version = "0.2.9"
+version = "0.3.0"
 description = "Simple Python interface to any SDMX 2.1 REST API (Eurostat, ISTAT, and more)"
 readme = "README.md"
 authors = [
@@ -16,6 +16,7 @@ dependencies = [
     "plotnine>=0.15.3",
     "polars>=1.38.1",
     "pyarrow>=23.0.1",
+    "pyyaml>=6.0.3",
     "rich>=14.3.3",
     "tenacity>=9.1.4",
     "typer>=0.24.1",

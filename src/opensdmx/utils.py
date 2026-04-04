@@ -64,6 +64,69 @@ def get_name_by_lang(node, lang: str = "en", ns: dict | None = None) -> str | No
     return None
 
 
+def _get_code_label(codelist_id: str | None, code_value: str) -> str:
+    """Return human-readable label for a single code from cache, or '' if not found."""
+    if not codelist_id:
+        return ""
+    # Only single-value codes can be looked up; skip multi-value (AT+BE+...)
+    if "+" in code_value:
+        return ""
+    from .db_cache import get_cached_codelist_values
+    cached = get_cached_codelist_values(codelist_id)
+    if not cached:
+        return ""
+    for entry in cached:
+        if entry["id"] == code_value:
+            return entry["name"] or ""
+    return ""
+
+
+def build_query_dict(
+    ds: dict,
+    filters: dict,
+    start_period: str | None = None,
+    end_period: str | None = None,
+    last_n: int | None = None,
+    first_n: int | None = None,
+    provider: str | None = None,
+) -> dict:
+    """Build a plain dict representing a query, ready for YAML serialisation.
+
+    For each active filter, looks up the code label in SQLite cache.
+    If not cached, description is left as an empty string.
+    """
+    from .base import _active_provider, get_agency_id, get_base_url
+    if provider:
+        provider_name = provider
+    elif isinstance(_active_provider, str):
+        provider_name = _active_provider  # e.g. "eurostat"
+    else:
+        provider_name = _active_provider.get("agency_id", "")
+    provider_url = get_base_url()
+    agency_id = get_agency_id()
+
+    filters_section: dict = {}
+    for dim_id, value in filters.items():
+        if value in ("", "."):
+            continue
+        codelist_id = (ds.get("dimensions") or {}).get(dim_id, {}).get("codelist_id")
+        label = _get_code_label(codelist_id, value)
+        filters_section[dim_id] = {"value": value, "description": label}
+
+    return {
+        "provider": provider_name,
+        "provider_url": provider_url,
+        "agency_id": agency_id,
+        "dataset": ds["df_id"],
+        "description": ds.get("df_description") or "",
+        "filters": filters_section,
+        "start_period": start_period,
+        "end_period": end_period,
+        "last_n": last_n,
+        "first_n": first_n,
+    }
+
+
 def make_url_key(filters: dict) -> str:
     """Build an SDMX filter key string from dimension filters.
 

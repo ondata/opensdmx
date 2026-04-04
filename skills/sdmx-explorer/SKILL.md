@@ -34,6 +34,7 @@ opensdmx --help                  # list all commands
 opensdmx search --help           # options and examples for search
 opensdmx constraints --help      # options and examples for constraints
 opensdmx get --help              # options and examples for get
+opensdmx run --help              # options and examples for run
 # ... same for info, values, constraints, embed, blacklist, plot
 ```
 
@@ -277,7 +278,29 @@ I can then run a quick analysis: row count, top values, time range, flagged reco
 If the user says yes, download with `--out <path>` and run a quick analysis
 (row count, top values, time range, any missing/flagged data worth noting).
 
-### Step 4 — Offer metadata and README
+### Step 4 — Offer to save the query as a reusable template
+
+After a successful download, always ask the user if they want to save the query:
+
+```
+This query worked well. Would you like to save it as a YAML template so you can
+re-run it later without remembering all the parameters?
+
+  opensdmx get <id> [filters] --out data.csv --query-file my_query.yaml
+
+The YAML captures provider, dataset, filters with human-readable descriptions,
+and time range. To re-run it later:
+
+  opensdmx run my_query.yaml
+  opensdmx run my_query.yaml --out fresh_data.csv
+
+The file is also useful for version control and sharing with colleagues.
+```
+
+Always suggest a meaningful filename (e.g. `unemployment_eu_2020_2024.yaml`,
+`gdp_annual_eurostat.yaml`) based on the dataset and filters used.
+
+### Step 5 — Offer metadata and README
 
 After downloading, always ask the user two optional extras:
 
