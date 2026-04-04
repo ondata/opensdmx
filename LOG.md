@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-04-04 (11)
+
+- chore: bump version to v0.2.9
+- feat: add BIS (Bank for International Settlements) as built-in provider
+
 ## 2026-04-04 (10)
 
 - chore: bump version to v0.2.8

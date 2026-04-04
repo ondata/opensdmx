@@ -58,5 +58,11 @@
     "description": "Official Australian statistics. Covers population, economy, employment, trade, prices and environment for Australia and its territories.",
     "base_url": "https://data.api.abs.gov.au/rest",
     "agency_id": "ABS"
+  },
+  "bis": {
+    "name": "Bank for International Settlements",
+    "description": "The bank for central banks. Global financial statistics: international credit, debt securities, exchange rates, banking flows, derivatives and property prices. Data contributed by 63 central banks worldwide.",
+    "base_url": "https://stats.bis.org/api/v1",
+    "agency_id": "BIS"
   }
 }
