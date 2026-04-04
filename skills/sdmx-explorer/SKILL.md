@@ -57,6 +57,9 @@ Then search for dataflows:
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
   (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`)
 
+To see the full list of built-in providers with their descriptions, run:
+`opensdmx providers`
+
 From the results, select **3–5 candidates** that are genuinely relevant (not just
 keyword matches). For each, write a short explanation of what it contains and why
 it might answer the user's question.
