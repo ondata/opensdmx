@@ -17,6 +17,12 @@ from .utils import get_name_by_lang, xml_attr_safe, xml_parse
 from .cache_config import DATAFLOWS_CACHE_TTL
 
 
+def _struct_path(endpoint: str) -> str:
+    """Prepend metadata_prefix to structure endpoint paths when configured."""
+    prefix = get_provider().get("metadata_prefix", "")
+    return f"{prefix}/{endpoint}" if prefix else endpoint
+
+
 def _dataflow_cache_path():
     return get_cache_dir() / "dataflows.parquet"
 
@@ -57,7 +63,7 @@ def all_available() -> pl.DataFrame:
     language = get_provider()["language"]
 
     catalog_agency = get_provider().get("catalog_agency", agency_id)
-    path = f"dataflow/{catalog_agency}"
+    path = _struct_path(f"dataflow/{catalog_agency}")
     dataflow_params = get_provider().get("dataflow_params", {})
     content = sdmx_request_xml(path, **dataflow_params)
     root, ns = xml_parse(content)
@@ -119,7 +125,7 @@ def _get_dimensions(structure_id: str) -> dict:
         return cached
 
     ds_agency = get_provider().get("datastructure_agency", "ALL")
-    path = f"datastructure/{ds_agency}/{structure_id}"
+    path = _struct_path(f"datastructure/{ds_agency}/{structure_id}")
     content = sdmx_request_xml(path)
     root, ns = xml_parse(content)
 
@@ -161,7 +167,7 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
     if is_codelist_info_cached(codelist_id):
         return get_cached_codelist_info(codelist_id)
     try:
-        path = f"codelist/ALL/{codelist_id}"
+        path = _struct_path(f"codelist/ALL/{codelist_id}")
         content = sdmx_request_xml(path)
         root, ns = xml_parse(content)
         struct_ns = ns.get("structure", "")

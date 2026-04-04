@@ -1,5 +1,18 @@
 # LOG
 
+## 2026-04-04 (5)
+
+- fix(bundesbank): add `metadata_prefix: "metadata"` to portals.json; add `_struct_path()` helper in discovery.py to prepend prefix to dataflow/datastructure/codelist paths — fixes #3
+
+## 2026-04-04 (4)
+
+- Test: full workflow tested for `oecd`, `bundesbank`, `worldbank` providers
+- OECD: all 5 steps work (search, info, values, constraints, get)
+- OECD: official rate limit is 60 data downloads/hour — applies to `get` only, not structure/metadata calls (search, info, values, constraints); current `rate_limit: 0.5` in portals.json is fine
+- ECB, Eurostat: no rate limit officially documented
+- Bundesbank: all steps fail — `/rest/dataflow/BBK` returns 404 ("Unknown path"); API routing broken
+- World Bank: all steps fail — `xml_parse()` misses namespaces declared on child elements (not root); `WDI` dataflow exists but never discovered
+
 ## 2026-04-04 (3)
 
 - Feat: `get` warns when dataset has >5,000 series and no filters/limits are set

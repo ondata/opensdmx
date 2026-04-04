@@ -37,7 +37,8 @@
   "bundesbank": {
     "name": "Deutsche Bundesbank",
     "base_url": "https://api.statistiken.bundesbank.de/rest",
-    "agency_id": "BBK"
+    "agency_id": "BBK",
+    "metadata_prefix": "metadata"
   },
   "worldbank": {
     "name": "World Bank",
