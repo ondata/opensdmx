@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-04 (8)
+
+- chore: bump version to v0.2.6
+
 ## 2026-04-04 (7)
 
 - fix(bundesbank): add datastructure_agency=BBK to portals.json (ALL not accepted by Bundesbank API)
