@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import httpx
 import numpy as np
 import polars as pl
 
@@ -20,7 +21,7 @@ def _check_ollama() -> None:
 
     try:
         models = ollama.list().models
-    except Exception:
+    except (httpx.ConnectError, httpx.HTTPError, OSError):
         raise RuntimeError(
             "Ollama server not reachable. Start it with:  ollama serve\n"
             "Tip: use keyword search instead:  opensdmx search <keyword>"

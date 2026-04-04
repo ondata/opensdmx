@@ -9,6 +9,7 @@ class ConstraintsUnavailable(Exception):
 import time
 import warnings
 
+import httpx
 import polars as pl
 
 from .base import get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
@@ -174,7 +175,7 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
         tag = f"{{{struct_ns}}}Codelist" if struct_ns else "Codelist"
         codelist_node = root.find(f".//{tag}")
         description = get_name_by_lang(codelist_node, "en", ns) if codelist_node is not None else None
-    except Exception:
+    except (httpx.HTTPError, OSError):
         description = None
     save_codelist_info(codelist_id, description)
     return description

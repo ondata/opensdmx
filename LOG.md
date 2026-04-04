@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-04-04 (9)
+
+- chore: bump version to v0.2.7
+- refactor: extract guide() logic to guide.py; cli.py -358 lines
+- feat: add [guide] optional extras (chatlas, questionary); remove dead deps (duckdb, inquirerpy)
+- test: add 11 mocked HTTP tests (sdmx_request_csv, all_available, get_data)
+- fix: replace silent except Exception with specific exception types in discovery, embed, cli, guide
+
 ## 2026-04-04 (8)
 
 - chore: bump version to v0.2.6
