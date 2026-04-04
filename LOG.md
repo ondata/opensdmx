@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-04-04 (13)
+
+- fix: World Bank provider now works for data requests (closes #5)
+  - add `data_accept` field in portals.json → sends correct Accept header for SDMX-JSON
+  - add `data_path_suffix: "/"` → trailing slash required by WB API to avoid 307 redirect
+  - add `follow_redirects=True` to httpx.Client (global fix)
+  - add `_parse_sdmx_json()` parser for SDMX-JSON 1.0 responses
+  - handle World Bank non-standard key order (dimensions sorted by keyPosition descending)
+
 ## 2026-04-04 (12)
 
 - chore: bump version to v0.3.0

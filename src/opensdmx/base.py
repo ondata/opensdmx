@@ -145,7 +145,7 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=0.5, min=0.5, max=4), reraise=True)
     def _do_request() -> httpx.Response:
         _rate_limit_check()
-        with httpx.Client(timeout=_timeout) as client:
+        with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
             resp = client.get(
                 url,
                 params=params or None,
@@ -167,13 +167,74 @@ def sdmx_request_xml(path: str, **params):
     return resp.content
 
 
+def _parse_sdmx_json(payload: dict):
+    """Parse an SDMX-JSON data response into a Polars DataFrame.
+
+    Supports the SDMX-JSON 1.0 format returned by providers such as World Bank.
+    Each series key is a colon-separated string of dimension indices (e.g. "0:1:2");
+    each observation key is an index into the observation dimension values.
+    """
+    import polars as pl
+
+    data = payload.get("data", payload)
+    structure = data["structure"]
+    series_dims = structure["dimensions"]["series"]
+    obs_dims = structure["dimensions"]["observation"]
+
+    # Some providers (e.g. World Bank) order the series key by descending keyPosition
+    # rather than ascending. Sort accordingly so indices map correctly.
+    key_ordered_dims = sorted(
+        series_dims, key=lambda d: d.get("keyPosition", 0), reverse=True
+    )
+
+    rows: list[dict] = []
+    for dataset in data.get("dataSets", []):
+        for series_key, series_data in dataset.get("series", {}).items():
+            series_indices = [int(i) for i in series_key.split(":")]
+            dim_values = {
+                dim["id"]: dim["values"][series_indices[idx]]["id"]
+                for idx, dim in enumerate(key_ordered_dims)
+            }
+            for obs_key, obs_values in series_data.get("observations", {}).items():
+                obs_idx = int(obs_key)
+                row = dict(dim_values)
+                for odim in obs_dims:
+                    row[odim["id"]] = odim["values"][obs_idx]["id"]
+                row["OBS_VALUE"] = obs_values[0] if obs_values else None
+                rows.append(row)
+
+    if not rows:
+        return pl.DataFrame()
+    return pl.DataFrame(rows).with_columns(pl.col("OBS_VALUE").cast(pl.Float64, strict=False))
+
+
 def sdmx_request_csv(path: str, **params):
     """Make a request and return CSV content as a Polars DataFrame."""
     import io
     import polars as pl
 
-    fmt = get_provider().get("data_format_param")
-    if fmt:
+    provider = get_provider()
+    data_accept = provider.get("data_accept")
+    fmt = provider.get("data_format_param")
+
+    if data_accept:
+        # Provider requires a specific Accept header (e.g. World Bank JSON)
+        suffix = provider.get("data_path_suffix", "")
+        unsupported = provider.get("unsupported_params", [])
+        dropped = [p for p in unsupported if p in params]
+        if dropped:
+            import warnings
+            warnings.warn(
+                f"Provider '{provider.get('name', '')}' does not support: {', '.join(dropped)}. "
+                "These parameters will be ignored.",
+                UserWarning,
+                stacklevel=3,
+            )
+        filtered_params = {k: v for k, v in params.items() if k not in unsupported}
+        resp = sdmx_request(path + suffix, accept=data_accept, **filtered_params)
+        return _parse_sdmx_json(resp.json())
+    elif fmt:
+        # Provider requires a ?format= query param (e.g. Eurostat SDMX-CSV)
         resp = sdmx_request(path, accept="application/xml", format=fmt, **params)
     else:
         resp = sdmx_request(path, accept="text/csv", **params)

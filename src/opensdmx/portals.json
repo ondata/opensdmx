@@ -51,7 +51,10 @@
     "name": "World Bank",
     "description": "World Development Indicators and other World Bank datasets. Covers 200+ countries with 1400+ indicators on development, poverty, health, education and environment.",
     "base_url": "https://api.worldbank.org/v2/sdmx/rest",
-    "agency_id": "WB"
+    "agency_id": "WB",
+    "data_accept": "application/vnd.sdmx.data+json;version=1.0.0-wd",
+    "data_path_suffix": "/",
+    "unsupported_params": ["lastNObservations", "firstNObservations"]
   },
   "abs": {
     "name": "Australian Bureau of Statistics",
