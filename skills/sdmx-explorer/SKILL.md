@@ -49,8 +49,32 @@ not to fetch data immediately.
 Identify which SDMX provider is relevant (ISTAT for Italian statistics, Eurostat for
 European statistics, OECD for international comparisons, etc.). If unclear, ask.
 
-Extract 2–4 meaningful keywords from the user's question.
-Then search for dataflows:
+### Step 1a — Extract keywords AND expected dimensions
+
+Before searching, parse the user's question on two levels:
+
+1. **Topic keywords** (2–4 terms) for the `opensdmx search` call.
+   Example: "unemployment", "labour force"
+
+2. **Expected dimensions** — the analytical angles the user wants to slice by.
+   These are often NOT in the dataset title or description, but must appear as
+   dimensions in the dataflow structure. Extract them explicitly:
+
+   | User says | Expected dimension |
+   |---|---|
+   | "by age group" / "per fascia di età" | `age` |
+   | "by sex" / "per sesso" | `sex` |
+   | "by country" / "per paese" | `geo` |
+   | "by region" | `geo` (NUTS level) |
+   | "by education level" | `isced11` or similar |
+   | "quarterly" / "monthly" | `freq` |
+
+   Example: *"unemployment for EU countries, by age group and sex"* →
+   topic keywords: `unemployment`; expected dimensions: `age`, `sex`, `geo`.
+
+### Step 1b — Search and pre-filter candidates
+
+Search for dataflows:
 
 - **Eurostat** (default provider — no `--provider` flag needed):
   `opensdmx search "<keyword>"`
@@ -61,26 +85,39 @@ Then search for dataflows:
 To see the full list of built-in providers with their descriptions, run:
 `opensdmx providers`
 
-From the results, select **3–5 candidates** that are genuinely relevant (not just
-keyword matches). For each, write a short explanation of what it contains and why
-it might answer the user's question.
+From the search results, pick **5–8 plausible candidates** by title relevance.
+Then run `opensdmx info <id>` on each one **in parallel** to check their dimension
+list. Keep only the candidates that contain **all expected dimensions**.
+Discard candidates missing a required dimension — even if the title looks right.
+
+```bash
+# Example: verify age and sex are present
+opensdmx info UNE_RT_A       # ✓ has age, sex, geo → keep
+opensdmx info TIPSUN20       # ✗ no age, no sex → discard
+```
+
+### Step 1c — Present verified candidates
+
+From the verified candidates, select **3–5** and present them. For each, confirm
+which expected dimensions are present and note any extras or limitations.
 
 Present them like this (use the conversation language; adapt as needed):
 
 ```
 I found these datasets that could answer your question:
 
-1. **demo_gind** — Demographic balance and crude rates (Eurostat)
-   Contains births, deaths, migration balance and demographic rates for EU countries,
-   with annual time series from 1960. Best for European comparisons.
+1. **UNE_RT_A** — Unemployment by sex and age – annual data (Eurostat)  ⭐ recommended
+   Has all three dimensions you need: age (7 ranges), sex (F/M/total), geo (38 countries).
+   Annual data from 2003 to 2025. Clean structure, no extra mandatory filters.
 
-2. **demo_nsinagec** — Live births by mother's age (Eurostat)
-   Births broken down by mother's age group and country. Useful if you want
-   age-specific fertility analysis rather than totals.
+2. **LFSA_URGAED** — Unemployment rates by educational attainment level (Eurostat)
+   Also has age (29 ranges!) and sex, but adds a mandatory education-level dimension
+   (ISCED11). More granular age breakdown, but requires choosing an education filter.
+   Best if you also want to break down by education.
 
-3. **APRO_CPNH1** — Crop production in national humidity (Eurostat)
-   Agricultural production data by crop type, country and structure indicator
-   (area, harvested production, yield). Covers 40+ European countries annually.
+3. **MET_LFU3RT** — Unemployment rates by sex, age and metropolitan region (Eurostat)
+   Has age and sex, but geo is at metropolitan region level — not country level.
+   Not suitable for country comparisons.
 
 Which one would you like to explore? You can also say "the first one" or
 describe more precisely what you need.
