@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-05
+
+- feat: relevance ranking for standard search — multi-token AND filter on `df_description` + `df_id`, synthetic score (id match ×3, start-of-desc ×2, occurrence count ×1), results sorted by score
+- feat: search default page size 20→50
+- feat: search table now shows `score` column
+
 ## 2026-04-04 (14)
 
 - docs: expand semantic search section in README with comparison table, 3 real examples, and sample output

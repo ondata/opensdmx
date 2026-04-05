@@ -101,7 +101,7 @@ def _startup(
 def search(
     keyword: str = typer.Argument(..., help="Keyword to search in dataset descriptions"),
     semantic: bool = typer.Option(False, "--semantic", "-s", help="Use semantic search via Ollama embeddings"),
-    n: int = typer.Option(20, "--n", help="Results per page (default: 20). Combine with --page to paginate."),
+    n: int = typer.Option(50, "--n", help="Results per page (default: 50). Combine with --page to paginate."),
     page: int = typer.Option(1, "--page", help="Page number, 1-based (default: 1). Use with --n to paginate. Title shows range e.g. '21-40 of 114'."),
     all_results: bool = typer.Option(False, "--all", help="Show ALL results from cache, ignoring --n and --page."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
@@ -111,16 +111,16 @@ def search(
     Results come from the local cache — fast, no network call.
     Default provider: eurostat. Use --provider to switch.
 
-    PAGINATION: By default shows 20 results (page 1). Use --page to navigate,
+    PAGINATION: By default shows 50 results (page 1). Use --page to navigate,
     --n to change page size, or --all to retrieve every match at once.
-    The title always shows the current range and total, e.g. '21-40 of 114'.
+    The title always shows the current range and total, e.g. '51-100 of 114'.
 
     Tip: semantic search matches meaning, not exact words. Try synonyms
     or related terms for better results (e.g. "jobless" instead of "unemployment").
 
     Examples:
 
-      opensdmx search unemployment              # page 1, 20 results
+      opensdmx search unemployment              # page 1, 50 results ranked by relevance
       opensdmx search unemployment --all        # all 114 results
       opensdmx search unemployment --page 2     # results 21-40
       opensdmx search unemployment --n 5 --page 3   # results 11-15
@@ -186,9 +186,10 @@ def search(
     table = Table(title=title, show_lines=False)
     table.add_column("df_id", style="cyan", no_wrap=True)
     table.add_column("df_description")
+    table.add_column("score", style="dim")
 
     for row in page_df.iter_rows(named=True):
-        table.add_row(row["df_id"], row["df_description"] or "")
+        table.add_row(row["df_id"], row["df_description"] or "", str(row.get("score", "")))
 
     console.print(table)
 

@@ -107,15 +107,51 @@ def all_available() -> pl.DataFrame:
     return _filter_invalid(df)
 
 
+def _score_results(df: pl.DataFrame, tokens: list[str]) -> pl.DataFrame:
+    """Add a synthetic relevance score and sort descending.
+
+    Scoring per token (case-insensitive):
+      +3  token found in df_id
+      +2  token found in first 60 chars of df_description (topic tends to be upfront)
+      +1  each occurrence of token in df_description
+    """
+    score_expr = pl.lit(0)
+    for token in tokens:
+        t = token.lower()
+        score_expr = score_expr + (
+            pl.col("df_id").str.to_lowercase().str.contains(t).cast(pl.Int32) * 3
+        )
+        score_expr = score_expr + (
+            pl.col("df_description").str.to_lowercase().str.slice(0, 60).str.contains(t).cast(pl.Int32) * 2
+        )
+        score_expr = score_expr + (
+            pl.col("df_description").str.to_lowercase().str.count_matches(t)
+        )
+    return df.with_columns(score_expr.alias("score")).sort("score", descending=True)
+
+
 def search_dataset(keyword: str) -> pl.DataFrame:
-    """Search datasets by keyword (case-insensitive) in their description."""
+    """Search datasets by keyword (case-insensitive) in description and ID.
+
+    Splits keyword into tokens; all tokens must match in df_description or df_id.
+    Results are sorted by a synthetic relevance score (id match, start-of-description,
+    occurrence count). Returns columns: df_id, version, df_description, df_structure_id, score.
+    """
     datasets = all_available()
-    results = datasets.filter(
-        pl.col("df_description").str.to_lowercase().str.contains(keyword.lower())
-    )
+    tokens = keyword.lower().split()
+
+    filter_expr = pl.lit(True)
+    for token in tokens:
+        filter_expr = filter_expr & (
+            pl.col("df_description").str.to_lowercase().str.contains(token)
+            | pl.col("df_id").str.to_lowercase().str.contains(token)
+        )
+
+    results = datasets.filter(filter_expr)
     if results.is_empty():
         warnings.warn(f"No datasets found matching keyword: {keyword}", stacklevel=2)
-    return results
+        return results
+    return _score_results(results, tokens)
 
 
 def _get_dimensions(structure_id: str) -> dict:
