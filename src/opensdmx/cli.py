@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import json
 import sys
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Optional
 
@@ -19,6 +21,41 @@ from .base import get_base_url, get_provider
 app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs)")
 console = Console()
 err_console = Console(stderr=True)
+
+# Global output mode — set by --output in the app callback.
+_output_mode: str = "table"
+
+
+@contextmanager
+def _status_ctx(msg: str):
+    """Show a Rich spinner only in table mode; silent otherwise."""
+    if _output_mode == "table":
+        with console.status(msg):
+            yield
+    else:
+        yield
+
+
+def _emit(data: object, df=None) -> None:
+    """Write structured output to stdout based on _output_mode.
+
+    data  — Python list/dict for JSON mode
+    df    — Polars DataFrame for CSV mode (falls back to data if None)
+    """
+    if _output_mode == "json":
+        sys.stdout.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+    elif _output_mode == "csv":
+        if df is not None:
+            sys.stdout.write(df.write_csv())
+        else:
+            # Fallback: serialise list-of-dicts manually
+            if isinstance(data, list) and data:
+                keys = list(data[0].keys())
+                sys.stdout.write(",".join(keys) + "\n")
+                for row in data:
+                    sys.stdout.write(",".join(str(row.get(k, "")) for k in keys) + "\n")
+            else:
+                sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 
 def _version_callback(value: bool) -> None:
@@ -87,7 +124,13 @@ def _check_api_reachable() -> None:
 def _startup(
     ctx: typer.Context,
     version: bool = typer.Option(False, "--version", "-V", callback=_version_callback, is_eager=True, help="Show version and exit"),
+    output: str = typer.Option("table", "--output", "-o", help="Output format: table (default), json, csv"),
 ) -> None:
+    global _output_mode
+    if output not in ("table", "json", "csv"):
+        err_console.print(f"[red]Error:[/red] invalid --output value '{output}'. Choose: table, json, csv")
+        raise typer.Exit(1)
+    _output_mode = output
     if ctx.invoked_subcommand is None:
         from importlib.metadata import version as _version
         console.print(f"opensdmx {_version('opensdmx')}\n")
@@ -143,20 +186,26 @@ def search(
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)
 
+        rows = [
+            {"df_id": r["df_id"], "df_description": r["df_description"] or "", "score": round(r["score"], 3)}
+            for r in df.iter_rows(named=True)
+        ]
+        if _output_mode != "table":
+            _emit(rows, df=df.select(["df_id", "df_description", "score"]))
+            return
+
         table = Table(title=f"Semantic search: {keyword}", show_lines=False)
         table.add_column("df_id", style="cyan", no_wrap=True)
         table.add_column("df_description")
         table.add_column("score", style="dim")
-
-        for row in df.iter_rows(named=True):
-            table.add_row(row["df_id"], row["df_description"] or "", f"{row['score']:.3f}")
-
+        for r in rows:
+            table.add_row(r["df_id"], r["df_description"], f"{r['score']:.3f}")
         console.print(table)
         return
 
     from . import search_dataset
     try:
-        with console.status("[dim]Searching...[/dim]"):
+        with _status_ctx("[dim]Searching...[/dim]"):
             df = search_dataset(keyword)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
@@ -182,6 +231,14 @@ def search(
             title = f"Search: {keyword} ({offset + 1}-{end} of {total})"
         else:
             title = f"Search: {keyword} ({total})"
+
+    if _output_mode != "table":
+        rows = [
+            {"df_id": r["df_id"], "df_description": r["df_description"] or "", "score": r.get("score", 0)}
+            for r in page_df.iter_rows(named=True)
+        ]
+        _emit(rows, df=page_df.select(["df_id", "df_description", "score"]))
+        return
 
     table = Table(title=title, show_lines=False)
     table.add_column("df_id", style="cyan", no_wrap=True)
@@ -211,11 +268,40 @@ def info(
     _apply_provider(provider)
     from . import dimensions_info, load_dataset
     try:
-        with console.status("[dim]Loading dataset...[/dim]"):
+        with _status_ctx("[dim]Loading dataset...[/dim]"):
             ds = load_dataset(dataset_id)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
+
+    try:
+        with _status_ctx("[dim]Loading dimensions...[/dim]"):
+            dim_df = dimensions_info(ds)
+    except Exception as e:
+        err_console.print(f"[yellow]Warning:[/yellow] could not fetch dimension info: {e}")
+        dim_df = None
+
+    if _output_mode != "table":
+        dims = []
+        if dim_df is not None and not dim_df.is_empty():
+            dims = [
+                {
+                    "dimension_id": r["dimension_id"],
+                    "position": r["position"],
+                    "codelist_id": r["codelist_id"] or None,
+                    "description": r.get("description") or None,
+                }
+                for r in dim_df.iter_rows(named=True)
+            ]
+        data = {
+            "df_id": ds["df_id"],
+            "version": ds["version"],
+            "df_description": ds["df_description"],
+            "df_structure_id": ds["df_structure_id"],
+            "dimensions": dims,
+        }
+        _emit(data)
+        return
 
     meta = (
         f"ID:          {ds['df_id']}\n"
@@ -225,13 +311,7 @@ def info(
     )
     console.print(Panel(meta, title="Dataset Info", expand=False))
 
-    try:
-        dim_df = dimensions_info(ds)
-    except Exception as e:
-        err_console.print(f"[yellow]Warning:[/yellow] could not fetch dimension info: {e}")
-        return
-
-    if dim_df.is_empty():
+    if dim_df is None or dim_df.is_empty():
         console.print("[yellow]No dimensions found.[/yellow]")
         return
 
@@ -270,7 +350,7 @@ def values(
     _apply_provider(provider)
     from . import get_dimension_values, load_dataset
     try:
-        with console.status("[dim]Loading...[/dim]"):
+        with _status_ctx("[dim]Loading...[/dim]"):
             ds = load_dataset(dataset_id)
             val_df = get_dimension_values(ds, dim)
     except Exception as e:
@@ -280,6 +360,11 @@ def values(
     if val_df.is_empty():
         err_console.print(f"[yellow]No values found for dimension:[/yellow] {dim}")
         raise typer.Exit(1)
+
+    if _output_mode != "table":
+        rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in val_df.iter_rows(named=True)]
+        _emit(rows, df=val_df)
+        return
 
     table = Table(title=f"{dataset_id} / {dim}", show_lines=False)
     table.add_column("id", style="cyan", no_wrap=True)
@@ -318,14 +403,14 @@ def constraints(
     from .discovery import ConstraintsUnavailable, get_available_values, get_dimension_values
 
     try:
-        with console.status("[dim]Loading dataset...[/dim]"):
+        with _status_ctx("[dim]Loading dataset...[/dim]"):
             ds = load_dataset(dataset_id)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
     try:
-        with console.status("[dim]Fetching constraints...[/dim]"):
+        with _status_ctx("[dim]Fetching constraints...[/dim]"):
             avail = get_available_values(ds)
     except ConstraintsUnavailable:
         err_console.print(
@@ -347,6 +432,14 @@ def constraints(
 
     if dimension is None:
         # Summary mode: one row per dimension
+        if _output_mode != "table":
+            data = {
+                dim_id: {"n_values": len(df["id"]), "codes": df["id"].to_list()}
+                for dim_id, df in avail.items()
+            }
+            _emit(data)
+            return
+
         table = Table(title=f"Constraints: {dataset_id}", show_lines=False)
         table.add_column("dimension_id", style="cyan", no_wrap=True)
         table.add_column("n_values", justify="right")
@@ -379,7 +472,7 @@ def constraints(
     constrained_codes = avail[actual_dim]["id"].to_list()
 
     try:
-        with console.status("[dim]Fetching labels...[/dim]"):
+        with _status_ctx("[dim]Fetching labels...[/dim]"):
             labels_df = get_dimension_values(ds, actual_dim)
     except (httpx.HTTPError, OSError, ValueError):  # labels are optional, fall back to empty
         labels_df = pl.DataFrame({"id": [], "name": []}, schema={"id": pl.Utf8, "name": pl.Utf8})
@@ -387,9 +480,14 @@ def constraints(
     constrained_df = pl.DataFrame({"id": constrained_codes})
     if not labels_df.is_empty():
         result_df = constrained_df.join(labels_df, on="id", how="left")
-        result_df = result_df.with_columns(pl.col("name").fill_null("—"))
+        result_df = result_df.with_columns(pl.col("name").fill_null(""))
     else:
-        result_df = constrained_df.with_columns(pl.lit("—").alias("name"))
+        result_df = constrained_df.with_columns(pl.lit("").alias("name"))
+
+    if _output_mode != "table":
+        rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in result_df.iter_rows(named=True)]
+        _emit(rows, df=result_df)
+        return
 
     table = Table(title=f"{dataset_id} / {actual_dim} (constrained)", show_lines=False)
     table.add_column("id", style="cyan", no_wrap=True)
@@ -436,6 +534,19 @@ def providers():
       opensdmx search unemployment --provider ecb
     """
     from .base import PROVIDERS
+
+    if _output_mode != "table":
+        data = [
+            {
+                "alias": alias,
+                "name": cfg.get("name", ""),
+                "description": cfg.get("description", ""),
+                "agency_id": cfg.get("agency_id", ""),
+            }
+            for alias, cfg in PROVIDERS.items()
+        ]
+        _emit(data)
+        return
 
     console.print(
         "\n[dim]The providers below are curated examples. "

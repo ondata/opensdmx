@@ -2,6 +2,7 @@
 
 ## 2026-04-05
 
+- feat: machine-to-machine output — global `--output table|json|csv` flag on all metadata commands (`search`, `info`, `values`, `constraints`, `providers`); stdout = pure structured data, stderr = errors/warnings; spinners suppressed in non-table mode
 - feat: relevance ranking for standard search — multi-token AND filter on `df_description` + `df_id`, synthetic score (id match ×3, start-of-desc ×2, occurrence count ×1), results sorted by score
 - feat: search default page size 20→50
 - feat: search table now shows `score` column
