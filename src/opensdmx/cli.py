@@ -787,6 +787,8 @@ def plot(
     height: float = typer.Option(5.0, "--height", help="Chart height in inches"),
     facet: Optional[str] = typer.Option(None, "--facet", help="Column for facet_wrap (small multiples)"),
     ncol: Optional[int] = typer.Option(None, "--ncol", help="Number of columns in facet grid (default: auto)"),
+    rotate_x: Optional[int] = typer.Option(None, "--rotate-x", help="Rotate x-axis labels by N degrees (e.g. 45 or 90)"),
+    colors: Optional[str] = typer.Option(None, "--colors", help="Comma-separated hex colors for fill/color scale (e.g. '#E69F00,#56B4E9,#009E73')"),
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
@@ -804,10 +806,12 @@ def plot(
       opensdmx plot /tmp/ranking.csv --geom barh --x geo --title "Rate by country"
       opensdmx plot /tmp/data.csv --geom bar --x year --color geo
       opensdmx plot /tmp/data.csv --color sex --facet age --ncol 2
+      opensdmx plot /tmp/data.csv --geom bar --color tipo --rotate-x 45
+      opensdmx plot /tmp/data.csv --color cat --colors '#E69F00,#56B4E9,#009E73'
     """
     import matplotlib
     matplotlib.use("Agg")
-    from plotnine import aes, coord_flip, facet_wrap, geom_col, geom_line, geom_point, ggplot, labs, scale_x_date, theme_minimal
+    from plotnine import aes, coord_flip, element_text, facet_wrap, geom_col, geom_line, geom_point, ggplot, labs, scale_x_date, theme, theme_minimal
 
     import polars as pl
 
@@ -871,6 +875,12 @@ def plot(
     if geom in ("bar", "barh"):
         import pandas as pd
 
+        # Convert numeric or datetime x column to plain string to avoid axis misinterpretation
+        if pd.api.types.is_numeric_dtype(pdf[x]):
+            pdf[x] = pdf[x].astype(str)
+        elif pd.api.types.is_datetime64_any_dtype(pdf[x]):
+            pdf[x] = pdf[x].dt.year.astype(str)
+
         # Sort categories by value for readable bar charts
         if geom == "barh":
             order = pdf.groupby(x)[y].sum().sort_values().index.tolist()
@@ -914,6 +924,14 @@ def plot(
 
     if facet:
         p = p + facet_wrap(facet, ncol=ncol)
+
+    if rotate_x is not None:
+        p = p + theme(axis_text_x=element_text(angle=rotate_x, hjust=1))
+
+    if colors:
+        from plotnine import scale_fill_manual, scale_color_manual
+        palette = [c.strip() for c in colors.split(",")]
+        p = p + scale_fill_manual(values=palette) + scale_color_manual(values=palette)
 
     if out is None:
         import re

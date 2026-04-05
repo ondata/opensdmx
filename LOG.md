@@ -2,6 +2,15 @@
 
 ## 2026-04-05
 
+- feat(plot): add `--rotate-x N` flag to rotate x-axis labels by N degrees
+- feat(plot): add `--colors 'hex1,hex2,...'` flag for custom categorical color palettes
+- fix(plot): bar/barh charts now display integer years (e.g. 2022) correctly instead of as dates (2022-01-01)
+- docs(skill): update sdmx-explorer skill — fix facet note in SKILL.md, add x-axis label overlap fix in visualization.md
+- docs(skill): add `references/color-guide.md` with Okabe-Ito and Set2 palettes, colorblind rules, and plotnine snippets
+- docs(skill): add `references/cli-templates.md` with ready-to-use parameter combinations for common chart scenarios
+
+## 2026-04-05
+
 - feat(info): show Eurostat dataflow page URL in `opensdmx info` output (table and JSON mode)
 - feat(portals): add `dataflow_page_url` field to Eurostat entry in portals.json
 

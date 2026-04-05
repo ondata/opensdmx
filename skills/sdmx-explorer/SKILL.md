@@ -445,8 +445,8 @@ fixes — see [references/visualization.md](references/visualization.md).
   by value (lowest at bottom, highest at top)
 - `point`: scatter plot — best for correlations between two numeric variables
 
-For other chart types (heatmaps, faceted plots), write a short Python script
-using plotnine directly.
+For other chart types not supported by `opensdmx plot` (heatmaps, grouped/dodge bars),
+write a short Python script using plotnine directly.
 
 Key points:
 - Always prepare data with DuckDB before plotting (separate units, limit series,

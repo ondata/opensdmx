@@ -16,10 +16,14 @@ The built-in `opensdmx plot` command supports three chart types via `--geom`:
 | `barh`   | Horizontal bar chart   | Rankings, sorted comparisons      | Bars auto-sorted by value (ascending)        |
 | `point`  | Scatter plot           | Correlations between two variables| Uses `geom_point` only, no connecting lines  |
 
-For other chart types — heatmaps, grouped (dodge) bars — write a short Python
-script using plotnine directly. plotnine supports the full Grammar of Graphics:
-`geom_bar`, `geom_col`, `geom_tile`, `geom_boxplot`, `facet_grid`,
-`coord_flip`, `position_dodge`, custom scales, and themes.
+Use `--facet <column>` + `--ncol <n>` for small multiples (one panel per value).
+Always check `opensdmx plot --help` to confirm a chart type is not supported before
+falling back to Python.
+
+For chart types not supported by `opensdmx plot` — heatmaps, grouped (dodge) bars,
+box plots — write a short Python script using plotnine directly. plotnine supports
+the full Grammar of Graphics: `geom_bar`, `geom_col`, `geom_tile`, `geom_boxplot`,
+`facet_grid`, `coord_flip`, `position_dodge`, custom scales, and themes.
 
 ## Command reference
 
@@ -193,6 +197,7 @@ Common problems and fixes:
 | Flat lines at bottom      | Scale mismatch                   | Separate charts per unit                                  |
 | Scattered points          | Multiple values per x-position   | Check for duplicate dimensions; add more filters          |
 | Title says "OBS_VALUE"    | Default labels used              | Set `--title`, `--ylabel`, `--xlabel` explicitly          |
+| X-axis labels overlap     | Many categories or long strings  | Use `--geom barh` (flips to horizontal); or in Python: `theme(axis_text_x=element_text(angle=90, hjust=1))` |
 
 ### 3. Present to user
 
