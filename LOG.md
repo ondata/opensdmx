@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-06 (4)
+
+- docs(skill): human-readable labels required in charts (Rule 5 in visualization.md)
+- docs(skill): generalize Rule 3 — never mix individual units with aggregates
+- docs(skill): add filter coherence principle to SKILL.md (individual vs. aggregate codes)
+
 ## 2026-04-06 (3)
 
 - chore: bump version to v0.3.10
