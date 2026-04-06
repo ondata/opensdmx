@@ -9,7 +9,7 @@ description: >
   employment, births, deaths, population, prices, trade, health, agriculture,
   GDP, inflation, unemployment, fertility rates, migration, energy, education,
   poverty, housing, and any other statistical topic. Also use it when the user
-  mentions a specific dataflow ID. Trigger for implicit questions like
+  mentions a dataflow ID. Trigger for implicit questions like
   "how many births were there in Italy last year?" or "I need EU unemployment
   data by age group". Guides the user step by step: discovers datasets, proposes
   the most meaningful candidates, explores the schema using real constraints
