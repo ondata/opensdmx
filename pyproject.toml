@@ -13,6 +13,7 @@ dependencies = [
     "lxml>=6.0.2",
     "numpy>=2.4.2",
     "ollama>=0.6.1",
+    "platformdirs>=4.9.4",
     "plotnine>=0.15.3",
     "polars>=1.38.1",
     "pyarrow>=23.0.1",

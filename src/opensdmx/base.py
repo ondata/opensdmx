@@ -82,10 +82,44 @@ def get_agency_id() -> str:
     return get_provider()["agency_id"]
 
 
+def _resolve_cache_base() -> Path:
+    """Return the base cache directory, with fallback to /tmp if not writable.
+
+    Resolution order:
+    1. OPENSDMX_CACHE_DIR env var
+    2. platformdirs.user_cache_dir (XDG on Linux, OS-native on macOS/Windows)
+    3. /tmp/opensdmx-{username} if neither is writable
+    """
+    import os
+    from platformdirs import user_cache_dir
+
+    candidates = []
+    if env := os.environ.get("OPENSDMX_CACHE_DIR"):
+        candidates.append(Path(env))
+    candidates.append(Path(user_cache_dir("opensdmx")))
+
+    for path in candidates:
+        try:
+            path.mkdir(parents=True, exist_ok=True)
+            # probe write access
+            probe = path / ".write_test"
+            probe.touch()
+            probe.unlink()
+            return path
+        except OSError:
+            continue
+
+    # last resort: /tmp
+    import getpass
+    fallback = Path(tempfile.gettempdir()) / f"opensdmx-{getpass.getuser()}"
+    fallback.mkdir(parents=True, exist_ok=True)
+    return fallback
+
+
 def get_cache_dir() -> Path:
-    """Return cache directory for the active provider: ~/.cache/opensdmx/{agency_id}/"""
+    """Return cache directory for the active provider."""
     agency = get_agency_id()
-    cache_dir = Path.home() / ".cache" / "opensdmx" / agency
+    cache_dir = _resolve_cache_base() / agency
     cache_dir.mkdir(parents=True, exist_ok=True)
     return cache_dir
 

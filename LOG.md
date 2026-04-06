@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-06 (2)
+
+- feat(cache): flexible cache directory — `OPENSDMX_CACHE_DIR` env var, `platformdirs` (XDG on Linux, OS-native on macOS/Windows), `/tmp/opensdmx-{user}` fallback if nothing is writable (closes #6)
+
 ## 2026-04-06
 
 - fix(cache): all SQLite `save_*` calls wrapped in isolated try/except — cache failures no longer discard successfully fetched API data
