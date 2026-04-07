@@ -102,8 +102,15 @@ Search for dataflows:
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
   (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`)
 
-To see the full list of built-in providers with their descriptions, run:
-`opensdmx providers`
+To see the full list of built-in providers — including which ones support
+`constraints` and `last_n` — run:
+```bash
+opensdmx providers
+```
+The `constraints` column tells you whether `opensdmx constraints` works for that
+provider (✓ = supported, ✗ = returns 400). The `last_n` column tells you whether
+`--last-n N` is supported in `opensdmx get`. Use this to decide which exploration
+flow to apply before you start (see Phase 2 and provider-specific quirks below).
 
 From the search results, pick **5–8 plausible candidates** by title relevance.
 Then run `opensdmx info <id>` on each one **in parallel** to check their dimension
@@ -523,13 +530,22 @@ explain the ones that are populated. Skip columns that are entirely empty.
 
 **Provider-specific quirks**
 
-| Provider | Notes |
-|----------|-------|
-| ISTAT | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs (e.g. `25_74_DF_DCIS_NATI2_1`); **use the ISTAT fast flow** (info → values → get) instead of constraints — the `availableconstraint` endpoint is very slow and often times out on large datasets |
-| Eurostat | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
-| OECD | Use `--provider oecd`; good for international comparisons |
-| ECB | Use `--provider ecb`; financial and monetary data |
-| World Bank | Use `--provider worldbank`; **single-dataflow architecture** — all 1400+ indicators live inside one dataflow called `WDI`; do NOT use `opensdmx search` to find indicators (it only returns `WDI`); use `opensdmx values WDI SERIES --provider worldbank \| grep -i <topic>` to find indicator codes; `availableconstraint` is not supported (returns 400) — skip `opensdmx constraints` and use `opensdmx values` directly; country codes are ISO 3166-1 **alpha-3** (`USA`, `DEU`, `ITA`, not `US`/`DE`/`IT`); **NOTE**: data requests currently fail with HTTP 401/307 due to a known bug (see GitHub issue #5) — as a workaround, suggest equivalent OECD datasets for macro/GDP indicators |
+For a machine-readable overview of all providers and their API capabilities, run
+`opensdmx providers` — the `constraints` and `last_n` columns reflect verified test
+results and should be your first reference when choosing an exploration flow.
+
+| Provider | constraints | last_n | Notes |
+|----------|:-----------:|:------:|-------|
+| Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
+| ISTAT | ✓ | ✓ | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs; **prefer the ISTAT fast flow** (info → values → get) — `availableconstraint` is very slow and often times out on large datasets |
+| ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
+| OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe get instead |
+| INSEE | ✗ | ✓ | Use `--provider insee`; French macroeconomic time series (BDM database) |
+| Bundesbank | ✗ | ✓ | Use `--provider bundesbank`; German monetary and financial statistics |
+| World Bank | ✗ | ✗ | Use `--provider worldbank`; **single-dataflow architecture** — all 1400+ indicators in one dataflow `WDI`; use `opensdmx values WDI SERIES --provider worldbank \| grep -i <topic>` to find indicator codes; country codes are ISO 3166-1 **alpha-3** (`USA`, `DEU`, `ITA`); **NOTE**: data requests currently fail with HTTP 401/307 due to a known bug (see GitHub issue #5) — as a workaround, suggest equivalent OECD datasets |
+| ABS | ✓ | ✓ | Use `--provider abs`; official Australian statistics |
+| BIS | ✓ | ✓ | Use `--provider bis`; global financial statistics from 63 central banks |
+| IMF | ✓ | ✓ | Use `--provider imf`; WEO dataset: dataflow `WEO`, country codes ISO alpha-3; use `--last-n` with dimension filters (wildcard requests may return HTTP 500) |
 
 **World Bank flow (different from all other providers)**
 
