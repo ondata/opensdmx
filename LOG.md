@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-07 (5)
+
+- feat(plot): add `--theme` option — supports `minimal` (default), `bw`, `classic`, `538`, `tufte`, `void`, `dark`, `light`, `gray`
+- docs(skill): add `--theme` to visualization.md options table
+- chore: bump version to v0.3.17
+
 ## 2026-04-07 (4)
 
 - feat(plot): add `--geom heatmap` using `geom_tile` — `--x` = columns, `--color` = rows, `--y` = fill intensity

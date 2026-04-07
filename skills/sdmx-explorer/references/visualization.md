@@ -56,6 +56,7 @@ opensdmx plot une_rt_m --freq M --geo IT+DE --color geo --out /tmp/chart.png
 | `--rotate-x`     | (none)         | Rotate x-axis labels by N degrees (e.g. 45 or 90) |
 | `--x-all`        | `false`        | Show all x-axis tick labels. Useful for discrete axes (e.g. quarterly labels) where plotnine would otherwise thin them out. Works with and without `--facet` and `--color` |
 | `--colors`       | (none)         | Comma-separated hex colors for fill/color scale (e.g. `'#E69F00,#56B4E9,#009E73'`) |
+| `--theme`        | `minimal`      | Plot theme: `minimal`, `bw`, `classic`, `538`, `tufte`, `void`, `dark`, `light`, `gray` |
 | `--start-period` | (none)         | Start period filter (dataflow mode only)           |
 | `--end-period`   | (none)         | End period filter (dataflow mode only)             |
 

@@ -790,6 +790,7 @@ def plot(
     rotate_x: Optional[int] = typer.Option(None, "--rotate-x", help="Rotate x-axis labels by N degrees (e.g. 45 or 90)"),
     x_all: bool = typer.Option(False, "--x-all", help="Show all x-axis tick labels (useful for discrete axes with few categories)"),
     colors: Optional[str] = typer.Option(None, "--colors", help="Comma-separated hex colors for fill/color scale (e.g. '#E69F00,#56B4E9,#009E73')"),
+    plot_theme: Optional[str] = typer.Option(None, "--theme", help="Plot theme: minimal (default), bw, classic, 538, tufte, void, dark, light, gray"),
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
@@ -812,7 +813,27 @@ def plot(
     """
     import matplotlib
     matplotlib.use("Agg")
-    from plotnine import aes, coord_flip, element_text, facet_wrap, geom_col, geom_line, geom_point, geom_tile, ggplot, labs, scale_x_date, theme, theme_minimal
+    from plotnine import aes, coord_flip, element_text, facet_wrap, geom_col, geom_line, geom_point, geom_tile, ggplot, labs, scale_x_date, theme
+    import plotnine.themes as _themes
+
+    _THEME_MAP = {
+        "minimal": _themes.theme_minimal,
+        "bw": _themes.theme_bw,
+        "classic": _themes.theme_classic,
+        "538": _themes.theme_538,
+        "tufte": _themes.theme_tufte,
+        "void": _themes.theme_void,
+        "dark": _themes.theme_dark,
+        "light": _themes.theme_light,
+        "gray": _themes.theme_gray,
+        "grey": _themes.theme_gray,
+    }
+
+    theme_name = plot_theme or "minimal"
+    if theme_name not in _THEME_MAP:
+        err_console.print(f"[red]Error:[/red] unknown --theme '{theme_name}'. Use: {', '.join(k for k in _THEME_MAP if k != 'grey')}")
+        raise typer.Exit(1)
+    selected_theme = _THEME_MAP[theme_name]
 
     import polars as pl
 
@@ -894,7 +915,7 @@ def plot(
             x=xlabel or x,
             y=ylabel or color,
             fill=y,
-        ) + theme_minimal()
+        ) + selected_theme()
     elif geom in ("bar", "barh"):
         import pandas as pd
 
@@ -935,7 +956,7 @@ def plot(
                 x=xlabel or x,
                 y=ylabel or y,
             )
-        p = p + theme_minimal()
+        p = p + selected_theme()
     else:
         if x_all and color:
             aes_mapping = aes(x=x, y=y, color=color, group=color)
@@ -954,7 +975,7 @@ def plot(
             title=title or ds_description,
             x=xlabel or x,
             y=ylabel or y,
-        ) + theme_minimal()
+        ) + selected_theme()
         if hasattr(pdf[x], "dt"):
             p = p + scale_x_date(date_breaks="2 years", date_labels="%Y")
 
