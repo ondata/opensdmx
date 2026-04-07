@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-07 (10)
+
+- feat(cli): add --grep flag to `values` and `constraints` commands — filters codelist/constraint results by regex (case-insensitive, matches id or name)
+
 ## 2026-04-07 (9)
 
 - docs(validation): update validation-statgpt.md — add Round 2 (IMF WEO, 3 agents, 42/42 match); now covers both OECD and WEO convergence tests

@@ -346,6 +346,7 @@ def values(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     dim: str = typer.Argument(..., help="Dimension ID (e.g. FREQ)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+    grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive)"),
 ):
     """Show available values for a dimension.
 
@@ -355,8 +356,12 @@ def values(
 
       opensdmx values NAMA_10_GDP FREQ
       opensdmx values DCIS_POPRES1 ITTER107 --provider istat
+      opensdmx values WEO INDICATOR --provider imf --grep "growth|change"
+      opensdmx values DSD_NAMAIN10@DF_TABLE1_EXPENDITURE_GROWTH UNIT_MEASURE --provider oecd --grep "percent"
     """
     _apply_provider(provider)
+    import re
+
     from . import get_dimension_values, load_dataset
     try:
         with _status_ctx("[dim]Loading...[/dim]"):
@@ -369,6 +374,14 @@ def values(
     if val_df.is_empty():
         err_console.print(f"[yellow]No values found for dimension:[/yellow] {dim}")
         raise typer.Exit(1)
+
+    if grep:
+        pattern = re.compile(grep, re.IGNORECASE)
+        mask = [
+            bool(pattern.search(str(r["id"] or "")) or pattern.search(str(r["name"] or "")))
+            for r in val_df.iter_rows(named=True)
+        ]
+        val_df = val_df.filter(mask)
 
     if _output_mode != "table":
         rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in val_df.iter_rows(named=True)]
@@ -390,6 +403,7 @@ def constraints(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     dimension: Optional[str] = typer.Argument(None, help="Dimension ID (optional); if omitted shows all dimensions"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+    grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive); only applies with DIMENSION"),
 ):
     """Show constrained (actually present) values for a dataflow's dimensions.
 
@@ -404,8 +418,12 @@ def constraints(
       opensdmx constraints NAMA_10_GDP
       opensdmx constraints NAMA_10_GDP FREQ
       opensdmx constraints DCIS_POPRES1 ITTER107 --provider istat
+      opensdmx constraints WEO INDICATOR --provider imf --grep "growth|change"
+      opensdmx constraints UNE_RT_M AGE --grep "Y25"
     """
     _apply_provider(provider)
+    import re
+
     import polars as pl
 
     from . import load_dataset
@@ -492,6 +510,14 @@ def constraints(
         result_df = result_df.with_columns(pl.col("name").fill_null(""))
     else:
         result_df = constrained_df.with_columns(pl.lit("").alias("name"))
+
+    if grep:
+        pattern = re.compile(grep, re.IGNORECASE)
+        mask = [
+            bool(pattern.search(str(r["id"] or "")) or pattern.search(str(r["name"] or "")))
+            for r in result_df.iter_rows(named=True)
+        ]
+        result_df = result_df.filter(mask)
 
     if _output_mode != "table":
         rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in result_df.iter_rows(named=True)]

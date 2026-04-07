@@ -176,8 +176,8 @@ All commands accept `--provider` (`-p`) to select the provider.
 | `opensdmx search --semantic <query> [--n N]` | Semantic search (requires `opensdmx embed`) |
 | `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
-| `opensdmx values <id> <dim> [-p provider]` | Show codelist values for a dimension (case-insensitive) |
-| `opensdmx constraints <id> [dim] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`) |
+| `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
+| `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`); optionally filter by regex |
 | `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file] [--query-file file.yaml] [-p provider]` | Download data; optionally save the query as YAML |
 | `opensdmx run <query.yaml> [--out file] [-p provider]` | Re-run a query saved with `--query-file` |
 | `opensdmx plot <id\|file.csv> [--DIM VALUE] [--geom line\|bar\|barh\|point\|scatter] [--out file] [-p provider]` | Plot data as chart |
