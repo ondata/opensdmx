@@ -266,7 +266,9 @@ def sdmx_request_csv(path: str, **params):
             )
         filtered_params = {k: v for k, v in params.items() if k not in unsupported}
         resp = sdmx_request(path + suffix, accept=data_accept, **filtered_params)
-        return _parse_sdmx_json(resp.json())
+        import re
+        text = re.sub(r"\[,", "[null,", resp.text)
+        return _parse_sdmx_json(json.loads(text))
     elif fmt:
         # Provider requires a ?format= query param (e.g. Eurostat SDMX-CSV)
         resp = sdmx_request(path, accept="application/xml", format=fmt, **params)

@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-07 (6)
+
+- fix(worldbank): handle missing observation values (`[,0]` → `[null,0]`) in SDMX-JSON responses — World Bank API returns invalid JSON for null observations
+
 ## 2026-04-07 (5)
 
 - feat(plot): add `--theme` option — supports `minimal` (default), `bw`, `classic`, `538`, `tufte`, `void`, `dark`, `light`, `gray`
