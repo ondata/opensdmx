@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-04-07 (17)
+
+- chore: bump version to v0.3.24
+- docs(skill): update sdmx-explorer with providers capability columns
+
 ## 2026-04-07 (16)
 
 - chore: bump version to v0.3.23
