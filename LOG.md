@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-04-07 (15)
+
+- chore: bump version to v0.3.22
+- feat(scripts): add probe_providers.sh — tests constraints and last_n for all built-in providers, saves report to tmp/
+
 ## 2026-04-07 (14)
 
 - feat(providers): add constraints and last_n capability columns; mark known support in portals.json
