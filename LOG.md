@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-07 (3)
+
+- feat(plot): add `--x-all` flag to force all x-axis tick labels on discrete axes (e.g. quarterly labels) — uses `scale_x_discrete(limits=...)`, works with `--facet` and `--color`
+- docs(skill): update visualization.md with `--x-all`, `--rotate-x`, `--colors` options and "missing x-axis labels" fix
+- chore: bump version to v0.3.15
+
 ## 2026-04-07 (2)
 
 - fix(cache): switch SQLite journal mode from WAL to DELETE — WAL creates `-wal`/`-shm` files that cause "database is locked" errors when accessing the cache across WSL/Windows filesystem boundaries (closes #7)

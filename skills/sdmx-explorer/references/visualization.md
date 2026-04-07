@@ -52,6 +52,9 @@ opensdmx plot une_rt_m --freq M --geo IT+DE --color geo --out /tmp/chart.png
 | `--out`          | `chart.png`    | Output file (.png, .pdf, .svg)                     |
 | `--width`        | `10`           | Width in inches                                    |
 | `--height`       | `5`            | Height in inches                                   |
+| `--rotate-x`     | (none)         | Rotate x-axis labels by N degrees (e.g. 45 or 90) |
+| `--x-all`        | `false`        | Show all x-axis tick labels. Useful for discrete axes (e.g. quarterly labels) where plotnine would otherwise thin them out. Works with and without `--facet` and `--color` |
+| `--colors`       | (none)         | Comma-separated hex colors for fill/color scale (e.g. `'#E69F00,#56B4E9,#009E73'`) |
 | `--start-period` | (none)         | Start period filter (dataflow mode only)           |
 | `--end-period`   | (none)         | End period filter (dataflow mode only)             |
 
@@ -249,7 +252,8 @@ Common problems and fixes:
 | Flat lines at bottom      | Scale mismatch                   | Separate charts per unit                                  |
 | Scattered points          | Multiple values per x-position   | Check for duplicate dimensions; add more filters          |
 | Title says "OBS_VALUE"    | Default labels used              | Set `--title`, `--ylabel`, `--xlabel` explicitly          |
-| X-axis labels overlap     | Many categories or long strings  | Use `--geom barh` (flips to horizontal); or in Python: `theme(axis_text_x=element_text(angle=90, hjust=1))` |
+| X-axis labels overlap     | Many categories or long strings  | Use `--geom barh` (flips to horizontal); or `--rotate-x 45` to angle them |
+| X-axis labels missing     | plotnine thins discrete tick labels | Use `--x-all` to force all tick labels. Combine with `--rotate-x 45` if labels overlap. Works with `--facet` and `--color` |
 | Codes shown instead of names | Raw SDMX codes (`EL`, `ED7`, `F`) not replaced | Join with labels via `opensdmx --output csv constraints` + DuckDB JOIN (see Rule 5) |
 
 ### 3. Present to user

@@ -788,6 +788,7 @@ def plot(
     facet: Optional[str] = typer.Option(None, "--facet", help="Column for facet_wrap (small multiples)"),
     ncol: Optional[int] = typer.Option(None, "--ncol", help="Number of columns in facet grid (default: auto)"),
     rotate_x: Optional[int] = typer.Option(None, "--rotate-x", help="Rotate x-axis labels by N degrees (e.g. 45 or 90)"),
+    x_all: bool = typer.Option(False, "--x-all", help="Show all x-axis tick labels (useful for discrete axes with few categories)"),
     colors: Optional[str] = typer.Option(None, "--colors", help="Comma-separated hex colors for fill/color scale (e.g. '#E69F00,#56B4E9,#009E73')"),
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
@@ -864,7 +865,7 @@ def plot(
     # For barh: x is the numeric value column; for all other geoms: y is the numeric value column.
     value_col = x if geom == "barh" else y
     df = df.with_columns(pl.col(value_col).cast(pl.Float64, strict=False))
-    if df[x].dtype == pl.Utf8:
+    if df[x].dtype == pl.Utf8 and not x_all:
         from .retrieval import parse_time_period
         parsed = parse_time_period(df[x])
         if parsed.drop_nulls().len() > 0:
@@ -919,7 +920,14 @@ def plot(
             )
         p = p + theme_minimal()
     else:
-        aes_mapping = aes(x=x, y=y, color=color) if color else aes(x=x, y=y)
+        if x_all and color:
+            aes_mapping = aes(x=x, y=y, color=color, group=color)
+        elif x_all:
+            aes_mapping = aes(x=x, y=y, group=1)
+        elif color:
+            aes_mapping = aes(x=x, y=y, color=color)
+        else:
+            aes_mapping = aes(x=x, y=y)
         p = ggplot(pdf, aes_mapping)
         if geom == "point":
             p = p + geom_point(size=2)
@@ -938,6 +946,15 @@ def plot(
 
     if rotate_x is not None:
         p = p + theme(axis_text_x=element_text(angle=rotate_x, hjust=1))
+
+    if x_all:
+        from plotnine import scale_x_discrete
+        all_values = pdf[x].unique().tolist()
+        try:
+            all_values = sorted(all_values)
+        except TypeError:
+            pass
+        p = p + scale_x_discrete(limits=all_values)
 
     if colors:
         from plotnine import scale_fill_manual, scale_color_manual
