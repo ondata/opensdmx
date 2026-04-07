@@ -16,7 +16,8 @@ the API returns the exact published figure.
 When paired with an AI agent (via the `sdmx-explorer` skill), the LLM handles discovery and query
 construction; opensdmx handles the retrieval. Numbers are never fabricated.
 
-This document reports a validation test inspired by the StatGPT paper, run in April 2026.
+This document reports validation tests inspired by the StatGPT paper, run on **2026-04-07**
+using **Claude Sonnet 4.6** as the AI agent.
 
 ---
 
@@ -25,15 +26,18 @@ This document reports a validation test inspired by the StatGPT paper, run in Ap
 The test was run twice, with different conditions, to measure both provider-choice convergence
 and value convergence.
 
-### Round 1 — open provider choice (OECD vs others)
+### Round 1 — OECD National Accounts
+
+> **Note**: at the time of this test, the IMF provider had not yet been added to opensdmx.
+> Agents chose OECD as the best available option for full G7 coverage, not as a free choice
+> between OECD and IMF. Round 2 (below) repeats the test with IMF WEO available.
 
 Three agents launched in parallel, no shared context. Each received the same request:
 
 > *"I need GDP growth data for G7 countries (Canada, France, Germany, Italy, Japan, United Kingdom,
 > United States) from 2019 to 2024."*
 
-Agents were free to choose any available provider (Eurostat, OECD, IMF, etc.) and worked
-autonomously through the full `sdmx-explorer` skill loop: discovery → schema → retrieval.
+Agents worked autonomously through the full `sdmx-explorer` skill loop: discovery → schema → retrieval.
 
 **Query convergence:**
 
