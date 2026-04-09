@@ -1,6 +1,6 @@
 [project]
 name = "opensdmx"
-version = "0.3.24"
+version = "0.3.25"
 description = "Simple Python interface to any SDMX 2.1 REST API (Eurostat, ISTAT, and more)"
 readme = "README.md"
 authors = [
@@ -8,6 +8,18 @@ authors = [
 ]
 license = { text = "MIT" }
 requires-python = ">=3.12"
+keywords = ["sdmx", "statistics", "eurostat", "istat", "open-data", "api"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "httpx>=0.28.1",
     "lxml>=6.0.2",

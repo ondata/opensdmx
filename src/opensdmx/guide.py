@@ -179,7 +179,9 @@ def run_guide(
         else:
             _reuse_ds = False
 
-        assert ds is not None  # always set: either via --dataset or the selection loop above
+        if ds is None:
+            err_console.print("[red]Error:[/red] No dataset selected.")
+            raise typer.Exit(1)
 
         try:
             result = guide_session(ds, query, failed_context=_failed_context)

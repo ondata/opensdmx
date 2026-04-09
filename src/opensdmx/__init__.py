@@ -1,5 +1,12 @@
 """opensdmx — Python interface to any SDMX 2.1 REST API."""
 
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("opensdmx")
+except PackageNotFoundError:
+    __version__ = "0.0.0"
+
 from .base import get_provider, set_provider, set_timeout
 from .discovery import (
     ConstraintsUnavailable,
@@ -38,4 +45,5 @@ __all__ = [
     "set_timeout",
     "parse_time_period",
     "main",
+    "__version__",
 ]

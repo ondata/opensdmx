@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-04-09
+
+- chore: bump version to v0.3.25
+- feat: expose `__version__` via `importlib.metadata`
+- fix: replace `assert` with proper error handling in guide.py
+- chore: add PyPI classifiers and keywords to pyproject.toml
+
 ## 2026-04-07 (17)
 
 - chore: bump version to v0.3.24
