@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import warnings
-
 import pytest
 from opensdmx.discovery import get_dimension_values, reset_filters, set_filters
 
@@ -55,13 +53,12 @@ def test_set_filters_list_value():
     assert result["filters"]["GEO"] == ["IT", "FR", "DE"]
 
 
-def test_set_filters_unknown_dimension_warns():
+def test_set_filters_unknown_dimension_warns(caplog):
+    import logging
     ds = _make_dataset(FREQ=0)
-    with warnings.catch_warnings(record=True) as w:
-        warnings.simplefilter("always")
+    with caplog.at_level(logging.WARNING, logger="opensdmx.discovery"):
         result = set_filters(ds, NONEXISTENT="X")
-        assert len(w) == 1
-        assert "NONEXISTENT" in str(w[0].message)
+    assert any("NONEXISTENT" in r.message for r in caplog.records)
     assert "NONEXISTENT" not in result["filters"]
 
 

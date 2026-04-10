@@ -2,6 +2,7 @@
 
 ## 2026-04-10
 
+- chore: bump version to v0.3.27
 - fix: replace warnings.warn with logging.warning in discovery.py and base.py
 - chore: bump version to v0.3.26
 - feat(search): add spinner during semantic search
