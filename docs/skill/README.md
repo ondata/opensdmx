@@ -1,6 +1,6 @@
 # Install the sdmx-explorer skill
 
-The `sdmx-explorer` skill enables guided, interactive exploration of SDMX statistical data sources directly in your AI coding agent, using the **[opensdmx](https://github.com/aborruso/opensdmx)** CLI under the hood.
+The `sdmx-explorer` skill enables guided, interactive exploration of SDMX statistical data sources directly in your AI coding agent, using the **[opensdmx](https://github.com/ondata/opensdmx)** CLI under the hood.
 
 Skills can be installed in many ways — refer to your agent's documentation for the available options. Here we use [skills](https://github.com/vercel-labs/skills), a convenient tool that installs a skill in a single step across multiple agents (Claude Code, OpenCode, GitHub Copilot, Codex, and more) in a unified way.
 
@@ -13,7 +13,7 @@ Node.js (v18+) must be installed. Install it via your system's package manager o
 Run:
 
 ```bash
-npx skills add aborruso/opensdmx --skill sdmx-explorer
+npx skills add ondata/opensdmx --skill sdmx-explorer
 ```
 
 ### Step 1 — Select agents

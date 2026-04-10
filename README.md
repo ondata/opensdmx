@@ -1,6 +1,6 @@
 [![PyPI version](https://img.shields.io/pypi/v/opensdmx)](https://pypi.org/project/opensdmx/)
-[![GitHub](https://img.shields.io/badge/github-aborruso%2Fopensdmx-blue?logo=github)](https://github.com/aborruso/opensdmx)
-[![deepwiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aborruso/opensdmx)
+[![GitHub](https://img.shields.io/badge/github-ondata%2Fopensdmx-blue?logo=github)](https://github.com/ondata/opensdmx)
+[![deepwiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ondata/opensdmx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # opensdmx
@@ -9,7 +9,7 @@ Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eur
 
 **The right way to get official statistics with AI.** Large language models are good at understanding questions, but they fabricate numerical data — research shows GenAI returns inaccurate statistics up to two-thirds of the time (IMF, *StatGPT: AI for Official Statistics*, 2026). The correct pattern is to use AI to *generate structured API queries*, not to generate the numbers. opensdmx is the execution layer for that pattern: the AI decides what to fetch, opensdmx fetches the exact published figure.
 
-> **Best used with AI.** opensdmx works well on its own, but **it shines when driven by an AI agent**: the CLI is designed to be composed, queried, and orchestrated step by step. For a guided, interactive experience — dataset discovery, schema exploration, filter selection, and data retrieval — pair it with the [`sdmx-explorer`](https://github.com/aborruso/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md) Agent Skill included in this repo. See the [**installation guide**](https://github.com/aborruso/opensdmx/blob/main/docs/skill/README.md) for step-by-step instructions.
+> **Best used with AI.** opensdmx works well on its own, but **it shines when driven by an AI agent**: the CLI is designed to be composed, queried, and orchestrated step by step. For a guided, interactive experience — dataset discovery, schema exploration, filter selection, and data retrieval — pair it with the [`sdmx-explorer`](https://github.com/ondata/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md) Agent Skill included in this repo. See the [**installation guide**](https://github.com/ondata/opensdmx/blob/main/docs/skill/README.md) for step-by-step instructions.
 
 ## Installation
 
