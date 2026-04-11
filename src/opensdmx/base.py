@@ -118,8 +118,8 @@ def _resolve_cache_base() -> Path:
 
 def get_cache_dir() -> Path:
     """Return cache directory for the active provider."""
-    agency = get_agency_id()
-    cache_dir = _resolve_cache_base() / agency
+    cache_key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
+    cache_dir = _resolve_cache_base() / cache_key
     cache_dir.mkdir(parents=True, exist_ok=True)
     return cache_dir
 
@@ -136,8 +136,8 @@ def set_timeout(seconds: float | None = None) -> float:
 
 def _rate_limit_file() -> Path:
     """Return per-provider rate limit temp file."""
-    agency = get_agency_id()
-    return Path(tempfile.gettempdir()) / f"opensdmx_{agency}_rate_limit.log"
+    key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
+    return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.log"
 
 
 def _rate_limit_check() -> None:

@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-04-11
+
+- feat: add Eurostat Comext as named provider (`--provider comext`) for DS-prefixed datasets
+- fix: cache and rate-limit keys now use provider alias instead of agency_id, preventing collision between eurostat and comext (both ESTAT)
+
 ## 2026-04-10
 
 - chore: bump version to v0.3.27

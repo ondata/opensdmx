@@ -14,6 +14,19 @@
     "constraints_supported": true,
     "last_n_supported": true
   },
+  "comext": {
+    "name": "Eurostat Comext",
+    "description": "Eurostat's reference database for detailed statistics on international trade in goods (ITG). Covers EU and non-EU trade by CN8 product codes since 1988. Also includes PRODCOM manufacturing data. Dataset IDs are prefixed DS-. Full dataset download is disabled by the API — dimension filters are required.",
+    "base_url": "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1",
+    "agency_id": "ESTAT",
+    "rate_limit": 0.5,
+    "language": "en",
+    "dataflow_params": {"detail": "allstubs", "references": "none"},
+    "datastructure_agency": "ESTAT",
+    "data_format_param": "SDMX-CSV",
+    "constraints_supported": false,
+    "last_n_supported": true
+  },
   "istat": {
     "name": "ISTAT",
     "description": "Italian National Institute of Statistics. Covers population, economy, employment, prices and social indicators for Italy. Main source for Italian official statistics.",
