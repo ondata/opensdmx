@@ -363,6 +363,22 @@ See [docs/validation-statgpt.md](docs/validation-statgpt.md) for the full test a
 
 Inspired by [istatR](https://github.com/jfulponi/istatR) by [@jfulponi](https://github.com/jfulponi) and [istatapi](https://github.com/Attol8/istatapi) by [@Attol8](https://github.com/Attol8).
 
+## Eurostat release calendar RSS feed
+
+A Cloudflare Worker that converts the Eurostat data release calendar into an RSS feed, filtered to data releases only.
+
+```
+https://eurostat-rss.andy-pr.workers.dev/
+```
+
+Filter by theme (`economy`, `agriculture`, `transport`, `environment`, `industry`, `population`, `international`, `science`):
+
+```
+https://eurostat-rss.andy-pr.workers.dev/?theme=economy
+```
+
+Source: [`scripts/eurostat-rss/`](scripts/eurostat-rss/).
+
 ## License
 
 MIT License — Copyright (c) 2026 Andrea Borruso
