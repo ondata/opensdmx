@@ -32,7 +32,7 @@
     "description": "Italian National Institute of Statistics. Covers population, economy, employment, prices and social indicators for Italy. Main source for Italian official statistics.",
     "base_url": "https://esploradati.istat.it/SDMXWS/rest",
     "agency_id": "IT1",
-    "rate_limit": 13.0,
+    "rate_limit": 15.0,
     "language": "it",
     "constraint_path_suffix": "/all/all",
     "constraint_params": {"mode": "available"},

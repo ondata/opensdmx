@@ -27,6 +27,7 @@ dependencies = [
     "ollama>=0.6.1",
     "platformdirs>=4.9.4",
     "plotnine>=0.15.3",
+    "portalocker>=3.0.0",
     "polars>=1.38.1",
     "pyarrow>=23.0.1",
     "pyyaml>=6.0.3",
