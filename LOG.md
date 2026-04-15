@@ -2,6 +2,9 @@
 
 ## 2026-04-15
 
+- chore: bump version to v0.3.31
+- fix(istat): use `/all/all?mode=available` for constraints endpoint, returning only codes actually present in each dataflow (removes ambiguity between multiple "total" codes like `T` vs `9` for SEX)
+- feat(cli): warn before first (slow) ISTAT constraints call; warning suppressed on cache hits
 - fix: rate limiter records timestamp at HTTP call start (not end), so the 13s interval is measured from request sent, not response received
 
 ## 2026-04-11
