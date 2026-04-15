@@ -429,6 +429,7 @@ def constraints(
 
     from . import load_dataset
     from .discovery import ConstraintsUnavailable, get_available_values, get_dimension_values
+    from .db_cache import get_cached_available_constraints
 
     try:
         with _status_ctx("[dim]Loading dataset...[/dim]"):
@@ -436,6 +437,13 @@ def constraints(
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
+
+    provider_cfg = get_provider()
+    if provider_cfg.get("agency_id") == "IT1" and get_cached_available_constraints(dataset_id) is None:
+        err_console.print(
+            "[yellow]⚠ ISTAT: first constraints call may take 30–120 s. "
+            "Results will be cached for 7 days.[/yellow]"
+        )
 
     try:
         with _status_ctx("[dim]Fetching constraints...[/dim]"):

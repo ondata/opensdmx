@@ -34,6 +34,8 @@
     "agency_id": "IT1",
     "rate_limit": 13.0,
     "language": "it",
+    "constraint_path_suffix": "/all/all",
+    "constraint_params": {"mode": "available"},
     "constraints_supported": true,
     "last_n_supported": true
   },
