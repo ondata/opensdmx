@@ -140,36 +140,61 @@ def _rate_limit_file() -> Path:
     return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.log"
 
 
-def _rate_limit_check() -> None:
-    """Wait if needed to respect the provider's rate limit.
-
-    Reads the last-call timestamp from /tmp. If less than rate_limit seconds
-    have passed since the last HTTP response, sleeps for the remaining time.
-    The timestamp is written *after* the HTTP call completes (in sdmx_request),
-    so the countdown starts from when the response was received.
-    """
-    min_interval = get_provider()["rate_limit"]
+def _load_rate_limit_timestamps() -> list[float]:
+    """Load recent call timestamps from temp file."""
     rl_file = _rate_limit_file()
-    if rl_file.exists():
-        try:
-            last = float(rl_file.read_text().strip())
-            elapsed = time.time() - last
-            if elapsed < min_interval:
-                wait = min_interval - elapsed
-                end_time = time.time() + wait
-                label = _rate_limit_context or "Waiting"
-                while True:
-                    remaining = end_time - time.time()
-                    if remaining <= 0:
-                        break
-                    remaining_str = "< 1s" if remaining < 1 else f"{remaining:.0f}s"
-                    sys.stderr.write(f"\r{label} ({remaining_str})...  ")
-                    sys.stderr.flush()
-                    time.sleep(0.2)
-                sys.stderr.write("\n")
+    if not rl_file.exists():
+        return []
+    try:
+        raw = rl_file.read_text().strip()
+        data = json.loads(raw)
+        if isinstance(data, list):
+            return [float(t) for t in data]
+        return [float(data)]  # legacy: single float
+    except (ValueError, OSError, json.JSONDecodeError):
+        return []
+
+
+def _save_rate_limit_timestamps(timestamps: list[float]) -> None:
+    """Save call timestamps to temp file."""
+    try:
+        _rate_limit_file().write_text(json.dumps(timestamps))
+    except OSError:
+        pass
+
+
+def _rate_limit_check() -> None:
+    """Sliding-window rate limiter.
+
+    Allows up to rate_limit_max_calls within rate_limit_window seconds.
+    If the window is full, waits until the oldest call exits the window.
+    Falls back to single-interval behavior (max_calls=1) when those fields
+    are absent from the provider config.
+    """
+    provider = get_provider()
+    min_interval = provider["rate_limit"]
+    max_calls: int = provider.get("rate_limit_max_calls", 1)
+    window: float = provider.get("rate_limit_window", min_interval)
+
+    now = time.time()
+    timestamps = [t for t in _load_rate_limit_timestamps() if now - t < window]
+
+    if len(timestamps) >= max_calls:
+        oldest = min(timestamps)
+        wait = window - (now - oldest)
+        if wait > 0:
+            end_time = time.time() + wait
+            label = _rate_limit_context or "Waiting"
+            while True:
+                remaining = end_time - time.time()
+                if remaining <= 0:
+                    break
+                remaining_str = "< 1s" if remaining < 1 else f"{remaining:.0f}s"
+                sys.stderr.write(f"\r{label} ({remaining_str})...  ")
                 sys.stderr.flush()
-        except (ValueError, OSError):
-            pass
+                time.sleep(0.2)
+            sys.stderr.write("\n")
+            sys.stderr.flush()
 
 
 def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.Response:
@@ -179,6 +204,16 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=0.5, min=0.5, max=4), reraise=True)
     def _do_request() -> httpx.Response:
         _rate_limit_check()
+        # Record timestamp at call START so the 13s interval is measured
+        # from when the request was sent, not when the response was received.
+        # Cache hits never reach here, so the rate limiter is only applied
+        # to actual HTTP calls.
+        provider = get_provider()
+        window: float = provider.get("rate_limit_window", provider["rate_limit"])
+        now = time.time()
+        ts = [t for t in _load_rate_limit_timestamps() if now - t < window]
+        ts.append(now)
+        _save_rate_limit_timestamps(ts)
         with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
             resp = client.get(
                 url,
@@ -189,7 +224,6 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
                 },
             )
             resp.raise_for_status()
-            _rate_limit_file().write_text(str(time.time()))
             return resp
 
     return _do_request()

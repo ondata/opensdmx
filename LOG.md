@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-04-15
+
+- fix: rate limiter records timestamp at HTTP call start (not end), so the 13s interval is measured from request sent, not response received
+- feat: sliding-window rate limiter infrastructure in base.py (max_calls + window fields in portals.json); ISTAT keeps fixed 13s interval
+
 ## 2026-04-11
 
 - feat: add Eurostat Comext as named provider (`--provider comext`) for DS-prefixed datasets
