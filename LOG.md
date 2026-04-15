@@ -2,6 +2,9 @@
 
 ## 2026-04-15
 
+- chore: bump version to v0.3.32
+- fix: serialize HTTP calls per provider with `portalocker` flock, so the rate limit holds across concurrent processes (parallel timestamp-file readers could previously defeat it)
+- chore: bump ISTAT rate_limit 13s → 15s for a safer margin
 - chore: bump version to v0.3.31
 - fix(istat): use `/all/all?mode=available` for constraints endpoint, returning only codes actually present in each dataflow (removes ambiguity between multiple "total" codes like `T` vs `9` for SEX)
 - feat(cli): warn before first (slow) ISTAT constraints call; warning suppressed on cache hits
