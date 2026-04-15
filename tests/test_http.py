@@ -7,7 +7,13 @@ from unittest.mock import MagicMock, patch
 import polars as pl
 import pytest
 
-from opensdmx.base import sdmx_request_csv, set_provider
+from opensdmx.base import (
+    _provider_cache_key,
+    _rate_limit_lock_file,
+    sdmx_request,
+    sdmx_request_csv,
+    set_provider,
+)
 from opensdmx.discovery import all_available
 from opensdmx.retrieval import get_data
 
@@ -76,6 +82,44 @@ class TestSdmxRequestCsv:
         with _mock_http_client(_CSV_CONTENT):
             df = sdmx_request_csv("data/UNE_RT_M")
         assert df["TIME_PERIOD"].dtype == pl.Utf8
+
+
+# ---------------------------------------------------------------------------
+# Cross-process serialization via portalocker.Lock
+# ---------------------------------------------------------------------------
+
+class TestRateLimitLock:
+    def test_portalocker_invoked_with_provider_lock_path(self):
+        """Every HTTP call must acquire the per-provider flock."""
+        set_provider("eurostat")
+        expected_path = str(_rate_limit_lock_file())
+
+        lock_cm = MagicMock()
+        lock_cm.__enter__ = MagicMock(return_value=lock_cm)
+        lock_cm.__exit__ = MagicMock(return_value=False)
+
+        with (
+            _mock_http_client(_CSV_CONTENT),
+            patch("opensdmx.base.portalocker.Lock", return_value=lock_cm) as mock_lock,
+        ):
+            sdmx_request("data/UNE_RT_M", accept="text/csv")
+
+        assert mock_lock.called
+        called_path = mock_lock.call_args.args[0]
+        assert called_path == expected_path
+        assert "eurostat" in called_path
+
+    def test_custom_provider_blank_agency_gets_url_hash_key(self):
+        """Custom URL providers without agency_id must not share the 'custom' key."""
+        set_provider("https://example.org/sdmx")
+        key_a = _provider_cache_key()
+
+        set_provider("https://other.example.net/api")
+        key_b = _provider_cache_key()
+
+        assert key_a != key_b
+        assert key_a.startswith("custom_")
+        assert key_b.startswith("custom_")
 
 
 # ---------------------------------------------------------------------------
