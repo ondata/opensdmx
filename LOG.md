@@ -2,6 +2,7 @@
 
 ## 2026-04-15
 
+- chore: bump version to v0.3.33
 - fix: move rate-limit lock and timestamp files from the shared system tempdir to the per-user cache base (via `platformdirs`), avoiding cross-user interference on multi-tenant hosts; cross-OS by construction
 - fix: derive provider cache/lock key from base URL hash when custom provider has no `agency_id`, so two such providers don't share the same lock and get serialized together
 - test: cover cross-process flock — assert `portalocker.Lock` is called with the per-provider lock path
