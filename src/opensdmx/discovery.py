@@ -405,10 +405,11 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
 
     provider = get_provider()
     constraint_endpoint = provider.get("constraint_endpoint", "availableconstraint")
+    constraint_suffix = provider.get("constraint_path_suffix", "")
     if constraint_endpoint == "contentconstraint":
         path = f"{constraint_endpoint}/{provider['agency_id']}/{df_id}"
     else:
-        path = f"{constraint_endpoint}/{df_id}"
+        path = f"{constraint_endpoint}/{df_id}{constraint_suffix}"
     try:
         constraint_params = provider.get("constraint_params", {"references": "none"})
         content = sdmx_request_xml(path, **constraint_params)
