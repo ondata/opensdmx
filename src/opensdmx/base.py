@@ -1,5 +1,6 @@
 """Core HTTP client and provider configuration for SDMX 2.1 REST APIs."""
 
+import hashlib
 import json
 import sys
 import tempfile
@@ -117,10 +118,26 @@ def _resolve_cache_base() -> Path:
     return fallback
 
 
+def _provider_cache_key() -> str:
+    """Stable per-provider key for cache, rate-limit and lock files.
+
+    For a preset provider the key is the preset name. For a custom URL
+    provider it is the agency_id when set, otherwise an 8-char sha256 of
+    the base URL — so two custom providers with different URLs don't share
+    the same cache/lock and get serialized together.
+    """
+    if isinstance(_active_provider, str):
+        return _active_provider
+    agency = get_agency_id()
+    if agency:
+        return agency
+    base = _active_provider.get("base_url", "")
+    return "custom_" + hashlib.sha256(base.encode("utf-8")).hexdigest()[:8]
+
+
 def get_cache_dir() -> Path:
     """Return cache directory for the active provider."""
-    cache_key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
-    cache_dir = _resolve_cache_base() / cache_key
+    cache_dir = _resolve_cache_base() / _provider_cache_key()
     cache_dir.mkdir(parents=True, exist_ok=True)
     return cache_dir
 
@@ -135,10 +152,21 @@ def set_timeout(seconds: float | None = None) -> float:
     return old
 
 
+def _rate_limit_dir() -> Path:
+    """Return the per-user directory for rate-limit state files.
+
+    Sits under the per-user cache base (same root as the data cache), so
+    lock and timestamp files are isolated per user and not exposed in the
+    world-writable system temp dir.
+    """
+    d = _resolve_cache_base() / "rate_limit"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
 def _rate_limit_file() -> Path:
-    """Return per-provider rate limit temp file."""
-    key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
-    return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.log"
+    """Return per-provider rate limit timestamp file."""
+    return _rate_limit_dir() / f"{_provider_cache_key()}.log"
 
 
 def _rate_limit_lock_file() -> Path:
@@ -149,8 +177,7 @@ def _rate_limit_lock_file() -> Path:
     callers read the same timestamp, sleep the same amount, and fire HTTP
     requests nearly simultaneously — defeating the rate limit.
     """
-    key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
-    return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.lock"
+    return _rate_limit_dir() / f"{_provider_cache_key()}.lock"
 
 
 def _rate_limit_check() -> None:

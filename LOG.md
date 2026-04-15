@@ -2,6 +2,9 @@
 
 ## 2026-04-15
 
+- fix: move rate-limit lock and timestamp files from the shared system tempdir to the per-user cache base (via `platformdirs`), avoiding cross-user interference on multi-tenant hosts; cross-OS by construction
+- fix: derive provider cache/lock key from base URL hash when custom provider has no `agency_id`, so two such providers don't share the same lock and get serialized together
+- test: cover cross-process flock — assert `portalocker.Lock` is called with the per-provider lock path
 - chore: bump version to v0.3.32
 - fix: serialize HTTP calls per provider with `portalocker` flock, so the rate limit holds across concurrent processes (parallel timestamp-file readers could previously defeat it)
 - chore: bump ISTAT rate_limit 13s → 15s for a safer margin
