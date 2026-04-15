@@ -1,6 +1,6 @@
 [project]
 name = "opensdmx"
-version = "0.3.33"
+version = "0.3.34"
 description = "Simple Python interface to any SDMX 2.1 REST API (Eurostat, ISTAT, and more)"
 readme = "README.md"
 authors = [

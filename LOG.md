@@ -2,6 +2,10 @@
 
 ## 2026-04-15
 
+- chore: bump version to v0.3.34
+- perf: memoize `_resolve_cache_base()` via `functools.lru_cache`, keyed on `OPENSDMX_CACHE_DIR`, so the write-probe runs at most once per process instead of on every HTTP request
+- test: isolate `TestRateLimitLock` via `monkeypatch` + `tmp_path` (`OPENSDMX_CACHE_DIR` override) so it no longer writes under the real user cache dir
+- docs: fix `_rate_limit_check()` docstring to reference the per-user rate-limit dir instead of `/tmp`
 - chore: bump version to v0.3.33
 - fix: move rate-limit lock and timestamp files from the shared system tempdir to the per-user cache base (via `platformdirs`), avoiding cross-user interference on multi-tenant hosts; cross-OS by construction
 - fix: derive provider cache/lock key from base URL hash when custom provider has no `agency_id`, so two such providers don't share the same lock and get serialized together

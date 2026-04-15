@@ -89,10 +89,16 @@ class TestSdmxRequestCsv:
 # ---------------------------------------------------------------------------
 
 class TestRateLimitLock:
-    def test_portalocker_invoked_with_provider_lock_path(self):
+    def test_portalocker_invoked_with_provider_lock_path(self, monkeypatch, tmp_path):
         """Every HTTP call must acquire the per-provider flock."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        # Clear the lru_cache so the tmp_path override takes effect
+        from opensdmx.base import _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
         set_provider("eurostat")
         expected_path = str(_rate_limit_lock_file())
+        assert str(tmp_path) in expected_path
 
         lock_cm = MagicMock()
         lock_cm.__enter__ = MagicMock(return_value=lock_cm)

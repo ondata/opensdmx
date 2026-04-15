@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import time
+from functools import lru_cache
 from pathlib import Path
 
 import httpx
@@ -84,26 +85,19 @@ def get_agency_id() -> str:
     return get_provider()["agency_id"]
 
 
-def _resolve_cache_base() -> Path:
-    """Return the base cache directory, with fallback to /tmp if not writable.
-
-    Resolution order:
-    1. OPENSDMX_CACHE_DIR env var
-    2. platformdirs.user_cache_dir (XDG on Linux, OS-native on macOS/Windows)
-    3. /tmp/opensdmx-{username} if neither is writable
-    """
-    import os
+@lru_cache(maxsize=1)
+def _resolve_cache_base_cached(env_override: str | None) -> Path:
+    """Memoized resolution — keyed on OPENSDMX_CACHE_DIR so tests can override."""
     from platformdirs import user_cache_dir
 
     candidates = []
-    if env := os.environ.get("OPENSDMX_CACHE_DIR"):
-        candidates.append(Path(env))
+    if env_override:
+        candidates.append(Path(env_override))
     candidates.append(Path(user_cache_dir("opensdmx")))
 
     for path in candidates:
         try:
             path.mkdir(parents=True, exist_ok=True)
-            # probe write access
             probe = path / ".write_test"
             probe.touch()
             probe.unlink()
@@ -111,11 +105,25 @@ def _resolve_cache_base() -> Path:
         except OSError:
             continue
 
-    # last resort: /tmp
     import getpass
     fallback = Path(tempfile.gettempdir()) / f"opensdmx-{getpass.getuser()}"
     fallback.mkdir(parents=True, exist_ok=True)
     return fallback
+
+
+def _resolve_cache_base() -> Path:
+    """Return the base cache directory, with fallback to /tmp if not writable.
+
+    Resolution order:
+    1. OPENSDMX_CACHE_DIR env var
+    2. platformdirs.user_cache_dir (XDG on Linux, OS-native on macOS/Windows)
+    3. /tmp/opensdmx-{username} if neither is writable
+
+    The write-probe runs once per (env value) — subsequent calls hit the
+    lru_cache so request-time overhead is near zero.
+    """
+    import os
+    return _resolve_cache_base_cached(os.environ.get("OPENSDMX_CACHE_DIR"))
 
 
 def _provider_cache_key() -> str:
@@ -183,7 +191,8 @@ def _rate_limit_lock_file() -> Path:
 def _rate_limit_check() -> None:
     """Wait if needed to respect the provider's rate limit.
 
-    Reads the last-call timestamp from /tmp. If less than rate_limit seconds
+    Reads the last-call timestamp from the per-user rate-limit directory
+    (`_rate_limit_dir()`, under the resolved cache base). If less than rate_limit seconds
     have passed since the last HTTP request was sent, sleeps for the remaining
     time. The timestamp is written at request start (before the HTTP call), so
     the interval is measured send-to-send, not receive-to-send.
