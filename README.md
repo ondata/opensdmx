@@ -32,6 +32,14 @@ uv add opensdmx
 pip install opensdmx
 ```
 
+**Update to the latest version:**
+
+```bash
+uv tool upgrade opensdmx            # if installed as CLI with `uv tool`
+uv lock --upgrade-package opensdmx  # if used as a library dependency
+pip install --upgrade opensdmx      # if installed with pip
+```
+
 ## CLI quick start
 
 ```bash
