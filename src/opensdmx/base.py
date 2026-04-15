@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 
 import httpx
+import portalocker
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 # Defaults for fields not specified in portals.json or custom providers
@@ -140,6 +141,18 @@ def _rate_limit_file() -> Path:
     return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.log"
 
 
+def _rate_limit_lock_file() -> Path:
+    """Return per-provider lock file.
+
+    Held for the entire HTTP call so that requests to the same provider are
+    strictly serialized across processes. Without this lock, two parallel
+    callers read the same timestamp, sleep the same amount, and fire HTTP
+    requests nearly simultaneously — defeating the rate limit.
+    """
+    key = _active_provider if isinstance(_active_provider, str) else get_agency_id() or "custom"
+    return Path(tempfile.gettempdir()) / f"opensdmx_{key}_rate_limit.lock"
+
+
 def _rate_limit_check() -> None:
     """Wait if needed to respect the provider's rate limit.
 
@@ -179,24 +192,30 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=0.5, min=0.5, max=4), reraise=True)
     def _do_request() -> httpx.Response:
-        _rate_limit_check()
-        # Record timestamp at request START (before HTTP call) so the interval
-        # is measured send-to-send, not receive-to-send.
-        try:
-            _rate_limit_file().write_text(str(time.time()))
-        except OSError:
-            pass
-        with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
-            resp = client.get(
-                url,
-                params=params or None,
-                headers={
-                    "Accept": accept,
-                    "User-Agent": "opensdmx Python package",
-                },
-            )
-            resp.raise_for_status()
-            return resp
+        # Hold an exclusive file lock for the whole HTTP call. This serializes
+        # requests to the same provider across processes, so the rate limit is
+        # actually enforced instead of being defeated by parallel reads of the
+        # timestamp file. Lock is per-provider, so different providers stay
+        # parallel. If the process dies, the kernel releases the flock.
+        with portalocker.Lock(str(_rate_limit_lock_file()), flags=portalocker.LOCK_EX):
+            _rate_limit_check()
+            # Record timestamp at request START (before HTTP call) so the
+            # interval is measured send-to-send, not receive-to-send.
+            try:
+                _rate_limit_file().write_text(str(time.time()))
+            except OSError:
+                pass
+            with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
+                resp = client.get(
+                    url,
+                    params=params or None,
+                    headers={
+                        "Accept": accept,
+                        "User-Agent": "opensdmx Python package",
+                    },
+                )
+                resp.raise_for_status()
+                return resp
 
     return _do_request()
 
