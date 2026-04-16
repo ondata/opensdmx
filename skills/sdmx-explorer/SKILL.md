@@ -216,11 +216,7 @@ know are valid and `opensdmx constraints` doesn't provide enough detail.
 **Never use `opensdmx values` to validate filter codes.** A code present in the codelist
 may return no data if it doesn't exist in this specific dataflow.
 
-### ISTAT fast flow (recommended)
-
-ISTAT's `availableconstraint` endpoint is extremely slow and often times out on large
-datasets (e.g. municipal-level data with thousands of territory codes). Use this faster
-flow instead:
+### ISTAT flow
 
 Step 1 — get dimension order and structure:
 ```bash
@@ -237,9 +233,27 @@ opensdmx values <dataflow_id> DATA_TYPE --provider istat
 definition, not necessarily in this specific dataflow. Most ISTAT codes are reliable,
 but some may be absent from a given dataflow (e.g. a versioned code like `LBIRTH_FROM2017`
 may appear in the codelist but the dataflow only uses the base code `LBIRTH`).
-Use `grep -i` to find candidate codes, then always verify with `get`.
+Use `grep -i` to find candidate codes.
 
-Step 3 — go directly to `get` with filters and verify with a narrow query:
+Step 3 — **CRITICAL: verify codes with `constraints` BEFORE testing with `get`**:
+```bash
+opensdmx constraints <dataflow_id> --provider istat
+opensdmx constraints <dataflow_id> DATA_TYPE --provider istat
+```
+
+**Do NOT skip this step.** The `values` codelist is theoretical — many codes will not
+exist in the actual dataflow. Testing invalid codes with `get` wastes enormous time
+because of ISTAT's rate limit (~13 seconds between requests). Each failed `get` attempt
+costs at least 13 seconds of waiting. Verifying codes with `constraints` first — even
+if the endpoint is slow (30–60+ seconds) — is far cheaper than multiple failed `get`
+attempts.
+
+For very large datasets with thousands of territory codes (e.g. municipal-level data),
+`constraints` on `REF_AREA` may time out. In that case only, use `values` + `grep` for
+territory codes and verify with a single narrow `get`. But for all other dimensions
+(DATA_TYPE, FREQ, etc.), always use `constraints`.
+
+Step 4 — build the query using only codes confirmed by `constraints`:
 ```bash
 opensdmx get <dataflow_id> --provider istat --REF_AREA <code> --last-n 1
 ```
@@ -247,9 +261,7 @@ opensdmx get <dataflow_id> --provider istat --REF_AREA <code> --last-n 1
 If the query returns a 404 or empty result:
 1. **Try the base form of the code** — remove any suffix that looks like a version or date
    (e.g. `LBIRTH_FROM2017` → try `LBIRTH`; `POP_1JAN2021` → try `POP_1JAN`).
-2. **Only if that also fails**, fall back to `opensdmx constraints` to check which codes
-   are actually available — but be aware it may take 30–60+ seconds or time out on large
-   datasets.
+2. Re-check with `opensdmx constraints` to verify which codes are actually available.
 
 ### Extract from both flows
 
@@ -545,7 +557,7 @@ results and should be your first reference when choosing an exploration flow.
 | Provider | constraints | last_n | Notes |
 |----------|:-----------:|:------:|-------|
 | Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
-| ISTAT | ✓ | ✓ | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs; **prefer the ISTAT fast flow** (info → values → get) — `availableconstraint` is very slow and often times out on large datasets |
+| ISTAT | ✓ | ✓ | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs; **always verify codes with `constraints` before `get`** — each failed `get` wastes ≥13s due to rate limit; `constraints` on REF_AREA may be slow on municipal datasets, but for other dimensions it's essential |
 | ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
 | OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe get instead |
 | INSEE | ✗ | ✓ | Use `--provider insee`; French macroeconomic time series (BDM database) |
@@ -599,6 +611,8 @@ codelist — pipe through `grep -i` to find specific cities or territories:
 opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo\|matera"
 ```
 
-Avoid `opensdmx constraints <dataflow_id> REF_AREA --provider istat` on municipal-level
-datasets — the `availableconstraint` endpoint is very slow with thousands of codes.
-Use `values` + `grep` to find codes, then verify with a narrow `get` query.
+For municipal-level datasets with thousands of territory codes, `constraints` on REF_AREA
+may be slow or time out. In that case only, use `values` + `grep` to find territory codes
+and verify with a single narrow `get`. But for all other dimensions, always use
+`opensdmx constraints` to verify codes before building the query — this avoids wasting
+time with failed `get` attempts (each costing ≥13s due to rate limiting).
