@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-04-19
+
+- feat: add thematic category tree (SDMX categoryscheme + categorisation) via new `opensdmx tree` command (ASCII in table mode, flat JSON/CSV otherwise); `--scheme` renders tree, `--depth` limits nesting
+- feat: add `--category` filter to `opensdmx search` (leaf id or dotted path); matches dataflow through categorisation
+- feat: add `opensdmx siblings <df_id>` — shows dataflow siblings in each category (one group per membership); surfaces related variants that text search misses
+- feat: new `src/opensdmx/categories.py` with two-parquet cache (`categories.parquet`, `categorisation.parquet`), lazy fetch on first `tree` call, 7-day TTL via `CATEGORIES_CACHE_TTL`, stale-df warning to stderr
+- feat: add `categories_supported` flag to `portals.json` (true: eurostat, istat, ecb, oecd, insee, abs, bis; false: comext, bundesbank, worldbank, imf) + new column in `opensdmx providers`
+- chore: add read-only MCP tool allowlist to `.claude/settings.local.json` (mempalace search/get/list, playwright network/snapshot/screenshot, chrome-devtools network tools)
+
 ## 2026-04-15
 
 - chore: bump version to v0.3.34

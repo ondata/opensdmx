@@ -12,7 +12,8 @@
     "data_format_param": "SDMX-CSV",
     "dataflow_page_url": "https://ec.europa.eu/eurostat/databrowser/product/page/{dataflow_id}",
     "constraints_supported": true,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "comext": {
     "name": "Eurostat Comext",
@@ -25,7 +26,8 @@
     "datastructure_agency": "ESTAT",
     "data_format_param": "SDMX-CSV",
     "constraints_supported": false,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": false
   },
   "istat": {
     "name": "ISTAT",
@@ -37,7 +39,8 @@
     "constraint_path_suffix": "/all/all",
     "constraint_params": {"mode": "available"},
     "constraints_supported": true,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "ecb": {
     "name": "European Central Bank",
@@ -45,7 +48,8 @@
     "base_url": "https://data-api.ecb.europa.eu/service",
     "agency_id": "ECB",
     "constraints_supported": false,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "oecd": {
     "name": "OECD",
@@ -55,7 +59,8 @@
     "catalog_agency": "all",
     "constraint_params": {},
     "constraints_supported": false,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "insee": {
     "name": "INSEE",
@@ -63,7 +68,8 @@
     "base_url": "https://www.bdm.insee.fr/series/sdmx",
     "agency_id": "FR1",
     "constraints_supported": false,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "bundesbank": {
     "name": "Deutsche Bundesbank",
@@ -73,7 +79,8 @@
     "metadata_prefix": "metadata",
     "datastructure_agency": "BBK",
     "constraints_supported": false,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": false
   },
   "worldbank": {
     "name": "World Bank",
@@ -84,7 +91,8 @@
     "data_path_suffix": "/",
     "unsupported_params": ["lastNObservations", "firstNObservations"],
     "constraints_supported": false,
-    "last_n_supported": false
+    "last_n_supported": false,
+    "categories_supported": false
   },
   "abs": {
     "name": "Australian Bureau of Statistics",
@@ -92,7 +100,8 @@
     "base_url": "https://data.api.abs.gov.au/rest",
     "agency_id": "ABS",
     "constraints_supported": true,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "bis": {
     "name": "Bank for International Settlements",
@@ -100,7 +109,8 @@
     "base_url": "https://stats.bis.org/api/v1",
     "agency_id": "BIS",
     "constraints_supported": true,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": true
   },
   "imf": {
     "name": "International Monetary Fund",
@@ -109,6 +119,7 @@
     "agency_id": "IMF.RES",
     "catalog_agency": "all",
     "constraints_supported": true,
-    "last_n_supported": true
+    "last_n_supported": true,
+    "categories_supported": false
   }
 }

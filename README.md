@@ -189,6 +189,9 @@ All commands accept `--provider` (`-p`) to select the provider.
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
 | `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
 | `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`); optionally filter by regex |
+| `opensdmx tree [--scheme ID] [--depth N] [-p provider]` | Browse the thematic tree (SDMX `categoryscheme` + `categorisation`); ASCII tree in table mode, flat rows in JSON/CSV |
+| `opensdmx siblings <id> [-p provider]` | Show dataflow siblings in each category — discover related variants that text search misses |
+| `opensdmx search <keyword> --category <CAT> [-p provider]` | Restrict search to a category (leaf id or dotted path); cuts false positives vs pure token match |
 | `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file] [--query-file file.yaml] [-p provider]` | Download data; optionally save the query as YAML |
 | `opensdmx run <query.yaml> [--out file] [-p provider]` | Re-run a query saved with `--query-file` |
 | `opensdmx plot <id\|file.csv> [--DIM VALUE] [--geom line\|bar\|barh\|point\|scatter] [--out file] [-p provider]` | Plot data as chart |
@@ -214,7 +217,18 @@ opensdmx search "disoccupazione" --provider istat
 opensdmx get 151_929 --provider istat --FREQ A --REF_AREA IT --out data.csv
 opensdmx search "GDP" --provider oecd
 opensdmx search "inflation" --provider ecb
+
+# Thematic tree (categoryscheme + categorisation)
+opensdmx tree --provider istat                       # list thematic schemes
+opensdmx tree --scheme Z1000AGR --provider istat     # browse ISTAT Agricoltura
+opensdmx search "prezzi" --category DCSP_PREZZIAGR --provider istat
+opensdmx siblings NAMA_10_GDP                        # 27 Eurostat GDP-related dataflows
+opensdmx siblings 104_466_DF_DCSP_FERTILIZZANTI_2 --provider istat  # all 7 fertilizer variants
 ```
+
+Not every provider exposes the thematic tree. Run `opensdmx providers` and check
+the `categories` column (✓/✗). Currently supported: `eurostat`, `istat`, `ecb`,
+`oecd`, `insee`, `abs`, `bis`.
 
 ### Query files
 
