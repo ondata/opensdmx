@@ -147,6 +147,7 @@ def search(
     n: int = typer.Option(50, "--n", help="Results per page (default: 50). Combine with --page to paginate."),
     page: int = typer.Option(1, "--page", help="Page number, 1-based (default: 1). Use with --n to paginate. Title shows range e.g. '21-40 of 114'."),
     all_results: bool = typer.Option(False, "--all", help="Show ALL results from cache, ignoring --n and --page."),
+    category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict search to a category (leaf id or dotted path). Provider must support categories. See `opensdmx tree`."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
     """Search datasets by keyword in the local cache (or semantically with --semantic).
@@ -212,8 +213,26 @@ def search(
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
+    if category:
+        import polars as pl
+
+        from .categories import CategoriesNotSupported, filter_by_category
+        try:
+            cat_df = filter_by_category(category)
+        except CategoriesNotSupported as e:
+            err_console.print(f"[red]Error:[/red] {e}")
+            raise typer.Exit(1)
+        if cat_df.is_empty():
+            err_console.print(f"[yellow]No dataflow found for category:[/yellow] {category}")
+            raise typer.Exit(0)
+        allowed = set(cat_df["df_id"].to_list())
+        df = df.filter(pl.col("df_id").is_in(list(allowed)))
+
     if df.is_empty():
-        err_console.print(f"[yellow]No datasets found for:[/yellow] {keyword}")
+        msg = f"No datasets found for: {keyword}"
+        if category:
+            msg += f" (category={category})"
+        err_console.print(f"[yellow]{msg}[/yellow]")
         raise typer.Exit(0)
 
     total = len(df)
@@ -596,6 +615,7 @@ def providers():
                 "agency_id": cfg.get("agency_id", ""),
                 "constraints_supported": cfg.get("constraints_supported"),
                 "last_n_supported": cfg.get("last_n_supported"),
+                "categories_supported": cfg.get("categories_supported"),
             }
             for alias, cfg in PROVIDERS.items()
         ]
@@ -615,6 +635,7 @@ def providers():
     table.add_column("agency", style="dim", no_wrap=True)
     table.add_column("constraints", justify="center", no_wrap=True)
     table.add_column("last_n", justify="center", no_wrap=True)
+    table.add_column("categories", justify="center", no_wrap=True)
 
     for alias, cfg in PROVIDERS.items():
         table.add_row(
@@ -624,9 +645,188 @@ def providers():
             cfg.get("agency_id", ""),
             _cap(cfg, "constraints_supported"),
             _cap(cfg, "last_n_supported"),
+            _cap(cfg, "categories_supported"),
         )
 
     console.print(table)
+
+
+@app.command()
+def tree(
+    scheme: Optional[str] = typer.Option(None, "--scheme", "-s", help="Render the tree for a specific scheme_id. If omitted, lists all schemes with dataflow counts."),
+    depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Limit tree nesting depth (1 = only top-level)."),
+    provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+):
+    """Browse the thematic tree of dataflows (categoryscheme + categorisation).
+
+    Without --scheme: lists all schemes with their dataflow counts.
+    With --scheme: renders an ASCII tree of that scheme's categories.
+
+    Not all providers expose categories. Use `opensdmx providers` to check.
+    In table mode output is an ASCII tree; in -o json|csv a flat table.
+
+    Examples:
+
+      opensdmx tree --provider istat
+      opensdmx tree --scheme Z1000AGR --provider istat
+      opensdmx tree --scheme Z1000AGR --depth 2 --provider istat
+      opensdmx tree --scheme t_economy --provider eurostat
+    """
+    _apply_provider(provider)
+
+    from .categories import CategoriesNotSupported, load_categories
+
+    try:
+        with _status_ctx("[dim]Loading category tree...[/dim]"):
+            categories_df, categorisation_df = load_categories()
+    except CategoriesNotSupported as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    if categories_df.is_empty():
+        err_console.print("[yellow]No categories returned by the provider.[/yellow]")
+        raise typer.Exit(0)
+
+    import polars as pl
+
+    df_counts = (
+        categorisation_df.group_by(["scheme_id", "cat_path"])
+        .agg(pl.len().alias("n_df"))
+    )
+
+    if scheme is None:
+        scheme_counts = (
+            categorisation_df.group_by("scheme_id")
+            .agg(pl.len().alias("n_df"))
+        )
+        schemes = (
+            categories_df.select(["scheme_id", "scheme_name"])
+            .unique()
+            .join(scheme_counts, on="scheme_id", how="left")
+            .with_columns(pl.col("n_df").fill_null(0))
+            .sort("scheme_id")
+        )
+
+        if _output_mode != "table":
+            rows = [
+                {"scheme_id": r["scheme_id"], "scheme_name": r["scheme_name"] or "", "n_df": int(r["n_df"])}
+                for r in schemes.iter_rows(named=True)
+            ]
+            _emit(rows, df=schemes)
+            return
+
+        table = Table(title="Category schemes", show_lines=False)
+        table.add_column("scheme_id", style="cyan", no_wrap=True)
+        table.add_column("scheme_name")
+        table.add_column("n_df", justify="right")
+        for r in schemes.iter_rows(named=True):
+            table.add_row(r["scheme_id"], r["scheme_name"] or "", str(r["n_df"]))
+        console.print(table)
+        return
+
+    scheme_rows = categories_df.filter(pl.col("scheme_id") == scheme)
+    if scheme_rows.is_empty():
+        err_console.print(f"[red]Error:[/red] scheme not found: {scheme}")
+        raise typer.Exit(1)
+
+    if depth is not None:
+        scheme_rows = scheme_rows.filter(pl.col("depth") <= depth)
+
+    scheme_rows = scheme_rows.join(df_counts, on=["scheme_id", "cat_path"], how="left").with_columns(
+        pl.col("n_df").fill_null(0)
+    )
+
+    if _output_mode != "table":
+        rows = [
+            {
+                "scheme_id": r["scheme_id"],
+                "cat_id": r["cat_id"],
+                "cat_path": r["cat_path"],
+                "cat_name": r["cat_name"] or "",
+                "parent_path": r["parent_path"] or "",
+                "depth": int(r["depth"]),
+                "n_df": int(r["n_df"]),
+            }
+            for r in scheme_rows.iter_rows(named=True)
+        ]
+        _emit(rows, df=scheme_rows)
+        return
+
+    scheme_name = scheme_rows.select("scheme_name").row(0)[0] or scheme
+    console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
+
+    children: dict[str, list[dict]] = {}
+    for r in scheme_rows.iter_rows(named=True):
+        children.setdefault(r["parent_path"] or "", []).append(r)
+    for kids in children.values():
+        kids.sort(key=lambda x: x["cat_name"] or x["cat_id"])
+
+    def render(parent_path: str, prefix: str) -> None:
+        kids = children.get(parent_path, [])
+        for i, node in enumerate(kids):
+            last = (i == len(kids) - 1)
+            branch = "└── " if last else "├── "
+            count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
+            label = node["cat_name"] or node["cat_id"]
+            console.print(f"{prefix}{branch}{label} [dim][{node['cat_id']}][/dim]{count_str}")
+            next_prefix = prefix + ("    " if last else "│   ")
+            render(node["cat_path"], next_prefix)
+
+    render("", "")
+
+
+@app.command()
+def siblings(
+    dataset_id: str = typer.Argument(..., help="Dataflow ID to locate in the thematic tree"),
+    provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+):
+    """Show dataflow siblings — other dataflows in the same category.
+
+    Given a dataflow ID, look up its categories and list all dataflows
+    sharing each category. Useful to discover related datasets that a pure
+    text search would miss (e.g. "Fertilizzanti" contains 7 dataflow variants
+    but only 1 contains the word "agricoltura" in its description).
+
+    A dataflow can belong to multiple categories: one group per membership.
+
+    Examples:
+
+      opensdmx siblings 104_466_DF_DCSP_FERTILIZZANTI_2 --provider istat
+      opensdmx siblings NAMA_10_GDP --provider eurostat
+    """
+    _apply_provider(provider)
+
+    from .categories import CategoriesNotSupported, siblings_of
+
+    try:
+        with _status_ctx("[dim]Loading category tree...[/dim]"):
+            groups = siblings_of(dataset_id)
+    except CategoriesNotSupported as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    if not groups:
+        err_console.print(
+            f"[yellow]Dataflow {dataset_id} is not categorized (or not found).[/yellow]"
+        )
+        raise typer.Exit(0)
+
+    if _output_mode != "table":
+        _emit(groups)
+        return
+
+    for g in groups:
+        header = f"{g['scheme_name']} > {g['cat_name'] or g['cat_path']}"
+        subtitle = f"scheme={g['scheme_id']}  cat_path={g['cat_path']}  siblings={len(g['siblings'])}"
+        console.print(f"\n[bold]{header}[/bold]  [dim]({subtitle})[/dim]")
+        table = Table(show_lines=False)
+        table.add_column("", style="green", no_wrap=True)
+        table.add_column("df_id", style="cyan", no_wrap=True)
+        table.add_column("df_description")
+        for s in g["siblings"]:
+            marker = "→" if s["is_target"] else ""
+            table.add_row(marker, s["df_id"], s["df_description"])
+        console.print(table)
 
 
 _LARGE_DATASET_THRESHOLD = 5000

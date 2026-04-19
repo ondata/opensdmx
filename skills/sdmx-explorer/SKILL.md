@@ -92,6 +92,54 @@ Before searching, parse the user's question on two levels:
    Example: *"unemployment for EU countries, by age group and sex"* →
    topic keywords: `unemployment`; expected dimensions: `age`, `sex`, `geo`.
 
+### Step 1a+ (optional) — Narrow the search thematically with `opensdmx tree`
+
+Before a full-text `search`, consider the thematic tree. Some providers expose
+a hierarchical catalog (SDMX `categoryscheme` + `categorisation`) that groups
+dataflows by topic — turns a flat list of thousands of dataflows into a
+navigable tree.
+
+Supported providers (check with `opensdmx providers` — `categories` column):
+- ✓ `eurostat`, `istat`, `ecb`, `oecd`, `insee`, `abs`, `bis`
+- ✗ `comext`, `bundesbank`, `worldbank`, `imf` (no category endpoint) — skip tree, go straight to `search`.
+
+When to use `tree`:
+
+- The user question targets a well-defined **domain** (agriculture, education,
+  health, trade, prices, population, …) where many dataflows share a root
+  theme. Browsing the tree is faster than scanning hundreds of keyword hits.
+- The keyword is generic or ambiguous (e.g. "impresa", "energia") and would
+  return too many results.
+- The user explicitly asks to "explore what's available on X".
+
+When to skip `tree` and go straight to `search`:
+
+- The user already gives a precise dataflow id or a narrow term with a clear
+  acronym (e.g. `NAMA_10_GDP`, `LFSA_ERGAN`).
+- The provider does not support it (see above).
+
+Workflow:
+
+```bash
+# 1. List all thematic schemes for the provider (one row per top-level domain)
+opensdmx tree --provider istat
+
+# 2. Enter the relevant scheme — render the category sub-tree
+opensdmx tree --scheme Z1000AGR --provider istat
+
+# 3. When you spot a relevant category, filter search to it
+opensdmx search "prezzi" --category DCSP_PREZZIAGR --provider istat
+```
+
+The `--category` filter accepts either a leaf id (`DCSP_LATTE`) or a full
+dotted path (`AGR_CRP.DCSP_LATTE`). It reduces false positives compared to
+pure token matching (e.g. finds `AGR_R_ACCTS` under Agriculture even when
+the description does not contain the word "agriculture").
+
+Note: the first `tree` invocation per provider triggers a one-time fetch
+(can take ~1 minute on Eurostat due to the 24 MB categorisation response),
+then the result is cached for 7 days under the provider's cache directory.
+
 ### Step 1b — Search and pre-filter candidates
 
 Search for dataflows:
@@ -182,6 +230,43 @@ describe more precisely what you need.
 ```
 
 Wait for the user's choice before proceeding.
+
+### Step 1d (optional) — Explore siblings of a candidate
+
+Once you have a candidate dataflow, check its **siblings** — other dataflows in
+the same thematic category. This often reveals variants (regional vs national,
+annual vs quarterly, different units of measure) that pure text search misses
+because the candidate's siblings do not share its exact wording.
+
+```bash
+opensdmx siblings <dataflow_id> --provider <p>
+```
+
+Only works on providers with `categories_supported: true`. A dataflow may
+belong to multiple categories: the command returns one group per membership.
+
+When to use:
+
+- The candidate's title sounds specific ("Fertilizers distributed for biological
+  agriculture"); you want to know if a broader version exists.
+- You expect a series at a different granularity (prov/reg/nat) that may not
+  share keywords.
+- The dataset list is fragmented across many small dataflow ids sharing a
+  common prefix — the category view clusters them.
+
+Example — starting from a single result, discover 6 complementary siblings:
+
+```bash
+$ opensdmx siblings 104_466_DF_DCSP_FERTILIZZANTI_2 --provider istat
+
+Agricoltura > Fertilizzanti  (7 siblings)
+  → 104_466_DF_DCSP_FERTILIZZANTI_2   uso in agricoltura biologica
+    104_466_DF_DCSP_FERTILIZZANTI_1   stato liquido o solido
+    104_466_DF_DCSP_FERTILIZZANTI_3   area di produzione
+    104_466_DF_DCSP_FERTILIZZANTI_4   distribuiti - prov.
+    104_466_DF_DCSP_FERTILIZZANTI_5   elementi nutritivi - prov.
+    ...
+```
 
 ---
 
