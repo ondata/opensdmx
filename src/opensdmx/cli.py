@@ -225,8 +225,7 @@ def search(
         if cat_df.is_empty():
             err_console.print(f"[yellow]No dataflow found for category:[/yellow] {category}")
             raise typer.Exit(0)
-        allowed = set(cat_df["df_id"].to_list())
-        df = df.filter(pl.col("df_id").is_in(list(allowed)))
+        df = df.filter(pl.col("df_id").is_in(cat_df["df_id"].unique()))
 
     if df.is_empty():
         msg = f"No datasets found for: {keyword}"
