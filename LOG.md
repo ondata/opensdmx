@@ -2,6 +2,7 @@
 
 ## 2026-04-19
 
+- fix: use SDMX 2.1 structure Accept header in `sdmx_request_xml`; fixes OECD returning JSON on `/dataflow` (closes #15); unblocks `all_available`/`search` on OECD and fills `df_description` in `siblings` output
 - feat: add thematic category tree (SDMX categoryscheme + categorisation) via new `opensdmx tree` command (ASCII in table mode, flat JSON/CSV otherwise); `--scheme` renders tree, `--depth` limits nesting
 - feat: add `--category` filter to `opensdmx search` (leaf id or dotted path); matches dataflow through categorisation
 - feat: add `opensdmx siblings <df_id>` — shows dataflow siblings in each category (one group per membership); surfaces related variants that text search misses

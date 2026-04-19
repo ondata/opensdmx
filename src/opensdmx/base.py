@@ -257,8 +257,16 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
 
 
 def sdmx_request_xml(path: str, **params):
-    """Make a request and return the raw XML bytes."""
-    resp = sdmx_request(path, accept="application/xml", **params)
+    """Make a request and return the raw XML bytes.
+
+    Uses the SDMX 2.1 structure Accept header — the generic "application/xml"
+    is not honoured by some providers (e.g. OECD) which then default to JSON.
+    """
+    resp = sdmx_request(
+        path,
+        accept="application/vnd.sdmx.structure+xml;version=2.1",
+        **params,
+    )
     return resp.content
 
 
