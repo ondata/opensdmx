@@ -691,13 +691,13 @@ def tree(
 
     df_counts = (
         categorisation_df.group_by(["scheme_id", "cat_path"])
-        .agg(pl.len().alias("n_df"))
+        .agg(pl.col("df_id").n_unique().alias("n_df"))
     )
 
     if scheme is None:
         scheme_counts = (
             categorisation_df.group_by("scheme_id")
-            .agg(pl.len().alias("n_df"))
+            .agg(pl.col("df_id").n_unique().alias("n_df"))
         )
         schemes = (
             categories_df.select(["scheme_id", "scheme_name"])

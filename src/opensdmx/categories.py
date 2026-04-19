@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import logging
-import sys
 import time
 from pathlib import Path
 
@@ -124,7 +123,8 @@ def _fetch_categoryscheme() -> pl.DataFrame:
 def _fetch_categorisation() -> pl.DataFrame:
     """Fetch and parse /categorisation into df_id -> (scheme_id, cat_path)."""
     provider = get_provider()
-    catalog_agency = provider.get("catalog_agency", provider["agency_id"])
+    agency_id = provider["agency_id"]
+    catalog_agency = provider.get("catalog_agency", agency_id)
     path = _struct_path(f"categorisation/{catalog_agency}/ALL/latest")
     content = sdmx_request_xml(path)
     root, ns = xml_parse(content)
@@ -142,6 +142,12 @@ def _fetch_categorisation() -> pl.DataFrame:
         if src.get("class") and src.get("class") != "Dataflow":
             continue
         df_id = src.get("id")
+        src_agency = src.get("agencyID")
+        # Mirror discovery.all_available(): if provider uses a cross-agency
+        # catalog, prefix df_id with the source agency so categorisation rows
+        # match the dataflow list (otherwise siblings/filter return empty).
+        if df_id and src_agency and catalog_agency != agency_id:
+            df_id = f"{src_agency},{df_id}"
         scheme_id = tgt.get("maintainableParentID")
         cat_path = tgt.get("id")
         if not (df_id and scheme_id and cat_path):
@@ -184,10 +190,9 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
     if cached is not None:
         return cached
 
-    print(
-        "[dim]Building thematic cache from categoryscheme + categorisation "
-        "(first run can take 1-2 minutes)...[/dim]",
-        file=sys.stderr,
+    logger.info(
+        "Building thematic cache from categoryscheme + categorisation "
+        "(first run can take 1-2 minutes)..."
     )
 
     categories_df = _fetch_categoryscheme()
@@ -220,7 +225,7 @@ def _warn_stale(categorisation_df: pl.DataFrame) -> None:
     n_stale = len(stale)
     if n_stale:
         logger.warning(
-            f"{n_stale}/{total} dataflow in categorisation not found in dataflows list (stale entries)"
+            f"{n_stale}/{total} entries in categorisation not found in dataflows list (stale entries)"
         )
 
 
@@ -244,7 +249,13 @@ def siblings_of(df_id: str) -> list[dict]:
         return []
 
     from .discovery import all_available
-    dataflows = all_available().select(["df_id", "df_description"])
+    try:
+        dataflows = all_available().select(["df_id", "df_description"])
+    except Exception as e:
+        logger.warning(f"Could not load dataflow list for descriptions: {e}")
+        dataflows = pl.DataFrame(
+            schema={"df_id": pl.Utf8, "df_description": pl.Utf8}
+        )
 
     groups = []
     for row in memberships.iter_rows(named=True):
@@ -258,8 +269,12 @@ def siblings_of(df_id: str) -> list[dict]:
 
         sib_ids = categorisation_df.filter(
             (pl.col("scheme_id") == scheme_id) & (pl.col("cat_path") == cat_path)
-        ).select("df_id")
-        sibs = sib_ids.join(dataflows, on="df_id", how="inner").unique(subset=["df_id"])
+        ).select("df_id").unique()
+        # Left-join so the sibling list survives when the dataflows table is
+        # unavailable (e.g. provider-side error on the /dataflow endpoint).
+        sibs = sib_ids.join(dataflows, on="df_id", how="left").with_columns(
+            pl.col("df_description").fill_null("")
+        )
 
         siblings = [
             {
@@ -297,5 +312,9 @@ def filter_by_category(cat_id_or_path: str) -> pl.DataFrame:
     matched = categorisation_df.filter(mask)
 
     from .discovery import all_available
-    dataflows = all_available()
+    try:
+        dataflows = all_available()
+    except Exception as e:
+        logger.warning(f"Could not load dataflow list: {e}; returning category ids only")
+        return matched
     return dataflows.join(matched, on="df_id", how="inner")

@@ -175,6 +175,71 @@ def test_fetch_categorisation_maps_dataflow_to_category(monkeypatch):
     assert wheat["cat_path"] == "CROPS.CEREALS"
 
 
+def test_fetch_categorisation_prefixes_df_id_when_catalog_agency_differs(monkeypatch):
+    """OECD-like providers (catalog_agency != agency_id) need df_id prefixed
+    with the source agencyID to join with all_available() dataflow ids."""
+    xml = b"""\
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+                   xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+                   xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <structure:Categorisations>
+      <structure:Categorisation id="CAT_WHEAT">
+        <structure:Source>
+          <Ref id="WHEAT" agencyID="OECD" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="CEREALS" maintainableParentID="AGRI"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+  </message:Structures>
+</message:Structure>
+"""
+    monkeypatch.setattr(categories, "sdmx_request_xml", lambda path, **kw: xml)
+    monkeypatch.setattr(
+        categories,
+        "get_provider",
+        lambda: {"agency_id": "IT1", "catalog_agency": "all"},
+    )
+    df = _fetch_categorisation()
+    assert len(df) == 1
+    row = df.row(0, named=True)
+    assert row["df_id"] == "OECD,WHEAT"
+    assert row["scheme_id"] == "AGRI"
+    assert row["cat_path"] == "CEREALS"
+
+
+def test_fetch_categorisation_no_prefix_when_catalog_agency_matches(monkeypatch):
+    """When catalog_agency == agency_id, df_id stays unprefixed."""
+    xml = b"""\
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+                   xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+                   xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <structure:Categorisations>
+      <structure:Categorisation id="CAT_WHEAT">
+        <structure:Source>
+          <Ref id="WHEAT" agencyID="IT1" class="Dataflow"/>
+        </structure:Source>
+        <structure:Target>
+          <Ref id="CEREALS" maintainableParentID="AGRI"/>
+        </structure:Target>
+      </structure:Categorisation>
+    </structure:Categorisations>
+  </message:Structures>
+</message:Structure>
+"""
+    monkeypatch.setattr(categories, "sdmx_request_xml", lambda path, **kw: xml)
+    monkeypatch.setattr(
+        categories,
+        "get_provider",
+        lambda: {"agency_id": "IT1"},
+    )
+    df = _fetch_categorisation()
+    assert df.row(0, named=True)["df_id"] == "WHEAT"
+
+
 # ── supported_providers ──────────────────────────────────────────────
 
 def test_supported_providers_reads_portals_json():
