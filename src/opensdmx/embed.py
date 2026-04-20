@@ -44,6 +44,46 @@ def _embed(texts: list[str]) -> np.ndarray:
     return np.array(response.embeddings, dtype=np.float32)
 
 
+def _category_context_for_embed() -> pl.DataFrame:
+    """Aggregate scheme_name + cat_name per df_id from the cached category tree.
+
+    Only uses the local cache — never triggers a live fetch. If the category
+    cache files are not yet present (provider doesn't support categories, or
+    user hasn't run `opensdmx tree` yet), returns an empty DataFrame and the
+    embedding falls back to df_id + description only.
+    """
+    empty = pl.DataFrame({"df_id": [], "cat_context": []}, schema={"df_id": pl.Utf8, "cat_context": pl.Utf8})
+
+    from .categories import _categories_cache_path, _categorisation_cache_path
+
+    cats_path = _categories_cache_path()
+    csation_path = _categorisation_cache_path()
+    if not cats_path.exists() or not csation_path.exists():
+        return empty
+
+    categories_df = pl.read_parquet(cats_path)
+    categorisation_df = pl.read_parquet(csation_path)
+
+    if categorisation_df.is_empty():
+        return empty
+
+    return (
+        categorisation_df.join(
+            categories_df.select(["scheme_id", "scheme_name", "cat_path", "cat_name"]),
+            on=["scheme_id", "cat_path"],
+            how="left",
+        )
+        .with_columns(
+            pl.concat_str(
+                [pl.col("scheme_name").fill_null(""), pl.col("cat_name").fill_null("")],
+                separator=" ",
+            ).str.strip_chars().alias("ctx")
+        )
+        .group_by("df_id")
+        .agg(pl.col("ctx").str.concat(" ").alias("cat_context"))
+    )
+
+
 def build_embeddings(progress: bool = True) -> None:
     """Encode all catalog descriptions and save to the provider's cache directory.
 
@@ -66,13 +106,29 @@ def build_embeddings(progress: bool = True) -> None:
     if catalog.is_empty():
         raise RuntimeError("No datasets found. Check your provider or network connection.")
 
-    ids = catalog["df_id"].to_list()
-    texts = catalog["df_description"].fill_null("").to_list()
+    cat_context = _category_context_for_embed()
+    catalog_with_cats = catalog.join(cat_context, on="df_id", how="left").with_columns(
+        pl.col("cat_context").fill_null("")
+    )
+
+    ids = catalog_with_cats["df_id"].to_list()
+    descriptions = catalog_with_cats["df_description"].fill_null("").to_list()
+    cat_contexts = catalog_with_cats["cat_context"].to_list()
+    texts = [
+        " ".join(part for part in (df_id, desc, cat_ctx) if part).strip()
+        for df_id, desc, cat_ctx in zip(ids, descriptions, cat_contexts)
+    ]
 
     if progress:
+        n_with_cats = sum(1 for c in cat_contexts if c)
+        if n_with_cats:
+            print(f"Enriching {n_with_cats}/{len(texts)} descriptions with cached category context.")
+        else:
+            print("No category cache found — embedding df_id + description only. "
+                  "Run `opensdmx tree` first for richer embeddings on providers that support categories.")
         print(f"Embedding {len(texts)} descriptions with {_EMBED_MODEL}...")
 
-    vectors = _embed(texts)
+    vectors = _embed([f"search_document: {t}" for t in texts])
     cache_path = _embed_cache_path()
 
     rows = [
@@ -120,7 +176,7 @@ def semantic_search(query: str, n: int = 10) -> pl.DataFrame:
         )
     doc_vecs = np.array(embed_df["embedding"].to_list(), dtype=np.float32)
 
-    query_vec = _embed([query])[0]
+    query_vec = _embed([f"search_query: {query}"])[0]
 
     # Cosine similarity
     query_norm = query_vec / (np.linalg.norm(query_vec) + 1e-10)

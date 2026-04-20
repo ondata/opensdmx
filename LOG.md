@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-04-20 (v0.4.4)
+
+- fix: semantic search now uses `search_document:` / `search_query:` prefixes required by `nomic-embed-text-v2-moe` (without prefixes the model returned essentially random rankings on short queries)
+- feat: embedding text now includes `df_id` and (when the category cache is populated) the dataflow's scheme/category names — dramatically improves recall on short titles (e.g. `Prezzi al consumo` → `CPI Prezzi al consumo Prezzi`)
+- docs: README documents richer embeddings via `opensdmx tree` and adds tips on writing better semantic queries
+
 ## 2026-04-20 (v0.4.3)
 
 - feat: `tree --category <cat_id>` — browse subtree rooted at a category (requires `--scheme`)

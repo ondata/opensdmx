@@ -398,6 +398,23 @@ opensdmx embed              # build embeddings for default provider (eurostat)
 opensdmx embed -p istat     # build embeddings for ISTAT
 ```
 
+For providers that expose a thematic catalog (Eurostat, ISTAT, ECB, OECD, INSEE,
+ABS, BIS), running `opensdmx tree` once before `opensdmx embed` enriches each
+embedding with the names of the categories the dataflow belongs to. This
+materially improves recall on short or generic queries — a dataflow whose only
+description is `Prezzi al consumo` becomes embeddable as `CPI Prezzi al consumo
+SDDS Plus Indicators Real Sector`, giving the model far more signal to work with.
+
+#### Tips for better results
+
+- **Use multi-word, descriptive queries.** A single word (`"inflation"`,
+  `"unemployment"`) provides little context and produces noisy rankings, in any
+  language. Phrases like `"consumer price inflation"` or `"unemployment rate by
+  age and sex"` work much better.
+- **English queries on non-English catalogs work well.** The model is
+  multilingual: an English query against an Italian catalog typically returns
+  good cross-lingual matches.
+
 #### Why semantic search matters
 
 The SDMX catalog uses technical terminology. The same concept can appear under many different labels, or under none of the words you'd naturally use. Semantic search bridges that gap.
