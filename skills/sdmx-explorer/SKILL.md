@@ -127,23 +127,38 @@ opensdmx tree --provider istat
 # 2. Enter the relevant scheme — render the category sub-tree
 opensdmx tree --scheme Z1000AGR --provider istat
 
-# 3. When you spot a relevant category, filter search to it
-opensdmx search "prezzi" --category DCSP_PREZZIAGR --provider istat
+# 3. (optional) Zoom into a sub-branch to keep the view focused
+opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat
+
+# 4. List the actual dataflow IDs inside a branch
+opensdmx search "" --category PRI_HARCONEU --provider istat
 ```
+
+`tree --category` and `search --category` are complementary: the first shows the
+category hierarchy (with dataflow counts), the second enumerates the dataflows
+themselves. Use them together when you spot an interesting branch.
 
 The `--category` filter accepts either a leaf id (`DCSP_LATTE`) or a full
 dotted path (`AGR_CRP.DCSP_LATTE`). It reduces false positives compared to
 pure token matching (e.g. finds `AGR_R_ACCTS` under Agriculture even when
 the description does not contain the word "agriculture").
 
+If you accidentally pass a category ID to `--scheme`, the CLI detects it and
+suggests the correct command — you can just run the suggested line:
+
+```bash
+opensdmx tree --scheme PRI_HARCONEU --provider istat
+# → 'PRI_HARCONEU' is a category, not a scheme.
+# → Use: opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU
+```
+
 Note: the first `tree` invocation per provider triggers a one-time fetch
 (can take ~1 minute on Eurostat due to the 24 MB categorisation response),
 then the result is cached for 7 days under the provider's cache directory.
 
 For the full top-down walkthrough (decision matrix, real ISTAT/Eurostat
-examples, the `tree --category` + `search "" --category` pair, cat_id
-extraction, and provider-specific notes), see
-[references/thematic-tree.md](references/thematic-tree.md).
+examples, cat_id extraction via `--output csv`, and provider-specific notes),
+see [references/thematic-tree.md](references/thematic-tree.md).
 
 ### Step 1b — Search and pre-filter candidates
 
@@ -308,50 +323,13 @@ may return no data if it doesn't exist in this specific dataflow.
 
 ### ISTAT flow
 
-Step 1 — get dimension order and structure:
-```bash
-opensdmx info <dataflow_id> --provider istat
-```
+ISTAT requires a different exploration pattern: the API has a strict ~13 s rate
+limit, codelists and constraints diverge often, and some codes carry version
+suffixes that need stripping. The flow consolidates `info` → `values` →
+`constraints` (mandatory before `get`) → `get`.
 
-Step 2 — explore codelist values for the dimensions you need to filter:
-```bash
-opensdmx values <dataflow_id> REF_AREA --provider istat
-opensdmx values <dataflow_id> DATA_TYPE --provider istat
-```
-
-`values` returns the **full theoretical codelist** — codes that exist in the codelist
-definition, not necessarily in this specific dataflow. Most ISTAT codes are reliable,
-but some may be absent from a given dataflow (e.g. a versioned code like `LBIRTH_FROM2017`
-may appear in the codelist but the dataflow only uses the base code `LBIRTH`).
-Use `grep -i` to find candidate codes.
-
-Step 3 — **CRITICAL: verify codes with `constraints` BEFORE testing with `get`**:
-```bash
-opensdmx constraints <dataflow_id> --provider istat
-opensdmx constraints <dataflow_id> DATA_TYPE --provider istat
-```
-
-**Do NOT skip this step.** The `values` codelist is theoretical — many codes will not
-exist in the actual dataflow. Testing invalid codes with `get` wastes enormous time
-because of ISTAT's rate limit (~13 seconds between requests). Each failed `get` attempt
-costs at least 13 seconds of waiting. Verifying codes with `constraints` first — even
-if the endpoint is slow (30–60+ seconds) — is far cheaper than multiple failed `get`
-attempts.
-
-For very large datasets with thousands of territory codes (e.g. municipal-level data),
-`constraints` on `REF_AREA` may time out. In that case only, use `values` + `grep` for
-territory codes and verify with a single narrow `get`. But for all other dimensions
-(DATA_TYPE, FREQ, etc.), always use `constraints`.
-
-Step 4 — build the query using only codes confirmed by `constraints`:
-```bash
-opensdmx get <dataflow_id> --provider istat --REF_AREA <code> --last-n 1
-```
-
-If the query returns a 404 or empty result:
-1. **Try the base form of the code** — remove any suffix that looks like a version or date
-   (e.g. `LBIRTH_FROM2017` → try `LBIRTH`; `POP_1JAN2021` → try `POP_1JAN`).
-2. Re-check with `opensdmx constraints` to verify which codes are actually available.
+For the full step-by-step walkthrough, territory codes, and ISTAT-specific
+quirks, see [references/istat-flow.md](references/istat-flow.md).
 
 ### Extract from both flows
 
@@ -590,12 +568,6 @@ implicitly agree with using it as a proxy for poverty.
 Place this explanation immediately after the data summary, before any offer
 to download or visualize.
 
-**Constraints vs codelists — always use constraints**
-Use `opensdmx constraints` to get codes actually present in the data.
-`opensdmx values` returns the full codelist (all possible codes), which may include
-codes absent from a specific dataflow. A code valid in the codelist may return no data
-if it doesn't exist in that dataflow.
-
 **Proposals, not lists**
 When presenting dataflow candidates, reason about each one: explain why it might or
 might not answer the question, what its limitations are, and which one you'd recommend.
@@ -640,69 +612,18 @@ explain the ones that are populated. Skip columns that are entirely empty.
 
 **Provider-specific quirks**
 
-For a machine-readable overview of all providers and their API capabilities, run
-`opensdmx providers` — the `constraints` and `last_n` columns reflect verified test
-results and should be your first reference when choosing an exploration flow.
+Run `opensdmx providers` for a machine-readable overview — the `constraints` and
+`last_n` columns reflect verified test results and tell you which exploration flow
+fits the target provider.
 
-| Provider | constraints | last_n | Notes |
-|----------|:-----------:|:------:|-------|
-| Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
-| ISTAT | ✓ | ✓ | Use `--provider istat`; 404 = "NoRecordsFound" (not a server error); rate limit ~13s; some IDs are parent containers (e.g. `25_74`) — use sub-dataflow IDs; **always verify codes with `constraints` before `get`** — each failed `get` wastes ≥13s due to rate limit; `constraints` on REF_AREA may be slow on municipal datasets, but for other dimensions it's essential |
-| ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
-| OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe get instead |
-| INSEE | ✗ | ✓ | Use `--provider insee`; French macroeconomic time series (BDM database) |
-| Bundesbank | ✗ | ✓ | Use `--provider bundesbank`; German monetary and financial statistics |
-| World Bank | ✗ | ✗ | Use `--provider worldbank`; **single-dataflow architecture** — all 1400+ indicators in one dataflow `WDI`; use `opensdmx values WDI SERIES --provider worldbank \| grep -i <topic>` to find indicator codes; country codes are ISO 3166-1 **alpha-3** (`USA`, `DEU`, `ITA`); **NOTE**: data requests currently fail with HTTP 401/307 due to a known bug (see GitHub issue #5) — as a workaround, suggest equivalent OECD datasets |
-| ABS | ✓ | ✓ | Use `--provider abs`; official Australian statistics |
-| BIS | ✓ | ✓ | Use `--provider bis`; global financial statistics from 63 central banks |
-| IMF | ✓ | ✓ | Use `--provider imf`; WEO dataset: dataflow `WEO`, country codes ISO alpha-3; use `--last-n` with dimension filters (wildcard requests may return HTTP 500) |
+The full capability matrix (Eurostat, ISTAT, ECB, OECD, INSEE, Bundesbank, World
+Bank, ABS, BIS, IMF), dimension flag casing, territory code conventions, and what
+to do when `constraints` or `last_n` are unsupported, are documented in
+[references/providers.md](references/providers.md).
 
-**World Bank flow (different from all other providers)**
+Two providers have flows that diverge enough to deserve their own walkthroughs:
 
-World Bank exposes a single dataflow `WDI` containing all indicators. The exploration
-flow is different — do NOT follow the standard Phase 1 search:
-
-```bash
-# Step 1 — find the indicator code (replaces opensdmx search)
-opensdmx values WDI SERIES --provider worldbank 2>&1 | grep -i "gdp per capita"
-# → NY_GDP_PCAP_KD  (constant USD), NY_GDP_PCAP_PP_KD  (PPP), etc.
-
-# Step 2 — get structure
-opensdmx info WDI --provider worldbank
-# → 3 dimensions: FREQ · SERIES · REF_AREA
-
-# Step 3 — find country codes (alpha-3, not alpha-2)
-opensdmx values WDI REF_AREA --provider worldbank 2>&1 | grep -i "italy\|germany"
-# → ITA, DEU (not IT, DE)
-
-# Step 4 — build query (skip constraints — endpoint returns 400)
-# IMPORTANT: always use --start-period / --end-period for time filtering.
-# --last-n is NOT supported by World Bank and will cause a parse error.
-opensdmx get WDI --provider worldbank --SERIES NY_GDP_PCAP_KD \
-  --REF_AREA ITA+DEU+FRA --start-period 2000 --end-period 2023
-```
-
-If data retrieval fails with HTTP 401/307 (known bug, issue #5), offer the equivalent
-OECD dataset as a workaround — OECD publishes most macro indicators (GDP, employment,
-prices) with comparable coverage.
-
-**Territory resolution (Eurostat)**
-Country codes follow ISO 3166-1 alpha-2: `IT` (Italy), `DE` (Germany), `FR` (France),
-`ES` (Spain). EU aggregates: `EU27_2020`, `EA20` (Euro area). Always verify against
-`opensdmx constraints` before using — not all codes are present in every dataset.
-
-**Territory resolution (ISTAT)**
-ISTAT uses numeric REF_AREA codes (6-digit municipal codes, province codes, region codes,
-and aggregate codes like `ITG12` for provinces or `SLL_*` for labour market areas).
-Use `opensdmx values <dataflow_id> REF_AREA --provider istat` to browse the full
-codelist — pipe through `grep -i` to find specific cities or territories:
-
-```bash
-opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo\|matera"
-```
-
-For municipal-level datasets with thousands of territory codes, `constraints` on REF_AREA
-may be slow or time out. In that case only, use `values` + `grep` to find territory codes
-and verify with a single narrow `get`. But for all other dimensions, always use
-`opensdmx constraints` to verify codes before building the query — this avoids wasting
-time with failed `get` attempts (each costing ≥13s due to rate limiting).
+- **ISTAT** — rate limit, suffix patterns, mandatory `constraints` step, territory
+  codes: [references/istat-flow.md](references/istat-flow.md)
+- **World Bank** — single-dataflow architecture (`WDI`), alpha-3 country codes,
+  known issue #5: [references/worldbank-flow.md](references/worldbank-flow.md)
