@@ -358,3 +358,41 @@ def test_load_categories_raises_when_unsupported(monkeypatch):
         categories.load_categories()
     # Hint must list at least one of the supported providers
     assert "istat" in str(excinfo.value) or "eurostat" in str(excinfo.value)
+
+
+def test_load_categories_does_not_fetch_dataflows_for_stale_check_without_cache(monkeypatch):
+    """First tree run should not download the full dataflow catalog just to warn."""
+    cats_df = pl.DataFrame(
+        {
+            "scheme_id": ["S1"],
+            "scheme_name": ["Scheme one"],
+            "cat_id": ["CAT_A"],
+            "cat_path": ["CAT_A"],
+            "cat_name": ["Cat A"],
+            "cat_description": [""],
+            "parent_path": [""],
+            "depth": [1],
+        },
+        schema_overrides={"depth": pl.Int32},
+    )
+    cz_df = pl.DataFrame({"df_id": ["DF_X"], "scheme_id": ["S1"], "cat_path": ["CAT_A"]})
+
+    monkeypatch.setattr(
+        categories,
+        "get_provider",
+        lambda: {"agency_id": "TEST", "categories_supported": True},
+    )
+    monkeypatch.setattr(categories, "_load_cached", lambda: None)
+    monkeypatch.setattr(categories, "_fetch_categoryscheme", lambda: cats_df)
+    monkeypatch.setattr(categories, "_fetch_categorisation", lambda: cz_df)
+    monkeypatch.setattr(categories.pl.DataFrame, "write_parquet", lambda self, path: None)
+
+    def _boom():
+        raise AssertionError("all_available() should not be called during stale warning")
+
+    monkeypatch.setattr("opensdmx.discovery._load_cached_dataflows", lambda: None)
+    monkeypatch.setattr("opensdmx.discovery.all_available", _boom)
+
+    loaded_cats, loaded_cz = categories.load_categories()
+    assert loaded_cats.equals(cats_df)
+    assert loaded_cz.equals(cz_df)

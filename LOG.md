@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-04-20 (v0.5.1)
+
+- fix(tree): `opensdmx tree` no longer downloads the full dataflow catalog
+  during the stale-categorisation warning path on first run; the warning now
+  uses cached dataflows only, so `Loading category tree...` does not stay
+  active for unrelated network work
+- docs: add an explicit subrelease section to `docs/release.md`
+- tests: add regression coverage to ensure `load_categories()` does not call
+  `all_available()` when no dataflow cache is present
+
 ## 2026-04-20 (tree-first phase 3B.1 — Category.description)
 
 - feat: parse `Category.description` alongside `Category.name` and expose

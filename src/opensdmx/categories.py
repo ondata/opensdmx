@@ -231,10 +231,20 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
 
 
 def _warn_stale(categorisation_df: pl.DataFrame) -> None:
-    """Log a single aggregated warning if some df_ids in categorisation are stale."""
+    """Log a single aggregated warning if some cached df_ids look stale.
+
+    This check is best-effort only. It must not trigger an extra network fetch,
+    otherwise the first `opensdmx tree` run spends spinner time downloading the
+    full dataflow catalog even though that data is not needed for the tree
+    output itself.
+    """
     try:
-        from .discovery import all_available
-        valid = set(all_available()["df_id"].to_list())
+        from .discovery import _load_cached_dataflows
+
+        cached = _load_cached_dataflows()
+        if cached is None:
+            return
+        valid = set(cached["df_id"].to_list())
     except Exception as e:
         logger.warning(f"Could not cross-check stale dataflows: {e}")
         return
