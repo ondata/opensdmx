@@ -189,7 +189,7 @@ All commands accept `--provider` (`-p`) to select the provider.
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
 | `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
 | `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`); optionally filter by regex |
-| `opensdmx tree [--scheme ID] [--depth N] [-p provider]` | Browse the thematic tree (SDMX `categoryscheme` + `categorisation`); ASCII tree in table mode, flat rows in JSON/CSV |
+| `opensdmx tree [--scheme ID] [--category CAT] [--depth N] [-p provider]` | Browse the thematic tree (SDMX `categoryscheme` + `categorisation`); use `--category` to zoom into a subtree; ASCII tree in table mode, flat rows in JSON/CSV |
 | `opensdmx siblings <id> [-p provider]` | Show dataflow siblings in each category — discover related variants that text search misses |
 | `opensdmx search <keyword> --category <CAT> [-p provider]` | Restrict search to a category (leaf id or dotted path); cuts false positives vs pure token match |
 | `opensdmx get <id> [--DIM VALUE] [--start-period P] [--end-period P] [--last-n N] [--first-n N] [--out file] [--query-file file.yaml] [-p provider]` | Download data; optionally save the query as YAML |
@@ -219,8 +219,10 @@ opensdmx search "GDP" --provider oecd
 opensdmx search "inflation" --provider ecb
 
 # Thematic tree (categoryscheme + categorisation)
-opensdmx tree --provider istat                       # list thematic schemes
-opensdmx tree --scheme Z1000AGR --provider istat     # browse ISTAT Agricoltura
+opensdmx tree --provider istat                                            # list thematic schemes
+opensdmx tree --scheme Z1000AGR --provider istat                          # browse ISTAT Agricoltura
+opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat  # zoom into IPCA subtree
+opensdmx tree --scheme t_economy --category t_prc                         # zoom into Prices subtree
 opensdmx search "prezzi" --category DCSP_PREZZIAGR --provider istat
 opensdmx siblings NAMA_10_GDP                        # 27 Eurostat GDP-related dataflows
 opensdmx siblings 104_466_DF_DCSP_FERTILIZZANTI_2 --provider istat  # all 7 fertilizer variants
@@ -339,6 +341,29 @@ Without a category filter, `search "annual"` returns 502 datasets from across al
 ```bash
 opensdmx search "annual"                          # 502 results across all themes
 opensdmx search "annual" --category t_prc_hicp    # 1 result: HICP - all items - annual average indices
+```
+
+**Step 4 — zoom into a subtree with `--category`**
+
+To navigate deeper without scrolling through the entire scheme, pass a category ID to `--category`:
+
+```bash
+opensdmx tree --scheme t_economy --category t_prc
+```
+
+```
+Prices (t_prc)
+├── Harmonised index of consumer prices (HICP)  (24 df)
+├── Housing price statistics  (1 df)
+└── Purchasing power parities  (3 df)
+```
+
+If you accidentally pass a category ID to `--scheme`, the CLI detects it and suggests the correct command:
+
+```bash
+opensdmx tree --scheme t_prc
+# → 't_prc' is a category, not a scheme.
+# → Use: opensdmx tree --scheme t_economy --category t_prc
 ```
 
 Use `--depth` to limit the tree depth when a scheme is very large:

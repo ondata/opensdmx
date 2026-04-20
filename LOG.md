@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-04-20
+## 2026-04-20 (v0.4.3)
 
 - feat: `tree --category <cat_id>` — browse subtree rooted at a category (requires `--scheme`)
 - fix: `tree --scheme` now shows hint when a category ID is passed instead of a scheme ID (suggests correct `--scheme --category`)
