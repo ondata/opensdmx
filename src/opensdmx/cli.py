@@ -725,7 +725,15 @@ def tree(
 
     scheme_rows = categories_df.filter(pl.col("scheme_id") == scheme)
     if scheme_rows.is_empty():
-        err_console.print(f"[red]Error:[/red] scheme not found: {scheme}")
+        cat_match = categories_df.filter(pl.col("cat_id") == scheme)
+        if not cat_match.is_empty():
+            parent_scheme = cat_match.row(0, named=True)["scheme_id"]
+            err_console.print(
+                f"[yellow]'{scheme}' is a category, not a scheme.[/yellow]\n"
+                f"Use: [cyan]opensdmx tree --scheme {parent_scheme}[/cyan]"
+            )
+        else:
+            err_console.print(f"[red]Error:[/red] scheme not found: {scheme}")
         raise typer.Exit(1)
 
     if depth is not None:
