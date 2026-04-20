@@ -358,6 +358,13 @@ Prices (t_prc)
 └── Purchasing power parities  (3 df)
 ```
 
+To list all dataflows inside a category branch, combine `tree --category` (for the hierarchy) with `search "" --category` (for the actual datasets):
+
+```bash
+opensdmx tree --scheme t_economy --category t_prc       # see the subcategory structure
+opensdmx search "" --category t_prc                     # list all dataflows in that branch
+```
+
 If you accidentally pass a category ID to `--scheme`, the CLI detects it and suggests the correct command:
 
 ```bash
