@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-20
+
+- docs: add `### Thematic tree` section in README with real Eurostat 3-step tutorial (schemes → tree browse → category filter); shows cat_id retrieval via CSV output and `search --category` delta (502 → 1 result)
+
 ## 2026-04-19
 
 - fix: use SDMX 2.1 structure Accept header in `sdmx_request_xml`; fixes OECD returning JSON on `/dataflow` (closes #15); unblocks `all_available`/`search` on OECD and fills `df_description` in `siblings` output

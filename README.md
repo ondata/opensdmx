@@ -280,6 +280,73 @@ opensdmx run unemployment_eu.yaml --out results.parquet
 
 Provider resolution order: `--provider` CLI flag → alias in YAML → `provider_url` + `agency_id` in YAML → environment variable. This means query files work with any provider, including custom URLs.
 
+### Thematic tree
+
+SDMX providers organise their datasets into a hierarchical **category tree** (schemes → categories → subcategories → datasets). `opensdmx tree` lets you browse this tree instead of guessing keywords.
+
+**Step 1 — list available schemes**
+
+```bash
+opensdmx tree
+```
+
+```
+┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━┓
+┃ scheme_id  ┃ scheme_name                          ┃ n_df ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━┩
+│ economy    │ Economy and finance                  │  418 │
+│ popul      │ Population and social conditions     │ 3747 │
+│ t_economy  │ Economy and finance                  │  130 │
+│ …          │ …                                    │  …   │
+└────────────┴──────────────────────────────────────┴──────┘
+```
+
+**Step 2 — browse a scheme**
+
+```bash
+opensdmx tree --scheme t_economy
+```
+
+```
+Economy and finance (t_economy)
+├── Exchange rates  (3 df)
+├── Government statistics
+│   └── Government finance statistics (EDP and ESA 2010)
+│       ├── Annual government finance statistics  (2 df)
+│       ├── Government deficit and debt  (3 df)
+│       └── Quarterly government finance statistics  (2 df)
+├── National accounts (including GDP)
+│   ├── Annual national accounts
+│   │   ├── Main GDP aggregates  (10 df)
+│   │   └── …
+│   └── …
+└── Prices
+    ├── Harmonised index of consumer prices (HICP)  (24 df)
+    └── …
+```
+
+The ASCII tree does not show category IDs. To retrieve them (needed for `--category` filtering), use CSV output:
+
+```bash
+opensdmx --output csv tree --scheme t_economy | grep -i hicp
+# t_economy,Economy and finance,t_prc_hicp,…,Harmonised index of consumer prices (HICP),…
+```
+
+**Step 3 — restrict search to a category**
+
+Without a category filter, `search "annual"` returns 502 datasets from across all themes. With `--category`, it narrows to the exact subcategory:
+
+```bash
+opensdmx search "annual"                          # 502 results across all themes
+opensdmx search "annual" --category t_prc_hicp    # 1 result: HICP - all items - annual average indices
+```
+
+Use `--depth` to limit the tree depth when a scheme is very large:
+
+```bash
+opensdmx tree --scheme t_economy --depth 1
+```
+
 ### Semantic search
 
 `opensdmx search` has two modes:
