@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-04-20 (tree-first phase 1)
+
+- fix: `opensdmx tree --category` now resolves categories by `cat_path` (previously only matched root-level cat_ids whose `cat_id == cat_path`; nested categories silently returned an empty subtree)
+- fix: `--depth` is relative to `--category` when set — `--depth 1` always means "node + direct children", fixing the `OutOfBoundsError` crash when the chosen category sat deeper than the absolute depth limit
+- fix: passing a dataflow ID to `--category` now yields a clear message ("is a dataflow, not a category") with suggested `info`, `search --category`, and `tree --category` commands using the parent category. When the dataflow is categorised only under a different scheme, the hint surfaces the scheme mismatch instead of pointing at an unrelated cat_id.
+- fix: `[cat_id]` labels in tree rendering now survive Rich markup — escaping the opening bracket makes them visible on Eurostat (where cat_ids like `t_bop_6` were previously consumed as style tags)
+- fix: empty subtree guard prints a descriptive message instead of crashing at `.row(0)` on an empty polars frame
+- skill: `sdmx-explorer` promotes `tree` as primary discovery path (Step 1b); keyword `search` demoted to Step 1c fallback; new hierarchical drill-down protocol mandates `--depth 1` at every level to avoid dumping large trees; new "cat_id vs df_id" guidance
+- tests: 4 new pytest cases on `tree` error paths and relative-depth semantics
+
 ## 2026-04-20 (v0.4.4)
 
 - fix: semantic search now uses `search_document:` / `search_query:` prefixes required by `nomic-embed-text-v2-moe` (without prefixes the model returned essentially random rankings on short queries)

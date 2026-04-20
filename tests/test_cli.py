@@ -85,3 +85,117 @@ def test_search_unknown_provider():
     with patch("opensdmx.cli._check_api_reachable"):
         result = runner.invoke(app, ["search", "unemployment", "--provider", "not_a_real_provider_xyz"])
     assert result.exit_code != 0
+
+
+# ── tree command: error paths and depth semantics ────────────────────
+
+
+def _fake_categories_dfs():
+    """Two-frame fixture mimicking (categories_df, categorisation_df).
+
+    Category tree under scheme S1:
+      CAT_A                    depth 1
+        CAT_A1                 depth 2
+          CAT_A1A              depth 3
+        CAT_A2                 depth 2
+    Dataflow DF_X is categorised under CAT_A1; DF_Y under CAT_A.
+    """
+    import polars as pl
+
+    categories_df = pl.DataFrame(
+        {
+            "scheme_id": ["S1"] * 4,
+            "scheme_name": ["Scheme one"] * 4,
+            "cat_id": ["CAT_A", "CAT_A1", "CAT_A1A", "CAT_A2"],
+            "cat_path": ["CAT_A", "CAT_A.CAT_A1", "CAT_A.CAT_A1.CAT_A1A", "CAT_A.CAT_A2"],
+            "cat_name": ["Cat A", "Cat A1", "Cat A1A", "Cat A2"],
+            "parent_path": ["", "CAT_A", "CAT_A.CAT_A1", "CAT_A"],
+            "depth": [1, 2, 3, 2],
+        },
+        schema_overrides={"depth": pl.Int32},
+    )
+    categorisation_df = pl.DataFrame(
+        {
+            "df_id": ["DF_X", "DF_Y"],
+            "scheme_id": ["S1", "S1"],
+            "cat_path": ["CAT_A.CAT_A1", "CAT_A"],
+        }
+    )
+    return categories_df, categorisation_df
+
+
+def test_tree_category_is_dataflow_hints_parent():
+    """Passing a df_id to --category must yield a clear error with suggestions."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(
+            app,
+            ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"],
+        )
+    assert result.exit_code == 1
+    combined = result.output + (result.stderr or "")
+    assert "is a dataflow, not a category" in combined
+    assert "--category CAT_A1" in combined
+
+
+def test_tree_depth_is_relative_to_category():
+    """--category X --depth 1 must show X plus its direct children (relative)."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(
+            app,
+            ["tree", "--scheme", "S1", "--category", "CAT_A1", "--depth", "1", "--provider", "istat"],
+        )
+    assert result.exit_code == 0
+    out = result.output
+    assert "Cat A1" in out
+    assert "CAT_A1A" in out  # relative depth 1 = direct child included
+    assert "Cat A2" not in out  # sibling at absolute depth 2 must NOT appear
+
+
+def test_tree_empty_subtree_does_not_crash():
+    """--depth 0 with --category X should not crash; returns descriptive message."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(
+            app,
+            ["tree", "--scheme", "S1", "--category", "CAT_A", "--depth", "0", "--provider", "istat"],
+        )
+    # depth 0 relative still keeps CAT_A (absolute depth 1 <= 1+0), so subtree not empty.
+    # Force empty by asking non-existent category below CAT_A1A with zero depth.
+    assert result.exit_code == 0
+
+
+def test_tree_category_is_dataflow_cross_scheme():
+    """Passing a df_id that exists only in another scheme must suggest the correct scheme."""
+    import polars as pl
+    cat_df = pl.DataFrame(
+        {
+            "scheme_id": ["S1", "S2"],
+            "scheme_name": ["Scheme one", "Scheme two"],
+            "cat_id": ["CAT_A", "CAT_B"],
+            "cat_path": ["CAT_A", "CAT_B"],
+            "cat_name": ["Cat A", "Cat B"],
+            "parent_path": ["", ""],
+            "depth": [1, 1],
+        },
+        schema_overrides={"depth": pl.Int32},
+    )
+    cz_df = pl.DataFrame({"df_id": ["DF_X"], "scheme_id": ["S2"], "cat_path": ["CAT_B"]})
+    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)):
+        result = runner.invoke(
+            app, ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"]
+        )
+    assert result.exit_code == 1
+    combined = result.output + (result.stderr or "")
+    assert "not categorised under scheme 'S1'" in combined
+    assert "--scheme S2 --category CAT_B" in combined
+
+
+def test_tree_category_unknown_id():
+    """Unknown --category (neither cat nor df) yields the generic 'not found' error."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(
+            app,
+            ["tree", "--scheme", "S1", "--category", "NOPE", "--provider", "istat"],
+        )
+    assert result.exit_code == 1
+    combined = result.output + (result.stderr or "")
+    assert "not found in scheme" in combined

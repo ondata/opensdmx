@@ -742,14 +742,49 @@ def tree(
     if category is not None:
         cat_match = scheme_rows.filter(pl.col("cat_id") == category)
         if cat_match.is_empty():
-            err_console.print(f"[red]Error:[/red] category '{category}' not found in scheme '{scheme}'")
+            df_in_scheme = categorisation_df.filter(
+                (pl.col("df_id") == category) & (pl.col("scheme_id") == scheme)
+            )
+            df_any = categorisation_df.filter(pl.col("df_id") == category)
+            if not df_in_scheme.is_empty():
+                parent_path = df_in_scheme.row(0, named=True)["cat_path"] or ""
+                parent_cat = parent_path.split(".")[-1] if parent_path else ""
+                msg = (
+                    f"[yellow]'{category}' is a dataflow, not a category.[/yellow]\n"
+                    f"To inspect the dataflow use: [cyan]opensdmx info {category}[/cyan]"
+                )
+                if parent_cat:
+                    msg += (
+                        f"\nTo list sibling dataflows in its category use: "
+                        f"[cyan]opensdmx search \"\" --category {parent_cat}[/cyan]"
+                        f"\nTo browse its parent subtree use: "
+                        f"[cyan]opensdmx tree --scheme {scheme} --category {parent_cat}[/cyan]"
+                    )
+                err_console.print(msg)
+            elif not df_any.is_empty():
+                first = df_any.row(0, named=True)
+                sugg_scheme = first["scheme_id"]
+                sugg_parent = (first["cat_path"] or "").split(".")[-1]
+                err_console.print(
+                    f"[yellow]'{category}' is a dataflow, and it is not categorised under scheme '{scheme}'.[/yellow]\n"
+                    f"It lives under scheme '{sugg_scheme}' instead. Try:\n"
+                    f"  [cyan]opensdmx info {category}[/cyan]\n"
+                    f"  [cyan]opensdmx tree --scheme {sugg_scheme} --category {sugg_parent}[/cyan]"
+                )
+            else:
+                err_console.print(f"[red]Error:[/red] category '{category}' not found in scheme '{scheme}'")
             raise typer.Exit(1)
+        cat_row = cat_match.row(0, named=True)
+        cat_path = cat_row["cat_path"]
         scheme_rows = scheme_rows.filter(
-            (pl.col("cat_path") == category) | pl.col("cat_path").str.starts_with(category + ".")
+            (pl.col("cat_path") == cat_path) | pl.col("cat_path").str.starts_with(cat_path + ".")
         )
+        cat_depth = int(cat_row["depth"])
+    else:
+        cat_depth = 0
 
     if depth is not None:
-        scheme_rows = scheme_rows.filter(pl.col("depth") <= depth)
+        scheme_rows = scheme_rows.filter(pl.col("depth") <= cat_depth + depth)
 
     scheme_rows = scheme_rows.join(df_counts, on=["scheme_id", "cat_path"], how="left").with_columns(
         pl.col("n_df").fill_null(0)
@@ -771,19 +806,27 @@ def tree(
         _emit(rows, df=scheme_rows)
         return
 
+    if scheme_rows.is_empty():
+        hint = f", depth {depth}" if depth is not None else ""
+        cat_bit = f", category '{category}'" if category else ""
+        err_console.print(
+            f"[yellow]Empty subtree for scheme '{scheme}'{cat_bit}{hint}.[/yellow]"
+        )
+        raise typer.Exit(0)
+
     scheme_name = scheme_rows.select("scheme_name").row(0)[0] or scheme
     if category is not None:
         cat_root = scheme_rows.filter(pl.col("cat_id") == category).row(0, named=True)
         root_label = cat_root["cat_name"] or category
         console.print(f"[bold]{root_label}[/bold] [dim]({category})[/dim]")
-        render_root = category
+        render_root = cat_root["cat_path"]
     else:
         console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
         render_root = ""
 
     children: dict[str, list[dict]] = {}
     for r in scheme_rows.iter_rows(named=True):
-        if category is not None and r["cat_id"] == category:
+        if category is not None and r["cat_path"] == render_root:
             continue
         children.setdefault(r["parent_path"] or "", []).append(r)
     for kids in children.values():
@@ -796,7 +839,7 @@ def tree(
             branch = "└── " if last else "├── "
             count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
             label = node["cat_name"] or node["cat_id"]
-            console.print(f"{prefix}{branch}{label} [dim][{node['cat_id']}][/dim]{count_str}")
+            console.print(f"{prefix}{branch}{label} [dim]\\[{node['cat_id']}][/dim]{count_str}")
             next_prefix = prefix + ("    " if last else "│   ")
             render(node["cat_path"], next_prefix)
 

@@ -69,6 +69,10 @@ not to fetch data immediately.
 Identify which SDMX provider is relevant (ISTAT for Italian statistics, Eurostat for
 European statistics, OECD for international comparisons, etc.). If unclear, ask.
 
+**Default discovery path is top-down via `opensdmx tree`** (Step 1b below), because
+statistical agencies curate a thematic hierarchy that is semantically richer and
+less noisy than any keyword match. Use keyword `search` (Step 1c) only as fallback.
+
 ### Step 1a — Extract keywords AND expected dimensions
 
 Before searching, parse the user's question on two levels:
@@ -92,51 +96,62 @@ Before searching, parse the user's question on two levels:
    Example: *"unemployment for EU countries, by age group and sex"* →
    topic keywords: `unemployment`; expected dimensions: `age`, `sex`, `geo`.
 
-### Step 1a+ (optional) — Narrow the search thematically with `opensdmx tree`
+### Step 1b — Top-down navigation (primary path)
 
-Before a full-text `search`, consider the thematic tree. Some providers expose
-a hierarchical catalog (SDMX `categoryscheme` + `categorisation`) that groups
-dataflows by topic — turns a flat list of thousands of dataflows into a
-navigable tree.
+Navigate the thematic tree. Statistical agencies organise their dataflows into a
+hierarchical catalog (SDMX `categoryscheme` + `categorisation`) — use it instead
+of guessing keywords. This is the **default** discovery flow; fall back to
+keyword search only under the conditions listed in Step 1c.
 
 Supported providers (check with `opensdmx providers` — `categories` column):
 - ✓ `eurostat`, `istat`, `ecb`, `oecd`, `insee`, `abs`, `bis`
-- ✗ `comext`, `bundesbank`, `worldbank`, `imf` (no category endpoint) — skip tree, go straight to `search`.
+- ✗ `comext`, `bundesbank`, `worldbank`, `imf` — skip to Step 1c.
 
-When to use `tree`:
+#### How to tell `cat_id` from `df_id`
 
-- The user question targets a well-defined **domain** (agriculture, education,
-  health, trade, prices, population, …) where many dataflows share a root
-  theme. Browsing the tree is faster than scanning hundreds of keyword hits.
-- The keyword is generic or ambiguous (e.g. "impresa", "energia") and would
-  return too many results.
-- The user explicitly asks to "explore what's available on X".
+When you see IDs flying around, remember:
+- IDs shown **between `[...]` in `tree` output are always category IDs**.
+  Safe to pass to `--category` and `search --category`.
+- Dataflow IDs appear only in the output of `search`, `info`, `siblings`,
+  or inside a dataflow row of CSV/JSON output. Never pass them to
+  `--category` — the CLI will reject them with a "is a dataflow, not a
+  category" message.
+- When in doubt, dump IDs with `opensdmx --output csv tree --scheme <id>`
+  and look at the `cat_id` column.
 
-When to skip `tree` and go straight to `search`:
+#### Hierarchical drill-down — always `--depth 1`
 
-- The user already gives a precise dataflow id or a narrow term with a clear
-  acronym (e.g. `NAMA_10_GDP`, `LFSA_ERGAN`).
-- The provider does not support it (see above).
-
-Workflow:
+Never read the whole tree at once. Large schemes can have dozens of nested
+categories and hundreds of dataflows — dumping them floods the conversation
+and buries the signal. Walk the tree **one level at a time**, with the user
+choosing the next branch to enter:
 
 ```bash
-# 1. List all thematic schemes for the provider (one row per top-level domain)
-opensdmx tree --provider istat
+# Step 1 — list top-level schemes (cheap, always safe)
+opensdmx tree --provider istat --depth 1
 
-# 2. Enter the relevant scheme — render the category sub-tree
-opensdmx tree --scheme Z1000AGR --provider istat
+# Step 2 — enter the chosen scheme, ONLY the first level
+opensdmx tree --scheme Z0400PRI --provider istat --depth 1
 
-# 3. (optional) Zoom into a sub-branch to keep the view focused
-opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat
+# Step 3 — drill into the interesting category, still ONE level at a time
+opensdmx tree --scheme Z0400PRI --category PRI_CONWHONAT --provider istat --depth 1
 
-# 4. List the actual dataflow IDs inside a branch
-opensdmx search "" --category PRI_HARCONEU --provider istat
+# Step 4 — when the branch looks final, enumerate the dataflows in it
+opensdmx search "" --category DCSP_NIC1B2015 --provider istat
 ```
+
+`--depth` is **relative to `--category`** when `--category` is set: `--depth 1`
+always means "the node plus its direct children", regardless of the category's
+absolute depth in the tree.
+
+After each step, present the children to the user in plain language and ask
+which branch to explore next. Do not pre-emptively dive deeper than one level
+unless the user explicitly says "go deep" or the tree is known to be shallow.
 
 `tree --category` and `search --category` are complementary: the first shows the
 category hierarchy (with dataflow counts), the second enumerates the dataflows
-themselves. Use them together when you spot an interesting branch.
+themselves. Use `search --category` only at the leaves, after the user has
+picked a terminal branch.
 
 The `--category` filter accepts either a leaf id (`DCSP_LATTE`) or a full
 dotted path (`AGR_CRP.DCSP_LATTE`). It reduces false positives compared to
@@ -160,7 +175,13 @@ For the full top-down walkthrough (decision matrix, real ISTAT/Eurostat
 examples, cat_id extraction via `--output csv`, and provider-specific notes),
 see [references/thematic-tree.md](references/thematic-tree.md).
 
-### Step 1b — Search and pre-filter candidates
+### Step 1c — Keyword search (fallback)
+
+Use this path only when:
+- The provider has no categories (see list in Step 1b).
+- The user already gave a precise dataflow ID or a narrow, unambiguous acronym
+  (e.g. `NAMA_10_GDP`, `LFSA_ERGAN`, `HICP`).
+- Step 1b returned an empty or uninformative branch after 2 scheme attempts.
 
 Search for dataflows:
 
