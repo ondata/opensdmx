@@ -750,7 +750,7 @@ def tree(
                 parent_path = df_in_scheme.row(0, named=True)["cat_path"] or ""
                 parent_cat = parent_path.split(".")[-1] if parent_path else ""
                 msg = (
-                    f"[yellow]'{category}' is a dataflow, not a category.[/yellow]\n"
+                    f"[yellow]\\[df:{category}] is a dataflow, not a category.[/yellow]\n"
                     f"To inspect the dataflow use: [cyan]opensdmx info {category}[/cyan]"
                 )
                 if parent_cat:
@@ -766,13 +766,13 @@ def tree(
                 sugg_scheme = first["scheme_id"]
                 sugg_parent = (first["cat_path"] or "").split(".")[-1]
                 err_console.print(
-                    f"[yellow]'{category}' is a dataflow, and it is not categorised under scheme '{scheme}'.[/yellow]\n"
+                    f"[yellow]\\[df:{category}] is a dataflow, and it is not categorised under scheme '{scheme}'.[/yellow]\n"
                     f"It lives under scheme '{sugg_scheme}' instead. Try:\n"
                     f"  [cyan]opensdmx info {category}[/cyan]\n"
                     f"  [cyan]opensdmx tree --scheme {sugg_scheme} --category {sugg_parent}[/cyan]"
                 )
             else:
-                err_console.print(f"[red]Error:[/red] category '{category}' not found in scheme '{scheme}'")
+                err_console.print(f"[red]Error:[/red] \\[cat:{category}] not found in scheme '{scheme}'")
             raise typer.Exit(1)
         cat_row = cat_match.row(0, named=True)
         cat_path = cat_row["cat_path"]
@@ -839,7 +839,7 @@ def tree(
             branch = "└── " if last else "├── "
             count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
             label = node["cat_name"] or node["cat_id"]
-            console.print(f"{prefix}{branch}{label} [dim]\\[{node['cat_id']}][/dim]{count_str}")
+            console.print(f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}")
             next_prefix = prefix + ("    " if last else "│   ")
             render(node["cat_path"], next_prefix)
 

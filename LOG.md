@@ -1,5 +1,18 @@
 # LOG
 
+## 2026-04-20 (tree-first phase 2)
+
+- feat: ASCII `tree` rendering now prefixes category IDs as `[cat:ID]`
+  (instead of `[ID]`) to disambiguate them from dataflow IDs
+- feat: `tree --category` error messages label dataflow IDs as `[df:ID]`
+  and category IDs as `[cat:ID]`, so the kind travels with the identifier
+  when copied between terminals
+- skill: `sdmx-explorer` documents the `[cat:]`/`[df:]` convention
+- tests: 1 new pytest verifies the `[cat:...]` prefix in ASCII output;
+  existing tests unchanged (18/18 passing)
+- CSV/JSON outputs unchanged — raw `cat_id`/`df_id` columns preserved;
+  the prefix lives only in ASCII rendering and error messages
+
 ## 2026-04-20 (tree-first phase 1)
 
 - fix: `opensdmx tree --category` now resolves categories by `cat_path` (previously only matched root-level cat_ids whose `cat_id == cat_path`; nested categories silently returned an empty subtree)

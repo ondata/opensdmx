@@ -109,13 +109,19 @@ Supported providers (check with `opensdmx providers` — `categories` column):
 
 #### How to tell `cat_id` from `df_id`
 
-When you see IDs flying around, remember:
-- IDs shown **between `[...]` in `tree` output are always category IDs**.
-  Safe to pass to `--category` and `search --category`.
-- Dataflow IDs appear only in the output of `search`, `info`, `siblings`,
-  or inside a dataflow row of CSV/JSON output. Never pass them to
-  `--category` — the CLI will reject them with a "is a dataflow, not a
-  category" message.
+IDs are now prefixed in every human-readable output:
+- `[cat:ID]` — category ID. Safe to pass to `--category` or `search --category`.
+- `[df:ID]` — dataflow ID. Pass to `opensdmx info`, `get`, `plot`. Passing
+  it to `--category` is rejected with a clear scheme-aware message.
+
+Rules of thumb:
+- IDs appearing inside the ASCII `tree` output are always `[cat:...]` —
+  the tree renders categories only.
+- Dataflow IDs come from `search`, `info`, `siblings`, or from the `df_id`
+  column of CSV/JSON outputs; the CLI labels them `[df:ID]` in error
+  messages so you never have to guess the kind.
+- CSV/JSON output keeps the raw columns (`cat_id`, `df_id`) unchanged —
+  the prefix lives only in the ASCII rendering.
 - When in doubt, dump IDs with `opensdmx --output csv tree --scheme <id>`
   and look at the `cat_id` column.
 

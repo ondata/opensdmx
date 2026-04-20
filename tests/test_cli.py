@@ -163,6 +163,15 @@ def test_tree_empty_subtree_does_not_crash():
     assert result.exit_code == 0
 
 
+def test_tree_renders_cat_prefix():
+    """ASCII tree must render category IDs with the [cat:ID] prefix."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
+    assert result.exit_code == 0
+    assert "[cat:CAT_A]" in result.output
+    assert "[cat:CAT_A1]" in result.output
+
+
 def test_tree_category_is_dataflow_cross_scheme():
     """Passing a df_id that exists only in another scheme must suggest the correct scheme."""
     import polars as pl
