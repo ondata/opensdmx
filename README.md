@@ -44,9 +44,9 @@ pip install --upgrade opensdmx      # if installed with pip
 
 ```bash
 opensdmx search "unemployment"
-opensdmx info une_rt_m
-opensdmx constraints une_rt_m geo
-opensdmx get une_rt_m --freq M --geo IT --sex T --out data.csv
+opensdmx info UNE_RT_M
+opensdmx constraints UNE_RT_M geo
+opensdmx get UNE_RT_M --freq M --geo IT --sex T --out data.csv
 
 # Save a query for later reuse
 opensdmx get TIPSUN20 --sex T --age Y15-74 --start-period 2020 --query-file unemployment.yaml
@@ -68,7 +68,7 @@ print(datasets.head())
 results = opensdmx.search_dataset("unemployment")
 
 # One-liner retrieval (Eurostat default)
-data = opensdmx.fetch("une_rt_m", freq="M", geo="IT", sex="T", age="TOTAL")
+data = opensdmx.fetch("UNE_RT_M", freq="M", geo="IT", sex="T", age="TOTAL")
 
 # Switch provider
 opensdmx.set_provider("istat")
@@ -157,7 +157,7 @@ import opensdmx
 from plotnine import ggplot, aes, geom_line, geom_point, labs, theme_minimal, scale_x_date
 
 # Eurostat monthly unemployment by sex and age
-ds = opensdmx.load_dataset("une_rt_m")
+ds = opensdmx.load_dataset("UNE_RT_M")
 ds = opensdmx.set_filters(ds, freq="M", geo="IT", sex="T", age="TOTAL", s_adj="SA", unit="PC_ACT")
 data = opensdmx.get_data(ds, start_period="2015", last_n_observations=60)
 
@@ -203,13 +203,13 @@ All commands accept `--provider` (`-p`) to select the provider.
 # Eurostat (default)
 opensdmx search "unemployment"
 opensdmx search "unemployment" --n 5
-opensdmx info une_rt_m
-opensdmx values une_rt_m FREQ          # case-insensitive: freq works too
-opensdmx constraints une_rt_m
-opensdmx constraints une_rt_m geo
-opensdmx get une_rt_m --freq M --geo IT --out data.csv
-opensdmx get une_rt_m --freq M --geo IT --out data.parquet
-opensdmx plot une_rt_m --freq M --geo IT --geom line
+opensdmx info UNE_RT_M
+opensdmx values UNE_RT_M FREQ          # case-insensitive: freq works too
+opensdmx constraints UNE_RT_M
+opensdmx constraints UNE_RT_M geo
+opensdmx get UNE_RT_M --freq M --geo IT --out data.csv
+opensdmx get UNE_RT_M --freq M --geo IT --out data.parquet
+opensdmx plot UNE_RT_M --freq M --geo IT --geom line
 opensdmx plot data.csv --geom scatter --x TIME_PERIOD --y OBS_VALUE
 
 # Other providers
