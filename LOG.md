@@ -1,5 +1,20 @@
 # LOG
 
+## 2026-04-20 (tree-first phase 3A)
+
+- feat: `opensdmx tree --show-dataflows` (alias `-l`) inlines dataflow
+  leaves under each category in the ASCII rendering, labelled `[df:ID]`.
+  Uses `all_available()` for dataflow descriptions — all data come from
+  cache, no extra HTTP fetch. Stderr warning if output exceeds 200 dfs.
+- feat: the flag shortcuts the `tree --category X` + `search "" --category X`
+  sequence when the user has picked a terminal branch — one command
+  instead of two. JSON/CSV outputs remain categories-only (warning to
+  stderr if `--show-dataflows` is combined with `--output json/csv`).
+- skill: documents the shortcut and advises against using it on broad
+  branches where it floods the output
+- tests: 2 new pytest cases (df leaf rendering + regression safety);
+  20/20 passing
+
 ## 2026-04-20 (tree-first phase 2)
 
 - feat: ASCII `tree` rendering now prefixes category IDs as `[cat:ID]`

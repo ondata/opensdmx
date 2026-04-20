@@ -655,6 +655,7 @@ def tree(
     scheme: Optional[str] = typer.Option(None, "--scheme", "-s", help="Render the tree for a specific scheme_id. If omitted, lists all schemes with dataflow counts."),
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict tree to the subtree rooted at this category ID (requires --scheme)."),
     depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Limit tree nesting depth (1 = only top-level)."),
+    show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (prefixed [df:ID])."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
     """Browse the thematic tree of dataflows (categoryscheme + categorisation).
@@ -662,6 +663,8 @@ def tree(
     Without --scheme: lists all schemes with their dataflow counts.
     With --scheme: renders an ASCII tree of that scheme's categories.
     With --scheme and --category: renders only the subtree under that category.
+    With --show-dataflows: each category's dataflows appear inline as leaves
+    ([df:ID] prefix); otherwise only categories are rendered.
 
     Not all providers expose categories. Use `opensdmx providers` to check.
     In table mode output is an ASCII tree; in -o json|csv a flat table.
@@ -673,6 +676,7 @@ def tree(
       opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat
       opensdmx tree --scheme Z1000AGR --depth 2 --provider istat
       opensdmx tree --scheme t_economy --provider eurostat
+      opensdmx tree --scheme Z0400PRI --category DCSP_NIC1B2015 --show-dataflows --provider istat
     """
     _apply_provider(provider)
 
@@ -791,6 +795,11 @@ def tree(
     )
 
     if _output_mode != "table":
+        if show_dataflows:
+            err_console.print(
+                "[yellow]--show-dataflows is only applied in table mode; "
+                "JSON/CSV output shows categories only.[/yellow]"
+            )
         rows = [
             {
                 "scheme_id": r["scheme_id"],
@@ -814,6 +823,33 @@ def tree(
         )
         raise typer.Exit(0)
 
+    df_by_path: dict[str, list[dict]] = {}
+    if show_dataflows:
+        from .discovery import all_available
+
+        rendered_paths = set(scheme_rows["cat_path"].to_list())
+        cz = categorisation_df.filter(
+            (pl.col("scheme_id") == scheme)
+            & pl.col("cat_path").is_in(list(rendered_paths))
+        )
+        try:
+            meta = all_available().select(["df_id", "df_description"])
+            joined = cz.join(meta, on="df_id", how="left")
+        except Exception:
+            joined = cz.with_columns(pl.lit(None).alias("df_description"))
+        for r in joined.iter_rows(named=True):
+            df_by_path.setdefault(r["cat_path"], []).append(
+                {"df_id": r["df_id"], "df_description": r.get("df_description") or ""}
+            )
+        for lst in df_by_path.values():
+            lst.sort(key=lambda x: x["df_description"] or x["df_id"])
+        total_df = sum(len(v) for v in df_by_path.values())
+        if total_df > 200:
+            err_console.print(
+                f"[yellow]Large output: {total_df} dataflows. "
+                f"Use --category to narrow down, or pipe through | less.[/yellow]"
+            )
+
     scheme_name = scheme_rows.select("scheme_name").row(0)[0] or scheme
     if category is not None:
         cat_root = scheme_rows.filter(pl.col("cat_id") == category).row(0, named=True)
@@ -833,15 +869,22 @@ def tree(
         kids.sort(key=lambda x: x["cat_name"] or x["cat_id"])
 
     def render(parent_path: str, prefix: str) -> None:
-        kids = children.get(parent_path, [])
-        for i, node in enumerate(kids):
-            last = (i == len(kids) - 1)
+        cats = children.get(parent_path, [])
+        dfs = df_by_path.get(parent_path, [])
+        total = len(cats) + len(dfs)
+        for i, node in enumerate(cats):
+            last = (i == total - 1)
             branch = "└── " if last else "├── "
             count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
             label = node["cat_name"] or node["cat_id"]
             console.print(f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}")
             next_prefix = prefix + ("    " if last else "│   ")
             render(node["cat_path"], next_prefix)
+        for j, d in enumerate(dfs):
+            last = (len(cats) + j) == total - 1
+            branch = "└── " if last else "├── "
+            label = d["df_description"] or d["df_id"]
+            console.print(f"{prefix}{branch}{label} [dim]\\[df:{d['df_id']}][/dim]")
 
     render(render_root, "")
 

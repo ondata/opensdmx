@@ -163,6 +163,40 @@ def test_tree_empty_subtree_does_not_crash():
     assert result.exit_code == 0
 
 
+def test_tree_show_dataflows_renders_df_leaves():
+    """--show-dataflows must inline df leaves as [df:ID] under their category."""
+    import polars as pl
+
+    cat_df, cz_df = _fake_categories_dfs()
+    meta_df = pl.DataFrame(
+        {
+            "df_id": ["DF_X", "DF_Y"],
+            "version": ["1.0", "1.0"],
+            "df_description": ["Desc for X", "Desc for Y"],
+            "df_structure_id": ["S_X", "S_Y"],
+        }
+    )
+    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)), \
+         patch("opensdmx.discovery.all_available", return_value=meta_df):
+        result = runner.invoke(
+            app,
+            ["tree", "--scheme", "S1", "--show-dataflows", "--provider", "istat"],
+        )
+    assert result.exit_code == 0
+    assert "[df:DF_X]" in result.output
+    assert "[df:DF_Y]" in result.output
+    assert "Desc for X" in result.output  # uses df_description as label
+    assert "[cat:CAT_A]" in result.output  # categories still present
+
+
+def test_tree_no_show_dataflows_is_regression_safe():
+    """Without --show-dataflows, output must not contain df markers."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
+    assert result.exit_code == 0
+    assert "[df:" not in result.output
+
+
 def test_tree_renders_cat_prefix():
     """ASCII tree must render category IDs with the [cat:ID] prefix."""
     with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):

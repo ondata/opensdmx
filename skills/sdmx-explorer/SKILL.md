@@ -159,6 +159,17 @@ category hierarchy (with dataflow counts), the second enumerates the dataflows
 themselves. Use `search --category` only at the leaves, after the user has
 picked a terminal branch.
 
+**Shortcut: `--show-dataflows` (`-l`)**. When the user has committed to a
+terminal branch, append `--show-dataflows` to `tree` to render dataflow
+leaves inline, labelled `[df:DF_ID]`, without a separate `search` call:
+
+```bash
+opensdmx tree --scheme Z0400PRI --category DCSP_NIC1B2015 --show-dataflows --provider istat
+```
+
+Keep the flag off while exploring upper levels — it can flood the output on
+large branches (>200 df triggers a stderr warning).
+
 The `--category` filter accepts either a leaf id (`DCSP_LATTE`) or a full
 dotted path (`AGR_CRP.DCSP_LATTE`). It reduces false positives compared to
 pure token matching (e.g. finds `AGR_R_ACCTS` under Agriculture even when
