@@ -140,6 +140,11 @@ Note: the first `tree` invocation per provider triggers a one-time fetch
 (can take ~1 minute on Eurostat due to the 24 MB categorisation response),
 then the result is cached for 7 days under the provider's cache directory.
 
+For the full top-down walkthrough (decision matrix, real ISTAT/Eurostat
+examples, the `tree --category` + `search "" --category` pair, cat_id
+extraction, and provider-specific notes), see
+[references/thematic-tree.md](references/thematic-tree.md).
+
 ### Step 1b — Search and pre-filter candidates
 
 Search for dataflows:
