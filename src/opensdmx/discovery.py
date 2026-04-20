@@ -268,19 +268,20 @@ def load_dataset(dataflow_identifier: str) -> dict:
     all_ds = all_available()
 
     match_row = None
+    identifier_upper = dataflow_identifier.upper()
 
-    # Try df_id exact match
-    rows = all_ds.filter(pl.col("df_id") == dataflow_identifier)
+    # Try df_id exact match (case-insensitive)
+    rows = all_ds.filter(pl.col("df_id").str.to_uppercase() == identifier_upper)
     if not rows.is_empty():
         match_row = rows.row(0, named=True)
 
-    # Try structure_id match
+    # Try structure_id match (case-insensitive)
     if match_row is None:
-        rows = all_ds.filter(pl.col("df_structure_id") == dataflow_identifier)
+        rows = all_ds.filter(pl.col("df_structure_id").str.to_uppercase() == identifier_upper)
         if not rows.is_empty():
             match_row = rows.row(0, named=True)
 
-    # Try description match
+    # Try description match (case-sensitive, human-readable text)
     if match_row is None:
         rows = all_ds.filter(pl.col("df_description") == dataflow_identifier)
         if not rows.is_empty():
