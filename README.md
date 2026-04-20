@@ -370,43 +370,55 @@ opensdmx embed -p istat     # build embeddings for ISTAT
 
 The SDMX catalog uses technical terminology. The same concept can appear under many different labels, or under none of the words you'd naturally use. Semantic search bridges that gap.
 
-**Example 1 — synonym that keyword misses**
-
-`jobless` as a keyword returns 5 datasets (only those with "jobless" in the title). As a semantic query it returns 20 results ranked by relevance, including unemployment datasets — because the model knows "jobless" and "unemployed" are the same concept:
+**Example 1 — colloquial phrase, zero word overlap with catalog**
 
 ```bash
-opensdmx search "jobless"            # 5 results — only datasets titled "jobless …"
-opensdmx search --semantic "jobless" # 20 results — unemployment datasets included, with score
-```
-
-**Example 2 — natural-language phrase that keyword can't match**
-
-`cost of living` returns zero results with keyword search (no dataset title contains that exact phrase). Semantic search finds 20 relevant datasets about housing costs, expenditure, and purchasing power:
-
-```bash
-opensdmx search "cost of living"            # 0 results
-opensdmx search --semantic "cost of living" # 20 results — housing cost overburden, social protection, etc.
-```
-
-**Example 3 — conceptual query**
-
-```bash
-opensdmx search "people without work"            # 0 results
-opensdmx search --semantic "people without work" # 20 results — unemployed persons, jobless households, labour force
+opensdmx search "people struggling to make ends meet"            # 0 results
+opensdmx search --semantic "people struggling to make ends meet" # finds ILC_MDES09 with score 0.844
 ```
 
 | df_id | df_description | score |
 |---|---|---|
-| LFSO_17SENEES | Self-employed persons without employees by main reason for not having employees | 0.569 |
-| LFSA_UGAN | Unemployed persons by citizenship | 0.559 |
-| LFSA_UGPIS | Unemployed persons by previous occupation | 0.549 |
-| LFSA_UGATES | Unemployed persons by type of employment sought | 0.544 |
-| LFSA_IGAWW | Persons outside the labour force not seeking employment by willingness to work | 0.544 |
+| ILC_MDES09 | Inability to make ends meet | 0.844 |
+| ILC_DI10 | Mean and median income by ability to make ends meet | 0.586 |
+| ILC_IGTP02 | Transition of ability to make ends meet from childhood to current situation | 0.557 |
+| HLTH_DM060 | Ability to make ends meet by level of disability | 0.521 |
+| … | … | … |
+
+The query shares no words with the results — the model matches the concept, not the text.
+
+**Example 2 — informal phrasing for a technical concept**
+
+```bash
+opensdmx search "people without a job"            # 0 results
+opensdmx search --semantic "people without a job" # finds unemployed/jobless datasets
+```
+
+| df_id | df_description | score |
+|---|---|---|
+| MED_PS423 | Proportion of persons living in jobless households | 0.609 |
+| LFSA_UGATES | Unemployed persons by type of employment sought | 0.592 |
+| LFSA_UGAN | Unemployed persons by citizenship | 0.581 |
+| LFSA_UGPIS | Unemployed persons by previous occupation | 0.578 |
+| … | … | … |
+
+**Example 3 — demographic concept expressed differently**
+
+```bash
+opensdmx search "aging population senior citizens"            # 0 results
+opensdmx search --semantic "aging population senior citizens" # finds population 65+ datasets
+```
+
+| df_id | df_description | score |
+|---|---|---|
+| TPS00028 | Proportion of population aged 65 and over | 0.646 |
+| TPS00010 | Population by age group | 0.550 |
+| ILC_LVPS30 | Distribution of population aged 65 and over by type of household | 0.544 |
 | … | … | … |
 
 **When keyword search is enough**
 
-When you already know the technical term, keyword search is faster and returns all matching datasets (not capped at 20). `search "unemployment"` returns 114 results; `search --semantic "unemployment"` returns the 20 most similar by score — useful to surface the most relevant ones quickly.
+When you already know the technical term, keyword search is faster and returns all matching datasets (not capped at 10). `search "unemployment"` returns 114 results; `search --semantic "unemployment"` returns the 10 most similar by score — useful to surface the most relevant ones quickly.
 
 **Rule of thumb:** start with a keyword search. If results are empty or off-target, switch to `--semantic`.
 
