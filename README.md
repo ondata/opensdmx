@@ -410,6 +410,14 @@ When you already know the technical term, keyword search is faster and returns a
 
 **Rule of thumb:** start with a keyword search. If results are empty or off-target, switch to `--semantic`.
 
+#### How the score works
+
+The `score` column is the **[cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)** between the query vector and each dataset description vector. Both are produced by [`nomic-embed-text-v2-moe`](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe) — the score is the model's native output, not a rescaled metric. It ranges from 0 to 1 (higher = more similar); in practice most relevant results fall between 0.5 and 0.7.
+
+The model converts text into high-dimensional vectors such that semantically related phrases point in similar directions, regardless of the exact words used. Cosine similarity measures the angle between two such vectors: a score of 1 means identical direction, 0 means orthogonal (unrelated).
+
+The ranking therefore depends entirely on the model: a different model would produce different vectors and a different ordering. The model is fixed — if you rebuild embeddings with `opensdmx embed`, the same model is used.
+
 ### Caching
 
 Cache is namespaced per provider under `~/.cache/opensdmx/{AGENCY_ID}/`.
