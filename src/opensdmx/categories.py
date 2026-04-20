@@ -26,6 +26,7 @@ CATEGORIES_SCHEMA = {
     "cat_id": pl.Utf8,
     "cat_path": pl.Utf8,
     "cat_name": pl.Utf8,
+    "cat_description": pl.Utf8,
     "parent_path": pl.Utf8,
     "depth": pl.Int32,
 }
@@ -58,7 +59,10 @@ def _load_cached() -> tuple[pl.DataFrame, pl.DataFrame] | None:
     age = time.time() - min(cp.stat().st_mtime, zp.stat().st_mtime)
     if age >= CATEGORIES_CACHE_TTL:
         return None
-    return pl.read_parquet(cp), pl.read_parquet(zp)
+    cats = pl.read_parquet(cp)
+    if "cat_description" not in cats.columns:
+        return None
+    return cats, pl.read_parquet(zp)
 
 
 def _direct_name(elem, language: str, ns: dict) -> str:
@@ -78,6 +82,22 @@ def _direct_name(elem, language: str, ns: dict) -> str:
     return ""
 
 
+def _direct_description(elem, language: str, ns: dict) -> str:
+    """Return the Description element (direct child) for the given language.
+
+    Same semantics as `_direct_name` but for Description (often absent).
+    """
+    common_ns = ns.get("common", "")
+    tag = f"{{{common_ns}}}Description" if common_ns else "Description"
+    direct = [n for n in elem.findall(tag)]
+    for n in direct:
+        if n.get("{http://www.w3.org/XML/1998/namespace}lang") == language:
+            return (n.text or "").strip()
+    if direct:
+        return (direct[0].text or "").strip()
+    return ""
+
+
 def _walk_categories(parent_elem, scheme_id, scheme_name, parent_path, depth, language, ns, rows):
     struct_ns = ns.get("structure", "")
     tag = f"{{{struct_ns}}}Category" if struct_ns else "Category"
@@ -92,6 +112,7 @@ def _walk_categories(parent_elem, scheme_id, scheme_name, parent_path, depth, la
             "cat_id": cid,
             "cat_path": cat_path,
             "cat_name": _direct_name(cat, language, ns),
+            "cat_description": _direct_description(cat, language, ns),
             "parent_path": parent_path,
             "depth": depth,
         })

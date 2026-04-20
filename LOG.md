@@ -1,5 +1,19 @@
 # LOG
 
+## 2026-04-20 (tree-first phase 3B.1 — Category.description)
+
+- feat: parse `Category.description` alongside `Category.name` and expose
+  it as `cat_description` in both the cache schema and `--output json|csv`
+- feat: ASCII tree appends the description dimmed+italic after the cat_id
+  marker when populated — helps disambiguate opaque cat_ids when the
+  provider fills the field
+- note: ISTAT populates `Description` on ~1/1200 categories; Eurostat and
+  OECD usage varies by scheme. For categories without `Description`,
+  rendering is unchanged
+- cache: the loader invalidates caches missing the new `cat_description`
+  column, forcing a fresh fetch on first use after upgrade
+- tests: 1 new pytest; 21/21 passing
+
 ## 2026-04-20 (tree-first phase 3A)
 
 - feat: `opensdmx tree --show-dataflows` (alias `-l`) inlines dataflow

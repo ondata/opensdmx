@@ -806,6 +806,7 @@ def tree(
                 "cat_id": r["cat_id"],
                 "cat_path": r["cat_path"],
                 "cat_name": r["cat_name"] or "",
+                "cat_description": r.get("cat_description") or "",
                 "parent_path": r["parent_path"] or "",
                 "depth": int(r["depth"]),
                 "n_df": int(r["n_df"]),
@@ -877,7 +878,11 @@ def tree(
             branch = "└── " if last else "├── "
             count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
             label = node["cat_name"] or node["cat_id"]
-            console.print(f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}")
+            desc = node.get("cat_description") or ""
+            desc_str = f" [dim italic]— {desc}[/dim italic]" if desc and desc != label else ""
+            console.print(
+                f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}{desc_str}"
+            )
             next_prefix = prefix + ("    " if last else "│   ")
             render(node["cat_path"], next_prefix)
         for j, d in enumerate(dfs):

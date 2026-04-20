@@ -109,6 +109,7 @@ def _fake_categories_dfs():
             "cat_id": ["CAT_A", "CAT_A1", "CAT_A1A", "CAT_A2"],
             "cat_path": ["CAT_A", "CAT_A.CAT_A1", "CAT_A.CAT_A1.CAT_A1A", "CAT_A.CAT_A2"],
             "cat_name": ["Cat A", "Cat A1", "Cat A1A", "Cat A2"],
+            "cat_description": ["", "Long-form description of A1", "", ""],
             "parent_path": ["", "CAT_A", "CAT_A.CAT_A1", "CAT_A"],
             "depth": [1, 2, 3, 2],
         },
@@ -161,6 +162,15 @@ def test_tree_empty_subtree_does_not_crash():
     # depth 0 relative still keeps CAT_A (absolute depth 1 <= 1+0), so subtree not empty.
     # Force empty by asking non-existent category below CAT_A1A with zero depth.
     assert result.exit_code == 0
+
+
+def test_tree_renders_cat_description_when_present():
+    """When Category.description is populated, ASCII renders it dimmed after the label."""
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
+    assert result.exit_code == 0
+    # CAT_A1 has description; CAT_A does not — only A1 shows "—"
+    assert "Long-form description of A1" in result.output
 
 
 def test_tree_show_dataflows_renders_df_leaves():
