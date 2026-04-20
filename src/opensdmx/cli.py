@@ -653,6 +653,7 @@ def providers():
 @app.command()
 def tree(
     scheme: Optional[str] = typer.Option(None, "--scheme", "-s", help="Render the tree for a specific scheme_id. If omitted, lists all schemes with dataflow counts."),
+    category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict tree to the subtree rooted at this category ID (requires --scheme)."),
     depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Limit tree nesting depth (1 = only top-level)."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ):
@@ -660,6 +661,7 @@ def tree(
 
     Without --scheme: lists all schemes with their dataflow counts.
     With --scheme: renders an ASCII tree of that scheme's categories.
+    With --scheme and --category: renders only the subtree under that category.
 
     Not all providers expose categories. Use `opensdmx providers` to check.
     In table mode output is an ASCII tree; in -o json|csv a flat table.
@@ -668,6 +670,7 @@ def tree(
 
       opensdmx tree --provider istat
       opensdmx tree --scheme Z1000AGR --provider istat
+      opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat
       opensdmx tree --scheme Z1000AGR --depth 2 --provider istat
       opensdmx tree --scheme t_economy --provider eurostat
     """
@@ -730,11 +733,20 @@ def tree(
             parent_scheme = cat_match.row(0, named=True)["scheme_id"]
             err_console.print(
                 f"[yellow]'{scheme}' is a category, not a scheme.[/yellow]\n"
-                f"Use: [cyan]opensdmx tree --scheme {parent_scheme}[/cyan]"
+                f"Use: [cyan]opensdmx tree --scheme {parent_scheme} --category {scheme}[/cyan]"
             )
         else:
             err_console.print(f"[red]Error:[/red] scheme not found: {scheme}")
         raise typer.Exit(1)
+
+    if category is not None:
+        cat_match = scheme_rows.filter(pl.col("cat_id") == category)
+        if cat_match.is_empty():
+            err_console.print(f"[red]Error:[/red] category '{category}' not found in scheme '{scheme}'")
+            raise typer.Exit(1)
+        scheme_rows = scheme_rows.filter(
+            (pl.col("cat_path") == category) | pl.col("cat_path").str.starts_with(category + ".")
+        )
 
     if depth is not None:
         scheme_rows = scheme_rows.filter(pl.col("depth") <= depth)
@@ -760,10 +772,19 @@ def tree(
         return
 
     scheme_name = scheme_rows.select("scheme_name").row(0)[0] or scheme
-    console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
+    if category is not None:
+        cat_root = scheme_rows.filter(pl.col("cat_id") == category).row(0, named=True)
+        root_label = cat_root["cat_name"] or category
+        console.print(f"[bold]{root_label}[/bold] [dim]({category})[/dim]")
+        render_root = category
+    else:
+        console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
+        render_root = ""
 
     children: dict[str, list[dict]] = {}
     for r in scheme_rows.iter_rows(named=True):
+        if category is not None and r["cat_id"] == category:
+            continue
         children.setdefault(r["parent_path"] or "", []).append(r)
     for kids in children.values():
         kids.sort(key=lambda x: x["cat_name"] or x["cat_id"])
@@ -779,7 +800,7 @@ def tree(
             next_prefix = prefix + ("    " if last else "│   ")
             render(node["cat_path"], next_prefix)
 
-    render("", "")
+    render(render_root, "")
 
 
 @app.command()

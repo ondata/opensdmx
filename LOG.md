@@ -2,7 +2,8 @@
 
 ## 2026-04-20
 
-- fix: `tree --scheme` now shows hint when a category ID is passed instead of a scheme ID (suggests correct scheme)
+- feat: `tree --category <cat_id>` — browse subtree rooted at a category (requires `--scheme`)
+- fix: `tree --scheme` now shows hint when a category ID is passed instead of a scheme ID (suggests correct `--scheme --category`)
 - fix: `load_dataset` now case-insensitive for `df_id` and `df_structure_id` — `opensdmx info cpi` and `opensdmx info CPI` both work
 - docs: add `### Thematic tree` section in README with real Eurostat 3-step tutorial (schemes → tree browse → category filter); shows cat_id retrieval via CSV output and `search --category` delta (502 → 1 result)
 
