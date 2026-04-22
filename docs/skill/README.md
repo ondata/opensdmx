@@ -40,6 +40,14 @@ Review and confirm with **Yes** to proceed.
 
 ![Confirm install](images/04.png)
 
+## Update
+
+To update the skill to the latest version:
+
+```bash
+npx skills update sdmx-explorer
+```
+
 ## Usage
 
 Once installed, use `/sdmx-explorer` in the selected agents to start an interactive SDMX exploration session using opensdmx.
