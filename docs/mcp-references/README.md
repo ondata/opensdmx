@@ -10,8 +10,8 @@ Useful for designing opensdmx's own MCP server and `sdmx-explorer` skill.
 
 | File | Project | Source |
 |---|---|---|
-| `oecd-mcp-llm-instructions.md` | isakskogstad/OECD-MCP | `oecd://llm-instructions` resource |
-| `worldbank-data360-system-prompt.md` | worldbank/data360-mcp | `data360://system-prompt` resource |
+| [oecd-mcp-llm-instructions.md](oecd-mcp-llm-instructions.md) | [isakskogstad/OECD-MCP](https://github.com/isakskogstad/OECD-MCP) | `oecd://llm-instructions` resource |
+| [worldbank-data360-system-prompt.md](worldbank-data360-system-prompt.md) | [worldbank/data360-mcp](https://github.com/worldbank/data360-mcp) | `data360://system-prompt` resource |
 
 ## How to add more
 
