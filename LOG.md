@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-04-29 (v0.6.1)
+
+- fix: always parse `OBS_FLAG`, `OBS_STATUS`, `CONF_STATUS` as strings in CSV responses — Polars was inferring these SDMX observation attribute columns as `i64`, crashing when a provider returned flag codes such as `c` (confidential); confirmed on Derzhstat `DF_SALARY_PAYMENT_STATUS`
+
 ## 2026-04-29 (v0.6.0 — Nadiia)
 
 - feat: add `OPENSDMX_USER_AGENT` env var to override the HTTP `User-Agent` header globally
