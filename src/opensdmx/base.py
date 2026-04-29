@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import os
 import sys
 import tempfile
 import time
@@ -19,6 +20,8 @@ _DEFAULTS: dict = {
     "dataflow_params": {},
     "constraint_endpoint": "availableconstraint",
     "datastructure_agency": "ALL",
+    "user_agent": None,
+    "data_key_format": "dots",
 }
 
 # Load portals from bundled JSON
@@ -247,7 +250,10 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
                     params=params or None,
                     headers={
                         "Accept": accept,
-                        "User-Agent": "opensdmx Python package",
+                        "User-Agent": os.environ.get(
+                            "OPENSDMX_USER_AGENT",
+                            get_provider().get("user_agent") or "opensdmx Python package",
+                        ),
                     },
                 )
                 resp.raise_for_status()

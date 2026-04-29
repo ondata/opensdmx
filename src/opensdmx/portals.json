@@ -121,5 +121,17 @@
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": false
+  },
+  "derzhstat": {
+    "name": "Derzhstat",
+    "description": "State Statistics Service of Ukraine. Covers prices, wages, demographics, agriculture, trade and national accounts for Ukraine. 112+ dataflows. Requires browser-like User-Agent (server blocks library UAs). Data URL key-filter notation not supported — period filtering via query params only.",
+    "base_url": "https://stat.gov.ua/sdmx/workspaces/default:integration/registry/sdmx/2.1",
+    "agency_id": "SSSU",
+    "user_agent": "Mozilla/5.0",
+    "data_key_format": "empty",
+    "rate_limit": 3.0,
+    "constraints_supported": true,
+    "last_n_supported": true,
+    "categories_supported": false
   }
 }

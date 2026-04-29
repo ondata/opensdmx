@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-04-29 (v0.6.0 — Nadiia)
+
+- feat: add `OPENSDMX_USER_AGENT` env var to override the HTTP `User-Agent` header globally
+- feat: add `user_agent` field to portal entries in `portals.json` — per-portal default User-Agent
+- feat: add `data_key_format` field to portal entries (`"dots"` default | `"empty"`) — controls whether the SDMX dimension key segment is appended to data URLs; providers that reject the dot notation (e.g. Derzhstat) use `"empty"`
+- feat: add `derzhstat` preset portal (State Statistics Service of Ukraine, agency SSSU) — 112+ dataflows including consumer prices and wages, accessible without authentication
+
+> Named after [Nadiia Babynska-Virna](https://www.linkedin.com/posts/nadiia-babynska-virna_opendata-localai-sdmx-ugcPost-7455051404538347520-MB39), whose work on building a local MCP server for Ukrainian statistics identified these blockers and inspired this release.
+
 ## 2026-04-20 (v0.5.1)
 
 - fix(tree): `opensdmx tree` no longer downloads the full dataflow catalog
