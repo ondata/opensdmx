@@ -6,7 +6,7 @@ import re
 
 import polars as pl
 
-from .base import sdmx_request_csv
+from .base import get_provider, sdmx_request_csv
 from .discovery import load_dataset, set_filters
 from .utils import make_url_key
 
@@ -80,10 +80,11 @@ def get_data(
     Returns:
         Polars DataFrame sorted by TIME_PERIOD ascending
     """
-    url_key = make_url_key(dataset["filters"])
     path = f"data/{dataset['df_id']}"
-    if url_key:
-        path = f"{path}/{url_key}"
+    if get_provider().get("data_key_format", "dots") != "empty":
+        url_key = make_url_key(dataset["filters"])
+        if url_key:
+            path = f"{path}/{url_key}"
 
     params = {}
     if start_period:
