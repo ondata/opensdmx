@@ -7,7 +7,7 @@ try:
 except PackageNotFoundError:
     __version__ = "0.0.0"
 
-from .base import get_provider, set_provider, set_timeout
+from .base import get_provider, set_provider, set_timeout, set_extra_headers, get_extra_headers
 from .discovery import (
     ConstraintsUnavailable,
     all_available,
@@ -43,6 +43,8 @@ __all__ = [
     "build_embeddings",
     "semantic_search",
     "set_timeout",
+    "set_extra_headers",
+    "get_extra_headers",
     "parse_time_period",
     "main",
     "__version__",

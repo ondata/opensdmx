@@ -16,7 +16,15 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from .base import get_base_url, get_provider
+from .base import get_base_url, get_provider, set_extra_headers
+
+def _parse_header(value: str) -> tuple[str, str]:
+    """Parse 'Name: Value' into (name, value). Raises BadParameter if no colon."""
+    if ":" not in value:
+        raise typer.BadParameter(f"Invalid header {value!r}: must be in 'Name: Value' format")
+    name, _, val = value.partition(":")
+    return name.strip(), val.strip()
+
 
 app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs)")
 console = Console()
@@ -101,6 +109,17 @@ def _apply_provider(provider: str | None) -> None:
             raise typer.Exit(1)
         agency_id = os.environ.get("OPENSDMX_AGENCY")
         set_provider(resolved, agency_id=agency_id)
+
+
+def _apply_headers(header: list[str] | None) -> None:
+    """Parse --header options and set extra HTTP headers."""
+    if not header:
+        return
+    parsed = {}
+    for h in header:
+        name, value = _parse_header(h)
+        parsed[name] = value
+    set_extra_headers(parsed)
 
 
 def _check_api_reachable() -> None:
@@ -274,6 +293,7 @@ def search(
 def info(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+    header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
     """Show metadata and dimensions for a dataset.
 
@@ -285,6 +305,7 @@ def info(
       opensdmx info DCIS_POPRES1 --provider istat
     """
     _apply_provider(provider)
+    _apply_headers(header)
     from . import dimensions_info, load_dataset
     try:
         with _status_ctx("[dim]Loading dataset...[/dim]"):
@@ -366,6 +387,7 @@ def values(
     dim: str = typer.Argument(..., help="Dimension ID (e.g. FREQ)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive)"),
+    header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
     """Show available values for a dimension.
 
@@ -379,6 +401,7 @@ def values(
       opensdmx values DSD_NAMAIN10@DF_TABLE1_EXPENDITURE_GROWTH UNIT_MEASURE --provider oecd --grep "percent"
     """
     _apply_provider(provider)
+    _apply_headers(header)
     import re
 
     from . import get_dimension_values, load_dataset
@@ -423,6 +446,7 @@ def constraints(
     dimension: Optional[str] = typer.Argument(None, help="Dimension ID (optional); if omitted shows all dimensions"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive); only applies with DIMENSION"),
+    header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
     """Show constrained (actually present) values for a dataflow's dimensions.
 
@@ -439,8 +463,10 @@ def constraints(
       opensdmx constraints DCIS_POPRES1 ITTER107 --provider istat
       opensdmx constraints WEO INDICATOR --provider imf --grep "growth|change"
       opensdmx constraints UNE_RT_M AGE --grep "Y25"
+      opensdmx constraints DATASET --header "X-Api-Key: abc123"
     """
     _apply_provider(provider)
+    _apply_headers(header)
     import re
 
     import polars as pl
@@ -657,6 +683,7 @@ def tree(
     depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Limit tree nesting depth (1 = only top-level)."),
     show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (prefixed [df:ID])."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+    header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
     """Browse the thematic tree of dataflows (categoryscheme + categorisation).
 
@@ -679,6 +706,7 @@ def tree(
       opensdmx tree --scheme Z0400PRI --category DCSP_NIC1B2015 --show-dataflows --provider istat
     """
     _apply_provider(provider)
+    _apply_headers(header)
 
     from .categories import CategoriesNotSupported, load_categories
 
@@ -963,6 +991,7 @@ def get(
     first_n: Optional[int] = typer.Option(None, "--first-n", help="Return only first N observations per series"),
     yes: bool = typer.Option(False, "--yes", "-y", help="Skip large-dataset confirmation prompt"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+    header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
     """Get data for a dataset. Extra --DIM VALUE pairs are used as filters.
 
@@ -975,8 +1004,10 @@ def get(
       opensdmx get NAMA_10_GDP --start-period 2010 --end-period 2023 --out data.parquet
       opensdmx get DCIS_POPRES1 --ITTER107 IT --provider istat
       opensdmx get TIPSUN20 --sex T --age Y15-74 --out data.csv --query-file unemployment.yaml
+      opensdmx get DATASET --header "X-Api-Key: abc123"
     """
     _apply_provider(provider)
+    _apply_headers(header)
     from . import get_data, load_dataset, set_filters
 
     filters = _parse_extra_filters(ctx)

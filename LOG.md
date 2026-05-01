@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-05-01
+
+- feat: add `--header "Name: Value"` option (repeatable) to `get`, `constraints`, `values`, `info`, `tree` commands — allows passing custom HTTP headers per invocation (e.g. API keys required in headers, not query string)
+- feat: expose `set_extra_headers()` / `get_extra_headers()` in Python public API (`opensdmx.base`, re-exported from `opensdmx`)
+- Extra headers merge over defaults; `User-Agent` is protected and cannot be overridden via `--header`
+
 ## 2026-04-29 (v0.6.1)
 
 - fix: always parse `OBS_FLAG`, `OBS_STATUS`, `CONF_STATUS` as strings in CSV responses — Polars was inferring these SDMX observation attribute columns as `i64`, crashing when a provider returned flag codes such as `c` (confidential); confirmed on Derzhstat `DF_SALARY_PAYMENT_STATUS`

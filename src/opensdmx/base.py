@@ -36,8 +36,20 @@ PROVIDERS: dict[str, dict] = {
 
 _active_provider: str | dict = "eurostat"
 _timeout: float = 300.0
+_extra_headers: dict[str, str] = {}
 
 _rate_limit_context: str = ""
+
+
+def set_extra_headers(headers: dict[str, str]) -> None:
+    """Set extra HTTP headers to include in all subsequent SDMX requests."""
+    global _extra_headers
+    _extra_headers = dict(headers)
+
+
+def get_extra_headers() -> dict[str, str]:
+    """Return the currently configured extra HTTP headers."""
+    return _extra_headers
 
 
 def set_rate_limit_context(msg: str) -> None:
@@ -245,16 +257,15 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
             except OSError:
                 pass
             with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
+                user_agent = os.environ.get(
+                    "OPENSDMX_USER_AGENT",
+                    get_provider().get("user_agent") or "opensdmx Python package",
+                )
+                extra = {k: v for k, v in _extra_headers.items() if k.lower() != "user-agent"}
                 resp = client.get(
                     url,
                     params=params or None,
-                    headers={
-                        "Accept": accept,
-                        "User-Agent": os.environ.get(
-                            "OPENSDMX_USER_AGENT",
-                            get_provider().get("user_agent") or "opensdmx Python package",
-                        ),
-                    },
+                    headers={"Accept": accept, "User-Agent": user_agent, **extra},
                 )
                 resp.raise_for_status()
                 return resp

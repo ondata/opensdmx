@@ -9,7 +9,7 @@ import pytest
 from click.exceptions import Exit as ClickExit
 from typer.testing import CliRunner
 
-from opensdmx.cli import _apply_provider, _parse_extra_filters, app
+from opensdmx.cli import _apply_provider, _parse_extra_filters, _parse_header, app
 
 runner = CliRunner()
 
@@ -252,3 +252,23 @@ def test_tree_category_unknown_id():
     assert result.exit_code == 1
     combined = result.output + (result.stderr or "")
     assert "not found in scheme" in combined
+
+
+# ── _parse_header ─────────────────────────────────────────────────────
+
+def test_parse_header_valid():
+    assert _parse_header("X-Api-Key: abc123") == ("X-Api-Key", "abc123")
+
+
+def test_parse_header_strips_whitespace():
+    assert _parse_header("  X-Api-Key :  abc123  ") == ("X-Api-Key", "abc123")
+
+
+def test_parse_header_value_with_colon():
+    assert _parse_header("Authorization: Bearer tok:en") == ("Authorization", "Bearer tok:en")
+
+
+def test_parse_header_missing_colon_raises():
+    import typer
+    with pytest.raises(typer.BadParameter):
+        _parse_header("invalid-no-colon")

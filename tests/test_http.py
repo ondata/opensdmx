@@ -233,3 +233,48 @@ class TestGetData:
 
         _, kwargs = mock_csv.call_args
         assert kwargs.get("lastNObservations") == 5
+
+
+# ---------------------------------------------------------------------------
+# Extra headers in sdmx_request
+# ---------------------------------------------------------------------------
+
+class TestExtraHeaders:
+    def _get_headers_sent(self, mock_client_class):
+        """Extract the headers dict from the last client.get() call."""
+        client_instance = mock_client_class.return_value
+        call_kwargs = client_instance.get.call_args
+        return call_kwargs[1]["headers"]
+
+    def test_extra_header_forwarded(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import set_extra_headers
+        set_extra_headers({"X-Api-Key": "secret"})
+        try:
+            with _mock_http_client(b"") as mock_client_class:
+                sdmx_request("data/TEST")
+            assert self._get_headers_sent(mock_client_class).get("X-Api-Key") == "secret"
+        finally:
+            set_extra_headers({})
+
+    def test_user_agent_not_overridable(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import set_extra_headers
+        set_extra_headers({"User-Agent": "hacker"})
+        try:
+            with _mock_http_client(b"") as mock_client_class:
+                sdmx_request("data/TEST")
+            assert self._get_headers_sent(mock_client_class)["User-Agent"] != "hacker"
+        finally:
+            set_extra_headers({})
+
+    def test_accept_overridable(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import set_extra_headers
+        set_extra_headers({"Accept": "application/json"})
+        try:
+            with _mock_http_client(b"") as mock_client_class:
+                sdmx_request("data/TEST")
+            assert self._get_headers_sent(mock_client_class)["Accept"] == "application/json"
+        finally:
+            set_extra_headers({})
