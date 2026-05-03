@@ -337,7 +337,7 @@ Once the user has chosen, retrieve the structure and available codes for the dat
 Step 1 — get the codes **actually present** in the dataflow (real constraints):
 ```bash
 opensdmx constraints PRC_HICP_MANR
-# shows all dimensions with count and sample of codes
+# shows all dimensions with count and a 3-code sample — add hint to use --output json for full list
 
 opensdmx constraints PRC_HICP_MANR coicop
 # shows full list of codes present in that dimension, with labels
@@ -345,6 +345,35 @@ opensdmx constraints PRC_HICP_MANR coicop
 
 `opensdmx constraints` is the ground truth — it queries the `availableconstraint`
 SDMX endpoint and returns only codes that actually exist in this specific dataflow.
+
+The table view truncates each dimension to a 3-code sample. For the **full list of
+codes per dimension**, use `--output json`:
+
+```bash
+# summary: object keyed by dimension → {n_values, codes: [...]}
+opensdmx --output json constraints PRC_HICP_MANR
+# → {"FREQ": {"n_values": 2, "codes": ["A","M"]}, "GEO": {"n_values": 35, "codes": [...]}, ...}
+
+# all codes + labels for one dimension: array of {id, name}
+opensdmx --output json constraints PRC_HICP_MANR coicop
+# → [{"id": "CP00", "name": "All-items HICP"}, {"id": "CP01", "name": "Food and non-alcoholic beverages"}, ...]
+```
+
+Useful `jq` patterns:
+
+```bash
+# list all dimension names
+opensdmx --output json constraints PRC_HICP_MANR | jq 'keys'
+
+# get all codes for one dimension
+opensdmx --output json constraints PRC_HICP_MANR | jq '.GEO.codes'
+
+# number of values per dimension
+opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | {dim: .key, n: .value.n_values}'
+
+# find a code by label (case-insensitive)
+opensdmx --output json constraints PRC_HICP_MANR coicop | jq '[.[] | select(.name | ascii_downcase | contains("food"))]'
+```
 
 Step 2 — get dimension order and structure:
 ```bash
