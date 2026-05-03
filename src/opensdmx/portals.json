@@ -124,7 +124,7 @@
   },
   "derzhstat": {
     "name": "Derzhstat",
-    "description": "State Statistics Service of Ukraine. Covers prices, wages, demographics, agriculture, trade and national accounts for Ukraine. 112+ dataflows. Requires browser-like User-Agent (server blocks library UAs). Data URL key-filter notation not supported — period filtering via query params only.",
+    "description": "State Statistics Service of Ukraine. Covers prices, wages, demographics, agriculture, trade and national accounts for Ukraine. 112+ dataflows. Requires browser-like User-Agent (server blocks library UAs). Key-filter path works with specific values but wildcard dots return 404 — dimension filters applied client-side after download.",
     "base_url": "https://stat.gov.ua/sdmx/workspaces/default:integration/registry/sdmx/2.1",
     "agency_id": "SSSU",
     "user_agent": "Mozilla/5.0",

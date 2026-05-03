@@ -98,6 +98,13 @@ def get_data(
 
     data = sdmx_request_csv(path, **params)
 
+    if get_provider().get("data_key_format", "dots") == "empty":
+        for col, val in dataset.get("filters", {}).items():
+            if not val or val == "." or col not in data.columns:
+                continue
+            allowed = val.split("+") if isinstance(val, str) else [str(v) for v in val]
+            data = data.filter(pl.col(col).is_in(allowed))
+
     if "TIME_PERIOD" in data.columns:
         data = data.with_columns(
             parse_time_period(data["TIME_PERIOD"]).alias("TIME_PERIOD")

@@ -27,6 +27,14 @@ def _parse_header(value: str) -> tuple[str, str]:
 
 
 app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs)")
+
+# PowerShell and cmd on Windows default to cp1252; force UTF-8 so Rich tables
+# and Unicode labels (e.g. Cyrillic) don't raise UnicodeEncodeError.
+if sys.platform == "win32":
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+
 console = Console()
 err_console = Console(stderr=True)
 

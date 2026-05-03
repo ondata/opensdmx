@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-05-03 (v0.6.3)
+
+- fix: force `OBS_VALUE` to `pl.Float64` in CSV parsing — Polars inferred `i64` from the first 10 000 rows and crashed on the first float value past the inference window (reported on Derzhstat `DF_POPULATION_BIRTH`)
+- fix: apply dimension filters client-side for portals with `data_key_format: "empty"` (e.g. Derzhstat) — previously `--DIM VALUE` flags were silently ignored, causing full-dataset downloads instead of filtered results
+- fix: force UTF-8 on stdout/stderr on Windows (`sys.platform == "win32"`) to prevent `UnicodeEncodeError` in PowerShell/cmd when Rich tables emit non-ASCII characters (Cyrillic labels, box-drawing)
+- fix(portals): update Derzhstat description — wildcard dots in key-filter path return 404; dimension filters are now applied client-side after download
+
 ## 2026-05-01
 
 - feat: add `--header "Name: Value"` option (repeatable) to `get`, `constraints`, `values`, `info`, `tree` commands — allows passing custom HTTP headers per invocation (e.g. API keys required in headers, not query string)
