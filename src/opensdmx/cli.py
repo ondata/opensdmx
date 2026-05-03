@@ -538,6 +538,7 @@ def constraints(
             table.add_row(dim_id, str(len(codes)), ", ".join(codes[:3]))
 
         console.print(table)
+        console.print("[dim]Tip: use --output json for the full list of values.[/dim]")
         return
 
     # Single-dimension mode

@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-05-03 (v0.6.4)
+
+- ux: `constraints` summary table now shows a tip to use `--output json` for the full list of values
+
 ## 2026-05-03 (v0.6.3)
 
 - fix: force `OBS_VALUE` to `pl.Float64` in CSV parsing — Polars inferred `i64` from the first 10 000 rows and crashed on the first float value past the inference window (reported on Derzhstat `DF_POPULATION_BIRTH`)
