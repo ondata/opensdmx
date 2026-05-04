@@ -423,47 +423,49 @@ The SDMX catalog uses technical terminology. The same concept can appear under m
 
 ```bash
 opensdmx search "people struggling to make ends meet"            # 0 results
-opensdmx search --semantic "people struggling to make ends meet" # finds ILC_MDES09 with score 0.844
+opensdmx search --semantic "people struggling to make ends meet" # finds ILC_MDES09 with score 0.438
 ```
 
 | df_id | df_description | score |
 |---|---|---|
-| ILC_MDES09 | Inability to make ends meet | 0.844 |
-| ILC_DI10 | Mean and median income by ability to make ends meet | 0.586 |
-| ILC_IGTP02 | Transition of ability to make ends meet from childhood to current situation | 0.557 |
-| HLTH_DM060 | Ability to make ends meet by level of disability | 0.521 |
+| ILC_MDES09 | Inability to make ends meet | 0.438 |
+| HLTH_DM060 | Ability to make ends meet by level of disability | 0.387 |
+| ILC_IGTP02 | Transition of ability to make ends meet from childhood to current situation | 0.374 |
+| ILC_MDES10A | Persons who cannot afford to get-together with friends or family for a drink or meal | 0.369 |
 | … | … | … |
 
 The query shares no words with the results — the model matches the concept, not the text.
 
-**Example 2 — informal phrasing for a technical concept**
+**Example 2 — phrase that avoids the technical acronym**
 
 ```bash
-opensdmx search "people without a job"            # 0 results
-opensdmx search --semantic "people without a job" # finds unemployed/jobless datasets
+opensdmx search "young people neither working nor in education"            # 0 results
+opensdmx search --semantic "young people neither working nor in education" # finds NEET datasets
 ```
 
 | df_id | df_description | score |
 |---|---|---|
-| MED_PS423 | Proportion of persons living in jobless households | 0.609 |
-| LFSA_UGATES | Unemployed persons by type of employment sought | 0.592 |
-| LFSA_UGAN | Unemployed persons by citizenship | 0.581 |
-| LFSA_UGPIS | Unemployed persons by previous occupation | 0.578 |
+| EDAT_LFSE_20 | Young persons neither in employment nor in education and training by labour status (NEET rates) | 0.635 |
+| EDAT_LFSE_23 | Young persons neither in employment nor in education and training by citizenship (NEET rates) | 0.620 |
+| EDAT_LFSE_21 | Young persons neither in employment nor in education and training by educational attainment level (NEET rates) | 0.615 |
 | … | … | … |
 
-**Example 3 — demographic concept expressed differently**
+The query describes the NEET concept in plain English without knowing the acronym.
+
+**Example 3 — single-word synonym**
 
 ```bash
-opensdmx search "aging population senior citizens"            # 0 results
-opensdmx search --semantic "aging population senior citizens" # finds population 65+ datasets
+opensdmx search "underemployment"            # 0 results
+opensdmx search --semantic "underemployment" # finds involuntary part-time datasets
 ```
 
 | df_id | df_description | score |
 |---|---|---|
-| TPS00028 | Proportion of population aged 65 and over | 0.646 |
-| TPS00010 | Population by age group | 0.550 |
-| ILC_LVPS30 | Distribution of population aged 65 and over by type of household | 0.544 |
+| LFSA_EPPGAI | Persons in involuntary part-time employment - % of total part-time employment | 0.431 |
+| LFSA_UPGADL | Persons in long-term unemployment (12 months or more) | 0.406 |
 | … | … | … |
+
+`underemployment` is not in the catalog; Eurostat describes the same concept as *involuntary part-time employment*.
 
 **When keyword search is enough**
 
@@ -473,7 +475,7 @@ When you already know the technical term, keyword search is faster and returns a
 
 #### How the score works
 
-The `score` column is the **[cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)** between the query vector and each dataset description vector. Both are produced by [`nomic-embed-text-v2-moe`](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe) — the score is the model's native output, not a rescaled metric. It ranges from 0 to 1 (higher = more similar); in practice most relevant results fall between 0.5 and 0.7.
+The `score` column is the **[cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)** between the query vector and each dataset description vector. Both are produced by [`nomic-embed-text-v2-moe`](https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe) — the score is the model's native output, not a rescaled metric. It ranges from 0 to 1 (higher = more similar); in practice most relevant results fall between 0.3 and 0.6.
 
 The model converts text into high-dimensional vectors such that semantically related phrases point in similar directions, regardless of the exact words used. Cosine similarity measures the angle between two such vectors: a score of 1 means identical direction, 0 means orthogonal (unrelated).
 
