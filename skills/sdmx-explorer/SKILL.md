@@ -343,6 +343,15 @@ opensdmx constraints PRC_HICP_MANR coicop
 # shows full list of codes present in that dimension, with labels
 ```
 
+**Geographic dimensions** (`GEO`, `REGION`, `NUTS`, `ITTER107`, …): always expand the list
+before filtering — the codes are opaque identifiers (NUTS codes, KATOTTG codes, etc.)
+and the only reliable way to map them to readable names is via `constraints`:
+
+```bash
+opensdmx constraints DF_LABOR_FORCE_A REGION --provider derzhstat
+# → 28 KATOTTG codes, each with the Ukrainian region name
+```
+
 `opensdmx constraints` is the ground truth — it queries the `availableconstraint`
 SDMX endpoint and returns only codes that actually exist in this specific dataflow.
 
