@@ -11,7 +11,7 @@ from pathlib import Path
 
 import httpx
 import portalocker
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 # Defaults for fields not specified in portals.json or custom providers
 _DEFAULTS: dict = {
@@ -237,11 +237,34 @@ def _rate_limit_check() -> None:
             pass
 
 
+def _is_retryable_exception(exc: BaseException) -> bool:
+    """Decide whether a request failure is worth retrying.
+
+    Retrying on 4xx (especially 429 Too Many Requests, 403 Forbidden) makes the
+    problem worse: it amplifies the request rate toward a provider that is
+    already rejecting us, and on rate-limit-by-IP providers (e.g. ISTAT) it can
+    turn a single 429 into a multi-day ban. We only retry on transient
+    conditions: network/timeout errors and 5xx server errors (excluding 501
+    Not Implemented, which is deterministic).
+    """
+    if isinstance(exc, (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError)):
+        return True
+    if isinstance(exc, httpx.HTTPStatusError):
+        status = exc.response.status_code
+        return 500 <= status < 600 and status != 501
+    return False
+
+
 def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.Response:
     """Make a request to the active SDMX provider with retry logic."""
     url = f"{get_base_url()}/{path}"
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=0.5, min=0.5, max=4), reraise=True)
+    @retry(
+        retry=retry_if_exception(_is_retryable_exception),
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=0.5, min=0.5, max=4),
+        reraise=True,
+    )
     def _do_request() -> httpx.Response:
         # Hold an exclusive file lock for the whole HTTP call. This serializes
         # requests to the same provider across processes, so the rate limit is

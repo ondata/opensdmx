@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-05-08
+
+- fix(http): retry only on transient failures in `sdmx_request` — the previous `@retry` decorator had no `retry=` predicate, so tenacity retried on **any** exception, including `httpx.HTTPStatusError` for 4xx codes. On rate-limit-by-IP providers (e.g. ISTAT) this could turn a single 429 into three back-to-back hits and amplify the risk of a multi-day ban. Now retries are restricted to `httpx.TimeoutException`, `httpx.NetworkError`, `httpx.RemoteProtocolError`, and 5xx server errors (excluding 501 Not Implemented). Predicate exposed as `_is_retryable_exception` for testing.
+
 ## 2026-05-03 (v0.6.4)
 
 - ux: `constraints` summary table now shows a tip to use `--output json` for the full list of values

@@ -4,10 +4,12 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock, patch
 
+import httpx
 import polars as pl
 import pytest
 
 from opensdmx.base import (
+    _is_retryable_exception,
     _provider_cache_key,
     _rate_limit_lock_file,
     sdmx_request,
@@ -278,3 +280,148 @@ class TestExtraHeaders:
             assert self._get_headers_sent(mock_client_class)["Accept"] == "application/json"
         finally:
             set_extra_headers({})
+
+
+# ---------------------------------------------------------------------------
+# Retry behavior — only retry transient failures, never 4xx
+# ---------------------------------------------------------------------------
+
+def _http_status_error(status: int) -> httpx.HTTPStatusError:
+    request = httpx.Request("GET", "http://test/example")
+    response = httpx.Response(status, request=request)
+    return httpx.HTTPStatusError(f"{status}", request=request, response=response)
+
+
+def _mock_client_raising_on_status(exc: Exception):
+    """Mock httpx.Client where get() returns a response whose raise_for_status raises exc."""
+    resp = MagicMock()
+    resp.content = b""
+    resp.raise_for_status = MagicMock(side_effect=exc)
+
+    client = MagicMock()
+    client.__enter__ = MagicMock(return_value=client)
+    client.__exit__ = MagicMock(return_value=False)
+    client.get = MagicMock(return_value=resp)
+
+    return patch("opensdmx.base.httpx.Client", return_value=client)
+
+
+def _mock_client_raising_on_get(exc: Exception):
+    """Mock httpx.Client where get() itself raises (e.g. timeout, network error)."""
+    client = MagicMock()
+    client.__enter__ = MagicMock(return_value=client)
+    client.__exit__ = MagicMock(return_value=False)
+    client.get = MagicMock(side_effect=exc)
+
+    return patch("opensdmx.base.httpx.Client", return_value=client)
+
+
+class TestIsRetryableExceptionPredicate:
+    """Unit tests for the retry predicate, independent of HTTP plumbing."""
+
+    def test_429_not_retryable(self):
+        assert _is_retryable_exception(_http_status_error(429)) is False
+
+    def test_403_not_retryable(self):
+        assert _is_retryable_exception(_http_status_error(403)) is False
+
+    def test_404_not_retryable(self):
+        assert _is_retryable_exception(_http_status_error(404)) is False
+
+    def test_401_not_retryable(self):
+        assert _is_retryable_exception(_http_status_error(401)) is False
+
+    def test_500_retryable(self):
+        assert _is_retryable_exception(_http_status_error(500)) is True
+
+    def test_502_retryable(self):
+        assert _is_retryable_exception(_http_status_error(502)) is True
+
+    def test_503_retryable(self):
+        assert _is_retryable_exception(_http_status_error(503)) is True
+
+    def test_504_retryable(self):
+        assert _is_retryable_exception(_http_status_error(504)) is True
+
+    def test_501_not_retryable(self):
+        """501 Not Implemented is deterministic — retrying never helps."""
+        assert _is_retryable_exception(_http_status_error(501)) is False
+
+    def test_connect_timeout_retryable(self):
+        assert _is_retryable_exception(httpx.ConnectTimeout("timeout")) is True
+
+    def test_read_timeout_retryable(self):
+        assert _is_retryable_exception(httpx.ReadTimeout("timeout")) is True
+
+    def test_connect_error_retryable(self):
+        assert _is_retryable_exception(httpx.ConnectError("conn refused")) is True
+
+    def test_unknown_exception_not_retryable(self):
+        """Don't retry on non-network exceptions (programming bugs, etc.)."""
+        assert _is_retryable_exception(ValueError("bad value")) is False
+        assert _is_retryable_exception(RuntimeError("oops")) is False
+
+
+class TestRetryBehavior:
+    """Integration-level: count actual HTTP attempts through sdmx_request."""
+
+    @pytest.fixture(autouse=True)
+    def _fast_retry(self, monkeypatch):
+        """Disable backoff waits so retry tests stay fast.
+
+        The @retry decorator on _do_request is rebuilt on every sdmx_request call,
+        so patching wait_exponential at the module name resolves before the
+        decorator is constructed.
+        """
+        from tenacity import wait_none
+        monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
+
+    def test_429_makes_one_call_no_retry(self, tmp_path, monkeypatch):
+        """A 429 must NOT trigger retries — would amplify the rate-limit hit."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_status(_http_status_error(429)) as mock_client_class:
+            with pytest.raises(httpx.HTTPStatusError):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 1
+
+    def test_403_makes_one_call_no_retry(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_status(_http_status_error(403)) as mock_client_class:
+            with pytest.raises(httpx.HTTPStatusError):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 1
+
+    def test_404_makes_one_call_no_retry(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_status(_http_status_error(404)) as mock_client_class:
+            with pytest.raises(httpx.HTTPStatusError):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 1
+
+    def test_503_retries_three_times(self, tmp_path, monkeypatch):
+        """5xx is transient — retry up to 3 attempts, then propagate."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_status(_http_status_error(503)) as mock_client_class:
+            with pytest.raises(httpx.HTTPStatusError):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 3
+
+    def test_connect_timeout_retries_three_times(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
+            with pytest.raises(httpx.ConnectTimeout):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 3
+
+    def test_connect_error_retries_three_times(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_get(httpx.ConnectError("refused")) as mock_client_class:
+            with pytest.raises(httpx.ConnectError):
+                sdmx_request("data/TEST")
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 3
