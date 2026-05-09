@@ -1,5 +1,4 @@
 import json
-import os
 import subprocess
 import time
 from datetime import datetime, timezone
@@ -7,81 +6,89 @@ from pathlib import Path
 
 TIMEOUT_S = 300
 
-DATASETS = {
-    "istat": {
-        "id": "41_269_DF_DCIS_INCIDENTISTR1_1",
-        "provider_flag": ["--provider", "istat"],
-        "get_args": ["--FREQ", "A", "--REF_AREA", "082053", "--Y_DEADLY_ACCIDENT", "1", "--last-n", "1"],
-        "has_constraints": False,
-    },
-    "eurostat": {
-        "id": "TRAN_SF_ROADNU",
-        "provider_flag": [],
-        "get_args": ["--freq", "A", "--geo", "ITG12+ITG27", "--last-n", "1"],
-        "has_constraints": True,
-    },
-}
+ISTAT_BASE = "https://esploradati.istat.it/SDMXWS/rest"
+ESTAT_BASE = "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1"
+
+# (url, download_body_for_row_count)
+CALLS = [
+    ("istat", "41_269_DF_DCIS_INCIDENTISTR1_1", "info",
+     f"{ISTAT_BASE}/dataflow/IT1/41_269_DF_DCIS_INCIDENTISTR1_1/1.0",
+     False),
+    ("istat", "41_269_DF_DCIS_INCIDENTISTR1_1", "get",
+     f"{ISTAT_BASE}/data/41_269_DF_DCIS_INCIDENTISTR1_1"
+     f"/A.082053+092009+118006.....1...?startPeriod=2022&endPeriod=2023",
+     False),  # ISTAT returns XML — row count not applicable
+    ("eurostat", "TRAN_SF_ROADNU", "info",
+     f"{ESTAT_BASE}/dataflow/ESTAT/TRAN_SF_ROADNU/1.0?detail=allstubs&references=none",
+     False),
+    ("eurostat", "TRAN_SF_ROADNU", "get",
+     f"{ESTAT_BASE}/data/TRAN_SF_ROADNU/A..ITG12+ITG27/"
+     f"?startPeriod=2022&endPeriod=2023&format=SDMX-CSV",
+     True),  # CSV — count rows
+]
 
 OUTPUT_FILE = Path("output/latency.jsonl")
 
 
-def run_call(call_type, provider, dataset_id, provider_flag, extra_args=None):
+def run_curl(provider, dataset_id, call_type, url, download_body):
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    fmt = "%{http_code}|%{time_total}|%{size_download}"
 
-    if call_type == "info":
-        cmd = ["opensdmx", "info", dataset_id] + provider_flag
-    elif call_type == "constraints":
-        cmd = ["opensdmx", "constraints", dataset_id] + provider_flag
-    elif call_type == "get":
-        cmd = ["opensdmx", "--output", "csv", "get", dataset_id] + (extra_args or []) + provider_flag
-
-    env = os.environ.copy()
-    if call_type == "constraints":
-        env["OPENSDMX_AVAILCONSTRAINT_TIMEOUT"] = str(TIMEOUT_S)
+    if download_body:
+        cmd = ["curl", "-s", "--max-time", str(TIMEOUT_S), "-w", f"\n{fmt}", url]
+    else:
+        cmd = ["curl", "-s", "-o", "/dev/null", "--max-time", str(TIMEOUT_S), "-w", fmt, url]
 
     start = time.monotonic()
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT_S, env=env)
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT_S + 10)
         duration = round(time.monotonic() - start, 3)
 
-        if result.returncode == 0:
-            n_rows = None
-            if call_type == "get":
-                lines = [line for line in result.stdout.strip().splitlines() if line]
-                n_rows = max(0, len(lines) - 1)
-            return {
-                "ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
-                "duration_s": duration, "status": "ok", "n_rows": n_rows, "error": None,
-            }
-        else:
-            err = (result.stderr or "").strip()
-            status = "timeout" if "timed out" in err.lower() else "error"
-            return {
-                "ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
-                "duration_s": duration, "status": status, "n_rows": None,
-                "error": err[:300] if err else f"exit {result.returncode}",
-            }
+        if result.returncode == 28:  # curl --max-time exceeded
+            return {"ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
+                    "duration_s": duration, "status": "timeout",
+                    "http_code": None, "n_rows": None, "error": f"timeout after {TIMEOUT_S}s"}
+
+        lines = result.stdout.strip().splitlines()
+        parts = (lines[-1] if lines else "").split("|")
+        if len(parts) != 3:
+            return {"ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
+                    "duration_s": duration, "status": "error",
+                    "http_code": None, "n_rows": None, "error": f"unexpected output: {result.stdout!r}"}
+
+        http_code = int(parts[0])
+        size_bytes = int(float(parts[2]))
+        status = "ok" if 200 <= http_code < 300 else "error"
+
+        n_rows = None
+        if download_body and status == "ok":
+            body = [l for l in lines[:-1] if l]
+            n_rows = max(0, len(body) - 1)
+
+        return {"ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
+                "duration_s": duration, "status": status,
+                "http_code": http_code, "n_rows": n_rows,
+                "error": None if status == "ok" else f"HTTP {http_code}"}
     except subprocess.TimeoutExpired:
         duration = round(time.monotonic() - start, 3)
-        return {
-            "ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
-            "duration_s": duration, "status": "timeout", "n_rows": None,
-            "error": f"subprocess timeout after {TIMEOUT_S}s",
-        }
+        return {"ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,
+                "duration_s": duration, "status": "timeout",
+                "http_code": None, "n_rows": None, "error": f"subprocess timeout after {TIMEOUT_S + 10}s"}
+
+
+PAUSE_S = 15  # between calls — respects ISTAT rate limit (5 req/min)
 
 
 def main():
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     results = []
 
-    for provider, config in DATASETS.items():
-        for call_type in ["info", "constraints", "get"]:
-            if call_type == "constraints" and not config.get("has_constraints"):
-                continue
-            extra = config["get_args"] if call_type == "get" else None
-            record = run_call(call_type, provider, config["id"], config["provider_flag"], extra)
-            results.append(record)
-            print(json.dumps(record), flush=True)
+    for i, (provider, dataset_id, call_type, url, download_body) in enumerate(CALLS):
+        if i > 0:
+            time.sleep(PAUSE_S)
+        record = run_curl(provider, dataset_id, call_type, url, download_body)
+        results.append(record)
+        print(json.dumps(record), flush=True)
 
     with open(OUTPUT_FILE, "a") as f:
         for r in results:
