@@ -38,6 +38,8 @@
     "language": "it",
     "constraint_path_suffix": "/all/all",
     "constraint_params": {"mode": "available"},
+    "constraint_timeout": 30,
+    "constraint_max_retries": 1,
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": true

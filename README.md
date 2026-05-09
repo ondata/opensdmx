@@ -500,6 +500,7 @@ Environment variables:
 | `OPENSDMX_DATAFLOWS_CACHE_TTL` | Dataset catalog TTL in seconds (default: `604800` — 7 days) |
 | `OPENSDMX_METADATA_CACHE_TTL` | Structure/codelist TTL in seconds (default: `2592000` — 30 days) |
 | `OPENSDMX_CONSTRAINTS_CACHE_TTL` | Constraints TTL in seconds (default: `604800` — 7 days) |
+| `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` | Per-call timeout (seconds) for the `availableconstraint` endpoint, with no retry. Default: `30`. Useful when a provider's availability backend is slow or unresponsive (e.g. ISTAT) and you want `opensdmx constraints` / `values` to fail fast instead of blocking on the global request timeout. |
 
 See `.env.example` for a ready-to-use template.
 

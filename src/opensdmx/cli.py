@@ -480,7 +480,7 @@ def constraints(
     import polars as pl
 
     from . import load_dataset
-    from .discovery import ConstraintsUnavailable, get_available_values, get_dimension_values
+    from .discovery import ConstraintsTimeout, ConstraintsUnavailable, get_available_values, get_dimension_values
     from .db_cache import get_cached_available_constraints
 
     try:
@@ -491,10 +491,14 @@ def constraints(
         raise typer.Exit(1)
 
     provider_cfg = get_provider()
-    if provider_cfg.get("agency_id") == "IT1" and get_cached_available_constraints(dataset_id) is None:
+    provider_constraint_timeout = provider_cfg.get("constraint_timeout")
+    if provider_constraint_timeout is not None and get_cached_available_constraints(dataset_id) is None:
+        import os as _os
+        _t = float(_os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT", str(provider_constraint_timeout)))
         err_console.print(
-            "[yellow]⚠ ISTAT: first constraints call may take 30–120 s. "
-            "Results will be cached for 7 days.[/yellow]"
+            f"[yellow]⚠ {provider_cfg.get('name', 'Provider')}: first constraints call "
+            f"(timeout {_t:.0f} s, no retry). Results cached 7 days on success; on timeout, raise "
+            f"OPENSDMX_AVAILCONSTRAINT_TIMEOUT.[/yellow]"
         )
 
     try:
@@ -504,6 +508,16 @@ def constraints(
         err_console.print(
             f"[yellow]⚠ Constraints not available for [bold]{dataset_id}[/bold] "
             f"(dataflow is hidden or not yet public).[/yellow]\n"
+            f"Data is still accessible:  opensdmx get {dataset_id} ..."
+        )
+        raise typer.Exit(0)
+    except ConstraintsTimeout as e:
+        err_console.print(
+            f"[yellow]⚠ Constraints request timed out after {e.timeout:.0f}s for "
+            f"[bold]{dataset_id}[/bold].[/yellow]\n"
+            f"The provider's [italic]availableconstraint[/italic] endpoint is slow or unresponsive. "
+            f"Try again later, or raise the limit:  "
+            f"[cyan]OPENSDMX_AVAILCONSTRAINT_TIMEOUT=60 opensdmx constraints {dataset_id}[/cyan]\n"
             f"Data is still accessible:  opensdmx get {dataset_id} ..."
         )
         raise typer.Exit(0)

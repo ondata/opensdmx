@@ -43,14 +43,45 @@ opensdmx constraints <dataflow_id> DATA_TYPE --provider istat
 
 This is the most important step. The `values` codelist is theoretical — many
 codes will not exist in the actual dataflow. Each failed `get` attempt costs
-≥13 s due to rate limiting, so verifying with `constraints` first (even when
-that endpoint takes 30–60 s on first call) is far cheaper than multiple failed
-`get` attempts.
+≥13 s due to rate limiting, so verifying with `constraints` first is far
+cheaper than multiple failed `get` attempts.
 
-**Exception — municipal-level datasets.** When `REF_AREA` contains thousands
-of territory codes, `constraints` on that dimension may time out. In that case
-only, fall back to `values` + `grep` for territories and verify with one narrow
-`get`. For all other dimensions, `constraints` remains the right call.
+The ISTAT `availableconstraint` endpoint has a default timeout of **30 s**
+(configured in `portals.json`). On success the result is cached for 7 days.
+The timeout can be raised via the `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` environment
+variable — but raising it is rarely useful (see below).
+
+**Exception — "all municipalities" datasets.** Dataflows that cover all ~8,000
+Italian municipalities at single-age granularity (e.g. `22_289_DF_DCIS_POPRES1_24`,
+`22_289_DF_DCIS_POPRES1_22`) will **always** time out regardless of the timeout
+setting. Empirically verified: ISTAT performs a full-cube scan and returns
+all 8,128 territory codes even when a key filter is passed
+(`/availableconstraint/{id}/.082053..../all` → still 8,128 codes, ~77 s).
+Raising `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` beyond 90 s does not help for these
+datasets.
+
+When `constraints` times out, the CLI prints:
+
+```
+⚠ Constraints request timed out after 30s for <dataflow_id>.
+The provider's availableconstraint endpoint is slow or unresponsive.
+Try again later, or raise the limit: OPENSDMX_AVAILCONSTRAINT_TIMEOUT=60 opensdmx constraints <dataflow_id>
+Data is still accessible: opensdmx get <dataflow_id> ...
+```
+
+**Fallback flow for municipal-level datasets:**
+
+1. Use `opensdmx values <dataflow_id> DATA_TYPE --provider istat` (and other
+   non-geographic dimensions) to get candidate codes from the codelist.
+2. Use `opensdmx values <dataflow_id> REF_AREA --provider istat | grep -i "palermo"`
+   to find the territory code (e.g. `082053`).
+3. Run a narrow `get` with `--last-n 1` or a 1-year period to confirm which
+   codes actually exist in the dataset before downloading everything.
+4. If `get` returns 404 or `NoRecordsFound`, iterate on the code (try base form
+   without version suffix, try a different DATA_TYPE).
+
+For all other ISTAT datasets (national, regional, provincial level),
+`constraints` responds within the 30 s timeout and remains the right call.
 
 ### Step 4 — build the query using verified codes
 

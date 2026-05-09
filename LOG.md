@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-05-08
+
+- refactor(discovery): per-provider `constraint_timeout` / `constraint_max_retries` in `portals.json` instead of hardcoded values in `discovery.py`. Previously the 30 s + 1-attempt fast-fail was applied to **every** provider with `constraints_supported: true` (Eurostat, ABS, BIS, IMF, Derzhstat), silently disabling the 3-retry policy for transient failures (5xx, NetworkError, TimeoutException) on backends that aren't slow. Now only ISTAT carries the override (`constraint_timeout: 30`, `constraint_max_retries: 1`); all other providers keep the module timeout (300 s) and 3 retries. Precedence: `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` env var > provider config > module default. CLI advisory generalized: gating on `provider.constraint_timeout` instead of `agency_id == "IT1"`.
+- feat(discovery): dedicated short timeout for the `availableconstraint` endpoint, configurable via `OPENSDMX_AVAILCONSTRAINT_TIMEOUT`. When the provider's availability backend is slow or unresponsive (documented case: ISTAT, TTFB > 180 s with zero bytes received), `opensdmx constraints` / `values` now fail fast instead of waiting up to 3 × 300 s on the global timeout. New `ConstraintsTimeout` exception parallel to `ConstraintsUnavailable`, exported from the package root. CLI prints a yellow advisory with the exact env var override.
+- feat(http): `sdmx_request` / `sdmx_request_xml` accept optional `_timeout` and `_max_retries` keyword overrides for per-call control of the HTTP timeout and retry attempts.
+- ux: ISTAT pre-warning before the first uncached constraints call now reflects the actual per-call timeout and the no-retry behavior (was a stale "30–120 s" estimate inherited from the old global-timeout regime).
+
 ## 2026-05-08 (v0.6.5)
 
 - fix(http): retry only on transient failures in `sdmx_request` — the previous `@retry` decorator had no `retry=` predicate, so tenacity retried on **any** exception, including `httpx.HTTPStatusError` for 4xx codes. On rate-limit-by-IP providers (e.g. ISTAT) this could turn a single 429 into three back-to-back hits and amplify the risk of a multi-day ban. Now retries are restricted to `httpx.TimeoutException`, `httpx.NetworkError`, `httpx.RemoteProtocolError`, and 5xx server errors (excluding 501 Not Implemented). Predicate exposed as `_is_retryable_exception` for testing.
