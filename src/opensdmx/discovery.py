@@ -428,6 +428,85 @@ def _parse_constraint_xml(content: bytes) -> dict[str, list[str]]:
     return result
 
 
+def _parse_serieskeys_xml(content: bytes) -> dict[str, list[str]]:
+    """Parse a serieskeysonly GenericData XML into {dim_id: [unique sorted values]}."""
+    root, ns = xml_parse(content)
+    generic_ns = ns.get("generic", "")
+
+    series_tag = f"{{{generic_ns}}}Series" if generic_ns else "Series"
+    serieskey_tag = f"{{{generic_ns}}}SeriesKey" if generic_ns else "SeriesKey"
+    val_tag = f"{{{generic_ns}}}Value" if generic_ns else "Value"
+
+    result: dict[str, set[str]] = {}
+    for series in root.iter(series_tag):
+        sk = series.find(serieskey_tag)
+        if sk is None:
+            continue
+        for v in sk.findall(val_tag):
+            dim_id = v.get("id")
+            value = v.get("value")
+            if dim_id and value:
+                result.setdefault(dim_id, set()).add(value)
+
+    return {k: sorted(vs) for k, vs in result.items()}
+
+
+def _fallback_serieskeysonly(dataset: dict, provider: dict) -> dict[str, pl.DataFrame]:
+    """Discover available codes via data?detail=serieskeysonly.
+
+    Used when availableconstraint times out. Sends an all-wildcard data request
+    with detail=serieskeysonly — the server returns series keys (no observations),
+    which encode exactly which dimension value combinations exist.
+
+    Fast on datasets with few dimensions (<6); may still time out on large
+    territorial/census datasets (9+ dims).
+    """
+    from .base import sdmx_request
+    from .db_cache import save_available_constraints
+
+    df_id = dataset["df_id"]
+    n_dims = len(dataset.get("dimensions", {}))
+    key = "." * (n_dims - 1) if n_dims > 1 else ""
+    path = f"data/{df_id}"
+    if key:
+        path = f"{path}/{key}"
+
+    env_timeout = os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT")
+    fallback_timeout = float(env_timeout) if env_timeout else float(
+        provider.get("constraint_fallback_timeout", 30.0)
+    )
+
+    logger.info("constraints: trying serieskeysonly fallback for %s", df_id)
+    try:
+        resp = sdmx_request(
+            path,
+            accept="application/xml",
+            _timeout=fallback_timeout,
+            _max_retries=1,
+            detail="serieskeysonly",
+        )
+    except httpx.TimeoutException as e:
+        logger.warning(
+            "serieskeysonly fallback timed out after %.1fs for %s",
+            fallback_timeout, df_id,
+        )
+        raise ConstraintsTimeout(df_id, fallback_timeout) from e
+    except Exception as e:
+        logger.warning("serieskeysonly fallback failed for %s: %s", df_id, e)
+        return {}
+
+    result = _parse_serieskeys_xml(resp.content)
+    if not result:
+        return {}
+
+    try:
+        save_available_constraints(df_id, result)
+    except Exception as ex:
+        logger.warning("Could not cache serieskeysonly values: %s", ex)
+
+    return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
+
+
 def _fallback_availableconstraint(dataset: dict, provider: dict) -> dict[str, pl.DataFrame]:
     """Query availableconstraint when contentconstraint returned 404.
 
@@ -582,7 +661,13 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
         if covered is None:
             covered = _fetch_and_cache_bulk_constraints(agency_id)
         if df_id not in covered:
-            return _fallback_availableconstraint(dataset, provider)
+            try:
+                return _fallback_availableconstraint(dataset, provider)
+            except ConstraintsTimeout:
+                logger.warning(
+                    "availableconstraint timed out for %s — trying serieskeysonly", df_id
+                )
+                return _fallback_serieskeysonly(dataset, provider)
         # Data was just populated in available_constraints by the bulk fetch
         cached = get_cached_available_constraints(df_id)
         if cached is not None:
@@ -621,7 +706,10 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
             "availableconstraint timed out after %.1fs for %s on provider %s",
             effective_timeout, df_id, provider_name,
         )
-        raise ConstraintsTimeout(df_id, effective_timeout) from e
+        logger.warning(
+            "availableconstraint timed out for %s — trying serieskeysonly", df_id
+        )
+        return _fallback_serieskeysonly(dataset, provider)
     except Exception as e:
         if isinstance(e, httpx.HTTPStatusError) and e.response.status_code == 500:
             raise ConstraintsUnavailable(df_id) from e
@@ -634,7 +722,13 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
                 "contentconstraint returned 404 for %s — falling back to availableconstraint",
                 df_id,
             )
-            return _fallback_availableconstraint(dataset, provider)
+            try:
+                return _fallback_availableconstraint(dataset, provider)
+            except ConstraintsTimeout:
+                logger.warning(
+                    "availableconstraint timed out for %s — trying serieskeysonly", df_id
+                )
+                return _fallback_serieskeysonly(dataset, provider)
         logger.warning("Could not retrieve available values: %s", e)
         return {}
 

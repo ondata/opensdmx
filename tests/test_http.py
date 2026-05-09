@@ -497,8 +497,8 @@ class TestAvailableConstraintTimeout:
                 get_available_values(ds)
         assert excinfo.value.df_id == "TIMEOUT_TEST_DF"
         assert excinfo.value.timeout == 30.0
-        # Single attempt, no retry — would otherwise be 3 calls.
-        assert mock_client_class.return_value.get.call_count == 1
+        # 1 constraint attempt (no retry) + 1 serieskeysonly attempt.
+        assert mock_client_class.return_value.get.call_count == 2
 
     def test_env_var_overrides_provider_timeout(self, tmp_path, monkeypatch):
         """OPENSDMX_AVAILCONSTRAINT_TIMEOUT must override the per-provider value."""
@@ -533,8 +533,8 @@ class TestAvailableConstraintTimeout:
         with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
             with pytest.raises(ConstraintsTimeout):
                 get_available_values(ds)
-        # Default retries: 3 attempts.
-        assert mock_client_class.return_value.get.call_count == 3
+        # 3 constraint attempts (default retries) + 1 serieskeysonly attempt.
+        assert mock_client_class.return_value.get.call_count == 4
 
     def test_500_still_raises_constraints_unavailable(self, tmp_path, monkeypatch):
         """Regression: 500 path (hidden dataflow) must keep working."""
