@@ -12,7 +12,7 @@ DATASETS = {
         "id": "41_269_DF_DCIS_INCIDENTISTR1_1",
         "provider_flag": ["--provider", "istat"],
         "get_args": ["--FREQ", "A", "--REF_AREA", "082053", "--Y_DEADLY_ACCIDENT", "1", "--last-n", "1"],
-        "has_constraints": True,
+        "has_constraints": False,
     },
     "eurostat": {
         "id": "TRAN_SF_ROADNU",
