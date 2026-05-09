@@ -49,6 +49,59 @@ For the dimensions present (`FREQ`, `DATA_TYPE`, `SEX`, `AGE`,
 dataflow. For any dimension marked `–` ("not in contentconstraint"), the CLI
 tells you exactly which command to run next.
 
+### Step 2b — When `contentconstraint` returns 404
+
+Some ISTAT datasets do not publish a `contentconstraint`. When
+`opensdmx constraints` returns 404, try these fallbacks in order:
+
+**Fallback A — `availableconstraint` via curl**
+
+`availableconstraint` is a different SDMX endpoint that returns the values
+actually present in the data. It requires the full key (all dimensions as
+wildcards). Get the dimension count from `opensdmx info`, then build the key:
+
+```bash
+# Get dimension count
+NDIM=$(opensdmx --output json info <dataflow_id> --provider istat | jq '[.[] | select(.type=="dimension")] | length')
+
+# Build the all-wildcard key (N-1 dots for N dimensions) and query REF_AREA
+curl -s "https://esploradati.istat.it/SDMXWS/rest/availableconstraint/IT1,<dataflow_id>,1.0/$(python3 -c "print('.'*($NDIM-1))")/REF_AREA/?mode=Available&references=none"
+```
+
+The response is XML — grep for `<a:Value>` to extract valid codes. Repeat with
+other dimension names to discover which codes are actually in the data.
+
+**Fallback B — probe GET to discover valid territory codes**
+
+If `availableconstraint` also times out or fails, do a probe GET with no area
+filter and a narrow 1-year time range. Save to CSV and inspect distinct values:
+
+```bash
+opensdmx get <dataflow_id> --provider istat \
+  --start-period 2022 --end-period 2022 \
+  --out /tmp/probe.csv
+
+duckdb -c "SELECT DISTINCT REF_AREA, count(*) n FROM '/tmp/probe.csv' GROUP BY REF_AREA ORDER BY n DESC LIMIT 30"
+```
+
+This is slower (full-year scan) but gives ground truth on which `REF_AREA`
+codes are actually populated in the dataflow.
+
+**If both fallbacks fail or time out**
+
+The dataset may have issues specific to the SDMX REST endpoint:
+
+1. Check if the search results included region-specific variants (e.g.
+   `41_269_1` for Lazio) — the data may be published per-region.
+2. Run `opensdmx siblings <dataflow_id> --provider istat` to find related
+   dataflows that may cover the same subject at a different aggregation level.
+3. Verify via the ISTAT web explorer (I.Stat) that the data exists at the
+   requested granularity.
+
+Note: the correct long-term fix is for `opensdmx constraints` to automatically
+fall back to `availableconstraint` when `contentconstraint` returns 404. Until
+that is implemented in the CLI, use the manual curl approach above.
+
 ### Step 3 — for missing dimensions, fall back to `values`
 
 ```bash
