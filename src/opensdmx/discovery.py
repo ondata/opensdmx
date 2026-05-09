@@ -697,7 +697,7 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
             **constraint_params,
         )
         result = _parse_constraint_xml(content)
-    except httpx.TimeoutException as e:
+    except httpx.TimeoutException:
         provider_name = provider.get("name", "unknown")
         # If no override was set, the module default applied — surface that to the user.
         from .base import _timeout as _module_timeout
