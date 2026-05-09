@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-05-09 — contentconstraint 404 → availableconstraint fallback
+
+- fix(discovery): `get_available_values` now falls back to `availableconstraint` when `contentconstraint` returns 404. Previously, a 404 was silently swallowed (logged as a warning, returned `{}`), leaving the user with no constraint data and no recovery path. Now: if the provider uses `contentconstraint` and gets 404, `_fallback_availableconstraint` constructs the all-wildcard SDMX key (`N-1` dots for `N` dimensions) and retries against the `availableconstraint` endpoint.
+- feat(portals): added `constraint_fallback_timeout: 30` to the ISTAT entry. The fallback uses a shorter 30 s timeout (vs. the normal constraint timeout) to fail fast on datasets where `availableconstraint` is also slow (e.g. large municipal datasets like road accident data). On timeout, `ConstraintsTimeout` is raised — the same exception already handled by the CLI.
+- refactor(discovery): extracted `_parse_constraint_xml(content)` helper, reused by both the primary path and the fallback. Eliminates duplicated KeyValue parsing logic.
+- test: 3 new unit tests in `tests/test_discovery.py` covering contentconstraint-200, contentconstraint-404→fallback-200, and contentconstraint-404→fallback-timeout — all mocked, no network calls.
+
+Note: the road-accident dataset (`41_270_DF_DCIS_MORTIFERITISTR1_1`) that motivated this fix will still raise `ConstraintsTimeout` on the fallback (its `availableconstraint` endpoint is slow regardless of timeout). For that dataset the only reliable path remains Fallback B: probe GET with a narrow time range + `duckdb DISTINCT REF_AREA` (documented in `skills/sdmx-explorer/references/istat-flow.md`).
+
 ## 2026-05-09 (v0.6.7 — issue #24)
 
 - feat(istat): switch ISTAT to `contentconstraint` — `opensdmx constraints` on ISTAT goes from always timing out on large municipal datasets (e.g. `22_289_DF_DCIS_POPRES1_24` ~77 s before timeout) to **sub-second** response. Probed 6 providers (Eurostat baseline + ISTAT + ABS + BIS + IMF + Derzhstat) and only ISTAT gains from the switch in this iteration; the other 4 either return 404/401/204 on `contentconstraint`. Probe details in `tmp/contentconstraint-probe.md`. Removed from the ISTAT entry the obsolete `constraint_path_suffix`, `constraint_params`, `constraint_timeout` and `constraint_max_retries` (those were specific to `availableconstraint`).

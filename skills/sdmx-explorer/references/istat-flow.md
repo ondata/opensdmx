@@ -51,30 +51,24 @@ tells you exactly which command to run next.
 
 ### Step 2b — When `contentconstraint` returns 404
 
-Some ISTAT datasets do not publish a `contentconstraint`. When
-`opensdmx constraints` returns 404, try these fallbacks in order:
+Some ISTAT datasets do not publish a `contentconstraint`. When this happens,
+`opensdmx constraints` automatically falls back to `availableconstraint`
+(the endpoint that returns values actually present in the data). The fallback
+uses a 30 s timeout to fail fast on slow backends.
 
-**Fallback A — `availableconstraint` via curl**
+**Most datasets**: the automatic fallback succeeds silently — you get constraint
+data without any extra steps.
 
-`availableconstraint` is a different SDMX endpoint that returns the values
-actually present in the data. It requires the full key (all dimensions as
-wildcards). Get the dimension count from `opensdmx info`, then build the key:
-
-```bash
-# Get dimension count
-NDIM=$(opensdmx --output json info <dataflow_id> --provider istat | jq '[.[] | select(.type=="dimension")] | length')
-
-# Build the all-wildcard key (N-1 dots for N dimensions) and query REF_AREA
-curl -s "https://esploradati.istat.it/SDMXWS/rest/availableconstraint/IT1,<dataflow_id>,1.0/$(python3 -c "print('.'*($NDIM-1))")/REF_AREA/?mode=Available&references=none"
-```
-
-The response is XML — grep for `<a:Value>` to extract valid codes. Repeat with
-other dimension names to discover which codes are actually in the data.
+**Large municipal datasets** (e.g. road accidents, detailed demographic flows):
+`availableconstraint` may time out even with the automatic fallback, because the
+endpoint itself is unresponsive on very large datasets. In that case `opensdmx
+constraints` raises a timeout error with a clear message. Continue with Fallback
+B below.
 
 **Fallback B — probe GET to discover valid territory codes**
 
-If `availableconstraint` also times out or fails, do a probe GET with no area
-filter and a narrow 1-year time range. Save to CSV and inspect distinct values:
+When the automatic fallback times out, do a probe GET with no area filter and a
+narrow 1-year time range. Save to CSV and inspect distinct values:
 
 ```bash
 opensdmx get <dataflow_id> --provider istat \
@@ -87,7 +81,7 @@ duckdb -c "SELECT DISTINCT REF_AREA, count(*) n FROM '/tmp/probe.csv' GROUP BY R
 This is slower (full-year scan) but gives ground truth on which `REF_AREA`
 codes are actually populated in the dataflow.
 
-**If both fallbacks fail or time out**
+**If Fallback B also times out or returns no results**
 
 The dataset may have issues specific to the SDMX REST endpoint:
 
@@ -97,10 +91,6 @@ The dataset may have issues specific to the SDMX REST endpoint:
    dataflows that may cover the same subject at a different aggregation level.
 3. Verify via the ISTAT web explorer (I.Stat) that the data exists at the
    requested granularity.
-
-Note: the correct long-term fix is for `opensdmx constraints` to automatically
-fall back to `availableconstraint` when `contentconstraint` returns 404. Until
-that is implemented in the CLI, use the manual curl approach above.
 
 ### Step 3 — for missing dimensions, fall back to `values`
 

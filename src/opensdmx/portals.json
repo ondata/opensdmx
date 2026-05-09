@@ -37,6 +37,7 @@
     "rate_limit": 15.0,
     "language": "it",
     "constraint_endpoint": "contentconstraint",
+    "constraint_fallback_timeout": 30,
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": true

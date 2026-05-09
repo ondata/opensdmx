@@ -406,8 +406,84 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     return pl.DataFrame(records, schema={"id": pl.Utf8, "name": pl.Utf8})
 
 
+def _parse_constraint_xml(content: bytes) -> dict[str, list[str]]:
+    """Parse KeyValue elements from a constraint XML response into a code dict."""
+    root, ns = xml_parse(content)
+    common_ns = ns.get("common", "")
+    struct_ns = ns.get("structure", "")
+    result: dict = {}
+    kv_tags = []
+    if struct_ns:
+        kv_tags.append(f"{{{struct_ns}}}KeyValue")
+    if common_ns:
+        kv_tags.append(f"{{{common_ns}}}KeyValue")
+    for kv_tag in kv_tags:
+        for kv in root.iter(kv_tag):
+            dim_id = kv.get("id")
+            if not dim_id:
+                continue
+            values = [c.text.strip() for c in kv if c.text and c.text.strip()]
+            if values:
+                result[dim_id] = values
+    return result
+
+
+def _fallback_availableconstraint(dataset: dict, provider: dict) -> dict[str, pl.DataFrame]:
+    """Query availableconstraint when contentconstraint returned 404.
+
+    Builds the all-wildcard key from the dataset's dimension count and version.
+    Caches results on success; raises ConstraintsTimeout if the endpoint is slow.
+    """
+    from .db_cache import save_available_constraints
+
+    df_id = dataset["df_id"]
+    agency_id = provider.get("agency_id", "")
+    version = dataset.get("version") or "1.0"
+    n_dims = len(dataset.get("dimensions", {}))
+    # SDMX key: N values separated by N-1 dots; all-wildcard = (N-1) dots
+    key = "." * (n_dims - 1) if n_dims > 1 else ""
+    path = f"availableconstraint/{agency_id},{df_id},{version}/{key}"
+
+    # Shorter timeout to fail fast on unresponsive backends.
+    # Precedence: env var > provider config > default 30s.
+    env_timeout = os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT")
+    fallback_timeout: float = float(env_timeout) if env_timeout else float(
+        provider.get("constraint_fallback_timeout", 30.0)
+    )
+
+    try:
+        content = sdmx_request_xml(
+            path,
+            _timeout=fallback_timeout,
+            _max_retries=1,
+            mode="Available",
+            references="none",
+        )
+    except httpx.TimeoutException as e:
+        logger.warning(
+            "availableconstraint fallback timed out after %.1fs for %s",
+            fallback_timeout, df_id,
+        )
+        raise ConstraintsTimeout(df_id, fallback_timeout) from e
+    except Exception as e:
+        logger.warning("availableconstraint fallback also failed for %s: %s", df_id, e)
+        return {}
+
+    result = _parse_constraint_xml(content)
+
+    try:
+        save_available_constraints(df_id, result)
+    except Exception as ex:
+        logger.warning("Could not cache constraint values: %s", ex)
+
+    return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
+
+
 def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
-    """Get all available values for all dimensions via availableconstraint endpoint.
+    """Get all available values for all dimensions via constraint endpoint.
+
+    For providers using contentconstraint: automatically falls back to
+    availableconstraint when contentconstraint returns 404.
 
     Results are cached in SQLite for 7 days.
     """
@@ -443,27 +519,7 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
             _max_retries=constraint_max_retries,
             **constraint_params,
         )
-        root, ns = xml_parse(content)
-
-        common_ns = ns.get("common", "")
-        struct_ns = ns.get("structure", "")
-
-        result: dict = {}
-        kv_tags = []
-        if struct_ns:
-            kv_tags.append(f"{{{struct_ns}}}KeyValue")
-        if common_ns:
-            kv_tags.append(f"{{{common_ns}}}KeyValue")
-
-        for kv_tag in kv_tags:
-            for kv in root.iter(kv_tag):
-                dim_id = kv.get("id")
-                if not dim_id:
-                    continue
-                values = [c.text.strip() for c in kv if c.text and c.text.strip()]
-                if values:
-                    result[dim_id] = values
-
+        result = _parse_constraint_xml(content)
     except httpx.TimeoutException as e:
         provider_name = provider.get("name", "unknown")
         # If no override was set, the module default applied — surface that to the user.
@@ -477,6 +533,16 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     except Exception as e:
         if isinstance(e, httpx.HTTPStatusError) and e.response.status_code == 500:
             raise ConstraintsUnavailable(df_id) from e
+        if (
+            constraint_endpoint == "contentconstraint"
+            and isinstance(e, httpx.HTTPStatusError)
+            and e.response.status_code == 404
+        ):
+            logger.warning(
+                "contentconstraint returned 404 for %s — falling back to availableconstraint",
+                df_id,
+            )
+            return _fallback_availableconstraint(dataset, provider)
         logger.warning("Could not retrieve available values: %s", e)
         return {}
 

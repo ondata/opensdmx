@@ -98,3 +98,99 @@ def test_reset_filters_returns_copy():
     result = reset_filters(ds_filtered)
     assert result is not ds_filtered
     assert ds_filtered["filters"]["FREQ"] == "A"  # original unchanged
+
+
+# ── contentconstraint 404 → availableconstraint fallback ─────────────────
+
+import httpx
+from unittest.mock import patch
+
+_ISTAT_PROVIDER = {
+    "name": "ISTAT",
+    "base_url": "https://esploradati.istat.it/SDMXWS/rest",
+    "agency_id": "IT1",
+    "rate_limit": 15.0,
+    "language": "it",
+    "constraint_endpoint": "contentconstraint",
+    "constraint_fallback_timeout": 30,
+    "constraint_params": {"references": "none"},
+}
+
+
+def _istat_dataset():
+    dims = {
+        "FREQ": {"id": "FREQ", "position": 1, "codelist_id": "CL_FREQ"},
+        "REF_AREA": {"id": "REF_AREA", "position": 2, "codelist_id": "CL_AREA"},
+        "DATA_TYPE": {"id": "DATA_TYPE", "position": 3, "codelist_id": "CL_DATA"},
+    }
+    return {
+        "df_id": "TEST_ISTAT_DF",
+        "version": "1.0",
+        "df_description": "Test ISTAT Dataset",
+        "df_structure_id": "TEST_DSD",
+        "dimensions": dims,
+        "filters": {d: "." for d in dims},
+    }
+
+
+def _http_404():
+    req = httpx.Request("GET", "http://x")
+    resp = httpx.Response(404, request=req)
+    return httpx.HTTPStatusError("404", request=req, response=resp)
+
+
+def test_get_available_values_contentconstraint_200():
+    """contentconstraint returns 200 — normal path, no fallback."""
+    from opensdmx.discovery import get_available_values
+
+    fake_parsed = {"FREQ": ["A"], "DATA_TYPE": ["VAL1"]}
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=b"<xml/>") as mock_req, \
+         patch("opensdmx.discovery._parse_constraint_xml", return_value=fake_parsed):
+        result = get_available_values(_istat_dataset())
+
+    assert set(result.keys()) == {"FREQ", "DATA_TYPE"}
+    called_path = mock_req.call_args[0][0]
+    assert called_path.startswith("contentconstraint/")
+
+
+def test_get_available_values_contentconstraint_404_fallback_success():
+    """contentconstraint returns 404 → falls back to availableconstraint successfully."""
+    from opensdmx.discovery import get_available_values
+
+    fallback_parsed = {"FREQ": ["A"], "REF_AREA": ["082053", "ITG12"], "DATA_TYPE": ["INC"]}
+
+    def fake_request(path, **kwargs):
+        if "contentconstraint" in path:
+            raise _http_404()
+        return b"<xml/>"
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", side_effect=fake_request), \
+         patch("opensdmx.discovery._parse_constraint_xml", return_value=fallback_parsed):
+        result = get_available_values(_istat_dataset())
+
+    assert "REF_AREA" in result
+    assert result["REF_AREA"].to_series().to_list() == ["082053", "ITG12"]
+
+
+def test_get_available_values_contentconstraint_404_fallback_timeout():
+    """contentconstraint returns 404 → availableconstraint times out → ConstraintsTimeout raised."""
+    from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+    def fake_request(path, **kwargs):
+        if "contentconstraint" in path:
+            raise _http_404()
+        raise httpx.TimeoutException("timeout")
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", side_effect=fake_request):
+        with pytest.raises(ConstraintsTimeout):
+            get_available_values(_istat_dataset())
