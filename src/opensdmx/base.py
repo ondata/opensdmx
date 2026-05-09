@@ -11,7 +11,7 @@ from pathlib import Path
 
 import httpx
 import portalocker
-from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
+from tenacity import Retrying, retry_if_exception, stop_after_attempt, wait_exponential
 
 # Defaults for fields not specified in portals.json or custom providers
 _DEFAULTS: dict = {
@@ -255,16 +255,30 @@ def _is_retryable_exception(exc: BaseException) -> bool:
     return False
 
 
-def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.Response:
-    """Make a request to the active SDMX provider with retry logic."""
-    url = f"{get_base_url()}/{path}"
+def sdmx_request(
+    path: str,
+    accept: str = "application/xml",
+    *,
+    _timeout: float | None = None,
+    _max_retries: int | None = None,
+    **params,
+) -> httpx.Response:
+    """Make a request to the active SDMX provider with retry logic.
 
-    @retry(
+    `_timeout` and `_max_retries` override the module defaults for this call only
+    (used e.g. by `availableconstraint` discovery to fail fast on slow backends).
+    """
+    url = f"{get_base_url()}/{path}"
+    effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
+    effective_attempts = _max_retries if _max_retries is not None else 3
+
+    retryer = Retrying(
         retry=retry_if_exception(_is_retryable_exception),
-        stop=stop_after_attempt(3),
+        stop=stop_after_attempt(effective_attempts),
         wait=wait_exponential(multiplier=0.5, min=0.5, max=4),
         reraise=True,
     )
+
     def _do_request() -> httpx.Response:
         # Hold an exclusive file lock for the whole HTTP call. This serializes
         # requests to the same provider across processes, so the rate limit is
@@ -279,7 +293,7 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
                 _rate_limit_file().write_text(str(time.time()))
             except OSError:
                 pass
-            with httpx.Client(timeout=_timeout, follow_redirects=True) as client:
+            with httpx.Client(timeout=effective_timeout, follow_redirects=True) as client:
                 user_agent = os.environ.get(
                     "OPENSDMX_USER_AGENT",
                     get_provider().get("user_agent") or "opensdmx Python package",
@@ -293,10 +307,16 @@ def sdmx_request(path: str, accept: str = "application/xml", **params) -> httpx.
                 resp.raise_for_status()
                 return resp
 
-    return _do_request()
+    return retryer(_do_request)
 
 
-def sdmx_request_xml(path: str, **params):
+def sdmx_request_xml(
+    path: str,
+    *,
+    _timeout: float | None = None,
+    _max_retries: int | None = None,
+    **params,
+):
     """Make a request and return the raw XML bytes.
 
     Uses the SDMX 2.1 structure Accept header — the generic "application/xml"
@@ -305,6 +325,8 @@ def sdmx_request_xml(path: str, **params):
     resp = sdmx_request(
         path,
         accept="application/vnd.sdmx.structure+xml;version=2.1",
+        _timeout=_timeout,
+        _max_retries=_max_retries,
         **params,
     )
     return resp.content

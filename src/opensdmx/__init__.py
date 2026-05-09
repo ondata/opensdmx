@@ -9,6 +9,7 @@ except PackageNotFoundError:
 
 from .base import get_provider, set_provider, set_timeout, set_extra_headers, get_extra_headers
 from .discovery import (
+    ConstraintsTimeout,
     ConstraintsUnavailable,
     all_available,
     dimensions_info,
@@ -25,6 +26,7 @@ from .embed import build_embeddings, semantic_search
 from .cli import main
 
 __all__ = [
+    "ConstraintsTimeout",
     "ConstraintsUnavailable",
     "set_provider",
     "get_provider",

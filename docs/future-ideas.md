@@ -26,16 +26,16 @@ Feynman generates a `.provenance.md` for every output. opensdmx already has some
 
 Feynman has a `Verifier` agent that validates every citation. opensdmx could have a `verify` command that takes a numeric value and searches it across alternative providers — "is this figure confirmed by both IMF and OECD?"
 
-**4. Natural language statistical research assistant**
+**4. Natural language statistical research assistant** *(partially implemented)*
 
 The most ambitious idea: a mode where the user asks a question in natural language and the system:
 
-1. Discovers relevant dataflows (already works via `catalog`)
-2. Resolves dimensions and filters (already works via `values`/`constraints`)
-3. Fetches the data
+1. Discovers relevant dataflows (already works via `catalog`) ✓
+2. Resolves dimensions and filters (already works via `values`/`constraints`) ✓
+3. Fetches the data ✓
 4. Answers with figures traced to the exact SDMX source
 
-This would be the statistical equivalent of Feynman.
+The `sdmx-explorer` skill is already a working embryo of this pattern. What's missing: persistent state, structured output artifacts, verification loops.
 
 ### Architectural Direction
 
@@ -84,6 +84,36 @@ Example: `opensdmx search --all-providers "inflation"`.
 **10. SDMX 3.0 / REST 2.0** *(low priority, high effort)*
 
 `sdmx1` and `pysdmx` (BIS) already support SDMX 3.0. No mainstream provider requires it today, but it is an emerging requirement. Defer until Eurostat or OECD mandate REST 2.0.
+
+---
+
+## rsdmx-Inspired Improvements
+
+Patterns from open issues in [eblondel/rsdmx](https://github.com/eblondel/rsdmx) (R package for SDMX) that reveal unmet user needs.
+
+**11. Hierarchical parent labels in codelist enrichment** *(low priority, medium effort)*
+
+When enriching a dataset with DSD labels, also return parent code labels (and grandparent, if present). rsdmx #109 has been open since 2016 — a persistent user need. opensdmx already does label lookup but ignores hierarchy. Useful for geographic hierarchies (country → region → city) and classification trees.
+
+**Feasibility note (2026-05-01):** SDMX 2.1 defines a `<structure:Parent><Ref id="..."/></structure:Parent>` element for explicit hierarchy. ISTAT uses it (e.g. CL_ITTER107: 12,465/12,471 codes have a parent). However, Eurostat and OECD do not — their hierarchy is implicit in the code structure (`OC1 → OC11 → OC111`) and would require provider-specific heuristics. Two separate code paths needed for limited gain: downgraded to low priority.
+
+**12. Codelist filtered by constraint** *(low priority, low effort)*
+
+`opensdmx values` currently returns all values declared in the codelist, not only those present in the dataset. rsdmx #190 exposes the same bug. Fix: apply the `AvailableConstraint` to filter the codelist before returning it. Note: `opensdmx constraints` already does this correctly — the gap is only in `values`.
+
+**Coverage note:** the `sdmx-explorer` skill already addresses this for AI-orchestrated use: it explicitly instructs never to use `opensdmx values` to validate filter codes and routes all constraint checks through `opensdmx constraints`. The remaining gap is purely UX for human users running `values` directly from the terminal.
+
+**13. Custom HTTP headers for authenticated providers** *(medium priority, low effort)*
+
+Some providers (e.g. ABS Australia) require API key in the HTTP header, not the query string. rsdmx #162. opensdmx has no mechanism for this. A `--header "X-Api-Key: ..."` flag or a per-provider `headers:` key in `providers.yaml` would cover the gap.
+
+**14. Auto-coercion of TIME_PERIOD to ISO dates** *(implemented)*
+
+`parse_time_period()` is applied by default in `retrieval.py` on every `get` call and in `plot`. No action needed.
+
+**15. Dataset validation against DSD** *(low priority, medium effort)*
+
+A command `opensdmx validate <dataflow> [--file data.csv]` that checks a dataset for compliance with its DSD: required dimensions present, values in declared codelists, observation attributes valid. rsdmx #107.
 
 ### Related projects to monitor
 

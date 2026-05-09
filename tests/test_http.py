@@ -425,3 +425,110 @@ class TestRetryBehavior:
                 sdmx_request("data/TEST")
         client_instance = mock_client_class.return_value
         assert client_instance.get.call_count == 3
+
+    def test_max_retries_override_one_attempt(self, tmp_path, monkeypatch):
+        """_max_retries=1 must short-circuit the default 3 attempts (timeout fast-fail path)."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
+            with pytest.raises(httpx.ConnectTimeout):
+                sdmx_request("data/TEST", _max_retries=1)
+        client_instance = mock_client_class.return_value
+        assert client_instance.get.call_count == 1
+
+    def test_timeout_override_passed_to_httpx_client(self, tmp_path, monkeypatch):
+        """_timeout override must reach httpx.Client(timeout=...)."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        with _mock_http_client(b"") as mock_client_class:
+            sdmx_request("data/TEST", _timeout=7.5)
+        # Call kwargs of httpx.Client(...)
+        _, kwargs = mock_client_class.call_args
+        assert kwargs["timeout"] == 7.5
+
+
+# ---------------------------------------------------------------------------
+# get_available_values — fast-fail on availableconstraint timeout
+# ---------------------------------------------------------------------------
+
+class TestAvailableConstraintTimeout:
+    """Verify that availableconstraint times out fast and raises ConstraintsTimeout.
+
+    Provider-specific tuning lives in portals.json (constraint_timeout,
+    constraint_max_retries). Only providers that opt in get the fast-fail behavior;
+    the rest keep the default 3 retries on transient failures.
+    """
+
+    @pytest.fixture(autouse=True)
+    def _fast_retry(self, monkeypatch):
+        from tenacity import wait_none
+        monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
+        # Force db_cache to re-init schema for the per-test tmp cache dir.
+        monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
+        # Skip per-provider rate-limit sleep so multi-attempt cases stay fast.
+        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda: None)
+
+    def _dataset(self, df_id: str = "TEST_DF") -> dict:
+        return {
+            "df_id": df_id,
+            "version": "1.0",
+            "df_description": "Test",
+            "df_structure_id": "TEST_DSD",
+            "dimensions": {"FREQ": {"id": "FREQ", "position": 0, "codelist_id": None}},
+            "filters": {"FREQ": "."},
+        }
+
+    def test_istat_timeout_raises_constraints_timeout(self, tmp_path, monkeypatch):
+        """ISTAT (configured constraint_timeout=30, max_retries=1) → fast-fail in 1 call."""
+        from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        set_provider("istat")
+        ds = self._dataset(df_id="TIMEOUT_TEST_DF")
+        with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
+            with pytest.raises(ConstraintsTimeout) as excinfo:
+                get_available_values(ds)
+        assert excinfo.value.df_id == "TIMEOUT_TEST_DF"
+        assert excinfo.value.timeout == 30.0
+        # Single attempt, no retry — would otherwise be 3 calls.
+        assert mock_client_class.return_value.get.call_count == 1
+
+    def test_env_var_overrides_provider_timeout(self, tmp_path, monkeypatch):
+        """OPENSDMX_AVAILCONSTRAINT_TIMEOUT must override the per-provider value."""
+        from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        monkeypatch.setenv("OPENSDMX_AVAILCONSTRAINT_TIMEOUT", "12.0")
+        set_provider("istat")
+        ds = self._dataset(df_id="ENV_TIMEOUT_DF")
+        with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
+            with pytest.raises(ConstraintsTimeout) as excinfo:
+                get_available_values(ds)
+        assert excinfo.value.timeout == 12.0
+        _, kwargs = mock_client_class.call_args
+        assert kwargs["timeout"] == 12.0
+
+    def test_provider_without_override_keeps_default_retries(self, tmp_path, monkeypatch):
+        """Eurostat (no constraint_timeout in portals.json) → 3 retry, module timeout.
+
+        Regression guard: the previous hardcoded 30s + 1 attempt was applied to all
+        providers, which silently disabled retries for Eurostat/ABS/BIS/IMF/Derzhstat.
+        """
+        from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        # eurostat is set by the module-level autouse fixture
+        ds = self._dataset(df_id="EUROSTAT_NO_OVERRIDE_DF")
+        with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
+            with pytest.raises(ConstraintsTimeout):
+                get_available_values(ds)
+        # Default retries: 3 attempts.
+        assert mock_client_class.return_value.get.call_count == 3
+
+    def test_500_still_raises_constraints_unavailable(self, tmp_path, monkeypatch):
+        """Regression: 500 path (hidden dataflow) must keep working."""
+        from opensdmx.discovery import ConstraintsUnavailable, get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        ds = self._dataset(df_id="HIDDEN_DF_500")
+        with _mock_client_raising_on_status(_http_status_error(500)):
+            with pytest.raises(ConstraintsUnavailable):
+                get_available_values(ds)

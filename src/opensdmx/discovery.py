@@ -6,7 +6,21 @@ from __future__ import annotations
 class ConstraintsUnavailable(Exception):
     """Raised when the availableconstraint endpoint returns 500 (hidden/not-yet-public dataflow)."""
 
+
+class ConstraintsTimeout(Exception):
+    """Raised when the availableconstraint endpoint times out (slow provider backend)."""
+
+    def __init__(self, df_id: str, timeout: float):
+        self.df_id = df_id
+        self.timeout = timeout
+        super().__init__(
+            f"Constraints request timed out after {timeout:.1f}s for {df_id}. "
+            f"Set OPENSDMX_AVAILCONSTRAINT_TIMEOUT to override."
+        )
+
+
 import logging
+import os
 import time
 
 logger = logging.getLogger(__name__)
@@ -411,9 +425,24 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
         path = f"{constraint_endpoint}/{provider['agency_id']}/{df_id}"
     else:
         path = f"{constraint_endpoint}/{df_id}{constraint_suffix}"
+
+    # Precedence: env var > provider config > module default (None → fallback in sdmx_request).
+    env_timeout = os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT")
+    if env_timeout:
+        constraint_timeout = float(env_timeout)
+    else:
+        provider_timeout = provider.get("constraint_timeout")
+        constraint_timeout = float(provider_timeout) if provider_timeout is not None else None
+    constraint_max_retries = provider.get("constraint_max_retries")  # None → default 3 in sdmx_request
+
     try:
         constraint_params = provider.get("constraint_params", {"references": "none"})
-        content = sdmx_request_xml(path, **constraint_params)
+        content = sdmx_request_xml(
+            path,
+            _timeout=constraint_timeout,
+            _max_retries=constraint_max_retries,
+            **constraint_params,
+        )
         root, ns = xml_parse(content)
 
         common_ns = ns.get("common", "")
@@ -435,8 +464,17 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
                 if values:
                     result[dim_id] = values
 
+    except httpx.TimeoutException as e:
+        provider_name = provider.get("name", "unknown")
+        # If no override was set, the module default applied — surface that to the user.
+        from .base import _timeout as _module_timeout
+        effective_timeout = constraint_timeout if constraint_timeout is not None else _module_timeout
+        logger.warning(
+            "availableconstraint timed out after %.1fs for %s on provider %s",
+            effective_timeout, df_id, provider_name,
+        )
+        raise ConstraintsTimeout(df_id, effective_timeout) from e
     except Exception as e:
-        import httpx
         if isinstance(e, httpx.HTTPStatusError) and e.response.status_code == 500:
             raise ConstraintsUnavailable(df_id) from e
         logger.warning("Could not retrieve available values: %s", e)
