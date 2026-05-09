@@ -108,6 +108,39 @@ https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?start
 Dimension values in the path follow the order from `opensdmx info`, with `.`
 for unfiltered dimensions and `+` to combine multiple values.
 
+## Aggregate codes in the data
+
+Many ISTAT dataflows include **aggregate codes** alongside individual-level
+codes. These are totals and sub-totals that summarise other rows — they must be
+excluded before any sum, chart, or analysis, or they will double-count the data.
+
+Common aggregate codes:
+
+| Dimension | Code    | Meaning               |
+|-----------|---------|-----------------------|
+| AGE       | `TOTAL` | all ages combined     |
+| SEX       | `9`     | both sexes combined   |
+| DATA_TYPE | varies  | often a grand total   |
+
+After downloading, always filter out aggregate codes before using the data.
+Example with DuckDB:
+
+```sql
+SELECT * FROM 'data.csv'
+WHERE AGE != 'TOTAL' AND SEX != 9
+```
+
+The `constraints` command shows aggregate codes alongside individual ones
+without marking them as totals — you cannot distinguish them from the schema
+alone. Check the codelist labels (via `opensdmx values <id> <dim> --provider
+istat`) to identify which codes are aggregates (labels like "total", "all",
+"tutti", "totale").
+
+Also note: when filtering by time period with `--start-period` / `--end-period`
+using year-only values (e.g. `2025`), ISTAT may return observations dated
+`YYYY+1-01-01` because it stores annual data as `YYYY-01-01`. Filter on the
+`TIME_PERIOD` column after download to select the exact reference date.
+
 ## Other quirks
 
 - Some IDs are **parent containers** (e.g. `25_74`) rather than fetchable
