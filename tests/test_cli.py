@@ -87,6 +87,92 @@ def test_search_unknown_provider():
     assert result.exit_code != 0
 
 
+# ── constraints command: missing-dimension hint (issue #24) ──────────
+
+
+def _fake_constraints_dataset():
+    """Dataset with 3 dims; the constraint endpoint will return only 2 of them."""
+    return {
+        "df_id": "TEST_DF",
+        "version": "1.0",
+        "df_description": "Test",
+        "df_structure_id": "TEST_DSD",
+        "dimensions": {
+            "FREQ": {"id": "FREQ", "position": 1, "codelist_id": "CL_FREQ"},
+            "REF_AREA": {"id": "REF_AREA", "position": 2, "codelist_id": "CL_AREA"},
+            "SEX": {"id": "SEX", "position": 3, "codelist_id": "CL_SEX"},
+        },
+        "filters": {"FREQ": ".", "REF_AREA": ".", "SEX": "."},
+    }
+
+
+def _fake_avail_with_missing_dim():
+    """Return only FREQ + SEX — REF_AREA missing (e.g. ISTAT contentconstraint)."""
+    import polars as pl
+
+    return {
+        "FREQ": pl.DataFrame({"id": ["A"]}),
+        "SEX": pl.DataFrame({"id": ["1", "2", "9"]}),
+    }
+
+
+def test_constraints_table_shows_missing_dim_hint():
+    """Table mode: dim absent from constraint response gets a row with – and a hint."""
+    import re
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
+        result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    # Strip Rich box-drawing characters and collapse whitespace so the wrapped
+    # hint string survives the table's column truncation.
+    flat = re.sub(r"[│┃┏┓┗┛┡┩━┳┻┣┫─]+", " ", result.output)
+    flat = re.sub(r"\s+", " ", flat)
+    # Present dims show their values
+    assert "FREQ" in flat
+    assert "SEX" in flat
+    # Missing dim: row with REF_AREA + hint pointing to `opensdmx values`
+    assert "REF_AREA" in flat
+    assert "not in contentconstraint" in flat
+    assert "opensdmx values TEST_DF REF_AREA" in flat
+
+
+def test_constraints_json_marks_missing_dim_with_source_and_hint():
+    """JSON mode: missing dim entry has source='missing' + hint field."""
+    import json
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
+        result = runner.invoke(app, ["--output", "json", "constraints", "TEST_DF", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    payload = json.loads(result.output)
+    assert payload["FREQ"]["source"] == "constraint"
+    assert payload["FREQ"]["n_values"] == 1
+    assert payload["REF_AREA"]["source"] == "missing"
+    assert payload["REF_AREA"]["n_values"] is None
+    assert payload["REF_AREA"]["hint"] == "opensdmx values TEST_DF REF_AREA"
+
+
+def test_constraints_single_dim_missing_suggests_values():
+    """Asking for a missing dim explicitly → suggest `opensdmx values` and exit 0."""
+    import re
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
+        result = runner.invoke(app, ["constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    flat = re.sub(r"\s+", " ", result.output)
+    assert "REF_AREA" in flat
+    assert "not exposed by contentconstraint" in flat
+    assert "opensdmx values TEST_DF REF_AREA" in flat
+
+
 # ── tree command: error paths and depth semantics ────────────────────
 
 

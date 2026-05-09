@@ -1,5 +1,17 @@
 # LOG
 
+## 2026-05-09 (v0.6.7 — issue #24)
+
+- feat(istat): switch ISTAT to `contentconstraint` — `opensdmx constraints` on ISTAT goes from always timing out on large municipal datasets (e.g. `22_289_DF_DCIS_POPRES1_24` ~77 s before timeout) to **sub-second** response. Probed 6 providers (Eurostat baseline + ISTAT + ABS + BIS + IMF + Derzhstat) and only ISTAT gains from the switch in this iteration; the other 4 either return 404/401/204 on `contentconstraint`. Probe details in `tmp/contentconstraint-probe.md`. Removed from the ISTAT entry the obsolete `constraint_path_suffix`, `constraint_params`, `constraint_timeout` and `constraint_max_retries` (those were specific to `availableconstraint`).
+- feat(cli): inline hint for dimensions absent from `contentconstraint`. ISTAT's `contentconstraint` does not expose `REF_AREA` (8k+ comuni would inflate the payload). The `constraints` summary table now shows missing dimensions with `–` and a hint pointing at the codelist endpoint:
+
+  ```
+  REF_AREA  –  not in contentconstraint — use: opensdmx values 22_289_DF_DCIS_POPRES1_24 REF_AREA
+  ```
+
+  In `--output json` mode each dimension entry carries a `source` field (`"constraint"` or `"missing"`) and missing entries include a `hint` field with the exact follow-up command. Single-dim mode (`opensdmx constraints <df> REF_AREA`) emits the same hint instead of a hard error and exits 0.
+- docs(skill): rewrite `sdmx-explorer/references/istat-flow.md` for the `contentconstraint` flow (no more 30 s timeout warnings). Update `SKILL.md` constraints section with the missing-dim pattern, `source`/`hint` JSON fields, and a `jq` recipe to list dims that need a `values` follow-up.
+
 ## 2026-05-09 (v0.6.6)
 
 - refactor(discovery): per-provider `constraint_timeout` / `constraint_max_retries` in `portals.json` instead of hardcoded values in `discovery.py`. Previously the 30 s + 1-attempt fast-fail was applied to **every** provider with `constraints_supported: true` (Eurostat, ABS, BIS, IMF, Derzhstat), silently disabling the 3-retry policy for transient failures (5xx, NetworkError, TimeoutException) on backends that aren't slow. Now only ISTAT carries the override (`constraint_timeout: 30`, `constraint_max_retries: 1`); all other providers keep the module timeout (300 s) and 3 retries. Precedence: `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` env var > provider config > module default. CLI advisory generalized: gating on `provider.constraint_timeout` instead of `agency_id == "IT1"`.

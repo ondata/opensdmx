@@ -476,11 +476,20 @@ class TestAvailableConstraintTimeout:
             "filters": {"FREQ": "."},
         }
 
-    def test_istat_timeout_raises_constraints_timeout(self, tmp_path, monkeypatch):
-        """ISTAT (configured constraint_timeout=30, max_retries=1) → fast-fail in 1 call."""
+    def test_provider_with_override_fast_fails(self, tmp_path, monkeypatch):
+        """A provider configured with constraint_timeout + max_retries=1 → fast-fail in 1 call.
+
+        Synthetic override: ISTAT no longer carries these settings (it uses
+        contentconstraint, sub-second), but the override mechanism remains valid
+        for any provider with a slow availableconstraint.
+        """
+        from opensdmx.base import PROVIDERS
         from opensdmx.discovery import ConstraintsTimeout, get_available_values
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_timeout", 30)
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_max_retries", 1)
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_endpoint", "availableconstraint")
         set_provider("istat")
         ds = self._dataset(df_id="TIMEOUT_TEST_DF")
         with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
@@ -493,10 +502,14 @@ class TestAvailableConstraintTimeout:
 
     def test_env_var_overrides_provider_timeout(self, tmp_path, monkeypatch):
         """OPENSDMX_AVAILCONSTRAINT_TIMEOUT must override the per-provider value."""
+        from opensdmx.base import PROVIDERS
         from opensdmx.discovery import ConstraintsTimeout, get_available_values
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
         monkeypatch.setenv("OPENSDMX_AVAILCONSTRAINT_TIMEOUT", "12.0")
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_timeout", 30)
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_max_retries", 1)
+        monkeypatch.setitem(PROVIDERS["istat"], "constraint_endpoint", "availableconstraint")
         set_provider("istat")
         ds = self._dataset(df_id="ENV_TIMEOUT_DF")
         with _mock_client_raising_on_get(httpx.ConnectTimeout("slow")) as mock_client_class:
@@ -532,3 +545,68 @@ class TestAvailableConstraintTimeout:
         with _mock_client_raising_on_status(_http_status_error(500)):
             with pytest.raises(ConstraintsUnavailable):
                 get_available_values(ds)
+
+
+# ---------------------------------------------------------------------------
+# get_available_values — endpoint URL build (contentconstraint vs availableconstraint)
+# ---------------------------------------------------------------------------
+
+class TestConstraintEndpointPathBuild:
+    """Verify the URL path built by get_available_values matches the configured endpoint.
+
+    issue #24: ISTAT switched from `availableconstraint/<df>/all/all?mode=available`
+    to `contentconstraint/<agency>/<df>` for sub-second response.
+    """
+
+    @pytest.fixture(autouse=True)
+    def _setup(self, monkeypatch):
+        from tenacity import wait_none
+        monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
+        monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
+        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda: None)
+
+    @staticmethod
+    def _dataset(df_id: str) -> dict:
+        return {
+            "df_id": df_id,
+            "version": "1.0",
+            "df_description": "Test",
+            "df_structure_id": "TEST_DSD",
+            "dimensions": {"FREQ": {"id": "FREQ", "position": 0, "codelist_id": None}},
+            "filters": {"FREQ": "."},
+        }
+
+    def test_istat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
+        """ISTAT (constraint_endpoint=contentconstraint) → URL is /contentconstraint/IT1/<df>."""
+        from opensdmx.discovery import get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        set_provider("istat")
+        ds = self._dataset(df_id="22_289_DF_DCIS_POPRES1_24")
+
+        empty_xml = b'<?xml version="1.0"?><message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>'
+        with _mock_http_client(empty_xml) as mock_client_class:
+            get_available_values(ds)
+
+        called_url = mock_client_class.return_value.get.call_args[0][0]
+        assert "/contentconstraint/IT1/22_289_DF_DCIS_POPRES1_24" in called_url
+        assert "/availableconstraint/" not in called_url
+        assert "/all/all" not in called_url
+        # mode=available is an availableconstraint-only param, must not be passed
+        called_params = mock_client_class.return_value.get.call_args.kwargs.get("params", {})
+        assert "mode" not in called_params
+
+    def test_eurostat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
+        """Regression: Eurostat path build unchanged (already on contentconstraint)."""
+        from opensdmx.discovery import get_available_values
+
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        set_provider("eurostat")
+        ds = self._dataset(df_id="PRC_HICP_MANR")
+
+        empty_xml = b'<?xml version="1.0"?><message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>'
+        with _mock_http_client(empty_xml) as mock_client_class:
+            get_available_values(ds)
+
+        called_url = mock_client_class.return_value.get.call_args[0][0]
+        assert "/contentconstraint/ESTAT/PRC_HICP_MANR" in called_url

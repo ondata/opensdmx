@@ -36,10 +36,7 @@
     "agency_id": "IT1",
     "rate_limit": 15.0,
     "language": "it",
-    "constraint_path_suffix": "/all/all",
-    "constraint_params": {"mode": "available"},
-    "constraint_timeout": 30,
-    "constraint_max_retries": 1,
+    "constraint_endpoint": "contentconstraint",
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": true

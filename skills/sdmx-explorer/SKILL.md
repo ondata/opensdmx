@@ -352,21 +352,40 @@ opensdmx constraints DF_LABOR_FORCE_A REGION --provider derzhstat
 # → 28 KATOTTG codes, each with the Ukrainian region name
 ```
 
-`opensdmx constraints` is the ground truth — it queries the `availableconstraint`
-SDMX endpoint and returns only codes that actually exist in this specific dataflow.
+`opensdmx constraints` is the ground truth — it queries the SDMX constraint
+endpoint (`contentconstraint` for Eurostat and ISTAT, `availableconstraint`
+for the others) and returns only codes that actually exist in this specific
+dataflow.
+
+**Missing dimensions.** Providers on `contentconstraint` may omit large
+dimensions (e.g. ISTAT does not expose `REF_AREA`, ~8,000 comuni). The CLI
+flags these inline:
+
+```
+REF_AREA  –  not in contentconstraint — use: opensdmx values <df> REF_AREA
+```
+
+When you see `–`, run the suggested `opensdmx values <df> <DIM>` to get the
+codes from the codelist (the theoretical universe — verify with a probe `get`
+before scaling, since not every code in the codelist is necessarily populated
+in the dataflow).
 
 The table view truncates each dimension to a 3-code sample. For the **full list of
 codes per dimension**, use `--output json`:
 
 ```bash
-# summary: object keyed by dimension → {n_values, codes: [...]}
+# summary: object keyed by dimension → {n_values, codes, source, [hint]}
 opensdmx --output json constraints PRC_HICP_MANR
-# → {"FREQ": {"n_values": 2, "codes": ["A","M"]}, "GEO": {"n_values": 35, "codes": [...]}, ...}
+# → {"freq": {"n_values": 1, "codes": ["M"], "source": "constraint"}, "geo": {...}, ...}
 
 # all codes + labels for one dimension: array of {id, name}
 opensdmx --output json constraints PRC_HICP_MANR coicop
 # → [{"id": "CP00", "name": "All-items HICP"}, {"id": "CP01", "name": "Food and non-alcoholic beverages"}, ...]
 ```
+
+Each dimension entry has a `source` field: `"constraint"` (codes returned by
+the endpoint) or `"missing"` (dim absent from the response). Missing entries
+include a `hint` field with the exact `opensdmx values …` command to run.
 
 Useful `jq` patterns:
 
@@ -375,10 +394,13 @@ Useful `jq` patterns:
 opensdmx --output json constraints PRC_HICP_MANR | jq 'keys'
 
 # get all codes for one dimension
-opensdmx --output json constraints PRC_HICP_MANR | jq '.GEO.codes'
+opensdmx --output json constraints PRC_HICP_MANR | jq '.geo.codes'
 
-# number of values per dimension
-opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | {dim: .key, n: .value.n_values}'
+# number of values per dimension (only those exposed by constraint)
+opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | select(.value.source=="constraint") | {dim: .key, n: .value.n_values}'
+
+# list dimensions missing from contentconstraint (need a follow-up `values` call)
+opensdmx --output json constraints 22_289_DF_DCIS_POPRES1_24 --provider istat | jq 'to_entries[] | select(.value.source=="missing") | {dim: .key, hint: .value.hint}'
 
 # find a code by label (case-insensitive)
 opensdmx --output json constraints PRC_HICP_MANR coicop | jq '[.[] | select(.name | ascii_downcase | contains("food"))]'

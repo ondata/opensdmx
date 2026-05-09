@@ -6,8 +6,10 @@ that shape the entire exploration flow:
 
 1. **Strict rate limit (~13 s between requests)** — every wasted call costs real
    time, so verifying codes upfront is much cheaper than trial-and-error `get`.
-2. **Codelists vs constraints diverge often** — `values` returns the theoretical
-   codelist, which can include codes absent from a specific dataflow.
+2. **`constraints` uses `contentconstraint` (sub-second)** — fast, reliable, but
+   does **not** expose `REF_AREA` (geographic dimension). For municipal datasets
+   that's by design: 8,000+ comuni would inflate the payload. The CLI surfaces
+   the missing dimension with an inline hint to `opensdmx values`.
 3. **Versioned/dated codes** — some codes carry suffixes (`LBIRTH_FROM2017`,
    `POP_1JAN2021`) that may need to be stripped to match what the dataflow
    actually accepts.
@@ -23,65 +25,50 @@ opensdmx info <dataflow_id> --provider istat
 Note dimension flags: ISTAT uses **uppercase** (`--REF_AREA`, `--DATA_TYPE`,
 `--FREQ`), unlike Eurostat (lowercase).
 
-### Step 2 — explore codelist values
-
-```bash
-opensdmx values <dataflow_id> REF_AREA --provider istat
-opensdmx values <dataflow_id> DATA_TYPE --provider istat
-```
-
-`values` returns the full theoretical codelist. Use `grep -i` to find candidates.
-Most ISTAT codes are reliable, but some (versioned variants) appear in the
-codelist while the dataflow only accepts the base form.
-
-### Step 3 — verify with `constraints` before any `get`
+### Step 2 — call `constraints` first
 
 ```bash
 opensdmx constraints <dataflow_id> --provider istat
-opensdmx constraints <dataflow_id> DATA_TYPE --provider istat
 ```
 
-This is the most important step. The `values` codelist is theoretical — many
-codes will not exist in the actual dataflow. Each failed `get` attempt costs
-≥13 s due to rate limiting, so verifying with `constraints` first is far
-cheaper than multiple failed `get` attempts.
-
-The ISTAT `availableconstraint` endpoint has a default timeout of **30 s**
-(configured in `portals.json`). On success the result is cached for 7 days.
-The timeout can be raised via the `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` environment
-variable — but raising it is rarely useful (see below).
-
-**Exception — "all municipalities" datasets.** Dataflows that cover all ~8,000
-Italian municipalities at single-age granularity (e.g. `22_289_DF_DCIS_POPRES1_24`,
-`22_289_DF_DCIS_POPRES1_22`) will **always** time out regardless of the timeout
-setting. Empirically verified: ISTAT performs a full-cube scan and returns
-all 8,128 territory codes even when a key filter is passed
-(`/availableconstraint/{id}/.082053..../all` → still 8,128 codes, ~77 s).
-Raising `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` beyond 90 s does not help for these
-datasets.
-
-When `constraints` times out, the CLI prints:
+`contentconstraint` returns sub-second, so this is the cheapest first call
+to make. The output looks like:
 
 ```
-⚠ Constraints request timed out after 30s for <dataflow_id>.
-The provider's availableconstraint endpoint is slow or unresponsive.
-Try again later, or raise the limit: OPENSDMX_AVAILCONSTRAINT_TIMEOUT=60 opensdmx constraints <dataflow_id>
-Data is still accessible: opensdmx get <dataflow_id> ...
+Constraints: 22_289_DF_DCIS_POPRES1_24
+  FREQ            1   A
+  REF_AREA        –   not in contentconstraint — use: opensdmx values 22_289_DF_DCIS_POPRES1_24 REF_AREA
+  DATA_TYPE       1   JAN
+  SEX             3   1, 2, 9
+  AGE           102   TOTAL, Y_GE100, Y0
+  MARITAL_STATUS  1   99
 ```
 
-**Fallback flow for municipal-level datasets:**
+For the dimensions present (`FREQ`, `DATA_TYPE`, `SEX`, `AGE`,
+`MARITAL_STATUS`) you have ground truth: the codes really present in the
+dataflow. For any dimension marked `–` ("not in contentconstraint"), the CLI
+tells you exactly which command to run next.
 
-1. Use `opensdmx values <dataflow_id> DATA_TYPE --provider istat` (and other
-   non-geographic dimensions) to get candidate codes from the codelist.
-2. Use `opensdmx values <dataflow_id> REF_AREA --provider istat | grep -i "palermo"`
-   to find the territory code (e.g. `082053`).
-3. Run a narrow `get` with `--last-n 1` or a 1-year period to confirm which
-   codes actually exist in the dataset before downloading everything.
-4. If `get` returns 404 or `NoRecordsFound`, iterate on the code (try base form
-   without version suffix, try a different DATA_TYPE).
+### Step 3 — for missing dimensions, fall back to `values`
 
-For all other ISTAT datasets (national, regional, provincial level),
-`constraints` responds within the 30 s timeout and remains the right call.
+```bash
+opensdmx values <dataflow_id> REF_AREA --provider istat
+```
+
+`values` returns the **theoretical codelist**. For `REF_AREA` (`CL_ITTER107`)
+that's all 8,000+ Italian territory codes — comuni, province, regioni,
+aggregati statistici (`ITG12`, `SLL_*`, etc.). Filter with `grep -i` to find
+candidates:
+
+```bash
+opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo"
+```
+
+Caveat: `values` is the universe of codes the codelist defines, **not** the
+codes actually populated in the dataflow. Most municipal codes work, but some
+versioned variants (`POP_1JAN2021`) appear in the codelist while the dataflow
+only accepts the base form. If a `get` returns 404 / `NoRecordsFound`, try
+the base code or check whether the suffix matches the year you're querying.
 
 ### Step 4 — build the query using verified codes
 
@@ -89,14 +76,12 @@ For all other ISTAT datasets (national, regional, provincial level),
 opensdmx get <dataflow_id> --provider istat --REF_AREA <code> --last-n 1
 ```
 
-If the query returns a 404 ("NoRecordsFound" — not a server error) or empty
-result:
+If the query returns 404 or empty:
 
 1. Try the **base form** of the code — strip any suffix that looks like a
-   version or date (e.g. `LBIRTH_FROM2017` → `LBIRTH`, `POP_1JAN2021` →
-   `POP_1JAN`).
-2. Re-check with `opensdmx constraints` to see which codes are actually
-   available.
+   version or date (`LBIRTH_FROM2017` → `LBIRTH`, `POP_1JAN2021` → `POP_1JAN`).
+2. Re-check `opensdmx constraints` for the dimensions that are exposed; for
+   those marked `–`, scan the codelist with `opensdmx values`.
 
 For previews use a narrow time range (1–2 years) — combined with `--last-n 1`,
 this keeps the response small and avoids loading data you don't need yet.
@@ -111,11 +96,8 @@ ISTAT uses numeric `REF_AREA` codes:
 - Aggregate codes (`ITG12` for groups of provinces, `SLL_*` for labour market
   areas, etc.)
 
-Browse the codelist with `grep -i` to locate specific places:
-
-```bash
-opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo\|matera"
-```
+`REF_AREA` is the dimension `contentconstraint` does not expose — always go
+through `opensdmx values <df> REF_AREA --provider istat` to discover codes.
 
 ## Direct download URL pattern
 

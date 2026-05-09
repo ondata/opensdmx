@@ -532,12 +532,36 @@ def constraints(
         )
         raise typer.Exit(1)
 
+    constraint_endpoint = provider_cfg.get("constraint_endpoint", "availableconstraint")
+
     if dimension is None:
-        # Summary mode: one row per dimension
+        # Summary mode: one row per DSD dimension. Dimensions absent from the
+        # constraint response (typical with `contentconstraint`, which omits
+        # large dimensions like REF_AREA) get an inline hint pointing the user
+        # to `opensdmx values` (the full codelist).
+        rows: list[dict] = []
+        for dim_id in ds["dimensions"]:
+            if dim_id in avail:
+                codes = avail[dim_id]["id"].to_list()
+                rows.append({
+                    "dimension_id": dim_id,
+                    "n_values": len(codes),
+                    "codes": codes,
+                    "source": "constraint",
+                })
+            else:
+                rows.append({
+                    "dimension_id": dim_id,
+                    "n_values": None,
+                    "codes": [],
+                    "source": "missing",
+                    "hint": f"opensdmx values {dataset_id} {dim_id}",
+                })
+
         if _output_mode != "table":
             data = {
-                dim_id: {"n_values": len(df["id"]), "codes": df["id"].to_list()}
-                for dim_id, df in avail.items()
+                r["dimension_id"]: {k: v for k, v in r.items() if k != "dimension_id"}
+                for r in rows
             }
             _emit(data)
             return
@@ -547,9 +571,19 @@ def constraints(
         table.add_column("n_values", justify="right")
         table.add_column("sample")
 
-        for dim_id, df in avail.items():
-            codes = df["id"].to_list()
-            table.add_row(dim_id, str(len(codes)), ", ".join(codes[:3]))
+        for r in rows:
+            if r["source"] == "constraint":
+                table.add_row(
+                    r["dimension_id"],
+                    str(r["n_values"]),
+                    ", ".join(r["codes"][:3]),
+                )
+            else:
+                table.add_row(
+                    r["dimension_id"],
+                    "–",
+                    f"[dim]not in {constraint_endpoint} — use: [cyan]{r['hint']}[/cyan][/dim]",
+                )
 
         console.print(table)
         console.print("[dim]Tip: use --output json for the full list of values.[/dim]")
@@ -568,9 +602,11 @@ def constraints(
 
     if actual_dim not in avail:
         err_console.print(
-            f"[yellow]No constrained values found for dimension:[/yellow] {actual_dim}"
+            f"[yellow]Dimension {actual_dim} is not exposed by {constraint_endpoint}.[/yellow]\n"
+            f"Fetch the full codelist instead:  "
+            f"[cyan]opensdmx values {dataset_id} {actual_dim}[/cyan]"
         )
-        raise typer.Exit(1)
+        raise typer.Exit(0)
 
     constrained_codes = avail[actual_dim]["id"].to_list()
 
