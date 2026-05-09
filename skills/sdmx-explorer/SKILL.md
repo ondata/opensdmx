@@ -539,9 +539,13 @@ curl "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/APRO_CPNH1/A
 ```
 
 **ISTAT URL pattern:**
+```bash
+curl -s \
+  -H "Accept: application/vnd.sdmx.data+csv;version=1.0.0" \
+  "https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?startPeriod={start}&endPeriod={end}"
 ```
-https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?startPeriod={start}&endPeriod={end}
-```
+Without the `Accept` header ISTAT returns XML. `endPeriod` has an off-by-one
+bug: request N-1 to receive data through N. See [references/istat-flow.md](references/istat-flow.md) for details.
 
 ### Step 3 — Ask the user what to do next
 

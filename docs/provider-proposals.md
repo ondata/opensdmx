@@ -110,6 +110,28 @@ Additionally, per-dataflow queries use a short-form df_id (`22_289`) which the
 server does not recognise — the server expects the long form (`22_289_DF_DCIS_POPRES1_24`).
 This makes direct per-dataflow queries unreliable even for the 43 covered datasets.
 
+#### Comparison: Eurostat as a working reference implementation
+
+Eurostat provides compelling evidence that comprehensive static constraints are
+both achievable and sufficient for practical SDMX usage:
+
+```bash
+# Eurostat contentconstraint — sub-second, 3 KB, covers every dataflow
+curl -o /dev/null -w "HTTP:%{http_code} TIME:%{time_total}s SIZE:%{size_download}b\n" \
+  "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/contentconstraint/ESTAT/UNE_RT_A/1.0?references=none"
+# → HTTP:200 TIME:1.188s SIZE:3281b
+
+# Eurostat availableconstraint — HTTP 405 (not implemented, not needed)
+curl -o /dev/null -w "HTTP:%{http_code}\n" \
+  "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/availableconstraint/ESTAT/UNE_RT_A/1.0"
+# → HTTP:405
+```
+
+Eurostat does not implement `availableconstraint` at all. It relies entirely on
+curated static `contentconstraint` documents — one per dataflow — and any SDMX
+client works perfectly with this approach. ISTAT's gap is not a limitation of
+the SDMX standard; it is a publishing gap that Eurostat has already solved.
+
 #### Impact
 
 - `opensdmx constraints` fails with timeout for most ISTAT datasets.

@@ -515,7 +515,8 @@ def constraints(
         err_console.print(
             f"[yellow]⚠ Constraints request timed out after {e.timeout:.0f}s for "
             f"[bold]{dataset_id}[/bold].[/yellow]\n"
-            f"The provider's [italic]availableconstraint[/italic] endpoint is slow or unresponsive. "
+            f"Both [italic]availableconstraint[/italic] and [italic]serieskeysonly[/italic] "
+            f"timed out — the dataset is too large for automatic code discovery.\n"
             f"Try again later, or raise the limit:  "
             f"[cyan]OPENSDMX_AVAILCONSTRAINT_TIMEOUT=60 opensdmx constraints {dataset_id}[/cyan]\n"
             f"Data is still accessible:  opensdmx get {dataset_id} ..."

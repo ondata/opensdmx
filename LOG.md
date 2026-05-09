@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-05-09 — v0.7.0: serieskeysonly fallback for constraints timeout
+
+- feat(discovery): `_parse_serieskeys_xml()` parses GenericData `detail=serieskeysonly` responses into `{dim_id: [unique sorted values]}`.
+- feat(discovery): `_fallback_serieskeysonly()` sends an all-wildcard data request with `detail=serieskeysonly` when `availableconstraint` times out. Results are cached in SQLite identically to normal constraint data.
+- feat(discovery): both `ConstraintsTimeout` catch-points in `get_available_values()` now chain to `_fallback_serieskeysonly` before re-raising — covers both the bulk path and the contentconstraint-404 path.
+- feat(cli): updated `ConstraintsTimeout` error message to mention that both fallbacks were attempted.
+- test: added `test_parse_serieskeys_xml`, `test_get_available_values_serieskeysonly_fallback`, updated existing timeout test to reflect double-fallback chain. All 159 tests pass.
+
 ## 2026-05-09 — ISTAT bulk contentconstraint cache
 
 - feat(discovery): `_fetch_and_cache_bulk_constraints` fetches `contentconstraint/{agency_id}` in one call, parses all 73 constraints (43 unique short df_ids), and populates `available_constraints` for each covered dataflow. Multiple constraints for the same df_id are merged by union per dimension.

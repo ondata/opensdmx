@@ -144,12 +144,36 @@ through `opensdmx values <df> REF_AREA --provider istat` to discover codes.
 
 ## Direct download URL pattern
 
+```bash
+curl -s \
+  -H "Accept: application/vnd.sdmx.data+csv;version=1.0.0" \
+  "https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?startPeriod={start}&endPeriod={end}"
 ```
-https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?startPeriod={start}&endPeriod={end}
-```
+
+`Accept: text/csv` also works and returns the same CSV format.
+Without an Accept header (or with `Accept: application/xml`) ISTAT returns XML.
 
 Dimension values in the path follow the order from `opensdmx info`, with `.`
 for unfiltered dimensions and `+` to combine multiple values.
+
+**Tip — limit results without knowing exact codes:**
+Use `lastNObservations=N` or `firstNObservations=N` to cap the number of
+observations per series:
+
+```bash
+curl -s \
+  -H "Accept: application/vnd.sdmx.data+csv;version=1.0.0" \
+  "https://esploradati.istat.it/SDMXWS/rest/data/CPI/CPI.IT.PCPI_IX._Z.M?lastNObservations=3"
+```
+
+**Tip — probe without downloading data:**
+Use `detail=serieskeysonly` to retrieve only series keys (no observations),
+useful for checking how many series a key returns before a full download:
+
+```bash
+curl -s \
+  "https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{key}?detail=serieskeysonly"
+```
 
 ## Aggregate codes in the data
 
@@ -179,10 +203,12 @@ alone. Check the codelist labels (via `opensdmx values <id> <dim> --provider
 istat`) to identify which codes are aggregates (labels like "total", "all",
 "tutti", "totale").
 
-Also note: when filtering by time period with `--start-period` / `--end-period`
-using year-only values (e.g. `2025`), ISTAT may return observations dated
-`YYYY+1-01-01` because it stores annual data as `YYYY-01-01`. Filter on the
-`TIME_PERIOD` column after download to select the exact reference date.
+**`endPeriod` off-by-one bug**: ISTAT returns one extra period beyond the
+requested `endPeriod` for any frequency (monthly, quarterly, annual). For
+example, `endPeriod=2024-03` returns data through `2024-04`, and
+`endPeriod=2024` returns data through `2025-01-01`. To get data through
+period N, request `endPeriod=N-1`. Filter on `TIME_PERIOD` after download
+to enforce the exact cutoff date.
 
 ## Other quirks
 

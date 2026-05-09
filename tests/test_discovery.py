@@ -179,11 +179,11 @@ def test_get_available_values_contentconstraint_404_fallback_success():
     assert result["REF_AREA"].to_series().to_list() == ["082053", "ITG12"]
 
 
-def test_get_available_values_contentconstraint_404_fallback_timeout():
-    """contentconstraint returns 404 → availableconstraint times out → ConstraintsTimeout raised."""
+def test_get_available_values_contentconstraint_404_both_fallbacks_timeout():
+    """contentconstraint 404 → availableconstraint timeout → serieskeysonly timeout → ConstraintsTimeout raised."""
     from opensdmx.discovery import ConstraintsTimeout, get_available_values
 
-    def fake_request(path, **kwargs):
+    def fake_xml_request(path, **kwargs):
         if "contentconstraint" in path:
             raise _http_404()
         raise httpx.TimeoutException("timeout")
@@ -191,6 +191,76 @@ def test_get_available_values_contentconstraint_404_fallback_timeout():
     with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
          patch("opensdmx.db_cache.save_available_constraints"), \
-         patch("opensdmx.discovery.sdmx_request_xml", side_effect=fake_request):
+         patch("opensdmx.discovery.sdmx_request_xml", side_effect=fake_xml_request), \
+         patch("opensdmx.base.sdmx_request", side_effect=httpx.TimeoutException("timeout")):
         with pytest.raises(ConstraintsTimeout):
             get_available_values(_istat_dataset())
+
+
+# ── _parse_serieskeys_xml ─────────────────────────────────────────────
+
+_SERIESKEYS_XML = b"""<?xml version="1.0" encoding="utf-8"?>
+<message:GenericData
+  xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+  <message:DataSet>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="082053"/>
+        <generic:Value id="DATA_TYPE" value="KILLINJ"/>
+        <generic:Value id="RESULT" value="F"/>
+      </generic:SeriesKey>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="082053"/>
+        <generic:Value id="DATA_TYPE" value="KILLINJ"/>
+        <generic:Value id="RESULT" value="M"/>
+      </generic:SeriesKey>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="FREQ" value="A"/>
+        <generic:Value id="REF_AREA" value="082053"/>
+        <generic:Value id="DATA_TYPE" value="ROADACC"/>
+        <generic:Value id="RESULT" value="9"/>
+      </generic:SeriesKey>
+    </generic:Series>
+  </message:DataSet>
+</message:GenericData>"""
+
+
+def test_parse_serieskeys_xml():
+    from opensdmx.discovery import _parse_serieskeys_xml
+    result = _parse_serieskeys_xml(_SERIESKEYS_XML)
+    assert result["FREQ"] == ["A"]
+    assert result["REF_AREA"] == ["082053"]
+    assert result["DATA_TYPE"] == ["KILLINJ", "ROADACC"]
+    assert result["RESULT"] == ["9", "F", "M"]
+
+
+def test_get_available_values_serieskeysonly_fallback():
+    """contentconstraint 404 → availableconstraint timeout → serieskeysonly succeeds."""
+    from unittest.mock import MagicMock
+    from opensdmx.discovery import get_available_values
+
+    def fake_xml_request(path, **kwargs):
+        if "contentconstraint" in path:
+            raise _http_404()
+        raise httpx.TimeoutException("timeout")
+
+    fake_resp = MagicMock()
+    fake_resp.content = _SERIESKEYS_XML
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", side_effect=fake_xml_request), \
+         patch("opensdmx.base.sdmx_request", return_value=fake_resp):
+        result = get_available_values(_istat_dataset())
+
+    assert "FREQ" in result
+    assert "DATA_TYPE" in result
+    assert result["DATA_TYPE"].to_series().to_list() == ["KILLINJ", "ROADACC"]
