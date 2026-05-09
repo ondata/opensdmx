@@ -1,0 +1,33 @@
+name: SDMX Latency Monitor
+
+on:
+  schedule:
+    - cron: '0 6,12,18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run latency monitor
+        run: uv run python scripts/monitor_latency.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/latency.jsonl
+          git diff --staged --quiet || git commit -m "monitor: latency $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
