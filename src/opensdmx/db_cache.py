@@ -58,6 +58,16 @@ def _db_conn():
                     cached_at    REAL NOT NULL,
                     PRIMARY KEY (df_id, dimension_id, code_id)
                 );
+                CREATE TABLE IF NOT EXISTS bulk_constraint_fetch (
+                    agency_id TEXT PRIMARY KEY,
+                    cached_at REAL NOT NULL
+                );
+                CREATE TABLE IF NOT EXISTS bulk_constraint_index (
+                    agency_id TEXT NOT NULL,
+                    df_id     TEXT NOT NULL,
+                    cached_at REAL NOT NULL,
+                    PRIMARY KEY (agency_id, df_id)
+                );
             """)
             _DB_INITIALIZED = True
         yield conn
@@ -218,3 +228,44 @@ def delete_invalid_dataset(df_id: str) -> bool:
     with _db_conn() as conn:
         cur = conn.execute("DELETE FROM invalid_datasets WHERE df_id = ?", (df_id,))
         return cur.rowcount > 0
+
+
+# --- bulk constraint index ---
+
+def is_bulk_constraint_fresh(agency_id: str) -> bool:
+    """Return True if the bulk constraint index for this agency was fetched recently."""
+    with _db_conn() as conn:
+        row = conn.execute(
+            "SELECT cached_at FROM bulk_constraint_fetch WHERE agency_id = ?",
+            (agency_id,),
+        ).fetchone()
+    if row is None:
+        return False
+    return time.time() - row["cached_at"] <= CONSTRAINTS_CACHE_TTL
+
+
+def get_df_ids_with_content_constraint(agency_id: str) -> set[str] | None:
+    """Return set of short df_ids that have a contentconstraint, or None if index not built."""
+    if not is_bulk_constraint_fresh(agency_id):
+        return None
+    with _db_conn() as conn:
+        rows = conn.execute(
+            "SELECT df_id FROM bulk_constraint_index WHERE agency_id = ?",
+            (agency_id,),
+        ).fetchall()
+    return {row["df_id"] for row in rows}
+
+
+def save_bulk_constraint_index(agency_id: str, df_ids: set[str]) -> None:
+    """Record the set of short df_ids covered by contentconstraint for this agency."""
+    now = time.time()
+    with _db_conn() as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO bulk_constraint_fetch VALUES (?, ?)",
+            (agency_id, now),
+        )
+        conn.execute("DELETE FROM bulk_constraint_index WHERE agency_id = ?", (agency_id,))
+        conn.executemany(
+            "INSERT OR REPLACE INTO bulk_constraint_index VALUES (?, ?, ?)",
+            [(agency_id, df_id, now) for df_id in df_ids],
+        )

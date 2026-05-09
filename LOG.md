@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-05-09 — ISTAT bulk contentconstraint cache
+
+- feat(discovery): `_fetch_and_cache_bulk_constraints` fetches `contentconstraint/{agency_id}` in one call, parses all 73 constraints (43 unique short df_ids), and populates `available_constraints` for each covered dataflow. Multiple constraints for the same df_id are merged by union per dimension.
+- feat(discovery): `get_available_values` now uses a bulk index for providers with `constraint_bulk_supported: true`. For covered df_ids: returns cached bulk data instantly. For uncovered df_ids (~99 % of ISTAT catalog): skips the 404 roundtrip entirely and goes straight to `_fallback_availableconstraint`.
+- feat(db_cache): two new SQLite tables — `bulk_constraint_fetch` (records last bulk fetch per agency, TTL 7 days) and `bulk_constraint_index` (set of short df_ids covered per agency).
+- feat(portals): added `constraint_bulk_supported: true` to ISTAT entry.
+- docs: added P-ISTAT-02 to `docs/provider-proposals.md` — request to extend `contentconstraint` coverage from 43 to all 4,836 ISTAT dataflows.
+- Bonus: bulk merge reveals `REF_AREA` (139 regional/provincial codes) for `DCIS_POPRES1` — previously reported as absent. Now cached automatically.
+
 ## 2026-05-09 — contentconstraint 404 → availableconstraint fallback
 
 - fix(discovery): `get_available_values` now falls back to `availableconstraint` when `contentconstraint` returns 404. Previously, a 404 was silently swallowed (logged as a warning, returned `{}`), leaving the user with no constraint data and no recovery path. Now: if the provider uses `contentconstraint` and gets 404, `_fallback_availableconstraint` constructs the all-wildcard SDMX key (`N-1` dots for `N` dimensions) and retries against the `availableconstraint` endpoint.

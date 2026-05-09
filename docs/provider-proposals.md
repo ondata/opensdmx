@@ -78,3 +78,66 @@ is less reliable because codelists contain all theoretically possible codes, not
 those present in the dataset.
 
 ---
+
+### P-ISTAT-02: Extend `contentconstraint` coverage to all dataflows
+
+**Status:** Not implemented (verified 2026-05-09)
+
+#### Background
+
+ISTAT exposes a bulk `contentconstraint` endpoint:
+
+```
+GET https://esploradati.istat.it/SDMXWS/rest/contentconstraint/IT1
+```
+
+This returns the full constraint catalog for agency IT1 in a single call (~350 KB, ~1 s).
+The catalog is machine-readable and extremely useful: it lets any SDMX client know
+upfront which dataflows have constrained values, and what those values are.
+
+#### Problem
+
+As of 2026-05-09, the catalog covers **only 43 of 4,836 dataflows** (~0.9 %).
+The covered dataflows are predominantly flagship demographic and census datasets
+(DCIS_POPRES1, DCIS_DECESSI, DCIS_PREVCOM, DCIS_MORTALITA1, DICA_ASIAULP, …).
+
+For the remaining ~4,793 dataflows:
+- The per-dataflow endpoint `contentconstraint/IT1/{df_id}` returns HTTP 404.
+- opensdmx then falls back to `availableconstraint`, which is slow (~30–120 s)
+  and times out for datasets with large territorial breakdowns (CL_ITTER107).
+
+Additionally, per-dataflow queries use a short-form df_id (`22_289`) which the
+server does not recognise — the server expects the long form (`22_289_DF_DCIS_POPRES1_24`).
+This makes direct per-dataflow queries unreliable even for the 43 covered datasets.
+
+#### Impact
+
+- `opensdmx constraints` fails with timeout for most ISTAT datasets.
+- Exploratory workflows (discover which values exist before downloading) are
+  impractical, forcing users to download full datasets to see valid codes.
+- Any SDMX 2.1 client that relies on constraints for code validation is
+  effectively blocked for ~99 % of ISTAT's catalog.
+
+#### Requested changes
+
+1. **Extend `contentconstraint` to all dataflows**, not just the 43 currently covered.
+   Even a partial constraint (covering the most important dimensions) is far more
+   useful than no constraint at all.
+
+2. **Accept the short-form df_id** in per-dataflow requests
+   (`contentconstraint/IT1/22_289`) in addition to the long form
+   (`contentconstraint/IT1/22_289_DF_DCIS_POPRES1_24`).
+
+3. **Include `REF_AREA`** in constraints for datasets with territorial breakdowns,
+   at least at the regional/provincial level. Currently `REF_AREA` is omitted from
+   most constraints; the bulk catalog does contain 139 `REF_AREA` codes for
+   `DCIS_POPRES1` (regional/provincial level), but this is inconsistent across datasets.
+
+#### Workaround (client-side)
+
+opensdmx v0.6.8+ fetches the bulk constraint catalog once (TTL 7 days),
+uses it directly for the 43 covered dataflows, and skips the 404 roundtrip
+for uncovered ones (going straight to `availableconstraint`).
+This eliminates unnecessary 404 calls but does not resolve the coverage gap.
+
+---

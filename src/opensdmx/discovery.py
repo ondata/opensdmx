@@ -479,10 +479,85 @@ def _fallback_availableconstraint(dataset: dict, provider: dict) -> dict[str, pl
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
+def _parse_bulk_constraint_xml(content: bytes) -> dict[str, dict[str, list[str]]]:
+    """Parse a bulk contentconstraint response into {short_df_id: {dim_id: [values]}}.
+
+    Merges multiple constraints for the same dataflow by taking the union of values
+    per dimension. TIME_PERIOD ranges (TimeRange elements) are silently ignored.
+    The short df_id is extracted from the long form by splitting on '_DF_'.
+    """
+    root, ns = xml_parse(content)
+    struct_ns = ns.get("structure", "")
+    common_ns = ns.get("common", "")
+
+    cc_tag = f"{{{struct_ns}}}ContentConstraint" if struct_ns else "ContentConstraint"
+    kv_tag = f"{{{common_ns}}}KeyValue" if common_ns else "KeyValue"
+    val_tag = f"{{{common_ns}}}Value" if common_ns else "Value"
+
+    result: dict[str, dict[str, list[str]]] = {}
+    for cc in root.iter(cc_tag):
+        df_ref_path = (
+            f".//{{{struct_ns}}}ConstraintAttachment/{{{struct_ns}}}Dataflow/Ref"
+            if struct_ns else ".//Ref"
+        )
+        df_ref = cc.find(df_ref_path)
+        if df_ref is None:
+            continue
+        long_id = df_ref.get("id", "")
+        parts = long_id.split("_DF_")
+        short_id = parts[0] if len(parts) > 1 else long_id
+        if not short_id:
+            continue
+
+        merged = result.setdefault(short_id, {})
+        for kv in cc.findall(f".//{kv_tag}"):
+            dim_id = kv.get("id")
+            if not dim_id:
+                continue
+            values = [v.text.strip() for v in kv.findall(val_tag) if v.text and v.text.strip()]
+            if not values:
+                continue
+            if dim_id in merged:
+                merged[dim_id] = list(dict.fromkeys(merged[dim_id] + values))
+            else:
+                merged[dim_id] = values
+
+    return result
+
+
+def _fetch_and_cache_bulk_constraints(agency_id: str) -> set[str]:
+    """Fetch all contentconstraints in bulk for an agency, cache them, and return covered df_ids."""
+    from .db_cache import save_available_constraints, save_bulk_constraint_index
+
+    path = _struct_path(f"contentconstraint/{agency_id}")
+    try:
+        content = sdmx_request_xml(path)
+    except Exception as e:
+        logger.warning("Could not fetch bulk constraints for %s: %s", agency_id, e)
+        save_bulk_constraint_index(agency_id, set())
+        return set()
+
+    parsed = _parse_bulk_constraint_xml(content)
+    for short_df_id, dims in parsed.items():
+        try:
+            save_available_constraints(short_df_id, dims)
+        except Exception as e:
+            logger.warning("Could not cache constraints for %s: %s", short_df_id, e)
+
+    covered = set(parsed.keys())
+    try:
+        save_bulk_constraint_index(agency_id, covered)
+    except Exception as e:
+        logger.warning("Could not save bulk constraint index: %s", e)
+    return covered
+
+
 def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     """Get all available values for all dimensions via constraint endpoint.
 
-    For providers using contentconstraint: automatically falls back to
+    For providers with constraint_bulk_supported: fetches the full constraint
+    catalog in one call and uses it directly, avoiding per-dataflow 404 roundtrips.
+    For providers using contentconstraint without bulk support: falls back to
     availableconstraint when contentconstraint returns 404.
 
     Results are cached in SQLite for 7 days.
@@ -497,6 +572,23 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     provider = get_provider()
     constraint_endpoint = provider.get("constraint_endpoint", "availableconstraint")
     constraint_suffix = provider.get("constraint_path_suffix", "")
+
+    # Bulk path: providers that expose a full constraint catalog in one call (e.g. ISTAT).
+    # Avoids per-dataflow 404 roundtrips for the ~99% of dataflows with no contentconstraint.
+    if provider.get("constraint_bulk_supported") and constraint_endpoint == "contentconstraint":
+        from .db_cache import get_df_ids_with_content_constraint
+        agency_id = provider.get("agency_id", "")
+        covered = get_df_ids_with_content_constraint(agency_id)
+        if covered is None:
+            covered = _fetch_and_cache_bulk_constraints(agency_id)
+        if df_id not in covered:
+            return _fallback_availableconstraint(dataset, provider)
+        # Data was just populated in available_constraints by the bulk fetch
+        cached = get_cached_available_constraints(df_id)
+        if cached is not None:
+            return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in cached.items()}
+        # Edge case: covered by index but not in per-df cache — fall through to per-df call
+
     if constraint_endpoint == "contentconstraint":
         path = f"{constraint_endpoint}/{provider['agency_id']}/{df_id}"
     else:

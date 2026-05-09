@@ -577,7 +577,7 @@ class TestConstraintEndpointPathBuild:
         }
 
     def test_istat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
-        """ISTAT (constraint_endpoint=contentconstraint) → URL is /contentconstraint/IT1/<df>."""
+        """ISTAT bulk path: first HTTP call goes to /contentconstraint/IT1 (no df_id)."""
         from opensdmx.discovery import get_available_values
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
@@ -588,13 +588,10 @@ class TestConstraintEndpointPathBuild:
         with _mock_http_client(empty_xml) as mock_client_class:
             get_available_values(ds)
 
-        called_url = mock_client_class.return_value.get.call_args[0][0]
-        assert "/contentconstraint/IT1/22_289_DF_DCIS_POPRES1_24" in called_url
-        assert "/availableconstraint/" not in called_url
-        assert "/all/all" not in called_url
-        # mode=available is an availableconstraint-only param, must not be passed
-        called_params = mock_client_class.return_value.get.call_args.kwargs.get("params", {})
-        assert "mode" not in called_params
+        # First call must be the bulk fetch: /contentconstraint/IT1 (no specific df_id)
+        first_url = mock_client_class.return_value.get.call_args_list[0][0][0]
+        assert "/contentconstraint/IT1" in first_url
+        assert "22_289_DF_DCIS_POPRES1_24" not in first_url
 
     def test_eurostat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
         """Regression: Eurostat path build unchanged (already on contentconstraint)."""
