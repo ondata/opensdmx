@@ -1,11 +1,13 @@
 # LOG
 
-## 2026-05-08
+## 2026-05-09 (v0.6.6)
 
 - refactor(discovery): per-provider `constraint_timeout` / `constraint_max_retries` in `portals.json` instead of hardcoded values in `discovery.py`. Previously the 30 s + 1-attempt fast-fail was applied to **every** provider with `constraints_supported: true` (Eurostat, ABS, BIS, IMF, Derzhstat), silently disabling the 3-retry policy for transient failures (5xx, NetworkError, TimeoutException) on backends that aren't slow. Now only ISTAT carries the override (`constraint_timeout: 30`, `constraint_max_retries: 1`); all other providers keep the module timeout (300 s) and 3 retries. Precedence: `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` env var > provider config > module default. CLI advisory generalized: gating on `provider.constraint_timeout` instead of `agency_id == "IT1"`.
 - feat(discovery): dedicated short timeout for the `availableconstraint` endpoint, configurable via `OPENSDMX_AVAILCONSTRAINT_TIMEOUT`. When the provider's availability backend is slow or unresponsive (documented case: ISTAT, TTFB > 180 s with zero bytes received), `opensdmx constraints` / `values` now fail fast instead of waiting up to 3 × 300 s on the global timeout. New `ConstraintsTimeout` exception parallel to `ConstraintsUnavailable`, exported from the package root. CLI prints a yellow advisory with the exact env var override.
 - feat(http): `sdmx_request` / `sdmx_request_xml` accept optional `_timeout` and `_max_retries` keyword overrides for per-call control of the HTTP timeout and retry attempts.
 - ux: ISTAT pre-warning before the first uncached constraints call now reflects the actual per-call timeout and the no-retry behavior (was a stale "30–120 s" estimate inherited from the old global-timeout regime).
+- docs: add `docs/provider-proposals.md` — empirically verified provider-side issues (P-ISTAT-01: `availableconstraint` key filter accepted but ignored, `contentconstraint` available at 0.66 s; see issue #24).
+- docs(skill): update `sdmx-explorer/references/istat-flow.md` — expand Step 3 with timeout behavior, `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` env var, empirical findings on key filter, and concrete fallback flow for municipal-level datasets.
 
 ## 2026-05-08 (v0.6.5)
 
