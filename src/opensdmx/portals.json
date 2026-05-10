@@ -59,6 +59,7 @@
     "agency_id": "OECD",
     "catalog_agency": "all",
     "constraint_params": {},
+    "data_rate_limit": 60,
     "constraints_supported": false,
     "last_n_supported": true,
     "categories_supported": true

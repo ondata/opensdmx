@@ -187,12 +187,18 @@ def _rate_limit_dir() -> Path:
     return d
 
 
-def _rate_limit_file() -> Path:
+def _use_split_rate_limit(is_data: bool) -> bool:
+    """True when this call should use the dedicated data rate limit."""
+    return is_data and get_provider().get("data_rate_limit") is not None
+
+
+def _rate_limit_file(is_data: bool = False) -> Path:
     """Return per-provider rate limit timestamp file."""
-    return _rate_limit_dir() / f"{_provider_cache_key()}.log"
+    suffix = ".data.log" if _use_split_rate_limit(is_data) else ".log"
+    return _rate_limit_dir() / f"{_provider_cache_key()}{suffix}"
 
 
-def _rate_limit_lock_file() -> Path:
+def _rate_limit_lock_file(is_data: bool = False) -> Path:
     """Return per-provider lock file.
 
     Held for the entire HTTP call so that requests to the same provider are
@@ -200,21 +206,31 @@ def _rate_limit_lock_file() -> Path:
     callers read the same timestamp, sleep the same amount, and fire HTTP
     requests nearly simultaneously — defeating the rate limit.
     """
-    return _rate_limit_dir() / f"{_provider_cache_key()}.lock"
+    suffix = ".data.lock" if _use_split_rate_limit(is_data) else ".lock"
+    return _rate_limit_dir() / f"{_provider_cache_key()}{suffix}"
 
 
-def _rate_limit_check() -> None:
+def _rate_limit_check(is_data: bool = False) -> None:
     """Wait if needed to respect the provider's rate limit.
 
+    When the provider defines `data_rate_limit` and `is_data=True`, uses that
+    interval with a separate timestamp/lock file so data and structure calls
+    don't block each other. All other providers use a single unified timer
+    (identical to previous behavior).
+
     Reads the last-call timestamp from the per-user rate-limit directory
-    (`_rate_limit_dir()`, under the resolved cache base). If less than rate_limit seconds
-    have passed since the last HTTP request was sent, sleeps for the remaining
-    time. The timestamp is written at request start (before the HTTP call), so
-    the interval is measured send-to-send, not receive-to-send.
+    (`_rate_limit_dir()`, under the resolved cache base). If less than the
+    required interval has passed, sleeps for the remaining time. The timestamp
+    is written at request start (before the HTTP call), so the interval is
+    measured send-to-send, not receive-to-send.
     Cache hits never reach this function — only real HTTP calls apply.
     """
-    min_interval = get_provider()["rate_limit"]
-    rl_file = _rate_limit_file()
+    provider = get_provider()
+    if _use_split_rate_limit(is_data):
+        min_interval = float(provider["data_rate_limit"])
+    else:
+        min_interval = provider["rate_limit"]
+    rl_file = _rate_limit_file(is_data)
     if rl_file.exists():
         try:
             last = float(rl_file.read_text().strip())
@@ -261,12 +277,15 @@ def sdmx_request(
     *,
     _timeout: float | None = None,
     _max_retries: int | None = None,
+    _is_data: bool = False,
     **params,
 ) -> httpx.Response:
     """Make a request to the active SDMX provider with retry logic.
 
     `_timeout` and `_max_retries` override the module defaults for this call only
     (used e.g. by `availableconstraint` discovery to fail fast on slow backends).
+    `_is_data=True` routes the call through the provider's `data_rate_limit` timer
+    (when configured), keeping data and structure calls on independent clocks.
     """
     url = f"{get_base_url()}/{path}"
     effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
@@ -283,14 +302,15 @@ def sdmx_request(
         # Hold an exclusive file lock for the whole HTTP call. This serializes
         # requests to the same provider across processes, so the rate limit is
         # actually enforced instead of being defeated by parallel reads of the
-        # timestamp file. Lock is per-provider, so different providers stay
-        # parallel. If the process dies, the kernel releases the flock.
-        with portalocker.Lock(str(_rate_limit_lock_file()), flags=portalocker.LOCK_EX):
-            _rate_limit_check()
+        # timestamp file. Lock is per-provider (and per-type when split), so
+        # different providers and data/structure streams stay parallel.
+        # If the process dies, the kernel releases the flock.
+        with portalocker.Lock(str(_rate_limit_lock_file(_is_data)), flags=portalocker.LOCK_EX):
+            _rate_limit_check(_is_data)
             # Record timestamp at request START (before HTTP call) so the
             # interval is measured send-to-send, not receive-to-send.
             try:
-                _rate_limit_file().write_text(str(time.time()))
+                _rate_limit_file(_is_data).write_text(str(time.time()))
             except OSError:
                 pass
             with httpx.Client(timeout=effective_timeout, follow_redirects=True) as client:
@@ -395,13 +415,13 @@ def sdmx_request_csv(path: str, **params):
                 ', '.join(dropped),
             )
         filtered_params = {k: v for k, v in params.items() if k not in unsupported}
-        resp = sdmx_request(path + suffix, accept=data_accept, **filtered_params)
+        resp = sdmx_request(path + suffix, accept=data_accept, _is_data=True, **filtered_params)
         import re
         text = re.sub(r"\[,", "[null,", resp.text)
         return _parse_sdmx_json(json.loads(text))
     elif fmt:
         # Provider requires a ?format= query param (e.g. Eurostat SDMX-CSV)
-        resp = sdmx_request(path, accept="application/xml", format=fmt, **params)
+        resp = sdmx_request(path, accept="application/xml", format=fmt, _is_data=True, **params)
     else:
-        resp = sdmx_request(path, accept="text/csv", **params)
+        resp = sdmx_request(path, accept="text/csv", _is_data=True, **params)
     return pl.read_csv(io.BytesIO(resp.content), infer_schema_length=10000, schema_overrides={"TIME_PERIOD": pl.Utf8, "OBS_VALUE": pl.Float64, "OBS_FLAG": pl.Utf8, "OBS_STATUS": pl.Utf8, "CONF_STATUS": pl.Utf8})

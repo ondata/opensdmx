@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-05-10 — feat: split rate limiter for data vs structure requests (issue #2)
+
+- feat(base): `_use_split_rate_limit(is_data)` — returns True only when `is_data=True` and the provider defines `data_rate_limit`. Keeps the unified timer for all providers without that key, preserving identical behavior for ISTAT, Eurostat, Derzhstat, and all others.
+- feat(base): `_rate_limit_file` / `_rate_limit_lock_file` / `_rate_limit_check` accept `is_data=False`. When split is active, data calls use `{provider}.data.log` + `{provider}.data.lock`; structure calls keep `{provider}.log` + `{provider}.lock` — fully independent clocks and locks.
+- feat(base): `sdmx_request` gains `_is_data=False` kwarg, propagated to the rate-limit machinery inside `_do_request`.
+- feat(base): all three data paths in `sdmx_request_csv` pass `_is_data=True` (World Bank JSON, Eurostat SDMX-CSV, generic CSV).
+- feat(portals): OECD gains `"data_rate_limit": 60` (1 data download/min, per official OECD docs). Structure calls (search, info, constraints) are unthrottled.
+- test: 6 new tests in `TestSplitRateLimit` covering split/no-split detection, lock file naming, and correct lock selection per call type. Updated two existing `_rate_limit_check` mocks to accept the new `is_data` kwarg. Total: 165 tests pass.
+
 ## 2026-05-10 — v0.7.1: fix(abs): constraint_params: {} to avoid 500 on availableconstraint
 
 - fix(portals): added `constraint_params: {}` to ABS entry — the server returns 500
