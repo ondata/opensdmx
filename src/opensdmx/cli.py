@@ -110,7 +110,8 @@ def _apply_provider(provider: str | None) -> None:
     import os
     resolved = provider or os.environ.get("OPENSDMX_PROVIDER")
     if resolved:
-        from .base import PROVIDERS, set_provider
+        from .base import PROVIDER_ALIASES, PROVIDERS, set_provider
+        resolved = PROVIDER_ALIASES.get(resolved, resolved)
         if resolved not in PROVIDERS and not resolved.startswith("http"):
             valid = ", ".join(sorted(PROVIDERS))
             err_console.print(f"[red]Error:[/red] unknown provider '{resolved}'. Valid: {valid}")

@@ -34,6 +34,12 @@ PROVIDERS: dict[str, dict] = {
     for key, entry in _raw_portals.items()
 }
 
+PROVIDER_ALIASES: dict[str, str] = {
+    alias: key
+    for key, entry in _raw_portals.items()
+    for alias in entry.get("aliases", [])
+}
+
 _active_provider: str | dict = "eurostat"
 _timeout: float = 300.0
 _extra_headers: dict[str, str] = {}

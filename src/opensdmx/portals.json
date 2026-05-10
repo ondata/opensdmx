@@ -1,6 +1,7 @@
 {
   "eurostat": {
     "name": "Eurostat",
+    "aliases": ["estat"],
     "description": "Statistical office of the EU. Covers demographics, economy, employment, trade, agriculture and environment for 27 member states and associated countries. Primary source for European comparative statistics.",
     "base_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1",
     "agency_id": "ESTAT",

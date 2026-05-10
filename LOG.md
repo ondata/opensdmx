@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-05-10 — v0.9.2
+
+- feat: `--provider estat` now accepted as alias for `eurostat` — aliases are declared in `portals.json` under the `"aliases"` field and resolved automatically at CLI startup
+
 ## 2026-05-10 — Errata corrige: v0.9.0 / v0.9.1 hub fast path is unreliable for `REF_AREA` on ISTAT
 
 Empirical verification on 2026-05-10 against `esploradati.istat.it` shows that the
