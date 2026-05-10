@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-05-10 — fix(abs): constraint_params: {} to avoid 500 on availableconstraint
+
+- fix(portals): added `constraint_params: {}` to ABS entry — the server returns 500
+  when `references=none` is sent as query parameter (default for all providers);
+  omitting all params gives 200 and correct constraint data.
+- probe(issue #27): BIS, Derzhstat, IMF already work via `availableconstraint` without
+  any portals.json change; the original probe only tested `contentconstraint`, which
+  those providers don't implement. ABS was the only broken case.
+- Updated `tmp/contentconstraint-probe.md` with current findings.
+
 ## 2026-05-09 — v0.7.0: serieskeysonly fallback for constraints timeout
 
 - feat(discovery): `_parse_serieskeys_xml()` parses GenericData `detail=serieskeysonly` responses into `{dim_id: [unique sorted values]}`.

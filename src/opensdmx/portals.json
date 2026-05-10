@@ -100,6 +100,7 @@
     "description": "Official Australian statistics. Covers population, economy, employment, trade, prices and environment for Australia and its territories.",
     "base_url": "https://data.api.abs.gov.au/rest",
     "agency_id": "ABS",
+    "constraint_params": {},
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": true
