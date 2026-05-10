@@ -41,7 +41,11 @@
     "constraint_fallback_timeout": 30,
     "constraints_supported": true,
     "last_n_supported": true,
-    "categories_supported": true
+    "categories_supported": true,
+    "hub_base_url": "https://esploradati.istat.it/databrowserhub/api/core",
+    "hub_node_id": "1",
+    "hub_dataset_agency": "IT1",
+    "hub_timeout": 15.0
   },
   "ecb": {
     "name": "European Central Bank",

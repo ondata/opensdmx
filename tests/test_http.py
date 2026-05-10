@@ -488,6 +488,9 @@ class TestAvailableConstraintTimeout:
         from opensdmx.discovery import ConstraintsTimeout, get_available_values
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        # Hub is on by default for ISTAT; this test exercises the SDMX-REST
+        # availableconstraint path explicitly, so we opt out of the hub.
+        monkeypatch.setenv("OPENSDMX_DISABLE_HUB", "1")
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_timeout", 30)
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_max_retries", 1)
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_endpoint", "availableconstraint")
@@ -508,6 +511,10 @@ class TestAvailableConstraintTimeout:
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
         monkeypatch.setenv("OPENSDMX_AVAILCONSTRAINT_TIMEOUT", "12.0")
+        # This test exercises the SDMX-REST availableconstraint timeout path;
+        # ISTAT's hub would otherwise be tried first (and also fail), polluting
+        # call counts and the recorded timeout. Force the hub off.
+        monkeypatch.setenv("OPENSDMX_DISABLE_HUB", "1")
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_timeout", 30)
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_max_retries", 1)
         monkeypatch.setitem(PROVIDERS["istat"], "constraint_endpoint", "availableconstraint")
@@ -578,10 +585,16 @@ class TestConstraintEndpointPathBuild:
         }
 
     def test_istat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
-        """ISTAT bulk path: first HTTP call goes to /contentconstraint/IT1 (no df_id)."""
+        """ISTAT bulk path: first HTTP call goes to /contentconstraint/IT1 (no df_id).
+
+        With the hub active by default, the SDMX-REST bulk path is bypassed for
+        ISTAT — disable the hub here to keep this test as a regression guard
+        for the bulk-catalog code path.
+        """
         from opensdmx.discovery import get_available_values
 
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        monkeypatch.setenv("OPENSDMX_DISABLE_HUB", "1")
         set_provider("istat")
         ds = self._dataset(df_id="22_289_DF_DCIS_POPRES1_24")
 

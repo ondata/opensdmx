@@ -1,5 +1,30 @@
 # LOG
 
+## 2026-05-10 — v0.9.0: feat(istat): `.Stat Suite` hub fast path for `get_available_values`
+
+- feat(hub): new `src/opensdmx/hub.py` module wrapping the `.Stat Suite` databrowser hub
+  API (`/databrowserhub/api/core/nodes/{node}/datasets/{id}/column/{dim}/partial/values`).
+  Per-dimension JSON lookups in ~500 ms, never go through the slow
+  `availableconstraint`/`serieskeysonly` cross-join. Reference: `docs/istat/hub-api.md`.
+- feat(discovery): `get_available_values()` tries the hub right after the SQLite cache
+  and before the existing bulk + availableconstraint + serieskeysonly chain. Hub usage
+  is opt-in per provider via `hub_base_url` in `portals.json`; on any hub failure (HTTP
+  error, parse error, partial result) the original chain runs unchanged.
+- feat(portals): ISTAT gains `hub_base_url`, `hub_node_id`, `hub_dataset_agency`,
+  `hub_timeout`. No other provider is touched — Eurostat, OECD, ECB, ABS, BIS, IMF,
+  Bundesbank, INSEE, World Bank, Comext, Derzhstat all keep their existing path
+  byte-for-byte. `OPENSDMX_DISABLE_HUB=1` opts out at runtime.
+- fix(istat): `41_270_DF_DCIS_MORTIFERITISTR1_1` (11 dimensions, ~573 k observations)
+  now resolves all dimension values in ~7 s end-to-end. Previously: timeout on
+  `availableconstraint` after 30 s, timeout on `serieskeysonly` after 30 s, no usable
+  output. Verified live on 2026-05-10.
+- test: 19 new tests in `tests/test_hub.py` covering enable/disable, URL/identifier
+  build, JSON parsing, error fallback (HTTP error, timeout, malformed JSON, partial
+  failure), TIME_PERIOD exclusion, and discovery integration on both ISTAT-like and
+  non-hub providers. Two existing ISTAT regression tests in `test_http.py` opt out of
+  the hub explicitly so they keep guarding the SDMX-REST availableconstraint and bulk
+  contentconstraint codepaths. Total: 184 tests pass.
+
 ## 2026-05-10 — v0.8.0: feat: split rate limiter for data vs structure requests (issue #2)
 
 - feat(base): `_use_split_rate_limit(is_data)` — returns True only when `is_data=True` and the provider defines `data_rate_limit`. Keeps the unified timer for all providers without that key, preserving identical behavior for ISTAT, Eurostat, Derzhstat, and all others.

@@ -8,8 +8,9 @@ flow fits the target provider.
 For flows that deviate substantially from the default pattern, see the dedicated
 references:
 
-- **ISTAT** (rate limit, suffix patterns, territory codes, mandatory `constraints`
-  step): [istat-flow.md](istat-flow.md)
+- **ISTAT** (rate limit, suffix patterns, territory codes, hub-backed
+  `constraints` for ground-truth dimension values incl. `REF_AREA`):
+  [istat-flow.md](istat-flow.md)
 - **World Bank** (single-dataflow architecture, alpha-3 codes, known bug):
   [worldbank-flow.md](worldbank-flow.md)
 
@@ -18,7 +19,7 @@ references:
 | Provider | constraints | last_n | Notes |
 |----------|:-----------:|:------:|-------|
 | Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
-| ISTAT | ✓ | ✓ | Use `--provider istat`; dedicated reference: [istat-flow.md](istat-flow.md) |
+| ISTAT | ✓ | ✓ | Use `--provider istat`; `constraints` uses the `.Stat Suite` hub by default — sub-second per dimension, exposes every dim including `REF_AREA`. Dedicated reference: [istat-flow.md](istat-flow.md) |
 | ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
 | OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe `get` instead |
 | INSEE | ✗ | ✓ | Use `--provider insee`; French macroeconomic time series (BDM database) |

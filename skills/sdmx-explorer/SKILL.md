@@ -352,14 +352,20 @@ opensdmx constraints DF_LABOR_FORCE_A REGION --provider derzhstat
 # → 28 KATOTTG codes, each with the Ukrainian region name
 ```
 
-`opensdmx constraints` is the ground truth — it queries the SDMX constraint
-endpoint (`contentconstraint` for Eurostat and ISTAT, `availableconstraint`
-for the others) and returns only codes that actually exist in this specific
-dataflow.
+`opensdmx constraints` is the ground truth — it queries the best discovery
+endpoint available for the active provider and returns only codes that
+actually exist in this specific dataflow:
 
-**Missing dimensions.** Providers on `contentconstraint` may omit large
-dimensions (e.g. ISTAT does not expose `REF_AREA`, ~8,000 comuni). The CLI
-flags these inline:
+- **ISTAT** — the `.Stat Suite` databrowser hub, which returns ground-truth
+  values per dimension in sub-second time. Every dimension is exposed,
+  including `REF_AREA` (~8,000 comuni). Set `OPENSDMX_DISABLE_HUB=1` to fall
+  back to `contentconstraint`/`availableconstraint`.
+- **Eurostat** — `contentconstraint`.
+- **All others** — `availableconstraint` (or the provider-specific equivalent).
+
+**Missing dimensions** are now rare. They appear only on providers/datasets
+where the discovery endpoint does not list a particular dimension (e.g. some
+Eurostat dataflows). The CLI flags these inline:
 
 ```
 REF_AREA  –  not in contentconstraint — use: opensdmx values <df> REF_AREA
@@ -399,8 +405,10 @@ opensdmx --output json constraints PRC_HICP_MANR | jq '.geo.codes'
 # number of values per dimension (only those exposed by constraint)
 opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | select(.value.source=="constraint") | {dim: .key, n: .value.n_values}'
 
-# list dimensions missing from contentconstraint (need a follow-up `values` call)
-opensdmx --output json constraints 22_289_DF_DCIS_POPRES1_24 --provider istat | jq 'to_entries[] | select(.value.source=="missing") | {dim: .key, hint: .value.hint}'
+# list dimensions missing from the discovery endpoint (need a follow-up `values` call)
+# Note: for ISTAT this returns nothing — the hub exposes every dimension. Useful on
+# Eurostat dataflows where contentconstraint occasionally omits large geo lists.
+opensdmx --output json constraints NAMA_10_GDP --provider eurostat | jq 'to_entries[] | select(.value.source=="missing") | {dim: .key, hint: .value.hint}'
 
 # find a code by label (case-insensitive)
 opensdmx --output json constraints PRC_HICP_MANR coicop | jq '[.[] | select(.name | ascii_downcase | contains("food"))]'
@@ -421,13 +429,18 @@ may return no data if it doesn't exist in this specific dataflow.
 
 ### ISTAT flow
 
-ISTAT requires a different exploration pattern: the API has a strict ~13 s rate
-limit, codelists and constraints diverge often, and some codes carry version
-suffixes that need stripping. The flow consolidates `info` → `values` →
-`constraints` (mandatory before `get`) → `get`.
+ISTAT keeps the `info` → `constraints` → `get` shape, with `values` as an
+optional sidecar for code labels. The SDMX REST endpoint has a strict ~13 s
+rate limit, but `opensdmx constraints` for ISTAT now goes through the
+`.Stat Suite` databrowser hub: every dimension (including `REF_AREA` with
+~8,000 comuni) is returned in sub-second time, even on 11-dimension
+datasets that previously timed out on `availableconstraint`. Some codes
+still carry version/date suffixes (`LBIRTH_FROM2017`, `POP_1JAN2021`) that
+may need stripping when filtering.
 
-For the full step-by-step walkthrough, territory codes, and ISTAT-specific
-quirks, see [references/istat-flow.md](references/istat-flow.md).
+For the full step-by-step walkthrough, territory codes, the hub fast path,
+the legacy SDMX REST fallback, and ISTAT-specific quirks, see
+[references/istat-flow.md](references/istat-flow.md).
 
 ### Extract from both flows
 
