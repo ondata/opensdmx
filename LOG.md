@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-05-10 — feat: split rate limiter for data vs structure requests (issue #2)
+## 2026-05-10 — v0.8.0: feat: split rate limiter for data vs structure requests (issue #2)
 
 - feat(base): `_use_split_rate_limit(is_data)` — returns True only when `is_data=True` and the provider defines `data_rate_limit`. Keeps the unified timer for all providers without that key, preserving identical behavior for ISTAT, Eurostat, Derzhstat, and all others.
 - feat(base): `_rate_limit_file` / `_rate_limit_lock_file` / `_rate_limit_check` accept `is_data=False`. When split is active, data calls use `{provider}.data.log` + `{provider}.data.lock`; structure calls keep `{provider}.log` + `{provider}.lock` — fully independent clocks and locks.
