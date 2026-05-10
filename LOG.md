@@ -18,12 +18,13 @@
   now resolves all dimension values in ~7 s end-to-end. Previously: timeout on
   `availableconstraint` after 30 s, timeout on `serieskeysonly` after 30 s, no usable
   output. Verified live on 2026-05-10.
-- test: 19 new tests in `tests/test_hub.py` covering enable/disable, URL/identifier
+- test: 21 new tests in `tests/test_hub.py` covering enable/disable, URL/identifier
   build, JSON parsing, error fallback (HTTP error, timeout, malformed JSON, partial
-  failure), TIME_PERIOD exclusion, and discovery integration on both ISTAT-like and
-  non-hub providers. Two existing ISTAT regression tests in `test_http.py` opt out of
-  the hub explicitly so they keep guarding the SDMX-REST availableconstraint and bulk
-  contentconstraint codepaths. Total: 184 tests pass.
+  failure), TIME_PERIOD exclusion, graceful contract for direct calls on non-hub
+  providers, and discovery integration on both ISTAT-like and non-hub providers.
+  Two existing ISTAT regression tests in `test_http.py` opt out of the hub explicitly
+  so they keep guarding the SDMX-REST availableconstraint and bulk contentconstraint
+  codepaths. Total: 186 tests pass.
 
 ## 2026-05-10 — v0.8.0: feat: split rate limiter for data vs structure requests (issue #2)
 
