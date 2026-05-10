@@ -15,6 +15,7 @@ from opensdmx.base import (
     sdmx_request,
     sdmx_request_csv,
     set_provider,
+    _use_split_rate_limit,
 )
 from opensdmx.discovery import all_available
 from opensdmx.retrieval import get_data
@@ -464,7 +465,7 @@ class TestAvailableConstraintTimeout:
         # Force db_cache to re-init schema for the per-test tmp cache dir.
         monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
         # Skip per-provider rate-limit sleep so multi-attempt cases stay fast.
-        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda: None)
+        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda is_data=False: None)
 
     def _dataset(self, df_id: str = "TEST_DF") -> dict:
         return {
@@ -563,7 +564,7 @@ class TestConstraintEndpointPathBuild:
         from tenacity import wait_none
         monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
         monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
-        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda: None)
+        monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda is_data=False: None)
 
     @staticmethod
     def _dataset(df_id: str) -> dict:
@@ -607,3 +608,95 @@ class TestConstraintEndpointPathBuild:
 
         called_url = mock_client_class.return_value.get.call_args[0][0]
         assert "/contentconstraint/ESTAT/PRC_HICP_MANR" in called_url
+
+
+# ---------------------------------------------------------------------------
+# Split rate limiter (data_rate_limit)
+# ---------------------------------------------------------------------------
+
+class TestSplitRateLimit:
+    """Tests for per-provider data_rate_limit splitting data and structure timers."""
+
+    def test_no_split_for_provider_without_data_rate_limit(self):
+        """Provider without data_rate_limit never activates split path."""
+        set_provider("eurostat")  # no data_rate_limit
+        assert not _use_split_rate_limit(is_data=True)
+        assert not _use_split_rate_limit(is_data=False)
+
+    def test_split_active_for_provider_with_data_rate_limit(self):
+        """Provider with data_rate_limit activates split only for data calls."""
+        set_provider("oecd")  # data_rate_limit: 60
+        assert _use_split_rate_limit(is_data=True)
+        assert not _use_split_rate_limit(is_data=False)
+
+    def test_data_lock_file_differs_from_structure_lock_file(self, monkeypatch, tmp_path):
+        """When split is active, data and structure use different lock files."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        set_provider("oecd")
+        struct_lock = _rate_limit_lock_file(is_data=False)
+        data_lock = _rate_limit_lock_file(is_data=True)
+        assert struct_lock != data_lock
+        assert struct_lock.name.endswith(".lock")
+        assert data_lock.name.endswith(".data.lock")
+
+    def test_no_split_same_lock_for_unified_provider(self, monkeypatch, tmp_path):
+        """Provider without data_rate_limit: data and structure share one lock file."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        set_provider("eurostat")
+        struct_lock = _rate_limit_lock_file(is_data=False)
+        data_lock = _rate_limit_lock_file(is_data=True)
+        assert struct_lock == data_lock
+
+    def test_data_request_uses_data_lock(self, monkeypatch, tmp_path):
+        """sdmx_request_csv acquires the .data.lock file for providers with data_rate_limit."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        set_provider("oecd")
+        expected_lock = str(_rate_limit_lock_file(is_data=True))
+
+        lock_cm = MagicMock()
+        lock_cm.__enter__ = MagicMock(return_value=lock_cm)
+        lock_cm.__exit__ = MagicMock(return_value=False)
+
+        with (
+            _mock_http_client(_CSV_CONTENT),
+            patch("opensdmx.base.portalocker.Lock", return_value=lock_cm) as mock_lock,
+        ):
+            sdmx_request_csv("data/OECD_DF")
+
+        called_path = mock_lock.call_args.args[0]
+        assert called_path == expected_lock
+        assert ".data.lock" in called_path
+
+    def test_structure_request_uses_plain_lock_even_for_split_provider(
+        self, monkeypatch, tmp_path
+    ):
+        """sdmx_request (structure) uses the plain .lock even when data_rate_limit is set."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        set_provider("oecd")
+        plain_lock = str(_rate_limit_lock_file(is_data=False))
+
+        lock_cm = MagicMock()
+        lock_cm.__enter__ = MagicMock(return_value=lock_cm)
+        lock_cm.__exit__ = MagicMock(return_value=False)
+
+        with (
+            _mock_http_client(_CSV_CONTENT),
+            patch("opensdmx.base.portalocker.Lock", return_value=lock_cm) as mock_lock,
+        ):
+            sdmx_request("dataflow/OECD/all", accept="application/xml")
+
+        called_path = mock_lock.call_args.args[0]
+        assert called_path == plain_lock
+        assert ".data.lock" not in called_path
