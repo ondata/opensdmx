@@ -107,10 +107,15 @@ made explicit as an additional entry.
 GET /datasets/{dataset_id}/columns/partial/values
 ```
 
-Returns the values **actually present** for **all dimensions at once** in a single request.
-Response time is ~2 s for datasets with 10+ dimensions — the same cost as a single
-per-dimension call. This is the endpoint used by the Data Browser UI and is the preferred
-discovery path.
+Returns valid values for **all dimensions at once** in a single request. Response time
+is ~2 s for datasets with 10+ dimensions — the same cost as a single per-dimension call.
+This is the endpoint used by the Data Browser UI and is the preferred discovery path.
+
+> **Caveat**: for dimensions where ISTAT has **not** populated an actual content constraint
+> (most notably `REF_AREA` on every dataset using `CL_ITTER107`), the response contains
+> the **full codelist**, not the codes actually present in the data. See
+> [Critical limitation: REF_AREA discovery on ISTAT](#critical-limitation-ref_area-discovery-on-istat)
+> below.
 
 `TIME_PERIOD` is included in the response but should be handled separately (it is a
 `TimeDimension`, not a codelist dimension).
@@ -148,14 +153,18 @@ queryable data (~80 of the 3743 catalog entries, identifiable by the `DF_BULK_` 
 GET /datasets/{dataset_id}/column/{dim_id}/partial/values
 ```
 
-Returns the values **actually present** in the dataset for a single dimension, with Italian
-labels and total observation count. Responds in ~500 ms even for `REF_AREA` with 8716 codes.
+Returns valid values for a single dimension, with Italian labels. Responds in
+sub-second time even for large dimensions.
 
 Use this endpoint only as a fallback when the bulk endpoint is unavailable. The response
 structure is identical to a single entry in the `criteria` array of the bulk response.
 
-The `partial` segment in the path suggests the endpoint may support pagination or filtering;
-this was not investigated.
+> **Same caveat as the bulk endpoint**: for ISTAT, on dimensions without an actual content
+> constraint (e.g. `REF_AREA`), the response is the full codelist. The `isSelectable` and
+> `isDefault` flags are uniformly `true`/`false` for every code and carry **no** discovery
+> information. See
+> [Critical limitation: REF_AREA discovery on ISTAT](#critical-limitation-ref_area-discovery-on-istat)
+> below.
 
 ---
 
@@ -252,18 +261,117 @@ The precise-key SDMX REST call returned in under 5 seconds.
 
 ---
 
+## Officially documented SDMX REST constraint endpoints
+
+Aside from the hub API, the .Stat Suite SDMX REST specification documents two parameters
+on the `dataflow` resource that expose content constraint information. They are part of
+the standard .Stat Suite API contract:
+
+- [.Stat SDMX RESTful Web Service Cheat Sheet](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/)
+- [Data features — Auto-generation of Actual Content Constraints](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/)
+
+Both endpoints have been verified working on ISTAT (`esploradati.istat.it`) on
+2026-05-10, on datasets where `availableconstraint` and `contentconstraint/IT1/BL_…`
+fail with timeouts and 404s respectively.
+
+### `references=actualconstraint`
+
+```
+GET /SDMXWS/rest/dataflow/IT1/{dataflow_id}/1.0?references=actualconstraint
+```
+
+Returns the dataflow plus a `ContentConstraint` of `type="Actual"` containing the codes
+actually used in the data, per dimension, in a `CubeRegion`. .Stat Core auto-generates
+these constraints at upload time with IDs prefixed `CR_A_` or `CR_B_` (validity dates
+indicate which one is currently active).
+
+Verified responses:
+
+| Dataflow | HTTP | Time | Size | REF_AREA in CubeRegion? |
+|---|---|---|---|---|
+| `22_289_DF_DCIS_POPRES1_24` (population, 6 dims) | 200 | 4.7 s | 9.9 KB | **No** — explicit `<NOT_DISPLAYED title="NOTE_REF_AREA">` annotation on the dataflow |
+| `41_269_DF_DCIS_INCIDENTISTR1_1` (incidents, 10 dims) | 200 | 6.0 s | 8.6 KB | **No** — silently absent from the CubeRegion |
+
+For the population dataflow, the constraint reliably enumerates the small dimensions:
+FREQ, DATA_TYPE, SEX (3 codes), AGE (TOTAL + Y0..Y99 + Y_GE100, 102 codes),
+MARITAL_STATUS (1 code), TIME_PERIOD (`2019-01-01` … `2026-12-31`).
+
+### `references=all&detail=referencepartial`
+
+```
+GET /SDMXWS/rest/dataflow/IT1/{dataflow_id}/1.0?references=all&detail=referencepartial
+```
+
+Returns the full dataflow with all referenced artefacts (DSD, codelists, categorisations,
+content constraint). The .Stat Suite spec describes the codelists as "partial — containing
+only allowed and/or actually used items".
+
+Verified on `22_289_DF_DCIS_POPRES1_24` — HTTP 200 in 34 s, 9.4 MB. The returned
+`CL_ITTER107` codelist contains 12,471 codes (Matera comune `077014` included). The
+direct codelist query
+
+```
+GET /SDMXWS/rest/codelist/IT1/CL_ITTER107/?references=none
+# → HTTP 200 in 10.3 s, 9.1 MB, 12,471 codes
+```
+
+returns **the same 12,471 codes**. So on ISTAT `referencepartial` does not actually
+filter `CL_ITTER107` — it falls back to the full codelist whenever there is no actual
+content constraint on `REF_AREA` to filter against (which, per the previous endpoint, is
+the case for every ISTAT dataset tested so far).
+
+---
+
+## Critical limitation: REF_AREA discovery on ISTAT
+
+Combining all available channels for the territorial dimension on ISTAT:
+
+| Channel | `22_289_DF_DCIS_POPRES1_24` | `41_269_DF_DCIS_INCIDENTISTR1_1` |
+|---|---|---|
+| `availableconstraint/{df}` | HTTP 000 in 60 s (no body) | HTTP 000, > 5 min (per ISTAT email) |
+| `contentconstraint/IT1/BL_…` | HTTP 404 in 1.2 s | HTTP 404 in 1.3 s (per ISTAT email) |
+| `dataflow/?references=actualconstraint` | REF_AREA absent (`NOT_DISPLAYED` annotation) | REF_AREA absent (no annotation) |
+| `dataflow/?references=all&detail=referencepartial` | full codelist, 12,471 codes | not retested but expected identical |
+| Hub `column/REF_AREA/partial/values` | 12,471 codes, 1,209,463 B | 12,471 codes, 1,209,463 B (byte-identical to the population response) |
+
+The hub's `isSelectable` and `isDefault` fields are **uniformly identical** for every
+code in both datasets (`isSelectable: true`, `isDefault: false`) and carry no
+information about which codes have data.
+
+**Implication**: there is no documented or undocumented endpoint on ISTAT that returns
+"only the territorial codes actually used in dataset X". The `partial/values` endpoints
+are an honest discovery channel **only** for dimensions where ISTAT has populated an
+actual content constraint (typically the small ones — FREQ, DATA_TYPE, SEX, AGE,
+MARITAL_STATUS, MONTH, etc.). For `REF_AREA`, every channel returns the full
+`CL_ITTER107` codelist regardless of which territorial granularity the dataset actually
+exposes.
+
+In practice, granularity for `REF_AREA` must be inferred from out-of-band signals:
+
+- Dataflow naming conventions (`DF_..._COM_*`, `DF_..._PROV_*`, …).
+- Dataflow description and category in the catalog tree.
+- A trial `GET /SDMXWS/rest/data/{df}/{key}?lastNObservations=1` at a candidate
+  granularity (country, region, province, comune) — failure modes are HTTP 404 or empty
+  CSV, returned within seconds, so trial-and-error is feasible at small scale.
+
+The earlier worked examples in this document (Milan municipality on
+`41_983_DF_DCIS_INCIDMORFER_COM_1`, Palermo province on `41_270_DF_DCIS_MORTIFERITISTR1_1`)
+work because those datasets really do carry data at the queried granularity — but this
+is confirmed only by hitting the data endpoint, not by reading the discovery response.
+
+---
+
 ## Relationship with the SDMX REST endpoint
 
-The hub API and the SDMX REST endpoint (`/SDMXWS/rest/`) serve different roles:
+The hub API and the SDMX REST endpoint (`/SDMXWS/rest/`) serve different roles. With
+the findings above incorporated:
 
 | Operation | SDMX REST | Hub API |
 |---|---|---|
 | Dataset catalog | `categoryscheme` (~24 MB, slow) | `GET /catalog` (single call, fast) |
-| Dimension values | `availableconstraint` (timeouts on large datasets) | `GET /column/{DIM}/partial/values` (sub-second) |
-| Data download | `GET /data/{key}` (works well with precise keys) | `POST /data` (JSON body, ~466ms) |
-
-For value discovery on ISTAT, `column/{DIM}/partial/values` is a practical alternative to
-`availableconstraint` when the latter times out.
+| Constraint discovery (small dims) | `dataflow/?references=actualconstraint` (~5 s, official) | `column/{DIM}/partial/values` (sub-second) |
+| Constraint discovery (REF_AREA on ISTAT) | none reliable — `availableconstraint` times out, `actualconstraint` excludes REF_AREA, `referencepartial` returns the full codelist | full codelist only — see limitation above |
+| Data download | `GET /data/{key}` (works well with precise keys) | `POST /data` (JSON body, ~466 ms) |
 
 ---
 

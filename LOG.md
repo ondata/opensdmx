@@ -1,5 +1,59 @@
 # LOG
 
+## 2026-05-10 — Errata corrige: v0.9.0 / v0.9.1 hub fast path is unreliable for `REF_AREA` on ISTAT
+
+Empirical verification on 2026-05-10 against `esploradati.istat.it` shows that the
+"hub fast path" introduced in v0.9.0 does **not** solve the territorial-dimension
+discovery problem on ISTAT. The release notes implied a generic fix; the fix is real
+only for small coded dimensions.
+
+What was tested (two datasets: `22_289_DF_DCIS_POPRES1_24` "Tutti i comuni per
+singola età" — 6 dimensions, and `41_269_DF_DCIS_INCIDENTISTR1_1` "Incidenti
+stradali" — 10 dimensions):
+
+- SDMX REST `availableconstraint/{df}` — HTTP 000, 60 s timeout (as documented).
+- SDMX REST `contentconstraint/IT1/BL_…` — HTTP 404 in 1.2 s.
+- SDMX REST `dataflow/?references=actualconstraint` — HTTP 200 in ~5 s, but `REF_AREA`
+  is **absent** from the `CubeRegion` (explicit `<NOT_DISPLAYED title="NOTE_REF_AREA">`
+  annotation on the population dataflow; silently absent on the incidents one).
+- SDMX REST `dataflow/?references=all&detail=referencepartial` — HTTP 200 in 34 s,
+  9.4 MB. The returned `CL_ITTER107` codelist contains 12,471 codes — **identical**
+  to the full codelist (`codelist/IT1/CL_ITTER107/?references=none` → 12,471 codes
+  too).
+- Hub `column/REF_AREA/partial/values` — HTTP 200 in ~6 s, 12,471 codes, response
+  body **byte-identical** between the population and incidents datasets
+  (1,209,463 B). The `isSelectable: true` and `isDefault: false` flags are uniform
+  across all 12,471 codes and carry no discovery information.
+
+Implications:
+
+- For dimensions where ISTAT populates an actual content constraint (FREQ,
+  DATA_TYPE, SEX, AGE, MARITAL_STATUS, MONTH, …) the hub fast path remains
+  correct: it returns the codes actually used.
+- For `REF_AREA` (and likely for any large coded dimension) the hub returns the
+  full codelist regardless of which territorial granularity the dataset actually
+  exposes. `opensdmx constraints <df> REF_AREA --provider istat` therefore reports
+  values that are **not all queryable**, while presenting them as if they were.
+- There is currently no documented or undocumented endpoint on ISTAT that returns
+  "the territorial codes actually used in dataset X". Discovery must rely on
+  out-of-band signals (dataflow naming, category tree) plus a probe
+  `GET /data/{key}?lastNObservations=1` at the candidate granularity.
+
+Documentation: `docs/istat/hub-api.md` updated today — caveats added to the bulk
+and per-dimension endpoint sections, two new sections added: "Officially
+documented SDMX REST constraint endpoints" (`references=actualconstraint`,
+`references=all&detail=referencepartial`) and "Critical limitation: REF_AREA
+discovery on ISTAT" with the full comparison table.
+
+Follow-ups (not yet done):
+
+- Print a runtime warning from `opensdmx constraints <df> REF_AREA` on ISTAT when
+  the response is the full codelist, so users do not mistake it for filtered
+  data.
+- Open a tracking issue mirroring this errata.
+- Consider amending the v0.9.0 release notes on GitHub with a link back to this
+  entry.
+
 ## 2026-05-10 — v0.9.1: fix(hub): use bulk `columns/partial/values` endpoint for ISTAT discovery
 
 - fix(hub): replace 10 sequential `column/{dim}/partial/values` calls with a single
