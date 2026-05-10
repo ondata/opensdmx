@@ -637,7 +637,9 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     Resolution order:
       1. SQLite cache (7 days)
       2. `.Stat Suite` hub, when configured (currently ISTAT) — per-dimension
-         ground truth, sub-second per call, never times out on large datasets
+         ground truth, typically sub-second per call, sidesteps the SDMX-REST
+         `availableconstraint` timeout pattern on large datasets (still bounded
+         by `hub_timeout`; on any failure falls through to step 3)
       3. Bulk contentconstraint catalog when `constraint_bulk_supported`
       4. Per-dataflow contentconstraint / availableconstraint
       5. `data?detail=serieskeysonly` fallback

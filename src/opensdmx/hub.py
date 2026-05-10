@@ -106,10 +106,15 @@ def get_dimension_values_via_hub(
 ) -> list[str]:
     """Return the code IDs available for `dim_id` in `df_id`, via hub.
 
-    Returns `[]` on any error. The hub returns ground-truth values present in
-    the dataset (not the codelist superset).
+    Returns `[]` on any error, including when the active provider has no
+    `hub_base_url` configured — the module's "fails gracefully" contract holds
+    even if callers invoke this function without first checking
+    `is_hub_enabled()`. The hub returns ground-truth values present in the
+    dataset (not the codelist superset).
     """
     p = get_provider()
+    if not p.get("hub_base_url"):
+        return []
     effective_timeout = float(timeout if timeout is not None else p.get("hub_timeout", 15.0))
     ds_id = _dataset_identifier(df_id, version)
     path = f"datasets/{ds_id}/column/{dim_id}/partial/values"
@@ -129,12 +134,16 @@ def get_dimension_values_via_hub(
 def get_available_values_via_hub(dataset: dict) -> dict[str, list[str]]:
     """Return `{dim_id: [codes]}` for every codelist dimension via hub.
 
-    Iterates the dataset's dimensions sequentially. Returns `{}` if any
-    dimension call fails — partial results would mislead the caller into
-    skipping the SDMX-REST fallback. TIME_PERIOD is excluded (it is a
-    `TimeDimension` in the DSD and is normally not in `dataset["dimensions"]`,
-    but we filter defensively).
+    Iterates the dataset's dimensions sequentially. Returns `{}` on any
+    failure — including when the active provider has no `hub_base_url`
+    configured — so callers fall through to the SDMX-REST chain. Partial
+    results would mislead the caller into skipping the fallback, so any
+    dimension miss aborts the whole hub attempt. TIME_PERIOD is excluded
+    (it is a `TimeDimension` in the DSD and is normally not in
+    `dataset["dimensions"]`, but we filter defensively).
     """
+    if not get_provider().get("hub_base_url"):
+        return {}
     df_id = dataset["df_id"]
     version = dataset.get("version")
     dim_ids = [d for d in dataset.get("dimensions", {}) if d.upper() != "TIME_PERIOD"]

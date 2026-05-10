@@ -195,7 +195,8 @@ def test_get_available_values_via_hub_iterates_dimensions():
         calls.append(dim_id)
         return {"FREQ": ["A", "M"], "REF_AREA": ["IT", "FR"]}.get(dim_id, [])
 
-    with patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
         result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
 
     assert calls == ["FREQ", "REF_AREA"]
@@ -207,7 +208,8 @@ def test_get_available_values_via_hub_aborts_on_partial_failure():
     def fake_get_dim(df_id, dim_id, version=None, **kwargs):
         return ["A"] if dim_id == "FREQ" else []
 
-    with patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
         result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
 
     assert result == {}
@@ -222,9 +224,22 @@ def test_get_available_values_via_hub_excludes_time_period():
         return ["X"]
 
     ds = _dataset(FREQ=1, TIME_PERIOD=2)
-    with patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
         get_available_values_via_hub(ds)
     assert "TIME_PERIOD" not in calls
+
+
+def test_get_available_values_via_hub_returns_empty_when_provider_not_configured():
+    """Direct call with a non-hub provider returns {} (graceful contract)."""
+    with patch("opensdmx.hub.get_provider", return_value=_NON_HUB_PROVIDER):
+        assert get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2)) == {}
+
+
+def test_get_dimension_values_via_hub_returns_empty_when_provider_not_configured():
+    """Direct call with a non-hub provider returns [] (graceful contract)."""
+    with patch("opensdmx.hub.get_provider", return_value=_NON_HUB_PROVIDER):
+        assert get_dimension_values_via_hub("DF_X", "REF_AREA") == []
 
 
 # ── integration with discovery.get_available_values ───────────────────────
