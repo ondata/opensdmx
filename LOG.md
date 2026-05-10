@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-05-10 — fix(abs): constraint_params: {} to avoid 500 on availableconstraint
+## 2026-05-10 — v0.7.1: fix(abs): constraint_params: {} to avoid 500 on availableconstraint
 
 - fix(portals): added `constraint_params: {}` to ABS entry — the server returns 500
   when `references=none` is sent as query parameter (default for all providers);
