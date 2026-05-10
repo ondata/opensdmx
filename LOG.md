@@ -1,5 +1,18 @@
 # LOG
 
+## 2026-05-10 — v0.9.1: fix(hub): use bulk `columns/partial/values` endpoint for ISTAT discovery
+
+- fix(hub): replace 10 sequential `column/{dim}/partial/values` calls with a single
+  `columns/partial/values` (plural) request that returns all dimensions at once (~2 s vs
+  10–15 s). Discovered via Playwright network inspection: the Data Browser UI has always
+  used the bulk endpoint; opensdmx was using the slower per-dimension variant.
+- fix(hub): add `_get_all_dimension_values_via_hub_bulk()` — falls back to sequential
+  per-dimension calls only when the bulk response is incomplete.
+- test(hub): 7 new tests covering bulk parsing, TIME_PERIOD exclusion, error paths, and
+  the bulk-first / sequential-fallback dispatch logic. Suite: 195 tests, all pass.
+- docs(istat): `docs/istat/hub-api.md` updated — bulk endpoint documented as preferred
+  path, single-dim endpoint moved to fallback section.
+
 ## 2026-05-10 — v0.9.0: feat(istat): `.Stat Suite` hub fast path for `get_available_values`
 
 - feat(hub): new `src/opensdmx/hub.py` module wrapping the `.Stat Suite` databrowser hub

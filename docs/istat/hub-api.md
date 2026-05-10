@@ -101,17 +101,19 @@ made explicit as an additional entry.
 
 ---
 
-### Dimension values
+### All dimension values (bulk — preferred)
 
 ```
-GET /datasets/{dataset_id}/column/{dim_id}/partial/values
+GET /datasets/{dataset_id}/columns/partial/values
 ```
 
-Returns the values **actually present** in the dataset for a given dimension, with Italian
-labels and total observation count. Responds in ~500ms even for `REF_AREA` with 8716 codes.
+Returns the values **actually present** for **all dimensions at once** in a single request.
+Response time is ~2 s for datasets with 10+ dimensions — the same cost as a single
+per-dimension call. This is the endpoint used by the Data Browser UI and is the preferred
+discovery path.
 
-The `partial` segment in the path suggests the endpoint may support pagination or filtering;
-this was not investigated.
+`TIME_PERIOD` is included in the response but should be handled separately (it is a
+`TimeDimension`, not a codelist dimension).
 
 **Response structure**:
 
@@ -119,22 +121,41 @@ this was not investigated.
 {
   "criteria": [
     {
+      "id": "FREQ",
+      "values": [{"id": "A", "name": "annuale", "isDefault": false, "isSelectable": true}]
+    },
+    {
       "id": "REF_AREA",
       "values": [
         {"id": "IT",     "name": "Italia",   "isDefault": false, "isSelectable": true},
         {"id": "ITG12",  "name": "Palermo",  "isDefault": false, "isSelectable": true},
         {"id": "015146", "name": "Milano",   "isDefault": false, "isSelectable": true}
       ]
-    }
-  ],
-  "obsCount": 573552
+    },
+    {"id": "TIME_PERIOD", "values": [{"id": "2023", "name": "2023"}]}
+  ]
 }
 ```
 
-`obsCount` reflects the total number of observations in the dataset (not the dimension).
-Datasets with `obsCount: null` are bulk or glossary containers with no queryable data —
-about 80 of the 3743 entries in the catalog, identifiable by the `DF_BULK_` prefix in their
-ID.
+`obsCount` may appear at top level; `null` indicates a bulk/glossary container with no
+queryable data (~80 of the 3743 catalog entries, identifiable by the `DF_BULK_` prefix).
+
+---
+
+### Single dimension values (fallback)
+
+```
+GET /datasets/{dataset_id}/column/{dim_id}/partial/values
+```
+
+Returns the values **actually present** in the dataset for a single dimension, with Italian
+labels and total observation count. Responds in ~500 ms even for `REF_AREA` with 8716 codes.
+
+Use this endpoint only as a fallback when the bulk endpoint is unavailable. The response
+structure is identical to a single entry in the `criteria` array of the bulk response.
+
+The `partial` segment in the path suggests the endpoint may support pagination or filtering;
+this was not investigated.
 
 ---
 

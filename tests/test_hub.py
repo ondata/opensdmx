@@ -10,6 +10,7 @@ import pytest
 
 from opensdmx.hub import (
     _dataset_identifier,
+    _get_all_dimension_values_via_hub_bulk,
     _hub_node_url,
     get_available_values_via_hub,
     get_dimension_values_via_hub,
@@ -185,10 +186,101 @@ def test_get_dimension_values_via_hub_returns_empty_on_bad_json_shape():
         assert get_dimension_values_via_hub("DF_X", "REF_AREA") == []
 
 
+# ── _get_all_dimension_values_via_hub_bulk ────────────────────────────────
+
+_BULK_PAYLOAD = {
+    "criteria": [
+        {
+            "id": "FREQ",
+            "values": [{"id": "A", "name": "annuale", "isDefault": False, "isSelectable": True}],
+        },
+        {
+            "id": "REF_AREA",
+            "values": [
+                {"id": "IT", "name": "Italia", "isDefault": False, "isSelectable": True},
+                {"id": "ITC4", "name": "Lombardia", "isDefault": False, "isSelectable": True},
+            ],
+        },
+        {
+            "id": "TIME_PERIOD",
+            "values": [{"id": "2023", "name": "2023"}],
+        },
+    ],
+}
+
+
+def test_get_all_dimension_values_via_hub_bulk_parses_all_dims():
+    cm, _ = _mock_client_with_response(payload=_BULK_PAYLOAD)
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        result = _get_all_dimension_values_via_hub_bulk("DF_X")
+
+    assert result == {"FREQ": ["A"], "REF_AREA": ["IT", "ITC4"]}
+
+
+def test_get_all_dimension_values_via_hub_bulk_excludes_time_period():
+    cm, _ = _mock_client_with_response(payload=_BULK_PAYLOAD)
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        result = _get_all_dimension_values_via_hub_bulk("DF_X")
+
+    assert "TIME_PERIOD" not in result
+
+
+def test_get_all_dimension_values_via_hub_bulk_returns_empty_on_http_error():
+    cm, _ = _mock_client_with_response(status=500)
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        assert _get_all_dimension_values_via_hub_bulk("DF_X") == {}
+
+
+def test_get_all_dimension_values_via_hub_bulk_returns_empty_on_timeout():
+    cm, _ = _mock_client_with_response(raise_exc=httpx.TimeoutException("slow"))
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        assert _get_all_dimension_values_via_hub_bulk("DF_X") == {}
+
+
+def test_get_all_dimension_values_via_hub_bulk_returns_empty_on_bad_json():
+    cm, _ = _mock_client_with_response(payload={"unexpected": "shape"})
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        assert _get_all_dimension_values_via_hub_bulk("DF_X") == {}
+
+
+def test_get_all_dimension_values_via_hub_bulk_returns_empty_when_provider_not_configured():
+    with patch("opensdmx.hub.get_provider", return_value=_NON_HUB_PROVIDER):
+        assert _get_all_dimension_values_via_hub_bulk("DF_X") == {}
+
+
+def test_get_all_dimension_values_via_hub_bulk_uses_correct_path():
+    cm, client = _mock_client_with_response(payload=_BULK_PAYLOAD)
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        _get_all_dimension_values_via_hub_bulk("DF_X", version="2.0")
+
+    url = client.get.call_args[0][0]
+    assert "/datasets/IT1,DF_X,2.0/columns/partial/values" in url
+
+
 # ── get_available_values_via_hub ──────────────────────────────────────────
 
-def test_get_available_values_via_hub_iterates_dimensions():
-    """Each dimension is queried via hub; results merged into one dict."""
+def test_get_available_values_via_hub_uses_bulk_when_it_covers_all_dims():
+    """Bulk endpoint success: sequential per-dim calls must NOT be made."""
+    seq_called = MagicMock()
+    bulk_result = {"FREQ": ["A"], "REF_AREA": ["IT", "FR"]}
+
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk", return_value=bulk_result), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=seq_called):
+        result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
+
+    assert result == {"FREQ": ["A"], "REF_AREA": ["IT", "FR"]}
+    seq_called.assert_not_called()
+
+
+def test_get_available_values_via_hub_falls_back_to_sequential_when_bulk_fails():
+    """Bulk returns {}: sequential per-dim calls are used as fallback."""
     calls = []
 
     def fake_get_dim(df_id, dim_id, version=None, **kwargs):
@@ -196,6 +288,7 @@ def test_get_available_values_via_hub_iterates_dimensions():
         return {"FREQ": ["A", "M"], "REF_AREA": ["IT", "FR"]}.get(dim_id, [])
 
     with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk", return_value={}), \
          patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
         result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
 
@@ -203,12 +296,29 @@ def test_get_available_values_via_hub_iterates_dimensions():
     assert result == {"FREQ": ["A", "M"], "REF_AREA": ["IT", "FR"]}
 
 
-def test_get_available_values_via_hub_aborts_on_partial_failure():
-    """If any dimension returns empty, return {} so caller falls through."""
+def test_get_available_values_via_hub_falls_back_when_bulk_missing_a_dim():
+    """Bulk missing a dimension: falls back to sequential for all dims."""
+    calls = []
+
+    def fake_get_dim(df_id, dim_id, version=None, **kwargs):
+        calls.append(dim_id)
+        return ["X"]
+
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk", return_value={"FREQ": ["A"]}), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
+        get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
+
+    assert "FREQ" in calls and "REF_AREA" in calls
+
+
+def test_get_available_values_via_hub_aborts_on_sequential_partial_failure():
+    """If sequential fallback fails on any dim, return {}."""
     def fake_get_dim(df_id, dim_id, version=None, **kwargs):
         return ["A"] if dim_id == "FREQ" else []
 
     with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk", return_value={}), \
          patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
         result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
 
@@ -216,18 +326,15 @@ def test_get_available_values_via_hub_aborts_on_partial_failure():
 
 
 def test_get_available_values_via_hub_excludes_time_period():
-    """TIME_PERIOD must not be queried via hub (not a codelist dimension)."""
-    calls = []
-
-    def fake_get_dim(df_id, dim_id, version=None, **kwargs):
-        calls.append(dim_id)
-        return ["X"]
+    """TIME_PERIOD must not appear in the result (not a codelist dimension)."""
+    bulk_result = {"FREQ": ["A"], "REF_AREA": ["IT"]}
 
     ds = _dataset(FREQ=1, TIME_PERIOD=2)
     with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
-         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=fake_get_dim):
-        get_available_values_via_hub(ds)
-    assert "TIME_PERIOD" not in calls
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk", return_value=bulk_result):
+        result = get_available_values_via_hub(ds)
+
+    assert "TIME_PERIOD" not in result
 
 
 def test_get_available_values_via_hub_returns_empty_when_provider_not_configured():

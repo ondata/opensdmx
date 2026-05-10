@@ -131,16 +131,57 @@ def get_dimension_values_via_hub(
         return []
 
 
-def get_available_values_via_hub(dataset: dict) -> dict[str, list[str]]:
-    """Return `{dim_id: [codes]}` for every codelist dimension via hub.
+def _get_all_dimension_values_via_hub_bulk(
+    df_id: str,
+    version: str | None = None,
+    *,
+    timeout: float | None = None,
+) -> dict[str, list[str]]:
+    """Return ``{dim_id: [codes]}`` for all dimensions via the bulk hub endpoint.
 
-    Iterates the dataset's dimensions sequentially. Returns `{}` on any
-    failure — including when the active provider has no `hub_base_url`
-    configured — so callers fall through to the SDMX-REST chain. Partial
-    results would mislead the caller into skipping the fallback, so any
-    dimension miss aborts the whole hub attempt. TIME_PERIOD is excluded
-    (it is a `TimeDimension` in the DSD and is normally not in
-    `dataset["dimensions"]`, but we filter defensively).
+    Calls ``columns/partial/values`` (plural) — one HTTP request for every
+    dimension at once, same cost as a single per-dimension call (~2 s for
+    datasets with 10+ dimensions). TIME_PERIOD is excluded from the result.
+
+    Returns ``{}`` on any error so callers fall through to sequential calls or
+    the SDMX-REST chain.
+    """
+    p = get_provider()
+    if not p.get("hub_base_url"):
+        return {}
+    effective_timeout = float(timeout if timeout is not None else p.get("hub_timeout", 15.0))
+    ds_id = _dataset_identifier(df_id, version)
+    path = f"datasets/{ds_id}/columns/partial/values"
+    payload = _hub_get_json(path, effective_timeout)
+    if not payload:
+        return {}
+    try:
+        result: dict[str, list[str]] = {}
+        for criterion in payload.get("criteria", []):
+            dim_id = criterion.get("id", "")
+            if not dim_id or dim_id.upper() == "TIME_PERIOD":
+                continue
+            codes = [v["id"] for v in criterion.get("values", []) if v.get("id")]
+            if codes:
+                result[dim_id] = codes
+        return result
+    except (KeyError, TypeError) as e:
+        logger.warning(
+            "hub bulk endpoint returned unexpected JSON shape for %s: %s", df_id, e
+        )
+        return {}
+
+
+def get_available_values_via_hub(dataset: dict) -> dict[str, list[str]]:
+    """Return ``{dim_id: [codes]}`` for every codelist dimension via hub.
+
+    Tries the bulk ``columns/partial/values`` endpoint first (one request for
+    all dimensions). Falls back to sequential per-dimension calls only when the
+    bulk endpoint does not cover all expected dimensions. Returns ``{}`` on any
+    failure — including when the active provider has no ``hub_base_url``
+    configured — so callers fall through to the SDMX-REST chain. TIME_PERIOD
+    is excluded (it is a ``TimeDimension`` in the DSD and is normally not in
+    ``dataset["dimensions"]``, but we filter defensively).
     """
     if not get_provider().get("hub_base_url"):
         return {}
@@ -149,6 +190,10 @@ def get_available_values_via_hub(dataset: dict) -> dict[str, list[str]]:
     dim_ids = [d for d in dataset.get("dimensions", {}) if d.upper() != "TIME_PERIOD"]
     if not dim_ids:
         return {}
+
+    bulk = _get_all_dimension_values_via_hub_bulk(df_id, version=version)
+    if bulk and all(d in bulk for d in dim_ids):
+        return {d: bulk[d] for d in dim_ids}
 
     result: dict[str, list[str]] = {}
     for dim_id in dim_ids:
