@@ -4,15 +4,24 @@ ISTAT (Italian National Institute of Statistics) is the canonical SDMX source
 for Italian statistics. Its API behaves differently from Eurostat in three ways
 that shape the entire exploration flow:
 
-1. **Strict rate limit (~13 s between requests)** — every wasted call costs real
-   time, so verifying codes upfront is much cheaper than trial-and-error `get`.
-2. **`constraints` uses `contentconstraint` (sub-second)** — fast, reliable, but
-   does **not** expose `REF_AREA` (geographic dimension). For municipal datasets
-   that's by design: 8,000+ comuni would inflate the payload. The CLI surfaces
-   the missing dimension with an inline hint to `opensdmx values`.
+1. **Strict rate limit (~13 s between requests)** on the SDMX REST endpoint —
+   every wasted `get` costs real time, so verifying codes upfront is much
+   cheaper than trial-and-error.
+2. **Hub-backed `constraints` (sub-second per dimension)** — for ISTAT,
+   `opensdmx constraints` uses the `.Stat Suite` databrowser hub by default and
+   returns ground-truth values for **every** dimension, including `REF_AREA`
+   (~8,000 comuni) and even on 11-dimension datasets that previously timed out
+   on the SDMX REST endpoint. No wildcard cross-join, no 30 s waits.
 3. **Versioned/dated codes** — some codes carry suffixes (`LBIRTH_FROM2017`,
    `POP_1JAN2021`) that may need to be stripped to match what the dataflow
    actually accepts.
+
+> **Hub note.** The hub call is automatic and transparent. On any hub failure
+> (network error, parse error, partial response) the CLI falls through to the
+> classic SDMX REST chain (`contentconstraint` bulk → `availableconstraint` →
+> `serieskeysonly`) without warning. Set `OPENSDMX_DISABLE_HUB=1` to force the
+> SDMX REST path for debugging or comparison. See `docs/istat/hub-api.md` for
+> the protocol details.
 
 ## Standard exploration flow
 
@@ -25,50 +34,40 @@ opensdmx info <dataflow_id> --provider istat
 Note dimension flags: ISTAT uses **uppercase** (`--REF_AREA`, `--DATA_TYPE`,
 `--FREQ`), unlike Eurostat (lowercase).
 
-### Step 2 — call `constraints` first
+### Step 2 — call `constraints` (one stop)
 
 ```bash
 opensdmx constraints <dataflow_id> --provider istat
 ```
 
-`contentconstraint` returns sub-second, so this is the cheapest first call
-to make. The output looks like:
+For ISTAT, `constraints` resolves every dimension via the hub in roughly
+500 ms per dimension. The output is ground truth — the codes actually present
+in the dataflow, not the theoretical codelist superset.
 
 ```
-Constraints: 22_289_DF_DCIS_POPRES1_24
-  FREQ            1   A
-  REF_AREA        –   not in contentconstraint — use: opensdmx values 22_289_DF_DCIS_POPRES1_24 REF_AREA
-  DATA_TYPE       1   JAN
-  SEX             3   1, 2, 9
-  AGE           102   TOTAL, Y_GE100, Y0
-  MARITAL_STATUS  1   99
+Constraints: 41_270_DF_DCIS_MORTIFERITISTR1_1
+  FREQ                1   A
+  REF_AREA          179   IT111, IT, ITC
+  DATA_TYPE           1   KILLINJ
+  ACCIDENT_LOCALIZATON 4  1, 2, 3
+  RESULT              3   M, F, 9
+  AGE                14   Y_UN5, Y6-9, Y10-14
+  SEX                 3   1, 2, 9
+  MONTH              13   1, 2, 3
+  …
 ```
 
-For the dimensions present (`FREQ`, `DATA_TYPE`, `SEX`, `AGE`,
-`MARITAL_STATUS`) you have ground truth: the codes really present in the
-dataflow. For any dimension marked `–` ("not in contentconstraint"), the CLI
-tells you exactly which command to run next.
+`REF_AREA` is now exposed alongside every other dimension. For the few
+historical cases where it was returned with a `–` placeholder (hub disabled,
+hub unreachable, very old cached entries), follow the legacy fallback in
+[Step 2b](#step-2b--legacy-fallback-when-the-hub-is-unavailable) below.
 
-### Step 2b — When `contentconstraint` returns 404
+### Step 2b — Legacy fallback when the hub is unavailable
 
-Some ISTAT datasets do not publish a `contentconstraint`. When this happens,
-`opensdmx constraints` automatically falls back to `availableconstraint`
-(the endpoint that returns values actually present in the data). The fallback
-uses a 30 s timeout to fail fast on slow backends.
-
-**Most datasets**: the automatic fallback succeeds silently — you get constraint
-data without any extra steps.
-
-**Large municipal datasets** (e.g. road accidents, detailed demographic flows):
-`availableconstraint` may time out even with the automatic fallback, because the
-endpoint itself is unresponsive on very large datasets. In that case `opensdmx
-constraints` raises a timeout error with a clear message. Continue with Fallback
-B below.
-
-**Fallback B — probe GET to discover valid territory codes**
-
-When the automatic fallback times out, do a probe GET with no area filter and a
-narrow 1-year time range. Save to CSV and inspect distinct values:
+If you see a `–` ("not in contentconstraint") in the output for a dimension,
+or if you have set `OPENSDMX_DISABLE_HUB=1` and a dataset happens to time out
+on `availableconstraint`, fall back to a probe GET with no area filter and a
+narrow 1-year time range:
 
 ```bash
 opensdmx get <dataflow_id> --provider istat \
@@ -79,39 +78,23 @@ duckdb -c "SELECT DISTINCT REF_AREA, count(*) n FROM '/tmp/probe.csv' GROUP BY R
 ```
 
 This is slower (full-year scan) but gives ground truth on which `REF_AREA`
-codes are actually populated in the dataflow.
+codes are actually populated in the dataflow. If even this returns no results,
+the dataset may need a different aggregation: run `opensdmx siblings
+<dataflow_id> --provider istat` and verify via I.Stat that the data exists at
+the requested granularity.
 
-**If Fallback B also times out or returns no results**
+### Step 3 — `values` for code labels (optional)
 
-The dataset may have issues specific to the SDMX REST endpoint:
-
-1. Check if the search results included region-specific variants (e.g.
-   `41_269_1` for Lazio) — the data may be published per-region.
-2. Run `opensdmx siblings <dataflow_id> --provider istat` to find related
-   dataflows that may cover the same subject at a different aggregation level.
-3. Verify via the ISTAT web explorer (I.Stat) that the data exists at the
-   requested granularity.
-
-### Step 3 — for missing dimensions, fall back to `values`
-
-```bash
-opensdmx values <dataflow_id> REF_AREA --provider istat
-```
-
-`values` returns the **theoretical codelist**. For `REF_AREA` (`CL_ITTER107`)
-that's all 8,000+ Italian territory codes — comuni, province, regioni,
-aggregati statistici (`ITG12`, `SLL_*`, etc.). Filter with `grep -i` to find
-candidates:
+`opensdmx constraints` already returns the IDs you need. Use `opensdmx values`
+only when you also want the human-readable label of a specific code:
 
 ```bash
 opensdmx values <dataflow_id> REF_AREA --provider istat 2>&1 | grep -i "palermo"
 ```
 
-Caveat: `values` is the universe of codes the codelist defines, **not** the
-codes actually populated in the dataflow. Most municipal codes work, but some
-versioned variants (`POP_1JAN2021`) appear in the codelist while the dataflow
-only accepts the base form. If a `get` returns 404 / `NoRecordsFound`, try
-the base code or check whether the suffix matches the year you're querying.
+Caveat: `values` is the **theoretical codelist** (universe of codes the
+codelist defines), not necessarily the codes populated in this dataflow. Trust
+`constraints` for what works, `values` for labels.
 
 ### Step 4 — build the query using verified codes
 
@@ -139,8 +122,10 @@ ISTAT uses numeric `REF_AREA` codes:
 - Aggregate codes (`ITG12` for groups of provinces, `SLL_*` for labour market
   areas, etc.)
 
-`REF_AREA` is the dimension `contentconstraint` does not expose — always go
-through `opensdmx values <df> REF_AREA --provider istat` to discover codes.
+For ISTAT, `REF_AREA` is exposed by `opensdmx constraints` via the hub — start
+there. Use `opensdmx values <df> REF_AREA --provider istat` only when you need
+the full theoretical codelist (e.g. mapping a specific code to its readable
+label) or when running with the hub disabled.
 
 ## Direct download URL pattern
 

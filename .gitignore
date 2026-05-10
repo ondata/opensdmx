@@ -30,3 +30,6 @@ openspec/
 
 # Skill workspaces (local only)
 skills/*-workspace/
+
+# Playwright MCP browser cache (local only)
+.playwright-mcp/

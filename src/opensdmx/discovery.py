@@ -634,12 +634,17 @@ def _fetch_and_cache_bulk_constraints(agency_id: str) -> set[str]:
 def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     """Get all available values for all dimensions via constraint endpoint.
 
-    For providers with constraint_bulk_supported: fetches the full constraint
-    catalog in one call and uses it directly, avoiding per-dataflow 404 roundtrips.
-    For providers using contentconstraint without bulk support: falls back to
-    availableconstraint when contentconstraint returns 404.
+    Resolution order:
+      1. SQLite cache (7 days)
+      2. `.Stat Suite` hub, when configured (currently ISTAT) — per-dimension
+         ground truth, sub-second per call, never times out on large datasets
+      3. Bulk contentconstraint catalog when `constraint_bulk_supported`
+      4. Per-dataflow contentconstraint / availableconstraint
+      5. `data?detail=serieskeysonly` fallback
 
-    Results are cached in SQLite for 7 days.
+    Steps 2+ are gated by provider config: providers without `hub_base_url`
+    skip step 2; providers without `constraint_bulk_supported` skip step 3.
+    Hub failures fall through transparently to the existing chain.
     """
     from .db_cache import get_cached_available_constraints, save_available_constraints
 
@@ -649,6 +654,22 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
         return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in cached.items()}
 
     provider = get_provider()
+
+    # `.Stat Suite` hub fast path: opt-in via provider config (`hub_base_url`).
+    # Skipped entirely for non-hub providers (Eurostat, OECD, ECB, ...). On any
+    # hub failure, falls through to the existing SDMX REST chain unchanged.
+    # Pass the patched provider explicitly so test patches on get_provider
+    # control hub activation deterministically.
+    from .hub import is_hub_enabled, get_available_values_via_hub
+    if is_hub_enabled(provider):
+        hub_result = get_available_values_via_hub(dataset)
+        if hub_result:
+            try:
+                save_available_constraints(df_id, hub_result)
+            except Exception as e:
+                logger.warning("Could not cache hub-derived constraints: %s", e)
+            return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in hub_result.items()}
+
     constraint_endpoint = provider.get("constraint_endpoint", "availableconstraint")
     constraint_suffix = provider.get("constraint_path_suffix", "")
 
