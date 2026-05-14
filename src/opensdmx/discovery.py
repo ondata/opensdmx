@@ -380,8 +380,11 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
         logger.warning("No codelist found for dimension: %s", dimension_id)
         return pl.DataFrame({"id": [], "name": []})
 
+    lang = get_provider()["language"]
+    cache_key = f"{codelist_id}:{lang}"
+
     from .db_cache import get_cached_codelist_values, save_codelist_values
-    cached = get_cached_codelist_values(codelist_id)
+    cached = get_cached_codelist_values(cache_key)
     if cached is not None:
         return pl.DataFrame(cached, schema={"id": pl.Utf8, "name": pl.Utf8})
 
@@ -396,11 +399,11 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     for code_node in root.iter(tag):
         records.append({
             "id": xml_attr_safe(code_node, "id"),
-            "name": get_name_by_lang(code_node, "en", ns),
+            "name": get_name_by_lang(code_node, lang, ns),
         })
 
     try:
-        save_codelist_values(codelist_id, records)
+        save_codelist_values(cache_key, records)
     except Exception as e:
         logger.warning("Could not cache codelist values: %s", e)
     return pl.DataFrame(records, schema={"id": pl.Utf8, "name": pl.Utf8})

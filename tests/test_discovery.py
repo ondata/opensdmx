@@ -264,3 +264,114 @@ def test_get_available_values_serieskeysonly_fallback():
     assert "FREQ" in result
     assert "DATA_TYPE" in result
     assert result["DATA_TYPE"].to_series().to_list() == ["KILLINJ", "ROADACC"]
+
+
+# ── get_dimension_values — language handling ──────────────────────────
+
+_BILINGUAL_CODELIST_XML = b"""<?xml version="1.0" encoding="utf-8"?>
+<message:Structure
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <message:Structures>
+    <structure:Codelists>
+      <structure:Codelist id="CL_TIPO_ALLOGGIO2" agencyID="IT1" version="1.0">
+        <common:Name xml:lang="en">Accommodation type</common:Name>
+        <common:Name xml:lang="it">Tipo di alloggio</common:Name>
+        <structure:Code id="ALL">
+          <common:Name xml:lang="en">total collective accommodation establishments</common:Name>
+          <common:Name xml:lang="it">totale esercizi ricettivi</common:Name>
+        </structure:Code>
+        <structure:Code id="HOTELLIKE">
+          <common:Name xml:lang="en">hotels and similar establishments</common:Name>
+          <common:Name xml:lang="it">esercizi alberghieri</common:Name>
+        </structure:Code>
+      </structure:Codelist>
+    </structure:Codelists>
+  </message:Structures>
+</message:Structure>
+"""
+
+_EUROSTAT_PROVIDER = {
+    "name": "Eurostat",
+    "base_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1",
+    "agency_id": "ESTAT",
+    "rate_limit": 0.5,
+    "language": "en",
+}
+
+
+def _dataset_with_codelist(codelist_id: str = "CL_TIPO_ALLOGGIO2") -> dict:
+    dims = {"TYPE_ACCOMMODATION": {"id": "TYPE_ACCOMMODATION", "position": 1, "codelist_id": codelist_id}}
+    return {
+        "df_id": "TEST_DF",
+        "version": "1.0",
+        "df_description": "Test",
+        "df_structure_id": "TEST_DSD",
+        "dimensions": dims,
+        "filters": {"TYPE_ACCOMMODATION": "."},
+    }
+
+
+def test_get_dimension_values_returns_italian_labels():
+    """With provider language='it', labels must come from xml:lang='it'."""
+    from opensdmx.discovery import get_dimension_values
+
+    saved_keys = []
+
+    def fake_save(key, records):
+        saved_keys.append(key)
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=_BILINGUAL_CODELIST_XML), \
+         patch("opensdmx.db_cache.get_cached_codelist_values", return_value=None), \
+         patch("opensdmx.db_cache.save_codelist_values", side_effect=fake_save):
+        df = get_dimension_values(_dataset_with_codelist(), "TYPE_ACCOMMODATION")
+
+    names = dict(zip(df["id"].to_list(), df["name"].to_list()))
+    assert names["ALL"] == "totale esercizi ricettivi"
+    assert names["HOTELLIKE"] == "esercizi alberghieri"
+    assert saved_keys == ["CL_TIPO_ALLOGGIO2:it"]
+
+
+def test_get_dimension_values_returns_english_labels():
+    """With provider language='en', labels must come from xml:lang='en'."""
+    from opensdmx.discovery import get_dimension_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_EUROSTAT_PROVIDER), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=_BILINGUAL_CODELIST_XML), \
+         patch("opensdmx.db_cache.get_cached_codelist_values", return_value=None), \
+         patch("opensdmx.db_cache.save_codelist_values"):
+        df = get_dimension_values(_dataset_with_codelist(), "TYPE_ACCOMMODATION")
+
+    names = dict(zip(df["id"].to_list(), df["name"].to_list()))
+    assert names["ALL"] == "total collective accommodation establishments"
+    assert names["HOTELLIKE"] == "hotels and similar establishments"
+
+
+def test_get_dimension_values_cache_keys_differ_by_language():
+    """Cache key must include language so Italian and English sessions don't share entries."""
+    from opensdmx.discovery import get_dimension_values
+
+    keys_used = []
+
+    def fake_get_cache(key):
+        keys_used.append(key)
+        return None
+
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=_BILINGUAL_CODELIST_XML), \
+         patch("opensdmx.db_cache.get_cached_codelist_values", side_effect=fake_get_cache), \
+         patch("opensdmx.db_cache.save_codelist_values"):
+        get_dimension_values(_dataset_with_codelist(), "TYPE_ACCOMMODATION")
+
+    with patch("opensdmx.discovery.get_provider", return_value=_EUROSTAT_PROVIDER), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=_BILINGUAL_CODELIST_XML), \
+         patch("opensdmx.db_cache.get_cached_codelist_values", side_effect=fake_get_cache), \
+         patch("opensdmx.db_cache.save_codelist_values"):
+        get_dimension_values(_dataset_with_codelist(), "TYPE_ACCOMMODATION")
+
+    assert keys_used[0] == "CL_TIPO_ALLOGGIO2:it"
+    assert keys_used[1] == "CL_TIPO_ALLOGGIO2:en"
+    assert keys_used[0] != keys_used[1]

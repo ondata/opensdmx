@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-05-14 — v0.9.3
+
+- fix: `opensdmx values` now returns labels in the provider's configured language (was always returning English); closes #31
+- fix: codelist cache is now language-aware — same codelist cached separately per language to prevent cross-language contamination
+
 ## 2026-05-10 — v0.9.2
 
 - feat: `--provider estat` now accepted as alias for `eurostat` — aliases are declared in `portals.json` under the `"aliases"` field and resolved automatically at CLI startup
