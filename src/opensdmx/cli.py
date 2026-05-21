@@ -1050,7 +1050,7 @@ def get(
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     last_n: Optional[int] = typer.Option(None, "--last-n", help="Return only last N observations per series"),
     first_n: Optional[int] = typer.Option(None, "--first-n", help="Return only first N observations per series"),
-    yes: bool = typer.Option(False, "--yes", "-y", help="Skip large-dataset confirmation prompt"),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Download all series in a single wildcard bulk request, skipping the confirmation prompt"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):

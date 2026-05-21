@@ -514,6 +514,22 @@ Once the user has specified their choices, build the query and fetch the data.
 Note: Eurostat dimension flags are lowercase (`--geo`, `--coicop`, `--freq`).
 ISTAT dimension flags are uppercase (`--REF_AREA`, `--DATA_TYPE`, `--FREQ`).
 
+### Bulk download — large datasets without REF_AREA filter
+
+When the user wants **all territorial units** (all comuni, all regions, all countries)
+without filtering REF_AREA, use `--yes` to trigger a single wildcard REST request
+instead of chunking:
+
+```bash
+opensdmx get 22_315_DF_DCIS_POPORESBIL1_24 --provider istat \
+  --FREQ A --DATA_TYPE BEG --SEX 9 --start-period 2024 --end-period 2024 \
+  --yes --out /tmp/all_comuni.csv
+```
+
+Without `--yes`, the CLI detects that the dataset has many series and stops with a
+warning. With `--yes`, it builds a single wildcard URL (e.g. `data/{df_id}/A..BEG.9`)
+and fetches everything in one call — typically much faster than looping on chunks.
+
 ### Step 1 — Verify with a preview (last observation)
 
 Before fetching everything, do a quick sanity check with `--last-n 1` to confirm

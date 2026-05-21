@@ -52,7 +52,19 @@ opensdmx get PRC_HICP_MANR --coicop CP00 --geo IT --last-n 6
 
 Restituisce le ultime 6 osservazioni. Esiste anche `--first-n`.
 
-### 8. get con valori multipli (operatore +)
+### 8. get bulk — scarica tutto senza filtri (wildcard)
+
+```bash
+opensdmx get DCIS_POPORESBIL1_24 --provider istat \
+  --FREQ A --DATA_TYPE BEG --SEX 9 --start-period 2024 --end-period 2024 \
+  --yes --out /tmp/comuni.csv
+```
+
+Quando nessun filtro è impostato su una dimensione ad alta cardinalità (es. REF_AREA con ~8.000 comuni),
+`--yes` costruisce una singola chiamata REST wildcard invece di loopare su chunk.
+Senza `--yes`, il CLI mostra il conteggio delle serie e si ferma in attesa di conferma.
+
+### 9. get con valori multipli (operatore +)
 
 ```bash
 opensdmx get PRC_HICP_MANR --coicop CP00 --geo IT+DE+FR --last-n 3
