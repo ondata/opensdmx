@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-05-21 — v0.9.4
+
+- fix: bulk CSV download no longer crashes when REF_AREA contains string codes like `IT` — `infer_schema_length=0` and `null_values=[]` prevent Polars from misinterpreting dimension codes as numeric or null; closes #32
+- fix: `"Could not find dataset"` error now names the active provider and suggests `--provider` alternatives; closes #33
+- fix: large-dataset warning now explains that `--yes` triggers a single wildcard REST request, not chunked calls; closes #35
+- fix: `Saved:` and `Query saved:` messages moved from stdout to stderr for clean pipeline use; partial #34
+
 ## 2026-05-14 — v0.9.3
 
 - fix: `opensdmx values` now returns labels in the provider's configured language (was always returning English); closes #31
