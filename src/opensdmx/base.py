@@ -430,4 +430,4 @@ def sdmx_request_csv(path: str, **params):
         resp = sdmx_request(path, accept="application/xml", format=fmt, _is_data=True, **params)
     else:
         resp = sdmx_request(path, accept="text/csv", _is_data=True, **params)
-    return pl.read_csv(io.BytesIO(resp.content), infer_schema_length=10000, schema_overrides={"TIME_PERIOD": pl.Utf8, "OBS_VALUE": pl.Float64, "OBS_FLAG": pl.Utf8, "OBS_STATUS": pl.Utf8, "CONF_STATUS": pl.Utf8})
+    return pl.read_csv(io.BytesIO(resp.content), infer_schema_length=0, null_values=[], schema_overrides={"TIME_PERIOD": pl.Utf8, "OBS_VALUE": pl.Float64, "OBS_FLAG": pl.Utf8, "OBS_STATUS": pl.Utf8, "CONF_STATUS": pl.Utf8})

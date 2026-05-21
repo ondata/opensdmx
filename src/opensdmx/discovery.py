@@ -302,7 +302,11 @@ def load_dataset(dataflow_identifier: str) -> dict:
             match_row = rows.row(0, named=True)
 
     if match_row is None:
-        raise ValueError(f"Could not find dataset with identifier: {dataflow_identifier}")
+        provider_name = get_provider().get("name", "unknown")
+        raise ValueError(
+            f"Could not find dataset '{dataflow_identifier}' in provider '{provider_name}'.\n"
+            f"Use --provider to specify a different provider (e.g. --provider istat, --provider ecb, --provider oecd)."
+        )
 
     structure_id = match_row["df_structure_id"] or match_row["df_id"]
     dimensions = _get_dimensions(structure_id)

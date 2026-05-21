@@ -1096,7 +1096,8 @@ def get(
                 if n_series > _LARGE_DATASET_THRESHOLD:
                     err_console.print(
                         f"[yellow]Warning:[/yellow] this dataset has ~{n_series:,} series (no filters set).\n"
-                        f"Download may be large. Use [cyan]--last-n N[/cyan] to limit, or [cyan]--yes[/cyan] to proceed."
+                        f"Use [cyan]--last-n N[/cyan] to limit results, or [cyan]--yes[/cyan] to download all "
+                        f"in a single bulk request (no chunking — typically fast)."
                     )
                     raise typer.Exit(1)
             except httpx.HTTPStatusError:
@@ -1127,7 +1128,7 @@ def get(
         else:
             err_console.print(f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json")
             raise typer.Exit(1)
-        console.print(f"[green]Saved:[/green] {out}")
+        err_console.print(f"[green]Saved:[/green] {out}")
 
     if query_file is not None:
         import yaml
@@ -1139,7 +1140,7 @@ def get(
         )
         with open(query_file, "w") as fh:
             yaml.dump(query_dict, fh, allow_unicode=True, sort_keys=False, default_flow_style=False)
-        console.print(f"[green]Query saved:[/green] {query_file}")
+        err_console.print(f"[green]Query saved:[/green] {query_file}")
 
 
 @app.command()
@@ -1228,7 +1229,7 @@ def run(
         else:
             err_console.print(f"[red]Error:[/red] unsupported format '{suffix}'. Supported: .csv, .parquet, .json")
             raise typer.Exit(1)
-        console.print(f"[green]Saved:[/green] {out}")
+        err_console.print(f"[green]Saved:[/green] {out}")
 
 
 @app.command(context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
