@@ -363,10 +363,12 @@ actually exist in this specific dataflow:
 - **Eurostat** — `contentconstraint`.
 - **All others** — `availableconstraint` (or the provider-specific equivalent).
 
-**Tip for ISTAT exploration — `has_constraint` field in search results:**
-`opensdmx search` results include a `has_constraint` column (visible with
-`--output json`). When `true`, a static `contentconstraint` is available for
-that dataflow — useful as a quick sanity check during exploration.
+**Tip for ISTAT exploration — `has_constraint` flag:**
+The ISTAT dataflow catalog embeds a `has_constraint` boolean (populated at catalog
+build time via a bulk `contentconstraint` call). When `true`, a static constraint
+is available for that dataflow and `opensdmx constraints` will be fast; when
+`false`, it falls back to the dynamic `availableconstraint` endpoint.
+You can inspect it with `opensdmx flows --output json | jq '.[] | select(.has_constraint)'`.
 **Caveat**: even when `has_constraint=true`, the constraint may not cover every
 dimension (e.g. `REF_AREA` is absent from some ISTAT contentconstraints). Always
 verify missing dimensions with `opensdmx constraints` or `opensdmx values`.

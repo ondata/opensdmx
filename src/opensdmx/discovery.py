@@ -137,26 +137,28 @@ def all_available() -> pl.DataFrame:
         catalog_ids = {r["df_id"] for r in records}
         try:
             cc_path = _struct_path(f"contentconstraint/{agency_id}")
-            cc_content = sdmx_request_xml(cc_path, _timeout=30)
+            cc_content = sdmx_request_xml(cc_path, _timeout=30, _max_retries=1)
             bulk_succeeded = True
             # Use raw long_ids for catalog matching (avoids _DF_ truncation mismatch)
             long_ids = _extract_bulk_long_ids(cc_content)
+            parsed = _parse_bulk_constraint_xml(cc_content)
             covered_catalog: set[str] = set()
             for long_id in long_ids:
                 catalog_id = _match_catalog_id(long_id, catalog_ids)
                 if catalog_id:
                     has_constraint_map[catalog_id] = True
                     covered_catalog.add(catalog_id)
-            # Also cache constraint values (uses short_ids from existing parser)
-            parsed = _parse_bulk_constraint_xml(cc_content)
-            for short_id, dims in parsed.items():
-                cache_id = _match_catalog_id(short_id, catalog_ids)
-                if cache_id:
-                    try:
-                        from .db_cache import save_available_constraints
-                        save_available_constraints(cache_id, dims)
-                    except Exception as e:
-                        logger.warning("Could not cache constraints for %s: %s", cache_id, e)
+                    # Cache constraint values under the correct catalog key.
+                    # _parse_bulk_constraint_xml uses the short_id (prefix before _DF_)
+                    # as the key, so derive it from the long_id for the lookup.
+                    short_id = long_id.split("_DF_")[0] if "_DF_" in long_id else long_id
+                    dims = parsed.get(short_id, {})
+                    if dims:
+                        try:
+                            from .db_cache import save_available_constraints
+                            save_available_constraints(catalog_id, dims)
+                        except Exception as e:
+                            logger.warning("Could not cache constraints for %s: %s", catalog_id, e)
             try:
                 from .db_cache import save_bulk_constraint_index
                 save_bulk_constraint_index(agency_id, covered_catalog)
@@ -691,32 +693,6 @@ def _parse_bulk_constraint_xml(content: bytes) -> dict[str, dict[str, list[str]]
     return result
 
 
-def _fetch_and_cache_bulk_constraints(agency_id: str) -> set[str]:
-    """Fetch all contentconstraints in bulk for an agency, cache them, and return covered df_ids."""
-    from .db_cache import save_available_constraints, save_bulk_constraint_index
-
-    path = _struct_path(f"contentconstraint/{agency_id}")
-    try:
-        content = sdmx_request_xml(path)
-    except Exception as e:
-        logger.warning("Could not fetch bulk constraints for %s: %s", agency_id, e)
-        save_bulk_constraint_index(agency_id, set())
-        return set()
-
-    parsed = _parse_bulk_constraint_xml(content)
-    for short_df_id, dims in parsed.items():
-        try:
-            save_available_constraints(short_df_id, dims)
-        except Exception as e:
-            logger.warning("Could not cache constraints for %s: %s", short_df_id, e)
-
-    covered = set(parsed.keys())
-    try:
-        save_bulk_constraint_index(agency_id, covered)
-    except Exception as e:
-        logger.warning("Could not save bulk constraint index: %s", e)
-    return covered
-
 
 def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     """Get all available values for all dimensions via constraint endpoint.
@@ -727,13 +703,13 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
          ground truth, typically sub-second per call, sidesteps the SDMX-REST
          `availableconstraint` timeout pattern on large datasets (still bounded
          by `hub_timeout`; on any failure falls through to step 3)
-      3. Bulk contentconstraint catalog when `constraint_bulk_supported`
+      3. dataset["has_constraint"] flag (populated by all_available() bulk probe):
+         False → skip per-dataflow CC_ call, go directly to availableconstraint
       4. Per-dataflow contentconstraint / availableconstraint
       5. `data?detail=serieskeysonly` fallback
 
     Steps 2+ are gated by provider config: providers without `hub_base_url`
-    skip step 2; providers without `constraint_bulk_supported` skip step 3.
-    Hub failures fall through transparently to the existing chain.
+    skip step 2. Hub failures fall through transparently to the existing chain.
     """
     from .db_cache import get_cached_available_constraints, save_available_constraints
 
