@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-05-22 — v0.10.0
+
+- feat: add `has_constraint` boolean column to dataflow catalog (`dataflows.parquet`) — populated at catalog-build time via a single bulk `contentconstraint` call for providers that support it (currently ISTAT); `get_available_values()` skips the per-dataflow CC_ call when the catalog confirms no static constraint exists, avoiding repeated 60s+ timeout attempts on large dataflows
+- fix: pre-existing key-mismatch bug in bulk constraint parser — `_DF_`-truncation produced short ids (e.g. `41_269`) that didn't match full-form catalog entries (e.g. `41_269_DF_DCIS_INCIDENTISTR1_1`); new `_extract_bulk_long_ids` helper and `_match_catalog_id` resolver handle both catalog id formats correctly
+- fix: constraint values for full-form catalog ids now correctly cached under the right key
+- chore: document Eurostat bulk CC 405 via `constraint_bulk_supported: false` in `portals.json`
+
 ## 2026-05-21 — v0.9.4
 
 - fix: bulk CSV download no longer crashes when REF_AREA contains string codes like `IT` — `infer_schema_length=0` and `null_values=[]` prevent Polars from misinterpreting dimension codes as numeric or null; closes #32
