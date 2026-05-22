@@ -213,7 +213,8 @@ def _fake_categories_dfs():
 
 def test_tree_category_is_dataflow_hints_parent():
     """Passing a df_id to --category must yield a clear error with suggestions."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"],
@@ -226,7 +227,8 @@ def test_tree_category_is_dataflow_hints_parent():
 
 def test_tree_depth_is_relative_to_category():
     """--category X --depth 1 must show X plus its direct children (relative)."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "CAT_A1", "--depth", "1", "--provider", "istat"],
@@ -240,7 +242,8 @@ def test_tree_depth_is_relative_to_category():
 
 def test_tree_empty_subtree_does_not_crash():
     """--depth 0 with --category X should not crash; returns descriptive message."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "CAT_A", "--depth", "0", "--provider", "istat"],
@@ -252,7 +255,8 @@ def test_tree_empty_subtree_does_not_crash():
 
 def test_tree_renders_cat_description_when_present():
     """When Category.description is populated, ASCII renders it dimmed after the label."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     # CAT_A1 has description; CAT_A does not — only A1 shows "—"
@@ -272,7 +276,8 @@ def test_tree_show_dataflows_renders_df_leaves():
             "df_structure_id": ["S_X", "S_Y"],
         }
     )
-    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)), \
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)), \
          patch("opensdmx.discovery.all_available", return_value=meta_df):
         result = runner.invoke(
             app,
@@ -287,7 +292,8 @@ def test_tree_show_dataflows_renders_df_leaves():
 
 def test_tree_no_show_dataflows_is_regression_safe():
     """Without --show-dataflows, output must not contain df markers."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     assert "[df:" not in result.output
@@ -295,7 +301,8 @@ def test_tree_no_show_dataflows_is_regression_safe():
 
 def test_tree_renders_cat_prefix():
     """ASCII tree must render category IDs with the [cat:ID] prefix."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     assert "[cat:CAT_A]" in result.output
@@ -318,7 +325,8 @@ def test_tree_category_is_dataflow_cross_scheme():
         schema_overrides={"depth": pl.Int32},
     )
     cz_df = pl.DataFrame({"df_id": ["DF_X"], "scheme_id": ["S2"], "cat_path": ["CAT_B"]})
-    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)):
         result = runner.invoke(
             app, ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"]
         )
@@ -330,7 +338,8 @@ def test_tree_category_is_dataflow_cross_scheme():
 
 def test_tree_category_unknown_id():
     """Unknown --category (neither cat nor df) yields the generic 'not found' error."""
-    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "NOPE", "--provider", "istat"],
