@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-05-22 — v0.10.1
+
+- fix: patch `_check_api_reachable` in all 9 `test_tree_*` tests — missing mock caused real HTTP requests to ISTAT in CI, where the provider is unreachable, making every tree test fail before the data mock could take effect
+
 ## 2026-05-22 — v0.10.0
 
 - feat: add `has_constraint` boolean column to dataflow catalog (`dataflows.parquet`) — populated at catalog-build time via a single bulk `contentconstraint` call for providers that support it (currently ISTAT); `get_available_values()` skips the per-dataflow CC_ call when the catalog confirms no static constraint exists, avoiding repeated 60s+ timeout attempts on large dataflows
