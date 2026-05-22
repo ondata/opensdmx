@@ -50,7 +50,25 @@ def _load_cached_dataflows() -> pl.DataFrame | None:
     if path.exists():
         age = time.time() - path.stat().st_mtime
         if age < DATAFLOWS_CACHE_TTL:
-            return pl.read_parquet(path)
+            df = pl.read_parquet(path)
+            if "has_constraint" not in df.columns:
+                df = df.with_columns(pl.lit(None).cast(pl.Boolean).alias("has_constraint"))
+            return df
+    return None
+
+
+def _match_catalog_id(long_id: str, catalog_ids: set[str]) -> str | None:
+    """Map a bulk-CC long df_id to its catalog key.
+
+    ISTAT's CC XML uses the full form (e.g. '41_269_DF_DCIS_INCIDENTISTR1_1')
+    but most catalog entries use a short prefix (e.g. '22_289').
+    Try direct match first, then fall back to the prefix before '_DF_'.
+    """
+    if long_id in catalog_ids:
+        return long_id
+    parts = long_id.split("_DF_")
+    if len(parts) > 1 and parts[0] in catalog_ids:
+        return parts[0]
     return None
 
 
@@ -67,7 +85,7 @@ def all_available() -> pl.DataFrame:
     """List all available datasets for the active provider.
 
     Returns a Polars DataFrame with columns:
-        df_id, version, df_description, df_structure_id
+        df_id, version, df_description, df_structure_id, has_constraint
 
     Results are cached per provider for 24h.
     Invalid datasets (marked via guide) are excluded.
@@ -77,11 +95,12 @@ def all_available() -> pl.DataFrame:
         return _filter_invalid(cached)
 
     agency_id = get_agency_id()
-    language = get_provider()["language"]
+    provider = get_provider()
+    language = provider["language"]
 
-    catalog_agency = get_provider().get("catalog_agency", agency_id)
+    catalog_agency = provider.get("catalog_agency", agency_id)
     path = _struct_path(f"dataflow/{catalog_agency}")
-    dataflow_params = get_provider().get("dataflow_params", {})
+    dataflow_params = provider.get("dataflow_params", {})
     content = sdmx_request_xml(path, **dataflow_params)
     root, ns = xml_parse(content)
 
@@ -110,12 +129,53 @@ def all_available() -> pl.DataFrame:
             "df_structure_id": df_structure_id,
         })
 
+    # Bulk contentconstraint probe: populate has_constraint for providers that support it.
+    # One HTTP call at catalog-build time; result is embedded in the cached Parquet.
+    has_constraint_map: dict[str, bool] = {}
+    bulk_succeeded = False
+    if provider.get("constraint_bulk_supported"):
+        catalog_ids = {r["df_id"] for r in records}
+        try:
+            cc_path = _struct_path(f"contentconstraint/{agency_id}")
+            cc_content = sdmx_request_xml(cc_path, _timeout=30)
+            bulk_succeeded = True
+            # Use raw long_ids for catalog matching (avoids _DF_ truncation mismatch)
+            long_ids = _extract_bulk_long_ids(cc_content)
+            covered_catalog: set[str] = set()
+            for long_id in long_ids:
+                catalog_id = _match_catalog_id(long_id, catalog_ids)
+                if catalog_id:
+                    has_constraint_map[catalog_id] = True
+                    covered_catalog.add(catalog_id)
+            # Also cache constraint values (uses short_ids from existing parser)
+            parsed = _parse_bulk_constraint_xml(cc_content)
+            for short_id, dims in parsed.items():
+                cache_id = _match_catalog_id(short_id, catalog_ids)
+                if cache_id:
+                    try:
+                        from .db_cache import save_available_constraints
+                        save_available_constraints(cache_id, dims)
+                    except Exception as e:
+                        logger.warning("Could not cache constraints for %s: %s", cache_id, e)
+            try:
+                from .db_cache import save_bulk_constraint_index
+                save_bulk_constraint_index(agency_id, covered_catalog)
+            except Exception as e:
+                logger.warning("Could not save bulk constraint index: %s", e)
+        except Exception as e:
+            logger.warning("Could not fetch bulk constraints at catalog time: %s", e)
+
+    has_constraint_col = [
+        has_constraint_map.get(r["df_id"], False if bulk_succeeded else None)
+        for r in records
+    ]
+
     df = pl.DataFrame(records, schema={
         "df_id": pl.Utf8,
         "version": pl.Utf8,
         "df_description": pl.Utf8,
         "df_structure_id": pl.Utf8,
-    })
+    }).with_columns(pl.Series("has_constraint", has_constraint_col, dtype=pl.Boolean))
     try:
         df.write_parquet(_dataflow_cache_path())
     except OSError:
@@ -319,6 +379,7 @@ def load_dataset(dataflow_identifier: str) -> dict:
         "df_structure_id": structure_id,
         "dimensions": dimensions,
         "filters": filters,
+        "has_constraint": match_row.get("has_constraint"),
     }
 
 
@@ -565,6 +626,25 @@ def _fallback_availableconstraint(dataset: dict, provider: dict) -> dict[str, pl
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
+def _extract_bulk_long_ids(content: bytes) -> set[str]:
+    """Extract raw df_ids from bulk contentconstraint XML without any truncation."""
+    root, ns = xml_parse(content)
+    struct_ns = ns.get("structure", "")
+    cc_tag = f"{{{struct_ns}}}ContentConstraint" if struct_ns else "ContentConstraint"
+    result: set[str] = set()
+    for cc in root.iter(cc_tag):
+        df_ref_path = (
+            f".//{{{struct_ns}}}ConstraintAttachment/{{{struct_ns}}}Dataflow/Ref"
+            if struct_ns else ".//Ref"
+        )
+        df_ref = cc.find(df_ref_path)
+        if df_ref is not None:
+            long_id = df_ref.get("id", "")
+            if long_id:
+                result.add(long_id)
+    return result
+
+
 def _parse_bulk_constraint_xml(content: bytes) -> dict[str, dict[str, list[str]]]:
     """Parse a bulk contentconstraint response into {short_df_id: {dim_id: [values]}}.
 
@@ -682,27 +762,16 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     constraint_endpoint = provider.get("constraint_endpoint", "availableconstraint")
     constraint_suffix = provider.get("constraint_path_suffix", "")
 
-    # Bulk path: providers that expose a full constraint catalog in one call (e.g. ISTAT).
-    # Avoids per-dataflow 404 roundtrips for the ~99% of dataflows with no contentconstraint.
-    if provider.get("constraint_bulk_supported") and constraint_endpoint == "contentconstraint":
-        from .db_cache import get_df_ids_with_content_constraint
-        agency_id = provider.get("agency_id", "")
-        covered = get_df_ids_with_content_constraint(agency_id)
-        if covered is None:
-            covered = _fetch_and_cache_bulk_constraints(agency_id)
-        if df_id not in covered:
-            try:
-                return _fallback_availableconstraint(dataset, provider)
-            except ConstraintsTimeout:
-                logger.warning(
-                    "availableconstraint timed out for %s — trying serieskeysonly", df_id
-                )
-                return _fallback_serieskeysonly(dataset, provider)
-        # Data was just populated in available_constraints by the bulk fetch
-        cached = get_cached_available_constraints(df_id)
-        if cached is not None:
-            return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in cached.items()}
-        # Edge case: covered by index but not in per-df cache — fall through to per-df call
+    # has_constraint=False means the catalog bulk probe confirmed no CC_ for this df_id.
+    # Skip the per-dataflow CC_ call and go straight to the dynamic fallback.
+    if dataset.get("has_constraint") is False:
+        try:
+            return _fallback_availableconstraint(dataset, provider)
+        except ConstraintsTimeout:
+            logger.warning(
+                "availableconstraint timed out for %s — trying serieskeysonly", df_id
+            )
+            return _fallback_serieskeysonly(dataset, provider)
 
     if constraint_endpoint == "contentconstraint":
         path = f"{constraint_endpoint}/{provider['agency_id']}/{df_id}"

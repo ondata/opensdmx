@@ -25,6 +25,46 @@ from opensdmx.retrieval import get_data
 # Fixtures / helpers
 # ---------------------------------------------------------------------------
 
+_ISTAT_DATAFLOW_XML = b"""<?xml version="1.0"?>
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="22_289" agencyID="IT1" version="1.0">
+        <common:Name xml:lang="it">Popolazione residente</common:Name>
+        <structure:Structure><Ref id="DCIS_POPRES1_24"/></structure:Structure>
+      </structure:Dataflow>
+      <structure:Dataflow id="99_999" agencyID="IT1" version="1.0">
+        <common:Name xml:lang="it">No constraint</common:Name>
+        <structure:Structure><Ref id="DSD_99_999"/></structure:Structure>
+      </structure:Dataflow>
+    </structure:Dataflows>
+  </message:Structures>
+</message:Structure>"""
+
+_ISTAT_CC_XML = b"""<?xml version="1.0"?>
+<message:Structure
+    xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+    xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+    xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <structure:Constraints>
+      <structure:ContentConstraint id="CC_22_289" agencyID="IT1" version="1.0" isFinal="false" type="Actual">
+        <structure:ConstraintAttachment>
+          <structure:Dataflow>
+            <Ref id="22_289_DF_DCIS_POPRES1_24" version="1.0" agencyID="IT1" package="datastructure" class="Dataflow"/>
+          </structure:Dataflow>
+        </structure:ConstraintAttachment>
+        <structure:CubeRegion include="true">
+          <common:KeyValue id="FREQ"><common:Value>A</common:Value></common:KeyValue>
+        </structure:CubeRegion>
+      </structure:ContentConstraint>
+    </structure:Constraints>
+  </message:Structures>
+</message:Structure>"""
+
 _DATAFLOW_XML = b"""<?xml version="1.0" encoding="UTF-8"?>
 <message:Structure
     xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
@@ -183,6 +223,70 @@ class TestAllAvailable:
             all_available()
 
         assert cache.exists()
+
+    def test_istat_bulk_ok_populates_has_constraint(self, tmp_path):
+        """all_available() with ISTAT: bulk CC call populates has_constraint True/False."""
+        import polars as pl
+        cache = tmp_path / "dataflows.parquet"
+        set_provider("istat")
+        try:
+            with (
+                patch("opensdmx.discovery.sdmx_request_xml",
+                      side_effect=[_ISTAT_DATAFLOW_XML, _ISTAT_CC_XML]),
+                patch("opensdmx.discovery._load_cached_dataflows", return_value=None),
+                patch("opensdmx.discovery._dataflow_cache_path", return_value=cache),
+                patch("opensdmx.discovery._filter_invalid", side_effect=lambda df: df),
+                patch("opensdmx.db_cache.save_available_constraints"),
+                patch("opensdmx.db_cache.save_bulk_constraint_index"),
+            ):
+                df = all_available()
+        finally:
+            set_provider("eurostat")
+
+        assert "has_constraint" in df.columns
+        assert df.filter(pl.col("df_id") == "22_289")["has_constraint"][0] is True
+        assert df.filter(pl.col("df_id") == "99_999")["has_constraint"][0] is False
+
+    def test_istat_bulk_fail_sets_has_constraint_null(self, tmp_path):
+        """all_available() with ISTAT: bulk CC failure leaves has_constraint as null."""
+        import polars as pl
+        cache = tmp_path / "dataflows.parquet"
+        set_provider("istat")
+        try:
+            with (
+                patch("opensdmx.discovery.sdmx_request_xml",
+                      side_effect=[_ISTAT_DATAFLOW_XML, Exception("bulk CC failed")]),
+                patch("opensdmx.discovery._load_cached_dataflows", return_value=None),
+                patch("opensdmx.discovery._dataflow_cache_path", return_value=cache),
+                patch("opensdmx.discovery._filter_invalid", side_effect=lambda df: df),
+            ):
+                df = all_available()
+        finally:
+            set_provider("eurostat")
+
+        assert "has_constraint" in df.columns
+        assert df["has_constraint"].null_count() == len(df)
+
+    def test_load_cached_dataflows_adds_missing_has_constraint(self, tmp_path):
+        """Old Parquet without has_constraint column gets the column added as null."""
+        import polars as pl
+        from opensdmx.discovery import _load_cached_dataflows
+
+        old_df = pl.DataFrame({
+            "df_id": ["OLD_DF"],
+            "version": ["1.0"],
+            "df_description": ["Old dataset"],
+            "df_structure_id": ["DSD_OLD"],
+        })
+        cache_path = tmp_path / "dataflows.parquet"
+        old_df.write_parquet(cache_path)
+
+        with patch("opensdmx.discovery._dataflow_cache_path", return_value=cache_path):
+            result = _load_cached_dataflows()
+
+        assert result is not None
+        assert "has_constraint" in result.columns
+        assert result["has_constraint"][0] is None
 
 
 # ---------------------------------------------------------------------------
@@ -584,12 +688,12 @@ class TestConstraintEndpointPathBuild:
             "filters": {"FREQ": "."},
         }
 
-    def test_istat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
-        """ISTAT bulk path: first HTTP call goes to /contentconstraint/IT1 (no df_id).
+    def test_istat_has_constraint_false_skips_cc(self, tmp_path, monkeypatch):
+        """has_constraint=False: get_available_values skips CC_ and uses availableconstraint.
 
-        With the hub active by default, the SDMX-REST bulk path is bypassed for
-        ISTAT — disable the hub here to keep this test as a regression guard
-        for the bulk-catalog code path.
+        The bulk CC probe now runs in all_available() at catalog-build time.
+        When the catalog marks a df_id as has_constraint=False, get_available_values
+        must not call the per-dataflow contentconstraint endpoint.
         """
         from opensdmx.discovery import get_available_values
 
@@ -597,15 +701,16 @@ class TestConstraintEndpointPathBuild:
         monkeypatch.setenv("OPENSDMX_DISABLE_HUB", "1")
         set_provider("istat")
         ds = self._dataset(df_id="22_289_DF_DCIS_POPRES1_24")
+        ds["has_constraint"] = False  # populated by all_available() bulk probe
 
         empty_xml = b'<?xml version="1.0"?><message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>'
         with _mock_http_client(empty_xml) as mock_client_class:
             get_available_values(ds)
 
-        # First call must be the bulk fetch: /contentconstraint/IT1 (no specific df_id)
-        first_url = mock_client_class.return_value.get.call_args_list[0][0][0]
-        assert "/contentconstraint/IT1" in first_url
-        assert "22_289_DF_DCIS_POPRES1_24" not in first_url
+        called_urls = [call[0][0] for call in mock_client_class.return_value.get.call_args_list]
+        # Must use availableconstraint (dynamic fallback), not per-dataflow contentconstraint
+        assert any("availableconstraint" in url for url in called_urls)
+        assert not any("/contentconstraint/IT1/" in url for url in called_urls)
 
     def test_eurostat_uses_contentconstraint_path(self, tmp_path, monkeypatch):
         """Regression: Eurostat path build unchanged (already on contentconstraint)."""
