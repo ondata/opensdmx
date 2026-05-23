@@ -738,6 +738,61 @@ def providers():
 
 
 @app.command()
+def which(
+    query: Optional[str] = typer.Argument(None, help="Capability to look up (omit to list all)."),
+    limit: int = typer.Option(3, help="Maximum matches to return."),
+):
+    """Find the command that implements a capability.
+
+    Resolves a natural-language query to the best matching command(s)
+    from the curated capability index. Exit code 2 when no confident
+    match is found (agent-friendly).
+
+    Examples:
+
+      opensdmx which
+      opensdmx which "visualize time series"
+      opensdmx which "find dataset" --limit 1
+    """
+    from .which import WHICH_INDEX, rank_which
+
+    matches = rank_which(query or "", limit)
+
+    if query and not matches:
+        err_console.print(
+            f"No match for {query!r}; run 'opensdmx --help' for all commands"
+        )
+        raise typer.Exit(2)
+
+    data = [
+        {
+            "command": m["entry"]["command"],
+            "score": m["score"],
+            "description": m["entry"]["description"],
+            "group": m["entry"].get("group", ""),
+        }
+        for m in matches
+    ]
+
+    if _output_mode != "table":
+        _emit(data)
+        return
+
+    table = Table(show_lines=False)
+    table.add_column("command", style="cyan", no_wrap=True)
+    table.add_column("group", style="dim", no_wrap=True)
+    table.add_column("description")
+    for row in data:
+        table.add_row(row["command"], row["group"], row["description"])
+    console.print(table)
+
+    if not query:
+        console.print(
+            "\n[dim]Pass a query to filter: [/dim][cyan]opensdmx which \"<capability>\"[/cyan]"
+        )
+
+
+@app.command()
 def tree(
     scheme: Optional[str] = typer.Option(None, "--scheme", "-s", help="Render the tree for a specific scheme_id. If omitted, lists all schemes with dataflow counts."),
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict tree to the subtree rooted at this category ID (requires --scheme)."),

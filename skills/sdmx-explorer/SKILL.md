@@ -17,7 +17,7 @@ description: >
   informed filter choices before fetching any data.
 license: MIT
 compatibility: >
-  Requires the opensdmx CLI (opensdmx search, info, constraints, values, get, plot).
+  Requires the opensdmx CLI (opensdmx search, info, constraints, values, get, plot, which).
 metadata:
   author: ondata
   version: "1.2"
@@ -57,6 +57,29 @@ opensdmx --output csv values TIPSUN20 geo   # CSV for tabular use
 
 In `--output json` mode: stdout is pure JSON, stderr carries errors/warnings, spinners
 are suppressed. Pipe directly into `jq` or parse in Python.
+
+## Command discovery — `opensdmx which`
+
+When you are unsure which command fits a task, use `which` to find it without
+reading the full `--help`:
+
+```bash
+opensdmx which                          # list the full capability index
+opensdmx which "visualize time series"  # → plot
+opensdmx which "find a dataset"         # → search, tree
+opensdmx which "download data"          # → get
+opensdmx which "list providers"         # → providers
+```
+
+Exit code 2 means no confident match — fall back to `opensdmx --help`.
+
+In JSON mode the result is an array of `{command, score, description, group}` objects,
+ready to parse without any text processing:
+
+```bash
+opensdmx -o json which "download" | jq '.[0].command'
+# → "get"
+```
 
 This skill runs a four-phase interactive loop. Always follow the phases in order.
 The goal is to help the user understand the data landscape and make informed choices,

@@ -367,3 +367,49 @@ def test_parse_header_missing_colon_raises():
     import typer
     with pytest.raises(typer.BadParameter):
         _parse_header("invalid-no-colon")
+
+
+# ── which ─────────────────────────────────────────────────────────────
+
+
+def test_which_no_query_lists_all():
+    result = runner.invoke(app, ["which"])
+    assert result.exit_code == 0
+    assert "search" in result.output
+    assert "plot" in result.output
+
+
+def test_which_match_visualize():
+    result = runner.invoke(app, ["which", "visualize"])
+    assert result.exit_code == 0
+    assert "plot" in result.output
+
+
+def test_which_match_download():
+    result = runner.invoke(app, ["which", "download"])
+    assert result.exit_code == 0
+    assert "get" in result.output
+
+
+def test_which_no_match_exits_2():
+    result = runner.invoke(app, ["which", "zzznomatch"])
+    assert result.exit_code == 2
+
+
+def test_which_json_output():
+    import json
+    result = runner.invoke(app, ["-o", "json", "which", "download"])
+    assert result.exit_code == 0
+    data = json.loads(result.output)
+    assert isinstance(data, list)
+    assert any(row["command"] == "get" for row in data)
+
+
+def test_which_limit():
+    result = runner.invoke(app, ["which", "data", "--limit", "1"])
+    assert result.exit_code == 0
+    lines = [l for l in result.output.splitlines() if l.strip() and not l.startswith(" ")]
+    commands_found = sum(1 for l in result.output.splitlines() if any(
+        cmd in l for cmd in ["search", "tree", "get", "plot", "info", "values", "constraints", "siblings", "providers", "run"]
+    ))
+    assert commands_found <= 2

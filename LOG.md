@@ -1,7 +1,8 @@
 # LOG
 
-## 2026-05-23
+## 2026-05-23 — v0.10.3
 
+- feat: add `which` command — natural-language capability lookup; resolves a query to the best matching command from a curated index; exit code 2 on no confident match (agent-friendly); supports `-o json` for pipeline use
 - feat: add ILO (ILOSTAT) and UNICEF portals — ILO uses standard `Accept: text/csv`, UNICEF uses `format=csvdata`; both support lastN and categories; constraints disabled for ILO (endpoint returns 500/413)
 
 ## 2026-05-22 — v0.10.1
