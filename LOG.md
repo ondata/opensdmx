@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-05-23
+
+- feat: add ILO (ILOSTAT) and UNICEF portals — ILO uses standard `Accept: text/csv`, UNICEF uses `format=csvdata`; both support lastN and categories; constraints disabled for ILO (endpoint returns 500/413)
+
 ## 2026-05-22 — v0.10.1
 
 - fix: patch `_check_api_reachable` in all 9 `test_tree_*` tests — missing mock caused real HTTP requests to ISTAT in CI, where the provider is unreachable, making every tree test fail before the data mock could take effect
