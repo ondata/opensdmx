@@ -754,7 +754,7 @@ def which(
       opensdmx which "visualize time series"
       opensdmx which "find dataset" --limit 1
     """
-    from .which import WHICH_INDEX, rank_which
+    from .which import rank_which
 
     matches = rank_which(query or "", limit)
 
