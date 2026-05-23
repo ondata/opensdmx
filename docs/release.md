@@ -21,7 +21,8 @@ uv lock
 
 # 3. Update LOG.md with the patch notes
 
-# 4. Run the focused test set first, then the full suite if the patch touches runtime code
+# 4. Run linter and full test suite — both must pass before any publish step
+uv run ruff check src/
 uv run pytest tests/ -v
 
 # 5. Commit and tag the patch release
@@ -57,7 +58,8 @@ uv lock
 
 # 3. Update LOG.md with changes
 
-# 4. Run tests
+# 4. Run linter and full test suite — both must pass before any publish step
+uv run ruff check src/
 uv run pytest tests/ -v
 
 # 5. Commit and tag
@@ -86,6 +88,7 @@ Every release MUST complete all steps in order:
 - [ ] Version bumped in `pyproject.toml`
 - [ ] `uv.lock` updated (`uv lock`)
 - [ ] `LOG.md` updated
+- [ ] Linter passes (`uv run ruff check src/`)
 - [ ] Tests pass (`uv run pytest`)
 - [ ] Commit created
 - [ ] Git tag created (`git tag vX.Y.Z`)
