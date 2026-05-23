@@ -131,6 +131,25 @@
     "last_n_supported": true,
     "categories_supported": false
   },
+  "ilo": {
+    "name": "International Labour Organization",
+    "description": "ILO statistics database (ILOSTAT). Covers labour force, employment, unemployment, wages, working hours and social protection for 200+ countries. Main international source for labour market comparisons.",
+    "base_url": "https://sdmx.ilo.org/rest",
+    "agency_id": "ILO",
+    "constraints_supported": false,
+    "last_n_supported": true,
+    "categories_supported": true
+  },
+  "unicef": {
+    "name": "UNICEF",
+    "description": "UN Children's Fund data warehouse. Covers child mortality, nutrition, education, water, sanitation, child protection and health indicators for 200+ countries. Key source for SDG indicators related to children.",
+    "base_url": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest",
+    "agency_id": "UNICEF",
+    "data_format_param": "csvdata",
+    "constraints_supported": true,
+    "last_n_supported": true,
+    "categories_supported": true
+  },
   "derzhstat": {
     "name": "Derzhstat",
     "description": "State Statistics Service of Ukraine. Covers prices, wages, demographics, agriculture, trade and national accounts for Ukraine. 112+ dataflows. Requires browser-like User-Agent (server blocks library UAs). Key-filter path works with specific values but wildcard dots return 404 — dimension filters applied client-side after download.",
