@@ -22,7 +22,7 @@ Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eur
 uv tool install opensdmx
 ```
 
-> **Install uv** — Linux/macOS: `curl -LsSf https://astral.sh/uv/install.sh | sh` · Windows: `winget install astral-sh.uv`
+> **[uv](https://docs.astral.sh/uv/)** is a fast Python package and project manager. Install — Linux/macOS: `curl -LsSf https://astral.sh/uv/install.sh | sh` · Windows: `winget install astral-sh.uv`
 
 **As a library** (for use in Python projects):
 

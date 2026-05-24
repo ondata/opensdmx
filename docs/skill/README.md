@@ -6,7 +6,7 @@ Skills can be installed in many ways — refer to your agent's documentation for
 
 ## Prerequisites
 
-Node.js (v18+) must be installed. Install it via your system's package manager or from [nodejs.org](https://nodejs.org).
+Node.js (v18+) is required only for the `npx skills` method below. Install it via your system's package manager or from [nodejs.org](https://nodejs.org).
 
 ## Installation
 
@@ -39,6 +39,10 @@ Choose how the skill file is installed. We recommend **Symlink**: instead of cop
 Review and confirm with **Yes** to proceed.
 
 ![Confirm install](images/04.png)
+
+## Alternative: manual installation
+
+If you prefer not to use `npx skills`, you can download the skill folder directly and add it to your agent without Node.js. The skill is located at [`skills/sdmx-explorer/`](../../skills/sdmx-explorer/) in this repository — refer to your agent's documentation for how to register a local skill folder.
 
 ## Update
 
