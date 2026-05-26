@@ -2,7 +2,7 @@
 
 ## Overview
 
-opensdmx is a Python library and CLI for querying any SDMX 2.1 REST API. It provides a uniform interface to 8+ statistical providers (Eurostat, ISTAT, ECB, OECD, INSEE, Deutsche Bundesbank, World Bank, ABS).
+opensdmx is a Python library and CLI for querying any SDMX 2.1 REST API. It provides a uniform interface to 14 configured statistical providers, including Eurostat, Eurostat Comext, ISTAT, ECB, OECD, INSEE, Deutsche Bundesbank, World Bank, ABS, BIS, IMF, ILO, UNICEF, and Derzhstat.
 
 ---
 
@@ -48,10 +48,10 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 
 ### Provider management
 
-- Support 8 built-in providers: eurostat, istat, ecb, oecd, insee, bundesbank, worldbank, abs.
+- Support 14 configured providers: eurostat, comext, istat, ecb, oecd, insee, bundesbank, worldbank, abs, bis, imf, ilo, unicef, derzhstat.
 - Allow switching the active provider at any time via `set_provider()` or `--provider` CLI option.
 - Support custom providers (any SDMX 2.1 URL + agency_id).
-- Provider configuration includes: base URL, agency ID, rate limit, language preference, dataflow params, constraint endpoint, data format parameter.
+- Provider configuration includes: base URL, agency ID, rate limit, language preference, dataflow params, constraint endpoint, data format parameter, metadata prefix, user-agent, category support, and provider capability flags.
 
 ### Dataset discovery
 
@@ -72,8 +72,8 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 ### Semantic search
 
 - Build and store Ollama embedding vectors for all dataset descriptions (`embed` command / `build_embeddings()`).
-- Search by semantic similarity with optional LLM-based query expansion (`semantic_search()`).
-- Embeddings are stored per provider in `~/.cache/opensdmx/{AGENCY_ID}/embeddings.parquet`.
+- Search by semantic similarity against locally built embeddings (`semantic_search()`).
+- Embeddings are stored per provider in the provider cache directory, for example `~/.cache/opensdmx/eurostat/embeddings.parquet`.
 
 ### Blacklist management (`blacklist` command)
 
@@ -82,9 +82,11 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 
 ### Caching
 
-- Cache the dataflow catalog as Parquet with a 24-hour TTL per provider.
-- Cache dimension definitions, codelist information, codelist values, and available constraints in SQLite with a 7-day TTL per row.
-- Namespace all cache files under `~/.cache/opensdmx/{AGENCY_ID}/`.
+- Cache the dataflow catalog as Parquet with a 7-day TTL per provider.
+- Cache thematic categories as Parquet with a 7-day TTL per provider.
+- Cache dimension definitions, codelist information, and codelist values in SQLite with a 30-day TTL per row.
+- Cache available constraints in SQLite with a 7-day TTL per row.
+- Namespace all cache files under a provider cache directory resolved from `OPENSDMX_CACHE_DIR`, the OS user cache directory, or `/tmp/opensdmx-{username}` as a fallback.
 
 ### Rate limiting and retry
 
@@ -102,8 +104,15 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 | `opensdmx embed` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id>` | Show dataset metadata and dimensions |
 | `opensdmx values <id> <dim>` | Show available values for a dimension |
+| `opensdmx constraints <id> [dim]` | Show dimension values actually present in the data |
+| `opensdmx tree` | Browse provider category schemes and category trees |
+| `opensdmx siblings <id>` | Show dataflows that share categories with a dataflow |
+| `opensdmx providers` | List configured providers and capability flags |
+| `opensdmx which <query>` | Map a natural-language need to the most relevant command |
 | `opensdmx get <id> [--DIM VALUE] [--out file]` | Download data |
+| `opensdmx run <query.yaml> [--out file]` | Re-run a saved YAML query |
 | `opensdmx plot <id> [--DIM VALUE] [--out file]` | Plot data as a line chart |
+| `opensdmx guide <query>` | AI-guided dataset discovery and filter selection (`guide` extra) |
 | `opensdmx blacklist` | Manage the unavailability blacklist |
 
 All commands accept `--provider` / `-p` to set the active provider.
@@ -132,12 +141,12 @@ All commands accept `--provider` / `-p` to set the active provider.
 | `polars` | DataFrames |
 | `pyarrow` | Parquet serialization |
 | `ollama` | Local embeddings |
-| `chatlas[google]` | AI conversation with Gemini |
 | `typer` | CLI framework |
 | `rich` | Terminal output formatting |
-| `questionary` | Interactive prompts |
 | `plotnine` | Line chart plotting |
 | `numpy` | Cosine similarity computation |
+| `chatlas[google]` | AI conversation with Gemini (`guide` extra) |
+| `questionary` | Interactive prompts (`guide` extra) |
 
 ---
 

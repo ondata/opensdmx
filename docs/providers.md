@@ -1,10 +1,10 @@
 # Provider Reference
 
-opensdmx supports 8 built-in SDMX 2.1 providers, configured in `src/opensdmx/portals.json`. Any SDMX 2.1-compliant endpoint can also be used as a custom provider.
+opensdmx supports 14 configured SDMX 2.1 providers, configured in `src/opensdmx/portals.json`. Any SDMX 2.1-compliant endpoint can also be used as a custom provider.
 
 ---
 
-## Built-in providers
+## Configured providers
 
 ### eurostat (default)
 
@@ -29,10 +29,28 @@ Quirks: Eurostat does not accept `Accept: text/csv`. Data must be requested with
 | Name | ISTAT |
 | `base_url` | `https://esploradati.istat.it/SDMXWS/rest` |
 | `agency_id` | `IT1` |
-| `rate_limit` | 13.0 s |
+| `rate_limit` | 15.0 s |
 | `language` | `it` |
+| `constraint_endpoint` | `contentconstraint` |
+| `constraint_bulk_supported` | `true` |
+| `hub_base_url` | `https://esploradati.istat.it/databrowserhub/api/core` |
 
-Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval between calls avoids HTTP 429 errors. Data is fetched using `Accept: text/csv` (no `data_format_param`). Dataset descriptions are in Italian; the embedded catalog language is `it`. The `constraint_endpoint` defaults to `availableconstraint`.
+Quirks: ISTAT enforces a strict rate limit. The 15-second minimum interval between calls avoids HTTP 429 errors. Data is fetched using `Accept: text/csv` (no `data_format_param`). Dataset descriptions are in Italian; the embedded catalog language is `it`. ISTAT supports bulk `contentconstraint` discovery and has an optional Data Browser hub fast path for some metadata.
+
+### comext
+
+| Field | Value |
+|---|---|
+| Name | Eurostat Comext |
+| `base_url` | `https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1` |
+| `agency_id` | `ESTAT` |
+| `rate_limit` | 0.5 s |
+| `language` | `en` |
+| `dataflow_params` | `detail=allstubs&references=none` |
+| `datastructure_agency` | `ESTAT` |
+| `data_format_param` | `SDMX-CSV` |
+
+Quirks: Comext uses Eurostat's SDMX-CSV format but exposes a trade-specific catalog. Full dataset download is disabled by the API, so dimension filters are required for practical data retrieval.
 
 ### ecb
 
@@ -52,7 +70,10 @@ Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval betwe
 | `base_url` | `https://sdmx.oecd.org/public/rest` |
 | `agency_id` | `OECD` |
 | `rate_limit` | 0.5 s |
+| `data_rate_limit` | 60 s |
 | `language` | `en` |
+
+Quirks: OECD uses `catalog_agency = all` for catalog discovery and a dedicated 60-second data-request timer while structure calls keep the default rate limit.
 
 ### insee
 
@@ -74,6 +95,8 @@ Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval betwe
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
 
+Quirks: Bundesbank uses a `metadata` prefix for structure endpoints and `BBK` as the datastructure agency.
+
 ### worldbank
 
 | Field | Value |
@@ -84,6 +107,8 @@ Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval betwe
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
 
+Quirks: World Bank data retrieval uses SDMX-JSON. `lastNObservations` and `firstNObservations` are not supported and are dropped before the data request.
+
 ### abs
 
 | Field | Value |
@@ -93,6 +118,66 @@ Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval betwe
 | `agency_id` | `ABS` |
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
+
+### bis
+
+| Field | Value |
+|---|---|
+| Name | Bank for International Settlements |
+| `base_url` | `https://stats.bis.org/api/v1` |
+| `agency_id` | `BIS` |
+| `rate_limit` | 0.5 s |
+| `language` | `en` |
+
+### imf
+
+| Field | Value |
+|---|---|
+| Name | International Monetary Fund |
+| `base_url` | `https://api.imf.org/external/sdmx/2.1` |
+| `agency_id` | `IMF.RES` |
+| `catalog_agency` | `all` |
+| `rate_limit` | 0.5 s |
+| `language` | `en` |
+
+Quirks: IMF catalog discovery uses `catalog_agency = all`. World Economic Outlook data is available through dataflow `WEO`; country codes are ISO alpha-3.
+
+### ilo
+
+| Field | Value |
+|---|---|
+| Name | International Labour Organization |
+| `base_url` | `https://sdmx.ilo.org/rest` |
+| `agency_id` | `ILO` |
+| `rate_limit` | 0.5 s |
+| `language` | `en` |
+
+### unicef
+
+| Field | Value |
+|---|---|
+| Name | UNICEF |
+| `base_url` | `https://sdmx.data.unicef.org/ws/public/sdmxapi/rest` |
+| `agency_id` | `UNICEF` |
+| `rate_limit` | 0.5 s |
+| `language` | `en` |
+| `data_format_param` | `csvdata` |
+
+Quirks: UNICEF data requests use `?format=csvdata`.
+
+### derzhstat
+
+| Field | Value |
+|---|---|
+| Name | Derzhstat |
+| `base_url` | `https://stat.gov.ua/sdmx/workspaces/default:integration/registry/sdmx/2.1` |
+| `agency_id` | `SSSU` |
+| `rate_limit` | 3.0 s |
+| `language` | `en` |
+| `user_agent` | `Mozilla/5.0` |
+| `data_key_format` | `empty` |
+
+Quirks: Derzhstat blocks default library user-agents, so opensdmx sends a browser-like user-agent. Wildcard dot keys return 404, so dimension filters are applied client-side after download.
 
 ---
 
@@ -107,8 +192,21 @@ Quirks: ISTAT enforces a strict rate limit. The 13-second minimum interval betwe
 | `language` | string | `"en"` | Preferred language for dataset descriptions |
 | `dataflow_params` | dict | `{}` | Extra query parameters appended to `dataflow/{agency_id}` requests |
 | `constraint_endpoint` | string | `"availableconstraint"` | Endpoint for fetching available values (`availableconstraint` or `contentconstraint`) |
+| `constraint_bulk_supported` | boolean | `false` | Whether a provider supports catalog-level bulk content constraints |
+| `constraint_params` | dict | absent | Extra query parameters appended to constraint requests |
 | `datastructure_agency` | string | `"ALL"` | Agency used in `datastructure/{agency}/...` requests |
+| `catalog_agency` | string | absent | Agency used for catalog requests when different from `agency_id` |
+| `metadata_prefix` | string | absent | Prefix prepended to structure endpoints for providers that split metadata paths |
 | `data_format_param` | string | absent | If present, sent as `?format={value}` for data requests instead of `Accept: text/csv` |
+| `data_accept` | string | absent | If present, used as the data request `Accept` header |
+| `data_path_suffix` | string | absent | Suffix appended to data paths for providers that require it |
+| `unsupported_params` | list | `[]` | Data request parameters to drop for providers that do not support them |
+| `data_rate_limit` | float | absent | Dedicated rate limit for data requests, separate from structure requests |
+| `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
+| `data_key_format` | string | `"dots"` | SDMX key path style; `"empty"` omits wildcard dot keys and filters client-side |
+| `constraints_supported` | boolean | provider-specific | Capability flag shown by `opensdmx providers` |
+| `last_n_supported` | boolean | provider-specific | Capability flag for observation count parameters |
+| `categories_supported` | boolean | provider-specific | Capability flag for category tree support |
 
 Fields not specified in `portals.json` fall back to the defaults listed above (applied in `base.py` at load time).
 
@@ -118,23 +216,27 @@ Fields not specified in `portals.json` fall back to the defaults listed above (a
 
 The `rate_limit` field in `portals.json` sets the minimum number of seconds that must elapse between consecutive HTTP calls to a provider. It is enforced automatically — no configuration is needed at runtime.
 
+Providers can also define `data_rate_limit`. When present, data requests use a separate timestamp and lock from structure/metadata requests. This lets slow or strict data endpoints be throttled without blocking catalog and metadata calls.
+
 ### How it works
 
-1. After every successful HTTP response, opensdmx writes the current Unix timestamp to a file in the OS temp directory:
+1. opensdmx resolves a user cache directory using this order:
 
    ```
-   /tmp/opensdmx_{AGENCY_ID}_rate_limit.log
+   OPENSDMX_CACHE_DIR
+   platformdirs.user_cache_dir("opensdmx")
+   /tmp/opensdmx-{username}  # fallback only
    ```
 
-   For example: `/tmp/opensdmx_IT1_rate_limit.log` for ISTAT.
+2. Rate-limit timestamp and lock files are stored under that cache root in `rate_limit/`, keyed by provider.
 
-2. Before the next HTTP call to the same provider, opensdmx reads the file and computes the elapsed time. If `elapsed < rate_limit`, it sleeps for the remaining seconds, showing a live countdown on stderr:
+3. Before each HTTP request, opensdmx takes an exclusive file lock for the provider, reads the previous timestamp, and computes the elapsed time. If `elapsed < rate_limit`, it sleeps for the remaining seconds, showing a live countdown on stderr:
 
    ```
    Waiting (11s)...
    ```
 
-3. The timestamp is written **after** the HTTP response is received (not before), so the countdown starts from when the previous call completed.
+4. The timestamp is written at request start, before the HTTP call, so the interval is measured send-to-send. The lock is held for the whole HTTP call, so parallel processes cannot bypass the provider limit.
 
 ### When it fires
 
@@ -145,23 +247,24 @@ CLI command
   └─ check SQLite / Parquet cache
        ├─ hit  → return cached data  (no wait, no timestamp update)
        └─ miss → sdmx_request()
-                   └─ _rate_limit_check()   ← waits if needed
-                        └─ HTTP call
-                             └─ write timestamp to /tmp  ← only on success
+                   └─ acquire provider lock
+                        └─ _rate_limit_check()   ← waits if needed
+                             └─ write timestamp
+                                  └─ HTTP call
 ```
 
 ### Cross-process behavior
 
-The `/tmp` file persists across separate CLI invocations. Running two commands back-to-back in separate shells will respect the rate limit:
+The rate-limit files persist across separate CLI invocations. Running two commands back-to-back in separate shells will respect the rate limit:
 
 ```bash
-opensdmx constraints 151_929 --provider istat   # makes HTTP call, writes /tmp timestamp
-opensdmx info 151_929 --provider istat          # reads /tmp, waits if < 13s have passed
+opensdmx constraints 151_929 --provider istat   # makes HTTP call, writes timestamp
+opensdmx info 151_929 --provider istat          # waits if < 15s have passed
 ```
 
 ### Cold start
 
-On the first call to a provider (no `/tmp` file), no wait is applied. The file is created after the first successful HTTP response.
+On the first call to a provider (no timestamp file), no wait is applied. The timestamp file is created before the first HTTP request is sent.
 
 ### Configuring rate limits
 
@@ -169,7 +272,7 @@ To adjust the interval for a built-in provider, edit `src/opensdmx/portals.json`
 
 ```json
 "istat": {
-  "rate_limit": 13.0
+  "rate_limit": 15.0
 }
 ```
 
@@ -202,6 +305,6 @@ From the CLI:
 opensdmx search "unemployment" --provider https://mysdmx.example.org/rest
 ```
 
-When a custom URL is given, `agency_id` is required. The custom provider uses all default field values unless overridden via `set_provider()` parameters. The cache directory will be `~/.cache/opensdmx/XYZ/`.
+When a custom URL is given, `agency_id` is optional but recommended. The custom provider uses all default field values unless overridden via `set_provider()` parameters. If `agency_id="XYZ"` is provided, the cache directory uses `XYZ`; otherwise opensdmx derives a short hash from the base URL so different custom URLs do not share cache or lock files.
 
 Custom providers are not persisted; they must be set each time.

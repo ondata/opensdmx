@@ -47,9 +47,9 @@ User runs: opensdmx get une_rt_m --freq M --geo IT --out data.csv
 cli.py  get()
   1. _apply_provider(provider)          → base.py  set_provider()
   2. load_dataset(dataset_id)           → discovery.py
-       └─ all_available()               → dataflows.parquet cache (24h TTL)
+       └─ all_available()               → dataflows.parquet cache (7d TTL)
             └─ sdmx_request_xml()       → base.py  (HTTP, rate limit, retry)
-       └─ _get_dimensions(struct_id)    → db_cache.py  (SQLite, 7d TTL)
+       └─ _get_dimensions(struct_id)    → db_cache.py  (SQLite, 30d TTL)
             └─ sdmx_request_xml()
   3. set_filters(ds, **filters)         → discovery.py  (case-insensitive)
   4. get_data(ds, ...)                  → retrieval.py
@@ -68,8 +68,7 @@ opensdmx search --semantic "unemployment"
 cli.py  search()
   1. embed.semantic_search(query, n)
        └─ embed_df = read_parquet(embeddings.parquet)
-       └─ embed._expand_query(query)    → chatlas + Gemini (LLM query expansion)
-       └─ embed._embed([expanded])      → Ollama nomic-embed-text-v2-moe
+       └─ embed._embed([query])         → Ollama nomic-embed-text-v2-moe
        └─ cosine similarity → top-N results
   2. all_available()                    → filter invalid datasets
   3. Print table with df_id, description, score
@@ -79,20 +78,22 @@ cli.py  search()
 
 ## Cache layers
 
-opensdmx uses two cache layers, both stored under `~/.cache/opensdmx/{AGENCY_ID}/`.
+opensdmx uses two cache layers, both stored under the provider cache directory. By default this is the OS user cache directory plus the provider key, for example `~/.cache/opensdmx/eurostat/` on Linux. `OPENSDMX_CACHE_DIR` can override the base directory, and `/tmp/opensdmx-{username}` is used only as a fallback if no preferred cache location is writable.
 
 ### Parquet files (file-based, TTL-based invalidation)
 
 | File | Content | TTL |
 |---|---|---|
-| `dataflows.parquet` | Full provider dataset catalog | 24 hours |
+| `dataflows.parquet` | Full provider dataset catalog | 7 days |
+| `categories.parquet` | Category tree | 7 days |
+| `categorisation.parquet` | Dataflow-to-category links | 7 days |
 | `embeddings.parquet` | Ollama embedding vectors per dataset | No expiry (manual rebuild via `opensdmx embed`) |
 
 The dataflow cache is invalidated by comparing `os.path.getmtime` to the current time. The embeddings file has no automatic expiry; it must be rebuilt explicitly.
 
 ### SQLite database (`cache.db`, TTL-based per row)
 
-All structured metadata is stored in a single SQLite database per provider. Each table has a `cached_at` column (Unix timestamp). Rows older than **7 days** are treated as expired and re-fetched.
+All structured metadata is stored in a single SQLite database per provider. Each cache table has a `cached_at` column (Unix timestamp). Structure and codelist metadata use a 30-day TTL; available constraints use a 7-day TTL.
 
 | Table | Content |
 |---|---|
@@ -100,6 +101,8 @@ All structured metadata is stored in a single SQLite database per provider. Each
 | `codelist_info` | Human-readable description of each codelist |
 | `codelist_values` | Individual code entries (id, name) for each codelist |
 | `available_constraints` | Codes actually present in a dataset (from constraint endpoint) |
+| `bulk_constraint_fetch` | Provider-level bulk constraint fetch timestamps |
+| `bulk_constraint_index` | Dataflows covered by a successful bulk constraint fetch |
 | `invalid_datasets` | Datasets that failed API availability checks (permanent) |
 
 See `docs/cache.md` for the full schema.

@@ -45,7 +45,7 @@ def _dataflow_cache_path():
 
 
 def _load_cached_dataflows() -> pl.DataFrame | None:
-    """Return cached dataflow list if it exists and is < 24h old."""
+    """Return cached dataflow list if it exists and is within the configured TTL."""
     path = _dataflow_cache_path()
     if path.exists():
         age = time.time() - path.stat().st_mtime
@@ -87,7 +87,7 @@ def all_available() -> pl.DataFrame:
     Returns a Polars DataFrame with columns:
         df_id, version, df_description, df_structure_id, has_constraint
 
-    Results are cached per provider for 24h.
+    Results are cached per provider for the configured dataflow cache TTL.
     Invalid datasets (marked via guide) are excluded.
     """
     cached = _load_cached_dataflows()

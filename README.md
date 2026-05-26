@@ -483,11 +483,13 @@ The ranking therefore depends entirely on the model: a different model would pro
 
 ### Caching
 
-Cache is namespaced per provider under `~/.cache/opensdmx/{AGENCY_ID}/`.
+Cache is namespaced per provider under the OS user cache directory, for example `~/.cache/opensdmx/eurostat/` on Linux. Set `OPENSDMX_CACHE_DIR` to override the cache base.
 
 | File | Content | Default TTL |
 |---|---|---|
 | `dataflows.parquet` | Dataset catalog | 7 days |
+| `categories.parquet`, `categorisation.parquet` | Category tree and dataflow-category links | 7 days |
+| `embeddings.parquet` | Semantic embeddings | No expiry |
 | `cache.db` — structures + codelists | Dimensions, codelist descriptions and values | 30 days |
 | `cache.db` — constraints | Available constraint values per dataflow | 7 days |
 
@@ -497,7 +499,9 @@ Environment variables:
 |---|---|
 | `OPENSDMX_PROVIDER` | Provider name or custom base URL (session-wide default) |
 | `OPENSDMX_AGENCY` | Agency ID for custom URL providers |
+| `OPENSDMX_CACHE_DIR` | Cache base directory override |
 | `OPENSDMX_DATAFLOWS_CACHE_TTL` | Dataset catalog TTL in seconds (default: `604800` — 7 days) |
+| `OPENSDMX_CATEGORIES_CACHE_TTL` | Category cache TTL in seconds (default: `604800` — 7 days) |
 | `OPENSDMX_METADATA_CACHE_TTL` | Structure/codelist TTL in seconds (default: `2592000` — 30 days) |
 | `OPENSDMX_CONSTRAINTS_CACHE_TTL` | Constraints TTL in seconds (default: `604800` — 7 days) |
 | `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` | Per-call timeout (seconds) for the `availableconstraint` endpoint, with no retry. Default: `30`. Useful when a provider's availability backend is slow or unresponsive (e.g. ISTAT) and you want `opensdmx constraints` / `values` to fail fast instead of blocking on the global request timeout. |

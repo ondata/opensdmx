@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-05-26 — evaluation
+
+- docs: align operational documentation with current code — provider count/list, ISTAT 15s rate limit, 7d/30d cache TTLs, provider-key cache paths, rate-limit lock behavior, and `guide` extra dependency split
+- docs: add current project evaluation for v0.10.3 in `docs/evaluation-v0.10.3.md`; verification: `207 passed`, `ruff check src/` passed, full-repo ruff has minor test/script lint issues
+- note: strongest next priorities are documentation drift cleanup, dependency slimming, full-repo lint hygiene, and closing stale OpenSpec state
+
 ## 2026-05-23 — v0.10.3
 
 - feat: add `which` command — natural-language capability lookup; resolves a query to the best matching command from a curated index; exit code 2 on no confident match (agent-friendly); supports `-o json` for pipeline use

@@ -58,13 +58,15 @@ The SDMX REST data URL uses a positional key: each dimension's filter values are
 
 ### URL construction
 
-The full data URL is assembled as:
+For providers that use standard dotted SDMX keys, the data URL path is assembled as:
 
 ```
-{base_url}/data/{agency_id},{df_id},{version}/{key}
+{base_url}/data/{df_id}/{key}
 ```
 
-If the key is empty (no filters), the key segment is omitted and the URL ends at `/{df_id}`.
+If the key is empty (no filters), the key segment is omitted and the URL ends at `/data/{df_id}`. Some providers store full dataflow identifiers in `df_id` (for example catalog entries that include an agency prefix); opensdmx treats `df_id` as the provider-specific identifier to place in the data path.
+
+Providers can set `data_key_format = "empty"` to omit wildcard dot keys entirely and apply dimension filters client-side after download. This is used for providers whose APIs reject all-wildcard dotted keys.
 
 ---
 
@@ -87,10 +89,13 @@ Each provider has a `rate_limit` field (minimum seconds between API calls). The 
 
 ### How it works
 
-1. A lock file is stored at `{tempdir}/opensdmx_{agency_id}_rate_limit.log`.
-2. Before each HTTP request, `_rate_limit_check()` reads the file for the last-call timestamp.
-3. If the elapsed time is less than `rate_limit`, the process sleeps in 0.2 s increments, printing a countdown.
-4. After the wait (or immediately if no wait needed), the file is updated with the current timestamp.
+1. opensdmx resolves the cache base from `OPENSDMX_CACHE_DIR`, then the OS user cache directory via `platformdirs`, then `/tmp/opensdmx-{username}` as fallback.
+2. Timestamp and lock files are stored under `{cache_base}/rate_limit/`, keyed by provider.
+3. Before each HTTP request, `sdmx_request()` takes an exclusive provider lock and `_rate_limit_check()` reads the previous timestamp.
+4. If the elapsed time is less than `rate_limit`, the process sleeps in 0.2 s increments, printing a countdown.
+5. The timestamp is updated at request start, before the HTTP call. The lock is held for the whole HTTP call.
+
+When a provider defines `data_rate_limit`, data requests use a separate timestamp and lock from structure/metadata requests.
 
 A human-readable label can be set via `set_rate_limit_context(msg)` to display in the countdown line.
 
@@ -99,15 +104,23 @@ A human-readable label can be set via `set_rate_limit_context(msg)` to display i
 | Provider | `rate_limit` (seconds) |
 |---|---|
 | eurostat | 0.5 |
-| istat | 13.0 |
+| comext | 0.5 |
+| istat | 15.0 |
 | ecb | 0.5 |
 | oecd | 0.5 |
 | insee | 0.5 |
 | bundesbank | 0.5 |
 | worldbank | 0.5 |
 | abs | 0.5 |
+| bis | 0.5 |
+| imf | 0.5 |
+| ilo | 0.5 |
+| unicef | 0.5 |
+| derzhstat | 3.0 |
 
 The default for any unspecified provider (or custom providers without an explicit value) is `0.5` s.
+
+OECD also defines `data_rate_limit = 60`, so data requests use a 60-second send-to-send interval while metadata requests use the default `rate_limit`.
 
 ---
 
@@ -117,7 +130,7 @@ All HTTP requests go through `sdmx_request()`, which wraps the call with `tenaci
 
 - Up to **3 attempts** total.
 - Exponential backoff: multiplier `0.5`, minimum `0.5 s`, maximum `4 s`.
-- Any exception from `httpx` or from `raise_for_status()` triggers a retry.
+- Retries are limited to transient failures: network errors, timeouts, remote protocol errors, and HTTP 5xx responses except 501. HTTP 4xx responses are not retried.
 
 ---
 
@@ -172,6 +185,6 @@ Dimensions are sorted by `position` ascending before being stored and returned. 
 
 ## Dataflow cache invalidation
 
-`all_available()` caches the provider's dataflow list as a Parquet file at `~/.cache/opensdmx/{AGENCY_ID}/dataflows.parquet`. The TTL is **24 hours** (checked via file modification time). If the file is older than 24 hours or does not exist, a fresh SDMX `dataflow/{agency_id}` request is made.
+`all_available()` caches the provider's dataflow list as a Parquet file in the provider cache directory, for example `~/.cache/opensdmx/eurostat/dataflows.parquet`. The TTL is **7 days** (checked via file modification time). If the file is older than 7 days or does not exist, a fresh SDMX `dataflow/{agency_id}` request is made.
 
 Invalid datasets (blacklisted via `guide`) are filtered from every returned DataFrame, regardless of whether the data came from cache or a fresh request.

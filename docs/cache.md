@@ -1,6 +1,14 @@
 # Cache Reference
 
-opensdmx uses two types of local cache files, stored under `~/.cache/opensdmx/{AGENCY_ID}/`. Each provider has its own isolated cache namespace.
+opensdmx uses local cache files stored in a provider-specific cache directory. By default this is under the OS user cache directory, for example `~/.cache/opensdmx/eurostat/` on Linux.
+
+Cache base resolution order:
+
+1. `OPENSDMX_CACHE_DIR`
+2. `platformdirs.user_cache_dir("opensdmx")`
+3. `/tmp/opensdmx-{username}` as fallback if neither location is writable
+
+Each provider has its own isolated cache namespace. Preset providers use their provider key (`eurostat`, `istat`, `oecd`, and so on). Custom providers use `agency_id` when provided, otherwise a short hash of the base URL.
 
 ---
 
@@ -8,20 +16,22 @@ opensdmx uses two types of local cache files, stored under `~/.cache/opensdmx/{A
 
 | File | Format | Content | TTL |
 |---|---|---|---|
-| `dataflows.parquet` | Parquet | Provider dataset catalog | 24h |
+| `dataflows.parquet` | Parquet | Provider dataset catalog | 7 days |
+| `categories.parquet` | Parquet | Provider category tree | 7 days |
+| `categorisation.parquet` | Parquet | Dataflow-to-category links | 7 days |
 | `embeddings.parquet` | Parquet | Semantic embeddings (per dataset) | No expiry |
-| `cache.db` | SQLite | Dimensions, codelists, constraints, blacklist | 7 days (per row) |
+| `cache.db` | SQLite | Dimensions, codelists, constraints, blacklist | Table-specific |
 
-Examples for Eurostat (agency `ESTAT`) and ISTAT (agency `IT1`):
+Examples for Eurostat and ISTAT:
 
 ```
-~/.cache/opensdmx/ESTAT/dataflows.parquet
-~/.cache/opensdmx/ESTAT/embeddings.parquet
-~/.cache/opensdmx/ESTAT/cache.db
+~/.cache/opensdmx/eurostat/dataflows.parquet
+~/.cache/opensdmx/eurostat/embeddings.parquet
+~/.cache/opensdmx/eurostat/cache.db
 
-~/.cache/opensdmx/IT1/dataflows.parquet
-~/.cache/opensdmx/IT1/embeddings.parquet
-~/.cache/opensdmx/IT1/cache.db
+~/.cache/opensdmx/istat/dataflows.parquet
+~/.cache/opensdmx/istat/embeddings.parquet
+~/.cache/opensdmx/istat/cache.db
 ```
 
 ---
@@ -30,7 +40,7 @@ Examples for Eurostat (agency `ESTAT`) and ISTAT (agency `IT1`):
 
 ### `dataflows.parquet`
 
-Downloaded from the SDMX `dataflow/{agency_id}` endpoint. Refreshed if older than 24 hours.
+Downloaded from the SDMX `dataflow/{agency_id}` endpoint. Refreshed if older than 7 days.
 
 Columns:
 
@@ -40,6 +50,13 @@ Columns:
 | `version` | String | Dataflow version |
 | `df_description` | String | Human-readable dataset name |
 | `df_structure_id` | String | Referenced Data Structure Definition ID |
+| `has_constraint` | Boolean/null | Whether a catalog-level constraint is known to exist for this dataflow |
+
+### `categories.parquet` and `categorisation.parquet`
+
+Built by `opensdmx tree` for providers that support SDMX `categoryscheme` and `categorisation` endpoints. Refreshed if either file is older than 7 days.
+
+`categories.parquet` contains the category hierarchy. `categorisation.parquet` maps dataflows to category paths.
 
 ### `embeddings.parquet`
 
@@ -55,6 +72,15 @@ Columns:
 ---
 
 ## SQLite: `cache.db`
+
+All structured metadata is stored in a single SQLite database per provider. Each cache table has a `cached_at` column (Unix timestamp). Expiry depends on the type of metadata:
+
+| Cache type | TTL | Environment override |
+|---|---:|---|
+| Dataflow catalog | 7 days | `OPENSDMX_DATAFLOWS_CACHE_TTL` |
+| Category tree | 7 days | `OPENSDMX_CATEGORIES_CACHE_TTL` |
+| Structure dimensions and codelists | 30 days | `OPENSDMX_METADATA_CACHE_TTL` |
+| Available constraints | 7 days | `OPENSDMX_CONSTRAINTS_CACHE_TTL` |
 
 ### Tables
 
@@ -104,6 +130,25 @@ Codes actually present in a dataset, fetched from the `availableconstraint` (or 
 
 On write, the existing rows for `df_id` are deleted before re-inserting, so the table always reflects the latest constraint snapshot.
 
+#### `bulk_constraint_fetch`
+
+Tracks provider-level bulk constraint fetches, used by providers such as ISTAT that support catalog-level `contentconstraint` discovery.
+
+| Column | Type | Notes |
+|---|---|---|
+| `agency_id` | TEXT | Provider agency ID — PK |
+| `cached_at` | REAL | Unix timestamp |
+
+#### `bulk_constraint_index`
+
+Stores which dataflows were covered by a successful bulk constraint fetch.
+
+| Column | Type | Notes |
+|---|---|---|
+| `agency_id` | TEXT | Provider agency ID — PK part |
+| `df_id` | TEXT | Dataset ID — PK part |
+| `cached_at` | REAL | Unix timestamp |
+
 #### `invalid_datasets`
 
 Datasets that failed an API availability check (triggered during `guide`). These are excluded from all future searches and listings. There is no automatic expiry; entries must be removed manually via `opensdmx blacklist`.
@@ -142,6 +187,15 @@ erDiagram
         TEXT df_id PK
         TEXT dimension_id PK
         TEXT code_id PK
+        REAL cached_at
+    }
+    bulk_constraint_fetch {
+        TEXT agency_id PK
+        REAL cached_at
+    }
+    bulk_constraint_index {
+        TEXT agency_id PK
+        TEXT df_id PK
         REAL cached_at
     }
     invalid_datasets {
