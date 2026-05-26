@@ -4,6 +4,21 @@ opensdmx is a Python package and CLI for querying any SDMX 2.1 REST API. It is o
 
 ---
 
+## Design philosophy
+
+opensdmx is designed first and foremost as a **CLI tool for LLM orchestration**. The primary "user" is an AI agent that reads stdout and composes commands step by step — not a Python developer importing objects.
+
+This shapes every architectural decision:
+
+- **Output is plain text or structured data (CSV, JSON), never Python objects.** An LLM reads stdout; it does not need a `DataMessage` or a `StructureMessage`.
+- **`print` over return values where the caller is an agent.** Direct output is intentional — the CLI is designed to speak to an AI orchestrating it.
+- **No rich object model.** Complexity justified in a Python library (URN parsing, MRO-based dispatch, message hierarchies) is unnecessary overhead here.
+- **Readable, self-contained error messages.** When something goes wrong, the agent must understand why from the CLI output alone — no stack traces, no internal paths.
+
+opensdmx works as a standalone CLI and as an importable Python library, but design trade-offs are resolved in favour of the agent-orchestration use case.
+
+---
+
 ## Module map
 
 | Module | Responsibility |

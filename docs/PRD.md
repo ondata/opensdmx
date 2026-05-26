@@ -21,7 +21,7 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 ## Goals
 
 - Provide a single Python API that works identically across all supported SDMX 2.1 providers.
-- Expose a CLI for non-programmatic workflows (download, plot, explore).
+- Expose a CLI designed for LLM orchestration: plain-text and structured output, composable commands, readable error messages.
 - Enable semantic search over provider catalogs via Ollama embeddings.
 - Cache all structural metadata to minimize API calls.
 
@@ -40,6 +40,7 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 - Data analysts and researchers who use SDMX data from public statistical agencies.
 - Python developers integrating statistical data into pipelines or notebooks.
 - Non-technical users who use the CLI for exploratory analysis.
+- **AI agents and LLM-based systems** that orchestrate statistical queries programmatically — the primary design target for the CLI interface.
 
 ---
 
