@@ -34,3 +34,5 @@ skills/*-workspace/
 # Playwright MCP browser cache (local only)
 .playwright-mcp/
 attivita/
+.firecrawl/
+video/
