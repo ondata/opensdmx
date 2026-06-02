@@ -544,6 +544,12 @@ https://eurostat-rss.andy-pr.workers.dev/?theme=economy
 
 Source: [`scripts/eurostat-rss/`](scripts/eurostat-rss/).
 
+## Related tools
+
+- **[opensituas](https://github.com/ondata/opensituas)** — Codes and history of every Italian territorial unit, from the CLI. The join key for any ISTAT dataset.
+- **[ISTAT MCP Server](https://github.com/ondata/istat_mcp_server)** — Italian statistical data directly in your AI assistant, via the MCP protocol.
+- **[CKAN MCP Server](https://github.com/ondata/ckan-mcp-server)** — Turn any CKAN open data portal into a natural-language conversation.
+
 ## License
 
 MIT License — Copyright (c) 2026 Andrea Borruso
