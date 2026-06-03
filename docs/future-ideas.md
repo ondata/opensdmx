@@ -115,6 +115,32 @@ Some providers (e.g. ABS Australia) require API key in the HTTP header, not the 
 
 A command `opensdmx validate <dataflow> [--file data.csv]` that checks a dataset for compliance with its DSD: required dimensions present, values in declared codelists, observation attributes valid. rsdmx #107.
 
+## OpenEcon-Inspired
+
+From a comparison with [OpenEcon Data](https://github.com/hanlulong/openecon-data) (330k indicators, LLM-driven routing). The point of these ideas is to match what makes OpenEcon's output trustworthy — explicit, verifiable provenance — while keeping opensdmx's thin, no-LLM-inside, standards-based design. OpenEcon attaches `apiUrl` + `sourceUrl` to every result; the LLM picks the series internally (its responses literally carry `"__decision_source":"llm_pick"`), which is convenient but opaque. opensdmx can deliver the same provenance *more* transparently because the intelligence stays in the external orchestrating agent.
+
+**16. Provenance on a channel separate from the data** *(medium priority, low effort)*
+
+Surface, for every `get`, the exact SDMX query URL (`query_url`) and a human-readable source URL (`source_url`). **Constraint: never inline in stdout** — the data stream (CSV/table, pipes, `--out file.csv`) must stay clean and machine-parseable. Correct form:
+
+- **CSV/table mode** → provenance goes to **stderr**, so stdout and `--out` files stay untouched.
+- **JSON output mode** (see idea #8 / JSON-as-default) → provenance is just a field in the envelope (`query_url`, `source_url`); no readability problem since the output is structured.
+- Optional dedicated subcommand `opensdmx url <dataflow> [filters]` that prints *only* the query URL, no data — zero pollution by design.
+
+Recommended default: JSON carries the field; CSV/table emits it on stderr. No flag needed for the common case.
+
+**17. Static country-group aliases** *(low priority, low effort)*
+
+A no-LLM alias map expanding `--geo G7` / `BRICS` / `OECD` into the underlying ISO/GEO code lists (Eurostat already has `EU27_2020`, `EA20` as native codes; the value is groups that are *not* SDMX codes). Mechanical, thin, no model involved.
+
+**18. Reproducible-command export** *(low priority, low effort)*
+
+After a `get`, optionally emit the exact `opensdmx` command (or API URL) that reproduces the result — the verifiable, no-LLM analogue of OpenEcon's "export as Python/Stata code".
+
+**19. Auditable provenance of the *choice*, not just the number** *(strategic, in the skill)*
+
+opensdmx's differentiator vs LLM-inside routers: because the agent drives `search → constraints → get` step by step, the `sdmx-explorer` skill can leave an auditable trail of *why* a given dataflow and codes were selected — provenance of the decision, not only of the datum. Lives in the skill, not the core.
+
 ### Related projects to monitor
 
 | Project | URL | Notes |

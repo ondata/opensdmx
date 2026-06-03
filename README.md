@@ -14,6 +14,12 @@ Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eur
 
 > **Best used with AI.** opensdmx works well on its own, but **it shines when driven by an AI agent**: the CLI is designed to be composed, queried, and orchestrated step by step. For a guided, interactive experience — dataset discovery, schema exploration, filter selection, and data retrieval — pair it with the [`sdmx-explorer`](https://github.com/ondata/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md) Agent Skill included in this repo. See the [**installation guide**](https://github.com/ondata/opensdmx/blob/main/docs/skill/README.md) for step-by-step instructions. The design principles behind this choice are documented in [Architecture → Design philosophy](docs/architecture.md).
 
+## Installation & First Steps
+
+This is a short video tutorial with Italian audio, showing how to install and use opensdmx.
+
+[![Video tutorial](docs/images/opensdmx_intro.png)](https://youtu.be/kxmLDzpQeGE)
+
 ## Installation
 
 **As a CLI tool** (recommended — available system-wide):
