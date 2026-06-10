@@ -32,6 +32,23 @@ openspec/
 # Skill workspaces (local only)
 skills/*-workspace/
 
+# External skills symlinked from .agents/ (heygen-com/hyperframes; reinstallable via skills-lock.json)
+skills/animejs
+skills/contribute-catalog
+skills/css-animations
+skills/gsap
+skills/hyperframes
+skills/hyperframes-cli
+skills/hyperframes-media
+skills/hyperframes-registry
+skills/lottie
+skills/remotion-to-hyperframes
+skills/tailwind
+skills/three
+skills/typegpu
+skills/waapi
+skills/website-to-hyperframes
+
 # Playwright MCP browser cache (local only)
 .playwright-mcp/
 attivita/
