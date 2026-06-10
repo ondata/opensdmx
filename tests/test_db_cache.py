@@ -14,7 +14,29 @@ def _isolated_db(tmp_path, monkeypatch):
     """Redirect db_cache to a temporary SQLite database for every test."""
     db_file = tmp_path / "test_cache.db"
     monkeypatch.setattr(db_cache, "_get_db_path", lambda: db_file)
-    monkeypatch.setattr(db_cache, "_DB_INITIALIZED", False)
+    monkeypatch.setattr(db_cache, "_INITIALIZED_DBS", set())
+
+
+# ── cross-provider schema init (issue #42) ───────────────────────────
+
+def test_schema_init_per_db_path(tmp_path, monkeypatch):
+    """Switching DB path (new provider) must re-create the schema.
+
+    Regression for issue #42: a global init flag skipped schema creation on
+    the second provider, raising 'no such table: invalid_datasets'.
+    """
+    monkeypatch.setattr(db_cache, "_INITIALIZED_DBS", set())
+    db_a = tmp_path / "a" / "cache.db"
+    db_b = tmp_path / "b" / "cache.db"
+    db_a.parent.mkdir()
+    db_b.parent.mkdir()
+
+    monkeypatch.setattr(db_cache, "_get_db_path", lambda: db_a)
+    assert db_cache.get_invalid_dataset_ids() == set()
+
+    # Second provider — a brand new DB file must still have the schema.
+    monkeypatch.setattr(db_cache, "_get_db_path", lambda: db_b)
+    assert db_cache.get_invalid_dataset_ids() == set()
 
 
 # ── structure dims ───────────────────────────────────────────────────

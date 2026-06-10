@@ -13,18 +13,18 @@ def _get_db_path() -> Path:
     return get_cache_dir() / "cache.db"
 
 
-_DB_INITIALIZED = False
+_INITIALIZED_DBS: set[str] = set()
 
 
 @contextmanager
 def _db_conn():
     """Yield a ready-to-use connection, then commit and close it."""
-    global _DB_INITIALIZED
-    conn = sqlite3.connect(_get_db_path(), timeout=10)
+    db_path = _get_db_path()
+    conn = sqlite3.connect(db_path, timeout=10)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=DELETE")
     try:
-        if not _DB_INITIALIZED:
+        if str(db_path) not in _INITIALIZED_DBS:
             conn.executescript("""
                 CREATE TABLE IF NOT EXISTS structure_dims (
                     structure_id TEXT NOT NULL,
@@ -69,7 +69,7 @@ def _db_conn():
                     PRIMARY KEY (agency_id, df_id)
                 );
             """)
-            _DB_INITIALIZED = True
+            _INITIALIZED_DBS.add(str(db_path))
         yield conn
         conn.commit()
     except Exception:

@@ -567,7 +567,7 @@ class TestAvailableConstraintTimeout:
         from tenacity import wait_none
         monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
         # Force db_cache to re-init schema for the per-test tmp cache dir.
-        monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
+        monkeypatch.setattr("opensdmx.db_cache._INITIALIZED_DBS", set())
         # Skip per-provider rate-limit sleep so multi-attempt cases stay fast.
         monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda is_data=False: None)
 
@@ -674,7 +674,7 @@ class TestConstraintEndpointPathBuild:
     def _setup(self, monkeypatch):
         from tenacity import wait_none
         monkeypatch.setattr("opensdmx.base.wait_exponential", lambda **kwargs: wait_none())
-        monkeypatch.setattr("opensdmx.db_cache._DB_INITIALIZED", False)
+        monkeypatch.setattr("opensdmx.db_cache._INITIALIZED_DBS", set())
         monkeypatch.setattr("opensdmx.base._rate_limit_check", lambda is_data=False: None)
 
     @staticmethod
