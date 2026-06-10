@@ -372,31 +372,39 @@ def test_parse_header_missing_colon_raises():
 # ── which ─────────────────────────────────────────────────────────────
 
 
-def test_which_no_query_lists_all():
+@pytest.fixture
+def _no_api_check():
+    """`which` is a local-only command, but the CLI callback still pings the
+    provider; mock it so these tests don't depend on network reachability."""
+    with patch("opensdmx.cli._check_api_reachable"):
+        yield
+
+
+def test_which_no_query_lists_all(_no_api_check):
     result = runner.invoke(app, ["which"])
     assert result.exit_code == 0
     assert "search" in result.output
     assert "plot" in result.output
 
 
-def test_which_match_visualize():
+def test_which_match_visualize(_no_api_check):
     result = runner.invoke(app, ["which", "visualize"])
     assert result.exit_code == 0
     assert "plot" in result.output
 
 
-def test_which_match_download():
+def test_which_match_download(_no_api_check):
     result = runner.invoke(app, ["which", "download"])
     assert result.exit_code == 0
     assert "get" in result.output
 
 
-def test_which_no_match_exits_2():
+def test_which_no_match_exits_2(_no_api_check):
     result = runner.invoke(app, ["which", "zzznomatch"])
     assert result.exit_code == 2
 
 
-def test_which_json_output():
+def test_which_json_output(_no_api_check):
     import json
     result = runner.invoke(app, ["-o", "json", "which", "download"])
     assert result.exit_code == 0
@@ -405,11 +413,10 @@ def test_which_json_output():
     assert any(row["command"] == "get" for row in data)
 
 
-def test_which_limit():
+def test_which_limit(_no_api_check):
     result = runner.invoke(app, ["which", "data", "--limit", "1"])
     assert result.exit_code == 0
-    lines = [l for l in result.output.splitlines() if l.strip() and not l.startswith(" ")]
-    commands_found = sum(1 for l in result.output.splitlines() if any(
-        cmd in l for cmd in ["search", "tree", "get", "plot", "info", "values", "constraints", "siblings", "providers", "run"]
+    commands_found = sum(1 for line in result.output.splitlines() if any(
+        cmd in line for cmd in ["search", "tree", "get", "plot", "info", "values", "constraints", "siblings", "providers", "run"]
     ))
     assert commands_found <= 2
