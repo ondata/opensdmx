@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-06-10 — v0.10.4
+
+- fix: SQLite schema is now initialized per DB file path instead of via a single module-level `_DB_INITIALIZED` flag (#42); switching provider (e.g. `eurostat` → `oecd`) no longer crashes with `no such table: invalid_datasets`
+- fix: harden the schema guard — key on the resolved absolute path (avoids relative-path/CWD aliasing) and re-create the schema when the DB file did not exist before connecting (covers `cache.db` deleted during a long-lived process)
+- test: add `test_schema_init_per_db_path` regression covering the two-provider scenario
+
 ## 2026-05-26 — evaluation
 
 - docs: align operational documentation with current code — provider count/list, ISTAT 15s rate limit, 7d/30d cache TTLs, provider-key cache paths, rate-limit lock behavior, and `guide` extra dependency split
