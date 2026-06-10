@@ -14,6 +14,7 @@ wheels/
 .codex/
 .gemini/
 .opencode/
+.agents/
 
 # Temp data files
 data.csv
@@ -36,5 +37,6 @@ skills/*-workspace/
 attivita/
 .firecrawl/
 video/
+*-demo.mp4
 docs/evaluation-v0.10.3.md
 .vscode/settings.json
