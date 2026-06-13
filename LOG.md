@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-06-13 — v0.12.0 — codelist hierarchy in cache
+
+- feat: the `codelist_values` cache now stores each code's `code_parent` (`<Parent>` ref) and `code_order` (`ORDER` annotation); populated at parse time, no extra request
+- feat: new `get_codelist_hierarchy(ds, dim)` accessor returns `(id, name, parent, order)`, exported from the package; `get_dimension_values` output is unchanged (still `(id, name)`)
+- cache: in-place migration adds the two columns to pre-existing `codelist_values` tables (no wipe); `save_codelist_values` now inserts by explicit columns
+- cross-provider: providers with flat/unordered codelists (e.g. Eurostat) yield null parent/order; verified ISTAT `CL_ITTER107` (12,471 codes → 12,465 parents, 12,471 orders) and Eurostat geo (4,292 codes, all null)
+- test: 4 new tests in `test_codelist_hierarchy.py` (parsing, regression guard, save/read round-trip, in-place migration)
+
 ## 2026-06-13 — v0.11.0
 
 - feat: `opensdmx get --labels` appends a `<dim>_label` column with the human-readable name for each dimension code (resolved from the codelist cache, in the provider's language); codes are preserved, label column mirrors the data column case + `_label`. Inspired by rsdmx's `as.data.frame(labels=TRUE)`

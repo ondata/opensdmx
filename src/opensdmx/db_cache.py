@@ -49,6 +49,8 @@ def _db_conn():
                     codelist_id TEXT NOT NULL,
                     code_id     TEXT NOT NULL,
                     code_name   TEXT,
+                    code_parent TEXT,
+                    code_order  INTEGER,
                     cached_at   REAL NOT NULL,
                     PRIMARY KEY (codelist_id, code_id)
                 );
@@ -75,6 +77,18 @@ def _db_conn():
                     PRIMARY KEY (agency_id, df_id)
                 );
             """)
+            # In-place migration: add columns missing from a pre-existing
+            # codelist_values table (CREATE TABLE IF NOT EXISTS cannot evolve
+            # an existing table). ADD COLUMN is O(1) and leaves old rows NULL.
+            existing_cols = {
+                row["name"]
+                for row in conn.execute("PRAGMA table_info(codelist_values)")
+            }
+            for col, decl in (("code_parent", "TEXT"), ("code_order", "INTEGER")):
+                if col not in existing_cols:
+                    conn.execute(
+                        f"ALTER TABLE codelist_values ADD COLUMN {col} {decl}"
+                    )
             _INITIALIZED_DBS.add(db_key)
         yield conn
         conn.commit()
@@ -154,22 +168,36 @@ def save_codelist_info(codelist_id: str, description: str | None) -> None:
 def get_cached_codelist_values(codelist_id: str) -> list | None:
     with _db_conn() as conn:
         rows = conn.execute(
-            "SELECT code_id, code_name, cached_at FROM codelist_values WHERE codelist_id = ? ORDER BY code_id",
+            "SELECT code_id, code_name, code_parent, code_order, cached_at "
+            "FROM codelist_values WHERE codelist_id = ? ORDER BY code_id",
             (codelist_id,),
         ).fetchall()
     if not rows:
         return None
     if time.time() - rows[0]["cached_at"] > METADATA_CACHE_TTL:
         return None
-    return [{"id": r["code_id"], "name": r["code_name"]} for r in rows]
+    return [
+        {
+            "id": r["code_id"],
+            "name": r["code_name"],
+            "parent": r["code_parent"],
+            "order": r["code_order"],
+        }
+        for r in rows
+    ]
 
 
 def save_codelist_values(codelist_id: str, values: list) -> None:
     now = time.time()
     with _db_conn() as conn:
         conn.executemany(
-            "INSERT OR REPLACE INTO codelist_values VALUES (?, ?, ?, ?)",
-            [(codelist_id, v["id"], v["name"], now) for v in values],
+            "INSERT OR REPLACE INTO codelist_values "
+            "(codelist_id, code_id, code_name, code_parent, code_order, cached_at) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            [
+                (codelist_id, v["id"], v["name"], v.get("parent"), v.get("order"), now)
+                for v in values
+            ],
         )
 
 

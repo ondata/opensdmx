@@ -139,6 +139,7 @@ opensdmx get MYDATASET
 | `print_dataset(ds)` | Print dataset summary |
 | `dimensions_info(ds)` | Dimension metadata → Polars DataFrame |
 | `get_dimension_values(ds, dim)` | Codelist values for a dimension |
+| `get_codelist_hierarchy(ds, dim)` | Codelist with hierarchy → `(id, name, parent, order)`; `parent`/`order` are null when the provider's codelist is flat/unordered |
 | `get_available_values(ds)` | Values actually present in the data (via `availableconstraint`) |
 | `set_filters(ds, **kwargs)` | Set dimension filters |
 | `reset_filters(ds)` | Reset all filters to `"."` (all) |

@@ -460,6 +460,14 @@ know are valid and `opensdmx constraints` doesn't provide enough detail.
 **Never use `opensdmx values` to validate filter codes.** A code present in the codelist
 may return no data if it doesn't exist in this specific dataflow.
 
+**Codelist hierarchy (library API).** When a codelist is hierarchical or ordered, the
+Python accessor `opensdmx.get_codelist_hierarchy(ds, dim)` returns `(id, name, parent,
+order)` — useful to filter by geographic level, roll up child→parent, or sort in the
+official sequence. `parent`/`order` are populated when the provider supplies them
+(notably ISTAT territorial codelists like `CL_ITTER107`) and null otherwise (e.g. flat
+Eurostat codelists). It shares the same cache as `values`/`--labels`, so it adds no extra
+request when the codelist is already cached.
+
 ### ISTAT flow
 
 ISTAT keeps the `info` → `constraints` → `get` shape, with `values` as an
