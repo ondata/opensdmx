@@ -431,8 +431,56 @@ def dimensions_info(dataset: dict, include_descriptions: bool = True) -> pl.Data
     return df
 
 
-def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
-    """Return available values (id, name) for a specific dimension."""
+def _local_tag(elem) -> str:
+    """Return an element's local tag name, stripping any namespace."""
+    return elem.tag.rsplit("}", 1)[-1]
+
+
+def _code_parent(code_node) -> str | None:
+    """Return the parent code id from a <Parent><Ref id=.../></Parent>, or None.
+
+    Namespace-agnostic: matches local tag names so it works across providers
+    regardless of prefix. Returns None when the code has no parent.
+    """
+    for child in code_node:
+        if _local_tag(child) != "Parent":
+            continue
+        for ref in child:
+            if _local_tag(ref) == "Ref":
+                rid = ref.get("id")
+                if rid:
+                    return rid
+    return None
+
+
+def _code_order(code_node) -> int | None:
+    """Return the integer ORDER annotation value, or None if absent/non-numeric.
+
+    Looks for <Annotations><Annotation id="ORDER">...<AnnotationText>N</...>.
+    Never raises on missing or non-numeric values.
+    """
+    for child in code_node:
+        if _local_tag(child) != "Annotations":
+            continue
+        for ann in child:
+            if _local_tag(ann) != "Annotation" or ann.get("id") != "ORDER":
+                continue
+            for sub in ann:
+                if _local_tag(sub) == "AnnotationText" and sub.text:
+                    try:
+                        return int(sub.text.strip())
+                    except (ValueError, TypeError):
+                        return None
+    return None
+
+
+def _load_codelist_records(dataset: dict, dimension_id: str) -> list[dict] | None:
+    """Load a dimension's codelist as a list of dicts (id, name, parent, order).
+
+    Resolves the dimension case-insensitively, serves from cache when fresh,
+    otherwise fetches and parses the codelist and caches it. Returns None when
+    the dimension has no codelist.
+    """
     dim_upper = {k.upper(): k for k in dataset["dimensions"]}
     actual = dim_upper.get(dimension_id.upper())
     if actual is None:
@@ -445,7 +493,7 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     codelist_id = dataset["dimensions"][dimension_id]["codelist_id"]
     if not codelist_id:
         logger.warning("No codelist found for dimension: %s", dimension_id)
-        return pl.DataFrame({"id": [], "name": []})
+        return None
 
     lang = get_provider()["language"]
     cache_key = f"{codelist_id}:{lang}"
@@ -453,7 +501,7 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     from .db_cache import get_cached_codelist_values, save_codelist_values
     cached = get_cached_codelist_values(cache_key)
     if cached is not None:
-        return pl.DataFrame(cached, schema={"id": pl.Utf8, "name": pl.Utf8})
+        return cached
 
     path = f"codelist/ALL/{codelist_id}"
     content = sdmx_request_xml(path)
@@ -467,13 +515,43 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
         records.append({
             "id": xml_attr_safe(code_node, "id"),
             "name": get_name_by_lang(code_node, lang, ns),
+            "parent": _code_parent(code_node),
+            "order": _code_order(code_node),
         })
 
     try:
         save_codelist_values(cache_key, records)
     except Exception as e:
         logger.warning("Could not cache codelist values: %s", e)
-    return pl.DataFrame(records, schema={"id": pl.Utf8, "name": pl.Utf8})
+    return records
+
+
+def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
+    """Return available values (id, name) for a specific dimension."""
+    records = _load_codelist_records(dataset, dimension_id)
+    if not records:
+        return pl.DataFrame({"id": [], "name": []})
+    # Project explicitly to (id, name) — _load_codelist_records also carries
+    # parent/order, which must not leak into this function's contract.
+    return pl.DataFrame(
+        [{"id": r["id"], "name": r["name"]} for r in records],
+        schema={"id": pl.Utf8, "name": pl.Utf8},
+    )
+
+
+def get_codelist_hierarchy(dataset: dict, dimension_id: str) -> pl.DataFrame:
+    """Return a dimension's codelist with hierarchy: (id, name, parent, order).
+
+    `parent` is the parent code id (null for roots), `order` is the integer
+    ORDER annotation (null when absent). Providers whose codelists are flat or
+    unordered simply yield null in those columns. Reuses the same cache as
+    `get_dimension_values`, so no extra request when the codelist is cached.
+    """
+    records = _load_codelist_records(dataset, dimension_id)
+    schema = {"id": pl.Utf8, "name": pl.Utf8, "parent": pl.Utf8, "order": pl.Int64}
+    if not records:
+        return pl.DataFrame({k: [] for k in schema}, schema=schema)
+    return pl.DataFrame(records, schema=schema)
 
 
 def _parse_constraint_xml(content: bytes) -> dict[str, list[str]]:
