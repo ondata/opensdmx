@@ -21,7 +21,7 @@ from .discovery import (
     search_dataset,
     set_filters,
 )
-from .retrieval import fetch, get_data, parse_time_period, run_query
+from .retrieval import enrich_with_labels, fetch, get_data, parse_time_period, run_query
 from .embed import build_embeddings, semantic_search
 from .cli import main
 
@@ -42,6 +42,7 @@ __all__ = [
     "get_data",
     "fetch",
     "run_query",
+    "enrich_with_labels",
     "build_embeddings",
     "semantic_search",
     "set_timeout",

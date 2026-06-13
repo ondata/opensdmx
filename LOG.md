@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-06-13 — v0.11.0
+
+- feat: `opensdmx get --labels` appends a `<dim>_label` column with the human-readable name for each dimension code (resolved from the codelist cache, in the provider's language); codes are preserved, label column mirrors the data column case + `_label`. Inspired by rsdmx's `as.data.frame(labels=TRUE)`
+- feat: the `--labels` choice is serialized to the YAML query file and honored by `opensdmx run`
+- core: new `enrich_with_labels(dataset, data)` helper in `retrieval.py`, exported from the package
+- docs: document `--labels` in README and the `sdmx-explorer` skill (SKILL.md, visualization.md Rule 5, duckdb-setup.md)
+- test: 5 new tests in `test_labels.py` (enrichment, no-codelist, unmapped→null, query-file round-trip)
+
 ## 2026-06-10 — v0.10.4
 
 - fix: SQLite schema is now initialized per DB file path instead of via a single module-level `_DB_INITIALIZED` flag (#42); switching provider (e.g. `eurostat` → `oecd`) no longer crashes with `no such table: invalid_datasets`
