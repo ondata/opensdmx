@@ -1106,6 +1106,7 @@ def get(
     last_n: Optional[int] = typer.Option(None, "--last-n", help="Return only last N observations per series"),
     first_n: Optional[int] = typer.Option(None, "--first-n", help="Return only first N observations per series"),
     yes: bool = typer.Option(False, "--yes", "-y", help="Download all series in a single wildcard bulk request, skipping the confirmation prompt"),
+    labels: bool = typer.Option(False, "--labels", help="Append a '<DIM>_label' column with the human-readable name for each dimension code"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ):
@@ -1161,6 +1162,10 @@ def get(
         with console.status("[dim]Fetching data...[/dim]"):
             df = get_data(ds, start_period=start_period, end_period=end_period,
                           last_n_observations=last_n, first_n_observations=first_n)
+        if labels:
+            from . import enrich_with_labels
+            with console.status("[dim]Adding labels...[/dim]"):
+                df = enrich_with_labels(ds, df)
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         if e.response.status_code in (400, 404):
@@ -1191,7 +1196,7 @@ def get(
         query_dict = build_query_dict(
             ds=ds, filters=filters,
             start_period=start_period, end_period=end_period,
-            last_n=last_n, first_n=first_n, provider=provider,
+            last_n=last_n, first_n=first_n, provider=provider, labels=labels,
         )
         with open(query_file, "w") as fh:
             yaml.dump(query_dict, fh, allow_unicode=True, sort_keys=False, default_flow_style=False)
@@ -1264,6 +1269,10 @@ def run(
         with console.status("[dim]Fetching data...[/dim]"):
             df = get_data(ds, start_period=start_period, end_period=end_period,
                           last_n_observations=last_n, first_n_observations=first_n)
+        if q.get("labels"):
+            from . import enrich_with_labels
+            with console.status("[dim]Adding labels...[/dim]"):
+                df = enrich_with_labels(ds, df)
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         raise typer.Exit(1)

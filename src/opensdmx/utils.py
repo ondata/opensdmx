@@ -89,6 +89,7 @@ def build_query_dict(
     last_n: int | None = None,
     first_n: int | None = None,
     provider: str | None = None,
+    labels: bool = False,
 ) -> dict:
     """Build a plain dict representing a query, ready for YAML serialisation.
 
@@ -124,6 +125,7 @@ def build_query_dict(
         "end_period": end_period,
         "last_n": last_n,
         "first_n": first_n,
+        "labels": labels,
     }
 
 

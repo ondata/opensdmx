@@ -547,6 +547,24 @@ Once the user has specified their choices, build the query and fetch the data.
 Note: Eurostat dimension flags are lowercase (`--geo`, `--coicop`, `--freq`).
 ISTAT dimension flags are uppercase (`--REF_AREA`, `--DATA_TYPE`, `--FREQ`).
 
+### Human-readable labels (`--labels`)
+
+The data returned by `opensdmx get` contains only **codes** (`geo=IT`, `sex=T`).
+Add `--labels` to append a sibling `<DIM>_label` column with the human-readable name
+for each code, resolved from the codelist in the provider's language:
+
+```bash
+opensdmx get NAMA_10_GDP --geo IT --sex T --labels --last-n 1
+```
+
+This adds `geo_label` ("Italy"), `sex_label` ("Total"), etc. alongside the original
+code columns (codes are preserved, not replaced). The label column name mirrors the
+data column case + `_label` (`geo` → `geo_label`, `ITTER107` → `ITTER107_label`).
+
+**Always prefer `--labels` when showing data to the user or building tables/charts** —
+never present raw codes when readable labels are available. The flag is also persisted
+in the YAML query file (`--query-file`) and honored by `opensdmx run`.
+
 ### Bulk download — large datasets without REF_AREA filter
 
 When the user wants **all territorial units** (all comuni, all regions, all countries)

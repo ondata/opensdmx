@@ -34,6 +34,8 @@ winget install DuckDB.cli
 ## Typical usage with SDMX data
 
 All examples assume the data was downloaded with `opensdmx get ... --out data.csv`.
+Add `--labels` to that command to get `<dim>_label` columns (human-readable names)
+alongside the codes — it avoids a manual codelist join in DuckDB.
 
 ### Quick inspection
 

@@ -54,6 +54,9 @@ opensdmx info UNE_RT_M
 opensdmx constraints UNE_RT_M geo
 opensdmx get UNE_RT_M --freq M --geo IT --sex T --out data.csv
 
+# Add human-readable labels alongside the codes (geo_label, sex_label, ...)
+opensdmx get UNE_RT_M --freq M --geo IT --sex T --labels --out data.csv
+
 # Save a query for later reuse
 opensdmx get TIPSUN20 --sex T --age Y15-74 --start-period 2020 --query-file unemployment.yaml
 

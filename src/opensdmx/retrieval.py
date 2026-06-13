@@ -113,6 +113,43 @@ def get_data(
     return data
 
 
+def enrich_with_labels(dataset: dict, data: pl.DataFrame) -> pl.DataFrame:
+    """Append human-readable label columns for each dimension in the data.
+
+    For every dimension whose column appears in ``data`` (matched
+    case-insensitively) and that has a codelist, adds a sibling
+    ``<col>_label`` column with the code's name resolved from the codelist
+    cache, in the provider's language. Original code columns are preserved and
+    row order is unchanged. Dimensions without a codelist add no column; codes
+    with no matching label get a null label.
+
+    Args:
+        dataset: dict returned by load_dataset()
+        data: DataFrame returned by get_data()
+
+    Returns:
+        Polars DataFrame with added ``<col>_label`` columns.
+    """
+    from .discovery import get_dimension_values
+
+    if data.is_empty():
+        return data
+
+    col_by_upper = {c.upper(): c for c in data.columns}
+    for dim_id, info in (dataset.get("dimensions") or {}).items():
+        col = col_by_upper.get(dim_id.upper())
+        if col is None or not (info or {}).get("codelist_id"):
+            continue
+        values = get_dimension_values(dataset, dim_id)
+        if values.is_empty():
+            continue
+        mapping = dict(zip(values["id"], values["name"]))
+        data = data.with_columns(
+            pl.col(col).replace_strict(mapping, default=None).alias(f"{col}_label")
+        )
+    return data
+
+
 def run_query(query_file: str) -> pl.DataFrame:
     """Run a query from a YAML file saved with `opensdmx get --query-file`.
 
@@ -149,13 +186,16 @@ def run_query(query_file: str) -> pl.DataFrame:
     if filters:
         ds = set_filters(ds, **filters)
 
-    return get_data(
+    data = get_data(
         ds,
         start_period=q.get("start_period"),
         end_period=q.get("end_period"),
         last_n_observations=q.get("last_n"),
         first_n_observations=q.get("first_n"),
     )
+    if q.get("labels"):
+        data = enrich_with_labels(ds, data)
+    return data
 
 
 def fetch(

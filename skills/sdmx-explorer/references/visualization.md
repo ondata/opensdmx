@@ -183,7 +183,18 @@ Then plot with `--x year` instead of `--x TIME_PERIOD`.
 be expected to know that `EL` is Greece, `ED7` is a master's degree, or `F` is Female.
 Always join the dimension codes with their labels before plotting.
 
-**How to get labels:**
+**Easiest path — fetch with `--labels`:**
+
+```bash
+# adds geo_label, sex_label, ... alongside the code columns, in one step
+opensdmx get <dataflow_id> --geo IT+DE+EL --labels --out /tmp/data.csv
+```
+
+Then plot with `--x geo_label` (or `--color geo_label`) directly — no DuckDB join
+needed. This is the preferred approach; use the manual join below only when the data
+was already downloaded without `--labels`.
+
+**How to get labels manually (when data lacks `_label` columns):**
 
 ```bash
 # Get geo labels from Eurostat constraints
@@ -256,7 +267,7 @@ Common problems and fixes:
 | Title says "OBS_VALUE"    | Default labels used              | Set `--title`, `--ylabel`, `--xlabel` explicitly          |
 | X-axis labels overlap     | Many categories or long strings  | Use `--geom barh` (flips to horizontal); or `--rotate-x 45` to angle them |
 | X-axis labels missing     | plotnine thins discrete tick labels | Use `--x-all` to force all tick labels. Combine with `--rotate-x 45` if labels overlap. Works with `--facet` and `--color` |
-| Codes shown instead of names | Raw SDMX codes (`EL`, `ED7`, `F`) not replaced | Join with labels via `opensdmx --output csv constraints` + DuckDB JOIN (see Rule 5) |
+| Codes shown instead of names | Raw SDMX codes (`EL`, `ED7`, `F`) not replaced | Re-fetch with `opensdmx get ... --labels` and plot `<dim>_label`; or join manually (see Rule 5) |
 
 ### 3. Present to user
 
