@@ -4,7 +4,7 @@
 
 - feat: the `codelist_values` cache now stores each code's `code_parent` (`<Parent>` ref) and `code_order` (`ORDER` annotation); populated at parse time, no extra request
 - feat: new `get_codelist_hierarchy(ds, dim)` accessor returns `(id, name, parent, order)`, exported from the package; `get_dimension_values` output is unchanged (still `(id, name)`)
-- cache: in-place migration adds the two columns to pre-existing `codelist_values` tables (no wipe); `save_codelist_values` now inserts by explicit columns
+- cache: in-place migration adds the two columns to pre-existing `codelist_values` tables (no wipe); `save_codelist_values` now inserts by explicit columns. Note: codelists cached before this upgrade keep null parent/order until re-fetched on TTL expiry — delete `cache.db` to refresh immediately
 - cross-provider: providers with flat/unordered codelists (e.g. Eurostat) yield null parent/order; verified ISTAT `CL_ITTER107` (12,471 codes → 12,465 parents, 12,471 orders) and Eurostat geo (4,292 codes, all null)
 - test: 4 new tests in `test_codelist_hierarchy.py` (parsing, regression guard, save/read round-trip, in-place migration)
 

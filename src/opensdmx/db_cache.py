@@ -80,6 +80,10 @@ def _db_conn():
             # In-place migration: add columns missing from a pre-existing
             # codelist_values table (CREATE TABLE IF NOT EXISTS cannot evolve
             # an existing table). ADD COLUMN is O(1) and leaves old rows NULL.
+            # Note: codelists cached before this upgrade keep NULL
+            # code_parent/code_order until they are re-fetched (on TTL expiry);
+            # until then get_codelist_hierarchy() returns null parent/order even
+            # for hierarchical codelists. Delete cache.db to refresh immediately.
             existing_cols = {
                 row["name"]
                 for row in conn.execute("PRAGMA table_info(codelist_values)")

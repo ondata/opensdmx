@@ -531,7 +531,12 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     records = _load_codelist_records(dataset, dimension_id)
     if not records:
         return pl.DataFrame({"id": [], "name": []})
-    return pl.DataFrame(records, schema={"id": pl.Utf8, "name": pl.Utf8})
+    # Project explicitly to (id, name) — _load_codelist_records also carries
+    # parent/order, which must not leak into this function's contract.
+    return pl.DataFrame(
+        [{"id": r["id"], "name": r["name"]} for r in records],
+        schema={"id": pl.Utf8, "name": pl.Utf8},
+    )
 
 
 def get_codelist_hierarchy(dataset: dict, dimension_id: str) -> pl.DataFrame:
