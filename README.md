@@ -30,6 +30,13 @@ uv tool install opensdmx
 
 > **[uv](https://docs.astral.sh/uv/)** is a fast Python package and project manager. Install — Linux/macOS: `curl -LsSf https://astral.sh/uv/install.sh | sh` · Windows: `winget install astral-sh.uv`
 
+> **Sandboxed environments (Claude Cowork & SOCKS proxies)** — From v0.12.1 opensdmx bundles `httpx[socks]`, so it works out of the box where all traffic is routed through a SOCKS proxy (e.g. the Claude Cowork sandbox). On older versions, network calls fail with an `ImportError`; patch the isolated tool venv once:
+> ```bash
+> uv pip install \
+>   --python "$(find ~/.local/share/uv/tools/opensdmx -name 'python3*' -type f | head -1)" \
+>   socksio "httpx[socks]"
+> ```
+
 **As a library** (for use in Python projects):
 
 ```bash

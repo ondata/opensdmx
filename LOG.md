@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-06-14 — v0.12.1 — SOCKS proxy support (Claude Cowork)
+
+- fix: dependency `httpx>=0.28.1` → `httpx[socks]>=0.28.1`, bundling `socksio`. opensdmx now works out of the box inside sandboxes that route all traffic through a SOCKS proxy (e.g. the Claude Cowork sandbox); previously any network call raised `ImportError`
+- docs: README Installation note + `sdmx-explorer` SKILL.md setup note documenting the SOCKS/sandbox case and the one-shot manual patch (`uv pip install ... socksio "httpx[socks]"`) for installs older than 0.12.1
+- skill: bumped `sdmx-explorer` to v1.3
+
 ## 2026-06-13 — v0.12.0 — codelist hierarchy in cache
 
 - feat: the `codelist_values` cache now stores each code's `code_parent` (`<Parent>` ref) and `code_order` (`ORDER` annotation); populated at parse time, no extra request

@@ -20,7 +20,7 @@ compatibility: >
   Requires the opensdmx CLI (opensdmx search, info, constraints, values, get, plot, which).
 metadata:
   author: ondata
-  version: "1.2"
+  version: "1.3"
 ---
 
 # SDMX Explorer — Guided Dataset Discovery
@@ -29,6 +29,17 @@ This skill uses the **opensdmx CLI** to explore any SDMX 2.1 REST endpoint:
 Eurostat, OECD, ECB, World Bank, ISTAT, and others.
 The primary reference provider is **Eurostat** (default in the opensdmx CLI).
 All examples use Eurostat unless stated otherwise.
+
+> **Sandboxed setup (Claude Cowork / SOCKS proxy).** If `opensdmx` is not yet
+> installed, install it with `uv tool install opensdmx` and add `~/.local/bin`
+> to `PATH`. opensdmx v0.12.1+ bundles `httpx[socks]`, so it works behind the
+> SOCKS proxy used by sandboxes out of the box. If a command fails with an
+> `ImportError` about SOCKS (older install), patch the tool venv once:
+> ```bash
+> uv pip install \
+>   --python "$(find ~/.local/share/uv/tools/opensdmx -name 'python3*' -type f | head -1)" \
+>   socksio "httpx[socks]"
+> ```
 
 Every `opensdmx` command supports `--help` — run it first to discover options and
 see usage examples:
