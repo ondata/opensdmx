@@ -499,8 +499,35 @@ the legacy SDMX REST fallback, and ISTAT-specific quirks, see
 Parse the output and extract:
 - **Dimension list** in order (position matters for URL construction later)
 - **Available codes** for each dimension, with descriptions
-- **Time range** (StartPeriod / EndPeriod)
+- **Time range** (StartPeriod / EndPeriod) — see the note below on how to get it
 - **Dimensions with more than one available value** (these are the meaningful filters)
+
+> **Getting the time range.** The `constraints` output does **not** include
+> `TIME_PERIOD` — verified on both Eurostat and ISTAT, where the time dimension is
+> absent from the content constraint. To fill StartPeriod/EndPeriod, probe the data
+> with two lightweight calls (one observation per series, not a full download):
+>
+> ```bash
+> opensdmx get <ID> <minimal filters> --first-n 1   # earliest period
+> opensdmx get <ID> <minimal filters> --last-n 1    # latest period
+> ```
+>
+> This probe works on every built-in provider **except World Bank** (its `last_n`
+> column is ✗ in `opensdmx providers`); for World Bank, read the period range from
+> the returned data instead.
+>
+> **ISTAT caveat.** The probe only works on a **published cell**: filter to a code
+> combination that actually exists. Explicit the single-value dimensions (e.g.
+> `--FREQ A`) — if left out they end up empty in the key and the request 404s. And
+> **do not rely on cross-cutting totals**: many ISTAT dataflows (e.g. `25_74`, which
+> crosses several citizenship/age dimensions) never publish the "all-TOTAL" cell, so
+> a fully-aggregated key returns 404 even though `first_n`/`last_n` are supported.
+> Verified working end-to-end on a clean dataflow, e.g.:
+>
+> ```bash
+> opensdmx get 22_315_DF_DCIS_POPORESBIL1_24 --provider istat \
+>   --FREQ A --REF_AREA IT --DATA_TYPE BEG --SEX 9 --first-n 1   # → 2019-01-01
+> ```
 
 ---
 
