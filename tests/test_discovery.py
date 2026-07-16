@@ -439,6 +439,21 @@ def test_search_or_fallback_prioritizes_token_coverage():
     assert res["df_id"].to_list() == ["COVERED", "REPEATED"]
 
 
+def test_search_or_fallback_counts_null_descriptions_as_no_match():
+    """A null description does not erase token coverage from a matching ID."""
+    catalog = pl.DataFrame(
+        {
+            "df_id": ["ALPHA_BETA", "ALPHA"],
+            "version": ["1.0", "1.0"],
+            "df_description": [None, "alpha"],
+            "df_structure_id": ["DSD_AB", "DSD_A"],
+        }
+    )
+    with patch("opensdmx.discovery.all_available", return_value=catalog):
+        res = search_dataset("alpha beta missing")
+    assert res["df_id"].to_list()[0] == "ALPHA_BETA"
+
+
 def test_search_treats_regex_characters_as_literal_tokens():
     """User tokens are literal text rather than regular expressions."""
     catalog = _fake_catalog().with_columns(

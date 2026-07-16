@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-07-16 - PR 48 null coverage fix
+
+- fix(search): OR fallback coverage treats a null description token match as false, preserving coverage from tokens that match the dataset ID.
+- test: added a null-description regression to ensure a two-token ID match ranks above a one-token match.
+
 ## 2026-07-16 - workflow cleanup
 
 - ci: removed duplicate automatic Claude Code PR review; Greptile and Copilot remain the automatic reviewers.

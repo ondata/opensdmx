@@ -201,7 +201,7 @@ def _score_results(
     for token in tokens:
         t = token.lower()
         if coverage_expr is not None:
-            coverage_expr = coverage_expr + _token_match_expr(t).cast(pl.Int32)
+            coverage_expr = coverage_expr + _token_match_expr(t).fill_null(False).cast(pl.Int32)
         score_expr = score_expr + (
             pl.col("df_id").str.to_lowercase().str.contains(t).cast(pl.Int32) * 3
         )
