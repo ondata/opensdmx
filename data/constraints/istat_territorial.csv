@@ -27,3 +27,190 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 101_12_DF_DCSP_PREZZIAGR_12,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020)",REF_AREA,nazionale,nazionale,1,2026-07-16
 101_12_DF_DCSP_PREZZIAGR_2,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
 101_12_DF_DCSP_PREZZIAGR_3,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_4,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_5,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_6,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_7,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_8,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_9,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2020)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_148,Risultati economici delle aziende agricole,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_148_DF_DCSP_RICAREA_1,Risultati economici delle aziende agricole - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_148_DF_DCSP_RICAREA_2,Valori economici medi per azienda per classe di ULA,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_148_DF_DCSP_RICAREA_3,Valori economici medi per azienda per classe di fatturato,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_148_DF_DCSP_RICAREA_4,Valori economici medi per azienda per forma giuridica,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_148_DF_DCSP_RICAREA_5,Idicatori di performance per settore,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_22,Fitosanitari,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_22_DF_DCSP_FITOSANITARI_1,Prodotti distribuiti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_22_DF_DCSP_FITOSANITARI_2,Principi attivi contenuti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_22_DF_DCSP_FITOSANITARI_3,Utilizzo per tipo di coltura - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_22_DF_DCSP_FITOSANITARI_4,Utilizzo - dettaglio di principio attivo,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_22_DF_DCSP_FITOSANITARI_5,Classe di trattamenti effettuati,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_959,Latte e prodotti lattiero caseari,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_959_DF_DCSP_LATTE_1,Prodotti - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_959_DF_DCSP_LATTE_2,Prodotti per tipo di unità produttiva,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_959_DF_DCSP_LATTE_3,Quantità di materie prime fresche importate,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_959_DF_DCSP_LATTE_4,Prodotti e stabilimenti per classi di tonnellate di prodotto,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_959_DF_DCSP_LATTE_5,Stabilimenti per unità produttive - reg,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_959_DF_DCSP_LATTE_6,Prodotti - reg,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_961,Consistenze degli allevamenti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-16
+101_961_DF_DCSP_CONSISTENZE_1,Consistenze al 1° dicembre - reg,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-16
+101_961_DF_DCSP_CONSISTENZE_2,Consistenze al 1° giugno,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_962,Import export di bestiame,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_1,Animali vivi - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_2,Animali vivi - dati annuali,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_3,Carni - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_4,Carni - dati annuali,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_965,Agriturismo,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_965_DF_DCSP_AGRITURISMO_1,Aziende autorizzate - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_965_DF_DCSP_AGRITURISMO_2,Servizi agrituristici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_965_DF_DCSP_AGRITURISMO_3,Zona altimetrica e sesso del conduttore - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_965_DF_DCSP_AGRITURISMO_4,Durata dell'autorizzazione - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+101_965_DF_DCSP_AGRITURISMO_5,Dinamica autorizzazioni - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-16
+102_974,Struttura delle aziende agricole,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_1,Aziende e superfici per titolo di possesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_10,Aziende con energia rinnovabile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_11,Aziende e mezzi meccanici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_12,Aziende per forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_13,Aziende per titolo di studio del conduttore,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_14,Persone e giornate di lavoro per tipo di manodopera,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_2,Aziende e superfici per classe di superficie,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_3,Aziende e superfici per forma di conduzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_4,Aziende a superficie irrigabile ed irrigata,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_5,Aziende e superfici per coltivazione biologiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_6,Aziende e superfici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_7,Aziende e superfici per coltivazione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_8,Aziende e consistenze degli allevamenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+102_974_DF_DCSP_SPA_9,Aziende con attività connesse,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+104_466,Fertilizzanti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_1,Fertilizzanti distribuiti per stato liquido o solido - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_2,Fertilizzanti distribuiti per uso in agricoltura biologica - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_3,Fertilizzanti distribuiti per area di produzione - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_4,Fertilizzanti distribuiti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_5,Elementi nutritivi contenuti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_6,Elementi nutritivi contenuti per tipo di fertilizzante,REF_AREA,nazionale,nazionale,1,2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_7,Elementi nutritivi contenuti per ettaro di superficie concimabile - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-16
+111_111,Indicatori  permessi di costruire,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_111_DF_DCSC_PERM_RAP1_1,Nuovi fabbricati residenziali,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_111_DF_DCSC_PERM_RAP1_2,Nuova edilizia non residenziale,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_1,Clima e saldi mensili destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_10,"Clima, saldi e frequenze mensili grezzi - rip.",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_11,"Clima, saldi e frequenze mensili grezzi per Ateco",REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_12,Saldi e frequenze mensili grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_13,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_14,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_15,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_16,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_17,Clima e saldi mensili destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_18,"Clima, saldi e frequenze mensili grezzi - rip.",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_19,"Clima, saldi e frequenze mensili grezzi per Ateco",REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_2,"Clima, saldi e frequenze mensili grezzi - rip.",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_20,Saldi e frequenze mensili grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_21,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_22,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_23,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_24,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_4,Saldi e frequenze mensili grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_5,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_6,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_7,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_8,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_9,Clima e saldi mensili destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+111_40,Fiducia delle imprese costruzioni,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_1,Clima e saldi destagionalizzati - mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_2,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_3,Durata di attività assicurata grezzi - trimestrali,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_4,Clima e saldi destagionalizzati - mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_5,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_6,Durata di attività assicurata grezzi - trimestrali,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_7,Clima e saldi destagionalizzati - mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_8,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",REF_AREA,nazionale,nazionale,1,2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_9,Durata di attività assicurata grezzi - trimestrali,REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191,Indice dei nuovi ordinativi e del fatturato dei prodotti industriali,REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_1,Fatturato dei prodotti industriali - Mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_10,Volume del fatturato industriale - Mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_2,Indice di volume del fatturato manifatturiero - Mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_3,Nuovi ordinativi dei prodotti industriali - Mensili (base 2015 - dati fino a dicembre 2020),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_4,Nuovi ordinativi - Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_5,Fatturato - Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_6,Volume del fatturato manifatturiero - Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_7,Nuovi ordinativi - Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_8,Fatturato - Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+114_191_DF_DCSC_ORDFATT_9,Valore del fatturato industriale - Mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_168,Produzione industriale in quantità e valore,REF_AREA,nazionale,nazionale,1,2026-07-16
+115_168_DF_DCSP_PRODCOM_1,Produzione industriale per settore economico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_168_DF_DCSP_PRODCOM_2,Produzione in valore e quantità per singolo prodotto (Prodcom),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_168_DF_DCSP_PRODCOM_3,Produzione in valore e quantità per tutti i prodotti (Prodcom),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333,Indice della produzione industriale,REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_1,Indice della produzione industriale - Mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_2,Dettaglio settori economici (Ateco 4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_4,Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_5,Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_6,Indice della produzione industriale - Mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_1,Indice della produzione nelle costruzioni - Mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_2,Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_3,Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_4,Indice della produzione nelle costruzioni - Mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1035,Servizi bancari - dati comunali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,6113,2026-07-16
+117_1035_DF_DCAT_SERVBANC_COM_1,Servizi bancari - dati comunali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,6113,2026-07-16
+117_1057,Trasporto ferroviario,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_1,Trasporto ferroviario - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_2,Passeggeri e percorrenza media per tipo di destinazione,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_3,Merci trasportate per gruppo merceologico (NST/2007),REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_4,Merci trasportate per paese di destinazione,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_5,Merci trasportate per paese di origine,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_6,Trasporto intermodale,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_7,Merci pericolose,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_1057_DF_DCSC_TRAFERR_8,Incidenti ferroviari,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_262,Fiducia delle imprese servizi,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_1,Clima e saldi (Ateco macrosettori) - mensili grezzi e destagionalizzati,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_10,Saldi e frequenze (Ateco 2 cifre) - mensili grezzi,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_11,Saldi e frequenze (ostacoli e capacità) - trimestrali grezzi,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_2,"Clima, saldi e frequenze - mensili grezzi e destagionalizzati - rip",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_3,Saldi e frequenze (Ateco 2 cifre) - mensili grezzi,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_4,Saldi e frequenze (ostacoli e capacità) - trimestrali grezzi,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_5,Clima e saldi mensili destagionalizzati per Ateco2007 - livello nazionale e ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_6,"Clima, saldi e frequenze mensili grezzi per Ateco 2007 - livello nazionale e ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_7,Saldi e frequenze modulo trimestrale ostacoli e capacità grezzi,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_8,Clima e saldi (Ateco macrosettori) - mensili grezzi e destagionalizzati,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_9,"Clima, saldi e frequenze - mensili grezzi e destagionalizzati - rip",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+117_266,Fiducia delle imprese del commercio,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_1,Clima e saldi per forma di vendita - mensili destagionalizzati,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_2,"Clima, saldi e frequenze per Ateco 2007 e forma di vendita - mensili grezzi",REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_3,Clima e saldi mensili destagionalizzati per forma di vendita,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_4,"Clima, saldi e frequenze mensili grezzi per Ateco e forma di vendita",REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_5,Clima e saldi per forma di vendita - mensili destagionalizzati,REF_AREA,nazionale,nazionale,1,2026-07-16
+117_266_DF_DCSC_FIDCOMM_6,"Clima, saldi e frequenze per Ateco 2007 e forma di vendita - mensili grezzi",REF_AREA,nazionale,nazionale,1,2026-07-16
+119_367,Indice del fatturato dei servizi,REF_AREA,nazionale,nazionale,1,2026-07-16
+119_367_DF_DCSC_FATTSERVIZ_1_4,Indice del fatturato dei servizi - Mensili (base 2021=100),REF_AREA,nazionale,nazionale,1,2026-07-16
+11_111,Edilizia residenziale - dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_1,Fabbricati residenziali nuovi e relative abitazioni  - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_10,Superfici dei fabbricati residenziali nuovi per destinazione d'uso -  ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_11,Fabbricati residenziali nuovi e ampliamenti con relative abitazioni per richiedente il titolo abilitativo - regioni e classi di comune,REF_AREA,regione,nazionale|ripartizione|regione,41,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_12,Fabbricati residenziali nuovi per tipologia dell'impianto - ripartizioni e e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_13,Ampliamenti di fabbricati residenziali con o senza sopraelevazione - ripartizioni e e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_14,Fabbricati nuovi e ampliamenti di fabbricati destinati a collettività - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_15,Fabbricati residenziali nuovi e ampliamenti di fabbricati residenziali per piano casa - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_2,Ampliamenti di fabbricati residenziali - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_3,Fabbricati residenziali nuovi per numero di abitazioni - regioni e classi di comune,REF_AREA,regione,nazionale|ripartizione|regione,41,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_4,Fabbricati residenziali nuovi e ampliamenti per titolo abilitativo - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_5,Fabbricati residenziali nuovi e ampliamenti per durata prevista dei lavori -  ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_6,Abitazioni in fabbricati residenziali nuovi per numero di stanze - province,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_7,Abitazioni in fabbricati residenziali nuovi per classi di superficie utile abitabile - province,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_8,Abitazioni in fabbricati residenziali nuovi per numero di stanze e superficie utile abitabile - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_9,Fabbricati residenziali nuovi per numero di piani - regioni e classi di comune,REF_AREA,regione,nazionale|ripartizione|regione,41,2026-07-16
+120_337,Indice delle vendite del commercio al dettaglio,REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_1,Valore delle vendite per settore merceologico e classe di addetti -mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_10,Valore delle vendite per settore merceologico e forma distributiva - dati mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_11,"Valore delle vendite per settore merceologico, gruppi di prodotti e classe di addetti - dati mensili (base 2005)",REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_12,Valore delle vendite per settore merceologico e classe di addetti - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_13,Valore delle vendite per settore merceologico e forma distributiva - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_14,Valore delle vendite per settore merceologico e gruppi di prodotti - mensili grezzi (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_15,Volume delle vendite per settore merceologico - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_2,Valore delle vendite per settore merceologico e forma distributiva - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_3,Valore delle vendite per settore merceologico e gruppi di prodotti - mensili grezzi (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_4,Volume delle vendite per settore merceologico - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_5,Valore delle vendite per forma distributiva e classe di addetti - dati mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_6,Valore delle vendite per settore merceologico e forma distributiva - dati mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_7,"Valore delle vendite per settore merceologico, gruppi di prodotti e classe di addetti - dati mensili (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_8,Volume delle vendite per settore merceologico - dati mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
+120_337_DF_DCSC_COMMDET_1_9,Valore delle vendite per forma distributiva e classe di addetti - dati mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16

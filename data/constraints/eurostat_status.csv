@@ -1,3 +1,324 @@
 df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked_at
 AACT_ALI01,Agricultural labour input statistics - absolute figures (thousand annual work units),ok,sdmx,5,95,0,"",2026-07-16
 AACT_ALI01_R,Agricultural labour input statistics by NUTS 2 region - absolute figures (thousand annual work units),ok,sdmx,5,351,0,"",2026-07-16
+AACT_ALI02,Agricultural labour input statistics - indices,ok,sdmx,5,97,0,"",2026-07-16
+AACT_ALI02_R,Agricultural labour input statistics by NUTS 2 region - indices,ok,sdmx,5,349,0,"",2026-07-16
+AACT_EAA01,Economic accounts for agriculture - values at current prices,ok,sdmx,6,255,0,"",2026-07-16
+AACT_EAA01_R,Economic accounts for agriculture by NUTS 2 region - values at current prices,ok,sdmx,6,534,0,"",2026-07-16
+AACT_EAA02,Economic accounts for agriculture - values at n-1 prices,ok,sdmx,6,244,0,"",2026-07-16
+AACT_EAA02_R,Economic accounts for agriculture by NUTS 2 region - values at n-1 prices,ok,sdmx,6,421,0,"",2026-07-16
+AACT_EAA03,Economic accounts for agriculture - values at reference year prices,ok,sdmx,6,261,0,"",2026-07-16
+AACT_EAA04,Economic accounts for agriculture - values at real prices,ok,sdmx,6,260,0,"",2026-07-16
+AACT_EAA05,"Economic accounts for agriculture - indices (volume, price, values)",ok,sdmx,7,261,0,"",2026-07-16
+AACT_EAA05_R,"Economic accounts for agriculture by NUTS 2 region - indices (volume, price, values)",ok,sdmx,7,457,0,"",2026-07-16
+AACT_EAA06,Economic accounts for agriculture - agricultural income indicators,ok,sdmx,5,103,0,"",2026-07-16
+AACT_UV01,Unit values at basic prices,ok,sdmx,5,166,0,"",2026-07-16
+AACT_UV02,Unit values at producer prices,ok,sdmx,5,166,0,"",2026-07-16
+AACT_UV03,Unit values - quantities (thousand tonnes),ok,sdmx,4,163,0,"",2026-07-16
+ACF_D_EQ,"Success rate in obtaining equity finance, by sources, type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,8,48,0,"",2026-07-16
+ACF_D_EQ1,"Reasons for partial success or lack of success in obtaining equity finance, by type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,7,40,0,"",2026-07-16
+ACF_D_LO,"Success rate in obtaining loan finance by sources, type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,8,43,0,"",2026-07-16
+ACF_D_LO1,"Reasons for partial success or lack of success in obtaining loan finance, by type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,8,48,0,"",2026-07-16
+ACF_D_OTH,"Success rate in obtaining other types of finance, by sources, type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,8,48,0,"",2026-07-16
+ACF_D_REA,"Reasons for choosing a bank for loan finance, by type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,7,41,0,"",2026-07-16
+ACF_P_CH,"Perception of the changes between 2007 and 2010, by type of enterprise and NACE Rev. 2 (2010)",ok,sdmx,8,45,0,"",2026-07-16
+ACF_P_FA,"Factors, likely limiting business growth between 2011 and 2013, by type of enterprise and NACE Rev. 2 (2010)",ok,sdmx,7,51,0,"",2026-07-16
+ACF_P_FI,"Finance types, likely needed between 2011 and 2013, by type of enterprise and NACE Rev. 2 (2010)",ok,sdmx,7,36,0,"",2026-07-16
+ACF_P_NE,"Enterprises perceiving finance need between 2011 and 2013, by type of enterprise and NACE Rev. 2 activity (2010)",ok,sdmx,6,33,0,"",2026-07-16
+ACF_P_PU,"Potential purpose of the finance between 2011 and 2013, by type of enterprise and NACE Rev. 2 (2010)",ok,sdmx,7,40,0,"",2026-07-16
+ACF_P_SO,"Envisaged finance sources between 2011 and 2013, by type of enterprise and NACE Rev. 2 (2010)",ok,sdmx,7,47,0,"",2026-07-16
+ACF_S_INF,"Enterprises seeking finance, by type of enterprise and NACE Rev. 2 activity (2007-2010)",ok,sdmx,7,37,0,"",2026-07-16
+ACF_S_NE,"Enterprises needing guarantee in obtaining loan finance, by type of enterprise and NACE Rev. 2 activity (2007-2010)",ok,sdmx,6,34,0,"",2026-07-16
+ACF_S_OWN,"Ownership situation, by type of enterprise and NACE Rev. 2 (2004-2010)",ok,sdmx,7,40,0,"",2026-07-16
+ACF_S_TY,"Typical guarantors in obtaining loan finance, by type of enterprise and NACE Rev. 2 (2007-2010)",ok,sdmx,7,40,0,"",2026-07-16
+AEI_EF_IR,Share of irrigable and irrigated areas in utilised agricultural area (UAA) by NUTS 2 region,ok,sdmx,5,377,0,"",2026-07-16
+AEI_EF_LS,Share of main livestock types in total livestock units (LSU) by NUTS 2 region,ok,sdmx,5,385,0,"",2026-07-16
+AEI_EF_LU,Share of main land types in utilised agricultural area (UAA) by NUTS 2 region,ok,sdmx,5,378,0,"",2026-07-16
+AEI_FM_MS,Manure storage facilities by NUTS 3 region,ok,sdmx,5,1483,0,"",2026-07-16
+AEI_FM_SALPEST09,Pesticide sales,ok,sdmx,5,212,0,"",2026-07-16
+AEI_FM_USEFERT,Consumption of inorganic fertilizers,ok,sdmx,5,245,0,"",2026-07-16
+AEI_HRI,Harmonised risk indicator 1 for pesticides by categorisation of active substances,ok,sdmx,5,56,0,"",2026-07-16
+AEI_PESTSAL_RSK,Pesticide sales by categorisation of active substances,ok,sdmx,5,50,0,"",2026-07-16
+AEI_PESTUSE,Pesticide use in agriculture,ok,sdmx,6,376,0,"",2026-07-16
+AEI_PR_GNB,Gross nutrient balance,ok,sdmx,5,114,0,"",2026-07-16
+AEI_PR_SOILER,"Estimated soil erosion by water, by erosion level, land cover and NUTS 3 region",ok,sdmx,6,1653,0,"",2026-07-16
+AEI_PS_INP,"Utilised agricultural area (UAA) managed by low-, medium- and high-input farms",ok,sdmx,5,511,0,"",2026-07-16
+AGR_R_ACCTS_H,Economic accounts for agriculture by NUTS 2 region (until 2012),ok,sdmx,6,529,0,"",2026-07-16
+AGR_R_MILKPR,Production of cow's milk on farms by NUTS 2 region,ok,sdmx,5,616,0,"",2026-07-16
+APRI_AIP_EN,Purchase prices for energy products used in agriculture,ok,sdmx,5,36,0,"",2026-07-16
+APRI_AIP_FS,Purchase prices for feeding stuffs,ok,sdmx,5,43,0,"",2026-07-16
+APRI_AIP_FT,Purchase prices for fertilisers,ok,sdmx,5,42,0,"",2026-07-16
+APRI_AP_ANOUTA,Selling prices of animal products (absolute prices) - annual price (from 2000 onwards),ok,sdmx,5,90,0,"",2026-07-16
+APRI_AP_CRPOUTA,Selling prices of crop products (absolute prices) - annual price (2000-2024),ok,sdmx,5,155,0,"",2026-07-16
+APRI_AP_HAOUTA,Selling prices of animal products (absolute prices) - annual - old codes - data from 1969 to 2005,ok,sdmx,5,150,0,"",2026-07-16
+APRI_AP_HAOUTM,Selling prices of animal products (absolute prices) - monthly - old code - data from 1969 to 2006,ok,sdmx,5,574,0,"",2026-07-16
+APRI_AP_HCOUTA,Selling prices of crop products (absolute prices) - annual - old codes - data from 1969 to 2005,ok,sdmx,5,327,0,"",2026-07-16
+APRI_AP_HCOUTM,Selling prices of crop products (absolute prices) - monthly - old codes - data from 1969 to 2006,ok,sdmx,5,753,0,"",2026-07-16
+APRI_AP_HIA,Purchase prices of the means of agricultural production (absolute prices) - annual - old codes - data from 1969 to 2005,ok,sdmx,5,148,0,"",2026-07-16
+APRI_AP_HIM,Purchase prices of the means of agricultural production (absolute prices) - monthly - old codes - data from 1969 to 2006,ok,sdmx,5,556,0,"",2026-07-16
+APRI_AP_INA,Purchase prices of the means of agricultural production (absolute prices) - annual price (from 2000 onwards),ok,sdmx,5,124,0,"",2026-07-16
+APRI_LPRC,Agricultural land prices by region,ok,sdmx,5,338,0,"",2026-07-16
+APRI_LPRC_H,Agricultural land prices by region - historical data (until 2009),ok,sdmx,5,59,0,"",2026-07-16
+APRI_LRNT,Agricultural land renting prices for one year by region,ok,sdmx,5,302,0,"",2026-07-16
+APRI_LRNT_H,Agricultural land renting prices for one year by region - historical data (until 2009),ok,sdmx,5,56,0,"",2026-07-16
+APRI_PI00_INM,"Price indices of the means of agricultural production, input (2000 = 100) - monthly data (1995-2005)",ok,sdmx,6,220,0,"",2026-07-16
+APRI_PI00_OUTM,"Price indices of agricultural products, output (2000 = 100) - monthly data (1988-2005)",ok,sdmx,6,357,0,"",2026-07-16
+APRI_PI95_PRODA,EC index of producer prices of agricultural products (1995 = 100) - annual data (1988-2004),ok,sdmx,6,128,0,"",2026-07-16
+APRI_PI95_PRODM,"EC index of producer prices of agricultural products (monthly index, monthly weighting) change in quarterly averages of the monthly index (1995-2005)",ok,sdmx,6,224,0,"",2026-07-16
+APRI_PI95_PURCHA,EC indices of purchase prices of the means of agricultural production (1995 = 100) - annual data (1988-2004),ok,sdmx,6,105,0,"",2026-07-16
+APRI_PI95_PURCHM,EC indices of purchase prices of the means of agricultural production (1995 = 100) - monthly data (1995-2005),ok,sdmx,6,201,0,"",2026-07-16
+APRI_PI95_VWIA,Weights of purchase prices of the means of agricultural production - survey 1995,ok,sdmx,5,72,0,"",2026-07-16
+APRI_PI95_VWPA,Weights of producer prices of agricultural products - survey 1995,ok,sdmx,5,96,0,"",2026-07-16
+APRI_PI_INA,"Price indices of the means of agricultural production, input - annual data",ok,sdmx,6,134,0,"",2026-07-16
+APRI_PI_INQ,"Price indices of the means of agricultural production, input - quarterly data",ok,sdmx,6,208,0,"",2026-07-16
+APRI_PI_OUTA,"Price indices of agricultural products, output - annual data",ok,sdmx,6,197,0,"",2026-07-16
+APRI_PI_OUTQ,"Price indices of agricultural products, output - quarterly data",ok,sdmx,6,267,0,"",2026-07-16
+APRO_CBS_CER,Cereal balance items for the main cereals,ok,sdmx,6,60,0,"",2026-07-16
+APRO_CBS_OIL,Oilseed balance items for the main oilseeds,ok,sdmx,6,56,0,"",2026-07-16
+APRO_CPNH1,Crop production in national humidity,ok,sdmx,5,288,0,"",2026-07-16
+APRO_CPNH1_H,Crop production - historical data (1955-1999),ok,sdmx,5,278,0,"",2026-07-16
+APRO_CPNHR,Crop production in national humidity by NUTS 2 region,ok,sdmx,5,759,0,"",2026-07-16
+APRO_CPNHR_H,Crop production by NUTS 2 region - historical data (1975-1999),ok,sdmx,5,734,0,"",2026-07-16
+APRO_CPSH1,Crop production in EU standard humidity,ok,sdmx,5,288,0,"",2026-07-16
+APRO_CPSHR,Crop production in EU standard humidity by NUTS 2 region,ok,sdmx,5,759,0,"",2026-07-16
+APRO_EC_EGGHEN,Production of eggs for consumption and number of laying hens (2013-2024),ok,sdmx,6,49,0,"",2026-07-16
+APRO_EC_LSHEN,Laying hens population - annual data (1960-2012),ok,sdmx,5,85,0,"",2026-07-16
+APRO_EC_POULA,Poultry - annual data,ok,sdmx,6,117,0,"",2026-07-16
+APRO_EC_POULM,Poultry - monthly data,ok,sdmx,6,772,0,"",2026-07-16
+APRO_EC_STRHEN,Structure of hatcheries - hens,ok,sdmx,7,108,0,"",2026-07-16
+APRO_EC_STRPOUL,Structure of hatcheries - poultry other than hens,ok,sdmx,7,108,0,"",2026-07-16
+APRO_MK_COLA,Production of main cows' milk products - annual data,ok,sdmx,6,119,0,"",2026-07-16
+APRO_MK_COLM,Production of main cows' milk products - monthly data,ok,sdmx,6,764,0,"",2026-07-16
+APRO_MK_FARM,Production and utilization of milk on the farm - annual data,ok,sdmx,5,142,0,"",2026-07-16
+APRO_MK_FATPROT,Fat contents and protein contents (cow's milk) - annual data,ok,sdmx,5,116,0,"",2026-07-16
+APRO_MK_POBTA,Milk collection (all milks) and dairy products obtained - annual data,ok,sdmx,5,195,0,"",2026-07-16
+APRO_MK_STRBT,Butter - distribution of enterprises by volume of annual production,ok,sdmx,5,73,0,"",2026-07-16
+APRO_MK_STRCC,Milk collection - distribution of collection centres by volume of annual collection,ok,sdmx,5,74,0,"",2026-07-16
+APRO_MK_STRCH,Cheese - distribution of enterprises by volume of annual production,ok,sdmx,5,73,0,"",2026-07-16
+APRO_MK_STRDM,Drinking milk - distribution of enterprises by volume of annual production,ok,sdmx,5,69,0,"",2026-07-16
+APRO_MK_STRFP,Fresh products - distribution of enterprises by volume of annual production,ok,sdmx,5,68,0,"",2026-07-16
+APRO_MK_STRMK,Milk collection - distribution of enterprises by volume of annual collection,ok,sdmx,5,69,0,"",2026-07-16
+APRO_MK_STRMT,Milk treated - distribution of enterprises by volume of annual production,ok,sdmx,5,69,0,"",2026-07-16
+APRO_MK_STRPD,Powdered dairy products - distribution of enterprises by volume of annual production,ok,sdmx,5,71,0,"",2026-07-16
+APRO_MT_LSAVCH_R,Average livestock population of chicken by NUTS 2 region,ok,sdmx,6,202,0,"",2026-07-16
+APRO_MT_LSCATL,Bovine population,ok,sdmx,6,138,0,"",2026-07-16
+APRO_MT_LSEQUI,Livestock - Equidae - annual data (1960-1997),ok,sdmx,5,71,0,"",2026-07-16
+APRO_MT_LSGOAT,Goats population,ok,sdmx,6,120,0,"",2026-07-16
+APRO_MT_LSPIG,Pig population,ok,sdmx,6,122,0,"",2026-07-16
+APRO_MT_LSSHEEP,Sheep population,ok,sdmx,6,120,0,"",2026-07-16
+APRO_MT_LS_R,Animal populations by NUTS 2 region,ok,sdmx,5,656,0,"",2026-07-16
+APRO_MT_PANN,Slaughtering in slaughterhouses - annual data,ok,sdmx,6,160,0,"",2026-07-16
+APRO_MT_PCATLHS,"Production forecasts for bovines, sheep and goats - bi-annual data",ok,sdmx,6,119,0,"",2026-07-16
+APRO_MT_PHEADM,Meat production and foreign trade - monthly data,ok,sdmx,6,1001,0,"",2026-07-16
+APRO_MT_PPIGHQ,Production forecasts for pigs - quarterly data,ok,sdmx,6,170,0,"",2026-07-16
+APRO_MT_PSLOTHM,"Estimates of slaughtering, other than in slaughterhouses - monthly data",ok,sdmx,6,245,0,"",2026-07-16
+APRO_MT_PWGTM,Slaughtering in slaughterhouses - monthly data,ok,sdmx,6,994,0,"",2026-07-16
+APRO_MT_SLOTH,"Estimates of slaughtering, other than in slaughterhouses - annual data",ok,sdmx,6,79,0,"",2026-07-16
+APRO_MT_STRCATL,"Cattles - total, dairy cow and other cows (1973-2007)",ok,sdmx,6,87,0,"",2026-07-16
+APRO_MT_STRGOAT,Goats (1993-2007),ok,sdmx,6,52,0,"",2026-07-16
+APRO_MT_STRPIG,"Pigs - total, fattening pigs and sows (1973-2007)",ok,sdmx,6,83,0,"",2026-07-16
+APRO_MT_STRSHE,Sheep (1993-2007),ok,sdmx,6,58,0,"",2026-07-16
+AVIA_EC_EMP_ARP,Persons employed in main airports by sex,ok,sdmx,5,231,0,"",2026-07-16
+AVIA_EC_EMP_ENT,Persons employed in aviation and airport enterprises by sex (2001-2013),ok,sdmx,5,34,0,"",2026-07-16
+AVIA_EC_ENTERP,Aviation and airport enterprises (2001-2013),ok,sdmx,4,32,0,"",2026-07-16
+AVIA_EQ_ARC_AGE,Commercial aircraft fleet by age of aircraft and country of operator,ok,sdmx,5,70,0,"",2026-07-16
+AVIA_EQ_ARC_AGEREG,Commercial aircraft fleet by age of aircraft and country of registration,ok,sdmx,5,70,0,"",2026-07-16
+AVIA_EQ_ARC_TYP,Commercial aircraft fleet by aircraft category and country of operator,ok,sdmx,5,74,0,"",2026-07-16
+AVIA_EQ_ARC_TYPREG,Commercial aircraft fleet by aircraft category and country of registration,ok,sdmx,5,74,0,"",2026-07-16
+AVIA_GOEXAC,International extra-EU freight and mail air transport between main airports and partner world region and countries,ok,sdmx,6,1161,0,"",2026-07-16
+AVIA_GOEXCC,International extra-EU freight and mail air transport between reporting and partner world regions and countries by type of schedule (from 2008 and onwards),ok,sdmx,7,556,0,"",2026-07-16
+AVIA_GOEXCCO,International extra-EU freight and mail air transport by reporting country and partner world region and countries (1993-2007),ok,sdmx,6,413,0,"",2026-07-16
+AVIA_GOOA,"Freight and mail air transport by type of schedule, transport coverage and main airports",ok,sdmx,7,1376,0,"",2026-07-16
+AVIA_GOOAC,Freight and mail air transport between main airports and partner reporting countries,ok,sdmx,6,1400,0,"",2026-07-16
+AVIA_GOOC,"Freight and mail air transport by type of schedule, transport coverage and country",ok,sdmx,7,633,0,"",2026-07-16
+AVIA_GOOCC,Freight and mail air transport between reporting and partner countries by type of schedule,ok,sdmx,7,662,0,"",2026-07-16
+AVIA_GOODIS,"Freight and mail air transport by aircraft model, distance bands and transport coverage",ok,sdmx,8,83,0,"",2026-07-16
+AVIA_GOR_AT,Freight and mail air transport routes between partner airports and main airports in Austria,ok,sdmx,5,675,0,"",2026-07-16
+AVIA_GOR_BA,Freight and mail air transport routes between partner airports and main airports in Bosnia and Herzegovina,ok,sdmx,5,97,0,"",2026-07-16
+AVIA_GOR_BE,Freight and mail air transport routes between partner airports and main airports in Belgium,ok,sdmx,5,1054,0,"",2026-07-16
+AVIA_GOR_BG,Freight and mail air transport routes between partner airports and main airports in Bulgaria,ok,sdmx,5,447,0,"",2026-07-16
+AVIA_GOR_CH,Freight and mail air transport routes between partner airports and main airports in Switzerland,ok,sdmx,5,837,0,"",2026-07-16
+AVIA_GOR_CY,Freight and mail air transport routes between partner airports and main airports in Cyprus,ok,sdmx,5,455,0,"",2026-07-16
+AVIA_GOR_DE,Freight and mail air transport routes between partner airports and main airports in Germany,ok,sdmx,5,2127,0,"",2026-07-16
+AVIA_GOR_DK,Freight and mail air transport routes between partner airports and main airports in Denmark,ok,sdmx,5,592,0,"",2026-07-16
+AVIA_GOR_EE,Freight and mail air transport routes between partner airports and main airports in Estonia,ok,sdmx,5,418,0,"",2026-07-16
+AVIA_GOR_EL,Freight and mail air transport routes between partner airports and main airports in Greece,ok,sdmx,5,753,0,"",2026-07-16
+AVIA_GOR_ES,Freight and mail air transport routes between partner airports and main airports in Spain,ok,sdmx,5,1636,0,"",2026-07-16
+AVIA_GOR_FI,Freight and mail air transport routes between partner airports and main airports in Finland,ok,sdmx,5,635,0,"",2026-07-16
+AVIA_GOR_FR,Freight and mail air transport routes between partner airports and main airports in France,ok,sdmx,5,1935,0,"",2026-07-16
+AVIA_GOR_HR,Freight and mail air transport routes between partner airports and main airports in Croatia,ok,sdmx,5,360,0,"",2026-07-16
+AVIA_GOR_HU,Freight and mail air transport routes between partner airports and main airports in Hungary,ok,sdmx,5,519,0,"",2026-07-16
+AVIA_GOR_IE,Freight and mail air transport routes between partner airports and main airports in Ireland,ok,sdmx,5,616,0,"",2026-07-16
+AVIA_GOR_IS,Freight and mail air transport routes between partner airports and main airports in Iceland,ok,sdmx,5,465,0,"",2026-07-16
+AVIA_GOR_IT,Freight and mail air transport routes between partner airports and main airports in Italy,ok,sdmx,5,1819,0,"",2026-07-16
+AVIA_GOR_LT,Freight and mail air transport routes between partner airports and main airports in Lithuania,ok,sdmx,5,466,0,"",2026-07-16
+AVIA_GOR_LU,Freight and mail air transport routes between partner airports and main airports in Luxembourg,ok,sdmx,5,564,0,"",2026-07-16
+AVIA_GOR_LV,Freight and mail air transport routes between partner airports and main airports in Latvia,ok,sdmx,5,464,0,"",2026-07-16
+AVIA_GOR_ME,Freight and mail air transport routes between partner airports and main airports in Montenegro,ok,sdmx,5,168,0,"",2026-07-16
+AVIA_GOR_MK,Freight and mail air transport routes between partner airports and main airports in North Macedonia,ok,sdmx,5,214,0,"",2026-07-16
+AVIA_GOR_MT,Freight and mail air transport routes between partner airports and main airports in Malta,ok,sdmx,5,491,0,"",2026-07-16
+AVIA_GOR_NL,Freight and mail air transport routes between partner airports and main airports in the Netherlands,ok,sdmx,5,844,0,"",2026-07-16
+AVIA_GOR_NO,Freight and mail air transport routes between partner airports and main airports in Norway,ok,sdmx,5,493,0,"",2026-07-16
+AVIA_GOR_PL,Freight and mail air transport routes between partner airports and main airports in Poland,ok,sdmx,5,624,0,"",2026-07-16
+AVIA_GOR_PT,Freight and mail air transport routes between partner airports and main airports in Portugal,ok,sdmx,5,735,0,"",2026-07-16
+AVIA_GOR_RO,Freight and mail air transport routes between partner airports and main airports in Romania,ok,sdmx,5,519,0,"",2026-07-16
+AVIA_GOR_RS,Freight and mail air transport routes between partner airports and main airports in Serbia,ok,sdmx,5,255,0,"",2026-07-16
+AVIA_GOR_SE,Freight and mail air transport routes between partner airports and main airports in Sweden,ok,sdmx,5,618,0,"",2026-07-16
+AVIA_GOR_SI,Freight and mail air transport routes between partner airports and main airports in Slovenia,ok,sdmx,5,430,0,"",2026-07-16
+AVIA_GOR_SK,Freight and mail air transport routes between partner airports and main airports in Slovakia,ok,sdmx,5,465,0,"",2026-07-16
+AVIA_GOR_TR,Freight and mail air transport routes between partner airports and main airports in Türkiye,ok,sdmx,5,336,0,"",2026-07-16
+AVIA_GOR_UK,Freight and mail air transport routes between partner airports and main airports in the United Kingdom,ok,sdmx,5,1876,0,"",2026-07-16
+AVIA_IF_ARP,Commercial airports by type,ok,sdmx,5,68,0,"",2026-07-16
+AVIA_IF_ARP_CO,Airport connections to transport infrastructure,ok,sdmx,4,185,0,"",2026-07-16
+AVIA_IF_TYP,Airport infrastructures by type,ok,sdmx,5,242,0,"",2026-07-16
+AVIA_PAEXAC,International extra-EU air passenger transport between main airports and partner world region and countries,ok,sdmx,6,1204,0,"",2026-07-16
+AVIA_PAEXCC,International extra-EU air passenger transport between reporting and partner world regions and countries by type of schedule (from 2008 and onwards),ok,sdmx,7,556,0,"",2026-07-16
+AVIA_PAEXCCO,International extra-EU air passenger transport by reporting country and partner world region and countries (1993-2007),ok,sdmx,6,414,0,"",2026-07-16
+AVIA_PAOA,"Air passenger transport by type of schedule, transport coverage and main airports",ok,sdmx,7,1463,0,"",2026-07-16
+AVIA_PAOAC,Air passenger transport between main airports and partner reporting countries,ok,sdmx,6,1487,0,"",2026-07-16
+AVIA_PAOC,"Air passenger transport by type of schedule, transport coverage and country",ok,sdmx,7,633,0,"",2026-07-16
+AVIA_PAOCC,Air passenger transport between reporting and partner countries by type of schedule,ok,sdmx,7,662,0,"",2026-07-16
+AVIA_PAODIS,"Air passenger transport by aircraft model, distance bands and transport coverage",ok,sdmx,8,82,0,"",2026-07-16
+AVIA_PAR_AT,Air passenger transport routes between partner airports and main airports in Austria,ok,sdmx,5,756,0,"",2026-07-16
+AVIA_PAR_BA,Air passenger transport routes between partner airports and main airports in Bosnia and Herzegovina,ok,sdmx,5,105,0,"",2026-07-16
+AVIA_PAR_BE,Air passenger transport routes between partner airports and main airports in Belgium,ok,sdmx,5,750,0,"",2026-07-16
+AVIA_PAR_BG,Air passenger transport routes between partner airports and main airports in Bulgaria,ok,sdmx,5,519,0,"",2026-07-16
+AVIA_PAR_CH,Air passenger transport routes between partner airports and main airports in Switzerland,ok,sdmx,5,848,0,"",2026-07-16
+AVIA_PAR_CY,Air passenger transport routes between partner airports and main airports in Cyprus,ok,sdmx,5,542,0,"",2026-07-16
+AVIA_PAR_DE,Air passenger transport routes between partner airports and main airports in Germany,ok,sdmx,5,2770,0,"",2026-07-16
+AVIA_PAR_DK,Air passenger transport routes between partner airports and main airports in Denmark,ok,sdmx,5,642,0,"",2026-07-16
+AVIA_PAR_EE,Air passenger transport routes between partner airports and main airports in Estonia,ok,sdmx,5,427,0,"",2026-07-16
+AVIA_PAR_EL,Air passenger transport routes between partner airports and main airports in Greece,ok,sdmx,5,1535,0,"",2026-07-16
+AVIA_PAR_ES,Air passenger transport routes between partner airports and main airports in Spain,ok,sdmx,5,2533,0,"",2026-07-16
+AVIA_PAR_FI,Air passenger transport routes between partner airports and main airports in Finland,ok,sdmx,5,647,0,"",2026-07-16
+AVIA_PAR_FR,Air passenger transport routes between partner airports and main airports in France,ok,sdmx,5,2363,0,"",2026-07-16
+AVIA_PAR_HR,Air passenger transport routes between partner airports and main airports in Croatia,ok,sdmx,5,583,0,"",2026-07-16
+AVIA_PAR_HU,Air passenger transport routes between partner airports and main airports in Hungary,ok,sdmx,5,544,0,"",2026-07-16
+AVIA_PAR_IE,Air passenger transport routes between partner airports and main airports in Ireland,ok,sdmx,5,763,0,"",2026-07-16
+AVIA_PAR_IS,Air passenger transport routes between partner airports and main airports in Iceland,ok,sdmx,5,475,0,"",2026-07-16
+AVIA_PAR_IT,Air passenger transport routes between partner airports and main airports in Italy,ok,sdmx,5,2677,0,"",2026-07-16
+AVIA_PAR_LT,Air passenger transport routes between partner airports and main airports in Lithuania,ok,sdmx,5,523,0,"",2026-07-16
+AVIA_PAR_LU,Air passenger transport routes between partner airports and main airports in Luxembourg,ok,sdmx,5,436,0,"",2026-07-16
+AVIA_PAR_LV,Air passenger transport routes between partner airports and main airports in Latvia,ok,sdmx,5,472,0,"",2026-07-16
+AVIA_PAR_ME,Air passenger transport routes between partner airports and main airports in Montenegro,ok,sdmx,5,229,0,"",2026-07-16
+AVIA_PAR_MK,Air passenger transport routes between partner airports and main airports in North Macedonia,ok,sdmx,5,244,0,"",2026-07-16
+AVIA_PAR_MT,Air passenger transport routes between partner airports and main airports in Malta,ok,sdmx,5,516,0,"",2026-07-16
+AVIA_PAR_NL,Air passenger transport routes between partner airports and main airports in the Netherlands,ok,sdmx,5,945,0,"",2026-07-16
+AVIA_PAR_NO,Air passenger transport routes between partner airports and main airports in Norway,ok,sdmx,5,828,0,"",2026-07-16
+AVIA_PAR_PL,Air passenger transport routes between partner airports and main airports in Poland,ok,sdmx,5,1182,0,"",2026-07-16
+AVIA_PAR_PT,Air passenger transport routes between partner airports and main airports in Portugal,ok,sdmx,5,915,0,"",2026-07-16
+AVIA_PAR_RO,Air passenger transport routes between partner airports and main airports in Romania,ok,sdmx,5,776,0,"",2026-07-16
+AVIA_PAR_RS,Air passenger transport routes between partner airports and main airports in Serbia,ok,sdmx,5,268,0,"",2026-07-16
+AVIA_PAR_SE,Air passenger transport routes between partner airports and main airports in Sweden,ok,sdmx,5,800,0,"",2026-07-16
+AVIA_PAR_SI,Air passenger transport routes between partner airports and main airports in Slovenia,ok,sdmx,5,408,0,"",2026-07-16
+AVIA_PAR_SK,Air passenger transport routes between partner airports and main airports in Slovakia,ok,sdmx,5,499,0,"",2026-07-16
+AVIA_PAR_TR,Air passenger transport routes between partner airports and main airports in Türkiye,ok,sdmx,5,1506,0,"",2026-07-16
+AVIA_PAR_UK,Air passenger transport routes between partner airports and main airports in the United Kingdom,ok,sdmx,5,2732,0,"",2026-07-16
+AVIA_TF_ACA,"Air transport by aircraft model, transport coverage and main airports",ok,sdmx,7,1149,0,"",2026-07-16
+AVIA_TF_ACC,Aircraft traffic data by reporting country,ok,sdmx,7,425,0,"",2026-07-16
+AVIA_TF_AIRPM,Commercial flights by reporting airport and type of schedule - monthly data,ok,sdmx,5,959,0,"",2026-07-16
+AVIA_TF_ALA,"Air transport by airline licence (EU or non-EU), main airports and transport coverage",ok,sdmx,7,1132,0,"",2026-07-16
+AVIA_TF_APAL,Air transport by airline licence (EU or non-EU) and reporting airports,ok,sdmx,6,1418,0,"",2026-07-16
+AVIA_TF_CM,Commercial flights by reporting country and type of schedule - monthly data,ok,sdmx,5,137,0,"",2026-07-16
+AVIA_TPGO,Freight and mail air transport over national territory (including territorial sea) - million tonne-km,ok,sdmx,5,54,0,"",2026-07-16
+AVIA_TPPA,Passenger air transport over national territory (including territorial sea) - million passenger-km,ok,sdmx,5,53,0,"",2026-07-16
+BD_9AC_L_FORM_R2,Business demography by legal form and NACE Rev. 2 activity (2004-2020),ok,sdmx,6,275,0,"",2026-07-16
+BD_9AC_L_FORM_R2$DV_343,Business demography by legal form and NACE Rev. 2 activity (2004-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9AC_L_FORM_R2$DV_343'
+For more information check: https://develop",2026-07-16
+BD_9A_L_FORM,"Business demography by legal form (until 2007, NACE Rev. 1.1)",ok,sdmx,6,188,0,"",2026-07-16
+BD_9BD_SZ_CL_R2,Business demography by size class and NACE Rev. 2 activity (2004-2020),ok,sdmx,6,344,0,"",2026-07-16
+BD_9BD_SZ_CL_R2$DV_585,Business demography by size class and NACE Rev. 2 activity (2004-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9BD_SZ_CL_R2$DV_585'
+For more information check: https://develope",2026-07-16
+BD_9BD_SZ_CL_R2$DV_61,Business demography by size class and NACE Rev. 2 activity (2004-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9BD_SZ_CL_R2$DV_61'
+For more information check: https://developer",2026-07-16
+BD_9B_SIZE_CL,"Business demography by size class (until 2007, NACE Rev. 1.1)",ok,sdmx,6,256,0,"",2026-07-16
+BD_9C_L_FORM,"Preliminary results on enterprise deaths presented by legal form (until 2007, NACE Rev. 1.1)",ok,sdmx,6,160,0,"",2026-07-16
+BD_9D_SIZE_CL,"Preliminary results on enterprise deaths presented by size class (until 2007, NACE Rev. 1.1)",ok,sdmx,6,163,0,"",2026-07-16
+BD_9EG_L_FORM_R2,Employer business demography by legal form and NACE Rev. 2 activity (2004-2020),ok,sdmx,6,269,0,"",2026-07-16
+BD_9EG_L_FORM_R2$DV_344,Employer business demography by legal form and NACE Rev. 2 activity (2004-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9EG_L_FORM_R2$DV_344'
+For more information check: https://develop",2026-07-16
+BD_9E_L_FORM,"Employer business demography by legal form (until 2007, NACE Rev. 1.1)",ok,sdmx,6,174,0,"",2026-07-16
+BD_9FH_SZ_CL_R2,Employer business demography by size class and NACE Rev. 2 activity (2004-2020),ok,sdmx,6,334,0,"",2026-07-16
+BD_9FH_SZ_CL_R2$DV_345,Employer business demography by size class and NACE Rev. 2 activity (2004-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9FH_SZ_CL_R2$DV_345'
+For more information check: https://develope",2026-07-16
+BD_9F_SIZE_CL,"Employer business demography by size class (until 2007, NACE Rev. 1.1)",ok,sdmx,6,235,0,"",2026-07-16
+BD_9G_L_FORM,"Preliminary results on employer enterprise deaths presented by legal form (until 2007, NACE Rev. 1.1)",ok,sdmx,6,151,0,"",2026-07-16
+BD_9H_SIZE_CL,"Preliminary results on employer enterprise deaths presented by size class (until 2007, NACE Rev. 1.1)",ok,sdmx,6,153,0,"",2026-07-16
+BD_9N,"Indicators with growth by 20% or more (until 2007, NACE Rev. 1.1)",ok,sdmx,7,170,0,"",2026-07-16
+BD_9N_R2,"Indicators with growth by 20% or more (NACE Rev. 2, 2007-2013)",ok,sdmx,7,243,0,"",2026-07-16
+BD_9N_R2$DV_346,"Indicators with growth by 20% or more (NACE Rev. 2, 2007-2013)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9N_R2$DV_346'
+For more information check: https://developer.mozil",2026-07-16
+BD_9PM_R2,High growth enterprises (growth by 10% or more) and related employment by NACE Rev. 2 (2008-2020),ok,sdmx,5,391,0,"",2026-07-16
+BD_9PM_R2$DV_2421,High growth enterprises (growth by 10% or more) and related employment by NACE Rev. 2 (2008-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_9PM_R2$DV_2421'
+For more information check: https://developer.moz",2026-07-16
+BD_ENACE2_R3,Employer business demography by NACE Rev. 2 and NUTS 3 region (2008-2020),ok,sdmx,5,1259,0,"",2026-07-16
+BD_ESIZE_R3,Employer business demography by size class and NUTS 3 region (2008-2019),ok,sdmx,6,1255,0,"",2026-07-16
+BD_HG,High growth enterprises and related employment by NACE Rev. 2 activity,ok,sdmx,5,387,0,"",2026-07-16
+BD_HG$DV_2307,High growth enterprises and related employment by NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_HG$DV_2307'
+For more information check: https://developer.mozilla",2026-07-16
+BD_HGNACE2_R3,Business demography and high growth enterprise by NACE Rev. 2 and NUTS 3 region (2008-2020),ok,sdmx,5,1302,0,"",2026-07-16
+BD_HGNACE_R,Business demography and high growth enterprises by NACE Rev. 2 activity and NUTS 3 region,ok,sdmx,5,1652,0,"",2026-07-16
+BD_HG_MICRO,High growth micro enterprises and related employment by NACE Rev. 2 activity,ok,sdmx,6,359,0,"",2026-07-16
+BD_HG_MICRO$DV_2422,High growth micro enterprises and related employment by NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_HG_MICRO$DV_2422'
+For more information check: https://developer.m",2026-07-16
+BD_L_FORM,Business demography by legal form and NACE Rev. 2 activity,ok,sdmx,6,204,0,"",2026-07-16
+BD_L_FORM$DV_2303,Business demography by legal form and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_L_FORM$DV_2303'
+For more information check: https://developer.moz",2026-07-16
+BD_SALGE1_L_FORM,Employer business demography by legal form and NACE Rev. 2 activity,ok,sdmx,6,201,0,"",2026-07-16
+BD_SALGE1_L_FORM$DV_2305,Employer business demography by legal form and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SALGE1_L_FORM$DV_2305'
+For more information check: https://develo",2026-07-16
+BD_SALGE1_NACE_R,Employer business demography by NACE Rev. 2 activity and NUTS 3 region,ok,sdmx,5,1650,0,"",2026-07-16
+BD_SALGE1_SIZE,Employer business demography by size class and NACE Rev. 2 activity,ok,sdmx,7,222,0,"",2026-07-16
+BD_SALGE1_SIZE$DV_2306,Employer business demography by size class and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SALGE1_SIZE$DV_2306'
+For more information check: https://develope",2026-07-16
+BD_SALGE1_SIZE_R,Employer business demography by size class and NUTS 3 region,ok,sdmx,6,1645,0,"",2026-07-16
+BD_SIZE,Business demography by size class and NACE Rev. 2 activity,ok,sdmx,7,227,0,"",2026-07-16
+BD_SIZE$DV_1483,Business demography by size class and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SIZE$DV_1483'
+For more information check: https://developer.mozil",2026-07-16
+BD_SIZE$DV_1502,Business demography by size class and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SIZE$DV_1502'
+For more information check: https://developer.mozil",2026-07-16
+BD_SIZE$DV_2304,Business demography by size class and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SIZE$DV_2304'
+For more information check: https://developer.mozil",2026-07-16
+BD_SIZE$DV_3244,Business demography by size class and NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BD_SIZE$DV_3244'
+For more information check: https://developer.mozil",2026-07-16
+BD_SIZE_R,Business demography by size class and NUTS 3 region,ok,sdmx,6,1646,0,"",2026-07-16
+BD_SIZE_R3,Business demography by size class and NUTS 3 region (2008-2020),ok,sdmx,6,1297,0,"",2026-07-16
+BOP_C6_A,Balance of payments by country - annual data (BPM6),ok,sdmx,9,371,0,"",2026-07-16
+BOP_C6_M,Balance of payments by country - monthly data (BPM6),ok,sdmx,9,559,0,"",2026-07-16
+BOP_C6_Q,Balance of payments by country - quarterly data (BPM6),ok,sdmx,9,468,0,"",2026-07-16
+BOP_EU6_M,European Union and euro area balance of payments - monthly data (BPM6),ok,sdmx,10,410,0,"",2026-07-16
+BOP_EU6_Q,European Union and euro area balance of payments - quarterly data (BPM6),ok,sdmx,10,360,0,"",2026-07-16
+BOP_EUINS6_A,Balance of payments of the EU institutions - annual data (BPM6),ok,sdmx,9,500,0,"",2026-07-16
+BOP_EUINS6_IIP,International investment position of the EU institutions (BPM6),ok,sdmx,9,277,0,"",2026-07-16
+BOP_EUINS6_M,Balance of payments of the EU institutions - monthly data (BPM6),ok,sdmx,9,741,0,"",2026-07-16
+BOP_EUINS6_Q,Balance of payments of the EU institutions - quarterly data (BPM6),ok,sdmx,9,554,0,"",2026-07-16
+BOP_EXMS6_Q,Export market shares (BPM6),ok,sdmx,7,97,0,"",2026-07-16
+BOP_FDI6_FLOW,"EU direct investment flows, by country and economic activity (BPM6)",ok,sdmx,9,470,0,"",2026-07-16
+BOP_FDI6_FLOW$DV_3229,"EU direct investment flows, by country and economic activity (BPM6)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BOP_FDI6_FLOW$DV_3229'
+For more information check: https://developer",2026-07-16
+BOP_FDI6_GEO,"EU direct investment positions, flows and income, by countries (BPM6)",ok,sdmx,7,372,0,"",2026-07-16
+BOP_FDI6_INC,"EU direct investment income, by country and economic activity (BPM6)",ok,sdmx,9,478,0,"",2026-07-16
+BOP_FDI6_INC$DV_3230,"EU direct investment income, by country and economic activity (BPM6)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BOP_FDI6_INC$DV_3230'
+For more information check: https://developer.",2026-07-16
+BOP_FDI6_IND,"EU direct investments indicators in % of GDP, impact indicators and rate of return on direct investment (BPM6)",ok,sdmx,7,82,0,"",2026-07-16
+BOP_FDI6_POS,"EU direct investment positions by country, ultimate and immediate counterpart and economic activity (BPM6)",ok,sdmx,10,479,0,"",2026-07-16
+BOP_FDI6_POS$DV_3228,"EU direct investment positions by country, ultimate and immediate counterpart and economic activity (BPM6)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BOP_FDI6_POS$DV_3228'
+For more information check: https://developer.",2026-07-16
+BOP_FDI_FLOW_R2,"EU direct investment flows, by country and economic activity (NACE Rev. 2)",ok,sdmx,8,454,0,"",2026-07-16
+BOP_FDI_INC_R2,"EU direct investment income, by country and economic activity (NACE Rev. 2)",ok,sdmx,8,452,0,"",2026-07-16
+BOP_FDI_POS_R2,"EU direct investment positions, by country and economic activity (NACE Rev. 2)",ok,sdmx,7,451,0,"",2026-07-16
+BOP_GDP6_Q,Main Balance of Payments and International Investment Position items as share of GDP (BPM6),ok,sdmx,8,261,0,"",2026-07-16
+BOP_IIP6_Q,International investment position - quarterly and annual data (BPM6),ok,sdmx,9,440,0,"",2026-07-16
+BOP_ITS6_DET,International trade in services (since 2010) (BPM6),ok,sdmx,7,510,0,"",2026-07-16
+BOP_ITS6_DET$DV_3102,International trade in services (since 2010) (BPM6),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BOP_ITS6_DET$DV_3102'
+For more information check: https://developer.",2026-07-16
+BOP_ITS6_DET$DV_347,International trade in services (since 2010) (BPM6),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/BOP_ITS6_DET$DV_347'
+For more information check: https://developer.m",2026-07-16
+BOP_ITS6_TOT,"Total services, detailed geographical breakdown by EU Member States (since 2010) (BPM6)",ok,sdmx,7,367,0,"",2026-07-16
+BOP_ITS_DET,International trade in services - historical data (2004-2013),ok,sdmx,7,283,0,"",2026-07-16
+BOP_ITS_DETH,International trade in services - historical data (1985-2003),ok,sdmx,7,278,0,"",2026-07-16
+BOP_ITS_STR,International trade in services - market integration indicators - historical data (1992-2013),ok,sdmx,5,64,0,"",2026-07-16
+BOP_ITS_TOT,"Total services, detailed geographical breakdown by EU Member States - historical data (2002-2012)",ok,sdmx,7,358,0,"",2026-07-16
+BOP_REM6,Personal transfers and compensation of employees,ok,sdmx,7,378,0,"",2026-07-16
+BS_BS10_00,Turnover by client specialisation and employment size class (2000),ok,sdmx,6,17,0,"",2026-07-16
+BS_BS10_04,Number of enterprises carrying out cross border trade by type of cross border trade and economic activity (2004),ok,sdmx,6,42,0,"",2026-07-16

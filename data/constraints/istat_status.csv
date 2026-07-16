@@ -27,3 +27,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 101_12_DF_DCSP_PREZZIAGR_12,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020)",ok,hub,4,26,0,"",2026-07-16
 101_12_DF_DCSP_PREZZIAGR_2,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)",ok,hub,4,27,0,"",2026-07-16
 101_12_DF_DCSP_PREZZIAGR_3,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)",ok,hub,4,37,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_4,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2015)",ok,hub,4,26,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_5,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2010)",ok,hub,4,36,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_6,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2010)",ok,hub,4,25,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_7,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2010)",ok,hub,4,36,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_8,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2010)",ok,hub,4,25,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_9,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2020)",ok,hub,4,38,0,"",2026-07-16
+101_148,Risultati economici delle aziende agricole,ok,hub,10,113,0,"",2026-07-16
+101_148_DF_DCSP_RICAREA_1,Risultati economici delle aziende agricole - Principali dati,ok,hub,4,47,0,"",2026-07-16
+101_148_DF_DCSP_RICAREA_2,Valori economici medi per azienda per classe di ULA,ok,hub,4,28,0,"",2026-07-16
+101_148_DF_DCSP_RICAREA_3,Valori economici medi per azienda per classe di fatturato,ok,hub,4,32,0,"",2026-07-16
+101_148_DF_DCSP_RICAREA_4,Valori economici medi per azienda per forma giuridica,ok,hub,4,29,0,"",2026-07-16
+101_148_DF_DCSP_RICAREA_5,Idicatori di performance per settore,ok,hub,4,19,0,"",2026-07-16
+101_22,Fitosanitari,ok,hub,7,254,0,"",2026-07-16
+101_22_DF_DCSP_FITOSANITARI_1,Prodotti distribuiti - prov.,ok,hub,5,159,0,"",2026-07-16
+101_22_DF_DCSP_FITOSANITARI_2,Principi attivi contenuti - prov.,ok,hub,4,193,0,"",2026-07-16
+101_22_DF_DCSP_FITOSANITARI_3,Utilizzo per tipo di coltura - Principali dati,ok,hub,5,42,0,"",2026-07-16
+101_22_DF_DCSP_FITOSANITARI_4,Utilizzo - dettaglio di principio attivo,ok,hub,5,75,0,"",2026-07-16
+101_22_DF_DCSP_FITOSANITARI_5,Classe di trattamenti effettuati,ok,hub,6,29,0,"",2026-07-16
+101_959,Latte e prodotti lattiero caseari,ok,hub,6,166,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_1,Prodotti - dati mensili,ok,hub,4,11,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_2,Prodotti per tipo di unità produttiva,ok,hub,5,88,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_3,Quantità di materie prime fresche importate,ok,hub,4,8,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_4,Prodotti e stabilimenti per classi di tonnellate di prodotto,ok,hub,6,123,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_5,Stabilimenti per unità produttive - reg,ok,hub,4,39,0,"",2026-07-16
+101_959_DF_DCSP_LATTE_6,Prodotti - reg,ok,hub,4,110,0,"",2026-07-16
+101_961,Consistenze degli allevamenti,ok,hub,5,72,0,"",2026-07-16
+101_961_DF_DCSP_CONSISTENZE_1,Consistenze al 1° dicembre - reg,ok,hub,5,69,0,"",2026-07-16
+101_961_DF_DCSP_CONSISTENZE_2,Consistenze al 1° giugno,ok,hub,5,37,0,"",2026-07-16
+101_962,Import export di bestiame,ok,hub,5,30,0,"",2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_1,Animali vivi - dati mensili,ok,hub,5,21,0,"",2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_2,Animali vivi - dati annuali,ok,hub,5,21,0,"",2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_3,Carni - dati mensili,ok,hub,5,14,0,"",2026-07-16
+101_962_DF_DCSP_LIVESTIMPEXP_4,Carni - dati annuali,ok,hub,5,18,0,"",2026-07-16
+101_965,Agriturismo,ok,hub,9,197,0,"",2026-07-16
+101_965_DF_DCSP_AGRITURISMO_1,Aziende autorizzate - prov,ok,hub,5,149,0,"",2026-07-16
+101_965_DF_DCSP_AGRITURISMO_2,Servizi agrituristici,ok,hub,5,179,0,"",2026-07-16
+101_965_DF_DCSP_AGRITURISMO_3,Zona altimetrica e sesso del conduttore - prov,ok,hub,6,151,0,"",2026-07-16
+101_965_DF_DCSP_AGRITURISMO_4,Durata dell'autorizzazione - prov,ok,hub,5,150,0,"",2026-07-16
+101_965_DF_DCSP_AGRITURISMO_5,Dinamica autorizzazioni - prov,ok,hub,4,146,0,"",2026-07-16
+102_974,Struttura delle aziende agricole,ok,hub,16,273,0,"",2026-07-16
+102_974_DF_DCSP_SPA_1,Aziende e superfici per titolo di possesso,ok,hub,5,50,0,"",2026-07-16
+102_974_DF_DCSP_SPA_10,Aziende con energia rinnovabile,ok,hub,5,42,0,"",2026-07-16
+102_974_DF_DCSP_SPA_11,Aziende e mezzi meccanici,ok,hub,6,51,0,"",2026-07-16
+102_974_DF_DCSP_SPA_12,Aziende per forma giuridica,ok,hub,5,47,0,"",2026-07-16
+102_974_DF_DCSP_SPA_13,Aziende per titolo di studio del conduttore,ok,hub,5,46,0,"",2026-07-16
+102_974_DF_DCSP_SPA_14,Persone e giornate di lavoro per tipo di manodopera,ok,hub,5,48,0,"",2026-07-16
+102_974_DF_DCSP_SPA_2,Aziende e superfici per classe di superficie,ok,hub,5,48,0,"",2026-07-16
+102_974_DF_DCSP_SPA_3,Aziende e superfici per forma di conduzione,ok,hub,5,45,0,"",2026-07-16
+102_974_DF_DCSP_SPA_4,Aziende a superficie irrigabile ed irrigata,ok,hub,4,39,0,"",2026-07-16
+102_974_DF_DCSP_SPA_5,Aziende e superfici per coltivazione biologiche,ok,hub,4,38,0,"",2026-07-16
+102_974_DF_DCSP_SPA_6,Aziende e superfici,ok,hub,4,47,0,"",2026-07-16
+102_974_DF_DCSP_SPA_7,Aziende e superfici per coltivazione,ok,hub,6,143,0,"",2026-07-16
+102_974_DF_DCSP_SPA_8,Aziende e consistenze degli allevamenti,ok,hub,5,57,0,"",2026-07-16
+102_974_DF_DCSP_SPA_9,Aziende con attività connesse,ok,hub,5,42,0,"",2026-07-16
+104_466,Fertilizzanti,ok,hub,8,234,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_1,Fertilizzanti distribuiti per stato liquido o solido - reg.,ok,hub,6,165,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_2,Fertilizzanti distribuiti per uso in agricoltura biologica - reg.,ok,hub,6,56,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_3,Fertilizzanti distribuiti per area di produzione - reg.,ok,hub,5,54,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_4,Fertilizzanti distribuiti - prov.,ok,hub,5,203,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_5,Elementi nutritivi contenuti - prov.,ok,hub,5,159,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_6,Elementi nutritivi contenuti per tipo di fertilizzante,ok,hub,6,73,0,"",2026-07-16
+104_466_DF_DCSP_FERTILIZZANTI_7,Elementi nutritivi contenuti per ettaro di superficie concimabile - reg.,ok,hub,5,39,0,"",2026-07-16
+111_111,Indicatori  permessi di costruire,ok,hub,5,10,0,"",2026-07-16
+111_111_DF_DCSC_PERM_RAP1_1,Nuovi fabbricati residenziali,ok,hub,5,8,0,"",2026-07-16
+111_111_DF_DCSC_PERM_RAP1_2,Nuova edilizia non residenziale,ok,hub,5,7,0,"",2026-07-16
+111_263,Fiducia delle imprese manifatturiere,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_1,Clima e saldi mensili destagionalizzati,ok,hub,6,36,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_10,"Clima, saldi e frequenze mensili grezzi - rip.",ok,hub,5,77,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_11,"Clima, saldi e frequenze mensili grezzi per Ateco",ok,hub,6,166,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_12,Saldi e frequenze mensili grezzi per classe di addetti,ok,hub,6,77,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_13,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,ok,hub,5,18,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_14,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,ok,hub,5,84,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_15,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,ok,hub,5,183,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_16,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,ok,hub,6,88,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_17,Clima e saldi mensili destagionalizzati,ok,hub,5,24,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_18,"Clima, saldi e frequenze mensili grezzi - rip.",ok,hub,5,86,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_19,"Clima, saldi e frequenze mensili grezzi per Ateco",ok,hub,5,124,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_2,"Clima, saldi e frequenze mensili grezzi - rip.",ok,hub,5,82,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_20,Saldi e frequenze mensili grezzi per classe di addetti,ok,hub,6,86,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_21,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,ok,hub,5,15,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_22,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,ok,hub,5,58,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_23,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,ok,hub,5,96,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_24,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,ok,hub,6,58,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_3,"Clima, saldi e frequenze mensili grezzi per Ateco",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_4,Saldi e frequenze mensili grezzi per classe di addetti,ok,hub,6,82,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_5,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,ok,hub,5,18,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_6,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,ok,hub,5,88,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_7,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,ok,hub,5,176,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_8,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,ok,hub,6,89,0,"",2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_9,Clima e saldi mensili destagionalizzati,ok,hub,5,24,0,"",2026-07-16
+111_40,Fiducia delle imprese costruzioni,ok,hub,6,144,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_1,Clima e saldi destagionalizzati - mensili,ok,hub,5,10,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_2,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",ok,hub,5,53,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_3,Durata di attività assicurata grezzi - trimestrali,ok,hub,5,8,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_4,Clima e saldi destagionalizzati - mensili,ok,hub,5,10,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_5,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",ok,hub,5,47,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_6,Durata di attività assicurata grezzi - trimestrali,ok,hub,6,9,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_7,Clima e saldi destagionalizzati - mensili,ok,hub,5,10,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_8,"Clima, saldi e frequenze grezzi per divisioni delle costruzioni - mensili",ok,hub,5,55,0,"",2026-07-16
+111_40_DF_DCSC_FIDIMPRCOSTR_9,Durata di attività assicurata grezzi - trimestrali,ok,hub,5,8,0,"",2026-07-16
+114_191,Indice dei nuovi ordinativi e del fatturato dei prodotti industriali,ok,hub,6,170,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_1,Fatturato dei prodotti industriali - Mensili (base 2015),ok,hub,6,159,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_10,Volume del fatturato industriale - Mensili (base 2021),ok,hub,6,12,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_2,Indice di volume del fatturato manifatturiero - Mensili (base 2015),ok,hub,6,8,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_3,Nuovi ordinativi dei prodotti industriali - Mensili (base 2015 - dati fino a dicembre 2020),ok,hub,6,97,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_4,Nuovi ordinativi - Mensili (base 2010),ok,hub,6,96,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_5,Fatturato - Mensili (base 2010),ok,hub,6,160,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_6,Volume del fatturato manifatturiero - Mensili (base 2010),ok,hub,6,8,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_7,Nuovi ordinativi - Mensili (base 2005),ok,hub,6,93,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_8,Fatturato - Mensili (base 2005),ok,hub,6,147,0,"",2026-07-16
+114_191_DF_DCSC_ORDFATT_9,Valore del fatturato industriale - Mensili (base 2021),ok,hub,6,159,0,"",2026-07-16
+115_168,Produzione industriale in quantità e valore,ok,hub,4,4652,0,"",2026-07-16
+115_168_DF_DCSP_PRODCOM_1,Produzione industriale per settore economico (Ateco 2 cifre),ok,hub,4,27,0,"",2026-07-16
+115_168_DF_DCSP_PRODCOM_2,Produzione in valore e quantità per singolo prodotto (Prodcom),ok,hub,4,4652,0,"",2026-07-16
+115_168_DF_DCSP_PRODCOM_3,Produzione in valore e quantità per tutti i prodotti (Prodcom),ok,hub,4,4652,0,"",2026-07-16
+115_333,Indice della produzione industriale,ok,hub,5,367,0,"",2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_1,Indice della produzione industriale - Mensili (base 2015),ok,hub,5,353,0,"",2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_2,Dettaglio settori economici (Ateco 4 cifre),ok,hub,5,353,0,"",2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_4,Mensili (base 2010),ok,hub,5,348,0,"",2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_5,Mensili (base 2005),ok,hub,5,307,0,"",2026-07-16
+115_333_DF_DCSC_INDXPRODIND_1_6,Indice della produzione industriale - Mensili (base 2021),ok,hub,5,353,0,"",2026-07-16
+115_362,Indice della produzione nelle costruzioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_1,Indice della produzione nelle costruzioni - Mensili (base 2015),ok,hub,5,7,0,"",2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_2,Mensili (base 2010),ok,hub,5,7,0,"",2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_3,Mensili (base 2005),ok,hub,5,8,0,"",2026-07-16
+115_362_DF_DCSC_INDXPRODCOSTR_1_4,Indice della produzione nelle costruzioni - Mensili (base 2021),ok,hub,5,7,0,"",2026-07-16
+117_1035,Servizi bancari - dati comunali,ok,hub,3,6117,0,"",2026-07-16
+117_1035_DF_DCAT_SERVBANC_COM_1,Servizi bancari - dati comunali,ok,hub,3,6117,0,"",2026-07-16
+117_1057,Trasporto ferroviario,ok,hub,13,125,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_1,Trasporto ferroviario - Principali dati,ok,hub,7,22,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_2,Passeggeri e percorrenza media per tipo di destinazione,ok,hub,7,13,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_3,Merci trasportate per gruppo merceologico (NST/2007),ok,hub,7,32,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_4,Merci trasportate per paese di destinazione,ok,hub,6,29,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_5,Merci trasportate per paese di origine,ok,hub,6,30,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_6,Trasporto intermodale,ok,hub,7,15,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_7,Merci pericolose,ok,hub,7,23,0,"",2026-07-16
+117_1057_DF_DCSC_TRAFERR_8,Incidenti ferroviari,ok,hub,6,22,0,"",2026-07-16
+117_262,Fiducia delle imprese servizi,ok,hub,6,240,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_1,Clima e saldi (Ateco macrosettori) - mensili grezzi e destagionalizzati,ok,hub,5,18,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_10,Saldi e frequenze (Ateco 2 cifre) - mensili grezzi,ok,hub,5,103,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_11,Saldi e frequenze (ostacoli e capacità) - trimestrali grezzi,ok,hub,5,59,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_2,"Clima, saldi e frequenze - mensili grezzi e destagionalizzati - rip",ok,hub,5,43,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_3,Saldi e frequenze (Ateco 2 cifre) - mensili grezzi,ok,hub,5,97,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_4,Saldi e frequenze (ostacoli e capacità) - trimestrali grezzi,ok,hub,5,59,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_5,Clima e saldi mensili destagionalizzati per Ateco2007 - livello nazionale e ripartizionale,ok,hub,6,21,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_6,"Clima, saldi e frequenze mensili grezzi per Ateco 2007 - livello nazionale e ripartizionale",ok,hub,5,90,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_7,Saldi e frequenze modulo trimestrale ostacoli e capacità grezzi,ok,hub,6,21,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_8,Clima e saldi (Ateco macrosettori) - mensili grezzi e destagionalizzati,ok,hub,5,18,0,"",2026-07-16
+117_262_DF_DCSC_FIDIMPRSERV_9,"Clima, saldi e frequenze - mensili grezzi e destagionalizzati - rip",ok,hub,5,43,0,"",2026-07-16
+117_266,Fiducia delle imprese del commercio,ok,hub,6,166,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_1,Clima e saldi per forma di vendita - mensili destagionalizzati,ok,hub,6,16,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_2,"Clima, saldi e frequenze per Ateco 2007 e forma di vendita - mensili grezzi",ok,hub,6,62,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_3,Clima e saldi mensili destagionalizzati per forma di vendita,ok,hub,6,16,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_4,"Clima, saldi e frequenze mensili grezzi per Ateco e forma di vendita",ok,hub,6,57,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_5,Clima e saldi per forma di vendita - mensili destagionalizzati,ok,hub,6,16,0,"",2026-07-16
+117_266_DF_DCSC_FIDCOMM_6,"Clima, saldi e frequenze per Ateco 2007 e forma di vendita - mensili grezzi",ok,hub,6,66,0,"",2026-07-16
+119_367,Indice del fatturato dei servizi,ok,hub,5,66,0,"",2026-07-16
+119_367_DF_DCSC_FATTSERVIZ_1_1,Indice del fatturato dei servizi - Trimestrali (base 2015),ok,hub,4,57,0,"",2026-07-16
+119_367_DF_DCSC_FATTSERVIZ_1_2,Trimestrali (base 2010),ok,hub,4,57,0,"",2026-07-16
+119_367_DF_DCSC_FATTSERVIZ_1_3,Trimestrali (base 2005),ok,hub,4,30,0,"",2026-07-16
+119_367_DF_DCSC_FATTSERVIZ_1_4,Indice del fatturato dei servizi - Mensili (base 2021=100),ok,hub,5,60,0,"",2026-07-16
+11_111,Edilizia residenziale - dati annuali,ok,hub,14,244,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_1,Fabbricati residenziali nuovi e relative abitazioni  - province e classi di comune,ok,hub,3,158,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_10,Superfici dei fabbricati residenziali nuovi per destinazione d'uso -  ripartizioni e classi di comune,ok,hub,4,30,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_11,Fabbricati residenziali nuovi e ampliamenti con relative abitazioni per richiedente il titolo abilitativo - regioni e classi di comune,ok,hub,4,53,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_12,Fabbricati residenziali nuovi per tipologia dell'impianto - ripartizioni e e classi di comune,ok,hub,4,29,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_13,Ampliamenti di fabbricati residenziali con o senza sopraelevazione - ripartizioni e e classi di comune,ok,hub,4,25,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_14,Fabbricati nuovi e ampliamenti di fabbricati destinati a collettività - ripartizioni e classi di comune,ok,hub,3,24,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_15,Fabbricati residenziali nuovi e ampliamenti di fabbricati residenziali per piano casa - ripartizioni e classi di comune,ok,hub,4,26,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_2,Ampliamenti di fabbricati residenziali - province e classi di comune,ok,hub,3,162,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_3,Fabbricati residenziali nuovi per numero di abitazioni - regioni e classi di comune,ok,hub,4,51,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_4,Fabbricati residenziali nuovi e ampliamenti per titolo abilitativo - ripartizioni e classi di comune,ok,hub,4,30,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_5,Fabbricati residenziali nuovi e ampliamenti per durata prevista dei lavori -  ripartizioni e classi di comune,ok,hub,4,31,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_6,Abitazioni in fabbricati residenziali nuovi per numero di stanze - province,ok,hub,4,148,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_7,Abitazioni in fabbricati residenziali nuovi per classi di superficie utile abitabile - province,ok,hub,4,146,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_8,Abitazioni in fabbricati residenziali nuovi per numero di stanze e superficie utile abitabile - ripartizioni e classi di comune,ok,hub,5,35,0,"",2026-07-16
+11_111_DF_DCSC_RESID_CONSTR_9,Fabbricati residenziali nuovi per numero di piani - regioni e classi di comune,ok,hub,4,51,0,"",2026-07-16
+120_337,Indice delle vendite del commercio al dettaglio,ok,hub,7,43,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_1,Valore delle vendite per settore merceologico e classe di addetti -mensili (base 2015),ok,hub,6,12,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_10,Valore delle vendite per settore merceologico e forma distributiva - dati mensili (base 2005),ok,hub,7,17,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_11,"Valore delle vendite per settore merceologico, gruppi di prodotti e classe di addetti - dati mensili (base 2005)",ok,hub,7,26,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_12,Valore delle vendite per settore merceologico e classe di addetti - mensili (base 2021),ok,hub,6,12,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_13,Valore delle vendite per settore merceologico e forma distributiva - mensili (base 2021),ok,hub,6,17,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_14,Valore delle vendite per settore merceologico e gruppi di prodotti - mensili grezzi (base 2021),ok,hub,5,20,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_15,Volume delle vendite per settore merceologico - mensili (base 2021),ok,hub,6,18,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_2,Valore delle vendite per settore merceologico e forma distributiva - mensili (base 2015),ok,hub,6,17,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_3,Valore delle vendite per settore merceologico e gruppi di prodotti - mensili grezzi (base 2015),ok,hub,5,20,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_4,Volume delle vendite per settore merceologico - mensili (base 2015),ok,hub,6,9,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_5,Valore delle vendite per forma distributiva e classe di addetti - dati mensili (base 2010),ok,hub,7,14,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_6,Valore delle vendite per settore merceologico e forma distributiva - dati mensili (base 2010),ok,hub,7,17,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_7,"Valore delle vendite per settore merceologico, gruppi di prodotti e classe di addetti - dati mensili (base 2010)",ok,hub,7,25,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_8,Volume delle vendite per settore merceologico - dati mensili (base 2010),ok,hub,7,10,0,"",2026-07-16
+120_337_DF_DCSC_COMMDET_1_9,Valore delle vendite per forma distributiva e classe di addetti - dati mensili (base 2005),ok,hub,7,14,0,"",2026-07-16
+121_329,Road freight carriage by category of transport,ok,hub,7,20,0,"",2026-07-16
+121_329_DF_DCSC_TRAMERCIS2_1,"Trasporto merci su strada per tipo di trasporto, classe di percorrenza e titolo di trasporto",ok,hub,7,20,0,"",2026-07-16
+121_330,Trasporto merci su strada,ok,hub,8,106,0,"",2026-07-16
+121_330_DF_DCSC_TRAMERCIS1_1,Merci trasportate per titolo di trasporto e classe di percorrenza,ok,hub,8,35,0,"",2026-07-16
+121_330_DF_DCSC_TRAMERCIS1_2,Merci trasportate - tonnellate per territorio di origine e di destinazione e macrobranca merceologica,ok,hub,8,80,0,"",2026-07-16
+121_330_DF_DCSC_TRAMERCIS1_3,Merci trasportate - tonnellate per territorio di origine e di destinazione e titolo di trasporto,ok,hub,8,74,0,"",2026-07-16
+121_330_DF_DCSC_TRAMERCIS1_4,Merci trasportate per territorio di origine e titolo di trasporto (trasporto interno),ok,hub,8,46,0,"",2026-07-16
