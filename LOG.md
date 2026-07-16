@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-07-16 — search: OR fallback fixes AND-only zero-results bug
+
+- fix: `search_dataset()` (`discovery.py`) combined all keyword tokens with AND and returned nothing when a single token was unmatched; now falls back to OR (any token) when AND is empty, so one stray token no longer wipes the result set. Relevance scoring (`_score_results`) keeps full-token matches on top. Extracted `_token_match_expr()` helper.
+- test: added AND/OR fallback cases to `tests/test_discovery.py` (mocked catalog, no network). Full suite 221 passed, ruff clean.
+- verified on real Eurostat cache: `"unemployment youth aardvark"` went from 0 → 123 results, top hits still the youth-unemployment dataflows.
+
+## 2026-07-15 — Google Doc export
+
+- docs: exported the requested Google Doc to Markdown with `gwsb drive files export`; saved as `tmp/google-doc.md`
+- docs: reviewed the ISTAT conference abstract against the local `istat_mcp_server` implementation; drafted a minimally edited 1,109-character revision in `tmp/abstract-revised.md`
+
 ## 2026-06-14 — v0.12.1 — SOCKS proxy support (Claude Cowork)
 
 - fix: dependency `httpx>=0.28.1` → `httpx[socks]>=0.28.1`, bundling `socksio`. opensdmx now works out of the box inside sandboxes that route all traffic through a SOCKS proxy (e.g. the Claude Cowork sandbox); previously any network call raised `ImportError`

@@ -375,3 +375,57 @@ def test_get_dimension_values_cache_keys_differ_by_language():
     assert keys_used[0] == "CL_TIPO_ALLOGGIO2:it"
     assert keys_used[1] == "CL_TIPO_ALLOGGIO2:en"
     assert keys_used[0] != keys_used[1]
+
+
+# ── search_dataset AND/OR fallback ───────────────────────────────────
+
+import polars as pl  # noqa: E402
+from opensdmx.discovery import search_dataset  # noqa: E402
+
+
+def _fake_catalog() -> pl.DataFrame:
+    return pl.DataFrame(
+        {
+            "df_id": ["UNEMP", "BIRTHS", "GDP"],
+            "version": ["1.0", "1.0", "1.0"],
+            "df_description": [
+                "Unemployment rate by age",
+                "Live births by region",
+                "Gross domestic product",
+            ],
+            "df_structure_id": ["DSD_U", "DSD_B", "DSD_G"],
+        }
+    )
+
+
+def test_search_and_match_all_tokens():
+    """All tokens present → AND path returns the single matching row."""
+    with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):
+        res = search_dataset("unemployment age")
+    assert res["df_id"].to_list() == ["UNEMP"]
+
+
+def test_search_or_fallback_when_and_empty():
+    """One token missing → AND is empty, OR fallback still finds partial matches."""
+    with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):
+        res = search_dataset("unemployment nonexistenttoken")
+    # AND would be empty (no row has 'nonexistenttoken'); OR must recover UNEMP.
+    assert "UNEMP" in res["df_id"].to_list()
+
+
+def test_search_or_fallback_ranks_full_match_first():
+    """OR fallback keeps the row matching more tokens on top via the relevance score."""
+    with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):
+        # 'births' matches only BIRTHS; 'region' matches only BIRTHS too → both in BIRTHS.
+        # 'gross' matches only GDP. AND is empty; OR returns BIRTHS + GDP, BIRTHS first.
+        res = search_dataset("births region gross")
+    ids = res["df_id"].to_list()
+    assert set(ids) == {"BIRTHS", "GDP"}
+    assert ids[0] == "BIRTHS"
+
+
+def test_search_no_match_returns_empty():
+    """No token matches anything → empty result even after OR fallback."""
+    with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):
+        res = search_dataset("zzz qqq")
+    assert res.is_empty()
