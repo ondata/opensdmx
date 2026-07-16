@@ -380,7 +380,7 @@ def test_get_dimension_values_cache_keys_differ_by_language():
 # ── search_dataset AND/OR fallback ───────────────────────────────────
 
 import polars as pl  # noqa: E402
-from opensdmx.discovery import search_dataset  # noqa: E402
+from opensdmx.discovery import _token_match_expr, search_dataset  # noqa: E402
 
 
 def _fake_catalog() -> pl.DataFrame:
@@ -422,6 +422,40 @@ def test_search_or_fallback_ranks_full_match_first():
     ids = res["df_id"].to_list()
     assert set(ids) == {"BIRTHS", "GDP"}
     assert ids[0] == "BIRTHS"
+
+
+def test_search_or_fallback_prioritizes_token_coverage():
+    """A multi-token match outranks repeated occurrences of one token."""
+    catalog = pl.DataFrame(
+        {
+            "df_id": ["REPEATED", "COVERED"],
+            "version": ["1.0", "1.0"],
+            "df_description": ["alpha " * 20, "alpha beta"],
+            "df_structure_id": ["DSD_R", "DSD_C"],
+        }
+    )
+    with patch("opensdmx.discovery.all_available", return_value=catalog):
+        res = search_dataset("alpha beta missing")
+    assert res["df_id"].to_list() == ["COVERED", "REPEATED"]
+
+
+def test_search_treats_regex_characters_as_literal_tokens():
+    """User tokens are literal text rather than regular expressions."""
+    catalog = _fake_catalog().with_columns(
+        pl.when(pl.col("df_id") == "GDP")
+        .then(pl.lit("GDP [provisional]"))
+        .otherwise(pl.col("df_description"))
+        .alias("df_description")
+    )
+    with patch("opensdmx.discovery.all_available", return_value=catalog):
+        res = search_dataset("[")
+    assert res["df_id"].to_list() == ["GDP"]
+
+
+def test_token_match_expr_normalizes_token_case():
+    """The helper remains case-insensitive when used independently."""
+    df = pl.DataFrame({"df_id": ["UPPER"], "df_description": ["Example"]})
+    assert df.filter(_token_match_expr("UPPER")).height == 1
 
 
 def test_search_no_match_returns_empty():

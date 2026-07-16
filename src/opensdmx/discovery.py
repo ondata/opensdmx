@@ -21,6 +21,7 @@ class ConstraintsTimeout(Exception):
 
 import logging
 import os
+import re
 import time
 
 logger = logging.getLogger(__name__)
@@ -185,7 +186,9 @@ def all_available() -> pl.DataFrame:
     return _filter_invalid(df)
 
 
-def _score_results(df: pl.DataFrame, tokens: list[str]) -> pl.DataFrame:
+def _score_results(
+    df: pl.DataFrame, tokens: list[str], *, prioritize_coverage: bool = False
+) -> pl.DataFrame:
     """Add a synthetic relevance score and sort descending.
 
     Scoring per token (case-insensitive):
@@ -194,8 +197,11 @@ def _score_results(df: pl.DataFrame, tokens: list[str]) -> pl.DataFrame:
       +1  each occurrence of token in df_description
     """
     score_expr = pl.lit(0)
+    coverage_expr = pl.lit(0) if prioritize_coverage else None
     for token in tokens:
         t = token.lower()
+        if coverage_expr is not None:
+            coverage_expr = coverage_expr + _token_match_expr(t).cast(pl.Int32)
         score_expr = score_expr + (
             pl.col("df_id").str.to_lowercase().str.contains(t).cast(pl.Int32) * 3
         )
@@ -205,11 +211,19 @@ def _score_results(df: pl.DataFrame, tokens: list[str]) -> pl.DataFrame:
         score_expr = score_expr + (
             pl.col("df_description").str.to_lowercase().str.count_matches(t)
         )
-    return df.with_columns(score_expr.alias("score")).sort("score", descending=True)
+    scored = df.with_columns(score_expr.alias("score"))
+    if coverage_expr is not None:
+        return (
+            scored.with_columns(coverage_expr.alias("_token_coverage"))
+            .sort(["_token_coverage", "score"], descending=True)
+            .drop("_token_coverage")
+        )
+    return scored.sort("score", descending=True)
 
 
 def _token_match_expr(token: str) -> pl.Expr:
     """True where a token appears in df_description or df_id (case-insensitive)."""
+    token = token.lower()
     return (
         pl.col("df_description").str.to_lowercase().str.contains(token)
         | pl.col("df_id").str.to_lowercase().str.contains(token)
@@ -227,7 +241,7 @@ def search_dataset(keyword: str) -> pl.DataFrame:
     Returns columns: df_id, version, df_description, df_structure_id, score.
     """
     datasets = all_available()
-    tokens = keyword.lower().split()
+    tokens = [re.escape(token) for token in keyword.lower().split()]
 
     and_expr = pl.lit(True)
     for token in tokens:
@@ -235,7 +249,8 @@ def search_dataset(keyword: str) -> pl.DataFrame:
     results = datasets.filter(and_expr)
 
     # Fallback: a single unmatched token must not wipe out the whole result set.
-    if results.is_empty() and len(tokens) > 1:
+    used_or_fallback = results.is_empty() and len(tokens) > 1
+    if used_or_fallback:
         or_expr = pl.lit(False)
         for token in tokens:
             or_expr = or_expr | _token_match_expr(token)
@@ -243,7 +258,7 @@ def search_dataset(keyword: str) -> pl.DataFrame:
 
     if results.is_empty():
         return results
-    return _score_results(results, tokens)
+    return _score_results(results, tokens, prioritize_coverage=used_or_fallback)
 
 
 def _resolve_codelist_from_concept(scheme_id: str, scheme_agency: str, concept_id: str) -> str | None:

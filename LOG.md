@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-07-16 - PR 48 review fixes
+
+- fix(search): treat search tokens as literal text, preventing malformed or broad regular-expression matches from user input.
+- fix(search): in OR fallback results, rank datasets by the number of distinct matched tokens before the existing relevance score; repeated occurrences of one token no longer outrank broader matches.
+- test: added regression coverage for literal regex characters, helper case normalization, and token-coverage ranking. `224 passed`; ruff clean.
+
 ## 2026-07-16 — search: OR fallback fixes AND-only zero-results bug
 
 - fix: `search_dataset()` (`discovery.py`) combined all keyword tokens with AND and returned nothing when a single token was unmatched; now falls back to OR (any token) when AND is empty, so one stray token no longer wipes the result set. Relevance scoring (`_score_results`) keeps full-token matches on top. Extracted `_token_match_expr()` helper.
