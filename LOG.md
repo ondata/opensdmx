@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-07-16 - search --grep
+
+- feat(cli): `search` gains `--grep`, the case-insensitive regex post-filter already available on `values` and `constraints`. Closes the gap that forced a shell pipe for whole-word matching (searching `comuni` on ISTAT also matched "comunitari", "comunicazione").
+- fix(cli): a malformed `--grep` pattern now reports a readable error instead of raising a regex traceback — applies to `search`, `values` and `constraints` via the shared `_filter_by_grep` helper.
+- fix(cli): `search` help said "dataset descriptions"; it matches titles and IDs, and dataflows expose a title (SDMX `Name`), not a description.
+- docs: README command table + example, `skills/sdmx-explorer` search step.
+- test: 4 regressions covering whole-word filtering, ID matching, invalid pattern, no-match exit.
+
 ## 2026-07-16 - incremental constraints archive
 
 - feat(data): public per-provider constraints archive in `data/constraints/` (parquet + status CSV), grown incrementally by `scripts/constraints_archive.py` — budgeted daily probes instead of bulk sweeps.

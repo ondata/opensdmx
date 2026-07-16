@@ -420,3 +420,54 @@ def test_which_limit(_no_api_check):
         cmd in line for cmd in ["search", "tree", "get", "plot", "info", "values", "constraints", "siblings", "providers", "run"]
     ))
     assert commands_found <= 2
+
+
+# ── search --grep ────────────────────────────────────────────────────
+
+
+def _fake_comun_results():
+    """Datasets whose titles all start with 'comun' but mean different things."""
+    import polars as pl
+
+    return pl.DataFrame({
+        "df_id": ["AGRI_1", "PERM_2", "BANK_3"],
+        "df_description": [
+            "Agriturismo - comuni",
+            "Permessi di soggiorno dei cittadini non comunitari",
+            "Servizi bancari - dati comunali",
+        ],
+        "score": [3, 1, 2],
+    })
+
+
+def test_search_grep_matches_whole_word_only(_no_api_check):
+    """A whole-word pattern excludes longer words sharing the same prefix."""
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["-o", "csv", "search", "comun", "--grep", r"\bcomuni\b"])
+    assert result.exit_code == 0
+    assert "AGRI_1" in result.output
+    assert "PERM_2" not in result.output
+    assert "BANK_3" not in result.output
+
+
+def test_search_grep_matches_id_as_well_as_title(_no_api_check):
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["-o", "csv", "search", "comun", "--grep", "BANK"])
+    assert result.exit_code == 0
+    assert "BANK_3" in result.output
+    assert "AGRI_1" not in result.output
+
+
+def test_search_grep_invalid_pattern_reports_error(_no_api_check):
+    """A malformed regex gets a readable message, not a traceback."""
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["search", "comun", "--grep", "["])
+    assert result.exit_code == 1
+    assert "invalid --grep pattern" in result.output
+
+
+def test_search_grep_no_match_exits_cleanly(_no_api_check):
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["search", "comun", "--grep", "zzznomatch"])
+    assert result.exit_code == 0
+    assert "No datasets found" in result.output

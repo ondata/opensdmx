@@ -200,7 +200,7 @@ All commands accept `--provider` (`-p`) to select the provider.
 
 | Command | Description |
 |---|---|
-| `opensdmx search <keyword> [--n N] [-p provider]` | Keyword search in dataset descriptions (default: 20 results) |
+| `opensdmx search <keyword> [--n N] [--grep pattern] [-p provider]` | Keyword search in dataset titles and IDs (default: 20 results); optionally filter by regex |
 | `opensdmx search --semantic <query> [--n N]` | Semantic search (requires `opensdmx embed`) |
 | `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
@@ -220,6 +220,7 @@ All commands accept `--provider` (`-p`) to select the provider.
 # Eurostat (default)
 opensdmx search "unemployment"
 opensdmx search "unemployment" --n 5
+opensdmx search "employ" --grep "\bemployment\b"   # whole word: a title with only "unemployment" won't match
 opensdmx info UNE_RT_M
 opensdmx values UNE_RT_M FREQ          # case-insensitive: freq works too
 opensdmx constraints UNE_RT_M

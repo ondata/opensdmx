@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from contextlib import contextmanager
 from pathlib import Path
@@ -50,6 +51,24 @@ def _status_ctx(msg: str):
             yield
     else:
         yield
+
+
+def _filter_by_grep(df, pattern: str, columns: list[str]):
+    """Filter a DataFrame to rows where any of `columns` matches the regex.
+
+    Case-insensitive. Exits with a readable message on a malformed pattern
+    rather than surfacing a regex traceback to the user.
+    """
+    try:
+        rx = re.compile(pattern, re.IGNORECASE)
+    except re.error as e:
+        err_console.print(f"[red]Error:[/red] invalid --grep pattern: {e}")
+        raise typer.Exit(1)
+    mask = [
+        any(rx.search(str(row[c] or "")) for c in columns)
+        for row in df.iter_rows(named=True)
+    ]
+    return df.filter(mask)
 
 
 def _emit(data: object, df=None) -> None:
@@ -170,8 +189,9 @@ def _startup(
 
 @app.command()
 def search(
-    keyword: str = typer.Argument(..., help="Keyword to search in dataset descriptions"),
+    keyword: str = typer.Argument(..., help="Keyword to search in dataset titles and IDs"),
     semantic: bool = typer.Option(False, "--semantic", "-s", help="Use semantic search via Ollama embeddings"),
+    grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or title, case-insensitive)"),
     n: int = typer.Option(50, "--n", help="Results per page (default: 50). Combine with --page to paginate."),
     page: int = typer.Option(1, "--page", help="Page number, 1-based (default: 1). Use with --n to paginate. Title shows range e.g. '21-40 of 114'."),
     all_results: bool = typer.Option(False, "--all", help="Show ALL results from cache, ignoring --n and --page."),
@@ -180,8 +200,11 @@ def search(
 ):
     """Search datasets by keyword in the local cache (or semantically with --semantic).
 
-    Results come from the local cache — fast, no network call.
-    Default provider: eurostat. Use --provider to switch.
+    Matches the dataset title and ID. Results come from the local cache — fast,
+    no network call. Default provider: eurostat. Use --provider to switch.
+
+    Use --grep to narrow the results with a regex, e.g. to match whole words
+    only and avoid matching longer words that merely start the same way.
 
     PAGINATION: By default shows 50 results (page 1). Use --page to navigate,
     --n to change page size, or --all to retrieve every match at once.
@@ -198,6 +221,7 @@ def search(
       opensdmx search unemployment --n 5 --page 3   # results 11-15
       opensdmx search --semantic disoccupazione --n 5
       opensdmx search population --provider istat
+      opensdmx search comun --provider istat --all --grep "\\bcomuni\\b|comunal"
     """
     _apply_provider(provider)
 
@@ -215,6 +239,9 @@ def search(
         except Exception as e:
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)
+
+        if grep:
+            df = _filter_by_grep(df, grep, ["df_id", "df_description"])
 
         rows = [
             {"df_id": r["df_id"], "df_description": r["df_description"] or "", "score": round(r["score"], 3)}
@@ -255,10 +282,15 @@ def search(
             raise typer.Exit(0)
         df = df.filter(pl.col("df_id").is_in(cat_df["df_id"].unique()))
 
+    if grep:
+        df = _filter_by_grep(df, grep, ["df_id", "df_description"])
+
     if df.is_empty():
         msg = f"No datasets found for: {keyword}"
         if category:
             msg += f" (category={category})"
+        if grep:
+            msg += f" (grep={grep})"
         err_console.print(f"[yellow]{msg}[/yellow]")
         raise typer.Exit(0)
 
@@ -411,7 +443,6 @@ def values(
     """
     _apply_provider(provider)
     _apply_headers(header)
-    import re
 
     from . import get_dimension_values, load_dataset
     try:
@@ -427,12 +458,7 @@ def values(
         raise typer.Exit(1)
 
     if grep:
-        pattern = re.compile(grep, re.IGNORECASE)
-        mask = [
-            bool(pattern.search(str(r["id"] or "")) or pattern.search(str(r["name"] or "")))
-            for r in val_df.iter_rows(named=True)
-        ]
-        val_df = val_df.filter(mask)
+        val_df = _filter_by_grep(val_df, grep, ["id", "name"])
 
     if _output_mode != "table":
         rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in val_df.iter_rows(named=True)]
@@ -476,7 +502,6 @@ def constraints(
     """
     _apply_provider(provider)
     _apply_headers(header)
-    import re
 
     import polars as pl
 
@@ -626,12 +651,7 @@ def constraints(
         result_df = constrained_df.with_columns(pl.lit("").alias("name"))
 
     if grep:
-        pattern = re.compile(grep, re.IGNORECASE)
-        mask = [
-            bool(pattern.search(str(r["id"] or "")) or pattern.search(str(r["name"] or "")))
-            for r in result_df.iter_rows(named=True)
-        ]
-        result_df = result_df.filter(mask)
+        result_df = _filter_by_grep(result_df, grep, ["id", "name"])
 
     if _output_mode != "table":
         rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in result_df.iter_rows(named=True)]

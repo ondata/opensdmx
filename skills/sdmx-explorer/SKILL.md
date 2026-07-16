@@ -242,6 +242,19 @@ Search for dataflows:
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
   (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`)
 
+`search` matches the dataset **title and ID**, by substring. That means a short
+keyword also matches longer words starting the same way — searching `comuni` on
+ISTAT also returns titles containing "comunitari" or "comunicazione". Use
+`--grep` (a case-insensitive regex applied to the results) to narrow it down
+without a shell pipe:
+
+```bash
+# whole word only — drops "comunitari", "comunicazione"
+opensdmx search comun --provider istat --all --grep '\bcomuni\b|comunal'
+```
+
+This is the same `--grep` available on `values` and `constraints`.
+
 To see the full list of built-in providers — including which ones support
 `constraints` and `last_n` — run:
 ```bash
