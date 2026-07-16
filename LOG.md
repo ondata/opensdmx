@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-07-16 - workflow cleanup
+
+- ci: removed duplicate automatic Claude Code PR review; Greptile and Copilot remain the automatic reviewers.
+- ci: Claude on-demand now triggers only from issue and normal PR conversation comments containing `@claude`, avoiding skipped runs for every inline review reply or review submission.
+
 ## 2026-07-16 - PR 48 review fixes
 
 - fix(search): treat search tokens as literal text, preventing malformed or broad regular-expression matches from user input.
