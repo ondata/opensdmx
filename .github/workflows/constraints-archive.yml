@@ -1,0 +1,63 @@
+name: Constraints Archive
+
+on:
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: 'Single provider to probe (empty = default set)'
+        required: false
+        default: ''
+      budget:
+        description: 'Override probe budget'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Restore opensdmx cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/opensdmx
+          key: constraints-archive-${{ github.run_id }}
+          restore-keys: constraints-archive-
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Probe (manual provider)
+        if: github.event_name == 'workflow_dispatch' && inputs.provider != ''
+        run: |
+          BUDGET_FLAG=""
+          if [ -n "${{ inputs.budget }}" ]; then BUDGET_FLAG="--budget ${{ inputs.budget }}"; fi
+          uv run python scripts/constraints_archive.py --provider "${{ inputs.provider }}" $BUDGET_FLAG
+
+      - name: Probe ISTAT
+        if: github.event_name != 'workflow_dispatch' || inputs.provider == ''
+        continue-on-error: true
+        run: uv run python scripts/constraints_archive.py --provider istat
+
+      - name: Probe Eurostat
+        if: github.event_name != 'workflow_dispatch' || inputs.provider == ''
+        continue-on-error: true
+        run: uv run python scripts/constraints_archive.py --provider eurostat
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/constraints/
+          git diff --staged --quiet || git commit -m "data: constraints archive $(date -u +%Y-%m-%d)"
+          git push

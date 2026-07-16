@@ -1,0 +1,9 @@
+df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
+101_1015,Coltivazioni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_1,Superfici e produzione - dati in complesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_10,Intenzioni di semina,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_2,Superfici e produzione - dati in complesso - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-07-16
+101_1030,Prodotti agroalimentari di qualità DOP/IGP e STG,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+101_1030_DF_DCSP_DOPIGP_1,Operatori per settore,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+101_1030_DF_DCSP_DOPIGP_2,Operatori per prodotto,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1030_DF_DCSP_DOPIGP_3,Dinamica degli operatori,REF_AREA,nazionale,nazionale,1,2026-07-16

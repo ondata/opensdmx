@@ -1,0 +1,3 @@
+df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked_at
+AACT_ALI01,Agricultural labour input statistics - absolute figures (thousand annual work units),ok,sdmx,5,95,0,"",2026-07-16
+AACT_ALI01_R,Agricultural labour input statistics by NUTS 2 region - absolute figures (thousand annual work units),ok,sdmx,5,351,0,"",2026-07-16

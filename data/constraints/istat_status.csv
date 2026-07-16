@@ -1,0 +1,9 @@
+df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked_at
+101_1015,Coltivazioni,ok,hub,5,471,0,"",2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_1,Superfici e produzione - dati in complesso,ok,hub,4,443,0,"",2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_10,Intenzioni di semina,ok,hub,4,62,0,"",2026-07-16
+101_1015_DF_DCSP_COLTIVAZIONI_2,Superfici e produzione - dati in complesso - prov,ok,hub,4,443,0,"",2026-07-16
+101_1030,Prodotti agroalimentari di qualità DOP/IGP e STG,ok,hub,10,575,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_1,Operatori per settore,ok,hub,7,171,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_2,Operatori per prodotto,ok,hub,6,395,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_3,Dinamica degli operatori,ok,hub,5,29,0,"",2026-07-16

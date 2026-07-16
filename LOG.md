@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-07-16 - incremental constraints archive
+
+- feat(data): public per-provider constraints archive in `data/constraints/` (parquet + status CSV), grown incrementally by `scripts/constraints_archive.py` — budgeted daily probes instead of bulk sweeps.
+- ISTAT probed via the databrowser hub bulk endpoint (~1 s/dataflow, no DSD call, outside the 15 s SDMX rate limiter); other providers via `load_dataset()` + `get_available_values()` with built-in pacing.
+- Derived view `istat_territorial.csv`: territorial granularity per dataflow (nazionale → comune) classified from ITTER107/REF_AREA codes — answers "which ISTAT datasets have municipal detail?" offline.
+- ci: `constraints-archive.yml` daily workflow (istat + eurostat budgets, opensdmx cache restore, commits on change).
+- chore: deleted unused bulk scaffolding (`schema_export.py`, `update_istat_schema.py`, `update_all_schemas.py`, `cache_maintenance.py`, `rate_limit_helper.py`, `example_cron.sh`); rewrote `scripts/README.md`.
+
 ## 2026-07-16 - PR 48 null coverage fix
 
 - fix(search): OR fallback coverage treats a null description token match as false, preserving coverage from tokens that match the dataset ID.
