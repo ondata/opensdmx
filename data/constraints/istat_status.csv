@@ -7,3 +7,23 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 101_1030_DF_DCSP_DOPIGP_1,Operatori per settore,ok,hub,7,171,0,"",2026-07-16
 101_1030_DF_DCSP_DOPIGP_2,Operatori per prodotto,ok,hub,6,395,0,"",2026-07-16
 101_1030_DF_DCSP_DOPIGP_3,Dinamica degli operatori,ok,hub,5,29,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_4,"Prodotti DOP, IGP e STG attivi",ok,hub,5,34,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_5,Processo di lavorazione per zona altimetrica,ok,hub,9,204,0,"",2026-07-16
+101_1030_DF_DCSP_DOPIGP_6,Processo di lavorazione per sesso del conduttore,ok,hub,9,203,0,"",2026-07-16
+101_1033,Macellazioni,ok,hub,5,108,0,"",2026-07-16
+101_1033_DF_DASH_DCSP_MACELLAZIONI_1,Carni - dati mensili,ok,hub,4,65,0,"",2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_1,Carni rosse - dati mensili,ok,hub,4,39,0,"",2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_2,Carni bianche - dati mensili,ok,hub,4,67,0,"",2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_3,Carni rosse - dati annuali,ok,hub,5,82,0,"",2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_4,Carni bianche - dati annuali,ok,hub,4,61,0,"",2026-07-16
+101_1039,Agriturismo - comuni,ok,hub,4,5639,0,"",2026-07-16
+101_1039_DF_DCSP_AGRITURISMO_COM_1,Agriturismo - comuni,ok,hub,4,5639,0,"",2026-07-16
+101_1077,Prodotti di qualità DOP/IGP e STG: operatori - dati comunali,ok,hub,3,5947,0,"",2026-07-16
+101_1077_DF_DCSP_DOPIGP_COM_1,Prodotti di qualità DOP/IGP e STG: operatori - dati comunali,ok,hub,3,5947,0,"",2026-07-16
+101_12,Prezzi dei prodotti agricoli,ok,hub,5,84,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_1,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2015)",ok,hub,4,38,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_10,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2020)",ok,hub,4,27,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_11,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2020)",ok,hub,4,37,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_12,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020)",ok,hub,4,26,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_2,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)",ok,hub,4,27,0,"",2026-07-16
+101_12_DF_DCSP_PREZZIAGR_3,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)",ok,hub,4,37,0,"",2026-07-16

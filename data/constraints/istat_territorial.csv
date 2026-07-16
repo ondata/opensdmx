@@ -7,3 +7,23 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 101_1030_DF_DCSP_DOPIGP_1,Operatori per settore,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
 101_1030_DF_DCSP_DOPIGP_2,Operatori per prodotto,REF_AREA,nazionale,nazionale,1,2026-07-16
 101_1030_DF_DCSP_DOPIGP_3,Dinamica degli operatori,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1030_DF_DCSP_DOPIGP_4,"Prodotti DOP, IGP e STG attivi",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1030_DF_DCSP_DOPIGP_5,Processo di lavorazione per zona altimetrica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+101_1030_DF_DCSP_DOPIGP_6,Processo di lavorazione per sesso del conduttore,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-16
+101_1033,Macellazioni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_1033_DF_DASH_DCSP_MACELLAZIONI_1,Carni - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_1,Carni rosse - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_2,Carni bianche - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_3,Carni rosse - dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_1033_DF_DCSP_MACELLAZIONI_4,Carni bianche - dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-16
+101_1039,Agriturismo - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,5632,2026-07-16
+101_1039_DF_DCSP_AGRITURISMO_COM_1,Agriturismo - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,5632,2026-07-16
+101_1077,Prodotti di qualità DOP/IGP e STG: operatori - dati comunali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,5944,2026-07-16
+101_1077_DF_DCSP_DOPIGP_COM_1,Prodotti di qualità DOP/IGP e STG: operatori - dati comunali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,5944,2026-07-16
+101_12,Prezzi dei prodotti agricoli,REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_1,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, mensile (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_10,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2020)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_11,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2020)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_12,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, media annua (base 2020)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_2,"Indice dei prezzi alla produzione dei prodotti venduti dagli agricoltori, mensile (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
+101_12_DF_DCSP_PREZZIAGR_3,"Indice dei prezzi dei prodotti acquistati dagli agricoltori, media annua (base 2015)",REF_AREA,nazionale,nazionale,1,2026-07-16
