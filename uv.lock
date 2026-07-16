@@ -997,7 +997,7 @@ wheels = [
 
 [[package]]
 name = "opensdmx"
-version = "0.12.2"
+version = "0.13.0"
 source = { editable = "." }
 dependencies = [
     { name = "duckdb" },
