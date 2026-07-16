@@ -1,5 +1,32 @@
 # LOG
 
+## 2026-07-16 - PR 48 null coverage fix
+
+- fix(search): OR fallback coverage treats a null description token match as false, preserving coverage from tokens that match the dataset ID.
+- test: added a null-description regression to ensure a two-token ID match ranks above a one-token match.
+
+## 2026-07-16 - workflow cleanup
+
+- ci: removed duplicate automatic Claude Code PR review; Greptile and Copilot remain the automatic reviewers.
+- ci: Claude on-demand now triggers only from issue and normal PR conversation comments containing `@claude`, avoiding skipped runs for every inline review reply or review submission.
+
+## 2026-07-16 - PR 48 review fixes
+
+- fix(search): treat search tokens as literal text, preventing malformed or broad regular-expression matches from user input.
+- fix(search): in OR fallback results, rank datasets by the number of distinct matched tokens before the existing relevance score; repeated occurrences of one token no longer outrank broader matches.
+- test: added regression coverage for literal regex characters, helper case normalization, and token-coverage ranking. `224 passed`; ruff clean.
+
+## 2026-07-16 — search: OR fallback fixes AND-only zero-results bug
+
+- fix: `search_dataset()` (`discovery.py`) combined all keyword tokens with AND and returned nothing when a single token was unmatched; now falls back to OR (any token) when AND is empty, so one stray token no longer wipes the result set. Relevance scoring (`_score_results`) keeps full-token matches on top. Extracted `_token_match_expr()` helper.
+- test: added AND/OR fallback cases to `tests/test_discovery.py` (mocked catalog, no network). Full suite 221 passed, ruff clean.
+- verified on real Eurostat cache: `"unemployment youth aardvark"` went from 0 → 123 results, top hits still the youth-unemployment dataflows.
+
+## 2026-07-15 — Google Doc export
+
+- docs: exported the requested Google Doc to Markdown with `gwsb drive files export`; saved as `tmp/google-doc.md`
+- docs: reviewed the ISTAT conference abstract against the local `istat_mcp_server` implementation; drafted a minimally edited 1,109-character revision in `tmp/abstract-revised.md`
+
 ## 2026-06-14 — v0.12.1 — SOCKS proxy support (Claude Cowork)
 
 - fix: dependency `httpx>=0.28.1` → `httpx[socks]>=0.28.1`, bundling `socksio`. opensdmx now works out of the box inside sandboxes that route all traffic through a SOCKS proxy (e.g. the Claude Cowork sandbox); previously any network call raised `ImportError`
