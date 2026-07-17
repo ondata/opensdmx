@@ -72,26 +72,18 @@ strict = true
 [[tool.mypy.overrides]]
 module = [
     "ollama.*",
-    "plotnine.*",
     "questionary.*",
     "chatlas.*",
     "matplotlib.*",
 ]
 ignore_missing_imports = true
 
-# Gradual strict adoption: modules not yet fully annotated are exempted from the
-# strict-only checks and converted one at a time. Remove a module from this list
-# once it is strict-clean. Remaining: categories, utils, db_cache, base,
-# discovery, cli.
+# plotnine ships py.typed but leaves its public API (aes, geom_*, theme, ...)
+# unannotated, so skip following it — otherwise every call is a no-untyped-call.
 [[tool.mypy.overrides]]
-module = [
-    "opensdmx.cli",
-]
-disallow_untyped_defs = false
-disallow_incomplete_defs = false
-disallow_untyped_calls = false
-disallow_any_generics = false
-warn_return_any = false
+module = ["plotnine.*"]
+follow_imports = "skip"
+ignore_missing_imports = true
 
 [build-system]
 requires = ["uv_build>=0.9.7,<0.10.0"]

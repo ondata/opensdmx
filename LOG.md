@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-07-17 - mypy strict complete + py.typed
+
+- ci: `cli` converted to strict and the gradual opt-out override removed — `strict = true` now covers all 14 modules with no exemptions. Typer commands get `-> None`, helpers typed (`_status_ctx -> Iterator[None]`, `_filter_by_grep`/`_emit` over `pl.DataFrame`), dicts parametrised.
+- plotnine ships `py.typed` but leaves its public API (`aes`, `geom_*`, `theme`) unannotated → dedicated `follow_imports = "skip"` override so its calls aren't flagged; `chatlas` kept typed (used for the `_ai_structured` TypeVar).
+- feat: added the `py.typed` marker (PEP 561), verified present in the built wheel — downstream users importing `opensdmx` now get the exported types.
+- Verified: mypy strict green (14 files), ruff clean, 229 tests, real CLI smoke (`providers`, `get --output csv`).
+
 ## 2026-07-17 - mypy strict (gradual)
 
 - ci: switched `[tool.mypy]` to `strict = true` with a per-module opt-out list so strict is adopted one module at a time. Converted the small/pure modules now — `ai`, `embed`, `which`, `hub`, `retrieval` (plus the already-clean `cache_config`, `guide`, `__init__`) are strict-clean; `categories`, `utils`, `db_cache`, `base`, `discovery`, `cli` stay exempted with the specific strict flags relaxed (tracked TODO in the config comment).

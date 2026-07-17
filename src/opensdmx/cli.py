@@ -5,9 +5,13 @@ from __future__ import annotations
 import json
 import re
 import sys
+from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Optional
+from typing import TYPE_CHECKING, Any, Optional
+
+if TYPE_CHECKING:
+    import polars as pl
 
 _HELP_FLAGS = {"--help", "-h"}
 
@@ -44,7 +48,7 @@ _output_mode: str = "table"
 
 
 @contextmanager
-def _status_ctx(msg: str):
+def _status_ctx(msg: str) -> Iterator[None]:
     """Show a Rich spinner only in table mode; silent otherwise."""
     if _output_mode == "table":
         with console.status(msg):
@@ -53,7 +57,7 @@ def _status_ctx(msg: str):
         yield
 
 
-def _filter_by_grep(df, pattern: str, columns: list[str]):
+def _filter_by_grep(df: pl.DataFrame, pattern: str, columns: list[str]) -> pl.DataFrame:
     """Filter a DataFrame to rows where any of `columns` matches the regex.
 
     Case-insensitive. Exits with a readable message on a malformed pattern
@@ -71,7 +75,7 @@ def _filter_by_grep(df, pattern: str, columns: list[str]):
     return df.filter(mask)
 
 
-def _emit(data: object, df=None) -> None:
+def _emit(data: object, df: pl.DataFrame | None = None) -> None:
     """Write structured output to stdout based on _output_mode.
 
     data  — Python list/dict for JSON mode
@@ -102,7 +106,7 @@ def _version_callback(value: bool) -> None:
 _PROVIDER_HELP = "Provider name ('eurostat', 'ecb') or custom base URL. Env: OPENSDMX_PROVIDER"
 
 
-def _parse_extra_filters(ctx: typer.Context) -> dict:
+def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
     """Parse extra --KEY VALUE args from context as dimension filters.
 
     Supports multiple values per dimension:
@@ -197,7 +201,7 @@ def search(
     all_results: bool = typer.Option(False, "--all", help="Show ALL results from cache, ignoring --n and --page."),
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict search to a category (leaf id or dotted path). Provider must support categories. See `opensdmx tree`."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Search datasets by keyword in the local cache (or semantically with --semantic).
 
     Matches the dataset title and ID. Results come from the local cache — fast,
@@ -335,7 +339,7 @@ def info(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
-):
+) -> None:
     """Show metadata and dimensions for a dataset.
 
     Default provider: eurostat. Use --provider to switch.
@@ -429,7 +433,7 @@ def values(
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive)"),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
-):
+) -> None:
     """Show available values for a dimension.
 
     Default provider: eurostat. Use --provider to switch.
@@ -482,7 +486,7 @@ def constraints(
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive); only applies with DIMENSION"),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
-):
+) -> None:
     """Show constrained (actually present) values for a dataflow's dimensions.
 
     Without DIMENSION: shows all dimensions with their count and a short sample.
@@ -566,7 +570,7 @@ def constraints(
         # constraint response (typical with `contentconstraint`, which omits
         # large dimensions like REF_AREA) get an inline hint pointing the user
         # to `opensdmx values` (the full codelist).
-        rows: list[dict] = []
+        rows: list[dict[str, Any]] = []
         for dim_id in ds["dimensions"]:
             if dim_id in avail:
                 codes = avail[dim_id]["id"].to_list()
@@ -671,7 +675,7 @@ def constraints(
 @app.command()
 def embed(
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Build semantic embeddings cache for the dataset catalog.
 
     Default provider: eurostat. Use --provider to switch.
@@ -691,7 +695,7 @@ def embed(
 
 
 @app.command()
-def providers():
+def providers() -> None:
     """List built-in SDMX providers (alias, name, description).
 
     These are curated examples — opensdmx works with any SDMX 2.1 REST endpoint.
@@ -704,7 +708,7 @@ def providers():
     """
     from .base import PROVIDERS
 
-    def _cap(cfg: dict, key: str) -> str:
+    def _cap(cfg: dict[str, Any], key: str) -> str:
         val = cfg.get(key)
         if val is True:
             return "[green]✓[/green]"
@@ -761,7 +765,7 @@ def providers():
 def which(
     query: Optional[str] = typer.Argument(None, help="Capability to look up (omit to list all)."),
     limit: int = typer.Option(3, help="Maximum matches to return."),
-):
+) -> None:
     """Find the command that implements a capability.
 
     Resolves a natural-language query to the best matching command(s)
@@ -820,7 +824,7 @@ def tree(
     show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (prefixed [df:ID])."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
-):
+) -> None:
     """Browse the thematic tree of dataflows (categoryscheme + categorisation).
 
     Without --scheme: lists all schemes with their dataflow counts.
@@ -988,7 +992,7 @@ def tree(
         )
         raise typer.Exit(0)
 
-    df_by_path: dict[str, list[dict]] = {}
+    df_by_path: dict[str, list[dict[str, Any]]] = {}
     if show_dataflows:
         from .discovery import all_available
 
@@ -1025,7 +1029,7 @@ def tree(
         console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
         render_root = ""
 
-    children: dict[str, list[dict]] = {}
+    children: dict[str, list[dict[str, Any]]] = {}
     for r in scheme_rows.iter_rows(named=True):
         if category is not None and r["cat_path"] == render_root:
             continue
@@ -1062,7 +1066,7 @@ def tree(
 def siblings(
     dataset_id: str = typer.Argument(..., help="Dataflow ID to locate in the thematic tree"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Show dataflow siblings — other dataflows in the same category.
 
     Given a dataflow ID, look up its categories and list all dataflows
@@ -1129,7 +1133,7 @@ def get(
     labels: bool = typer.Option(False, "--labels", help="Append a '<DIM>_label' column with the human-readable name for each dimension code"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
-):
+) -> None:
     """Get data for a dataset. Extra --DIM VALUE pairs are used as filters.
 
     Default provider: eurostat. Use --provider to switch.
@@ -1228,7 +1232,7 @@ def run(
     query_file: Path = typer.Argument(..., help="YAML query file (created with --query-file)"),
     out: Optional[Path] = typer.Option(None, "--out", help="Output file (.csv/.parquet/.json) — default: stdout"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Run a query from a YAML file saved with --query-file.
 
     Examples:
@@ -1339,7 +1343,7 @@ def plot(
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Plot data as a chart (line, bar, barh, point, heatmap).
 
     INPUT can be a dataflow ID (fetches from SDMX) or a local file
@@ -1568,7 +1572,7 @@ def guide(
     yes: bool = typer.Option(False, "--yes", "-y", help="Non-interactive: auto-confirm all prompts and download data.csv"),
     out: Path = typer.Option(Path("data.csv"), "--out", help="Output file when --yes is set"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """Guided dataset discovery: semantic search + AI multi-turn conversation for filters.
 
     Default provider: eurostat. Use --provider to switch.
@@ -1588,7 +1592,7 @@ def guide(
 def blacklist(
     remove: Optional[list[str]] = typer.Option(None, "--remove", help="Dataset ID to remove from blacklist (repeatable)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
-):
+) -> None:
     """List and manage datasets marked as unavailable.
 
     Default provider: eurostat. Use --provider to switch.
@@ -1658,5 +1662,5 @@ def blacklist(
         console.print(f"[green]Removed:[/green] {df_id}")
 
 
-def main():
+def main() -> None:
     app()
