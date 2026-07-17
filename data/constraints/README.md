@@ -52,8 +52,12 @@ WHERE dimension_id IN ('ITTER107', 'REF_AREA')
 
 Human-diffable progress tracker: `df_id`, `df_description`, `status`
 (`ok` / `empty` / `error`), `source` (`hub` / `sdmx`), `n_dims`, `n_codes`,
-`error_count`, `last_error`, `checked_at`. Errored dataflows are retried on
-later runs (max 3 attempts).
+`error_count`, `last_error`, `checked_at`.
+
+Failed dataflows are retried with exponential backoff (1, 2, 4 ... days, capped
+at 64) and never abandoned: hub failures are usually transient — the endpoint
+sheds load under a burst of requests — so a dataflow that failed a few runs in
+a row is generally fine when probed again later.
 
 ### `istat_territorial.csv` — derived view (ISTAT only)
 

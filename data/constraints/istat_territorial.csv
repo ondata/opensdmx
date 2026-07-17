@@ -321,3 +321,5 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_3,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
 150_1175,Tasso di occupazione - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_1,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Titolo di studio, cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_10,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 (dettaglio) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17

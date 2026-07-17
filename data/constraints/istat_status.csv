@@ -384,3 +384,6 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 150_1175,Tasso di occupazione - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),ok,hub,6,37,0,"",2026-07-17
 150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",ok,hub,6,34,0,"",2026-07-17
 150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_2,Ripartizioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1188,Occupati (migliaia) - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_1,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Titolo di studio, cittadinanza, età",ok,hub,6,29,0,"",2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_10,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 (dettaglio) - posizione professionale,ok,hub,6,30,0,"",2026-07-17

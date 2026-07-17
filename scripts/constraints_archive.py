@@ -48,7 +48,14 @@ DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "constraints"
 
 DEFAULT_BUDGETS = {"istat": 200, "eurostat": 300}
 FALLBACK_BUDGET = 50
-MAX_ERROR_RETRIES = 3
+
+# Failed dataflows are retried with exponential backoff and never abandoned.
+# Hub failures are typically transient — the endpoint sheds load under a burst
+# of requests, so a dataflow that failed a few runs in a row is usually fine
+# when probed again later. Backoff keeps genuinely dead dataflows from eating
+# the budget every run without dropping them from the archive for good.
+ERROR_RETRY_BACKOFF_DAYS = 1
+MAX_BACKOFF_DOUBLINGS = 6  # caps the wait at 64 days
 
 STATUS_COLUMNS = {
     "df_id": pl.Utf8,
@@ -131,10 +138,23 @@ def probe_sdmx(df_id: str) -> dict[str, list[str]]:
     return {dim: frame["id"].to_list() for dim, frame in available.items()}
 
 
+def error_retry_due(entry: dict, today: date) -> bool:
+    """True when a failed dataflow has waited long enough to be retried.
+
+    The wait doubles with each consecutive failure (1, 2, 4 ... days, capped),
+    so a transient hub failure is retried the next run while a dataflow that
+    keeps failing decays to a negligible cost. Nothing is ever abandoned.
+    """
+    checked = date.fromisoformat(entry["checked_at"])
+    doublings = min(max(entry["error_count"] - 1, 0), MAX_BACKOFF_DOUBLINGS)
+    wait = ERROR_RETRY_BACKOFF_DAYS * (2**doublings)
+    return (today - checked).days >= wait
+
+
 def pick_candidates(
     catalog: pl.DataFrame, status: dict[str, dict], stale_days: int
 ) -> list[dict]:
-    """Order: never probed, then errored (< MAX_ERROR_RETRIES), then stale."""
+    """Order: never probed, then errored (backoff elapsed), then stale."""
     today = date.today()
     pending, errored, stale = [], [], []
     for row in catalog.sort("df_id").iter_rows(named=True):
@@ -144,7 +164,7 @@ def pick_candidates(
             continue
         checked = date.fromisoformat(entry["checked_at"])
         if entry["status"] == "error":
-            if entry["error_count"] < MAX_ERROR_RETRIES:
+            if error_retry_due(entry, today):
                 errored.append((checked, row))
         elif (today - checked).days > stale_days:
             stale.append((checked, row))
