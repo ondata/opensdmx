@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import sqlite3
 import time
+from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
+from typing import Any
 
 
 def _get_db_path() -> Path:
@@ -17,7 +19,7 @@ _INITIALIZED_DBS: set[str] = set()
 
 
 @contextmanager
-def _db_conn():
+def _db_conn() -> Iterator[sqlite3.Connection]:
     """Yield a ready-to-use connection, then commit and close it."""
     db_path = _get_db_path()
     db_key = str(db_path.resolve())
@@ -108,7 +110,7 @@ from .cache_config import CONSTRAINTS_CACHE_TTL, METADATA_CACHE_TTL
 
 # --- structure dims ---
 
-def get_cached_dims(structure_id: str) -> dict | None:
+def get_cached_dims(structure_id: str) -> dict[str, Any] | None:
     with _db_conn() as conn:
         rows = conn.execute(
             "SELECT * FROM structure_dims WHERE structure_id = ? ORDER BY position",
@@ -128,7 +130,7 @@ def get_cached_dims(structure_id: str) -> dict | None:
     }
 
 
-def save_dims(structure_id: str, dims: dict) -> None:
+def save_dims(structure_id: str, dims: dict[str, Any]) -> None:
     now = time.time()
     with _db_conn() as conn:
         conn.executemany(
@@ -147,7 +149,7 @@ def is_codelist_info_cached(codelist_id: str) -> bool:
         ).fetchone()
     if row is None:
         return False
-    return time.time() - row["cached_at"] <= METADATA_CACHE_TTL
+    return bool(time.time() - row["cached_at"] <= METADATA_CACHE_TTL)
 
 
 def get_cached_codelist_info(codelist_id: str) -> str | None:
@@ -169,7 +171,7 @@ def save_codelist_info(codelist_id: str, description: str | None) -> None:
 
 # --- codelist values ---
 
-def get_cached_codelist_values(codelist_id: str) -> list | None:
+def get_cached_codelist_values(codelist_id: str) -> list[dict[str, Any]] | None:
     with _db_conn() as conn:
         rows = conn.execute(
             "SELECT code_id, code_name, code_parent, code_order, cached_at "
@@ -191,7 +193,7 @@ def get_cached_codelist_values(codelist_id: str) -> list | None:
     ]
 
 
-def save_codelist_values(codelist_id: str, values: list) -> None:
+def save_codelist_values(codelist_id: str, values: list[dict[str, Any]]) -> None:
     now = time.time()
     with _db_conn() as conn:
         conn.executemany(
@@ -207,7 +209,7 @@ def save_codelist_values(codelist_id: str, values: list) -> None:
 
 # --- available constraints ---
 
-def get_cached_available_constraints(df_id: str) -> dict | None:
+def get_cached_available_constraints(df_id: str) -> dict[str, Any] | None:
     with _db_conn() as conn:
         rows = conn.execute(
             "SELECT dimension_id, code_id, cached_at FROM available_constraints WHERE df_id = ?",
@@ -217,13 +219,13 @@ def get_cached_available_constraints(df_id: str) -> dict | None:
         return None
     if time.time() - rows[0]["cached_at"] > CONSTRAINTS_CACHE_TTL:
         return None
-    result: dict = {}
+    result: dict[str, Any] = {}
     for row in rows:
         result.setdefault(row["dimension_id"], []).append(row["code_id"])
     return result
 
 
-def save_available_constraints(df_id: str, constraints: dict) -> None:
+def save_available_constraints(df_id: str, constraints: dict[str, Any]) -> None:
     now = time.time()
     rows = [
         (df_id, dim_id, code_id, now)
@@ -247,13 +249,13 @@ def save_invalid_dataset(df_id: str, description: str | None = None) -> None:
         )
 
 
-def get_invalid_dataset_ids() -> set:
+def get_invalid_dataset_ids() -> set[str]:
     with _db_conn() as conn:
         rows = conn.execute("SELECT df_id FROM invalid_datasets").fetchall()
     return {row["df_id"] for row in rows}
 
 
-def list_invalid_datasets() -> list[dict]:
+def list_invalid_datasets() -> list[dict[str, Any]]:
     with _db_conn() as conn:
         rows = conn.execute(
             "SELECT df_id, description, marked_at FROM invalid_datasets ORDER BY marked_at DESC"
@@ -265,7 +267,7 @@ def delete_invalid_dataset(df_id: str) -> bool:
     """Delete a dataset from the blacklist. Returns True if it existed."""
     with _db_conn() as conn:
         cur = conn.execute("DELETE FROM invalid_datasets WHERE df_id = ?", (df_id,))
-        return cur.rowcount > 0
+        return bool(cur.rowcount > 0)
 
 
 # --- bulk constraint index ---
@@ -279,7 +281,7 @@ def is_bulk_constraint_fresh(agency_id: str) -> bool:
         ).fetchone()
     if row is None:
         return False
-    return time.time() - row["cached_at"] <= CONSTRAINTS_CACHE_TTL
+    return bool(time.time() - row["cached_at"] <= CONSTRAINTS_CACHE_TTL)
 
 
 def get_df_ids_with_content_constraint(agency_id: str) -> set[str] | None:
