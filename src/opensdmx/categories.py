@@ -6,6 +6,7 @@ import json
 import logging
 import time
 from pathlib import Path
+from typing import Any
 
 import polars as pl
 
@@ -65,7 +66,7 @@ def _load_cached() -> tuple[pl.DataFrame, pl.DataFrame] | None:
     return cats, pl.read_parquet(zp)
 
 
-def _direct_name(elem, language: str, ns: dict) -> str:
+def _direct_name(elem: Any, language: str, ns: dict[str, str]) -> str:
     """Return the Name element (direct child) for the given language.
 
     Falls back to any direct-child Name if preferred language is missing.
@@ -82,7 +83,7 @@ def _direct_name(elem, language: str, ns: dict) -> str:
     return ""
 
 
-def _direct_description(elem, language: str, ns: dict) -> str:
+def _direct_description(elem: Any, language: str, ns: dict[str, str]) -> str:
     """Return the Description element (direct child) for the given language.
 
     Same semantics as `_direct_name` but for Description (often absent).
@@ -98,7 +99,16 @@ def _direct_description(elem, language: str, ns: dict) -> str:
     return ""
 
 
-def _walk_categories(parent_elem, scheme_id, scheme_name, parent_path, depth, language, ns, rows):
+def _walk_categories(
+    parent_elem: Any,
+    scheme_id: str,
+    scheme_name: str,
+    parent_path: str,
+    depth: int,
+    language: str,
+    ns: dict[str, str],
+    rows: list[dict[str, Any]],
+) -> None:
     struct_ns = ns.get("structure", "")
     tag = f"{{{struct_ns}}}Category" if struct_ns else "Category"
     for cat in parent_elem.findall(tag):
@@ -129,7 +139,7 @@ def _fetch_categoryscheme() -> pl.DataFrame:
     root, ns = xml_parse(content)
     struct_ns = ns.get("structure", "")
 
-    rows: list[dict] = []
+    rows: list[dict[str, Any]] = []
     scheme_tag = f"{{{struct_ns}}}CategoryScheme" if struct_ns else "CategoryScheme"
     for scheme in root.iter(scheme_tag):
         sid = xml_attr_safe(scheme, "id")
@@ -151,7 +161,7 @@ def _fetch_categorisation() -> pl.DataFrame:
     root, ns = xml_parse(content)
     struct_ns = ns.get("structure", "")
 
-    rows: list[dict] = []
+    rows: list[dict[str, Any]] = []
     cz_tag = f"{{{struct_ns}}}Categorisation" if struct_ns else "Categorisation"
     src_tag = f"{{{struct_ns}}}Source" if struct_ns else "Source"
     tgt_tag = f"{{{struct_ns}}}Target" if struct_ns else "Target"
@@ -260,7 +270,7 @@ def _warn_stale(categorisation_df: pl.DataFrame) -> None:
         )
 
 
-def siblings_of(df_id: str) -> list[dict]:
+def siblings_of(df_id: str) -> list[dict[str, Any]]:
     """Return all dataflow siblings grouped by category.
 
     A dataflow can belong to multiple categories (cross-listed). This function

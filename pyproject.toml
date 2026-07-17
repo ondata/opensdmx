@@ -85,7 +85,6 @@ ignore_missing_imports = true
 # discovery, cli.
 [[tool.mypy.overrides]]
 module = [
-    "opensdmx.categories",
     "opensdmx.utils",
     "opensdmx.db_cache",
     "opensdmx.base",
