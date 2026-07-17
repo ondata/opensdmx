@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 WHICH_INDEX: list[dict] = [
     {
         "command": "search",
@@ -91,7 +93,7 @@ def rank_which(query: str, limit: int = 3) -> list[dict]:
         return [{"entry": e, "score": 0} for e in WHICH_INDEX]
 
     tokens = q.split()
-    scored = [{"entry": e, "score": _score_entry(e, q, tokens)} for e in WHICH_INDEX]
+    scored: list[dict[str, Any]] = [{"entry": e, "score": _score_entry(e, q, tokens)} for e in WHICH_INDEX]
     scored = [m for m in scored if m["score"] > 0]
     scored.sort(key=lambda m: m["score"], reverse=True)
     return scored[:limit]

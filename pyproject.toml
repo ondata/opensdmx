@@ -47,13 +47,38 @@ guide = [
 opensdmx = "opensdmx:main"
 
 [dependency-groups]
-dev = ["pytest>=8", "ruff>=0.11", "opensdmx[guide]"]
+dev = [
+    "pytest>=8",
+    "ruff>=0.11",
+    "mypy>=1.11",
+    "types-PyYAML",
+    "lxml-stubs",
+    "pandas-stubs",
+    "opensdmx[guide]",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.ruff.lint]
 ignore = ["E402"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src/opensdmx"]
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+# Third-party libraries without type stubs.
+[[tool.mypy.overrides]]
+module = [
+    "ollama.*",
+    "plotnine.*",
+    "questionary.*",
+    "chatlas.*",
+    "matplotlib.*",
+]
+ignore_missing_imports = true
 
 [build-system]
 requires = ["uv_build>=0.9.7,<0.10.0"]

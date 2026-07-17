@@ -1,6 +1,13 @@
 """AI-assisted filter selection — Python controls flow, AI produces structured JSON."""
 from __future__ import annotations
 
+from typing import TYPE_CHECKING, TypeVar
+
+if TYPE_CHECKING:
+    from pydantic import BaseModel
+
+_ModelT = TypeVar("_ModelT", bound="BaseModel")
+
 
 class ChangeDataset(Exception):
     """Raised when the user wants to go back to dataset selection."""
@@ -160,7 +167,7 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
     # ── AI helper (structured output, history maintained) ─────────────────────
     chat = ChatGoogle(model="gemini-2.5-flash")
 
-    def _ai_structured(msg: str, model_cls, spinner: str = "AI is processing..."):
+    def _ai_structured(msg: str, model_cls: type[_ModelT], spinner: str = "AI is processing...") -> _ModelT:
         with console.status(f"[dim]{spinner}[/dim]"):
             with warnings.catch_warnings(), contextlib.redirect_stderr(io.StringIO()):
                 warnings.simplefilter("ignore")
@@ -208,7 +215,7 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
     # ── Step 4: Python validates each scenario ────────────────────────────────
     valid_scenarios: list[ScenarioFilter] = []
     with console.status("[dim]Validating scenarios...[/dim]"):
-        for s in proposal.scenarios:  # type: ignore[union-attr]
+        for s in proposal.scenarios:
             ok, _ = _validate(_to_dict(s.filters))
             if ok:
                 valid_scenarios.append(s)
@@ -239,7 +246,7 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
                 lines.append(f"- {df.dim_id}: {code_str}")
         return "\n".join(lines)
 
-    intro = getattr(proposal, "intro", "") or ""  # type: ignore[union-attr]
+    intro = getattr(proposal, "intro", "") or ""
     parts = [intro] if intro else []
     for i, s in enumerate(valid_scenarios):
         parts.append(_fmt_scenario(s, chr(65 + i)))
@@ -316,12 +323,12 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
             "Set confirmed=False — confirmation is handled separately."
         )
 
-        update: FilterUpdate = _ai_structured(  # type: ignore[assignment]
+        update: FilterUpdate = _ai_structured(
             update_msg, FilterUpdate, spinner="AI is processing your request..."
         )
 
         # Python validates
-        upd_dict = _to_dict(update.filters)  # type: ignore[union-attr]
+        upd_dict = _to_dict(update.filters)
         ok, err = _validate(upd_dict)
         if not ok:
             fix_msg = (
@@ -330,24 +337,24 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
                 f"Current valid filters: {current_filters}\n"
                 "Fix only what is invalid and return a working filter set."
             )
-            update = _ai_structured(fix_msg, FilterUpdate, spinner="Fixing filters...")  # type: ignore[assignment]
-            upd_dict = _to_dict(update.filters)  # type: ignore[union-attr]
+            update = _ai_structured(fix_msg, FilterUpdate, spinner="Fixing filters...")
+            upd_dict = _to_dict(update.filters)
             ok, err = _validate(upd_dict)
             if not ok:
                 console.print(f"\n[yellow]⚠ Could not find a valid combination: {err}[/yellow]")
-                console.print(Markdown(update.message))  # type: ignore[union-attr]
+                console.print(Markdown(update.message))
                 console.print()
                 continue
 
         current_filters = upd_dict
-        current_start = update.start_period or current_start  # type: ignore[union-attr]
-        current_end = update.end_period or current_end  # type: ignore[union-attr]
+        current_start = update.start_period or current_start
+        current_end = update.end_period or current_end
 
         console.print("\n[bold cyan]AI:[/bold cyan]")
-        console.print(Markdown(update.message))  # type: ignore[union-attr]
+        console.print(Markdown(update.message))
         console.print()
 
-        if update.confirmed:  # type: ignore[union-attr]
+        if update.confirmed:
             break
 
     return {

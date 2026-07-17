@@ -86,7 +86,7 @@ def get_data(
         if url_key:
             path = f"{path}/{url_key}"
 
-    params = {}
+    params: dict[str, str | int] = {}
     if start_period:
         params["startPeriod"] = start_period
     if end_period:

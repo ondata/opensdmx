@@ -23,8 +23,16 @@ import logging
 import os
 import re
 import time
+from typing import TypedDict, cast
 
 logger = logging.getLogger(__name__)
+
+
+class _DataflowRecord(TypedDict):
+    df_id: str
+    version: str | None
+    df_description: str | None
+    df_structure_id: str | None
 
 import httpx
 import polars as pl
@@ -105,7 +113,7 @@ def all_available() -> pl.DataFrame:
     content = sdmx_request_xml(path, **dataflow_params)
     root, ns = xml_parse(content)
 
-    records = []
+    records: list[_DataflowRecord] = []
     for df in root.iter("{" + ns.get("structure", "") + "}Dataflow") if "structure" in ns else []:
         df_id_raw = xml_attr_safe(df, "id")
         df_agency = xml_attr_safe(df, "agencyID")
@@ -114,7 +122,7 @@ def all_available() -> pl.DataFrame:
         if catalog_agency != agency_id and df_agency:
             df_id = f"{df_agency},{df_id_raw}"
         else:
-            df_id = df_id_raw
+            df_id = df_id_raw or ""
         version = xml_attr_safe(df, "version")
         df_description = get_name_by_lang(df, language, ns) or get_name_by_lang(df, "en", ns)
 
@@ -332,7 +340,7 @@ def _get_dimensions(structure_id: str) -> dict:
     # Sort by position
     result = dict(sorted(
         ((k, v) for k, v in dims.items() if v["position"] is not None),
-        key=lambda item: item[1]["position"]
+        key=lambda item: cast(int, item[1]["position"])
     ))
     try:
         save_dims(structure_id, result)
@@ -864,6 +872,7 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
 
     # Precedence: env var > provider config > module default (None → fallback in sdmx_request).
     env_timeout = os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT")
+    constraint_timeout: float | None
     if env_timeout:
         constraint_timeout = float(env_timeout)
     else:

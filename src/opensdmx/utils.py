@@ -17,7 +17,7 @@ def xml_parse(content: bytes):
     regardless of the prefix used in the source XML.
     """
     root = etree.fromstring(content)
-    ns = {}
+    ns: dict[str, str] = {}
     for element in root.iter():
         for prefix, uri in element.nsmap.items():
             if uri in ns.values():

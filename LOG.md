@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-07-17 - mypy type-checking
+
+- ci: added mypy to the dev tooling. `[tool.mypy]` in `pyproject.toml` (pragmatic baseline: default checks + `warn_unused_ignores`/`warn_redundant_casts`), dev deps `mypy`, `types-PyYAML`, `lxml-stubs`, `pandas-stubs`; `uv run mypy` step in `ci.yml` next to ruff.
+- fix(types): resolved the real type errors surfaced — `ai._ai_structured` now generic (`TypeVar` bound to `BaseModel`), dropping 11 stale `# type: ignore`; `discovery` dataflow records typed via a `TypedDict` (df_id always `str`); `params`/`ns`/`constraint_timeout` annotations; `which.rank_which` scored list typed.
+- `mypy`, `ruff`, and the 229-test suite all green.
+
 ## 2026-07-16 - search --grep
 
 - feat(cli): `search` gains `--grep`, the case-insensitive regex post-filter already available on `values` and `constraints`. Closes the gap that forced a shell pipe for whole-word matching (searching `comuni` on ISTAT also matched "comunitari", "comunicazione").
