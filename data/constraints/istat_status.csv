@@ -227,3 +227,160 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 121_330_DF_DCSC_TRAMERCIS1_2,Merci trasportate - tonnellate per territorio di origine e di destinazione e macrobranca merceologica,ok,hub,8,80,0,"",2026-07-16
 121_330_DF_DCSC_TRAMERCIS1_3,Merci trasportate - tonnellate per territorio di origine e di destinazione e titolo di trasporto,ok,hub,8,74,0,"",2026-07-16
 121_330_DF_DCSC_TRAMERCIS1_4,Merci trasportate per territorio di origine e titolo di trasporto (trasporto interno),ok,hub,8,46,0,"",2026-07-16
+121_330_DF_DCSC_TRAMERCIS1_5,Merci trasportate per territorio di origine e titolo di trasporto (trasporto complessivo),ok,hub,8,45,0,"",2026-07-17
+121_330_DF_DCSC_TRAMERCIS1_6,Merci trasportate per territorio di destinazione e titolo di trasporto (trasporto interno),ok,hub,8,46,0,"",2026-07-17
+121_330_DF_DCSC_TRAMERCIS1_7,Merci trasportate per territorio di destinazione e titolo di trasporto (trasporto complessivo),ok,hub,8,45,0,"",2026-07-17
+121_331,Trasporto aereo,ok,hub,8,141,0,"",2026-07-17
+121_331_DF_DCSC_INDTRAEREO_1,Voli interni e internazionali,ok,hub,8,74,0,"",2026-07-17
+121_331_DF_DCSC_INDTRAEREO_2,Voli internazionali per paese di origine/destinazione,ok,hub,8,86,0,"",2026-07-17
+121_331_DF_DCSC_INDTRAEREO_3,"Voli internazionali da e per Linate, Malpensa, Fiumicino",ok,hub,8,71,0,"",2026-07-17
+121_331_DF_DCSC_INDTRAEREO_4,Dato trimestrale,ok,hub,8,63,0,"",2026-07-17
+121_393,Trasporto marittimo,ok,hub,11,246,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_1,Passeggeri e merci,ok,hub,7,26,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_2,Passeggeri per porto di imbarco e sbarco,ok,hub,8,79,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_3,"Merci per porto di imbarco e sbarco, tipo di carico e merce NST 2007",ok,hub,11,90,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_4,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST 2007,ok,hub,8,97,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_5,Navigazione di cabotaggio per regione italiana di imbarco e sbarco,ok,hub,7,56,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_6,"Merci, navi arrivate e tonnellate di stazza lorda per regione",ok,hub,11,42,0,"",2026-07-17
+121_393_DF_DCSC_TRAMAR_7,Porto e tipo merce NST/R,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+121_393_DF_DCSC_TRAMAR_8,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST/R,ok,hub,8,99,0,"",2026-07-17
+122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54_DF_DCSC_TUR_1,Capacità degli esercizi ricettivi per tipo di esercizio - com.,ok,hub,8,12695,0,"",2026-07-17
+122_54_DF_DCSC_TUR_10,Tipo di località e paese di residenza,ok,hub,8,29,0,"",2026-07-17
+122_54_DF_DCSC_TUR_11,Per regione e per residenza del cliente - mensili e annuali,ok,hub,7,43,0,"",2026-07-17
+122_54_DF_DCSC_TUR_12,Per tipo di esercizio e residenza del cliente - annuali,ok,hub,7,21,0,"",2026-07-17
+122_54_DF_DCSC_TUR_13,"Arrivi, presenze, permanenza media - Mensili",ok,hub,7,19,0,"",2026-07-17
+122_54_DF_DCSC_TUR_2,Dimensione dell'albergo - prov.,ok,hub,8,156,0,"",2026-07-17
+122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54_DF_DCSC_TUR_4,Residenti per regione di origine,ok,hub,7,43,0,"",2026-07-17
+122_54_DF_DCSC_TUR_5,Paese di origine,ok,hub,7,78,0,"",2026-07-17
+122_54_DF_DCSC_TUR_6,Tipo di località,ok,hub,8,29,0,"",2026-07-17
+122_54_DF_DCSC_TUR_7,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - annuali,ok,hub,7,169,0,"",2026-07-17
+122_54_DF_DCSC_TUR_8,Residenti per regione di origine,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54_DF_DCSC_TUR_9,Paese di origine - prov,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+123_712,Indicatori di bilancio e dati sul personale delle unità istituzionali,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+123_712_DF_DCAR_INDBILPER_1,Indicatori di bilancio e dati sul personale delle unità istituzionali,ok,hub,3,11440,0,"",2026-07-17
+123_713,Numero e tipo di unità istituzionali,ok,hub,3,64,0,"",2026-07-17
+123_713_DF_DCAR_UI_1,Numero e tipo di unità istituzionali,ok,hub,3,64,0,"",2026-07-17
+123_840,Attività e organizzazione delle unità istituzionali,ok,hub,5,206,0,"",2026-07-17
+123_840_DF_DCAR_INDCENS_PA_1,Indicatori,ok,hub,4,145,0,"",2026-07-17
+123_840_DF_DCAR_INDCENS_PA_2,Funzionalità di alcuni servizi,ok,hub,5,103,0,"",2026-07-17
+124_1156,"Stato patrimoniale delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,4,27,0,"",2026-07-17
+124_1156_DF_DCAR_STATPAT_UNI_1,"Stato patrimoniale delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,4,27,0,"",2026-07-17
+124_1157,"Conto economico delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,4,25,0,"",2026-07-17
+124_1157_DF_DCAR_CONTECON_UNI_1,"Conto economico delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,4,25,0,"",2026-07-17
+124_229,Stato patrimoniale delle camere di commercio - euro,ok,hub,3,23,0,"",2026-07-17
+124_229_DF_DCAR_STATPATCC_1,Stato patrimoniale delle camere di commercio (euro),ok,hub,3,23,0,"",2026-07-17
+124_231,Entrate delle unità istituzionali locali (euro),ok,hub,5,100,0,"",2026-07-17
+124_231_DF_DCAR_ENTIST_1,Entrate delle unità istituzionali locali (euro),ok,hub,5,62,0,"",2026-07-17
+124_232,Spese delle unità istituzionali locali (euro),ok,hub,5,110,0,"",2026-07-17
+124_232_DF_DCAR_SPEIST_1,Spese delle unità istituzionali locali (euro),ok,hub,5,63,0,"",2026-07-17
+124_233_DF_DCAR_ENTIST_PA_1,Entrate del Rendiconto Generale dello Stato (euro),ok,hub,5,21,0,"",2026-07-17
+124_234_DF_DCAR_SPEIST_PA_1,Spese del Rendiconto Generale dello Stato (euro),ok,hub,5,25,0,"",2026-07-17
+124_234_DF_DCAR_SPEIST_PA_2,"Spese delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,5,24,0,"",2026-07-17
+124_322,Conto economico delle camere di commercio - euro,ok,hub,4,25,0,"",2026-07-17
+124_322_DF_DCAR_CONTECON_CC_1,Conto economico delle camere di commercio (euro),ok,hub,4,25,0,"",2026-07-17
+124_722,"Conto economico delle Asl, aziende ospedaliere, aziende ospedaliere universitarie, policlinici e IRCCS (migliaia di euro)",ok,hub,4,65,0,"",2026-07-17
+124_722_DF_DCAR_CONTECON_ASLAO_1,"Conto economico delle Asl, aziende ospedaliere, aziende ospedaliere universitarie, Policlinici e IRCCS (migliaia di euro)",ok,hub,4,65,0,"",2026-07-17
+12_323,Impianti di depurazione delle acque reflue urbane,ok,hub,4,126,0,"",2026-07-17
+12_323_DF_DCCV_IMPDEP_1,Impianti di depurazione delle acque reflue urbane - reg.,ok,hub,4,35,0,"",2026-07-17
+12_323_DF_DCCV_IMPDEP_2,Impianti di depurazione delle acque reflue urbane - ato,ok,hub,4,104,0,"",2026-07-17
+12_340,Prelievo di acqua per uso potabile,ok,hub,4,45,0,"",2026-07-17
+12_340_DF_DCCV_PRELACQ_1,Prelievo di acqua per uso potabile,ok,hub,4,45,0,"",2026-07-17
+12_60,Distribuzione di acqua potabile,ok,hub,3,8578,0,"",2026-07-17
+12_60_DF_DCCV_CONSACQUA_1,Distribuzione di acqua potabile - reg.,ok,hub,3,31,0,"",2026-07-17
+12_60_DF_DCCV_CONSACQUA_2,Distribuzione di acqua potabile,ok,hub,3,8486,0,"",2026-07-17
+12_60_DF_DCCV_CONSACQUA_3,Distribuzione di acqua potabile - Distretto idrografico,ok,hub,3,12,0,"",2026-07-17
+139_176,Importazioni ed esportazioni per paese e merce Ateco 2007,ok,hub,5,42,0,"",2026-07-17
+140_180,Nic - mensili sino al  2010 (base 1995),ok,hub,5,482,0,"",2026-07-17
+143_1043,Indici dei prezzi alla produzione delle costruzioni,ok,hub,5,14,0,"",2026-07-17
+143_1043_DF_DCSC_INDPREPROCOSTR_1,Prezzi alla produzione delle costruzioni (base 2015),ok,hub,5,13,0,"",2026-07-17
+143_1043_DF_DCSC_INDPREPROCOSTR_2,Prezzi alla produzione delle costruzioni (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_222,Indice dei prezzi all'importazione - dati mensili,ok,hub,6,146,0,"",2026-07-17
+143_222_DF_DCSC_PREIMPIND_1,Prezzi all'importazione - Dati mensili (base 2015),ok,hub,6,145,0,"",2026-07-17
+143_222_DF_DCSC_PREIMPIND_2,Prezzi all'importazione - Dati mensili (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_497,Prezzi delle abitazioni (Ipab),ok,hub,5,28,0,"",2026-07-17
+143_497_DF_DCSP_IPAB_1,Trimestrali dal 2010 al 2024 (base 2015),ok,hub,5,19,0,"",2026-07-17
+143_497_DF_DCSP_IPAB_2,Medie annue dal 2010 al 2024 (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_497_DF_DCSP_IPAB_3,Pesi dal 2010,ok,hub,4,6,0,"",2026-07-17
+143_497_DF_DCSP_IPAB_4,Trimestrali dal 2010 al 2016 (base 2010),ok,hub,5,9,0,"",2026-07-17
+143_497_DF_DCSP_IPAB_5,Medie annue dal 2010 al 2016 (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_497_DF_DCSP_IPAB_6,Trimestrali dal 2010 (base 2025),ok,hub,5,19,0,"",2026-07-17
+143_497_DF_DCSP_IPAB_7,Medie annue dal 2010 (base 2025),ok,hub,5,18,0,"",2026-07-17
+144_107_DF_DCSP_FOI3_1,Foi - pesi sino al 2010,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_110_DF_DCSP_FOI1_1,Foi - mensili sino al 2010 (base 1995),ok,hub,5,139,0,"",2026-07-17
+144_118_DF_DCSP_FOI2_1,Foi - medie annue sino al 2010 (base 1995),ok,hub,5,138,0,"",2026-07-17
+144_125_DF_DCSP_NICDUE_1,Classificazione Coicop (2 cifre) (base dicembre 1998) - prov.,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_125_DF_DCSP_NICDUE_2,Tipologie di prodotto (base 1995),ok,hub,5,38,0,"",2026-07-17
+144_125_DF_DCSP_NICDUE_3,Classificazione Coicop (5 cifre) (base 1995),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_126_DF_DCSP_NICTRE_1,Tipologie di prodotto,ok,hub,4,36,0,"",2026-07-17
+144_126_DF_DCSP_NICTRE_2,Classificazione Coicop (5 cifre),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_180_DF_DCSP_NICUNOB_1,Classificazione Coicop (2 cifre) (base dicembre 1998),ok,hub,5,139,0,"",2026-07-17
+144_180_DF_DCSP_NICUNOB_2,Tipologie di prodotto (base 1995),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_180_DF_DCSP_NICUNOB_3,Classificazione Coicop (5 cifre) (base 1995),ok,hub,5,331,0,"",2026-07-17
+145_360,Prezzi alla produzione dell'industria,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_1,Prezzi alla produzione dell'industria - mensili (base 2015),ok,hub,6,351,0,"",2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_3,Mensili (base 2005),ok,hub,6,322,0,"",2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361,Costi di costruzione,ok,hub,5,61,0,"",2026-07-17
+145_361_DF_DCSC_FABBRESID_1_1,Fabbricato residenziale e capannone industriale - mensili (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),ok,hub,5,9,0,"",2026-07-17
+145_361_DF_DCSC_FABBRESID_1_3,Tronchi stradali - serie interrotta - mensili (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_4,Fabbricato residenziale - mensili (base 2010),ok,hub,5,30,0,"",2026-07-17
+145_361_DF_DCSC_FABBRESID_1_5,Tronchi stradali - mensili (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_6,Fabbricato residenziale dal 2000 al 2012 (base 2005) - mensili,ok,hub,5,27,0,"",2026-07-17
+145_361_DF_DCSC_FABBRESID_1_7,Fabbricato residenziale e capannone industriale - mensili (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_8,Tronco stradale con tratto in galleria - mensili (base 2021),ok,hub,5,5,0,"",2026-07-17
+145_361_DF_DCSC_FABBRESID_1_9,Tronchi stradali - serie interrotta - mensili (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_362_DCSC_INDICITOL_1,Tipologie omogenee di lavorazioni (TOL) - mensili (base 2022),ok,hub,5,24,0,"",2026-07-17
+145_376,Prezzi alla produzione dei servizi,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_1,Trimestrali business to business dal 2006 al 2023 (base 2015),ok,hub,5,40,0,"",2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_2,Medie annue business to business dal 2006 al 2023 (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_3,Trimestrali business to business dal 2006 al 2017 (base 2010),ok,hub,5,35,0,"",2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_4,Medie annue business to business dal 2006 al 2017 (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_5,Trimestrali business to business dal 2006 al 2012 (base 2006),ok,hub,5,10,0,"",2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_6,Medie annue business to business dal 2006 al 2012 (base 2006),ok,hub,5,11,0,"",2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_7,Trimestrali business to business dal 2006 (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_8,Trimestrali business to all dal 2006 (base 2021),ok,hub,5,38,0,"",2026-07-17
+149_319,Tensione contrattuale,ok,hub,6,23,0,"",2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_1,Tensioni contrattuale - indicatori (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_2,Indicatori (base 2010),ok,hub,6,14,0,"",2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_3,Indicatori (base 2005),ok,hub,6,14,0,"",2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_4,Tensione contrattuale - indicatori (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+149_327,"Orario contrattuale, ferie e altre riduzioni orarie - dipendenti a tempo pieno",ok,hub,6,125,0,"",2026-07-17
+149_327_DF_DCSC_RETRCONTR1O_1,"Orario contrattuale, ferie e altre riduzioni orarie - dipendenti a tempo pieno",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+149_577,Posizioni lavorative alle dipendenze,ok,hub,5,42,0,"",2026-07-17
+149_577_DF_DCSC_OROS_1_1,Posizioni lavorative alle dipendenze (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+149_577_DF_DCSC_OROS_1_2,Posizioni lavorative alle dipendenze (base 2010),ok,hub,5,32,0,"",2026-07-17
+149_577_DF_DCSC_OROS_1_3,Posizioni lavorative alle dipendenze (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+14_121_DF_DCCV_TRASPUB_1,Trasporto pubblico,ok,hub,4,256,0,"",2026-07-17
+14_122_DF_DCCV_VERDURB_1,Verde urbano - dati fino al 2009,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+14_166_DF_DCCV_INTBONRUM_1,Interventi di bonifica del rumore,ok,hub,4,254,0,"",2026-07-17
+14_167_DF_DCCV_MONINQACS_1,Inquinamento acustico,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_105,Occupati per ore settimanali lavorate e numero di ore settimanali lavorate procapite,ok,hub,12,83,0,"",2026-07-17
+150_105_DF_DCCV_ORELAVMED_UNT2020_1,Numero di ore medie settimanali effettivamente lavorate pro-capite - livello ripartizionale,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_105_DF_DCCV_ORELAVMED_UNT2020_2,Numero di occupati per ore settimanali effettivamente lavorate - livello ripartizionale,ok,hub,11,78,0,"",2026-07-17
+150_1168,Tasso di occupazione  - dati mensili - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1168_DF_DCCV_TAXOCCUMENS1_UNT2020_1,Tasso di occupazione - dati mensili - regolamento precedente (fino al 2020),ok,hub,7,72,0,"",2026-07-17
+150_1169,Forze lavoro  - dati mensili - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1169_DF_DCCV_FORZLVMENS1_UNT2020_1,Forze lavoro  - dati mensili - regolamento precedente (fino al 2020),ok,hub,7,72,0,"",2026-07-17
+150_1170,Occupati -  dati mensili - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1170_DF_DCCV_OCCUPATIMENS1_UNT2020_1,"Posizione professionale, carattere occupazione",ok,hub,8,68,0,"",2026-07-17
+150_1170_DF_DCCV_OCCUPATIMENS1_UNT2020_2,"Sesso, età",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1171,Tasso di attività  - dati mensili - regolamento precedente (fino al 2020),ok,hub,7,72,0,"",2026-07-17
+150_1171_DF_DCCV_TAXATVTMENS1_UNT2020_1,Tasso di attività - dati mensili - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1172,Tasso di attività - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),ok,hub,6,37,0,"",2026-07-17
+150_1172_DF_DCCV_TAXATVTDE1_UNT2020_1,"Sesso, età",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1172_DF_DCCV_TAXATVTDE1_UNT2020_2,Ripartizioni,ok,hub,5,27,0,"",2026-07-17
+150_1173,Forze di lavoro - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1173_DF_DCCV_FORZLVDE1_UNT2020_1,"Sesso, età",ok,hub,6,34,0,"",2026-07-17
+150_1173_DF_DCCV_FORZLVDE1_UNT2020_2,Ripartizioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1174,Occupati - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),ok,hub,9,50,0,"",2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_1,"Posizione professionale, carattere occupazione",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_2,Macrosettori economici,ok,hub,6,31,0,"",2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_3,"Sesso, età",ok,hub,6,36,0,"",2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_4,Ripartizioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+150_1175,Tasso di occupazione - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),ok,hub,6,37,0,"",2026-07-17
+150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",ok,hub,6,34,0,"",2026-07-17
+150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_2,Ripartizioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17

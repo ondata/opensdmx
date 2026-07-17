@@ -214,3 +214,110 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 120_337_DF_DCSC_COMMDET_1_7,"Valore delle vendite per settore merceologico, gruppi di prodotti e classe di addetti - dati mensili (base 2010)",REF_AREA,nazionale,nazionale,1,2026-07-16
 120_337_DF_DCSC_COMMDET_1_8,Volume delle vendite per settore merceologico - dati mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-16
 120_337_DF_DCSC_COMMDET_1_9,Valore delle vendite per forma distributiva e classe di addetti - dati mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-16
+121_331,Trasporto aereo,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_331_DF_DCSC_INDTRAEREO_1,Voli interni e internazionali,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_331_DF_DCSC_INDTRAEREO_2,Voli internazionali per paese di origine/destinazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_331_DF_DCSC_INDTRAEREO_3,"Voli internazionali da e per Linate, Malpensa, Fiumicino",REF_AREA,nazionale,nazionale,1,2026-07-17
+121_331_DF_DCSC_INDTRAEREO_4,Dato trimestrale,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393,Trasporto marittimo,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_1,Passeggeri e merci,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_2,Passeggeri per porto di imbarco e sbarco,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_3,"Merci per porto di imbarco e sbarco, tipo di carico e merce NST 2007",REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_4,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST 2007,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_5,Navigazione di cabotaggio per regione italiana di imbarco e sbarco,REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_6,"Merci, navi arrivate e tonnellate di stazza lorda per regione",REF_AREA,nazionale,nazionale,1,2026-07-17
+121_393_DF_DCSC_TRAMAR_8,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST/R,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_1,Capacità degli esercizi ricettivi per tipo di esercizio - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+122_54_DF_DCSC_TUR_10,Tipo di località e paese di residenza,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_11,Per regione e per residenza del cliente - mensili e annuali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+122_54_DF_DCSC_TUR_12,Per tipo di esercizio e residenza del cliente - annuali,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_13,"Arrivi, presenze, permanenza media - Mensili",REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_2,Dimensione dell'albergo - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+122_54_DF_DCSC_TUR_4,Residenti per regione di origine,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_5,Paese di origine,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_6,Tipo di località,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54_DF_DCSC_TUR_7,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+123_713,Numero e tipo di unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
+123_713_DF_DCAR_UI_1,Numero e tipo di unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
+123_840,Attività e organizzazione delle unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+123_840_DF_DCAR_INDCENS_PA_1,Indicatori,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+123_840_DF_DCAR_INDCENS_PA_2,Funzionalità di alcuni servizi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+124_1156,"Stato patrimoniale delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+124_1156_DF_DCAR_STATPAT_UNI_1,"Stato patrimoniale delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+124_1157,"Conto economico delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+124_1157_DF_DCAR_CONTECON_UNI_1,"Conto economico delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+124_229,Stato patrimoniale delle camere di commercio - euro,REF_AREA,nazionale,nazionale,1,2026-07-17
+124_229_DF_DCAR_STATPATCC_1,Stato patrimoniale delle camere di commercio (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_231,Entrate delle unità istituzionali locali (euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+124_231_DF_DCAR_ENTIST_1,Entrate delle unità istituzionali locali (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_232,Spese delle unità istituzionali locali (euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+124_232_DF_DCAR_SPEIST_1,Spese delle unità istituzionali locali (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_233_DF_DCAR_ENTIST_PA_1,Entrate del Rendiconto Generale dello Stato (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_234_DF_DCAR_SPEIST_PA_1,Spese del Rendiconto Generale dello Stato (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_234_DF_DCAR_SPEIST_PA_2,"Spese delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+124_322,Conto economico delle camere di commercio - euro,REF_AREA,nazionale,nazionale,1,2026-07-17
+124_322_DF_DCAR_CONTECON_CC_1,Conto economico delle camere di commercio (euro),REF_AREA,nazionale,nazionale,1,2026-07-17
+124_722,"Conto economico delle Asl, aziende ospedaliere, aziende ospedaliere universitarie, policlinici e IRCCS (migliaia di euro)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
+124_722_DF_DCAR_CONTECON_ASLAO_1,"Conto economico delle Asl, aziende ospedaliere, aziende ospedaliere universitarie, Policlinici e IRCCS (migliaia di euro)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
+12_323,Impianti di depurazione delle acque reflue urbane,REF_AREA,regione,nazionale|ripartizione|regione,119,2026-07-17
+12_323_DF_DCCV_IMPDEP_1,Impianti di depurazione delle acque reflue urbane - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+12_323_DF_DCCV_IMPDEP_2,Impianti di depurazione delle acque reflue urbane - ato,REF_AREA,ripartizione,nazionale|ripartizione,97,2026-07-17
+12_340,Prelievo di acqua per uso potabile,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-17
+12_340_DF_DCCV_PRELACQ_1,Prelievo di acqua per uso potabile,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-17
+12_60,Distribuzione di acqua potabile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8575,2026-07-17
+12_60_DF_DCCV_CONSACQUA_1,Distribuzione di acqua potabile - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+12_60_DF_DCCV_CONSACQUA_2,Distribuzione di acqua potabile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8483,2026-07-17
+12_60_DF_DCCV_CONSACQUA_3,Distribuzione di acqua potabile - Distretto idrografico,REF_AREA,nazionale,nazionale,9,2026-07-17
+139_176,Importazioni ed esportazioni per paese e merce Ateco 2007,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-17
+140_180,Nic - mensili sino al  2010 (base 1995),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,119,2026-07-17
+143_1043,Indici dei prezzi alla produzione delle costruzioni,REF_AREA,nazionale,nazionale,1,2026-07-17
+143_1043_DF_DCSC_INDPREPROCOSTR_1,Prezzi alla produzione delle costruzioni (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+143_222,Indice dei prezzi all'importazione - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+143_222_DF_DCSC_PREIMPIND_1,Prezzi all'importazione - Dati mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+143_497,Prezzi delle abitazioni (Ipab),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,11,2026-07-17
+143_497_DF_DCSP_IPAB_1,Trimestrali dal 2010 al 2024 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,11,2026-07-17
+143_497_DF_DCSP_IPAB_3,Pesi dal 2010,REF_AREA,nazionale,nazionale,1,2026-07-17
+143_497_DF_DCSP_IPAB_4,Trimestrali dal 2010 al 2016 (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+143_497_DF_DCSP_IPAB_6,Trimestrali dal 2010 (base 2025),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,11,2026-07-17
+143_497_DF_DCSP_IPAB_7,Medie annue dal 2010 (base 2025),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,11,2026-07-17
+144_110_DF_DCSP_FOI1_1,Foi - mensili sino al 2010 (base 1995),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,119,2026-07-17
+144_118_DF_DCSP_FOI2_1,Foi - medie annue sino al 2010 (base 1995),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,119,2026-07-17
+144_125_DF_DCSP_NICDUE_2,Tipologie di prodotto (base 1995),REF_AREA,nazionale,nazionale,1,2026-07-17
+144_126_DF_DCSP_NICTRE_1,Tipologie di prodotto,REF_AREA,nazionale,nazionale,1,2026-07-17
+144_180_DF_DCSP_NICUNOB_1,Classificazione Coicop (2 cifre) (base dicembre 1998),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,119,2026-07-17
+144_180_DF_DCSP_NICUNOB_3,Classificazione Coicop (5 cifre) (base 1995),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_1,Prezzi alla produzione dell'industria - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_3,Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361,Costi di costruzione,REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_4,Fabbricato residenziale - mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_6,Fabbricato residenziale dal 2000 al 2012 (base 2005) - mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_8,Tronco stradale con tratto in galleria - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_362_DCSC_INDICITOL_1,Tipologie omogenee di lavorazioni (TOL) - mensili (base 2022),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_1,Trimestrali business to business dal 2006 al 2023 (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_3,Trimestrali business to business dal 2006 al 2017 (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_5,Trimestrali business to business dal 2006 al 2012 (base 2006),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_6,Medie annue business to business dal 2006 al 2012 (base 2006),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_8,Trimestrali business to all dal 2006 (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+149_319,Tensione contrattuale,REF_AREA,nazionale,nazionale,1,2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_2,Indicatori (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_3,Indicatori (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+149_327,"Orario contrattuale, ferie e altre riduzioni orarie - dipendenti a tempo pieno",REF_AREA,nazionale,nazionale,1,2026-07-17
+149_577,Posizioni lavorative alle dipendenze,REF_AREA,nazionale,nazionale,1,2026-07-17
+149_577_DF_DCSC_OROS_1_2,Posizioni lavorative alle dipendenze (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+14_121_DF_DCCV_TRASPUB_1,Trasporto pubblico,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-17
+14_166_DF_DCCV_INTBONRUM_1,Interventi di bonifica del rumore,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-17
+150_105,Occupati per ore settimanali lavorate e numero di ore settimanali lavorate procapite,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_105_DF_DCCV_ORELAVMED_UNT2020_2,Numero di occupati per ore settimanali effettivamente lavorate - livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1168_DF_DCCV_TAXOCCUMENS1_UNT2020_1,Tasso di occupazione - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1169_DF_DCCV_FORZLVMENS1_UNT2020_1,Forze lavoro  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1170_DF_DCCV_OCCUPATIMENS1_UNT2020_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1171,Tasso di attività  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1172,Tasso di attività - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_1172_DF_DCCV_TAXATVTDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_1173_DF_DCCV_FORZLVDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1174,Occupati - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_2,Macrosettori economici,REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_3,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1175,Tasso di occupazione - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17

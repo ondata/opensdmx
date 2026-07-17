@@ -322,3 +322,321 @@ BOP_ITS_TOT,"Total services, detailed geographical breakdown by EU Member States
 BOP_REM6,Personal transfers and compensation of employees,ok,sdmx,7,378,0,"",2026-07-16
 BS_BS10_00,Turnover by client specialisation and employment size class (2000),ok,sdmx,6,17,0,"",2026-07-16
 BS_BS10_04,Number of enterprises carrying out cross border trade by type of cross border trade and economic activity (2004),ok,sdmx,6,42,0,"",2026-07-16
+BS_BS11_00,Turnover by client specialisation and product specialisation (2000),ok,sdmx,6,14,0,"",2026-07-17
+BS_BS11_04,Number of enterprises carrying out cross border trade by reasons for cross border trade and economic activity (2004),ok,sdmx,6,42,0,"",2026-07-17
+BS_BS12_04,Number of enterprises by importance of barriers met in cross border trade and economic activity (2004),ok,sdmx,8,52,0,"",2026-07-17
+BS_BS13_04,Turnover by type of media for advertising services (2004),ok,sdmx,6,24,0,"",2026-07-17
+BS_BS14_04,Income from intellectual property rights for computer services (2004),ok,sdmx,5,17,0,"",2026-07-17
+BS_BS16_04,Purchases of advertising space or time for resale (2004),ok,sdmx,5,18,0,"",2026-07-17
+BS_BS1_00,Turnover by product specialisation for div. 72 (2000),ok,sdmx,5,15,0,"",2026-07-17
+BS_BS1_01,SBS variables by product specialisation and by employment size class for div 72 and 74 (2001),ok,sdmx,7,38,0,"",2026-07-17
+BS_BS1_03,SBS variables by employment size class for div 72 and 74 (2003),ok,sdmx,6,43,0,"",2026-07-17
+BS_BS1_04,Main economic variables by employment size class (2004),ok,sdmx,6,47,0,"",2026-07-17
+BS_BS1_05,Main economic variables (2005),ok,sdmx,5,34,0,"",2026-07-17
+BS_BS1_06,Main economic variables (2006),ok,sdmx,5,25,0,"",2026-07-17
+BS_BS1_07,Main economic variables (2007),ok,sdmx,5,26,0,"",2026-07-17
+BS_BS2_00,Turnover by product specialisation and employment size class for group 72.2 (2000),ok,sdmx,6,20,0,"",2026-07-17
+BS_BS3_01,Turnover by type of client and by employment size class for div 72 and 74 (2001),ok,sdmx,7,36,0,"",2026-07-17
+BS_BS3_03,Turnover by type of client and by employment size class for div 72 and 74 (2003),ok,sdmx,7,44,0,"",2026-07-17
+BS_BS3_04,Turnover by type of client and economic activity (2004),ok,sdmx,7,44,0,"",2026-07-17
+BS_BS4_01,Turnover by residence of client and by employment size class for div 72 and 74 (2001),ok,sdmx,7,35,0,"",2026-07-17
+BS_BS4_03,Turnover by residence of client and by employment size class for div 72 and 74 (2003),ok,sdmx,7,44,0,"",2026-07-17
+BS_BS4_04,"Turnover by residence of client, employment size class and economic activity (2004)",ok,sdmx,7,45,0,"",2026-07-17
+BS_BS4_05,Turnover by residence of client and economic activity (2005),ok,sdmx,6,32,0,"",2026-07-17
+BS_BS4_06,Turnover by residence of client and economic activity (2006),ok,sdmx,6,23,0,"",2026-07-17
+BS_BS4_07,Turnover by residence of client and economic activity (2007),ok,sdmx,6,23,0,"",2026-07-17
+BS_BS5_00,Turnover by type of client and NACE Rev.1 at 3-digit level (2000),ok,sdmx,6,23,0,"",2026-07-17
+BS_BS5_01,SBS variables by client specialisation and by employment size class for div 72 and 74 (2001),ok,sdmx,7,38,0,"",2026-07-17
+BS_BS5_04,Number of enterprises carrying out cross border trade by employment size class (2004),ok,sdmx,6,24,0,"",2026-07-17
+BS_BS6_00,Turnover by type of client and employment size class (2000),ok,sdmx,6,21,0,"",2026-07-17
+BS_BS6_01,SBS variables by client specialisation and by product specialisation for div 72 and 74 (2001),ok,sdmx,7,34,0,"",2026-07-17
+BS_BS6_04,Number of enterprises carrying out cross border trade by type of cross border trade and employment size class (2004),ok,sdmx,6,27,0,"",2026-07-17
+BS_BS7_00,Turnover by nationality of client and NACE Rev.1 at 3-digit level (2000),ok,sdmx,6,22,0,"",2026-07-17
+BS_BS7_04,Number of enterprises carrying out cross border trade by reasons for cross border trade and employment size class (2004),ok,sdmx,6,27,0,"",2026-07-17
+BS_BS8ACE_R2,Turnover by product and economic activity (NACE Rev. 2) (2008-2015),ok,sdmx,6,150,0,"",2026-07-17
+BS_BS8BDF_R2,Turnover by residence of client and economic activity (NACE Rev. 2) (2008-2020),ok,sdmx,6,65,0,"",2026-07-17
+BS_BS8CPA2_1,Turnover by product and NACE Rev. 2 activity (CPA 2.1) (2015-2020),ok,sdmx,6,148,0,"",2026-07-17
+BS_BS8_00,Turnover by nationality of client and employment size class (2000),ok,sdmx,6,20,0,"",2026-07-17
+BS_BS8_04,Number of enterprises by importance of barriers met in cross border trade and employment size class (2004),ok,sdmx,8,37,0,"",2026-07-17
+BS_BS9_00,Turnover by client specialisation and NACE Rev.1 at 3-digit level (2000),ok,sdmx,6,18,0,"",2026-07-17
+BS_BS9_04,Number of enterprises carrying out cross border trade by economic activity (2004),ok,sdmx,6,39,0,"",2026-07-17
+CEI_CIE011,Persons employed in circular economy sectors,ok,sdmx,5,52,0,"",2026-07-17
+CEI_CIE012,Private investment and gross added value related to circular economy sectors,ok,sdmx,5,53,0,"",2026-07-17
+CEI_CIE020,Patents related to recycling and secondary raw materials,ok,sdmx,5,62,0,"",2026-07-17
+CEI_GSR010,Consumption footprint,ok,sdmx,5,64,0,"",2026-07-17
+CEI_GSR011,Greenhouse gases emissions from production activities,ok,sdmx,6,70,0,"",2026-07-17
+CEI_GSR020,EU self-sufficiency for raw materials,ok,sdmx,6,37,0,"",2026-07-17
+CEI_GSR030,Material import dependency,ok,sdmx,5,71,0,"",2026-07-17
+CEI_PC020,Material footprint,ok,sdmx,6,70,0,"",2026-07-17
+CEI_PC030,Resource productivity,ok,sdmx,4,72,0,"",2026-07-17
+CEI_PC031,Generation of municipal waste per capita,ok,sdmx,5,71,0,"",2026-07-17
+CEI_PC032,Generation of waste excluding major mineral wastes per GDP unit,ok,sdmx,4,55,0,"",2026-07-17
+CEI_PC034,Waste generation per capita,ok,sdmx,7,58,0,"",2026-07-17
+CEI_PC035,Food waste,ok,sdmx,7,50,0,"",2026-07-17
+CEI_PC040,Generation of packaging waste per capita,ok,sdmx,6,69,0,"",2026-07-17
+CEI_PC050,Generation of plastic packaging waste per capita,ok,sdmx,6,69,0,"",2026-07-17
+CEI_SRM010,Contribution of recycled materials to raw materials demand - end-of-life recycling input rates (EOL-RIR),ok,sdmx,5,37,0,"",2026-07-17
+CEI_SRM020,Trade in recyclable raw materials,ok,sdmx,6,70,0,"",2026-07-17
+CEI_SRM030,Circular material use rate,ok,sdmx,4,64,0,"",2026-07-17
+CEI_SRM040,Recyclable secondary raw materials - prices,ok,sdmx,6,107,0,"",2026-07-17
+CEI_WM010,Recycling rate of all waste excluding major mineral waste,ok,sdmx,5,51,0,"",2026-07-17
+CEI_WM011,Recycling rate of municipal waste,ok,sdmx,5,71,0,"",2026-07-17
+CEI_WM020,Recycling rate of packaging waste by type of packaging,ok,sdmx,5,73,0,"",2026-07-17
+CEI_WM060,Recycling rate of waste of electrical and electronic equipment (WEEE) separately collected,ok,sdmx,4,52,0,"",2026-07-17
+CENS_01NAAGCHI,"Female population aged 15 and over by household composition, age group, age of the youngest child and current activity status",ok,sdmx,8,66,0,"",2026-07-17
+CENS_01NACTZ,"Population by sex, citizenship and current activity status",ok,sdmx,7,62,0,"",2026-07-17
+CENS_01NADISCO,"Employed persons aged 15 and over by sex, age group and occupation",ok,sdmx,7,194,0,"",2026-07-17
+CENS_01NADNAC,"Employed persons aged 15 and over by sex, age group and economic activity (NACE Rev. 1)",ok,sdmx,7,345,0,"",2026-07-17
+CENS_01NAIND,Employed persons aged 15 and over by sex and industry indicator,ok,sdmx,7,56,0,"",2026-07-17
+CENS_01NAISCO,"Employed persons aged 15 and over by sex, age group, citizenship and occupation (ISCO-88)",ok,sdmx,8,65,0,"",2026-07-17
+CENS_01NANAC,"Employed persons aged 15 and over by sex, age group, citizenship and economic activity (NACE Rev.1)",ok,sdmx,8,75,0,"",2026-07-17
+CENS_01NAPOP,"Population by sex, age and current activity status",ok,sdmx,7,117,0,"",2026-07-17
+CENS_01NAWTIME,"Employed persons aged 15 and over by sex, economic activity (NACE Rev. 1) and time usually worked",ok,sdmx,7,58,0,"",2026-07-17
+CENS_01NDBUILD,"Dwellings by type of ownership, type of building and occupancy status",ok,sdmx,6,39,0,"",2026-07-17
+CENS_01NDCOMF,Occupied conventional dwellings by presence of comfort characteristics,ok,sdmx,5,35,0,"",2026-07-17
+CENS_01NDHH,Private housholds by composition and type of housing,ok,sdmx,6,50,0,"",2026-07-17
+CENS_01NDNBOWN,Occupied conventional dwellings by number of rooms and occupants,ok,sdmx,6,53,0,"",2026-07-17
+CENS_01NDPERCONS,Owner-occupied dwellings by type and year of construction of the building,ok,sdmx,6,45,0,"",2026-07-17
+CENS_01NDQUART_HD,Private households by type of housing,ok,sdmx,5,36,0,"",2026-07-17
+CENS_01NDQUART_LQ,Living quarters by type of housing,ok,sdmx,5,36,0,"",2026-07-17
+CENS_01NDQUART_OC,Occupants by type of housing,ok,sdmx,5,36,0,"",2026-07-17
+CENS_01NEISCO,"Population aged 15-74 by sex, age group, educational attainment level and occupation (ISCO 1988)",ok,sdmx,8,66,0,"",2026-07-17
+CENS_01NELEV,"Population by sex, age group, citizenship and educational attainment level",ok,sdmx,8,157,0,"",2026-07-17
+CENS_01NEWS,"Population aged 15-74 by sex, age group, current activity status and educational attainment level",ok,sdmx,8,61,0,"",2026-07-17
+CENS_01NHCTZCOMP,Private households by composition and citizenship,ok,sdmx,6,47,0,"",2026-07-17
+CENS_01NHECO,"Private households by size, composition and presence of elderly members",ok,sdmx,7,54,0,"",2026-07-17
+CENS_01NHFST,"Population aged 15 and over, living in private households, by sex, age group, family status and current activity status",ok,sdmx,8,72,0,"",2026-07-17
+CENS_01NHFSTCTZ,"Population by sex, citizenship, family status and type of housing",ok,sdmx,8,53,0,"",2026-07-17
+CENS_01NHHST,"Population by sex, age group and family situation (household status)",ok,sdmx,7,56,0,"",2026-07-17
+CENS_01NHSIZE,"Population in private households by sex, age group, citizenship and size of household",ok,sdmx,8,72,0,"",2026-07-17
+CENS_01NHTYPE,"Population by sex, age and household status",ok,sdmx,7,167,0,"",2026-07-17
+CENS_01NSCBIRTH,"Population by sex, age group and country of birth",ok,sdmx,7,274,0,"",2026-07-17
+CENS_01NSCTZ,"Population by sex, age group and country of citizenship",ok,sdmx,7,281,0,"",2026-07-17
+CENS_01NSRES,"Population by sex, age group, citizenship and place of residence one year prior to the census",ok,sdmx,8,283,0,"",2026-07-17
+CENS_01RACTZ,"Employed persons aged 15 and over by sex, citizenship, economic activity (NACE Rev. 1), status in employment and NUTS 3 region",ok,sdmx,8,1324,0,"",2026-07-17
+CENS_01RAMIGR,"Total and active population by sex, age, employment status, residence one year prior to the census and NUTS 3 region",ok,sdmx,8,1366,0,"",2026-07-17
+CENS_01RAPOP,"Population by sex, age group, current activity status and NUTS 3 region",ok,sdmx,7,1413,0,"",2026-07-17
+CENS_01RDBUILD,Persons by type of building and NUTS 3 region,ok,sdmx,5,853,0,"",2026-07-17
+CENS_01RDHH,"Dwellings by type of housing, building and NUTS 3 region",ok,sdmx,6,840,0,"",2026-07-17
+CENS_01REISCO,"Employed persons by sex, age group, educational attainment level, occupation (ISCO-88) and NUTS 3 region",ok,sdmx,8,849,0,"",2026-07-17
+CENS_01REWS,"Population by sex, age group, educational attainment level, current activity status and NUTS 3 region",ok,sdmx,8,845,0,"",2026-07-17
+CENS_01RHAGCHI,"Private households by composition, age group of children and NUTS 3 region",ok,sdmx,6,834,0,"",2026-07-17
+CENS_01RHECO,"Private households by composition, size and NUTS 3 region",ok,sdmx,6,837,0,"",2026-07-17
+CENS_01RHSIZE,"Population by sex, age group, size of household and NUTS 3 region",ok,sdmx,7,910,0,"",2026-07-17
+CENS_01RHTYPE,"Population by sex, age group, household status and NUTS 3 region",ok,sdmx,7,877,0,"",2026-07-17
+CENS_01RSCTZ,"Population by sex, citizenship and NUTS 3 region",ok,sdmx,6,853,0,"",2026-07-17
+CENS_11AED_R2,"Population by current activity status, educational attainment level and NUTS 2 region",ok,sdmx,8,538,0,"",2026-07-17
+CENS_11AG_R3,Population by single year of age and NUTS 3 region,ok,sdmx,6,2018,0,"",2026-07-17
+CENS_11AN_R2,"Population by current activity status, NACE Rev. 2 activity and NUTS 2 region",ok,sdmx,8,530,0,"",2026-07-17
+CENS_11AO_R2,"Population by current activity status, occupation and NUTS 2 region",ok,sdmx,8,540,0,"",2026-07-17
+CENS_11ARCO_R2,"Population by period of arrival in the country, country of birth and NUTS 2 region",ok,sdmx,7,511,0,"",2026-07-17
+CENS_11COBA_R2,"Population by group of country of birth, current activity status and NUTS 2 region",ok,sdmx,8,511,0,"",2026-07-17
+CENS_11COBE_R2,"Population by group of country of birth, educational attainment level and NUTS 2 region",ok,sdmx,8,517,0,"",2026-07-17
+CENS_11COBO_R2,"Population by group of country of birth, occupation and NUTS 2 region",ok,sdmx,8,520,0,"",2026-07-17
+CENS_11COB_N,Population by country of birth at national level,ok,sdmx,7,309,0,"",2026-07-17
+CENS_11CTZO_R2,"Population by group of citizenship, occupation and NUTS 2 region",ok,sdmx,8,520,0,"",2026-07-17
+CENS_11CTZ_N,Population by country of citizenship at national level,ok,sdmx,7,301,0,"",2026-07-17
+CENS_11DWOB_R3,"Conventional dwellings by occupancy status, type of building and NUTS 3 region",ok,sdmx,6,1871,0,"",2026-07-17
+CENS_11EMPN_R2,"Population by status in employment, NACE Rev. 2 activity and NUTS 2 region",ok,sdmx,8,541,0,"",2026-07-17
+CENS_11EMPO_R2,"Population by status in employment, occupation and NUTS 2 region",ok,sdmx,8,541,0,"",2026-07-17
+CENS_11FS_R3,Population by family status and NUTS 3 region,ok,sdmx,7,1927,0,"",2026-07-17
+CENS_11FTS_R3,"Families by type, size and NUTS 3 region",ok,sdmx,6,1920,0,"",2026-07-17
+CENS_11HOU_R2,Population by housing arrangement and NUTS 2 region,ok,sdmx,7,481,0,"",2026-07-17
+CENS_11HTTS_R2,"Private households by type, tenure status and NUTS 2 region",ok,sdmx,6,513,0,"",2026-07-17
+CENS_11MS_R3,Population by marital status and NUTS 3 region,ok,sdmx,7,1928,0,"",2026-07-17
+CENS_21AE_R2,"Population by groups of current activity status, age groups, educational attainment level and NUTS 2 region",ok,sdmx,8,500,0,"",2026-07-17
+CENS_21AGR2,Population by age and NUTS 2 region,ok,sdmx,6,582,0,"",2026-07-17
+CENS_21AH,"Population by groups of current activity status, age groups and household status",ok,sdmx,8,75,0,"",2026-07-17
+CENS_21AM_R2,"Population by groups of current activity status, age groups, legal marital status and NUTS 2 region",ok,sdmx,8,494,0,"",2026-07-17
+CENS_21ARA_R2,"Population by year of arrival in the country, groups of current activity status and NUTS 2 region",ok,sdmx,7,490,0,"",2026-07-17
+CENS_21ARCO_R2,"Population by year of arrival in the country, country of birth, occupation and NUTS 2 region",ok,sdmx,8,487,0,"",2026-07-17
+CENS_21ARE_R2,"Population by year of arrival in the country, education and NUTS 2 region",ok,sdmx,7,496,0,"",2026-07-17
+CENS_21ARF_R3,"Population by year of arrival in the country, age groups, family status and NUTS 3 region",ok,sdmx,8,1723,0,"",2026-07-17
+CENS_21ARGC_R3,"Population by year of arrival in the country since 2010, age groups, groups of country of birth and NUTS 3 region",ok,sdmx,8,1732,0,"",2026-07-17
+CENS_21A_R2,"Population by current activity status, age and NUTS 2 region",ok,sdmx,7,592,0,"",2026-07-17
+CENS_21COBA_R2,"Population by groups of country of birth, age groups, groups of current activity status and NUTS 2 region",ok,sdmx,8,495,0,"",2026-07-17
+CENS_21COBE_R2,"Population by country of birth, age groups, education and NUTS 2 region",ok,sdmx,8,501,0,"",2026-07-17
+CENS_21COBHA_R3,"Population by country of birth, age groups, type of housing arrangements and NUTS 3 region",ok,sdmx,7,1737,0,"",2026-07-17
+CENS_21COBHA_R3$DV_3143,"Population by country of birth, age groups, type of housing arrangements and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21COBHA_R3$DV_3143'
+For more information check: https://develop",2026-07-17
+CENS_21COBHS_R3,"Population by country of birth, age groups, household status and NUTS 3 region",ok,sdmx,8,1736,0,"",2026-07-17
+CENS_21COBO_R2,"Population by groups of country of birth, age groups, occupation and NUTS 2 region",ok,sdmx,8,502,0,"",2026-07-17
+CENS_21COB_R3,"Population by country of birth, age groups and NUTS 3 region",ok,sdmx,7,1965,0,"",2026-07-17
+CENS_21CTZA_R2,"Population by groups of country of citizenship, age groups, groups of current activity status and NUTS 2 region",ok,sdmx,8,495,0,"",2026-07-17
+CENS_21CTZF_R3,"Population by country of citizenship, age groups, family status and NUTS 3 region",ok,sdmx,8,1734,0,"",2026-07-17
+CENS_21CTZHA_R3,"Population by country of citizenship, age groups, type of housing arrangements and NUTS 3 region",ok,sdmx,7,1737,0,"",2026-07-17
+CENS_21CTZHA_R3$DV_3145,"Population by country of citizenship, age groups, type of housing arrangements and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21CTZHA_R3$DV_3145'
+For more information check: https://develop",2026-07-17
+CENS_21CTZHS_R2,"Population by country of citizenship, age groups, household status and NUTS 2 region",ok,sdmx,8,497,0,"",2026-07-17
+CENS_21CTZO_R2,"Population by groups of country of citizenship, age groups, occupation and NUTS 2 region",ok,sdmx,8,502,0,"",2026-07-17
+CENS_21CTZ_R3,"Population by country of citizenship, age groups and NUTS 3 region",ok,sdmx,7,1942,0,"",2026-07-17
+CENS_21DWBNO_R3,"Dwellings by type of building, number of occupants and NUTS 3 region",ok,sdmx,6,1712,0,"",2026-07-17
+CENS_21DWBNO_R3$DV_3139,"Dwellings by type of building, number of occupants and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21DWBNO_R3$DV_3139'
+For more information check: https://develop",2026-07-17
+CENS_21DWBNR_R3,"Dwellings by type of building, number of rooms or useful floor space and NUTS 3 region",ok,sdmx,7,1719,0,"",2026-07-17
+CENS_21DWBNR_R3$DV_3140,"Dwellings by type of building, number of rooms or useful floor space and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21DWBNR_R3$DV_3140'
+For more information check: https://develop",2026-07-17
+CENS_21DWBO_R2,"Dwellings by type of building, ownership status and NUTS 2 region",ok,sdmx,6,464,0,"",2026-07-17
+CENS_21DWBO_R2$DV_3138,"Dwellings by type of building, ownership status and NUTS 2 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21DWBO_R2$DV_3138'
+For more information check: https://develope",2026-07-17
+CENS_21DWOB_R3,"Conventional dwellings by occupancy status, type of building and NUTS 3 region",ok,sdmx,6,1701,0,"",2026-07-17
+CENS_21DWOB_R3$DV_3141,"Conventional dwellings by occupancy status, type of building and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21DWOB_R3$DV_3141'
+For more information check: https://develope",2026-07-17
+CENS_21DWOP_R3,"Conventional dwellings by occupancy status, period of construction and NUTS 3 region",ok,sdmx,6,1704,0,"",2026-07-17
+CENS_21DWOP_R3$DV_3142,"Conventional dwellings by occupancy status, period of construction and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21DWOP_R3$DV_3142'
+For more information check: https://develope",2026-07-17
+CENS_21EMPL,"Population by status in employment, age groups and location of place of work",ok,sdmx,8,79,0,"",2026-07-17
+CENS_21EMPN_R2,"Population by status in employment, age groups, economic activity (NACE Rev.2) and NUTS 2 region",ok,sdmx,8,502,0,"",2026-07-17
+CENS_21EMPO_R2,"Population by status in employment, age groups, occupation and NUTS 2 region",ok,sdmx,8,502,0,"",2026-07-17
+CENS_21FE_R2,"Population by family status, age groups, educational attainment level and NUTS 2 region",ok,sdmx,8,500,0,"",2026-07-17
+CENS_21FHCS_R3,"Families by household composition, size of family nucleus and NUTS 3 region",ok,sdmx,6,1720,0,"",2026-07-17
+CENS_21F_R3,"Population by family status, broad age groups and NUTS 3 region",ok,sdmx,7,1712,0,"",2026-07-17
+CENS_21HE_R2,"Population by household status, age groups, educational attainment level and NUTS 2 region",ok,sdmx,8,504,0,"",2026-07-17
+CENS_21HHCS_R3,"Private households by household composition, size and NUTS 3 region",ok,sdmx,6,1715,0,"",2026-07-17
+CENS_21HHCT_R3,"Private households by household composition, tenure status and NUTS 3 region",ok,sdmx,6,1711,0,"",2026-07-17
+CENS_21LE_R2,"Population by location of place of work, age groups, educational attainment level and NUTS 2 region",ok,sdmx,8,500,0,"",2026-07-17
+CENS_21LHA_R3,"Population by size of the locality, housing arrangements and NUTS 3 region",ok,sdmx,7,1713,0,"",2026-07-17
+CENS_21LHA_R3$DV_3144,"Population by size of the locality, housing arrangements and NUTS 3 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CENS_21LHA_R3$DV_3144'
+For more information check: https://developer",2026-07-17
+CENS_21LOC_R2,"Population by location of place of work, age groups, occupation and NUTS 2 region",ok,sdmx,8,501,0,"",2026-07-17
+CENS_21L_R3,"Population by size of the locality, age groups and NUTS 3 region",ok,sdmx,7,1735,0,"",2026-07-17
+CENS_21M,Population by age and marital status,ok,sdmx,7,174,0,"",2026-07-17
+CENS_21ME_R2,"Population by marital status, age groups, educational attainment level and NUTS 2 region",ok,sdmx,8,500,0,"",2026-07-17
+CENS_21MH,Population by marital status and household status,ok,sdmx,7,56,0,"",2026-07-17
+CENS_21M_R3,"Population by marital status, broad age groups and NUTS 3 region",ok,sdmx,7,1706,0,"",2026-07-17
+CENS_21RESH_R2,"Population by residence one year prior to census, age groups, household status and NUTS 2 region",ok,sdmx,8,499,0,"",2026-07-17
+CENS_21RESO_R2,"Population by residence one year prior to census, age groups, occupation and NUTS 2 region",ok,sdmx,8,504,0,"",2026-07-17
+CENS_21UA_A,Population with Ukrainian citizenship by age,ok,sdmx,6,121,0,"",2026-07-17
+CENS_21UA_A5,Population with Ukrainian citizenship by 5-year age group,ok,sdmx,6,43,0,"",2026-07-17
+CENS_21UA_A5R3,Population with Ukrainian citizenship by 5-year age group and NUTS 3 region,ok,sdmx,6,315,0,"",2026-07-17
+CENS_21UA_AR3,Population with Ukrainian citizenship by age and NUTS 3 region,ok,sdmx,6,283,0,"",2026-07-17
+CENS_21UA_MS,Population with Ukrainian citizenship by 5-year age group and marital status,ok,sdmx,7,38,0,"",2026-07-17
+CENS_21UA_MSR3,"Population with Ukrainian citizenship by 5-year age group, marital status and NUTS 3 region",ok,sdmx,7,137,0,"",2026-07-17
+CENS_21UA_YAE,Population with Ukrainian citizenship by 5-year age group and year of arrival in the country,ok,sdmx,7,48,0,"",2026-07-17
+CENS_21URB01,"Population by age, sex and degree of urbanisation",ok,sdmx,7,70,0,"",2026-07-17
+CENS_21URB02,Type of living quarters by degree of urbanisation,ok,sdmx,6,44,0,"",2026-07-17
+CENS_91AAGE,Active population by sex and age,ok,sdmx,6,109,0,"",2026-07-17
+CENS_91ACTZ,Active population by citizenship and age group,ok,sdmx,7,215,0,"",2026-07-17
+CENS_91AENACE,Persons in employment by sex and NACE Rev.1,ok,sdmx,6,36,0,"",2026-07-17
+CENS_91AEPISCO,Persons in employment by sex and occupation,ok,sdmx,6,50,0,"",2026-07-17
+CENS_91AMSTA,Female active population by age and marital status,ok,sdmx,6,48,0,"",2026-07-17
+CENS_91ANNWCTZ,"Non national workers by citizenship, sex and economic activity",ok,sdmx,7,88,0,"",2026-07-17
+CENS_91AWSTA,"Active population by sex, age groups and working status",ok,sdmx,7,48,0,"",2026-07-17
+CENS_91DAME,Occupied conventional dwellings by tenure status and amenities,ok,sdmx,6,40,0,"",2026-07-17
+CENS_91DOWN,"Occupied conventional dwellings by households, by number of rooms",ok,sdmx,5,38,0,"",2026-07-17
+CENS_91DPER,Occupied conventional dwellings by tenure status and period of construction,ok,sdmx,6,53,0,"",2026-07-17
+CENS_91EACT,"Active population by sex, by age group and educational attainment level",ok,sdmx,7,54,0,"",2026-07-17
+CENS_91EINACT,"Inactive population by sex, age group and educational attainment level",ok,sdmx,7,54,0,"",2026-07-17
+CENS_91HNNCH,Family nuclei by number of children,ok,sdmx,5,29,0,"",2026-07-17
+CENS_91HPNPER,Household composition by size,ok,sdmx,5,32,0,"",2026-07-17
+CENS_91HPWSTAN,Households by number of persons and their status of economic activity,ok,sdmx,7,40,0,"",2026-07-17
+CENS_91SBIRTH,Population by sex and year of birth,ok,sdmx,6,153,0,"",2026-07-17
+CENS_91SCTZ,"Population by sex, age group and citizenship",ok,sdmx,7,227,0,"",2026-07-17
+CENS_91SMSTA,"Population by sex, age and marital status",ok,sdmx,7,160,0,"",2026-07-17
+CENS_91TYPB,Housing units by type of building,ok,sdmx,5,21,0,"",2026-07-17
+CENS_91TYPL,Housing units by type,ok,sdmx,5,27,0,"",2026-07-17
+CENS_HNAISCO,Employed population by sex and occupation,ok,sdmx,6,48,0,"",2026-07-17
+CENS_HNCAS,"Population by sex, age and current activity status",ok,sdmx,7,65,0,"",2026-07-17
+CENS_HNCTZ,"Population by sex, age and citizenship",ok,sdmx,7,64,0,"",2026-07-17
+CENS_HNDWNR,Occupied conventional dwellings by number of rooms,ok,sdmx,5,45,0,"",2026-07-17
+CENS_HNDWSIZE,Households by size (number of persons),ok,sdmx,5,42,0,"",2026-07-17
+CENS_HNELEV,"Population by sex, age and educational attainment level",ok,sdmx,7,62,0,"",2026-07-17
+CENS_HNMGA,Population by sex and age,ok,sdmx,6,60,0,"",2026-07-17
+CLI_GGE_FOOT,EU GHG emissions from the production and consumption (footprint) perspectives (FIGARO application),ok,sdmx,6,54,0,"",2026-07-17
+CLI_IAD_LOSS,Climate related economic losses by type of event,ok,sdmx,6,93,0,"",2026-07-17
+CRIM_CRT_CASE,Legal cases processed in first instance courts by legal status of the court process (until 2022),ok,sdmx,6,64,0,"",2026-07-17
+CRIM_CRT_CASE22,Legal cases processed in first instance courts by legal status of the court process (since 2022),ok,sdmx,6,40,0,"",2026-07-17
+CRIM_CRT_PER,Persons brought before criminal courts by legal status of the court process,ok,sdmx,5,60,0,"",2026-07-17
+CRIM_GEN,Crimes recorded by the police by offence category (1993-2007),ok,sdmx,5,63,0,"",2026-07-17
+CRIM_GEN_REG,Police-recorded offences by NUTS 3 region,ok,sdmx,5,1971,0,"",2026-07-17
+CRIM_HIST,Crimes recorded by the police (1950-2000),ok,sdmx,4,91,0,"",2026-07-17
+CRIM_HOM_CITY,Crimes recorded by the police - homicide in cities (1993-2007),ok,sdmx,4,54,0,"",2026-07-17
+CRIM_HOM_OCIT,Intentional homicide offences in largest cities,ok,sdmx,4,57,0,"",2026-07-17
+CRIM_HOM_SOFF,Intentional homicide and sexual offences by legal status and sex of the person involved,ok,sdmx,7,72,0,"",2026-07-17
+CRIM_HOM_SOFF$DV_1941,Intentional homicide and sexual offences by legal status and sex of the person involved,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_HOM_SOFF$DV_1941'
+For more information check: https://developer",2026-07-17
+CRIM_HOM_VAGE,Victims of intentional homicide and sexual exploitation by age and sex,ok,sdmx,7,74,0,"",2026-07-17
+CRIM_HOM_VAGE$DV_2321,Victims of intentional homicide and sexual exploitation by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_HOM_VAGE$DV_2321'
+For more information check: https://developer",2026-07-17
+CRIM_HOM_VAGE$DV_2603,Victims of intentional homicide and sexual exploitation by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_HOM_VAGE$DV_2603'
+For more information check: https://developer",2026-07-17
+CRIM_HOM_VCIT,Intentional homicide victims in largest cities by sex,ok,sdmx,5,54,0,"",2026-07-17
+CRIM_HOM_VREL,Intentional homicide victims by victim-offender relationship and sex,ok,sdmx,6,57,0,"",2026-07-17
+CRIM_HOM_VREL$DV_1645,Intentional homicide victims by victim-offender relationship and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_HOM_VREL$DV_1645'
+For more information check: https://developer",2026-07-17
+CRIM_JUST_AGE,Suspects and offenders by age,ok,sdmx,6,67,0,"",2026-07-17
+CRIM_JUST_BRI,Bribery by legal status and sex of the person involved,ok,sdmx,6,55,0,"",2026-07-17
+CRIM_JUST_CTZ,Suspects and offenders by citizenship,ok,sdmx,6,67,0,"",2026-07-17
+CRIM_JUST_JOB,Personnel in the criminal justice system by sex,ok,sdmx,6,68,0,"",2026-07-17
+CRIM_JUST_SEX,Suspects and offenders by sex,ok,sdmx,6,67,0,"",2026-07-17
+CRIM_OFF_CAT,Police-recorded offences by offence category,ok,sdmx,5,86,0,"",2026-07-17
+CRIM_OFF_CAT$DV_1401,Police-recorded offences by offence category,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_OFF_CAT$DV_1401'
+For more information check: https://developer.",2026-07-17
+CRIM_OFF_CAT$DV_348,Police-recorded offences by offence category,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_OFF_CAT$DV_348'
+For more information check: https://developer.m",2026-07-17
+CRIM_PLCE,Police officers (1993-2007),ok,sdmx,4,53,0,"",2026-07-17
+CRIM_PRIS_AGE,Prisoners by age and sex,ok,sdmx,6,67,0,"",2026-07-17
+CRIM_PRIS_CAP,Prison capacity and number of persons held,ok,sdmx,5,63,0,"",2026-07-17
+CRIM_PRIS_CTZ,Prisoners by citizenship,ok,sdmx,5,64,0,"",2026-07-17
+CRIM_PRIS_OFF,Prisoners by offence category and sex,ok,sdmx,6,66,0,"",2026-07-17
+CRIM_PRIS_POP,Prison population (1993-2007),ok,sdmx,4,55,0,"",2026-07-17
+CRIM_PRIS_TRI,Prisoners by legal status of the trial process,ok,sdmx,5,65,0,"",2026-07-17
+CRIM_SMU_SCTZ,Suspects of migrant smuggling by citizenship,ok,sdmx,5,45,0,"",2026-07-17
+CRIM_SMU_SEX,Persons involved in migrant smuggling by legal status and sex,ok,sdmx,6,54,0,"",2026-07-17
+CRIM_THB_EXPSXA,"Victims of trafficking in human beings by form of exploitation, sex and age",ok,sdmx,7,60,0,"",2026-07-17
+CRIM_THB_EXPSXA$DV_2922,"Victims of trafficking in human beings by form of exploitation, sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_THB_EXPSXA$DV_2922'
+For more information check: https://develop",2026-07-17
+CRIM_THB_SEX,Persons involved in trafficking in human beings by legal status and sex,ok,sdmx,6,61,0,"",2026-07-17
+CRIM_THB_SEX$DV_1641,Persons involved in trafficking in human beings by legal status and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_THB_SEX$DV_1641'
+For more information check: https://developer.",2026-07-17
+CRIM_THB_VCTZ,Victims of trafficking in human beings by citizenship,ok,sdmx,5,56,0,"",2026-07-17
+CRIM_THB_VCTZ$DV_1643,Victims of trafficking in human beings by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_THB_VCTZ$DV_1643'
+For more information check: https://developer",2026-07-17
+CRIM_THB_VCTZSEX,Victims of trafficking in human beings by citizenship and sex,ok,sdmx,6,53,0,"",2026-07-17
+CRIM_THB_VEXP,Victims of trafficking in human beings by all forms of exploitation,ok,sdmx,5,56,0,"",2026-07-17
+CRIM_THB_VSAGE,Victims of trafficking in human beings by sex and age,ok,sdmx,6,54,0,"",2026-07-17
+CRIM_THB_VSAGE$DV_2921,Victims of trafficking in human beings by sex and age,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/CRIM_THB_VSAGE$DV_2921'
+For more information check: https://develope",2026-07-17
+CULT_EMP_AGE,Cultural employment by age,ok,sdmx,5,62,0,"",2026-07-17
+CULT_EMP_ART,"Persons working as creative and performing artists, authors, journalists and linguists",ok,sdmx,4,54,0,"",2026-07-17
+CULT_EMP_ARTPC,"Persons working as creative and performing artists, authors, journalists and linguists by individual and employment characteristics",ok,sdmx,6,62,0,"",2026-07-17
+CULT_EMP_EDU,Cultural employment by educational attainment level,ok,sdmx,5,60,0,"",2026-07-17
+CULT_EMP_N2,Cultural employment by NACE Rev. 2 activity (2008-2026),ok,sdmx,5,66,0,"",2026-07-17
+CULT_EMP_REG,Cultural employment by NUTS 2 region,ok,sdmx,4,469,0,"",2026-07-17
+CULT_EMP_SEX,Cultural employment by sex,ok,sdmx,5,58,0,"",2026-07-17
+CULT_EMP_WSTA,Cultural employment by sex and selected labour market characteristics,ok,sdmx,7,63,0,"",2026-07-17
+CULT_ENT_NUM,Number and average size of enterprises in the cultural sectors by NACE Rev. 2 activity (2011-2020),ok,sdmx,6,76,0,"",2026-07-17
+CULT_ENT_VAL,Value added and turnover of enterprises in the cultural sectors by NACE Rev. 2 activity (2011-2020),ok,sdmx,6,73,0,"",2026-07-17
+CULT_PCS_BKA,Persons reading books in the last 12 months by sex and age (2007 and 2011),ok,sdmx,7,46,0,"",2026-07-17
+CULT_PCS_BKE,Persons reading books in the last 12 months by sex and educational attainment level (2007 and 2011),ok,sdmx,7,42,0,"",2026-07-17
+CULT_PCS_CAA,Persons participating in cultural activities in the last 12 months by sex and age (2007 and 2011),ok,sdmx,8,48,0,"",2026-07-17
+CULT_PCS_CAE,Persons participating in cultural activities in the last 12 months by sex and educational attainment level (2007 and 2011),ok,sdmx,8,44,0,"",2026-07-17
+CULT_PCS_HBS,Mean consumption expenditure of private households on cultural goods and services by COICOP consumption purpose,ok,sdmx,5,63,0,"",2026-07-17
+CULT_PCS_NWA,Persons reading newspapers in the last 12 months by age (2007 and 2011),ok,sdmx,6,44,0,"",2026-07-17
+CULT_PCS_NWE,Persons reading newspapers in the last 12 months by educational attainment level (2007 and 2011),ok,sdmx,6,40,0,"",2026-07-17
+CULT_PCS_NWS,Persons reading newspapers in the last 12 months by sex (2007 and 2011),ok,sdmx,6,39,0,"",2026-07-17
+CULT_PCS_QNT,Mean consumption expenditure of private households on cultural goods and services by income quintile,ok,sdmx,5,45,0,"",2026-07-17
+CULT_TRD_PRD,Intra and extra-EU trade in cultural goods by product,ok,sdmx,7,84,0,"",2026-07-17
+CULT_TRD_PRT,Intra and extra-EU trade in cultural goods by product and partner,ok,sdmx,7,321,0,"",2026-07-17
+DEMO_DIVCB,Divorces by country of birth of wife and husband,ok,sdmx,6,75,0,"",2026-07-17
+DEMO_DIVCZ,Divorces by citizenship of wife and husband,ok,sdmx,6,80,0,"",2026-07-17
+DEMO_FABORT,Legally induced abortions by mother's age,ok,sdmx,5,119,0,"",2026-07-17
+DEMO_FABORTIND,Abortion indicators,ok,sdmx,5,47,0,"",2026-07-17
+DEMO_FABORTORD,Legally induced abortions by mother's age and number of previous live births,ok,sdmx,6,77,0,"",2026-07-17
+DEMO_FACBC,Live births by mother's age and country of birth,ok,sdmx,6,130,0,"",2026-07-17
+DEMO_FACZC,Live births by mother's age and citizenship,ok,sdmx,6,133,0,"",2026-07-17
+DEMO_FAEDUC,Live births by mother's age and educational attainment level,ok,sdmx,6,124,0,"",2026-07-17
+DEMO_FAEMPLC,Live births by mother's age and activity status,ok,sdmx,6,121,0,"",2026-07-17
+DEMO_FAGEC,Live births by mother's age and legal marital status,ok,sdmx,6,176,0,"",2026-07-17
+DEMO_FAGER,Live births by mother's year of birth (age reached) and legal marital status,ok,sdmx,6,178,0,"",2026-07-17
+DEMO_FASEC,Live births by mother's age and newborn's sex,ok,sdmx,6,128,0,"",2026-07-17
+DEMO_FIND,Fertility indicators,ok,sdmx,4,138,0,"",2026-07-17
+DEMO_FMONTH,Live births (total) by month,ok,sdmx,5,143,0,"",2026-07-17
+DEMO_FORDAGEC,Live births by mother's age and birth order,ok,sdmx,6,177,0,"",2026-07-17
+DEMO_FORDAGER,Live births by mother's year of birth (age reached) and birth order,ok,sdmx,6,179,0,"",2026-07-17
+DEMO_FRATE,Fertility rates by age,ok,sdmx,6,170,0,"",2026-07-17
+DEMO_FWEIGHT,Live births by birth weight and duration of gestation,ok,sdmx,6,105,0,"",2026-07-17
+DEMO_GIND,Population change - Demographic balance and crude rates at national level,ok,sdmx,4,156,0,"",2026-07-17
+DEMO_MACBC,"Deaths by age, sex and country of birth",ok,sdmx,7,187,0,"",2026-07-17
+DEMO_MACZC,"Deaths by age, sex and citizenship",ok,sdmx,7,193,0,"",2026-07-17
+DEMO_MAEDUC,"Deaths by age, sex and educational attainment level",ok,sdmx,7,187,0,"",2026-07-17
