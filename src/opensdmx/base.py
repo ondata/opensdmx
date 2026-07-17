@@ -1,5 +1,7 @@
 """Core HTTP client and provider configuration for SDMX 2.1 REST APIs."""
 
+from __future__ import annotations
+
 import hashlib
 import json
 import os
@@ -8,13 +10,17 @@ import tempfile
 import time
 from functools import lru_cache
 from pathlib import Path
+from typing import TYPE_CHECKING, Any
 
 import httpx
 import portalocker
 from tenacity import Retrying, retry_if_exception, stop_after_attempt, wait_exponential
 
+if TYPE_CHECKING:
+    import polars as pl
+
 # Defaults for fields not specified in portals.json or custom providers
-_DEFAULTS: dict = {
+_DEFAULTS: dict[str, Any] = {
     "rate_limit": 0.5,
     "language": "en",
     "dataflow_params": {},
@@ -29,7 +35,7 @@ _PORTALS_FILE = Path(__file__).parent / "portals.json"
 with open(_PORTALS_FILE) as f:
     _raw_portals = json.load(f)
 
-PROVIDERS: dict[str, dict] = {
+PROVIDERS: dict[str, dict[str, Any]] = {
     key: {**_DEFAULTS, **entry}
     for key, entry in _raw_portals.items()
 }
@@ -40,7 +46,7 @@ PROVIDER_ALIASES: dict[str, str] = {
     for alias in entry.get("aliases", [])
 }
 
-_active_provider: str | dict = "eurostat"
+_active_provider: str | dict[str, Any] = "eurostat"
 _timeout: float = 300.0
 _extra_headers: dict[str, str] = {}
 
@@ -91,7 +97,7 @@ def set_provider(
         }
 
 
-def get_provider() -> dict:
+def get_provider() -> dict[str, Any]:
     """Return the active provider configuration dict."""
     if isinstance(_active_provider, dict):
         return _active_provider
@@ -99,11 +105,11 @@ def get_provider() -> dict:
 
 
 def get_base_url() -> str:
-    return get_provider()["base_url"]
+    return str(get_provider()["base_url"])
 
 
 def get_agency_id() -> str:
-    return get_provider()["agency_id"]
+    return str(get_provider()["agency_id"])
 
 
 @lru_cache(maxsize=1)
@@ -284,7 +290,7 @@ def sdmx_request(
     _timeout: float | None = None,
     _max_retries: int | None = None,
     _is_data: bool = False,
-    **params,
+    **params: Any,
 ) -> httpx.Response:
     """Make a request to the active SDMX provider with retry logic.
 
@@ -341,8 +347,8 @@ def sdmx_request_xml(
     *,
     _timeout: float | None = None,
     _max_retries: int | None = None,
-    **params,
-):
+    **params: Any,
+) -> bytes:
     """Make a request and return the raw XML bytes.
 
     Uses the SDMX 2.1 structure Accept header — the generic "application/xml"
@@ -358,7 +364,7 @@ def sdmx_request_xml(
     return resp.content
 
 
-def _parse_sdmx_json(payload: dict):
+def _parse_sdmx_json(payload: dict[str, Any]) -> pl.DataFrame:
     """Parse an SDMX-JSON data response into a Polars DataFrame.
 
     Supports the SDMX-JSON 1.0 format returned by providers such as World Bank.
@@ -378,7 +384,7 @@ def _parse_sdmx_json(payload: dict):
         series_dims, key=lambda d: d.get("keyPosition", 0), reverse=True
     )
 
-    rows: list[dict] = []
+    rows: list[dict[str, Any]] = []
     for dataset in data.get("dataSets", []):
         for series_key, series_data in dataset.get("series", {}).items():
             series_indices = [int(i) for i in series_key.split(":")]
@@ -399,7 +405,7 @@ def _parse_sdmx_json(payload: dict):
     return pl.DataFrame(rows).with_columns(pl.col("OBS_VALUE").cast(pl.Float64, strict=False))
 
 
-def sdmx_request_csv(path: str, **params):
+def sdmx_request_csv(path: str, **params: Any) -> pl.DataFrame:
     """Make a request and return CSV content as a Polars DataFrame."""
     import io
     import polars as pl
