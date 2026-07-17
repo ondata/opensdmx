@@ -1,5 +1,7 @@
 """XML parsing helpers and URL key builder."""
 
+from typing import Any
+
 from lxml import etree
 
 
@@ -10,7 +12,7 @@ _NS_CANONICAL = {
 }
 
 
-def xml_parse(content: bytes):
+def xml_parse(content: bytes) -> tuple[Any, dict[str, str]]:
     """Parse XML bytes and return (root, namespaces dict).
 
     Namespace prefixes are normalized to canonical names (message, structure, common)
@@ -31,21 +33,21 @@ def xml_parse(content: bytes):
     return root, ns
 
 
-def xml_attr_safe(node, attr: str, default: str | None = None) -> str | None:
+def xml_attr_safe(node: Any, attr: str, default: str | None = None) -> str | None:
     """Extract an attribute from an XML node safely."""
-    val = node.get(attr)
+    val: str | None = node.get(attr)
     return val if val is not None else default
 
 
-def xml_text_safe(node, xpath: str, ns: dict, default: str | None = None) -> str | None:
+def xml_text_safe(node: Any, xpath: str, ns: dict[str, str], default: str | None = None) -> str | None:
     """Find a child node via XPath and return its text content."""
     found = node.find(xpath, ns)
     if found is not None and found.text:
-        return found.text.strip()
+        return str(found.text).strip()
     return default
 
 
-def get_name_by_lang(node, lang: str = "en", ns: dict | None = None) -> str | None:
+def get_name_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = None) -> str | None:
     """Return the Name element text for the given language, falling back to first Name."""
     ns = ns or {}
     names = []
@@ -57,10 +59,10 @@ def get_name_by_lang(node, lang: str = "en", ns: dict | None = None) -> str | No
     for name_node in names:
         node_lang = name_node.get("{http://www.w3.org/XML/1998/namespace}lang")
         if node_lang == lang:
-            return name_node.text.strip() if name_node.text else None
+            return str(name_node.text).strip() if name_node.text else None
 
     if names:
-        return names[0].text.strip() if names[0].text else None
+        return str(names[0].text).strip() if names[0].text else None
     return None
 
 
@@ -82,15 +84,15 @@ def _get_code_label(codelist_id: str | None, code_value: str) -> str:
 
 
 def build_query_dict(
-    ds: dict,
-    filters: dict,
+    ds: dict[str, Any],
+    filters: dict[str, Any],
     start_period: str | None = None,
     end_period: str | None = None,
     last_n: int | None = None,
     first_n: int | None = None,
     provider: str | None = None,
     labels: bool = False,
-) -> dict:
+) -> dict[str, Any]:
     """Build a plain dict representing a query, ready for YAML serialisation.
 
     For each active filter, looks up the code label in SQLite cache.
@@ -106,7 +108,7 @@ def build_query_dict(
     provider_url = get_base_url()
     agency_id = get_agency_id()
 
-    filters_section: dict = {}
+    filters_section: dict[str, Any] = {}
     for dim_id, value in filters.items():
         if value in ("", "."):
             continue
@@ -129,7 +131,7 @@ def build_query_dict(
     }
 
 
-def make_url_key(filters: dict) -> str:
+def make_url_key(filters: dict[str, Any]) -> str:
     """Build an SDMX filter key string from dimension filters.
 
     Multiple values are joined with '+', dimensions separated by '.'.
