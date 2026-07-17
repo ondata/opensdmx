@@ -1024,3 +1024,537 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 172_1198_DF_DCCV_NEET1_UNT2020_6,Dati regionali,ok,hub,4,37,0,"",2026-07-17
 172_1198_DF_DCCV_NEET1_UNT2020_7,Età (%),ok,hub,5,21,0,"",2026-07-17
 172_1198_DF_DCCV_NEET1_UNT2020_8,Titolo di studio (%),ok,hub,6,20,0,"",2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_9,Cittadinanza (%),ok,hub,6,19,0,"",2026-07-17
+172_926,Indicatori  complementari,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_1,"Forze lavoro potenziali - titolo di studio, età",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_10,Non cercano ma disponibili - condizione dichiarata,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_11,Non cercano ma disponibili - reg.,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_12,Cercano lavoro ma non immediatamente disponibili - sesso,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_13,Cercano lavoro ma non immediatamente disponibili - età,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_14,Cercano lavoro ma non immediatamente disponibili - titolo di studio,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_15,Cercano lavoro ma non immediatamente disponibili -cittadinanza,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_16,Part time involontario - età,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_17,"Part time involontario - titolo di studio, cittadinanza",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_18,"Part time involontario - posizione professionale, settore economico di impiego (Ateco 2007)",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_19,Sottoccupati - età,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_2,Forze lavoro potenziali - cittadinanza,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_20,"Sottoccupati - titolo di studio, cittadinanza",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_21,"Sottoccupati - posizione professionale, settore economico di impiego (Ateco 2007)",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_22,"Tasso di mancata partecipazione - titolo di studio, età",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_23,"Tasso di mancata partecipazione - titolo di studio, cittadinanza",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_24,"Tasso di mancata partecipazione -età, reg.",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_25,"Tasso di mancata partecipazione -titolo di studio, reg.",empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_26,Tasso di mancata partecipazione -prov.,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_3,Forze lavoro potenziali - condizione dichiarata,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_4,Forze lavoro potenziali - reg.,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_5,Forze lavoro potenziali - prov.,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_6,Non cercano ma disponibili - età,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_7,Non cercano ma disponibili - titolo di studio,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_8,Non cercano ma disponibili -cittadinanza,empty,hub,0,0,0,"",2026-07-17
+172_926_DF_DCCV_COMPL1_9,Non cercano ma disponibili - motivo principale della mancata ricerca,empty,hub,0,0,0,"",2026-07-17
+172_931,NEET  (giovani non occupati e non in istruzione e formazione),ok,hub,10,64,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_1,"NEET (giovani non occupati e non in istruzione e formazione)- Condizione professionale europea, età",ok,hub,6,27,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_10,Incidenza dei giovani Neet - Ruolo in famiglia (%),ok,hub,6,20,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_11,Incidenza dei giovani Neet - Dati regionali (%),ok,hub,5,40,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_2,"NEET (giovani non occupati e non in istruzione e formazione) - Condizione professionale europea, titolo di studio",ok,hub,7,26,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_3,"NEET  (giovani non occupati e non in istruzione e formazione)- Condizione professionele europea, cittadinanza",ok,hub,7,22,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_4,"NEET  (giovani non occupati e non in istruzione e formazione) - Condizione professionale europea, ruolo in famiglia",ok,hub,7,18,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_5,"NEET  (giovani non occupati e non in istruzione e formazione) - Cittadinanza, ruolo in famiglia",ok,hub,7,22,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_6,NEET  (giovani non occupati e non in istruzione e formazione) - Dati regionali,ok,hub,4,37,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_7,Incidenza dei giovani Neet - Età (%),ok,hub,5,21,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_8,Incidenza dei giovani Neet - Titolo di studio (%),ok,hub,6,20,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_9,Incidenza dei giovani Neet - Cittadinanza (%),ok,hub,6,19,0,"",2026-07-17
+172_931_DF_DCCV_NEET1_YOUTH_1,Giovani - NEET Giovani non occupati e non in istruzione e formazione,ok,hub,10,64,0,"",2026-07-17
+174_321,Attività quotidiane,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_1,"Sesso, età, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_10,"Attività - sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_11,"Attività - sesso, rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_12,"Punti orari - sesso, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_13,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_14,"Punti orari - sesso, età, rip. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_2,"Sesso, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_3,"Sesso, età, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_4,"Sesso, stato civile, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_5,"Sesso, età - reg. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_6,"Bambini, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_8,"Attività - sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_321_DF_DCCV_ATTPRINC_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_65,Distribuzione del carico di lavoro nelle coppie,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_1,"Coppia con o senza figli, età della donna, titolo di studio dell'uomo e della donna, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_2,"Coppia con o senza figli, età e posizione nella professione della donna, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_3,"Coppia con figli, età della donna, età del figlio più piccolo, numero di figli, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - reg.",ok,hub,6,47,0,"",2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_5,"Coppia con donna di 65 anni e più, titolo di studio della donna, titolo di studio dell'uomo",ok,hub,5,17,0,"",2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_6,Coppia con donna di 65 anni e più - reg.,ok,hub,4,37,0,"",2026-07-17
+174_66,Tempo trascorso da solo o con altri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_1,"Sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_2,"Sesso, cittadinanza",ok,hub,6,24,0,"",2026-07-17
+174_66_DF_DCCV_CONCHI_3,"Sesso, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_4,"Sesso, stato civile, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_5,"Sesso, età - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_6,"Bambini, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_66_DF_DCCV_CONCHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80,Attività quotidiane - persone in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_3,"Coppia con figli, età della donna, età del figlio più piccolo e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_80_DF_DCCV_COPPIE_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",ok,hub,7,29,0,"",2026-07-17
+174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82,Luoghi frequentati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_1,"Sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_2,"Sesso, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_3,"Sesso, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_4,"Sesso, stato civile, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_5,"Sesso, età - reg. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_6,"Bambini, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_8,"Punti orari - sesso, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+174_82_DF_DCCV_LUOGHI_9,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_1163,Unità locali e addetti - territorio anno riferimento dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,ok,hub,5,37,0,"",2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,ok,hub,4,2300,0,"",2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_3,Settori economici (Ateco 3 cifre) - com.,ok,hub,4,14535,0,"",2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_4,"Classe di addetti, settori economici (Ateco 5 cifre) - Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_5,"Classe di addetti, settori economici (Ateco 4 cifre) - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",ok,hub,5,2208,0,"",2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",ok,hub,5,14540,0,"",2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_8,"Classe di addetti, settori economici (Ateco 1 cifra) - sll 2011",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_9,"Classe di addetti, settori economici (Ateco 1 cifra) - sll 2021",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203,Imprese - occupati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_1,Imprese - occupati - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_10,"Settori economici (Ateco 3 cifre), età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_11,"Settori economici (Ateco 3 cifre), paese di nascita",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_12,"Sesso, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_13,"Sesso, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_14,"Sesso, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_15,"Età, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_16,"Età, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_17,"Età, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_18,"Paese nascita, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_19,"Paese nascita, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_2,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_20,"Paese nascita, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_3,"Macrosettori economici, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_4,"Macrosettori economici, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_5,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_6,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_7,Forma giuridica - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_8,Età impresa - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_203_DF_DICA_ACDP_9,"Settori economici (Ateco 3 cifre), sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207,Imprese - lavoratori esterni per compensi percepiti e periodo di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_1,Imprese - lavoratori esterni per compensi percepiti e periodo di attività - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_10,Età impresa - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_11,Impresa con dipendenti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_12,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_13,Classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_14,Forma giuridica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_15,Età impresa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_16,Impresa con dipendenti,empty,hub,0,0,0,"",2026-07-17
+183_207_DF_DICA_AESTCP_2,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_3,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_4,"Macrosettori economici, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_5,"Macrosettori economici, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_6,"Macrosettori economici, impresa con dipendenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_7,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_8,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_207_DF_DICA_AESTCP_9,Forma giuridica - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208,Imprese - lavoratori esterni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_1,Imprese - lavoratori esterni - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_10,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_11,Classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_12,Forma giuridica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_13,Età impresa e impresa con dipendenti,ok,hub,7,154,0,"",2026-07-17
+183_208_DF_DICA_AESTLP_2,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_3,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_4,"Macrosettori economici, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_5,"Macrosettori economici, età impresa e impresa con dipendenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_6,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_7,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_8,Forma giuridica - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_208_DF_DICA_AESTLP_9,Età impresa e impresa con dipendenti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275,Imprese - lavoratori indipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_1,Imprese - lavoratori indipendenti - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_10,Sesso,ok,hub,6,150,0,"",2026-07-17
+183_275_DF_DICA_AINDP_11,Età,ok,hub,6,151,0,"",2026-07-17
+183_275_DF_DICA_AINDP_12,Paese di nascita,ok,hub,5,152,0,"",2026-07-17
+183_275_DF_DICA_AINDP_13,Classe di addetti,ok,hub,6,151,0,"",2026-07-17
+183_275_DF_DICA_AINDP_14,Forma giuridica,ok,hub,6,158,0,"",2026-07-17
+183_275_DF_DICA_AINDP_15,Età impresa,ok,hub,6,152,0,"",2026-07-17
+183_275_DF_DICA_AINDP_16,"Impresa con dipendenti, sesso",ok,hub,6,150,0,"",2026-07-17
+183_275_DF_DICA_AINDP_17,"Impresa con dipendenti, età",ok,hub,6,151,0,"",2026-07-17
+183_275_DF_DICA_AINDP_18,"Impresa con dipendenti, paese di nascita",ok,hub,5,152,0,"",2026-07-17
+183_275_DF_DICA_AINDP_19,"Impresa con dipendenti, tipo di lavoratore indipendente",ok,hub,6,149,0,"",2026-07-17
+183_275_DF_DICA_AINDP_2,Settori economici (Ateco 3 cifre),ok,hub,6,347,0,"",2026-07-17
+183_275_DF_DICA_AINDP_3,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_4,"Macrosettori economici, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_5,"Macrosettori economici, età impresa, impresa con dipendenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_6,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_7,Classe di addetti - rip.,ok,hub,8,33,0,"",2026-07-17
+183_275_DF_DICA_AINDP_8,Forma giuridica - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_275_DF_DICA_AINDP_9,"Età della impresa, impresa con dipendenti - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276,Imprese - lavoratori temporanei,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_1,Imprese - lavoratori temporanei - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_10,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_11,Classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_12,Forma giuridica,ok,hub,6,161,0,"",2026-07-17
+183_276_DF_DICA_AINTP_13,Età impresa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_14,"Impresa con dipendenti, sesso",ok,hub,6,149,0,"",2026-07-17
+183_276_DF_DICA_AINTP_15,"Impresa con dipendenti, età",ok,hub,6,150,0,"",2026-07-17
+183_276_DF_DICA_AINTP_16,"Impresa con dipendenti, paese di nascita",ok,hub,5,152,0,"",2026-07-17
+183_276_DF_DICA_AINTP_17,"Impresa con dipendenti, periodo di attività svolto nell'impresa utilizzatrice",ok,hub,6,151,0,"",2026-07-17
+183_276_DF_DICA_AINTP_2,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_3,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_4,"Macrosettori economici, forma giuridica",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_5,"Macrosettori economici, età impresa, impresa con dipendenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_6,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_7,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_8,Forma giuridica - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_276_DF_DICA_AINTP_9,"Età impresa, impresa con dipendenti - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_277,Imprese e addetti,empty,hub,0,0,0,"",2026-07-17
+183_277_DF_DICA_ASIAUE1P_1,Imprese e addetti - Principali dati,ok,hub,7,186,0,"",2026-07-17
+183_277_DF_DICA_ASIAUE1P_2,"Forma giuridica, settori economici (Ateco 5 cifre) - Italia",ok,hub,6,2081,0,"",2026-07-17
+183_277_DF_DICA_ASIAUE1P_3,"Forma giuridica, settori economici (Ateco 4 cifre) - rip.",ok,hub,6,2086,0,"",2026-07-17
+183_277_DF_DICA_ASIAUE1P_4,"Forma giuridica, settori economici (Ateco 3 cifre) - prov.",ok,hub,6,2219,0,"",2026-07-17
+183_277_DF_DICA_ASIAUE1P_5,"Classe di addetti, settori economici (Ateco 2 cifre) - prov.",ok,hub,8,14559,0,"",2026-07-17
+183_285,Unità locali e addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_285_DF_DICA_ASIAULP_1,Unità locali e addetti - Principali dati,ok,hub,5,37,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_10,"Classe di addetti, settori economici (Ateco 1 cifra) - sll 2021",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_285_DF_DICA_ASIAULP_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,ok,hub,4,2303,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_3,Settori economici (Ateco 3 cifre) - com.,ok,hub,4,14534,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_4,"Classe di addetti, settori economici (Ateco 5 cifre) - Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_285_DF_DICA_ASIAULP_5,"Classe di addetti, settori economici (Ateco 4 cifre) - rip.",ok,hub,5,2075,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",ok,hub,5,2209,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",ok,hub,5,14539,0,"",2026-07-17
+183_285_DF_DICA_ASIAULP_8,"Classe di addetti, settori economici (Ateco 1 cifra) - sll 2011",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_285_DF_DICA_ASIAULP_9,"Classe di addetti, settori economici (Ateco 1 cifra) - sll 2001",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286,Imprese - lavoratori dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_1,Imprese - lavoratori dipendenti - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_10,"Forma giuridica, età - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_11,"Forma giuridica, paese di nascita - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_12,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_13,Settori economici (Ateco 1 cifra) - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_14,Classe di addetti - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_15,Forma giuridica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_16,Età impresa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_17,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_18,"Macrosettori economici, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_19,Macrosettori economici - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_2,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_20,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_21,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_22,Età impresa - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_23,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_24,"Forma giuridica, sesso - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_25,"Forma giuridica, età - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_26,"Forma giuridica, paese di nascita - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_27,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_28,Settori economici (Ateco 1 cifra) - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_29,Classe di addetti - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_3,"Macrosettori economici, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_30,Forma giuridica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_31,Età impresa - prov.,ok,hub,6,152,0,"",2026-07-17
+183_286_DF_DICA_ADIPWP_32,"Macrosettori economici, classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_33,"Macrosettori economici, età impresa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_34,Macrosettori economici - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_35,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_36,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_37,Età impresa - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_38,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_39,"Forma giuridica, sesso - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_4,Macrosettori economici - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_40,"Forma giuridica, età - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_41,"Forma giuridica, paese di nascita - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_42,Settori economici (Ateco 3 cifre) - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_43,Settori economici (Ateco 1 cifra) - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_44,Classe di addetti - prov.,ok,hub,6,151,0,"",2026-07-17
+183_286_DF_DICA_ADIPWP_45,Forma giuridica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_46,Età impresa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_5,Settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_6,Classe di addetti - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_7,Età impresa - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_8,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_286_DF_DICA_ADIPWP_9,"Forma giuridica, sesso - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332,Unità locali - lavoratori dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_1,"Classe di addetti, sesso, età - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_2,"Classe di addetti, paese di nascita - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_3,"Classe di addetti, qualifica professionale - prov",ok,hub,6,155,0,"",2026-07-17
+183_332_DF_DICA_ASIAULOCCP_4,"Settori economici (Ateco 3 cifre), sesso - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_5,"Settori economici (Ateco 3 cifre), età - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_6,"Settori economici (Ateco 3 cifre), paese di nascita - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_332_DF_DICA_ASIAULOCCP_7,"Settori economici (Ateco 3 cifre), qualifica professionale - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_336,Imprese - lavoratori dipendenti beneficiari di sgravi contributivi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_336_DF_DICA_ADIPPP_1,"Sesso, macrosettori economici",ok,hub,7,32,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_2,"Sesso, classe di addetti",ok,hub,7,32,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_3,Sesso - reg.,ok,hub,6,54,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_4,"Età, macrosettori economici",ok,hub,7,33,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_5,"Età, classe di addetti",ok,hub,7,33,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_6,Età - reg.,ok,hub,6,55,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_7,"Paese di nascita, macrosettori economici",ok,hub,6,34,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_8,"Paese di nascita, classe di addetti",ok,hub,6,34,0,"",2026-07-17
+183_336_DF_DICA_ADIPPP_9,Paese di nascita - reg.,ok,hub,5,56,0,"",2026-07-17
+183_464,Imprese - occupati per titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_464_DF_DICA_TISTUDIO_1,Imprese - occupati per titolo di studio - Principali dati,ok,hub,8,77,0,"",2026-07-17
+183_464_DF_DICA_TISTUDIO_2,Qualifica professionale - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_464_DF_DICA_TISTUDIO_3,"Paese di nascita, sesso, età - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_464_DF_DICA_TISTUDIO_4,Sesso - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_464_DF_DICA_TISTUDIO_5,Età - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+183_464_DF_DICA_TISTUDIO_6,Paese di nascita - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_157,Bilancio energetico,empty,hub,0,0,0,"",2026-07-17
+18_157_DF_DCCV_BILENERG_1,Usi finali,ok,hub,4,10,0,"",2026-07-17
+18_157_DF_DCCV_BILENERG_2,Consumo interno lordo,ok,hub,5,9,0,"",2026-07-17
+18_635,Consumi energetici delle famiglie,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_635_DF_DCCV_CENERG_1,Spesa per tipo di fonte,ok,hub,5,40,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_10,Legna e pellets - reg.,ok,hub,4,37,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_11,Legna - tipo e canale approvvigionamento - reg.,ok,hub,5,49,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_12,Lampadine - reg.,ok,hub,5,38,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_13,Elettrodomestici - reg.,ok,hub,4,36,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_2,"Impianto riscaldamento - disponibilità, tipo e fonte - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_635_DF_DCCV_CENERG_3,Impianto riscaldamento - tipo per fonte e frequenza d'uso,ok,hub,6,12,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_4,Impianto riscaldamento - frequenza d'uso - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_635_DF_DCCV_CENERG_5,Impianto riscaldamento - ore di accensione - reg.,ok,hub,5,39,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_6,"Impianto condizionamento - disponibilità, tipo e frequenza d'uso - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_635_DF_DCCV_CENERG_7,Impianto condizionamento - ore di accensione - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+18_635_DF_DCCV_CENERG_8,"Riscaldamento acqua - disponibilità, tipo di impianto e fonte - reg.",ok,hub,5,47,0,"",2026-07-17
+18_635_DF_DCCV_CENERG_9,Riscaldamento acqua - tipo di impianto e fonte di alimentazione,ok,hub,5,14,0,"",2026-07-17
+19_366_DF_DCCN_PROTSOC_B19_1,Conti economici consolidati - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+19_366_DF_DCCN_PROTSOC_B19_2,"Prestazioni secondo evento, rischio e bisogno - edizioni ottobre 2019 - aprile 2024",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_1064,Sequenza dei conti trimestrali per settore istituzionale - edizioni ottobre 2019 - luglio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_1,Sequenza dei conti - edizioni ottobre 2019 - luglio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_2,Indicatori su famiglie e società non finanziarie - edizioni ottobre 2019 - luglio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_3,Aggregati destagionalizzati - edizioni ottobre 2019 - luglio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_184,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_184_DF_DCCN_PILQ_B19_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_88,Occupazione per branca di attività e popolazione - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_88_DF_DCCN_OCCQSEC2010_B19_1,Occupazione per branca di attività - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_88_DF_DCCN_OCCQSEC2010_B19_2,Popolazione media del periodo - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_963_DF_DCCN_SHA_B19_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento - edizioni giugno 2020 - maggio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_963_DF_DCCN_SHA_B19_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore - edizioni giugno 2020 - maggio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+1_963_DF_DCCN_SHA_B19_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento - edizioni giugno 2020 - maggio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_1201,Popolazione semi-super centenaria (105 anni e più),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_1201_DF_DCIS_SSCENT_1,Popolazione semi-super centenaria (105 anni e più),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_1240,Popolazione italiana residente all'estero - bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_1240_DF_DCIS_POPITAESTBIL_1,Popolazione italiana residente all'estero - bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_1262,Popolazione italiana residente all'estero,empty,hub,0,0,0,"",2026-07-17
+22_1262_DF_DCIS_POPITAEST_1,Popolazione al 1° gennaio per regione italiana e Paese estero di iscrizione AIRE,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_1,Fabbricati non residenziali nuovi e relative abitazioni - province e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_10,Ampliamenti di fabbricati non residenziali con o senza sopraelevazione - ripartizioni e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_2,Ampliamenti di fabbricati non residenziali e relative abitazioni - province e classi di comune,ok,hub,3,157,0,"",2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_3,Fabbricati non residenziali nuovi e ampliamenti per titolo abilitativo - ripartizioni e classi di comune,ok,hub,4,31,0,"",2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_4,Fabbricati non residenziali nuovi e ampliamenti per durata prevista dei lavori - ripartizioni e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_5,Superfici dei fabbricati non residenziali nuovi per destinazione d'uso - ripartizioni e classi di comune,ok,hub,3,25,0,"",2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_6,Superfici degli ampliamenti di fabbricati non residenziali per destinazione d'uso - ripartizioni e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_7,Fabbricati non residenziali nuovi e ampliamenti per destinazione economica - province e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_8,Fabbricati non residenziali nuovi e ampliamenti per richiedente il titolo abilitativo - regioni e classi di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_9,Fabbricati non residenziali nuovi per tipologia dell'impianto - ripartizioni e classi di comune,ok,hub,4,30,0,"",2026-07-17
+22_289,Popolazione residente  al 1° gennaio,ok,hub,6,8133,0,"",2026-07-17
+22_289_DF_DASH_DCIS_POPRES1_1,Dashboard - Tutti i comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_1,"Italia, regioni, province",ok,hub,6,254,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_10,Friuli Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_11,Emilia Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_12,Toscana,ok,hub,6,403,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_13,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_14,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_15,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_16,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_17,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_18,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_19,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_1_YOU,"Italia, regioni, province - Giovani",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_2,Per fascia di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_20,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_21,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_22,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_23,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_24,Tutti i comuni per singola età,ok,hub,6,11686,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_25,Tutti i comuni per stato civile,ok,hub,6,11592,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_26,Tutti i comuni per singola età e stato civile,ok,hub,6,12586,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_3,Piemonte,empty,hub,0,0,0,"",2026-07-17
+22_289_DF_DCIS_POPRES1_3B,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_4,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_5,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_6,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_7,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_8,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_9,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_LT,Popolazione residente al 1° gennaio - provincia di Latina,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_293,Indicatori  demografici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,ok,hub,3,161,0,"",2026-07-17
+22_315,Popolazione residente  - bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DASH_DCIS_POPORESBIL1_24,Tutti i comuni per singola età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_10,Friuli-Venezia Giulia,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_11,Emilia-Romagna,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_12,Toscana,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_13,Umbria,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_14,Marche,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_15,Lazio,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_16,Abruzzo,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_17,Molise,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_18,Campania,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_19,Puglia,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_20,Basilicata,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_21,Calabria,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_22,Sicilia,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_23,Sardegna,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,ok,hub,4,12499,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_3,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_4,Valle d'Aosta/Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_5,Liguria,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_6,Lombardia,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_7,Provincia Autonoma Bolzano/Bozen,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_8,Provincia Autonoma Trento,empty,hub,0,0,0,"",2026-07-17
+22_315_DF_DCIS_POPORESBIL1_9,Veneto,empty,hub,0,0,0,"",2026-07-17
+22_389,Popolazione residente al 1° gennaio - ultimo anno disponibile,empty,hub,0,0,0,"",2026-07-17
+24_1149,Unioni civili-Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_1,Sesso (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_2,Stato civile (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_3,"Classe di età, stato civile e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_4,"Titolo di studio, stato civile e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_5,Mese di costituzione e sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_6,Regime patrimoniale e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_7,"Uniti per età, anno di nascita e stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1150,Unioni civili - Indicatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1150_DF_DCIS_UNIONIND_1,Indicatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1150_DF_DCIS_UNIONIND_2,Età media delle donne per stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1150_DF_DCIS_UNIONIND_3,Età media degli uomini per stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1151,Unioni civili - Caratteristiche socio-professionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1151_DF_DCIS_UNIONISOC_1,Regime patrimoniale e posizione professionale,ok,hub,6,34,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_2,Regime patrimoniale e condizione professionale,ok,hub,6,30,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,ok,hub,6,34,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_4,Sesso e condizione professionale,ok,hub,6,30,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_5,Regione di nascita,ok,hub,4,57,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_6,Regione di residenza,ok,hub,4,57,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_7,Regione di nascita unito 2 e di residenza unito 1,ok,hub,4,57,0,"",2026-07-17
+24_1151_DF_DCIS_UNIONISOC_8,Regione di nascita unito 1 e di residenza unito 2,ok,hub,4,57,0,"",2026-07-17
+24_1152,Unioni civili - Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_2,Unioni civili con almeno uno straniero per area di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_3,Unioni civili con almeno uno straniero per paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_4,Unioni civili di entrambi stranieri per paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_5,Unioni civili di entrambi stranieri per paese e confronto cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_6,Unioni civili per tipologia di coppia e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152_DF_DCIS_UNIONICIT_7,Unioni civili per tipologia di coppia e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186,Matrimoni,empty,hub,0,0,0,"",2026-07-17
+24_186_DF_DCIS_MATRDEMO_1,Rito (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_10,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_11,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_12,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_13,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_14,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_15,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_16,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_17,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_18,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_19,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_2,Stato civile (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_20,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_21,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_22,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_23,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_24,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_25,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_26,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_27,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_28,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_29,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_3,Età e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_30,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_4,Classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_5,"Rito, classe di età, stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_6,"Rito, titolo di studio, stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_7,"Rito, mese di celebrazione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_8,Regime patrimoniale e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_9,Tipo di comune e rito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,5,21,0,"",2026-07-17
+24_386,Matrimoni - Caratteristiche socio-professionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_2,Regime patrimoniale e condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_3,Regione di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_4,Regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446,Matrimoni - Cittadinanza,empty,hub,0,0,0,"",2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_1,Matrimoni - Cittadinanza - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_2,Matrimoni per tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_3,Tipologia di coppia e area di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_4,Tipologia di coppia e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_5,Matrimoni di sposi entrambi stranieri per cittadinanza,empty,hub,0,0,0,"",2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_6,Matrimoni di sposi entrambi stranieri per uguaglianza o meno della cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_7,Tipologia di coppia e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_8,Primi o secondi matrimoni per tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_447,Sposi - Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_447_DF_DCIS_SPOSI_1,"Età, anno di nascita e stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_447_DF_DCIS_SPOSI_2,Età e durata della vedovanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_447_DF_DCIS_SPOSI_3,Età e durata del divorzio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_84,Matrimoni - Indicatori,ok,hub,5,193,0,"",2026-07-17
+24_84_DF_DCIS_MATRIND_1,Indicatori di nuzialità,ok,hub,3,179,0,"",2026-07-17
+24_84_DF_DCIS_MATRIND_2,Età media degli sposi per stato civile,ok,hub,4,149,0,"",2026-07-17
+24_84_DF_DCIS_MATRIND_3,Età media delle spose per stato civile,ok,hub,4,149,0,"",2026-07-17
+24_84_DF_DCIS_MATRIND_4,Numeri indice,ok,hub,3,31,0,"",2026-07-17
+25_1242,Intenzioni di fecondità,ok,hub,9,53,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_1,Persone 18-49 anni che hanno intenzione di avere un figlio,ok,hub,6,18,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_2,Intenzione di avere figli entro tre anni,ok,hub,6,18,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_3,Intenzione di avere figli entro tre anni per numero di figli avuti,ok,hub,6,17,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_4,Intenzione di avere figli entro tre anni delle persone con lo stesso territorio di residenza,ok,hub,4,21,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_5,Intenzione di avere figli in futuro,ok,hub,6,18,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_6,Intenzione di avere figli in futuro per numero di figli avuti,ok,hub,6,17,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_7,Intenzione di avere figli in futuro delle persone con lo stesso territorio di residenza,ok,hub,4,21,0,"",2026-07-17
+25_326,Indicatori  di fecondità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_326_DF_DCIS_FECONDITA1_5,Tasso di fecondità totale per anno di evento e cittadinanza della madre,ok,hub,4,142,0,"",2026-07-17
+25_326_DF_DCIS_FECONDITA1_6,Età media delle madri al parto per anno di evento e cittadinanza della madre,ok,hub,4,142,0,"",2026-07-17
+25_326_DF_DCIS_FECONDITA1_7,"Tassi di fecondità specifici per età della madre, anno di evento e cittadinanza della madre (per mille donne)",ok,hub,5,179,0,"",2026-07-17
+25_326_DF_DCIS_FECONDITA1_8,Età media dei padri alla nascita del figlio,ok,hub,3,139,0,"",2026-07-17
+25_74,Nati vivi,ok,hub,13,446,0,"",2026-07-17
+25_74_DF_DCIS_NATI1_10,Padre - Età e stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_11,Genitori - Età (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_12,Genitori - Stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_13,Stato civile di lei e di lui,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_14,Età di lei e di lui,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_15,Caratteristiche della madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_16,Caratteristiche del padre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_17,Stime  (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_7,Madre - Età e stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_8,Madre - Età e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_9,Madre - Età e anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_1,Nati serie storica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_2,Sesso e cittadinanza del nato - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_3,Continente di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_4,Macro area di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_5,Paese di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_6,Nati dentro e fuori dal matrimonio - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_7,Età e cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_8,"Cittadinanza dei genitori, classe di età dei genitori - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI2_9,"Cittadinanza dei genitori, stato civile dei genitori - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944,Tavole di fecondità per ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_10,Età media al parto per coorte e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_11,"Tassi di fecondità specifci per età della madre, coorte e ordine di nascita (per mille donne)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_5,Principali indicatori,ok,hub,4,213,0,"",2026-07-17
+25_944_DF_DCIS_ARCH_FEC_6,Tasso di fecondità totale per anno di evento e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_7,Età media al parto per anno di evento e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_8,"Tassi di fecondità specifici per età della madre, anno di evento e ordine di nascita (per mille donne)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_9,Tasso di fecondità totale per coorte e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_29,Decessi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_295,Tavole di mortalità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_295_DF_DCIS_MORTALITA1_1,Classi di età,ok,hub,5,11612,0,"",2026-07-17
+26_295_DF_DCIS_MORTALITA1_2,Singole età,ok,hub,5,11708,0,"",2026-07-17
+26_29_DF_DCIS_DECESSI_1,Indicatori sintetici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_29_DF_DCIS_DECESSI_2,Morti,ok,hub,9,12526,0,"",2026-07-17
+26_29_DF_DCIS_DECESSI_3,Quozienti  specifici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_239,Investimenti fissi lordi per branca proprietaria (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_242,Spesa per consumi finali delle famiglie - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_243,Spesa per consumi finali della Pa - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_248,Prodotto interno lordo lato produzione - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_254,Sequenza dei conti - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_298,Aggregati dei conti per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_301,Occupazione per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+270_303,Investimenti fissi lordi per branca proprietaria (NACE Rev.2) - edizioni febbraio 2012 - novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+272_1164,Relazioni di parentela e reti di supporto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,ok,hub,4,26,0,"",2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",ok,hub,5,24,0,"",2026-07-17

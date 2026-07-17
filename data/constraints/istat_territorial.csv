@@ -823,3 +823,116 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 172_1198_DF_DCCV_NEET1_UNT2020_6,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
 172_1198_DF_DCCV_NEET1_UNT2020_7,Età (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 172_1198_DF_DCCV_NEET1_UNT2020_8,Titolo di studio (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_9,Cittadinanza (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931,NEET  (giovani non occupati e non in istruzione e formazione),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_931_DF_DCCV_NEET1_1,"NEET (giovani non occupati e non in istruzione e formazione)- Condizione professionale europea, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_10,Incidenza dei giovani Neet - Ruolo in famiglia (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_11,Incidenza dei giovani Neet - Dati regionali (%),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_931_DF_DCCV_NEET1_2,"NEET (giovani non occupati e non in istruzione e formazione) - Condizione professionale europea, titolo di studio",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_3,"NEET  (giovani non occupati e non in istruzione e formazione)- Condizione professionele europea, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_4,"NEET  (giovani non occupati e non in istruzione e formazione) - Condizione professionale europea, ruolo in famiglia",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_931_DF_DCCV_NEET1_5,"NEET  (giovani non occupati e non in istruzione e formazione) - Cittadinanza, ruolo in famiglia",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_6,NEET  (giovani non occupati e non in istruzione e formazione) - Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_931_DF_DCCV_NEET1_7,Incidenza dei giovani Neet - Età (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_8,Incidenza dei giovani Neet - Titolo di studio (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_9,Incidenza dei giovani Neet - Cittadinanza (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_931_DF_DCCV_NEET1_YOUTH_1,Giovani - NEET Giovani non occupati e non in istruzione e formazione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+174_65_DF_DCCV_ASIMMETRIA_6,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,236,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+183_208_DF_DICA_AESTLP_13,Età impresa e impresa con dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_10,Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_11,Età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_12,Paese di nascita,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_13,Classe di addetti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_14,Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_15,Età impresa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_16,"Impresa con dipendenti, sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_17,"Impresa con dipendenti, età",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_18,"Impresa con dipendenti, paese di nascita",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_19,"Impresa con dipendenti, tipo di lavoratore indipendente",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_275_DF_DICA_AINDP_2,Settori economici (Ateco 3 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+183_275_DF_DICA_AINDP_7,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
+183_276_DF_DICA_AINTP_12,Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_14,"Impresa con dipendenti, sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_15,"Impresa con dipendenti, età",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_16,"Impresa con dipendenti, paese di nascita",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_17,"Impresa con dipendenti, periodo di attività svolto nell'impresa utilizzatrice",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_277_DF_DICA_ASIAUE1P_1,Imprese e addetti - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-07-17
+183_277_DF_DICA_ASIAUE1P_2,"Forma giuridica, settori economici (Ateco 5 cifre) - Italia",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_277_DF_DICA_ASIAUE1P_3,"Forma giuridica, settori economici (Ateco 4 cifre) - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
+183_277_DF_DICA_ASIAUE1P_4,"Forma giuridica, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_277_DF_DICA_ASIAUE1P_5,"Classe di addetti, settori economici (Ateco 2 cifre) - prov.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+183_285_DF_DICA_ASIAULP_1,Unità locali e addetti - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
+183_285_DF_DICA_ASIAULP_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,239,2026-07-17
+183_285_DF_DICA_ASIAULP_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12470,2026-07-17
+183_285_DF_DICA_ASIAULP_5,"Classe di addetti, settori economici (Ateco 4 cifre) - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
+183_285_DF_DICA_ASIAULP_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-07-17
+183_285_DF_DICA_ASIAULP_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12470,2026-07-17
+183_286_DF_DICA_ADIPWP_31,Età impresa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_286_DF_DICA_ADIPWP_44,Classe di addetti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_332_DF_DICA_ASIAULOCCP_3,"Classe di addetti, qualifica professionale - prov",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_336_DF_DICA_ADIPPP_1,"Sesso, macrosettori economici",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_2,"Sesso, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_3,Sesso - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+183_336_DF_DICA_ADIPPP_4,"Età, macrosettori economici",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_5,"Età, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_6,Età - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+183_336_DF_DICA_ADIPPP_7,"Paese di nascita, macrosettori economici",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_8,"Paese di nascita, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-17
+183_336_DF_DICA_ADIPPP_9,Paese di nascita - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+183_464_DF_DICA_TISTUDIO_1,Imprese - occupati per titolo di studio - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_157_DF_DCCV_BILENERG_1,Usi finali,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_157_DF_DCCV_BILENERG_2,Consumo interno lordo,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_635_DF_DCCV_CENERG_1,Spesa per tipo di fonte,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_10,Legna e pellets - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_11,Legna - tipo e canale approvvigionamento - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_12,Lampadine - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_13,Elettrodomestici - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_3,Impianto riscaldamento - tipo per fonte e frequenza d'uso,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_635_DF_DCCV_CENERG_5,Impianto riscaldamento - ore di accensione - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_8,"Riscaldamento acqua - disponibilità, tipo di impianto e fonte - reg.",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_9,Riscaldamento acqua - tipo di impianto e fonte di alimentazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_2,Ampliamenti di fabbricati non residenziali e relative abitazioni - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_3,Fabbricati non residenziali nuovi e ampliamenti per titolo abilitativo - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_5,Superfici dei fabbricati non residenziali nuovi per destinazione d'uso - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_9,Fabbricati non residenziali nuovi per tipologia dell'impianto - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
+22_289,Popolazione residente  al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8128,2026-07-17
+22_289_DF_DCIS_POPRES1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+22_289_DF_DCIS_POPRES1_12,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,288,2026-07-17
+22_289_DF_DCIS_POPRES1_24,Tutti i comuni per singola età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
+22_289_DF_DCIS_POPRES1_25,Tutti i comuni per stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
+22_289_DF_DCIS_POPRES1_26,Tutti i comuni per singola età e stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+24_1151_DF_DCIS_UNIONISOC_1,Regime patrimoniale e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_1151_DF_DCIS_UNIONISOC_2,Regime patrimoniale e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_1151_DF_DCIS_UNIONISOC_4,Sesso e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+24_84,Matrimoni - Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
+24_84_DF_DCIS_MATRIND_1,Indicatori di nuzialità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
+24_84_DF_DCIS_MATRIND_2,Età media degli sposi per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
+24_84_DF_DCIS_MATRIND_3,Età media delle spose per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
+24_84_DF_DCIS_MATRIND_4,Numeri indice,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+25_1242,Intenzioni di fecondità,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
+25_1242_DF_DCCV_FERTINT1_1,Persone 18-49 anni che hanno intenzione di avere un figlio,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_2,Intenzione di avere figli entro tre anni,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_3,Intenzione di avere figli entro tre anni per numero di figli avuti,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_4,Intenzione di avere figli entro tre anni delle persone con lo stesso territorio di residenza,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
+25_1242_DF_DCCV_FERTINT1_5,Intenzione di avere figli in futuro,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_6,Intenzione di avere figli in futuro per numero di figli avuti,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_7,Intenzione di avere figli in futuro delle persone con lo stesso territorio di residenza,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
+25_326_DF_DCIS_FECONDITA1_5,Tasso di fecondità totale per anno di evento e cittadinanza della madre,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_326_DF_DCIS_FECONDITA1_6,Età media delle madri al parto per anno di evento e cittadinanza della madre,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_326_DF_DCIS_FECONDITA1_7,"Tassi di fecondità specifici per età della madre, anno di evento e cittadinanza della madre (per mille donne)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_326_DF_DCIS_FECONDITA1_8,Età media dei padri alla nascita del figlio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+26_295_DF_DCIS_MORTALITA1_1,Classi di età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
+26_295_DF_DCIS_MORTALITA1_2,Singole età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
+26_29_DF_DCIS_DECESSI_2,Morti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
