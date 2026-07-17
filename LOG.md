@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-07-17 - v0.14.0
+
+- release: export types to consumers via the `py.typed` marker (PEP 561) and full `mypy --strict` coverage across the package. No runtime or behaviour change.
+
 ## 2026-07-17 - mypy strict complete + py.typed
 
 - ci: `cli` converted to strict and the gradual opt-out override removed — `strict = true` now covers all 14 modules with no exemptions. Typer commands get `-> None`, helpers typed (`_status_ctx -> Iterator[None]`, `_filter_by_grep`/`_emit` over `pl.DataFrame`), dicts parametrised.
