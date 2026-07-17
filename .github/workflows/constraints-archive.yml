@@ -2,7 +2,9 @@ name: Constraints Archive
 
 on:
   schedule:
-    - cron: '30 4 * * *'
+    # 02:10 UTC — early morning in Italy (04:10 CEST / 03:10 CET; GitHub cron is
+    # UTC-only). Odd minute on purpose: round times queue longer.
+    - cron: '10 2 * * *'
   workflow_dispatch:
     inputs:
       provider:
@@ -59,5 +61,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/constraints/
-          git diff --staged --quiet || git commit -m "data: constraints archive $(date -u +%Y-%m-%d)"
+          if git diff --staged --quiet; then
+            echo "No new constraints to commit"
+            exit 0
+          fi
+          git commit -m "data: constraints archive $(date -u +%Y-%m-%d)"
+          # Another bot (or a person) may have pushed during the ~25 min probe;
+          # rebase so this batch is not lost to a non-fast-forward rejection.
+          git pull --rebase origin main
           git push
