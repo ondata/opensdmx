@@ -66,8 +66,7 @@ ignore = ["E402"]
 [tool.mypy]
 python_version = "3.12"
 files = ["src/opensdmx"]
-warn_redundant_casts = true
-warn_unused_ignores = true
+strict = true
 
 # Third-party libraries without type stubs.
 [[tool.mypy.overrides]]
@@ -79,6 +78,25 @@ module = [
     "matplotlib.*",
 ]
 ignore_missing_imports = true
+
+# Gradual strict adoption: modules not yet fully annotated are exempted from the
+# strict-only checks and converted one at a time. Remove a module from this list
+# once it is strict-clean. Remaining: categories, utils, db_cache, base,
+# discovery, cli.
+[[tool.mypy.overrides]]
+module = [
+    "opensdmx.categories",
+    "opensdmx.utils",
+    "opensdmx.db_cache",
+    "opensdmx.base",
+    "opensdmx.discovery",
+    "opensdmx.cli",
+]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+disallow_any_generics = false
+warn_return_any = false
 
 [build-system]
 requires = ["uv_build>=0.9.7,<0.10.0"]

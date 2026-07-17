@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-07-17 - mypy strict (gradual)
+
+- ci: switched `[tool.mypy]` to `strict = true` with a per-module opt-out list so strict is adopted one module at a time. Converted the small/pure modules now — `ai`, `embed`, `which`, `hub`, `retrieval` (plus the already-clean `cache_config`, `guide`, `__init__`) are strict-clean; `categories`, `utils`, `db_cache`, `base`, `discovery`, `cli` stay exempted with the specific strict flags relaxed (tracked TODO in the config comment).
+- fix(types): precise generics (`dict[str, Any]`, `list[dict[str, str]]`), missing param/return annotations, and Any-return coercions via typed locals; no new `# type: ignore`.
+- `mypy`, `ruff`, and the 229-test suite all green; runtime smoke (`which`, package import) ok.
+
 ## 2026-07-17 - mypy type-checking
 
 - ci: added mypy to the dev tooling. `[tool.mypy]` in `pyproject.toml` (pragmatic baseline: default checks + `warn_unused_ignores`/`warn_redundant_casts`), dev deps `mypy`, `types-PyYAML`, `lxml-stubs`, `pandas-stubs`; `uv run mypy` step in `ci.yml` next to ruff.

@@ -26,6 +26,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+from typing import Any
 
 import httpx
 
@@ -34,7 +35,7 @@ from .base import get_provider
 logger = logging.getLogger(__name__)
 
 
-def is_hub_enabled(provider: dict | None = None) -> bool:
+def is_hub_enabled(provider: dict[str, Any] | None = None) -> bool:
     """True when the active provider exposes a `.Stat Suite` hub.
 
     Pass an explicit `provider` dict to make the check independent of the
@@ -69,7 +70,7 @@ def _dataset_identifier(df_id: str, version: str | None) -> str:
     return f"{agency},{df_id},{v}"
 
 
-def _hub_get_json(path: str, timeout: float) -> dict | None:
+def _hub_get_json(path: str, timeout: float) -> dict[str, Any] | None:
     """GET a hub path and return parsed JSON, or `None` on any error.
 
     Errors are logged at WARNING and never propagate — callers must fall through
@@ -91,7 +92,8 @@ def _hub_get_json(path: str, timeout: float) -> dict | None:
         with httpx.Client(timeout=timeout, follow_redirects=True) as client:
             resp = client.get(url, headers=headers)
             resp.raise_for_status()
-            return resp.json()
+            data: dict[str, Any] = resp.json()
+            return data
     except (httpx.HTTPError, json.JSONDecodeError, ValueError) as e:
         logger.warning("hub request failed for %s: %s", path, e)
         return None
@@ -172,7 +174,7 @@ def _get_all_dimension_values_via_hub_bulk(
         return {}
 
 
-def get_available_values_via_hub(dataset: dict) -> dict[str, list[str]]:
+def get_available_values_via_hub(dataset: dict[str, Any]) -> dict[str, list[str]]:
     """Return ``{dim_id: [codes]}`` for every codelist dimension via hub.
 
     Tries the bulk ``columns/partial/values`` endpoint first (one request for

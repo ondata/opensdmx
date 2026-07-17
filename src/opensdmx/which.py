@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-WHICH_INDEX: list[dict] = [
+WHICH_INDEX: list[dict[str, str]] = [
     {
         "command": "search",
         "description": "Find datasets by keyword in the local cache (or semantically with --semantic).",
@@ -58,7 +58,7 @@ WHICH_INDEX: list[dict] = [
 ]
 
 
-def _score_entry(entry: dict, query: str, tokens: list[str]) -> int:
+def _score_entry(entry: dict[str, str], query: str, tokens: list[str]) -> int:
     score = 0
     cmd = entry["command"].lower()
     desc = entry["description"].lower()
@@ -81,7 +81,7 @@ def _score_entry(entry: dict, query: str, tokens: list[str]) -> int:
     return score
 
 
-def rank_which(query: str, limit: int = 3) -> list[dict]:
+def rank_which(query: str, limit: int = 3) -> list[dict[str, Any]]:
     """Return scored matches from WHICH_INDEX for *query*.
 
     Empty query returns all entries at score 0 (listing mode).

@@ -1,7 +1,7 @@
 """AI-assisted filter selection — Python controls flow, AI produces structured JSON."""
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar
 
 if TYPE_CHECKING:
     from pydantic import BaseModel
@@ -13,7 +13,7 @@ class ChangeDataset(Exception):
     """Raised when the user wants to go back to dataset selection."""
 
 
-def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
+def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") -> dict[str, Any]:
     """Guide user to select filters for a dataset.
 
     Architecture: Python fetches constraints and validates combos.
@@ -133,7 +133,7 @@ def guide_session(ds: dict, objective: str, failed_context: str = "") -> dict:
         )
 
     # ── Helper: list[DimFilter] → dict ───────────────────────────────────────
-    def _to_dict(filters) -> dict[str, list[str]]:
+    def _to_dict(filters: list[DimFilter]) -> dict[str, list[str]]:
         return {f.dim_id: f.codes for f in filters}
 
     # ── Python validation ─────────────────────────────────────────────────────

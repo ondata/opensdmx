@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import httpx
 import numpy as np
 import polars as pl
@@ -11,8 +13,9 @@ from .base import get_cache_dir
 _EMBED_MODEL = "nomic-embed-text-v2-moe"
 
 
-def _embed_cache_path():
-    return get_cache_dir() / "embeddings.parquet"
+def _embed_cache_path() -> Path:
+    path: Path = get_cache_dir() / "embeddings.parquet"
+    return path
 
 
 def _check_ollama() -> None:

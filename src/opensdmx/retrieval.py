@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from typing import Any
 
 import polars as pl
 
@@ -62,7 +63,7 @@ def parse_time_period(series: pl.Series) -> pl.Series:
 
 
 def get_data(
-    dataset: dict,
+    dataset: dict[str, Any],
     start_period: str | None = None,
     end_period: str | None = None,
     last_n_observations: int | None = None,
@@ -96,7 +97,7 @@ def get_data(
     if first_n_observations is not None:
         params["firstNObservations"] = first_n_observations
 
-    data = sdmx_request_csv(path, **params)
+    data: pl.DataFrame = sdmx_request_csv(path, **params)
 
     if get_provider().get("data_key_format", "dots") == "empty":
         for col, val in dataset.get("filters", {}).items():
@@ -113,7 +114,7 @@ def get_data(
     return data
 
 
-def enrich_with_labels(dataset: dict, data: pl.DataFrame) -> pl.DataFrame:
+def enrich_with_labels(dataset: dict[str, Any], data: pl.DataFrame) -> pl.DataFrame:
     """Append human-readable label columns for each dimension in the data.
 
     For every dimension whose column appears in ``data`` (matched
@@ -204,7 +205,7 @@ def fetch(
     end_period: str | None = None,
     last_n_observations: int | None = None,
     first_n_observations: int | None = None,
-    **filters,
+    **filters: Any,
 ) -> pl.DataFrame:
     """Quick one-call retrieval: loads dataset, sets filters, fetches data.
 
