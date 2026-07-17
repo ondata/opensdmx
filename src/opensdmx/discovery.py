@@ -23,7 +23,8 @@ import logging
 import os
 import re
 import time
-from typing import TypedDict, cast
+from pathlib import Path
+from typing import Any, TypedDict, cast
 
 logger = logging.getLogger(__name__)
 
@@ -49,8 +50,9 @@ def _struct_path(endpoint: str) -> str:
     return f"{prefix}/{endpoint}" if prefix else endpoint
 
 
-def _dataflow_cache_path():
-    return get_cache_dir() / "dataflows.parquet"
+def _dataflow_cache_path() -> Path:
+    path: Path = get_cache_dir() / "dataflows.parquet"
+    return path
 
 
 def _load_cached_dataflows() -> pl.DataFrame | None:
@@ -288,13 +290,14 @@ def _resolve_codelist_from_concept(scheme_id: str, scheme_agency: str, concept_i
                     f".//{{{struct_ns}}}CoreRepresentation//{{{struct_ns}}}Enumeration//Ref"
                 ) if struct_ns else None
                 if enum_ref is not None:
-                    return enum_ref.get("id")
+                    enum_id = enum_ref.get("id")
+                    return str(enum_id) if enum_id is not None else None
     except Exception:
         pass
     return None
 
 
-def _get_dimensions(structure_id: str) -> dict:
+def _get_dimensions(structure_id: str) -> dict[str, Any]:
     """Fetch dimension metadata for a data structure definition."""
     from .db_cache import get_cached_dims, save_dims
     cached = get_cached_dims(structure_id)
@@ -373,7 +376,7 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
     return description
 
 
-def load_dataset(dataflow_identifier: str) -> dict:
+def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
     """Create a dataset object for a given dataflow ID, structure ID, or description.
 
     Returns a dict with keys:
@@ -423,7 +426,7 @@ def load_dataset(dataflow_identifier: str) -> dict:
     }
 
 
-def print_dataset(dataset: dict) -> None:
+def print_dataset(dataset: dict[str, Any]) -> None:
     """Print a human-readable summary of a dataset object."""
     print("Dataset")
     print("-------")
@@ -443,7 +446,7 @@ def print_dataset(dataset: dict) -> None:
         print(f"  - {dim_id}: {fstr}")
 
 
-def dimensions_info(dataset: dict, include_descriptions: bool = True) -> pl.DataFrame:
+def dimensions_info(dataset: dict[str, Any], include_descriptions: bool = True) -> pl.DataFrame:
     """Return a DataFrame with dimension metadata."""
     records = [
         {
@@ -469,12 +472,12 @@ def dimensions_info(dataset: dict, include_descriptions: bool = True) -> pl.Data
     return df
 
 
-def _local_tag(elem) -> str:
+def _local_tag(elem: Any) -> str:
     """Return an element's local tag name, stripping any namespace."""
-    return elem.tag.rsplit("}", 1)[-1]
+    return str(elem.tag).rsplit("}", 1)[-1]
 
 
-def _code_parent(code_node) -> str | None:
+def _code_parent(code_node: Any) -> str | None:
     """Return the parent code id from a <Parent><Ref id=.../></Parent>, or None.
 
     Namespace-agnostic: matches local tag names so it works across providers
@@ -487,11 +490,11 @@ def _code_parent(code_node) -> str | None:
             if _local_tag(ref) == "Ref":
                 rid = ref.get("id")
                 if rid:
-                    return rid
+                    return str(rid)
     return None
 
 
-def _code_order(code_node) -> int | None:
+def _code_order(code_node: Any) -> int | None:
     """Return the integer ORDER annotation value, or None if absent/non-numeric.
 
     Looks for <Annotations><Annotation id="ORDER">...<AnnotationText>N</...>.
@@ -512,7 +515,7 @@ def _code_order(code_node) -> int | None:
     return None
 
 
-def _load_codelist_records(dataset: dict, dimension_id: str) -> list[dict] | None:
+def _load_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[dict[str, Any]] | None:
     """Load a dimension's codelist as a list of dicts (id, name, parent, order).
 
     Resolves the dimension case-insensitively, serves from cache when fresh,
@@ -564,7 +567,7 @@ def _load_codelist_records(dataset: dict, dimension_id: str) -> list[dict] | Non
     return records
 
 
-def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
+def get_dimension_values(dataset: dict[str, Any], dimension_id: str) -> pl.DataFrame:
     """Return available values (id, name) for a specific dimension."""
     records = _load_codelist_records(dataset, dimension_id)
     if not records:
@@ -577,7 +580,7 @@ def get_dimension_values(dataset: dict, dimension_id: str) -> pl.DataFrame:
     )
 
 
-def get_codelist_hierarchy(dataset: dict, dimension_id: str) -> pl.DataFrame:
+def get_codelist_hierarchy(dataset: dict[str, Any], dimension_id: str) -> pl.DataFrame:
     """Return a dimension's codelist with hierarchy: (id, name, parent, order).
 
     `parent` is the parent code id (null for roots), `order` is the integer
@@ -597,7 +600,7 @@ def _parse_constraint_xml(content: bytes) -> dict[str, list[str]]:
     root, ns = xml_parse(content)
     common_ns = ns.get("common", "")
     struct_ns = ns.get("structure", "")
-    result: dict = {}
+    result: dict[str, Any] = {}
     kv_tags = []
     if struct_ns:
         kv_tags.append(f"{{{struct_ns}}}KeyValue")
@@ -637,7 +640,7 @@ def _parse_serieskeys_xml(content: bytes) -> dict[str, list[str]]:
     return {k: sorted(vs) for k, vs in result.items()}
 
 
-def _fallback_serieskeysonly(dataset: dict, provider: dict) -> dict[str, pl.DataFrame]:
+def _fallback_serieskeysonly(dataset: dict[str, Any], provider: dict[str, Any]) -> dict[str, pl.DataFrame]:
     """Discover available codes via data?detail=serieskeysonly.
 
     Used when availableconstraint times out. Sends an all-wildcard data request
@@ -693,7 +696,7 @@ def _fallback_serieskeysonly(dataset: dict, provider: dict) -> dict[str, pl.Data
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
-def _fallback_availableconstraint(dataset: dict, provider: dict) -> dict[str, pl.DataFrame]:
+def _fallback_availableconstraint(dataset: dict[str, Any], provider: dict[str, Any]) -> dict[str, pl.DataFrame]:
     """Query availableconstraint when contentconstraint returned 404.
 
     Builds the all-wildcard key from the dataset's dimension count and version.
@@ -810,7 +813,7 @@ def _parse_bulk_constraint_xml(content: bytes) -> dict[str, dict[str, list[str]]
 
 
 
-def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
+def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     """Get all available values for all dimensions via constraint endpoint.
 
     Resolution order:
@@ -932,7 +935,7 @@ def get_available_values(dataset: dict) -> dict[str, pl.DataFrame]:
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
-def set_filters(dataset: dict, **kwargs) -> dict:
+def set_filters(dataset: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
     """Set dimension filters (case-insensitive). Returns a new dataset dict."""
     import copy
     dataset = copy.deepcopy(dataset)
@@ -948,7 +951,7 @@ def set_filters(dataset: dict, **kwargs) -> dict:
     return dataset
 
 
-def reset_filters(dataset: dict) -> dict:
+def reset_filters(dataset: dict[str, Any]) -> dict[str, Any]:
     """Reset all filters to '.' (all values). Returns a new dataset dict."""
     import copy
     dataset = copy.deepcopy(dataset)
