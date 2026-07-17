@@ -42,7 +42,10 @@ import polars as pl
 import opensdmx
 # Direct hub access: lets the ISTAT probe skip the per-dataflow DSD call
 # (15 s each under the SDMX rate limiter) that the public API would require.
-from opensdmx.hub import _get_all_dimension_values_via_hub_bulk
+# We go one level below `_get_all_dimension_values_via_hub_bulk` because it
+# returns {} both when the hub fails and when it answers with nothing — a
+# distinction this archive has to record (see `probe_istat_hub`).
+from opensdmx.hub import _dataset_identifier, _hub_get_json
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "constraints"
 
@@ -56,6 +59,14 @@ FALLBACK_BUDGET = 50
 # the budget every run without dropping them from the archive for good.
 ERROR_RETRY_BACKOFF_DAYS = 1
 MAX_BACKOFF_DOUBLINGS = 6  # caps the wait at 64 days
+
+# A healthy hub answers in well under a second whatever the response size —
+# 11,675 codes came back in 0.9 s, 247 codes in 0.6 s. A request still pending
+# after 5 s is in a degraded window and will not answer, so waiting the package
+# default of 15 s only burns the run's time budget: one batch spent 24 of its
+# 40 minutes idling on timeouts. Failures are transient — the same dataflows
+# answer in 0.5 s on the next run — so cutting early costs nothing.
+HUB_PROBE_TIMEOUT = 5.0
 
 STATUS_COLUMNS = {
     "df_id": pl.Utf8,
@@ -125,10 +136,34 @@ def merge_archive(provider: str, new_rows: pl.DataFrame, probed_ids: set[str]) -
     return merged
 
 
+class HubUnavailable(RuntimeError):
+    """The hub did not answer — transient, so the dataflow stays in the queue."""
+
+
 def probe_istat_hub(df_id: str, version: str | None) -> dict[str, list[str]]:
-    result = _get_all_dimension_values_via_hub_bulk(df_id, version=version)
-    if not result:
-        raise RuntimeError("hub bulk endpoint returned no data")
+    """Return ``{dim_id: [codes]}`` from the databrowser hub.
+
+    Raises `HubUnavailable` when the request itself failed: the dataflow is
+    fine, the hub just did not answer, so it goes back in the retry queue.
+    Returns ``{}`` when the hub answered normally with nothing for this
+    dataflow — a fact about the dataflow (recorded as `empty`), not a failure
+    to retry forever. Short IDs that act as containers behave this way: 164_164
+    is empty while its child RICPOPRES2011_24 holds 11,675 codes.
+    """
+    ds_id = _dataset_identifier(df_id, version)
+    payload = _hub_get_json(
+        f"datasets/{ds_id}/columns/partial/values", HUB_PROBE_TIMEOUT
+    )
+    if payload is None:
+        raise HubUnavailable("hub did not answer (timeout or HTTP error)")
+    result: dict[str, list[str]] = {}
+    for criterion in payload.get("criteria", []):
+        dim_id = criterion.get("id", "")
+        if not dim_id or dim_id.upper() == "TIME_PERIOD":
+            continue
+        codes = [v["id"] for v in criterion.get("values", []) if v.get("id")]
+        if codes:
+            result[dim_id] = codes
     return result
 
 
@@ -276,7 +311,7 @@ def run(provider: str, budget: int, pause: float, stale_days: int,
                 try:
                     result = probe_istat_hub(df_id, row["version"])
                     entry["source"] = "hub"
-                except Exception:
+                except HubUnavailable:
                     if not sdmx_fallback:
                         raise
                     result = probe_sdmx(df_id)

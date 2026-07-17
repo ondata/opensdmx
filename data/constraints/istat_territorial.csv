@@ -323,3 +323,503 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
 150_1188_DF_DCCV_OCCUPATIT1_UNT2020_1,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Titolo di studio, cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 150_1188_DF_DCCV_OCCUPATIT1_UNT2020_10,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 (dettaglio) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_11,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - profilo professionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_12,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - dipendenti, carattere occupazione, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_13,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 - posizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_14,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 - posizione professionale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_15,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 - posizione professionale, tempo pieno/parziale",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_16,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 (dettaglio) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_17,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 - profilo professionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_18,"Ateco 2002 - dipendenti, carattere occupazione, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_19,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002, Ateco 2007 (2008-2010)",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_2,Occupati (migliaia) - regolamento precedente (fino al 2020)- Profilo professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_20,Occupati (migliaia) - regolamento precedente (fino al 2020)- Professione 2011 (dettaglio),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_21,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Professione 2011, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_22,Occupati (migliaia) - regolamento precedente (fino al 2020)- Professione 2001 (dettaglio),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_23,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Professione 2001, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_24,Occupati (migliaia) - regolamento precedente (fino al 2020)- Età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_25,Occupati (migliaia) - regolamento precedente (fino al 2020)- Titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_26,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Posizione professionale, tempo pieno/parziale",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_28,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dipendenti - carattere occupazione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_29,Occupati (migliaia) - regolamento precedente (fino al 2020)- Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_3,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Tempo pieno/parziale, posizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_30,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_31,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 - posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_32,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_33,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_34,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal I 1977 - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_35,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_36,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_37,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal IV 1992 - posizione professionale, carattere occupazione",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_38,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal IV 1992 - tempo pieno/parziale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_39,Occupati (migliaia) - regolamento precedente (fino al 2020)- Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_4,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Tempo pieno/parziale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_40,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 (dal I 1977-2010) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_41,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 (dal IV 1992-2010) - posizione professionale, carattere occupazione",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_42,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2002 (dal IV 1992-2010) - tempo pieno/parziale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_5,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Dipendenti a tempo determinato/indeterminato, tempo pieno/parziale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_6,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Dipendenti a tempo determinato/indeterminato, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_7,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - posizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_8,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - posizione professionale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1188_DF_DCCV_OCCUPATIT1_UNT2020_9,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 - posizione professionale, tempo pieno/parziale",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1189_DF_DCCV_TAXOCCU1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1189_DF_DCCV_TAXOCCU1_UNT2020_6,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1189_DF_DCCV_TAXOCCU1_UNT2020_7,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_10,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_11,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_3,Dati regionali - sesso,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_5,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_6,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_7,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_8,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1190_DF_DCCV_FORZLV1_UNT2020_9,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_1,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_3,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_5,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_6,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_7,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_8,"Dal IV 1992 - Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1191_DF_DCCV_TAXATVT1_UNT2020_9,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_875_DF_DCCV_OCCUPATIMENS1_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_880_DF_DCCV_TAXATVTDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_880_DF_DCCV_TAXATVTDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_881_DF_DCCV_FORZLVDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_881_DF_DCCV_FORZLVDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_882_DF_DCCV_OCCUPATITDE1_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_882_DF_DCCV_OCCUPATITDE1_2,Macrosettori economici,REF_AREA,nazionale,nazionale,1,2026-07-17
+150_882_DF_DCCV_OCCUPATITDE1_3,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_882_DF_DCCV_OCCUPATITDE1_4,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_883_DF_DCCV_TAXOCCUDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_883_DF_DCCV_TAXOCCUDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_908_DF_DCCV_FORZLV1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_908_DF_DCCV_FORZLV1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_908_DF_DCCV_FORZLV1_3,"Cittadinanza, titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_908_DF_DCCV_FORZLV1_4,Dati regionali - sesso,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_908_DF_DCCV_FORZLV1_5,Dati regionali - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_908_DF_DCCV_FORZLV1_6,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_908_DF_DCCV_FORZLV1_7,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_908_DF_DCCV_FORZLV1_8,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_915,Tasso di  occupazione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_3,"Titolo di studio, cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_5,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_6,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_915_DF_DCCV_TAXOCCU1_YOUTH_1,Giovani - Tasso di occupazione - dati annuali e trimestrali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_916,Tasso di  attività,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_916_DF_DCCV_TAXATVT1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_916_DF_DCCV_TAXATVT1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_916_DF_DCCV_TAXATVT1_3,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_916_DF_DCCV_TAXATVT1_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_916_DF_DCCV_TAXATVT1_5,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_916_DF_DCCV_TAXATVT1_6,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_916_DF_DCCV_TAXATVT1_YOUTH_1,Tasso di attività - dati annuali e trimestrali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_938,Occupati  (migliaia),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_1,Occupati  (migliaia) - Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_10,"Occupati  (migliaia) - Ateco 2007 - posizione professionale, tempo pieno/parziale",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_11,Occupati  (migliaia) - Ateco 2007 (dettaglio) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_12,Occupati  (migliaia) - Ateco 2007 - profilo professionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_13,"Occupati  (migliaia) - Ateco 2007 - dipendenti, carattere occupazione, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_14,Occupati  (migliaia) - Professione (dettaglio),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_15,"Occupati  (migliaia) - Professione, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_16,Occupati  (migliaia) - Età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_17,Occupati  (migliaia) - Titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_18,"Occupati  (migliaia)  - Posizione professionale, tempo pieno/parziale",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_19,Occupati  (migliaia) - Ateco 2007 - posizione professionale - trimestrali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_2,"Occupati  (migliaia) - Titolo di studio, cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_20,Occupati  (migliaia) - Dipendenti - carattere occupazione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_21,Occupati  (migliaia) - Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_22,Occupati  (migliaia) - Ateco 2007,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_23,Occupati  (migliaia) - Posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_24,Occupati  (migliaia) - Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_26,"Occupati  (migliaia) - Dal I 2004 - Ateco, dipendente e carattere occupazione",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_3,Occupati  (migliaia) - Profilo professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_4,"Occupati  (migliaia) - Tempo pieno/parziale, posizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_5,"Occupati  (migliaia) - Tempo pieno/parziale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_6,"Occupati  (migliaia) - Dipendenti a tempo determinato/indeterminato, tempo pieno/parziale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_7,"Occupati  (migliaia) - Dipendenti a tempo determinato/indeterminato, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_8,"Occupati  (migliaia) - Ateco 2007 - posizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_938_DF_DCCV_OCCUPATIT1_9,"Occupati  (migliaia) - Ateco 2007 - posizione professionale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1176,Tasso di disoccupazione  - dati mensili- regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1176_DF_DCCV_TAXDISOCCUMENS1_UNT2020,Tasso di disoccupazione - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1177,Disoccupati  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1177_DF_DCCV_DISOCCUPTMENS1_UNT20201,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1177_DF_DCCV_DISOCCUPTMENS1_UNT20202,Incidenza dei disoccupati sulla popolazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1178,Tasso di disoccupazione - dati trimestrali destagionalizzati  - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_1178_DF_DCCV_TAXDISOCCUDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1178_DF_DCCV_TAXDISOCCUDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_1179,Disoccupati - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_1179_DF_DCCV_DISOCCUPTDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+151_1179_DF_DCCV_DISOCCUPTDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_1192,Disoccupati - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_1,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_10,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_11,Dal IV 1992 - durata della disoccupazione,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_12,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_2,Cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_3,"Condizione professionale, disoccupazione di lunga durata",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_4,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_5,Dati regionali - condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_6,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_7,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_8,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1192_DF_DCCV_DISOCCUPT1_UNT2020_9,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193,Tasso di  disoccupazione - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_1,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_10,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_11,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_12,"Dal IV 1992 - dati regionali, età",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_13,"Dal IV 1992 - dati regionali, durata della disoccupazione",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_3,Durata della disoccupazione,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_4,Dati regionali - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_5,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_6,Dati regionali - durata della disoccupazione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_7,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_8,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_9,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_874,Tasso di disoccupazione  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_877,Disoccupati  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_877_DF_DCCV_DISOCCUPTMENS1_2,Incidenza dei disoccupati sulla popolazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_884,Tasso di disoccupazione - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_884_DF_DCCV_TAXDISOCCUDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+151_884_DF_DCCV_TAXDISOCCUDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_885,Disoccupati - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_885_DF_DCCV_DISOCCUPTDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+151_885_DF_DCCV_DISOCCUPTDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+151_914,Tasso di  disoccupazione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_3,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_4,Durata della disoccupazione,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_5,Dati regionali - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_6,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_7,Dati regionali - durata della disoccupazione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_8,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_9,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_914_DF_DCCV_TAXDISOCCU1_YOUTH_1,Giovani - Tasso di disoccupazione - Dati annuali e trimestrali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+151_929,Disoccupati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_3,Cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_4,"Condizione professionale, disoccupazione di lunga durata",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_5,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_6,Dati regionali - condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_7,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+151_929_DF_DCCV_DISOCCUPT1_8,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1180,Tasso di inattività  - dati mensili- regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+152_1180_DF_DCCV_TAXINATTMENS1_UNT2020_1,Tasso di inattività - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+152_1181,Inattivi  - dati mensili- regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+152_1181_DF_DCCV_INATTIVMENS1_UNT2020_1,Inattivi - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+152_1182,Tasso di inattività - dati trimestrali destagionalizzati- regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_1182_DF_DCCV_TAXINATTDE1_UNT2020_1,"Sesso, età",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_1182_DF_DCCV_TAXINATTDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_1183,Inattivi - dati trimestrali destagionalizzati- regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_1183_DF_DCCV_INATTIVDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+152_1183_DF_DCCV_INATTIVDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_1185,Inattivi- regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_1,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_10,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_11,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_12,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_13,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_14,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_3,Condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_4,Motivo inattività,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_5,Condizione dichiarata,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_6,Dati regionali - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_7,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_8,Dati regionali - condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1185_DF_DCCV_INATTIV1_UNT2020_9,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+152_1196,Tasso di  inattività- regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_1,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_2,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_3,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_4,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_5,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_6,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_7,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_8,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_1196_DF_DCCV_TAXINATT1_UNT2020_9,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_878,Tasso di inattività  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+152_879,Inattivi  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+152_886,Tasso di inattività - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_886_DF_DCCV_TAXINATTDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+152_886_DF_DCCV_TAXINATTDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_887,Inattivi - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_887_DF_DCCV_INATTIVDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+152_887_DF_DCCV_INATTIVDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+152_913,Tasso di  inattività,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+152_913_DF_DCCV_TAXINATT1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_913_DF_DCCV_TAXINATT1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_913_DF_DCCV_TAXINATT1_3,"Titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_913_DF_DCCV_TAXINATT1_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_913_DF_DCCV_TAXINATT1_5,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+152_913_DF_DCCV_TAXINATT1_6,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_913_DF_DCCV_TAXINATT1_YOUTH_1,Giovani - Tasso di inattività - Dati annuali e trimestrali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+152_928,Inattivi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+152_928_DF_DCCV_INATTIV1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_10,Dati provinciali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-17
+152_928_DF_DCCV_INATTIV1_11,Dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_2,"Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_3,"Cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_4,Condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_5,Motivo inattività,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_6,Condizione dichiarata,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+152_928_DF_DCCV_INATTIV1_7,Dati regionali - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_928_DF_DCCV_INATTIV1_8,Dati regionali - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+152_928_DF_DCCV_INATTIV1_9,Dati regionali - condizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+154_373,Indicatori - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-17
+154_373_DF_DCSC_COSTLAVULAOROS_1_1,Costo del lavoro per Ula (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+154_373_DF_DCSC_COSTLAVULAOROS_1_2,Costo del lavoro per Ula (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+154_373_DF_DCSC_COSTLAVULAOROS_1_3,Costo del lavoro per Ula (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+154_373_DF_DCSC_COSTLAVULAOROS_1_7,Costo del lavoro per Ula (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+154_373_DF_DCSC_COSTLAVULAOROS_1_8,Contributi sociali per Ula (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_274,Retribuzioni contrattuali nella Pubblica amministrazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+155_274_DF_DCSC_RETRCASSCOMPPA_1,Retribuzioni contrattuali nella PA (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_274_DF_DCSC_RETRCASSCOMPPA_2,Retribuzioni nella PA (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_274_DF_DCSC_RETRCASSCOMPPA_3,Retribuzioni nella PA (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_274_DF_DCSC_RETRCASSCOMPPA_4,Retribuzioni contrattuali nella PA (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_318,Retribuzioni contrattuali per tipo di contratto,REF_AREA,nazionale,nazionale,1,2026-07-17
+155_318_DF_DCSC_RETRCONTR1C_2,Retribuzioni contrattuali (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_318_DF_DCSC_RETRCONTR1C_3,Retribuzioni contrattuali (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_318_DF_DCSC_RETRCONTR1C_4,Retribuzioni contrattuali (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358,Retribuzioni contrattuali per settore economico (Ateco),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_1,Retribuzione oraria e per dipendente (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_2,Retribuzione di cassa per dipendente (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_3,Retribuzione oraria e per dipendente (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_4,Retribuzione di cassa per dipendente (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_5,Retribuzione oraria e per dipendente (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_6,Retribuzione di cassa per dipendente (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_7,Retribuzione oraria e per dipendente (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_358_DF_DCSC_RETRATECO1_8,Retribuzione di cassa per dipendente (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_374,Retribuzioni lorde - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-17
+155_374_DF_DCSC_RETRULAOROS_1_1,Retribuzioni per Ula (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_374_DF_DCSC_RETRULAOROS_1_2,Retribuzioni per Ula (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_374_DF_DCSC_RETRULAOROS_1_3,Retribuzioni per Ula (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+155_374_DF_DCSC_RETRULAOROS_1_4,Retribuzioni per Ula (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
+158_149,Scuola dell'infanzia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_149_DF_DCIS_INFANZIA_1,"Scuole, classi e bambini",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_149_DF_DCIS_INFANZIA_2,Insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-17
+158_150,Scuola primaria,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_150_DF_DCIS_PRIMARIA_1,"Scuole, classi e alunni",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_150_DF_DCIS_PRIMARIA_2,Insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-17
+158_151,Scuola secondaria di primo grado,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_151_DF_DICIS_SCUOLSEC1_1,"Scuole, classi e alunni",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_151_DF_DICIS_SCUOLSEC1_2,Insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-17
+158_260,Scuola secondaria di secondo grado,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_260_DF_DCIS_SCUOLESECOND2_1,"Scuole, classi e studenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-17
+158_260_DF_DCIS_SCUOLESECOND2_2,Insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-17
+159_17,Alunni con disabilità,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+159_17_DF_DCIS_ALUNNIDIS_1,Alunni con disabilità,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+159_18,Scuole con alunni con disabilità e figure per l'integrazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+159_18_DF_DCIS_SCUOLEDIS_1,Scuole con alunni con disabilità e figure per l'integrazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+159_19,Scuole con alunni con sordità e presenza comunicatori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+159_19_DF_DCIS_SCUOLESORDI_1,Scuole con alunni con sordità e presenza comunicatori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+160_233,Enti previdenziali - numero di dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-17
+160_233_DF_DCAR_ENTPREVDIP_1,Enti previdenziali - numero di dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-17
+160_234,Enti previdenziali - spese (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_234_DF_DCAR_ENTPREVSPE_1,Enti previdenziali - spese (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_235,Enti previdenziali - entrate (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_235_DF_DCAR_ENTPREVENT_1,Enti previdenziali - entrate (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_753,Enti nazionali di previdenza e assistenza sociale S13 - numero di dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-17
+160_753_DF_DCAR_ENTPREVDIP_PA_1,Enti nazionali di previdenza e assistenza sociale S13 - numero di dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-17
+160_754,Enti nazionali di previdenza e assistenza sociale S13 - entrate (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_754_DF_DCAR_ENTPREVENT_PA_1,Enti nazionali di previdenza e assistenza sociale S13 - entrate (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_755,Enti nazionali di previdenza e assistenza sociale S13 - spese (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+160_755_DF_DCAR_ENTPREVSPE_PA_1,Enti nazionali di previdenza e assistenza sociale S13 - spese (migliaia di euro),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-17
+161_267_DF_DCSP_SBSNAZ_10,Fatturato,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_11,Costo del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_12,Margine operativo lordo,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_13,Competitività di costo,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_14,Numero di addetti e dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_2,Tutti i settori economici (Ateco 4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_6,Commercio (Ateco 2 cifre) e classe di fatturato,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_7,Investimenti per la tutela dell'ambiente,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_8,Principali indicatori di performance,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_267_DF_DCSP_SBSNAZ_9,Valore aggiunto,REF_AREA,nazionale,nazionale,1,2026-07-17
+161_268,Risultati economici delle imprese - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+161_268_DF_DCSP_SBSREG_1,Risultati economici delle imprese - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+162_1058,Sequenza dei conti trimestrali per settore istituzionale - Conti versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1058_DF_DCCN_ISTITUZ_QNA_B14_1,Sequenza dei conti - edizioni ottobre 2014 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1058_DF_DCCN_ISTITUZ_QNA_B14_2,Indicatori su famiglie e società non finanziarie - edizioni ottobre 2016 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1058_DF_DCCN_ISTITUZ_QNA_B14_3,Aggregati destagionalizzati - edizioni ottobre 2018 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1064,Sequenza  dei conti trimestrali per settore istituzionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1064_DF_DCCN_ISTITUZ_QNA1_1,Sequenza dei conti,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1064_DF_DCCN_ISTITUZ_QNA1_2,Indicatori su famiglie e società non finanziarie,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_1064_DF_DCCN_ISTITUZ_QNA1_3,Aggregati destagionalizzati,REF_AREA,nazionale,nazionale,1,2026-07-17
+162_633,Sequenza dei conti trimestrali per settore istituzionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226,Principali aggregati trimestrali di Contabilità Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_1,Valore aggiunto per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_2,Investimenti fissi lordi per tipo di investimento,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_3,Spesa per i consumi finali delle famiglie,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_4,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 2 cifre) e durata,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_5,Redditi da lavoro dipendente e componenti per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_1226_DF_DCCN_QNA1_6,Costi e margini per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_144,Aggregati dei conti per branca di attività (NACE Rev.1.1) - edizione settembre 2011,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_156,Conto economico delle risorse e degli impieghi  e contributi alla crescita del Pil,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_156_DF_DCCN_SQCQ_1,Conto economico delle risorse e degli impieghi,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_156_DF_DCCN_SQCQ_2,Contributi alla crescita del PIL,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_156_DF_DCCN_SQCQ_3,Prodotto interno lordo e variazioni (stima preliminare),REF_AREA,nazionale,nazionale,1,2026-07-17
+163_184,Prodotto interno lordo e  principali componenti,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_184_DF_DCCN_PILQ_1,Prodotto interno lordo e principali componenti,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_241,Spesa per consumi finali delle famiglie - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_246,Costi e margini per branca di attività (NACE Rev.1.1) - edizione settembre 2011,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_247,Prodotto interno lordo lato produzione - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_24_DF_DCCN_QNA_2,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_24_DF_DCCN_QNA_3,Spesa per i consumi finali delle famiglie - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_24_DF_DCCN_QNA_4,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_24_DF_DCCN_QNA_6,Costi e margini per branca di attività - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_250,Investimenti fissi lordi - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_253,Conto economico delle risorse e degli impieghi - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_257,Occupazione per branca di attività (NACE Rev.1.1) - edizione settembre 2011,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_296,Aggregati dei conti per branca di attività (NACE Rev.2) - edizioni dicembre 2011 - agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_299,Costi e margini per branca di attività (NACE Rev.2) - edizioni dicembre 2011 - giugno 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_300,Occupazione per branca di attività (NACE Rev.2) - edizioni dicembre 2011 - giugno 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_88,Occupazione per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_88_DF_DCCN_OCCQSEC2010_1,Occupazione per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_88_DF_DCCN_OCCQSEC2010_2,Popolazione media del periodo,REF_AREA,nazionale,nazionale,1,2026-07-17
+164_164_DF_DCIS_RICPOPRES2011_2,Bilancio demografico dal 21 ottobre 2001 al 31 dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+164_164_DF_DCIS_RICPOPRES2011_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+164_279_DF_DCIS_RICPOPRES1991_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_13,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_19,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_20,Calabria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,417,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_24,Bilancio demografico dal 20 ottobre 1991 al 21 ottobre 2001,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,133,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_3,Valle d'Aosta/Vallée d'Aoste,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,78,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_4,Liguria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_5,Lombardia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1560,2026-07-17
+164_305_DF_DCIS_RICPOPRES2001_6,Provincia Autonoma Bolzano/Bozen,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,120,2026-07-17
+164_346_DF_DCIS_RICPOPRES1971_1,Ricostruzione intercensuaria della popolazione residente - Anni 1952-1971,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+165_1167_DF_DCIS_PREVFAM_2,Famiglie e numero medio di componenti familiari per tipologia familiare  - Scenario mediano,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+165_1245_DF_DCIS_PREVCOM_1,Previsioni comunali: Popolazione residente per sesso e classi quinquennali di età - Scenario mediano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+165_1245_DF_DCIS_PREVCOM_2,Previsioni comunali: Componenti del bilancio demografico - Scenario mediano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+165_1245_DF_DCIS_PREVCOM_3,Previsioni comunali: Tassi generici del movimento demografico - Scenario mediano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+165_1245_DF_DCIS_PREVCOM_4,Previsioni comunali: Principali indicatori strutturali - Scenario mediano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+165_889,Previsioni della popolazione  - Anni 2024-2080,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+165_889_DF_DCIS_PREVDEM1_1,Popolazione al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+167_35_DF_DCSP_NICTREB2010_1,Tipologie di prodotto,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_743_DF_DCSP_NIC3B2015_1,Prezzi al consumo per l’intera collettività (Nic) - pesi dal 2016 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_743_DF_DCSP_NIC3B2015_2,Tipologie di prodotto,REF_AREA,nazionale,nazionale,1,2026-07-17
+167_743_DF_DCSP_NIC3B2015_3,Classificazione Ecoicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+167_744_DF_DCSP_NIC1B2015_1,Prezzi al consumo per l’intera collettività (Nic) - mensili dal 2016 (base 2015) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-07-17
+167_745_DF_DCSP_NIC1B2025_1,Prezzi al consumo per l’intera collettività (Nic) - mensili dal 2026 (base 2025) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,108,2026-07-17
+167_745_DF_DCSP_NIC1B2025_2,Tipologie di prodotto,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+167_745_DF_DCSP_NIC1B2025_3,Classificazione Ecoicop 2 (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,108,2026-07-17
+167_745_DF_DCSP_NIC1B2025_4,Classificazione Ecoicop 2 (5 cifre),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,124,2026-07-17
+167_745_DF_DCSP_NIC1B2025_5,"Prezzi al consumo per l’intera collettività (Nic) - mensili dal 1996 al 2025 (basi 1995, 2010, 2015) - Ecoicop 2",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_745_DF_DCSP_NIC1B2025_6,Prezzi al consumo per l’intera collettività (Nic) - mensili - tutte le basi - Ecoicop 2,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,124,2026-07-17
+167_746,Nic – pesi dal 2026 - Ecoicop 2,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_746_DF_DCSP_NIC3EC2_1,Prezzi al consumo per l’intera collettività (Nic) - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_746_DF_DCSP_NIC3EC2_2,Tipologie di prodotto,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_747,Nic - medie annue dal 2026 (base  2025) - Ecoicop 2,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+167_747_DCSP_NIC2B2025_1,"Prezzi al consumo per l’intera collettività (Nic) - medie annue dal 1996 al 2025 (basi 1995, 2010, 2015) - Ecoicop 2",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+168_2,Ipca - mensili e trimestrali dal 2001 al 2015 (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_261_DF_DCSP_IPCATC2_1,Ipca - medie annue a tassazione costante (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_2_DF_DCSP_IPCA1_1,Classificazione Coicop (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_2_DF_DCSP_IPCA1_2,Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_2_DF_DCSP_IPCA1_3,Mensili per classi di spesa (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_2_DF_DCSP_IPCA1_4,Trimestrali per classi di spesa (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_306_DF_DCSP_IPCATC1_1,Ipca - mensili a tassazione costante (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_307,Ipca - mensili a tassazione costante (base 2025),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_307_DF_DCSP_IPCATC1B2025_1,Ipca a tassazione costante mensili dal 2006 (base 2025),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_5_DF_DCSP_IPCA2_1,Classificazione Coicop (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_5_DF_DCSP_IPCA2_2,Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_5_DF_DCSP_IPCA2_3,Medie annue per classi di spesa (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_6,Ipca - pesi dal 2001,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_6_DF_DCSP_IPCA3_1,Classificazione Ecoicop (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_6_DF_DCSP_IPCA3_2,Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_6_DF_DCSP_IPCA3_3,Classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_7,Ipca - pesi dal 1996 - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_756,Ipca - mensili a tassazione costante (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_756_DF_DCSP_IPCATC1B2015_1,Ipca - mensili a tassazione costante (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_757,Ipca - medie annue a tassazione costante (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_757_DF_DCSP_IPCATC2B2015_1,Ipca - medie annue a tassazione costante (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_758,Ipca - medie annue dal 2001 (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_758_DF_DCSP_IPCA2B2015_1,Classificazione Ecoicop (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_758_DF_DCSP_IPCA2B2015_2,Aggregati speciali (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_758_DF_DCSP_IPCA2B2015_3,Classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_760,Ipca - mensili dal 2001 (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_760_DF_DCSP_IPCA1B2015_1,Classificazione Ecoicop (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_760_DF_DCSP_IPCA1B2015_2,Aggregati speciali (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_760_DF_DCSP_IPCA1B2015_3,Classi di spesa,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_761,Ipca - mensili dal 1996 (base 2025),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_761_DF_DCSP_IPCA1B2025_1,Ecoicop 2 classificazione (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_761_DF_DCSP_IPCA1B2025_2,Aggregati speciali (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_762,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_762_DF_DCSP_IPCA2B2025_1,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_7_DF_DCSP_IPCA3EC2_1,Ipca – Classificazione ECOICOP vers.2 (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_7_DF_DCSP_IPCA3EC2_2,Ipca – Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_15_DF_DCSP_FOI1B2010_1,Foi - mensili dal 2011 al 2015 (base 2010),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,112,2026-07-17
+169_28_DF_DCSP_FOI2B2010_1,Foi - medie annue dal 2011 al 2015 (base 2010),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,112,2026-07-17
+169_30_DF_DCSP_FOI3B2010_1,Foi – pesi dal 2011 al 2015,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_745,Foi - mensili dal 2016 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,126,2026-07-17
+169_745_DF_DCSP_FOI1B2015_1,Foi - mensili dal 2016 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,126,2026-07-17
+169_746,Foi - medie annue dal 2016 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-17
+169_746_DF_DCSP_FOI2B2015_1,Foi - medie annue dal 2016 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-17
+169_747,Foi - pesi dal 2016,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_747_DF_DCSP_FOI3B2015_1,Foi - pesi dal 2016,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_748,Foi - mensili dal 2026 (base 2025),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,123,2026-07-17
+169_748_DF_DCSP_FOI1B2025_1,Foi - mensili dal 2026 (base 2025) - Ecoicop 2,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,123,2026-07-17
+169_748_DF_DCSP_FOI1B2025_2,"Foi - mensili dal 1996 al 2025 (basi 1995, 2010, 2015) - Ecoicop 2",REF_AREA,nazionale,nazionale,1,2026-07-17
+169_749,Foi - pesi dal 1996 - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_749_DF_DCSP_FOI3EC2_1,Foi - pesi dal 1996 - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_750,Foi - medie annue dal 2026 (base 2025) -  Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+169_750_DF_DCSP_FOI2B2025_1,"Foi - medie annue dal 1996 al 2025 (basi 1995, 2010, 2015) - Ecoicop 2",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197,Indicatori  complementari - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_1,"Forze lavoro potenziali - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_10,"Non cercano ma disponibili - titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_11,Non cercano ma disponibili - motivo principale della mancata ricerca,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_12,"Non cercano ma disponibili - cittadinanza, condizione dichiarata",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_13,Non cercano ma disponibili - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_14,Non cercano ma disponibili (%) - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_15,"Non cercano ma disponibili (%) - titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_16,Non cercano ma disponibili (%) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_17,Cercano lavoro ma non immediatamente disponibili - sesso,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_18,Cercano lavoro ma non immediatamente disponibili - età,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_19,Cercano lavoro ma non immediatamente disponibili - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_2,"Forze lavoro potenziali - cittadinanza, condizione dichiarata",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_20,Cercano lavoro ma non immediatamente disponibili - cittadinanza,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_21,Cercano lavoro ma non immediatamente disponibili (%) - sesso,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_22,Cercano lavoro ma non immediatamente disponibili (%) - età,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_23,Cercano lavoro ma non immediatamente disponibili (%) - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_24,Cercano lavoro ma non immediatamente disponibili (%) - cittadinanza,REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_25,Sottoccupati e part time involontario - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_26,"Sottoccupati e part time involontario - titolo di studio, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_27,"Sottoccupati e part time involontario - posizione professionale, settore economico di impiego (Ateco 2007)",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_28,"Sottoccupati e part time involontario - posizione professionale, settore economico di impiego (Ateco 2002)",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_29,Sottoccupati e part time involontario (%) - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_3,Forze lavoro potenziali - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_30,"Sottoccupati e part time involontario (%) - titolo di studio, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_31,"Sottoccupati e part time involontario (%) - posizione professionale, settore economico di impiego (Ateco 2007)",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_32,"Sottoccupati e part time involontario (%) - posizione professionale, settore economico di impiego (Ateco 2002)",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_33,"Tasso di mancata partecipazione - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_34,"Tasso di mancata partecipazione - titolo di studio, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_36,"Tasso di mancata partecipazione - titolo di studio, reg.",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_37,Tasso di mancata partecipazione - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_4,Forze lavoro potenziali - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_5,"Forze lavoro potenziali (%) - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_6,Forze lavoro potenziali (%) - cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_7,Forze lavoro potenziali (%) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_8,Forze lavoro potenziali (%) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+172_1197_DF_DCCV_COMPL1_UNT2020_9,Non cercano ma disponibili - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198,NEET  (giovani non occupati e non in istruzione e formazione) - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_1,"Condizione professionale europea, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_10,Ruolo in famiglia (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_11,Dati regionali (%),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_12,"Condizione professionale, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_13,"Condizione professionale, titolo di studio",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_14,"Condizione professionale, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_15,"Condizione professionale, ruolo in famiglia",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_2,"Condizione professionale europea, titolo di studio",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_3,"Condizione professionale europea, cittadinanza",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_4,"Condizione professionale europea, ruolo in famiglia",REF_AREA,nazionale,nazionale,1,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_5,"Cittadinanza, ruolo in famiglia",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_6,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_7,Età (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+172_1198_DF_DCCV_NEET1_UNT2020_8,Titolo di studio (%),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17

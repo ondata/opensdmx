@@ -54,10 +54,15 @@ Human-diffable progress tracker: `df_id`, `df_description`, `status`
 (`ok` / `empty` / `error`), `source` (`hub` / `sdmx`), `n_dims`, `n_codes`,
 `error_count`, `last_error`, `checked_at`.
 
-Failed dataflows are retried with exponential backoff (1, 2, 4 ... days, capped
-at 64) and never abandoned: hub failures are usually transient — the endpoint
-sheds load under a burst of requests — so a dataflow that failed a few runs in
-a row is generally fine when probed again later.
+`status` separates two things the hub reports differently:
+
+- **`empty`** — the hub answered normally but has nothing for this dataflow.
+  A fact about the dataflow, not a failure: it is never retried. Short IDs
+  acting as containers behave this way (`164_164` is empty while its child
+  `..._RICPOPRES2011_24` holds 11,675 codes).
+- **`error`** — the hub did not answer (timeout or HTTP error). Transient: the
+  same dataflows answer in half a second on a later run. Retried with
+  exponential backoff (1, 2, 4 ... days, capped at 64) and never abandoned.
 
 ### `istat_territorial.csv` — derived view (ISTAT only)
 
