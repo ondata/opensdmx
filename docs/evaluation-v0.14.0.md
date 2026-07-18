@@ -109,11 +109,20 @@ This also explains a stale claim in `docs/cache.md`: the ER diagram declares a f
 
 This project documents ISTAT as banning IPs for 1-2 days on rate-limit violations. This is the single code path that can burst requests at ISTAT with zero throttling.
 
-**The ban-scope question resolves against us.** `portals.json` puts both endpoints on the *same host*: SDMX at `https://esploradati.istat.it/SDMXWS/rest`, hub at `https://esploradati.istat.it/databrowserhub/api/core`. A per-IP block at that host applies to both paths, so the unthrottled hub loop can plausibly trigger the ban that the SDMX limiter exists to prevent.
+**The ban-scope question resolves against us.** `portals.json` puts both endpoints on the *same host*: SDMX at `https://esploradati.istat.it/SDMXWS/rest`, hub at `https://esploradati.istat.it/databrowserhub/api/core`. A per-IP block at that host applies to both paths, so an unthrottled hub loop can plausibly trigger the ban that the SDMX limiter exists to prevent.
 
-**But the obvious fix is wrong.** Routing `_hub_get_json` through `base.sdmx_request` would impose ISTAT's 15 s SDMX rate limit on the hub — and that exclusion is *deliberate*: LOG.md records the hub path as "~1 s/dataflow, outside the 15 s SDMX rate limiter", and the daily constraints-archive job is budgeted on that speed. Imposing 15 s/dataflow would make the archive job 15× slower and blow its budget. The blast radius is also wider than it looks: `scripts/constraints_archive.py:48` imports `_hub_get_json` directly, so the CI job depends on this private function's behaviour. Mechanically it may not even fit — `sdmx_request` composes SDMX-REST paths against `base_url`, and the hub uses a different path root.
+**Severity revised down to Medium after review.** This finding was first rated High on the assumption that the daily constraints-archive job is production. It is not — that job is an experiment, outside the main product. That matters because the two consumers of the hub have very different burst profiles:
 
-The correct shape is to **share the transport hygiene without sharing the rate-limit policy**: give the hub tenacity retry, `_extra_headers` and consistent timeout handling, plus its own pacing calibrated to the hub's tolerance — not the SDMX limiter's 15 s. This is the same "separate limiter per endpoint class" idea already tracked in issue #2 for OECD data-vs-metadata. Calibrate the hub interval from measurement, not from reasoning.
+| Consumer | Requests | Frequency |
+|---|---|---|
+| Product (`constraints`, `values` on ISTAT, via `discovery.py:849`) | 1 bulk call, or 5-10 in the per-dimension fallback | one per user command, interactive |
+| `scripts/constraints_archive.py` | the same, **× thousands of dataflows** | daily, in a loop |
+
+The ban risk lives almost entirely in the second, and the second is a test. What remains in the *product* path is narrower but still real: no tenacity retry, so a transient hub failure surfaces as a user-visible error instead of being retried; no `_extra_headers`, so `--header` never reaches the hub; and the per-dimension fallback at `hub.py:200-211` fires 5-10 unpaced requests.
+
+**The obvious fix is still wrong, for a better reason.** Routing `_hub_get_json` through `base.sdmx_request` would impose ISTAT's 15 s SDMX rate limit on the hub. The original argument against this was that it would make the archive job 15× slower — which carries little weight once the archive is understood as an experiment. The argument that does hold is about the product: it would add 15 s to every interactive `opensdmx constraints` on ISTAT, turning a ~1 s response into a ~16 s one. That is a genuine product regression, and it stands independently of the archive. Mechanically it may not even fit — `sdmx_request` composes SDMX-REST paths against `base_url`, and the hub uses a different path root. Note also that `scripts/constraints_archive.py:48` imports `_hub_get_json` directly, so any signature change touches the CI job.
+
+The correct shape is to **share the transport hygiene without sharing the rate-limit policy**: give the hub tenacity retry, `_extra_headers` and consistent timeout handling. Pacing is worth adding for the loop case, but it is no longer urgent, and it should be calibrated from measurement rather than reasoning — the current evidence is only "nothing has gone wrong yet", which is absence of proof, not proof of safety.
 
 **5. `run` reimplements `retrieval.run_query()`, and they have already diverged.** `cli.py:1244-1305` vs `retrieval.py:154-199`
 
@@ -205,7 +214,7 @@ Sequenced so that each phase is independently shippable and leaves the suite gre
 
 Each is a handful of lines. Together they close every Tier-1 finding.
 
-Finding 4 (hub) is **not** in this phase despite its severity: the fix needs a measured pacing decision and touches a CI-critical script, so it gets its own change rather than riding along with one-liners.
+Finding 4 (hub) is **not** in this phase: it touches a script the CI depends on, and its pacing half wants measurement rather than reasoning, so it gets its own change rather than riding along with one-liners. After the severity revision it is also no longer the most urgent item — see Phase 2.
 
 ### Phase 2 — delete duplication
 
@@ -262,7 +271,7 @@ These were examined and found sound. Several look like problems at first glance.
 | 1 | `cli.py:90-95` | `-o csv` emits corrupt CSV (no quoting) | **High** |
 | 2 | `cli.py:1182` | `typer.Exit` swallowed → spurious `Error: 1` | **High** |
 | 3 | `utils.py:77`, `ai.py:79` | Codelist cache read with wrong key — always misses | Medium-high (unconditional, narrow surface) |
-| 4 | `hub.py:92` | Bypasses transport: no retry, no pacing, same host as the rate-limited SDMX endpoint | **High** |
+| 4 | `hub.py:92` | Bypasses transport: no retry, no `_extra_headers`, no pacing, same host as the rate-limited SDMX endpoint | Medium (was High — the burst-at-scale consumer is an experiment, not the product) |
 | 5 | `cli.py:1244-1305` | `run` duplicates `run_query()`, already diverged | Medium-high |
 | 6 | `cli.py:1416-1421` | Third fetch copy in `plot` drops filter warnings | Medium |
 | 7 | `pyproject.toml` | `pandas` undeclared; `duckdb` orphan | Medium-high |
