@@ -951,10 +951,12 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 168_761,Ipca - mensili dal 1996 (base 2025),ok,hub,5,227,0,"",2026-07-17
 168_761_DF_DCSP_IPCA1B2025_1,Ecoicop 2 classificazione (4 cifre),ok,hub,5,220,0,"",2026-07-17
 168_761_DF_DCSP_IPCA1B2025_2,Aggregati speciali (5 cifre),ok,hub,5,25,0,"",2026-07-17
+168_761_DF_DCSP_IPCA1B2025_3,Ipca trimestrali - classi di spesa (dal 2005),ok,hub,5,22,0,"",2026-07-18
 168_762,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,ok,hub,5,185,0,"",2026-07-17
 168_762_DF_DCSP_IPCA2B2025_1,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,ok,hub,5,185,0,"",2026-07-17
 168_7_DF_DCSP_IPCA3EC2_1,Ipca – Classificazione ECOICOP vers.2 (4 cifre),ok,hub,4,445,0,"",2026-07-17
 168_7_DF_DCSP_IPCA3EC2_2,Ipca – Aggregati speciali,ok,hub,4,25,0,"",2026-07-17
+168_7_DF_DCSP_IPCA3EC2_3,Ipca pesi- classi di spesa (dal 2005),ok,hub,4,19,0,"",2026-07-18
 169_15_DF_DCSP_FOI1B2010_1,Foi - mensili dal 2011 al 2015 (base 2010),ok,hub,5,132,0,"",2026-07-17
 169_28_DF_DCSP_FOI2B2010_1,Foi - medie annue dal 2011 al 2015 (base 2010),ok,hub,5,132,0,"",2026-07-17
 169_30_DF_DCSP_FOI3B2010_1,Foi – pesi dal 2011 al 2015,ok,hub,4,18,0,"",2026-07-17
@@ -1558,3 +1560,201 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 272_1164,Relazioni di parentela e reti di supporto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,ok,hub,4,26,0,"",2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",ok,hub,5,24,0,"",2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_3,Persone per numero di nonni non conviventi per sesso e età,ok,hub,6,16,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_4,Persone per numero di nonni non conviventi per territorio,ok,hub,4,20,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_5,Prossimità abitativa per territorio,ok,hub,4,31,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_6,"Prossimità abitativa - sesso, età",ok,hub,6,30,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_7,Frequenza dei contatti per territorio,ok,hub,5,33,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_8,"Tipo e frequenza dei contatti - sesso, età",ok,hub,7,32,0,"",2026-07-18
+27_349,Separazioni - Indicatori 2008-2014,ok,hub,3,65,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_1,Procedimenti e separazioni,ok,hub,3,36,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_2,Caratteristiche del matrimonio e della coppia,ok,hub,3,40,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_3,Figli,ok,hub,3,37,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_4,Provvedimenti economici,ok,hub,3,39,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_5,Caratteristiche del matrimonio e della coppia - sintesi,ok,hub,3,33,0,"",2026-07-18
+27_349_DF_DCIS_SEPARAZIND_6,Separazioni - Indicatori per coppie miste,ok,hub,3,36,0,"",2026-07-18
+27_355,Divorzi - Indicatori 2008-2014,ok,hub,3,65,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_1,Procedimenti e divorzi,ok,hub,3,36,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_2,Caratteristiche del matrimonio e della coppia,ok,hub,3,40,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_3,Figli,ok,hub,3,37,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_4,Provvedimenti economici,ok,hub,3,39,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_5,Caratteristiche del matrimonio e della coppia,ok,hub,3,33,0,"",2026-07-18
+27_355_DF_DCIS_DIVORZIND_6,Divorzi - Indicatori per coppie miste,ok,hub,3,36,0,"",2026-07-18
+27_384,Separazioni - Caratteristiche demografiche 2008-2014,ok,hub,12,232,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_1,Separazioni - Caratteristiche demografiche 2008-2014 - Principali dati,ok,hub,3,30,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_2,Regione di nascita,ok,hub,5,63,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_3,Regione di residenza,ok,hub,5,63,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_4,Età alla separazione - coniugi,ok,hub,5,23,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_5,Età alla separazione - marito,ok,hub,4,40,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_6,Età alla separazione - moglie,ok,hub,4,40,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_7,Età al matrimonio e anno di matrimonio,ok,hub,6,65,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_8,Età al matrimonio - marito,ok,hub,4,39,0,"",2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_9,Età al matrimonio - moglie,ok,hub,4,39,0,"",2026-07-18
+27_385,Divorzi - Caratteristiche demografiche 2008-2014,ok,hub,12,232,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_1,Divorzi - Caratteristiche demografiche 2008-2014 - Principali dati,ok,hub,3,30,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_2,Regione di nascita,ok,hub,5,63,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_3,Regione di residenza,ok,hub,5,63,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_4,Età al divorzio - coniugi,ok,hub,5,23,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_5,Età al divorzio - marito,ok,hub,4,40,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_6,Età al divorzio - moglie,ok,hub,4,40,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_7,Età al matrimonio e anno di matrimonio,ok,hub,6,65,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_8,Età al matrimonio - marito,ok,hub,4,39,0,"",2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_9,Età al matrimonio - moglie,ok,hub,4,39,0,"",2026-07-18
+27_467,Separazioni -  Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_1,Separazioni - Caratteristiche demografiche - Principali dati,ok,hub,3,32,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_2,Regione di nascita,ok,hub,5,73,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_3,Regione di residenza,ok,hub,5,73,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_4,Età alla separazione - coniugi,ok,hub,5,25,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_5,Età alla separazione - marito,ok,hub,4,42,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_6,Età alla separazione - moglie,ok,hub,4,42,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_7,Età al matrimonio e anno di matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_8,Età al matrimonio - marito,ok,hub,4,41,0,"",2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_9,Età al matrimonio - moglie,ok,hub,4,41,0,"",2026-07-18
+27_468,Separazioni -  Caratteristiche socio-professionali,ok,hub,9,78,0,"",2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_1,Titolo di studio dei coniugi,ok,hub,5,13,0,"",2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_2,Titolo di studio del marito,ok,hub,4,35,0,"",2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_3,Titolo di studio della moglie,ok,hub,4,35,0,"",2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_4,Condizione professionale dei coniugi,ok,hub,5,23,0,"",2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_5,Posizione nella professione dei coniugi,ok,hub,5,21,0,"",2026-07-18
+27_469,Separazioni -  Caratteristiche e figli,ok,hub,13,159,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_1,Separazioni - Caratteristiche e figli - Principali dati,ok,hub,3,35,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_10,Età e numero di figli affidati,ok,hub,5,27,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_11,Età dei figli affidati,ok,hub,4,50,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_12,Tipo di affidamento,ok,hub,4,37,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_13,Numero di figli affidati,ok,hub,4,36,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_2,Tipo di separazione giudiziale,ok,hub,4,34,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_3,Modalità di esaurimento e rito di celebrazione del matrimonio,ok,hub,5,38,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_4,Durata del matrimonio,ok,hub,4,54,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_5,Anno di matrimonio e numero di figli,ok,hub,6,65,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_6,Anno di matrimonio e presenza di figli affidati,ok,hub,5,62,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_7,Presenza di figli affidati,ok,hub,4,36,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_8,Anno di matrimonio,ok,hub,4,58,0,"",2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_9,Età dei figli affidati e tipo di affidamento,ok,hub,5,28,0,"",2026-07-18
+27_470,Divorzi -  Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_1,Divorzi - Caratteristiche demografiche - Principali dati,ok,hub,3,32,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_2,Regione di nascita,ok,hub,5,73,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_3,Regione di residenza,ok,hub,5,73,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_4,Età al divorzio - coniugi,ok,hub,5,25,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_5,Età al divorzio - marito,ok,hub,4,42,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_6,Età al divorzio - moglie,ok,hub,4,42,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_7,Età al matrimonio e anno di matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_8,Età al matrimonio - marito,ok,hub,4,41,0,"",2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_9,Età al matrimonio - moglie,ok,hub,4,41,0,"",2026-07-18
+27_474,Separazioni -  Indicatori,ok,hub,3,88,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_1,Procedimenti e separazioni,ok,hub,3,35,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_2,Caratteristiche del matrimonio e della coppia,ok,hub,3,39,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_3,Provvedimenti economici per il coniuge,ok,hub,3,38,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_4,Provvedimenti economici per i figli,ok,hub,3,44,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_5,Provvedimenti economici per i figli minori,ok,hub,3,35,0,"",2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_6,Assegnazione dell'abitazione,ok,hub,3,38,0,"",2026-07-18
+27_475,Divorzi -  Caratteristiche socio-professionali,ok,hub,9,78,0,"",2026-07-18
+27_475_DF_DCIS_DIVSOC1_1,Titolo di studio dei coniugi,ok,hub,5,13,0,"",2026-07-18
+27_475_DF_DCIS_DIVSOC1_2,Titolo di studio del marito,ok,hub,4,35,0,"",2026-07-18
+27_475_DF_DCIS_DIVSOC1_3,Titolo di studio della moglie,ok,hub,4,35,0,"",2026-07-18
+27_475_DF_DCIS_DIVSOC1_4,Condizione professionale dei coniugi,ok,hub,5,23,0,"",2026-07-18
+27_475_DF_DCIS_DIVSOC1_5,Posizione nella professione dei coniugi,ok,hub,5,21,0,"",2026-07-18
+27_731,Separazioni - caratteristiche e figli minori affidati 2008-2014,ok,hub,13,145,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_1,Separazioni - caratteristiche e figli minori affidati 2008-2014 - Principali dati,ok,hub,3,31,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_10,Età e numero di figli affidati,ok,hub,5,25,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_11,Età dei figli affidati,ok,hub,4,48,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_12,Tipo di affidamento,ok,hub,4,35,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_13,Numero di figli affidati,ok,hub,4,34,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_2,Tipo di separazione giudiziale,ok,hub,4,35,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_3,Modalità di esaurimento e rito di celebrazione del matrimonio,ok,hub,5,36,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_4,Durata del matrimonio,ok,hub,4,53,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_5,Anno di matrimonio e numero di figli,ok,hub,5,53,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_6,Anno di matrimonio e presenza di figli affidati,ok,hub,5,50,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_7,Presenza di figli affidati,ok,hub,4,33,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_8,Anno di matrimonio,ok,hub,5,48,0,"",2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_9,Età dei figli affidati e tipo di affidamento,ok,hub,5,26,0,"",2026-07-18
+27_748,Separazioni - Caratteristiche socio-professionali 2008-2014,ok,hub,9,77,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_1,Titolo di studio dei coniugi,ok,hub,5,13,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_2,Titolo di studio del marito,ok,hub,4,35,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_3,Titolo di studio della moglie,ok,hub,4,35,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_4,Condizione professionale dei coniugi,ok,hub,5,22,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_5,Posizione nella professione dei coniugi,ok,hub,5,21,0,"",2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_6,Separazioni - Caratteristiche socio-professionali 2008-2014 - Principali dati,ok,hub,3,30,0,"",2026-07-18
+27_749,Divorzi - Caratteristiche socio-professionali 2008-2014,ok,hub,9,77,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_1,Titolo di studio dei coniugi,ok,hub,5,13,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_2,Titolo di studio del marito,ok,hub,4,35,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_3,Titolo di studio della moglie,ok,hub,4,35,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_4,Condizione professionale dei coniugi,ok,hub,5,22,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_5,Posizione nella professione dei coniugi,ok,hub,5,21,0,"",2026-07-18
+27_749_DF_DCIS_DIVSOC_6,Divorzi - Caratteristiche socio-professionali 2008-2014 - Principali dati,ok,hub,3,30,0,"",2026-07-18
+27_814,Divorzi - Caratteristiche e figli minori affidati 2008-2014,ok,hub,14,150,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_1,Divorzi - Caratteristiche e figli minori affidati 2008-2014 - Principali dati,ok,hub,3,31,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_10,Coniuge che ha presentato la domanda di divorzio con rito giudiziale,ok,hub,4,35,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_11,Anno di matrimonio,ok,hub,4,47,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_12,Età dei figli affidati e tipo di affidamento,ok,hub,5,26,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_13,Età e numero di figli affidati,ok,hub,5,25,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_14,Età dei figli affidati,ok,hub,4,48,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_15,Tipo di affidamento,ok,hub,4,35,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_16,Numero di figli affidati,ok,hub,4,34,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_2,Rito di esaurimento,ok,hub,4,33,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_3,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,ok,hub,4,37,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_4,Durata del matrimonio,ok,hub,4,51,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_5,Anno di matrimonio e modalità di esaurimento,ok,hub,5,50,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_6,Modalità di esaurimento,ok,hub,4,33,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_7,Anno di matrimonio e presenza di figli affidati,ok,hub,5,50,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_8,Figli affidati,ok,hub,4,33,0,"",2026-07-18
+27_814_DF_DCIS_DIVFIG_9,Anno di matrimonio e numero di figli,ok,hub,5,53,0,"",2026-07-18
+27_945,Divorzi - Caratteristiche e figli,ok,hub,14,167,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_1,Rito di esaurimento e rito di celebrazione del matrimonio,ok,hub,5,38,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_10,Età dei figli affidati e tipo di affidamento,ok,hub,5,28,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_11,Età e numero di figli affidati,ok,hub,5,54,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_12,Età dei figli affidati,ok,hub,4,50,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_13,Tipo di affidamento,ok,hub,4,37,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_2,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,ok,hub,4,39,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_3,Durata del matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_945_DF_DCIS_DIVFIG1_4,Anno e rito di celebrazione del matrimonio,ok,hub,5,61,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_5,Anno di matrimonio e numero di figli,ok,hub,5,91,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_6,Anno di matrimonio e presenza di figli affidati,ok,hub,5,89,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_7,Presenza di figli affidati,ok,hub,4,36,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_8,Coniuge che ha presentato la domanda di divorzio con rito giudiziale,ok,hub,4,35,0,"",2026-07-18
+27_945_DF_DCIS_DIVFIG1_9,Anno di matrimonio,ok,hub,4,58,0,"",2026-07-18
+27_946,Divorzi  -  Indicatori,ok,hub,3,89,0,"",2026-07-18
+27_946_DF_DCIS_DIVFIG1_14,Numero di figli affidati,ok,hub,4,36,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_1,Procedimenti e divorzi,ok,hub,3,35,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_2,Caratteristiche del matrimonio e della coppia,ok,hub,3,39,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_3,Provvedimenti economici per il coniuge,ok,hub,3,38,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_4,Provvedimenti economici per i figli,ok,hub,3,44,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_5,Provvedimenti economici per i figli minori,ok,hub,3,35,0,"",2026-07-18
+27_946_DF_DCIS_DIVORZIND1_6,Assegnazione dell'abitazione,ok,hub,3,38,0,"",2026-07-18
+284_103,Principali aggregati per branca di attività (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_104,Valori pro capite - edizioni ottobre 2011 - marzo 2014,ok,hub,7,18,0,"",2026-07-18
+284_159,Prodotto interno lordo e principali componenti - edizioni fino a marzo 2014,ok,hub,7,41,0,"",2026-07-18
+284_238,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.1.1) - edizioni precedenti ottobre 2011",empty,hub,0,0,0,"",2026-07-18
+284_240,Spesa per consumi finali delle famiglie - edizioni fino a marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_249,Investimenti - edizioni fino a marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_252,Sequenza dei conti - edizioni fino a marzo 2014,ok,hub,8,141,0,"",2026-07-18
+284_302,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_9,Occupazione regolare ed irregolare - edizioni ottobre 2011 - marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+285_245,Contributi alla crescita del PIL - edizioni fino ad agosto 2014,ok,hub,8,30,0,"",2026-07-18
+28_185,Migrazioni (Trasferimenti di residenza),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_1,Migrazioni interne  - Italiani e stranieri,ok,hub,6,71,0,"",2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_2,Immigrati - cittadinanza,ok,hub,7,226,0,"",2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_3,Immigrati - paesi di provenienza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_4,Immigrati - province di destinazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_5,Emigrati - cittadinanza,ok,hub,7,221,0,"",2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_6,Emigrati - paesi di destinazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_7,Emigrati - province di origine,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+29_316,Stranieri residenti - Bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",ok,hub,4,158,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_10,Emilia-Romagna,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_11,Toscana,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_12,Umbria,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_13,Marche,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_14,Lazio,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_15,Abruzzo,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_16,Molise,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_17,Campania,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_18,Puglia,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_19,Basilicata,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_2,Piemonte,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_20,Calabria,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_21,Sicilia,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_22,Sardegna,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_23,Tutti i comuni,ok,hub,4,8087,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_3,Valle d'Aosta/Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_4,Liguria,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_5,Lombardia,empty,hub,0,0,0,"",2026-07-18

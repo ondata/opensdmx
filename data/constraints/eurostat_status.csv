@@ -640,3 +640,312 @@ DEMO_GIND,Population change - Demographic balance and crude rates at national le
 DEMO_MACBC,"Deaths by age, sex and country of birth",ok,sdmx,7,187,0,"",2026-07-17
 DEMO_MACZC,"Deaths by age, sex and citizenship",ok,sdmx,7,193,0,"",2026-07-17
 DEMO_MAEDUC,"Deaths by age, sex and educational attainment level",ok,sdmx,7,187,0,"",2026-07-17
+DEMO_MAGEC,Deaths by age and sex,ok,sdmx,6,233,0,"",2026-07-18
+DEMO_MAGEC$DV_1942,Deaths by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_MAGEC$DV_1942'
+For more information check: https://developer.mo",2026-07-18
+DEMO_MAGER,Deaths by year of birth (age reached) and sex,ok,sdmx,6,234,0,"",2026-07-18
+DEMO_MARCB,Marriages by country of birth of bride and groom,ok,sdmx,6,79,0,"",2026-07-18
+DEMO_MARCZ,Marriages by citizenship of bride and groom,ok,sdmx,6,84,0,"",2026-07-18
+DEMO_MARSTAC,"Deaths by age, sex and legal marital status",ok,sdmx,7,187,0,"",2026-07-18
+DEMO_MEXRT,Excess mortality by month,ok,sdmx,4,109,0,"",2026-07-18
+DEMO_MFOET,Late foetal deaths by mother's age,ok,sdmx,5,77,0,"",2026-07-18
+DEMO_MINF,Infant mortality,ok,sdmx,5,132,0,"",2026-07-18
+DEMO_MINFEDU,Infant mortality by mother's educational attainment level (ISCED11f) and father's educational attainment level (ISCED11),ok,sdmx,6,74,0,"",2026-07-18
+DEMO_MINFIND,Infant mortality rates,ok,sdmx,5,131,0,"",2026-07-18
+DEMO_MINFS,Infant mortality by age and sex,ok,sdmx,6,90,0,"",2026-07-18
+DEMO_MLEXPEC,Life expectancy by age and sex,ok,sdmx,6,224,0,"",2026-07-18
+DEMO_MLEXPEC$DV_1943,Life expectancy by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_MLEXPEC$DV_1943'
+For more information check: https://developer.",2026-07-18
+DEMO_MLEXPEC$DV_292,Life expectancy by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_MLEXPEC$DV_292'
+For more information check: https://developer.m",2026-07-18
+DEMO_MLEXPECEDU,"Life expectancy by age, sex and educational attainment level",ok,sdmx,7,125,0,"",2026-07-18
+DEMO_MLIFETABLE,Life table by age and sex,ok,sdmx,6,231,0,"",2026-07-18
+DEMO_MMONTH,Deaths (total) by month,ok,sdmx,5,142,0,"",2026-07-18
+DEMO_NDIVDUR,Divorces by duration of marriage (reached during the year),ok,sdmx,5,143,0,"",2026-07-18
+DEMO_NDIVIND,Divorce indicators,ok,sdmx,4,126,0,"",2026-07-18
+DEMO_NIND,Marriage indicators,ok,sdmx,4,133,0,"",2026-07-18
+DEMO_NMSTA,Marriages by sex and previous marital status,ok,sdmx,6,130,0,"",2026-07-18
+DEMO_NMSTA2,Marriages by previous legal union status of bride and groom,ok,sdmx,6,74,0,"",2026-07-18
+DEMO_NSINAGEC,First-time marrying persons by age and sex,ok,sdmx,6,181,0,"",2026-07-18
+DEMO_NSINRT,First marriage rates by age and sex,ok,sdmx,7,147,0,"",2026-07-18
+DEMO_PJAN,Population on 1 January by age and sex,ok,sdmx,6,233,0,"",2026-07-18
+DEMO_PJANBROAD,Population on 1 January by broad age group and sex,ok,sdmx,6,136,0,"",2026-07-18
+DEMO_PJANEDU,"Population on 1 January by age, sex and educational attainment level",ok,sdmx,7,176,0,"",2026-07-18
+DEMO_PJANGROUP,Population on 1 January by age group and sex,ok,sdmx,6,153,0,"",2026-07-18
+DEMO_PJANIND,Population structure indicators at national level,ok,sdmx,4,182,0,"",2026-07-18
+DEMO_PJANMARSTA,"Population on 1 January by age, sex and legal marital status",ok,sdmx,7,229,0,"",2026-07-18
+DEMO_POPEP,Persons eligible to vote in the 2024 European Parliament elections by category of voters - dedicated data collection,ok,sdmx,6,33,0,"",2026-07-18
+DEMO_POPMDCTB,Median age of residents by sex and country of birth,ok,sdmx,6,49,0,"",2026-07-18
+DEMO_POPMDCTZ,Median age of residents by sex and citizenship,ok,sdmx,6,50,0,"",2026-07-18
+DEMO_POPPCCTB,"Proportion of population by age group, sex and country of birth",ok,sdmx,7,76,0,"",2026-07-18
+DEMO_POPPCCTZ,"Proportion of population by age group, sex and citizenship",ok,sdmx,7,77,0,"",2026-07-18
+DEMO_R_BIRTHS,Live births (total) by NUTS 3 region,ok,sdmx,4,2178,0,"",2026-07-18
+DEMO_R_D2JAN,"Population on 1 January by age, sex and NUTS 2 region",ok,sdmx,6,665,0,"",2026-07-18
+DEMO_R_D3AREA,Area by NUTS 3 region,ok,sdmx,5,1999,0,"",2026-07-18
+DEMO_R_D3DENS,Population density by NUTS 3 region,ok,sdmx,4,2123,0,"",2026-07-18
+DEMO_R_DEATHS,Deaths (total) by NUTS 3 region,ok,sdmx,4,2178,0,"",2026-07-18
+DEMO_R_FAGEC,Live births by mother's age and NUTS 2 region,ok,sdmx,5,600,0,"",2026-07-18
+DEMO_R_FAGEC3,Live births by age group of the mothers and NUTS 3 region,ok,sdmx,5,2169,0,"",2026-07-18
+DEMO_R_FIND2,Fertility indicators by NUTS 2 region,ok,sdmx,5,548,0,"",2026-07-18
+DEMO_R_FIND3,Fertility indicators by NUTS 3 region,ok,sdmx,5,2140,0,"",2026-07-18
+DEMO_R_FIND3$DV_1541,Fertility indicators by NUTS 3 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_R_FIND3$DV_1541'
+For more information check: https://developer.",2026-07-18
+DEMO_R_FRATE2,Fertility rates by age and NUTS 2 region,ok,sdmx,5,582,0,"",2026-07-18
+DEMO_R_GIND3,Population change - Demographic balance and crude rates at regional level (NUTS 3),ok,sdmx,4,2172,0,"",2026-07-18
+DEMO_R_GIND3$DV_1542,Population change - Demographic balance and crude rates at regional level (NUTS 3),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_R_GIND3$DV_1542'
+For more information check: https://developer.",2026-07-18
+DEMO_R_MAGEC,"Deaths by age, sex and NUTS 2 region",ok,sdmx,6,666,0,"",2026-07-18
+DEMO_R_MAGEC3,"Deaths by age group, sex and NUTS 3 region",ok,sdmx,6,2179,0,"",2026-07-18
+DEMO_R_MINF,Infant mortality by NUTS 2 region,ok,sdmx,4,558,0,"",2026-07-18
+DEMO_R_MINFIND,Infant mortality rates by NUTS 2 region,ok,sdmx,4,549,0,"",2026-07-18
+DEMO_R_MLIFE,"Life table by age, sex and NUTS 2 region",ok,sdmx,6,652,0,"",2026-07-18
+DEMO_R_MLIFEXP,"Life expectancy by age, sex and NUTS 2 region",ok,sdmx,6,644,0,"",2026-07-18
+DEMO_R_MWEEK3,"Deaths by week, sex, 5-year age group and NUTS 3 region",ok,sdmx,6,2938,0,"",2026-07-18
+DEMO_R_MWK2_05,"Deaths by week, sex, 5-year age group and NUTS 2 region",ok,sdmx,6,1869,0,"",2026-07-18
+DEMO_R_MWK2_10,"Deaths by week, sex, 10-year age group and NUTS 2 region",ok,sdmx,6,1861,0,"",2026-07-18
+DEMO_R_MWK2_20,"Deaths by week, sex, 20-year age group and NUTS 2 region",ok,sdmx,6,1855,0,"",2026-07-18
+DEMO_R_MWK2_TS,"Deaths by week, sex and NUTS 2 region",ok,sdmx,5,1827,0,"",2026-07-18
+DEMO_R_MWK3_10,"Deaths by week, sex, 10-year age group and NUTS 3 region",ok,sdmx,6,2930,0,"",2026-07-18
+DEMO_R_MWK3_20,"Deaths by week, sex, 20-year age group and NUTS 3 region",ok,sdmx,6,2924,0,"",2026-07-18
+DEMO_R_MWK3_T,Deaths by week and NUTS 3 region,ok,sdmx,4,2892,0,"",2026-07-18
+DEMO_R_MWK3_TS,"Deaths by week, sex and NUTS 3 region",ok,sdmx,5,2895,0,"",2026-07-18
+DEMO_R_MWK_05,"Deaths by week, sex and 5-year age group",ok,sdmx,6,1449,0,"",2026-07-18
+DEMO_R_MWK_10,"Deaths by week, sex and 10-year age group",ok,sdmx,6,1441,0,"",2026-07-18
+DEMO_R_MWK_20,"Deaths by week, sex and 20-year age group",ok,sdmx,6,1435,0,"",2026-07-18
+DEMO_R_MWK_TS,Deaths by week and sex,ok,sdmx,5,1428,0,"",2026-07-18
+DEMO_R_PJANAGGR3,"Population on 1 January by broad age group, sex and NUTS 3 region",ok,sdmx,6,2188,0,"",2026-07-18
+DEMO_R_PJANGROUP,"Population on 1 January by age group, sex and NUTS 2 region",ok,sdmx,6,583,0,"",2026-07-18
+DEMO_R_PJANGRP3,"Population on 1 January by age group, sex and NUTS 3 region",ok,sdmx,6,2180,0,"",2026-07-18
+DEMO_R_PJANIND2,Population structure indicators by NUTS 2 region,ok,sdmx,5,601,0,"",2026-07-18
+DEMO_R_PJANIND2$DV_2145,Population structure indicators by NUTS 2 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_R_PJANIND2$DV_2145'
+For more information check: https://develop",2026-07-18
+DEMO_R_PJANIND3,Population structure indicators by NUTS 3 region,ok,sdmx,5,2191,0,"",2026-07-18
+DEMO_R_PJANIND3$DV_1561,Population structure indicators by NUTS 3 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/DEMO_R_PJANIND3$DV_1561'
+For more information check: https://develop",2026-07-18
+DEMO_URESPOP,Usually resident population on 1 January,ok,sdmx,4,45,0,"",2026-07-18
+DSB_ICTEG01,Persons using the internet for interaction with public authorities by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTEG02,Persons using the internet to request official documents or certificates by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTEG03,Persons using the internet for making an appointment or a reservation by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTEG04,Persons using a website or app of public authorities by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTEG05,Persons having no issue when using a website or app of public authorities by level of disability (activity limitation),ok,sdmx,6,65,0,"",2026-07-18
+DSB_ICTIU01,Persons using the internet in the past 12 months by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU02,Persons regularly using the internet by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU03,Persons using the internet for learning activities by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU04,Persons using the internet for telephoning or video calls by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU05,Persons using the internet for participating in social networks by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU06,Persons using the internet for finding information about goods and services by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU07,Persons using the internet for internet banking by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU08,Persons using the internet for seeking health information by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_ICTIU09,Persons using the internet for making an appointment with a practitioner via a website by level of disability (activity limitation),ok,sdmx,6,72,0,"",2026-07-18
+DSB_SPREX01,Social protection expenditure on disability by benefits - % of GDP,ok,sdmx,7,82,0,"",2026-07-18
+DSB_SPREX02,Social protection expenditure on disability by benefits - PPS per inhabitant,ok,sdmx,7,82,0,"",2026-07-18
+DSB_SPREX03,Social protection expenditure on disability by benefits - million EUR,ok,sdmx,7,82,0,"",2026-07-18
+DSB_SPRPB01,Beneficiaries of disability pensions by pension type,ok,sdmx,8,61,0,"",2026-07-18
+DSB_SPRPB02,Beneficiaries of disability pensions by sex,ok,sdmx,8,61,0,"",2026-07-18
+DT_CPA_3D50,"Turnover by product in motor trade (NACE Rev. 1.1, G50, 5-yearly statistics) (2000-2005)",ok,sdmx,5,46,0,"",2026-07-18
+DT_CPA_3D51_03,"Turnover by product in wholesale trade (NACE Rev. 1.1, G51, 5-yearly statistics) (2003)",ok,sdmx,5,124,0,"",2026-07-18
+DT_CPA_3D51_98,"Turnover by product in wholesale trade (NACE Rev. 1.1, G51) (1998)",ok,sdmx,5,114,0,"",2026-07-18
+DT_CPA_3D52,"Turnover by product in retail trade (NACE Rev. 1.1, G52, 5-yearly statistics (1997-2007)",ok,sdmx,5,99,0,"",2026-07-18
+DT_CPA_N45_R2,Multiannual enterprise statistics - Breakdown of turnover by product type for wholesale and retail trade and repair of motor vehicles and motorcycles (NACE Rev. 2 G45) (2010),ok,sdmx,6,55,0,"",2026-07-18
+DT_CPA_N46_R2,"Turnover by product type for wholesale trade (NACE Rev. 2, G46) (2013-2018)",ok,sdmx,6,133,0,"",2026-07-18
+DT_CPA_N47_R2,"Multiannual enterprise statistics - Breakdown of turnover by product type for retail trade (NACE Rev. 2, G47) (2012)",ok,sdmx,7,100,0,"",2026-07-18
+DT_OTH_3D51_03,"Wholesale trade - operating costs and types of customer (NACE Rev. 1.1, G51, 5-yearly statistics) (2003)",ok,sdmx,5,68,0,"",2026-07-18
+DT_OTH_3D52_03,"Retail trade - operating costs, forms of trading and types of supplier (NACE Rev. 1.1 G52, 5-yearly statistics) (2002-2007)",ok,sdmx,5,66,0,"",2026-07-18
+DT_OTH_3D52_SPA,"Sales area for retail stores in square meters (NACE Rev. 1.1, G52) (2002-2007)",ok,sdmx,6,68,0,"",2026-07-18
+DT_OTH_N47_R2,"Number of retail stores (NACE Rev.2, G47) (2012-2017)",ok,sdmx,6,78,0,"",2026-07-18
+DT_TURN_N45_R2,Multiannual enterprise statistics - Breakdown of turnover by activity type for wholesale and retail trade and repair of motor vehicles and motorcycles (NACE Rev. 2 G45) (2010-2015),ok,sdmx,5,44,0,"",2026-07-18
+DT_TURN_N46_R2,"Turnover by type of activity for wholesale trade (NACE Rev. 2, G46) (2008-2018)",ok,sdmx,5,92,0,"",2026-07-18
+DT_TURN_N47_R2,"Turnover by type of activity for retail trade (NACE Rev.2, G47) (2012-2017)",ok,sdmx,6,79,0,"",2026-07-18
+EARN_GR_EMPISCO,Employees by sex and occupation (1995-2008),ok,sdmx,7,54,0,"",2026-07-18
+EARN_GR_EMPNAC2,Employees by sex and NACE Rev. 2 activity (2005-2011),ok,sdmx,8,77,0,"",2026-07-18
+EARN_GR_EMPNACE,Employees by sex and NACE Rev. 1.1 activity (1995-2008),ok,sdmx,7,74,0,"",2026-07-18
+EARN_GR_GOEG,Gender overall earnings gap,ok,sdmx,6,38,0,"",2026-07-18
+EARN_GR_GPG,Gender pay gap in unadjusted form by NACE Rev. 1.1 activity - structure of earnings survey methodology (2002-2007),ok,sdmx,5,58,0,"",2026-07-18
+EARN_GR_GPGR2,Gender pay gap in unadjusted form by NACE Rev. 2 activity - structure of earnings survey methodology,ok,sdmx,5,81,0,"",2026-07-18
+EARN_GR_GPGR2AG,Gender pay gap in unadjusted form by age and NACE Rev. 2 activity (B-S except O) - structure of earnings survey methodology,ok,sdmx,5,62,0,"",2026-07-18
+EARN_GR_GPGR2CT,Gender pay gap in unadjusted form by type of ownership and NACE Rev. 2 activity (B-S except O) - structure of earnings survey methodology,ok,sdmx,5,56,0,"",2026-07-18
+EARN_GR_GPGR2WT,Gender pay gap in unadjusted form by working time and NACE Rev. 2 activity (B-S except O) - structure of earnings survey methodology,ok,sdmx,5,58,0,"",2026-07-18
+EARN_GR_HGPG,Gender pay gap in unadjusted form (1994 - 2006),ok,sdmx,4,52,0,"",2026-07-18
+EARN_GR_ISCO,Average annual gross earnings by sex and occupation (1995-2008),ok,sdmx,7,56,0,"",2026-07-18
+EARN_GR_NACE,Average annual gross earnings by sex and NACE Rev. 1.1 activity (1995-2008),ok,sdmx,7,77,0,"",2026-07-18
+EARN_GR_NACE2,Average annual gross earnings by sex and NACE Rev. 2 activity (2005-2011),ok,sdmx,8,79,0,"",2026-07-18
+EARN_MW_AVGR1,Monthly minimum wage as a proportion of average monthly earnings (%) - NACE Rev. 1.1 (1999-2009),ok,sdmx,6,50,0,"",2026-07-18
+EARN_MW_AVGR2,Monthly minimum wage as a proportion of average monthly earnings (%) - NACE Rev. 2 (from 2008 onwards),ok,sdmx,6,52,0,"",2026-07-18
+EARN_MW_CUR,Monthly minimum wages - bi-annual data,ok,sdmx,4,98,0,"",2026-07-18
+EARN_NT_LOWWTRP,Tax rate on low wage earners - low wage trap,ok,sdmx,5,65,0,"",2026-07-18
+EARN_NT_NET,Annual net earnings,ok,sdmx,6,89,0,"",2026-07-18
+EARN_NT_NETFT,Annual net earnings of a full-time single worker without children earning an average wage,ok,sdmx,5,71,0,"",2026-07-18
+EARN_NT_TAXRATE,Tax rate,ok,sdmx,5,81,0,"",2026-07-18
+EARN_NT_TAXWEDGE,Tax rate on low wage earners - tax wedge on labour costs,ok,sdmx,4,68,0,"",2026-07-18
+EARN_NT_UNEMTRP,Tax rate on low wage earners - unemployment trap,ok,sdmx,4,67,0,"",2026-07-18
+EARN_SES06_01,"Employees by economic activity, collective pay agreement and sex (2006)",ok,sdmx,8,74,0,"",2026-07-18
+EARN_SES06_02,"Employees by economic activity, sex and age (2006)",ok,sdmx,8,71,0,"",2026-07-18
+EARN_SES06_03,"Employees by sex, age and occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,8,68,0,"",2026-07-18
+EARN_SES06_04,"Employees by economic activity, sex and educational attainment level (2006)",ok,sdmx,8,72,0,"",2026-07-18
+EARN_SES06_05,"Employees by economic activity, sex and length of service with the enterprise (2006)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES06_12,"Mean hourly earnings by economic activity, collective pay agreement, sex (2006)",ok,sdmx,9,79,0,"",2026-07-18
+EARN_SES06_13,"Mean hourly earnings by economic activity, sex, age (2006)",ok,sdmx,9,78,0,"",2026-07-18
+EARN_SES06_14,"Mean hourly earnings by sex, age and occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,9,70,0,"",2026-07-18
+EARN_SES06_15,"Mean hourly earnings by economic activity, sex, employment contract (2006)",ok,sdmx,9,76,0,"",2026-07-18
+EARN_SES06_16,"Mean hourly earnings by economic activity, sex, educational attainment level (2006)",ok,sdmx,9,79,0,"",2026-07-18
+EARN_SES06_17,"Mean hourly earnings by economic activity, sex and length of service with the enterprise (2006)",ok,sdmx,9,80,0,"",2026-07-18
+EARN_SES06_18,"Mean hourly earnings by size class of the enterprise, sex and occupation (2006)",ok,sdmx,8,67,0,"",2026-07-18
+EARN_SES06_19,"Mean monthly earnings by economic activity, collective pay agreement, sex (2006)",ok,sdmx,9,81,0,"",2026-07-18
+EARN_SES06_20,"Mean monthly earnings by economic activity, sex, age (2006)",ok,sdmx,9,79,0,"",2026-07-18
+EARN_SES06_21,"Mean monthly earnings by sex, age, occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,9,71,0,"",2026-07-18
+EARN_SES06_22,"Mean monthly earnings by economic activity, sex, employment contract (2006)",ok,sdmx,9,77,0,"",2026-07-18
+EARN_SES06_23,"Mean monthly earnings by economic activity, sex, educational attainment level (2006)",ok,sdmx,9,80,0,"",2026-07-18
+EARN_SES06_24,"Mean monthly earnings by economic activity, sex, length of service with the enterprise (2006)",ok,sdmx,9,81,0,"",2026-07-18
+EARN_SES06_25,"Mean monthly earnings by size class of the enterprise, sex, occupation (2006)",ok,sdmx,8,68,0,"",2026-07-18
+EARN_SES06_26,"Mean annual earnings by economic activity, collective pay agreement, sex (2006)",ok,sdmx,9,79,0,"",2026-07-18
+EARN_SES06_27,"Mean annual earnings by economic activity, sex, age (2006)",ok,sdmx,9,77,0,"",2026-07-18
+EARN_SES06_28,"Mean annual earnings by sex, age, occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,9,69,0,"",2026-07-18
+EARN_SES06_29,"Mean annual earnings by economic activity, sex, employment contract (2006)",ok,sdmx,9,75,0,"",2026-07-18
+EARN_SES06_30,"Mean annual earnings by economic activity, sex, educational attainment level (2006)",ok,sdmx,9,78,0,"",2026-07-18
+EARN_SES06_31,"Mean annual earnings by economic activity, sex, length of service with the enterprise (2006)",ok,sdmx,9,79,0,"",2026-07-18
+EARN_SES06_32,"Mean annual earnings by size class of the enterprise, sex, occupation (2006)",ok,sdmx,8,66,0,"",2026-07-18
+EARN_SES06_33,"Mean monthly hours paid by economic activity, collective pay agreement, sex (2006)",ok,sdmx,8,76,0,"",2026-07-18
+EARN_SES06_34,"Mean monthly hours paid by economic activity, sex, age (2006)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES06_35,"Mean monthly hours paid by sex, age, occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,8,65,0,"",2026-07-18
+EARN_SES06_36,"Mean monthly hours paid by economic activity, sex, employment contract (2006)",ok,sdmx,8,71,0,"",2026-07-18
+EARN_SES06_37,"Mean monthly hours paid by economic activity, sex, educational attainment level (2006)",ok,sdmx,8,74,0,"",2026-07-18
+EARN_SES06_38,"Mean monthly hours paid by economic activity, sex, length of service with the enterprise (2006)",ok,sdmx,8,75,0,"",2026-07-18
+EARN_SES06_39,"Mean monthly hours paid by size class of the enterprise, sex, occupation (2006)",ok,sdmx,7,62,0,"",2026-07-18
+EARN_SES06_40,"Mean annual holidays by economic activity, collective pay agreement, sex (2006)",ok,sdmx,8,72,0,"",2026-07-18
+EARN_SES06_41,"Mean annual holidays by economic activity, sex, age (2006)",ok,sdmx,8,71,0,"",2026-07-18
+EARN_SES06_42,"Mean annual holidays by sex, age, occupation - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,8,63,0,"",2026-07-18
+EARN_SES06_43,"Mean annual holidays by economic activity, sex, employment contract (2006)",ok,sdmx,8,68,0,"",2026-07-18
+EARN_SES06_44,"Mean annual holidays by economic activity, sex, educational attainment level (2006)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES06_45,"Mean annual holidays by economic activity, sex, length of service with the enterprise (2006)",ok,sdmx,8,74,0,"",2026-07-18
+EARN_SES06_46,"Mean annual holidays by size class of the enterprise, sex, occupation (2006)",ok,sdmx,7,62,0,"",2026-07-18
+EARN_SES06_47,"Mean hourly earnings by economic activity, sex, occupation (2006)",ok,sdmx,9,85,0,"",2026-07-18
+EARN_SES06_48,"Mean monthly earnings by economic activity, sex, occupation (2006)",ok,sdmx,9,86,0,"",2026-07-18
+EARN_SES06_49,"Mean annual earnings by economic activity, sex, occupation (2006)",ok,sdmx,9,84,0,"",2026-07-18
+EARN_SES06_50,"Mean monthly hours paid by economic activity, sex, occupation (2006)",ok,sdmx,8,80,0,"",2026-07-18
+EARN_SES06_51,"Mean annual holidays by economic activity, sex, occupation (2006)",ok,sdmx,8,79,0,"",2026-07-18
+EARN_SES06_52,"Employees by economic activity, sex and employment contract (2006)",ok,sdmx,8,69,0,"",2026-07-18
+EARN_SES06_53,"Employees by size class of the enterprise, sex and occupation (2006)",ok,sdmx,7,60,0,"",2026-07-18
+EARN_SES06_54,"Employees by economic activity, sex and occupation (2006)",ok,sdmx,8,78,0,"",2026-07-18
+EARN_SES06_RANN,"Mean annual earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,4,103,0,"",2026-07-18
+EARN_SES06_RHR,"Mean hourly earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,4,94,0,"",2026-07-18
+EARN_SES10_01,"Employees by sex, economic activity and collective pay agreement (2010)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES10_02,"Employees by sex, age and economic activity (2010)",ok,sdmx,8,83,0,"",2026-07-18
+EARN_SES10_03,"Number of employees by sex, age, occupation and size class - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES10_04,"Employees by sex, economic activity and educational attainment level (2010)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES10_05,"Employees by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES10_12,"Mean hourly earnings by sex, economic activity and collective pay agreement (2010)",ok,sdmx,9,92,0,"",2026-07-18
+EARN_SES10_13,"Mean hourly earnings by sex, age and economic activity (2010)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES10_14,"Mean hourly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,9,73,0,"",2026-07-18
+EARN_SES10_15,"Mean hourly earnings by sex, economic activity and employment contract (2010)",ok,sdmx,9,88,0,"",2026-07-18
+EARN_SES10_16,"Mean hourly earnings by sex, economic activity and educational attainment level (2010)",ok,sdmx,9,91,0,"",2026-07-18
+EARN_SES10_17,"Mean hourly earnings by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,9,91,0,"",2026-07-18
+EARN_SES10_18,"Mean hourly earnings by sex, size class of the enterprise and occupation (2010)",ok,sdmx,8,72,0,"",2026-07-18
+EARN_SES10_19,"Mean monthly earnings by sex, economic activity and collective pay agreement (2010)",ok,sdmx,9,93,0,"",2026-07-18
+EARN_SES10_20,"Mean monthly earnings by sex, age and economic activity (2010)",ok,sdmx,9,90,0,"",2026-07-18
+EARN_SES10_21,"Mean monthly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,9,74,0,"",2026-07-18
+EARN_SES10_22,"Mean monthly earnings by sex, economic activity and employment contract (2010)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES10_23,"Mean monthly earnings by sex, economic activity and educational attainment level (2010)",ok,sdmx,9,92,0,"",2026-07-18
+EARN_SES10_24,"Mean monthly earnings by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,9,93,0,"",2026-07-18
+EARN_SES10_25,"Mean monthly earnings by sex, size class of the enterprise and occupation (2010)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES10_26,"Mean annual earnings by sex, economic activity and collective pay agreement (2010)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES10_27,"Mean annual earnings by sex, age and economic activity (2010)",ok,sdmx,9,86,0,"",2026-07-18
+EARN_SES10_28,"Mean annual earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,9,70,0,"",2026-07-18
+EARN_SES10_29,"Mean annual earnings by sex, economic activity and employment contract (2010)",ok,sdmx,9,85,0,"",2026-07-18
+EARN_SES10_30,"Mean annual earnings by sex, economic activity and educational attainment level (2010)",ok,sdmx,9,88,0,"",2026-07-18
+EARN_SES10_31,"Mean annual earnings by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES10_32,"Mean annual earnings by sex, size class of the enterprise and occupation (2010)",ok,sdmx,8,69,0,"",2026-07-18
+EARN_SES10_33,"Mean monthly hours paid by sex, economic activity and collective pay agreement (2010)",ok,sdmx,8,88,0,"",2026-07-18
+EARN_SES10_34,"Mean monthly hours paid by sex, age and economic activity (2010)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES10_35,"Mean monthly hours paid by sex, age and occupation - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,8,69,0,"",2026-07-18
+EARN_SES10_36,"Mean monthly hours paid by sex, economic activity and employment contract (2010)",ok,sdmx,8,84,0,"",2026-07-18
+EARN_SES10_37,"Mean monthly hours paid by sex, economic activity and educational attainment level (2010)",ok,sdmx,8,87,0,"",2026-07-18
+EARN_SES10_38,"Mean monthly hours paid by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,8,88,0,"",2026-07-18
+EARN_SES10_39,"Mean monthly hours paid by sex, size class of the enterprise and occupation (2010)",ok,sdmx,7,68,0,"",2026-07-18
+EARN_SES10_40,"Mean annual holidays by sex, economic activity and collective pay agreement (2010)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES10_41,"Mean annual holidays by sex, age and economic activity (2010)",ok,sdmx,8,83,0,"",2026-07-18
+EARN_SES10_42,"Mean annual holidays by sex, age and occupation - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,8,67,0,"",2026-07-18
+EARN_SES10_43,"Mean annual holidays by sex, economic activity and employment contract (2010)",ok,sdmx,8,82,0,"",2026-07-18
+EARN_SES10_44,"Mean annual holidays by sex, economic activity and educational attainment level (2010)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES10_45,"Mean annual holidays by sex, economic activity and length of service with the enterprise (2010)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES10_46,"Mean annual holidays by sex, size class of the enterprise and occupation (2010)",ok,sdmx,7,65,0,"",2026-07-18
+EARN_SES10_47,"Mean hourly earnings by sex, economic activity and occupation (2010)",ok,sdmx,9,95,0,"",2026-07-18
+EARN_SES10_48,"Mean monthly earnings by sex, economic activity and occupation (2010)",ok,sdmx,9,96,0,"",2026-07-18
+EARN_SES10_49,"Mean annual earnings by sex, economic activity and occupation (2010)",ok,sdmx,9,92,0,"",2026-07-18
+EARN_SES10_50,"Mean monthly hours paid by sex, economic activity and occupation (2010)",ok,sdmx,8,91,0,"",2026-07-18
+EARN_SES10_51,"Mean annual holidays by sex, economic activity and occupation (2010)",ok,sdmx,8,89,0,"",2026-07-18
+EARN_SES10_52,"Employees by sex, economic activity and employment contract (2010)",ok,sdmx,8,81,0,"",2026-07-18
+EARN_SES10_53,"Number of employees by sex, size class of the enterprise and occupation (2010)",ok,sdmx,7,65,0,"",2026-07-18
+EARN_SES10_54,"Employees by sex, economic activity and occupation (2010)",ok,sdmx,8,89,0,"",2026-07-18
+EARN_SES10_ACTRL,"Annual earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,5,45,0,"",2026-07-18
+EARN_SES10_ADECI,"Annual earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,6,49,0,"",2026-07-18
+EARN_SES10_HFTPT,Hourly earnings by economic activity and contractual working time (enterprises with 10 employed persons or more) (2010),ok,sdmx,6,51,0,"",2026-07-18
+EARN_SES10_MCTRL,"Monthly earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,5,45,0,"",2026-07-18
+EARN_SES10_MDECI,"Monthly earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,6,50,0,"",2026-07-18
+EARN_SES10_RANN,"Mean annual earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,4,105,0,"",2026-07-18
+EARN_SES10_RHR,"Mean hourly earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2010)",ok,sdmx,5,109,0,"",2026-07-18
+EARN_SES14_01,"Employees by sex, economic activity and collective pay agreement (2014)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES14_01$DV_3281,"Employees by sex, economic activity and collective pay agreement (2014)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES14_01$DV_3281'
+For more information check: https://developer",2026-07-18
+EARN_SES14_02,"Employees by sex, age and economic activity (2014)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES14_03,"Employees by sex, age, occupation and size class - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,8,74,0,"",2026-07-18
+EARN_SES14_04,"Employees by sex, economic activity and educational attainment (2014)",ok,sdmx,8,83,0,"",2026-07-18
+EARN_SES14_05,"Employees by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES14_12,"Mean hourly earnings by sex, economic activity and collective pay agreement (2014)",ok,sdmx,9,93,0,"",2026-07-18
+EARN_SES14_13,"Mean hourly earnings by sex, age and economic activity (2014)",ok,sdmx,9,92,0,"",2026-07-18
+EARN_SES14_14,"Mean hourly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,9,76,0,"",2026-07-18
+EARN_SES14_15,"Mean hourly earnings by sex, economic activity and employment contract (2014)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES14_16,"Mean hourly earnings by sex, economic activity and educational attainment (2014)",ok,sdmx,9,90,0,"",2026-07-18
+EARN_SES14_17,"Mean hourly earnings by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,9,92,0,"",2026-07-18
+EARN_SES14_18,"Mean hourly earnings by sex, size class of the enterprise and occupation (2014)",ok,sdmx,8,72,0,"",2026-07-18
+EARN_SES14_19,"Mean monthly earnings by sex, economic activity and collective pay agreement (2014)",ok,sdmx,9,94,0,"",2026-07-18
+EARN_SES14_20,"Mean monthly earnings by sex, age and economic activity (2014)",ok,sdmx,9,93,0,"",2026-07-18
+EARN_SES14_21,"Mean monthly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,9,77,0,"",2026-07-18
+EARN_SES14_22,"Mean monthly earnings by sex, economic activity and employment contract (2014)",ok,sdmx,9,90,0,"",2026-07-18
+EARN_SES14_23,"Mean monthly earnings by sex, economic activity and educational attainment (2014)",ok,sdmx,9,91,0,"",2026-07-18
+EARN_SES14_24,"Mean monthly earnings by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,9,94,0,"",2026-07-18
+EARN_SES14_25,"Mean monthly earnings by sex, size class of the enterprise and occupation (2014)",ok,sdmx,8,73,0,"",2026-07-18
+EARN_SES14_26,"Mean annual earnings by sex, economic activity and collective pay agreement (2014)",ok,sdmx,9,90,0,"",2026-07-18
+EARN_SES14_27,"Mean annual earnings by sex, age and economic activity (2014)",ok,sdmx,9,89,0,"",2026-07-18
+EARN_SES14_28,"Mean annual earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,9,73,0,"",2026-07-18
+EARN_SES14_29,"Mean annual earnings by sex, economic activity and employment contract (2014)",ok,sdmx,9,86,0,"",2026-07-18
+EARN_SES14_30,"Mean annual earnings by sex, economic activity and educational attainment (2014)",ok,sdmx,9,87,0,"",2026-07-18
+EARN_SES14_31,"Mean annual earnings by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,9,90,0,"",2026-07-18
+EARN_SES14_32,"Mean annual earnings by sex, size class of the enterprise and occupation (2014)",ok,sdmx,8,69,0,"",2026-07-18
+EARN_SES14_33,"Mean monthly hours paid by sex, economic activity and collective pay agreement (2014)",ok,sdmx,8,88,0,"",2026-07-18
+EARN_SES14_34,"Mean monthly hours paid by sex, age and economic activity (2014)",ok,sdmx,8,87,0,"",2026-07-18
+EARN_SES14_35,"Mean monthly hours paid by sex, age and occupation - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,8,71,0,"",2026-07-18
+EARN_SES14_36,"Mean monthly hours paid by sex, economic activity and employment contract (2014)",ok,sdmx,8,84,0,"",2026-07-18
+EARN_SES14_37,"Mean monthly hours paid by sex, economic activity and educational attainment (2014)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES14_38,"Mean monthly hours paid by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,8,88,0,"",2026-07-18
+EARN_SES14_39,"Mean monthly hours paid by sex, size class of the enterprise and occupation (2014)",ok,sdmx,7,67,0,"",2026-07-18
+EARN_SES14_40,"Mean annual holidays by sex, economic activity and collective pay agreement (2014)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES14_41,"Mean annual holidays by sex, age and economic activity (2014)",ok,sdmx,8,85,0,"",2026-07-18
+EARN_SES14_42,"Mean annual holidays by sex, age and occupation - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,8,69,0,"",2026-07-18
+EARN_SES14_43,"Mean annual holidays by sex, economic activity and employment contract (2014)",ok,sdmx,8,82,0,"",2026-07-18
+EARN_SES14_44,"Mean annual holidays by sex, economic activity and educational attainment (2014)",ok,sdmx,8,83,0,"",2026-07-18
+EARN_SES14_45,"Mean annual holidays by sex, economic activity and length of service with the enterprise (2014)",ok,sdmx,8,86,0,"",2026-07-18
+EARN_SES14_46,"Mean annual holidays by sex, size class of the enterprise and occupation (2014)",ok,sdmx,7,65,0,"",2026-07-18
+EARN_SES14_47,"Mean hourly earnings by sex, economic activity and occupation (2014)",ok,sdmx,9,97,0,"",2026-07-18
+EARN_SES14_48,"Mean monthly earnings by sex, economic activity and occupation (2014)",ok,sdmx,9,98,0,"",2026-07-18
+EARN_SES14_49,"Mean annual earnings by sex, economic activity and occupation (2014)",ok,sdmx,9,94,0,"",2026-07-18
+EARN_SES14_50,"Mean monthly hours paid by sex, economic activity and occupation (2014)",ok,sdmx,8,92,0,"",2026-07-18
+EARN_SES14_51,"Mean annual holidays by sex, economic activity and occupation (2014)",ok,sdmx,8,90,0,"",2026-07-18
+EARN_SES14_52,"Employees by sex, economic activity and employment contract (2014)",ok,sdmx,8,82,0,"",2026-07-18
+EARN_SES14_53,"Employees by sex, size class of the enterprise and occupation (2014)",ok,sdmx,7,65,0,"",2026-07-18
+EARN_SES14_54,"Employees by sex, economic activity and occupation (2014)",ok,sdmx,8,90,0,"",2026-07-18
+EARN_SES14_ACTRL,"Annual earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,5,46,0,"",2026-07-18
+EARN_SES14_ADECI,"Annual earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,6,51,0,"",2026-07-18
+EARN_SES14_HFTPT,Hourly earnings by economic activity and contractual working time (enterprises with 10 employed persons or more) (2014),ok,sdmx,6,53,0,"",2026-07-18
+EARN_SES14_MCTRL,"Monthly earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,5,45,0,"",2026-07-18
+EARN_SES14_MDECI,"Monthly earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,6,52,0,"",2026-07-18
+EARN_SES14_RANN,"Mean annual earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,5,110,0,"",2026-07-18
+EARN_SES14_RHR,"Mean hourly earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2014)",ok,sdmx,5,112,0,"",2026-07-18
+EARN_SES18_01,"Employees by sex, economic activity and collective pay agreement (2018)",ok,sdmx,8,87,0,"",2026-07-18
+EARN_SES18_01$DV_762,"Employees by sex, economic activity and collective pay agreement (2018)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES18_01$DV_762'
+For more information check: https://developer.",2026-07-18
+EARN_SES18_02,"Employees by sex, age and economic activity (2018)",ok,sdmx,8,89,0,"",2026-07-18
+EARN_SES18_03,"Employees by sex, age, occupation and size class - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,8,80,0,"",2026-07-18
+EARN_SES18_04,"Employees by sex, economic activity and educational attainment (2018)",ok,sdmx,8,83,0,"",2026-07-18
+EARN_SES18_05,"Employees by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,8,87,0,"",2026-07-18
+EARN_SES18_12,"Mean hourly earnings by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,93,0,"",2026-07-18
+EARN_SES18_13,"Mean hourly earnings by sex, age and economic activity (2018)",ok,sdmx,9,95,0,"",2026-07-18

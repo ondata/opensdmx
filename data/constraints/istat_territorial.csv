@@ -751,10 +751,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 168_761,Ipca - mensili dal 1996 (base 2025),REF_AREA,nazionale,nazionale,1,2026-07-17
 168_761_DF_DCSP_IPCA1B2025_1,Ecoicop 2 classificazione (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
 168_761_DF_DCSP_IPCA1B2025_2,Aggregati speciali (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+168_761_DF_DCSP_IPCA1B2025_3,Ipca trimestrali - classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-18
 168_762,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
 168_762_DF_DCSP_IPCA2B2025_1,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
 168_7_DF_DCSP_IPCA3EC2_1,Ipca – Classificazione ECOICOP vers.2 (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
 168_7_DF_DCSP_IPCA3EC2_2,Ipca – Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_7_DF_DCSP_IPCA3EC2_3,Ipca pesi- classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-18
 169_15_DF_DCSP_FOI1B2010_1,Foi - mensili dal 2011 al 2015 (base 2010),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,112,2026-07-17
 169_28_DF_DCSP_FOI2B2010_1,Foi - medie annue dal 2011 al 2015 (base 2010),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,112,2026-07-17
 169_30_DF_DCSP_FOI3B2010_1,Foi – pesi dal 2011 al 2015,REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -936,3 +938,167 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 26_29_DF_DCIS_DECESSI_2,Morti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+272_1164_DF_DCCV_RELAZ_PARENT_3,Persone per numero di nonni non conviventi per sesso e età,REF_AREA,nazionale,nazionale,1,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_4,Persone per numero di nonni non conviventi per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_5,Prossimità abitativa per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_6,"Prossimità abitativa - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_7,Frequenza dei contatti per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_8,"Tipo e frequenza dei contatti - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-18
+27_349,Separazioni - Indicatori 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_1,Procedimenti e separazioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_2,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_3,Figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_4,Provvedimenti economici,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_5,Caratteristiche del matrimonio e della coppia - sintesi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_349_DF_DCIS_SEPARAZIND_6,Separazioni - Indicatori per coppie miste,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355,Divorzi - Indicatori 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_1,Procedimenti e divorzi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_2,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_3,Figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_4,Provvedimenti economici,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_5,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_355_DF_DCIS_DIVORZIND_6,Divorzi - Indicatori per coppie miste,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384,Separazioni - Caratteristiche demografiche 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_1,Separazioni - Caratteristiche demografiche 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_4,Età alla separazione - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_5,Età alla separazione - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_6,Età alla separazione - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_7,Età al matrimonio e anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_384_DF_DCIS_SEPARAZDEMCONG_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385,Divorzi - Caratteristiche demografiche 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_1,Divorzi - Caratteristiche demografiche 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_4,Età al divorzio - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_5,Età al divorzio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_6,Età al divorzio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_7,Età al matrimonio e anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_385_DF_DCIS_DIVORDEMCONG_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_1,Separazioni - Caratteristiche demografiche - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_4,Età alla separazione - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_5,Età alla separazione - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_6,Età alla separazione - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_468,Separazioni -  Caratteristiche socio-professionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_1,Titolo di studio dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_2,Titolo di studio del marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_3,Titolo di studio della moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_4,Condizione professionale dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_468_DF_DCIS_SEPARAZSOC1_5,Posizione nella professione dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_469,Separazioni -  Caratteristiche e figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_1,Separazioni - Caratteristiche e figli - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_10,Età e numero di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_11,Età dei figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_12,Tipo di affidamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_13,Numero di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_2,Tipo di separazione giudiziale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_3,Modalità di esaurimento e rito di celebrazione del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_4,Durata del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_5,Anno di matrimonio e numero di figli,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_6,Anno di matrimonio e presenza di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_7,Presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_8,Anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_469_DF_DCIS_SEPARAZFIG1_9,Età dei figli affidati e tipo di affidamento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_1,Divorzi - Caratteristiche demografiche - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_4,Età al divorzio - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_5,Età al divorzio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_6,Età al divorzio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474,Separazioni -  Indicatori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_1,Procedimenti e separazioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_2,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_3,Provvedimenti economici per il coniuge,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_4,Provvedimenti economici per i figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_5,Provvedimenti economici per i figli minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_474_DF_DCIS_SEPARAZIND1_6,Assegnazione dell'abitazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_475,Divorzi -  Caratteristiche socio-professionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_475_DF_DCIS_DIVSOC1_1,Titolo di studio dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_475_DF_DCIS_DIVSOC1_2,Titolo di studio del marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_475_DF_DCIS_DIVSOC1_3,Titolo di studio della moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_475_DF_DCIS_DIVSOC1_4,Condizione professionale dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_475_DF_DCIS_DIVSOC1_5,Posizione nella professione dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_731,Separazioni - caratteristiche e figli minori affidati 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_1,Separazioni - caratteristiche e figli minori affidati 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_10,Età e numero di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_11,Età dei figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_12,Tipo di affidamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_13,Numero di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_2,Tipo di separazione giudiziale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_3,Modalità di esaurimento e rito di celebrazione del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_4,Durata del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_5,Anno di matrimonio e numero di figli,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_6,Anno di matrimonio e presenza di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_7,Presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_8,Anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_731_DF_DCIS_SEPARAZFIG_9,Età dei figli affidati e tipo di affidamento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_748,Separazioni - Caratteristiche socio-professionali 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_1,Titolo di studio dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_2,Titolo di studio del marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_3,Titolo di studio della moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_4,Condizione professionale dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_5,Posizione nella professione dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_748_DF_DCIS_SEPARAZSOC_6,Separazioni - Caratteristiche socio-professionali 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_749,Divorzi - Caratteristiche socio-professionali 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_749_DF_DCIS_DIVSOC_1,Titolo di studio dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_749_DF_DCIS_DIVSOC_2,Titolo di studio del marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_749_DF_DCIS_DIVSOC_3,Titolo di studio della moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_749_DF_DCIS_DIVSOC_4,Condizione professionale dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_749_DF_DCIS_DIVSOC_5,Posizione nella professione dei coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_749_DF_DCIS_DIVSOC_6,Divorzi - Caratteristiche socio-professionali 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814,Divorzi - Caratteristiche e figli minori affidati 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_1,Divorzi - Caratteristiche e figli minori affidati 2008-2014 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_10,Coniuge che ha presentato la domanda di divorzio con rito giudiziale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_11,Anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_814_DF_DCIS_DIVFIG_12,Età dei figli affidati e tipo di affidamento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_814_DF_DCIS_DIVFIG_13,Età e numero di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_814_DF_DCIS_DIVFIG_14,Età dei figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_15,Tipo di affidamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_16,Numero di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_2,Rito di esaurimento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_3,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_4,Durata del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_5,Anno di matrimonio e modalità di esaurimento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_814_DF_DCIS_DIVFIG_6,Modalità di esaurimento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_7,Anno di matrimonio e presenza di figli affidati,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_814_DF_DCIS_DIVFIG_8,Figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_814_DF_DCIS_DIVFIG_9,Anno di matrimonio e numero di figli,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_945,Divorzi - Caratteristiche e figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_1,Rito di esaurimento e rito di celebrazione del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_10,Età dei figli affidati e tipo di affidamento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_945_DF_DCIS_DIVFIG1_11,Età e numero di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_12,Età dei figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_13,Tipo di affidamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_2,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_4,Anno e rito di celebrazione del matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_945_DF_DCIS_DIVFIG1_5,Anno di matrimonio e numero di figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_6,Anno di matrimonio e presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_7,Presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_8,Coniuge che ha presentato la domanda di divorzio con rito giudiziale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_9,Anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_946,Divorzi  -  Indicatori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVFIG1_14,Numero di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_1,Procedimenti e divorzi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_2,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_3,Provvedimenti economici per il coniuge,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_4,Provvedimenti economici per i figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_5,Provvedimenti economici per i figli minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_946_DF_DCIS_DIVORZIND1_6,Assegnazione dell'abitazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+284_104,Valori pro capite - edizioni ottobre 2011 - marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+284_159,Prodotto interno lordo e principali componenti - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+284_252,Sequenza dei conti - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+285_245,Contributi alla crescita del PIL - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_1,Migrazioni interne  - Italiani e stranieri,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_2,Immigrati - cittadinanza,REF_AREA,provincia,provincia,1,2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_5,Emigrati - cittadinanza,REF_AREA,nazionale,nazionale,1,2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8063,2026-07-18
