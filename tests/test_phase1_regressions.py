@@ -73,9 +73,10 @@ def test_emit_csv_stringifies_non_string_values(capsys):
     assert rows[1] == ["plot", "5", "True"]
 
 
-def test_which_csv_output_is_valid(capsys):
+def test_which_csv_output_is_valid():
     """End-to-end: `which` descriptions contain commas."""
-    result = runner.invoke(app, ["-o", "csv", "which", "plot"])
+    with patch("opensdmx.cli._check_api_reachable"):
+        result = runner.invoke(app, ["-o", "csv", "which", "plot"])
     assert result.exit_code == 0
     rows = _parse_csv(result.stdout)
     assert len(rows) > 1
@@ -119,6 +120,7 @@ def test_get_large_dataset_guard_does_not_print_spurious_error():
     fake = pl.DataFrame({"TIME_PERIOD": ["2020"], "OBS_VALUE": [1.0]})
     with (
         patch.object(cli, "_LARGE_DATASET_THRESHOLD", 0),
+        patch("opensdmx.cli._check_api_reachable"),
         patch("opensdmx.load_dataset", return_value={"df_id": "X", "dimensions": {}}),
         patch("opensdmx.set_filters", side_effect=lambda ds, **k: ds),
         patch("opensdmx.get_data", return_value=fake),
@@ -126,7 +128,9 @@ def test_get_large_dataset_guard_does_not_print_spurious_error():
         result = runner.invoke(app, ["get", "X"])
 
     assert result.exit_code == 1
-    assert "Warning:" in result.output
+    # The warning belongs on stderr, so assert it there specifically.
+    assert "Warning:" in result.stderr
+    # The spurious line must appear on neither stream: result.output is combined.
     assert "Error: 1" not in result.output
 
 
@@ -135,6 +139,7 @@ def test_get_large_dataset_message_reflects_filter_state():
     fake = pl.DataFrame({"TIME_PERIOD": ["2020"], "OBS_VALUE": [1.0]})
     with (
         patch.object(cli, "_LARGE_DATASET_THRESHOLD", 0),
+        patch("opensdmx.cli._check_api_reachable"),
         patch("opensdmx.load_dataset", return_value={"df_id": "X", "dimensions": {}}),
         patch("opensdmx.set_filters", side_effect=lambda ds, **k: ds),
         patch("opensdmx.get_data", return_value=fake),
@@ -142,8 +147,8 @@ def test_get_large_dataset_message_reflects_filter_state():
         result = runner.invoke(app, ["get", "X", "--geo", "IT"])
 
     assert result.exit_code == 1
-    assert "no filters set" not in result.output
-    assert "with the current filters" in result.output
+    assert "no filters set" not in result.stderr
+    assert "with the current filters" in result.stderr
 
 
 # ── Finding 3: codelist cache read with the wrong key ────────────────
