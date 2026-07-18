@@ -5,7 +5,6 @@ See docs/evaluation-v0.14.0.md findings 5, 6, 13, 17.
 
 from __future__ import annotations
 
-import warnings
 
 import polars as pl
 import pytest
@@ -188,24 +187,28 @@ def test_run_query_missing_dataset_field_raises(tmp_path):
         run_query(str(path))
 
 
-# ── Finding 6: plot dropped set_filters warnings that get reported ───
+# ── Finding 6 (corrected): filter errors must reach the caller ───────
 
 
-def test_load_and_filter_surfaces_set_filters_warnings(capsys):
-    """`plot` used to skip this, so a suspicious filter was silently ignored."""
+def test_load_and_filter_propagates_set_filters_error():
+    """A bad filter must reach the caller, which turns it into a CLI error.
+
+    This replaces a test that asserted `warnings.warn` output was captured.
+    That test passed only because its mock raised a warning: nothing in the
+    package uses the warnings module, so the machinery it exercised never
+    fired in production. See docs/evaluation-v0.14.0.md, finding 6.
+    """
     from opensdmx import cli
 
-    def noisy_set_filters(ds, **kwargs):
-        warnings.warn("suspicious filter value", UserWarning)
-        return ds
+    def strict_set_filters(ds, **kwargs):
+        raise ValueError("unknown dimension(s): 'geoo'")
 
     with (
         patch("opensdmx.load_dataset", return_value={"df_id": "X", "dimensions": {}}),
-        patch("opensdmx.set_filters", side_effect=noisy_set_filters),
+        patch("opensdmx.set_filters", side_effect=strict_set_filters),
     ):
-        cli._load_and_filter("X", {"geo": "ZZ"})
-
-    assert "suspicious filter value" in capsys.readouterr().err
+        with pytest.raises(ValueError, match="geoo"):
+            cli._load_and_filter("X", {"geoo": "IT"})
 
 
 def test_load_and_filter_skips_set_filters_when_no_filters():

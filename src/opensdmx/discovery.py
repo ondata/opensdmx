@@ -937,18 +937,56 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
+def _normalise_dim(name: str) -> str:
+    """Normalise a dimension name for matching: upper-case, '-' same as '_'.
+
+    SDMX dimension ids use underscores (NA_ITEM, TIME_PERIOD); CLI convention
+    is dashes. Treating them as equivalent lets `--na-item` and `--na_item`
+    both work, the same way matching is already case-insensitive.
+    """
+    return name.upper().replace("-", "_")
+
+
 def set_filters(dataset: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
-    """Set dimension filters (case-insensitive). Returns a new dataset dict."""
+    """Set dimension filters. Returns a new dataset dict.
+
+    Matching is case-insensitive and treats '-' and '_' as equivalent.
+
+    Raises:
+        ValueError: if a name matches no dimension. Unknown filters used to be
+            dropped with a log line, which meant a typo silently returned
+            unfiltered data — the wrong answer, with the only signal on stderr.
+    """
     import copy
     dataset = copy.deepcopy(dataset)
-    dim_upper = {k.upper(): k for k in dataset["dimensions"]}
+    dim_norm = {_normalise_dim(k): k for k in dataset["dimensions"]}
 
+    unknown: list[str] = []
     for key, value in kwargs.items():
-        actual = dim_upper.get(key.upper())
+        actual = dim_norm.get(_normalise_dim(key))
         if actual is None:
-            logger.warning("Dimension '%s' not found. Ignoring.", key)
+            unknown.append(key)
             continue
         dataset["filters"][actual] = value
+
+    if unknown:
+        import difflib
+
+        available = list(dataset["dimensions"])
+        details = []
+        for key in unknown:
+            close = difflib.get_close_matches(
+                _normalise_dim(key), [_normalise_dim(d) for d in available], n=1
+            )
+            if close:
+                suggestion = dim_norm[close[0]]
+                details.append(f"'{key}' (did you mean '{suggestion}'?)")
+            else:
+                details.append(f"'{key}'")
+        raise ValueError(
+            f"unknown dimension(s): {', '.join(details)}. "
+            f"Available: {', '.join(available)}"
+        )
 
     return dataset
 

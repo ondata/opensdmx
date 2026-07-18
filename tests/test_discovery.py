@@ -53,13 +53,42 @@ def test_set_filters_list_value():
     assert result["filters"]["GEO"] == ["IT", "FR", "DE"]
 
 
-def test_set_filters_unknown_dimension_warns(caplog):
-    import logging
+def test_set_filters_unknown_dimension_raises():
+    """Unknown filters used to be dropped with a log line, which silently
+    returned unfiltered data. They now fail loudly."""
+    import pytest
+
     ds = _make_dataset(FREQ=0)
-    with caplog.at_level(logging.WARNING, logger="opensdmx.discovery"):
-        result = set_filters(ds, NONEXISTENT="X")
-    assert any("NONEXISTENT" in r.message for r in caplog.records)
-    assert "NONEXISTENT" not in result["filters"]
+    with pytest.raises(ValueError, match="NONEXISTENT"):
+        set_filters(ds, NONEXISTENT="X")
+
+
+def test_set_filters_unknown_dimension_lists_available():
+    import pytest
+
+    ds = _make_dataset(FREQ=0)
+    with pytest.raises(ValueError, match="Available: FREQ"):
+        set_filters(ds, NONEXISTENT="X")
+
+
+def test_set_filters_suggests_close_match():
+    import pytest
+
+    ds = _make_dataset(FREQ=0)
+    with pytest.raises(ValueError, match="did you mean 'FREQ'"):
+        set_filters(ds, FREQQ="A")
+
+
+def test_set_filters_dash_matches_underscore():
+    """CLI convention is dashes, SDMX ids use underscores."""
+    ds = _make_dataset(NA_ITEM=0)
+    result = set_filters(ds, **{"na-item": "B1GQ"})
+    assert result["filters"]["NA_ITEM"] == "B1GQ"
+
+
+def test_set_filters_underscore_still_works():
+    ds = _make_dataset(NA_ITEM=0)
+    assert set_filters(ds, na_item="B1GQ")["filters"]["NA_ITEM"] == "B1GQ"
 
 
 # ── get_dimension_values ─────────────────────────────────────────────

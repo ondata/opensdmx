@@ -484,6 +484,19 @@ know are valid and `opensdmx constraints` doesn't provide enough detail.
 **Never use `opensdmx values` to validate filter codes.** A code present in the codelist
 may return no data if it doesn't exist in this specific dataflow.
 
+**Filter names (v0.15.0+).** Dimension names match case-insensitively, and `-` and `_`
+are equivalent — `--na-item`, `--na_item` and `--NA_ITEM` all reach `NA_ITEM`. A name
+matching no dimension is a hard error listing the available ones, often with a
+suggestion:
+
+```
+Error: unknown dimension(s): 'geoo' (did you mean 'geo'?). Available: freq, unit, na_item, geo
+```
+
+Read that list and retry — do not ignore the error. Before v0.15.0 an unrecognised
+filter was dropped with a warning on stderr and the query ran **unfiltered**, so stdout
+carried more data than requested with no signal in it.
+
 **Codelist hierarchy (library API).** When a codelist is hierarchical or ordered, the
 Python accessor `opensdmx.get_codelist_hierarchy(ds, dim)` returns `(id, name, parent,
 order)` — useful to filter by geographic level, roll up child→parent, or sort in the
