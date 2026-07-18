@@ -151,14 +151,11 @@ def all_available() -> pl.DataFrame:
             cc_content = sdmx_request_xml(cc_path, _timeout=30, _max_retries=1)
             bulk_succeeded = True
             # Use raw long_ids for catalog matching (avoids _DF_ truncation mismatch)
-            long_ids = _extract_bulk_long_ids(cc_content)
-            parsed = _parse_bulk_constraint_xml(cc_content)
-            covered_catalog: set[str] = set()
+            long_ids, parsed = parse_bulk_constraints(cc_content)
             for long_id in long_ids:
                 catalog_id = _match_catalog_id(long_id, catalog_ids)
                 if catalog_id:
                     has_constraint_map[catalog_id] = True
-                    covered_catalog.add(catalog_id)
                     # Cache constraint values under the correct catalog key.
                     # _parse_bulk_constraint_xml uses the short_id (prefix before _DF_)
                     # as the key, so derive it from the long_id for the lookup.
@@ -170,11 +167,6 @@ def all_available() -> pl.DataFrame:
                             save_available_constraints(catalog_id, dims)
                         except Exception as e:
                             logger.warning("Could not cache constraints for %s: %s", catalog_id, e)
-            try:
-                from .db_cache import save_bulk_constraint_index
-                save_bulk_constraint_index(agency_id, covered_catalog)
-            except Exception as e:
-                logger.warning("Could not save bulk constraint index: %s", e)
         except Exception as e:
             logger.warning("Could not fetch bulk constraints at catalog time: %s", e)
 
@@ -747,9 +739,8 @@ def _fallback_availableconstraint(dataset: dict[str, Any], provider: dict[str, A
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
-def _extract_bulk_long_ids(content: bytes) -> set[str]:
-    """Extract raw df_ids from bulk contentconstraint XML without any truncation."""
-    root, ns = xml_parse(content)
+def _extract_bulk_long_ids(root: Any, ns: dict[str, str]) -> set[str]:
+    """Extract raw df_ids from a parsed bulk contentconstraint tree, untruncated."""
     struct_ns = ns.get("structure", "")
     cc_tag = f"{{{struct_ns}}}ContentConstraint" if struct_ns else "ContentConstraint"
     result: set[str] = set()
@@ -766,14 +757,25 @@ def _extract_bulk_long_ids(content: bytes) -> set[str]:
     return result
 
 
-def _parse_bulk_constraint_xml(content: bytes) -> dict[str, dict[str, list[str]]]:
-    """Parse a bulk contentconstraint response into {short_df_id: {dim_id: [values]}}.
+def parse_bulk_constraints(
+    content: bytes,
+) -> tuple[set[str], dict[str, dict[str, list[str]]]]:
+    """Parse bulk contentconstraint XML once, returning (long_ids, per-dataflow values).
+
+    Both views come from a single tree build: this is the largest XML the
+    library fetches, and parsing it twice cost two full namespace scans.
+    """
+    root, ns = xml_parse(content)
+    return _extract_bulk_long_ids(root, ns), _parse_bulk_constraint_xml(root, ns)
+
+
+def _parse_bulk_constraint_xml(root: Any, ns: dict[str, str]) -> dict[str, dict[str, list[str]]]:
+    """Parse a parsed bulk contentconstraint tree into {short_df_id: {dim_id: [values]}}.
 
     Merges multiple constraints for the same dataflow by taking the union of values
     per dimension. TIME_PERIOD ranges (TimeRange elements) are silently ignored.
     The short df_id is extracted from the long form by splitting on '_DF_'.
     """
-    root, ns = xml_parse(content)
     struct_ns = ns.get("structure", "")
     common_ns = ns.get("common", "")
 

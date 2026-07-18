@@ -97,6 +97,25 @@ def set_provider(
         }
 
 
+def set_provider_from_env() -> bool:
+    """Set the active provider from OPENSDMX_PROVIDER, resolving aliases.
+
+    Returns True if the variable was set and applied, False otherwise. Kept
+    here rather than in the CLI so library entry points resolve the provider
+    the same way `opensdmx` does.
+    """
+    import os
+
+    name = os.environ.get("OPENSDMX_PROVIDER")
+    if not name:
+        return False
+    set_provider(
+        PROVIDER_ALIASES.get(name, name),
+        agency_id=os.environ.get("OPENSDMX_AGENCY"),
+    )
+    return True
+
+
 def get_provider() -> dict[str, Any]:
     """Return the active provider configuration dict."""
     if isinstance(_active_provider, dict):
