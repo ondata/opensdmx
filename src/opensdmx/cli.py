@@ -108,6 +108,72 @@ def _emit(data: object, df: pl.DataFrame | None = None) -> None:
             sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 
+def _write_output(df: pl.DataFrame, out: Path | None) -> None:
+    """Write a frame to stdout as CSV, or to a file chosen by its suffix."""
+    if out is None:
+        sys.stdout.write(df.write_csv())
+        return
+    suffix = out.suffix.lower()
+    if suffix == ".parquet":
+        df.write_parquet(out)
+    elif suffix == ".json":
+        df.write_ndjson(out)
+    elif suffix == ".csv":
+        df.write_csv(out)
+    else:
+        err_console.print(
+            f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json"
+        )
+        raise typer.Exit(1)
+    err_console.print(f"[green]Saved:[/green] {out}")
+
+
+def _load_and_filter(dataset_id: str, filters: dict[str, Any]) -> dict[str, Any]:
+    """Load a dataset and apply filters, surfacing any `set_filters` warnings.
+
+    Shared by `get` and `plot` so a suspicious filter value is reported the
+    same way by both.
+    """
+    import warnings as _warnings
+    from . import load_dataset, set_filters
+
+    with console.status("[dim]Loading dataset...[/dim]"):
+        ds: dict[str, Any] = load_dataset(dataset_id)
+        if filters:
+            with _warnings.catch_warnings(record=True) as _caught:
+                _warnings.simplefilter("always")
+                ds = set_filters(ds, **filters)
+            for _w in _caught:
+                err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+    return ds
+
+
+def _fetch_frame(
+    ds: dict[str, Any],
+    *,
+    start_period: str | None = None,
+    end_period: str | None = None,
+    last_n: int | None = None,
+    first_n: int | None = None,
+    labels: bool = False,
+) -> pl.DataFrame:
+    """Fetch observations for a prepared dataset, optionally label-enriched."""
+    from . import enrich_with_labels, get_data
+
+    with console.status("[dim]Fetching data...[/dim]"):
+        df: pl.DataFrame = get_data(
+            ds,
+            start_period=start_period,
+            end_period=end_period,
+            last_n_observations=last_n,
+            first_n_observations=first_n,
+        )
+    if labels:
+        with console.status("[dim]Adding labels...[/dim]"):
+            df = enrich_with_labels(ds, df)
+    return df
+
+
 def _version_callback(value: bool) -> None:
     if value:
         from importlib.metadata import version
@@ -142,16 +208,17 @@ def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
 def _apply_provider(provider: str | None) -> None:
     """Set active provider from CLI option or OPENSDMX_PROVIDER env var."""
     import os
-    resolved = provider or os.environ.get("OPENSDMX_PROVIDER")
-    if resolved:
-        from .base import PROVIDER_ALIASES, PROVIDERS, set_provider
-        resolved = PROVIDER_ALIASES.get(resolved, resolved)
-        if resolved not in PROVIDERS and not resolved.startswith("http"):
-            valid = ", ".join(sorted(PROVIDERS))
-            err_console.print(f"[red]Error:[/red] unknown provider '{resolved}'. Valid: {valid}")
-            raise typer.Exit(1)
-        agency_id = os.environ.get("OPENSDMX_AGENCY")
-        set_provider(resolved, agency_id=agency_id)
+
+    from .base import resolve_provider
+
+    name = provider or os.environ.get("OPENSDMX_PROVIDER")
+    if not name:
+        return
+    try:
+        resolve_provider(name)
+    except ValueError as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
 
 
 def _apply_headers(header: list[str] | None) -> None:
@@ -1160,20 +1227,12 @@ def get(
     """
     _apply_provider(provider)
     _apply_headers(header)
-    from . import get_data, load_dataset, set_filters
+    from . import get_data
 
     filters = _parse_extra_filters(ctx)
 
     try:
-        import warnings as _warnings
-        with console.status("[dim]Loading dataset...[/dim]"):
-            ds = load_dataset(dataset_id)
-            if filters:
-                with _warnings.catch_warnings(record=True) as _caught:
-                    _warnings.simplefilter("always")
-                    ds = set_filters(ds, **filters)
-                for _w in _caught:
-                    err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+        ds = _load_and_filter(dataset_id, filters)
 
         # Probe for large datasets when no last_n/first_n limit is set.
         # Skip if provider does not support lastNObservations (probe would fetch all data).
@@ -1195,13 +1254,14 @@ def get(
             except httpx.HTTPStatusError:
                 pass  # let the real request fail with a proper error
 
-        with console.status("[dim]Fetching data...[/dim]"):
-            df = get_data(ds, start_period=start_period, end_period=end_period,
-                          last_n_observations=last_n, first_n_observations=first_n)
-        if labels:
-            from . import enrich_with_labels
-            with console.status("[dim]Adding labels...[/dim]"):
-                df = enrich_with_labels(ds, df)
+        df = _fetch_frame(
+            ds,
+            start_period=start_period,
+            end_period=end_period,
+            last_n=last_n,
+            first_n=first_n,
+            labels=labels,
+        )
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         if e.response.status_code in (400, 404):
@@ -1215,20 +1275,7 @@ def get(
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
-    if out is None:
-        sys.stdout.write(df.write_csv())
-    else:
-        suffix = out.suffix.lower()
-        if suffix == ".parquet":
-            df.write_parquet(out)
-        elif suffix == ".json":
-            df.write_ndjson(out)
-        elif suffix == ".csv":
-            df.write_csv(out)
-        else:
-            err_console.print(f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json")
-            raise typer.Exit(1)
-        err_console.print(f"[green]Saved:[/green] {out}")
+    _write_output(df, out)
 
     if query_file is not None:
         import yaml
@@ -1257,83 +1304,40 @@ def run(
       opensdmx run unemployment.yaml --out results.csv
       opensdmx run query.yaml --out results.parquet
     """
+    import warnings as _warnings
+
     import yaml
-    from . import get_data, load_dataset, set_filters
 
-    if not query_file.exists():
-        err_console.print(f"[red]Error:[/red] file not found: {query_file}")
-        raise typer.Exit(1)
+    from . import run_query
 
-    try:
-        with open(query_file) as fh:
-            q = yaml.safe_load(fh)
-    except Exception as e:
-        err_console.print(f"[red]Error reading YAML:[/red] {e}")
-        raise typer.Exit(1)
-
-    # Provider resolution: CLI flag > alias (if known) > URL + agency_id > env/default
+    # Validate --provider here so an unknown name gets the CLI's readable
+    # error; run_query applies the rest of the precedence chain.
     if provider:
         _apply_provider(provider)
-    else:
-        from .base import PROVIDERS, set_provider
-        alias = q.get("provider")
-        if alias and alias in PROVIDERS:
-            set_provider(alias)
-        elif q.get("provider_url"):
-            set_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
-        else:
-            _apply_provider(None)
-
-    dataset_id = q.get("dataset")
-    if not dataset_id:
-        err_console.print("[red]Error:[/red] 'dataset' field missing in query file")
-        raise typer.Exit(1)
-
-    filters = {dim: info["value"] for dim, info in (q.get("filters") or {}).items()}
-    start_period = q.get("start_period")
-    end_period = q.get("end_period")
-    last_n = q.get("last_n")
-    first_n = q.get("first_n")
 
     try:
-        import warnings as _warnings
-        with console.status("[dim]Loading dataset...[/dim]"):
-            ds = load_dataset(dataset_id)
-            if filters:
-                with _warnings.catch_warnings(record=True) as _caught:
-                    _warnings.simplefilter("always")
-                    ds = set_filters(ds, **filters)
-                for _w in _caught:
-                    err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
-
-        with console.status("[dim]Fetching data...[/dim]"):
-            df = get_data(ds, start_period=start_period, end_period=end_period,
-                          last_n_observations=last_n, first_n_observations=first_n)
-        if q.get("labels"):
-            from . import enrich_with_labels
-            with console.status("[dim]Adding labels...[/dim]"):
-                df = enrich_with_labels(ds, df)
+        with _warnings.catch_warnings(record=True) as _caught:
+            _warnings.simplefilter("always")
+            with console.status("[dim]Running query...[/dim]"):
+                df = run_query(str(query_file), provider=provider)
+        for _w in _caught:
+            err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+    except FileNotFoundError:
+        err_console.print(f"[red]Error:[/red] file not found: {query_file}")
+        raise typer.Exit(1)
+    except yaml.YAMLError as e:
+        err_console.print(f"[red]Error reading YAML:[/red] {e}")
+        raise typer.Exit(1)
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         raise typer.Exit(1)
+    except typer.Exit:
+        raise
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
-    if out is None:
-        sys.stdout.write(df.write_csv())
-    else:
-        suffix = out.suffix.lower()
-        if suffix == ".parquet":
-            df.write_parquet(out)
-        elif suffix == ".json":
-            df.write_ndjson(out)
-        elif suffix == ".csv":
-            df.write_csv(out)
-        else:
-            err_console.print(f"[red]Error:[/red] unsupported format '{suffix}'. Supported: .csv, .parquet, .json")
-            raise typer.Exit(1)
-        err_console.print(f"[green]Saved:[/green] {out}")
+    _write_output(df, out)
 
 
 @app.command(context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
@@ -1425,21 +1429,20 @@ def plot(
             raise typer.Exit(1)
     else:
         _apply_provider(provider)
-        from . import get_data, load_dataset, set_filters
 
         filters = _parse_extra_filters(ctx)
 
         try:
-            ds = load_dataset(dataset_id)
-            if filters:
-                ds = set_filters(ds, **filters)
-            df = get_data(ds, start_period=start_period, end_period=end_period)
+            ds = _load_and_filter(dataset_id, filters)
+            df = _fetch_frame(ds, start_period=start_period, end_period=end_period)
             ds_description = ds["df_description"]
         except httpx.HTTPStatusError as e:
             err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
             if e.response.status_code in (400, 404):
                 err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
             raise typer.Exit(1)
+        except typer.Exit:
+            raise
         except Exception as e:
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)

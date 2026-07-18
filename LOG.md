@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-07-18 - Phase 2: remove duplication
+
+- refactor(retrieval, cli): `opensdmx run` reimplemented `retrieval.run_query()` — public API, exported in `__all__` — and the copies had diverged. The CLI honoured `OPENSDMX_PROVIDER` and accepted `--provider`; the library did neither, so the same YAML file behaved differently depending on the caller. `run_query()` gains a `provider` argument and the env fallback; the CLI now calls it. **Behaviour change for library users**: a query file with no `provider` field now respects `OPENSDMX_PROVIDER` instead of silently staying on the default.
+- feat(base): `set_provider_from_env()` — resolves `OPENSDMX_PROVIDER` including aliases, so library entry points and the CLI agree. `set_provider()` alone never resolved aliases.
+- refactor(cli): extracted `_load_and_filter()` and `_fetch_frame()`. The `load_dataset → set_filters → get_data → enrich_with_labels` pipeline was written three times, and the `plot` copy had already degraded — it did not capture `set_filters` warnings, so a suspicious filter value was reported by `get` and silently ignored by `plot`. Verified: `plot` now surfaces it.
+- refactor(cli): extracted `_write_output()`, duplicated between `get` and `run` down to a one-word difference in the error string (`unsupported output format` vs `unsupported format`). `run` now uses the former wording.
+- perf(discovery): `parse_bulk_constraints()` builds the tree once. `_extract_bulk_long_ids` and `_parse_bulk_constraint_xml` each called `xml_parse()` on the same bulk contentconstraint bytes — the largest XML the library fetches — for two full tree builds and two namespace scans.
+- chore(db_cache): deleted `bulk_constraint_fetch` and `bulk_constraint_index`. Written on every catalog rebuild, never read: their only reader had no callers. The signal travels in the `has_constraint` column of `dataflows.parquet`.
+- test: 15 regressions in `tests/test_phase2_dedup.py`. Suite 243 → 258, ruff and mypy strict green, real-CLI smoke on `get --query-file`, `run` and `plot`.
+
 ## 2026-07-18 - v0.14.1
 
 - release: patch shipping the four Phase 1 bug fixes below. Most user-visible is `-o csv`, which emitted corrupt CSV whenever a field contained a comma — `which` and `providers` both do. No API change.

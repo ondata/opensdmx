@@ -237,7 +237,6 @@ class TestAllAvailable:
                 patch("opensdmx.discovery._dataflow_cache_path", return_value=cache),
                 patch("opensdmx.discovery._filter_invalid", side_effect=lambda df: df),
                 patch("opensdmx.db_cache.save_available_constraints"),
-                patch("opensdmx.db_cache.save_bulk_constraint_index"),
             ):
                 df = all_available()
         finally:

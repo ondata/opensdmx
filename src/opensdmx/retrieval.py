@@ -151,18 +151,23 @@ def enrich_with_labels(dataset: dict[str, Any], data: pl.DataFrame) -> pl.DataFr
     return data
 
 
-def run_query(query_file: str) -> pl.DataFrame:
+def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
     """Run a query from a YAML file saved with `opensdmx get --query-file`.
+
+    Provider resolution, highest precedence first: the `provider` argument, the
+    file's `provider` alias, its `provider_url`, then the `OPENSDMX_PROVIDER`
+    environment variable. If none apply the active provider is left untouched.
 
     Args:
         query_file: path to the YAML query file
+        provider:   override the provider named in the file
 
     Returns:
         Polars DataFrame
     """
     import yaml
     from pathlib import Path
-    from .base import PROVIDERS, set_provider
+    from .base import PROVIDER_ALIASES, PROVIDERS, resolve_provider, set_provider, set_provider_from_env
 
     path = Path(query_file)
     if not path.exists():
@@ -172,10 +177,16 @@ def run_query(query_file: str) -> pl.DataFrame:
         q = yaml.safe_load(fh)
 
     alias = q.get("provider")
-    if alias and alias in PROVIDERS:
-        set_provider(alias)
+    if provider:
+        # agency_id falls back to OPENSDMX_AGENCY inside resolve_provider, so a
+        # custom --provider URL keeps the agency the CLI already resolved.
+        resolve_provider(provider, agency_id=q.get("agency_id") or None)
+    elif alias and PROVIDER_ALIASES.get(alias, alias) in PROVIDERS:
+        set_provider(PROVIDER_ALIASES[alias] if alias in PROVIDER_ALIASES else alias)
     elif q.get("provider_url"):
         set_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
+    else:
+        set_provider_from_env()
 
     dataset_id = q.get("dataset")
     if not dataset_id:
