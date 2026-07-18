@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-07-18 - v0.14.1
+
+- release: patch shipping the four Phase 1 bug fixes below. Most user-visible is `-o csv`, which emitted corrupt CSV whenever a field contained a comma — `which` and `providers` both do. No API change.
+
 ## 2026-07-18 - architecture review + Phase 1 bug fixes
 
 - docs: full architecture review in `docs/evaluation-v0.14.0.md` — data flow, 19 findings ranked by severity, refactoring strategy in 4 phases, plus an explicit "verified correct, do not change" list. Plan in `tasks/todo-architecture-review.md`.
