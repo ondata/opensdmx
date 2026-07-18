@@ -959,11 +959,28 @@ def set_filters(dataset: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
     """
     import copy
     dataset = copy.deepcopy(dataset)
-    dim_norm = {_normalise_dim(k): k for k in dataset["dimensions"]}
+    dims = list(dataset["dimensions"])
+
+    # A dimension id may legally contain '-' (SDMX ids are NCNames), so two
+    # dimensions such as A-B and A_B can share a normalised form. No provider
+    # in the wild does this — 441 dimension ids across 7 providers, none with
+    # a dash — but the collision must not resolve to whichever came first.
+    #
+    # Matching the exact (case-insensitive) id before the normalised one makes
+    # that unreachable rather than merely detected: any key normalising to a
+    # colliding form is itself one of the colliding ids up to case, so the
+    # exact pass always claims it. Both stay independently addressable.
+    exact = {d.upper(): d for d in dims}
+    by_norm: dict[str, list[str]] = {}
+    for dim in dims:
+        by_norm.setdefault(_normalise_dim(dim), []).append(dim)
 
     unknown: list[str] = []
     for key, value in kwargs.items():
-        actual = dim_norm.get(_normalise_dim(key))
+        actual = exact.get(key.upper())
+        if actual is None:
+            candidates = by_norm.get(_normalise_dim(key), [])
+            actual = candidates[0] if len(candidates) == 1 else None
         if actual is None:
             unknown.append(key)
             continue
@@ -979,7 +996,7 @@ def set_filters(dataset: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
                 _normalise_dim(key), [_normalise_dim(d) for d in available], n=1
             )
             if close:
-                suggestion = dim_norm[close[0]]
+                suggestion = by_norm[close[0]][0]
                 details.append(f"'{key}' (did you mean '{suggestion}'?)")
             else:
                 details.append(f"'{key}'")

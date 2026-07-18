@@ -91,6 +91,29 @@ def test_set_filters_underscore_still_works():
     assert set_filters(ds, na_item="B1GQ")["filters"]["NA_ITEM"] == "B1GQ"
 
 
+def test_set_filters_exact_id_wins_over_normalised_collision():
+    """SDMX ids are NCNames, so 'A-B' and 'A_B' may coexist and share a
+    normalised form. Matching the exact id first keeps both addressable and
+    stops the pair resolving to whichever was declared first."""
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1})
+    assert set_filters(ds, **{"A-B": "X"})["filters"]["A-B"] == "X"
+    assert set_filters(ds, **{"A_B": "Y"})["filters"]["A_B"] == "Y"
+
+
+def test_set_filters_collision_resolves_case_insensitively():
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1})
+    lower_dash = set_filters(ds, **{"a-b": "X"})["filters"]
+    assert lower_dash["A-B"] == "X" and lower_dash["A_B"] == "."
+    lower_under = set_filters(ds, **{"a_b": "Y"})["filters"]
+    assert lower_under["A_B"] == "Y" and lower_under["A-B"] == "."
+
+
+def test_set_filters_collision_does_not_break_other_dimensions():
+    """A dataset merely containing such a pair stays usable."""
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1, "GEO": 2})
+    assert set_filters(ds, geo="IT")["filters"]["GEO"] == "IT"
+
+
 # ── get_dimension_values ─────────────────────────────────────────────
 
 def test_get_dimension_values_case_insensitive():
