@@ -86,15 +86,26 @@ def _emit(data: object, df: pl.DataFrame | None = None) -> None:
     elif _output_mode == "csv":
         if df is not None:
             sys.stdout.write(df.write_csv())
+        elif isinstance(data, list) and data:
+            # Let Polars handle quoting: hand-rolled joining corrupts any field
+            # containing a comma. Values are stringified so a heterogeneous
+            # column can never fail schema inference.
+            import polars as pl
+            keys = list(data[0].keys())
+            rows = [
+                {k: "" if row.get(k) is None else str(row.get(k)) for k in keys}
+                for row in data
+            ]
+            sys.stdout.write(pl.DataFrame(rows).write_csv())
         else:
-            # Fallback: serialise list-of-dicts manually
-            if isinstance(data, list) and data:
-                keys = list(data[0].keys())
-                sys.stdout.write(",".join(keys) + "\n")
-                for row in data:
-                    sys.stdout.write(",".join(str(row.get(k, "")) for k in keys) + "\n")
-            else:
-                sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
+            # Nested or scalar payloads have no faithful flat-CSV form: emit
+            # JSON as before, but say so rather than doing it silently. An
+            # empty list is not formless, just empty — no warning for it.
+            if not isinstance(data, list):
+                err_console.print(
+                    "[yellow]Warning:[/yellow] this command has no CSV form; emitting JSON."
+                )
+            sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 
 def _version_callback(value: bool) -> None:
@@ -1174,8 +1185,9 @@ def get(
                     probe = get_data(ds, last_n_observations=1)
                 n_series = len(probe)
                 if n_series > _LARGE_DATASET_THRESHOLD:
+                    _scope = "with the current filters" if filters else "no filters set"
                     err_console.print(
-                        f"[yellow]Warning:[/yellow] this dataset has ~{n_series:,} series (no filters set).\n"
+                        f"[yellow]Warning:[/yellow] this dataset has ~{n_series:,} series ({_scope}).\n"
                         f"Use [cyan]--last-n N[/cyan] to limit results, or [cyan]--yes[/cyan] to download all "
                         f"in a single bulk request (no chunking — typically fast)."
                     )
@@ -1195,6 +1207,10 @@ def get(
         if e.response.status_code in (400, 404):
             err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
         raise typer.Exit(1)
+    except typer.Exit:
+        # typer.Exit subclasses RuntimeError, so the handler below would swallow
+        # a deliberate exit and reprint it as "Error: 1".
+        raise
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)

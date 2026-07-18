@@ -73,8 +73,11 @@ def _get_code_label(codelist_id: str | None, code_value: str) -> str:
     # Only single-value codes can be looked up; skip multi-value (AT+BE+...)
     if "+" in code_value:
         return ""
+    from .base import get_provider
     from .db_cache import get_cached_codelist_values
-    cached = get_cached_codelist_values(codelist_id)
+    # Values are cached under "{codelist_id}:{lang}" (see discovery._load_codelist_records);
+    # reading with the bare id never matches.
+    cached = get_cached_codelist_values(f"{codelist_id}:{get_provider()['language']}")
     if not cached:
         return ""
     for entry in cached:
