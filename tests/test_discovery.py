@@ -53,13 +53,65 @@ def test_set_filters_list_value():
     assert result["filters"]["GEO"] == ["IT", "FR", "DE"]
 
 
-def test_set_filters_unknown_dimension_warns(caplog):
-    import logging
+def test_set_filters_unknown_dimension_raises():
+    """Unknown filters used to be dropped with a log line, which silently
+    returned unfiltered data. They now fail loudly."""
+    import pytest
+
     ds = _make_dataset(FREQ=0)
-    with caplog.at_level(logging.WARNING, logger="opensdmx.discovery"):
-        result = set_filters(ds, NONEXISTENT="X")
-    assert any("NONEXISTENT" in r.message for r in caplog.records)
-    assert "NONEXISTENT" not in result["filters"]
+    with pytest.raises(ValueError, match="NONEXISTENT"):
+        set_filters(ds, NONEXISTENT="X")
+
+
+def test_set_filters_unknown_dimension_lists_available():
+    import pytest
+
+    ds = _make_dataset(FREQ=0)
+    with pytest.raises(ValueError, match="Available: FREQ"):
+        set_filters(ds, NONEXISTENT="X")
+
+
+def test_set_filters_suggests_close_match():
+    import pytest
+
+    ds = _make_dataset(FREQ=0)
+    with pytest.raises(ValueError, match="did you mean 'FREQ'"):
+        set_filters(ds, FREQQ="A")
+
+
+def test_set_filters_dash_matches_underscore():
+    """CLI convention is dashes, SDMX ids use underscores."""
+    ds = _make_dataset(NA_ITEM=0)
+    result = set_filters(ds, **{"na-item": "B1GQ"})
+    assert result["filters"]["NA_ITEM"] == "B1GQ"
+
+
+def test_set_filters_underscore_still_works():
+    ds = _make_dataset(NA_ITEM=0)
+    assert set_filters(ds, na_item="B1GQ")["filters"]["NA_ITEM"] == "B1GQ"
+
+
+def test_set_filters_exact_id_wins_over_normalised_collision():
+    """SDMX ids are NCNames, so 'A-B' and 'A_B' may coexist and share a
+    normalised form. Matching the exact id first keeps both addressable and
+    stops the pair resolving to whichever was declared first."""
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1})
+    assert set_filters(ds, **{"A-B": "X"})["filters"]["A-B"] == "X"
+    assert set_filters(ds, **{"A_B": "Y"})["filters"]["A_B"] == "Y"
+
+
+def test_set_filters_collision_resolves_case_insensitively():
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1})
+    lower_dash = set_filters(ds, **{"a-b": "X"})["filters"]
+    assert lower_dash["A-B"] == "X" and lower_dash["A_B"] == "."
+    lower_under = set_filters(ds, **{"a_b": "Y"})["filters"]
+    assert lower_under["A_B"] == "Y" and lower_under["A-B"] == "."
+
+
+def test_set_filters_collision_does_not_break_other_dimensions():
+    """A dataset merely containing such a pair stays usable."""
+    ds = _make_dataset(**{"A-B": 0, "A_B": 1, "GEO": 2})
+    assert set_filters(ds, geo="IT")["filters"]["GEO"] == "IT"
 
 
 # ── get_dimension_values ─────────────────────────────────────────────

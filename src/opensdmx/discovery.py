@@ -937,18 +937,73 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
+def _normalise_dim(name: str) -> str:
+    """Normalise a dimension name for matching: upper-case, '-' same as '_'.
+
+    SDMX dimension ids use underscores (NA_ITEM, TIME_PERIOD); CLI convention
+    is dashes. Treating them as equivalent lets `--na-item` and `--na_item`
+    both work, the same way matching is already case-insensitive.
+    """
+    return name.upper().replace("-", "_")
+
+
 def set_filters(dataset: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
-    """Set dimension filters (case-insensitive). Returns a new dataset dict."""
+    """Set dimension filters. Returns a new dataset dict.
+
+    Matching is case-insensitive and treats '-' and '_' as equivalent.
+
+    Raises:
+        ValueError: if a name matches no dimension. Unknown filters used to be
+            dropped with a log line, which meant a typo silently returned
+            unfiltered data — the wrong answer, with the only signal on stderr.
+    """
     import copy
     dataset = copy.deepcopy(dataset)
-    dim_upper = {k.upper(): k for k in dataset["dimensions"]}
+    dims = list(dataset["dimensions"])
 
+    # A dimension id may legally contain '-' (SDMX ids are NCNames), so two
+    # dimensions such as A-B and A_B can share a normalised form. No provider
+    # in the wild does this — 441 dimension ids across 7 providers, none with
+    # a dash — but the collision must not resolve to whichever came first.
+    #
+    # Matching the exact (case-insensitive) id before the normalised one makes
+    # that unreachable rather than merely detected: any key normalising to a
+    # colliding form is itself one of the colliding ids up to case, so the
+    # exact pass always claims it. Both stay independently addressable.
+    exact = {d.upper(): d for d in dims}
+    by_norm: dict[str, list[str]] = {}
+    for dim in dims:
+        by_norm.setdefault(_normalise_dim(dim), []).append(dim)
+
+    unknown: list[str] = []
     for key, value in kwargs.items():
-        actual = dim_upper.get(key.upper())
+        actual = exact.get(key.upper())
         if actual is None:
-            logger.warning("Dimension '%s' not found. Ignoring.", key)
+            candidates = by_norm.get(_normalise_dim(key), [])
+            actual = candidates[0] if len(candidates) == 1 else None
+        if actual is None:
+            unknown.append(key)
             continue
         dataset["filters"][actual] = value
+
+    if unknown:
+        import difflib
+
+        available = list(dataset["dimensions"])
+        details = []
+        for key in unknown:
+            close = difflib.get_close_matches(
+                _normalise_dim(key), [_normalise_dim(d) for d in available], n=1
+            )
+            if close:
+                suggestion = by_norm[close[0]][0]
+                details.append(f"'{key}' (did you mean '{suggestion}'?)")
+            else:
+                details.append(f"'{key}'")
+        raise ValueError(
+            f"unknown dimension(s): {', '.join(details)}. "
+            f"Available: {', '.join(available)}"
+        )
 
     return dataset
 

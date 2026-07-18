@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-07-18 - v0.15.0 - strict filter matching
+
+- fix(discovery): `set_filters` now treats `-` and `_` as equivalent when matching dimension names, so `--na-item` reaches the `NA_ITEM` dimension. CLI convention is dashes, SDMX ids use underscores; matching was already case-insensitive, this extends the same leniency.
+- **BREAKING** fix(discovery): an unknown filter name now raises `ValueError` instead of being dropped with a log line. The old behaviour ran the query unfiltered and put the only signal on stderr — for a tool whose primary consumer reads stdout, that returned wrong data with no indication. Verified: `opensdmx get NAMA_10_GDP --geo IT --na-item B1GQ ...` used to emit 20+ `na_item` values when one was asked for. The error carries a `difflib` suggestion and the available dimension list.
+- **Correction to the Phase 2 record.** That refactor claimed `plot` had degraded by not capturing `set_filters` warnings. It had not. `catch_warnings` genuinely appeared in `get`/`run` and not `plot`, but **nothing in the package calls `warnings.warn`** — the messages come from `logger.warning` via logging, independently. Confirmed by running `plot` at the v0.14.1 tag: same output. The claim was verified only in the after state, never the before.
+- refactor(cli): removed the dead `catch_warnings` blocks from `_load_and_filter` and `run`. They captured nothing, and Phase 2 had preserved them faithfully rather than deleting them — the opposite of that phase's purpose.
+- test: replaced `test_load_and_filter_surfaces_set_filters_warnings`, which passed only because its own mock raised a warning the real code never raises. 5 new tests on dash matching, the raise, the suggestion and the available list. Suite 264 → 268.
+- docs: `docs/evaluation-v0.14.0.md` finding 6 carries the correction inline; new finding 20 documents the filter bug.
+
 ## 2026-07-18 - Phase 2: remove duplication
 
 - refactor(retrieval, cli): `opensdmx run` reimplemented `retrieval.run_query()` — public API, exported in `__all__` — and the copies had diverged. The CLI honoured `OPENSDMX_PROVIDER` and accepted `--provider`; the library did neither, so the same YAML file behaved differently depending on the caller. `run_query()` gains a `provider` argument and the env fallback; the CLI now calls it. **Behaviour change for library users**: a query file with no `provider` field now respects `OPENSDMX_PROVIDER` instead of silently staying on the default.

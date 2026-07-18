@@ -136,9 +136,17 @@ The correct shape is to **share the transport hygiene without sharing the rate-l
 
 Two implementations of one behaviour, already out of sync, with the library version being the weaker one — that is the version a downstream importer gets.
 
-**6. The same fetch block is written three times, and the third copy is degraded.** `cli.py:1156-1192`, `1282-1299`, `1416-1421`
+**6. The same fetch block is written three times.** `cli.py:1156-1192`, `1282-1299`, `1416-1421`
 
-`load_dataset → set_filters → get_data → enrich_with_labels` appears in `get`, `run` and `plot`. The `plot` copy does **not** capture `set_filters` warnings, so a suspicious filter value is reported by `get` and silently ignored by `plot`. The output-writing block is likewise duplicated between `get` and `run`, where the error strings differ by one word (`unsupported output format` vs `unsupported format`) — evidence of hand-copying.
+`load_dataset → set_filters → get_data → enrich_with_labels` appears in `get`, `run` and `plot`. The output-writing block is likewise duplicated between `get` and `run`, where the error strings differ by one word (`unsupported output format` vs `unsupported format`) — evidence of hand-copying.
+
+> **Correction.** This finding originally claimed the `plot` copy was *degraded* — that it did not capture `set_filters` warnings, so a suspicious filter reported by `get` was silently ignored by `plot`. **That was wrong**, and it survived into the Phase 2 commit and PR #50 before being caught.
+>
+> The observation behind it was real: `catch_warnings` appeared twice in `cli.py`, in `get` and `run`, not in `plot`. The inference was not. **Nothing in the package calls `warnings.warn`** — `set_filters` used `logger.warning`, which reaches stderr through logging regardless of any `catch_warnings` block. Verified by running `plot` against the v0.14.1 tag: it printed `Dimension 'na-item' not found. Ignoring.` before the refactor as well.
+>
+> Two lessons. First, the `catch_warnings` machinery in `get` and `run` was dead code from the start — Phase 2 preserved it faithfully instead of deleting it, which is the opposite of that phase's purpose. Second, the verification that "confirmed" the fix only exercised the *after* state; the same session had correctly established the `--na-item` behaviour as pre-existing precisely by testing *before* as well.
+>
+> The deduplication in Phase 2 stands on its own merits. Only this rationale was wrong. The dead `catch_warnings` blocks were removed in the follow-up that also made unknown filters raise (finding 20).
 
 **7. Packaging metadata is wrong in two directions.** `pyproject.toml`
 
@@ -196,6 +204,21 @@ The semantic branch returns at line 265; the category filter and all pagination 
 **18. Eager numpy costs 45 ms on every invocation.** `__init__.py:26` → `embed.py:8`
 
 Measured: 282 ms import, 238 ms with numpy stubbed. Paid by `--help`, `get` and `search`, none of which touch numpy. The module already uses lazy imports for `ollama`; applying the same to numpy recovers 16% of import time. The remaining ~240 ms is polars, httpx, rich and typer — genuinely needed.
+
+**20. An unknown filter name returned unfiltered data, with the only signal on stderr.** `discovery.py:940`
+
+Found during Phase 2 smoke-testing, not by the review itself, and pre-existing — reproduced against the released v0.14.1.
+
+`set_filters` matched dimension names case-insensitively but not dash-insensitively, so `--na-item` did not match the `NA_ITEM` dimension. The unmatched filter was then dropped with a `logger.warning` and the query ran unfiltered:
+
+```
+$ opensdmx get NAMA_10_GDP --geo IT --na-item B1GQ --unit CP_MEUR --freq A --last-n 1
+# stdout carries 20+ na_item values; only B1GQ was asked for
+```
+
+Two defects compounding. The dash/underscore mismatch is a usability gap: CLI convention is dashes, SDMX ids use underscores, and `--na-item` is what a user naturally types. The silent drop is the dangerous half — for a tool whose stated primary consumer is an agent reading stdout, returning the wrong data with the only signal on stderr is a correctness hazard, and it applied to *any* misspelled dimension, not just dashed ones.
+
+Fixed by normalising `-` to `_` when matching, and by raising `ValueError` (with a `difflib` did-you-mean and the list of available dimensions) instead of dropping. Behaviour change on public API, so it ships in a minor version.
 
 **19. `docs/architecture.md` is stale.** Module map omits `hub.py`, `categories.py`, `guide.py`, `which.py`, `cache_config.py` — 1.092 lines, roughly 20% of the package, including the distinctive ISTAT hub path. It also contradicts itself on the cache directory: `~/.cache/opensdmx/eurostat/` in one section, `{agency_id}` in another. The code (`base.py:156`) uses the **preset name** for preset providers and `agency_id` only for custom ones, so the second statement is wrong.
 
@@ -287,3 +310,4 @@ These were examined and found sound. Several look like problems at first glance.
 | 17 | `discovery.py:154-155` | Largest XML parsed twice | Medium |
 | 18 | `__init__.py:26` | Eager numpy costs 45 ms per invocation | Low-medium |
 | 19 | `docs/architecture.md` | 5 modules missing; cache-dir self-contradiction | Low |
+| 20 | `discovery.py:940` | An unknown filter name was dropped with a log line, silently returning unfiltered data on stdout | **High** (found after the review, during Phase 2 smoke-testing) |

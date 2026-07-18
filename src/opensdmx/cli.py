@@ -129,22 +129,18 @@ def _write_output(df: pl.DataFrame, out: Path | None) -> None:
 
 
 def _load_and_filter(dataset_id: str, filters: dict[str, Any]) -> dict[str, Any]:
-    """Load a dataset and apply filters, surfacing any `set_filters` warnings.
+    """Load a dataset and apply filters.
 
-    Shared by `get` and `plot` so a suspicious filter value is reported the
-    same way by both.
+    Shared by `get` and `plot` so both reject a bad filter identically.
+    `set_filters` raises `ValueError` on an unknown dimension name; the
+    caller turns that into a CLI error rather than querying unfiltered.
     """
-    import warnings as _warnings
     from . import load_dataset, set_filters
 
     with console.status("[dim]Loading dataset...[/dim]"):
         ds: dict[str, Any] = load_dataset(dataset_id)
         if filters:
-            with _warnings.catch_warnings(record=True) as _caught:
-                _warnings.simplefilter("always")
-                ds = set_filters(ds, **filters)
-            for _w in _caught:
-                err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+            ds = set_filters(ds, **filters)
     return ds
 
 
@@ -1304,8 +1300,6 @@ def run(
       opensdmx run unemployment.yaml --out results.csv
       opensdmx run query.yaml --out results.parquet
     """
-    import warnings as _warnings
-
     import yaml
 
     from . import run_query
@@ -1316,12 +1310,8 @@ def run(
         _apply_provider(provider)
 
     try:
-        with _warnings.catch_warnings(record=True) as _caught:
-            _warnings.simplefilter("always")
-            with console.status("[dim]Running query...[/dim]"):
-                df = run_query(str(query_file), provider=provider)
-        for _w in _caught:
-            err_console.print(f"[yellow]Warning:[/yellow] {_w.message}")
+        with console.status("[dim]Running query...[/dim]"):
+            df = run_query(str(query_file), provider=provider)
     except FileNotFoundError:
         err_console.print(f"[red]Error:[/red] file not found: {query_file}")
         raise typer.Exit(1)
