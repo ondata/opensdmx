@@ -97,22 +97,44 @@ def set_provider(
         }
 
 
+def resolve_provider(name: str, agency_id: str | None = None) -> None:
+    """Set the active provider from a preset name, an alias, or a base URL.
+
+    Single resolution path shared by the CLI and by library entry points, so a
+    name is accepted, rejected and alias-expanded identically everywhere.
+
+    Args:
+        name:      preset key, alias (see PROVIDER_ALIASES), or base URL
+        agency_id: agency for a custom URL; falls back to OPENSDMX_AGENCY
+
+    Raises:
+        ValueError: if `name` is neither a known preset/alias nor a URL.
+    """
+    import os
+
+    resolved = PROVIDER_ALIASES.get(name, name)
+    if resolved not in PROVIDERS and not resolved.startswith("http"):
+        valid = ", ".join(sorted(PROVIDERS))
+        raise ValueError(f"unknown provider '{name}'. Valid: {valid}")
+    set_provider(resolved, agency_id=agency_id or os.environ.get("OPENSDMX_AGENCY"))
+
+
 def set_provider_from_env() -> bool:
     """Set the active provider from OPENSDMX_PROVIDER, resolving aliases.
 
     Returns True if the variable was set and applied, False otherwise. Kept
     here rather than in the CLI so library entry points resolve the provider
     the same way `opensdmx` does.
+
+    Raises:
+        ValueError: if OPENSDMX_PROVIDER holds an unknown non-URL value.
     """
     import os
 
     name = os.environ.get("OPENSDMX_PROVIDER")
     if not name:
         return False
-    set_provider(
-        PROVIDER_ALIASES.get(name, name),
-        agency_id=os.environ.get("OPENSDMX_AGENCY"),
-    )
+    resolve_provider(name)
     return True
 
 

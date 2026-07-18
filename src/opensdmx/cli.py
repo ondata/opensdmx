@@ -208,16 +208,17 @@ def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
 def _apply_provider(provider: str | None) -> None:
     """Set active provider from CLI option or OPENSDMX_PROVIDER env var."""
     import os
-    resolved = provider or os.environ.get("OPENSDMX_PROVIDER")
-    if resolved:
-        from .base import PROVIDER_ALIASES, PROVIDERS, set_provider
-        resolved = PROVIDER_ALIASES.get(resolved, resolved)
-        if resolved not in PROVIDERS and not resolved.startswith("http"):
-            valid = ", ".join(sorted(PROVIDERS))
-            err_console.print(f"[red]Error:[/red] unknown provider '{resolved}'. Valid: {valid}")
-            raise typer.Exit(1)
-        agency_id = os.environ.get("OPENSDMX_AGENCY")
-        set_provider(resolved, agency_id=agency_id)
+
+    from .base import resolve_provider
+
+    name = provider or os.environ.get("OPENSDMX_PROVIDER")
+    if not name:
+        return
+    try:
+        resolve_provider(name)
+    except ValueError as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
 
 
 def _apply_headers(header: list[str] | None) -> None:

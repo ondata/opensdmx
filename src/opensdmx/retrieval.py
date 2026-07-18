@@ -167,7 +167,7 @@ def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
     """
     import yaml
     from pathlib import Path
-    from .base import PROVIDERS, PROVIDER_ALIASES, set_provider, set_provider_from_env
+    from .base import PROVIDER_ALIASES, PROVIDERS, resolve_provider, set_provider, set_provider_from_env
 
     path = Path(query_file)
     if not path.exists():
@@ -178,9 +178,11 @@ def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
 
     alias = q.get("provider")
     if provider:
-        set_provider(PROVIDER_ALIASES.get(provider, provider))
-    elif alias and alias in PROVIDERS:
-        set_provider(alias)
+        # agency_id falls back to OPENSDMX_AGENCY inside resolve_provider, so a
+        # custom --provider URL keeps the agency the CLI already resolved.
+        resolve_provider(provider, agency_id=q.get("agency_id") or None)
+    elif alias and PROVIDER_ALIASES.get(alias, alias) in PROVIDERS:
+        set_provider(PROVIDER_ALIASES[alias] if alias in PROVIDER_ALIASES else alias)
     elif q.get("provider_url"):
         set_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
     else:

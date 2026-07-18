@@ -105,6 +105,77 @@ def test_run_query_file_provider_wins_over_env(tmp_path, monkeypatch):
     assert seen == [PROVIDERS["eurostat"]["agency_id"]]
 
 
+# ── Review follow-up: provider resolution edge cases ─────────────────
+
+
+def test_resolve_provider_expands_alias():
+    from opensdmx.base import resolve_provider
+
+    set_provider("istat")
+    resolve_provider("estat")
+    assert get_provider()["agency_id"] == PROVIDERS["eurostat"]["agency_id"]
+
+
+def test_resolve_provider_rejects_unknown_name():
+    from opensdmx.base import resolve_provider
+
+    with pytest.raises(ValueError, match="unknown provider 'eurostatt'"):
+        resolve_provider("eurostatt")
+
+
+def test_resolve_provider_accepts_url_with_agency():
+    from opensdmx.base import resolve_provider
+
+    resolve_provider("https://example.org/sdmx", agency_id="MYAG")
+    assert get_provider()["base_url"] == "https://example.org/sdmx"
+    assert get_provider()["agency_id"] == "MYAG"
+
+
+def test_set_provider_from_env_rejects_typo(monkeypatch):
+    """A typo used to become a bogus custom provider and fail later obscurely."""
+    monkeypatch.setenv("OPENSDMX_PROVIDER", "eurostatt")
+    with pytest.raises(ValueError, match="unknown provider"):
+        set_provider_from_env()
+
+
+def test_run_query_file_alias_beats_env(tmp_path, monkeypatch):
+    """`provider: estat` in the file must win over OPENSDMX_PROVIDER."""
+    qfile = _write_query(tmp_path, provider="estat")
+    monkeypatch.setenv("OPENSDMX_PROVIDER", "istat")
+    set_provider("istat")
+
+    seen: list[str] = []
+
+    def spy_load(dataset_id):
+        seen.append(get_provider()["agency_id"])
+        raise RuntimeError("stop")
+
+    with patch("opensdmx.retrieval.load_dataset", side_effect=spy_load):
+        with pytest.raises(RuntimeError):
+            run_query(qfile)
+
+    assert seen == [PROVIDERS["eurostat"]["agency_id"]]
+
+
+def test_run_query_custom_url_keeps_agency(tmp_path, monkeypatch):
+    """`--provider <url>` must not blank the agency the environment supplies."""
+    qfile = _write_query(tmp_path)
+    monkeypatch.setenv("OPENSDMX_AGENCY", "MYAG")
+    monkeypatch.delenv("OPENSDMX_PROVIDER", raising=False)
+
+    seen: list[str] = []
+
+    def spy_load(dataset_id):
+        seen.append(get_provider()["agency_id"])
+        raise RuntimeError("stop")
+
+    with patch("opensdmx.retrieval.load_dataset", side_effect=spy_load):
+        with pytest.raises(RuntimeError):
+            run_query(qfile, provider="https://example.org/sdmx")
+
+    assert seen == ["MYAG"]
+
+
 def test_run_query_missing_file_raises():
     with pytest.raises(FileNotFoundError):
         run_query("/nonexistent/query.yaml")
