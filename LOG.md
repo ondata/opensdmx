@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-07-18 - architecture review + Phase 1 bug fixes
+
+- docs: full architecture review in `docs/evaluation-v0.14.0.md` — data flow, 19 findings ranked by severity, refactoring strategy in 4 phases, plus an explicit "verified correct, do not change" list. Plan in `tasks/todo-architecture-review.md`.
+- fix(cli): `-o csv` emitted corrupt CSV — `_emit` joined fields with `","` and no quoting, so any description containing a comma split into extra columns (`which`, `providers`). Now delegates to Polars `write_csv()`; `str()` semantics preserved.
+- fix(cli): `-o csv` on a nested payload (`info`, `constraints` summary, `siblings`) fell back to JSON silently. Still JSON — there is no faithful flat form — but now says so on stderr. Two deliberate behaviour additions, not restorations: that stderr warning is new (an empty list is exempt — it is empty, not formless), and a present-but-`None` value now renders as an empty cell instead of the literal `None`. stdout is byte-identical to before in every other case.
+- fix(cli): the large-dataset guard raised `typer.Exit(1)` inside a `try` whose `except Exception` caught it (`typer.Exit` subclasses `RuntimeError`), appending a spurious `Error: 1` after a correct warning. Handler now re-raises `typer.Exit`.
+- fix(cli): that warning said "no filters set" unconditionally, even when filters were passed.
+- fix(utils, ai): codelist values are cached under `{codelist_id}:{lang}` but were read with the bare id, so `_get_code_label` and the AI label map returned nothing on every provider — verified against the live cache (zero rows under a bare key). The AI context was listing raw codes with no labels.
+- chore(deps): declared `pandas` (imported at `cli.py:1456,1473`, previously resolved only transitively via plotnine); removed `duckdb`, declared since v0.2.6 and never imported.
+- test: 14 regressions in `tests/test_phase1_regressions.py`. Suite 229 → 243, ruff and mypy strict green, real-CLI smoke on `search` and `get`.
+
 ## 2026-07-17 - v0.14.0
 
 - release: export types to consumers via the `py.typed` marker (PEP 561) and full `mypy --strict` coverage across the package. No runtime or behaviour change.

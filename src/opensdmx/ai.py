@@ -76,7 +76,10 @@ def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") 
 
         labels: dict[str, str] = {}
         if codelist_id:
-            cached_vals = get_cached_codelist_values(codelist_id)
+            # Cached under "{codelist_id}:{lang}" — the bare id never matches.
+            cached_vals = get_cached_codelist_values(
+                f"{codelist_id}:{get_provider()['language']}"
+            )
             if cached_vals:
                 labels = {r["id"]: r["name"] for r in cached_vals}
         all_labels[dim_id] = labels
