@@ -129,10 +129,11 @@ def _write_output(df: pl.DataFrame, out: Path | None) -> None:
 
 
 def _load_and_filter(dataset_id: str, filters: dict[str, Any]) -> dict[str, Any]:
-    """Load a dataset and apply filters, surfacing any `set_filters` warnings.
+    """Load a dataset and apply filters.
 
-    Shared by `get` and `plot` so a suspicious filter value is reported the
-    same way by both.
+    Shared by `get` and `plot` so both reject a bad filter identically.
+    `set_filters` raises `ValueError` on an unknown dimension name; the
+    caller turns that into a CLI error rather than querying unfiltered.
     """
     from . import load_dataset, set_filters
 
