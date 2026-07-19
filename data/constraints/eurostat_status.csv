@@ -949,3 +949,324 @@ EARN_SES18_04,"Employees by sex, economic activity and educational attainment (2
 EARN_SES18_05,"Employees by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,8,87,0,"",2026-07-18
 EARN_SES18_12,"Mean hourly earnings by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,93,0,"",2026-07-18
 EARN_SES18_13,"Mean hourly earnings by sex, age and economic activity (2018)",ok,sdmx,9,95,0,"",2026-07-18
+EARN_SES18_14,"Mean hourly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,9,80,0,"",2026-07-19
+EARN_SES18_15,"Mean hourly earnings by sex, economic activity and employment contract (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_16,"Mean hourly earnings by sex, economic activity and educational attainment (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_17,"Mean hourly earnings by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,9,93,0,"",2026-07-19
+EARN_SES18_18,"Mean hourly earnings by sex, size class of the enterprise and occupation (2018)",ok,sdmx,8,74,0,"",2026-07-19
+EARN_SES18_19,"Mean monthly earnings by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,93,0,"",2026-07-19
+EARN_SES18_20,"Mean monthly earnings by sex, age and economic activity (2018)",ok,sdmx,9,95,0,"",2026-07-19
+EARN_SES18_21,"Mean monthly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,9,80,0,"",2026-07-19
+EARN_SES18_22,"Mean monthly earnings by sex, economic activity and employment contract (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_23,"Mean monthly earnings by sex, economic activity and educational attainment (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_24,"Mean monthly earnings by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,9,94,0,"",2026-07-19
+EARN_SES18_25,"Mean monthly earnings by sex, size class of the enterprise and occupation (2018)",ok,sdmx,8,74,0,"",2026-07-19
+EARN_SES18_26,"Mean annual earnings by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_27,"Mean annual earnings by sex, age and economic activity (2018)",ok,sdmx,9,91,0,"",2026-07-19
+EARN_SES18_28,"Mean annual earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,9,76,0,"",2026-07-19
+EARN_SES18_29,"Mean annual earnings by sex, economic activity and employment contract (2018)",ok,sdmx,9,85,0,"",2026-07-19
+EARN_SES18_30,"Mean annual earnings by sex, economic activity and educational attainment (2018)",ok,sdmx,9,85,0,"",2026-07-19
+EARN_SES18_31,"Mean annual earnings by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,9,90,0,"",2026-07-19
+EARN_SES18_32,"Mean annual earnings by sex, size class of the enterprise and occupation (2018)",ok,sdmx,8,70,0,"",2026-07-19
+EARN_SES18_33,"Mean monthly hours paid by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES18_34,"Mean monthly hours paid by sex, age and economic activity (2018)",ok,sdmx,9,91,0,"",2026-07-19
+EARN_SES18_35,"Mean monthly hours paid by sex, age and occupation - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,9,76,0,"",2026-07-19
+EARN_SES18_36,"Mean monthly hours paid by sex, economic activity and employment contract (2018)",ok,sdmx,9,85,0,"",2026-07-19
+EARN_SES18_37,"Mean monthly hours paid by sex, economic activity and educational attainment (2018)",ok,sdmx,9,85,0,"",2026-07-19
+EARN_SES18_38,"Mean monthly hours paid by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,9,90,0,"",2026-07-19
+EARN_SES18_39,"Mean monthly hours paid by sex, size class of the enterprise and occupation (2018)",ok,sdmx,8,70,0,"",2026-07-19
+EARN_SES18_40,"Mean annual holidays by sex, economic activity and collective pay agreement (2018)",ok,sdmx,9,86,0,"",2026-07-19
+EARN_SES18_41,"Mean annual holidays by sex, age and economic activity (2018)",ok,sdmx,9,88,0,"",2026-07-19
+EARN_SES18_42,"Mean annual holidays by sex, age and occupation - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,9,73,0,"",2026-07-19
+EARN_SES18_43,"Mean annual holidays by sex, economic activity and employment contract (2018)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES18_44,"Mean annual holidays by sex, economic activity and educational attainment (2018)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES18_45,"Mean annual holidays by sex, economic activity and length of service with the enterprise (2018)",ok,sdmx,9,87,0,"",2026-07-19
+EARN_SES18_46,"Mean annual holidays by sex, size class of the enterprise and occupation (2018)",ok,sdmx,8,67,0,"",2026-07-19
+EARN_SES18_47,"Mean hourly earnings by sex, economic activity and occupation (2018)",ok,sdmx,9,98,0,"",2026-07-19
+EARN_SES18_48,"Mean monthly earnings by sex, economic activity and occupation (2018)",ok,sdmx,9,99,0,"",2026-07-19
+EARN_SES18_49,"Mean annual earnings by sex, economic activity and occupation (2018)",ok,sdmx,9,94,0,"",2026-07-19
+EARN_SES18_50,"Mean monthly hours paid by sex, economic activity and occupation (2018)",ok,sdmx,9,95,0,"",2026-07-19
+EARN_SES18_51,"Mean annual holidays by sex, economic activity and occupation (2018)",ok,sdmx,9,92,0,"",2026-07-19
+EARN_SES18_52,"Employees by sex, economic activity and employment contract (2018)",ok,sdmx,8,83,0,"",2026-07-19
+EARN_SES18_53,"Employees by sex, size class of the enterprise and occupation (2018)",ok,sdmx,7,68,0,"",2026-07-19
+EARN_SES18_54,"Employees by sex, economic activity and occupation (2018)",ok,sdmx,8,92,0,"",2026-07-19
+EARN_SES18_ACTRL,"Annual earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,5,45,0,"",2026-07-19
+EARN_SES18_ADECI,"Annual earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,6,51,0,"",2026-07-19
+EARN_SES18_HFTPT,Hourly earnings by economic activity and contractual working time (enterprises with 10 employed persons or more) (2018),ok,sdmx,6,54,0,"",2026-07-19
+EARN_SES18_MCTRL,"Monthly earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,5,45,0,"",2026-07-19
+EARN_SES18_MDECI,"Monthly earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,6,52,0,"",2026-07-19
+EARN_SES18_RANN,"Mean annual earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,5,117,0,"",2026-07-19
+EARN_SES18_RHR,"Mean hourly earnings by NUTS 1 region (enterprises with 10 employees or more) - NACE Rev. 2, B-S excluding O (2018)",ok,sdmx,5,119,0,"",2026-07-19
+EARN_SES22_01,"Employees by sex, economic activity and collective pay agreement (2022)",ok,sdmx,8,82,0,"",2026-07-19
+EARN_SES22_02,"Employees by sex, age and economic activity (2022)",ok,sdmx,8,84,0,"",2026-07-19
+EARN_SES22_03,"Employees by sex, age, occupation and size class of the enterprise - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,8,74,0,"",2026-07-19
+EARN_SES22_04,"Employees by sex, economic activity and educational attainment (2022)",ok,sdmx,8,78,0,"",2026-07-19
+EARN_SES22_05,"Employees by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,8,83,0,"",2026-07-19
+EARN_SES22_12,"Mean hourly earnings by sex, economic activity and collective pay agreement (2022)",ok,sdmx,9,88,0,"",2026-07-19
+EARN_SES22_13,"Mean hourly earnings by sex, age and economic activity (2022)",ok,sdmx,9,90,0,"",2026-07-19
+EARN_SES22_14,"Mean hourly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,9,75,0,"",2026-07-19
+EARN_SES22_15,"Mean hourly earnings by sex, economic activity and employment contract (2022)",ok,sdmx,9,84,0,"",2026-07-19
+EARN_SES22_16,"Mean hourly earnings by sex, economic activity and educational attainment (2022)",ok,sdmx,9,84,0,"",2026-07-19
+EARN_SES22_17,"Mean hourly earnings by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES22_18,"Mean hourly earnings by sex, occupation and size class of the enterprise (2022)",ok,sdmx,8,69,0,"",2026-07-19
+EARN_SES22_19,"Mean monthly earnings by sex, economic activity and collective pay agreement (2022)",ok,sdmx,9,90,0,"",2026-07-19
+EARN_SES22_20,"Mean monthly earnings by sex, age and economic activity (2022)",ok,sdmx,9,91,0,"",2026-07-19
+EARN_SES22_21,"Mean monthly earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,9,77,0,"",2026-07-19
+EARN_SES22_22,"Mean monthly earnings by sex, economic activity and employment contract (2022)",ok,sdmx,9,86,0,"",2026-07-19
+EARN_SES22_23,"Mean monthly earnings by sex, economic activity and educational attainment (2022)",ok,sdmx,9,86,0,"",2026-07-19
+EARN_SES22_24,"Mean monthly earnings by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,9,91,0,"",2026-07-19
+EARN_SES22_25,"Mean monthly earnings by sex, occupation and size class of the enterprise (2022)",ok,sdmx,8,71,0,"",2026-07-19
+EARN_SES22_26,"Mean annual earnings by sex, economic activity and collective pay agreement (2022)",ok,sdmx,9,86,0,"",2026-07-19
+EARN_SES22_27,"Mean annual earnings by sex, age and economic activity (2022)",ok,sdmx,9,59,0,"",2026-07-19
+EARN_SES22_28,"Mean annual earnings by sex, age and occupation - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,9,73,0,"",2026-07-19
+EARN_SES22_29,"Mean annual earnings by sex, economic activity and employment contract (2022)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES22_30,"Mean annual earnings by sex, economic activity and educational attainment (2022)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES22_31,"Mean annual earnings by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,9,87,0,"",2026-07-19
+EARN_SES22_32,"Mean annual earnings by sex, occupation and size class of the enterprise (2022)",ok,sdmx,8,67,0,"",2026-07-19
+EARN_SES22_33,"Mean monthly hours paid by sex, economic activity and collective pay agreement (2022)",ok,sdmx,9,86,0,"",2026-07-19
+EARN_SES22_34,"Mean monthly hours paid by sex, age and economic activity (2022)",ok,sdmx,9,88,0,"",2026-07-19
+EARN_SES22_35,"Mean monthly hours paid by sex, age and occupation - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,9,73,0,"",2026-07-19
+EARN_SES22_36,"Mean monthly hours paid by sex, economic activity and employment contract (2022)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES22_37,"Mean monthly hours paid by sex, economic activity and educational attainment (2022)",ok,sdmx,9,82,0,"",2026-07-19
+EARN_SES22_38,"Mean monthly hours paid by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,9,87,0,"",2026-07-19
+EARN_SES22_39,"Mean monthly hours paid by sex, occupation and size class of the enterprise (2022)",ok,sdmx,8,67,0,"",2026-07-19
+EARN_SES22_40,"Mean annual holidays by sex, economic activity and collective pay agreement (2022)",ok,sdmx,9,83,0,"",2026-07-19
+EARN_SES22_41,"Mean annual holidays by sex, age and economic activity (2022)",ok,sdmx,9,85,0,"",2026-07-19
+EARN_SES22_42,"Mean annual holidays by sex, age and occupation - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,9,70,0,"",2026-07-19
+EARN_SES22_43,"Mean annual holidays by sex, economic activity and employment contract (2022)",ok,sdmx,9,79,0,"",2026-07-19
+EARN_SES22_44,"Mean annual holidays by sex, economic activity and educational attainment (2022)",ok,sdmx,9,79,0,"",2026-07-19
+EARN_SES22_45,"Mean annual holidays by sex, economic activity and length of service with the enterprise (2022)",ok,sdmx,9,84,0,"",2026-07-19
+EARN_SES22_46,"Mean annual holidays by sex, occupation and size class of the enterprise (2022)",ok,sdmx,8,64,0,"",2026-07-19
+EARN_SES22_47,"Mean hourly earnings by sex, occupation and economic activity (2022)",ok,sdmx,9,94,0,"",2026-07-19
+EARN_SES22_48,"Mean monthly earnings by sex, occupation and economic activity (2022)",ok,sdmx,9,96,0,"",2026-07-19
+EARN_SES22_49,"Mean annual earnings by sex, occupation and economic activity (2022)",ok,sdmx,9,92,0,"",2026-07-19
+EARN_SES22_50,"Mean monthly hours paid by sex, occupation and economic activity (2022)",ok,sdmx,9,92,0,"",2026-07-19
+EARN_SES22_51,"Mean annual holidays by sex, occupation and economic activity (2022)",ok,sdmx,9,89,0,"",2026-07-19
+EARN_SES22_52,"Employees by sex, economic activity and employment contract (2022)",ok,sdmx,7,76,0,"",2026-07-19
+EARN_SES22_53,"Employees by sex, occupation and size class of the enterprise (2022)",ok,sdmx,7,63,0,"",2026-07-19
+EARN_SES22_54,"Employees by sex, economic activity and occupation (2022)",ok,sdmx,8,88,0,"",2026-07-19
+EARN_SES22_ACTRL,"Annual earnings by economic control - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,5,42,0,"",2026-07-19
+EARN_SES22_ADECI,"Annual earnings by quantiles and contractual working time - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,6,48,0,"",2026-07-19
+EARN_SES22_HFTPT,Hourly earnings by economic activity and contractual working time (2022),ok,sdmx,6,50,0,"",2026-07-19
+EARN_SES22_MCTRL,"Monthly earnings by economic control - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,5,42,0,"",2026-07-19
+EARN_SES22_MDECI,"Monthly earnings by quantiles and contractual working time - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,6,49,0,"",2026-07-19
+EARN_SES22_RANN,"Mean annual earnings by NUTS 1 region - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,5,105,0,"",2026-07-19
+EARN_SES22_RHR,"Mean hourly earnings by NUTS 1 region - NACE Rev. 2, B-S excluding O (2022)",ok,sdmx,5,107,0,"",2026-07-19
+EARN_SES_ACTRL,"Annual earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 1.1, C-O excluding L",ok,sdmx,5,37,0,"",2026-07-19
+EARN_SES_ADECI,"Annual earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,6,43,0,"",2026-07-19
+EARN_SES_AGT01,"Employees by economic activity, collective pay agreement, sex, employment contract (2002)",ok,sdmx,8,78,0,"",2026-07-19
+EARN_SES_AGT02,"Employees by economic activity, sex, age (2002)",ok,sdmx,7,70,0,"",2026-07-19
+EARN_SES_AGT03,"Employees by size of the enterprise, sex, occupation (2002)",ok,sdmx,7,60,0,"",2026-07-19
+EARN_SES_AGT04,"Employees by economic activity, sex, educational attainment level (2002)",ok,sdmx,7,72,0,"",2026-07-19
+EARN_SES_AGT05,"Employees by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,7,71,0,"",2026-07-19
+EARN_SES_AGT06,"Employees by economic activity, economic control, sex (2002)",ok,sdmx,7,67,0,"",2026-07-19
+EARN_SES_AGT12,"Mean hourly earnings by economic activity, collective pay agreement, sex (2002)",ok,sdmx,8,78,0,"",2026-07-19
+EARN_SES_AGT13,"Mean hourly earnings by economic activity, sex, age (2002)",ok,sdmx,8,75,0,"",2026-07-19
+EARN_SES_AGT14,"Mean hourly earnings by sex, age, occupation (2002)",ok,sdmx,8,66,0,"",2026-07-19
+EARN_SES_AGT15,"Mean hourly earnings by economic activity, sex, employment contract (2002)",ok,sdmx,8,75,0,"",2026-07-19
+EARN_SES_AGT16,"Mean hourly earnings by economic activity, sex, educational attainment level (2002)",ok,sdmx,8,78,0,"",2026-07-19
+EARN_SES_AGT17,"Mean hourly earnings by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,8,77,0,"",2026-07-19
+EARN_SES_AGT18,"Mean hourly earnings by size of the enterprise, sex, occupation (2002)",ok,sdmx,8,66,0,"",2026-07-19
+EARN_SES_AGT19,"Mean monthly earnings by economic activity, collective pay agreement, sex (2002)",ok,sdmx,8,79,0,"",2026-07-19
+EARN_SES_AGT20,"Mean monthly earnings by economic activity, sex, age (2002)",ok,sdmx,8,77,0,"",2026-07-19
+EARN_SES_AGT21,"Mean monthly earnings by sex, age, occupation (2002)",ok,sdmx,8,67,0,"",2026-07-19
+EARN_SES_AGT22,"Mean monthly earnings by economic activity, sex, employment contract (2002)",ok,sdmx,8,76,0,"",2026-07-19
+EARN_SES_AGT23,"Mean monthly earnings by economic activity, sex, educational attainment level (2002)",ok,sdmx,8,79,0,"",2026-07-19
+EARN_SES_AGT24,"Mean monthly earnings by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,8,78,0,"",2026-07-19
+EARN_SES_AGT25,"Mean monthly earnings by size of the enterprise, sex, occupation (2002)",ok,sdmx,8,67,0,"",2026-07-19
+EARN_SES_AGT26,"Mean annual earnings by economic activity, collective pay agreement, sex (2002)",ok,sdmx,8,77,0,"",2026-07-19
+EARN_SES_AGT27,"Mean annual earnings by economic activity, sex, age (2002)",ok,sdmx,8,75,0,"",2026-07-19
+EARN_SES_AGT28,"Mean annual earnings by sex, age, occupation (2002)",ok,sdmx,8,65,0,"",2026-07-19
+EARN_SES_AGT29,"Mean annual earnings by economic activity, sex, employment contract (2002)",ok,sdmx,8,74,0,"",2026-07-19
+EARN_SES_AGT30,"Mean annual earnings by economic activity, sex, educational attainment level (2002)",ok,sdmx,8,77,0,"",2026-07-19
+EARN_SES_AGT31,"Mean annual earnings by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,8,76,0,"",2026-07-19
+EARN_SES_AGT32,"Mean annual earnings by size of the enterprise, sex,occupation (2002)",ok,sdmx,8,65,0,"",2026-07-19
+EARN_SES_AGT33,"Mean monthly hours paid by economic activity, collective pay agreement, sex (2002)",ok,sdmx,7,74,0,"",2026-07-19
+EARN_SES_AGT34,"Mean monthly hours paid by economic activity, sex, age (2002)",ok,sdmx,7,72,0,"",2026-07-19
+EARN_SES_AGT35,"Mean monthly hours paid by sex, age,occupation (2002)",ok,sdmx,7,62,0,"",2026-07-19
+EARN_SES_AGT36,"Mean monthly hours paid by economic activity, sex, employment contract (2002)",ok,sdmx,8,73,0,"",2026-07-19
+EARN_SES_AGT37,"Mean monthly hours paid by economic activity, sex, educational attainment level (2002)",ok,sdmx,7,74,0,"",2026-07-19
+EARN_SES_AGT38,"Mean monthly hours paid by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,7,73,0,"",2026-07-19
+EARN_SES_AGT39,"Mean monthly hours paid by size of the enterprise, sex, occupation (2002)",ok,sdmx,7,62,0,"",2026-07-19
+EARN_SES_AGT40,"Mean annual holidays by economic activity, collective pay agreement, sex (2002)",ok,sdmx,7,71,0,"",2026-07-19
+EARN_SES_AGT41,"Mean annual holidays by economic activity, sex, age (2002)",ok,sdmx,7,69,0,"",2026-07-19
+EARN_SES_AGT42,"Mean annual holidays by sex, age, occupation (2002)",ok,sdmx,7,60,0,"",2026-07-19
+EARN_SES_AGT43,"Mean annual holidays by economic activity, sex, employment contract (2002)",ok,sdmx,7,68,0,"",2026-07-19
+EARN_SES_AGT44,"Mean annual holidays by economic activity, sex, educational attainment level (2002)",ok,sdmx,7,71,0,"",2026-07-19
+EARN_SES_AGT45,"Mean annual holidays by economic activity, sex, length of service in the enterprise (2002)",ok,sdmx,7,69,0,"",2026-07-19
+EARN_SES_AGT46,"Mean annual holidays by size of the enterprise, sex, occupation (2002)",ok,sdmx,7,60,0,"",2026-07-19
+EARN_SES_ANNUAL,Structure of earnings survey - annual earnings,ok,sdmx,9,101,0,"",2026-07-19
+EARN_SES_HFTPT,Hourly earnings by economic activity and contractual working time (enterprises with 10 employed persons or more) (2006),ok,sdmx,6,44,0,"",2026-07-19
+EARN_SES_HOURLY,Structure of earnings survey - hourly earnings,ok,sdmx,9,97,0,"",2026-07-19
+EARN_SES_MCTRL,"Monthly earnings by economic control (enterprises with 10 employed persons or more) - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,5,38,0,"",2026-07-19
+EARN_SES_MDECI,"Monthly earnings by quantiles and contractual working time (enterprises with 10 employed persons or more) - NACE Rev. 1.1, C-O excluding L (2006)",ok,sdmx,6,44,0,"",2026-07-19
+EARN_SES_MONTHLY,Structure of earnings survey - monthly earnings,ok,sdmx,9,105,0,"",2026-07-19
+EARN_SES_MONTHLY$DV_221,Structure of earnings survey - monthly earnings,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_MONTHLY$DV_221'
+For more information check: https://develop",2026-07-19
+EARN_SES_PUB1A,Low-wage earners as a proportion of all employees (excluding apprentices) by age,ok,sdmx,6,62,0,"",2026-07-19
+EARN_SES_PUB1A$DV_1878,Low-wage earners as a proportion of all employees (excluding apprentices) by age,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB1A$DV_1878'
+For more information check: https://develope",2026-07-19
+EARN_SES_PUB1A$DV_352,Low-wage earners as a proportion of all employees (excluding apprentices) by age,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB1A$DV_352'
+For more information check: https://developer",2026-07-19
+EARN_SES_PUB1I,Low-wage earners as a proportion of all employees (excluding apprentices) by educational attainment level,ok,sdmx,6,57,0,"",2026-07-19
+EARN_SES_PUB1I$DV_353,Low-wage earners as a proportion of all employees (excluding apprentices) by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB1I$DV_353'
+For more information check: https://developer",2026-07-19
+EARN_SES_PUB1N,Low-wage earners as a proportion of all employees (excluding apprentices) by economic activity,ok,sdmx,6,69,0,"",2026-07-19
+EARN_SES_PUB1S,Low-wage earners as a proportion of all employees (excluding apprentices) by sex,ok,sdmx,6,55,0,"",2026-07-19
+EARN_SES_PUB1S$DV_1877,Low-wage earners as a proportion of all employees (excluding apprentices) by sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB1S$DV_1877'
+For more information check: https://develope",2026-07-19
+EARN_SES_PUB1S$DV_354,Low-wage earners as a proportion of all employees (excluding apprentices) by sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB1S$DV_354'
+For more information check: https://developer",2026-07-19
+EARN_SES_PUB1T,Low-wage earners as a proportion of all employees (excluding apprentices) by employment contract,ok,sdmx,6,56,0,"",2026-07-19
+EARN_SES_PUB2A,"Median hourly earnings, all employees (excluding apprentices) by age",ok,sdmx,6,65,0,"",2026-07-19
+EARN_SES_PUB2A$DV_1880,"Median hourly earnings, all employees (excluding apprentices) by age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB2A$DV_1880'
+For more information check: https://develope",2026-07-19
+EARN_SES_PUB2I,"Median hourly earnings, all employees (excluding apprentices) by educational attainment level",ok,sdmx,6,59,0,"",2026-07-19
+EARN_SES_PUB2N,"Median hourly earnings, all employees (excluding apprentices) by economic activity",ok,sdmx,6,71,0,"",2026-07-19
+EARN_SES_PUB2S,"Median hourly earnings, all employees (excluding apprentices) by sex",ok,sdmx,6,57,0,"",2026-07-19
+EARN_SES_PUB2S$DV_1879,"Median hourly earnings, all employees (excluding apprentices) by sex",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EARN_SES_PUB2S$DV_1879'
+For more information check: https://develope",2026-07-19
+EARN_SES_PUB2T,"Median hourly earnings, all employees (excluding apprentices) by employment contract",ok,sdmx,6,58,0,"",2026-07-19
+EDAT_AES_L21,Persons knowing foreign languages by number of foreign languages and sex,ok,sdmx,7,56,0,"",2026-07-19
+EDAT_AES_L21$DV_1602,Persons knowing foreign languages by number of foreign languages and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_AES_L21$DV_1602'
+For more information check: https://developer.",2026-07-19
+EDAT_AES_L22,Persons knowing foreign languages by number of foreign languages and age,ok,sdmx,6,59,0,"",2026-07-19
+EDAT_AES_L23,Persons knowing foreign languages by number of foreign languages and educational attainment level,ok,sdmx,7,59,0,"",2026-07-19
+EDAT_AES_L24,Persons knowing foreign languages by number of foreign languages and labour status,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L25,Persons knowing foreign languages by number of foreign languages and occupation,ok,sdmx,7,58,0,"",2026-07-19
+EDAT_AES_L26,Persons knowing foreign languages by number of foreign languages and degree of urbanisation,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L27,Persons knowing foreign languages by number of foreign languages and level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-07-19
+EDAT_AES_L31,Persons by level of knowledge of the best-known foreign language and sex,ok,sdmx,7,56,0,"",2026-07-19
+EDAT_AES_L32,Persons by level of knowledge of the best-known foreign language and age,ok,sdmx,6,59,0,"",2026-07-19
+EDAT_AES_L33,Persons by level of knowledge of the best-known foreign language and educational attainment level,ok,sdmx,7,59,0,"",2026-07-19
+EDAT_AES_L34,Persons by level of knowledge of the best-known foreign language and labour status,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L35,Persons by level of knowledge of the best-known foreign language and occupation,ok,sdmx,7,58,0,"",2026-07-19
+EDAT_AES_L36,Persons by level of knowledge of the best-known foreign language and degree of urbanisation,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L37,Persons by level of knowledge of the best-known foreign language and level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-07-19
+EDAT_AES_L51,Persons by level of knowledge of the foreign language reported as best-known in the country and sex,ok,sdmx,7,56,0,"",2026-07-19
+EDAT_AES_L52,Persons by level of knowledge of the foreign language reported as best-known in the country and age,ok,sdmx,6,59,0,"",2026-07-19
+EDAT_AES_L53,Persons by level of knowledge of the foreign language reported as best-known in the country and educational attainment level,ok,sdmx,7,59,0,"",2026-07-19
+EDAT_AES_L54,Persons by level of knowledge of the foreign language reported as best-known in the country and labour status,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L55,Persons by level of knowledge of the foreign language reported as best-known in the country and occupation,ok,sdmx,7,58,0,"",2026-07-19
+EDAT_AES_L56,Persons by level of knowledge of the foreign language reported as best-known in the country and degree of urbanisation,ok,sdmx,7,57,0,"",2026-07-19
+EDAT_AES_L57,Persons by level of knowledge of the foreign language reported as best-known in the country and level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-07-19
+EDAT_LFSE_01,Early leavers from education and training by citizenship,ok,sdmx,8,76,0,"",2026-07-19
+EDAT_LFSE_01$DV_1866,Early leavers from education and training by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_01$DV_1866'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_02,Early leavers from education and training by country of birth,ok,sdmx,8,75,0,"",2026-07-19
+EDAT_LFSE_02$DV_1868,Early leavers from education and training by country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_02$DV_1868'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_03,Population in private households by educational attainment level,ok,sdmx,7,113,0,"",2026-07-19
+EDAT_LFSE_03$DV_1701,Population in private households by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_03$DV_1701'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_03$DV_598,Population in private households by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_03$DV_598'
+For more information check: https://developer.m",2026-07-19
+EDAT_LFSE_04,Population in private households by educational attainment level and NUTS 2 region,ok,sdmx,7,553,0,"",2026-07-19
+EDAT_LFSE_14,Early leavers from education and training by labour status,ok,sdmx,7,83,0,"",2026-07-19
+EDAT_LFSE_14$DV_1864,Early leavers from education and training by labour status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_14$DV_1864'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_14$DV_356,Early leavers from education and training by labour status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_14$DV_356'
+For more information check: https://developer.m",2026-07-19
+EDAT_LFSE_15,Early leavers from formal education by labour status,ok,sdmx,7,71,0,"",2026-07-19
+EDAT_LFSE_16,Early leavers from education and training by NUTS 2 region,ok,sdmx,6,544,0,"",2026-07-19
+EDAT_LFSE_17,Population aged 15-34 in private households,ok,sdmx,6,81,0,"",2026-07-19
+EDAT_LFSE_18,Participation rate of young persons in education and training by labour status (incl. NEET rates),ok,sdmx,8,86,0,"",2026-07-19
+EDAT_LFSE_19,Participation rate of young persons in formal education by labour status,ok,sdmx,8,82,0,"",2026-07-19
+EDAT_LFSE_20,Young persons neither in employment nor in education and training by labour status (NEET rates),ok,sdmx,8,87,0,"",2026-07-19
+EDAT_LFSE_20$DV_1101,Young persons neither in employment nor in education and training by labour status (NEET rates),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_20$DV_1101'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_20$DV_1807,Young persons neither in employment nor in education and training by labour status (NEET rates),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_20$DV_1807'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_21,Young persons neither in employment nor in education and training by educational attainment level (NEET rates),ok,sdmx,9,91,0,"",2026-07-19
+EDAT_LFSE_22,Young persons neither in employment nor in education and training by NUTS 2 region (NEET rates),ok,sdmx,8,549,0,"",2026-07-19
+EDAT_LFSE_23,Young persons neither in employment nor in education and training by citizenship (NEET rates),ok,sdmx,9,86,0,"",2026-07-19
+EDAT_LFSE_23$DV_1844,Young persons neither in employment nor in education and training by citizenship (NEET rates),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_23$DV_1844'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_24,Employment rates of young persons not in education and training by educational attainment level and years since completion of highest level of education,ok,sdmx,8,87,0,"",2026-07-19
+EDAT_LFSE_25,Unemployment rates of young persons not in education and training by educational attainment level and years since completion of highest level of education,ok,sdmx,8,87,0,"",2026-07-19
+EDAT_LFSE_26,Labour force participation rates of young persons not in education and training by educational attainment level and years since completion of highest level of education,ok,sdmx,8,87,0,"",2026-07-19
+EDAT_LFSE_27,Labour force non-participation rates of young persons not in education and training by educational attainment level and years since completion of highest level of education,ok,sdmx,8,87,0,"",2026-07-19
+EDAT_LFSE_28,Young persons neither in employment nor in education and training by country of birth (NEET rates),ok,sdmx,9,85,0,"",2026-07-19
+EDAT_LFSE_28$DV_1849,Young persons neither in employment nor in education and training by country of birth (NEET rates),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFSE_28$DV_1849'
+For more information check: https://developer.",2026-07-19
+EDAT_LFSE_29,Young persons neither in employment nor in education and training by degree of urbanisation (NEET rates),ok,sdmx,9,88,0,"",2026-07-19
+EDAT_LFSE_30,Early leavers from education and training by degree of urbanisation,ok,sdmx,8,78,0,"",2026-07-19
+EDAT_LFSE_31,"Employment rates of young persons not in education and training by educational attainment level, years since completion of highest level of education and citizenship",ok,sdmx,9,94,0,"",2026-07-19
+EDAT_LFSE_32,"Employment rates of young persons not in education and training by educational attainment level, years since completion of highest level of education and country of birth",ok,sdmx,9,93,0,"",2026-07-19
+EDAT_LFSE_33,"Employment rates of young persons not in education and training by educational attainment level, years since completion of highest level of education and NUTS 2 region",ok,sdmx,8,561,0,"",2026-07-19
+EDAT_LFSE_34,"Employment rates of young persons not in education and training by educational attainment level, years since completion of highest level of education and degree of urbanisation",ok,sdmx,9,92,0,"",2026-07-19
+EDAT_LFSE_35,Young persons neither in employment nor in education and training by country of birth and degree of urbanisation (NEET rates),ok,sdmx,10,82,0,"",2026-07-19
+EDAT_LFSE_36,Young persons neither in employment nor in education and training by citizenship and degree of urbanisation (NEET rates),ok,sdmx,10,83,0,"",2026-07-19
+EDAT_LFSE_37,Young persons neither in employment nor in education and training by country of birth and NUTS 2 region (NEET rates),ok,sdmx,9,551,0,"",2026-07-19
+EDAT_LFSE_38,Young persons neither in employment nor in education and training by citizenship and NUTS 2 region (NEET rates),ok,sdmx,9,552,0,"",2026-07-19
+EDAT_LFSE_39,Young persons neither in employment nor in education and training by level of disability (activity limitation) (NEET rates),ok,sdmx,9,59,0,"",2026-07-19
+EDAT_LFSE_40,Early leavers from education and training by level of disability (activity limitation),ok,sdmx,7,50,0,"",2026-07-19
+EDAT_LFSO_00T1,Youth transitions from education to working life in Europe (in number of months) (2000),ok,sdmx,5,150,0,"",2026-07-19
+EDAT_LFSO_00T2,Employed in service sector and occupational status of recent school-leavers (2000),ok,sdmx,4,25,0,"",2026-07-19
+EDAT_LFSO_00T3,"Young people's social origin, educational attainment level and labour outcomes in Europe (2000)",ok,sdmx,4,45,0,"",2026-07-19
+EDAT_LFSO_00T4,Parents educational attainment level (2000),ok,sdmx,4,23,0,"",2026-07-19
+EDAT_LFSO_00T5,Job mismatches and their labour market effects among school-leavers in Europe (2000),ok,sdmx,4,37,0,"",2026-07-19
+EDAT_LFSO_09T1,Average age when leaving formal education by educational attainment level for persons who left within the last 3 or 5 years (2009),ok,sdmx,7,47,0,"",2026-07-19
+EDAT_LFSO_09T2,Average time between leaving formal education and starting the first job by educational attainment level for persons who left within the last 3 or 5 years (2009),ok,sdmx,8,48,0,"",2026-07-19
+EDAT_LFSO_09T3,Employment rates by educational attainment level and number of years after leaving formal education (2009),ok,sdmx,8,50,0,"",2026-07-19
+EDAT_LFS_9901,Population in private households by educational attainment level - thousand persons,ok,sdmx,7,98,0,"",2026-07-19
+EDAT_LFS_9902,Population in private households by educational attainment level and labour status - thousand persons,ok,sdmx,8,96,0,"",2026-07-19
+EDAT_LFS_9904,Population in private households by educational attainment level and labour status - %,ok,sdmx,8,94,0,"",2026-07-19
+EDAT_LFS_9905,Employees by educational attainment level and occupation,ok,sdmx,8,99,0,"",2026-07-19
+EDAT_LFS_9906,Employees by educational attainment level and employment contract,ok,sdmx,8,91,0,"",2026-07-19
+EDAT_LFS_9907,Persons in full-time/part-time employment by educational attainment level,ok,sdmx,8,91,0,"",2026-07-19
+EDAT_LFS_9908,Employees by educational attainment level and size of the local unit,ok,sdmx,8,99,0,"",2026-07-19
+EDAT_LFS_9909,Employees by educational attainment level and NACE Rev. 1.1 activity (2004-2008),ok,sdmx,8,91,0,"",2026-07-19
+EDAT_LFS_9910,Employees by educational attainment level and NACE Rev. 2 activity (2008-2026),ok,sdmx,8,106,0,"",2026-07-19
+EDAT_LFS_9911,Population in private households by educational attainment level and citizenship,ok,sdmx,8,95,0,"",2026-07-19
+EDAT_LFS_9911$DV_1702,Population in private households by educational attainment level and citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFS_9911$DV_1702'
+For more information check: https://developer",2026-07-19
+EDAT_LFS_9912,Population in private households by educational attainment level and country of birth,ok,sdmx,8,94,0,"",2026-07-19
+EDAT_LFS_9912$DV_1703,Population in private households by educational attainment level and country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDAT_LFS_9912$DV_1703'
+For more information check: https://developer",2026-07-19
+EDAT_LFS_9913,Population in private households by educational attainment level and degree of urbanisation,ok,sdmx,8,93,0,"",2026-07-19
+EDAT_LFS_9915,"Population in private households by educational attainment level, country of birth and degree of urbanisation",ok,sdmx,9,88,0,"",2026-07-19
+EDAT_LFS_9916,"Population in private households by educational attainment level, citizenship and degree of urbanisation",ok,sdmx,9,89,0,"",2026-07-19
+EDAT_LFS_9917,"Population in private households by educational attainment level, country of birth and NUTS 2 region",ok,sdmx,8,557,0,"",2026-07-19
+EDAT_LFS_9918,"Population in private households by educational attainment level, citizenship and NUTS 2 region",ok,sdmx,8,558,0,"",2026-07-19
+EDAT_LFS_9919,Population aged 20-34 in private households with work experience while studying by educational attainment level and years since completion of highest level of education,ok,sdmx,10,72,0,"",2026-07-19
+EDAT_LFS_9920,Population in private households by educational attainment level and level of disability (activity limitation),ok,sdmx,8,75,0,"",2026-07-19
+EDUC_ENRL1AD,"Students by ISCED level, study intensity and sex (1998-2012)",ok,sdmx,7,92,0,"",2026-07-19
+EDUC_ENRL1AT,"Students by ISCED level, type of institution and study intensity (1998-2012)",ok,sdmx,7,94,0,"",2026-07-19
+EDUC_ENRL1TL,"Students by ISCED level, age and sex (1998-2012)",ok,sdmx,7,109,0,"",2026-07-19
+EDUC_ENRL5,Tertiary students (ISCED 5-6) by field of education and sex (1998-2012),ok,sdmx,7,94,0,"",2026-07-19
+EDUC_ENRL6,"Tertiary students (ISCED 5-6) non-citizens, non-residents by field of education (1998-2007)",ok,sdmx,7,88,0,"",2026-07-19
+EDUC_ENRL8,Tertiary students (ISCED 5-6) by country of citizenship (1998-2012),ok,sdmx,6,281,0,"",2026-07-19
+EDUC_ENRLLNG1,Students in ISCED 1-3 by modern foreign language studied (1998-2012),ok,sdmx,6,89,0,"",2026-07-19
+EDUC_ENRLLNG2,Students in ISCED 1-3 by number of modern foreign languages studied (1998-2012),ok,sdmx,7,69,0,"",2026-07-19
+EDUC_ENTR2TL,New entrants to ISCED 3 to 6 by age and sex (1998-2012),ok,sdmx,7,87,0,"",2026-07-19
+EDUC_FIABS,Expenditure on education in current prices (1995-2011),ok,sdmx,5,57,0,"",2026-07-19
+EDUC_FIAID,Financial aid to students (1995-2011),ok,sdmx,5,58,0,"",2026-07-19
+EDUC_FIEXPC,Expenditure on education in constant prices (1999-2011),ok,sdmx,5,48,0,"",2026-07-19
+EDUC_FIFUNDS,Funding of education (1995-2011),ok,sdmx,5,64,0,"",2026-07-19
+EDUC_FIGDP,Expenditure on education as % of GDP or public expenditure (1991-2011),ok,sdmx,5,70,0,"",2026-07-19
+EDUC_FIPUBIN,Expenditure on public educational institutions (1995-2011),ok,sdmx,4,65,0,"",2026-07-19
+EDUC_FITOTIN,Expenditure on public and private educational institutions (1995-2011),ok,sdmx,4,64,0,"",2026-07-19
+EDUC_GRAD2,Graduates in ISCED 3 and 4 by age and sex (1998-2012),ok,sdmx,7,100,0,"",2026-07-19
+EDUC_GRAD4,Graduates in ISCED 5 and 6 by age and sex (1998-2012),ok,sdmx,7,88,0,"",2026-07-19
+EDUC_GRAD5,Graduations in ISCED 3 to 6 by field of education and sex (1998-2012),ok,sdmx,7,99,0,"",2026-07-19
+EDUC_IGEN,Education and training context indicators (1998-2012),ok,sdmx,4,77,0,"",2026-07-19
+EDUC_ILANG,Language learning (1995-2012),ok,sdmx,4,83,0,"",2026-07-19
+EDUC_ILEV,Distribution of pupils/ students by level (1998-2012),ok,sdmx,4,70,0,"",2026-07-19
+EDUC_IPART,Participation/ enrolment in education (ISCED 0-4) (1998-2012),ok,sdmx,4,70,0,"",2026-07-19
+EDUC_IPART_S,Participation/ enrolment in education by sex (1998-2012),ok,sdmx,5,86,0,"",2026-07-19
+EDUC_ISTE,Pupil/ student - teacher ratio and average class size (ISCED 1-3) (1998-2012),ok,sdmx,4,59,0,"",2026-07-19
+EDUC_ITEACH,Teaching staff (1998-2012),ok,sdmx,5,80,0,"",2026-07-19
+EDUC_ITERTC,Tertiary education graduates (1998-2012),ok,sdmx,4,93,0,"",2026-07-19
+EDUC_ITERTP,Tertiary education participation (1998-2012),ok,sdmx,4,88,0,"",2026-07-19
+EDUC_MOFO_DST,Foreign students by level of education and country of destination (2005-2012),ok,sdmx,6,88,0,"",2026-07-19
+EDUC_MOFO_FLD,Foreign students by level and field of education (2008-2012),ok,sdmx,6,82,0,"",2026-07-19
+EDUC_MOFO_GEN,Foreign students by level of education and sex (2008-2012),ok,sdmx,6,54,0,"",2026-07-19
+EDUC_MOFO_GRD,Foreign graduates by level of education and sex (2008-2012),ok,sdmx,6,54,0,"",2026-07-19
+EDUC_MOFO_ORIG,Foreign students by level of education and country of origin (2005-2012),ok,sdmx,6,94,0,"",2026-07-19
+EDUC_MOMO_DST,Students going abroad by level of education and destination (2005-2012),ok,sdmx,6,82,0,"",2026-07-19
+EDUC_MOMO_FLD,Students from abroad by level and field of education (2008-2012),ok,sdmx,6,81,0,"",2026-07-19
+EDUC_MOMO_GEN,Students from abroad by level of education and sex (2008-2012),ok,sdmx,6,53,0,"",2026-07-19
+EDUC_MOMO_GRD,Graduates from abroad by level of education and sex (2008-2012),ok,sdmx,6,54,0,"",2026-07-19
+EDUC_MOMO_ORIG,Students from abroad by level of education and origin (2008-2012),ok,sdmx,6,92,0,"",2026-07-19
+EDUC_OUTC_PISA,"Low achieving 15-year-olds in reading, mathematics or science by sex",ok,sdmx,6,59,0,"",2026-07-19

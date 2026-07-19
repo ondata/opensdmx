@@ -1758,3 +1758,201 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 29_316_DF_DCIS_POPSTRBIL1_3,Valle d'Aosta/Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_4,Liguria,empty,hub,0,0,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_5,Lombardia,empty,hub,0,0,0,"",2026-07-18
+29_316_DF_DCIS_POPSTRBIL1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_316_DF_DCIS_POPSTRBIL1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_316_DF_DCIS_POPSTRBIL1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_316_DF_DCIS_POPSTRBIL1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317,Stranieri residenti al 1° gennaio - Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_1,"Italia, regioni, province - Paese di cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_10,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_11,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_12,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_13,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_14,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_15,Abruzzo,empty,hub,0,0,0,"",2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_16,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_17,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_18,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_19,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_2,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_20,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_21,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_22,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_23,Tutti i comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_24,"Italia, regioni, province - Area geopolitica di cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_4,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_5,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348,Permessi di soggiorno dei cittadini non comunitari,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_1,Tipo di permesso e cittadinanza,ok,hub,5,76,0,"",2026-07-19
+29_348_DF_DCIS_PERMSOGG1_10,"Cittadinanza, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",ok,hub,6,149,0,"",2026-07-19
+29_348_DF_DCIS_PERMSOGG1_2,Tipo di permesso e classe di età,ok,hub,6,21,0,"",2026-07-19
+29_348_DF_DCIS_PERMSOGG1_3,Tipo di permesso e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_5,Provincia e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_7,Provincia e stato civile,ok,hub,6,143,0,"",2026-07-19
+29_348_DF_DCIS_PERMSOGG1_8,Cittadinanza e motivo del permesso,ok,hub,6,209,0,"",2026-07-19
+29_348_DF_DCIS_PERMSOGG1_9,Cittadinanza e stato civile,ok,hub,5,77,0,"",2026-07-19
+29_7,Stranieri residenti al 1° gennaio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_1,"Italia, regioni, province",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_10,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_11,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_12,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_13,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_14,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_15,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_16,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_17,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_18,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_19,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_2,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_20,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_21,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_22,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_23,Tutti i comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_4,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_5,Lombardia,empty,hub,0,0,0,"",2026-07-19
+29_7_DF_DCIS_POPSTRRES1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_849,Acquisizioni di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_849_DF_DCIS_ACQCITIZ_1,Modalità di acquisizione e classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_849_DF_DCIS_ACQCITIZ_2,Principali paesi di cittadinanza,ok,hub,5,57,0,"",2026-07-19
+29_849_DF_DCIS_ACQCITIZ_3,Modalità di acquisizione,ok,hub,6,39,0,"",2026-07-19
+29_849_DF_DCIS_ACQCITIZ_4,Sesso,ok,hub,5,145,0,"",2026-07-19
+29_956,Stranieri residenti e condizioni di vita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_1,Cittadinanza ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_10,Lingua madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_11,"Uso dell'italiano in famiglia e con amici, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_12,"Uso dell'italiano in famiglia e con amici, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_13,"Uso dell'italiano in famiglia e con amici, presenza in Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_14,"Uso dell'italiano in famiglia e con amici, tipologia familiare",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_15,Uso dell'italiano dei cittadini stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_16,"Uso dell'italiano al lavoro, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_17,Uso dell'italiano al lavoro e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_18,"Eventi discriminatori dichiarati, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_19,Eventi discriminatori dichiarati e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_2,Cittadinanza e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_20,Eventi discriminatori dichiarati e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_21,Eventi discriminatori dichiarati e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_22,Eventi discriminatori dichiarati dagli stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_23,"Soddisfazione per vita e lavoro, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_24,"Soddisfazione per vita e lavoro, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_25,"Grado di soddisfazione, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_26,Grado di soddisfazione e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_27,Grado di soddisfazione e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_28,"Grado di soddisfazione, titolo di studio e condizione occupazionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_29,Grado di soddisfazione e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_3,Sesso e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_30,Grado di soddisfazione dei cittadini stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_31,Grado di soddisfazione ed eventi discriminatori dichiarati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_4,Sesso e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_5,"Tipologia familiare, cittadinanza e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_6,Tipologia familiare e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_7,Famiglie con stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_8,Coppie con stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_9,Età media degli stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_505,Sequence of accounts - editions from September 2019 to March 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_505_DF_DCCN_SQCN_B19_1,Sequenza dei conti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_506,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_506_DF_DCCN_PILN_B19_1,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_507,Occupazione regolare e irregolare per branca di attività e popolazione - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_507_DF_DCCN_OCCNSEC2010_B19_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate - edizioni settembre 2019 - marzo 2024",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_507_DF_DCCN_OCCNSEC2010_B19_2,Tassi di irregolarità - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+2_507_DF_DCCN_OCCNSEC2010_B19_3,Popolazione media annua - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_1008,Reddito delle persone fisiche (Irpef)  - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_1008_DF_MEF_REDDITIIRPEF_COM_1,Contribuenti e principali categorie di reddito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_1008_DF_MEF_REDDITIIRPEF_COM_2,Contribuenti e reddito complessivo per classi di importo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264,Fiducia dei consumatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_1,Climi grezzi (base 2021=100) - Climi grezzi e destagionalizzati (base 2010=100) - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_10,Climi grezzi e destagionalizzati - livello nazionale e ripartizionale (base 2010=100),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_11,Saldi mensili grezzi e destagionalizzati - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_12,Saldi mensili grezzi per classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_13,Saldi mensili grezzi per sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_14,Saldi mensili grezzi per livello di istruzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_15,Saldi mensili grezzi per condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_16,Domande mensili grezze - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_17,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_18,Previsioni di spesa - saldi e domande mensili grezzi fino a dicembre 2005 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_2,Saldi mensili grezzi - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_3,Saldi mensili grezzi per classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_4,Saldi mensili grezzi per sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_5,Saldi mensili grezzi per livello di istruzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_6,Saldi mensili grezzi per condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_7,Domande mensili grezze - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_8,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+30_264_DF_DCSC_FIDCONS_9,Previsioni di spesa - saldi e domande mensili grezzi da gen 1998 fino a dic 2005 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124,Spesa media mensile familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124_DF_DCCV_SPEMMFAM_1,Tipo di Spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124_DF_DCCV_SPEMMFAM_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124_DF_DCCV_SPEMMFAM_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124_DF_DCCV_SPEMMFAM_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_124_DF_DCCV_SPEMMFAM_5,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_163,Comportamento di spesa delle famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_163_DF_DCCV_FAMCOMPORT_1,Cambiamenti nelle abitudini di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_199,Omogeneità della spesa per consumi regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_199_DF_DCCV_INDCONSUMI_1,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_199_DF_DCCV_INDCONSUMI_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_199_DF_DCCV_INDCONSUMI_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_199_DF_DCCV_INDCONSUMI_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_206,Quinto di spesa della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_206_DF_DCCV_SPQUINTO_1,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_206_DF_DCCV_SPQUINTO_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_206_DF_DCCV_SPQUINTO_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_206_DF_DCCV_SPQUINTO_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_213,famiglie che hanno effettuato la spesa per alcune voci di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_213_DF_DCCV_SPEFFCOMP_1,Famiglie e tipo di consumi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_214,Dettaglio della spesa effettiva,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_214_DF_DCCV_SPEFFDETT_1,Spesa media mensile e tipologia di acquisti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739,Spese per consumi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_1,Cambiamenti nelle abitudini di spesa (2018-2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_10,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_11,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_2,Cambiamenti nelle abitudini di spesa (2014-2017),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_3,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_4,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_5,Titolo di studio della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_6,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_7,Quantili di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_8,Voce di spesa (ECoicop),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_739_DF_DCCV_SPEMEFAM_9,Ampiezza e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740,Spese per consumi - Coicop 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_1,Cambiamenti nelle abitudini di spesa (dal 2018),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_10,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_11,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_2,Cambiamenti nelle abitudini di spesa (2014-2017),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_3,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_4,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_5,Titolo di studio della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_6,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_7,Quantili di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_8,Voce di spesa (Coicop 2018),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_9,Ampiezza e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_221,Omogeneità del reddito regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_221_DF_DCCV_GINIREDD_1,Omogeneità del reddito regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223,Famiglie per fonte di reddito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_2,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_3,Minori e anziani in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_4,Sesso ed età del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_5,Titolo di studio e condizione professionale del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_223_DF_DCCV_FONTEPRED_6,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292,Reddito netto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_2,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_3,Minori in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_4,Anziani in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_5,Sesso del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_6,Classe di età del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_7,Titolo di studio del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_8,Condizione professionale del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_292_DF_DCCV_REDNETFAMFONTERED_9,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_38,Quinto di reddito equivalente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19

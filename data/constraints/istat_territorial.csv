@@ -1102,3 +1102,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 28_185_DF_DCIS_MIGRAZIONI_5,Emigrati - cittadinanza,REF_AREA,nazionale,nazionale,1,2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8063,2026-07-18
+29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_348_DF_DCIS_PERMSOGG1_7,Provincia e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_348_DF_DCIS_PERMSOGG1_8,Cittadinanza e motivo del permesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_849_DF_DCIS_ACQCITIZ_2,Principali paesi di cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-19
+29_849_DF_DCIS_ACQCITIZ_3,Modalità di acquisizione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-19
+29_849_DF_DCIS_ACQCITIZ_4,Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-19
