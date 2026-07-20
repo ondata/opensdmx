@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -347,6 +348,82 @@ def test_tree_category_unknown_id():
     assert result.exit_code == 1
     combined = result.output + (result.stderr or "")
     assert "not found in scheme" in combined
+
+
+def _invoke_tree(*args):
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        return runner.invoke(app, ["tree", *args, "--provider", "istat"])
+
+
+def test_tree_scoped_flags_require_scheme():
+    """--category and --show-dataflows have no global meaning: refuse, don't ignore."""
+    for flag in (["--category", "CAT_A"], ["--show-dataflows"]):
+        result = _invoke_tree(*flag)
+        assert result.exit_code == 1
+        combined = result.output + (result.stderr or "")
+        assert "requires --scheme" in combined
+
+
+def test_tree_no_scheme_depth_1_is_the_default():
+    """The skill's entry command `tree --depth 1` must keep listing schemes."""
+    assert _invoke_tree("--depth", "1").output == _invoke_tree().output
+
+
+def test_tree_no_scheme_depth_2_shows_top_level_categories():
+    """The provider is the root, so schemes are level 1 and categories level 2."""
+    shallow = _invoke_tree("--depth", "1").output
+    deep = _invoke_tree("--depth", "2")
+    assert deep.exit_code == 0
+    assert "Cat A" in deep.output and "Cat A" not in shallow
+    assert "Cat A1" not in deep.output  # absolute depth 2 is one level too deep
+
+
+def _fake_two_scheme_dfs():
+    """Minimal two-scheme fixture: the no-scheme tree renders one block per scheme."""
+    import polars as pl
+
+    categories_df = pl.DataFrame(
+        {
+            "scheme_id": ["S1", "S2"],
+            "scheme_name": ["Scheme one", "Scheme two"],
+            "cat_id": ["CAT_A", "CAT_B"],
+            "cat_path": ["CAT_A", "CAT_B"],
+            "cat_name": ["Cat A", "Cat B"],
+            "cat_description": ["", ""],
+            "parent_path": ["", ""],
+            "depth": [1, 1],
+        },
+        schema_overrides={"depth": pl.Int32},
+    )
+    categorisation_df = pl.DataFrame(
+        {"df_id": ["DF_X"], "scheme_id": ["S1"], "cat_path": ["CAT_A"]}
+    )
+    return categories_df, categorisation_df
+
+
+def test_tree_no_scheme_depth_2_renders_one_tree_per_scheme():
+    """Every scheme gets its own block, blank-line separated."""
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_two_scheme_dfs()):
+        result = runner.invoke(app, ["tree", "--depth", "2", "--provider", "istat"])
+    assert result.exit_code == 0
+    out = result.output
+    assert "Scheme one (S1)" in out and "Scheme two (S2)" in out
+    assert "Cat A" in out and "Cat B" in out
+    # schemes are sorted and separated by a blank line
+    assert out.index("(S1)") < out.index("(S2)")
+    assert "\n\nScheme two" in out
+
+
+def test_tree_no_scheme_depth_json_emits_category_rows():
+    """json at depth >= 2 must carry categories, not the three-column summary."""
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+        result = runner.invoke(app, ["-o", "json", "tree", "--depth", "2", "--provider", "istat"])
+    assert result.exit_code == 0
+    rows = json.loads(result.output)
+    assert [r["cat_id"] for r in rows] == ["CAT_A"]
 
 
 # ── _parse_header ─────────────────────────────────────────────────────

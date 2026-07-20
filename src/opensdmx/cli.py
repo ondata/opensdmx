@@ -890,18 +890,84 @@ def which(
         )
 
 
+def _render_tree_block(
+    rows: Any,
+    root_label: str,
+    root_id: str,
+    render_root: str,
+    df_by_path: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Print one ASCII category tree rooted at render_root ("" = whole scheme)."""
+    console.print(f"[bold]{root_label}[/bold] [dim]({root_id})[/dim]")
+
+    children: dict[str, list[dict[str, Any]]] = {}
+    for r in rows.iter_rows(named=True):
+        if render_root and r["cat_path"] == render_root:
+            continue
+        children.setdefault(r["parent_path"] or "", []).append(r)
+    for kids in children.values():
+        kids.sort(key=lambda x: x["cat_name"] or x["cat_id"])
+
+    def render(parent_path: str, prefix: str) -> None:
+        cats = children.get(parent_path, [])
+        dfs = df_by_path.get(parent_path, [])
+        total = len(cats) + len(dfs)
+        for i, node in enumerate(cats):
+            last = (i == total - 1)
+            branch = "└── " if last else "├── "
+            count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
+            label = node["cat_name"] or node["cat_id"]
+            desc = node.get("cat_description") or ""
+            desc_str = f" [dim italic]— {desc}[/dim italic]" if desc and desc != label else ""
+            console.print(
+                f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}{desc_str}"
+            )
+            next_prefix = prefix + ("    " if last else "│   ")
+            render(node["cat_path"], next_prefix)
+        for j, d in enumerate(dfs):
+            last = (len(cats) + j) == total - 1
+            branch = "└── " if last else "├── "
+            label = d["df_description"] or d["df_id"]
+            console.print(f"{prefix}{branch}{label} [dim]\\[df:{d['df_id']}][/dim]")
+
+    render(render_root, "")
+
+
+def _category_rows(rows: Any) -> list[dict[str, Any]]:
+    """Flatten category rows for json/csv output."""
+    return [
+        {
+            "scheme_id": r["scheme_id"],
+            "cat_id": r["cat_id"],
+            "cat_path": r["cat_path"],
+            "cat_name": r["cat_name"] or "",
+            "cat_description": r.get("cat_description") or "",
+            "parent_path": r["parent_path"] or "",
+            "depth": int(r["depth"]),
+            "n_df": int(r["n_df"]),
+        }
+        for r in rows.iter_rows(named=True)
+    ]
+
+
 @app.command()
 def tree(
     scheme: Optional[str] = typer.Option(None, "--scheme", "-s", help="Render the tree for a specific scheme_id. If omitted, lists all schemes with dataflow counts."),
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict tree to the subtree rooted at this category ID (requires --scheme)."),
-    depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Limit tree nesting depth (1 = only top-level)."),
-    show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (prefixed [df:ID])."),
+    depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Levels to show below the current root (default: 1 without --scheme, unlimited with it)."),
+    show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (requires --scheme; prefixed [df:ID])."),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
     """Browse the thematic tree of dataflows (categoryscheme + categorisation).
 
-    Without --scheme: lists all schemes with their dataflow counts.
+    The provider is the root of the tree and the scheme list is level 1, so
+    --depth N always means "N levels below the current root".
+
+    Without --scheme: --depth 1 (the default) lists all schemes with their
+    dataflow counts; --depth 2 or more adds their categories, one tree per
+    scheme. --category and --show-dataflows are scheme-scoped and require
+    --scheme.
     With --scheme: renders an ASCII tree of that scheme's categories.
     With --scheme and --category: renders only the subtree under that category.
     With --show-dataflows: each category's dataflows appear inline as leaves
@@ -913,6 +979,7 @@ def tree(
     Examples:
 
       opensdmx tree --provider istat
+      opensdmx tree --depth 2 --provider istat
       opensdmx tree --scheme Z1000AGR --provider istat
       opensdmx tree --scheme Z0400PRI --category PRI_HARCONEU --provider istat
       opensdmx tree --scheme Z1000AGR --depth 2 --provider istat
@@ -943,6 +1010,38 @@ def tree(
     )
 
     if scheme is None:
+        if category is not None or show_dataflows:
+            bad = "--category" if category is not None else "--show-dataflows"
+            err_console.print(
+                f"[red]Error:[/red] {bad} requires --scheme.\n"
+                "Run [cyan]opensdmx tree[/cyan] to list the schemes, then pick one."
+            )
+            raise typer.Exit(1)
+
+        if depth is not None and depth >= 2:
+            # The provider is the root of the tree and the scheme list is level 1,
+            # so top-level categories (absolute depth 1) sit at depth 2.
+            all_rows = (
+                categories_df.filter(pl.col("depth") <= depth - 1)
+                .join(df_counts, on=["scheme_id", "cat_path"], how="left")
+                .with_columns(pl.col("n_df").fill_null(0))
+            )
+            if _output_mode != "table":
+                _emit(_category_rows(all_rows), df=all_rows)
+                return
+            for i, scheme_id in enumerate(sorted(all_rows["scheme_id"].unique().to_list())):
+                if i:
+                    console.print()
+                rows_s = all_rows.filter(pl.col("scheme_id") == scheme_id)
+                _render_tree_block(
+                    rows_s,
+                    rows_s.select("scheme_name").row(0)[0] or scheme_id,
+                    scheme_id,
+                    "",
+                    {},
+                )
+            return
+
         scheme_counts = (
             categorisation_df.group_by("scheme_id")
             .agg(pl.col("df_id").n_unique().alias("n_df"))
@@ -1096,44 +1195,15 @@ def tree(
     scheme_name = scheme_rows.select("scheme_name").row(0)[0] or scheme
     if category is not None:
         cat_root = scheme_rows.filter(pl.col("cat_id") == category).row(0, named=True)
-        root_label = cat_root["cat_name"] or category
-        console.print(f"[bold]{root_label}[/bold] [dim]({category})[/dim]")
-        render_root = cat_root["cat_path"]
+        _render_tree_block(
+            scheme_rows,
+            cat_root["cat_name"] or category,
+            category,
+            cat_root["cat_path"],
+            df_by_path,
+        )
     else:
-        console.print(f"[bold]{scheme_name}[/bold] [dim]({scheme})[/dim]")
-        render_root = ""
-
-    children: dict[str, list[dict[str, Any]]] = {}
-    for r in scheme_rows.iter_rows(named=True):
-        if category is not None and r["cat_path"] == render_root:
-            continue
-        children.setdefault(r["parent_path"] or "", []).append(r)
-    for kids in children.values():
-        kids.sort(key=lambda x: x["cat_name"] or x["cat_id"])
-
-    def render(parent_path: str, prefix: str) -> None:
-        cats = children.get(parent_path, [])
-        dfs = df_by_path.get(parent_path, [])
-        total = len(cats) + len(dfs)
-        for i, node in enumerate(cats):
-            last = (i == total - 1)
-            branch = "└── " if last else "├── "
-            count_str = f" [dim]({node['n_df']} df)[/dim]" if node["n_df"] else ""
-            label = node["cat_name"] or node["cat_id"]
-            desc = node.get("cat_description") or ""
-            desc_str = f" [dim italic]— {desc}[/dim italic]" if desc and desc != label else ""
-            console.print(
-                f"{prefix}{branch}{label} [dim]\\[cat:{node['cat_id']}][/dim]{count_str}{desc_str}"
-            )
-            next_prefix = prefix + ("    " if last else "│   ")
-            render(node["cat_path"], next_prefix)
-        for j, d in enumerate(dfs):
-            last = (len(cats) + j) == total - 1
-            branch = "└── " if last else "├── "
-            label = d["df_description"] or d["df_id"]
-            console.print(f"{prefix}{branch}{label} [dim]\\[df:{d['df_id']}][/dim]")
-
-    render(render_root, "")
+        _render_tree_block(scheme_rows, scheme_name, scheme, "", df_by_path)
 
 
 @app.command()
