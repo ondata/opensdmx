@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-07-20 - tree: stop dropping flags silently
+## 2026-07-20 - v0.16.0 - tree: stop dropping flags silently
 
 - **BREAKING** fix(cli): `tree --category X` and `tree --show-dataflows` without `--scheme` now exit 1 instead of silently printing the scheme list with exit 0. The `scheme is None` branch returned before any tree-shaping flag was read, so three flags were accepted and discarded — `--category`'s own help text already claimed "requires --scheme", an intent never enforced.
 - feat(cli): `--depth` now acts without `--scheme`. The provider is the root of the tree and the scheme list is level 1, so `--depth N` uniformly means "N levels below the current root" and the special case disappears. `--depth 2` renders one tree per scheme with its top-level categories; ISTAT goes from 45 to 314 lines. `--depth 1` and the no-flag default keep printing the same scheme table — deliberate, since `skills/sdmx-explorer` documents `tree --depth 1` as the entry point of the guided workflow.
