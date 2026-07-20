@@ -1956,3 +1956,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 32_292_DF_DCCV_REDNETFAMFONTERED_8,Condizione professionale del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
 32_292_DF_DCCV_REDNETFAMFONTERED_9,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
 32_38,Quinto di reddito equivalente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+32_38_DF_DCCV_QUINTOREDD_1,Ampiezza della famiglia,ok,hub,6,15,0,"",2026-07-20
+32_38_DF_DCCV_QUINTOREDD_2,Tipologia familiare,ok,hub,6,19,0,"",2026-07-20
+32_38_DF_DCCV_QUINTOREDD_3,Minori e anziani in famiglia,ok,hub,7,18,0,"",2026-07-20
+32_38_DF_DCCV_QUINTOREDD_4,Sesso e età del principale percettore,ok,hub,7,18,0,"",2026-07-20
+32_38_DF_DCCV_QUINTOREDD_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,7,22,0,"",2026-07-20
+32_38_DF_DCCV_QUINTOREDD_6,Regioni,ok,hub,5,35,0,"",2026-07-20
+33_179,Affollamento nell'abitazione,ok,hub,14,95,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_1,Ampiezza della famiglia e tipologia familiare,ok,hub,5,19,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_2,Minori e anziani in famiglia,ok,hub,5,12,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_3,Sesso e età del principale percettore,ok,hub,5,12,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_4,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,16,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_5,Livello del reddito e abitazione in affitto o di proprietà,ok,hub,5,12,0,"",2026-07-20
+33_179_DF_DCCV_ABITAFFOLL_6,Regioni e tipo di comune,ok,hub,3,38,0,"",2026-07-20
+33_225,Spesa per l'abitazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+33_225_DF_DCCV_ABITSPESA_1,Abitazione in affitto o di proprietà,ok,hub,4,7,0,"",2026-07-20
+33_225_DF_DCCV_ABITSPESA_2,Ampiezza della famiglia e tipologia familiare,ok,hub,5,20,0,"",2026-07-20
+33_225_DF_DCCV_ABITSPESA_3,Minori e anziani in famiglia,ok,hub,5,13,0,"",2026-07-20
+33_225_DF_DCCV_ABITSPESA_4,Sesso e età del principale percettore,ok,hub,5,13,0,"",2026-07-20
+33_225_DF_DCCV_ABITSPESA_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,17,0,"",2026-07-20
+33_225_DF_DCCV_ABITSPESA_6,Regioni e tipo di comune,ok,hub,3,39,0,"",2026-07-20
+33_290,Titolo di godimento dell'abitazione (in affitto o di proprietà),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+33_290_DF_DCCV_TITGODABIT_1,Ampiezza della famiglia e tipologia familiare,ok,hub,7,22,0,"",2026-07-20
+33_290_DF_DCCV_TITGODABIT_2,Minori e anziani in famiglia,ok,hub,7,15,0,"",2026-07-20
+33_290_DF_DCCV_TITGODABIT_3,Sesso e età del principale percettore,ok,hub,7,15,0,"",2026-07-20
+33_290_DF_DCCV_TITGODABIT_4,Titolo di studio e condizione professionale del principale percettore,ok,hub,7,19,0,"",2026-07-20
+33_290_DF_DCCV_TITGODABIT_5,Livello di reddito (Quinto di reddito equivalente),ok,hub,6,12,0,"",2026-07-20
+33_290_DF_DCCV_TITGODABIT_6,Regioni e tipo di comune,ok,hub,5,41,0,"",2026-07-20
+33_291,"Inquinamento, criminalità e rumore nella zona in cui si vive",ok,hub,14,97,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_1,Ampiezza familiare e tipologia familiare,ok,hub,5,21,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_2,Numero di minori e numero di anziani in famiglia,ok,hub,5,14,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_3,Sesso ed età del principale percettore di reddito,ok,hub,5,14,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_4,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,18,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_5,Livello del reddito e abitazione in affitto o in proprietà,ok,hub,5,14,0,"",2026-07-20
+33_291_DF_DCCV_PROBLZONRES_2_6,Regioni e tipo di comune,ok,hub,4,41,0,"",2026-07-20
+33_350,Spesa per l'abitazione delle famiglie con componenti stranieri,ok,hub,14,84,0,"",2026-07-20
+33_350_DF_DCCV_ABITSPESA_STRA_1,Spesa per l'abitazione delle famiglie con componenti stranieri,ok,hub,14,84,0,"",2026-07-20
+33_4,"Abitazione danneggiata, umida o poco luminosa",ok,hub,14,97,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_1,Ampiezza della famiglia e tipologia familiare,ok,hub,6,22,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_2,Minori e anziani in famiglia,ok,hub,6,15,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_3,Sesso e età del principale percettore,ok,hub,6,15,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_4,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,19,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_5,Livello del reddito e abitazione in affitto o di proprietà,ok,hub,6,15,0,"",2026-07-20
+33_4_DF_DCCV_ABITPROBL_6,Regioni e tipo di comune,ok,hub,4,41,0,"",2026-07-20
+34_178,Incidenza di povertà assoluta familiare,ok,hub,11,52,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_1,Dati per numero di componenti,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_2,Dati per tipologia familiare,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_3,Dati per famiglia con figli minori,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_4,Dati per famiglia con anziani,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_5,Dati per età della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_6,Dati per titolo di studio della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_178_DF_DCCV_INCPOVAFAM_7,Dati per occupazione della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_198,Incidenza di povertà relativa familiare,ok,hub,11,81,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_1,Dati nazionali e sub nazionali,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_2,Dati per numero di componenti,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_3,Dati per tipologia familiare,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_4,Dati per famiglia con figli minori,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_5,Dati per famiglia con anziani,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_6,Dati per età della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_7,Dati per titolo di studio della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_198_DF_DCCV_INCPOVRFAM_8,Dati per occupazione della persona di riferimento,empty,hub,0,0,0,"",2026-07-20
+34_201,Indicatori di povertà assoluta,ok,hub,3,11,0,"",2026-07-20
+34_201_DF_DCCV_INDPOVASS_1,Indicatori di povertà assoluta,ok,hub,3,11,0,"",2026-07-20
+34_202,Indicatori di povertà relativa,ok,hub,3,11,0,"",2026-07-20
+34_202_DF_DCCV_INDPOVREL_1,Indicatori di povertà relativa,ok,hub,3,11,0,"",2026-07-20
+34_204,Intensità di povertà assoluta familiare,ok,hub,4,8,0,"",2026-07-20
+34_204_DF_DCCV_INTPOVAFAM_1,Intensità di povertà assoluta familiare,ok,hub,3,7,0,"",2026-07-20
+34_205,Intensità di povertà relativa familiare,ok,hub,4,8,0,"",2026-07-20
+34_205_DF_DCCV_INTPOVRFAM_1,Intensità di povertà relativa familiare,ok,hub,3,7,0,"",2026-07-20
+34_211,Soglia di povertà assoluta,ok,hub,6,121,0,"",2026-07-20
+34_211_DF_DCCV_SOGLIAPOVA_1,Soglia di povertà assoluta,ok,hub,6,49,0,"",2026-07-20
+34_211_DF_DCCV_SOGLIAPOVA_2,Soglia di povertà assoluta,ok,hub,6,83,0,"",2026-07-20
+34_212,Soglia di povertà relativa,ok,hub,5,11,0,"",2026-07-20
+34_212_DF_DCCV_SOGLIAPOVR_1,Soglia di povertà relativa,ok,hub,5,11,0,"",2026-07-20
+34_215,Famiglie con pagamenti arretrati,ok,hub,13,68,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_1,Ampiezza della famiglia,ok,hub,5,12,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_2,Tipologia familiare,ok,hub,5,16,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_3,Minori e anziani in famiglia,ok,hub,6,15,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_4,Sesso ed età del principale percettore,ok,hub,6,15,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,19,0,"",2026-07-20
+34_215_DF_DCCV_ARRETRATI_6,Ripartizioni e tipo di comune,ok,hub,4,20,0,"",2026-07-20
+34_216,Famiglie che non riescono  a risparmiare o a far fronte a spese impreviste,ok,hub,12,87,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_1,Ampiezza della famiglia,ok,hub,4,10,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_2,Tipologia familiare,ok,hub,4,14,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_3,Minori e anziani in famiglia,ok,hub,5,13,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_4,Sesso ed età del principale percettore,ok,hub,5,13,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,17,0,"",2026-07-20
+34_216_DF_DCCV_IMPREV_6,"Ripartizioni, regioni e tipo di comune",ok,hub,3,39,0,"",2026-07-20
+34_217,Famiglie che considerano un carico pesante alcune spese per l'abitazione o il rimborso di debiti,ok,hub,13,69,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_1,Ampiezza della famiglia,ok,hub,5,13,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_2,Tipologia familiare,ok,hub,5,17,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_3,Minori e anziani in famiglia,ok,hub,6,16,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_4,Sesso ed età del principale percettore,ok,hub,6,16,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,20,0,"",2026-07-20
+34_217_DF_DCCV_CARICOPES_6,Ripartizioni e tipo di comune,ok,hub,4,21,0,"",2026-07-20
+34_218,Famiglie che non possono permettersi alcuni beni durevoli,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_1,Ampiezza della famiglia,ok,hub,5,17,0,"",2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_2,Tipologia familiare,ok,hub,5,21,0,"",2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_3,Minori e anziani in famiglia,ok,hub,6,20,0,"",2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_4,Sesso ed età del principale percettore,ok,hub,6,20,0,"",2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,24,0,"",2026-07-20
+34_218_DF_DCCV_DIFFBENDUR_6,Ripartizioni e tipo di comune,ok,hub,4,25,0,"",2026-07-20
+34_219,Famiglie che hanno  difficoltà nel pagamento di alcune spese,ok,hub,13,71,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_1,Ampiezza della famiglia,ok,hub,5,15,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_2,Tipologia familiare,ok,hub,5,19,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_3,Minori e anziani in famiglia,ok,hub,6,18,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_4,Sesso ed età del principale percettore,ok,hub,6,18,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,22,0,"",2026-07-20
+34_219_DF_DCCV_NOSOLDI_6,Ripartizioni e tipo di comune,ok,hub,4,23,0,"",2026-07-20
+34_220,Famiglie per reddito minimo per arrivare a fine mese senza difficoltà,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_220_DF_DCCV_REDDFINMES_1,Ampiezza della famiglia,ok,hub,5,15,0,"",2026-07-20
+34_220_DF_DCCV_REDDFINMES_2,Tipologia familiare,ok,hub,5,19,0,"",2026-07-20
+34_220_DF_DCCV_REDDFINMES_3,Minori e anziani in famiglia,ok,hub,6,18,0,"",2026-07-20
+34_220_DF_DCCV_REDDFINMES_4,Sesso ed età del principale percettore,ok,hub,6,18,0,"",2026-07-20
+34_220_DF_DCCV_REDDFINMES_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,22,0,"",2026-07-20
+34_220_DF_DCCV_REDDFINMES_6,Ripartizioni e tipo di comune,ok,hub,4,23,0,"",2026-07-20
+34_226,Famiglie per capacità di arrivare a fine mese,ok,hub,13,90,0,"",2026-07-20
+34_226_DF_PERCEPIT_1,Ampiezza della famiglia,ok,hub,5,13,0,"",2026-07-20
+34_226_DF_PERCEPIT_2,Tipologia familiare,ok,hub,5,17,0,"",2026-07-20
+34_226_DF_PERCEPIT_3,Minori e anziani in famiglia,ok,hub,6,16,0,"",2026-07-20
+34_226_DF_PERCEPIT_4,Sesso ed età del principale percettore,ok,hub,6,16,0,"",2026-07-20
+34_226_DF_PERCEPIT_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,20,0,"",2026-07-20
+34_226_DF_PERCEPIT_6,"Ripartizioni, regioni e tipo di comune",ok,hub,4,42,0,"",2026-07-20
+34_280,Famiglie che non possono permettersi alcune spese,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_2,Tipologia familiare,ok,hub,5,16,0,"",2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_3,Minori e anziani in famiglia,ok,hub,6,15,0,"",2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_4,Sesso ed età del principale percettore,ok,hub,6,15,0,"",2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,19,0,"",2026-07-20
+34_280_DF_DCCV_FAMNOVOCISPESA_6,Ripartizioni e tipo di comune,ok,hub,4,20,0,"",2026-07-20
+34_727,Povertà nuove serie,ok,hub,11,141,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_1,Principali indicatori,ok,hub,3,25,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_10,Individui poveri - regione di residenza,ok,hub,3,33,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_11,Linee e soglie di povertà relativa,ok,hub,5,18,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_2,Famiglie povere - ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_727_DF_DCCV_POVERTA_3,Famiglie povere - tipologia familiare,ok,hub,5,45,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_4,Famiglie povere - età della persona di riferimento,ok,hub,4,14,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_5,Famiglie povere - condizione professionale della persona di riferimento,ok,hub,4,21,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_6,Famiglie povere - titolo di studio della persona di riferimento,ok,hub,4,12,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_7,Famiglie povere - tipo comune di residenza,ok,hub,3,20,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_8,Famiglie povere - regione di residenza,ok,hub,3,33,0,"",2026-07-20
+34_727_DF_DCCV_POVERTA_9,Individui poveri - sesso ed età,ok,hub,5,13,0,"",2026-07-20
+34_728,Povertà serie interrotte - 1997-2021,ok,hub,11,142,0,"",2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_1,Famiglie povere - caratteristiche socio-demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_2,Famiglie povere - regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_3,Famiglie povere - tipo comune di residenza,ok,hub,3,20,0,"",2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_4,Individui poveri - regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_5,Individui poveri - sesso ed età,ok,hub,5,13,0,"",2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_6,Linee e soglie di povertà relativa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_7,Principali indicatori,ok,hub,3,25,0,"",2026-07-20
+392_584,Dottorati - caratteristiche socio-demografiche e curriculum,ok,hub,13,61,0,"",2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_1,"Cittadinanza, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_2,Stato civile,ok,hub,6,17,0,"",2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_3,"Titolo conseguito nei termini, area disciplinare",ok,hub,7,31,0,"",2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_4,Fonte di finanziamento durante il dottorato,ok,hub,6,14,0,"",2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_5,Titolo di studio del padre e della madre,ok,hub,6,18,0,"",2026-07-20
+392_585,Dottorati - retribuzione e orario di lavoro,ok,hub,9,45,0,"",2026-07-20
+392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_1,Retribuzioni per residenza e area disciplinare,ok,hub,6,29,0,"",2026-07-20
+392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_2,Retribuzione e tipo di occupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_3,"Dottori, ore settimanali lavorate e tipo di occupazione",ok,hub,6,20,0,"",2026-07-20
+392_586,Dottorati - mobilità territoriale,ok,hub,9,40,0,"",2026-07-20
+392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_1,"Periodi di formazione all'estero, area disciplinare",ok,hub,5,27,0,"",2026-07-20
+392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_2,"Periodi di formazione all'estero, occupazione, sesso",ok,hub,6,18,0,"",2026-07-20
+392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_3,Intenzione di lasciare l'Italia,ok,hub,6,30,0,"",2026-07-20
+392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_4,"Residenti all'estero, occupazione, sesso",ok,hub,5,16,0,"",2026-07-20
+392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_5,"Residenti all'estero, area disciplinare",ok,hub,4,25,0,"",2026-07-20
+392_636,Dottorati - condizione occupazionale,ok,hub,14,89,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_1,"Condizione occupazionale, sesso, residenza",ok,hub,6,21,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_2,"Condizione occupazionale, area disciplinare",ok,hub,5,25,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_3,"Settore di impiego, tipo di occupazione",ok,hub,7,20,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_4,Attività economica,ok,hub,6,26,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_5,Professione,ok,hub,7,17,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_6,Coerenza tra l'attività lavorativa e il dottorato,ok,hub,6,12,0,"",2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_7,Attività di ricerca e sviluppo,ok,hub,7,16,0,"",2026-07-20
+392_708,Dottorati - ricerca di lavoro e soddisfazione,ok,hub,12,60,0,"",2026-07-20
+392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_1,Ricerca di lavoro e occupazione attuale,ok,hub,6,22,0,"",2026-07-20
+392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_2,Tipo di occupazione e orario desiderati,ok,hub,6,20,0,"",2026-07-20
+392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_3,Luogo di lavoro desiderato e preferenza per lavoro di ricerca,ok,hub,6,19,0,"",2026-07-20
+392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_4,Soddisfazione (da 0 a 10) per il lavoro e il dottorato,ok,hub,4,23,0,"",2026-07-20
+395_344,Sequenza dei conti trimestrali per settore istituzionale - Conti versione 2011,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+396_61,Reddito disponibile delle famiglie nelle regioni italiane - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_1,Indicatori di mortalità per causa per titolo di studio,empty,hub,0,0,0,"",2026-07-20
+39_1005,Suicidi - popolazione di 15 anni e oltre,ok,hub,12,103,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_1,Suicidi - popolazione di 15 anni e oltre - Principali dati,ok,hub,5,42,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_2,Sesso ed età,ok,hub,6,22,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_3,Malattie associate,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_1005_DF_DCIS_SUICIDI_4,Modalità del suicidio,ok,hub,7,30,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_5,Modalità del suicidio e malattie associate,ok,hub,7,23,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_6,Istruzione,ok,hub,8,30,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_7,Stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_1005_DF_DCIS_SUICIDI_8,Mese del decesso,ok,hub,7,57,0,"",2026-07-20
+39_1005_DF_DCIS_SUICIDI_9,Cittadinanza,ok,hub,5,21,0,"",2026-07-20
+39_1_DF_DCIS_IND_MORT_EDU_1,Indicatori di mortalità per causa e titolo di studio,ok,hub,7,69,0,"",2026-07-20
+39_493,Mortalità per territorio di evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_1,Causa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_2,Causa ed età,ok,hub,7,127,0,"",2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_3,Causa e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_4,Età e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",ok,hub,9,11631,0,"",2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_6,Anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_494,Mortalità per territorio di residenza,empty,hub,0,0,0,"",2026-07-20

@@ -1270,3 +1270,319 @@ EDUC_MOMO_GEN,Students from abroad by level of education and sex (2008-2012),ok,
 EDUC_MOMO_GRD,Graduates from abroad by level of education and sex (2008-2012),ok,sdmx,6,54,0,"",2026-07-19
 EDUC_MOMO_ORIG,Students from abroad by level of education and origin (2008-2012),ok,sdmx,6,92,0,"",2026-07-19
 EDUC_OUTC_PISA,"Low achieving 15-year-olds in reading, mathematics or science by sex",ok,sdmx,6,59,0,"",2026-07-19
+EDUC_PERS1D,Teachers (ISCED 0-4) and academic staff (ISCED 5-6) by age and sex (1998-2012),ok,sdmx,7,76,0,"",2026-07-20
+EDUC_PERS1T,Teachers (ISCED 0-4) and academic staff (ISCED 5-6) by employment status and sex (1998-2012),ok,sdmx,7,68,0,"",2026-07-20
+EDUC_REGIND,Education indicators by NUTS 2 region (1998-2012),ok,sdmx,4,423,0,"",2026-07-20
+EDUC_RENRLRG1,"Students by level of education, orientation, sex and NUTS 2 region (1998-2012)",ok,sdmx,6,433,0,"",2026-07-20
+EDUC_RENRLRG3,"Students by age, sex and NUTS 2 region (1998-2012)",ok,sdmx,6,452,0,"",2026-07-20
+EDUC_UOE_ENRA01,"Pupils and students enrolled by education level, sex, type of institution and intensity of participation",ok,sdmx,8,79,0,"",2026-07-20
+EDUC_UOE_ENRA02,"Pupils and students enrolled by education level, sex and age",ok,sdmx,7,130,0,"",2026-07-20
+EDUC_UOE_ENRA03,"Pupils and students enrolled by education level, sex and field of education",ok,sdmx,7,249,0,"",2026-07-20
+EDUC_UOE_ENRA04,Pupils and students by education level - as % of total age population,ok,sdmx,5,65,0,"",2026-07-20
+EDUC_UOE_ENRA05,Pupils and students in education by age groups - as % of corresponding age population,ok,sdmx,5,67,0,"",2026-07-20
+EDUC_UOE_ENRA05$DV_441,Pupils and students in education by age groups - as % of corresponding age population,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRA05$DV_441'
+For more information check: https://develope",2026-07-20
+EDUC_UOE_ENRA06,Pupils and students in education aged 30 and over - per 1000 of corresponding age population,ok,sdmx,4,52,0,"",2026-07-20
+EDUC_UOE_ENRA07,Expected school years of pupils and students by education level,ok,sdmx,5,56,0,"",2026-07-20
+EDUC_UOE_ENRA08,Students in post-compulsory education - as % of the total population of post-compulsory school age,ok,sdmx,4,55,0,"",2026-07-20
+EDUC_UOE_ENRA09,Students participation at the end of compulsory education - as % of the corresponding age population,ok,sdmx,6,61,0,"",2026-07-20
+EDUC_UOE_ENRA10,"Pupils from age 4 to the starting age of compulsory education at primary level, by sex - as % of the population of the corresponding age group",ok,sdmx,5,70,0,"",2026-07-20
+EDUC_UOE_ENRA11,"Pupils and students enrolled by education level, sex and NUTS 2 region",ok,sdmx,6,511,0,"",2026-07-20
+EDUC_UOE_ENRA12,"Pupils and students enrolled by sex, age and NUTS 2 region",ok,sdmx,6,529,0,"",2026-07-20
+EDUC_UOE_ENRA13,Distribution of pupils and students enrolled in general and vocational programmes by education level and NUTS 2 region,ok,sdmx,5,503,0,"",2026-07-20
+EDUC_UOE_ENRA14,Participation rates of selected age groups in education at regional level,ok,sdmx,5,451,0,"",2026-07-20
+EDUC_UOE_ENRA15,Participation rates in selected education levels at regional level,ok,sdmx,5,455,0,"",2026-07-20
+EDUC_UOE_ENRA16,"Pupils and students enrolled by education level, programme orientation, completion and sex",ok,sdmx,6,116,0,"",2026-07-20
+EDUC_UOE_ENRA17,Pupils from age 4 to the starting age of compulsory education at primary level by NUTS 2 region - % of the population of the corresponding age,ok,sdmx,4,436,0,"",2026-07-20
+EDUC_UOE_ENRA18,Pupils from age 5 to the starting age of compulsory education at primary level by sex - % of the population of the corresponding age,ok,sdmx,5,54,0,"",2026-07-20
+EDUC_UOE_ENRA19,"Pupils aged 4 years old, by sex - as % of the population of the corresponding age group",ok,sdmx,5,55,0,"",2026-07-20
+EDUC_UOE_ENRA20,"Pupils aged 3 years old, by sex - as % of the population of the corresponding age group",ok,sdmx,5,55,0,"",2026-07-20
+EDUC_UOE_ENRA21,Pupils from age 3 to the starting age of compulsory education at primary level by sex - % of the population of the corresponding age,ok,sdmx,5,55,0,"",2026-07-20
+EDUC_UOE_ENRA22,Pupils from age 3 to the starting age of compulsory education at primary level by NUTS 2 region - % of the population of the corresponding age,ok,sdmx,4,437,0,"",2026-07-20
+EDUC_UOE_ENRA23,Pupils from age 0 to the starting age of compulsory education at primary level by sex - % of the population of the corresponding age,ok,sdmx,5,55,0,"",2026-07-20
+EDUC_UOE_ENRA24,"Students enrolled in formal non-tertiary adult education by education level, sex and age group",ok,sdmx,7,71,0,"",2026-07-20
+EDUC_UOE_ENRA25,Pupils under the age of 3 by sex - as % of the population of the corresponding age,ok,sdmx,5,52,0,"",2026-07-20
+EDUC_UOE_ENRA27,Out-of-school rate by sex and age - as % of the population of the corresponding age,ok,sdmx,6,58,0,"",2026-07-20
+EDUC_UOE_ENRA28,"Out-of-school rate in population of lower secondary school age, by sex",ok,sdmx,5,53,0,"",2026-07-20
+EDUC_UOE_ENRA29,"Out-of-school rate in population of upper secondary school age, by sex",ok,sdmx,5,53,0,"",2026-07-20
+EDUC_UOE_ENRA30,Distribution of students at education level and programme orientation by sex and field of education,ok,sdmx,7,254,0,"",2026-07-20
+EDUC_UOE_ENRA31,Students enrolled in STEM education fields - per thousand of population aged 20-29,ok,sdmx,6,69,0,"",2026-07-20
+EDUC_UOE_ENRP01,"Pupils enrolled in early childhood education by sex, type of institution and intensity of participation",ok,sdmx,8,71,0,"",2026-07-20
+EDUC_UOE_ENRP02,Pupils enrolled in early childhood education by sex and age,ok,sdmx,7,85,0,"",2026-07-20
+EDUC_UOE_ENRP03,Pupils enrolled in early childhood education by sex and NUTS 2 region,ok,sdmx,6,501,0,"",2026-07-20
+EDUC_UOE_ENRP04,"Pupils enrolled in primary education by sex, type of institution and intensity of participation",ok,sdmx,7,68,0,"",2026-07-20
+EDUC_UOE_ENRP05,Pupils enrolled in primary education by sex and age,ok,sdmx,6,87,0,"",2026-07-20
+EDUC_UOE_ENRP06,Pupils enrolled in primary education by sex and NUTS 2 region,ok,sdmx,5,498,0,"",2026-07-20
+EDUC_UOE_ENRP07,Pupils in early childhood and primary education by education level and age - as % of corresponding age population,ok,sdmx,6,66,0,"",2026-07-20
+EDUC_UOE_ENRP07$DV_3501,Pupils in early childhood and primary education by education level and age - as % of corresponding age population,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRP07$DV_3501'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_ENRS01,"Pupils enrolled in lower-secondary education by programme orientation, sex, type of institution and intensity of participation",ok,sdmx,8,71,0,"",2026-07-20
+EDUC_UOE_ENRS02,"Pupils enrolled in lower-secondary education by programme orientation, sex and age",ok,sdmx,7,92,0,"",2026-07-20
+EDUC_UOE_ENRS03,"Pupils enrolled in lower-secondary education by programme orientation, sex and NUTS 2 region",ok,sdmx,6,501,0,"",2026-07-20
+EDUC_UOE_ENRS04,"Pupils enrolled in upper secondary education by programme orientation, sex, type of institution and intensity of participation",ok,sdmx,8,74,0,"",2026-07-20
+EDUC_UOE_ENRS05,"Pupils enrolled in upper-secondary education by programme orientation, sex and age",ok,sdmx,7,96,0,"",2026-07-20
+EDUC_UOE_ENRS05$DV_2144,"Pupils enrolled in upper-secondary education by programme orientation, sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRS05$DV_2144'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_ENRS06,"Pupils enrolled in upper secondary education by programme orientation, sex and NUTS 2 region",ok,sdmx,6,501,0,"",2026-07-20
+EDUC_UOE_ENRS07,"Pupils enrolled in post-secondary non-tertiary education by programme orientation, sex, type of institution and intensity of participation",ok,sdmx,8,74,0,"",2026-07-20
+EDUC_UOE_ENRS08,"Pupils enrolled in post-secondary non-tertiary education by programme orientation, sex and age",ok,sdmx,7,96,0,"",2026-07-20
+EDUC_UOE_ENRS09,"Pupils enrolled in post-secondary non-tertiary education by programme orientation, sex and NUTS 2 region",ok,sdmx,6,501,0,"",2026-07-20
+EDUC_UOE_ENRS10,"Pupils enrolled in vocational upper secondary and post-secondary non-tertiary education by education level, sex and field of education",ok,sdmx,7,244,0,"",2026-07-20
+EDUC_UOE_ENRT01,"Students enrolled in tertiary education by education level, programme orientation, sex, type of institution and intensity of participation",ok,sdmx,8,82,0,"",2026-07-20
+EDUC_UOE_ENRT02,"Students enrolled in tertiary education by education level, programme orientation, sex and age",ok,sdmx,7,118,0,"",2026-07-20
+EDUC_UOE_ENRT03,"Students enrolled in tertiary education by education level, programme orientation, sex and field of education",ok,sdmx,7,253,0,"",2026-07-20
+EDUC_UOE_ENRT03$DV_1705,"Students enrolled in tertiary education by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRT03$DV_1705'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_ENRT03$DV_3061,"Students enrolled in tertiary education by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRT03$DV_3061'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_ENRT03$DV_442,"Students enrolled in tertiary education by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_ENRT03$DV_442'
+For more information check: https://develope",2026-07-20
+EDUC_UOE_ENRT04,Distribution of students enrolled at tertiary education levels by sex and field of education,ok,sdmx,7,246,0,"",2026-07-20
+EDUC_UOE_ENRT05,Ratio of the proportion of tertiary students over the proportion of the population by NUTS 1 and NUTS 2 region,ok,sdmx,4,454,0,"",2026-07-20
+EDUC_UOE_ENRT06,"Students enrolled in tertiary education by education level, programme orientation, sex and NUTS 2 region",ok,sdmx,6,508,0,"",2026-07-20
+EDUC_UOE_ENRT07,Students in tertiary education by age groups - as % of corresponding age population,ok,sdmx,6,67,0,"",2026-07-20
+EDUC_UOE_ENRT08,Students in tertiary education - as % of 20-24 years old in the population,ok,sdmx,6,61,0,"",2026-07-20
+EDUC_UOE_ENT01,"New entrants by education level, programme orientation, sex and age",ok,sdmx,7,126,0,"",2026-07-20
+EDUC_UOE_ENT02,"New entrants by education level, programme orientation, sex and field of education",ok,sdmx,7,140,0,"",2026-07-20
+EDUC_UOE_ENT03,Distribution of new entrants at education level and programme orientation by sex and field of education,ok,sdmx,7,140,0,"",2026-07-20
+EDUC_UOE_FINA01,Financial aid to students by education level - as % of total public expenditure,ok,sdmx,5,56,0,"",2026-07-20
+EDUC_UOE_FINE01,"Total educational expenditure by education level, programme orientation and type of source",ok,sdmx,6,80,0,"",2026-07-20
+EDUC_UOE_FINE02,"Public educational expenditure by education level, programme orientation, type of source and expenditure category",ok,sdmx,8,97,0,"",2026-07-20
+EDUC_UOE_FINE03,"Private educational expenditure by education level, programme orientation, type of source and expenditure category",ok,sdmx,8,93,0,"",2026-07-20
+EDUC_UOE_FINE04,"Public expenditure on education in current prices, by education level and programme orientation",ok,sdmx,5,64,0,"",2026-07-20
+EDUC_UOE_FINE06,Public expenditure on education by education level and programme orientation - as % of GDP,ok,sdmx,5,72,0,"",2026-07-20
+EDUC_UOE_FINE07,Public subsidies to the private sector by education level and programme orientation,ok,sdmx,6,71,0,"",2026-07-20
+EDUC_UOE_FINE08,Public expenditure on education by education level and programme orientation - as % of public expenditure or % of GNI,ok,sdmx,5,65,0,"",2026-07-20
+EDUC_UOE_FINE09,Public expenditure on education per pupil/student based on FTE by education level and programme orientation,ok,sdmx,5,74,0,"",2026-07-20
+EDUC_UOE_FINE10,Pupils and students enrolled by education level and programme orientation with coverage adjusted to statistics on educational finance and aligned to financial year,ok,sdmx,7,82,0,"",2026-07-20
+EDUC_UOE_FINF01,"Funding of education by education level, programme orientation and recipient of funding",ok,sdmx,7,66,0,"",2026-07-20
+EDUC_UOE_FINF02,"Funding of vocational education by education level, type of source and recipient of funding",ok,sdmx,8,84,0,"",2026-07-20
+EDUC_UOE_FINI01,"Expenditure of the educational institutions by education level, programme orientation, type of institution and expenditure category",ok,sdmx,7,93,0,"",2026-07-20
+EDUC_UOE_FINI02,"Expenditure of the educational institutions on vocational education by education level, programme orientation, type of institution and expenditure category",ok,sdmx,7,77,0,"",2026-07-20
+EDUC_UOE_FINI03,Expenditure on educational institutions by education level and programme orientation,ok,sdmx,7,66,0,"",2026-07-20
+EDUC_UOE_FINI04,"Annual expenditure on educational institutions per pupil/student based on FTE, by education level and programme orientation",ok,sdmx,6,67,0,"",2026-07-20
+EDUC_UOE_FINI05,Expenditure on public educational institutions - as % of total or current expenditure,ok,sdmx,5,54,0,"",2026-07-20
+EDUC_UOE_FINI06,"Ratio of annual expenditure per student at the tertiary level and primary level of education, in public educational institutions",ok,sdmx,4,49,0,"",2026-07-20
+EDUC_UOE_GRAD01,"Graduates by education level, programme orientation, completion, sex and age",ok,sdmx,7,163,0,"",2026-07-20
+EDUC_UOE_GRAD02,"Graduates by education level, programme orientation, sex and field of education",ok,sdmx,7,256,0,"",2026-07-20
+EDUC_UOE_GRAD02$DV_1704,"Graduates by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_GRAD02$DV_1704'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_GRAD02$DV_3062,"Graduates by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_GRAD02$DV_3062'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_GRAD02$DV_443,"Graduates by education level, programme orientation, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_GRAD02$DV_443'
+For more information check: https://develope",2026-07-20
+EDUC_UOE_GRAD03,Distribution of graduates at education level and programme orientation by sex and field of education,ok,sdmx,7,251,0,"",2026-07-20
+EDUC_UOE_GRAD04,"Graduates in tertiary education, in science, math., computing, engineering, manufacturing, construction, by sex - per 1000 of population aged 20-29",ok,sdmx,6,62,0,"",2026-07-20
+EDUC_UOE_GRAD05,Graduates in tertiary education by age groups - per 1000 of population aged 20-29,ok,sdmx,6,60,0,"",2026-07-20
+EDUC_UOE_GRAD06,Graduates at doctoral level by sex and age groups - per 1000 of population aged 25-34,ok,sdmx,6,58,0,"",2026-07-20
+EDUC_UOE_GRAD07,"Graduates at doctoral level, in science, math., computing, engineering, manufacturing, construction, by sex - per 1000 of population aged 25-34",ok,sdmx,5,56,0,"",2026-07-20
+EDUC_UOE_GRAD08,"First-time graduates by education level, sex and age group",ok,sdmx,7,77,0,"",2026-07-20
+EDUC_UOE_GRAD09,Graduates in tertiary education by education level - women per 100 men,ok,sdmx,5,59,0,"",2026-07-20
+EDUC_UOE_GRAD10,"Distribution of male and female graduates in different fields of education, by education level and programme orientation",ok,sdmx,7,255,0,"",2026-07-20
+EDUC_UOE_LANG01,Pupils by education level and modern foreign language studied - absolute numbers and % of pupils by language studied,ok,sdmx,6,93,0,"",2026-07-20
+EDUC_UOE_LANG01$DV_3063,Pupils by education level and modern foreign language studied - absolute numbers and % of pupils by language studied,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_LANG01$DV_3063'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_LANG02,"Pupils by education level, age and number of modern foreign languages studied - absolute numbers and % of pupils by number of languages studied",ok,sdmx,7,85,0,"",2026-07-20
+EDUC_UOE_LANG03,Average number of foreign languages studied per pupil by education level,ok,sdmx,5,60,0,"",2026-07-20
+EDUC_UOE_MOBC01,"Credit mobile graduates (at least 3 months abroad) by education level, type of mobility scheme, type of mobility and sex",ok,sdmx,8,64,0,"",2026-07-20
+EDUC_UOE_MOBC02,"Credit mobile graduates (at least 3 months abroad) by education level, country of destination, type of mobility and sex",ok,sdmx,8,287,0,"",2026-07-20
+EDUC_UOE_MOBC03,"Credit mobile graduates (less than 3 months abroad) by education level, country of destination, type of mobility and sex",ok,sdmx,8,286,0,"",2026-07-20
+EDUC_UOE_MOBG01,"Degree mobile graduates from abroad by education level, sex and field of education",ok,sdmx,7,132,0,"",2026-07-20
+EDUC_UOE_MOBG02,"Degree mobile graduates from abroad by education level, sex and country of origin",ok,sdmx,7,291,0,"",2026-07-20
+EDUC_UOE_MOBG03,"Share of degree mobile graduates from abroad by education level, sex and country of origin",ok,sdmx,7,291,0,"",2026-07-20
+EDUC_UOE_MOBG04,Distribution of degree mobile graduates from abroad at education level by sex and field of education,ok,sdmx,7,132,0,"",2026-07-20
+EDUC_UOE_MOBS01,"Mobile students from abroad enrolled by education level, sex and field of education",ok,sdmx,7,288,0,"",2026-07-20
+EDUC_UOE_MOBS01$DV_1805,"Mobile students from abroad enrolled by education level, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_MOBS01$DV_1805'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_MOBS01$DV_445,"Mobile students from abroad enrolled by education level, sex and field of education",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_MOBS01$DV_445'
+For more information check: https://develope",2026-07-20
+EDUC_UOE_MOBS02,"Mobile students from abroad enrolled by education level, sex and country of origin",ok,sdmx,7,292,0,"",2026-07-20
+EDUC_UOE_MOBS03,"Share of mobile students from abroad enrolled by education level, sex and country of origin",ok,sdmx,7,294,0,"",2026-07-20
+EDUC_UOE_MOBS03$DV_1126,"Share of mobile students from abroad enrolled by education level, sex and country of origin",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EDUC_UOE_MOBS03$DV_1126'
+For more information check: https://develop",2026-07-20
+EDUC_UOE_MOBS04,Distribution of mobile students from abroad enrolled at education level by sex and field of education,ok,sdmx,7,292,0,"",2026-07-20
+EDUC_UOE_MOBS06,Distribution of mobile students from abroad with EU and non-EU country of origin by education level and sex,ok,sdmx,7,292,0,"",2026-07-20
+EDUC_UOE_PERD01,Distribution of teachers at education level and programme orientation by age groups,ok,sdmx,7,80,0,"",2026-07-20
+EDUC_UOE_PERD02,Distribution of academic staff at education level by age groups,ok,sdmx,7,70,0,"",2026-07-20
+EDUC_UOE_PERD03,"Female teachers - as % of all teachers, by education level",ok,sdmx,5,64,0,"",2026-07-20
+EDUC_UOE_PERD04,"Female school-management personnel - as % of total school-management personnel, by education level",ok,sdmx,5,53,0,"",2026-07-20
+EDUC_UOE_PERD05,"Teachers working part-time - as % of all teachers, by education level",ok,sdmx,5,63,0,"",2026-07-20
+EDUC_UOE_PERP01,"Classroom teachers and academic staff by education level, programme orientation, sex and age groups",ok,sdmx,7,85,0,"",2026-07-20
+EDUC_UOE_PERP02,"Classroom teachers and academic staff by education level, programme orientation, sex, type of institution and employment status",ok,sdmx,8,80,0,"",2026-07-20
+EDUC_UOE_PERP03,"Classroom teachers working full-time and part-time in primary, lower-secondary and upper-secondary education - as % of total active population",ok,sdmx,4,52,0,"",2026-07-20
+EDUC_UOE_PERP04,Ratio of pupils and students to teachers and academic staff by education level and programme orientation,ok,sdmx,5,70,0,"",2026-07-20
+EDUC_UOE_PERP05,Ratio of pupils to teachers and teacher aides by education level and programme orientation,ok,sdmx,5,54,0,"",2026-07-20
+EF_AH_BOVINE,"Animal housing by type of bovine, utilised agricultural area, size classes of livestock units and NUTS 2 region",ok,sdmx,10,421,0,"",2026-07-20
+EF_AH_BOVT,"Outdoor access of bovine by type of animal housing, size classes of livestock units, farm type and NUTS 2 region",ok,sdmx,10,317,0,"",2026-07-20
+EF_AH_PIGS,"Animal housing by type of pigs, utilised agricultural area, size classes of livestock units and NUTS 2 region",ok,sdmx,10,421,0,"",2026-07-20
+EF_AH_PIGT,"Outdoor access of pigs by type of animal housing, size classes of livestock units, farm type and NUTS 2 region",ok,sdmx,10,316,0,"",2026-07-20
+EF_AH_POULT,"Outdoor access of poultry by type of animal housing, size classes of livestock units, farm type and NUTS 2 region",ok,sdmx,10,317,0,"",2026-07-20
+EF_AH_POULTRY,"Animal housing by type of poultry, utilised agricultural area, size classes of livestock units and NUTS 2 region",ok,sdmx,10,423,0,"",2026-07-20
+EF_AUX_SOC,Standard output coefficients of agricultural products,ok,sdmx,5,1385,0,"",2026-07-20
+EF_FSI_AGESEX,Age structure of farm managers,ok,sdmx,7,69,0,"",2026-07-20
+EF_FSI_CDIV,Crop diversity,ok,sdmx,6,55,0,"",2026-07-20
+EF_FSI_ECSZ,"Average economic size of farms by standard output, farm type and age of farm manager",ok,sdmx,7,94,0,"",2026-07-20
+EF_FSI_FARMS,Farms by utilised agricultural area,ok,sdmx,5,57,0,"",2026-07-20
+EF_FSI_GRDS,Grazing livestock density,ok,sdmx,6,49,0,"",2026-07-20
+EF_FSI_IRRI,Irrigable and irrigated area,ok,sdmx,5,48,0,"",2026-07-20
+EF_FSI_LEGUM,Farms with leguminous crops by size of arable land,ok,sdmx,6,59,0,"",2026-07-20
+EF_FSI_LF,Average farm labour force by work status and sex of farm manager,ok,sdmx,6,58,0,"",2026-07-20
+EF_FSI_LFSEX,Farm labour force by work status and sex of worker,ok,sdmx,6,55,0,"",2026-07-20
+EF_FSI_LSK,Livestock units by animal groups and size classes of livestock units,ok,sdmx,7,91,0,"",2026-07-20
+EF_FSI_LSKDS,Livestock density,ok,sdmx,6,49,0,"",2026-07-20
+EF_FSI_LUS,Main farm land use,ok,sdmx,6,64,0,"",2026-07-20
+EF_FSI_NFM,New farm managers by sex,ok,sdmx,6,44,0,"",2026-07-20
+EF_FSI_ORG,"Average organic farm size by utilised agricultural area, economic size and farm type",ok,sdmx,8,92,0,"",2026-07-20
+EF_FSI_PHYSZ,Physical size of farms by utilised agricultural area and legal form,ok,sdmx,6,66,0,"",2026-07-20
+EF_FSI_TENURE,Tenure of utilised agricultural area,ok,sdmx,7,74,0,"",2026-07-20
+EF_FSI_TRAINING,Agricultural training of farm managers,ok,sdmx,6,60,0,"",2026-07-20
+EF_KVAAREG,"Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region",ok,sdmx,6,338,0,"",2026-07-20
+EF_KVAGE,"Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA) and age of manager",ok,sdmx,6,61,0,"",2026-07-20
+EF_KVECSLEG,"Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region",ok,sdmx,6,341,0,"",2026-07-20
+EF_KVFTAA,"Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and agricultural size of farm (UAA)",ok,sdmx,6,79,0,"",2026-07-20
+EF_KVFTECS,"Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and economic size of farm (SO in Euro)",ok,sdmx,6,81,0,"",2026-07-20
+EF_KVFTREG,"Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region",ok,sdmx,5,350,0,"",2026-07-20
+EF_LFLEGAA,"Labour force categories: number of persons and farm work (AWU) by sex of worker, legal satus of holding and agricultural size of farm (UAA)",ok,sdmx,6,84,0,"",2026-07-20
+EF_LFLEGECS,Labour force categories: number of persons and farm work (AWU) by legal status of holding and economic size of farm (SO in Euro),ok,sdmx,6,86,0,"",2026-07-20
+EF_LFWTIME,Labour force categories: number of persons and farm work (AWU) in the holding by working time (% AWU) and agricultural size of farm (UAA),ok,sdmx,7,63,0,"",2026-07-20
+EF_LF_FAM,"Agricultural family labour force by age, sex of farm manager and NUTS 2 region",ok,sdmx,10,445,0,"",2026-07-20
+EF_LF_FAM_SH,Share of family farms by NUTS 2 region,ok,sdmx,6,292,0,"",2026-07-20
+EF_LF_LEG,"Agricultural labour force by legal entity, work status and sex of worker, economic size of the agricultural holding and NUTS 2 region",ok,sdmx,9,434,0,"",2026-07-20
+EF_LF_MAIN,"Main agricultural labour force by age and sex of the farm manager, farm type of the agricultural holding and NUTS 2 region",ok,sdmx,9,442,0,"",2026-07-20
+EF_LF_SIZE,Agricultural labour force by size of the farm and NUTS 2 region,ok,sdmx,8,436,0,"",2026-07-20
+EF_LSK_BEES,Beehives on farms by NUTS 2 region,ok,sdmx,8,398,0,"",2026-07-20
+EF_LSK_BOVINE,Bovine by NUTS 2 region,ok,sdmx,9,466,0,"",2026-07-20
+EF_LSK_GOATS,Goats by NUTS 2 region,ok,sdmx,9,453,0,"",2026-07-20
+EF_LSK_MAIN,Main livestock indicators by NUTS 2 region,ok,sdmx,10,470,0,"",2026-07-20
+EF_LSK_ORG,"Organic animal farming by utilised agricultural area, livestock unit, economic size of the farm and NUTS 2 region",ok,sdmx,9,442,0,"",2026-07-20
+EF_LSK_PIGS,Pigs by NUTS 2 region,ok,sdmx,8,451,0,"",2026-07-20
+EF_LSK_POULTRY,Poultry by NUTS 2 region,ok,sdmx,8,456,0,"",2026-07-20
+EF_LSK_SHEEP,Sheep by NUTS 2 region,ok,sdmx,9,457,0,"",2026-07-20
+EF_LS_GVBROILER,Poultry: number of farms and heads by size of farm (UAA) and size of broiler flock,ok,sdmx,7,66,0,"",2026-07-20
+EF_LS_GVLAYHEN,Poultry: number of farms and heads by size of farm (UAA) and size of laying hen flock,ok,sdmx,7,65,0,"",2026-07-20
+EF_LS_GVOPIG,Pigs: number of farms and heads by size of farm (UAA) and size of other pig herd,ok,sdmx,7,66,0,"",2026-07-20
+EF_LS_GVSOWS,Pigs: number of farms and heads by size of farm (UAA) and size of breeding sow herd,ok,sdmx,7,66,0,"",2026-07-20
+EF_LS_GZCATL,Cattle: number of farms and heads by size of farm (UAA) and size of cattle herd,ok,sdmx,7,72,0,"",2026-07-20
+EF_LS_GZCATLLSU,Cattle: number of farms and heads by size of farm (UAA) and livestock units (LSU) of farm,ok,sdmx,7,73,0,"",2026-07-20
+EF_LS_GZDCOW,Dairy cows: number of farms and heads by size of farm (UAA) and size of dairy herd,ok,sdmx,7,72,0,"",2026-07-20
+EF_LS_GZFORAGE,Fodder crops: number of farms and areas by size of farm (UAA) and size of fodder crops area,ok,sdmx,7,72,0,"",2026-07-20
+EF_LS_GZGOAT,Goats: number of farms and heads by size of farm (UAA) and size of goat herd,ok,sdmx,7,65,0,"",2026-07-20
+EF_LS_GZOCOW,Other cows: number of farms and heads by size of farm (UAA) and size of other cow herd,ok,sdmx,7,72,0,"",2026-07-20
+EF_LS_GZSHEEP,Sheep: number of farms and heads by size of farm (UAA) and size of sheep flock,ok,sdmx,7,65,0,"",2026-07-20
+EF_LS_OVAAREG,Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region,ok,sdmx,6,377,0,"",2026-07-20
+EF_LS_OVESU,Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region,ok,sdmx,6,377,0,"",2026-07-20
+EF_LS_OVLSUREG,Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region,ok,sdmx,6,377,0,"",2026-07-20
+EF_LUS_ALLCROPS,"Farms and hectares by crops, utilised agricultural area, economic size of the farm and NUTS 2 region",ok,sdmx,8,537,0,"",2026-07-20
+EF_LUS_IRRI,"Irrigated crops by utilised agricultural area, economic size of the farm and NUTS 2 region",ok,sdmx,8,420,0,"",2026-07-20
+EF_LUS_MAIN,Main farm land use by NUTS 2 region,ok,sdmx,9,467,0,"",2026-07-20
+EF_LUS_ORCHCITRUS,"Citrus fruits by age, density classes of trees and NUTS 2 region",ok,sdmx,8,100,0,"",2026-07-20
+EF_LUS_ORCHGRAPES,"Table grapes and raisins by age, density classes of vines and NUTS 2 region",ok,sdmx,8,133,0,"",2026-07-20
+EF_LUS_ORCHOLIVES,"Olives by age, density classes of trees and NUTS 2 region",ok,sdmx,8,104,0,"",2026-07-20
+EF_LUS_ORCHPOME,"Pome fruits by age, density classes of trees and NUTS 2 region",ok,sdmx,8,267,0,"",2026-07-20
+EF_LUS_ORCHSTONE,"Stone fruits by age, density classes of trees and NUTS 2 region",ok,sdmx,8,172,0,"",2026-07-20
+EF_LUS_ORG,"Organic crops by utilised agricultural area, economic size of the farm and NUTS 2 region",ok,sdmx,8,450,0,"",2026-07-20
+EF_LUS_PEGRASS,"Permanent grassland by area under corresponding crop, utilised agricultural area, economic size of the farm and NUTS 2 region",ok,sdmx,9,441,0,"",2026-07-20
+EF_LU_ALARABLE,Arable crops: number of farms and areas by size of farm (UAA) and size of arable area,ok,sdmx,7,73,0,"",2026-07-20
+EF_LU_ALBARLEY,Barley: number of farms and area by size of farm (UAA) and size of barley area,ok,sdmx,7,65,0,"",2026-07-20
+EF_LU_ALCEREAL,"Cereals: number of farms, areas and combine harvestors by size of farm (UAA) and size of cereal area",ok,sdmx,7,74,0,"",2026-07-20
+EF_LU_ALFLOWER,Flowers and ornamental plants: number of farms and areas by size of farm (UAA) and size of flower and ornamental plant area,ok,sdmx,6,56,0,"",2026-07-20
+EF_LU_ALIPLANT,Industrial plants: number of farms and areas by size of farm (UAA) and size of industrial plant area,ok,sdmx,7,75,0,"",2026-07-20
+EF_LU_ALMAIZE,Grain maize: number of farms and area by size of farm (UAA) and size of grain maize area,ok,sdmx,7,65,0,"",2026-07-20
+EF_LU_ALPOTAT,Potatoes: number of farms and area by size of farm (UAA) and size of potato area,ok,sdmx,7,64,0,"",2026-07-20
+EF_LU_ALSBEET,Sugar beet: number of farms and area by size of farm (UAA) and size of sugar beet area,ok,sdmx,7,63,0,"",2026-07-20
+EF_LU_ALVEGGLAS,"Vegetables, melons, strawberries and greenhouses: number of farms and areas by size of farm (UAA) and size of vegetable, melon and strawberry area under glass",ok,sdmx,7,69,0,"",2026-07-20
+EF_LU_ALVEGOUT,"Vegetables, melons, strawberries and greenhouses: number of farms and areas by size of farm (UAA) and size of vegetable, melon and strawberry outdoor area",ok,sdmx,7,69,0,"",2026-07-20
+EF_LU_ALWHEAT,Common wheat: number of farms and area by size of farm (UAA) and size of common wheat area,ok,sdmx,7,65,0,"",2026-07-20
+EF_LU_OFGLASS,Crops under glass: number of farms and areas by size of farm (UAA) and size of crops under glass area,ok,sdmx,7,67,0,"",2026-07-20
+EF_LU_OFGRASS,Permanent grassland: number of farms and areas by size of farm (UAA) and size of permanent grassland area,ok,sdmx,7,65,0,"",2026-07-20
+EF_LU_OFIRRIG,"Irrigation: number of farms, areas and equipment by size of farm (UAA) and NUTS 2 region",ok,sdmx,5,353,0,"",2026-07-20
+EF_LU_OFSETASID,Fallow land and set-aside land: number of farms and areas by size of farm (UAA) and size of arable area,ok,sdmx,7,75,0,"",2026-07-20
+EF_LU_OFWOOD,Other land: number of farms and areas by size of farm (UAA) and size of wooded area,ok,sdmx,7,66,0,"",2026-07-20
+EF_LU_OVCROPAA,Farmland: number of farms and areas by size of farm (UAA) and NUTS 2 region,ok,sdmx,6,424,0,"",2026-07-20
+EF_LU_OVCROPESU,Farmland: number of farms and areas by economic size of farm (ESU) and NUTS 2 region,ok,sdmx,6,424,0,"",2026-07-20
+EF_LU_PCFRUIT,Fruit and berry plantations: number of farms and areas by size of farm (UAA) and size of fruit and berry plantation area,ok,sdmx,7,67,0,"",2026-07-20
+EF_LU_PCGEO,Permanent crops: number of farms and areas by size of farm (UAA) and size of permanent crop area,ok,sdmx,7,80,0,"",2026-07-20
+EF_LU_PCOLIVE,Olive plantations: number of farms and areas by size of farm (UAA) and size of olive plantation area,ok,sdmx,7,64,0,"",2026-07-20
+EF_LU_PCREG,"Permanent crops: number of farms and areas by size of farm (UAA), size of permanent crop area and NUTS 2 region",ok,sdmx,6,364,0,"",2026-07-20
+EF_LU_PCVINE,Vineyards: number of farms and areas by size of farm (UAA) and size of vineyard area,ok,sdmx,7,67,0,"",2026-07-20
+EF_MPMANAA,"Holder-manager relationship: area, livestock, labour force and standard output (SO) by agricultural size of farm (UAA) (2005-2013)",ok,sdmx,6,70,0,"",2026-07-20
+EF_MPORGANIC,"Organic farming: number of farms, areas with different crops and heads of different types of animals by agricultural size of farm (UAA) and NUTS 2 region (2003-2013)",ok,sdmx,5,396,0,"",2026-07-20
+EF_MPTRAINECS,"Agricultural training of farm managers: number of farms, agricultural area, labour force, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro) (2005-2013)",ok,sdmx,6,58,0,"",2026-07-20
+EF_MPTRAINMAN,"Agricultural training of farm managers: number of farms, agricultural area, labour force and standard output (SO) by age and sex of the manager (2005-2013)",ok,sdmx,7,55,0,"",2026-07-20
+EF_MP_DIGI,"Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region",ok,sdmx,8,311,0,"",2026-07-20
+EF_MP_DIGI$DV_3082,"Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EF_MP_DIGI$DV_3082'
+For more information check: https://developer.mo",2026-07-20
+EF_MP_DIGICR,"Precision farming by age and training of manager, size of farm and NUTS 2 region",ok,sdmx,9,312,0,"",2026-07-20
+EF_MP_DIGICR$DV_3083,"Precision farming by age and training of manager, size of farm and NUTS 2 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EF_MP_DIGICR$DV_3083'
+For more information check: https://developer.",2026-07-20
+EF_MP_DIGILSK,"Machinery for livestock management by age and training of manager, size classes of livestock and NUTS 2 region",ok,sdmx,9,312,0,"",2026-07-20
+EF_MP_EFA,"Ecological focus areas in agricultural holdings by utilised agricultural area, farm type and NUTS 2 region",ok,sdmx,8,299,0,"",2026-07-20
+EF_MP_IRRI,Irrigation methods and source of irrigation water of agricultural holdings by NUTS 2 region,ok,sdmx,8,405,0,"",2026-07-20
+EF_MP_MA,"Utilised agricultural area fertilised by manure application technique, farm type and NUTS 2 region",ok,sdmx,9,321,0,"",2026-07-20
+EF_MP_MACH,"Machinery used by agricultural holdings by type of ownership, farm size, farm type and NUTS 2 region",ok,sdmx,9,434,0,"",2026-07-20
+EF_MP_MANLEG,Agricultural holdings by legal form of the management,ok,sdmx,8,375,0,"",2026-07-20
+EF_MP_MANORG,"Organic farming by age, sex and training of farm manager and NUTS 2 region",ok,sdmx,10,439,0,"",2026-07-20
+EF_MP_MNE,Import and export of manure by farm type and NUTS 2 region,ok,sdmx,9,327,0,"",2026-07-20
+EF_MP_MS,"Manure storage facilities by utilised agricultural area, size class of livestock, farm type and NUTS 2 region",ok,sdmx,9,429,0,"",2026-07-20
+EF_MP_PRAC,"Soil management practices by arable land area, farmtype, crop rotation and NUTS 2 region",ok,sdmx,9,438,0,"",2026-07-20
+EF_MP_RENERG,Equipment used for production of renewable energy on agricultural holdings by economic size and type of the farm and NUTS 2 region,ok,sdmx,8,429,0,"",2026-07-20
+EF_MP_SOIL,"Soil cover by arable land area, farmtype, crop rotation and NUTS 2 region",ok,sdmx,9,440,0,"",2026-07-20
+EF_MP_STFAC,Storage facilities for agricultural products in agricultural holdings by type and economic size of the farm and NUTS 2 region,ok,sdmx,8,309,0,"",2026-07-20
+EF_MP_TENURE,"Tenure of agricultural holdings by utilised agricultural area, sex and age of farm manager and NUTS 2 region",ok,sdmx,10,465,0,"",2026-07-20
+EF_MP_TPIRRI,Technical parameters of the irrigation equipment of agricultural holdings and payment terms for irrigation water by NUTS 2 region,ok,sdmx,8,283,0,"",2026-07-20
+EF_MP_TRAINING,"Agricultural holdings and utilised agricultural area by training, age and sex of farm managers and NUTS 2 region",ok,sdmx,10,440,0,"",2026-07-20
+EF_MP_TRAINING_SH,Share of holdings by training of farm manager and NUTS 2 region,ok,sdmx,5,298,0,"",2026-07-20
+EF_MP_VOCTRAINING,"Agricultural holding and utilised agricultural area by vocational training, sex and age of farm managers and NUTS 2 region",ok,sdmx,10,427,0,"",2026-07-20
+EF_M_AGE_SH,Share of holdings by age of farm managers and NUTS 2 region,ok,sdmx,5,298,0,"",2026-07-20
+EF_M_FARMANG,"Farm indicators by age and sex of the manager, economic size of the farm, utilised agricultural area and NUTS 2 region",ok,sdmx,9,440,0,"",2026-07-20
+EF_M_FARMANG$DV_3161,"Farm indicators by age and sex of the manager, economic size of the farm, utilised agricultural area and NUTS 2 region",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EF_M_FARMANG$DV_3161'
+For more information check: https://developer.",2026-07-20
+EF_M_FARMLEG,"Farm indicators by legal status of the holding, utilised agricultural area, type and economic size of the farm and NUTS 2 region",ok,sdmx,9,442,0,"",2026-07-20
+EF_M_IRRI,"Irrigation of agricultural holdings by utilised agricultural area, economic size, farmtype and NUTS 2 region",ok,sdmx,9,459,0,"",2026-07-20
+EF_M_ORG,"Main farm indicators by organic farming, utilised agricultural area, economic size, farm type of agricultural holding and NUTS 2",ok,sdmx,9,443,0,"",2026-07-20
+EF_M_PRY,Land and labour productivity of agricultural holdings by sex of farm manager and type and size of the farm,ok,sdmx,9,53,0,"",2026-07-20
+EF_M_RD,"Main farm indicators by rural development support measures, utilized agricultural area, type and economic size of the farm and NUTS 2 region",ok,sdmx,9,437,0,"",2026-07-20
+EF_M_SEXHOLD_SH,Share of agricultural holdings by sex of holder and type of tenure,ok,sdmx,8,57,0,"",2026-07-20
+EF_M_SEX_SH,Share of holdings by sex of farm managers and NUTS 2 region,ok,sdmx,5,297,0,"",2026-07-20
+EF_M_SO_SH,Share of holdings by economic size classes and NUTS 2 region,ok,sdmx,5,297,0,"",2026-07-20
+EF_OGAAA,"Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by agricultural size of farm (UAA)",ok,sdmx,7,71,0,"",2026-07-20
+EF_OGAAGE,"Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age of holder",ok,sdmx,7,76,0,"",2026-07-20
+EF_OGADSEXAGE,"Other gainful activities directly related to the holding: number of farms, agricultural area, standard output (SO) and livestock (LSU) by age and sex of holder",ok,sdmx,6,112,0,"",2026-07-20
+EF_OGAECS,"Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by economic size of farm (SO in Euro)",ok,sdmx,7,73,0,"",2026-07-20
+EF_OGAFT,"Other gainful activities (OGA) of the farm of sole holder: number of farms, agricultural area, standard output (SO) and livestock (LSU) by type of farming (1-digit)",ok,sdmx,7,71,0,"",2026-07-20
+EF_OGA_MAIN,"Farm indicators by other gainful activities related to the holder, utilised agricultural area, type and economic size of the farm and NUTS 2 region",ok,sdmx,9,442,0,"",2026-07-20
+EF_OGA_TYPE,"Type of other gainful activities directly related to the agricultural holdings by age of the manager, utilised agricultural area, type and economic size of the farm and NUTS 2 region",ok,sdmx,10,447,0,"",2026-07-20
+EF_OLFAA,Labour force: number of persons and farm work (AWU) by agricultural size of farm (UAA),ok,sdmx,5,60,0,"",2026-07-20
+EF_OLFFTECS,Labour force: number of persons and farm work (AWU) by type of farming (2-digit) and economic size of farm (SO in Euro),ok,sdmx,6,85,0,"",2026-07-20
+EF_OLFREG,Labour force: number of persons and farm work (AWU) by sex of workers and NUTS 2 region,ok,sdmx,4,351,0,"",2026-07-20
+EF_OLSAAREG,Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region,ok,sdmx,5,380,0,"",2026-07-20
+EF_OLSLSUFT,Livestock: number of farms and heads of animals by type of farming (2-digit),ok,sdmx,5,112,0,"",2026-07-20
+EF_OLSLSUREG,Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region,ok,sdmx,5,380,0,"",2026-07-20
+EF_OV_KVAA,"Key variables by legal status of holding, size of farm (UAA) and NUTS 2 region",ok,sdmx,6,352,0,"",2026-07-20
+EF_OV_KVAAESU,"Key variables by size of farm (UAA), economic size of farm (ESU) and LFA status",ok,sdmx,7,69,0,"",2026-07-20
+EF_OV_KVAGE,"Key variables by age of holder, size of farm (UAA) and LFA status",ok,sdmx,7,66,0,"",2026-07-20
+EF_OV_KVESUFT,"Key variables by type of farming (1-digit), economic size of farm (ESU) and LFA status",ok,sdmx,7,65,0,"",2026-07-20
+EF_OV_KVFTAA,Key variables by type of farming (2-digit) and size of farm (UAA),ok,sdmx,6,78,0,"",2026-07-20
+EF_OV_KVFTESU,Key variables by type of farming (2-digit) and economic size of farm (ESU),ok,sdmx,6,72,0,"",2026-07-20
+EF_OV_KVFTOB00,"Key variables by type of farming (1-digit), economic size of farm (ESU) and objective zone 2000",ok,sdmx,7,60,0,"",2026-07-20
+EF_OV_KVFTOB99,"Key variables by type of farming (1-digit), economic size of farm (ESU) and objective zone 1999",ok,sdmx,7,49,0,"",2026-07-20
+EF_OV_KVFTREG,Key variables by type of farming (2-digit) and NUTS 2 region,ok,sdmx,5,345,0,"",2026-07-20
+EF_OV_LFFT,Labour force: number of persons and farm work (AWU) by type of farming (2-digit) and economic size of farm (ESU),ok,sdmx,7,87,0,"",2026-07-20
+EF_OV_LFOB00,Labour force: number of persons and farm work (AWU) by size of farm (UAA) and objective zone 2000,ok,sdmx,7,45,0,"",2026-07-20
+EF_OV_LFOB99,Labour force: number of persons and farm work (AWU) by size of farm (UAA) and objective zone 1999,ok,sdmx,7,46,0,"",2026-07-20
+EF_OV_LFSUM,Labour force: number of persons and farm work (AWU) by size of farm (UAA) and LFA status,ok,sdmx,7,62,0,"",2026-07-20
+EF_OV_LSFT,"Livestock: number of farms, heads and LSU by type of farming (2-digit) and economic size of farm (ESU)",ok,sdmx,7,97,0,"",2026-07-20
+EF_OV_LSOB00,Livestock: number of farms and heads by size of farm (UAA) and objective zone 2000,ok,sdmx,7,46,0,"",2026-07-20
+EF_OV_LSOB99,Livestock: number of farms and heads by size of farm (UAA) and objective zone 1999,ok,sdmx,7,48,0,"",2026-07-20
+EF_OV_LSSUM,Livestock: number of farms and heads by size of farm (UAA) and LFA status,ok,sdmx,7,66,0,"",2026-07-20
+EF_OV_LUFT,Land use: number of farms and areas by type of farming (2-digit) and economic size of farm (ESU),ok,sdmx,7,136,0,"",2026-07-20
+EF_OV_LUOB00,Land use: number of farms and areas by size of farm (UAA) and objective zone 2000,ok,sdmx,7,70,0,"",2026-07-20
+EF_OV_LUOB99,Land use: number of farms and areas by size of farm (UAA) and objective zone 1999,ok,sdmx,7,63,0,"",2026-07-20
+EF_OV_LUSUM,Land use: number of farms and areas by size of farm (UAA) and LFA status,ok,sdmx,7,84,0,"",2026-07-20
+EF_POIRRIG,"Irrigation: number of farms, areas and equipment by size of irrigated area and NUTS 2 region",ok,sdmx,5,381,0,"",2026-07-20
+EF_POMENGMO,"Mushrooms, energy crops, GMO: number of farms and areas by size of farm (UAA)",ok,sdmx,5,59,0,"",2026-07-20
+EF_RD_LEG,"Beneficiary of rural development support measures by legal form, economic size and farm type of the agricultural holding and NUTS 2 region",ok,sdmx,9,456,0,"",2026-07-20
+EF_RD_MAN,"Beneficiary of rural development support measures by age, sex and training of farm manager and NUTS 2 region",ok,sdmx,9,451,0,"",2026-07-20
+EF_R_FARM,"Structure of agricultural holdings by eurofarm region, main indicators",ok,sdmx,4,1224,0,"",2026-07-20
+EF_R_NUTS,Structure of agricultural holdings by NUTS 3 region - main indicators,ok,sdmx,4,1456,0,"",2026-07-20
+EF_SO_LFAA,"Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, size of farm (UAA) and NUTS 2 region",ok,sdmx,8,361,0,"",2026-07-20
