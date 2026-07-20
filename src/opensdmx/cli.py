@@ -411,6 +411,8 @@ def search(
             title = f"Search: {keyword} ({total})"
 
     if _output_mode != "table":
+        import polars as pl
+
         rows = [
             {
                 "df_id": r["df_id"],
@@ -420,7 +422,16 @@ def search(
             }
             for r in page_df.iter_rows(named=True)
         ]
-        _emit(rows)
+        # Keep the typed frame for CSV: falling back to `rows` would stringify
+        # score. The category column is materialised even without a cache, so
+        # the schema does not depend on whether `opensdmx tree` has been run.
+        csv_df = page_df
+        if "cat_primary" not in csv_df.columns:
+            csv_df = csv_df.with_columns(pl.lit("").alias("cat_primary"))
+        csv_df = csv_df.select(
+            ["df_id", "df_description", pl.col("cat_primary").fill_null("").alias("category"), "score"]
+        )
+        _emit(rows, df=csv_df)
         return
 
     table = Table(title=title, show_lines=False)

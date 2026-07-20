@@ -76,15 +76,19 @@ def compose_title(description: str | None, category: str | None = None) -> str:
     nothing alone; 1,622 of them are shared by more than one dataflow. Prefixing
     the category makes the row identifiable wherever it is printed.
 
-    Returns the description unchanged when there is no category, when the two
-    are equal, or when the description already contains the category — which is
-    common, since a title often repeats its parent's wording.
+    Returns the description unchanged when there is no category, or when the
+    title already *starts with* the category — common on Eurostat, where the
+    category often is the title's prefix, and repeating it would read badly.
+
+    The check is a prefix match, not a substring one: category "Age" must not be
+    suppressed from the title "Average earnings". Casefolded rather than
+    lowercased, so non-ASCII titles compare correctly.
     """
     title = (description or "").strip()
     context = (category or "").strip()
     if not context or not title:
         return title or context
-    if context.lower() in title.lower():
+    if title.casefold().startswith(context.casefold()):
         return title
     return f"{context}{TITLE_SEPARATOR}{title}"
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 from opensdmx.utils import (
+    compose_title,
     get_name_by_lang,
     make_url_key,
     xml_attr_safe,
@@ -119,3 +120,30 @@ def test_get_name_by_lang_no_names():
 )
 def test_make_url_key(filters, expected):
     assert make_url_key(filters) == expected
+
+
+# ── compose_title ────────────────────────────────────────────────────
+
+
+@pytest.mark.parametrize(
+    "description,category,expected",
+    [
+        # a leaf title gains its context
+        ("Sesso, età", "Disoccupati - dati mensili", "Disoccupati - dati mensili › Sesso, età"),
+        # already prefixed by the category: no repetition
+        ("Consumer prices - annual", "Consumer prices", "Consumer prices - annual"),
+        # a category merely *contained* in the title must NOT be suppressed:
+        # "Age" inside "Average" is a coincidence, not context
+        ("Average earnings", "Age", "Age › Average earnings"),
+        # casefold, not lower: non-ASCII prefixes still compare
+        ("ÈTA e sesso", "Età", "Età › ÈTA e sesso"),
+        ("Età e sesso", "ETÀ", "Età e sesso"),
+        # degenerate inputs
+        ("Sesso, età", None, "Sesso, età"),
+        ("Sesso, età", "", "Sesso, età"),
+        ("", "Lavoro", "Lavoro"),
+        (None, None, ""),
+    ],
+)
+def test_compose_title(description, category, expected):
+    assert compose_title(description, category) == expected

@@ -283,8 +283,10 @@ def search_dataset(keyword: str) -> pl.DataFrame:
     comes from the local category cache, populated by `opensdmx tree`; without
     it the search behaves exactly as it did before.
 
-    Returns columns: df_id, version, df_description, df_structure_id,
-    cat_context, score.
+    Returns columns: df_id, version, df_description, df_structure_id, score —
+    plus cat_context and cat_primary when the category cache exists. Those two
+    are conditional: callers must use `.get()` or check `df.columns` rather than
+    assume them.
     """
     datasets = _with_category_context(all_available())
     columns = [*_SEARCH_COLUMNS, "cat_context"] if "cat_context" in datasets.columns else None
