@@ -891,7 +891,7 @@ def which(
 
 
 def _render_tree_block(
-    rows: Any,
+    rows: pl.DataFrame,
     root_label: str,
     root_id: str,
     render_root: str,
@@ -933,7 +933,7 @@ def _render_tree_block(
     render(render_root, "")
 
 
-def _category_rows(rows: Any) -> list[dict[str, Any]]:
+def _category_rows(rows: pl.DataFrame) -> list[dict[str, Any]]:
     """Flatten category rows for json/csv output."""
     return [
         {
