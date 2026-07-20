@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-07-20 - tree: stop dropping flags silently
+
+- **BREAKING** fix(cli): `tree --category X` and `tree --show-dataflows` without `--scheme` now exit 1 instead of silently printing the scheme list with exit 0. The `scheme is None` branch returned before any tree-shaping flag was read, so three flags were accepted and discarded — `--category`'s own help text already claimed "requires --scheme", an intent never enforced.
+- feat(cli): `--depth` now acts without `--scheme`. The provider is the root of the tree and the scheme list is level 1, so `--depth N` uniformly means "N levels below the current root" and the special case disappears. `--depth 2` renders one tree per scheme with its top-level categories; ISTAT goes from 45 to 314 lines. `--depth 1` and the no-flag default keep printing the same scheme table — deliberate, since `skills/sdmx-explorer` documents `tree --depth 1` as the entry point of the guided workflow.
+- refactor(cli): the ASCII render block moved into `_render_tree_block()` so the no-scheme path reuses it per scheme rather than reimplementing it.
+- Rendering shifts with depth: level 1 is the `n_df` table, level 2+ the ASCII tree. Accepted, no row-count warning — whoever types `--depth 3` asked for the big tree.
+- test: 5 new cases in `tests/test_cli.py`, including a regression guard that no-scheme `--depth 1` output stays identical to the no-flag output, and a dedicated two-scheme fixture covering the one-tree-per-scheme loop the single-scheme fixture could not reach. Suite 271 → 276.
+- docs: `tree` docstring and `skills/sdmx-explorer/SKILL.md` state the root/level model; plan in `tasks/todo-tree-depth.md`.
+
 ## 2026-07-18 - v0.15.0 - strict filter matching
 
 - fix(discovery): `set_filters` now treats `-` and `_` as equivalent when matching dimension names, so `--na-item` reaches the `NA_ITEM` dimension. CLI convention is dashes, SDMX ids use underscores; matching was already case-insensitive, this extends the same leniency.

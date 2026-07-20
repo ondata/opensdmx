@@ -180,9 +180,14 @@ opensdmx tree --scheme Z0400PRI --category PRI_CONWHONAT --provider istat --dept
 opensdmx search "" --category DCSP_NIC1B2015 --provider istat
 ```
 
-`--depth` is **relative to `--category`** when `--category` is set: `--depth 1`
-always means "the node plus its direct children", regardless of the category's
-absolute depth in the tree.
+`--depth N` always means "N levels below the current root". The root is the
+category when `--category` is set, the scheme when only `--scheme` is set, and
+the provider itself when neither is: that is why `tree --depth 1` with no
+`--scheme` lists the schemes, and `--depth 2` would add their top-level
+categories. Prefer `--depth 1` and let the user pick the branch.
+
+`--category` and `--show-dataflows` are scheme-scoped: without `--scheme` they
+exit with an error rather than being silently ignored.
 
 After each step, present the children to the user in plain language and ask
 which branch to explore next. Do not pre-emptively dive deeper than one level
