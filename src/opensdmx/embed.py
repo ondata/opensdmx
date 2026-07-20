@@ -50,41 +50,12 @@ def _embed(texts: list[str]) -> np.ndarray:
 def _category_context_for_embed() -> pl.DataFrame:
     """Aggregate scheme_name + cat_name per df_id from the cached category tree.
 
-    Only uses the local cache — never triggers a live fetch. If the category
-    cache files are not yet present (provider doesn't support categories, or
-    user hasn't run `opensdmx tree` yet), returns an empty DataFrame and the
-    embedding falls back to df_id + description only.
+    Thin wrapper kept for clarity at the call site; the implementation lives in
+    ``categories.category_context`` because keyword search needs it too.
     """
-    empty = pl.DataFrame({"df_id": [], "cat_context": []}, schema={"df_id": pl.Utf8, "cat_context": pl.Utf8})
+    from .categories import category_context
 
-    from .categories import _categories_cache_path, _categorisation_cache_path
-
-    cats_path = _categories_cache_path()
-    csation_path = _categorisation_cache_path()
-    if not cats_path.exists() or not csation_path.exists():
-        return empty
-
-    categories_df = pl.read_parquet(cats_path)
-    categorisation_df = pl.read_parquet(csation_path)
-
-    if categorisation_df.is_empty():
-        return empty
-
-    return (
-        categorisation_df.join(
-            categories_df.select(["scheme_id", "scheme_name", "cat_path", "cat_name"]),
-            on=["scheme_id", "cat_path"],
-            how="left",
-        )
-        .with_columns(
-            pl.concat_str(
-                [pl.col("scheme_name").fill_null(""), pl.col("cat_name").fill_null("")],
-                separator=" ",
-            ).str.strip_chars().alias("ctx")
-        )
-        .group_by("df_id")
-        .agg(pl.col("ctx").str.concat(" ").alias("cat_context"))
-    )
+    return category_context(include_scheme=True)
 
 
 def build_embeddings(progress: bool = True) -> None:

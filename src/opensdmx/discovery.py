@@ -198,12 +198,15 @@ def _score_results(
       +2  token found in first 60 chars of df_description (topic tends to be upfront)
       +1  each occurrence of token in df_description
     """
+    has_context = "cat_context" in df.columns
+    columns = [*_SEARCH_COLUMNS, "cat_context"] if has_context else None
+
     score_expr = pl.lit(0)
     coverage_expr = pl.lit(0) if prioritize_coverage else None
     for token in tokens:
         t = token.lower()
         if coverage_expr is not None:
-            coverage_expr = coverage_expr + _token_match_expr(t).fill_null(False).cast(pl.Int32)
+            coverage_expr = coverage_expr + _token_match_expr(t, columns).cast(pl.Int32)
         score_expr = score_expr + (
             pl.col("df_id").str.to_lowercase().str.contains(t).cast(pl.Int32) * 3
         )
@@ -213,6 +216,13 @@ def _score_results(
         score_expr = score_expr + (
             pl.col("df_description").str.to_lowercase().str.count_matches(t)
         )
+        if has_context:
+            # Below every own-title signal: the category says what the dataset is
+            # about, not what this particular cut contains.
+            score_expr = score_expr + (
+                pl.col("cat_context").str.to_lowercase().str.contains(t)
+                .fill_null(False).cast(pl.Int32)
+            )
     scored = df.with_columns(score_expr.alias("score"))
     if coverage_expr is not None:
         return (
@@ -223,13 +233,41 @@ def _score_results(
     return scored.sort("score", descending=True)
 
 
-def _token_match_expr(token: str) -> pl.Expr:
-    """True where a token appears in df_description or df_id (case-insensitive)."""
-    token = token.lower()
-    return (
-        pl.col("df_description").str.to_lowercase().str.contains(token)
-        | pl.col("df_id").str.to_lowercase().str.contains(token)
+_SEARCH_COLUMNS = ["df_description", "df_id"]
+
+
+def _with_category_context(datasets: pl.DataFrame) -> pl.DataFrame:
+    """Attach the cached category names as a searchable column.
+
+    Returns the frame untouched when no category cache exists, so providers
+    without categories — and users who never ran `opensdmx tree` — keep the
+    previous behaviour rather than hitting the network or an error.
+    """
+    try:
+        from .categories import category_context
+
+        context = category_context(include_scheme=False)
+    except Exception as e:  # pragma: no cover - defensive, search must never die here
+        logger.debug(f"Category context unavailable, searching titles only: {e}")
+        return datasets
+    if context.is_empty():
+        return datasets
+    return datasets.join(context, on="df_id", how="left").with_columns(
+        pl.col("cat_context").fill_null("")
     )
+
+
+def _token_match_expr(token: str, columns: list[str] | None = None) -> pl.Expr:
+    """True where a token appears in any of the given columns (case-insensitive).
+
+    Defaults to df_description and df_id. Callers that joined extra searchable
+    text — currently the category context — pass the wider list.
+    """
+    token = token.lower()
+    expr = pl.lit(False)
+    for column in columns or _SEARCH_COLUMNS:
+        expr = expr | pl.col(column).str.to_lowercase().str.contains(token).fill_null(False)
+    return expr
 
 
 def search_dataset(keyword: str) -> pl.DataFrame:
@@ -240,14 +278,21 @@ def search_dataset(keyword: str) -> pl.DataFrame:
     token no longer wipes out the whole result set. Results are sorted by a
     synthetic relevance score (id match, start-of-description, occurrence count),
     which keeps datasets matching all tokens at the top of the OR fallback.
-    Returns columns: df_id, version, df_description, df_structure_id, score.
+    Tokens also match the name of the categories a dataflow belongs to, so a
+    leaf title such as "Sesso, età" is reachable through its topic. That context
+    comes from the local category cache, populated by `opensdmx tree`; without
+    it the search behaves exactly as it did before.
+
+    Returns columns: df_id, version, df_description, df_structure_id,
+    cat_context, score.
     """
-    datasets = all_available()
+    datasets = _with_category_context(all_available())
+    columns = [*_SEARCH_COLUMNS, "cat_context"] if "cat_context" in datasets.columns else None
     tokens = [re.escape(token) for token in keyword.lower().split()]
 
     and_expr = pl.lit(True)
     for token in tokens:
-        and_expr = and_expr & _token_match_expr(token)
+        and_expr = and_expr & _token_match_expr(token, columns)
     results = datasets.filter(and_expr)
 
     # Fallback: a single unmatched token must not wipe out the whole result set.
@@ -255,7 +300,7 @@ def search_dataset(keyword: str) -> pl.DataFrame:
     if used_or_fallback:
         or_expr = pl.lit(False)
         for token in tokens:
-            or_expr = or_expr | _token_match_expr(token)
+            or_expr = or_expr | _token_match_expr(token, columns)
         results = datasets.filter(or_expr)
 
     if results.is_empty():

@@ -66,6 +66,29 @@ def get_name_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = No
     return None
 
 
+TITLE_SEPARATOR = " › "
+
+
+def compose_title(description: str | None, category: str | None = None) -> str:
+    """Render a dataflow title with its category as context.
+
+    Many ISTAT titles are leaf labels — "Sesso", "Età", "Lazio" — that mean
+    nothing alone; 1,622 of them are shared by more than one dataflow. Prefixing
+    the category makes the row identifiable wherever it is printed.
+
+    Returns the description unchanged when there is no category, when the two
+    are equal, or when the description already contains the category — which is
+    common, since a title often repeats its parent's wording.
+    """
+    title = (description or "").strip()
+    context = (category or "").strip()
+    if not context or not title:
+        return title or context
+    if context.lower() in title.lower():
+        return title
+    return f"{context}{TITLE_SEPARATOR}{title}"
+
+
 def _get_code_label(codelist_id: str | None, code_value: str) -> str:
     """Return human-readable label for a single code from cache, or '' if not found."""
     if not codelist_id:

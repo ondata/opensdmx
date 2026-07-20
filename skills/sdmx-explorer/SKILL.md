@@ -247,11 +247,30 @@ Search for dataflows:
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
   (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`)
 
-`search` matches the dataset **title and ID**, by substring. That means a short
-keyword also matches longer words starting the same way — searching `comuni` on
-ISTAT also returns titles containing "comunitari" or "comunicazione". Use
-`--grep` (a case-insensitive regex applied to the results) to narrow it down
-without a shell pipe:
+`search` matches the dataset **title, ID and category name**, by substring.
+
+The category name matters on ISTAT, where many titles are leaf labels that mean
+nothing alone — `Sesso`, `Età`, `Lazio`, and 1,622 dataflows sharing a title
+with at least one other. Searching `disoccupati mensili` returns the dataflows
+titled `Sesso, età` that hold the actual data, and prints them with their
+context so they can be told apart:
+
+```
+Disoccupati - dati mensili › Sesso, età
+Disoccupati - dati mensili - regolamento precedente (fino al 2020) › Sesso, età
+```
+
+The context comes from the local category cache, so **`opensdmx tree` makes
+search smarter**: run it once per provider and the categories become searchable.
+Without that cache — or on a provider with no categories — search behaves
+exactly as before. A category match ranks below a match on the dataflow's own
+title.
+
+Substring matching means a short keyword also matches longer words starting the
+same way: searching `comuni` on ISTAT also returns titles containing
+"comunitari" or "comunicazione". Use `--grep` (a case-insensitive regex applied
+to the results) to narrow it down without a shell pipe. Note `--grep` applies to
+title and ID only, never to the category, so these recipes stay precise:
 
 ```bash
 # whole word only — drops "comunitari", "comunicazione"

@@ -22,6 +22,27 @@ from rich.panel import Panel
 from rich.table import Table
 
 from .base import get_base_url, get_provider, set_extra_headers
+from .utils import compose_title
+
+def _category_of(df_id: str) -> str:
+    """Primary category name for one dataflow, or '' when unavailable.
+
+    Reads the local cache only, so it stays silent for providers without
+    categories and for users who never ran `opensdmx tree`.
+    """
+    try:
+        import polars as pl
+
+        from .categories import category_context
+
+        context = category_context(include_scheme=False)
+        if context.is_empty():
+            return ""
+        row = context.filter(pl.col("df_id") == df_id)
+        return "" if row.is_empty() else (row.row(0, named=True)["cat_primary"] or "")
+    except Exception:
+        return ""
+
 
 def _parse_header(value: str) -> tuple[str, str]:
     """Parse 'Name: Value' into (name, value). Raises BadParameter if no colon."""
@@ -391,10 +412,15 @@ def search(
 
     if _output_mode != "table":
         rows = [
-            {"df_id": r["df_id"], "df_description": r["df_description"] or "", "score": r.get("score", 0)}
+            {
+                "df_id": r["df_id"],
+                "df_description": r["df_description"] or "",
+                "category": r.get("cat_primary") or "",
+                "score": r.get("score", 0),
+            }
             for r in page_df.iter_rows(named=True)
         ]
-        _emit(rows, df=page_df.select(["df_id", "df_description", "score"]))
+        _emit(rows)
         return
 
     table = Table(title=title, show_lines=False)
@@ -403,7 +429,11 @@ def search(
     table.add_column("score", style="dim")
 
     for row in page_df.iter_rows(named=True):
-        table.add_row(row["df_id"], row["df_description"] or "", str(row.get("score", "")))
+        table.add_row(
+            row["df_id"],
+            compose_title(row["df_description"], row.get("cat_primary")),
+            str(row.get("score", "")),
+        )
 
     console.print(table)
 
@@ -461,6 +491,7 @@ def info(
             "df_id": ds["df_id"],
             "version": ds["version"],
             "df_description": ds["df_description"],
+            "category": _category_of(ds["df_id"]),
             "df_structure_id": ds["df_structure_id"],
             "dimensions": dims,
         }
@@ -473,6 +504,11 @@ def info(
         f"ID:          {ds['df_id']}\n"
         f"Version:     {ds['version']}\n"
         f"Description: {ds['df_description']}\n"
+    )
+    _cat = _category_of(ds["df_id"])
+    if _cat:
+        meta += f"Category:    {_cat}\n"
+    meta += (
         f"Structure:   {ds['df_structure_id']}"
     )
     if _page_url:
