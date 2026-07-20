@@ -450,6 +450,56 @@ def _fake_catalog() -> pl.DataFrame:
     )
 
 
+def _fake_context(rows: dict[str, str] | None = None) -> pl.DataFrame:
+    """Category-context frame as category_context() returns it."""
+    rows = rows or {}
+    return pl.DataFrame(
+        {
+            "df_id": list(rows.keys()),
+            "cat_context": list(rows.values()),
+            "cat_primary": list(rows.values()),
+        },
+        schema={"df_id": pl.Utf8, "cat_context": pl.Utf8, "cat_primary": pl.Utf8},
+    )
+
+
+def _search_with_context(keyword: str, context: pl.DataFrame, catalog=None):
+    catalog = _fake_catalog() if catalog is None else catalog
+    with patch("opensdmx.discovery.all_available", return_value=catalog), \
+         patch("opensdmx.categories.category_context", return_value=context):
+        return search_dataset(keyword)
+
+
+def test_search_matches_category_context():
+    """A leaf title is reachable through the name of its category."""
+    res = _search_with_context("unemployment", _fake_context({"GDP": "Unemployment monthly"}))
+    assert "GDP" in res["df_id"].to_list()
+
+
+def test_search_ranks_own_title_above_category_match():
+    """Category context is weaker evidence than the dataflow's own title."""
+    res = _search_with_context("unemployment", _fake_context({"GDP": "Unemployment monthly"}))
+    rows = res.iter_rows(named=True)
+    scores = {r["df_id"]: r["score"] for r in rows}
+    assert scores["UNEMP"] > scores["GDP"]
+
+
+def test_search_without_category_cache_is_unchanged():
+    """Empty context frame → byte-identical behaviour to before the feature."""
+    with_ctx = _search_with_context("unemployment age", _fake_context())
+    with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()), \
+         patch("opensdmx.categories.category_context", side_effect=FileNotFoundError):
+        broken = search_dataset("unemployment age")
+    assert with_ctx["df_id"].to_list() == ["UNEMP"]
+    assert broken["df_id"].to_list() == ["UNEMP"]
+
+
+def test_search_context_does_not_duplicate_rows():
+    """One row per dataflow even though a dataflow can sit in several categories."""
+    res = _search_with_context("births", _fake_context({"BIRTHS": "Population Demography"}))
+    assert res["df_id"].to_list().count("BIRTHS") == 1
+
+
 def test_search_and_match_all_tokens():
     """All tokens present → AND path returns the single matching row."""
     with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):

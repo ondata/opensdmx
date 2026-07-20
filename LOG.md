@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-07-20 - search matches the category context
+
+- feat(search): keyword search now also matches the **category name** a dataflow belongs to. ISTAT titles are often leaf labels — `Sesso`, `Età`, `Lazio` — and 1,622 of 4,879 dataflows (33%) share a title with another. `search "disoccupati mensili" --provider istat` went from 2 results to 6, the four new ones being the dataflows that actually hold the data.
+- feat(search): results print the category as context (`Disoccupati - dati mensili › Sesso, età`), suppressed when the title already contains it. `info` gained a `Category:` line. `-o json|csv` carry a separate `category` field, so a machine gets the parts and a human the composed line.
+- **Not ISTAT-specific.** The context comes from the category cache, and `categories_supported` holds for 9 of 14 providers. Eurostat `search "consumer prices"` went from 33 to 66 results. Providers without categories, and users who never ran `opensdmx tree`, keep the previous behaviour exactly — verified on IMF.
+- refactor: `_category_context_for_embed()` moved to `categories.category_context()`, gaining an `include_scheme` flag and a `cat_primary` column. Embeddings keep scheme+category as before; search uses the category alone, since a scheme like "Lavoro e retribuzioni" would match nearly everything under it. New shared `utils.compose_title()`.
+- **Rejected on measurement.** The issue proposed deriving a parent title from the ISTAT id pattern `{parent}_DF_{dsd}_{n}`. Measured first: on the 3,460 dataflows having both, the parent title **is** the category name in 51% of cases, and contained in it in another 4% — an ISTAT-specific id parser would have rebuilt data the catalogue already carries and already feeds to the embeddings. The 45% where the parent says something else, typically the vintage, stays uncovered and is documented in #52.
+- `--grep` deliberately still applies to title and ID only, so documented recipes return the same rows. `tree` and `siblings` are untouched: both already group by category, so a per-row prefix would be pure duplication.
+- test: 4 new cases, including a regression guard that an absent category cache leaves results byte-identical. Suite 276 → 280.
+- fix: `str.concat` → `str.join`, silencing a polars DeprecationWarning that the wider use of this code path made frequent.
+
 ## 2026-07-20 - v0.16.0 - tree: stop dropping flags silently
 
 - **BREAKING** fix(cli): `tree --category X` and `tree --show-dataflows` without `--scheme` now exit 1 instead of silently printing the scheme list with exit 0. The `scheme is None` branch returned before any tree-shaping flag was read, so three flags were accepted and discarded — `--category`'s own help text already claimed "requires --scheme", an intent never enforced.

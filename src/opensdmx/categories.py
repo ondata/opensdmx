@@ -359,3 +359,60 @@ def filter_by_category(cat_id_or_path: str) -> pl.DataFrame:
         logger.warning(f"Could not load dataflow list: {e}; returning category ids only")
         return matched
     return dataflows.join(matched, on="df_id", how="inner")
+
+
+def category_context(*, include_scheme: bool = True) -> pl.DataFrame:
+    """Aggregate the category names a dataflow belongs to, one row per df_id.
+
+    Returns columns: df_id, cat_context, cat_primary. A dataflow can sit in
+    several categories: `cat_context` concatenates them all, for matching, while
+    `cat_primary` holds one — the first alphabetically, so the choice is stable
+    across runs — for display, where a concatenation would be unreadable.
+    Measured: 96% of ISTAT dataflows have a single category, Eurostat up to 5.
+
+    Only reads the local cache — never triggers a live fetch. When the cache is
+    absent (provider without categories, or `opensdmx tree` never run) the
+    result is empty, and callers fall back to their previous behaviour.
+
+    Args:
+        include_scheme: prepend the scheme name to each category name. Useful
+            for embeddings, where broad topical words help; unhelpful for
+            keyword search, where a scheme like "Lavoro e retribuzioni" would
+            match nearly everything under it.
+    """
+    empty = pl.DataFrame(
+        {"df_id": [], "cat_context": [], "cat_primary": []},
+        schema={"df_id": pl.Utf8, "cat_context": pl.Utf8, "cat_primary": pl.Utf8},
+    )
+
+    cats_path = _categories_cache_path()
+    csation_path = _categorisation_cache_path()
+    if not cats_path.exists() or not csation_path.exists():
+        return empty
+
+    categories_df = pl.read_parquet(cats_path)
+    categorisation_df = pl.read_parquet(csation_path)
+
+    if categorisation_df.is_empty():
+        return empty
+
+    parts = ["scheme_name", "cat_name"] if include_scheme else ["cat_name"]
+    return (
+        categorisation_df.join(
+            categories_df.select(["scheme_id", "scheme_name", "cat_path", "cat_name"]),
+            on=["scheme_id", "cat_path"],
+            how="left",
+        )
+        .with_columns(
+            pl.concat_str(
+                [pl.col(c).fill_null("") for c in parts],
+                separator=" ",
+            ).str.strip_chars().alias("ctx"),
+            pl.col("cat_name").fill_null("").str.strip_chars().alias("cat_only"),
+        )
+        .group_by("df_id")
+        .agg(
+            pl.col("ctx").str.join(" ").alias("cat_context"),
+            pl.col("cat_only").sort().first().alias("cat_primary"),
+        )
+    )
