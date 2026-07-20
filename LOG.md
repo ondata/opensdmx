@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-07-20 - search matches the category context
+## 2026-07-20 - v0.17.0 - search matches the category context
 
 - feat(search): keyword search now also matches the **category name** a dataflow belongs to. ISTAT titles are often leaf labels — `Sesso`, `Età`, `Lazio` — and 1,622 of 4,879 dataflows (33%) share a title with another. `search "disoccupati mensili" --provider istat` went from 2 results to 6, the four new ones being the dataflows that actually hold the data.
 - feat(search): results print the category as context (`Disoccupati - dati mensili › Sesso, età`), suppressed when the title already contains it. `info` gained a `Category:` line. `-o json|csv` carry a separate `category` field, so a machine gets the parts and a human the composed line.
@@ -10,6 +10,8 @@
 - `--grep` deliberately still applies to title and ID only, so documented recipes return the same rows. `tree` and `siblings` are untouched: both already group by category, so a per-row prefix would be pure duplication.
 - test: 4 new cases, including a regression guard that an absent category cache leaves results byte-identical. Suite 276 → 280.
 - fix: `str.concat` → `str.join`, silencing a polars DeprecationWarning that the wider use of this code path made frequent.
+- Review follow-up: `compose_title` used a substring test, so the category `Age` was silently dropped from the title `Average earnings`; now a casefolded prefix match, pinned by tests. CSV output regained its typed frame — without it `score` was stringified and the column set depended on whether the category cache existed, making the schema a function of local state.
+- Filed while planning this: #57 (the embeddings index records neither the model nor the text that built it, so it cannot report staleness) and #58 (the 45% of ISTAT dataflows whose parent title carries a vintage the category does not).
 
 ## 2026-07-20 - v0.16.0 - tree: stop dropping flags silently
 
