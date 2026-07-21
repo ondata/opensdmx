@@ -175,3 +175,27 @@ def test_partial_codelist_selects_matching_criterion(_inps):
     with patch.object(inps, "_hub_json", return_value=payload):
         vals = inps._partial_codelist(3, "INPS,DFB_A,1.0", "INDICATORI")
     assert [v["id"] for v in vals] == ["RETR_ANNO", "NUM_LAVORATORI"]  # not OTHER
+
+
+def test_partial_codelist_no_matching_criterion_returns_empty(_inps):
+    # Requested dimension absent from the response → return nothing, not criteria[0].
+    payload = {"criteria": [{"id": "TERRITORIO", "values": [{"id": "ITC4"}]}]}
+    with patch.object(inps, "_hub_json", return_value=payload):
+        vals = inps._partial_codelist(3, "INPS,DFB_A,1.0", "INDICATORI")
+    assert vals == []
+
+
+def test_data_calls_use_resolved_version_not_stale_dataset(_inps):
+    # dataset carries a stale version "1.0"; the index resolves "2.0" → the hub
+    # id must use the resolved version.
+    dataset = {"df_id": "DFB_A", "version": "1.0", "dimensions": {"D1": {"id": "D1"}}}
+    captured: dict[str, str] = {}
+
+    def fake_collect(node, ds_full, dim_id):
+        captured["ds_full"] = ds_full
+        return [{"id": "X", "name": "x"}]
+
+    with patch.object(inps, "_resolve", return_value=(3, "2.0")), \
+         patch.object(inps, "_collect_dim_records", side_effect=fake_collect):
+        inps.get_available_values(dataset)
+    assert captured["ds_full"] == "INPS,DFB_A,2.0"

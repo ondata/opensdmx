@@ -1348,9 +1348,14 @@ def get(
         ds = _load_and_filter(dataset_id, filters)
 
         # Probe for large datasets when no last_n/first_n limit is set.
-        # Skip if provider does not support lastNObservations (probe would fetch all data).
+        # Skip when the provider has no server-side lastNObservations: the probe
+        # would download the full dataflow (hub-only/full-download providers like
+        # INPS), so the "size check" would cost a whole extra download.
         from .base import get_provider as _get_provider
-        _probe_supported = "lastNObservations" not in _get_provider().get("unsupported_params", [])
+        _probe_supported = (
+            _get_provider().get("last_n_supported", True)
+            and "lastNObservations" not in _get_provider().get("unsupported_params", [])
+        )
         if not last_n and not first_n and not yes and _probe_supported:
             try:
                 with console.status("[dim]Checking dataset size...[/dim]"):

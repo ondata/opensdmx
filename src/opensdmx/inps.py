@@ -389,11 +389,13 @@ def _partial_codelist(
     )
     criteria = payload.get("criteria", []) or []
     # Select the criterion matching the requested dimension rather than assuming
-    # position 0 — guards against reordered or multi-criterion responses.
+    # position 0 — guards against reordered or multi-criterion responses. If no
+    # criterion matches, return nothing rather than guessing criteria[0], which
+    # would be another dimension's values.
     for crit in criteria:
         if crit.get("id") == dim_id:
             return crit.get("values", []) or []
-    return criteria[0].get("values", []) or [] if criteria else []
+    return []
 
 
 def _collect_dim_records(node: int, ds_full: str, dim_id: str) -> list[dict[str, str]]:
@@ -431,7 +433,7 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, list[str]]:
     """
     df_id = dataset["df_id"]
     node, resolved_version = _resolve(df_id)
-    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
+    ds_full = _ds_identifier(df_id, resolved_version)
 
     result: dict[str, list[str]] = {}
     for dim_id in dataset.get("dimensions", {}):
@@ -458,7 +460,7 @@ def get_data(dataset: dict[str, Any]) -> pl.DataFrame:
 
     df_id = dataset["df_id"]
     node, resolved_version = _resolve(df_id)
-    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
+    ds_full = _ds_identifier(df_id, resolved_version)
     path = f"nodes/{node}/datasets/{ds_full}/download/csv"
 
     # The hub occasionally returns a partial/malformed body with HTTP 200; that
@@ -500,7 +502,7 @@ def get_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[dic
     """
     df_id = dataset["df_id"]
     node, resolved_version = _resolve(df_id)
-    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
+    ds_full = _ds_identifier(df_id, resolved_version)
     return [
         {"id": r["id"], "name": r["name"], "parent": None, "order": None}
         for r in _collect_dim_records(node, ds_full, dimension_id)
