@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-07-21 - INPS provider (hub-only)
+
+- feat(provider): added **INPS** — the first *hub-only* provider. Its classic SDMX-REST endpoint is WAF-blocked, so opensdmx talks exclusively to the `.Stat Suite` DataBrowser middleware (`https://opendata.inps.it/databrowser/api/core`, JSON over GET+POST). All INPS logic lives in a dedicated `inps.py` adapter; core functions delegate via a single `if provider.get("hub_only")` branch — no scattered `if provider ==` checks.
+- The middleware is split into four *nodes* (observatories: pensioni, dipendenti, imprese, politiche occupazionali); `hub_nodes` in `portals.json` holds the `code→nodeId` map, and a `df_id→node` index is built once from the four catalogs and cached as Parquet.
+- `providers`/`tree`/`search`/`info`/`constraints`/`get` all work. Discovery reads catalog+structure+PartialCodelists; `get` downloads the full dataflow as SDMX-CSV (the middleware has no server-side filter) and filters client-side (dimensions + a by-year period window), mirroring Derzhstat's `data_key_format:"empty"`. `last_n`/`first_n` unavailable.
+- infra: `base.sdmx_request` gained `_method`/`_json_body`/`_base_url` so hub POST calls inherit rate-limit/retry/file-lock. `dimensions_info` now prefers a description carried on the dimension (the hub's per-dimension label), falling back to the codelist description for the other providers.
+- Verified live end-to-end: RAL media Lombardia 2021 = **27,285 €** (matches a manual cross-check), `--labels` resolves Italian names. Full test suite green, ruff clean, zero changes to any other provider's path.
+- docs: `docs/inps/middleware-api.md` (endpoint reference), `docs/providers.md` + skill `references/providers.md` updated.
+
 ## 2026-07-20 - v0.17.0 - search matches the category context
 
 - feat(search): keyword search now also matches the **category name** a dataflow belongs to. ISTAT titles are often leaf labels — `Sesso`, `Età`, `Lazio` — and 1,622 of 4,879 dataflows (33%) share a title with another. `search "disoccupati mensili" --provider istat` went from 2 results to 6, the four new ones being the dataflows that actually hold the data.

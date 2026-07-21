@@ -20,6 +20,7 @@ references:
 |----------|:-----------:|:------:|-------|
 | Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
 | ISTAT | ✓ | ✓ | Use `--provider istat`; `constraints` uses the `.Stat Suite` hub by default — sub-second per dimension, exposes every dim including `REF_AREA`. Dedicated reference: [istat-flow.md](istat-flow.md) |
+| INPS | ✓ | ✗ | Use `--provider inps`; **hub-only** provider (classic SDMX-REST is WAF-blocked, so everything goes through the DataBrowser middleware). Four observatories appear as schemes in `opensdmx tree` (pensioni, dipendenti, imprese, politiche occupazionali). `constraints` returns ground-truth values incl. NUTS-2021 territory codes (Lombardia=`ITC4`); dimension IDs are uppercase (`TERRITORIO`, `INDICATORI`, ...). `opensdmx get` **works**: it downloads the full dataflow (the middleware has no server-side filter) and applies dimension filters client-side; the period window (`--start-period`/`--end-period`) is applied client-side by year, and `--last-n`/`--first-n` are unavailable (`last_n ✗`). |
 | ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
 | OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe `get` instead |
 | INSEE | ✗ | ✓ | Use `--provider insee`; French macroeconomic time series (BDM database) |

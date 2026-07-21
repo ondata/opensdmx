@@ -331,6 +331,9 @@ def sdmx_request(
     _timeout: float | None = None,
     _max_retries: int | None = None,
     _is_data: bool = False,
+    _method: str = "GET",
+    _json_body: Any = None,
+    _base_url: str | None = None,
     **params: Any,
 ) -> httpx.Response:
     """Make a request to the active SDMX provider with retry logic.
@@ -339,8 +342,14 @@ def sdmx_request(
     (used e.g. by `availableconstraint` discovery to fail fast on slow backends).
     `_is_data=True` routes the call through the provider's `data_rate_limit` timer
     (when configured), keeping data and structure calls on independent clocks.
+    `_method="POST"` with `_json_body` sends a JSON POST — used by the `.Stat Suite`
+    hub middleware (e.g. INPS), which serves catalog/structure/data over POST.
+    `_base_url` overrides the provider base URL for this call (the hub lives on a
+    separate host, e.g. `.../databrowser/api/core`); rate-limit, retry, file-lock
+    and cache key still key off the active provider.
     """
-    url = f"{get_base_url()}/{path}"
+    base = _base_url if _base_url is not None else get_base_url()
+    url = f"{base}/{path}"
     effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
     effective_attempts = _max_retries if _max_retries is not None else 3
 
@@ -372,11 +381,24 @@ def sdmx_request(
                     get_provider().get("user_agent") or "opensdmx Python package",
                 )
                 extra = {k: v for k, v in _extra_headers.items() if k.lower() != "user-agent"}
-                resp = client.get(
-                    url,
-                    params=params or None,
-                    headers={"Accept": accept, "User-Agent": user_agent, **extra},
-                )
+                if _method == "POST":
+                    resp = client.post(
+                        url,
+                        params=params or None,
+                        json=_json_body,
+                        headers={
+                            "Accept": accept,
+                            "Content-Type": "application/json",
+                            "User-Agent": user_agent,
+                            **extra,
+                        },
+                    )
+                else:
+                    resp = client.get(
+                        url,
+                        params=params or None,
+                        headers={"Accept": accept, "User-Agent": user_agent, **extra},
+                    )
                 resp.raise_for_status()
                 return resp
 

@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
 from opensdmx.base import PROVIDERS, get_extra_headers, get_provider, set_extra_headers, set_provider
 
 

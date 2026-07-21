@@ -1,6 +1,6 @@
 # Provider Reference
 
-opensdmx supports 14 configured SDMX 2.1 providers, configured in `src/opensdmx/portals.json`. Any SDMX 2.1-compliant endpoint can also be used as a custom provider.
+opensdmx supports 15 configured SDMX 2.1 providers, configured in `src/opensdmx/portals.json`. Any SDMX 2.1-compliant endpoint can also be used as a custom provider.
 
 ---
 
@@ -179,6 +179,21 @@ Quirks: UNICEF data requests use `?format=csvdata`.
 
 Quirks: Derzhstat blocks default library user-agents, so opensdmx sends a browser-like user-agent. Wildcard dot keys return 404, so dimension filters are applied client-side after download.
 
+### inps
+
+| Field | Value |
+|---|---|
+| Name | INPS |
+| `agency_id` | `INPS` |
+| `rate_limit` | 0.5 s |
+| `language` | `it` |
+| `hub_base_url` | `https://opendata.inps.it/databrowser/api/core` |
+| `hub_only` | `true` |
+| `hub_nodes` | `{pensioni:2, dipendenti:3, imprese:4, politiche_occupazionali:1}` |
+| `user_agent` | `Mozilla/5.0` |
+
+Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked by a WAF, so `base_url` points at the middleware (the same host as `hub_base_url`) and every catalog/structure/constraint/data call goes through the `.Stat Suite` DataBrowser middleware (`hub_base_url`, POST + GET JSON), routed by the dedicated `inps.py` adapter. The middleware is split into four *nodes* (one per observatory: pensions, employees, companies, employment policies); the `code→nodeId` map lives in `hub_nodes`, and a `df_id→node` index is built once from the four catalogs and cached. Data retrieval downloads the whole dataflow as SDMX-CSV (the middleware has no server-side filter) and filters client-side, mirroring Derzhstat's `data_key_format: "empty"`; the period window is applied client-side by year and `last_n`/`first_n` are unavailable. Territory codes are NUTS 2021 (Lombardia = `ITC4`). See [inps/middleware-api.md](inps/middleware-api.md) for the endpoint reference.
+
 ---
 
 ## Provider configuration fields
@@ -204,6 +219,9 @@ Quirks: Derzhstat blocks default library user-agents, so opensdmx sends a browse
 | `data_rate_limit` | float | absent | Dedicated rate limit for data requests, separate from structure requests |
 | `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
 | `data_key_format` | string | `"dots"` | SDMX key path style; `"empty"` omits wildcard dot keys and filters client-side |
+| `hub_base_url` | string | absent | `.Stat Suite` DataBrowser middleware base URL (ISTAT constraints fast path; INPS full backend) |
+| `hub_only` | boolean | `false` | When `true`, the provider has no SDMX-REST endpoint; catalog/structure/constraints are served entirely via `hub_base_url` (INPS) |
+| `hub_nodes` | dict | absent | `code→nodeId` map for hub-only providers whose middleware is split into nodes (INPS observatories) |
 | `constraints_supported` | boolean | provider-specific | Capability flag shown by `opensdmx providers` |
 | `last_n_supported` | boolean | provider-specific | Capability flag for observation count parameters |
 | `categories_supported` | boolean | provider-specific | Capability flag for category tree support |
