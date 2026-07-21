@@ -248,7 +248,6 @@ class TestAllAvailable:
 
     def test_istat_bulk_fail_sets_has_constraint_null(self, tmp_path):
         """all_available() with ISTAT: bulk CC failure leaves has_constraint as null."""
-        import polars as pl
         cache = tmp_path / "dataflows.parquet"
         set_provider("istat")
         try:
@@ -817,3 +816,88 @@ class TestSplitRateLimit:
         called_path = mock_lock.call_args.args[0]
         assert called_path == plain_lock
         assert ".data.lock" not in called_path
+
+
+# ---------------------------------------------------------------------------
+# POST branch + base-url override in sdmx_request (used by the INPS hub)
+# ---------------------------------------------------------------------------
+
+def _mock_post_client(content: bytes = b"{}"):
+    """httpx.Client mock exposing both get and post, serving *content*."""
+    resp = MagicMock()
+    resp.content = content
+    resp.raise_for_status = MagicMock()
+
+    client = MagicMock()
+    client.__enter__ = MagicMock(return_value=client)
+    client.__exit__ = MagicMock(return_value=False)
+    client.post = MagicMock(return_value=resp)
+    client.get = MagicMock(return_value=resp)
+    return patch("opensdmx.base.httpx.Client", return_value=client), client
+
+
+class TestPostBranch:
+    def test_post_method_json_body_and_base_url(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        cm, client = _mock_post_client()
+        with cm:
+            sdmx_request(
+                "nodes/3/x",
+                accept="application/json",
+                _method="POST",
+                _json_body=[{"id": "A"}],
+                _base_url="https://hub.test/api",
+            )
+        assert client.post.called
+        assert not client.get.called          # POST must not fall through to GET
+        args, kwargs = client.post.call_args
+        assert args[0] == "https://hub.test/api/nodes/3/x"   # base-url override honored
+        assert kwargs["json"] == [{"id": "A"}]
+        assert kwargs["headers"]["Content-Type"] == "application/json"
+        assert kwargs["headers"]["Accept"] == "application/json"
+
+    def test_get_is_default_and_no_content_type(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        cm, client = _mock_post_client()
+        with cm:
+            sdmx_request("data/TEST", accept="text/csv")
+        assert client.get.called
+        assert not client.post.called
+        _, kwargs = client.get.call_args
+        assert "Content-Type" not in kwargs["headers"]
+
+
+# ---------------------------------------------------------------------------
+# Hub-only get_data path (INPS): full download + client-side filter/window
+# ---------------------------------------------------------------------------
+
+class TestHubOnlyGetData:
+    def test_filters_dimensions_and_year_window(self):
+        set_provider("inps")
+        try:
+            full = pl.DataFrame({
+                "TERRITORIO": ["ITC4", "ITC1", "ITC4"],
+                "TIME_PERIOD": ["2021", "2021", "2020"],
+                "OBS_VALUE": [1.0, 2.0, 3.0],
+            })
+            dataset = {"df_id": "DFB_X", "version": "1.0", "filters": {"TERRITORIO": "ITC4"}}
+            with patch("opensdmx.inps.get_data", return_value=full):
+                result = get_data(dataset, start_period="2021", end_period="2021")
+            # only ITC4 (dimension filter) and only 2021 (year window) survive
+            assert result["TERRITORIO"].to_list() == ["ITC4"]
+            assert result["OBS_VALUE"].to_list() == [1.0]
+        finally:
+            set_provider("eurostat")
+
+    def test_warns_and_ignores_last_n(self, caplog):
+        set_provider("inps")
+        try:
+            full = pl.DataFrame({"TIME_PERIOD": ["2021"], "OBS_VALUE": [1.0]})
+            dataset = {"df_id": "DFB_X", "version": "1.0", "filters": {}}
+            with patch("opensdmx.inps.get_data", return_value=full):
+                with caplog.at_level("WARNING"):
+                    result = get_data(dataset, last_n_observations=5)
+            assert any("first_n/last_n" in r.message for r in caplog.records)
+            assert result.height == 1          # data still returned, arg ignored
+        finally:
+            set_provider("eurostat")

@@ -91,9 +91,26 @@ def test_all_available_parses_catalog(_inps):
     assert rows["DFB_A"]["version"] == "1.0"
     assert rows["DFB_A"]["df_structure_id"] is None
     assert rows["DFB_A"]["has_constraint"] is True
-    # df->node index persisted as a side effect
+    assert rows["DFB_A"]["version"] == "1.0"        # read from the identifier
+    # df->node index persisted as a side effect: df_id -> (node, version)
     saved = save_index.call_args[0][0]
-    assert saved == {"DFB_A": 3, "DFB_B": 3}
+    assert saved == {"DFB_A": (3, "1.0"), "DFB_B": (3, "1.0")}
+
+
+def test_all_available_reads_version_from_identifier(_inps):
+    catalog = {
+        "categoryGroups": [{"categories": [{
+            "id": "OS1", "label": "Obs",
+            "datasetIdentifiers": ["INPS,DFB_V2,2.0"], "childrenCategories": [],
+        }]}],
+        "datasetMap": {"INPS,DFB_V2,2.0": {"title": "Versioned flow"}},
+    }
+    with patch.object(inps, "_fetch_catalogs", return_value={5: catalog}), \
+         patch.object(inps, "_save_index") as save_index:
+        df = inps.all_available()
+
+    assert df.row(0, named=True)["version"] == "2.0"            # not hard-coded 1.0
+    assert save_index.call_args[0][0] == {"DFB_V2": (5, "2.0")}
 
 
 # ── load_categories ───────────────────────────────────────────────────────
@@ -117,7 +134,7 @@ def test_load_categories_schemes_and_hierarchy(_inps):
 # ── get_dimensions ────────────────────────────────────────────────────────
 
 def test_get_dimensions_excludes_time_and_orders(_inps):
-    with patch.object(inps, "_node_for_df", return_value=3), \
+    with patch.object(inps, "_resolve", return_value=(3, "1.0")), \
          patch.object(inps, "_hub_json", return_value=_STRUCTURE):
         dims = inps.get_dimensions("DFB_A")
 
@@ -147,3 +164,14 @@ def test_collect_dim_records_expands_non_selectable_parent(_inps):
 
     ids = {r["id"]: r["name"] for r in records}
     assert ids == {"ITC4": "Lombardia", "ITC1": "Piemonte"}   # parent ITC dropped
+
+
+def test_partial_codelist_selects_matching_criterion(_inps):
+    # Response with the requested dimension NOT at position 0.
+    payload = {"criteria": [
+        {"id": "OTHER", "values": [{"id": "X"}]},
+        {"id": "INDICATORI", "values": [{"id": "RETR_ANNO"}, {"id": "NUM_LAVORATORI"}]},
+    ]}
+    with patch.object(inps, "_hub_json", return_value=payload):
+        vals = inps._partial_codelist(3, "INPS,DFB_A,1.0", "INDICATORI")
+    assert [v["id"] for v in vals] == ["RETR_ANNO", "NUM_LAVORATORI"]  # not OTHER

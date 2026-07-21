@@ -6,8 +6,8 @@
 - The middleware is split into four *nodes* (observatories: pensioni, dipendenti, imprese, politiche occupazionali); `hub_nodes` in `portals.json` holds the `code→nodeId` map, and a `df_id→node` index is built once from the four catalogs and cached as Parquet.
 - `providers`/`tree`/`search`/`info`/`constraints`/`get` all work. Discovery reads catalog+structure+PartialCodelists; `get` downloads the full dataflow as SDMX-CSV (the middleware has no server-side filter) and filters client-side (dimensions + a by-year period window), mirroring Derzhstat's `data_key_format:"empty"`. `last_n`/`first_n` unavailable.
 - infra: `base.sdmx_request` gained `_method`/`_json_body`/`_base_url` so hub POST calls inherit rate-limit/retry/file-lock. `dimensions_info` now prefers a description carried on the dimension (the hub's per-dimension label), falling back to the codelist description for the other providers.
-- Verified live end-to-end: RAL media Lombardia 2021 = **27,285 €** (matches a manual cross-check), `--labels` resolves Italian names. ruff clean, pytest 289 passed, zero changes to any other provider's path.
-- docs: `docs/inps/middleware-api.md` (endpoint reference), `docs/providers.md` + skill `references/providers.md` updated. Reverse-engineering notes in `tmp/inps-databrowser-reverse-engineering.md`.
+- Verified live end-to-end: RAL media Lombardia 2021 = **27,285 €** (matches a manual cross-check), `--labels` resolves Italian names. Full test suite green, ruff clean, zero changes to any other provider's path.
+- docs: `docs/inps/middleware-api.md` (endpoint reference), `docs/providers.md` + skill `references/providers.md` updated.
 
 ## 2026-07-20 - v0.17.0 - search matches the category context
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import re
 from typing import Any
 
@@ -88,6 +89,11 @@ def get_data(
     if hub_only:
         # Hub-only providers (INPS) have no SDMX-REST data endpoint: download the
         # full dataflow via the middleware and filter client-side below.
+        if last_n_observations is not None or first_n_observations is not None:
+            logging.getLogger(__name__).warning(
+                "Provider does not support first_n/last_n observations "
+                "(hub-only full download); ignoring these arguments."
+            )
         from . import inps
         data: pl.DataFrame = inps.get_data(dataset)
     else:
@@ -119,7 +125,10 @@ def get_data(
             data = data.filter(pl.col(col).is_in(allowed))
 
     # Hub-only downloads are full: apply the period window client-side (by year),
-    # since the middleware ignores startPeriod/endPeriod.
+    # since the middleware ignores startPeriod/endPeriod. INPS keeps intra-annual
+    # granularity in a dimension (e.g. MESE), never in TIME_PERIOD — which is
+    # always the year (YYYY) — so a year comparison is correct here; a full-date
+    # compare would wrongly drop annual rows on a sub-annual start/end.
     if hub_only and "TIME_PERIOD" in data.columns:
         if start_period:
             data = data.filter(pl.col("TIME_PERIOD").str.slice(0, 4) >= str(start_period)[:4])

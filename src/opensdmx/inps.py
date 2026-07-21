@@ -23,7 +23,7 @@ per-provider caches.
 All hub calls go through `base.sdmx_request(..., _base_url=hub, _method=...)`,
 inheriting the provider's rate-limit, retry, file-lock and User-Agent handling.
 
-Reference: tmp/inps-databrowser-reverse-engineering.md
+Reference: docs/inps/middleware-api.md
 """
 
 from __future__ import annotations
@@ -64,12 +64,18 @@ def _nodes() -> dict[str, int]:
     return {str(k): int(v) for k, v in get_provider().get("hub_nodes", {}).items()}
 
 
+def _hub_timeout() -> float | None:
+    """Per-provider hub timeout (`hub_timeout` in portals.json), or None for default."""
+    t = get_provider().get("hub_timeout")
+    return float(t) if t is not None else None
+
+
 def _hub_json(node: int, path: str, *, method: str = "GET", body: Any = None) -> Any:
     """Call a per-node hub endpoint and return parsed JSON.
 
     Routes through `base.sdmx_request` so rate-limit/retry/lock/User-Agent are
     inherited from the active (INPS) provider, while the base URL is overridden
-    to the hub host.
+    to the hub host and the request is bounded by the provider's `hub_timeout`.
     """
     full_path = f"nodes/{node}/{path.lstrip('/')}"
     resp = sdmx_request(
@@ -78,6 +84,7 @@ def _hub_json(node: int, path: str, *, method: str = "GET", body: Any = None) ->
         _base_url=_hub_base(),
         _method=method,
         _json_body=body,
+        _timeout=_hub_timeout(),
     )
     return resp.json()
 
@@ -108,38 +115,49 @@ def _index_cache_path() -> Path:
     return get_cache_dir() / "inps_df_index.parquet"
 
 
-def _save_index(index: dict[str, int]) -> None:
+def _save_index(index: dict[str, tuple[int, str]]) -> None:
     try:
         pl.DataFrame(
-            {"df_id": list(index.keys()), "node_id": list(index.values())},
-            schema={"df_id": pl.Utf8, "node_id": pl.Int64},
+            {
+                "df_id": list(index.keys()),
+                "node_id": [n for n, _ in index.values()],
+                "version": [v for _, v in index.values()],
+            },
+            schema={"df_id": pl.Utf8, "node_id": pl.Int64, "version": pl.Utf8},
         ).write_parquet(_index_cache_path())
     except OSError as e:
         logger.warning("Could not write INPS df->node index: %s", e)
 
 
-def _load_index() -> dict[str, int] | None:
+def _load_index() -> dict[str, tuple[int, str]] | None:
     path = _index_cache_path()
     if not path.exists():
         return None
     try:
         df = pl.read_parquet(path)
-        return dict(zip(df["df_id"].to_list(), df["node_id"].to_list()))
+        if "version" not in df.columns:  # pre-versioned cache → force rebuild
+            return None
+        return {r["df_id"]: (r["node_id"], r["version"]) for r in df.iter_rows(named=True)}
     except (OSError, pl.exceptions.PolarsError):
         return None
 
 
-def _node_for_df(df_id: str) -> int:
-    """Return the node id owning `df_id`, building the index if necessary."""
+def _resolve(df_id: str) -> tuple[int, str]:
+    """Return `(node_id, version)` for `df_id`, building the index if necessary."""
     index = _load_index()
     if index is None or df_id not in index:
         # Cold path: build the catalog-derived caches, then retry.
         all_available()
         index = _load_index() or {}
-    node = index.get(df_id)
-    if node is None:
+    entry = index.get(df_id)
+    if entry is None:
         raise ValueError(f"INPS dataflow '{df_id}' not found in any node catalog.")
-    return node
+    return entry
+
+
+def _node_for_df(df_id: str) -> int:
+    """Return the node id owning `df_id`, building the index if necessary."""
+    return _resolve(df_id)[0]
 
 
 # --------------------------------------------------------------------------- #
@@ -151,11 +169,11 @@ def all_available() -> pl.DataFrame:
     Schema matches `discovery.all_available`:
         df_id, version, df_description, df_structure_id, has_constraint
 
-    `df_id` is the bare flow id (e.g. `DFB_ST_DIP_ATECO_REG_01`), version is
-    "1.0", `df_structure_id` is None (structure is fetched by df_id), and
-    `has_constraint` is True (the hub always exposes per-dimension values).
-    Descriptions come from each node's `datasetMap` title; the leaf category
-    label is a fallback when a title is absent.
+    `df_id` is the bare flow id (e.g. `DFB_ST_DIP_ATECO_REG_01`), version is read
+    from the catalog identifier (`INPS,{flow},{version}`), `df_structure_id` is
+    None (structure is fetched by df_id), and `has_constraint` is True (the hub
+    always exposes per-dimension values). Descriptions come from each node's
+    `datasetMap` title; the leaf category label is a fallback when absent.
     """
     catalogs = _fetch_catalogs()
 
@@ -164,7 +182,7 @@ def all_available() -> pl.DataFrame:
     leaf_label = _leaf_labels(catalogs)
 
     records: list[dict[str, Any]] = []
-    index: dict[str, int] = {}
+    index: dict[str, tuple[int, str]] = {}
     seen: set[str] = set()
     for node, catalog in catalogs.items():
         # The authoritative dataflow set is the category tree's
@@ -177,14 +195,23 @@ def all_available() -> pl.DataFrame:
         }
         for full_id in _catalog_dataset_ids(catalog):
             df_id = _bare_df_id(full_id)
+            parts = full_id.split(",")
+            version = parts[2] if len(parts) >= 3 else "1.0"
             if df_id in seen:
+                # A flow id shared across observatories keeps its first node;
+                # warn so the ambiguity is visible rather than silent.
+                if index.get(df_id, (node, ""))[0] != node:
+                    logger.warning(
+                        "INPS dataflow '%s' appears in multiple nodes; keeping node %s",
+                        df_id, index[df_id][0],
+                    )
                 continue
             seen.add(df_id)
-            index[df_id] = node
+            index[df_id] = (node, version)
             description = title_map.get(df_id) or leaf_label.get(df_id) or df_id
             records.append({
                 "df_id": df_id,
-                "version": "1.0",
+                "version": version,
                 "df_description": description,
                 "df_structure_id": None,
                 "has_constraint": True,
@@ -318,8 +345,9 @@ def get_dimensions(df_id: str, version: str | None = None) -> dict[str, dict[str
     TIME_PERIOD is excluded (it is the `timeDimension`, mirroring how every
     SDMX DSD keeps the time dimension out of the ordinary dimension list).
     """
-    node = _node_for_df(df_id)
-    structure = _hub_json(node, f"datasets/{_ds_identifier(df_id, version)}/structure")
+    node, resolved_version = _resolve(df_id)
+    ds_id = _ds_identifier(df_id, version or resolved_version)
+    structure = _hub_json(node, f"datasets/{ds_id}/structure")
     time_dim = structure.get("timeDimension")
 
     dims: dict[str, dict[str, Any]] = {}
@@ -360,9 +388,12 @@ def _partial_codelist(
         body=body,
     )
     criteria = payload.get("criteria", []) or []
-    if not criteria:
-        return []
-    return criteria[0].get("values", []) or []
+    # Select the criterion matching the requested dimension rather than assuming
+    # position 0 — guards against reordered or multi-criterion responses.
+    for crit in criteria:
+        if crit.get("id") == dim_id:
+            return crit.get("values", []) or []
+    return criteria[0].get("values", []) or [] if criteria else []
 
 
 def _collect_dim_records(node: int, ds_full: str, dim_id: str) -> list[dict[str, str]]:
@@ -394,12 +425,13 @@ def _collect_dim_records(node: int, ds_full: str, dim_id: str) -> list[dict[str,
 def get_available_values(dataset: dict[str, Any]) -> dict[str, list[str]]:
     """Return `{dim_id: [codes]}` for every (non-time) dimension via the hub.
 
-    Returns `{}` on failure so the caller can decide how to degrade.
+    An unknown dataflow or a hub/network error propagates (the discovery caller
+    has no SDMX-REST fallback for a hub-only provider); dimensions that simply
+    return no values are omitted from the result.
     """
     df_id = dataset["df_id"]
-    version = dataset.get("version")
-    node = _node_for_df(df_id)
-    ds_full = _ds_identifier(df_id, version)
+    node, resolved_version = _resolve(df_id)
+    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
 
     result: dict[str, list[str]] = {}
     for dim_id in dataset.get("dimensions", {}):
@@ -425,9 +457,8 @@ def get_data(dataset: dict[str, Any]) -> pl.DataFrame:
     import io
 
     df_id = dataset["df_id"]
-    version = dataset.get("version")
-    node = _node_for_df(df_id)
-    ds_full = _ds_identifier(df_id, version)
+    node, resolved_version = _resolve(df_id)
+    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
     path = f"nodes/{node}/datasets/{ds_full}/download/csv"
 
     # The hub occasionally returns a partial/malformed body with HTTP 200; that
@@ -442,6 +473,7 @@ def get_data(dataset: dict[str, Any]) -> pl.DataFrame:
             _method="POST",
             _json_body=[],
             _is_data=True,
+            _timeout=_hub_timeout(),
         )
         try:
             return pl.read_csv(
@@ -467,9 +499,8 @@ def get_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[dic
     view is sufficient for label lookup).
     """
     df_id = dataset["df_id"]
-    version = dataset.get("version")
-    node = _node_for_df(df_id)
-    ds_full = _ds_identifier(df_id, version)
+    node, resolved_version = _resolve(df_id)
+    ds_full = _ds_identifier(df_id, dataset.get("version") or resolved_version)
     return [
         {"id": r["id"], "name": r["name"], "parent": None, "order": None}
         for r in _collect_dim_records(node, ds_full, dimension_id)
