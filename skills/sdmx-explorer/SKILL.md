@@ -830,6 +830,22 @@ Key points:
 
 ## Key principles
 
+**Negative results are valid — never force a match**
+The discovery phases handle the "zero results" case (paginate, change keyword,
+offer semantic search). But the more insidious case is when results *exist* yet
+none actually matches the concept the user asked for at the required granularity
+— unit, geography, population, time frequency. When that happens, **say so
+plainly**: *"No SDMX dataflow exposes this indicator"*. Do not present a
+superficially-similar dataflow as if it answered the question — a national
+contractual-wage **index** is not a regional average gross **salary in euro**; a
+one-off graduate-cohort survey is not a decade-long time series. For each
+near-candidate you discarded, state concretely *why* it fails (wrong unit, wrong
+territorial level, different population, not a time series). If you know the data
+exists in a non-SDMX source (e.g. a national statistical release, an INPS
+observatory), name it as such, out of band. Returning the truth "this does not
+exist here" is a correct, complete answer — never rationalise a weak candidate
+into a recommendation to avoid an empty result.
+
 **Always explain the indicator — never assume prior knowledge**
 After presenting any results, always include a plain-language explanation of the
 key indicator(s) used. Do not assume the user knows what GNI, PPP, HICP, or any
