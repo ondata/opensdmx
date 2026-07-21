@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-07-21 - INPS provider (hub-only)
+## 2026-07-21 - v0.18.0 - INPS provider (hub-only)
 
 - feat(provider): added **INPS** — the first *hub-only* provider. Its classic SDMX-REST endpoint is WAF-blocked, so opensdmx talks exclusively to the `.Stat Suite` DataBrowser middleware (`https://opendata.inps.it/databrowser/api/core`, JSON over GET+POST). All INPS logic lives in a dedicated `inps.py` adapter; core functions delegate via a single `if provider.get("hub_only")` branch — no scattered `if provider ==` checks.
 - The middleware is split into four *nodes* (observatories: pensioni, dipendenti, imprese, politiche occupazionali); `hub_nodes` in `portals.json` holds the `code→nodeId` map, and a `df_id→node` index is built once from the four catalogs and cached as Parquet.
