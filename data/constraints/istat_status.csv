@@ -2156,3 +2156,191 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",ok,hub,9,11631,0,"",2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_6,Anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
 39_494,Mortalità per territorio di residenza,empty,hub,0,0,0,"",2026-07-20
+39_494_DF_DCIS_CMORTE1_RES_1,Causa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_2,Causa ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_3,Causa e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_4,Età e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_5,"Istruzione, stato civile e mese di decesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_6,Anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_7,Anno di matrimonio ed età del coniuge,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_8,Quozienti di mortalità - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57,Cause multiple di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57_DF_DCIS_CMORTEM_1,Rapporto tra causa iniziale e causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57_DF_DCIS_CMORTEM_2,Numero di patologie per causa iniziale di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57_DF_DCIS_CMORTEM_3,Numero di menzioni per causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57_DF_DCIS_CMORTEM_4,Mortalità infantile - rapporto tra causa iniziale e causa multipla,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_57_DF_DCIS_CMORTEM_5,Mortalità infantile - numero di menzioni per causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_700,Mortalità infantile per territorio di evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_700_DF_DCIS_CMORTEINF2_EV_1,Causa ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_700_DF_DCIS_CMORTEINF2_EV_2,Causa e cittadinanza della madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_700_DF_DCIS_CMORTEINF2_EV_3,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_700_DF_DCIS_CMORTEINF2_EV_4,Cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_701,Mortalità infantile per territorio di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_701_DF_DCIS_CMORTEINF2_RES_1,Causa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_701_DF_DCIS_CMORTEINF2_RES_2,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_701_DF_DCIS_CMORTEINF2_RES_3,Cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_701_DF_DCIS_CMORTEINF2_RES_4,Quozienti di mortalità infantile - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_156,Conto economico delle risorse e degli impieghi e contributi alla crescita del Pil - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_156_DF_DCCN_SQCQ_B19_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_156_DF_DCCN_SQCQ_B19_2,Contributi alla crescita del PIL - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+3_48_DF_DCCN_VAAGSIPET_B19_2,Prodotti e voci di costo - edizioni maggio 2020 - giugno 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_269_1,Incidenti stradali con lesioni alle persone (Lazio),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_270_DF_DCIS_MORTIFERITISTR1_1_1,dataflow eliminato,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_270_DF_DCIS_MORTIFERITISTR1_TS1_1,"Morti e feriti in incidenti stradali - Anni 2001, 2002, 2003",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_270_DF_DCIS_MORTIFERITISTR1_TS2_1,"Morti e feriti in incidenti stradali - Anni 2004, 2005, 2006",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_270_DF_DCIS_MORTIFERITISTR1_TS3_1,"Morti e feriti in incidenti stradali - Anni 2007, 2008, 2009",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_271,Veicoli coinvolti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_271_DF_DCIS_VEICOLIINCID1_1,Veicoli coinvolti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_287,Indicatori di incidentalità stradale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_287_DF_DCIS_INDINCIDENT_1,Indice di mortalità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_287_DF_DCIS_INDINCIDENT_2,Indice di lesività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_288,Veicoli - Pubblico registro automobilistico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_288_DF_DCIS_VEICOLIPRA_1,Veicoli - Pubblico registro automobilistico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_983,"Incidenti, morti e feriti - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_983_DF_DCIS_INCIDMORFER_COM_1,"Incidenti, morti e feriti - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_993,Veicoli - Pubblico registro automobilistico - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+41_993_DCIS_VEICOLIPRA_COM_1,Veicoli - Pubblico registro automobilistico - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108,Interruzioni volontarie della gravidanza caratteristiche dell'evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_1,"Tipo di intervento, terapia antalgica e settimane di amenorrea",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_10,Luogo di aborto - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_11,Tipo di complicazione - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_12,Presenza di malformazioni fetali - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_2,"Tipo di intervento, terapia antalgica ed età gestazionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_3,Tipo di intervento - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_4,Terapia antalgica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_5,Settimane di amenorrea - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_6,Età gestazionale - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_7,Istituzione che ha rilasciato la certificazione - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_8,Giorni di attesa tra certificazione e intervento - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_1108_DF_DCIS_IVG_CARATTEV1_9,Livello di urgenza - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_210,Interruzioni volontarie della gravidanza - Migrazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_210_DF_DCIS_IVG_MIGRAZIONE_1,Indicatori di emigrazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_210_DF_DCIS_IVG_MIGRAZIONE_2,Indicatori di immigrazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_210_DF_DCIS_IVG_MIGRAZIONE_3,Eventi per regione di residenza della donna e regione di intervento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_320,Aborti spontanei - dimissioni rispetto al luogo di nascita della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_320_DF_DCIS_ABORTISPONTN_1,Aborti spontanei - dimissioni rispetto al luogo di nascita della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324,Aborti spontanei - dimissioni rispetto al luogo di residenza della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_1,Età e settimane di amenorrea,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_10,Stato civile - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_11,Titolo di studio - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_12,Condizione professionale - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_13,Storia riproduttiva della donna e numerosità dell'evento - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_14,Utilizzo di tecniche di procreazione medicalmente assistita - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_15,Metodo di procreazione medicalmente assistita - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_16,Numero medio settimane di amenorrea - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_17,Età media della donna - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_2,"Età, stato civile e titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_3,Età e condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_4,"Età, storia riproduttiva della donna e numerosità dell'evento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_5,Numero medio di settimane di amenorrea,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_6,Tassi e rapporti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_7,"Tassi e rapporti standardizzati, tasso di abortività spontanea totale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_8,Età - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_324_DF_DCIS_ABORTISPONTR_9,Settimane di amenorrea - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325,Aborti spontanei - dimissioni rispetto al luogo dell'evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_1,Età e paese di cittadinanza della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_10,Paese di cittadinanza della donna - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_11,Tipo di intervento - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_12,Terapia antalgica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_13,Tipo di complicazione - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_14,Utilizzo di tecniche di procreazione medicalmente assistita - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_15,Metodo di procreazione medicalmente assistita - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_16,Luogo di aborto - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_2,Età della donna e settimana di amenorrea,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_3,Età della donna e utilizzo di tecniche di procreazione medicalmente assistita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_4,Età della donna e metodo di procreazione medicalmente assistita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_5,"Tipo di intervento, di complicazione e settimana di amenorrea",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_6,Degenza media per tipo intervento e settimane di amenorrea,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_7,Regione di residenza della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_8,Degenza media e tipo di complicazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_325_DF_DCIS_ABORTISPONTL_9,Età della donna - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70,Interruzioni volontarie della gravidanza - caratteristiche della donna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_1,"Età, stato civile e storia riproduttiva",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_10,Età - prov. di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_11,Età - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_12,Minorenni per assenso - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_13,Età delle donne con cittadinanza straniera - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_14,Paese di cittadinanza - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_15,Stato civile - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_16,Titolo di studio - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_17,Condizione professionale - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_18,Storia riproduttiva - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_2,Dettaglio età e storia riproduttiva,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_3,"Età, stato civile e titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_4,"Età, stato civile e condizione proessionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_5,Tasso di abortività volontaria (per 1000 donne) totale e stadardizzato,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_6,Tasso di abortività volontaria per età e stato civile (per 1000 donne),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_7,Tasso di abortività volontaria delle donne minorenni (per 1000 donne),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_8,Età media all'interruzione volontaria di gravidanza - prov. di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+42_70_DF_DCIS_IVG_CARATTDON_9,Età - prov. di evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_236,Strutture sanitarie per l'assistenza di base - serie interrotte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_236_DF_DCIS_ASSBASE_1,Strutture sanitarie per l'assistenza di base - serie interrotte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_237,Strutture sanitarie distrettuali - serie interrotte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_237_DF_DCIS_STRSANDISTR_1,Tipologia delle strutture sanitarie distrettuali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_237_DF_DCIS_STRSANDISTR_2,Attività delle strutture sanitarie distrettuali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283,Dimissioni ospedaliere per disturbi psichici rispetto al luogo di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_1,Sesso ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_2,Sesso e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_3,Aggregati clinici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_4,Dimissioni per ricoveri in day hospital,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_5,Degenza media in ricovero ordinario,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_6,Pazienti ricoverati in luogo diverso da quello di residenza - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_283_DF_DCIS_OSPDISTPSICHRES_7,Pazienti ricoverati in luogo diverso da quello di residenza - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284,Dimissioni per disturbi psichici rispetto al luogo di dimissione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_1,Istituti di cura,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_2,Dimissioni per tipo di istituto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_3,Dimissioni per regime e tipo di ricovero,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_4,Dimissioni per aggregato clinico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_5,Dimissioni per tipo di reparto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_6,Dimissioni di pazienti in trattamento sanitaro obbligatorio (TSO),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_7,Pazienti ricoverati in luogo diverso da quello di residenza - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_284_DF_DCIS_OSPDISTPSICHRIC_8,Pazienti ricoverati in luogo diverso da quello di residenza - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_339,Dimissioni per acuti e per cittadinanza del paziente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_339_DF_DCIS_OSPSTRA_1,"Sesso, età e cittadinanza del paziente",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_339_DF_DCIS_OSPSTRA_2,Diagnosi principale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_339_DF_DCIS_OSPSTRA_3,Provincia di dimissione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_495,Istituti di cura - serie interrotte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_495_DF_DCIS_OSPEDSSN_1,Struttura e attività degli istituti di cura del SSN,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_495_DF_DCIS_OSPEDSSN_2,Struttura e attività degli istituti di cura del SSN per area di specializzazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_495_DF_DCIS_OSPEDSSN_3,Apparecchiature biomedicali negli istituti di cura del SSN,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_495_DF_DCIS_OSPEDSSN_4,Personale degli istituti di cura del SSN,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_967,Istituti di cura,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_967_DF_DCIS_OSPED_1,Istituti pubblici e privati e loro attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_967_DF_DCIS_OSPED_2,Posti letto e attività per specializzazione clinica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_973,Personale sanitario,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_973_DF_DCIS_PERS_SANIT_1,Personale sanitario,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_98,Visite mediche ed accertamenti diagnostici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_98_DF_DCIS_RSERVSAN_1,Visite mediche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_98_DF_DCIS_RSERVSAN_2,Visite mediche - valori standardizzati e regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_98_DF_DCIS_RSERVSAN_3,Accertamenti diagnostici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_98_DF_DCIS_RSERVSAN_4,Accertamenti diagnostici - valori standardizzati e regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_994,Istituti di cura  - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_994_DF_DCIS_OSPED_COM_1,Istituti pubblici e privati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+43_994_DF_DCIS_OSPED_COM_2,Posti letto per specializzazione clinica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_812,Pensionati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_812_DF_DCAR_PENSIONATI2_1,Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_812_DF_DCAR_PENSIONATI2_2,Importo mensile - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_812_DF_DCAR_PENSIONATI2_3,Età - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_812_DF_DCAR_PENSIONATI2_4,Indicatori - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813,Pensioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_1,Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_2,Importo mensile - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_3,Età del beneficiario - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_4,"Ivs e indennitarie - importo, settore e ex professione - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_5,"Ivs e indennitarie - età, settore e ex professione - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+46_813_DF_DCAR_PENSIONI2_6,Indicatori - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_1219,Interventi e servizi sociali di regioni e province,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_1219_DF_DCIS_SPESESERSOC1_RP_1,Utenti e spesa - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_1219_DF_DCIS_SPESESERSOC1_RP_2,Spesa per ente gestore - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850,Servizi  socio-educativi per la prima infanzia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_1,Indicatori - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_2,Servizi offerti dai comuni - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_3,Servizi offerti dai comuni - prov. e com.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_4,Servizi offerti dai comuni - ambiti territoriali sociali (Ats),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_5,Servizi sul territorio - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_6,Servizi sul territorio - prov. e com.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_850_DF_DCIS_SERVSOCEDU1_7,Servizi sul territorio - ambiti territoriali sociali (Ats),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21

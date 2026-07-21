@@ -1586,3 +1586,306 @@ EF_RD_MAN,"Beneficiary of rural development support measures by age, sex and tra
 EF_R_FARM,"Structure of agricultural holdings by eurofarm region, main indicators",ok,sdmx,4,1224,0,"",2026-07-20
 EF_R_NUTS,Structure of agricultural holdings by NUTS 3 region - main indicators,ok,sdmx,4,1456,0,"",2026-07-20
 EF_SO_LFAA,"Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, size of farm (UAA) and NUTS 2 region",ok,sdmx,8,361,0,"",2026-07-20
+EF_SO_LFAGE,"Labour force: number of persons and farm work (AWU) by age of worker, category of worker and size of farm (UAA)",ok,sdmx,7,63,0,"",2026-07-21
+EF_SO_LFESU,"Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, economic size of farm (ESU) and NUTS 2 region",ok,sdmx,8,363,0,"",2026-07-21
+EF_SO_LFSEXAGE,"Family labour force: number of persons and farm work (AWU) by sex of worker, age of worker and size of farm (UAA)",ok,sdmx,7,59,0,"",2026-07-21
+EF_SO_LFWTIME,"Labour force: number of persons and farm work (AWU) by working time (% AWU), category of worker and size of farm (UAA)",ok,sdmx,7,67,0,"",2026-07-21
+EF_SO_MPLEGPER,Holder-manager relationship: selected variables by size of farm (UAA) (2000-2007),ok,sdmx,6,71,0,"",2026-07-21
+EF_SO_MPMACHIN,Farm machinery: number of farms and machines by size of farm (UAA) (1990-2005),ok,sdmx,6,66,0,"",2026-07-21
+EF_SO_MPORG,Organic farming: selected variables by size of farm (UAA) and NUTS 2 region (2000-2007),ok,sdmx,6,341,0,"",2026-07-21
+EF_SO_MPTENURE,Type of tenure: number of farms and areas by size of farm (UAA) and NUTS 2 region (1990-2007),ok,sdmx,6,349,0,"",2026-07-21
+EF_SO_MPTRAIN,Agricultural training of farm managers: selected variables by economic size of farm (ESU) (1990-2005),ok,sdmx,6,55,0,"",2026-07-21
+EF_SO_RDAA,"Other activities on the holding: number of farms, agricultural area and economic size (ESU) by legal status of holding and size of farm (UAA)",ok,sdmx,7,60,0,"",2026-07-21
+EF_SO_RDFT,"Other activities on the holding: number of farms, agricultural area and economic size (ESU) by legal status of holding, type of farming (1-digit) and economic size of farm (ESU)",ok,sdmx,8,70,0,"",2026-07-21
+EF_SO_RDLFOGA,Family labour force with other gainful activity: number of persons by size of farm (UAA),ok,sdmx,5,63,0,"",2026-07-21
+EF_SO_RDSEXAGE,"Other activities on the holding: number of farms, agricultural area and economic size (ESU) by age of holder and sex of holder",ok,sdmx,7,57,0,"",2026-07-21
+EGI_EM1,Employment in Foreign Controlled Enterprises,ok,sdmx,6,50,0,"",2026-07-21
+EGI_EM2,Employment in Foreign Affiliates of Domestic Enterprises,ok,sdmx,6,48,0,"",2026-07-21
+EGI_RD1,Intra-mural Business Enterprise R&D Expenditures in Foreign Controlled Enterprises,ok,sdmx,6,37,0,"",2026-07-21
+EGI_SO1,Enterprises sourcing abroad,ok,sdmx,8,39,0,"",2026-07-21
+EGI_TR1,Export to import ratio,ok,sdmx,4,60,0,"",2026-07-21
+EGI_TR2,Intermediate goods trade,ok,sdmx,5,43,0,"",2026-07-21
+EGI_TR3,Trade in goods with the top 5 partners,ok,sdmx,5,60,0,"",2026-07-21
+EGI_TR4,Intermediate services trade,ok,sdmx,5,47,0,"",2026-07-21
+EGI_TR5,Trade in services with the top 5 partners,ok,sdmx,5,47,0,"",2026-07-21
+EGI_VA1,Value Added in Foreign Controlled Enterprises,ok,sdmx,6,50,0,"",2026-07-21
+EGR_CONC,Concentration of multinational enterprise groups by NACE Rev. 2 activity - experimental statistics,ok,sdmx,6,51,0,"",2026-07-21
+EGR_EMP,Persons employed in multinational enterprise groups by size class - experimental statistics,ok,sdmx,5,48,0,"",2026-07-21
+EGR_MNE,Multinational enterprise groups in EU-EFTA countries by controlling country - experimental statistics,ok,sdmx,4,47,0,"",2026-07-21
+EGR_MNE_EMPW,"Multinational enterprise groups employment by controlling country group size class, NACE Rev. 2 activity and country of work - experimental statistics",ok,sdmx,7,69,0,"",2026-07-21
+EGR_MNE_N2SC,"Multinational enterprise groups in EU-EFTA countries by controlling country, size class and NACE Rev. 2 activity - experimental statistics",ok,sdmx,6,37,0,"",2026-07-21
+EI_BPM6CA_M,Current account - monthly data,ok,sdmx,10,508,0,"",2026-07-21
+EI_BPM6CA_Q,Current account - quarterly data,ok,sdmx,10,225,0,"",2026-07-21
+EI_BPM6FA_M,Financial account - monthly data,ok,sdmx,10,490,0,"",2026-07-21
+EI_BPM6FA_Q,Financial account - quarterly data,ok,sdmx,10,207,0,"",2026-07-21
+EI_BPM6IIP_Q,International investment position - quarterly data,ok,sdmx,10,203,0,"",2026-07-21
+EI_BSBU_M_R2,Construction confidence indicator and survey results - monthly data,ok,sdmx,5,608,0,"",2026-07-21
+EI_BSBU_Q_R2,Construction survey results - quarterly data,ok,sdmx,6,214,0,"",2026-07-21
+EI_BSCI_M_R2,Euro area business climate indicator - monthly data,ok,sdmx,5,503,0,"",2026-07-21
+EI_BSCO_M,Consumers confidence indicator and survey results - monthly data,ok,sdmx,6,609,0,"",2026-07-21
+EI_BSCO_Q,Consumers survey results - quarterly data,ok,sdmx,6,187,0,"",2026-07-21
+EI_BSEE_M_R2,Employment expectations indicators - monthly data,ok,sdmx,6,602,0,"",2026-07-21
+EI_BSFS_M,Financial services confidence indicator and survey results - monthly data,ok,sdmx,6,218,0,"",2026-07-21
+EI_BSFS_Q,Financial services survey results - quarterly data,ok,sdmx,6,89,0,"",2026-07-21
+EI_BSIN_M_R2,Industry confidence indicator and survey results - monthly data,ok,sdmx,6,606,0,"",2026-07-21
+EI_BSIN_Q_R2,Industry survey results - quarterly data,ok,sdmx,5,235,0,"",2026-07-21
+EI_BSLH_M_R2,Labour hoarding indicators - monthly data,ok,sdmx,6,601,0,"",2026-07-21
+EI_BSRT_M_R2,Retail trade confidence indicator and survey results - monthly data,ok,sdmx,6,554,0,"",2026-07-21
+EI_BSSE_M_R2,Services confidence indicator and survey results - monthly data,ok,sdmx,6,506,0,"",2026-07-21
+EI_BSSE_Q_R2,Services survey results - quarterly data,ok,sdmx,6,146,0,"",2026-07-21
+EI_BSSI_M_R2,Economic sentiment and confidence indicators by sector - monthly data,ok,sdmx,5,602,0,"",2026-07-21
+EI_CPHI_M,Harmonised index of consumer prices - monthly data,ok,sdmx,5,445,0,"",2026-07-21
+EI_ETEA_M,Euro area international trade - monthly data,ok,sdmx,7,360,0,"",2026-07-21
+EI_ETEU27_2020_M,EU27 (from 2020) international trade - monthly data,ok,sdmx,7,365,0,"",2026-07-21
+EI_HPPI_Q,House price index (2025 = 100) - quarterly data,ok,sdmx,5,139,0,"",2026-07-21
+EI_ISBR_M,Construction growth rates by NACE Rev. 2 activity - monthly data,ok,sdmx,6,617,0,"",2026-07-21
+EI_ISBU_M,Construction - monthly data - index (2015 = 100) (NACE Rev. 2),ok,sdmx,7,624,0,"",2026-07-21
+EI_ISBU_Q,Construction index by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,248,0,"",2026-07-21
+EI_ISEN_M,Energy - monthly data,ok,sdmx,5,287,0,"",2026-07-21
+EI_ISIND_Q,Industry index by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,217,0,"",2026-07-21
+EI_ISIN_M,Industry - monthly data - index (2015 = 100) (NACE Rev. 2),ok,sdmx,7,639,0,"",2026-07-21
+EI_ISIR_M,Industry growth rates by NACE Rev. 2 activity - monthly data,ok,sdmx,6,631,0,"",2026-07-21
+EI_ISPPE_Q,Service producer prices growth rates - quarterly data,ok,sdmx,7,186,0,"",2026-07-21
+EI_ISPPI_Q,Service producer prices index - quarterly data,ok,sdmx,7,186,0,"",2026-07-21
+EI_ISRR_M,Retail trade growth rates by NACE Rev. 2 activity - monthly data,ok,sdmx,6,483,0,"",2026-07-21
+EI_ISRT_M,Retail trade index by NACE Rev. 2 activity - monthly data,ok,sdmx,7,489,0,"",2026-07-21
+EI_ISRT_Q,Retail trade index by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,201,0,"",2026-07-21
+EI_ISSET_Q,Turnover in services index - quarterly data,ok,sdmx,7,190,0,"",2026-07-21
+EI_ISSE_Q,Turnover in services growth rates by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,190,0,"",2026-07-21
+EI_ISSPR_M,Production in services growth rates by NACE Rev. 2 activity - monthly data,ok,sdmx,7,376,0,"",2026-07-21
+EI_ISSP_M,Production in services index by NACE Rev. 2 activity - monthly data,ok,sdmx,7,377,0,"",2026-07-21
+EI_ISSP_Q,Production in services index by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,164,0,"",2026-07-21
+EI_IS_M_VTG,Industrial production - monthly data - vintages from 2021 onwards,ok,sdmx,7,1264,0,"",2026-07-21
+EI_IS_M_VTGFIX,Industrial production - monthly data - vintages from 2001 to 2020,ok,sdmx,7,3149,0,"",2026-07-21
+EI_LMHR_M,Unemployment rate (%) - monthly data,ok,sdmx,6,581,0,"",2026-07-21
+EI_LMHU_M,Unemployment (1 000) - monthly data,ok,sdmx,6,581,0,"",2026-07-21
+EI_LMJV_Q_R2,Job vacancy rate - quarterly data,ok,sdmx,7,168,0,"",2026-07-21
+EI_LMLC_Q,"Labour cost index, nominal value - quarterly data",ok,sdmx,8,204,0,"",2026-07-21
+EI_LM_M_VTG,Unemployment - monthly data - vintages from 2021 onwards,ok,sdmx,8,861,0,"",2026-07-21
+EI_LM_M_VTGFIX,Unemployment - monthly data - vintages from 2001 to 2020,ok,sdmx,8,1845,0,"",2026-07-21
+EI_MFEF_M,Effective exchange rates indices - monthly data,ok,sdmx,5,389,0,"",2026-07-21
+EI_MFIR_M,Interest rates - monthly data,ok,sdmx,6,613,0,"",2026-07-21
+EI_MFRT_M,Euro/Ecu exchange rates - monthly data,ok,sdmx,5,379,0,"",2026-07-21
+EI_NA_Q_VTG,Gross domestic product (GDP) - quarterly data - vintages based on ESA 2010,ok,sdmx,6,303,0,"",2026-07-21
+ENPE_APRO_CPNH1,Crop production - ENP-East countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPE_APRO_MT_LS,Livestock - ENP-East countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPE_APRO_MT_P,Meat production - ENP-East countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPE_BOP_C6_A,Balance of payments - ENP-East countries,ok,sdmx,6,41,0,"",2026-07-21
+ENPE_BOP_FDI6,Direct investment balance with the rest of the world - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_BOP_IIP6,Gross external debt of the whole economy - ENP-East countries,ok,sdmx,4,30,0,"",2026-07-21
+ENPE_BOP_IIP6_SERV,"Gross external debt of the whole economy, relative to exports of goods and services - ENP-East countries",ok,sdmx,4,29,0,"",2026-07-21
+ENPE_CPI,Consumer price index - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_DEMO_R_D3DENS,Population density on 1 January - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_EDAT_LFSE_03,Population (aged 30-34) who completed tertiary or equivalent education - ENP-East countries,ok,sdmx,5,28,0,"",2026-07-21
+ENPE_EDAT_LFSE_14,Early leavers from education and training (aged 18-24) by sex - ENP-East countries,ok,sdmx,6,31,0,"",2026-07-21
+ENPE_EDUC_FIGDP,Public expenditure on education - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_EDUC_UOE_ENRA02,Pupils and students enrolled by education level - ENP-East countries,ok,sdmx,5,42,0,"",2026-07-21
+ENPE_EF_LUS_MAIN,Main farm land use - ENP-East countries,ok,sdmx,5,36,0,"",2026-07-21
+ENPE_ENV_GHG,GHG emissions - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_ENV_WASACC,Persons served by municipal waste collection - % of population - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_ENV_WASGENM,Municipal waste generated - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_ENV_WAT_COV,Population connected to public water supply - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_ENV_WAT_USE,Annual freshwater use - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_EXT_BAL,Trade balance - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_EXT_INTRO,Share of imports and exports in EU27 trade - ENP-East countries,ok,sdmx,5,30,0,"",2026-07-21
+ENPE_EXT_SITC,Trade in goods by SITC product group - ENP-East countries,ok,sdmx,7,44,0,"",2026-07-21
+ENPE_FISH_CA_MAIN,Fish catches - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_GOV_10DD,Government deficit/surplus and debt - ENP-East countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPE_HLTH_EXP,Health care expenditure - % of GDP - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_ILC_DI03,Median equivalised net income - EUR per person - ENP-East countries,ok,sdmx,5,27,0,"",2026-07-21
+ENPE_ILC_DI11,Income quintile share ratio - S80/S20 - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_ILC_DI12,Gini coefficient - ENP-East countries,ok,sdmx,5,28,0,"",2026-07-21
+ENPE_ILC_LI01,"Relative poverty threshold after social transfers, income per month - ENP-East countries",ok,sdmx,4,28,0,"",2026-07-21
+ENPE_ILC_LI09,"Proportion of persons at risk of relative poverty, before social transfers by sex - ENP-East countries",ok,sdmx,5,28,0,"",2026-07-21
+ENPE_ILC_LI09A,Proportion of persons at risk of relative poverty (after transfers) - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_IRT_LD,Loan and deposit one year interest rate - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_IRT_LT_GBY10,Government bond yields - 10 years' maturity - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_IRT_ST,Money market interest rates - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_ISOC_CIWEB,Enterprises having a website or homepage - % of total enteprises - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_ISOC_CI_CM_PS,Enterprises using computers - % of total enteprises - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_ISOC_CI_IFP_FU,Frequency of internet use by individuals (aged 16-74) - ENP-East countries,ok,sdmx,6,31,0,"",2026-07-21
+ENPE_ISOC_CI_IN_ENS,Enterprises with internet access - % of total enteprises - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_ISOC_CI_IN_H,Percentage of households having internet access at home - ENP-East countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPE_ISOC_CI_IT_H,Internet penetration by type of internet - per 100 persons - ENP-East countries,ok,sdmx,5,28,0,"",2026-07-21
+ENPE_ISOC_PENRT,Fixed telephone line and mobile phone penetration rate - ENP-East countries,ok,sdmx,5,30,0,"",2026-07-21
+ENPE_ISOC_SK_SKL_I,Proportion of youths and adults (aged 16-74) by type of ICT skills - ENP-East countries,ok,sdmx,5,22,0,"",2026-07-21
+ENPE_LFSA_ACT,Share of employed persons (aged 15 and over) by economic activity (NACE Rev.2) - ENP-East countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPE_LFSA_ARGAED,Activity rates by sex and age - ENP-East countries,ok,sdmx,6,33,0,"",2026-07-21
+ENPE_LFSA_ERGAN,Employment and employment rates (aged 20-64) by sex - ENP-East countries,ok,sdmx,6,33,0,"",2026-07-21
+ENPE_LFSA_URGAN,Unemployment rates by sex and age - ENP-East countries,ok,sdmx,6,34,0,"",2026-07-21
+ENPE_LFSA_URGAN2,Long-term unemployment rates by sex - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_MAR_GO,Gross weight of goods handled - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_MON_RES,Money supply and official reserves - ENP-East countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPE_NAMA_10_A10,Gross value added by industry - ENP-East countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPE_NAMA_10_GDP,Gross domestic product at market prices - ENP-East countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPE_NAMA_10_GDP_EA,Gross domestic product at market prices by expenditure - ENP-East countries,ok,sdmx,5,37,0,"",2026-07-21
+ENPE_NAMA_10_LP,Labour productivity in GDP (constant prices) per person employed - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_NAMA_10_PE,Employment growth (domestic concept) - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_NAMA_10_ULC,Nominal unit labour cost growth - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_NAMA_GDP_EXT,External balance of goods and services - ENP-East countries,ok,sdmx,5,29,0,"",2026-07-21
+ENPE_NRG_GIC,Gross inland consumption of energy - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_NRG_IMP,Net imports of energy products - ENP-East countries,ok,sdmx,4,25,0,"",2026-07-21
+ENPE_NRG_INTEN,Energy intensity of the economy (2015=100) - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_NRG_PPRD,Primary production by source of energy - ENP-East countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPE_NRG_PRCHH,Electricity and gas prices for households - ENP-East countries,ok,sdmx,5,30,0,"",2026-07-21
+ENPE_NRG_PROD,Energy productivity - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_NRG_RNEW,Share of renewable energy in gross final energy consumption - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_RAIL_GO,Goods transported by rail - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_RAIL_IF,Length of rail lines - ENP-East countries,ok,sdmx,4,25,0,"",2026-07-21
+ENPE_RD_E_GERDFUND,Gross domestic expenditure on R&D (GERD) - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_RD_E_GERDSEC,Gross domestic expenditure on R&D (GERD) by source of funding - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_RD_P_PERS,Share of R&D personnel in total employment - ENP-East countries,ok,sdmx,4,24,0,"",2026-07-21
+ENPE_REG_AREA3,Total area - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_ROAD_EQS_CAR,Passenger cars - ENP-East countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPE_ROAD_GO,Road freight transport - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_ROAD_IF,Length of roads network - ENP-East countries,ok,sdmx,5,30,0,"",2026-07-21
+ENPE_ROAD_PA,Passenger road transport - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_SPR_EXP,Social protection expenditure excluding administrative costs (including health expenditure) - % of GDP - ENP-East countries,ok,sdmx,4,26,0,"",2026-07-21
+ENPE_STS_INCOPR,Industrial and construction production volume index - calendar adjusted - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_STS_INPPD,Domestic industrial production price index - ENP-East countries,ok,sdmx,4,22,0,"",2026-07-21
+ENPE_STS_NFEMP,Persons employed within the non-financial business economy by size class - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_STS_TRTU,Services turnover index - calendar adjusted - ENP-East countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPE_STS_TRTU1,Retail trade volume of sales index (deflated turnover) - ENP-East countries,ok,sdmx,4,24,0,"",2026-07-21
+ENPE_TOUR_CAP_NAT,Number of bed places in hotels and similar accomodation - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_TOUR_DEM_TTTOT,Departures of residents going abroad for all holidays and business - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_TOUR_OCC_ARNAT,Arrivals of non-residents at hotels and similar accomodation establishments - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPE_WG_M,Average nominal monthly wages and salaries - ENP-East countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPS_APRO_CPNH1,Crop production - ENP-South countries,ok,sdmx,5,56,0,"",2026-07-21
+ENPS_APRO_MT_LS,Livestock - ENP-South countries,ok,sdmx,5,40,0,"",2026-07-21
+ENPS_APRO_MT_P,Meat production - ENP-South countries,ok,sdmx,5,37,0,"",2026-07-21
+ENPS_AVIA_FR,Freight and mail air transport (including national transport) - ENP-South countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPS_AVIA_IF,Number of airports - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_AVIA_PA,Air passenger transport - ENP-South countries,ok,sdmx,5,35,0,"",2026-07-21
+ENPS_AVIA_TYP,Commercial aircraft fleet by type of aircraft - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_BOP_C6_A,Balance of payments - ENP-South countries,ok,sdmx,7,57,0,"",2026-07-21
+ENPS_BOP_FDI6,Direct investment balance with the rest of the world - ENP-South countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPS_BOP_IIP6,Gross external debt of the whole economy - ENP-South countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPS_CPI,Consumer price index - ENP-South countries,ok,sdmx,4,33,0,"",2026-07-21
+ENPS_DEMO_DENS,Population density - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_DEMO_FRATE1,Fertility rate - ENP-South countries,ok,sdmx,4,30,0,"",2026-07-21
+ENPS_DEMO_GIND,"Crude rate of birth, of dead and of population change - ENP-South countries",ok,sdmx,5,34,0,"",2026-07-21
+ENPS_DEMO_INFANT,Infant mortality rate by sex - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_DEMO_MLEXPEC,Life expectancy at birth by sex - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_DEMO_NIND,Mean age at first marriage by sex - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_DEMO_PJANGR,Population on 1 January by sex and age group - ENP-South countries,ok,sdmx,6,45,0,"",2026-07-21
+ENPS_DEMO_PJANGRY,Average population mid-year by sex and age group - ENP-South countries,ok,sdmx,6,37,0,"",2026-07-21
+ENPS_DEMO_UNDER5,Mortality rate (under age 5) by sex - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_EDAT_LFSE3,Population (aged 20-24) who completed at least an upper secondary educational attainment level (ISCED 2011 level 3) by sex - ENP-South countries,ok,sdmx,6,32,0,"",2026-07-21
+ENPS_EDAT_LFSE4,Population (aged 25 and over) by sex and educational attainment level - ENP-South countries,ok,sdmx,7,32,0,"",2026-07-21
+ENPS_EDUC_COMPRATE,School completion rate at ISCED 1 level by sex - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_EDUC_COMPYR,Net enrolment rates by sex and education level - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENPS_EDUC_ENRATE,Net enrolment rates by sex and education level - ENP-South countries,ok,sdmx,6,36,0,"",2026-07-21
+ENPS_EDUC_FIGDP,Public expenditure on education - ENP-South countries,ok,sdmx,4,25,0,"",2026-07-21
+ENPS_EDUC_LTR,Literacy rate by sex and age group - ENP-South countries,ok,sdmx,6,34,0,"",2026-07-21
+ENPS_EDUC_PARITY,Gender parity index by education level - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_EF_LUS_MAIN,Main farm land use - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_ENV_AIR_EMIS,Air pollutants - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_ENV_WASACC,Population served by municipal waste - ENP-South countries,ok,sdmx,5,30,0,"",2026-07-21
+ENPS_ENV_WASGENH,Generation of waste by households - ENP-South countries,ok,sdmx,5,26,0,"",2026-07-21
+ENPS_ENV_WASGENM,Municipal waste generated - ENP-South countries,ok,sdmx,4,30,0,"",2026-07-21
+ENPS_ENV_WASGENP,Municipal waste per inhabitant - ENP-South countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPS_ENV_WASTRT,Treatment of municipal waste - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_ENV_WAT_ABS,Annual freshwater abstraction by source - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_ENV_WAT_CAT,Water use by economic activity - ENP-South countries,ok,sdmx,5,36,0,"",2026-07-21
+ENPS_ENV_WAT_COV,Population connected to public water supply - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_ENV_WW_CON,Population connected to wastewater collection and treatment systems - ENP-South countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPS_EXT_SITC,Trade value in goods by SITC product group - ENP-South countries,ok,sdmx,7,47,0,"",2026-07-21
+ENPS_FISH_AQ2A,Aquaculture production by aquatic environment - ENP-South countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPS_FISH_CA_MAIN,Fish catches by fishing areas - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_GOV_10DD,Government deficit/surplus and debt - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_GOV_10DDE,Total economy deficit/surplus - ENP-South countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPS_ILC_DI11,Income quintile share ratio - S80/S20 - ENP-South countries,ok,sdmx,4,28,0,"",2026-07-21
+ENPS_ILC_DI12,Gini coefficient - ENP-South countries,ok,sdmx,5,29,0,"",2026-07-21
+ENPS_ILC_NATLN,Poverty headcount ratio by sex (proportion of persons below the national poverty line) - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_ILC_SANIT,Households with sustainable access to improved sanitation by simplified degree of urbanisation - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_ILC_SECURE,Households with access to secure tenure by simplified degree of urbanisation - ENP-South countries,ok,sdmx,5,21,0,"",2026-07-21
+ENPS_LFSA_ACT,Share of employment (persons aged 15 and over) by NACE Rev. 2 activity - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_LFSA_ARGAED,Activity rates (aged 15-64) by sex - ENP-South countries,ok,sdmx,6,35,0,"",2026-07-21
+ENPS_LFSA_EGAPS,Employment by professional status - ENP-South countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPS_LFSA_ERGAN,Employment rates (aged 15-64) by sex - ENP-South countries,ok,sdmx,6,34,0,"",2026-07-21
+ENPS_LFSA_GAP,Gender gap for unemployment rate (aged 25-74) - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_LFSA_GAPLG,Gender gap for long-term unemployment rate (aged 15-74) - ENP-South countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPS_LFSA_PGANWS,Total employment by age group - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_LFSA_PPSEC,"Persons employed (aged 20-64) in the public and private sector - % of total employed persons, ENP-South countries",ok,sdmx,5,30,0,"",2026-07-21
+ENPS_LFSA_URGAN,Unemployment rates by sex and age - ENP-South countries,ok,sdmx,6,37,0,"",2026-07-21
+ENPS_LFSA_URGAN2,Long-term unemployment rates by sex – ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_MAR_EQ1000,Number of ships of 1000 GT and over by type of vessel - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_MAR_EQ300,Number of ships of 300 GT and over - ENP-South countries,ok,sdmx,4,23,0,"",2026-07-21
+ENPS_MAR_EQTON,Carrying capacity of merchant ships of 1000 GT and over by vessel type - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_MAR_FRDIR,Gross weight of goods handled in all ports by direction - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_MAR_PADIR,Passengers embarked and disembarked (excluding cruises) in all ports by direction - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_MAR_POR,Number of principal ports - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_NAMA_10_A10,Gross value added by industry - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_NAMA_10_GDP,Gross domestic product at market prices - ENP-South countries,ok,sdmx,4,34,0,"",2026-07-21
+ENPS_NAMA_10_GDP_EA,Gross domestic product at market prices by expenditure - ENP-South countries,ok,sdmx,5,40,0,"",2026-07-21
+ENPS_NAMA_10_PC,Gross domestic product (GDP) per capita - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENPS_NAMA_GDP_EXT,"External balance of goods and services - % per GDP, ENP-South countries",ok,sdmx,5,30,0,"",2026-07-21
+ENPS_NRG_BAL_C,Energy balance - ENP-South countries,ok,sdmx,5,38,0,"",2026-07-21
+ENPS_NRG_BAL_C1,Final energy consumption by sector - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_NRG_GIC,Gross inland consumption of energy - ENP-Sounth countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_NRG_IMP,Net imports of energy products - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_NRG_PPRD,Primary production by energy source - ENP-South countries,ok,sdmx,5,39,0,"",2026-07-21
+ENPS_NRG_PRCHH,Electricity and gas prices for households - ENP-South countries,ok,sdmx,5,31,0,"",2026-07-21
+ENPS_NRG_RNEW,Share of renewable energy in gross final energy consumption - ENP-South countries,ok,sdmx,4,27,0,"",2026-07-21
+ENPS_RAIL_EQ,Number of railway vehicles per type - ENP-South countries,ok,sdmx,5,34,0,"",2026-07-21
+ENPS_RAIL_FR,Rail freight traffic - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENPS_RAIL_IF,Length of rail network - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENPS_RAIL_PA,Rail passenger traffic - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENPS_REG_AREA3,Total area - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_ROAD_EQS_CAR,Stock of vehicles by category - ENP-South countries,ok,sdmx,5,38,0,"",2026-07-21
+ENPS_ROAD_GO,Road freight transport - ENP-South countries,ok,sdmx,4,24,0,"",2026-07-21
+ENPS_ROAD_IF,Length of roads network - ENP-South countries,ok,sdmx,5,33,0,"",2026-07-21
+ENPS_TOUR_BORDER,Arrivals of tourists at the border - ENP-South countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPS_TOUR_CAP_NAT,Tourism infrastructure - ENP-South countries,ok,sdmx,6,35,0,"",2026-07-21
+ENPS_TOUR_CAP_NATB,Bed places in hotels and similar accommodation - ENP-South countries,ok,sdmx,4,31,0,"",2026-07-21
+ENPS_TOUR_DEM_TTTOT,Departures of residents going abroad for all holidays and business - ENP-South countries,ok,sdmx,4,29,0,"",2026-07-21
+ENPS_TOUR_OCC_ARNAT,Arrivals at tourism accommodation establishments by type of accommodation - ENP-South countries,ok,sdmx,6,34,0,"",2026-07-21
+ENPS_TOUR_OCC_NINAT,Nights spent at tourism accommodation establishments - ENP-South countries,ok,sdmx,5,32,0,"",2026-07-21
+ENPS_TRAN_SF_R,Persons killed in road accidents - ENP-South countries,ok,sdmx,4,32,0,"",2026-07-21
+ENV_AC_AEINT_R2,Air emissions intensities by NACE Rev. 2 activity,ok,sdmx,7,172,0,"",2026-07-21
+ENV_AC_AIBRID_R2,Air emissions accounts totals bridging to emission inventory totals,ok,sdmx,6,110,0,"",2026-07-21
+ENV_AC_AIBRID_RD,Air emissions accounts related to road transport - totals bridging to emission inventory totals,ok,sdmx,6,79,0,"",2026-07-21
+ENV_AC_AIGG_Q,Air emissions accounts for greenhouse gases by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,110,0,"",2026-07-21
+ENV_AC_AINAH_R2,Air emissions accounts by NACE Rev. 2 activity,ok,sdmx,6,178,0,"",2026-07-21
+ENV_AC_AINAH_R2$DV_3245,Air emissions accounts by NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AC_AINAH_R2$DV_3245'
+For more information check: https://develop",2026-07-21
+ENV_AC_AINAH_RD,Air emissions accounts related to road transport by NACE Rev. 2 activity,ok,sdmx,6,151,0,"",2026-07-21
+ENV_AC_CCMINV,Investments in climate change mitigation by NACE Rev. 2 activity,ok,sdmx,6,64,0,"",2026-07-21
+ENV_AC_CEPSGC1,Intermediate consumption of environmental protection services by institutional sector and NACE Rev. 2 activity,ok,sdmx,7,84,0,"",2026-07-21
+ENV_AC_CEPSGH1,Final consumption expenditure on environmental protection services by institutional sector,ok,sdmx,6,68,0,"",2026-07-21
+ENV_AC_CH4FP,"Methane emission footprints (CH4 in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_CO2FP,Carbon dioxide emission footprints (FIGARO application),ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_CUR,Circular material use rate,ok,sdmx,4,51,0,"",2026-07-21
+ENV_AC_CURM,Circular material use rate by material type,ok,sdmx,5,29,0,"",2026-07-21
+ENV_AC_EGSS1,Employment in the environmental goods and services sector (2000-2023),ok,sdmx,8,121,0,"",2026-07-21
+ENV_AC_EGSS2,"Production, value added and exports in the environmental goods and services sector (2000-2023)",ok,sdmx,8,126,0,"",2026-07-21
+ENV_AC_EGSS3,"Production, value added and employment by industry groups in the environmental goods and services sector (2000-2023)",ok,sdmx,8,40,0,"",2026-07-21
+ENV_AC_EPIAP1,Environmental protection investments of corporations as ancillary producers by environmental protection activity and NACE Rev. 2 activity,ok,sdmx,7,82,0,"",2026-07-21
+ENV_AC_EPIGG1,Environmental protection investments of general government by environmental protection activity,ok,sdmx,5,65,0,"",2026-07-21
+ENV_AC_EPISSP1,Environmental protection investments of corporations as specialist and secondary producers by environmental protection activity,ok,sdmx,5,68,0,"",2026-07-21
+ENV_AC_EPITE1,Environmental protection investments of total economy,ok,sdmx,4,51,0,"",2026-07-21
+ENV_AC_EPNEIS1,National expenditure on environmental protection by institutional sector,ok,sdmx,5,60,0,"",2026-07-21
+ENV_AC_EPTRF1,Environmental protection transfers by environmental protection activity and institutional sector,ok,sdmx,7,75,0,"",2026-07-21
+ENV_AC_GHGFP,"Greenhouse gas emission footprints (in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_GHGFP$DV_3246,"Greenhouse gas emission footprints (in CO2 equivalent, FIGARO application)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AC_GHGFP$DV_3246'
+For more information check: https://developer.",2026-07-21
+ENV_AC_HFCFP,"Hydrofluorocarbon emission footprints (HFC in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_IO10,Air emission footprints (domestic technology assumption),ok,sdmx,8,113,0,"",2026-07-21
+ENV_AC_LANDFP,Land use footprints,ok,sdmx,6,22,0,"",2026-07-21
+ENV_AC_MFA,Material flow accounts,ok,sdmx,6,158,0,"",2026-07-21
+ENV_AC_MFABI,Material flow accounts - balancing items,ok,sdmx,5,86,0,"",2026-07-21
+ENV_AC_MFADPO,Material flow accounts - domestic processed output,ok,sdmx,5,112,0,"",2026-07-21
+ENV_AC_MFAIN,Material flow accounts - main indicators,ok,sdmx,5,85,0,"",2026-07-21
+ENV_AC_MID,Material import dependency,ok,sdmx,5,79,0,"",2026-07-21
+ENV_AC_N2OFP,"Nitrous oxide emission footprints (N2O in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_NF3SF6FP,"Nitrogen trifluoride and sulphur hexafluoride emission footprints (NF3-SF6 in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_PEFA04,Key indicators of physical energy flow accounts by NACE Rev. 2 activity,ok,sdmx,6,160,0,"",2026-07-21
+ENV_AC_PEFA04$DV_3261,Key indicators of physical energy flow accounts by NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AC_PEFA04$DV_3261'
+For more information check: https://developer",2026-07-21
+ENV_AC_PEFA05,Physical energy flow accounts totals bridging to energy balances totals,ok,sdmx,5,75,0,"",2026-07-21
+ENV_AC_PEFAFP,Energy footprints (domestic technology assumption),ok,sdmx,8,97,0,"",2026-07-21
+ENV_AC_PEFASU,Energy supply and use by NACE Rev. 2 activity,ok,sdmx,7,192,0,"",2026-07-21
+ENV_AC_PEPSGG1,Production of environmental protection services of general government by economic characteristics,ok,sdmx,6,77,0,"",2026-07-21
+ENV_AC_PEPSNS1,Production of environmental protection services of corporations as ancillary producers by economic characteristics and NACE Rev. 2 activity,ok,sdmx,7,88,0,"",2026-07-21
+ENV_AC_PEPSSP1,Production of environmental protection services of corporations as specialist and secondary producers by economic characteristics,ok,sdmx,6,81,0,"",2026-07-21
+ENV_AC_PFCFP,"Perfluorocarbon emission footprints (PFC in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
