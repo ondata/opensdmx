@@ -138,8 +138,13 @@ of guessing keywords. This is the **default** discovery flow; fall back to
 keyword search only under the conditions listed in Step 1c.
 
 Supported providers (check with `opensdmx providers` — `categories` column):
-- ✓ `eurostat`, `istat`, `ecb`, `oecd`, `insee`, `abs`, `bis`
+- ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf` — skip to Step 1c.
+
+`inps` is a **hub-only** provider (Italian social security: pensions, employees,
+companies, employment policies) — everything works, but its dimension IDs are
+uppercase and `get` downloads the full dataflow then filters client-side. See
+[references/providers.md](references/providers.md).
 
 #### How to tell `cat_id` from `df_id`
 
@@ -245,7 +250,7 @@ Search for dataflows:
   `opensdmx search "<keyword>"`
 - **ISTAT**: `opensdmx search "<keyword>" --provider istat`
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
-  (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`)
+  (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `inps`)
 
 `search` matches the dataset **title, ID and category name**, by substring.
 
@@ -856,10 +861,16 @@ contractual-wage **index** is not a regional average gross **salary in euro**; a
 one-off graduate-cohort survey is not a decade-long time series. For each
 near-candidate you discarded, state concretely *why* it fails (wrong unit, wrong
 territorial level, different population, not a time series). If you know the data
-exists in a non-SDMX source (e.g. a national statistical release, an INPS
-observatory), name it as such, out of band. Returning the truth "this does not
+exists in a non-SDMX source (e.g. a national statistical release, a tax-authority
+open-data file), name it as such, out of band. Returning the truth "this does not
 exist here" is a correct, complete answer — never rationalise a weak candidate
 into a recommendation to avoid an empty result.
+
+Before declaring a gap for **Italian social-security data** (pensions, employees,
+wages/RAL, companies, unemployment benefits — often by region), check
+`--provider inps`: the INPS observatories are now reachable through opensdmx, and
+they carry region-level series that ISTAT's SDMX does not (e.g. average annual
+gross wage — *retribuzione media annua* — by region).
 
 **Always explain the indicator — never assume prior knowledge**
 After presenting any results, always include a plain-language explanation of the

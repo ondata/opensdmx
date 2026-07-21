@@ -105,8 +105,21 @@ def all_available() -> pl.DataFrame:
     if cached is not None:
         return _filter_invalid(cached)
 
-    agency_id = get_agency_id()
     provider = get_provider()
+
+    # Hub-only providers (INPS) serve the catalog over the `.Stat Suite`
+    # middleware, not SDMX-REST. Delegate to the dedicated adapter, cache the
+    # result as Parquet (same as the REST branch) and return.
+    if provider.get("hub_only"):
+        from . import inps
+        df = inps.all_available()
+        try:
+            df.write_parquet(_dataflow_cache_path())
+        except OSError:
+            pass
+        return _filter_invalid(df)
+
+    agency_id = get_agency_id()
     language = provider["language"]
 
     catalog_agency = provider.get("catalog_agency", agency_id)
@@ -343,6 +356,15 @@ def _get_dimensions(structure_id: str) -> dict[str, Any]:
     if cached is not None:
         return cached
 
+    if get_provider().get("hub_only"):
+        from . import inps
+        result = inps.get_dimensions(structure_id)
+        try:
+            save_dims(structure_id, result)
+        except Exception as e:
+            logger.warning("Could not cache dimension metadata: %s", e)
+        return result
+
     ds_agency = get_provider().get("datastructure_agency", "ALL")
     path = _struct_path(f"datastructure/{ds_agency}/{structure_id}")
     content = sdmx_request_xml(path)
@@ -394,6 +416,11 @@ def _get_dimensions(structure_id: str) -> dict[str, Any]:
 def _get_dimension_description(codelist_id: str | None) -> str | None:
     """Fetch the description of a codelist."""
     if not codelist_id:
+        return None
+    # Hub-only providers (INPS) have no SDMX-REST codelist endpoint (WAF-blocked);
+    # hitting it would stall `info` with retries+rate-limit per dimension. The
+    # per-dimension label is not available cheaply, so return None here.
+    if get_provider().get("hub_only"):
         return None
     from .db_cache import get_cached_codelist_info, is_codelist_info_cached, save_codelist_info
     if is_codelist_info_cached(codelist_id):
@@ -502,8 +529,12 @@ def dimensions_info(dataset: dict[str, Any], include_descriptions: bool = True) 
     })
 
     if include_descriptions and not df.is_empty():
+        # Prefer a description already carried on the dimension (e.g. the hub
+        # supplies a human label per dimension); fall back to the codelist
+        # description resolved over SDMX-REST for the other providers.
         descriptions = [
-            _get_dimension_description(row["codelist_id"])
+            dataset["dimensions"][row["dimension_id"]].get("description")
+            or _get_dimension_description(row["codelist_id"])
             for row in df.iter_rows(named=True)
         ]
         df = df.with_columns(pl.Series("description", descriptions, dtype=pl.Utf8))
@@ -569,6 +600,10 @@ def _load_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[d
             f"Dimension '{dimension_id}' not found. Available: {avail}"
         )
     dimension_id = actual
+
+    if get_provider().get("hub_only"):
+        from . import inps
+        return inps.get_codelist_records(dataset, dimension_id)
 
     codelist_id = dataset["dimensions"][dimension_id]["codelist_id"]
     if not codelist_id:
@@ -887,6 +922,21 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
         return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in cached.items()}
 
     provider = get_provider()
+
+    # Hub-only providers (INPS) resolve constraints via the middleware's
+    # PartialCodelists endpoint (per-dimension available values, with territory
+    # hierarchy expansion). This branch is terminal: INPS also sets
+    # `hub_base_url`, so without returning here it would wrongly fall through to
+    # the ISTAT-style hub path below and then the WAF-blocked REST chain.
+    if provider.get("hub_only"):
+        from . import inps
+        hub_result = inps.get_available_values(dataset)
+        if hub_result:
+            try:
+                save_available_constraints(df_id, hub_result)
+            except Exception as e:
+                logger.warning("Could not cache hub-derived constraints: %s", e)
+        return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in hub_result.items()}
 
     # `.Stat Suite` hub fast path: opt-in via provider config (`hub_base_url`).
     # Skipped entirely for non-hub providers (Eurostat, OECD, ECB, ...). On any

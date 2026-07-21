@@ -226,8 +226,12 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
         "(first run can take 1-2 minutes)..."
     )
 
-    categories_df = _fetch_categoryscheme()
-    categorisation_df = _fetch_categorisation()
+    if provider.get("hub_only"):
+        from . import inps
+        categories_df, categorisation_df = inps.load_categories()
+    else:
+        categories_df = _fetch_categoryscheme()
+        categorisation_df = _fetch_categorisation()
 
     _warn_stale(categorisation_df)
 

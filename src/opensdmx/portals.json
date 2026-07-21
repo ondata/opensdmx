@@ -49,6 +49,27 @@
     "hub_dataset_agency": "IT1",
     "hub_timeout": 15.0
   },
+  "inps": {
+    "name": "INPS",
+    "description": "Italian National Social Security Institute statistical observatories: pensions, private-sector employees and temporary workers, companies, and employment policies (NASPI/DIS-COLL). Hub-only provider (SDMX-REST endpoint is WAF-blocked).",
+    "base_url": "https://opendata.inps.it/databrowser/api/core",
+    "agency_id": "INPS",
+    "rate_limit": 0.5,
+    "language": "it",
+    "hub_only": true,
+    "hub_base_url": "https://opendata.inps.it/databrowser/api/core",
+    "hub_nodes": {
+      "pensioni": 2,
+      "dipendenti": 3,
+      "imprese": 4,
+      "politiche_occupazionali": 1
+    },
+    "hub_timeout": 30.0,
+    "constraints_supported": true,
+    "last_n_supported": false,
+    "categories_supported": true,
+    "user_agent": "Mozilla/5.0"
+  },
   "ecb": {
     "name": "European Central Bank",
     "description": "ECB Statistical Data Warehouse. Covers monetary policy, banking supervision, exchange rates, balance of payments and financial statistics for the euro area.",

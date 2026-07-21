@@ -81,30 +81,50 @@ def get_data(
     Returns:
         Polars DataFrame sorted by TIME_PERIOD ascending
     """
-    path = f"data/{dataset['df_id']}"
-    if get_provider().get("data_key_format", "dots") != "empty":
-        url_key = make_url_key(dataset["filters"])
-        if url_key:
-            path = f"{path}/{url_key}"
+    provider = get_provider()
+    hub_only = provider.get("hub_only", False)
+    empty_key = provider.get("data_key_format", "dots") == "empty"
 
-    params: dict[str, str | int] = {}
-    if start_period:
-        params["startPeriod"] = start_period
-    if end_period:
-        params["endPeriod"] = end_period
-    if last_n_observations is not None:
-        params["lastNObservations"] = last_n_observations
-    if first_n_observations is not None:
-        params["firstNObservations"] = first_n_observations
+    if hub_only:
+        # Hub-only providers (INPS) have no SDMX-REST data endpoint: download the
+        # full dataflow via the middleware and filter client-side below.
+        from . import inps
+        data: pl.DataFrame = inps.get_data(dataset)
+    else:
+        path = f"data/{dataset['df_id']}"
+        if not empty_key:
+            url_key = make_url_key(dataset["filters"])
+            if url_key:
+                path = f"{path}/{url_key}"
 
-    data: pl.DataFrame = sdmx_request_csv(path, **params)
+        params: dict[str, str | int] = {}
+        if start_period:
+            params["startPeriod"] = start_period
+        if end_period:
+            params["endPeriod"] = end_period
+        if last_n_observations is not None:
+            params["lastNObservations"] = last_n_observations
+        if first_n_observations is not None:
+            params["firstNObservations"] = first_n_observations
 
-    if get_provider().get("data_key_format", "dots") == "empty":
+        data = sdmx_request_csv(path, **params)
+
+    # Client-side dimension filter for providers that download unfiltered:
+    # empty-key (Derzhstat) and hub-only (INPS).
+    if hub_only or empty_key:
         for col, val in dataset.get("filters", {}).items():
             if not val or val == "." or col not in data.columns:
                 continue
             allowed = val.split("+") if isinstance(val, str) else [str(v) for v in val]
             data = data.filter(pl.col(col).is_in(allowed))
+
+    # Hub-only downloads are full: apply the period window client-side (by year),
+    # since the middleware ignores startPeriod/endPeriod.
+    if hub_only and "TIME_PERIOD" in data.columns:
+        if start_period:
+            data = data.filter(pl.col("TIME_PERIOD").str.slice(0, 4) >= str(start_period)[:4])
+        if end_period:
+            data = data.filter(pl.col("TIME_PERIOD").str.slice(0, 4) <= str(end_period)[:4])
 
     if "TIME_PERIOD" in data.columns:
         data = data.with_columns(
