@@ -374,8 +374,23 @@ opensdmx siblings <dataflow_id> --provider <p>
 Only works on providers with `categories_supported: true`. A dataflow may
 belong to multiple categories: the command returns one group per membership.
 
+**Golden rule — right content, wrong categorical level.** Whenever a candidate is
+correct in subject matter but exposed at a different breakdown level than the user
+asked for, look among its siblings *before* giving up or settling. This is not just
+geographic (comune vs province vs national): it applies to any dimension the
+provider splits into separate dataflows — territorial level, time frequency
+(annual vs quarterly), unit of measure, or the classification used for a breakdown
+(single countries vs geopolitical aggregates). The right-granularity variant almost
+never shares the candidate's wording — it is often titled generically (e.g. just
+"Tutti i comuni") — so keyword search cannot reach it, but `siblings` clusters it
+next to the candidate you already have. In these cases treat Step 1d as mandatory,
+not optional.
+
 When to use:
 
+- The candidate is correct in content but at the wrong categorical level (e.g. you
+  found foreign residents by citizenship at province level, but the user asked for a
+  single comune — the comune variant is a sibling titled "Tutti i comuni").
 - The candidate's title sounds specific ("Fertilizers distributed for biological
   agriculture"); you want to know if a broader version exists.
 - You expect a series at a different granularity (prov/reg/nat) that may not
