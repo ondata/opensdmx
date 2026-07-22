@@ -2344,3 +2344,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 47_850_DF_DCIS_SERVSOCEDU1_5,Servizi sul territorio - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
 47_850_DF_DCIS_SERVSOCEDU1_6,Servizi sul territorio - prov. e com.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
 47_850_DF_DCIS_SERVSOCEDU1_7,Servizi sul territorio - ambiti territoriali sociali (Ats),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+47_940,Interventi e servizi sociali dei comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_1,Indicatori - prov.,ok,hub,5,153,0,"",2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_2,Spesa per ente gestore - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_3,Utenti e spesa - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_4,Utenti e spesa - prov. e com.,ok,hub,5,12609,0,"",2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_5,Utenti e spesa - Ambiti territoriali sociali (Ats),ok,hub,5,12611,0,"",2026-07-22
+498_1104,Persone a rischio povertà o esclusione sociale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+498_1104_DF_DCCV_RISKPOV_1,Ampiezza della famiglia,ok,hub,6,18,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_10,Tipologia familiare,ok,hub,5,19,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_11,Fonte principale di reddito della famiglia,ok,hub,5,14,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_12,Minori e anziani in famiglia,ok,hub,6,18,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_13,Sesso ed età del principale percettore,ok,hub,6,18,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_14,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,22,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_15,Cittadinanza del principale percettore,ok,hub,5,13,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_16,Ripartizioni e tipo di comune,ok,hub,4,23,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_2,Tipologia familiare,ok,hub,5,19,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_3,Fonte principale di reddito della famiglia,ok,hub,5,14,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_4,Minori e anziani in famiglia,ok,hub,6,18,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_5,Sesso ed età del principale percettore,ok,hub,6,18,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_6,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,22,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_7,Cittadinanza del principale percettore,ok,hub,5,13,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_8,Ripartizioni e tipo di comune,ok,hub,4,23,0,"",2026-07-22
+498_1104_DF_DCCV_RISKPOV_9,Ampiezza della famiglia,ok,hub,5,15,0,"",2026-07-22
+49_23,Presidi residenziali socio-assistenziali (serie interrotte),ok,hub,4,46,0,"",2026-07-22
+49_23_DF_DCIS_POSTILETTOPRESIDI_1,Presidi residenziali socio-assistenziali (serie interrotte),ok,hub,4,46,0,"",2026-07-22
+49_37,Presidi residenziali socio-assistenziali e socio-sanitari,ok,hub,11,119,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_1,Strutture - reg.,ok,hub,4,35,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_10,Posti letto per tipo di gestore - reg.,ok,hub,4,51,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_11,Personale - reg.,ok,hub,4,56,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_2,Posti letto per tipo di utenza e tipo di residenzialità,ok,hub,5,19,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_3,Posti letto per tipo di utenza e funzione di protezione sociale,ok,hub,5,23,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_4,Posti letto per tipo di utenza e livello di assistenza sanitaria,ok,hub,5,21,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_5,Posti letto per tipo di utenza - reg.,ok,hub,4,42,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_6,Posti letto per tipo di residenzialità - reg.,ok,hub,4,35,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_7,Posti letto per funzione di protezione sociale - reg.,ok,hub,4,39,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_8,Posti letto per livello di assistenza sanitaria - reg.,ok,hub,4,37,0,"",2026-07-22
+49_37_DF_DCIS_PRESIDI1_9,Posti letto per natura giuridica del titolare e finanziamenti pubblici - reg.,ok,hub,5,41,0,"",2026-07-22
+49_62,Ospiti dei presidi residenziali socio-assistenziali e socio-sanitari,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_1,Ospiti dei presidi residenziali socio-assistenziali e socio-sanitari - Principali dati,ok,hub,4,34,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_10,Minori dimessi per tipo di destinazione - rip.,ok,hub,4,20,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_11,Adulti per età - reg.,ok,hub,4,35,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_12,Adulti per genere e tipo di disagio - reg.,ok,hub,4,38,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_13,Adulti per carattere di residenzialità - reg.,ok,hub,4,35,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_14,Adulti per funzione della protezione sociale - reg.,ok,hub,4,39,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_15,Adulti per livello di assistenza sanitaria - reg.,ok,hub,4,37,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_16,Anziani per età e tipo di disagio - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_17,Anziani per tipo di residenzialità - reg.,ok,hub,5,39,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_18,Anziani per genere e funzione della protezione sociale - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_19,Anziani per genere e livello di assistenza sanitaria - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_2,Minori per età - rip.,ok,hub,4,15,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_20,Stranieri per genere - reg.,ok,hub,4,34,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_21,Stranieri minori per genere - reg.,ok,hub,4,34,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_22,Stranieri minori per tipo di disagio - rip.,ok,hub,5,39,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_23,Stranieri minori per motivo ingresso - rip.,ok,hub,5,19,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_24,Stranieri adulti per genere e tipo di disagio - reg.,ok,hub,5,41,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_25,Stranieri anziani per genere e tipo di disagio - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_26,Minori per provenienza - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_27,Stranieri minori per provenienza - rip.,ok,hub,5,19,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_3,Minori per genere - reg.,ok,hub,4,34,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_4,Minori per tipo di disagio - rip.,ok,hub,5,17,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_5,Minori per tipo di residenzialità - rip.,ok,hub,4,13,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_6,Minori per funzione della protezione sociale - rip.,ok,hub,4,16,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_7,Minori per livello di assistenza sanitaria - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_8,Minori per motivo di ingresso - rip.,ok,hub,5,19,0,"",2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_9,Minori per condizione di adottabilità - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_1063,Sequenza dei conti per settore istituzionale e stock di attività non finanziarie - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_1,Sequenza dei conti - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2019 - aprile 2024,ok,hub,8,25,0,"",2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica - edizioni ottobre 2019 - aprile 2024,ok,hub,9,83,0,"",2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_4,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_5,Stock di attività non finanziarie  - edizioni luglio 2021 - gennaio 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_805,Occupazione per branca di attività - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_805_DF_DCCN_OCCSISEC2010_B19_1,Occupazione per branca di attività - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+4_805_DF_DCCN_OCCSISEC2010_B19_2,Occupazione per sottosettore -  edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044,Scuole,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_1,Scuole - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_10,Secondaria I grado - indicatori scolastici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_11,"Secondaria II grado - scuole, classi e studenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_12,Secondaria II grado - insegnanti delle scuole statali,ok,hub,5,29,0,"",2026-07-22
+52_1044_DF_DCIS_SCUOLE_13,Secondaria II grado - indicatori scolastici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_14,Secondaria II grado - diplomati,ok,hub,6,159,0,"",2026-07-22
+52_1044_DF_DCIS_SCUOLE_15,Secondaria II grado - ripetenti per anno di corso,ok,hub,8,153,0,"",2026-07-22
+52_1044_DF_DCIS_SCUOLE_2,"Infanzia - scuole, classi, bambini",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_3,Infanzia - insegnanti delle scuole statali,ok,hub,5,29,0,"",2026-07-22
+52_1044_DF_DCIS_SCUOLE_4,Infanzia - indicatori scolastici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_5,"Primaria - scuole, classi e alunni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_6,Primaria - insegnanti delle scuole statali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_7,Primaria - indicatori scolastici,ok,hub,5,146,0,"",2026-07-22
+52_1044_DF_DCIS_SCUOLE_8,"Secondaria I grado - scuole, classi e alunni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1044_DF_DCIS_SCUOLE_9,Secondaria I grado - insegnanti delle scuole statali,ok,hub,5,29,0,"",2026-07-22
+52_1194,Popolazione 15 anni e oltre per titolo di studio - regolamento precedente (fino al 2020),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_1,Popolazione per titolo di studio e età,ok,hub,6,36,0,"",2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_2,Popolazione per titolo di studio e regioni,ok,hub,6,41,0,"",2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_3,Popolazione per titolo di studio - italiani e stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1203,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020),ok,hub,6,48,0,"",2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_1,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020) - Principali dati,ok,hub,5,41,0,"",2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_2,Condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_3,Valori assoluti,ok,hub,5,15,0,"",2026-07-22
+532_1195,Popolazione per condizione professionale - regolamento precedente (fino al 2020),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_1,Classi di età quinquennali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_10,Serie ricostruite dal IV 1992 - dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_11,Classi di età quinquennali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_12,Tutte le età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_13,Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_14,Ruolo in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_15,"Cittadinanza, ruolo in famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_16,Status di studente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_17,Dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_18,Serie ricostruite dal I 1977 - età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_19,Serie ricostruite dal IV 1992 - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_2,Tutte le età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_20,Serie ricostruite dal IV 1992 - dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_3,Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_4,Ruolo in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_5,"Cittadinanza, ruolo in famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_6,Status di studente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_7,Dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_8,Serie ricostruite dal I 1977 - età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_1195_DF_DCCV_POPCOND1_UNT2020_9,Serie ricostruite dal IV 1992 - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_930,Popolazione  per condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_930_DF_DCCV_POPCOND1_1,Classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_930_DF_DCCV_POPCOND1_2,Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_930_DF_DCCV_POPCOND1_3,Status di studente,ok,hub,7,34,0,"",2026-07-22
+532_930_DF_DCCV_POPCOND1_4,Dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+532_930_DF_DCCV_POPCOND1_5,Serie ricostruite dal I 2004 - età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957,Retribuzioni orarie  dei dipendenti del settore privato,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_1,Classe di età,ok,hub,10,49,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_10,Paese di nascita - prov,ok,hub,5,150,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_11,Titolo di studio - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_12,Tipo di contratto - prov,ok,hub,6,150,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_13,Regime orario - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_14,Classe di dipendenti - prov,ok,hub,6,152,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_15,Qualifica contrattuale- prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_16,Giorni retribuiti - prov,ok,hub,6,150,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_17,Sesso - 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_18,Classe di eta- 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_19,Paese di nascita- 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_2,Retribuzione oraria per paese di nascita,ok,hub,9,48,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_20,Titolo di studio - 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_21,Tipo di contratto- 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_22,Regime orario- 2 digit,ok,hub,7,114,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_23,Classe di dipendenti - 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_24,Qualifica contrattuale - 2 digit,ok,hub,7,115,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_25,Giorni retribuiti - 2 digit,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_3,Titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_4,Tipo di contratto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_5,Retribuzione oraria per regime orario,ok,hub,10,48,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_6,Retribuzione oraria per classe di dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_7,Retribuzione oraria per giorni retribuiti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+533_957_DF_DCSC_RACLI_8,Sesso - prov,ok,hub,6,150,0,"",2026-07-22
+533_957_DF_DCSC_RACLI_9,Classe di età - prov,ok,hub,6,151,0,"",2026-07-22
+534_1037,Ore lavorate - Imprese con dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_1037_DF_DCSC_ORE10_2_1,Monte ore lavorate (base 2015),ok,hub,6,32,0,"",2026-07-22
+534_1037_DF_DCSC_ORE10_2_2,Ore lavorate per dipendente (base 2015),ok,hub,6,32,0,"",2026-07-22
+534_1037_DF_DCSC_ORE10_2_3,Ore di straordinario e di Cig,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_1037_DF_DCSC_ORE10_2_4,Monte ore lavorate (base 2010) - 10 e più dipendenti,ok,hub,6,31,0,"",2026-07-22
+534_1037_DF_DCSC_ORE10_2_5,Ore lavorate per dipendente (base 2010) - 10 e più dipendenti,ok,hub,6,31,0,"",2026-07-22
+534_1037_DF_DCSC_ORE10_2_6,Ore lavorate per dipendente (base 2005) - 10 e più dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_1037_DF_DCSC_ORE10_2_7,Monte ore lavorate (base 2021),ok,hub,6,32,0,"",2026-07-22
+534_1037_DF_DCSC_ORE10_2_8,Ore lavorate per dipendente (base 2021),ok,hub,6,32,0,"",2026-07-22
+534_1038,Posti vacanti - Imprese con dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_1038_DF_DCSC_POSTIVAC_2_1,Posti vacanti - Imprese con dipendenti,ok,hub,6,32,0,"",2026-07-22
+534_49,Ore lavorate - Imprese con almeno 500 dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_1,Ore lavorate per dipendente (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_10,Ore di sciopero (base 2010),ok,hub,6,8,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_11,Ore lavorate per dipendente (base 2005),ok,hub,6,163,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_12,Ore di straordinario e Cig (base 2005),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_13,Ore di sciopero (base 2005),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_14,Ore lavorate per dipendente (base 2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_15,Ore di straordinario e Cig (base 2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_16,Ore di sciopero (base 2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_2,Ore di straordinario e Cig (base 2015),ok,hub,6,42,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_3,Ore di sciopero (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_4,Ore lavorate per dipendente - Ateco 3 cifre (base 2015),ok,hub,6,199,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_5,Ore di straordinario e Cig - Ateco 3 cifre (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_6,Ore lavorate per dipendente (base 2010),ok,hub,6,43,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_7,Ore lavorate per dipendente - Ateco 3 cifre (base 2010),ok,hub,6,174,0,"",2026-07-22
+534_49_DF_DCSC_GI_ORE_8,Ore di straordinario e Cig (base 2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_49_DF_DCSC_GI_ORE_9,Ore di straordinario e Cig - Ateco 3 cifre (base 2010),ok,hub,6,173,0,"",2026-07-22
+534_50,Posizioni lavorative - Imprese con almeno 500 dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_1,Dipendenti (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_10,Quota part time - Ateco 2 cifre (base 2010),ok,hub,6,91,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_11,Tassi di ingresso e di uscita (base 2010),ok,hub,6,36,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_12,Tassi di ingresso e di uscita - Ateco 3 cifre (base 2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_13,Dipendenti (base 2005),ok,hub,6,163,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_14,Quota part time (base 2005),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_15,Tassi di ingresso e di uscita (base 2005),ok,hub,6,162,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_16,Dipendenti (base 2021),ok,hub,6,43,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_17,Quota part time (base 2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_18,Tassi di ingresso e di uscita (base 2021),ok,hub,6,42,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_2,Quota part time (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_3,Tassi di ingresso e di uscita (base 2015),ok,hub,6,42,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_4,Dipendenti - Ateco 3 cifre (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_5,Quota part time - Ateco 2 cifre (base 2015),ok,hub,6,104,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_6,Tassi di ingresso e di uscita - Ateco 3 cifre (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_7,Dipendenti (base 2010),ok,hub,6,37,0,"",2026-07-22
+534_50_DF_DCSC_GI_OCC_8,Dipendenti - Ateco 3 cifre (base 2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+534_50_DF_DCSC_GI_OCC_9,Quota part time (base 2010),ok,hub,6,35,0,"",2026-07-22
+535_194,Retribuzioni lorde - Imprese con almeno 500 dipendenti,ok,hub,6,222,0,"",2026-07-22
+535_194_DF_DCSC_GI_RE_1,Dati grezzi (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22

@@ -1234,3 +1234,106 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 39_1_DF_DCIS_IND_MORT_EDU_1,Indicatori di mortalità per causa e titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_2,Causa ed età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-07-20
+47_940_DF_DCIS_SPESESERSOC1_1,Indicatori - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_4,Utenti e spesa - prov. e com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_5,Utenti e spesa - Ambiti territoriali sociali (Ats),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
+498_1104_DF_DCCV_RISKPOV_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_10,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_11,Fonte principale di reddito della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_12,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_13,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_14,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_15,Cittadinanza del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_16,Ripartizioni e tipo di comune,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-07-22
+498_1104_DF_DCCV_RISKPOV_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_3,Fonte principale di reddito della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_4,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_5,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_6,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_7,Cittadinanza del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-22
+498_1104_DF_DCCV_RISKPOV_8,Ripartizioni e tipo di comune,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-07-22
+498_1104_DF_DCCV_RISKPOV_9,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
+49_23,Presidi residenziali socio-assistenziali (serie interrotte),REF_AREA,regione,nazionale|ripartizione|regione,26,2026-07-22
+49_23_DF_DCIS_POSTILETTOPRESIDI_1,Presidi residenziali socio-assistenziali (serie interrotte),REF_AREA,regione,nazionale|ripartizione|regione,26,2026-07-22
+49_37,Presidi residenziali socio-assistenziali e socio-sanitari,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_1,Strutture - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_10,Posti letto per tipo di gestore - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_11,Personale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_2,Posti letto per tipo di utenza e tipo di residenzialità,REF_AREA,nazionale,nazionale,1,2026-07-22
+49_37_DF_DCIS_PRESIDI1_3,Posti letto per tipo di utenza e funzione di protezione sociale,REF_AREA,nazionale,nazionale,1,2026-07-22
+49_37_DF_DCIS_PRESIDI1_4,Posti letto per tipo di utenza e livello di assistenza sanitaria,REF_AREA,nazionale,nazionale,1,2026-07-22
+49_37_DF_DCIS_PRESIDI1_5,Posti letto per tipo di utenza - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_6,Posti letto per tipo di residenzialità - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_7,Posti letto per funzione di protezione sociale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_8,Posti letto per livello di assistenza sanitaria - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_37_DF_DCIS_PRESIDI1_9,Posti letto per natura giuridica del titolare e finanziamenti pubblici - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_1,Ospiti dei presidi residenziali socio-assistenziali e socio-sanitari - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_10,Minori dimessi per tipo di destinazione - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_11,Adulti per età - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_12,Adulti per genere e tipo di disagio - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_13,Adulti per carattere di residenzialità - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_14,Adulti per funzione della protezione sociale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_15,Adulti per livello di assistenza sanitaria - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_17,Anziani per tipo di residenzialità - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_2,Minori per età - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_20,Stranieri per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_21,Stranieri minori per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_22,Stranieri minori per tipo di disagio - rip.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_23,Stranieri minori per motivo ingresso - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_24,Stranieri adulti per genere e tipo di disagio - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_27,Stranieri minori per provenienza - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_3,Minori per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_4,Minori per tipo di disagio - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_5,Minori per tipo di residenzialità - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_6,Minori per funzione della protezione sociale - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_8,Minori per motivo di ingresso - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-22
+52_1044_DF_DCIS_SCUOLE_12,Secondaria II grado - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
+52_1044_DF_DCIS_SCUOLE_14,Secondaria II grado - diplomati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-07-22
+52_1044_DF_DCIS_SCUOLE_15,Secondaria II grado - ripetenti per anno di corso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-07-22
+52_1044_DF_DCIS_SCUOLE_3,Infanzia - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
+52_1044_DF_DCIS_SCUOLE_7,Primaria - indicatori scolastici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-07-22
+52_1044_DF_DCIS_SCUOLE_9,Secondaria I grado - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_1,Popolazione per titolo di studio e età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_2,Popolazione per titolo di studio e regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+52_1203,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_1,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_3,Valori assoluti,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
+532_930_DF_DCCV_POPCOND1_3,Status di studente,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
+533_957_DF_DCSC_RACLI_1,Classe di età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+533_957_DF_DCSC_RACLI_10,Paese di nascita - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_12,Tipo di contratto - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_14,Classe di dipendenti - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_16,Giorni retribuiti - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_2,Retribuzione oraria per paese di nascita,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+533_957_DF_DCSC_RACLI_22,Regime orario- 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
+533_957_DF_DCSC_RACLI_24,Qualifica contrattuale - 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
+533_957_DF_DCSC_RACLI_5,Retribuzione oraria per regime orario,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+533_957_DF_DCSC_RACLI_8,Sesso - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_9,Classe di età - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+534_1037_DF_DCSC_ORE10_2_1,Monte ore lavorate (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_2,Ore lavorate per dipendente (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_4,Monte ore lavorate (base 2010) - 10 e più dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_5,Ore lavorate per dipendente (base 2010) - 10 e più dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_7,Monte ore lavorate (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_8,Ore lavorate per dipendente (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1038_DF_DCSC_POSTIVAC_2_1,Posti vacanti - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_10,Ore di sciopero (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_11,Ore lavorate per dipendente (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_2,Ore di straordinario e Cig (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_4,Ore lavorate per dipendente - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_6,Ore lavorate per dipendente (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_7,Ore lavorate per dipendente - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_9,Ore di straordinario e Cig - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_10,Quota part time - Ateco 2 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_11,Tassi di ingresso e di uscita (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_13,Dipendenti (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_15,Tassi di ingresso e di uscita (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_16,Dipendenti (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_18,Tassi di ingresso e di uscita (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_3,Tassi di ingresso e di uscita (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_5,Quota part time - Ateco 2 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_7,Dipendenti (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_9,Quota part time (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+535_194,Retribuzioni lorde - Imprese con almeno 500 dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22

@@ -1889,3 +1889,318 @@ ENV_AC_PEPSGG1,Production of environmental protection services of general govern
 ENV_AC_PEPSNS1,Production of environmental protection services of corporations as ancillary producers by economic characteristics and NACE Rev. 2 activity,ok,sdmx,7,88,0,"",2026-07-21
 ENV_AC_PEPSSP1,Production of environmental protection services of corporations as specialist and secondary producers by economic characteristics,ok,sdmx,6,81,0,"",2026-07-21
 ENV_AC_PFCFP,"Perfluorocarbon emission footprints (PFC in CO2 equivalent, FIGARO application)",ok,sdmx,7,200,0,"",2026-07-21
+ENV_AC_RME,Material footprints - main indicators,ok,sdmx,6,131,0,"",2026-07-22
+ENV_AC_RMEFD,Material footprints - details by final use of products,ok,sdmx,7,158,0,"",2026-07-22
+ENV_AC_RP,Resource productivity,ok,sdmx,4,67,0,"",2026-07-22
+ENV_AC_SD,Material flows for circular economy - Sankey diagram data,ok,sdmx,6,66,0,"",2026-07-22
+ENV_AC_TAX,Environmental tax revenues,ok,sdmx,5,72,0,"",2026-07-22
+ENV_AC_TAXENER,Energy taxes by paying sector,ok,sdmx,5,73,0,"",2026-07-22
+ENV_AC_TAXENER$DV_3262,Energy taxes by paying sector,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AC_TAXENER$DV_3262'
+For more information check: https://develope",2026-07-22
+ENV_AC_TAXIND2,Environmental taxes by economic activity (NACE Rev. 2),ok,sdmx,6,150,0,"",2026-07-22
+ENV_AIR_EMIS,Air pollutants by source sector,ok,sdmx,6,232,0,"",2026-07-22
+ENV_AIR_EMIS$DV_446,Air pollutants by source sector,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AIR_EMIS$DV_446'
+For more information check: https://developer.m",2026-07-22
+ENV_AIR_EMIS_IND,Air pollutants by source sector aggregated for indicator sets,ok,sdmx,6,87,0,"",2026-07-22
+ENV_AIR_GGE,Greenhouse gas emissions by source sector,ok,sdmx,6,247,0,"",2026-07-22
+ENV_AIR_GGE$DV_447,Greenhouse gas emissions by source sector,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_AIR_GGE$DV_447'
+For more information check: https://developer.mo",2026-07-22
+ENV_AIR_NO2,"Nitrogen dioxide concentrations in European capital cities - monthly averages, experimental statistics",ok,sdmx,5,136,0,"",2026-07-22
+ENV_BIO2,Common farmland bird index,ok,sdmx,4,62,0,"",2026-07-22
+ENV_BIO3,Common bird indices by type of estimate,ok,sdmx,6,47,0,"",2026-07-22
+ENV_BIO4,Protected areas,ok,sdmx,5,46,0,"",2026-07-22
+ENV_BIO5,Proportion of fish stocks sustainably exploited,ok,sdmx,5,30,0,"",2026-07-22
+ENV_CC_MINV,"Investments in climate change mitigation by environmental purpose (CEP), NACE Rev. 2 activity and institutional sector",ok,sdmx,8,77,0,"",2026-07-22
+ENV_CHMHAZ,Production and consumption of chemicals by hazard class,ok,sdmx,6,36,0,"",2026-07-22
+ENV_EGSS_EMP,Employment in the environmental goods and service sector,ok,sdmx,8,134,0,"",2026-07-22
+ENV_EGSS_MON,"Production, value added and exports in the environmental goods and service sector",ok,sdmx,8,140,0,"",2026-07-22
+ENV_EPEA_CFIN,Final consumption expenditure on environmental protection services by institutional sector and environmental purpose,ok,sdmx,6,71,0,"",2026-07-22
+ENV_EPEA_CINT,"Intermediate consumption of environmental protection services by institutional sector, NACE Rev. 2 activity and environmental purpose",ok,sdmx,7,86,0,"",2026-07-22
+ENV_EPEA_INVAP,Environmental protection investments of corporations as ancillary producers by NACE Rev. 2 activity and environmental purpose,ok,sdmx,7,85,0,"",2026-07-22
+ENV_EPEA_INVGG,Environmental protection investments of general government and NPISH by environmental purpose,ok,sdmx,5,67,0,"",2026-07-22
+ENV_EPEA_INVSP,Environmental protection investments of corporations as specialist and secondary producers by environmental purpose,ok,sdmx,5,69,0,"",2026-07-22
+ENV_EPEA_INVTE,Environmental protection investments of total economy,ok,sdmx,4,47,0,"",2026-07-22
+ENV_EPEA_NEEP,National expenditure on environmental protection by institutional sector and environmental purpose,ok,sdmx,6,74,0,"",2026-07-22
+ENV_EPEA_PAP,"Production of environmental protection services by corporations as ancillary producers, by economic characteristics, NACE Rev. 2 activity and environmental purpose",ok,sdmx,7,91,0,"",2026-07-22
+ENV_EPEA_PGG,"Production of environmental protection services by general government and NPISH, by economic characteristics and environmental purpose",ok,sdmx,6,78,0,"",2026-07-22
+ENV_EPEA_PSP,"Production of environmental protection services by corporations as specialist and secondary producers, by economic characteristics and environmental purpose",ok,sdmx,6,80,0,"",2026-07-22
+ENV_EPEA_TRF,Environmental protection transfers by institutional sector and environmental purpose,ok,sdmx,7,76,0,"",2026-07-22
+ENV_ESST_CEPGG,"Environmental subsidies and similar transfers from general government, by environmental activity, sector of recipient and ESA category of transfer",ok,sdmx,7,87,0,"",2026-07-22
+ENV_ESST_CEPGGCP,"Environmental subsidies and similar transfers from general government to corporations, by environmental activity, ESA category of transfer and NACE Rev. 2 activity of recipient",ok,sdmx,7,89,0,"",2026-07-22
+ENV_ESST_CEPRW,"Environmental subsidies and similar transfers from the rest of the world to the domestic economy, by environmental activity and ESA category of transfer",ok,sdmx,6,77,0,"",2026-07-22
+ENV_ESST_GG,"Environmental subsidies and similar transfers from general government, by environmental activity, sector of recipient and ESA category of transfer (2011-2022)",ok,sdmx,7,64,0,"",2026-07-22
+ENV_ESST_GG$DV_3263,"Environmental subsidies and similar transfers from general government, by environmental activity, sector of recipient and ESA category of transfer (2011-2022)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_ESST_GG$DV_3263'
+For more information check: https://developer.m",2026-07-22
+ENV_ESST_GGCP,"Environmental subsidies and similar transfers from general government to corporations, by environmental activity, ESA category of transfer and NACE Rev. 2 activity of recipient (2011-2022)",ok,sdmx,7,67,0,"",2026-07-22
+ENV_ESST_RW,"Environmental subsidies and similar transfers from the Rest of the World to the domestic economy, by environmental activity and ESA category of transfer (2011-2022)",ok,sdmx,6,56,0,"",2026-07-22
+ENV_LANDFP_DOM,Domestic land use in the EU by product,ok,sdmx,8,149,0,"",2026-07-22
+ENV_LANDFP_EXP,Land use embodied in EU exports by product (HS 2022),ok,sdmx,8,536,0,"",2026-07-22
+ENV_LANDFP_IMP,Land use embodied in imports into the EU by product (HS 2022),ok,sdmx,8,714,0,"",2026-07-22
+ENV_TRDRRM,Trade in recyclable raw materials by partner,ok,sdmx,7,292,0,"",2026-07-22
+ENV_WASBAT,Recycling of batteries and accumulators,ok,sdmx,6,55,0,"",2026-07-22
+ENV_WASELEE,Waste electrical and electronic equipment (WEEE) by waste management operations,ok,sdmx,6,76,0,"",2026-07-22
+ENV_WASELEE$DV_3022,Waste electrical and electronic equipment (WEEE) by waste management operations,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WASELEE$DV_3022'
+For more information check: https://developer.m",2026-07-22
+ENV_WASELEEOS,"Waste electrical and electronic equipment (WEEE) by waste management operations - open scope, 6 product categories (from 2018 onwards)",ok,sdmx,6,78,0,"",2026-07-22
+ENV_WASELEEOS$DV_3021,"Waste electrical and electronic equipment (WEEE) by waste management operations - open scope, 6 product categories (from 2018 onwards)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WASELEEOS$DV_3021'
+For more information check: https://developer",2026-07-22
+ENV_WASELV,End-of-life vehicles by waste management operations - detailed data,ok,sdmx,6,76,0,"",2026-07-22
+ENV_WASELVT,"End-of-life vehicles - reuse, recycling and recovery, totals",ok,sdmx,5,59,0,"",2026-07-22
+ENV_WASFAC,Number and capacity of recovery and disposal facilities by NUTS 2 region,ok,sdmx,5,613,0,"",2026-07-22
+ENV_WASFLOW,"Management of waste excluding major mineral waste, by waste management operations and waste flow",ok,sdmx,6,50,0,"",2026-07-22
+ENV_WASFW,Food waste and food waste prevention by NACE Rev. 2 activity - tonnes of fresh mass,ok,sdmx,7,45,0,"",2026-07-22
+ENV_WASFW$DV_3265,Food waste and food waste prevention by NACE Rev. 2 activity - tonnes of fresh mass,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WASFW$DV_3265'
+For more information check: https://developer.moz",2026-07-22
+ENV_WASGEN,"Generation of waste by waste category, hazardousness and NACE Rev. 2 activity",ok,sdmx,7,127,0,"",2026-07-22
+ENV_WASGEN$DV_3264,"Generation of waste by waste category, hazardousness and NACE Rev. 2 activity",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WASGEN$DV_3264'
+For more information check: https://developer.mo",2026-07-22
+ENV_WASMUN,Municipal waste by waste management operations,ok,sdmx,5,81,0,"",2026-07-22
+ENV_WASOBL,Municipal waste reporting obligation,ok,sdmx,6,66,0,"",2026-07-22
+ENV_WASOPER,"Management of waste excluding major mineral waste, by waste management operations",ok,sdmx,5,47,0,"",2026-07-22
+ENV_WASPAC,Packaging waste by waste management operations,ok,sdmx,6,85,0,"",2026-07-22
+ENV_WASPACR,"Recycling rates of packaging waste for monitoring compliance with policy targets, by type of packaging",ok,sdmx,5,71,0,"",2026-07-22
+ENV_WASPB,Sales and collection of portable batteries and accumulators,ok,sdmx,6,53,0,"",2026-07-22
+ENV_WASPCB,Consumption of lightweight plastic carrier bags by their wall thickness,ok,sdmx,5,45,0,"",2026-07-22
+ENV_WASSD,Management of waste by waste management operations and type of material - Sankey diagram data,ok,sdmx,6,63,0,"",2026-07-22
+ENV_WASSHIP,"Transboundary shipments of notified waste by partner, hazardousness and waste management operations",ok,sdmx,8,224,0,"",2026-07-22
+ENV_WASTRDMP,Trade in waste by type of material and partner,ok,sdmx,7,292,0,"",2026-07-22
+ENV_WASTRT,"Treatment of waste by waste category, hazardousness and waste management operations",ok,sdmx,7,111,0,"",2026-07-22
+ENV_WATABS_RB,Water abstraction by river basin district (RBD),ok,sdmx,6,355,0,"",2026-07-22
+ENV_WATRES_RB,Freshwater resources by river basin district (RBD),ok,sdmx,5,316,0,"",2026-07-22
+ENV_WATUSE_RB,Water use by river basin district (RBD),ok,sdmx,6,259,0,"",2026-07-22
+ENV_WAT_ABS,Annual freshwater abstraction by source and sector,ok,sdmx,6,104,0,"",2026-07-22
+ENV_WAT_BAL,Water use balance,ok,sdmx,6,111,0,"",2026-07-22
+ENV_WAT_CAT,Water use by supply category and economical sector,ok,sdmx,6,95,0,"",2026-07-22
+ENV_WAT_CAT$DV_3266,Water use by supply category and economical sector,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WAT_CAT$DV_3266'
+For more information check: https://developer.m",2026-07-22
+ENV_WAT_IND,Water use in the manufacturing industry by activity and supply category,ok,sdmx,6,87,0,"",2026-07-22
+ENV_WAT_LTAA,Renewable freshwater resources - long term annual averages,ok,sdmx,5,53,0,"",2026-07-22
+ENV_WAT_POP,Population connected to public water supply,ok,sdmx,5,63,0,"",2026-07-22
+ENV_WAT_POP$DV_3268,Population connected to public water supply,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WAT_POP$DV_3268'
+For more information check: https://developer.m",2026-07-22
+ENV_WAT_RES,Renewable freshwater resources,ok,sdmx,5,91,0,"",2026-07-22
+ENV_WAT_USE,Water made available for use,ok,sdmx,6,102,0,"",2026-07-22
+ENV_WW_CON,Population connected to wastewater treatment plants,ok,sdmx,5,94,0,"",2026-07-22
+ENV_WW_CON$DV_3267,Population connected to wastewater treatment plants,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WW_CON$DV_3267'
+For more information check: https://developer.mo",2026-07-22
+ENV_WW_GENP,Generation and discharge of wastewater by pollutant,ok,sdmx,6,97,0,"",2026-07-22
+ENV_WW_GENV,Generation and discharge of wastewater in volume,ok,sdmx,5,112,0,"",2026-07-22
+ENV_WW_GENV$DV_3269,Generation and discharge of wastewater in volume,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ENV_WW_GENV$DV_3269'
+For more information check: https://developer.m",2026-07-22
+ENV_WW_SPD,Sewage sludge production and disposal,ok,sdmx,6,88,0,"",2026-07-22
+EQ_DSKL07,Individuals' level of digital skills by sex and age,ok,sdmx,6,65,0,"",2026-07-22
+EQ_DSKL08,Individuals' level of digital skills by country of birth,ok,sdmx,6,61,0,"",2026-07-22
+EQ_DSKL09,Individuals' level of digital skills by country of citizenship,ok,sdmx,6,61,0,"",2026-07-22
+EQ_FER05,Live births,ok,sdmx,4,70,0,"",2026-07-22
+EQ_MOR06,Deaths by sex,ok,sdmx,4,70,0,"",2026-07-22
+EQ_POP02,Population structure by sex,ok,sdmx,4,68,0,"",2026-07-22
+EQ_POP03,Population structure by detailed age group,ok,sdmx,4,71,0,"",2026-07-22
+EQ_POP04,Median age by sex,ok,sdmx,4,69,0,"",2026-07-22
+EQ_WDISC,Perception of discrimination in cities,ok,sdmx,5,97,0,"",2026-07-22
+ERT_BIL_CONV_A,Conversion factors for euro fixed series into euro/ECU - annual data,ok,sdmx,4,79,0,"",2026-07-22
+ERT_BIL_CONV_M,Conversion factors for euro fixed series into euro/ECU - monthly data,ok,sdmx,4,690,0,"",2026-07-22
+ERT_BIL_CONV_Q,Conversion factors for euro fixed series into euro/ECU - quarterly data,ok,sdmx,4,246,0,"",2026-07-22
+ERT_BIL_EUR_A,Euro/ECU exchange rates - annual data,ok,sdmx,5,210,0,"",2026-07-22
+ERT_BIL_EUR_A$DV_841,Euro/ECU exchange rates - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ERT_BIL_EUR_A$DV_841'
+For more information check: https://developer.",2026-07-22
+ERT_BIL_EUR_A$DV_861,Euro/ECU exchange rates - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ERT_BIL_EUR_A$DV_861'
+For more information check: https://developer.",2026-07-22
+ERT_BIL_EUR_D,Euro/ECU exchange rates - daily data,ok,sdmx,5,13874,0,"",2026-07-22
+ERT_BIL_EUR_M,Euro/ECU exchange rates - monthly data,ok,sdmx,5,710,0,"",2026-07-22
+ERT_BIL_EUR_Q,Euro/ECU exchange rates - quarterly data,ok,sdmx,5,264,0,"",2026-07-22
+ERT_EFF_IC_A,Industrial countries' effective exchange rates - annual data,ok,sdmx,5,93,0,"",2026-07-22
+ERT_EFF_IC_M,Industrial countries' effective exchange rates - monthly data,ok,sdmx,5,445,0,"",2026-07-22
+ERT_EFF_IC_Q,Industrial countries' effective exchange rates - quarterly data,ok,sdmx,5,190,0,"",2026-07-22
+ERT_H_EUR_A,Former euro area national currencies vs. euro/ECU - annual data,ok,sdmx,5,80,0,"",2026-07-22
+ERT_H_EUR_D,Former euro area national currencies vs. euro/ECU - daily data,ok,sdmx,5,13306,0,"",2026-07-22
+ERT_H_EUR_M,Former euro area national currencies vs. euro/ECU - monthly data,ok,sdmx,5,685,0,"",2026-07-22
+ERT_H_EUR_Q,Former euro area national currencies vs. euro/ECU - quarterly data,ok,sdmx,5,245,0,"",2026-07-22
+EXT_LT_INTERCC,International trade of EFTA and enlargement countries,ok,sdmx,6,56,0,"",2026-07-22
+EXT_LT_INTERTRD,"International trade of EU, the euro area and the Member States by SITC product group",ok,sdmx,6,77,0,"",2026-07-22
+EXT_LT_INTRATRD,Intra and Extra-EU trade by Member State and by product group,ok,sdmx,6,73,0,"",2026-07-22
+EXT_LT_INTROEU27_2020,Share of European Union EU27 (from 2020) in the World Trade,ok,sdmx,5,51,0,"",2026-07-22
+EXT_LT_INVCUR,Trade shares by invoicing currency (from 2010 onwards),ok,sdmx,8,71,0,"",2026-07-22
+EXT_LT_MAINAGRI,"Extra-EU trade of food, drinks and tobacco (SITC 0+1) by partner",ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINCHEM,Extra-EU trade of chemicals and related products (SITC 5) by partner,ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINEU,Extra-EU trade by partner,ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINEZ,Extra-Euro area trade by partner and by SITC product group,ok,sdmx,6,280,0,"",2026-07-22
+EXT_LT_MAINMACH,Extra-EU trade of machinery and transport equipment (SITC 7) by partner,ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINMANU,Extra-EU trade of other manufactured goods (SITC 6+8) by partner,ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINMINE,"Extra-EU trade of mineral fuels, lubricants and related materials (SITC 3) by partner",ok,sdmx,6,264,0,"",2026-07-22
+EXT_LT_MAINRAWM,"Extra EU trade of raw materials (SITC 2+4), by partner",ok,sdmx,6,264,0,"",2026-07-22
+EXT_SER_BEC01,Services trade by broad economic categories (BEC Rev.5),ok,sdmx,7,64,0,"",2026-07-22
+EXT_SER_MOS,"International supply of services by modes, type of product (EBOPS 2010) and partner country",ok,sdmx,8,167,0,"",2026-07-22
+EXT_STEC01,Services trade by enterprise characteristics (STEC) by NACE Rev. 2 activities and enterprise size class,ok,sdmx,8,69,0,"",2026-07-22
+EXT_STEC02,Services trade by enterprise characteristics (STEC) by EBOPS 2010 items and NACE Rev. 2 activities,ok,sdmx,8,109,0,"",2026-07-22
+EXT_STEC02$DV_3101,Services trade by enterprise characteristics (STEC) by EBOPS 2010 items and NACE Rev. 2 activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/EXT_STEC02$DV_3101'
+For more information check: https://developer.mo",2026-07-22
+EXT_STEC03,Services trade by enterprise characteristics (STEC) by NACE Rev. 2 activities and type of ownership,ok,sdmx,8,68,0,"",2026-07-22
+EXT_ST_27_2020MSBEC,Member States EU27 (from 2020) trade by BEC product group,ok,sdmx,7,346,0,"",2026-07-22
+EXT_ST_EABEC,Euro area trade by BEC product group,ok,sdmx,7,317,0,"",2026-07-22
+EXT_ST_EASITC,Euro area trade by SITC product group,ok,sdmx,7,388,0,"",2026-07-22
+EXT_ST_EFTACC,"Macro series for EFTA, enlargement countries and Northern Ireland (raw data and growth rates)",ok,sdmx,7,327,0,"",2026-07-22
+EXT_ST_EU27_2020BEC,EU27 (from 2020) trade by BEC product group,ok,sdmx,7,316,0,"",2026-07-22
+EXT_ST_EU27_2020SITC,EU27 (from 2020) trade by SITC product group,ok,sdmx,7,381,0,"",2026-07-22
+EXT_TEC01,Trade by NACE Rev. 2 activity and enterprise size class,ok,sdmx,8,110,0,"",2026-07-22
+EXT_TEC02,Concentration of trade by NACE Rev. 2 activity,ok,sdmx,8,70,0,"",2026-07-22
+EXT_TEC03,Trade by partner country and NACE Rev. 2 activity,ok,sdmx,7,140,0,"",2026-07-22
+EXT_TEC04,Trade by number of partner countries and NACE Rev. 2 activity,ok,sdmx,8,73,0,"",2026-07-22
+EXT_TEC05,Trade by commodity and NACE Rev. 2 activity,ok,sdmx,8,133,0,"",2026-07-22
+EXT_TEC06,Trade by type of trader,ok,sdmx,8,107,0,"",2026-07-22
+EXT_TEC07,Trade by type of ownership,ok,sdmx,8,108,0,"",2026-07-22
+EXT_TEC08,Trade by exports intensity,ok,sdmx,8,110,0,"",2026-07-22
+EXT_TEC09,Trade by NACE Rev. 2 activity sector,ok,sdmx,7,289,0,"",2026-07-22
+EXT_TEC10,Trade by partner country and enterprise size class,ok,sdmx,7,141,0,"",2026-07-22
+EXT_TIC02,Trade shares by invoicing currency with additional currency and SITC product group breakdowns (from 2021 onwards),ok,sdmx,8,101,0,"",2026-07-22
+FATS_ACTIV,Foreign controlled EU enterprises by NACE Rev. 2 activity and country of control (from 2021 onwards),ok,sdmx,6,153,0,"",2026-07-22
+FATS_ACTIV_RD,Research and development variables in foreign controlled EU enterprises by NACE Rev. 2 activity (B-F) and country of control (from 2021 onwards),ok,sdmx,6,103,0,"",2026-07-22
+FATS_CTRL,Foreign controlled EU enterprises by detailed breakdown of countries of control (from 2021 onwards),ok,sdmx,6,306,0,"",2026-07-22
+FATS_CTRL_RD,Research and development variables in foreign controlled EU enterprises by detailed breakdown of country of control (from 2021 onwards),ok,sdmx,6,281,0,"",2026-07-22
+FATS_G1A_03,Foreign control of enterprises by economic activity and a selection of controlling countries (2003-2007),ok,sdmx,6,224,0,"",2026-07-22
+FATS_G1A_08,Foreign control of enterprises by economic activity and a selection of controlling countries (2008-2020),ok,sdmx,6,255,0,"",2026-07-22
+FATS_G1A_RD,"Foreign control of enterprises - research and development characteristics by economic activity (NACE Rev. 2, B-F) and a selection of controlling countries (2009-2019)",ok,sdmx,6,141,0,"",2026-07-22
+FATS_G1B_03,Foreign control of enterprises by controlling countries (2003-2007),ok,sdmx,6,302,0,"",2026-07-22
+FATS_G1B_08,Foreign control of enterprises by controlling countries (2008-2020),ok,sdmx,6,327,0,"",2026-07-22
+FATS_G1B_RD,Foreign control of enterprises: research and development characteristics by controlling countries (2011-2019),ok,sdmx,6,291,0,"",2026-07-22
+FATS_OUT1,Outward FATS - experimental data (2004-2006),ok,sdmx,6,346,0,"",2026-07-22
+FATS_OUT2,Outward FATS - main variables (2007-2009),ok,sdmx,6,347,0,"",2026-07-22
+FATS_OUT2_R2,"Outward FATS, main variables - NACE Rev. 2 activity (2010-2020)",ok,sdmx,6,388,0,"",2026-07-22
+FATS_OUT3,Outward FATS - additional variables (2008-2009),ok,sdmx,6,318,0,"",2026-07-22
+FATS_OUT_ACTIV,Foreign affiliates of the EU enterprises by NACE Rev. 2 activity and country of the affiliates (from 2021 onwards),ok,sdmx,6,153,0,"",2026-07-22
+FATS_OUT_DOM,Foreign controlling EU enterprises and domestic affiliates by NACE Rev. 2 activity (from 2021 onwards),ok,sdmx,5,83,0,"",2026-07-22
+FATS_OUT_PART,Foreign affiliates of the EU enterprises by detailed breakdown of country of the affiliates (from 2021 onwards),ok,sdmx,6,287,0,"",2026-07-22
+FISH_AQ2A,Production from aquaculture excluding hatcheries and nurseries (from 2008 onwards),ok,sdmx,8,362,0,"",2026-07-22
+FISH_AQ2B,Production of fish eggs for human consumption from aquaculture (from 2008 onwards),ok,sdmx,8,129,0,"",2026-07-22
+FISH_AQ3,Input to capture-based aquaculture (from 2008 onwards),ok,sdmx,5,208,0,"",2026-07-22
+FISH_AQ4A,Production of hatcheries and nurseries at eggs stage in life cycle (from 2008 onwards),ok,sdmx,6,181,0,"",2026-07-22
+FISH_AQ4B,Production of hatcheries and nurseries at juveniles stage in life cycle (from 2008 onwards),ok,sdmx,6,279,0,"",2026-07-22
+FISH_AQ_Q,Aquaculture production in quantities (1984-2007) - tonnes live weight,ok,sdmx,7,313,0,"",2026-07-22
+FISH_AQ_QH,Aquaculture production in quantities (1950-1983) - tonnes live weight,ok,sdmx,7,281,0,"",2026-07-22
+FISH_AQ_V,Aquaculture production in values (1984-2007) - 1 000 euro,ok,sdmx,7,295,0,"",2026-07-22
+FISH_CA_ANT48,Catches - Antarctic - Atlantic,ok,sdmx,6,165,0,"",2026-07-22
+FISH_CA_ANT58,Catches - Antarctic - Indian Ocean,ok,sdmx,6,104,0,"",2026-07-22
+FISH_CA_ANT88,Catches - Antarctic - Pacific,ok,sdmx,6,119,0,"",2026-07-22
+FISH_CA_ANT90,Catches - Antarctic - Total,ok,sdmx,6,176,0,"",2026-07-22
+FISH_CA_ATL21,Catches - north-west Atlantic (from 2000 onwards),ok,sdmx,6,312,0,"",2026-07-22
+FISH_CA_ATL21_H,Catches - north-west Atlantic,ok,sdmx,6,262,0,"",2026-07-22
+FISH_CA_ATL27,Catches - north-east Atlantic (from 2000 onwards),ok,sdmx,6,1510,0,"",2026-07-22
+FISH_CA_ATL271,Catches - north-east Atlantic (1950-1984),ok,sdmx,6,877,0,"",2026-07-22
+FISH_CA_ATL272,Catches - north-east Atlantic (1985-1999),ok,sdmx,6,829,0,"",2026-07-22
+FISH_CA_ATL31,Catches - West-central Atlantic,ok,sdmx,6,128,0,"",2026-07-22
+FISH_CA_ATL34,Catches - east-central Atlantic (from 2000 onwards),ok,sdmx,6,837,0,"",2026-07-22
+FISH_CA_ATL34_H,Catches - east-central Atlantic,ok,sdmx,6,332,0,"",2026-07-22
+FISH_CA_ATL37,Catches - Mediterranean and Black Sea (from 2000 onwards),ok,sdmx,6,1063,0,"",2026-07-22
+FISH_CA_ATL37_H,Catches - Mediterranean and Black Sea,ok,sdmx,6,344,0,"",2026-07-22
+FISH_CA_ATL41,Catches - south-west Atlantic (from 2000 onwards),ok,sdmx,6,324,0,"",2026-07-22
+FISH_CA_ATL41_H,Catches - south-west Atlantic,ok,sdmx,6,217,0,"",2026-07-22
+FISH_CA_ATL47,Catches - south-east Atlantic (from 2000 onwards),ok,sdmx,6,384,0,"",2026-07-22
+FISH_CA_ATL47_H,Catches - south-east Atlantic,ok,sdmx,6,241,0,"",2026-07-22
+FISH_CA_IND51,Catches - west Indian Ocean (from 2000 onwards),ok,sdmx,6,423,0,"",2026-07-22
+FISH_CA_IND51_H,Catches - west Indian Ocean,ok,sdmx,6,191,0,"",2026-07-22
+FISH_CA_IND57,Catches - east Indian Ocean,ok,sdmx,6,102,0,"",2026-07-22
+FISH_CA_INW09,Catches - inland waters,ok,sdmx,6,280,0,"",2026-07-22
+FISH_CA_MAIN,Catches - major fishing areas (from 2000 onwards),ok,sdmx,6,1897,0,"",2026-07-22
+FISH_CA_MAIN_H,Catches - major fishing areas,ok,sdmx,6,1074,0,"",2026-07-22
+FISH_CA_PAC61,Catches - north-west Pacific,ok,sdmx,6,97,0,"",2026-07-22
+FISH_CA_PAC67,Catches - north-east Pacific,ok,sdmx,6,101,0,"",2026-07-22
+FISH_CA_PAC71,Catches - west-central Pacific,ok,sdmx,6,85,0,"",2026-07-22
+FISH_CA_PAC77,Catches - east-central Pacific,ok,sdmx,6,118,0,"",2026-07-22
+FISH_CA_PAC81,Catches - south-west Pacific,ok,sdmx,6,149,0,"",2026-07-22
+FISH_CA_PAC87,Catches - south-east Pacific,ok,sdmx,6,187,0,"",2026-07-22
+FISH_FLEET_ALT,"Fishing fleet by age, length and gross tonnage",ok,sdmx,7,103,0,"",2026-07-22
+FISH_FLEET_GP,Fishing fleet by type of gear and engine power,ok,sdmx,6,91,0,"",2026-07-22
+FISH_LD_BE,Landings of fishery products in Belgium,ok,sdmx,8,184,0,"",2026-07-22
+FISH_LD_BG,Landings of fishery products in Bulgaria,ok,sdmx,8,109,0,"",2026-07-22
+FISH_LD_CY,Landings of fishery products in Cyprus,ok,sdmx,8,284,0,"",2026-07-22
+FISH_LD_DE,Landings of fishery products in Germany,ok,sdmx,8,260,0,"",2026-07-22
+FISH_LD_DK,Landings of fishery products in Denmark,ok,sdmx,8,347,0,"",2026-07-22
+FISH_LD_EE,Landings of fishery products in Estonia,ok,sdmx,8,139,0,"",2026-07-22
+FISH_LD_EL,Landings of fishery products in Greece,ok,sdmx,8,186,0,"",2026-07-22
+FISH_LD_ES,Landings of fishery products in Spain,ok,sdmx,8,1334,0,"",2026-07-22
+FISH_LD_FI,Landings of fishery products in Finland,ok,sdmx,8,84,0,"",2026-07-22
+FISH_LD_FR,Landings of fishery products in France,ok,sdmx,8,634,0,"",2026-07-22
+FISH_LD_HR,Landings of fishery products in Croatia,ok,sdmx,8,215,0,"",2026-07-22
+FISH_LD_IE,Landings of fishery products in Ireland,ok,sdmx,8,457,0,"",2026-07-22
+FISH_LD_IS,Landings of fishery products in Iceland,ok,sdmx,8,163,0,"",2026-07-22
+FISH_LD_IT,Landings of fishery products in Italy,ok,sdmx,8,437,0,"",2026-07-22
+FISH_LD_LT,Landings of fishery products in Lithuania,ok,sdmx,8,158,0,"",2026-07-22
+FISH_LD_LV,Landings of fishery products in Latvia,ok,sdmx,8,110,0,"",2026-07-22
+FISH_LD_MAIN,Landings of fishery products - main data,ok,sdmx,8,1808,0,"",2026-07-22
+FISH_LD_MT,Landings of fishery products in Malta,ok,sdmx,8,340,0,"",2026-07-22
+FISH_LD_NL,Landings of fishery products in the Netherlands,ok,sdmx,8,491,0,"",2026-07-22
+FISH_LD_NO,Landings of fishery products in Norway,ok,sdmx,8,325,0,"",2026-07-22
+FISH_LD_PL,Landings of fishery products in Poland,ok,sdmx,8,129,0,"",2026-07-22
+FISH_LD_PT,Landings of fishery products in Portugal,ok,sdmx,8,711,0,"",2026-07-22
+FISH_LD_RO,Landings of fishery products in Romania,ok,sdmx,8,84,0,"",2026-07-22
+FISH_LD_SE,Landings of fishery products in Sweden,ok,sdmx,8,312,0,"",2026-07-22
+FISH_LD_SI,Landings of fishery products in Slovenia,ok,sdmx,8,226,0,"",2026-07-22
+FISH_LD_UK,Landings of fishery products in the United Kingdom,ok,sdmx,8,392,0,"",2026-07-22
+FOBS_AGE,"Enterprises managed by the founder, by entrepreneur age (2005)",ok,sdmx,6,175,0,"",2026-07-22
+FOBS_BRA,"Enterprises managed by the founder, by branch experience (2005)",ok,sdmx,6,153,0,"",2026-07-22
+FOBS_EDU,"Enterprises managed by the founder, by education attainment level of the entrepreneur (2005)",ok,sdmx,6,178,0,"",2026-07-22
+FOBS_ENT,"Enterprises managed by the founder, by experience managing an enterprise (2005)",ok,sdmx,6,154,0,"",2026-07-22
+FOBS_GEN,"Enterprises managed by the founder, by sex of the entrepreneur (2005)",ok,sdmx,6,178,0,"",2026-07-22
+FOBS_ISC,"Enterprises managed by the founder, by birth size class (number of employees) (2005)",ok,sdmx,6,186,0,"",2026-07-22
+FOBS_SSC,"Enterprises managed by the founder, by survival size class (number of employees) (2005)",ok,sdmx,6,186,0,"",2026-07-22
+FOR_AREA,Area of wooded land (FAO),ok,sdmx,5,48,0,"",2026-07-22
+FOR_AREA_EFA,Area of wooded land (EFA questionnaire),ok,sdmx,6,86,0,"",2026-07-22
+FOR_AWU,Annual work units in forestry and logging,ok,sdmx,5,75,0,"",2026-07-22
+FOR_BASIC,"Roundwood, fuelwood and other basic products",ok,sdmx,7,95,0,"",2026-07-22
+FOR_ECO_CP,Economic aggregates of forestry,ok,sdmx,5,98,0,"",2026-07-22
+FOR_EMP_LFS,Employed persons in forestry and forest-based industry - NACE Rev. 2 (2008-2026),ok,sdmx,8,75,0,"",2026-07-22
+FOR_EMP_LFS1,Employed persons in forestry and forest-based industry - NACE Rev. 1.1 (1992-2008),ok,sdmx,8,70,0,"",2026-07-22
+FOR_EMSUW,Monetary supply and use of wood in the rough,ok,sdmx,6,50,0,"",2026-07-22
+FOR_EOUTPUT,Output of forestry by type,ok,sdmx,5,80,0,"",2026-07-22
+FOR_EPSUW,Physical supply and use of wood in the rough over bark,ok,sdmx,8,55,0,"",2026-07-22
+FOR_IRASS,Industrial roundwood by assortment,ok,sdmx,7,76,0,"",2026-07-22
+FOR_IRSPEC,Industrial roundwood by species,ok,sdmx,7,83,0,"",2026-07-22
+FOR_OWNER,Roundwood removals under bark by type of ownership,ok,sdmx,6,71,0,"",2026-07-22
+FOR_PP,"Pulp, paper and paperboard",ok,sdmx,6,98,0,"",2026-07-22
+FOR_PROFNC,Protective functions of forests,ok,sdmx,6,39,0,"",2026-07-22
+FOR_PROTECT,Protected forests,ok,sdmx,6,41,0,"",2026-07-22
+FOR_REMOV,Roundwood removals by type of wood and assortment,ok,sdmx,7,82,0,"",2026-07-22
+FOR_SECPP,Secondary paper products,ok,sdmx,6,89,0,"",2026-07-22
+FOR_SECWP,"Secondary wood products, trade",ok,sdmx,7,78,0,"",2026-07-22
+FOR_SECWPP,"Secondary wood products, production",ok,sdmx,5,24,0,"",2026-07-22
+FOR_SUP_CP,Supply and use of products within forestry,ok,sdmx,5,100,0,"",2026-07-22
+FOR_SWPAN,Sawnwood and panels,ok,sdmx,7,89,0,"",2026-07-22
+FOR_SWSPEC,Sawnwood trade by species,ok,sdmx,6,83,0,"",2026-07-22
+FOR_TROP,Tropical wood imports to the EU from chapter 44 of the Harmonised System,ok,sdmx,5,70,0,"",2026-07-22
+FOR_VOL,Volume of timber (FAO),ok,sdmx,5,47,0,"",2026-07-22
+FOR_VOL_EFA,Volume of timber over bark (EFA questionnaire),ok,sdmx,6,87,0,"",2026-07-22
+GBA_FUNDMOD,GBARD by type of funding,ok,sdmx,5,75,0,"",2026-07-22
+GBA_NABSFIN07,GBARD by socioeconomic objectives (NABS 2007),ok,sdmx,5,104,0,"",2026-07-22
+GBA_NABSFIN92,GBARD by socioeconomic objectives (NABS 1992) (1980-2007),ok,sdmx,5,205,0,"",2026-07-22
+GBA_NABSTE,Share of GBARD in total general government expenditure,ok,sdmx,4,86,0,"",2026-07-22
+GBA_TNCOOR,National public funding to transnationally coordinated R&D,ok,sdmx,5,70,0,"",2026-07-22
+GBV_ANY_AGE,"Women who have experienced violence by any perpetrator, by age group",ok,sdmx,5,39,0,"",2026-07-22
+GBV_ANY_CNQ,Women who have experienced violence by any perpetrator and consequences of violence,ok,sdmx,5,37,0,"",2026-07-22
+GBV_ANY_CNQV,"Women who have experienced violence by any perpetrator, by consequences and type of perpetrator",ok,sdmx,6,40,0,"",2026-07-22
+GBV_ANY_COB,"Women who have experienced violence by any perpetrator, by country of birth",ok,sdmx,5,36,0,"",2026-07-22
+GBV_ANY_DU,"Women who have experienced violence by any perpetrator, by degree of urbanisation",ok,sdmx,5,33,0,"",2026-07-22
+GBV_ANY_ED,"Women who have experienced violence by any perpetrator, by level of education",ok,sdmx,5,36,0,"",2026-07-22
+GBV_ANY_FRQ,"Women who have experienced violence by any perpetrator, by type and frequency of violence",ok,sdmx,6,40,0,"",2026-07-22
+GBV_ANY_INJOCC,"Women who have experienced violence by any perpetrator, by occurrence of injury",ok,sdmx,5,36,0,"",2026-07-22
+GBV_ANY_LIM,"Women who have experienced violence by any perpetrator, by level of disability (activity limitation)",ok,sdmx,5,39,0,"",2026-07-22
+GBV_ANY_OCC,"Women who have experienced violence by any perpetrator, by occurrence of the last episode",ok,sdmx,5,34,0,"",2026-07-22
+GBV_ANY_PERP,"Women who have experienced violence by one or several types of perpetrators out of non-partner, current partner or former partner",ok,sdmx,5,35,0,"",2026-07-22
+GBV_ANY_RDUR,"Women who experienced repeated violence by any perpetrator, by duration of violence",ok,sdmx,5,36,0,"",2026-07-22
+GBV_ANY_ROFT,"Women who experienced repeated violence by any perpetrator, by periodicity of the violence",ok,sdmx,5,36,0,"",2026-07-22
+GBV_ANY_RP,"Women who have experienced violence by any perpetrator, by person/support service to whom violence was reported",ok,sdmx,5,39,0,"",2026-07-22
+GBV_ANY_TYPE,"Women who have experienced violence by any perpetrator, by type of violence",ok,sdmx,5,57,0,"",2026-07-22
+GBV_AWR_LEG,"Women as victims/non-victims of violence, by awareness of free legal aid",ok,sdmx,6,37,0,"",2026-07-22
+GBV_AWR_SERV,"Women as victims/non-victims of violence, by awareness of the existence of support services",ok,sdmx,6,37,0,"",2026-07-22
+GBV_CH_AGE,"Women who have experienced sexual violence during childhood, by age group",ok,sdmx,5,38,0,"",2026-07-22
+GBV_CH_PERP,"Women who have experienced sexual violence during childhood, by type of perpetrator",ok,sdmx,5,39,0,"",2026-07-22
+GBV_CH_PH,"Women who have experienced physical violence by parents during childhood, by type of perpetrator",ok,sdmx,5,36,0,"",2026-07-22
+GBV_CH_PHPS,"Women who have experienced physical or psychological violence during childhood, by type of perpetrator",ok,sdmx,5,36,0,"",2026-07-22
+GBV_CH_PS,"Women who have experienced psychological violence by parents during childhood, by type of perpetrator",ok,sdmx,5,36,0,"",2026-07-22
+GBV_CH_RP,"Women who have experienced sexual violence during childhood, by person/support service to whom violence was reported",ok,sdmx,5,36,0,"",2026-07-22
+GBV_CH_VBP,"Women who have witnessed violence between parents during childhood, by type of perpetrator",ok,sdmx,6,39,0,"",2026-07-22
+GBV_DV_AGE,"Women who have experienced violence by a domestic perpetrator, by age group",ok,sdmx,5,38,0,"",2026-07-22
+GBV_DV_COB,"Women who have experienced violence by a domestic perpetrator, by country of birth",ok,sdmx,5,36,0,"",2026-07-22
+GBV_DV_DU,"Women who have experienced violence by a domestic perpetrator, by degree of urbanisation",ok,sdmx,5,33,0,"",2026-07-22
+GBV_DV_ED,"Women who have experienced violence by a domestic perpetrator, by level of education",ok,sdmx,5,36,0,"",2026-07-22
+GBV_DV_LIM,"Women who have experienced violence by a domestic perpetrator, by level of disability (activity limitation)",ok,sdmx,5,39,0,"",2026-07-22
+GBV_DV_OCC,"Women who have experienced violence by a domestic perpetrator, by occurrence of the last episode",ok,sdmx,5,37,0,"",2026-07-22
+GBV_DV_TYPE,"Women who have experienced violence by a domestic perpetrator, by type of violence",ok,sdmx,5,43,0,"",2026-07-22
