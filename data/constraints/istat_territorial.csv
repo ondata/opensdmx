@@ -1337,3 +1337,150 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 534_50_DF_DCSC_GI_OCC_7,Dipendenti (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_50_DF_DCSC_GI_OCC_9,Quota part time (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 535_194,Retribuzioni lorde - Imprese con almeno 500 dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+535_194_DF_DCSC_GI_RE_10,Dati destagionalizzati (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
+535_194_DF_DCSC_GI_RE_3,Dati destagionalizzati (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
+535_194_DF_DCSC_GI_RE_4,Dati grezzi (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
+535_194_DF_DCSC_GI_RE_6,Dati destagionalizzati (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
+535_194_DF_DCSC_GI_RE_7,Dati grezzi (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
+535_194_DF_DCSC_GI_RE_8,Dati destagionalizzati (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_1,Dati grezzi (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_10,Dati destagionalizzati (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_2,Dati grezzi - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_3,Dati destagionalizzati (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_4,Dati grezzi (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_5,Dati grezzi - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_6,Dati destagionalizzati (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_7,Dati grezzi (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_8,Dati destagionalizzati (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193_DF_DCSC_GI_COS_9,Dati grezzi (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_278,Imprese ed enti pubblici con almeno 10 dipendenti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-23
+536_278_DF_DCSC_COSTLAVSTRUT_1_1,Imprese ed enti pubblici con almeno 10 dipendenti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-23
+56_1045,Iscritti all'università - comune dell'ateneo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_1,Iscritti per sesso,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_2,Iscritti per cittadinanza,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_3,Iscritti per gruppo di corsi di laurea,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
+56_1046,Iscritti all'università - comune di residenza,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8422,2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_1,Iscritti per sesso,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8422,2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_2,Iscritti per cittadinanza,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8422,2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_3,Iscritti per gruppo di corsi di laurea,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8422,2026-07-23
+56_1135,Docenti universitari,REF_AREA,nazionale,nazionale,1,2026-07-23
+56_1135_DF_DCIS_DOCENTI1_1,Docenti universitari,REF_AREA,nazionale,nazionale,1,2026-07-23
+56_188,Docenti universitari 2007-2011,REF_AREA,nazionale,nazionale,1,2026-07-23
+56_188_DF_DCIS_DOCENTI_1,Docenti universitari 2007-2011,REF_AREA,nazionale,nazionale,1,2026-07-23
+56_189,Indicatori sull'università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
+56_189_DF_INDUNIV_1,Indicatori sull' università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
+56_77_DF_DCIS_SANSCUOLE_2,Scuole con alunni con disabilità e postazioni informatiche adattate,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-23
+5_42,Conto trimestrale - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_42_DF_DCCN_FPQ_B19_1,Conto economico - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_42_DF_DCCN_FPQ_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_1,Conto economico per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_3,Redditi e retribuzione pro capite per sottosettore -edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_4,Investimenti fissi lordi per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_6,Formazione della spesa per consumi finali - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+609_1,Ambiente urbano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,258,2026-07-23
+609_1_DF_DCCV_URBANENV_1,Acqua - consumo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_10,Energia - teleriscaldamento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
+609_1_DF_DCCV_URBANENV_11,Mobilità urbana - mobilità sostenibile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,256,2026-07-23
+609_1_DF_DCCV_URBANENV_12,Mobilità urbana - parco veicolare,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,252,2026-07-23
+609_1_DF_DCCV_URBANENV_13,Mobilità urbana - trasporto pubblico locale,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,256,2026-07-23
+609_1_DF_DCCV_URBANENV_14,Rifiuti urbani - produzione,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_15,Raccolta differenziata - frazioni merceologiche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
+609_1_DF_DCCV_URBANENV_16,Rumore - attività di misura,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_17,Rumore - attività temporanee,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
+609_1_DF_DCCV_URBANENV_18,Verde urbano - densità,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_19,Verde urbano - disponibilità,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_2,Acqua - razionamento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,244,2026-07-23
+609_1_DF_DCCV_URBANENV_20,Verde urbano - tipologia di verde,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_21,Verde urbano - forestazione,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
+609_1_DF_DCCV_URBANENV_22,Rifiuti urbani - servizio di raccolta,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,244,2026-07-23
+609_1_DF_DCCV_URBANENV_3,Qualità dell'aria - monitoraggio inquinanti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_4,Qualità dell'aria - valori di concentrazione e numero di superamenti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_5,Eco management - illuminazione pubblica stradale,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_6,Eco management - livello di digitalizzazione,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_7,Energia - consumi energetici domestici e non domestici,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
+609_1_DF_DCCV_URBANENV_8,Energia - fonti rinnovabili,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,255,2026-07-23
+609_1_DF_DCCV_URBANENV_9,Energia - rete di ricarica per auto elettriche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
+60_1004,Musei ed istituzioni similari - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,3116,2026-07-23
+60_1004_DF_DCIS_MUSVIS_COM_1,Musei ed istituzioni similari - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,3116,2026-07-23
+60_130,Internet: accesso e tipo di utilizzo,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_11,Tipo di acquisti e ordini - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_2,Famiglie e accesso ad internet - reg. e tipo comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_3,Famiglie e tipo di connessione - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_5,Attività svolte su internet - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_7,Interazione con la PA - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_130_DF_DCCV_ICT_9,Acquisti o ordini - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_195_DF_DCIS_MUSVIS_2,Appartenenza a circuito museale,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3,Archivi di stato,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3_DF_DCIS_ARCHIVIST_1,Attività svolte,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3_DF_DCIS_ARCHIVIST_2,Superficie per destinazione di uso,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3_DF_DCIS_ARCHIVIST_3,Tipologia di materiale conservato,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3_DF_DCIS_ARCHIVIST_4,Utenti per motivo,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_3_DF_DCIS_ARCHIVIST_5,Ricerche per tipologia,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_41,Biblioteche pubbliche statali,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
+60_41_DF_DCIS_BIBLIOT_1,Biblioteche pubbliche statali - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
+60_41_DF_DCIS_BIBLIOT_2,Prestiti per tipo di richiedente,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
+60_41_DF_DCIS_BIBLIOT_3,Personale impiegato,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
+610_119_DF_DCCV_TRASPRIV_1,Trasporto privato,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-23
+612_933,Laureati - caratteristiche socio-demografiche e curriculum,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_1,Tipo di diploma,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_2,Giudizio (da 0 a 10) sui fattori di scelta ateneo,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_3,Gruppo di laurea,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_4,Partecipazione Erasmus,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_5,Laurea precedente,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_6,Iscrizione ad altra formazione,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_7,Conclusa altra formazione,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_8,Titolo di studio del padre e della madre,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_937,Laureati - ricerca di lavoro,REF_AREA,nazionale,nazionale,1,2026-07-23
+612_937_DF_DCCV_LAU_RIC_1,Ricerca di lavoro in Italia o all'estero (occupati e non),REF_AREA,nazionale,nazionale,1,2026-07-23
+612_937_DF_DCCV_LAU_RIC_2,Occupazione e orario desiderati (occupati e non),REF_AREA,nazionale,nazionale,1,2026-07-23
+612_939,Laureati - condizione occupazionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_1,Gruppo di laurea e condizione occupazionale,REF_AREA,provincia,provincia,1,2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_2,Gruppo di laurea e professione,REF_AREA,provincia,provincia,1,2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_6,Soddisfazione per il lavoro,REF_AREA,provincia,provincia,1,2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_7,Regione di residenza e condizione occupazionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_8,Regione di residenza e reddito mensile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-23
+613_934,Diplomati - caratteristiche socio-demografiche e curriculum,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_1,Tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_10,Iscrizione a università - sesso e tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_11,Iscrizione a università - regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_12,Iscrizione a studi terziari non universitari - sesso e tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_13,Iscrizione a studi terziari non universitari - regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_2,Natura giuridica della scuola e soddisfazione,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_3,Età all'intervista,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_4,Cittadinanza e familiari coabitanti,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_5,Regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_6,Titolo di studio del padre e della madre,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_7,Iscrizione ad un qualsiasi tipo di corso post-diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_8,Iscrizione a corsi di formazione professionale - sesso e tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_9,Iscrizione a corsi di formazione professionale - regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_935,Diplomati - condizione occupazionale e retribuzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_1,Sesso e tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_10,Regione e retribuzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_2,Professione CP2011,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_3,Tipo di occupazione e ore di lavoro,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_4,Settore d'impiego e attività economica,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_5,Retribuzione e tipo di diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_6,Retribuzione e tipo di occupazione,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_7,Utilità del diploma,REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_8,Soddisfazione per il lavoro (punteggio medio),REF_AREA,provincia,provincia,1,2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_9,Regione e condizione occupazionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-23
+613_936,Diplomati - ricerca di lavoro,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_936_DF_DCCV_DIPL_RIC_1,Ricerca di lavoro e occupazione attuale,REF_AREA,provincia,provincia,1,2026-07-23
+613_936_DF_DCCV_DIPL_RIC_2,Ricerca di lavoro e regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
+613_936_DF_DCCV_DIPL_RIC_3,"Occupazione, orario e luogo di lavoro desiderati",REF_AREA,provincia,provincia,1,2026-07-23
+61_69_DF_DCIS_PUBBLICATE3_2,Prezzo e copie stampate,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_1,Categoria di imposta - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_4,Classe CEPA - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_5,Destinazione del gettito - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081,Conti dei flussi fisici di energia (PEFA) versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_1,"Risorse e impieghi, schema di sintesi - edizione dicembre 2018",REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_2,Risorse per attività e tipo di flusso - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_3,Impieghi per attività e tipo di flusso - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_5,Vettori di indicatori chiave sui flussi di energia - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_6,Tavola di raccordo: consumo di energia - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_1,Spesa nazionale - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_2,Aggregati economici per settore istituzionale - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1116,Conti dei flussi di materia versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1116_DF_DCCN_FLUMAT_B14_1,Indicatori aggregati - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23

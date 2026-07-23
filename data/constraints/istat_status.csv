@@ -2544,3 +2544,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 534_50_DF_DCSC_GI_OCC_9,Quota part time (base 2010),ok,hub,6,35,0,"",2026-07-22
 535_194,Retribuzioni lorde - Imprese con almeno 500 dipendenti,ok,hub,6,222,0,"",2026-07-22
 535_194_DF_DCSC_GI_RE_1,Dati grezzi (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-22
+535_194_DF_DCSC_GI_RE_10,Dati destagionalizzati (base 2021),ok,hub,6,11,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_2,Dati grezzi - Ateco 3 cifre (base 2015),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+535_194_DF_DCSC_GI_RE_3,Dati destagionalizzati (base 2015),ok,hub,6,11,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_4,Dati grezzi (base 2010),ok,hub,6,37,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_5,Dati grezzi - Ateco 3 cifre (base 2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+535_194_DF_DCSC_GI_RE_6,Dati destagionalizzati (base 2010),ok,hub,6,8,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_7,Dati grezzi (base 2005),ok,hub,6,163,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_8,Dati destagionalizzati (base 2005),ok,hub,6,8,0,"",2026-07-23
+535_194_DF_DCSC_GI_RE_9,Dati grezzi (base 2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+536_193,Imprese con almeno 500 dipendenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+536_193_DF_DCSC_GI_COS_1,Dati grezzi (base 2015),ok,hub,6,42,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_10,Dati destagionalizzati (base 2021),ok,hub,6,11,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_2,Dati grezzi - Ateco 3 cifre (base 2015),ok,hub,6,198,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_3,Dati destagionalizzati (base 2015),ok,hub,6,12,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_4,Dati grezzi (base 2010),ok,hub,6,36,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_5,Dati grezzi - Ateco 3 cifre (base 2010),ok,hub,6,173,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_6,Dati destagionalizzati (base 2010),ok,hub,6,8,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_7,Dati grezzi (base 2005),ok,hub,6,162,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_8,Dati destagionalizzati (base 2005),ok,hub,6,8,0,"",2026-07-23
+536_193_DF_DCSC_GI_COS_9,Dati grezzi (base 2021),ok,hub,6,42,0,"",2026-07-23
+536_278,Imprese ed enti pubblici con almeno 10 dipendenti,ok,hub,6,80,0,"",2026-07-23
+536_278_DF_DCSC_COSTLAVSTRUT_1_1,Imprese ed enti pubblici con almeno 10 dipendenti,ok,hub,6,80,0,"",2026-07-23
+56_1045,Iscritti all'università - comune dell'ateneo,ok,hub,6,441,0,"",2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_1,Iscritti per sesso,ok,hub,4,421,0,"",2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_2,Iscritti per cittadinanza,ok,hub,4,421,0,"",2026-07-23
+56_1045_DF_DCIS_ISCRITTI_COM_A_3,Iscritti per gruppo di corsi di laurea,ok,hub,4,435,0,"",2026-07-23
+56_1046,Iscritti all'università - comune di residenza,ok,hub,6,8447,0,"",2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_1,Iscritti per sesso,ok,hub,4,8427,0,"",2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_2,Iscritti per cittadinanza,ok,hub,4,8427,0,"",2026-07-23
+56_1046_DF_DCIS_ISCRITTI_COM_R_3,Iscritti per gruppo di corsi di laurea,ok,hub,4,8441,0,"",2026-07-23
+56_1135,Docenti universitari,ok,hub,8,30,0,"",2026-07-23
+56_1135_DF_DCIS_DOCENTI1_1,Docenti universitari,ok,hub,7,29,0,"",2026-07-23
+56_188,Docenti universitari 2007-2011,ok,hub,8,36,0,"",2026-07-23
+56_188_DF_DCIS_DOCENTI_1,Docenti universitari 2007-2011,ok,hub,7,35,0,"",2026-07-23
+56_189,Indicatori sull'università,ok,hub,5,37,0,"",2026-07-23
+56_189_DF_INDUNIV_1,Indicatori sull' università,ok,hub,4,36,0,"",2026-07-23
+56_190,Laureati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_190_DF_DCIS_LAUREATI_1,Laureati,ok,hub,7,57,0,"",2026-07-23
+56_190_DF_DCIS_LAUREATI_2,Laureati (2007-2009),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_258,Immatricolati,ok,hub,8,59,0,"",2026-07-23
+56_258_DF_DCIS_IMMATRIC_1,Immatricolati,empty,hub,0,0,0,"",2026-07-23
+56_259,Iscritti all'università,empty,hub,0,0,0,"",2026-07-23
+56_259_DF_DCIS_ISCRITTI_1,Iscritti,empty,hub,0,0,0,"",2026-07-23
+56_259_DF_DCIS_ISCRITTI_2,Iscritti per tipologia e regione dell'ateneo (2008-2010),empty,hub,0,0,0,"",2026-07-23
+56_259_DF_DCIS_ISCRITTI_3,Iscritti per regione dell'ateneo e di residenza (2008-2010),empty,hub,0,0,0,"",2026-07-23
+56_77,Servizi per gli alunni con disabilità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_77_DF_DCIS_SANSCUOLE_1,Scuole per presenza di barriere architettoniche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_77_DF_DCIS_SANSCUOLE_2,Scuole con alunni con disabilità e postazioni informatiche adattate,ok,hub,7,154,0,"",2026-07-23
+56_857,Immatricolati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_857_DF_DCIS_IMMATRIC1_1,Immatricolati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_857_DF_DCIS_IMMATRIC1_2,Immatricolati (2008-2010),ok,hub,8,59,0,"",2026-07-23
+56_858,Iscritti all'università,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_858_DF_DCIS_ISCRITTI1_1,Iscritti,ok,hub,8,12532,0,"",2026-07-23
+56_858_DF_DCIS_ISCRITTI1_2,Iscritti per tipologia e regione dell'ateneo (2008-2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+56_858_DF_DCIS_ISCRITTI1_3,Iscritti per regione dell'ateneo e di residenza (2008-2010),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+5_42,Conto trimestrale - edizioni ottobre 2019 - luglio 2024,ok,hub,9,59,0,"",2026-07-23
+5_42_DF_DCCN_FPQ_B19_1,Conto economico - edizioni ottobre 2019 - luglio 2024,ok,hub,7,50,0,"",2026-07-23
+5_42_DF_DCCN_FPQ_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - luglio 2024,ok,hub,7,33,0,"",2026-07-23
+5_815,Conto annuale - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+5_815_DF_DCCN_FPA_B19_1,Conto economico per sottosettore - edizioni ottobre 2019 - aprile 2024,ok,hub,7,106,0,"",2026-07-23
+5_815_DF_DCCN_FPA_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - aprile 2024,ok,hub,7,48,0,"",2026-07-23
+5_815_DF_DCCN_FPA_B19_3,Redditi e retribuzione pro capite per sottosettore -edizioni ottobre 2019 - aprile 2024,ok,hub,7,21,0,"",2026-07-23
+5_815_DF_DCCN_FPA_B19_4,Investimenti fissi lordi per sottosettore - edizioni ottobre 2019 - aprile 2024,ok,hub,8,40,0,"",2026-07-23
+5_815_DF_DCCN_FPA_B19_5,Imposte e contributi sociali per sottosettore - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+5_815_DF_DCCN_FPA_B19_6,Formazione della spesa per consumi finali - edizioni ottobre 2019 - aprile 2024,ok,hub,7,44,0,"",2026-07-23
+5_94,Uscite annuali per sottosettore - edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+5_94_DF_DCCN_OTEPPA_B19_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre) -  edizioni ottobre 2019 - aprile 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+5_94_DF_DCCN_OTEPPA_B19_2,Voci di uscita per funzione (COFOG 2 e 3 cifre) - edizioni febbraio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+609_1,Ambiente urbano,ok,hub,3,494,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_1,Acqua - consumo,ok,hub,3,256,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_10,Energia - teleriscaldamento,ok,hub,3,255,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_11,Mobilità urbana - mobilità sostenibile,ok,hub,3,281,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_12,Mobilità urbana - parco veicolare,ok,hub,3,289,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_13,Mobilità urbana - trasporto pubblico locale,ok,hub,3,306,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_14,Rifiuti urbani - produzione,ok,hub,3,257,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_15,Raccolta differenziata - frazioni merceologiche,ok,hub,3,262,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_16,Rumore - attività di misura,ok,hub,3,256,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_17,Rumore - attività temporanee,ok,hub,3,253,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_18,Verde urbano - densità,ok,hub,3,255,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_19,Verde urbano - disponibilità,ok,hub,3,253,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_2,Acqua - razionamento,ok,hub,3,250,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_20,Verde urbano - tipologia di verde,ok,hub,3,266,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_21,Verde urbano - forestazione,ok,hub,3,250,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_22,Rifiuti urbani - servizio di raccolta,ok,hub,3,247,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_3,Qualità dell'aria - monitoraggio inquinanti,ok,hub,3,256,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_4,Qualità dell'aria - valori di concentrazione e numero di superamenti,ok,hub,3,260,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_5,Eco management - illuminazione pubblica stradale,ok,hub,3,261,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_6,Eco management - livello di digitalizzazione,ok,hub,3,260,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_7,Energia - consumi energetici domestici e non domestici,ok,hub,3,259,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_8,Energia - fonti rinnovabili,ok,hub,3,271,0,"",2026-07-23
+609_1_DF_DCCV_URBANENV_9,Energia - rete di ricarica per auto elettriche,ok,hub,3,251,0,"",2026-07-23
+60_1004,Musei ed istituzioni similari - comuni,ok,hub,3,3119,0,"",2026-07-23
+60_1004_DF_DCIS_MUSVIS_COM_1,Musei ed istituzioni similari - comuni,ok,hub,3,3119,0,"",2026-07-23
+60_130,Internet: accesso e tipo di utilizzo,ok,hub,6,142,0,"",2026-07-23
+60_130_DF_DCCV_ICT_1,Famiglie e accesso ad internet,ok,hub,3,21,0,"",2026-07-23
+60_130_DF_DCCV_ICT_10,Tipo di acquisti e ordini,ok,hub,4,55,0,"",2026-07-23
+60_130_DF_DCCV_ICT_11,Tipo di acquisti e ordini - reg. e tipo di comune,ok,hub,3,75,0,"",2026-07-23
+60_130_DF_DCCV_ICT_2,Famiglie e accesso ad internet - reg. e tipo comune,ok,hub,3,46,0,"",2026-07-23
+60_130_DF_DCCV_ICT_3,Famiglie e tipo di connessione - reg. e tipo di comune,ok,hub,3,40,0,"",2026-07-23
+60_130_DF_DCCV_ICT_4,Attività svolte su internet,ok,hub,4,36,0,"",2026-07-23
+60_130_DF_DCCV_ICT_5,Attività svolte su internet - reg. e tipo di comune,ok,hub,3,54,0,"",2026-07-23
+60_130_DF_DCCV_ICT_6,Interazioni con la PA,ok,hub,4,19,0,"",2026-07-23
+60_130_DF_DCCV_ICT_7,Interazione con la PA - reg. e tipo di comune,ok,hub,3,39,0,"",2026-07-23
+60_130_DF_DCCV_ICT_8,Acquisti o ordini,ok,hub,4,20,0,"",2026-07-23
+60_130_DF_DCCV_ICT_9,Acquisti o ordini - reg. e tipo di comune,ok,hub,3,40,0,"",2026-07-23
+60_195,Musei ed istituzioni similari,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+60_195_DF_DCIS_MUSVIS_1,Musei ed istituzioni similari - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+60_195_DF_DCIS_MUSVIS_2,Appartenenza a circuito museale,ok,hub,6,45,0,"",2026-07-23
+60_195_DF_DCIS_MUSVIS_3,Tipo di gestione e accesso gratuito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+60_195_DF_DCIS_MUSVIS_4,Periodo di apertura,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+60_195_DF_DCIS_MUSVIS_5,Tipo di servizi e dotazioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+60_3,Archivi di stato,ok,hub,9,66,0,"",2026-07-23
+60_3_DF_DCIS_ARCHIVIST_1,Attività svolte,ok,hub,4,34,0,"",2026-07-23
+60_3_DF_DCIS_ARCHIVIST_2,Superficie per destinazione di uso,ok,hub,4,36,0,"",2026-07-23
+60_3_DF_DCIS_ARCHIVIST_3,Tipologia di materiale conservato,ok,hub,4,40,0,"",2026-07-23
+60_3_DF_DCIS_ARCHIVIST_4,Utenti per motivo,ok,hub,4,33,0,"",2026-07-23
+60_3_DF_DCIS_ARCHIVIST_5,Ricerche per tipologia,ok,hub,5,35,0,"",2026-07-23
+60_41,Biblioteche pubbliche statali,ok,hub,7,39,0,"",2026-07-23
+60_41_DF_DCIS_BIBLIOT_1,Biblioteche pubbliche statali - Principali dati,ok,hub,5,33,0,"",2026-07-23
+60_41_DF_DCIS_BIBLIOT_2,Prestiti per tipo di richiedente,ok,hub,5,27,0,"",2026-07-23
+60_41_DF_DCIS_BIBLIOT_3,Personale impiegato,ok,hub,5,27,0,"",2026-07-23
+610_119_DF_DCCV_TRASPRIV_1,Trasporto privato,ok,hub,5,258,0,"",2026-07-23
+612_933,Laureati - caratteristiche socio-demografiche e curriculum,ok,hub,14,71,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_1,Tipo di diploma,ok,hub,6,12,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_2,Giudizio (da 0 a 10) sui fattori di scelta ateneo,ok,hub,6,15,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_3,Gruppo di laurea,ok,hub,7,28,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_4,Partecipazione Erasmus,ok,hub,7,28,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_5,Laurea precedente,ok,hub,7,14,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_6,Iscrizione ad altra formazione,ok,hub,7,15,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_7,Conclusa altra formazione,ok,hub,7,15,0,"",2026-07-23
+612_933_DF_DCCV_LAU_DEM_FORM_8,Titolo di studio del padre e della madre,ok,hub,7,20,0,"",2026-07-23
+612_937,Laureati - ricerca di lavoro,ok,hub,10,32,0,"",2026-07-23
+612_937_DF_DCCV_LAU_RIC_1,Ricerca di lavoro in Italia o all'estero (occupati e non),ok,hub,8,20,0,"",2026-07-23
+612_937_DF_DCCV_LAU_RIC_2,Occupazione e orario desiderati (occupati e non),ok,hub,8,19,0,"",2026-07-23
+612_939,Laureati - condizione occupazionale,ok,hub,14,105,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_1,Gruppo di laurea e condizione occupazionale,ok,hub,7,29,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_2,Gruppo di laurea e professione,ok,hub,7,29,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_3,Gruppo di laurea e reddito mensile,ok,hub,6,27,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_4,Tipo di occupazione,ok,hub,6,16,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_5,Attività economica e settore di impiego,ok,hub,7,17,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_6,Soddisfazione per il lavoro,ok,hub,6,16,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_7,Regione di residenza e condizione occupazionale,ok,hub,7,47,0,"",2026-07-23
+612_939_DF_DCCV_LAU_OCCUP_RED_8,Regione di residenza e reddito mensile,ok,hub,7,59,0,"",2026-07-23
+613_934,Diplomati - caratteristiche socio-demografiche e curriculum,ok,hub,14,129,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_1,Tipo di diploma,ok,hub,5,30,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_10,Iscrizione a università - sesso e tipo di diploma,ok,hub,6,37,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_11,Iscrizione a università - regione di dimora abituale,ok,hub,4,39,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_12,Iscrizione a studi terziari non universitari - sesso e tipo di diploma,ok,hub,6,36,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_13,Iscrizione a studi terziari non universitari - regione di dimora abituale,ok,hub,4,38,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_2,Natura giuridica della scuola e soddisfazione,ok,hub,5,26,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_3,Età all'intervista,ok,hub,5,21,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_4,Cittadinanza e familiari coabitanti,ok,hub,6,14,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_5,Regione di dimora abituale,ok,hub,4,35,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_6,Titolo di studio del padre e della madre,ok,hub,5,16,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_7,Iscrizione ad un qualsiasi tipo di corso post-diploma,ok,hub,4,11,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_8,Iscrizione a corsi di formazione professionale - sesso e tipo di diploma,ok,hub,6,36,0,"",2026-07-23
+613_934_DF_DCCV_DIPL_DEM_FORM_9,Iscrizione a corsi di formazione professionale - regione di dimora abituale,ok,hub,4,38,0,"",2026-07-23
+613_935,Diplomati - condizione occupazionale e retribuzione,ok,hub,13,137,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_1,Sesso e tipo di diploma,ok,hub,6,35,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_10,Regione e retribuzione,ok,hub,4,36,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_2,Professione CP2011,ok,hub,6,18,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_3,Tipo di occupazione e ore di lavoro,ok,hub,6,20,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_4,Settore d'impiego e attività economica,ok,hub,6,33,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_5,Retribuzione e tipo di diploma,ok,hub,5,30,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_6,Retribuzione e tipo di occupazione,ok,hub,6,18,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_7,Utilità del diploma,ok,hub,6,13,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_8,Soddisfazione per il lavoro (punteggio medio),ok,hub,4,13,0,"",2026-07-23
+613_935_DF_DCCV_DIPL_OCCUP_REDD_9,Regione e condizione occupazionale,ok,hub,4,38,0,"",2026-07-23
+613_936,Diplomati - ricerca di lavoro,ok,hub,8,59,0,"",2026-07-23
+613_936_DF_DCCV_DIPL_RIC_1,Ricerca di lavoro e occupazione attuale,ok,hub,5,16,0,"",2026-07-23
+613_936_DF_DCCV_DIPL_RIC_2,Ricerca di lavoro e regione di dimora abituale,ok,hub,4,35,0,"",2026-07-23
+613_936_DF_DCCV_DIPL_RIC_3,"Occupazione, orario e luogo di lavoro desiderati",ok,hub,7,21,0,"",2026-07-23
+61_69,Opere librarie pubblicate,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+61_69_DF_DCIS_PUBBLICATE3_1,Opere librarie pubblicate - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+61_69_DF_DCIS_PUBBLICATE3_2,Prezzo e copie stampate,ok,hub,5,50,0,"",2026-07-23
+669_1073,Gettito delle imposte ambientali versione 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_1,Categoria di imposta - edizioni dicembre 2014 - ottobre 2018,ok,hub,6,39,0,"",2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_2,Unità che corrisponde l'imposta - edizioni dicembre 2014 - ottobre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_3,Gettito corrisposto dalle attività produttive - edizioni dicembre 2014 - ottobre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_4,Classe CEPA - edizioni dicembre 2014 - ottobre 2018,ok,hub,6,14,0,"",2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_5,Destinazione del gettito - edizioni dicembre 2014 - ottobre 2018,ok,hub,6,13,0,"",2026-07-23
+669_1080,Emissioni atmosferiche NAMEA (NACE Rev. 2) versione 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_1,Attività produttive - edizioni novembre 2014 - novembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_2,Famiglie - edizioni novembre 2014 - novembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP - edizioni novembre 2014 - novembre 2018,ok,hub,6,42,0,"",2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_4,Intensità della produzione e del valore aggiunto - edizioni novembre 2014 - novembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_5,Intensità dell'occupazione - edizioni novembre 2014 - novembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1081,Conti dei flussi fisici di energia (PEFA) versione 2014,ok,hub,7,177,0,"",2026-07-23
+669_1081_DF_DCCN_PEFA_B14_1,"Risorse e impieghi, schema di sintesi - edizione dicembre 2018",ok,hub,7,27,0,"",2026-07-23
+669_1081_DF_DCCN_PEFA_B14_2,Risorse per attività e tipo di flusso - edizione dicembre 2018,ok,hub,7,151,0,"",2026-07-23
+669_1081_DF_DCCN_PEFA_B14_3,Impieghi per attività e tipo di flusso - edizione dicembre 2018,ok,hub,7,152,0,"",2026-07-23
+669_1081_DF_DCCN_PEFA_B14_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione) - edizione dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1081_DF_DCCN_PEFA_B14_5,Vettori di indicatori chiave sui flussi di energia - edizione dicembre 2018,ok,hub,6,117,0,"",2026-07-23
+669_1081_DF_DCCN_PEFA_B14_6,Tavola di raccordo: consumo di energia - edizione dicembre 2018,ok,hub,6,19,0,"",2026-07-23
+669_1113,Spese per la protezione dell'ambiente versione 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_1,Spesa nazionale - edizioni aprile 2018 e gennaio 2019,ok,hub,7,11,0,"",2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_2,Aggregati economici per settore istituzionale - edizioni aprile 2018 e gennaio 2019,ok,hub,7,34,0,"",2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_3,Investimenti e produzione ausiliaria delle società come produttori ausiliari per attività economica - edizioni aprile 2018 e gennaio 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-23
+669_1116,Conti dei flussi di materia versione 2014,ok,hub,6,84,0,"",2026-07-23
+669_1116_DF_DCCN_FLUMAT_B14_1,Indicatori aggregati - edizioni gennaio 2016 - febbraio 2019,ok,hub,4,19,0,"",2026-07-23

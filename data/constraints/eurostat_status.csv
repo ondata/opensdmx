@@ -2204,3 +2204,329 @@ GBV_DV_ED,"Women who have experienced violence by a domestic perpetrator, by lev
 GBV_DV_LIM,"Women who have experienced violence by a domestic perpetrator, by level of disability (activity limitation)",ok,sdmx,5,39,0,"",2026-07-22
 GBV_DV_OCC,"Women who have experienced violence by a domestic perpetrator, by occurrence of the last episode",ok,sdmx,5,37,0,"",2026-07-22
 GBV_DV_TYPE,"Women who have experienced violence by a domestic perpetrator, by type of violence",ok,sdmx,5,43,0,"",2026-07-22
+GBV_IPV_AGE,"Ever-partnered women who have experienced violence by an intimate partner, by age group",ok,sdmx,5,39,0,"",2026-07-23
+GBV_IPV_CNQ,Ever-partnered women who have experienced violence by an intimate partner and consequences of violence,ok,sdmx,5,37,0,"",2026-07-23
+GBV_IPV_COB,"Ever-partnered women who have experienced violence by an intimate partner, by country of birth",ok,sdmx,5,36,0,"",2026-07-23
+GBV_IPV_COMM,Perception of women as victims/non-victims of intimate partner violence by commonness of this violence against women,ok,sdmx,6,39,0,"",2026-07-23
+GBV_IPV_DU,"Ever-partnered women who have experienced violence by an intimate partner, by degree of urbanisation",ok,sdmx,5,33,0,"",2026-07-23
+GBV_IPV_ECAGE,"Ever-partnered women who have experienced economic violence by an intimate partner, by age group",ok,sdmx,5,38,0,"",2026-07-23
+GBV_IPV_ED,"Ever-partnered women who have experienced violence by an intimate partner, by level of education",ok,sdmx,5,36,0,"",2026-07-23
+GBV_IPV_FRQ,"Ever-partnered women who have experienced violence by an intimate partner, by type and frequency of violence",ok,sdmx,6,40,0,"",2026-07-23
+GBV_IPV_LIM,"Ever-partnered women who have experienced violence by an intimate partner, by level of disability (activity limitation)",ok,sdmx,5,39,0,"",2026-07-23
+GBV_IPV_OCC,"Ever-partnered women who have experienced violence by an intimate partner, by occurrence of the last episode",ok,sdmx,6,40,0,"",2026-07-23
+GBV_IPV_RDUR,"Ever-partnered women who have experienced repeated violence by an intimate partner, by duration of violence",ok,sdmx,5,36,0,"",2026-07-23
+GBV_IPV_ROFT,"Ever-partnered women who have experienced repeated violence by an intimate partner, by periodicity of the violence",ok,sdmx,5,36,0,"",2026-07-23
+GBV_IPV_RP,"Ever-partnered women who have experienced violence by an intimate partner, by person/support service to whom violence was reported",ok,sdmx,5,39,0,"",2026-07-23
+GBV_IPV_RTOG,"Ever-partnered women who have experienced repeated violence by an intimate partner, that started while being together or after separation",ok,sdmx,5,35,0,"",2026-07-23
+GBV_IPV_TYPE,"Ever-partnered women who have experienced violence by an intimate partner, by type of violence",ok,sdmx,5,59,0,"",2026-07-23
+GBV_NPV_AGE,"Women who have experienced violence by a non-partner, by age group",ok,sdmx,5,39,0,"",2026-07-23
+GBV_NPV_CNQ,Women who have experienced violence by a non-partner and consequences of violence,ok,sdmx,5,37,0,"",2026-07-23
+GBV_NPV_COB,"Women who have experienced violence by a non-partner, by country of birth",ok,sdmx,5,36,0,"",2026-07-23
+GBV_NPV_DU,"Women who have experienced violence by a non-partner, by degree of urbanisation",ok,sdmx,5,33,0,"",2026-07-23
+GBV_NPV_ED,"Women who have experienced violence by a non-partner, by level of education",ok,sdmx,5,36,0,"",2026-07-23
+GBV_NPV_FRQ,"Women who have experienced violence by a non-partner, by type and frequency of violence",ok,sdmx,6,40,0,"",2026-07-23
+GBV_NPV_LIM,"Women who have experienced violence by a non-partner, by level of disability (activity limitation)",ok,sdmx,5,39,0,"",2026-07-23
+GBV_NPV_OCC,"Women who have experienced violence by a non-partner, by occurrence of the last episode",ok,sdmx,5,37,0,"",2026-07-23
+GBV_NPV_PERP,"Women who have experienced violence by a non-partner, by type of perpetrator",ok,sdmx,5,44,0,"",2026-07-23
+GBV_NPV_RDUR,"Women who experienced repeated violence by a non-partner, by duration of violence",ok,sdmx,5,36,0,"",2026-07-23
+GBV_NPV_ROFT,"Women who experienced repeated violence by a non-partner, by periodicity of the violence",ok,sdmx,5,36,0,"",2026-07-23
+GBV_NPV_RP,"Women who have experienced violence by a non-partner, by person/support service to whom violence was reported",ok,sdmx,5,39,0,"",2026-07-23
+GBV_NPV_TYPE,"Women who have experienced violence by a non-partner, by type of violence",ok,sdmx,5,58,0,"",2026-07-23
+GBV_SHW_AGE,"Ever-working women who have experienced sexual harassment at work, by age group",ok,sdmx,5,39,0,"",2026-07-23
+GBV_SHW_COMM,Perception of ever-working women as victims/non-victims of sexual harassment at work by commonness of harassment,ok,sdmx,6,39,0,"",2026-07-23
+GBV_SHW_FRQ,"Ever-working women who have experienced sexual harassment at work, by frequency",ok,sdmx,5,35,0,"",2026-07-23
+GBV_SHW_OCC,"Ever-working women who have experienced sexual harassment at work, by occurrence of the last episode",ok,sdmx,5,37,0,"",2026-07-23
+GBV_SHW_PERP,"Ever-working women who have experienced sexual harassment at work, by type of male perpetrator",ok,sdmx,5,38,0,"",2026-07-23
+GBV_SHW_RP,"Ever-working women who have experienced sexual harassment at work, by person/support service to whom violence was reported during last year",ok,sdmx,5,36,0,"",2026-07-23
+GBV_SHW_SNWAGE,"Ever-working women who have experienced sexual harassment at work via social network and messages, by age group",ok,sdmx,5,38,0,"",2026-07-23
+GBV_SHW_TYPE,"Ever-working women who have experienced sexual harassment at work, by type of violence",ok,sdmx,5,38,0,"",2026-07-23
+GBV_ST_AGE,"Women who have experienced stalking, by age group",ok,sdmx,5,38,0,"",2026-07-23
+GBV_ST_CNQ,"Women who have experienced stalking, by consequences of violence",ok,sdmx,5,36,0,"",2026-07-23
+GBV_ST_OCC,"Women who have experienced stalking, by occurrence of the last episode",ok,sdmx,5,36,0,"",2026-07-23
+GBV_ST_PERP,"Women who have experienced stalking, by type of perpetrator",ok,sdmx,5,40,0,"",2026-07-23
+GBV_ST_RP,"Women who have experienced stalking, by person/support service to whom violence was reported",ok,sdmx,5,36,0,"",2026-07-23
+GBV_VTP_AGE,"Persons who have experienced violence, by sex, type of perpetrator and age group",ok,sdmx,7,25,0,"",2026-07-23
+GBV_VTP_CNQ,"Persons who had consequences due to experienced physical/sexual violence, by sex, perpetrator and type of consequence",ok,sdmx,7,24,0,"",2026-07-23
+GBV_VTP_DU,"Persons who have experienced violence, by sex, type of perpetrator and degree of urbanisation",ok,sdmx,7,23,0,"",2026-07-23
+GBV_VTP_ED,"Persons who have experienced violence, by sex, type of perpetrator and level of education",ok,sdmx,7,23,0,"",2026-07-23
+GBV_VTP_FREQ,"Persons who have experienced once or repeated physical/sexual violence, by sex and perpetrator",ok,sdmx,7,22,0,"",2026-07-23
+GBV_VTP_IPVT,"Ever-partnered persons who have experienced violence by an intimate partner, by sex and type of violence",ok,sdmx,6,25,0,"",2026-07-23
+GBV_VTP_LIM,"Persons who have experienced violence, by sex, type of perpetrator and level of disability (activity limitation)",ok,sdmx,7,25,0,"",2026-07-23
+GBV_VTP_NPVT,"Persons who have experienced violence by a non-partner, by sex and type of violence",ok,sdmx,6,23,0,"",2026-07-23
+GBV_VTP_PERP,"Persons who have experienced physical/sexual violence, by sex and type of perpetrator",ok,sdmx,6,34,0,"",2026-07-23
+GBV_VTP_RP,"Persons who have experienced physical/sexual violence by sex, type of perpetrator and person/support service to whom violence was reported",ok,sdmx,7,26,0,"",2026-07-23
+GBV_VTP_SHWA,"Ever-working persons who have experienced sexual harassment at work, by sex and age group",ok,sdmx,6,22,0,"",2026-07-23
+GBV_VTP_SHWT,"Ever-working persons who have experienced sexual harassment at work, by sex and type of violence",ok,sdmx,6,22,0,"",2026-07-23
+GBV_VTP_TYPE,"Persons who have experienced violence, by sex and type of violence",ok,sdmx,6,24,0,"",2026-07-23
+GOV_10A_EMP,General government employment,ok,sdmx,6,48,0,"",2026-07-23
+GOV_10A_EXP,General government expenditure by function (COFOG),ok,sdmx,7,192,0,"",2026-07-23
+GOV_10A_EXP$DV_578,General government expenditure by function (COFOG),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/GOV_10A_EXP$DV_578'
+For more information check: https://developer.mo",2026-07-23
+GOV_10A_EXP$DV_584,General government expenditure by function (COFOG),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/GOV_10A_EXP$DV_584'
+For more information check: https://developer.mo",2026-07-23
+GOV_10A_GGFA,Annual financial accounts for general government,ok,sdmx,10,120,0,"",2026-07-23
+GOV_10A_MAIN,"Government revenue, expenditure and main aggregates",ok,sdmx,6,215,0,"",2026-07-23
+GOV_10A_NFBS,General government non-financial balance sheets,ok,sdmx,6,54,0,"",2026-07-23
+GOV_10A_TAXAG,Main national accounts tax aggregates,ok,sdmx,6,170,0,"",2026-07-23
+GOV_10DD_ACD,Apparent cost of general government gross debt,ok,sdmx,5,60,0,"",2026-07-23
+GOV_10DD_DCUR,Debt by currency of issue,ok,sdmx,7,76,0,"",2026-07-23
+GOV_10DD_EDPT1,"Government deficit/surplus, debt and associated data",ok,sdmx,6,90,0,"",2026-07-23
+GOV_10DD_EDPT2,Transition from the working balance to the deficit/surplus,ok,sdmx,6,89,0,"",2026-07-23
+GOV_10DD_EDPT3,Transition from the deficit/surplus to the change in debt,ok,sdmx,6,107,0,"",2026-07-23
+GOV_10DD_GGD,General government debt,ok,sdmx,8,100,0,"",2026-07-23
+GOV_10DD_GUAR,Guarantees (contingent liabilities),ok,sdmx,6,54,0,"",2026-07-23
+GOV_10DD_RMD,Remaining maturity of general government gross debt,ok,sdmx,7,73,0,"",2026-07-23
+GOV_10Q_GGDEBT,Quarterly government debt,ok,sdmx,6,194,0,"",2026-07-23
+GOV_10Q_GGFA,Quarterly financial accounts for general government,ok,sdmx,10,214,0,"",2026-07-23
+GOV_10Q_GGNFA,Quarterly non-financial accounts for general government,ok,sdmx,7,225,0,"",2026-07-23
+GOV_CL_GUAR,Government guarantees,ok,sdmx,6,54,0,"",2026-07-23
+GOV_CL_LIAB,Liabilities of government controlled entities classified outside general government,ok,sdmx,7,55,0,"",2026-07-23
+GOV_CL_NPL,Non-performing loans of government,ok,sdmx,6,51,0,"",2026-07-23
+GOV_CL_PPP,Liabilities related to private-public partnerships (PPPs) recorded off-balance sheet of government,ok,sdmx,6,51,0,"",2026-07-23
+GOV_EU_DEBT,Debt of the EU institutions,ok,sdmx,6,20,0,"",2026-07-23
+GOV_EU_FA,Financial accounts for EU institutions,ok,sdmx,8,45,0,"",2026-07-23
+GOV_EU_NFA,Non-financial accounts for EU institutions,ok,sdmx,6,65,0,"",2026-07-23
+GOV_EV,Expenditure variables supporting the implementation of the EU economic governance framework,ok,sdmx,6,41,0,"",2026-07-23
+GOV_GB,"Stock of general government debt security liabilities issued as 'green bonds' - one-off data collection, experimental statistics",ok,sdmx,4,37,0,"",2026-07-23
+GOV_RRF_FA,Recovery and resilience facility (RRF) financial flows,ok,sdmx,8,51,0,"",2026-07-23
+GOV_RRF_USE,Recovery and resilience facility (RRF) uses,ok,sdmx,6,48,0,"",2026-07-23
+GVC_EFFGVC,Enterprises by type of global value chains effect and their importance,ok,sdmx,6,49,0,"",2026-07-23
+GVC_EMBF,"Employees and self-employed persons by business function, size and NACE Rev. 2 activity aggregates",ok,sdmx,7,57,0,"",2026-07-23
+GVC_MSO,Enterprises by motivation factors for international sourcing and their importance,ok,sdmx,6,47,0,"",2026-07-23
+GVC_PG,"Enterprises purchasing goods from abroad by type of goods, business partner and trade partner origin",ok,sdmx,7,46,0,"",2026-07-23
+GVC_PS,"Enterprises purchasing services from abroad by type of services, business partner and trade partner origin",ok,sdmx,7,47,0,"",2026-07-23
+GVC_SG,"Enterprises supplying goods abroad by type of goods, business partner and trade partner origin",ok,sdmx,7,46,0,"",2026-07-23
+GVC_SOBAR,Enterprises by barriers considered for international sourcing and their importance,ok,sdmx,6,48,0,"",2026-07-23
+GVC_SOBFBP,Enterprises sourcing business functions abroad by kind of business partner,ok,sdmx,6,41,0,"",2026-07-23
+GVC_SOBFEC,"Enterprises by international sourcing status, size and NACE Rev. 2 activity",ok,sdmx,7,49,0,"",2026-07-23
+GVC_SOBFGA,Enterprises sourcing business functions abroad by geographical area of partner,ok,sdmx,6,52,0,"",2026-07-23
+GVC_SOJOBBF,Job changes in enterprises as a result of international sourcing by business function,ok,sdmx,5,39,0,"",2026-07-23
+GVC_SOJOBCH,Job changes in enterprises as a result of international sourcing by NACE Rev. 2 activity aggregates,ok,sdmx,5,31,0,"",2026-07-23
+GVC_SOJOBJSK,Job changes in enterprises as a result of international sourcing by job skill requirement,ok,sdmx,5,31,0,"",2026-07-23
+GVC_SS,"Enterprises supplying services abroad by type of services, business partner and trade partner origin",ok,sdmx,7,47,0,"",2026-07-23
+HBS_CAR_T311,Household characteristics by activity and employment status of the reference person,ok,sdmx,5,58,0,"",2026-07-23
+HBS_CAR_T312,Household characteristics by number of active persons,ok,sdmx,5,56,0,"",2026-07-23
+HBS_CAR_T313,Household characteristics by type of household,ok,sdmx,5,58,0,"",2026-07-23
+HBS_CAR_T314,Household characteristics by age of the reference person,ok,sdmx,5,56,0,"",2026-07-23
+HBS_CAR_T315,Household characteristics by degree of urbanisation,ok,sdmx,5,55,0,"",2026-07-23
+HBS_CAR_T316,Household characteristics by main source of income,ok,sdmx,5,54,0,"",2026-07-23
+HBS_EXP_T111,Mean consumption expenditure per household and per adult equivalent,ok,sdmx,4,53,0,"",2026-07-23
+HBS_EXP_T121,Mean consumption expenditure per household by COICOP consumption purpose,ok,sdmx,5,284,0,"",2026-07-23
+HBS_EXP_T121$DV_3203,Mean consumption expenditure per household by COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_EXP_T121$DV_3203'
+For more information check: https://developer.",2026-07-23
+HBS_EXP_T123A,Mean consumption expenditure per household with expenditure greater than zero by COICOP consumption purpose,ok,sdmx,5,283,0,"",2026-07-23
+HBS_EXP_T123A$DV_3204,Mean consumption expenditure per household with expenditure greater than zero by COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_EXP_T123A$DV_3204'
+For more information check: https://developer",2026-07-23
+HBS_EXP_T123B,Households with expenditure greater than zero by COICOP consumption purpose,ok,sdmx,5,283,0,"",2026-07-23
+HBS_EXP_T123B$DV_3205,Households with expenditure greater than zero by COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_EXP_T123B$DV_3205'
+For more information check: https://developer",2026-07-23
+HBS_EXP_T131,Mean consumption expenditure by socio-economic category of the reference person,ok,sdmx,5,56,0,"",2026-07-23
+HBS_EXP_T132,Mean consumption expenditure by number of active persons,ok,sdmx,5,53,0,"",2026-07-23
+HBS_EXP_T133,Mean consumption expenditure by income quintile,ok,sdmx,5,55,0,"",2026-07-23
+HBS_EXP_T134,Mean consumption expenditure by type of household,ok,sdmx,5,56,0,"",2026-07-23
+HBS_EXP_T135,Mean consumption expenditure by age of the reference person,ok,sdmx,5,54,0,"",2026-07-23
+HBS_EXP_T136,Mean consumption expenditure by degree of urbanisation,ok,sdmx,5,53,0,"",2026-07-23
+HBS_EXP_T137,Mean consumption expenditure by main source of the household's income,ok,sdmx,5,52,0,"",2026-07-23
+HBS_STR_T211,Structure of consumption expenditure by COICOP consumption purpose,ok,sdmx,5,283,0,"",2026-07-23
+HBS_STR_T211$DV_3206,Structure of consumption expenditure by COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T211$DV_3206'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T221,Structure of consumption expenditure by activity and employment status of the reference person and COICOP consumption purpose,ok,sdmx,6,200,0,"",2026-07-23
+HBS_STR_T221$DV_3207,Structure of consumption expenditure by activity and employment status of the reference person and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T221$DV_3207'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T222,Structure of consumption expenditure by number of active persons and COICOP consumption purpose,ok,sdmx,6,197,0,"",2026-07-23
+HBS_STR_T222$DV_3208,Structure of consumption expenditure by number of active persons and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T222$DV_3208'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T223,Structure of consumption expenditure by income quintile and COICOP consumption purpose,ok,sdmx,6,203,0,"",2026-07-23
+HBS_STR_T223$DV_3209,Structure of consumption expenditure by income quintile and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T223$DV_3209'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T224,Structure of consumption expenditure by type of household and COICOP consumption purpose,ok,sdmx,6,204,0,"",2026-07-23
+HBS_STR_T224$DV_3241,Structure of consumption expenditure by type of household and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T224$DV_3241'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T225,Structure of consumption expenditure by age of the reference person and COICOP consumption purpose,ok,sdmx,6,198,0,"",2026-07-23
+HBS_STR_T225$DV_3210,Structure of consumption expenditure by age of the reference person and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T225$DV_3210'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T226,Structure of consumption expenditure by degree of urbanisation and COICOP consumption purpose,ok,sdmx,6,197,0,"",2026-07-23
+HBS_STR_T226$DV_3211,Structure of consumption expenditure by degree of urbanisation and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T226$DV_3211'
+For more information check: https://developer.",2026-07-23
+HBS_STR_T227,Structure of consumption expenditure by main source of income and COICOP consumption purpose,ok,sdmx,6,109,0,"",2026-07-23
+HBS_STR_T227$DV_3242,Structure of consumption expenditure by main source of income and COICOP consumption purpose,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HBS_STR_T227$DV_3242'
+For more information check: https://developer.",2026-07-23
+HLTH_CD_ACDR,Causes of death by NUTS 2 region - crude death rate,ok,sdmx,7,451,0,"",2026-07-23
+HLTH_CD_ACDR2,Causes of death - crude death rate by NUTS 2 region of residence,ok,sdmx,7,644,0,"",2026-07-23
+HLTH_CD_ACDR2$DV_3323,Causes of death - crude death rate by NUTS 2 region of residence,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_CD_ACDR2$DV_3323'
+For more information check: https://developer",2026-07-23
+HLTH_CD_AINFO,Causes of death - infant mortality by country of occurrence,ok,sdmx,8,107,0,"",2026-07-23
+HLTH_CD_AINFR,Causes of death - infant mortality by country of residence,ok,sdmx,8,104,0,"",2026-07-23
+HLTH_CD_ANR,Causes of death - absolute number,ok,sdmx,7,167,0,"",2026-07-23
+HLTH_CD_APERRO,"Peri-neonatal mortality by age of mother, country of residence and occurrence",ok,sdmx,7,74,0,"",2026-07-23
+HLTH_CD_APERRTO,"Fetal, peri- and neonatal mortality rates by country of occurrence",ok,sdmx,6,60,0,"",2026-07-23
+HLTH_CD_APR,Treatable and preventable mortality of residents by cause and sex,ok,sdmx,7,158,0,"",2026-07-23
+HLTH_CD_APR$DV_3322,Treatable and preventable mortality of residents by cause and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_CD_APR$DV_3322'
+For more information check: https://developer.m",2026-07-23
+HLTH_CD_APYLL,Causes of death - potential years of life lost by country of residence,ok,sdmx,7,150,0,"",2026-07-23
+HLTH_CD_ARO,Causes of death - deaths by country of residence and occurrence,ok,sdmx,8,185,0,"",2026-07-23
+HLTH_CD_ARO$DV_3321,Causes of death - deaths by country of residence and occurrence,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_CD_ARO$DV_3321'
+For more information check: https://developer.m",2026-07-23
+HLTH_CD_ASDR,Causes of death - standardised death rate,ok,sdmx,7,149,0,"",2026-07-23
+HLTH_CD_ASDR2,Causes of death - standardised death rate by NUTS 2 region of residence,ok,sdmx,7,614,0,"",2026-07-23
+HLTH_CD_DAR,Deaths of residents related to dementias including Alzheimer,ok,sdmx,5,57,0,"",2026-07-23
+HLTH_CD_IAP,Health impacts of air pollution,ok,sdmx,6,62,0,"",2026-07-23
+HLTH_CD_IDO,Deaths related to infectious diseases,ok,sdmx,6,62,0,"",2026-07-23
+HLTH_CD_INFO,Infant deaths occurring in the country by cause,ok,sdmx,7,89,0,"",2026-07-23
+HLTH_CD_INFOEU,Infant deaths occurring in the EU by cause and age,ok,sdmx,8,59,0,"",2026-07-23
+HLTH_CD_MRO,"Causes of death - death by country of residence and occurrence, monthly data",ok,sdmx,8,192,0,"",2026-07-23
+HLTH_CD_MSDR2,"Causes of death - standardised death rate by country of residence, monthly data",ok,sdmx,7,190,0,"",2026-07-23
+HLTH_CD_PTPYLL,Causes of death - potential years of life lost by treatable and preventable diseases,ok,sdmx,6,59,0,"",2026-07-23
+HLTH_CD_TRO,Deaths related to transport accidents occurring in the country,ok,sdmx,6,64,0,"",2026-07-23
+HLTH_CD_TROEU,Detailed deaths related to transport accidents occurring in the EU,ok,sdmx,7,46,0,"",2026-07-23
+HLTH_CD_YCDR2,"Causes of death - crude death rate by NUTS 2 region of residence, 3 year average",ok,sdmx,7,634,0,"",2026-07-23
+HLTH_CD_YCDRF,"Causes of death by NUTS 2 region - crude death rate, 3 year average - females",ok,sdmx,7,442,0,"",2026-07-23
+HLTH_CD_YCDRM,"Causes of death by NUTS 2 region - crude death rate, 3 year average - males",ok,sdmx,7,442,0,"",2026-07-23
+HLTH_CD_YCDRT,"Causes of death by NUTS 2 region - crude death rate, 3 year average - total",ok,sdmx,7,442,0,"",2026-07-23
+HLTH_CD_YINFO,"Causes of death - infant mortality by NUTS 2 region of occurrence, 3 year average",ok,sdmx,8,563,0,"",2026-07-23
+HLTH_CD_YINFR,"Causes of death - infant mortality by NUTS 2 region of residence, 3 year average",ok,sdmx,8,558,0,"",2026-07-23
+HLTH_CD_YNRF,"Causes of death by NUTS 2 region - absolute number, 3 year average - females",ok,sdmx,7,465,0,"",2026-07-23
+HLTH_CD_YNRM,"Causes of death by NUTS 2 region - absolute number, 3 year average - males",ok,sdmx,7,465,0,"",2026-07-23
+HLTH_CD_YNRT,"Causes of death by NUTS 2 region - absolute number, 3 year average - total",ok,sdmx,7,465,0,"",2026-07-23
+HLTH_CD_YPERRO,"Peri-neonatal mortality by age of mother and parity, by NUTS 2 region of residence and occurrence, 3 year average",ok,sdmx,8,530,0,"",2026-07-23
+HLTH_CD_YPERRTO,"Fetal, peri- and neonatal mortality rates by NUTS 2 region of occurrence, 3 year average",ok,sdmx,6,507,0,"",2026-07-23
+HLTH_CD_YPYLL,Causes of death - potential years of life lost by NUTS 2 region of residence,ok,sdmx,7,607,0,"",2026-07-23
+HLTH_CD_YRO,"Causes of death - deaths by NUTS 2 region of residence and occurrence, 3 year average",ok,sdmx,8,643,0,"",2026-07-23
+HLTH_CD_YSDR1,"Causes of death by NUTS 2 region - standardised death rate, 3 year average",ok,sdmx,7,424,0,"",2026-07-23
+HLTH_CD_YSDR2,"Causes of death - standardised death rate by NUTS 2 region of residence, 3 year average",ok,sdmx,7,603,0,"",2026-07-23
+HLTH_CO_BEDOC,Inpatient curative care bed occupancy rate by type of care,ok,sdmx,5,102,0,"",2026-07-23
+HLTH_CO_DISCH1,"Hospital discharges by diagnosis, in-patients, total number - historical data (1995-2021)",ok,sdmx,8,249,0,"",2026-07-23
+HLTH_CO_DISCH1F,"Hospital discharges by diagnosis, NUTS 2 region, in-patients and total number - females - historical data (2000-2021)",ok,sdmx,8,460,0,"",2026-07-23
+HLTH_CO_DISCH1M,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, total number - males - historical data (2000-2021)",ok,sdmx,8,448,0,"",2026-07-23
+HLTH_CO_DISCH1T,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, total number - total - historical data (2000-2021)",ok,sdmx,8,463,0,"",2026-07-23
+HLTH_CO_DISCH2,"Hospital discharges by diagnosis, in-patients, per 100 000 inhabitants - historical data (1995-2021)",ok,sdmx,8,247,0,"",2026-07-23
+HLTH_CO_DISCH2F,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, per 100 000 inhabitants - females - historical data (2000-2021)",ok,sdmx,8,458,0,"",2026-07-23
+HLTH_CO_DISCH2M,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, per 100 000 inhabitants - males - historical data (2000-2021)",ok,sdmx,8,446,0,"",2026-07-23
+HLTH_CO_DISCH2T,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, per 100 000 inhabitants - total - historical data (2000-2021)",ok,sdmx,8,461,0,"",2026-07-23
+HLTH_CO_DISCH3,"Hospital discharges by diagnosis, day cases, total number - historical data (1995-2021)",ok,sdmx,8,244,0,"",2026-07-23
+HLTH_CO_DISCH3F,"Hospital discharges by diagnosis and NUTS 2 region, day cases, total number - females - historical data (2000-2021)",ok,sdmx,8,443,0,"",2026-07-23
+HLTH_CO_DISCH3M,"Hospital discharges by diagnosis and NUTS 2 region, day cases, total number - males - historical data (2000-2021)",ok,sdmx,8,431,0,"",2026-07-23
+HLTH_CO_DISCH3T,"Hospital discharges by diagnosis and NUTS 2 region, day cases, total number - total - historical data (2000-2021)",ok,sdmx,8,447,0,"",2026-07-23
+HLTH_CO_DISCH4,"Hospital discharges by diagnosis, day cases, per 100 000 inhabitants - historical data (1995-2021)",ok,sdmx,8,242,0,"",2026-07-23
+HLTH_CO_DISCH4F,"Hospital discharges by diagnosis and NUTS 2 region, day cases, per 100 000 inhabitants - females - historical data (2000-2021)",ok,sdmx,8,441,0,"",2026-07-23
+HLTH_CO_DISCH4M,"Hospital discharges by diagnosis and NUTS 2 region, day cases, per 100 000 inhabitants - males - historical data (2000-2021)",ok,sdmx,8,429,0,"",2026-07-23
+HLTH_CO_DISCH4T,"Hospital discharges by diagnosis and NUTS 2 region, day cases, per 100 000 inhabitants - total - historical data (2000-2021)",ok,sdmx,8,445,0,"",2026-07-23
+HLTH_CO_DISCHLS,Hospital discharges and length of stay for inpatient and curative care - historical data (until 2021),ok,sdmx,6,108,0,"",2026-07-23
+HLTH_CO_DISCHNR,"Non-residents among all hospital discharges, % - historical data (2003-2019)",ok,sdmx,5,50,0,"",2026-07-23
+HLTH_CO_EXAM,"Medical technologies - examinations by medical imaging techniques (CT, MRI and PET)",ok,sdmx,6,74,0,"",2026-07-23
+HLTH_CO_HOSDAY,Hospital days of in-patients - historical data (1995-2021),ok,sdmx,8,248,0,"",2026-07-23
+HLTH_CO_HOSDAYF,Hospital days of in-patients by NUTS 2 region - females - historical data (1999-2021),ok,sdmx,8,453,0,"",2026-07-23
+HLTH_CO_HOSDAYM,Hospital days of in-patients by NUTS 2 region - males - historical data (1999-2021),ok,sdmx,8,441,0,"",2026-07-23
+HLTH_CO_HOSDAYT,Hospital days of in-patients by NUTS 2 region - total - historical data (1999-2021),ok,sdmx,8,464,0,"",2026-07-23
+HLTH_CO_ICUBEDOC,Adult intensive care units bed occupancy rate,ok,sdmx,5,38,0,"",2026-07-23
+HLTH_CO_INPAGG,Hospital discharges and length of stay for inpatient curative care,ok,sdmx,6,110,0,"",2026-07-23
+HLTH_CO_INPST,In-patient average length of stay (days)- historical data (1995-2021),ok,sdmx,8,248,0,"",2026-07-23
+HLTH_CO_INPSTF,In-patient average length of stay (days) by NUTS 2 region - females - historical data(1999-2021),ok,sdmx,8,453,0,"",2026-07-23
+HLTH_CO_INPSTM,In-patient average length of stay (days) by NUTS 2 region - males - historical data (1999-2021),ok,sdmx,8,441,0,"",2026-07-23
+HLTH_CO_INPSTT,In-patient average length of stay (days) by NUTS 2 region - total - historical data (1999-2021),ok,sdmx,8,464,0,"",2026-07-23
+HLTH_CO_PROC2,Surgical operations and procedures performed in hospitals by ICD-9-CM - historical data (1990-2016),ok,sdmx,6,110,0,"",2026-07-23
+HLTH_CO_PROC3,Surgical procedures,ok,sdmx,6,99,0,"",2026-07-23
+HLTH_CO_REN,End-stage renal failure (ESRF) patients - historical data (1980-2014),ok,sdmx,5,70,0,"",2026-07-23
+HLTH_DB_EMACAG,"Prevalence of disability by sex, age and labour status",ok,sdmx,6,42,0,"",2026-07-23
+HLTH_DB_EMACSE,"Percentage distribution of labour status by severity of disability, sex and age",ok,sdmx,7,49,0,"",2026-07-23
+HLTH_DB_EMASNE,Percentage distribution of assistance needed by not employed disabled people by sex,ok,sdmx,5,35,0,"",2026-07-23
+HLTH_DB_EMASNT,Percentage distribution of types of assistance needed by not employed disabled people by sex,ok,sdmx,5,35,0,"",2026-07-23
+HLTH_DB_EMASPR,Percentage distribution of assistance provided to employed disabled people by sex,ok,sdmx,5,36,0,"",2026-07-23
+HLTH_DB_EMASPT,Percentage distribution of types of assistance provided to employed disabled people by sex,ok,sdmx,5,37,0,"",2026-07-23
+HLTH_DB_EMCANA,Percentage distribution of causes of disability by sex and economic activity (NACE Rev. 1),ok,sdmx,6,58,0,"",2026-07-23
+HLTH_DB_EMDUCA,"Percentage distribution of duration of disability (in years) since onset, by cause of disability and sex",ok,sdmx,6,49,0,"",2026-07-23
+HLTH_DB_EMEDAG,"Prevalence of disability by sex, age and educational attainment level",ok,sdmx,6,47,0,"",2026-07-23
+HLTH_DB_EMMAAG,"Prevalence of disability by sex, age and marital status",ok,sdmx,6,47,0,"",2026-07-23
+HLTH_DB_EMNAAG,"Prevalence of disability by sex, age and economic activity (NACE Rev. 1)",ok,sdmx,6,57,0,"",2026-07-23
+HLTH_DB_EMOCAG,"Prevalence of disability by sex, age and occupation",ok,sdmx,6,50,0,"",2026-07-23
+HLTH_DB_EMRENA,"Prevalence of disability by sex, economic activity (NACE Rev. 1) and NUTS 2 region",ok,sdmx,5,292,0,"",2026-07-23
+HLTH_DB_EMSEAG,Percentage distribution of severities of disability by sex and age,ok,sdmx,6,48,0,"",2026-07-23
+HLTH_DB_EMTYAG,Percentage distribution of types of disability by sex and age,ok,sdmx,6,53,0,"",2026-07-23
+HLTH_DE010,"Early leavers from education and training (age group 18-24) by type of disability, sex and labour status",ok,sdmx,7,45,0,"",2026-07-23
+HLTH_DE020,Tertiary educational attainment (age group 30-34) by type of disability and sex,ok,sdmx,6,41,0,"",2026-07-23
+HLTH_DE030,"Young persons neither in employment nor in education and training by type of disability, sex and age",ok,sdmx,7,45,0,"",2026-07-23
+HLTH_DE040,"Population by type of disability, sex, age and educational attainment level",ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DE050,"Participation in education and training by type of disability, sex and age",ok,sdmx,8,52,0,"",2026-07-23
+HLTH_DE060,"Participation in formal education by type of disability, sex and age",ok,sdmx,8,52,0,"",2026-07-23
+HLTH_DE070,"Participation in non-formal education and training by type of disability, sex and age",ok,sdmx,8,52,0,"",2026-07-23
+HLTH_DH010,"Self-perceived health by level of disability (activity limitation), sex and age",ok,sdmx,8,84,0,"",2026-07-23
+HLTH_DH010$DV_2083,"Self-perceived health by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DH010$DV_2083'
+For more information check: https://developer.mo",2026-07-23
+HLTH_DH020,"Persons having a longstanding health problem by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DH030,"Self-reported unmet needs for medical examination by level of disability (activity limitation), sex and age",ok,sdmx,8,84,0,"",2026-07-23
+HLTH_DH030$DV_2112,"Self-reported unmet needs for medical examination by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DH030$DV_2112'
+For more information check: https://developer.mo",2026-07-23
+HLTH_DHC010,Tenure status by level of disability (activity limitation) and poverty status,ok,sdmx,7,83,0,"",2026-07-23
+HLTH_DHC020,"Overall satisfaction with the dwelling by level of disability (activity limitation), sex and age",ok,sdmx,8,56,0,"",2026-07-23
+HLTH_DHC030,"Severe housing deprivation rate by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC030$DV_2024,"Severe housing deprivation rate by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DHC030$DV_2024'
+For more information check: https://developer.m",2026-07-23
+HLTH_DHC040,"Overcrowding rate by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DHC050,"Share of housing cost in disposable income by level of disability (activity limitation), sex and age",ok,sdmx,8,87,0,"",2026-07-23
+HLTH_DHC060,"Housing cost overburden rate by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DHC060$DV_2023,"Housing cost overburden rate by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DHC060$DV_2023'
+For more information check: https://developer.m",2026-07-23
+HLTH_DHC070,"Persons living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC080,"Persons with no bath or shower in their dwelling by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC090,"Persons not having indoor flushing toilet for the sole use of their household by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC100,"Persons considering their dwelling as too dark by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC110,"Noise from neighbours or from the street by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC120,"Pollution, grime or other environmental problems by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC130,"Crime, violence or vandalism in the area by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DHC140,"Inability to keep home adequately warm by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DHC140$DV_2002,"Inability to keep home adequately warm by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DHC140$DV_2002'
+For more information check: https://developer.m",2026-07-23
+HLTH_DHC140$DV_2681,"Inability to keep home adequately warm by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DHC140$DV_2681'
+For more information check: https://developer.m",2026-07-23
+HLTH_DLM010,Employment rate by type of disability (2011),ok,sdmx,7,47,0,"",2026-07-23
+HLTH_DLM020,Labour force participation rate by type of disability (2011),ok,sdmx,7,47,0,"",2026-07-23
+HLTH_DLM030,Unemployment rate by type of disability (2011),ok,sdmx,7,49,0,"",2026-07-23
+HLTH_DLM040,Population in private households by type of disability and labour status (2011),ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DLM050,Employed persons by type of disability and professional status (2011),ok,sdmx,8,56,0,"",2026-07-23
+HLTH_DLM060,Persons outside the labour force by type of disability and main reason for not seeking employment (2011),ok,sdmx,8,59,0,"",2026-07-23
+HLTH_DLM070,Not employed persons but having a previous work experience by type of disability and the main reason for leaving the last job or business (2011),ok,sdmx,8,60,0,"",2026-07-23
+HLTH_DLM080,Employed persons by type of disability and full-time/part-time employment (2011),ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DLM090,Employed persons by type of disability and working from home (2011),ok,sdmx,8,54,0,"",2026-07-23
+HLTH_DLM100,Employed persons by type of disability and supervisor responsibility (2011),ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DLM110,Employed persons by type of disability and average usual weekly hours worked in the main job (2011),ok,sdmx,8,57,0,"",2026-07-23
+HLTH_DLM120,Employed persons by type of disability and economic activity (2011),ok,sdmx,8,72,0,"",2026-07-23
+HLTH_DLM130,Employed persons by type of disability and occupation (2011),ok,sdmx,8,64,0,"",2026-07-23
+HLTH_DLM140,Persons reporting a limitation in work by reason (2011),ok,sdmx,7,54,0,"",2026-07-23
+HLTH_DLM150,Persons reporting a limitation in the amount of work caused by longstanding health problems or difficulties in basic activities by cause (2011),ok,sdmx,7,49,0,"",2026-07-23
+HLTH_DLM160,Persons reporting a limitation in the type of work caused by longstanding health problems or difficulties in basic activities by cause (2011),ok,sdmx,7,49,0,"",2026-07-23
+HLTH_DLM170,Persons reporting a limitation in getting to and from work caused by longstanding health problems or difficulties in basic activities by cause (2011),ok,sdmx,7,49,0,"",2026-07-23
+HLTH_DLM180,Employed persons having a longstanding health problem or a difficulty in basic activities by the type of special assistance used (2011),ok,sdmx,7,51,0,"",2026-07-23
+HLTH_DLM190,Not employed persons having a longstanding health problem or a difficulty in basic activities by the type of special assistance needed (2011),ok,sdmx,7,51,0,"",2026-07-23
+HLTH_DLM200,Disability employment gap by level of activity limitation and sex (source EU-SILC),ok,sdmx,6,70,0,"",2026-07-23
+HLTH_DM010,"Severe material and social deprivation rate by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DM010$DV_1997,"Severe material and social deprivation rate by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DM010$DV_1997'
+For more information check: https://developer.mo",2026-07-23
+HLTH_DM020,"Inability to afford paying for one week annual holiday away from home by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DM030,"Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) every second day by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DM040,"Inability to face unexpected financial expenses by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DM050,"Arrears (mortgage or rent, utility bills or hire purchase) by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DM060,"Ability to make ends meet by level of disability (activity limitation), sex and age",ok,sdmx,8,81,0,"",2026-07-23
+HLTH_DM070,"Share of persons who cannot afford a telephone by level of activity limitation, sex and age",ok,sdmx,7,76,0,"",2026-07-23
+HLTH_DM080,"Share of persons who cannot afford a colour TV by level of activity limitation, sex and age",ok,sdmx,7,76,0,"",2026-07-23
+HLTH_DM090,"Share of persons who cannot afford a computer by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DM100,"Share of persons who cannot afford a washing machine by level of activity limitation, sex and age",ok,sdmx,7,76,0,"",2026-07-23
+HLTH_DM110,"Share of persons who cannot afford a personal car by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DP010,Persons reporting a longstanding health problem or a basic activity difficulty by sex and age,ok,sdmx,7,50,0,"",2026-07-23
+HLTH_DP020,"Population by type of longstanding health problem, sex and age",ok,sdmx,7,64,0,"",2026-07-23
+HLTH_DP030,Prevalence of the main longstanding health problems by sex and age,ok,sdmx,7,51,0,"",2026-07-23
+HLTH_DP040,"Population by type of basic activity difficulty, sex and age",ok,sdmx,7,57,0,"",2026-07-23
+HLTH_DP050,Prevalence of the main basic activity difficulties by sex and age,ok,sdmx,7,50,0,"",2026-07-23
+HLTH_DP060,"Population by type of disability, sex, age and marital status",ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DP070,"Population by type of disability, sex, age and household composition",ok,sdmx,8,61,0,"",2026-07-23
+HLTH_DP080,"Population by type of disability, sex, age and degree of urbanization",ok,sdmx,8,53,0,"",2026-07-23
+HLTH_DPE010,"Persons at risk of poverty or social exclusion by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DPE010$DV_1963,"Persons at risk of poverty or social exclusion by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DPE010$DV_1963'
+For more information check: https://developer.m",2026-07-23
+HLTH_DPE020,"Persons at risk of poverty by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DPE020$DV_1984,"Persons at risk of poverty by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DPE020$DV_1984'
+For more information check: https://developer.m",2026-07-23
+HLTH_DPE030,"Persons at risk of poverty before social transfers (pensions included in social transfers) by level of disability (activity limitation), sex and age",ok,sdmx,7,81,0,"",2026-07-23
+HLTH_DPE040,"Persons living in households with very low work intensity by level of disability (activity limitation), sex and age",ok,sdmx,7,77,0,"",2026-07-23
+HLTH_DPE040$DV_2001,"Persons living in households with very low work intensity by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DPE040$DV_2001'
+For more information check: https://developer.m",2026-07-23
+HLTH_DPE050,"In-work at-risk-of-poverty rate by level of disability (activity limitation), sex and age",ok,sdmx,8,81,0,"",2026-07-23
