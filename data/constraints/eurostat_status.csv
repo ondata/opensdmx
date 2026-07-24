@@ -2530,3 +2530,340 @@ HLTH_DPE040,"Persons living in households with very low work intensity by level 
 HLTH_DPE040$DV_2001,"Persons living in households with very low work intensity by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DPE040$DV_2001'
 For more information check: https://developer.m",2026-07-23
 HLTH_DPE050,"In-work at-risk-of-poverty rate by level of disability (activity limitation), sex and age",ok,sdmx,8,81,0,"",2026-07-23
+HLTH_DPE050$DV_1993,"In-work at-risk-of-poverty rate by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_DPE050$DV_1993'
+For more information check: https://developer.m",2026-07-24
+HLTH_DPEH005,"Population by sex, age and disability status",ok,sdmx,7,49,0,"",2026-07-24
+HLTH_DPEH010,"Population by sex, age, disability status and labour status",ok,sdmx,8,48,0,"",2026-07-24
+HLTH_DPEH020,"Population by sex, age, disability status and educational attainment level",ok,sdmx,8,47,0,"",2026-07-24
+HLTH_DPEH030,"Population by sex, age, disability status and income quintile",ok,sdmx,8,49,0,"",2026-07-24
+HLTH_DPEH040,"Population by sex, age, disability status and household type",ok,sdmx,8,50,0,"",2026-07-24
+HLTH_DPEH050,"Population by sex, age, disability status and having a longstanding health problem",ok,sdmx,8,46,0,"",2026-07-24
+HLTH_DPEH060,"Population by sex, age, disability status and having a longstanding difficulty in basic activities",ok,sdmx,8,46,0,"",2026-07-24
+HLTH_DPEH070,"Population by sex, age, disability status and reporting a longstanding difficulty in activities of personal care",ok,sdmx,8,46,0,"",2026-07-24
+HLTH_DPEH080,"Population by sex, age, disability status and reporting a longstanding difficulty in activities of household care",ok,sdmx,8,46,0,"",2026-07-24
+HLTH_DPEH090,"Persons reporting a longstanding health problem by sex, age and type of longstanding health problem",ok,sdmx,7,58,0,"",2026-07-24
+HLTH_DPEH100,"Persons reporting a longstanding difficulty in basic activities by sex, age and type of basic activity where a longstanding difficulty is encountered",ok,sdmx,7,49,0,"",2026-07-24
+HLTH_DPEH110,"Persons reporting a difficulty in personal care activities by sex, age and need for assistance",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DPEH120,"Persons reporting a difficulty in household care activities by sex, age and need for assistance",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DPEH130,"Persons with disabilities by sex, age and need for assistance",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DPEH135,"Persons with disabilities by sex, need for assistance and labour status",ok,sdmx,7,44,0,"",2026-07-24
+HLTH_DPEH140,"Persons with disabilities by sex, need for assistance and educational attainment level",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DPEH150,"Persons with disabilities by sex, need for assistance and income quintile",ok,sdmx,7,45,0,"",2026-07-24
+HLTH_DPEH160,"Persons with disabilities by sex, need for assistance and household type",ok,sdmx,7,46,0,"",2026-07-24
+HLTH_DPEH170,"Persons with disabilities by sex, need for assistance and having a longstanding health problem",ok,sdmx,7,42,0,"",2026-07-24
+HLTH_DPEH180,"Persons with disabilities by sex, need for assistance and having a longstanding difficulty in basic activities",ok,sdmx,7,42,0,"",2026-07-24
+HLTH_DPEH190,"Persons with disabilities by sex, need for assistance and having a longstanding difficulty in activities of personal care",ok,sdmx,7,42,0,"",2026-07-24
+HLTH_DPEH200,"Persons with disabilities by sex, need for assistance and having a longstanding difficulty in activities of household care",ok,sdmx,7,42,0,"",2026-07-24
+HLTH_DS010,"Frequency of going to cinema, live performances, cultural sites or attending live sport events by level of disability (activity limitation), sex and age",ok,sdmx,9,56,0,"",2026-07-24
+HLTH_DS020,"Frequency of getting together with relatives or friends by level of disability (activity limitation), sex and age",ok,sdmx,9,56,0,"",2026-07-24
+HLTH_DS030,"Frequency of contacts with relatives or friends by level of disability (activity limitation), sex and age",ok,sdmx,9,56,0,"",2026-07-24
+HLTH_DS040,"Participation in activities of churches or other religious organisations by level of disability (activity limitation), sex and age",ok,sdmx,8,48,0,"",2026-07-24
+HLTH_DS050,"Participation in informal voluntary activities by level of disability (activity limitation), sex and age",ok,sdmx,8,47,0,"",2026-07-24
+HLTH_DSI010,"Persons with disabilities by sex, age and severity of disability",ok,sdmx,7,44,0,"",2026-07-24
+HLTH_DSI015,"Persons with disabilities by sex, severity of disability and labour status",ok,sdmx,7,45,0,"",2026-07-24
+HLTH_DSI020,"Persons with disabilities by sex, severity of disability and educational attainment level",ok,sdmx,7,44,0,"",2026-07-24
+HLTH_DSI030,"Persons with disabilities by sex, severity of disability and income quintile",ok,sdmx,7,46,0,"",2026-07-24
+HLTH_DSI040,"Persons with disabilities by sex, severity of disability and household type",ok,sdmx,7,47,0,"",2026-07-24
+HLTH_DSI050,"Persons with disabilities by sex, severity of disability and having a longstanding health problem",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DSI060,"Persons with disabilities by sex, severity of disability and having a longstanding difficulty in basic activities",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DSI070,"Persons with disabilities by sex, severity of disability and having a longstanding difficulty in activities of personal care",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DSI080,"Persons with disabilities by sex, severity of disability and having a longstanding difficulty in activities of household care",ok,sdmx,7,43,0,"",2026-07-24
+HLTH_DSI090,"Persons with disabilities by sex, age and life area where a barrier is reported",ok,sdmx,7,51,0,"",2026-07-24
+HLTH_DSI095,"Persons with disabilities by sex, life area where a barrier is reported and labour status",ok,sdmx,7,52,0,"",2026-07-24
+HLTH_DSI100,"Persons with disabilities by sex, life area where a barrier is reported and educational attainment level",ok,sdmx,7,51,0,"",2026-07-24
+HLTH_DSI110,"Persons with disabilities by sex, life area where a barrier is reported and income quintile",ok,sdmx,7,53,0,"",2026-07-24
+HLTH_DSI120,"Persons with disabilities by sex, life area where a barrier is reported and household type",ok,sdmx,7,54,0,"",2026-07-24
+HLTH_DSI130,"Persons with disabilities by sex, life area where a barrier is reported and having a longstanding health problem",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_DSI140,"Persons with disabilities by sex, life area where a barrier is reported and having a longstanding difficulty in basic activities",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_DSI150,"Persons with disabilities by sex, life area where a barrier is reported and having a longstanding difficulty in activities of personal care",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_DSI160,"Persons with disabilities by sex, life area where a barrier is reported and having a longstanding difficulty in activities of household care",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_EHIS_AC1E,"Persons reporting an accident resulting in injury by sex, age and educational attainment level",ok,sdmx,8,67,0,"",2026-07-24
+HLTH_EHIS_AC1U,"Persons reporting an accident resulting in injury by sex, age and degree of urbanisation",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_AC2E,"Medical intervention for an accident resulting in injury by sex, age and educational attainment level",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_AL1B,"Frequency of alcohol consumption by sex, age and country of birth",ok,sdmx,8,73,0,"",2026-07-24
+HLTH_EHIS_AL1C,"Frequency of alcohol consumption by sex, age and country of citizenship",ok,sdmx,8,73,0,"",2026-07-24
+HLTH_EHIS_AL1E,"Frequency of alcohol consumption by sex, age and educational attainment level",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_AL1E$DV_1142,"Frequency of alcohol consumption by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_AL1E$DV_1142'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_AL1I,"Frequency of alcohol consumption by sex, age and income quintile",ok,sdmx,8,74,0,"",2026-07-24
+HLTH_EHIS_AL1U,"Frequency of alcohol consumption by sex, age and degree of urbanisation",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_AL2E,"Hazardous alcohol drinkers by sex, age and educational attainment level",ok,sdmx,7,61,0,"",2026-07-24
+HLTH_EHIS_AL2I,"Hazardous alcohol drinkers by sex, age and income quintile",ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_AL2U,"Hazardous alcohol drinkers by sex, age and degree of urbanisation",ok,sdmx,7,58,0,"",2026-07-24
+HLTH_EHIS_AL3E,"Frequency of heavy episodic drinking by sex, age and educational attainment level",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_AL3E$DV_450,"Frequency of heavy episodic drinking by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_AL3E$DV_450'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_AL3I,"Frequency of heavy episodic drinking by sex, age and income quintile",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_AL3I$DV_461,"Frequency of heavy episodic drinking by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_AL3I$DV_461'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_AL3U,"Frequency of heavy episodic drinking by sex, age and degree of urbanisation",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_AM1E,"Self-reported time elapsed since last visit to a medical professional by sex, age and educational attainment level",ok,sdmx,9,72,0,"",2026-07-24
+HLTH_EHIS_AM1U,"Self-reported time elapsed since last visit to a medical professional by sex, age and degree of urbanisation",ok,sdmx,9,71,0,"",2026-07-24
+HLTH_EHIS_AM2B,"Self-reported consultations of a medical professional by sex, age and country of birth",ok,sdmx,9,67,0,"",2026-07-24
+HLTH_EHIS_AM2C,"Self-reported consultations of a medical professional by sex, age and country of citizenship",ok,sdmx,9,67,0,"",2026-07-24
+HLTH_EHIS_AM2D,"Self-reported consultations of a medical professional by level of disability (activity limitation), sex and age",ok,sdmx,9,66,0,"",2026-07-24
+HLTH_EHIS_AM2E,"Self-reported consultations of a medical professional by sex, age and educational attainment level",ok,sdmx,9,67,0,"",2026-07-24
+HLTH_EHIS_AM2U,"Self-reported consultations of a medical professional by sex, age and degree of urbanisation",ok,sdmx,9,66,0,"",2026-07-24
+HLTH_EHIS_AM6D,"Self-reported consultation of mental healthcare or rehabilitative care professionals by level of disability (activity limitation), sex and age",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_AM6D$DV_2123,"Self-reported consultation of mental healthcare or rehabilitative care professionals by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_AM6D$DV_2123'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_AM6E,"Self-reported consultation of mental healthcare or rehabilitative care professionals by sex, age and educational attainment level",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_AM6U,"Self-reported consultation of mental healthcare or rehabilitative care professionals by sex, age and degree of urbanisation",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_AM7D,"Self-reported use of home care services by level of disability (activity limitation), sex and age",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_AM7E,"Self-reported use of home care services by sex, age and educational attainment level",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_AM7I,"Self-reported use of home care services by sex, age and income quintile",ok,sdmx,7,55,0,"",2026-07-24
+HLTH_EHIS_AM7SA,Self-reported use of home care services by people with severe difficulty in personal care activities by sex and age,ok,sdmx,6,46,0,"",2026-07-24
+HLTH_EHIS_AM7SH,Self-reported use of home care services by people with severe difficulty in personal care activities by age and household type,ok,sdmx,6,46,0,"",2026-07-24
+HLTH_EHIS_AM7TA,"Self-reported use of home care services by sex, age and level of difficulty with personal care or household activities",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_EHIS_AM7TH,"Self-reported use of home care services by age, level of difficulty with personal care or household activities and household type",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_EHIS_AM7U,"Self-reported use of home care services by sex, age and degree of urbanisation",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_AW1D,"Absence from work due to personal health problems by level of disability (activity limitation), sex and age",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_AW1E,"Absence from work due to personal health problems by sex, age and educational attainment level",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_AW1U,"Absence from work due to personal health problems by sex, age and degree of urbanisation",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_BM1B,"Body mass index (BMI) by sex, age and country of birth",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_BM1B$DV_2103,"Body mass index (BMI) by sex, age and country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1B$DV_2103'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_BM1C,"Body mass index (BMI) by sex, age and country of citizenship",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_BM1C$DV_2104,"Body mass index (BMI) by sex, age and country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1C$DV_2104'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_BM1D,"Body mass index (BMI) by level of disability (activity limitation), sex and age",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_BM1D$DV_2105,"Body mass index (BMI) by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1D$DV_2105'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_BM1E,"Body mass index (BMI) by sex, age and educational attainment level",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_BM1E$DV_309,"Body mass index (BMI) by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1E$DV_309'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_BM1I,"Body mass index (BMI) by sex, age and income quintile",ok,sdmx,8,73,0,"",2026-07-24
+HLTH_EHIS_BM1I$DV_2704,"Body mass index (BMI) by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1I$DV_2704'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_BM1I$DV_306,"Body mass index (BMI) by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_BM1I$DV_306'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_BM1U,"Body mass index (BMI) by sex, age and degree of urbanisation",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_CD1B,"Persons reporting a chronic disease, by disease, sex, age and contry of birth",ok,sdmx,8,76,0,"",2026-07-24
+HLTH_EHIS_CD1C,"Persons reporting a chronic disease, by disease, sex, age and broad group of citizenship",ok,sdmx,8,76,0,"",2026-07-24
+HLTH_EHIS_CD1D,"Persons reporting a chronic disease by level of disability (activity limitation), sex and age",ok,sdmx,8,75,0,"",2026-07-24
+HLTH_EHIS_CD1D$DV_2101,"Persons reporting a chronic disease by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_CD1D$DV_2101'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_CD1E,"Persons reporting a chronic disease, by disease, sex, age and educational attainment level",ok,sdmx,8,76,0,"",2026-07-24
+HLTH_EHIS_CD1I,"Persons reporting a chronic disease, by disease, sex, age and income quintile",ok,sdmx,8,77,0,"",2026-07-24
+HLTH_EHIS_CD1U,"Persons reporting a chronic disease, by disease, sex, age and degree of urbanisation",ok,sdmx,8,75,0,"",2026-07-24
+HLTH_EHIS_DE1,"Body mass index (BMI) by sex, age and educational attainment level (%)",ok,sdmx,7,40,0,"",2026-07-24
+HLTH_EHIS_DE10,"Frequency of alcohol consumption by sex, age and educational attainment level (%)",ok,sdmx,8,35,0,"",2026-07-24
+HLTH_EHIS_DE2,"Body mass index (BMI) by sex, age and income quintile (%)",ok,sdmx,7,40,0,"",2026-07-24
+HLTH_EHIS_DE3,"Daily smokers of cigarettes by sex, age and educational attainment level (%)",ok,sdmx,6,34,0,"",2026-07-24
+HLTH_EHIS_DE4,"Daily smokers of cigarettes by sex, age and income quintile (%)",ok,sdmx,6,34,0,"",2026-07-24
+HLTH_EHIS_DE5,"Daily smokers by number of cigarettes by sex, age and educational attainment level (%)",ok,sdmx,7,35,0,"",2026-07-24
+HLTH_EHIS_DE6,"Frequency of binge drinking by sex, age and educational attainment level",ok,sdmx,7,36,0,"",2026-07-24
+HLTH_EHIS_DE7,"Consumption of fruits by sex, age and educational attainment level (%)",ok,sdmx,7,40,0,"",2026-07-24
+HLTH_EHIS_DE8,"Consumption of vegetables by sex, age and educational attainment level (%)",ok,sdmx,7,40,0,"",2026-07-24
+HLTH_EHIS_DE9,"Practice of daily physical activity by sex, age and educational attainment level (%)",ok,sdmx,6,30,0,"",2026-07-24
+HLTH_EHIS_FV1B,"Frequency of fruit and vegetables consumption by sex, age and country of birth",ok,sdmx,9,70,0,"",2026-07-24
+HLTH_EHIS_FV1C,"Frequency of fruit and vegetables consumption by sex, age and country of citizenship",ok,sdmx,9,70,0,"",2026-07-24
+HLTH_EHIS_FV1D,"Frequency of fruit and vegetables consumption by level of disability (activity limitation), sex and age",ok,sdmx,9,70,0,"",2026-07-24
+HLTH_EHIS_FV1E,"Frequency of fruit and vegetables consumption by sex, age and educational attainment level",ok,sdmx,9,70,0,"",2026-07-24
+HLTH_EHIS_FV1I,"Frequency of fruit and vegetables consumption by sex, age and income quintile",ok,sdmx,9,66,0,"",2026-07-24
+HLTH_EHIS_FV1M,"Frequency of fruit and vegetables consumption by sex, age and body mass index",ok,sdmx,9,63,0,"",2026-07-24
+HLTH_EHIS_FV1U,"Frequency of fruit and vegetables consumption by sex, age and degree of urbanisation",ok,sdmx,9,69,0,"",2026-07-24
+HLTH_EHIS_FV3B,"Daily consumption of fruit and vegetables by sex, age and country of birth",ok,sdmx,8,67,0,"",2026-07-24
+HLTH_EHIS_FV3C,"Daily consumption of fruit and vegetables by sex, age and country of citizenship",ok,sdmx,8,67,0,"",2026-07-24
+HLTH_EHIS_FV3D,"Daily consumption of fruit and vegetables by level of disability (activity limitation), sex and age",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_FV3E,"Daily consumption of fruit and vegetables by sex, age and educational attainment level",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_FV3E$DV_1143,"Daily consumption of fruit and vegetables by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_FV3E$DV_1143'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_FV3E$DV_462,"Daily consumption of fruit and vegetables by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_FV3E$DV_462'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_FV3I,"Daily consumption of fruit and vegetables by sex, age and income quintile",ok,sdmx,8,68,0,"",2026-07-24
+HLTH_EHIS_FV3M,"Daily consumption of fruit and vegetables by sex, age and body mass index",ok,sdmx,8,59,0,"",2026-07-24
+HLTH_EHIS_FV3U,"Daily consumption of fruit and vegetables by sex, age and degree of urbanisation",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_FV5E,"Frequency of drinking pure fruit or vegetable juice by sex, age and educational attainment level",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_FV7E,"Frequency of drinking sugar-sweetened soft drinks by sex, age and educational attainment level",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_FV7I,"Frequency of drinking sugar-sweetened soft drinks by sex, age and income quintile",ok,sdmx,8,60,0,"",2026-07-24
+HLTH_EHIS_FV7M,"Frequency of drinking sugar-sweetened soft drinks by sex, age and body mass index",ok,sdmx,8,59,0,"",2026-07-24
+HLTH_EHIS_HA1D,"Difficulties in household activities by sex, age and level of disability (activity limitation)",ok,sdmx,9,62,0,"",2026-07-24
+HLTH_EHIS_HA1E,"Difficulties in household activities by sex, age and educational attainment level",ok,sdmx,9,62,0,"",2026-07-24
+HLTH_EHIS_HA1HCS,"Difficulties in household activities by sex, age and use of home care services",ok,sdmx,9,57,0,"",2026-07-24
+HLTH_EHIS_HA1I,"Difficulties in household activities by sex, age and income quintile",ok,sdmx,9,61,0,"",2026-07-24
+HLTH_EHIS_HA1U,"Difficulties in household activities by sex, age and degree of urbanisation",ok,sdmx,9,62,0,"",2026-07-24
+HLTH_EHIS_HAHLPD,"Need for help with household activities by sex, age and level of activity limitation",ok,sdmx,8,54,0,"",2026-07-24
+HLTH_EHIS_HAHLPE,"Need for help with household activities by sex, age and educational attainment level",ok,sdmx,8,53,0,"",2026-07-24
+HLTH_EHIS_HAHLPU,"Need for help with household activities by sex, age and degree of urbanisation",ok,sdmx,8,53,0,"",2026-07-24
+HLTH_EHIS_HC1,"Self-reported vaccination against influenza by sex, age and educational attainment level (%)",ok,sdmx,6,28,0,"",2026-07-24
+HLTH_EHIS_HC10,"Self-reported use of non-prescribed medicines by sex, age and educational attainment level",ok,sdmx,7,34,0,"",2026-07-24
+HLTH_EHIS_HC2,Self-reported breast examination by X-ray by educational attainment level among women aged 50-69 (%),ok,sdmx,5,30,0,"",2026-07-24
+HLTH_EHIS_HC3,Self-reported cervical smear test by educational attainment level among women aged 20-69 (%),ok,sdmx,5,29,0,"",2026-07-24
+HLTH_EHIS_HC4,"Self-reported colorectal cancer screening test by sex, age and educational attainment level among people aged 50-74 (%)",ok,sdmx,6,30,0,"",2026-07-24
+HLTH_EHIS_HC5,"Self-reported consultation of a medical professional by sex, age and educational attainment level (%)",ok,sdmx,8,43,0,"",2026-07-24
+HLTH_EHIS_HC6,"Self-reported consultation of a psychologist or physiotherapist by sex, age and educational attainment level (%)",ok,sdmx,8,37,0,"",2026-07-24
+HLTH_EHIS_HC7,"Self-reported use of prescribed medicines for specific diseases by sex, age and educational attainment level",ok,sdmx,7,39,0,"",2026-07-24
+HLTH_EHIS_HC8,"Self-reported hospital in-patient and day-patient admissions by sex, age and educational attainment level (%) - historical data (2008)",ok,sdmx,8,36,0,"",2026-07-24
+HLTH_EHIS_HC9,"Self-reported use of prescribed medicines by sex, age and educational attainment level",ok,sdmx,7,34,0,"",2026-07-24
+HLTH_EHIS_HO1E,"Self-reported hospital in-patient and day-patient admissions by sex, age and educational attainment level",ok,sdmx,8,61,0,"",2026-07-24
+HLTH_EHIS_HO1U,"Self-reported hospital in-patient and day-patient admissions by sex, age and degree of urbanisation",ok,sdmx,8,59,0,"",2026-07-24
+HLTH_EHIS_IC1E,"Persons providing informal care or assistance at least once a week by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_IC1U,"Persons providing informal care or assistance at least once a week by sex, age and degree of urbanisation",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_MD1B,"Self-reported use of prescribed medicines by sex, age and country of birth",ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_MD1C,"Self-reported use of prescribed medicines by sex, age and country of citizenship",ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_MD1E,"Self-reported use of prescribed medicines by sex, age and educational attainment level",ok,sdmx,7,63,0,"",2026-07-24
+HLTH_EHIS_MD1U,"Self-reported use of prescribed medicines by sex, age and degree of urbanisation",ok,sdmx,7,62,0,"",2026-07-24
+HLTH_EHIS_MD2B,"Self-reported use of non-prescribed medicines by sex, age and country of birth",ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_MD2C,"Self-reported use of non-prescribed medicines by sex, age and country of citizenship",ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_MD2E,"Self-reported use of non-prescribed medicines by sex, age and educational attainment level",ok,sdmx,7,63,0,"",2026-07-24
+HLTH_EHIS_MD2U,"Self-reported use of non-prescribed medicines by sex, age and degree of urbanisation",ok,sdmx,7,62,0,"",2026-07-24
+HLTH_EHIS_MH1B,"Current depressive symptoms by sex, age and country of birth",ok,sdmx,8,67,0,"",2026-07-24
+HLTH_EHIS_MH1B$DV_2106,"Current depressive symptoms by sex, age and country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_MH1B$DV_2106'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_MH1C,"Current depressive symptoms by sex, age and country of citizenship",ok,sdmx,8,67,0,"",2026-07-24
+HLTH_EHIS_MH1C$DV_2107,"Current depressive symptoms by sex, age and country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_MH1C$DV_2107'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_MH1D,"Current depressive symptoms by level of disability (activity limitation), sex and age",ok,sdmx,8,64,0,"",2026-07-24
+HLTH_EHIS_MH1E,"Current depressive symptoms by sex, age and educational attainment level",ok,sdmx,8,68,0,"",2026-07-24
+HLTH_EHIS_MH1E$DV_463,"Current depressive symptoms by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_MH1E$DV_463'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_MH1I,"Current depressive symptoms by sex, age and income quintile",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_MH1I$DV_464,"Current depressive symptoms by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_MH1I$DV_464'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_MH1U,"Current depressive symptoms by sex, age and degree of urbanisation",ok,sdmx,8,68,0,"",2026-07-24
+HLTH_EHIS_MH2B,"Severity of current depressive symptoms by sex, age and country of birth",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_MH2C,"Severity of current depressive symptoms by sex, age and country of citizenhip",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_MH2D,"Severity of current depressive symptoms by level of disability (activity limitation), sex and age",ok,sdmx,8,68,0,"",2026-07-24
+HLTH_EHIS_MH2E,"Severity of current depressive symptoms by sex, age and educational attainment level",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_MH2I,"Severity of current depressive symptoms by sex, age and income quintile",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_MH2U,"Severity of current depressive symptoms by sex, age and degree of urbanisation",ok,sdmx,8,68,0,"",2026-07-24
+HLTH_EHIS_PA1E,"Self-reported vaccination against influenza by sex, age and educational attainment level",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_PA1I,"Self-reported vaccination against influenza by sex, age and income quintile",ok,sdmx,7,56,0,"",2026-07-24
+HLTH_EHIS_PA1U,"Self-reported vaccination against influenza by sex, age and degree of urbanisation",ok,sdmx,7,58,0,"",2026-07-24
+HLTH_EHIS_PA2E,"Self-reported screening of cardiovascular diseases and diabetes risks by sex, age and educational attainment level",ok,sdmx,9,69,0,"",2026-07-24
+HLTH_EHIS_PA2I,"Self-reported screening of cardiovascular diseases and diabetes risks by sex, age and income quintile",ok,sdmx,9,66,0,"",2026-07-24
+HLTH_EHIS_PA2U,"Self-reported screening of cardiovascular diseases and diabetes risks by sex, age and degree of urbanisation",ok,sdmx,9,68,0,"",2026-07-24
+HLTH_EHIS_PA5E,"Self-reported last colorectal cancer screening test by sex, age and educational attainment level",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_PA5I,"Self-reported last colorectal cancer screening test by sex, age and income quintile",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_PA5U,"Self-reported last colorectal cancer screening test by sex, age and degree of urbanisation",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_PA6E,"Self-reported last colonoscopy by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_PA6I,"Self-reported last colonoscopy by sex, age and income quintile",ok,sdmx,8,62,0,"",2026-07-24
+HLTH_EHIS_PA6U,"Self-reported last colonoscopy by sex, age and degree of urbanisation",ok,sdmx,8,64,0,"",2026-07-24
+HLTH_EHIS_PA7E,Self-reported last breast examination by X-ray among women by age and educational attainment level,ok,sdmx,7,64,0,"",2026-07-24
+HLTH_EHIS_PA7I,Self-reported last breast examination by X-ray among women by age and income quintile,ok,sdmx,7,61,0,"",2026-07-24
+HLTH_EHIS_PA7U,Self-reported last breast examination by X-ray among women by age and degree of urbanisation,ok,sdmx,7,63,0,"",2026-07-24
+HLTH_EHIS_PA8E,Self-reported last cervical smear test among women by age and educational attainment level,ok,sdmx,7,63,0,"",2026-07-24
+HLTH_EHIS_PA8I,Self-reported last cervical smear test among women by age and income quintile,ok,sdmx,7,60,0,"",2026-07-24
+HLTH_EHIS_PA8U,Self-reported last cervical smear test among women by age and degree of urbanisation,ok,sdmx,7,62,0,"",2026-07-24
+HLTH_EHIS_PC1D,"Difficulties in personal care activities by sex, age and level of disability (activity limitation)",ok,sdmx,9,60,0,"",2026-07-24
+HLTH_EHIS_PC1E,"Difficulties in personal care activities by sex, age and educational attainment level",ok,sdmx,9,60,0,"",2026-07-24
+HLTH_EHIS_PC1HCS,"Difficulties in personal care activities by sex, age and use of home care services",ok,sdmx,9,54,0,"",2026-07-24
+HLTH_EHIS_PC1I,"Difficulties in personal care activities by sex, age and income quintile",ok,sdmx,9,58,0,"",2026-07-24
+HLTH_EHIS_PC1U,"Difficulties in personal care activities by sex, age and degree of urbanisation",ok,sdmx,9,60,0,"",2026-07-24
+HLTH_EHIS_PCHLPD,"Need for help with personal care activities by sex, age and level of activity limitation",ok,sdmx,8,53,0,"",2026-07-24
+HLTH_EHIS_PCHLPE,"Need for help with personal care activities by sex, age and educational attainment level",ok,sdmx,8,53,0,"",2026-07-24
+HLTH_EHIS_PCHLPU,"Need for help with personal care activities by sex, age and degree of urbanisation",ok,sdmx,8,54,0,"",2026-07-24
+HLTH_EHIS_PE1E,"Effort involved in performing work-related physical activity by sex, age and educational attainment level",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE1I,"Effort involved in performing work-related physical activity by sex, age and income quintile",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_PE1U,"Effort involved in performing work-related physical activity by sex, age and degree of urbanisation",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE2E,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and educational attainment level",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_PE2E$DV_1144,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE2E$DV_1144'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_PE2E$DV_300,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE2E$DV_300'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE2E$DV_301,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE2E$DV_301'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE2I,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and income quintile",ok,sdmx,8,74,0,"",2026-07-24
+HLTH_EHIS_PE2I$DV_465,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE2I$DV_465'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE2M,"Time spent on health-enhancing non-work-related aerobic physical activity by sex, age and body mass index",ok,sdmx,8,62,0,"",2026-07-24
+HLTH_EHIS_PE2U,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and degree of urbanisation",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_PE2U$DV_466,"Time spent on health-enhancing (non-work-related) aerobic physical activity by sex, age and degree of urbanisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE2U$DV_466'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE3E,"Performing (non-work-related) physical activities by sex, age and educational attainment level",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE3E$DV_294,"Performing (non-work-related) physical activities by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE3E$DV_294'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE3E$DV_296,"Performing (non-work-related) physical activities by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE3E$DV_296'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE3I,"Performing (non-work-related) physical activities by sex, age and income quintile",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_PE3I$DV_467,"Performing (non-work-related) physical activities by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE3I$DV_467'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE3U,"Performing (non-work-related) physical activities by sex, age and degree of urbanisation",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE3U$DV_468,"Performing (non-work-related) physical activities by sex, age and degree of urbanisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE3U$DV_468'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE6E,"Walking and cycling at least 30 minutes per day by sex, age and educational attainment level",ok,sdmx,7,57,0,"",2026-07-24
+HLTH_EHIS_PE9B,"Performing health-enhancing physical activity by sex, age and country of birth",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE9C,"Performing health-enhancing physical activity by sex, age and country of citizenship",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_PE9D,"Performing health-enhancing physical activity by level of disability (activity limitation), sex and age",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_PE9E,"Performing health-enhancing physical activity by sex, age and educational attainment level",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_PE9E$DV_469,"Performing health-enhancing physical activity by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE9E$DV_469'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE9I,"Performing health-enhancing physical activity by sex, age and income quintile",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_PE9I$DV_470,"Performing health-enhancing physical activity by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE9I$DV_470'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PE9U,"Performing health-enhancing physical activity by sex, age and degree of urbanisation",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_PE9U$DV_471,"Performing health-enhancing physical activity by sex, age and degree of urbanisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_PE9U$DV_471'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_PL1D,"Functional limitations by sex, age and level of disability (activity limitation)",ok,sdmx,9,67,0,"",2026-07-24
+HLTH_EHIS_PL1E,"Functional limitations by sex, age and educational attainment level",ok,sdmx,9,68,0,"",2026-07-24
+HLTH_EHIS_PL1U,"Functional limitations by sex, age and degree of urbanisation",ok,sdmx,9,67,0,"",2026-07-24
+HLTH_EHIS_PN1B,"Severity of bodily pain by sex, age and country of birth",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_PN1C,"Severity of bodily pain by sex, age and country of citizenship",ok,sdmx,8,66,0,"",2026-07-24
+HLTH_EHIS_PN1D,"Severity of bodily pain by level of disability (activity limitation), sex and age",ok,sdmx,8,65,0,"",2026-07-24
+HLTH_EHIS_PN1E,"Severity of bodily pain by sex, age and educational attainment level",ok,sdmx,8,65,0,"",2026-07-24
+HLTH_EHIS_SK1B,"Smoking of tobacco products by sex, age and country of birth",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_SK1C,"Smoking of tobacco products by sex, age and country of citizenship",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_SK1E,"Smoking of tobacco products by sex, age and educational attainment level",ok,sdmx,8,73,0,"",2026-07-24
+HLTH_EHIS_SK1I,"Smoking of tobacco products by sex, age and income quintile",ok,sdmx,8,72,0,"",2026-07-24
+HLTH_EHIS_SK1U,"Smoking of tobacco products by sex, age and degree of urbanisation",ok,sdmx,8,70,0,"",2026-07-24
+HLTH_EHIS_SK2E,"Former daily tobacco smokers by sex, age and educational attainment level",ok,sdmx,7,59,0,"",2026-07-24
+HLTH_EHIS_SK2I,"Former daily tobacco smokers by sex, age and income quintile",ok,sdmx,7,61,0,"",2026-07-24
+HLTH_EHIS_SK3E,"Daily smokers of cigarettes by sex, age and educational attainment level",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_SK3E$DV_1127,"Daily smokers of cigarettes by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SK3E$DV_1127'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_SK3E$DV_298,"Daily smokers of cigarettes by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SK3E$DV_298'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_SK3I,"Daily smokers of cigarettes by sex, age and income quintile",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_SK3I$DV_1141,"Daily smokers of cigarettes by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SK3I$DV_1141'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_SK3I$DV_2705,"Daily smokers of cigarettes by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SK3I$DV_2705'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_SK3I$DV_304,"Daily smokers of cigarettes by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SK3I$DV_304'
+For more information check: https://developer",2026-07-24
+HLTH_EHIS_SK3U,"Daily smokers of cigarettes by sex, age and degree of urbanisation",ok,sdmx,8,69,0,"",2026-07-24
+HLTH_EHIS_SK4E,"Daily exposure to tobacco smoke indoors by sex, age and educational attainment level",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_SK4U,"Daily exposure to tobacco smoke indoors by sex, age and degree of urbanisation",ok,sdmx,8,71,0,"",2026-07-24
+HLTH_EHIS_SK5E,"Duration of daily tobacco smoking by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SK6E,"Use of electronic cigarettes or similar electronic devices by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SS1B,"Overall perceived social support by sex, age and country of birth",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SS1C,"Overall perceived social support by sex, age and country of citizenship",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SS1C$DV_2108,"Overall perceived social support by sex, age and country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SS1C$DV_2108'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_SS1D,"Overall perceived social support by level of disability (activity limitation), sex and age",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SS1D$DV_2109,"Overall perceived social support by level of disability (activity limitation), sex and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_EHIS_SS1D$DV_2109'
+For more information check: https://develope",2026-07-24
+HLTH_EHIS_SS1E,"Overall perceived social support by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_SS1U,"Overall perceived social support by sex, age and degree of urbanisation",ok,sdmx,8,62,0,"",2026-07-24
+HLTH_EHIS_ST1,"People reporting a chronic disease, by disease, sex, age and educational attainment level (%)",ok,sdmx,7,41,0,"",2026-07-24
+HLTH_EHIS_ST10,"Limitations in personal care activities by sex, age and educational attainment level (%)",ok,sdmx,8,37,0,"",2026-07-24
+HLTH_EHIS_ST11,"Limitations in household activities by sex, age and educational attainment level (%)",ok,sdmx,8,36,0,"",2026-07-24
+HLTH_EHIS_ST2,"People reporting having had an accident by sex, age and educational attainment level (%)",ok,sdmx,7,34,0,"",2026-07-24
+HLTH_EHIS_ST3,"People reporting having had an accident, which resulted in injury for which medical treatment was sought by sex, age and educational attainment level (%)",ok,sdmx,7,34,0,"",2026-07-24
+HLTH_EHIS_ST4,"People declaring physical pain or physical discomfort by sex, age and educational attainment level (%)",ok,sdmx,7,37,0,"",2026-07-24
+HLTH_EHIS_ST7,"Psychological distress by sex, age and educational attainment level (average score)",ok,sdmx,6,32,0,"",2026-07-24
+HLTH_EHIS_ST8,"Psychological well-being (energy and vitality index) by sex, age and educational attainment level (average score)",ok,sdmx,6,33,0,"",2026-07-24
+HLTH_EHIS_ST9,"Physical and sensory functional limitations by sex, age and educational attainment level (%)",ok,sdmx,8,36,0,"",2026-07-24
+HLTH_EHIS_TAD,"Difficulties in personal care activities or household activities by sex, age and level of disability (activity limitation)",ok,sdmx,8,54,0,"",2026-07-24
+HLTH_EHIS_TADLE,"Severe difficulties in personal care activities or household activities by sex, age and type of activity where the severe difficulty is encountered",ok,sdmx,7,50,0,"",2026-07-24
+HLTH_EHIS_TADLH,"Need for help with personal care or household activities by level of difficulty experienced in those activities, sex and age",ok,sdmx,8,52,0,"",2026-07-24
+HLTH_EHIS_TADLHI,"Need for help with personal care or household activities by level of difficulty experienced in those activities, age and income quintile",ok,sdmx,8,55,0,"",2026-07-24
+HLTH_EHIS_TADLHU,"Need for help with personal care or household activities by level of difficulty experienced in those activities, age and degree of urbanisation",ok,sdmx,8,50,0,"",2026-07-24
+HLTH_EHIS_TADLI,"Severe difficulties in personal care activities or household activities by age, income quintile and type of activity where the severe difficulty is encountered",ok,sdmx,7,53,0,"",2026-07-24
+HLTH_EHIS_TAE,"Difficulties in personal care activities or household activities by sex, age and educational attainment level",ok,sdmx,8,54,0,"",2026-07-24
+HLTH_EHIS_TAHCS,"Difficulties in personal care activities or household activities by sex, age and use of home care services",ok,sdmx,8,49,0,"",2026-07-24
+HLTH_EHIS_TAI,"Difficulties in personal care activities or household activities by sex, age and income quintile",ok,sdmx,8,53,0,"",2026-07-24
+HLTH_EHIS_TAU,"Difficulties in personal care activities or household activities by sex, age and degree of urbanisation",ok,sdmx,8,54,0,"",2026-07-24
+HLTH_EHIS_UN1D,"Self-reported unmet needs for health care by specific reasons, level of disability (activity limitation), sex and age",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_UN1E,"Self-reported unmet needs for health care by sex, age, specific reasons and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_UN1I,"Self-reported unmet needs for health care by sex, age, specific reasons and income quintile",ok,sdmx,8,59,0,"",2026-07-24
+HLTH_EHIS_UN1U,"Self-reported unmet needs for health care by sex, age, specific reasons and degree of urbanisation",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_UN2D,"Self-reported unmet needs for specific health care-related services due to financial reasons by level of disability (activity limitation), sex and age",ok,sdmx,8,64,0,"",2026-07-24
+HLTH_EHIS_UN2E,"Self-reported unmet needs for specific health care-related services due to financial reasons by sex, age and educational attainment level",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_UN2I,"Self-reported unmet needs for specific health care-related services due to financial reasons by sex, age and income quintile",ok,sdmx,8,60,0,"",2026-07-24
+HLTH_EHIS_UN2U,"Self-reported unmet needs for specific health care-related services due to financial reasons by sex, age and degree of urbanisation",ok,sdmx,8,63,0,"",2026-07-24
+HLTH_EHIS_VIE,"Correction of vision problems by sex, age and educational attainment level",ok,sdmx,8,65,0,"",2026-07-24
+HLTH_EHIS_VIU,"Correction of vision problems by sex, age and degree of urbanisation",ok,sdmx,8,65,0,"",2026-07-24
+HLTH_HC_DENT,Consultation of a dentist per inhabitant,ok,sdmx,4,99,0,"",2026-07-24
+HLTH_HC_PHYS,Consultation of a medical doctor (in private practice or as outpatient) per inhabitant - historical data (1960-2013),ok,sdmx,5,103,0,"",2026-07-24
+HLTH_HC_PHYS2,Consultation of a medical doctor per inhabitant and by type of consultation,ok,sdmx,5,105,0,"",2026-07-24

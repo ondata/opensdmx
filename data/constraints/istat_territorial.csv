@@ -754,6 +754,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 168_761_DF_DCSP_IPCA1B2025_3,Ipca trimestrali - classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-18
 168_762,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
 168_762_DF_DCSP_IPCA2B2025_1,Ipca - medie annue dal 1996 (base 2025) - Ecoicop 2,REF_AREA,nazionale,nazionale,1,2026-07-17
+168_762_DF_DCSP_IPCA2B2025_2,Ipca medie annue - classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-24
 168_7_DF_DCSP_IPCA3EC2_1,Ipca – Classificazione ECOICOP vers.2 (4 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
 168_7_DF_DCSP_IPCA3EC2_2,Ipca – Aggregati speciali,REF_AREA,nazionale,nazionale,1,2026-07-17
 168_7_DF_DCSP_IPCA3EC2_3,Ipca pesi- classi di spesa (dal 2005),REF_AREA,nazionale,nazionale,1,2026-07-18
@@ -1355,6 +1356,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 536_193_DF_DCSC_GI_COS_9,Dati grezzi (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
 536_278,Imprese ed enti pubblici con almeno 10 dipendenti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-23
 536_278_DF_DCSC_COSTLAVSTRUT_1_1,Imprese ed enti pubblici con almeno 10 dipendenti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-23
+536_279,Imprese ed enti pubblici con almeno 10 dipendenti - nuova metodologia,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-24
 56_1045,Iscritti all'università - comune dell'ateneo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
 56_1045_DF_DCIS_ISCRITTI_COM_A_1,Iscritti per sesso,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
 56_1045_DF_DCIS_ISCRITTI_COM_A_2,Iscritti per cittadinanza,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,416,2026-07-23
@@ -1484,3 +1486,113 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 669_1113_DF_DCCN_SPESAPROTAMB_B14_2,Aggregati economici per settore istituzionale - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1116,Conti dei flussi di materia versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1116_DF_DCCN_FLUMAT_B14_1,Indicatori aggregati - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1116_DF_DCCN_FLUMAT_B14_2,Estrazione interna di materiali utilizzati - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+669_1116_DF_DCCN_FLUMAT_B14_3,Scambi con il resto del mondo - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+669_1119_DF_DCCN_EGSS_B14_1,"Produzione, valore aggiunto, esportazioni - edizione febbraio 2019",REF_AREA,nazionale,nazionale,1,2026-07-24
+669_1119_DF_DCCN_EGSS_B14_2,Occupazione (unità di lavoro) - edizione febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359,Viaggi per caratteristiche del viaggiatore,REF_AREA,regione,nazionale|ripartizione|regione,10,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_1,"Viaggi per sesso, classe di età della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_10,Viaggi per sesso e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_11,Viaggi per classe di età e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_12,Viaggi per tipologia del viaggio e residenza della persona che ha viaggiato. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_13,"Viaggi per tipologia del viaggio, residenza della persona che ha viaggiato e destinazione. Dati percentuali sul totale dei viaggi dello stesso tipo e con la stessa destinazione - Livello Ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_14,"Viaggi per sesso, classe di età e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo effettuati da persone con le stesse caratteristiche - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_15,Viaggi per destinazione e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo e con la stessa area geografica di provenienza della persona che ha viaggiato - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_16,Viaggi delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_17,"Viaggi di vacanza per durata della vacanza, principale mezzo di trasporto e residenza della persona che ha viaggiato. Dati percentuali sul totale delle vacanze della stessa durata e area geografica di provenienza della persona che ha viaggiato - Livello Ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_18,"Viaggi di vacanza per durata della vacanza, principale alloggio e residenza della persona che ha viaggiato. Dati percentuali sul totale delle vacanze della stessa durata e area geografica di provenienza della persona che ha viaggiato - Livello ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_2,Viaggi per residenza della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_3,"Viaggi per tipologia del viaggio, residenza della persona che ha viaggiato e destinazione. Dati assoluti (in migliaia) - Livello Ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_4,Viaggi per residenza della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Tipologia comunale,REF_AREA,nazionale,nazionale,7,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_5,Viaggi delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_6,"Viaggi di vacanza per durata della vacanza, principale mezzo di trasporto e residenza della persona che ha viaggiato. Dati assoluti (in migliaia) - Livello Ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_7,"Viaggi di vacanza per durata della vacanza, principale tipo di alloggio e residenza della persona che ha viaggiato. Dati assoluti (in migliaia) - Livello Ripartizionale",REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_8,Viaggi per residenza della persona che ha viaggiato e tipologia del viaggio. Dati percentuali sul totale dei viaggi con la stessa area di provenienza della persona che ha viaggiato - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_359_DF_DCCV_VIAGGI_RES_9,Viaggi per residenza della persona che ha viaggiato e tipologia del viaggio. Dati percentuali sul totale dei viaggi con la stessa area di provenienza della persona che ha viaggiato - Tipologia comunale,REF_AREA,nazionale,nazionale,7,2026-07-24
+68_365,Viaggi per motivo del viaggio,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_1,Vacanze per motivo prevalente e durata. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_2,Vacanze per motivo prevalente e durata. Dati percentuali sul totale delle vacanze della stessa durata - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_3,Vacanze di 4 notti e più per trimestre e classe di durata. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_4,Vacanze di 4 notti e più per trimestre e classe di durata. Dati percentuali sul totale delle vacanze di 4 e più notti nel periodo di riferimento - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_5,Vacanze di piacere/svago per tipo di vacanza e durata. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_6,Vacanze di piacere/svago per tipo di vacanza e durata. Dati percentuali sul totale delle vacanze della stessa durata - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_7,Viaggi di piacere/svago per tipo di luogo e destinazione principale. Dati per 100 viaggi nella stessa destinazione - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_8,Viaggi di lavoro per motivo prevalente. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_365_DF_DCCV_VIAGGI_9,Viaggi di lavoro per motivo prevalente. Dati percentuali sul totale dei viaggi di lavoro - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_370,Persone che non hanno viaggiato per vacanza (dati trimestrali),REF_AREA,nazionale,nazionale,1,2026-07-24
+68_370_DF_DCCV_NON_TURISTI_1,Persone che non hanno viaggiato per vacanza per motivo prevalente e trimestre. Dati assoluti (in migliaia) - Livello nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_370_DF_DCCV_NON_TURISTI_2,Persone che non hanno viaggiato per vacanza per motivo prevalente e trimestre. Dati percentuali - Livello nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371,Persone che hanno viaggiato (dati trimestrali),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_1,"Persone che hanno viaggiato per tipologia del viaggio, destinazione e trimestre. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_10,Occupati di 15 anni e più che hanno viaggiato per lavoro per trimestre. Dati assoluti (in migliaia) - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_11,Occupati di 15 anni e più che hanno viaggiato per lavoro per sesso e trimestre. Dati per 100 abitanti con le stesse caratteristiche - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_12,Occupati di 15 anni e più che hanno viaggiato per lavoro per trimestre. Dati per 100 abitanti con le stesse caratteristiche - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_13,"Persone di 15 anni e più che hanno viaggiato per tipologia del viaggio, condizione professionale e trimestre. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_14,"Persone di 15 anni e più che hanno viaggiato per tipologia del viaggio, condizione professionale e trimestre. Dati per 100 abitanti con le stesse caratteristiche - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_15,Persone che hanno viaggiato. Media annuale. Dati per 100 abitanti - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_16,Persone di 15 anni e più occupate che hanno viaggiato per lavoro. Media annuale. Dati assoluti (in migliaia) - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_17,Persone di 15 anni e più occupate che hanno viaggiato per lavoro. Media annuale. Dati per 100 abitanti con le stesse caratteristiche - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_18,Tipologia del viaggio e destinazione,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_19,Tipologia del viaggio e sesso,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_2,"Persone che hanno viaggiato per tipologia del viaggio, sesso e trimestre. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_20,Tipologia del viaggio e classe di età,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_21,Tipologia del viaggio e condizione professionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_22,Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_23,Valori medi,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_24,Sesso,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_25,Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_26,Valori medi,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_3,"Persone che hanno viaggiato per tipologia del viaggio, classe di età e trimestre. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_4,Persone che hanno viaggiato per tipologia del viaggio e trimestre. Dati assoluti (in migliaia) - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_5,"Persone che hanno viaggiato per tipologia del viaggio, destinazione e trimestre. Dati per 100 abitanti - Livello nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_6,Persone che hanno viaggiato per tipologia del viaggio e trimestre - Dati per 100 abitanti - Livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_371_DF_DCCV_TURISTI_7,"Persone che hanno viaggiato per tipologia del viaggio, sesso e trimestre. Dati per 100 abitanti con le stesse caratteristiche - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_8,"Persone che hanno viaggiato per tipologia del viaggio, classe di età e trimestre. Dati per 100 abitanti con le stesse caratteristiche - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_371_DF_DCCV_TURISTI_9,Occupati di 15 anni e più che hanno viaggiato per lavoro per sesso e trimestre. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380,Viaggi per caratteristiche del viaggio,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_1,"Viaggi per trimestre, destinazione principale e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_10,Viaggi di vacanza e di lavoro per destinazione principale e alloggio prevalente. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_11,Viaggi per trimestre e tipologia del viaggio. Dati percentuali sul totale dei viaggi effettuati nello stesso periodo- Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_12,Viaggi per destinazione principale e organizzazione. Dati percentuali sul totale dei viaggi con la stessa destinazione - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_13,"Viaggi per anno, mese di inizio e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_14,Viaggi per destinazione principale e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_15,Viaggi per organizzazione dell'alloggio e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_16,Viaggi per organizzazione del trasporto e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_17,Viaggi con prenotazione tramite internet per tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_18,"Viaggi per destinazione principale, organizzazione e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo e con la stessa destinazione - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_19,"Viaggi di vacanza e di lavoro per destinazione principale, principale mezzo di trasporto. Dati percentuali sul totale dei viaggi dello stesso tipo e con la stessa destinazione - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_2,"Viaggi per anno, mese di inizio e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_20,Viaggi di vacanza e di lavoro per destinazione principale e alloggio prevalente. Dati percentuali sul totale dei viaggi dello stesso tipo e con la stessa destinazione - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_21,Viaggi all'estero per paese di destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_22,Viaggi all'estero per paese di destinazione e tipologia del viaggio.. Dati percentuali sul totale dei viaggi all'estero dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_23,Viaggi in Italia per regione di destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_24,Viaggi in Italia per regione di destinazione e tipologia del viaggio. Dati percentuali sul totale dei viaggi in Italia dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_25,Viaggi medi procapite per ripartizione geografica,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_3,Viaggi per destinazione principale e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_4,"Viaggi per destinazione principale, organizzazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_5,Viaggi per destinazione principale e organizzazione. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_6,Viaggi per organizzazione dell'alloggio e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_7,Viaggi per organizzazione del trasporto e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_8,Viaggi con prenotazione tramite internet per tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_380_DF_DCCV_VIAGGI_CHARACT_9,"Viaggi di vacanza e di lavoro per destinazione principale, principale mezzo di trasporto. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381,Pernottamenti in viaggio,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_381_DF_DCCV_TURNOT_1,"Notti per trimestre, destinazione principale e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_10,Notti per destinazione e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_11,"Notti per destinazione principale, alloggio prevalente e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggio dello stesso tipo e con la stessa destinazione - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_12,Notti per destinazione e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggio dello stesso tipo e con la stessa destinazione - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_381_DF_DCCV_TURNOT_13,Notti per destinazione e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggio dello stesso tipo e con la stessa area geografica di provenienza della persona che ha viaggiato - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_381_DF_DCCV_TURNOT_14,"Notti per sesso, classe di età della persona che ha viaggiato e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggio dello stesso tipo effettuati da persone dello stesso sesso - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_15,Notti in Italia per regione di destinazione e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggi in Italia dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_16,Notti all'estero per paese di destinazione e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggi all'estero dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_17,Notti delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati percentuali sul totale delle notti in viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_18,"Durata media del viaggio per trimestre, destinazione principale e tipologia del viaggio - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_19,Presenze turistiche medie giornaliere di vacanza in Italia per ripartizione geografica di destinazione e trimestre. Dati per 1000 residenti - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_2,"Notti per destinazione principale, alloggio prevalente e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_3,Notti per destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_4,"Notti per sesso, classe di età della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_5,Notti per destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_381_DF_DCCV_TURNOT_6,Notti in Italia per regione di destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_7,Notti all'estero per paese di destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_8,Notti delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia),REF_AREA,nazionale,nazionale,1,2026-07-24
+68_381_DF_DCCV_TURNOT_9,Notti di vacanza e lavoro per trimestre. Dati percentuali sul totale delle notti in viaggio - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+6_20,Ricerca e Sviluppo,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-24
