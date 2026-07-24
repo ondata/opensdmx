@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-07-24 - richer embeddings: ingest LAYOUT_DATAFLOW_KEYWORDS
+## 2026-07-24 - v0.19.0 - richer embeddings: ingest LAYOUT_DATAFLOW_KEYWORDS
 
 - feat(discovery): parse an optional per-dataflow keyword annotation into a new
   nullable `df_keywords` column on the dataflows cache. Providers opt in by
