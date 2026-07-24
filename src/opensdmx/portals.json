@@ -47,7 +47,8 @@
     "hub_base_url": "https://esploradati.istat.it/databrowserhub/api/core",
     "hub_node_id": "1",
     "hub_dataset_agency": "IT1",
-    "hub_timeout": 15.0
+    "hub_timeout": 15.0,
+    "keyword_annotation": "LAYOUT_DATAFLOW_KEYWORDS"
   },
   "inps": {
     "name": "INPS",
