@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-07-24 - real ISTAT descriptions from METADATA_API (embeddings)
+## 2026-07-24 - v0.20.0 - real ISTAT descriptions from METADATA_API (embeddings)
 
 - feat(descriptions): harvest the authentic dataflow descriptions ISTAT shows on
   EsploraDati — never present in the SDMX structure — via the `METADATA_URL`
