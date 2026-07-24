@@ -635,3 +635,28 @@ def test_keyword_annotation_absent_returns_none():
     assert _keyword_annotation(_df_node(), "LAYOUT_DATAFLOW_KEYWORDS", "it") is None
     # Annotations present but not the requested type.
     assert _keyword_annotation(_df_node(_KEYWORDS_ANN), "NOPE", "it") is None
+
+
+def test_cached_dataflows_backfills_df_keywords(tmp_path):
+    """A legacy cache lacking df_keywords still yields the column (schema stability)."""
+    from opensdmx import discovery
+
+    legacy = pl.DataFrame(
+        {
+            "df_id": ["OLD"],
+            "version": ["1.0"],
+            "df_description": ["Legacy dataset"],
+            "df_structure_id": ["DSD"],
+            "has_constraint": [True],
+        }
+    )
+    cache_file = tmp_path / "dataflows.parquet"
+    legacy.write_parquet(cache_file)
+
+    with patch.object(discovery, "_dataflow_cache_path", return_value=cache_file), \
+         patch.object(discovery, "DATAFLOWS_CACHE_TTL", 10**9):
+        loaded = discovery._load_cached_dataflows()
+
+    assert loaded is not None
+    assert "df_keywords" in loaded.columns
+    assert loaded["df_keywords"].to_list() == [None]

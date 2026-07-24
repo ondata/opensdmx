@@ -65,6 +65,8 @@ def _load_cached_dataflows() -> pl.DataFrame | None:
             df = pl.read_parquet(path)
             if "has_constraint" not in df.columns:
                 df = df.with_columns(pl.lit(None).cast(pl.Boolean).alias("has_constraint"))
+            if "df_keywords" not in df.columns:
+                df = df.with_columns(pl.lit(None).cast(pl.Utf8).alias("df_keywords"))
             return df
     return None
 
@@ -114,6 +116,11 @@ def all_available() -> pl.DataFrame:
     if provider.get("hub_only"):
         from . import inps
         df = inps.all_available()
+        # Keep the catalog schema stable across providers: hub-only frames carry
+        # no keyword annotation, but the column must exist so callers never
+        # special-case its absence (mirrors the has_constraint contract).
+        if "df_keywords" not in df.columns:
+            df = df.with_columns(pl.lit(None).cast(pl.Utf8).alias("df_keywords"))
         try:
             df.write_parquet(_dataflow_cache_path())
         except OSError:
