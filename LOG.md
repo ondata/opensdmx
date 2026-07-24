@@ -1,5 +1,27 @@
 # LOG
 
+## 2026-07-24 - richer embeddings: ingest LAYOUT_DATAFLOW_KEYWORDS
+
+- feat(discovery): parse an optional per-dataflow keyword annotation into a new
+  nullable `df_keywords` column on the dataflows cache. Providers opt in by
+  declaring `keyword_annotation` in `portals.json` (only ISTAT:
+  `LAYOUT_DATAFLOW_KEYWORDS`); others never call the parser. New helper
+  `_keyword_annotation()` matches on the `AnnotationType` child text
+  (namespace-agnostic), returns the text for the provider language with en
+  fallback. Zero extra network cost — same `GET /dataflow/IT1` already made.
+- feat(embed): append `df_keywords` to the embedded document text when present
+  (guarded on column existence for backward-compat with older caches).
+- Where present, the keyword layer is rich — expanded dimensions, periodicity,
+  and territorial granularity (`provincia, comune…`) — so it also helps the
+  REF_AREA granularity question. But coverage is thin: **144/4899 ISTAT
+  dataflows (2.9%)**. Deliberately not wired into keyword search (low impact).
+- Context: ISTAT declined (2026-07-23) to populate `<common:Description>` on the
+  DSD, so descriptive text must come from within opensdmx. `cat_description` is
+  effectively empty everywhere (0.1% ISTAT, 0% Eurostat); the real broad lever
+  remains offline synthetic descriptions (separate task).
+- Verified: full suite green (307), ruff clean, live refresh confirmed the
+  column populates (2.9%) and the embedded text carries the keywords.
+
 ## 2026-07-21 - v0.18.0 - INPS provider (hub-only)
 
 - feat(provider): added **INPS** — the first *hub-only* provider. Its classic SDMX-REST endpoint is WAF-blocked, so opensdmx talks exclusively to the `.Stat Suite` DataBrowser middleware (`https://opendata.inps.it/databrowser/api/core`, JSON over GET+POST). All INPS logic lives in a dedicated `inps.py` adapter; core functions delegate via a single `if provider.get("hub_only")` branch — no scattered `if provider ==` checks.

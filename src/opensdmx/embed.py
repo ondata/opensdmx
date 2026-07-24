@@ -88,9 +88,15 @@ def build_embeddings(progress: bool = True) -> None:
     ids = catalog_with_cats["df_id"].to_list()
     descriptions = catalog_with_cats["df_description"].fill_null("").to_list()
     cat_contexts = catalog_with_cats["cat_context"].to_list()
+    # Optional keyword annotation (e.g. ISTAT LAYOUT_DATAFLOW_KEYWORDS): present
+    # only for providers that declare it and only on a fraction of dataflows.
+    if "df_keywords" in catalog_with_cats.columns:
+        keywords = catalog_with_cats["df_keywords"].fill_null("").to_list()
+    else:
+        keywords = [""] * len(ids)
     texts = [
-        " ".join(part for part in (df_id, desc, cat_ctx) if part).strip()
-        for df_id, desc, cat_ctx in zip(ids, descriptions, cat_contexts)
+        " ".join(part for part in (df_id, desc, cat_ctx, kw) if part).strip()
+        for df_id, desc, cat_ctx, kw in zip(ids, descriptions, cat_contexts, keywords)
     ]
 
     if progress:

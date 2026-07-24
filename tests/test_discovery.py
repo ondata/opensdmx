@@ -580,3 +580,58 @@ def test_search_no_match_returns_empty():
     with patch("opensdmx.discovery.all_available", return_value=_fake_catalog()):
         res = search_dataset("zzz qqq")
     assert res.is_empty()
+
+
+# --- _keyword_annotation (LAYOUT_DATAFLOW_KEYWORDS ingestion) --------------
+
+def _df_node(annotations_xml: str = "", name: str = "Superfici"):
+    """Build a <Dataflow> lxml element with optional annotations block."""
+    from lxml import etree
+
+    xml = (
+        '<str:Dataflow xmlns:str="s" xmlns:com="c" '
+        'xmlns:xml="http://www.w3.org/XML/1998/namespace" id="DF" agencyID="IT1">'
+        f"{annotations_xml}"
+        f'<com:Name xml:lang="it">{name}</com:Name>'
+        "</str:Dataflow>"
+    )
+    return etree.fromstring(xml.encode())
+
+
+_KEYWORDS_ANN = (
+    "<com:Annotations>"
+    "<com:Annotation><com:AnnotationType>LAST_UPDATE</com:AnnotationType>"
+    "<com:AnnotationTitle>2024</com:AnnotationTitle></com:Annotation>"
+    "<com:Annotation>"
+    "<com:AnnotationType>LAYOUT_DATAFLOW_KEYWORDS</com:AnnotationType>"
+    '<com:AnnotationText xml:lang="it">Coltivazione+regione, provincia, comune</com:AnnotationText>'
+    '<com:AnnotationText xml:lang="en">Crop+region, province</com:AnnotationText>'
+    "</com:Annotation></com:Annotations>"
+)
+
+
+def test_keyword_annotation_prefers_requested_language():
+    from opensdmx.discovery import _keyword_annotation
+
+    node = _df_node(_KEYWORDS_ANN)
+    assert _keyword_annotation(node, "LAYOUT_DATAFLOW_KEYWORDS", "it") == (
+        "Coltivazione+regione, provincia, comune"
+    )
+    assert _keyword_annotation(node, "LAYOUT_DATAFLOW_KEYWORDS", "en") == "Crop+region, province"
+
+
+def test_keyword_annotation_falls_back_to_english():
+    from opensdmx.discovery import _keyword_annotation
+
+    node = _df_node(_KEYWORDS_ANN)
+    # A language that isn't present falls back to English.
+    assert _keyword_annotation(node, "LAYOUT_DATAFLOW_KEYWORDS", "fr") == "Crop+region, province"
+
+
+def test_keyword_annotation_absent_returns_none():
+    from opensdmx.discovery import _keyword_annotation
+
+    # No annotations block at all.
+    assert _keyword_annotation(_df_node(), "LAYOUT_DATAFLOW_KEYWORDS", "it") is None
+    # Annotations present but not the requested type.
+    assert _keyword_annotation(_df_node(_KEYWORDS_ANN), "NOPE", "it") is None

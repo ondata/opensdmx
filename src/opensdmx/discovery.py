@@ -34,6 +34,7 @@ class _DataflowRecord(TypedDict):
     version: str | None
     df_description: str | None
     df_structure_id: str | None
+    df_keywords: str | None
 
 import httpx
 import polars as pl
@@ -121,6 +122,7 @@ def all_available() -> pl.DataFrame:
 
     agency_id = get_agency_id()
     language = provider["language"]
+    keyword_annotation = provider.get("keyword_annotation")
 
     catalog_agency = provider.get("catalog_agency", agency_id)
     path = _struct_path(f"dataflow/{catalog_agency}")
@@ -146,11 +148,19 @@ def all_available() -> pl.DataFrame:
         struct_ref = df.find(f".//{{{struct_ns}}}Structure/Ref") if struct_ns else None
         df_structure_id = struct_ref.get("id") if struct_ref is not None else None
 
+        # Optional keyword annotation (ISTAT LAYOUT_DATAFLOW_KEYWORDS): extra
+        # descriptive text that enriches embeddings, at zero network cost.
+        df_keywords = (
+            _keyword_annotation(df, keyword_annotation, language)
+            if keyword_annotation else None
+        )
+
         records.append({
             "df_id": df_id,
             "version": version,
             "df_description": df_description,
             "df_structure_id": df_structure_id,
+            "df_keywords": df_keywords,
         })
 
     # Bulk contentconstraint probe: populate has_constraint for providers that support it.
@@ -193,6 +203,7 @@ def all_available() -> pl.DataFrame:
         "version": pl.Utf8,
         "df_description": pl.Utf8,
         "df_structure_id": pl.Utf8,
+        "df_keywords": pl.Utf8,
     }).with_columns(pl.Series("has_constraint", has_constraint_col, dtype=pl.Boolean))
     try:
         df.write_parquet(_dataflow_cache_path())
@@ -545,6 +556,41 @@ def dimensions_info(dataset: dict[str, Any], include_descriptions: bool = True) 
 def _local_tag(elem: Any) -> str:
     """Return an element's local tag name, stripping any namespace."""
     return str(elem.tag).rsplit("}", 1)[-1]
+
+
+def _keyword_annotation(df_node: Any, ann_type: str, language: str) -> str | None:
+    """Return the text of a dataflow annotation identified by its AnnotationType.
+
+    ISTAT carries per-dataflow keyword text in a ``LAYOUT_DATAFLOW_KEYWORDS``
+    annotation (expanded dimensions, periodicity, territorial keywords) — richer
+    than the bare Name and useful for embeddings. Providers opt in by declaring
+    ``keyword_annotation`` in portals.json; others never reach here.
+
+    Namespace-agnostic via :func:`_local_tag`. Matches on the ``AnnotationType``
+    child text (not the ``id`` attribute, which ISTAT leaves unset here). Returns
+    the ``AnnotationText`` for ``language``, falling back to English, then the
+    first available; None when the annotation is absent or empty.
+    """
+    for child in df_node:
+        if _local_tag(child) != "Annotations":
+            continue
+        for ann in child:
+            if _local_tag(ann) != "Annotation":
+                continue
+            if not any(
+                _local_tag(sub) == "AnnotationType" and (sub.text or "").strip() == ann_type
+                for sub in ann
+            ):
+                continue
+            texts: dict[str, str] = {}
+            for sub in ann:
+                if _local_tag(sub) == "AnnotationText" and sub.text and sub.text.strip():
+                    lang = sub.get("{http://www.w3.org/XML/1998/namespace}lang", "")
+                    texts[lang] = sub.text.strip()
+            if not texts:
+                return None
+            return texts.get(language) or texts.get("en") or next(iter(texts.values()))
+    return None
 
 
 def _code_parent(code_node: Any) -> str | None:
