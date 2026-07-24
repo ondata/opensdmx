@@ -58,6 +58,26 @@ def _category_context_for_embed() -> pl.DataFrame:
     return category_context(include_scheme=True)
 
 
+def _descriptions_resource_path() -> Path:
+    """Path to the bundled, versioned description resource for the active provider."""
+    from .base import _provider_cache_key
+
+    return Path(__file__).parent / "data" / "descriptions" / f"{_provider_cache_key()}.parquet"
+
+
+def _descriptions_for_embed() -> pl.DataFrame:
+    """Load harvested dataflow descriptions for the active provider, if shipped.
+
+    Descriptions are produced offline by ``scripts/descriptions_archive.py`` and
+    committed inside the package. Returns an empty frame when no resource exists,
+    so embeddings fall back to their previous text with no network access.
+    """
+    path = _descriptions_resource_path()
+    if not path.exists():
+        return pl.DataFrame(schema={"df_id": pl.Utf8, "description": pl.Utf8})
+    return pl.read_parquet(path).select(["df_id", "description"])
+
+
 def build_embeddings(progress: bool = True) -> None:
     """Encode all catalog descriptions and save to the provider's cache directory.
 
@@ -84,10 +104,18 @@ def build_embeddings(progress: bool = True) -> None:
     catalog_with_cats = catalog.join(cat_context, on="df_id", how="left").with_columns(
         pl.col("cat_context").fill_null("")
     )
+    # Optional shipped descriptions (e.g. ISTAT METADATA_API harvest): join if the
+    # resource exists for this provider, otherwise the column stays empty and the
+    # embedded text is identical to before. Read locally — never fetched here.
+    prose = _descriptions_for_embed()
+    catalog_with_cats = catalog_with_cats.join(
+        prose.rename({"description": "df_prose"}), on="df_id", how="left"
+    ).with_columns(pl.col("df_prose").fill_null(""))
 
     ids = catalog_with_cats["df_id"].to_list()
     descriptions = catalog_with_cats["df_description"].fill_null("").to_list()
     cat_contexts = catalog_with_cats["cat_context"].to_list()
+    proses = catalog_with_cats["df_prose"].to_list()
     # Optional keyword annotation (e.g. ISTAT LAYOUT_DATAFLOW_KEYWORDS): present
     # only for providers that declare it and only on a fraction of dataflows.
     if "df_keywords" in catalog_with_cats.columns:
@@ -95,15 +123,20 @@ def build_embeddings(progress: bool = True) -> None:
     else:
         keywords = [""] * len(ids)
     texts = [
-        " ".join(part for part in (df_id, desc, cat_ctx, kw) if part).strip()
-        for df_id, desc, cat_ctx, kw in zip(ids, descriptions, cat_contexts, keywords)
+        " ".join(part for part in (df_id, desc, cat_ctx, prose_t, kw) if part).strip()
+        for df_id, desc, cat_ctx, prose_t, kw in zip(
+            ids, descriptions, cat_contexts, proses, keywords
+        )
     ]
 
     if progress:
         n_with_cats = sum(1 for c in cat_contexts if c)
+        n_with_prose = sum(1 for p in proses if p)
         if n_with_cats:
             print(f"Enriching {n_with_cats}/{len(texts)} descriptions with cached category context.")
-        else:
+        if n_with_prose:
+            print(f"Enriching {n_with_prose}/{len(texts)} descriptions with harvested metadata prose.")
+        if not n_with_cats:
             print("No category cache found — embedding df_id + description only. "
                   "Run `opensdmx tree` first for richer embeddings on providers that support categories.")
         print(f"Embedding {len(texts)} descriptions with {_EMBED_MODEL}...")
