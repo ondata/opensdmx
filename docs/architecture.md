@@ -74,6 +74,8 @@ cli.py  search()
   3. Print table with df_id, description, score
 ```
 
+What text each dataflow is embedded from — and why the descriptions are harvested offline into a shipped resource — is documented in [Dataflow descriptions for semantic search](descriptions.md).
+
 ---
 
 ## Cache layers

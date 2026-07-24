@@ -423,6 +423,11 @@ materially improves recall on short or generic queries — a dataflow whose only
 description is `Prezzi al consumo` becomes embeddable as `CPI Prezzi al consumo
 SDDS Plus Indicators Real Sector`, giving the model far more signal to work with.
 
+For ISTAT, embeddings also fold in the authentic survey descriptions harvested
+from EsploraDati (shipped with the package), so queries can match a dataset by
+how it is produced, not just its title. See
+[Dataflow descriptions for semantic search](docs/descriptions.md) for the design.
+
 #### Tips for better results
 
 - **Use multi-word, descriptive queries.** A single word (`"inflation"`,
