@@ -1,5 +1,27 @@
 # LOG
 
+## 2026-07-24 - real ISTAT descriptions from METADATA_API (embeddings)
+
+- feat(descriptions): harvest the authentic dataflow descriptions ISTAT shows on
+  EsploraDati — never present in the SDMX structure — via the `METADATA_URL`
+  annotation → `METADATA_API` (`DATA_SOURCE`). New `scripts/descriptions_archive.py`
+  reads the annotation for the whole catalog in one call, de-duplicates by the
+  shared `reportId` (3,974 linked dataflows → 622 unique reports, 6.3×), fetches
+  each report once, HTML-cleans the prose, and writes a bundled resource
+  `src/opensdmx/data/descriptions/istat.parquet` (**3,949 dataflows described, ~81%**).
+- feat(embed): fold the harvested description into the embedded document text when
+  the provider resource is present; guarded, so providers/checkouts without it are
+  byte-identical to before. Read locally — no metadata request at embedding time.
+- feat(portals): ISTAT declares the channel (`metadata_annotation`,
+  `metadata_api_path`, `metadata_description_attribute`); generic, no per-provider `if`.
+  `metadataSetId`/`reportId`/`BaseUrlMDA` are derived from the live annotation.
+- infra: monthly GitHub Action refreshes the resource; the metadata API is a
+  service distinct from the rate-limited SDMX endpoint.
+- Context: ISTAT declined to add `<common:Description>` to the DSD (2026-07-23), but
+  the prose was already reachable through this separate channel. This is the primary
+  description lever (81%); deterministic DSD composition (the ~19% tail + other
+  providers) and optional LLM prose are declared follow-ups. No runtime LLM.
+
 ## 2026-07-24 - v0.19.0 - richer embeddings: ingest LAYOUT_DATAFLOW_KEYWORDS
 
 - feat(discovery): parse an optional per-dataflow keyword annotation into a new

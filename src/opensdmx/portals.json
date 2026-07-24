@@ -48,7 +48,10 @@
     "hub_node_id": "1",
     "hub_dataset_agency": "IT1",
     "hub_timeout": 15.0,
-    "keyword_annotation": "LAYOUT_DATAFLOW_KEYWORDS"
+    "keyword_annotation": "LAYOUT_DATAFLOW_KEYWORDS",
+    "metadata_annotation": "METADATA_URL",
+    "metadata_api_path": "/api/getMetadata",
+    "metadata_description_attribute": "DATA_SOURCE"
   },
   "inps": {
     "name": "INPS",

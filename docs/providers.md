@@ -225,8 +225,14 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 | `constraints_supported` | boolean | provider-specific | Capability flag shown by `opensdmx providers` |
 | `last_n_supported` | boolean | provider-specific | Capability flag for observation count parameters |
 | `categories_supported` | boolean | provider-specific | Capability flag for category tree support |
+| `keyword_annotation` | string | absent | Dataflow annotation type carrying keyword text folded into embeddings (ISTAT: `LAYOUT_DATAFLOW_KEYWORDS`) |
+| `metadata_annotation` | string | absent | Dataflow annotation type linking to a reference-metadata report, harvested into descriptions (ISTAT: `METADATA_URL`) |
+| `metadata_api_path` | string | `"/api/getMetadata"` | Path on the metadata API (`BaseUrlMDA` from the annotation) that returns the report |
+| `metadata_description_attribute` | string | `"DATA_SOURCE"` | Reported-attribute id holding the description prose in the metadata response |
 
 Fields not specified in `portals.json` fall back to the defaults listed above (applied in `base.py` at load time).
+
+The metadata channel (`metadata_annotation` + `metadata_api_path` + `metadata_description_attribute`) is served by a service distinct from the SDMX data endpoint and is **not** subject to that endpoint's rate limit. It is consumed offline by `scripts/descriptions_archive.py`, which ships a per-provider description resource under `src/opensdmx/data/descriptions/`; see that folder's README.
 
 ---
 
