@@ -115,6 +115,28 @@ def test_extract_description_missing_attribute_returns_none():
     assert archive.extract_description(payload, "NOPE") is None
 
 
+def test_extract_description_prefers_provider_language():
+    payload = {
+        "data": {
+            "metadataSets": [
+                {
+                    "reports": [
+                        {
+                            "attributeSet": {
+                                "reportedAttributes": [
+                                    {"id": "DATA_SOURCE", "texts": {"de": "Beschreibung", "en": "Description"}}
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    assert archive.extract_description(payload, "DATA_SOURCE", "de") == "Beschreibung"
+    assert archive.extract_description(payload, "DATA_SOURCE", "fr") == "Description"  # en fallback
+
+
 # --- embed.py guard --------------------------------------------------------
 
 def test_descriptions_for_embed_missing_resource_is_empty(monkeypatch, tmp_path):

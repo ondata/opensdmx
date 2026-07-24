@@ -69,7 +69,7 @@ def parquet_path(provider: str) -> Path:
     return DATA_DIR / f"{provider}.parquet"
 
 
-def clean_prose(raw: str) -> str:
+def clean_prose(raw: str | None) -> str:
     """Unescape HTML entities and strip markup, collapsing whitespace to plain text."""
     text = html.unescape(raw or "")
     text = _TAG_RE.sub(" ", text)
@@ -126,18 +126,20 @@ def collect_metadata_links(provider_cfg: dict, agency: str, language: str) -> di
     return links
 
 
-def extract_description(payload: dict, attr_id: str) -> str | None:
+def extract_description(payload: dict, attr_id: str, language: str = "en") -> str | None:
     """Return the cleaned text of a reported attribute from a getMetadata payload.
 
     Walks nested reportedAttributes across every metadataSet/report; the metadata
-    prose sits under ``id == attr_id`` (ISTAT: DATA_SOURCE). Pure function, so the
-    extraction is unit-tested without the network.
+    prose sits under ``id == attr_id`` (ISTAT: DATA_SOURCE). When the attribute
+    carries per-language ``texts``, prefer the provider ``language`` (en fallback).
+    Pure function, so the extraction is unit-tested without the network.
     """
 
     def walk_attrs(attrs):
         for a in attrs:
             if a.get("id") == attr_id:
-                txt = a.get("text") or (a.get("texts") or {}).get("it") or (a.get("texts") or {}).get("en")
+                texts = a.get("texts") or {}
+                txt = a.get("text") or texts.get(language) or texts.get("en") or next(iter(texts.values()), None)
                 if txt:
                     return txt
             found = walk_attrs(a.get("attributeSet", {}).get("reportedAttributes", []))
@@ -154,7 +156,8 @@ def extract_description(payload: dict, attr_id: str) -> str | None:
 
 
 def fetch_description(
-    client: httpx.Client, base_url: str, api_path: str, set_id: str, report_id: str, attr_id: str
+    client: httpx.Client, base_url: str, api_path: str, set_id: str, report_id: str,
+    attr_id: str, language: str = "en"
 ) -> str | None:
     """Fetch one report's metadata and return the cleaned description attribute, or None."""
     resp = client.get(
@@ -164,7 +167,7 @@ def fetch_description(
         follow_redirects=True,
     )
     resp.raise_for_status()
-    return extract_description(resp.json(), attr_id)
+    return extract_description(resp.json(), attr_id, language)
 
 
 def load_existing(provider: str) -> pl.DataFrame:
@@ -222,7 +225,8 @@ def run(provider: str, pause: float) -> int:
             meta = unique_reports[report_id]
             try:
                 text = fetch_description(
-                    client, meta["base_url"], api_path, meta["metadata_set_id"], report_id, attr_id
+                    client, meta["base_url"], api_path, meta["metadata_set_id"], report_id,
+                    attr_id, language
                 )
             except Exception as e:  # noqa: BLE001 - log and continue, resumable next run
                 print(f"  ! {report_id}: {type(e).__name__}: {e}", file=sys.stderr)

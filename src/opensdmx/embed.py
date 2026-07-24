@@ -136,8 +136,11 @@ def build_embeddings(progress: bool = True) -> None:
             print(f"Enriching {n_with_cats}/{len(texts)} descriptions with cached category context.")
         if n_with_prose:
             print(f"Enriching {n_with_prose}/{len(texts)} descriptions with harvested metadata prose.")
-        if not n_with_cats:
+        if not n_with_cats and not n_with_prose:
             print("No category cache found — embedding df_id + description only. "
+                  "Run `opensdmx tree` first for richer embeddings on providers that support categories.")
+        elif not n_with_cats:
+            print("No category cache found. "
                   "Run `opensdmx tree` first for richer embeddings on providers that support categories.")
         print(f"Embedding {len(texts)} descriptions with {_EMBED_MODEL}...")
 
