@@ -1,5 +1,20 @@
 # LOG
 
+## 2026-07-25 - feat: consume LAST_UPDATE / DATAFLOW_NOTES / ATTACHED_DATA_FILES
+
+- feat(discovery): three new nullable catalog columns read from ISTAT's `annotations`
+  block at zero extra network cost — `df_last_update` (LAST_UPDATE, 4,511 dataflows),
+  `df_notes` (DATAFLOW_NOTES, 144), `df_bulk_files` (ATTACHED_DATA_FILES, 365). Stored
+  as published (LAST_UPDATE mixes ISO 8601 and MM/dd/yyyy; bulk files are `URL|LABEL`).
+- feat(embed): fold `df_notes` into the embedded document text so semantic search can
+  match a dataset by its methodological caveats (e.g. province-boundary changes that
+  break time-series comparability). `df_last_update`/`df_bulk_files` are captured, not embedded.
+- infra: optional catalog columns backfilled via one `_ensure_catalog_columns()` helper
+  (legacy cache + hub-only INPS), replacing the growing per-column if-chain.
+- Verified: coverage 4,511 / 144 / 365; a notes-only query now reaches the dataflow.
+  Follow-ups (out of scope): normalise `df_last_update`, surface `df_bulk_files` in
+  `info`/`get`, and the GEO_ID territorial change.
+
 ## 2026-07-25 - refactor: single-pass annotation reader
 
 - refactor(discovery): replace the text-only `_keyword_annotation` walker with

@@ -35,6 +35,9 @@ class _DataflowRecord(TypedDict):
     df_description: str | None
     df_structure_id: str | None
     df_keywords: str | None
+    df_last_update: str | None
+    df_notes: str | None
+    df_bulk_files: str | None
 
 import httpx
 import polars as pl
@@ -56,18 +59,35 @@ def _dataflow_cache_path() -> Path:
     return path
 
 
+# Optional catalog columns: present on the fresh REST build but not on a hub-only
+# frame or a cache written before they existed. Backfilled as null so every
+# consumer sees a stable schema regardless of provider or cache age.
+_OPTIONAL_CATALOG_COLUMNS: dict[str, Any] = {
+    "has_constraint": pl.Boolean,
+    "df_keywords": pl.Utf8,
+    "df_last_update": pl.Utf8,
+    "df_notes": pl.Utf8,
+    "df_bulk_files": pl.Utf8,
+}
+
+
+def _ensure_catalog_columns(df: pl.DataFrame) -> pl.DataFrame:
+    """Add any missing optional catalog columns as null, for schema stability."""
+    missing = [
+        pl.lit(None).cast(dtype).alias(name)
+        for name, dtype in _OPTIONAL_CATALOG_COLUMNS.items()
+        if name not in df.columns
+    ]
+    return df.with_columns(missing) if missing else df
+
+
 def _load_cached_dataflows() -> pl.DataFrame | None:
     """Return cached dataflow list if it exists and is within the configured TTL."""
     path = _dataflow_cache_path()
     if path.exists():
         age = time.time() - path.stat().st_mtime
         if age < DATAFLOWS_CACHE_TTL:
-            df = pl.read_parquet(path)
-            if "has_constraint" not in df.columns:
-                df = df.with_columns(pl.lit(None).cast(pl.Boolean).alias("has_constraint"))
-            if "df_keywords" not in df.columns:
-                df = df.with_columns(pl.lit(None).cast(pl.Utf8).alias("df_keywords"))
-            return df
+            return _ensure_catalog_columns(pl.read_parquet(path))
     return None
 
 
@@ -115,12 +135,9 @@ def all_available() -> pl.DataFrame:
     # result as Parquet (same as the REST branch) and return.
     if provider.get("hub_only"):
         from . import inps
-        df = inps.all_available()
-        # Keep the catalog schema stable across providers: hub-only frames carry
-        # no keyword annotation, but the column must exist so callers never
-        # special-case its absence (mirrors the has_constraint contract).
-        if "df_keywords" not in df.columns:
-            df = df.with_columns(pl.lit(None).cast(pl.Utf8).alias("df_keywords"))
+        # Keep the catalog schema stable: hub-only frames carry no annotation
+        # columns, but they must exist so callers never special-case their absence.
+        df = _ensure_catalog_columns(inps.all_available())
         try:
             df.write_parquet(_dataflow_cache_path())
         except OSError:
@@ -155,18 +172,19 @@ def all_available() -> pl.DataFrame:
         struct_ref = df.find(f".//{{{struct_ns}}}Structure/Ref") if struct_ns else None
         df_structure_id = struct_ref.get("id") if struct_ref is not None else None
 
-        # Optional keyword annotation (ISTAT LAYOUT_DATAFLOW_KEYWORDS): extra
-        # descriptive text that enriches embeddings, at zero network cost.
-        # One annotation pass per dataflow, resolved by the provider's config.
+        # Optional dataflow annotations, resolved by the provider's config, at
+        # zero network cost. One annotation pass per dataflow, reused for all keys.
         anns = _annotations(df, language) if ann_config else {}
-        df_keywords = _annotation_value(anns, ann_config, "keywords")
 
         records.append({
             "df_id": df_id,
             "version": version,
             "df_description": df_description,
             "df_structure_id": df_structure_id,
-            "df_keywords": df_keywords,
+            "df_keywords": _annotation_value(anns, ann_config, "keywords"),
+            "df_last_update": _annotation_value(anns, ann_config, "last_update"),
+            "df_notes": _annotation_value(anns, ann_config, "notes"),
+            "df_bulk_files": _annotation_value(anns, ann_config, "bulk_files"),
         })
 
     # Bulk contentconstraint probe: populate has_constraint for providers that support it.
@@ -210,6 +228,9 @@ def all_available() -> pl.DataFrame:
         "df_description": pl.Utf8,
         "df_structure_id": pl.Utf8,
         "df_keywords": pl.Utf8,
+        "df_last_update": pl.Utf8,
+        "df_notes": pl.Utf8,
+        "df_bulk_files": pl.Utf8,
     }).with_columns(pl.Series("has_constraint", has_constraint_col, dtype=pl.Boolean))
     try:
         df.write_parquet(_dataflow_cache_path())

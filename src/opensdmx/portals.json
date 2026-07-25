@@ -50,7 +50,10 @@
     "hub_timeout": 15.0,
     "annotations": {
       "keywords": { "type": "LAYOUT_DATAFLOW_KEYWORDS", "value": "text" },
-      "metadata_url": { "type": "METADATA_URL", "value": "text" }
+      "metadata_url": { "type": "METADATA_URL", "value": "text" },
+      "last_update": { "type": "LAST_UPDATE", "value": "title" },
+      "notes": { "type": "DATAFLOW_NOTES", "value": "text" },
+      "bulk_files": { "type": "ATTACHED_DATA_FILES", "value": "text" }
     },
     "metadata_api_path": "/api/getMetadata",
     "metadata_description_attribute": "DATA_SOURCE",
