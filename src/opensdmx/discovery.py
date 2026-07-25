@@ -627,7 +627,7 @@ def _annotations(df_node: Any, language: str) -> dict[str, "Annotation"]:
 
 
 def _annotation_value(
-    anns: dict[str, "Annotation"], ann_config: dict, key: str
+    anns: dict[str, "Annotation"], ann_config: dict[str, Any], key: str
 ) -> str | None:
     """Resolve a provider's stable annotation key to its declared value, or None.
 
@@ -635,21 +635,22 @@ def _annotation_value(
     (``{stable_key: {type, value}}``); ``value`` is ``text``, ``title`` or
     ``presence``. Returns ``"true"`` for a present ``presence`` annotation.
 
-    Defensive against a malformed/hand-edited config: a missing ``type`` or an
+    Defensive against a malformed/hand-edited config: a non-string ``type`` or an
     unknown ``value`` field yields ``None`` rather than raising or reading an
     arbitrary attribute off the ``Annotation`` tuple.
     """
     if not isinstance(spec := ann_config.get(key), dict):
         return None
-    ann = anns.get(spec.get("type"))
-    if ann is None:
+    ann_type = spec.get("type")
+    if not isinstance(ann_type, str) or (ann := anns.get(ann_type)) is None:
         return None
     field = spec.get("value", "text")
     if field == "presence":
         return "true"
     if field not in Annotation._fields:  # only title/text/url are readable
         return None
-    return getattr(ann, field)
+    value: str | None = getattr(ann, field)
+    return value
 
 
 def _keyword_annotation(df_node: Any, ann_type: str, language: str) -> str | None:
