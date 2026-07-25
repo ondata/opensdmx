@@ -119,7 +119,14 @@ def all_available() -> pl.DataFrame:
     """List all available datasets for the active provider.
 
     Returns a Polars DataFrame with columns:
-        df_id, version, df_description, df_structure_id, has_constraint
+        df_id, version, df_description, df_structure_id, has_constraint,
+        and the optional dataflow-annotation columns df_keywords,
+        df_last_update, df_notes, df_bulk_files.
+
+    The annotation columns are populated only for providers that declare the
+    corresponding entries in their ``annotations`` block (currently ISTAT) and
+    are null everywhere else; all columns always exist so the schema is stable
+    across providers and cache versions (see ``_ensure_catalog_columns``).
 
     Results are cached per provider for the configured dataflow cache TTL.
     Invalid datasets (marked via guide) are excluded.
