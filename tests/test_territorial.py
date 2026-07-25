@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
-from unittest.mock import patch
 
 import polars as pl
 
@@ -13,14 +12,18 @@ _SPEC = importlib.util.spec_from_file_location(
     "constraints_archive",
     Path(__file__).resolve().parents[1] / "scripts" / "constraints_archive.py",
 )
+assert _SPEC is not None and _SPEC.loader is not None
 archive = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(archive)
 
 
 def test_discovered_territorial_dims_reads_geo_dim():
-    catalog = pl.DataFrame({"df_id": ["A", "B", "C"], "df_geo_dim": ["RESIDENCE_TERR", None, "RESIDENCE_TERR"]})
-    with patch.object(archive.opensdmx, "all_available", return_value=catalog):
-        assert archive._discovered_territorial_dims() == {"RESIDENCE_TERR"}
+    catalog = pl.DataFrame(
+        {"df_id": ["A", "B", "C"], "df_geo_dim": ["RESIDENCE_TERR", None, "RESIDENCE_TERR"]}
+    )
+    assert archive._discovered_territorial_dims(catalog) == {"RESIDENCE_TERR"}
+    # A catalog without the column (legacy) yields nothing, no error.
+    assert archive._discovered_territorial_dims(pl.DataFrame({"df_id": ["A"]})) == set()
 
 
 def test_rebuild_classifies_by_name_not_by_code_shape(tmp_path, monkeypatch):
@@ -40,8 +43,7 @@ def test_rebuild_classifies_by_name_not_by_code_shape(tmp_path, monkeypatch):
     catalog = pl.DataFrame({"df_id": ["BIRTHS"], "df_geo_dim": ["RESIDENCE_TERR"]})
 
     monkeypatch.setattr(archive, "DATA_DIR", tmp_path)
-    with patch.object(archive.opensdmx, "all_available", return_value=catalog):
-        archive.rebuild_istat_territorial(arch, status)
+    archive.rebuild_istat_territorial(arch, status, catalog)
 
     out = pl.read_csv(tmp_path / "istat_territorial.csv")
     ids = out["df_id"].to_list()
@@ -66,8 +68,7 @@ def test_rebuild_keeps_multiple_territorial_dimensions_separate(tmp_path, monkey
     catalog = pl.DataFrame({"df_id": ["MULTI"], "df_geo_dim": ["RESIDENCE_TERR"]})
 
     monkeypatch.setattr(archive, "DATA_DIR", tmp_path)
-    with patch.object(archive.opensdmx, "all_available", return_value=catalog):
-        archive.rebuild_istat_territorial(arch, status)
+    archive.rebuild_istat_territorial(arch, status, catalog)
 
     out = pl.read_csv(tmp_path / "istat_territorial.csv").sort("dimension_id")
     assert out["dimension_id"].to_list() == ["REF_AREA", "RESIDENCE_TERR"]

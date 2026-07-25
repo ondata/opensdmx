@@ -739,7 +739,7 @@ def test_cached_dataflows_backfills_df_keywords(tmp_path):
 
     assert loaded is not None
     # Every optional catalog column is backfilled null on a legacy cache.
-    for col in ("df_keywords", "df_last_update", "df_notes", "df_bulk_files"):
+    for col in ("df_keywords", "df_last_update", "df_notes", "df_bulk_files", "df_geo_dim"):
         assert col in loaded.columns
         assert loaded[col].to_list() == [None]
 

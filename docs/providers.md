@@ -233,7 +233,7 @@ Fields not specified in `portals.json` fall back to the defaults listed above (a
 
 The metadata channel (the `metadata_url` annotation + `metadata_api_path` + `metadata_description_attribute`) is served by a service distinct from the SDMX data endpoint and is **not** subject to that endpoint's rate limit. It is consumed offline by `scripts/descriptions_archive.py`, which ships a per-provider description resource under `src/opensdmx/data/descriptions/`; see that folder's README.
 
-ISTAT's `annotations` block also produces three nullable catalog columns, stored as published:
+ISTAT's `annotations` block also produces these nullable catalog columns, stored as published:
 
 | Column | Annotation | Notes |
 |---|---|---|
