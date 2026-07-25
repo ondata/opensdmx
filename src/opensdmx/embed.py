@@ -116,16 +116,22 @@ def build_embeddings(progress: bool = True) -> None:
     descriptions = catalog_with_cats["df_description"].fill_null("").to_list()
     cat_contexts = catalog_with_cats["cat_context"].to_list()
     proses = catalog_with_cats["df_prose"].to_list()
-    # Optional keyword annotation (e.g. ISTAT LAYOUT_DATAFLOW_KEYWORDS): present
-    # only for providers that declare it and only on a fraction of dataflows.
-    if "df_keywords" in catalog_with_cats.columns:
-        keywords = catalog_with_cats["df_keywords"].fill_null("").to_list()
-    else:
-        keywords = [""] * len(ids)
+
+    def _optional_column(name: str) -> list[str]:
+        """A dataflow-annotation column as a list, or empty strings when absent."""
+        if name in catalog_with_cats.columns:
+            return catalog_with_cats[name].fill_null("").to_list()
+        return [""] * len(ids)
+
+    # Optional dataflow annotations folded into the embedded text (present only for
+    # providers that declare them, and only on a fraction of dataflows):
+    #   df_keywords — LAYOUT_DATAFLOW_KEYWORDS; df_notes — DATAFLOW_NOTES caveats.
+    keywords = _optional_column("df_keywords")
+    notes = _optional_column("df_notes")
     texts = [
-        " ".join(part for part in (df_id, desc, cat_ctx, prose_t, kw) if part).strip()
-        for df_id, desc, cat_ctx, prose_t, kw in zip(
-            ids, descriptions, cat_contexts, proses, keywords
+        " ".join(part for part in (df_id, desc, cat_ctx, prose_t, kw, note) if part).strip()
+        for df_id, desc, cat_ctx, prose_t, kw, note in zip(
+            ids, descriptions, cat_contexts, proses, keywords, notes
         )
     ]
 

@@ -738,5 +738,38 @@ def test_cached_dataflows_backfills_df_keywords(tmp_path):
         loaded = discovery._load_cached_dataflows()
 
     assert loaded is not None
-    assert "df_keywords" in loaded.columns
-    assert loaded["df_keywords"].to_list() == [None]
+    # Every optional catalog column is backfilled null on a legacy cache.
+    for col in ("df_keywords", "df_last_update", "df_notes", "df_bulk_files"):
+        assert col in loaded.columns
+        assert loaded[col].to_list() == [None]
+
+
+_CATALOG_ANN = (
+    "<com:Annotations>"
+    "<com:Annotation><com:AnnotationType>LAST_UPDATE</com:AnnotationType>"
+    "<com:AnnotationTitle>2026-07-22T08:34:26.801Z</com:AnnotationTitle></com:Annotation>"
+    "<com:Annotation><com:AnnotationType>DATAFLOW_NOTES</com:AnnotationType>"
+    "<com:AnnotationTitle>DATAFLOW_NOTES</com:AnnotationTitle>"
+    '<com:AnnotationText xml:lang="it">Dati provinciali non confrontabili dal 2017</com:AnnotationText>'
+    "</com:Annotation>"
+    "<com:Annotation><com:AnnotationType>ATTACHED_DATA_FILES</com:AnnotationType>"
+    '<com:AnnotationText xml:lang="it">https://x/full.csv.zip|DOWNLOAD_ZIP</com:AnnotationText>'
+    "</com:Annotation></com:Annotations>"
+)
+
+
+def test_annotation_value_resolves_catalog_fields():
+    from opensdmx.discovery import _annotation_value, _annotations
+
+    anns = _annotations(_df_node(_CATALOG_ANN), "it")
+    config = {
+        "last_update": {"type": "LAST_UPDATE", "value": "title"},
+        "notes": {"type": "DATAFLOW_NOTES", "value": "text"},
+        "bulk_files": {"type": "ATTACHED_DATA_FILES", "value": "text"},
+    }
+    # last_update reads the title; notes/bulk read the text, not the literal title label
+    assert _annotation_value(anns, config, "last_update") == "2026-07-22T08:34:26.801Z"
+    assert _annotation_value(anns, config, "notes") == "Dati provinciali non confrontabili dal 2017"
+    assert _annotation_value(anns, config, "bulk_files") == "https://x/full.csv.zip|DOWNLOAD_ZIP"
+    # absent annotation → None
+    assert _annotation_value(_annotations(_df_node(), "it"), config, "notes") is None
