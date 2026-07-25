@@ -615,6 +615,8 @@ def _annotations(df_node: Any, language: str) -> dict[str, "Annotation"]:
                     texts[sub.get(_XML_LANG, "")] = val
             if ann_type is None:
                 continue
+            if ann_type in result:
+                continue  # first-wins on duplicate types, matching the prior reader
             text = (
                 texts.get(language)
                 or texts.get("en")
