@@ -53,11 +53,19 @@ def test_clean_prose_empty():
     assert archive.clean_prose(None) == ""
 
 
-# --- METADATA_URL annotation parsing --------------------------------------
+# --- METADATA_URL resolution via the shared annotation reader --------------
+# The harvester no longer carries its own walker; it reads METADATA_URL through
+# discovery._annotations. These tests pin that path.
 
-def test_annotation_text_prefers_language_and_parses_params():
-    node = _df_node(_METADATA_ANN)
-    url = archive._annotation_text(node, "METADATA_URL", "it")
+def _metadata_url(node, language):
+    from opensdmx.discovery import _annotations
+
+    ann = _annotations(node, language).get("METADATA_URL")
+    return ann.text if ann else None
+
+
+def test_metadata_url_prefers_language_and_parses_params():
+    url = _metadata_url(_df_node(_METADATA_ANN), "it")
     q = parse_qs(urlparse(url).query)
     assert q["reportId"][0] == "DCIS_NATI2"
     assert q["metadataSetId"][0] == "MS_ISTAT_TOPMETA2"
@@ -65,14 +73,12 @@ def test_annotation_text_prefers_language_and_parses_params():
     assert q["BaseUrlMDA"][0] == "https://esploradati.istat.it/METADATA_API"
 
 
-def test_annotation_text_falls_back_to_english():
-    node = _df_node(_METADATA_ANN)
-    url = archive._annotation_text(node, "METADATA_URL", "fr")
-    assert "lang=en" in url
+def test_metadata_url_falls_back_to_english():
+    assert "lang=en" in _metadata_url(_df_node(_METADATA_ANN), "fr")
 
 
-def test_annotation_text_absent_returns_none():
-    assert archive._annotation_text(_df_node(), "METADATA_URL", "it") is None
+def test_metadata_url_absent_returns_none():
+    assert _metadata_url(_df_node(), "it") is None
 
 
 # --- DATA_SOURCE extraction ------------------------------------------------

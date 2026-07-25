@@ -24,7 +24,7 @@ import os
 import re
 import time
 from pathlib import Path
-from typing import Any, TypedDict, cast
+from typing import Any, NamedTuple, TypedDict, cast
 
 logger = logging.getLogger(__name__)
 
@@ -129,7 +129,7 @@ def all_available() -> pl.DataFrame:
 
     agency_id = get_agency_id()
     language = provider["language"]
-    keyword_annotation = provider.get("keyword_annotation")
+    ann_config = provider.get("annotations", {})
 
     catalog_agency = provider.get("catalog_agency", agency_id)
     path = _struct_path(f"dataflow/{catalog_agency}")
@@ -157,10 +157,9 @@ def all_available() -> pl.DataFrame:
 
         # Optional keyword annotation (ISTAT LAYOUT_DATAFLOW_KEYWORDS): extra
         # descriptive text that enriches embeddings, at zero network cost.
-        df_keywords = (
-            _keyword_annotation(df, keyword_annotation, language)
-            if keyword_annotation else None
-        )
+        # One annotation pass per dataflow, resolved by the provider's config.
+        anns = _annotations(df, language) if ann_config else {}
+        df_keywords = _annotation_value(anns, ann_config, "keywords")
 
         records.append({
             "df_id": df_id,
@@ -565,39 +564,95 @@ def _local_tag(elem: Any) -> str:
     return str(elem.tag).rsplit("}", 1)[-1]
 
 
-def _keyword_annotation(df_node: Any, ann_type: str, language: str) -> str | None:
-    """Return the text of a dataflow annotation identified by its AnnotationType.
+_XML_LANG = "{http://www.w3.org/XML/1998/namespace}lang"
 
-    ISTAT carries per-dataflow keyword text in a ``LAYOUT_DATAFLOW_KEYWORDS``
-    annotation (expanded dimensions, periodicity, territorial keywords) — richer
-    than the bare Name and useful for embeddings. Providers opt in by declaring
-    ``keyword_annotation`` in portals.json; others never reach here.
 
-    Namespace-agnostic via :func:`_local_tag`. Matches on the ``AnnotationType``
-    child text (not the ``id`` attribute, which ISTAT leaves unset here). Returns
-    the ``AnnotationText`` for ``language``, falling back to English, then the
-    first available; None when the annotation is absent or empty.
+class Annotation(NamedTuple):
+    """One SDMX annotation. ``text`` is already language-resolved."""
+
+    title: str | None
+    text: str | None
+    url: str | None
+
+
+def _annotations(df_node: Any, language: str) -> dict[str, "Annotation"]:
+    """Return every annotation on a node in one pass, keyed by AnnotationType.
+
+    ISTAT drives per-dataflow behaviour from SDMX annotations, and the value can
+    live in any field: ``AnnotationTitle`` (LAST_UPDATE, LAYOUT_*, GEO_ID, …),
+    ``AnnotationText`` (LAYOUT_DATAFLOW_KEYWORDS, METADATA_URL), ``AnnotationURL``,
+    or nowhere at all (READY_FOR_PRODUCTION — presence is the signal). A single
+    reader exposes all of them so callers pick the field they need.
+
+    - Namespace-agnostic via :func:`_local_tag`.
+    - Keyed on the ``AnnotationType`` **child text**, matched literally (ISTAT
+      publishes ``LINkEDDATAFLOWNODE`` with a lowercase k), not the ``id`` attribute.
+    - ``text`` follows the language fallback: requested → English → first available.
+    - Presence-only annotations map to an all-``None`` ``Annotation`` so a
+      membership test still answers correctly.
     """
+    result: dict[str, Annotation] = {}
     for child in df_node:
         if _local_tag(child) != "Annotations":
             continue
         for ann in child:
             if _local_tag(ann) != "Annotation":
                 continue
-            if not any(
-                _local_tag(sub) == "AnnotationType" and (sub.text or "").strip() == ann_type
-                for sub in ann
-            ):
-                continue
+            ann_type: str | None = None
+            title: str | None = None
+            url: str | None = None
             texts: dict[str, str] = {}
             for sub in ann:
-                if _local_tag(sub) == "AnnotationText" and sub.text and sub.text.strip():
-                    lang = sub.get("{http://www.w3.org/XML/1998/namespace}lang", "")
-                    texts[lang] = sub.text.strip()
-            if not texts:
-                return None
-            return texts.get(language) or texts.get("en") or next(iter(texts.values()))
-    return None
+                tag = _local_tag(sub)
+                val = (sub.text or "").strip()
+                if tag == "AnnotationType" and val:
+                    ann_type = val
+                elif tag == "AnnotationTitle" and val:
+                    title = val
+                elif tag == "AnnotationURL" and val:
+                    url = val
+                elif tag == "AnnotationText" and val:
+                    texts[sub.get(_XML_LANG, "")] = val
+            if ann_type is None:
+                continue
+            text = (
+                texts.get(language)
+                or texts.get("en")
+                or (next(iter(texts.values())) if texts else None)
+            )
+            result[ann_type] = Annotation(title=title, text=text, url=url)
+    return result
+
+
+def _annotation_value(
+    anns: dict[str, "Annotation"], ann_config: dict, key: str
+) -> str | None:
+    """Resolve a provider's stable annotation key to its declared value, or None.
+
+    ``ann_config`` is the provider's ``annotations`` block
+    (``{stable_key: {type, value}}``); ``value`` is ``text``, ``title`` or
+    ``presence``. Returns ``"true"`` for a present ``presence`` annotation.
+    """
+    spec = ann_config.get(key)
+    if not spec:
+        return None
+    ann = anns.get(spec["type"])
+    if ann is None:
+        return None
+    field = spec.get("value", "text")
+    if field == "presence":
+        return "true"
+    return getattr(ann, field, None)
+
+
+def _keyword_annotation(df_node: Any, ann_type: str, language: str) -> str | None:
+    """Thin wrapper: the ``AnnotationText`` of one annotation type, or None.
+
+    Kept for callers/tests that ask for a single annotation's text; the walk now
+    lives in :func:`_annotations`.
+    """
+    ann = _annotations(df_node, language).get(ann_type)
+    return ann.text if ann else None
 
 
 def _code_parent(code_node: Any) -> str | None:
