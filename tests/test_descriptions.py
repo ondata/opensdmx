@@ -137,6 +137,22 @@ def test_extract_description_prefers_provider_language():
     assert archive.extract_description(payload, "DATA_SOURCE", "fr") == "Description"  # en fallback
 
 
+# --- SIQual id from the link attribute ------------------------------------
+
+def test_extract_link_id_pulls_siqual_id():
+    link = "Iscritti in anagrafe per nascita[http://siqual.istat.it/SIQual/visualizza.do?id=0019100&refresh=true&language=IT]"
+    payload = _payload("DATA_SOURCE_LINK", link)
+    assert archive.extract_link_id(payload, "DATA_SOURCE_LINK") == "0019100"
+
+
+def test_extract_link_id_absent_returns_none():
+    # attribute present but no id= param
+    payload = _payload("DATA_SOURCE_LINK", "http://siqual.istat.it/SIQual/home.do")
+    assert archive.extract_link_id(payload, "DATA_SOURCE_LINK") is None
+    # attribute missing entirely
+    assert archive.extract_link_id(_payload("DATA_SOURCE", "x"), "DATA_SOURCE_LINK") is None
+
+
 # --- embed.py guard --------------------------------------------------------
 
 def test_descriptions_for_embed_missing_resource_is_empty(monkeypatch, tmp_path):

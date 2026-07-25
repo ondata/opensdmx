@@ -58,11 +58,13 @@ RESOURCE_COLUMNS = {
     "description": pl.Utf8,
     "report_id": pl.Utf8,
     "metadata_set_id": pl.Utf8,
+    "siqual_id": pl.Utf8,  # id of the linked quality-system page (ISTAT SIQual), if any
     "harvested_at": pl.Utf8,  # ISO date
 }
 
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
+_LINK_ID_RE = re.compile(r"[?&]id=(\w+)")
 
 
 def parquet_path(provider: str) -> Path:
@@ -126,13 +128,12 @@ def collect_metadata_links(provider_cfg: dict, agency: str, language: str) -> di
     return links
 
 
-def extract_description(payload: dict, attr_id: str, language: str = "en") -> str | None:
-    """Return the cleaned text of a reported attribute from a getMetadata payload.
+def _find_attribute(payload: dict, attr_id: str, language: str = "en") -> str | None:
+    """Return the raw text of a reported attribute by id, walking nested sets.
 
-    Walks nested reportedAttributes across every metadataSet/report; the metadata
-    prose sits under ``id == attr_id`` (ISTAT: DATA_SOURCE). When the attribute
-    carries per-language ``texts``, prefer the provider ``language`` (en fallback).
-    Pure function, so the extraction is unit-tested without the network.
+    Walks nested reportedAttributes across every metadataSet/report. When the
+    attribute carries per-language ``texts``, prefer the provider ``language``
+    (en fallback, then the first available). Pure function, unit-tested offline.
     """
 
     def walk_attrs(attrs):
@@ -151,15 +152,35 @@ def extract_description(payload: dict, attr_id: str, language: str = "en") -> st
         for rep in ms.get("reports", []):
             raw = walk_attrs(rep.get("attributeSet", {}).get("reportedAttributes", []))
             if raw:
-                return clean_prose(raw)
+                return raw
     return None
 
 
-def fetch_description(
+def extract_description(payload: dict, attr_id: str, language: str = "en") -> str | None:
+    """Return the cleaned description prose (ISTAT: DATA_SOURCE), or None."""
+    raw = _find_attribute(payload, attr_id, language)
+    return clean_prose(raw) if raw else None
+
+
+def extract_link_id(payload: dict, link_attr: str, language: str = "en") -> str | None:
+    """Return the ``id=`` value from a link attribute (ISTAT: DATA_SOURCE_LINK), or None.
+
+    The link points at the provider's quality system (ISTAT SIQual,
+    ``visualizza.do?id=0019100``); the id is the same for the survey's SIQual
+    detail and disaggregation pages.
+    """
+    raw = _find_attribute(payload, link_attr, language)
+    if not raw:
+        return None
+    m = _LINK_ID_RE.search(raw)
+    return m.group(1) if m else None
+
+
+def fetch_report(
     client: httpx.Client, base_url: str, api_path: str, set_id: str, report_id: str,
-    attr_id: str, language: str = "en"
-) -> str | None:
-    """Fetch one report's metadata and return the cleaned description attribute, or None."""
+    attr_id: str, link_attr: str | None, language: str = "en"
+) -> tuple[str | None, str | None]:
+    """Fetch one report's metadata once; return (cleaned description, siqual_id)."""
     resp = client.get(
         base_url.rstrip("/") + api_path,
         params={"metadataSetId": set_id, "reportId": report_id},
@@ -167,7 +188,10 @@ def fetch_description(
         follow_redirects=True,
     )
     resp.raise_for_status()
-    return extract_description(resp.json(), attr_id, language)
+    payload = resp.json()
+    desc = extract_description(payload, attr_id, language)
+    siqual_id = extract_link_id(payload, link_attr, language) if link_attr else None
+    return desc, siqual_id
 
 
 def load_existing(provider: str) -> pl.DataFrame:
@@ -199,6 +223,7 @@ def run(provider: str, pause: float) -> int:
     language = cfg.get("language", "en")
     api_path = cfg.get("metadata_api_path", "/api/getMetadata")
     attr_id = cfg.get("metadata_description_attribute", "DATA_SOURCE")
+    link_attr = cfg.get("metadata_link_attribute")
 
     print(f"Collecting {cfg['metadata_annotation']} links from the {provider} catalog...")
     links = collect_metadata_links(cfg, agency, language)
@@ -207,32 +232,38 @@ def run(provider: str, pause: float) -> int:
         print("No dataflows carry the metadata annotation. Nothing to harvest.")
         return 0
 
-    # Resume: keep descriptions for reports already harvested, re-fetch the rest.
+    # Resume: keep descriptions (and siqual_id) for reports already harvested,
+    # re-fetch the rest. Tolerates an older resource without the siqual_id column.
     existing = load_existing(provider)
-    known_reports: dict[str, str] = {}
+    known: dict[str, tuple[str, str | None]] = {}
     if not existing.is_empty():
-        for row in existing.select(["report_id", "description"]).unique().iter_rows(named=True):
-            known_reports[row["report_id"]] = row["description"]
+        has_siqual = "siqual_id" in existing.columns
+        cols = ["report_id", "description"] + (["siqual_id"] if has_siqual else [])
+        for row in existing.select(cols).unique(subset=["report_id"]).iter_rows(named=True):
+            known[row["report_id"]] = (row["description"], row.get("siqual_id"))
 
     unique_reports = {v["report_id"]: v for v in links.values()}
-    to_fetch = [r for r in unique_reports if r not in known_reports]
+    to_fetch = [r for r in unique_reports if r not in known]
     print(f"{total_linked} linked dataflows -> {len(unique_reports)} unique reports "
-          f"({len(known_reports)} cached, {len(to_fetch)} to fetch).")
+          f"({len(known)} cached, {len(to_fetch)} to fetch).")
 
-    report_text = dict(known_reports)
+    report_text = {rid: v[0] for rid, v in known.items()}
+    report_siqual = {rid: v[1] for rid, v in known.items() if v[1]}
     with httpx.Client(headers={"User-Agent": "opensdmx-descriptions-archive"}) as client:
         for i, report_id in enumerate(to_fetch, 1):
             meta = unique_reports[report_id]
             try:
-                text = fetch_description(
+                text, siqual_id = fetch_report(
                     client, meta["base_url"], api_path, meta["metadata_set_id"], report_id,
-                    attr_id, language
+                    attr_id, link_attr, language
                 )
             except Exception as e:  # noqa: BLE001 - log and continue, resumable next run
                 print(f"  ! {report_id}: {type(e).__name__}: {e}", file=sys.stderr)
-                text = None
+                text, siqual_id = None, None
             if text:
                 report_text[report_id] = text
+            if siqual_id:
+                report_siqual[report_id] = siqual_id
             if i % 50 == 0:
                 print(f"  ...{i}/{len(to_fetch)} reports fetched")
             time.sleep(pause)
@@ -248,6 +279,7 @@ def run(provider: str, pause: float) -> int:
             "description": text,
             "report_id": meta["report_id"],
             "metadata_set_id": meta["metadata_set_id"],
+            "siqual_id": report_siqual.get(meta["report_id"]),
             "harvested_at": harvested_at,
         })
 
@@ -257,8 +289,10 @@ def run(provider: str, pause: float) -> int:
 
     covered = result.height
     uncovered = total_linked - covered
+    with_siqual = result.filter(pl.col("siqual_id").is_not_null()).height if covered else 0
     print(f"Wrote {parquet_path(provider)}: {covered} dataflows described "
-          f"from {result['report_id'].n_unique()} reports; "
+          f"from {result['report_id'].n_unique()} reports "
+          f"({with_siqual} with a siqual_id); "
           f"{uncovered} linked dataflows without text this run.")
     return 0
 

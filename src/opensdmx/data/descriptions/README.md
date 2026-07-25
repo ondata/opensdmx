@@ -18,7 +18,10 @@ One Parquet file per provider, keyed by `df_id`:
 | `description` | plain-text description (HTML-unescaped, markup stripped) |
 | `report_id` | source reference-metadata report id (shared across dataflows) |
 | `metadata_set_id` | source metadata set id |
+| `siqual_id` | id of the linked quality-system page, when present (ISTAT SIQual: `visualizza.do?id=<siqual_id>` / `disaggregazioni.do?id=<siqual_id>`), extracted from the metadata link attribute |
 | `harvested_at` | ISO date of the harvest |
+
+The `siqual_id` bridges a dataflow to ISTAT's SIQual quality system, which documents the survey's methodology and its territorial disaggregation level (e.g. municipality vs region). opensdmx does not fetch SIQual itself; the id is captured here at zero extra cost so the mapping is available.
 
 ## Regenerating
 

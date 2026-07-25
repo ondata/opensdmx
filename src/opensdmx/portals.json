@@ -51,7 +51,8 @@
     "keyword_annotation": "LAYOUT_DATAFLOW_KEYWORDS",
     "metadata_annotation": "METADATA_URL",
     "metadata_api_path": "/api/getMetadata",
-    "metadata_description_attribute": "DATA_SOURCE"
+    "metadata_description_attribute": "DATA_SOURCE",
+    "metadata_link_attribute": "DATA_SOURCE_LINK"
   },
   "inps": {
     "name": "INPS",
