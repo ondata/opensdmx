@@ -1,5 +1,23 @@
 # LOG
 
+## 2026-07-25 - research: ISTAT dataflow annotations (SDMX Istat Toolkit)
+
+- docs: add `docs/istat/databrowser-annotations.md` — census of the SDMX annotations
+  ISTAT publishes on its dataflows, from exploring the SDMX Istat Toolkit site. One
+  catalog call: 4,899 dataflows, 29 distinct annotation types in use, of which
+  opensdmx reads 2 (`LAYOUT_DATAFLOW_KEYWORDS`, `METADATA_URL`).
+- finding: esploradati runs the **StatKit Data Browser**, not `.Stat Suite` — the
+  manual (§3.7, p. 36) names `app/databrowserhub/api/core`, our `hub_base_url`.
+  `docs/istat/hub-api.md` and `docs/inps/middleware-api.md` carry the wrong platform.
+- finding: 643 dataflows (13.1%) are flagged non-production or hidden by ISTAT and we
+  expose them all — 14.1% of real search hits. Probed `CPI` (flagged, returns current
+  data): the flag means catalog visibility, not data availability, so the remedy is to
+  label and deprioritize, never to filter.
+- unused signals worth a pass: `LAST_UPDATE` (92.1%, mixed ISO / `dd/mm/yyyy`),
+  `LAYOUT_ROW`/`COLUMN`/`FILTER` (~80%, the publisher's own pivot), `DATAFLOW_NOTES`
+  (145 methodological caveats), `ATTACHED_DATA_FILES` (366 bulk CSV/zip downloads).
+- no code change in this pass.
+
 ## 2026-07-24 - v0.20.0 - real ISTAT descriptions from METADATA_API (embeddings)
 
 - feat(descriptions): harvest the authentic dataflow descriptions ISTAT shows on
