@@ -46,14 +46,14 @@ Anything else — aggregates (`IT108_NC`, `FILTER__*`), foreign areas — matche
 
 ### 4. Deriving the dataflow level
 
-Per `df_id`:
+Per `(df_id, territorial dimension)`:
 
 - collect the **set of levels** seen across its codes;
 - `max_level` = the **deepest** level present (order: national → ripartizione → region → province → municipality);
 - `levels` = the full chain, e.g. `nazionale|regione|provincia`;
 - `n_territories` = total count of territorial codes.
 
-Written one row per `df_id` to `data/constraints/istat_territorial.csv`.
+Written one row per `(df_id, dimension_id)` to `data/constraints/istat_territorial.csv` — usually one row per dataflow, but a dataflow with more than one territorial dimension (e.g. `REF_AREA` + `RESIDENCE_TERR`) gets a row each, so their code counts and levels never conflate.
 
 **Worked example** — same survey, two cuts, classified correctly:
 

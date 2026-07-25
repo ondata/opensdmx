@@ -123,7 +123,7 @@ def all_available() -> pl.DataFrame:
     Returns a Polars DataFrame with columns:
         df_id, version, df_description, df_structure_id, has_constraint,
         and the optional dataflow-annotation columns df_keywords,
-        df_last_update, df_notes, df_bulk_files.
+        df_last_update, df_notes, df_bulk_files, df_geo_dim.
 
     The annotation columns are populated only for providers that declare the
     corresponding entries in their ``annotations`` block (currently ISTAT) and

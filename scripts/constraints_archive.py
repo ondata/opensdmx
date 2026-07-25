@@ -242,7 +242,12 @@ def rebuild_istat_territorial(archive: pl.DataFrame, status: dict[str, dict]) ->
         | pl.col("dimension_id").is_in(list(extra_dims))
     )
     rows = []
-    for (df_id,), group in territorial.group_by(["df_id"], maintain_order=True):
+    # Group by (df_id, dimension_id): a dataflow may now carry more than one
+    # territorial dimension (e.g. REF_AREA + RESIDENCE_TERR), so each dimension
+    # gets its own row rather than pooling their codes into a single, wrong count.
+    for (df_id, dimension_id), group in territorial.group_by(
+        ["df_id", "dimension_id"], maintain_order=True
+    ):
         codes = group["code_id"].to_list()
         levels_seen = {lvl for code in codes if (lvl := classify_territorial_code(code))}
         ordered = [lvl for lvl in TERRITORIAL_LEVELS if lvl in levels_seen]
@@ -253,14 +258,14 @@ def rebuild_istat_territorial(archive: pl.DataFrame, status: dict[str, dict]) ->
             {
                 "df_id": df_id,
                 "df_description": entry.get("df_description", ""),
-                "dimension_id": group["dimension_id"][0],
+                "dimension_id": dimension_id,
                 "max_level": ordered[-1] if ordered else "",
                 "levels": "|".join(ordered),
                 "n_territories": len(codes),
                 "checked_at": entry.get("checked_at", ""),
             }
         )
-    rows.sort(key=lambda r: r["df_id"])
+    rows.sort(key=lambda r: (r["df_id"], r["dimension_id"]))
     out = DATA_DIR / "istat_territorial.csv"
     pl.DataFrame(
         rows,

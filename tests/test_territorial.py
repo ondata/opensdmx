@@ -50,3 +50,27 @@ def test_rebuild_classifies_by_name_not_by_code_shape(tmp_path, monkeypatch):
     assert out.filter(pl.col("df_id") == "BIRTHS")["max_level"][0] == "comune"
     # ECOICOP_2 is not a territorial name → PRICES is not classified, despite 6-digit codes
     assert "PRICES" not in ids
+
+
+def test_rebuild_keeps_multiple_territorial_dimensions_separate(tmp_path, monkeypatch):
+    # A dataflow with TWO territorial dimensions must yield one row per dimension,
+    # not a single row pooling their codes (which would sum n_territories and mix levels).
+    arch = pl.DataFrame(
+        {
+            "df_id": ["MULTI", "MULTI", "MULTI"],
+            "dimension_id": ["REF_AREA", "RESIDENCE_TERR", "RESIDENCE_TERR"],
+            "code_id": ["IT", "015146", "015147"],  # REF_AREA: national; RESIDENCE_TERR: 2 comuni
+        }
+    )
+    status = {"MULTI": {"df_description": "X", "checked_at": "2026-07-25"}}
+    catalog = pl.DataFrame({"df_id": ["MULTI"], "df_geo_dim": ["RESIDENCE_TERR"]})
+
+    monkeypatch.setattr(archive, "DATA_DIR", tmp_path)
+    with patch.object(archive.opensdmx, "all_available", return_value=catalog):
+        archive.rebuild_istat_territorial(arch, status)
+
+    out = pl.read_csv(tmp_path / "istat_territorial.csv").sort("dimension_id")
+    assert out["dimension_id"].to_list() == ["REF_AREA", "RESIDENCE_TERR"]
+    ref, res = out.to_dicts()
+    assert ref["max_level"] == "nazionale" and ref["n_territories"] == 1
+    assert res["max_level"] == "comune" and res["n_territories"] == 2
