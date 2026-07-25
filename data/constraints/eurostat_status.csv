@@ -2867,3 +2867,334 @@ HLTH_EHIS_VIU,"Correction of vision problems by sex, age and degree of urbanisat
 HLTH_HC_DENT,Consultation of a dentist per inhabitant,ok,sdmx,4,99,0,"",2026-07-24
 HLTH_HC_PHYS,Consultation of a medical doctor (in private practice or as outpatient) per inhabitant - historical data (1960-2013),ok,sdmx,5,103,0,"",2026-07-24
 HLTH_HC_PHYS2,Consultation of a medical doctor per inhabitant and by type of consultation,ok,sdmx,5,105,0,"",2026-07-24
+HLTH_HLYE,Healthy life years by sex (from 2004 onwards),ok,sdmx,6,69,0,"",2026-07-25
+HLTH_HLYE$DV_3621,Healthy life years by sex (from 2004 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_HLYE$DV_3621'
+For more information check: https://developer.moz",2026-07-25
+HLTH_HLYE$DV_3622,Healthy life years by sex (from 2004 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_HLYE$DV_3622'
+For more information check: https://developer.moz",2026-07-25
+HLTH_HLYE_H,Healthy life years (1995 - 2003),ok,sdmx,4,55,0,"",2026-07-25
+HLTH_NRALOS2,In-patient average length of stay of non-residents,ok,sdmx,8,212,0,"",2026-07-25
+HLTH_NRALOS2C,In-patient average length of stay of non-residents by country of residence,ok,sdmx,9,39,0,"",2026-07-25
+HLTH_NRDC3,Hospital discharge day cases of non-residents by diagnosis,ok,sdmx,8,210,0,"",2026-07-25
+HLTH_NRDC3C,Hospital discharge day cases of non-residents by country of residence,ok,sdmx,9,37,0,"",2026-07-25
+HLTH_NRDISCH1,Hospital discharges of non-residents - % of total hospital discharges,ok,sdmx,8,186,0,"",2026-07-25
+HLTH_NRHOSDAY2,Hospital bed days of non-resident in-patients,ok,sdmx,8,212,0,"",2026-07-25
+HLTH_NRHOSDAY2C,Hospital bed days of non-resident in-patients by country of residence,ok,sdmx,9,39,0,"",2026-07-25
+HLTH_NRINPAT3,Hospital discharges of non-resident in-patients by diagnosis,ok,sdmx,8,212,0,"",2026-07-25
+HLTH_NRINPAT3C,Hospital discharges of non-resident in-patients by country of residence,ok,sdmx,9,39,0,"",2026-07-25
+HLTH_PS_IMMU,Vaccination against influenza of population aged 65 and over,ok,sdmx,4,67,0,"",2026-07-25
+HLTH_PS_PREV,Preventive cancer screenings - programme data,ok,sdmx,6,71,0,"",2026-07-25
+HLTH_PS_SCRE,Breast cancer and cervical cancer screenings - historical data (2000-2021),ok,sdmx,6,64,0,"",2026-07-25
+HLTH_RALOS1,In-patients average length of stay of residents in hospital,ok,sdmx,8,218,0,"",2026-07-25
+HLTH_RALOS1_REG,In-patients average length of stay of residents in hospital by NUTS 2 region of residence,ok,sdmx,9,459,0,"",2026-07-25
+HLTH_RDC1,Hospital discharge day cases of residents by diagnosis,ok,sdmx,8,215,0,"",2026-07-25
+HLTH_RDC1_REG,Hospital discharge day cases of residents by diagnosis and NUTS 2 region of residence,ok,sdmx,9,449,0,"",2026-07-25
+HLTH_RDC2,Hospital discharge day cases of residents by diagnosis - per hundred thousand inhabitants,ok,sdmx,8,215,0,"",2026-07-25
+HLTH_RDC2_REG,Hospital discharge day cases of residents by diagnosis and NUTS 2 region of residence - per hundred thousand inhabitants,ok,sdmx,9,449,0,"",2026-07-25
+HLTH_RHOSDAY1,Hospital bed days of resident in-patients,ok,sdmx,8,218,0,"",2026-07-25
+HLTH_RHOSDAY1_REG,Hospital bed days of resident in-patients by NUTS 2 region of residence,ok,sdmx,9,459,0,"",2026-07-25
+HLTH_RINPAT1,Hospital discharges of resident in-patients by diagnosis,ok,sdmx,8,218,0,"",2026-07-25
+HLTH_RINPAT1_REG,Hospital discharges of resident in-patients by diagnosis and NUTS 2 region of residence,ok,sdmx,9,459,0,"",2026-07-25
+HLTH_RINPAT2,Hospital discharges of resident in-patients by diagnosis - per hundred thousand inhabitants,ok,sdmx,8,218,0,"",2026-07-25
+HLTH_RINPAT2_REG,Hospital discharges of resident in-patients by diagnosis and NUTS 2 region of residence - per hundred thousand inhabitants,ok,sdmx,9,459,0,"",2026-07-25
+HLTH_RS_BDLTC,Beds in nursing and other residential long-term care facilities,ok,sdmx,4,87,0,"",2026-07-25
+HLTH_RS_BDS,Hospital beds by type of care - historical data (1960-2020),ok,sdmx,5,110,0,"",2026-07-25
+HLTH_RS_BDS1,Hospital beds by function and type of care,ok,sdmx,6,117,0,"",2026-07-25
+HLTH_RS_BDS2,Hospital beds by hospital ownership,ok,sdmx,5,106,0,"",2026-07-25
+HLTH_RS_BDSICU,Available beds in intensive care unit (ICU) by typology,ok,sdmx,6,48,0,"",2026-07-25
+HLTH_RS_BDSNS,Long-term care beds in nursing and residential care facilities by NUTS 2 region - historical data (1980-2021),ok,sdmx,5,307,0,"",2026-07-25
+HLTH_RS_BDSRG,Hospital beds by NUTS 2 region - historical data (1993-2016),ok,sdmx,5,405,0,"",2026-07-25
+HLTH_RS_BDSRG2,Available beds in hospitals by NUTS 2 region,ok,sdmx,4,310,0,"",2026-07-25
+HLTH_RS_EQUIP,Medical technology - historical data (1980-2016),ok,sdmx,6,93,0,"",2026-07-25
+HLTH_RS_GRD,Health graduates - historical data (1980-2021),ok,sdmx,5,92,0,"",2026-07-25
+HLTH_RS_GRD2,Health graduates,ok,sdmx,5,93,0,"",2026-07-25
+HLTH_RS_GRD2$DV_2825,Health graduates,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_RS_GRD2$DV_2825'
+For more information check: https://developer.",2026-07-25
+HLTH_RS_MEDIM,Devices for medical imaging,ok,sdmx,6,94,0,"",2026-07-25
+HLTH_RS_NURSE,Nurses by age and sex,ok,sdmx,6,66,0,"",2026-07-25
+HLTH_RS_PHYS,Physicians by sex and age,ok,sdmx,6,97,0,"",2026-07-25
+HLTH_RS_PHYSCAT,Physicians by category,ok,sdmx,5,91,0,"",2026-07-25
+HLTH_RS_PHYSREG,Physicians by NUTS 2 region,ok,sdmx,4,322,0,"",2026-07-25
+HLTH_RS_PRS1,Health personnel (excluding nursing and caring professionals) - historical data (1980-2021),ok,sdmx,6,114,0,"",2026-07-25
+HLTH_RS_PRS2,Health personnel,ok,sdmx,6,119,0,"",2026-07-25
+HLTH_RS_PRS2$DV_2824,Health personnel,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_RS_PRS2$DV_2824'
+For more information check: https://developer.",2026-07-25
+HLTH_RS_PRSHP1,Health personnel employed in hospital - historical data (1980-2021),ok,sdmx,5,92,0,"",2026-07-25
+HLTH_RS_PRSHP2,Hospital employment,ok,sdmx,5,95,0,"",2026-07-25
+HLTH_RS_PRSNS,Nursing and caring professionals - historical data (1980-2021),ok,sdmx,6,96,0,"",2026-07-25
+HLTH_RS_PRSRG,Health personnel by NUTS 2 region - historical data (1993-2021),ok,sdmx,5,401,0,"",2026-07-25
+HLTH_RS_SPEC,Physicians by medical speciality - historical data (1985-2016),ok,sdmx,5,112,0,"",2026-07-25
+HLTH_RS_TECH,Technical resources in hospital,ok,sdmx,5,66,0,"",2026-07-25
+HLTH_RS_WKMG,Health workforce migration - historical data (2000-2021),ok,sdmx,6,67,0,"",2026-07-25
+HLTH_RS_WKMG2,Health workforce migration,ok,sdmx,6,71,0,"",2026-07-25
+HLTH_SHA11_FS,Revenues of health care financing schemes,ok,sdmx,5,101,0,"",2026-07-25
+HLTH_SHA11_HC,Health care expenditure by function,ok,sdmx,5,151,0,"",2026-07-25
+HLTH_SHA11_HC$DV_2822,Health care expenditure by function,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SHA11_HC$DV_2822'
+For more information check: https://developer",2026-07-25
+HLTH_SHA11_HC$DV_2841,Health care expenditure by function,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SHA11_HC$DV_2841'
+For more information check: https://developer",2026-07-25
+HLTH_SHA11_HCHF,Expenditure for selected health care functions by health care financing schemes,ok,sdmx,6,134,0,"",2026-07-25
+HLTH_SHA11_HCHP,Expenditure for selected health care functions by health care providers,ok,sdmx,6,133,0,"",2026-07-25
+HLTH_SHA11_HF,Health care expenditure by financing scheme,ok,sdmx,5,109,0,"",2026-07-25
+HLTH_SHA11_HF$DV_2821,Health care expenditure by financing scheme,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SHA11_HF$DV_2821'
+For more information check: https://developer",2026-07-25
+HLTH_SHA11_HF$DV_2826,Health care expenditure by financing scheme,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SHA11_HF$DV_2826'
+For more information check: https://developer",2026-07-25
+HLTH_SHA11_HFFS,Revenues of health care financing schemes by health care financing schemes,ok,sdmx,6,112,0,"",2026-07-25
+HLTH_SHA11_HP,Health care expenditure by provider,ok,sdmx,5,127,0,"",2026-07-25
+HLTH_SHA11_HPHF,Expenditure for selected health care providers by health care financing schemes,ok,sdmx,6,115,0,"",2026-07-25
+HLTH_SILC_01,"Self-perceived health by sex, age and labour status",ok,sdmx,8,103,0,"",2026-07-25
+HLTH_SILC_02,"Self-perceived health by sex, age and educational attainment level",ok,sdmx,8,98,0,"",2026-07-25
+HLTH_SILC_02$DV_381,"Self-perceived health by sex, age and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_02$DV_381'
+For more information check: https://developer.m",2026-07-25
+HLTH_SILC_04,"People having a long-standing illness or health problem, by sex, age and labour status",ok,sdmx,7,95,0,"",2026-07-25
+HLTH_SILC_05,"People having a long-standing illness or health problem, by sex, age and educational attainment level",ok,sdmx,7,92,0,"",2026-07-25
+HLTH_SILC_06,"Self-perceived long-standing limitations in usual activities due to health problem by sex, age and labour status",ok,sdmx,8,101,0,"",2026-07-25
+HLTH_SILC_07,"Level of disability (activity limitation) by sex, age and educational attainment level",ok,sdmx,8,97,0,"",2026-07-25
+HLTH_SILC_08,"Self-reported unmet needs for medical examination by sex, age, main reason declared and income quintile",ok,sdmx,8,106,0,"",2026-07-25
+HLTH_SILC_08$DV_3521,"Self-reported unmet needs for medical examination by sex, age, main reason declared and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_08$DV_3521'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_08B,"Self-reported unmet needs for medical examination due to financial reasons, long waiting list or distance by sex, age and risk of poverty threshold - % of the persons having the same needs",ok,sdmx,8,55,0,"",2026-07-25
+HLTH_SILC_08B_R,"Self-reported unmet needs for medical examination due to financial reasons, long waiting list or distance by NUTS-2-region - % of the persons having the same needs",ok,sdmx,5,285,0,"",2026-07-25
+HLTH_SILC_08C,"Persons reporting needs for medical examination or treatment by sex, age and at risk of poverty and social exclusion situation",ok,sdmx,7,66,0,"",2026-07-25
+HLTH_SILC_08_R,Self-reported unmet needs for medical examination by main reason declared and NUTS 2 region,ok,sdmx,5,302,0,"",2026-07-25
+HLTH_SILC_09,"Self-reported unmet needs for dental examination by sex, age, main reason declared and income quintile",ok,sdmx,8,102,0,"",2026-07-25
+HLTH_SILC_09B,"Self-reported unmet needs for dental examination due to financial reasons, long waiting list or distance by sex, age and risk of poverty threshold - % of the persons having the same needs",ok,sdmx,8,55,0,"",2026-07-25
+HLTH_SILC_09C,"Persons reporting needs for dental examination or treatment by sex, age and at risk of poverty and social exclusion situation",ok,sdmx,7,66,0,"",2026-07-25
+HLTH_SILC_10,"Self-perceived health by sex, age and income quintile",ok,sdmx,8,106,0,"",2026-07-25
+HLTH_SILC_10$DV_1147,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_1147'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_10$DV_2042,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_2042'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_10$DV_290,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_290'
+For more information check: https://developer.m",2026-07-25
+HLTH_SILC_11,"People having a long-standing illness or health problem, by sex, age and income quintile",ok,sdmx,7,97,0,"",2026-07-25
+HLTH_SILC_11$DV_3662,"People having a long-standing illness or health problem, by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_11$DV_3662'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_12,"Level of disability (activity limitation) by sex, age and income quintile",ok,sdmx,8,102,0,"",2026-07-25
+HLTH_SILC_12$DV_3663,"Level of disability (activity limitation) by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_12$DV_3663'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_13,"Self-reported unmet needs for medical examination by sex, age, main reason declared and labour status",ok,sdmx,8,105,0,"",2026-07-25
+HLTH_SILC_14,"Self-reported unmet needs for medical examination by sex, age, main reason declared and educational attainment level",ok,sdmx,8,102,0,"",2026-07-25
+HLTH_SILC_14$DV_3522,"Self-reported unmet needs for medical examination by sex, age, main reason declared and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_14$DV_3522'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_14$DV_385,"Self-reported unmet needs for medical examination by sex, age, main reason declared and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_14$DV_385'
+For more information check: https://developer.m",2026-07-25
+HLTH_SILC_15,"Self-reported unmet needs for dental examination by sex, age, main reason declared and labour status",ok,sdmx,8,104,0,"",2026-07-25
+HLTH_SILC_16,"Self-reported unmet needs for dental examination by sex, age, main reason declared and educational attainment level",ok,sdmx,8,101,0,"",2026-07-25
+HLTH_SILC_17,Healthy life expectancy based on self-perceived health,ok,sdmx,6,63,0,"",2026-07-25
+HLTH_SILC_18,"Self-perceived health by sex, age and degree of urbanisation",ok,sdmx,8,99,0,"",2026-07-25
+HLTH_SILC_19,"People having a long-standing illness or health problem, by sex, age and degree of urbanisation",ok,sdmx,7,92,0,"",2026-07-25
+HLTH_SILC_20,"Level of disability (activity limitation) by sex, age and degree of urbanisation",ok,sdmx,8,97,0,"",2026-07-25
+HLTH_SILC_21,"Self-reported unmet needs for medical examination by sex, age, main reason declared and degree of urbanisation",ok,sdmx,8,102,0,"",2026-07-25
+HLTH_SILC_22,"Self-reported unmet needs for dental examination by sex, age, main reason declared and degree of urbanisation",ok,sdmx,8,101,0,"",2026-07-25
+HLTH_SILC_23,"Self-perceived health by sex, age and groups of country of birth",ok,sdmx,8,102,0,"",2026-07-25
+HLTH_SILC_23$DV_2061,"Self-perceived health by sex, age and groups of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_23$DV_2061'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_24,"Self-perceived health by sex, age and groups of country of citizenship",ok,sdmx,8,103,0,"",2026-07-25
+HLTH_SILC_24$DV_2082,"Self-perceived health by sex, age and groups of country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_24$DV_2082'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_25,"People having a long-standing illness or health problem, by sex, age and groups of country of birth",ok,sdmx,7,97,0,"",2026-07-25
+HLTH_SILC_26,"People having a long-standing illness or health problem, by sex, age and groups of country of citizenship",ok,sdmx,7,97,0,"",2026-07-25
+HLTH_SILC_27,"Level of disability (activity limitation) by sex, age and country of birth",ok,sdmx,8,100,0,"",2026-07-25
+HLTH_SILC_27$DV_1841,"Level of disability (activity limitation) by sex, age and country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_27$DV_1841'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_28,"Level of disability (activity limitation) by sex, age and citizenship",ok,sdmx,8,100,0,"",2026-07-25
+HLTH_SILC_28$DV_1843,"Level of disability (activity limitation) by sex, age and citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_28$DV_1843'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_29,"Self-reported unmet needs for medical examination by sex, age, main reason declared and groups of country of birth",ok,sdmx,8,108,0,"",2026-07-25
+HLTH_SILC_29$DV_3524,"Self-reported unmet needs for medical examination by sex, age, main reason declared and groups of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_29$DV_3524'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_30,"Self-reported unmet needs for medical examination by sex, age, main reason declared and groups of country of citizenship",ok,sdmx,8,108,0,"",2026-07-25
+HLTH_SILC_30$DV_3564,"Self-reported unmet needs for medical examination by sex, age, main reason declared and groups of country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_30$DV_3564'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_31,"Self-reported unmet needs for dental examination by sex, age, main reason declared and groups of country of birth",ok,sdmx,8,108,0,"",2026-07-25
+HLTH_SILC_31$DV_3525,"Self-reported unmet needs for dental examination by sex, age, main reason declared and groups of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_31$DV_3525'
+For more information check: https://developer.",2026-07-25
+HLTH_SILC_32,"Self-reported unmet needs for dental examination by sex, age, main reason declared and groups of country of citizenship",ok,sdmx,8,108,0,"",2026-07-25
+HLTH_SILC_32$DV_3565,"Self-reported unmet needs for dental examination by sex, age, main reason declared and groups of country of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_32$DV_3565'
+For more information check: https://developer.",2026-07-25
+HLTH_TALOS1,In-patients average length of stay in hospitals,ok,sdmx,8,219,0,"",2026-07-25
+HLTH_TDC1,Hospital discharge day cases by diagnosis,ok,sdmx,8,217,0,"",2026-07-25
+HLTH_THOSDAY1,Hospital bed days of in-patients,ok,sdmx,8,219,0,"",2026-07-25
+HLTH_TINPAT1,Hospital discharges of in-patients by diagnosis,ok,sdmx,8,219,0,"",2026-07-25
+HRST_FL_MOBAGE,Job-to-job mobility of human resources in science and technology (HRST) by age,ok,sdmx,5,71,0,"",2026-07-25
+HRST_FL_MOBSECT,Job-to-job mobility of HRST by NACE Rev. 1.1 activity (1996-2008),ok,sdmx,6,59,0,"",2026-07-25
+HRST_FL_MOBSECT2,Job-to-job mobility of human resources in science and technology (HRST) by NACE Rev. 2 activity,ok,sdmx,6,61,0,"",2026-07-25
+HRST_FL_MOBSEX,Job-to-job mobility of human resources in science and technology (HRST) by sex,ok,sdmx,6,71,0,"",2026-07-25
+HRST_FL_TEFOR,Participation of foreign students in tertiary education (ISCED 1997) by field of education (1998-2012),ok,sdmx,5,60,0,"",2026-07-25
+HRST_FL_TEGRAD,"Graduation from tertiary education (ISCED 1997) by sex, level and field of education (2002-2012)",ok,sdmx,7,65,0,"",2026-07-25
+HRST_FL_TEPART,"Participation in tertiary education (ISCED 1997) by sex, level and field of education (1998-2012)",ok,sdmx,7,63,0,"",2026-07-25
+HRST_STEM_AGE,Persons with tertiary education in STEM fields by labour force status and age,ok,sdmx,6,48,0,"",2026-07-25
+HRST_STEM_GEN,Persons with tertiary education in STEM fields by labour force status and sex,ok,sdmx,6,46,0,"",2026-07-25
+HRST_STEM_IND,Employed persons with tertiary education in STEM fields by NACE Rev. 2 activity,ok,sdmx,5,52,0,"",2026-07-25
+HRST_STEM_OCC,Employed persons with tertiary education in STEM fields by occupation,ok,sdmx,5,46,0,"",2026-07-25
+HRST_ST_NCAT,"Human resources in science and technology (HRST) by category, sex and age",ok,sdmx,7,88,0,"",2026-07-25
+HRST_ST_NFIEAGE,HRST with tertiary education by age and field of education (2003-2013),ok,sdmx,6,66,0,"",2026-07-25
+HRST_ST_NFIEOCC,"Employed HRST with tertiary education by age, field of education and occupation (2003-2013)",ok,sdmx,7,65,0,"",2026-07-25
+HRST_ST_NFIESEX,"HRST with tertiary education by sex, age and field of education (2003-2013)",ok,sdmx,7,65,0,"",2026-07-25
+HRST_ST_NOCC,"Employed persons in science and technology (HRST) by category, age and occupation",ok,sdmx,7,84,0,"",2026-07-25
+HRST_ST_NSEC,"Employed HRST by category, age and NACE Rev. 1.1 activity (1994-2007)",ok,sdmx,7,91,0,"",2026-07-25
+HRST_ST_NSEC2,"Employed persons in science and technology (HRST) by category, NACE Rev. 2 activity and age (2008-2026)",ok,sdmx,7,99,0,"",2026-07-25
+HRST_ST_NSECSEX,"Employed HRST by category, sex, age and NACE Rev. 1.1 activity (1994-2007)",ok,sdmx,8,71,0,"",2026-07-25
+HRST_ST_NSECSEX2,"Employed persons in science and technology (HRST) by category, NACE Rev. 2 activity and sex (2008-2026)",ok,sdmx,8,84,0,"",2026-07-25
+HRST_ST_NUNEAGE,Unemployed persons in science and technology (HRST) by category and age,ok,sdmx,6,81,0,"",2026-07-25
+HRST_ST_NUNEAGE$DV_1867,Unemployed persons in science and technology (HRST) by category and age,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HRST_ST_NUNEAGE$DV_1867'
+For more information check: https://develop",2026-07-25
+HRST_ST_NUNESEX,Unemployed persons in science and technology (HRST) by category and sex,ok,sdmx,6,78,0,"",2026-07-25
+HRST_ST_NUNESEX$DV_1865,Unemployed persons in science and technology (HRST) by category and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HRST_ST_NUNESEX$DV_1865'
+For more information check: https://develop",2026-07-25
+HRST_ST_RAGE,"Human resources in science and technology (HRST) by category, NUTS 1 region and age",ok,sdmx,6,203,0,"",2026-07-25
+HRST_ST_RCAT,Human resources in science and technology (HRST) by category and NUTS 2 region,ok,sdmx,5,548,0,"",2026-07-25
+HRST_ST_RSEC,"Employed HRST by category, NACE Rev. 1.1 activity and NUTS 1 region (1994 - 2007)",ok,sdmx,6,204,0,"",2026-07-25
+HRST_ST_RSEC2,"Employed persons in science and technology (HRST) by category, NACE Rev. 2 activity and NUTS 1 region (2008-2026)",ok,sdmx,6,220,0,"",2026-07-25
+HRST_ST_RSEX,"Human resources in science and technology (HRST) by category, NUTS 1 region and sex",ok,sdmx,6,200,0,"",2026-07-25
+HSW_AC1,Persons reporting an accident at work by educational attainment level,ok,sdmx,7,54,0,"",2026-07-25
+HSW_AC10,Persons reporting an accident at work by full-time/part-time employment,ok,sdmx,7,48,0,"",2026-07-25
+HSW_AC11,Persons reporting an accident at work by atypical working time,ok,sdmx,7,49,0,"",2026-07-25
+HSW_AC12,Persons reporting an accident at work by country of birth,ok,sdmx,7,50,0,"",2026-07-25
+HSW_AC13,Persons reporting an accident at work resulting in time off work by country of birth,ok,sdmx,7,51,0,"",2026-07-25
+HSW_AC14,Persons reporting an accident at work while working from home,ok,sdmx,7,49,0,"",2026-07-25
+HSW_AC2,Persons reporting an accident at work resulting in time off work by educational attainment level,ok,sdmx,7,55,0,"",2026-07-25
+HSW_AC3,Persons reporting an accident at work resulting in time off work by period off,ok,sdmx,6,48,0,"",2026-07-25
+HSW_AC4,Persons reporting a road traffic accident,ok,sdmx,5,43,0,"",2026-07-25
+HSW_AC5A,Persons reporting an accident at work by NACE Rev. 1.1 activity (2007),ok,sdmx,7,50,0,"",2026-07-25
+HSW_AC5B,Persons reporting an accident at work by NACE Rev. 2 activity,ok,sdmx,7,55,0,"",2026-07-25
+HSW_AC6A,Persons reporting an accident at work resulting in sick leave by NACE Rev. 1.1 activity (2007),ok,sdmx,7,51,0,"",2026-07-25
+HSW_AC6B,Persons reporting an accident at work resulting in time off work by NACE Rev. 2 activity,ok,sdmx,7,55,0,"",2026-07-25
+HSW_AC7,Persons reporting an accident at work by occupation,ok,sdmx,7,55,0,"",2026-07-25
+HSW_AC8,Persons reporting an accident at work by professional status,ok,sdmx,7,54,0,"",2026-07-25
+HSW_AC8$DV_386,Persons reporting an accident at work by professional status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HSW_AC8$DV_386'
+For more information check: https://developer.mozill",2026-07-25
+HSW_AC9,Persons reporting an accident at work by size of the local unit,ok,sdmx,7,54,0,"",2026-07-25
+HSW_AW_CO1,"Number of accidents at work by contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,48,0,"",2026-07-25
+HSW_AW_CO2,"Incidence rate of accidents at work by contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,45,0,"",2026-07-25
+HSW_AW_CO3,"Percentage distribution of accidents at work by contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,48,0,"",2026-07-25
+HSW_AW_DE1,"Number of accidents at work by deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,48,0,"",2026-07-25
+HSW_AW_DE2,"Incidence rate of accidents at work by deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,45,0,"",2026-07-25
+HSW_AW_DE3,"Percentage distribution of accidents at work by deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,48,0,"",2026-07-25
+HSW_AW_FIMS,"Standardised incidence rate of fatal accidents at work by Member State and age, excluding road traffic accidents and accidents on board of any mean of transport in the course of work",ok,sdmx,7,55,0,"",2026-07-25
+HSW_AW_FNMS,"Number of fatal accidents at work by Member State and age, excluding road traffic accidents and accidents on board of any mean of transport in the course of work",ok,sdmx,7,56,0,"",2026-07-25
+HSW_AW_INAAG,"Standardised incidence rate of accidents at work by NACE Rev. 1.1 activity, severity and age",ok,sdmx,7,51,0,"",2026-07-25
+HSW_AW_INASX,"Standardised incidence rate of accidents at work by NACE Rev. 1.1 activity, severity and sex",ok,sdmx,7,68,0,"",2026-07-25
+HSW_AW_INASZ,Standardised incidence rate of accidents at work by NACE Rev. 1.1 activity and size of enterprise,ok,sdmx,7,34,0,"",2026-07-25
+HSW_AW_INAWS,Standardised incidence rate of accidents at work by NACE Rev. 1.1 activity and employment status,ok,sdmx,7,30,0,"",2026-07-25
+HSW_AW_MAA1,"Number of accidents at work by material agent of specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_MAA2,"Incidence rate of accidents at work by material agent of specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,57,0,"",2026-07-25
+HSW_AW_MAA3,"Percentage distribution of accidents at work by material agent of specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_MAC1,"Number of accidents at work by material agent of contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_MAC2,"Incidence rate of accidents at work by material agent of contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,57,0,"",2026-07-25
+HSW_AW_MAC3,"Percentage distribution of accidents at work by material agent of contact - mode of injury, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_MAD1,"Number of accidents at work by material agent of deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_MAD2,"Incidence rate of accidents at work by material agent of deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,57,0,"",2026-07-25
+HSW_AW_MAD3,"Percentage distribution of accidents at work by material agent of deviation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,60,0,"",2026-07-25
+HSW_AW_NBOSV,Number of accidents at work by part of body injured and severity,ok,sdmx,6,35,0,"",2026-07-25
+HSW_AW_NINSV,Number of accidents at work by type of injury and severity,ok,sdmx,6,72,0,"",2026-07-25
+HSW_AW_NNAAG,"Number of accidents at work by NACE Rev. 1.1 activity, severity and age",ok,sdmx,7,65,0,"",2026-07-25
+HSW_AW_NNASV,Number of accidents at work by NACE Rev. 1.1 activity and severity,ok,sdmx,6,35,0,"",2026-07-25
+HSW_AW_NNASX,"Number of accidents at work by NACE Rev. 1.1 activity, severity and sex",ok,sdmx,7,83,0,"",2026-07-25
+HSW_AW_NNASZ,Number of accidents at work by NACE Rev. 1.1 activity and size of enterprise,ok,sdmx,7,37,0,"",2026-07-25
+HSW_AW_NNAWS,Number of accidents at work by NACE Rev. 1.1 activity and employment status,ok,sdmx,7,34,0,"",2026-07-25
+HSW_AW_PA1,"Number of accidents at work by specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,47,0,"",2026-07-25
+HSW_AW_PA2,"Incidence rate of accidents at work by specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,44,0,"",2026-07-25
+HSW_AW_PA3,"Percentage distribution of accidents at work by specific physical activity, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,47,0,"",2026-07-25
+HSW_AW_WE1,"Number of accidents at work by working environment, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,52,0,"",2026-07-25
+HSW_AW_WE2,"Incidence rate of accidents at work by working environment, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,49,0,"",2026-07-25
+HSW_AW_WE3,"Percentage distribution of accidents at work by working environment, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,52,0,"",2026-07-25
+HSW_AW_WP1,"Number of accidents at work by working process, economic activity, sex, age and severity",ok,sdmx,9,46,0,"",2026-07-25
+HSW_AW_WP2,"Incidence rate of accidents at work by working process, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,43,0,"",2026-07-25
+HSW_AW_WP3,"Percentage distribution of accidents at work by working process, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,46,0,"",2026-07-25
+HSW_AW_WS1,"Number of accidents at work by type of workstation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,42,0,"",2026-07-25
+HSW_AW_WS2,"Incidence rate of accidents at work by type of workstation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,39,0,"",2026-07-25
+HSW_AW_WS3,"Percentage distribution of accidents at work by type of workstation, NACE Rev. 1.1 activity, sex, age and severity",ok,sdmx,9,42,0,"",2026-07-25
+HSW_EXP1,Persons reporting exposure to risk factors that can adversely affect mental well-being by educational attainment level,ok,sdmx,7,54,0,"",2026-07-25
+HSW_EXP1$DV_1875,Persons reporting exposure to risk factors that can adversely affect mental well-being by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HSW_EXP1$DV_1875'
+For more information check: https://developer.mozi",2026-07-25
+HSW_EXP10,Persons reporting exposure to risk factors that can adversely affect physical health by size of the local unit,ok,sdmx,7,54,0,"",2026-07-25
+HSW_EXP2,Persons reporting exposure to risk factors that can adversely affect physical health by educational attainment level,ok,sdmx,7,54,0,"",2026-07-25
+HSW_EXP3,Persons reporting exposure to risk factors that can adversely affect mental well-being by type of factor,ok,sdmx,7,58,0,"",2026-07-25
+HSW_EXP4,Persons reporting exposure to risk factors that can adversely affect physical health by type of factor,ok,sdmx,7,62,0,"",2026-07-25
+HSW_EXP5A,"Persons reporting exposure to risk factors that can adversely affect mental well-being by sex, age and NACE Rev. 1.1 activity",ok,sdmx,7,50,0,"",2026-07-25
+HSW_EXP5B,Persons reporting exposure to risk factors that can adversely affect mental well-being by NACE Rev. 2 activity,ok,sdmx,7,55,0,"",2026-07-25
+HSW_EXP6A,"Persons reporting exposure to risk factors that can adversely affect physical health by sex, age and NACE Rev. 1.1 activity",ok,sdmx,7,50,0,"",2026-07-25
+HSW_EXP6B,Persons reporting exposure to risk factors that can adversely affect physical health by NACE Rev. 2 activity,ok,sdmx,7,55,0,"",2026-07-25
+HSW_EXP6B$DV_1876,Persons reporting exposure to risk factors that can adversely affect physical health by NACE Rev. 2 activity,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HSW_EXP6B$DV_1876'
+For more information check: https://developer.moz",2026-07-25
+HSW_EXP9,Persons reporting exposure to risk factors that can adversely affect mental well-being by size of the local unit,ok,sdmx,7,54,0,"",2026-07-25
+HSW_HP_DINAG,"Standardised prevalence rate of work-related health problems by diagnosis group, NACE Rev. 1.1 activity and age",ok,sdmx,7,45,0,"",2026-07-25
+HSW_HP_DISNU,"Number of work-related health problems by diagnosis group, sex and number of complaints per victim",ok,sdmx,7,24,0,"",2026-07-25
+HSW_HP_NUSE,"Work-related health problems in 1999, by sex",ok,sdmx,6,25,0,"",2026-07-25
+HSW_HP_SVCLN,"Relative prevalence rate of work-related health problems by severity, diagnosis group, permanency of the job, length of service in the enterprise and NACE Rev. 1.1 activity",ok,sdmx,9,38,0,"",2026-07-25
+HSW_HP_SVDIN,"Relative prevalence rate of work-related health problems by severity, diagnosis group, occupation and NACE Rev. 1.1 activity (EU mean rate = 100 for each severity)",ok,sdmx,8,40,0,"",2026-07-25
+HSW_HP_SVDNA,"Standardised prevalence rate of work-related health problems by severity, diagnosis group, NACE Rev. 1.1 activity and age",ok,sdmx,8,36,0,"",2026-07-25
+HSW_HP_SVDWA,"Number of work-related health problems by diagnosis group, severity, activity and employment status of the victim and age",ok,sdmx,8,36,0,"",2026-07-25
+HSW_IJ_CLN,"Relative standardised incidence rate of accidental injuries at work by permanency of the job, length of service in the enterprise and NACE Rev. 1.1 activity (mean rate for each Member State = 100)",ok,sdmx,7,44,0,"",2026-07-25
+HSW_IJ_EDSE,Relative standardised incidence rate of accidental injuries at work by educational attainment level and sex (mean rate for each Member State = 100),ok,sdmx,6,19,0,"",2026-07-25
+HSW_IJ_HJNAS,"Relative incidence rate of accidental injuries at work by working hours, number of job contract, NACE Rev. 1.1 activity, age and sex (EU mean rate = 100)",ok,sdmx,9,41,0,"",2026-07-25
+HSW_IJ_INWSA,"Accidental injuries at work by type of injury, work status after the accidental injury and age",ok,sdmx,7,30,0,"",2026-07-25
+HSW_IJ_ISNA,Relative incidence rate of accidental injuries at work by occupation and NACE Rev. 1.1 activity (EU mean rate = 100),ok,sdmx,6,33,0,"",2026-07-25
+HSW_IJ_NUSE,"Accidental injuries at work in 1999, by sex",ok,sdmx,6,25,0,"",2026-07-25
+HSW_IJ_SVCLN,"Relative incidence rate of accidental injuries at work by severity, permanency of the job, length of service in the enterprise and NACE Rev. 1.1 activity (EU mean rate = 100 for each severity)",ok,sdmx,8,35,0,"",2026-07-25
+HSW_IJ_SVHOS,"Relative incidence rate of accidental injuries at work by severity, working hours and sex (EU mean rate = 100 for each severity)",ok,sdmx,7,17,0,"",2026-07-25
+HSW_IJ_SVINJ,Accidental injuries at work by severity and type of injury,ok,sdmx,6,36,0,"",2026-07-25
+HSW_IJ_SVNIA,"Relative incidence rate of accidental injuries at work by severity, frequency of night work and age (EU mean rate = 100 for each severity)",ok,sdmx,7,18,0,"",2026-07-25
+HSW_IJ_SVSHA,"Relative incidence rate of accidental injuries at work by severity, frequency of shift work and age (EU mean rate = 100 for each severity)",ok,sdmx,7,18,0,"",2026-07-25
+HSW_IND,Indicators on health and safety at work,ok,sdmx,5,50,0,"",2026-07-25
+HSW_MI01,"Accidents at work by sex, age and severity (NACE Rev. 2 activity A, C-N)",ok,sdmx,8,74,0,"",2026-07-25
+HSW_MI02,"Accidents at work by days lost, sex and age (NACE Rev. 2 activity A, C-N)",ok,sdmx,8,84,0,"",2026-07-25
+HSW_MI03,"Accidents at work of employees by sex and age, excluding road traffic accidents and accidents on board of any mean of transport in the course of work (NACE Rev. 2 activity A, C-N excluding H)",ok,sdmx,8,74,0,"",2026-07-25
+HSW_MI04,"Accidents at work by size of enterprise (NACE Rev. 2 activity A, C-N)",ok,sdmx,7,67,0,"",2026-07-25
+HSW_MI05,"Accidents at work by ISCO (NACE Rev. 2 activity A, C-N)",ok,sdmx,7,73,0,"",2026-07-25
+HSW_MI06,"Accidents at work by part of body injured and severity (NACE Rev. 2 activity A, C-N)",ok,sdmx,7,78,0,"",2026-07-25
+HSW_MI07,"Accidents at work by type of injury and severity (NACE Rev. 2 activity A, C-N)",ok,sdmx,7,83,0,"",2026-07-25
+HSW_MI08,Accidents at work by sex and severity (NACE Rev. 2 activity Total),ok,sdmx,7,59,0,"",2026-07-25
+HSW_MI_EMP01,Accidents at work of employees by sex and severity (NACE Rev. 2 activity Total),ok,sdmx,6,58,0,"",2026-07-25
+HSW_N2_01,Non-fatal accidents at work by NACE Rev. 2 activity and sex,ok,sdmx,6,171,0,"",2026-07-25
+HSW_N2_02,Fatal Accidents at work by NACE Rev. 2 activity,ok,sdmx,5,167,0,"",2026-07-25
+HSW_N2_03,Non-fatal accidents at work by NACE Rev. 2 activity and age,ok,sdmx,6,179,0,"",2026-07-25
+HSW_N2_04,Accidents at work by days lost and NACE Rev. 2 activity,ok,sdmx,6,179,0,"",2026-07-25
+HSW_N2_05,Accidents at work by NACE Rev. 2 activity and size of enterprise,ok,sdmx,7,89,0,"",2026-07-25
+HSW_N2_06,Accidents at work by NACE Rev. 2 activity and part of body injured,ok,sdmx,7,91,0,"",2026-07-25
+HSW_N2_07,Accidents at work by NACE Rev. 2 activity and type of injury,ok,sdmx,7,96,0,"",2026-07-25
+HSW_OCC_CNR,Recognised cases of occupational cancers - experimental statistics,ok,sdmx,5,28,0,"",2026-07-25
+HSW_OCC_INA,EU index of occupational diseases (2013=100) - experimental statistics,ok,sdmx,5,35,0,"",2026-07-25
+HSW_OCC_ISCO,"Recognised occupational diseases belonging to the short list, by occupation (ISCO) - experimental statistics",ok,sdmx,6,46,0,"",2026-07-25
+HSW_OCC_N2,"Recognised occupational diseases belonging to the short list, by economic sector (NACE Rev 2. activity) - experimental statistics",ok,sdmx,6,55,0,"",2026-07-25
+HSW_PB1,Persons reporting a work-related health problem by educational attainment level,ok,sdmx,7,54,0,"",2026-07-25
+HSW_PB10,Persons reporting a work-related health problem by full-time/part-time employment,ok,sdmx,7,53,0,"",2026-07-25
+HSW_PB11,Persons reporting a work-related health problem by country of birth,ok,sdmx,7,55,0,"",2026-07-25
+HSW_PB12,Persons reporting a work-related health problem resulting in time off work by country of birth,ok,sdmx,7,56,0,"",2026-07-25
+HSW_PB13,Persons reporting a work-related health problem by working from home,ok,sdmx,7,54,0,"",2026-07-25
+HSW_PB2,Persons reporting a work-related health problem resulting in time off work by educational attainment level,ok,sdmx,7,55,0,"",2026-07-25
+HSW_PB3,Persons reporting a work-related health problem resulting in time off work by period off,ok,sdmx,6,50,0,"",2026-07-25
+HSW_PB4,Persons reporting a work-related health problem resulting in limitations of daily activities,ok,sdmx,6,46,0,"",2026-07-25
+HSW_PB5,Persons reporting a work-related health problem by type of diagnose,ok,sdmx,7,61,0,"",2026-07-25
+HSW_PB6A,Persons reporting a work-related health problem by NACE Rev. 1.1 activity (2007),ok,sdmx,7,50,0,"",2026-07-25
+HSW_PB6B,Persons reporting a work-related health problem by NACE Rev. 2 activity,ok,sdmx,7,55,0,"",2026-07-25
+HSW_PB7,Persons reporting a work-related health problem by occupation,ok,sdmx,7,55,0,"",2026-07-25
+HSW_PB8,Persons reporting a work-related health problem by professional status,ok,sdmx,7,54,0,"",2026-07-25
+HSW_PB9,Persons reporting a work-related health problem by size of the local unit,ok,sdmx,7,54,0,"",2026-07-25
+HSW_PH3_01,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and workstation",ok,sdmx,9,89,0,"",2026-07-25
+HSW_PH3_02,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and working environment",ok,sdmx,9,99,0,"",2026-07-25
+HSW_PH3_03,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and working process",ok,sdmx,9,93,0,"",2026-07-25
+HSW_PH3_04,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and specific physical activity",ok,sdmx,9,93,0,"",2026-07-25
+HSW_PH3_05,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and material agent of specific physical activity",ok,sdmx,9,106,0,"",2026-07-25
+HSW_PH3_06,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and deviation",ok,sdmx,9,94,0,"",2026-07-25
+HSW_PH3_07,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and material agent of deviation",ok,sdmx,9,106,0,"",2026-07-25
+HSW_PH3_08,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and contact mode of injury",ok,sdmx,9,94,0,"",2026-07-25
+HSW_PH3_09,"Accidents at work by sex, age, severity, NACE Rev. 2 activity and material agent of contact mode injury",ok,sdmx,9,106,0,"",2026-07-25
+HTEC_CIS3,"Innovation in high-tech sectors in SMEs (CIS3), EU Member States and selected countries (2000-2001)",ok,sdmx,6,39,0,"",2026-07-25
+HTEC_CIS4,"Innovation in high-tech sectors (CIS 2004), EU Member States and selected countries (2004)",ok,sdmx,6,48,0,"",2026-07-25
+HTEC_CIS5,"Innovation in high-tech sectors (CIS 2006), EU Member States and selected countries (2006)",ok,sdmx,6,49,0,"",2026-07-25
+HTEC_CIS6,"Innovation in high-tech sectors (CIS 2008, CIS 2010, CIS 2012), EU Member States and selected countries (2008-2012)",ok,sdmx,6,56,0,"",2026-07-25
+HTEC_ECO_ENT,Enterprises in high-tech sectors by NACE Rev.1.1 activity (1995-2007),ok,sdmx,5,55,0,"",2026-07-25
+HTEC_ECO_ENT2,Enterprises in high-tech sectors by NACE Rev.2 activity,ok,sdmx,5,62,0,"",2026-07-25
+HTEC_ECO_SBS,Economic data in high-tech sectors by NACE Rev.1.1 activity (1995-2007),ok,sdmx,6,62,0,"",2026-07-25
+HTEC_ECO_SBS2,Economic data in high-tech sectors by NACE Rev.2 activity,ok,sdmx,6,62,0,"",2026-07-25
+HTEC_EMP_NAT,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity (1994-2008),ok,sdmx,6,84,0,"",2026-07-25
+HTEC_EMP_NAT2,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity (2008-2026),ok,sdmx,6,95,0,"",2026-07-25
+HTEC_EMP_NAT2$DV_1870,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity (2008-2026),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HTEC_EMP_NAT2$DV_1870'
+For more information check: https://developer",2026-07-25
+HTEC_EMP_NISCED,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity and educational attainment level (1994-2008),ok,sdmx,6,86,0,"",2026-07-25
+HTEC_EMP_NISCED2,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity and educational attainment level (2008-2026),ok,sdmx,6,96,0,"",2026-07-25
+HTEC_EMP_NISCO,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity and occupation (1994-2008),ok,sdmx,6,85,0,"",2026-07-25

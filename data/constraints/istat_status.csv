@@ -2944,3 +2944,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 68_702_DF_DCCV_TUR_RIC_CAPI_2,Residenza - rip.,ok,hub,4,13,0,"",2026-07-24
 6_1095_DF_DCCN_ISTITUZ_TNA1_B19_1,Reddito disponibile delle famiglie nelle regioni italiane - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-24
 6_20,Ricerca e Sviluppo,ok,hub,15,188,0,"",2026-07-24
+6_20_DF_DCSP_RS_1,Spesa (% sul Pil),ok,hub,4,6,0,"",2026-07-25
+6_20_DF_DCSP_RS_10,Addetti per titolo di studio,ok,hub,7,20,0,"",2026-07-25
+6_20_DF_DCSP_RS_11,Addetti per disciplina scientifica,ok,hub,7,23,0,"",2026-07-25
+6_20_DF_DCSP_RS_12,Addetti delle imprese per settore economico (Ateco 2 cifre),ok,hub,6,55,0,"",2026-07-25
+6_20_DF_DCSP_RS_13,Addetti - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_20_DF_DCSP_RS_14,Spesa delle imprese per settore utilizzatore,ok,hub,4,37,0,"",2026-07-25
+6_20_DF_DCSP_RS_15,Spesa in R&S intra-muros delle imprese per controllo societario,ok,hub,4,10,0,"",2026-07-25
+6_20_DF_DCSP_RS_2,Stanziamenti delle amministrazioni centrali e locali,ok,hub,4,19,0,"",2026-07-25
+6_20_DF_DCSP_RS_3,Spesa per tipo di ricerca,ok,hub,5,14,0,"",2026-07-25
+6_20_DF_DCSP_RS_4,Spesa per fonte di finanziamento,ok,hub,5,15,0,"",2026-07-25
+6_20_DF_DCSP_RS_5,Spesa per disciplina scientifica,ok,hub,5,17,0,"",2026-07-25
+6_20_DF_DCSP_RS_6,Spesa per tipo di costi sostenuti,ok,hub,5,19,0,"",2026-07-25
+6_20_DF_DCSP_RS_7,Spesa - reg.,ok,hub,4,36,0,"",2026-07-25
+6_20_DF_DCSP_RS_8,Spesa delle imprese per classe di addetti,ok,hub,5,15,0,"",2026-07-25
+6_20_DF_DCSP_RS_9,Spesa delle imprese per settore economico (Ateco 2 cifre),ok,hub,5,55,0,"",2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_1,Occupazione regionale - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_2,Occupazione provinciale - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_3,Tasso di irregolarità - edizioni gennaio 2020 - dicembre 2023,ok,hub,6,47,0,"",2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_4,Popolazione media annua - edizioni gennaio 2020 - dicembre 2023,ok,hub,5,41,0,"",2026-07-25
+6_382_DF_DCCN_SQCT_B19_1,Sequenza dei conti - edizioni gennaio 2020 - dicembre 2023,ok,hub,6,62,0,"",2026-07-25
+6_39,ICT nelle imprese con almeno 10 addetti,ok,hub,5,521,0,"",2026-07-25
+6_39_DF_DCSP_ICT_1,Principali indicatori,ok,hub,5,40,0,"",2026-07-25
+6_39_DF_DCSP_ICT_10,Intelligenza Artificiale,ok,hub,5,65,0,"",2026-07-25
+6_39_DF_DCSP_ICT_11,Robotica e stampa 3d,ok,hub,5,54,0,"",2026-07-25
+6_39_DF_DCSP_ICT_12,"Tecnologie per l'organizzzazione interna, di filiera e internet delle cose",ok,hub,5,100,0,"",2026-07-25
+6_39_DF_DCSP_ICT_13,Sicurezza informatica,ok,hub,5,99,0,"",2026-07-25
+6_39_DF_DCSP_ICT_14,Competenze e formazione in ICT,ok,hub,5,72,0,"",2026-07-25
+6_39_DF_DCSP_ICT_15,Indicatori Industria 4.0 - aree tecnologiche di acquisto,ok,hub,5,64,0,"",2026-07-25
+6_39_DF_DCSP_ICT_16,Indicatori Industria 4.0 - fattori di digitalizzazione,ok,hub,5,52,0,"",2026-07-25
+6_39_DF_DCSP_ICT_17,Indicatori DESI,ok,hub,5,51,0,"",2026-07-25
+6_39_DF_DCSP_ICT_18,ICT nelle imprese - rip,ok,hub,5,497,0,"",2026-07-25
+6_39_DF_DCSP_ICT_19,ICT nelle imprese - reg,ok,hub,5,481,0,"",2026-07-25
+6_39_DF_DCSP_ICT_2,"Connessione e utilizzo di internet, sito web",ok,hub,5,87,0,"",2026-07-25
+6_39_DF_DCSP_ICT_20,ICT e ambiente,ok,hub,5,52,0,"",2026-07-25
+6_39_DF_DCSP_ICT_3,Social media,ok,hub,5,57,0,"",2026-07-25
+6_39_DF_DCSP_ICT_4,Commercio elettronico,ok,hub,5,89,0,"",2026-07-25
+6_39_DF_DCSP_ICT_5,Vendite on-line,ok,hub,5,59,0,"",2026-07-25
+6_39_DF_DCSP_ICT_6,Acquisti on-line,ok,hub,5,51,0,"",2026-07-25
+6_39_DF_DCSP_ICT_7,Fatturazione elettronica,ok,hub,5,58,0,"",2026-07-25
+6_39_DF_DCSP_ICT_8,Cloud Computing,ok,hub,5,81,0,"",2026-07-25
+6_39_DF_DCSP_ICT_9,Analisi di dati e Big Data,ok,hub,5,69,0,"",2026-07-25
+6_471,Innovazione nelle imprese con almeno 10 addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Principali dati,ok,hub,5,14,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,ok,hub,6,19,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),ok,hub,6,65,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_12,Addetti laureati e classe di addetti,ok,hub,6,21,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_13,Addetti laureati e settori economici (Ateco 2 cifre),ok,hub,6,64,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_14,Implementazione dell'attività innovativa di prodotto e/o processo e classe di addetti,ok,hub,6,15,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_15,Implementazione dell'attività innovativa di prodotto e/o processo e settori economici (Ateco 2 cifre),ok,hub,6,57,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_16,Tipo di finanziamento e classe di addetti,ok,hub,6,20,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_17,Tipo di finaziamento e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,ok,hub,6,25,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_19,Tipo di innovazione di prodotto/processo introdotta e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,ok,hub,5,14,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_20,Metodi di sviluppo dell'innovazione di prodotto/processo e classe di addetti,empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_21,Metodi di sviluppo dell'innovazione di prodotto/processo e settori economici (Ateco 2 cifre),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_22,Fatturato derivante da nuovi prodotti e classe di addetti,empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_23,Fatturato derivante da nuovi prodotti e settori economici (Ateco 2 cifre),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_24,Tipo di spesa per l'innovazione e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_25,Tipo di spesa per l'innovazione e settori economici (Ateco 2 cifre),ok,hub,6,69,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_26,Localizzazione del partner della cooperazione e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_27,Localizzazione del partner della cooperazione e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,ok,hub,6,25,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_29,Tipo di partner della cooperazione e settori economici (Ateco 2 cifre),ok,hub,6,72,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_3,Tipo di attività innovativa e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_30,Dati regionali,ok,hub,5,39,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_31,Approfondimenti sui dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_32,Strategie aziendali e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_33,Strategie aziendali e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_34,Tipi di prodotti e servizi venduti e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_35,Tipi di prodotti e servizi venduti e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_36,Forme di tutela della proprietà industriale e classe di addetti,ok,hub,6,21,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_37,Forme di tutela della proprietà industriale e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_38,"Tecnologia, servizi tecnici e conoscenze acquisite e classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_39,"Tecnologia, servizi tecnici e conoscenze acquisite e settori economici (Ateco 2 cifre)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_4,Età dell'impresa e classe di addetti,empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_40,Pratiche di organizzazione del lavoro e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_41,Pratiche di organizzazione del lavoro e settori economici (Ateco 2 cifre),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_5,Età dell'impresa e classe di addetti e settori economici (Ateco 2 digit),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_6,Impatto degli interventi legislativo-normativi e settori economici (Ateco 2 digit),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_67,Benefici ambientali (Ateco 2 cifre),ok,hub,6,56,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_68,Benefici ambientali e classe di addetti,ok,hub,6,74,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_69,Fattori ambientali (Ateco 2 cifre),ok,hub,7,74,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_7,Impatto degli interventi legislativo-normativi e classe di addetti,empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_70,Fattori ambientali e classe di addetti,ok,hub,7,27,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_71,Conseguenze dell'emergenza sanitaria COVID-19 e classe di addetti,ok,hub,6,58,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_72,Conseguenze dell'emergenza sanitaria COVID-19 (Ateco 2 cifre),ok,hub,6,75,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_73,Conseguenze dell'emergenza sanitaria COVID-19 su spese per innovazione e fatturato e classe di addetti,ok,hub,6,59,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_74,Conseguenze dell'emergenza sanitaria COVID-19 su spese per innovazione e fatturato (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_75,Cambiamento climatico e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_76,Cambiamento climatico (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_DF_DCSP_LACIS_8,Fattori che hanno scoraggiato attività di innovazione e settori economici (Ateco 2 digit),empty,hub,0,0,0,"",2026-07-25
+6_471_DF_DCSP_LACIS_9,Fattori che hanno scoraggiato attività di innovazione e classe di addetti,empty,hub,0,0,0,"",2026-07-25
+6_471_TS,Innovazione nelle imprese con almeno 10 addetti - fino al 2020,empty,hub,0,0,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Serie storica - fino al 2020 - Principali dati,ok,hub,5,24,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,ok,hub,6,19,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),ok,hub,6,65,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_12,Addetti laureati e classe di addetti,ok,hub,6,22,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_13,Addetti laureati e settori economici (Ateco 2 cifre),ok,hub,6,69,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_14,Implementazione dell'attività innovativa di prodotto e/o processo e classe di addetti,ok,hub,6,18,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_15,Implementazione dell'attività innovativa di prodotto e/o processo e settori economici (Ateco 2 cifre),ok,hub,6,65,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_16,Tipo di finanziamento e classe di addetti,ok,hub,6,23,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_17,Tipo di finaziamento e settori economici (Ateco 2 cifre),ok,hub,6,68,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,ok,hub,6,24,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_19,Tipo di innovazione di prodotto/processo introdotta e settori economici (Ateco 2 cifre),ok,hub,6,71,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,ok,hub,5,16,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_20,Metodi di sviluppo dell'innovazione di prodotto/processo e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_21,Metodi di sviluppo dell'innovazione di prodotto/processo e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_22,Fatturato derivante da nuovi prodotti e classe di addetti,ok,hub,6,16,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_23,Fatturato derivante da nuovi prodotti e settori economici (Ateco 2 cifre),ok,hub,6,59,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_24,Tipo di spesa per l'innovazione e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_25,Tipo di spesa per l'innovazione e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_26,Localizzazione del partner della cooperazione e classe di addetti,ok,hub,6,18,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_27,Localizzazione del partner della cooperazione e settori economici (Ateco 2 cifre),ok,hub,6,71,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,ok,hub,6,29,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_29,Tipo di partner della cooperazione e settori economici (Ateco 2 cifre),ok,hub,6,83,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_3,Tipo di attività innovativa e settori economici (Ateco 2 cifre),ok,hub,5,73,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_30,Dati regionali,ok,hub,5,46,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_31,Approfondimenti sui dati regionali,ok,hub,6,42,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_32,Strategie aziendali e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_33,Strategie aziendali e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_34,Tipi di prodotti e servizi venduti e classe di addetti,ok,hub,6,23,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_35,Tipi di prodotti e servizi venduti e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_36,Forme di tutela della proprietà industriale e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_37,Forme di tutela della proprietà industriale e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_38,"Tecnologia, servizi tecnici e conoscenze acquisite e classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_39,"Tecnologia, servizi tecnici e conoscenze acquisite e settori economici (Ateco 2 cifre)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_4,Età dell'impresa e classe di addetti,ok,hub,6,20,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_40,Pratiche di organizzazione del lavoro e classe di addetti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_41,Pratiche di organizzazione del lavoro e settori economici (Ateco 2 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_5,Età dell'impresa e classe di addetti e settori economici (Ateco 2 digit),ok,hub,7,70,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_6,Impatto degli interventi legislativo-normativi e settori economici (Ateco 2 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+6_471_TS_DF_DCSP_LACIS_7,Impatto degli interventi legislativo-normativi e classe di addetti,ok,hub,6,36,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_8,Fattori che hanno scoraggiato attività di innovazione e settori economici (Ateco 2 digit),ok,hub,7,75,0,"",2026-07-25
+6_471_TS_DF_DCSP_LACIS_9,Fattori che hanno scoraggiato attività di innovazione e classe di addetti,ok,hub,7,75,0,"",2026-07-25
+6_498_DF_DCCN_PILT_B19_1,Prodotto interno lordo lato produzione - edizioni gennaio 2020 - dicembre 2023,ok,hub,6,47,0,"",2026-07-25
+6_64,Clima di fiducia delle imprese,ok,hub,5,7,0,"",2026-07-25
+6_64_DF_DCSC_IESI_1,Clima di fiducia delle imprese - media pesata di indici in base 2010=100,ok,hub,5,5,0,"",2026-07-25
+6_64_DF_DCSC_IESI_2,Clima di fiducia delle imprese - media pesata di indici in base 2021=100,ok,hub,5,5,0,"",2026-07-25
+71_1028,Conti dei beni e servizi ambientali - classificazione CEP,ok,hub,9,52,0,"",2026-07-25
+71_1028_DF_DCCN_EGSS1_1,"Produzione, valore aggiunto, esportazioni",ok,hub,7,43,0,"",2026-07-25
+71_1028_DF_DCCN_EGSS1_2,Investimenti per la mitigazione dei cambiamenti climatici,ok,hub,8,39,0,"",2026-07-25
+71_1028_DF_DCCN_EGSS1_3,Occupazione (unità di lavoro),ok,hub,6,39,0,"",2026-07-25
+71_953,Spese per la protezione dell'ambiente - classificazione CEP,ok,hub,9,59,0,"",2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_1,Spesa nazionale,ok,hub,7,19,0,"",2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_2,Aggregati economici per settore istituzionale,ok,hub,7,33,0,"",2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_3,Investimenti e produzione ausiliaria delle società come produttori ausiliari per attività economica,ok,hub,8,41,0,"",2026-07-25
+723_1036,Famiglie - condizione occupazionale,ok,hub,8,72,0,"",2026-07-25
+723_1036_DF_DCCV_FAMCOND1_1,"Presenza di occupati, pensionati, disoccupati",ok,hub,7,38,0,"",2026-07-25
+723_1036_DF_DCCV_FAMCOND1_2,Presenza di occupati e stranieri,ok,hub,7,28,0,"",2026-07-25
+723_1036_DF_DCCV_FAMCOND1_3,Tipologia di occupazione,ok,hub,6,36,0,"",2026-07-25
+723_1036_DF_DCCV_FAMCOND1_4,Dati regionali,ok,hub,4,41,0,"",2026-07-25
+723_1040,Individui per ruolo in famiglia - condizione occupazionale,ok,hub,10,65,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_1,"Occupati, disoccupati, inattivi per età",ok,hub,6,35,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_2,"Occupati, disoccupati, inattivi per titolo di studio",ok,hub,7,23,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_3,"Occupati, disoccupati, inattivi per cittadinanza",ok,hub,7,24,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_4,"Genitori occupati, disoccupati, inattivi per numero di figli",ok,hub,7,22,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_5,"Genitori occupati, disoccupati, inattivi per età del figlio più piccolo",ok,hub,8,29,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_6,Tassi per età,ok,hub,6,33,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_7,Tassi dei genitori per numero dei figli,ok,hub,7,22,0,"",2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_8,Tassi dei genitori per età del figlio più piccolo,ok,hub,8,24,0,"",2026-07-25
+723_1041,Coppie - condizione occupazionale,ok,hub,8,73,0,"",2026-07-25
+723_1041_DF_DCCV_COPPIECOND_1,"Presenza di occupati, regime orario, età della donna e numero di figli",ok,hub,6,29,0,"",2026-07-25
+723_1041_DF_DCCV_COPPIECOND_2,"Presenza di occupati, regime orario, età della donna ed età del figlio più piccolo",ok,hub,7,30,0,"",2026-07-25
+723_1041_DF_DCCV_COPPIECOND_3,"Presenza di occupati, regime orario, età e titolo di studio della donna",ok,hub,6,28,0,"",2026-07-25
+723_1041_DF_DCCV_COPPIECOND_4,"Condizione occupazionale dei partner, presenza di figli e titolo di studio della donna",ok,hub,6,26,0,"",2026-07-25
+723_1041_DF_DCCV_COPPIECOND_5,Dati regionali,ok,hub,4,40,0,"",2026-07-25
+723_1206,Famiglie - condizione occupazionale - regolamento precedente (fino al 2020),ok,hub,8,75,0,"",2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_1,"Presenza di occupati, pensionati, disoccupati",ok,hub,7,41,0,"",2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_2,Presenza di occupati e stranieri,ok,hub,7,29,0,"",2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_3,Tipologia di occupazione,ok,hub,7,41,0,"",2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_4,Dati regionali,ok,hub,4,42,0,"",2026-07-25
+723_1207,Coppie - condizione occupazionale - regolamento precedente (fino al 2020),ok,hub,8,80,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_1,"Presenza di occupati, regime orario, età della donna e numero di figli",ok,hub,6,34,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_2,"Presenza di occupati, regime orario, età della donna ed età del figlio più piccolo",ok,hub,7,34,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_3,"Presenza di occupati, regime orario, età e titolo di studio della donna",ok,hub,6,33,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_4,Condizione occupazionale dei partner ed età della donna,ok,hub,5,31,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_5,"Condizione occupazionale dei partner, presenza di figli e titolo di studio della donna",ok,hub,6,28,0,"",2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_6,Dati regionali,ok,hub,4,40,0,"",2026-07-25
+723_1208,Individui per ruolo in famiglia - condizione occupazionale- regolamento precedente (fino al 2020),ok,hub,10,54,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_1,"Occupati, disoccupati, inattivi per età",ok,hub,6,33,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_2,"Occupati, disoccupati, inattivi per titolo di studio",ok,hub,7,28,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_3,"Occupati, disoccupati, inattivi per cittadinanza",ok,hub,7,21,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_4,"Genitori occupati, disoccupati, inattivi per numero di figli",ok,hub,7,28,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_5,"Genitori occupati, disoccupati, inattivi per età del figlio più piccolo",ok,hub,8,29,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_6,Tassi per età,ok,hub,6,31,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_7,Tassi dei genitori per numero dei figli,ok,hub,7,28,0,"",2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_8,Tassi dei genitori per età del figlio più piccolo,ok,hub,8,29,0,"",2026-07-25
+729_1050,Superfici territoriali,ok,hub,3,8720,0,"",2026-07-25
+729_995,Caratteristiche geo-morfologiche dei comuni,ok,hub,3,8127,0,"",2026-07-25
+72_1028,Contributi e altri trasferimenti a fini ambientali,ok,hub,10,51,0,"",2026-07-25
+72_1028_DF_DCCN_ESST_1,Contributi e altri trasferimenti a fini ambientali - per settore istituzionale erogante e ricevente e per finalità ambientale,ok,hub,8,34,0,"",2026-07-25
+72_1028_DF_DCCN_ESST_2,Contributi e altri trasferimenti a fini ambientali erogati da Amministrazioni pubbliche a Società - per attività economica e finalità ambientale,ok,hub,9,44,0,"",2026-07-25
+72_155,Procedimenti civili,ok,hub,7,44,0,"",2026-07-25
+72_155_DF_DCAR_NUM_PROC_CIV_1,Movimento,ok,hub,6,13,0,"",2026-07-25
+72_155_DF_DCAR_NUM_PROC_CIV_2,Sopravvenuti per Distretto di Corte di Appello,ok,hub,7,40,0,"",2026-07-25
+72_158,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",ok,hub,5,10,0,"",2026-07-25
+72_158_DF_DCAR_PROC_CIV_1,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",ok,hub,5,10,0,"",2026-07-25
+730_1006,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,140,0,"",2026-07-25
+730_1006_DF_DCCN_SQCN_B14_1,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,140,0,"",2026-07-25

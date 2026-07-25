@@ -1596,3 +1596,155 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 68_381_DF_DCCV_TURNOT_8,Notti delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia),REF_AREA,nazionale,nazionale,1,2026-07-24
 68_381_DF_DCCV_TURNOT_9,Notti di vacanza e lavoro per trimestre. Dati percentuali sul totale delle notti in viaggio - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
 6_20,Ricerca e Sviluppo,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-24
+6_20_DF_DCSP_RS_1,Spesa (% sul Pil),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_10,Addetti per titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_11,Addetti per disciplina scientifica,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_12,Addetti delle imprese per settore economico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_14,Spesa delle imprese per settore utilizzatore,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_15,Spesa in R&S intra-muros delle imprese per controllo societario,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_2,Stanziamenti delle amministrazioni centrali e locali,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_3,Spesa per tipo di ricerca,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_4,Spesa per fonte di finanziamento,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_5,Spesa per disciplina scientifica,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_6,Spesa per tipo di costi sostenuti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_7,Spesa - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_20_DF_DCSP_RS_8,Spesa delle imprese per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_9,Spesa delle imprese per settore economico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_3,Tasso di irregolarità - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_4,Popolazione media annua - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+6_382_DF_DCCN_SQCT_B19_1,Sequenza dei conti - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+6_39,ICT nelle imprese con almeno 10 addetti,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-25
+6_39_DF_DCSP_ICT_1,Principali indicatori,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_10,Intelligenza Artificiale,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_11,Robotica e stampa 3d,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_12,"Tecnologie per l'organizzzazione interna, di filiera e internet delle cose",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-25
+6_39_DF_DCSP_ICT_13,Sicurezza informatica,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_14,Competenze e formazione in ICT,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_15,Indicatori Industria 4.0 - aree tecnologiche di acquisto,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_16,Indicatori Industria 4.0 - fattori di digitalizzazione,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_17,Indicatori DESI,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_18,ICT nelle imprese - rip,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-25
+6_39_DF_DCSP_ICT_19,ICT nelle imprese - reg,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-25
+6_39_DF_DCSP_ICT_2,"Connessione e utilizzo di internet, sito web",REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_20,ICT e ambiente,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_3,Social media,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_4,Commercio elettronico,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-25
+6_39_DF_DCSP_ICT_5,Vendite on-line,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_6,Acquisti on-line,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_7,Fatturazione elettronica,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_8,Cloud Computing,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_39_DF_DCSP_ICT_9,Analisi di dati e Big Data,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_12,Addetti laureati e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_13,Addetti laureati e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_14,Implementazione dell'attività innovativa di prodotto e/o processo e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_15,Implementazione dell'attività innovativa di prodotto e/o processo e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_16,Tipo di finanziamento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_25,Tipo di spesa per l'innovazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_29,Tipo di partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_30,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_DF_DCSP_LACIS_36,Forme di tutela della proprietà industriale e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_67,Benefici ambientali (Ateco 2 cifre),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_DF_DCSP_LACIS_68,Benefici ambientali e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_69,Fattori ambientali (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_70,Fattori ambientali e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_71,Conseguenze dell'emergenza sanitaria COVID-19 e classe di addetti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_DF_DCSP_LACIS_72,Conseguenze dell'emergenza sanitaria COVID-19 (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_73,Conseguenze dell'emergenza sanitaria COVID-19 su spese per innovazione e fatturato e classe di addetti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_TS_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Serie storica - fino al 2020 - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_12,Addetti laureati e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_13,Addetti laureati e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_14,Implementazione dell'attività innovativa di prodotto e/o processo e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_15,Implementazione dell'attività innovativa di prodotto e/o processo e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_16,Tipo di finanziamento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_17,Tipo di finaziamento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_19,Tipo di innovazione di prodotto/processo introdotta e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_22,Fatturato derivante da nuovi prodotti e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_23,Fatturato derivante da nuovi prodotti e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_26,Localizzazione del partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_27,Localizzazione del partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_29,Tipo di partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_3,Tipo di attività innovativa e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_30,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_TS_DF_DCSP_LACIS_31,Approfondimenti sui dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_TS_DF_DCSP_LACIS_34,Tipi di prodotti e servizi venduti e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_4,Età dell'impresa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_5,Età dell'impresa e classe di addetti e settori economici (Ateco 2 digit),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_7,Impatto degli interventi legislativo-normativi e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_8,Fattori che hanno scoraggiato attività di innovazione e settori economici (Ateco 2 digit),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_9,Fattori che hanno scoraggiato attività di innovazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_498_DF_DCCN_PILT_B19_1,Prodotto interno lordo lato produzione - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+6_64,Clima di fiducia delle imprese,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_64_DF_DCSC_IESI_1,Clima di fiducia delle imprese - media pesata di indici in base 2010=100,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_64_DF_DCSC_IESI_2,Clima di fiducia delle imprese - media pesata di indici in base 2021=100,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_1028,Conti dei beni e servizi ambientali - classificazione CEP,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_1028_DF_DCCN_EGSS1_1,"Produzione, valore aggiunto, esportazioni",REF_AREA,nazionale,nazionale,1,2026-07-25
+71_1028_DF_DCCN_EGSS1_2,Investimenti per la mitigazione dei cambiamenti climatici,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_1028_DF_DCCN_EGSS1_3,Occupazione (unità di lavoro),REF_AREA,nazionale,nazionale,1,2026-07-25
+71_953,Spese per la protezione dell'ambiente - classificazione CEP,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_1,Spesa nazionale,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_2,Aggregati economici per settore istituzionale,REF_AREA,nazionale,nazionale,1,2026-07-25
+71_953_DF_DCCN_SPESAPROTAMB1_3,Investimenti e produzione ausiliaria delle società come produttori ausiliari per attività economica,REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1036,Famiglie - condizione occupazionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1036_DF_DCCV_FAMCOND1_1,"Presenza di occupati, pensionati, disoccupati",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1036_DF_DCCV_FAMCOND1_2,Presenza di occupati e stranieri,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1036_DF_DCCV_FAMCOND1_3,Tipologia di occupazione,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1036_DF_DCCV_FAMCOND1_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1040,Individui per ruolo in famiglia - condizione occupazionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_1,"Occupati, disoccupati, inattivi per età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_2,"Occupati, disoccupati, inattivi per titolo di studio",REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_3,"Occupati, disoccupati, inattivi per cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_4,"Genitori occupati, disoccupati, inattivi per numero di figli",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_5,"Genitori occupati, disoccupati, inattivi per età del figlio più piccolo",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_6,Tassi per età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_7,Tassi dei genitori per numero dei figli,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1040_DF_DCCV_RUOLOFAMCOND_8,Tassi dei genitori per età del figlio più piccolo,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1041,Coppie - condizione occupazionale,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1041_DF_DCCV_COPPIECOND_1,"Presenza di occupati, regime orario, età della donna e numero di figli",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1041_DF_DCCV_COPPIECOND_2,"Presenza di occupati, regime orario, età della donna ed età del figlio più piccolo",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1041_DF_DCCV_COPPIECOND_3,"Presenza di occupati, regime orario, età e titolo di studio della donna",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1041_DF_DCCV_COPPIECOND_4,"Condizione occupazionale dei partner, presenza di figli e titolo di studio della donna",REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1041_DF_DCCV_COPPIECOND_5,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1206,Famiglie - condizione occupazionale - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_1,"Presenza di occupati, pensionati, disoccupati",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_2,Presenza di occupati e stranieri,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_3,Tipologia di occupazione,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1206_DF_DCCV_FAMCOND1_UNT2020_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1207,Coppie - condizione occupazionale - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_1,"Presenza di occupati, regime orario, età della donna e numero di figli",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_2,"Presenza di occupati, regime orario, età della donna ed età del figlio più piccolo",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_3,"Presenza di occupati, regime orario, età e titolo di studio della donna",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_4,Condizione occupazionale dei partner ed età della donna,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_5,"Condizione occupazionale dei partner, presenza di figli e titolo di studio della donna",REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1207_DF_DCCV_COPPIECOND_UNT2020_6,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-25
+723_1208,Individui per ruolo in famiglia - condizione occupazionale- regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_1,"Occupati, disoccupati, inattivi per età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_2,"Occupati, disoccupati, inattivi per titolo di studio",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_3,"Occupati, disoccupati, inattivi per cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_4,"Genitori occupati, disoccupati, inattivi per numero di figli",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_5,"Genitori occupati, disoccupati, inattivi per età del figlio più piccolo",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_6,Tassi per età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_7,Tassi dei genitori per numero dei figli,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+723_1208_DF_DCCV_RUOLOFAMCOND_UNT2020_8,Tassi dei genitori per età del figlio più piccolo,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-25
+729_1050,Superfici territoriali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8717,2026-07-25
+729_995,Caratteristiche geo-morfologiche dei comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8117,2026-07-25
+72_1028,Contributi e altri trasferimenti a fini ambientali,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_1028_DF_DCCN_ESST_1,Contributi e altri trasferimenti a fini ambientali - per settore istituzionale erogante e ricevente e per finalità ambientale,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_1028_DF_DCCN_ESST_2,Contributi e altri trasferimenti a fini ambientali erogati da Amministrazioni pubbliche a Società - per attività economica e finalità ambientale,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_155,Procedimenti civili,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_155_DF_DCAR_NUM_PROC_CIV_1,Movimento,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_155_DF_DCAR_NUM_PROC_CIV_2,Sopravvenuti per Distretto di Corte di Appello,REF_AREA,nazionale,nazionale,1,2026-07-25
+72_158,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",REF_AREA,nazionale,nazionale,1,2026-07-25
+72_158_DF_DCAR_PROC_CIV_1,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1006,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1006_DF_DCCN_SQCN_B14_1,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
