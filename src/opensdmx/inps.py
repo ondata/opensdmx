@@ -1,7 +1,7 @@
-"""INPS hub-only adapter (`.Stat Suite` `api/core` middleware).
+"""INPS hub-only adapter (StatKit Data Browser `api/core` middleware).
 
 INPS (Istituto Nazionale della Previdenza Sociale) publishes its statistical
-observatories through a `.Stat Suite` DataBrowser whose classic SDMX-REST (NSI
+observatories through a StatKit Data Browser whose classic SDMX-REST (NSI
 WS) endpoint is blocked by a WAF for external access. Only the middleware
 `https://opendata.inps.it/databrowser/api/core` is reachable, and it serves
 catalog/structure/constraints over JSON (GET + POST), not SDMX-REST.

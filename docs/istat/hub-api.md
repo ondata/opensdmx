@@ -1,7 +1,8 @@
 # ISTAT Data Browser Hub API
 
-ISTAT's public web interface ([esploradati.istat.it](https://esploradati.istat.it)) is built
-on the [.Stat Suite](https://sis-cc.gitlab.io/dotstatsuite-documentation/) platform. The
+ISTAT's public web interface ([esploradati.istat.it](https://esploradati.istat.it)) runs the
+**StatKit Data Browser**, ISTAT's own open-source product — see
+[databrowser-annotations.md](databrowser-annotations.md) for the platform identification. The
 frontend communicates with a backend hub layer — `/databrowserhub/api/` — that is separate
 from the official SDMX 2.1 REST endpoint (`/SDMXWS/rest/`).
 
@@ -263,9 +264,11 @@ The precise-key SDMX REST call returned in under 5 seconds.
 
 ## Officially documented SDMX REST constraint endpoints
 
-Aside from the hub API, the .Stat Suite SDMX REST specification documents two parameters
-on the `dataflow` resource that expose content constraint information. They are part of
-the standard .Stat Suite API contract:
+Aside from the hub API, the **SDMX 2.1 REST standard** defines two parameters on the
+`dataflow` resource that expose content constraint information. They are part of the SDMX
+REST specification, not vendor-specific — ISTAT's server implements them. The `.Stat Suite`
+documentation below is a readable reference for the same SDMX feature (the reference
+implementation), not the source of the contract:
 
 - [.Stat SDMX RESTful Web Service Cheat Sheet](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/)
 - [Data features — Auto-generation of Actual Content Constraints](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/)
@@ -281,9 +284,10 @@ GET /SDMXWS/rest/dataflow/IT1/{dataflow_id}/1.0?references=actualconstraint
 ```
 
 Returns the dataflow plus a `ContentConstraint` of `type="Actual"` containing the codes
-actually used in the data, per dimension, in a `CubeRegion`. .Stat Core auto-generates
+actually used in the data, per dimension, in a `CubeRegion`. The ISTAT server auto-generates
 these constraints at upload time with IDs prefixed `CR_A_` or `CR_B_` (validity dates
-indicate which one is currently active).
+indicate which one is currently active) — a server-side behaviour observed on ISTAT, not an
+SDMX-standard guarantee.
 
 Verified responses:
 
@@ -303,8 +307,8 @@ GET /SDMXWS/rest/dataflow/IT1/{dataflow_id}/1.0?references=all&detail=referencep
 ```
 
 Returns the full dataflow with all referenced artefacts (DSD, codelists, categorisations,
-content constraint). The .Stat Suite spec describes the codelists as "partial — containing
-only allowed and/or actually used items".
+content constraint). The SDMX REST spec describes the `referencepartial` codelists as
+"partial — containing only allowed and/or actually used items".
 
 Verified on `22_289_DF_DCIS_POPRES1_24` — HTTP 200 in 34 s, 9.4 MB. The returned
 `CL_ITTER107` codelist contains 12,471 codes (Matera comune `077014` included). The
@@ -430,6 +434,7 @@ The key insight is that the SDMX REST data endpoint is not slow; the bottleneck 
 
 ## References
 
-- [.Stat Suite documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/)
+- [.Stat Suite documentation](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/data/) — reference for SDMX REST features shared by ISTAT's StatKit Data Browser
+- Platform identification and annotation census: [databrowser-annotations.md](databrowser-annotations.md)
 - ISTAT SDMX API guide: [ondata.github.io/guida-api-istat](https://ondata.github.io/guida-api-istat)
 - `tmp/problemi_istat.md` — diagnosis and timeline of SDMX REST timeout issues

@@ -1,4 +1,4 @@
-"""Tests for opensdmx.hub — `.Stat Suite` hub integration."""
+"""Tests for opensdmx.hub — StatKit Data Browser hub integration."""
 
 from __future__ import annotations
 

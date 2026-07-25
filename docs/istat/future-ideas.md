@@ -142,7 +142,7 @@ API calls.
 
 ## Caveats and open questions
 
-- The hub API is `.Stat Suite`'s internal frontend API. It has no stability contract.
+- The hub API is StatKit Data Browser's internal frontend API. It has no stability contract.
   Any integration should degrade gracefully if the hub is unavailable (fall through to
   the existing SDMX REST chain).
 - The `node/1` ID should be confirmed stable or made configurable in provider settings.

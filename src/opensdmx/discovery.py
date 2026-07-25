@@ -110,7 +110,7 @@ def all_available() -> pl.DataFrame:
 
     provider = get_provider()
 
-    # Hub-only providers (INPS) serve the catalog over the `.Stat Suite`
+    # Hub-only providers (INPS) serve the catalog over the StatKit Data Browser
     # middleware, not SDMX-REST. Delegate to the dedicated adapter, cache the
     # result as Parquet (same as the REST branch) and return.
     if provider.get("hub_only"):
@@ -955,7 +955,7 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
 
     Resolution order:
       1. SQLite cache (7 days)
-      2. `.Stat Suite` hub, when configured (currently ISTAT) — per-dimension
+      2. StatKit Data Browser hub, when configured (currently ISTAT) — per-dimension
          ground truth, typically sub-second per call, sidesteps the SDMX-REST
          `availableconstraint` timeout pattern on large datasets (still bounded
          by `hub_timeout`; on any failure falls through to step 3)
@@ -991,7 +991,7 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
                 logger.warning("Could not cache hub-derived constraints: %s", e)
         return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in hub_result.items()}
 
-    # `.Stat Suite` hub fast path: opt-in via provider config (`hub_base_url`).
+    # StatKit Data Browser hub fast path: opt-in via provider config (`hub_base_url`).
     # Skipped entirely for non-hub providers (Eurostat, OECD, ECB, ...). On any
     # hub failure, falls through to the existing SDMX REST chain unchanged.
     # Pass the patched provider explicitly so test patches on get_provider

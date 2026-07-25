@@ -1,6 +1,6 @@
 # INPS DataBrowser middleware API
 
-Reference for the `.Stat Suite` DataBrowser middleware that backs the `inps`
+Reference for the StatKit Data Browser middleware that backs the `inps`
 provider. INPS publishes its statistical observatories through this middleware
 only: the classic SDMX-REST NSI Web Service is blocked by a WAF for external
 access, so opensdmx talks exclusively to `api/core`.

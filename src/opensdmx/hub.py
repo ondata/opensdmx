@@ -1,6 +1,6 @@
-"""Optional .Stat Suite hub integration (ISTAT-style providers).
+"""Optional StatKit Data Browser hub integration (ISTAT-style providers).
 
-Some SDMX providers — currently ISTAT — expose a `.Stat Suite` hub API alongside
+Some SDMX providers — currently ISTAT — expose a StatKit Data Browser hub API alongside
 the official SDMX 2.1 REST endpoint. The hub serves the same data through faster,
 more focused endpoints (single-dimension value lookups, JSON catalog) and is the
 backend behind the public databrowser UI.
@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 
 def is_hub_enabled(provider: dict[str, Any] | None = None) -> bool:
-    """True when the active provider exposes a `.Stat Suite` hub.
+    """True when the active provider exposes a StatKit Data Browser hub.
 
     Pass an explicit `provider` dict to make the check independent of the
     module-level provider state (useful in tests where the caller already

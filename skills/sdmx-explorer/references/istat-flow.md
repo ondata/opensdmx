@@ -8,7 +8,7 @@ that shape the entire exploration flow:
    every wasted `get` costs real time, so verifying codes upfront is much
    cheaper than trial-and-error.
 2. **Hub-backed `constraints` (sub-second per dimension)** — for ISTAT,
-   `opensdmx constraints` uses the `.Stat Suite` databrowser hub by default and
+   `opensdmx constraints` uses the StatKit Data Browser hub by default and
    returns ground-truth values for **every** dimension, including `REF_AREA`
    (~8,000 comuni) and even on 11-dimension datasets that previously timed out
    on the SDMX REST endpoint. No wildcard cross-join, no 30 s waits.

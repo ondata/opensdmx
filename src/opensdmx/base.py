@@ -342,7 +342,7 @@ def sdmx_request(
     (used e.g. by `availableconstraint` discovery to fail fast on slow backends).
     `_is_data=True` routes the call through the provider's `data_rate_limit` timer
     (when configured), keeping data and structure calls on independent clocks.
-    `_method="POST"` with `_json_body` sends a JSON POST — used by the `.Stat Suite`
+    `_method="POST"` with `_json_body` sends a JSON POST — used by the StatKit Data Browser
     hub middleware (e.g. INPS), which serves catalog/structure/data over POST.
     `_base_url` overrides the provider base URL for this call (the hub lives on a
     separate host, e.g. `.../databrowser/api/core`); rate-limit, retry, file-lock

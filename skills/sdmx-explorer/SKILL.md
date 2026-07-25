@@ -447,7 +447,7 @@ opensdmx constraints DF_LABOR_FORCE_A REGION --provider derzhstat
 endpoint available for the active provider and returns only codes that
 actually exist in this specific dataflow:
 
-- **ISTAT** — the `.Stat Suite` databrowser hub, which returns ground-truth
+- **ISTAT** — the StatKit Data Browser hub, which returns ground-truth
   values per dimension in sub-second time. Every dimension is exposed,
   including `REF_AREA` (~8,000 comuni). Set `OPENSDMX_DISABLE_HUB=1` to fall
   back to `contentconstraint`/`availableconstraint`.
@@ -554,7 +554,7 @@ request when the codelist is already cached.
 ISTAT keeps the `info` → `constraints` → `get` shape, with `values` as an
 optional sidecar for code labels. The SDMX REST endpoint has a strict ~13 s
 rate limit, but `opensdmx constraints` for ISTAT now goes through the
-`.Stat Suite` databrowser hub: every dimension (including `REF_AREA` with
+StatKit Data Browser hub: every dimension (including `REF_AREA` with
 ~8,000 comuni) is returned in sub-second time, even on 11-dimension
 datasets that previously timed out on `availableconstraint`. Some codes
 still carry version/date suffixes (`LBIRTH_FROM2017`, `POP_1JAN2021`) that
