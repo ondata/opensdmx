@@ -81,6 +81,10 @@ ones — same code hierarchy):
 Columns: `df_id`, `df_description`, `dimension_id`, `max_level`, `levels`
 (pipe-separated levels present), `n_territories`, `checked_at`.
 
+The full method — how codes are read and classified, why the level is per
+dataflow (not per survey), and how other providers fit — is documented in
+[docs/territorial-classification.md](../../docs/territorial-classification.md).
+
 ```sql
 SELECT df_id, df_description, n_territories
 FROM 'data/constraints/istat_territorial.csv'

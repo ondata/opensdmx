@@ -2,6 +2,12 @@
 
 How opensdmx gives each dataflow enough descriptive text for semantic search to work, and why the pipeline is shaped the way it is. This is design rationale — the runnable parts live in `scripts/descriptions_archive.py`, `src/opensdmx/embed.py`, and the resource under `src/opensdmx/data/descriptions/`.
 
+## Provider scope
+
+opensdmx is multi-provider. The description-harvest mechanism is generic: a provider opts in by declaring a reference-metadata channel in `portals.json` (`metadata_annotation`, `metadata_api_path`, `metadata_description_attribute`), and `embed.py` folds the harvested text in only when the provider's resource exists. Providers without such a channel keep their previous embeddings (title + category context), with no behaviour change.
+
+**Today only ISTAT declares such a channel**, so the endpoints, coverage figures, and examples in the rest of this document are ISTAT-specific. Other providers would follow the same shape with their own metadata service.
+
 ## The problem
 
 Over SDMX, most ISTAT dataflows expose only a terse `Name` (~49 characters, often a leaf label such as "Sport - età dettaglio"). The rich, human-written descriptions shown on EsploraDati never appear in the SDMX structure. ISTAT confirmed (2026-07-23) it will not add `<common:Description>` to the DSD. Without descriptive text, semantic search has almost nothing to match a natural-language question against.
