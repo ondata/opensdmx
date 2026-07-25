@@ -208,20 +208,47 @@ def pick_candidates(
     return pending + [row for _, row in errored] + [row for _, row in stale]
 
 
-def rebuild_istat_territorial(archive: pl.DataFrame, status: dict[str, dict]) -> None:
+def _discovered_territorial_dims(catalog: pl.DataFrame) -> set[str]:
+    """Dimension names ISTAT declares as territorial via the GEO_ID annotation.
+
+    Reads ``df_geo_dim`` from the catalog the caller already loaded (no re-fetch),
+    so a transient catalog failure can never silently drop the discovered
+    dimensions and publish an incomplete territorial view.
+
+    GEO_ID (df_geo_dim) is set on only ~27 dataflows, but it reveals the *names*
+    (e.g. RESIDENCE_TERR, REGION_OF_STUDY) that appear on many more. We apply each
+    discovered name wherever the dimension occurs — never widening by code shape,
+    since non-geographic dimensions (ECOICOP_2) also carry 6-digit codes.
+    """
+    if "df_geo_dim" not in catalog.columns:
+        return set()
+    return {d for d in catalog["df_geo_dim"].drop_nulls().to_list() if d}
+
+
+def rebuild_istat_territorial(
+    archive: pl.DataFrame, status: dict[str, dict], catalog: pl.DataFrame
+) -> None:
     """Derive per-dataflow territorial granularity from territorial dimension codes.
 
-    Older ISTAT dataflows use ITTER107 as territorial dimension, newer ones use
-    REF_AREA with the same code hierarchy. Codes that match no pattern
-    (aggregates like `IT108_NC`, `FILTER__*`, foreign areas) are ignored;
-    dataflows where nothing classifies are skipped.
+    Territorial dimensions are the ITTER107/REF_AREA defaults (same code hierarchy)
+    plus any dimension ISTAT names as territorial via the GEO_ID annotation
+    (`RESIDENCE_TERR`, `REGION_OF_STUDY`, …), gated on the dimension name only.
+    Codes that match no pattern (aggregates like `IT108_NC`, `FILTER__*`, foreign
+    areas) are ignored; dataflows where nothing classifies are skipped.
     """
+    extra_dims = _discovered_territorial_dims(catalog)
     territorial = archive.filter(
         pl.col("dimension_id").str.starts_with("ITTER")
         | (pl.col("dimension_id") == "REF_AREA")
+        | pl.col("dimension_id").is_in(list(extra_dims))
     )
     rows = []
-    for (df_id,), group in territorial.group_by(["df_id"], maintain_order=True):
+    # Group by (df_id, dimension_id): a dataflow may now carry more than one
+    # territorial dimension (e.g. REF_AREA + RESIDENCE_TERR), so each dimension
+    # gets its own row rather than pooling their codes into a single, wrong count.
+    for (df_id, dimension_id), group in territorial.group_by(
+        ["df_id", "dimension_id"], maintain_order=True
+    ):
         codes = group["code_id"].to_list()
         levels_seen = {lvl for code in codes if (lvl := classify_territorial_code(code))}
         ordered = [lvl for lvl in TERRITORIAL_LEVELS if lvl in levels_seen]
@@ -232,14 +259,14 @@ def rebuild_istat_territorial(archive: pl.DataFrame, status: dict[str, dict]) ->
             {
                 "df_id": df_id,
                 "df_description": entry.get("df_description", ""),
-                "dimension_id": group["dimension_id"][0],
+                "dimension_id": dimension_id,
                 "max_level": ordered[-1] if ordered else "",
                 "levels": "|".join(ordered),
                 "n_territories": len(codes),
                 "checked_at": entry.get("checked_at", ""),
             }
         )
-    rows.sort(key=lambda r: r["df_id"])
+    rows.sort(key=lambda r: (r["df_id"], r["dimension_id"]))
     out = DATA_DIR / "istat_territorial.csv"
     pl.DataFrame(
         rows,
@@ -353,7 +380,7 @@ def run(provider: str, budget: int, pause: float, stale_days: int,
     archive = merge_archive(provider, new_rows, probed_ids)
     save_status(provider, status)
     if provider == "istat":
-        rebuild_istat_territorial(archive, status)
+        rebuild_istat_territorial(archive, status, catalog)
 
     done = sum(1 for e in status.values() if e["status"] != "error")
     print(f"\nrun: {n_ok} ok, {n_empty} empty, {n_error} errors | "

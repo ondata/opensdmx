@@ -1,0 +1,77 @@
+"""Tests for the nightly territorial classifier (scripts/constraints_archive.py):
+GEO_ID-discovered dimensions are classified by name, never by code shape."""
+
+from __future__ import annotations
+
+import importlib.util
+from pathlib import Path
+
+import polars as pl
+
+_SPEC = importlib.util.spec_from_file_location(
+    "constraints_archive",
+    Path(__file__).resolve().parents[1] / "scripts" / "constraints_archive.py",
+)
+assert _SPEC is not None and _SPEC.loader is not None
+archive = importlib.util.module_from_spec(_SPEC)
+_SPEC.loader.exec_module(archive)
+
+
+def test_discovered_territorial_dims_reads_geo_dim():
+    catalog = pl.DataFrame(
+        {"df_id": ["A", "B", "C"], "df_geo_dim": ["RESIDENCE_TERR", None, "RESIDENCE_TERR"]}
+    )
+    assert archive._discovered_territorial_dims(catalog) == {"RESIDENCE_TERR"}
+    # A catalog without the column (legacy) yields nothing, no error.
+    assert archive._discovered_territorial_dims(pl.DataFrame({"df_id": ["A"]})) == set()
+
+
+def test_rebuild_classifies_by_name_not_by_code_shape(tmp_path, monkeypatch):
+    # Archive: a RESIDENCE_TERR dataflow with ITTER-format codes, and an ECOICOP_2
+    # dataflow whose 6-digit codes look municipal but are a consumption classification.
+    arch = pl.DataFrame(
+        {
+            "df_id": ["BIRTHS", "BIRTHS", "BIRTHS", "PRICES"],
+            "dimension_id": ["RESIDENCE_TERR", "RESIDENCE_TERR", "RESIDENCE_TERR", "ECOICOP_2"],
+            "code_id": ["IT", "ITC4", "015146", "011111"],
+        }
+    )
+    status = {
+        "BIRTHS": {"df_description": "Nati vivi", "checked_at": "2026-07-25"},
+        "PRICES": {"df_description": "Prezzi", "checked_at": "2026-07-25"},
+    }
+    catalog = pl.DataFrame({"df_id": ["BIRTHS"], "df_geo_dim": ["RESIDENCE_TERR"]})
+
+    monkeypatch.setattr(archive, "DATA_DIR", tmp_path)
+    archive.rebuild_istat_territorial(arch, status, catalog)
+
+    out = pl.read_csv(tmp_path / "istat_territorial.csv")
+    ids = out["df_id"].to_list()
+    # RESIDENCE_TERR is discovered → BIRTHS classified at its deepest level (comune)
+    assert "BIRTHS" in ids
+    assert out.filter(pl.col("df_id") == "BIRTHS")["max_level"][0] == "comune"
+    # ECOICOP_2 is not a territorial name → PRICES is not classified, despite 6-digit codes
+    assert "PRICES" not in ids
+
+
+def test_rebuild_keeps_multiple_territorial_dimensions_separate(tmp_path, monkeypatch):
+    # A dataflow with TWO territorial dimensions must yield one row per dimension,
+    # not a single row pooling their codes (which would sum n_territories and mix levels).
+    arch = pl.DataFrame(
+        {
+            "df_id": ["MULTI", "MULTI", "MULTI"],
+            "dimension_id": ["REF_AREA", "RESIDENCE_TERR", "RESIDENCE_TERR"],
+            "code_id": ["IT", "015146", "015147"],  # REF_AREA: national; RESIDENCE_TERR: 2 comuni
+        }
+    )
+    status = {"MULTI": {"df_description": "X", "checked_at": "2026-07-25"}}
+    catalog = pl.DataFrame({"df_id": ["MULTI"], "df_geo_dim": ["RESIDENCE_TERR"]})
+
+    monkeypatch.setattr(archive, "DATA_DIR", tmp_path)
+    archive.rebuild_istat_territorial(arch, status, catalog)
+
+    out = pl.read_csv(tmp_path / "istat_territorial.csv").sort("dimension_id")
+    assert out["dimension_id"].to_list() == ["REF_AREA", "RESIDENCE_TERR"]
+    ref, res = out.to_dicts()
+    assert ref["max_level"] == "nazionale" and ref["n_territories"] == 1
+    assert res["max_level"] == "comune" and res["n_territories"] == 2

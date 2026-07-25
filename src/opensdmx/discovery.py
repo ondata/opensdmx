@@ -38,6 +38,7 @@ class _DataflowRecord(TypedDict):
     df_last_update: str | None
     df_notes: str | None
     df_bulk_files: str | None
+    df_geo_dim: str | None
 
 import httpx
 import polars as pl
@@ -68,6 +69,7 @@ _OPTIONAL_CATALOG_COLUMNS: dict[str, Any] = {
     "df_last_update": pl.Utf8,
     "df_notes": pl.Utf8,
     "df_bulk_files": pl.Utf8,
+    "df_geo_dim": pl.Utf8,
 }
 
 
@@ -121,7 +123,7 @@ def all_available() -> pl.DataFrame:
     Returns a Polars DataFrame with columns:
         df_id, version, df_description, df_structure_id, has_constraint,
         and the optional dataflow-annotation columns df_keywords,
-        df_last_update, df_notes, df_bulk_files.
+        df_last_update, df_notes, df_bulk_files, df_geo_dim.
 
     The annotation columns are populated only for providers that declare the
     corresponding entries in their ``annotations`` block (currently ISTAT) and
@@ -192,6 +194,7 @@ def all_available() -> pl.DataFrame:
             "df_last_update": _annotation_value(anns, ann_config, "last_update"),
             "df_notes": _annotation_value(anns, ann_config, "notes"),
             "df_bulk_files": _annotation_value(anns, ann_config, "bulk_files"),
+            "df_geo_dim": _annotation_value(anns, ann_config, "geo_dim"),
         })
 
     # Bulk contentconstraint probe: populate has_constraint for providers that support it.
@@ -238,6 +241,7 @@ def all_available() -> pl.DataFrame:
         "df_last_update": pl.Utf8,
         "df_notes": pl.Utf8,
         "df_bulk_files": pl.Utf8,
+        "df_geo_dim": pl.Utf8,
     }).with_columns(pl.Series("has_constraint", has_constraint_col, dtype=pl.Boolean))
     try:
         df.write_parquet(_dataflow_cache_path())
