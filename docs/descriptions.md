@@ -4,7 +4,7 @@ How opensdmx gives each dataflow enough descriptive text for semantic search to 
 
 ## Provider scope
 
-opensdmx is multi-provider. The description-harvest mechanism is generic: a provider opts in by declaring a reference-metadata channel in `portals.json` (`metadata_annotation`, `metadata_api_path`, `metadata_description_attribute`), and `embed.py` folds the harvested text in only when the provider's resource exists. Providers without such a channel keep their previous embeddings (title + category context), with no behaviour change.
+opensdmx is multi-provider. The description-harvest mechanism is generic: a provider opts in by declaring the metadata channel in `portals.json` — the `metadata_url` entry in its `annotations` block plus `metadata_api_path` and `metadata_description_attribute` — and `embed.py` folds the harvested text in only when the provider's resource exists. Providers without such a channel keep their previous embeddings (title + category context), with no behaviour change.
 
 **Today only ISTAT declares such a channel**, so the endpoints, coverage figures, and examples in the rest of this document are ISTAT-specific. Other providers would follow the same shape with their own metadata service.
 
@@ -38,7 +38,7 @@ The descriptions ISTAT publishes on EsploraDati are reachable programmatically, 
 
 **De-duplicate by report, not by dataflow.** The `reportId` is shared across all the cuts of one survey, so the metadata is fetched once per report and mapped back to every referencing dataflow. For ISTAT this turns 3,974 linked dataflows into 622 unique fetches (6.3×). The metadata API is a service distinct from the rate-limited SDMX data endpoint, so the harvest is not bound by that throttle.
 
-**Declare the channel per provider, never branch on the provider name.** ISTAT sets `metadata_annotation`, `metadata_api_path`, and `metadata_description_attribute` in `portals.json`; the harvester and `embed.py` read them via `.get()`. A provider that declares nothing is never touched, and no library code contains `if provider == "istat"`.
+**Declare the channel per provider, never branch on the provider name.** ISTAT declares `metadata_url` in its `annotations` block plus `metadata_api_path` and `metadata_description_attribute` in `portals.json`; the harvester and `embed.py` read them via `.get()`. A provider that declares nothing is never touched, and no library code contains `if provider == "istat"`.
 
 **Guard the consumer on file existence.** `embed.py` joins the resource only when the file for the active provider exists. Absent — for the other providers, or a fresh checkout — the embedded text is byte-identical to before and no error is raised.
 

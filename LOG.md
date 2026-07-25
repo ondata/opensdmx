@@ -1,5 +1,26 @@
 # LOG
 
+## 2026-07-25 - refactor: single-pass annotation reader
+
+- refactor(discovery): replace the text-only `_keyword_annotation` walker with
+  `_annotations(node, language)` → `dict[type, Annotation(title, text, url)]`, one
+  pass over the node. Fixes the latent bug that the old reader saw only
+  `AnnotationText`, while most ISTAT annotations (LAST_UPDATE, LAYOUT_*, GEO_ID, …)
+  carry their value in `AnnotationTitle` — pointing the old reader at them returned
+  `None` silently. Presence-only annotations (e.g. READY_FOR_PRODUCTION) map to an
+  all-`None` `Annotation` so membership tests work; type strings match literally
+  (`LINkEDDATAFLOWNODE`, lowercase k). `_keyword_annotation` kept as a thin wrapper.
+- refactor(portals): declare consumed annotations in one `annotations` block
+  (`{stable_key: {type, value: text|title|presence}}`) instead of per-annotation
+  top-level keys; ISTAT migrated (`keywords`, `metadata_url`). The METADATA_API
+  service keys stay separate. No `if provider ==`.
+- refactor(scripts): the descriptions harvester drops its `_annotation_text` copy and
+  reads METADATA_URL through the shared reader.
+- Enabling change only: no new annotation is consumed and behaviour is unchanged —
+  verified end-to-end (ISTAT `df_keywords` still 144/4899, identical) and by the
+  untouched keyword tests. Unlocks LAST_UPDATE, DATAFLOW_NOTES, ATTACHED_DATA_FILES,
+  hidden-flag labelling (see `docs/istat/databrowser-annotations.md`) at zero net cost.
+
 ## 2026-07-25 - research: ISTAT dataflow annotations (SDMX Istat Toolkit)
 
 - docs: add `docs/istat/databrowser-annotations.md` — census of the SDMX annotations

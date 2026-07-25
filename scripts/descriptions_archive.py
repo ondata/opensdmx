@@ -45,7 +45,7 @@ import polars as pl
 
 import opensdmx
 from opensdmx.base import get_provider, set_provider
-from opensdmx.discovery import _local_tag, _struct_path
+from opensdmx.discovery import _annotation_value, _annotations, _struct_path
 from opensdmx.utils import xml_parse
 
 # The resource lives INSIDE the package so it is bundled in the wheel and read
@@ -78,44 +78,16 @@ def clean_prose(raw: str | None) -> str:
     return _WS_RE.sub(" ", text).strip()
 
 
-def _annotation_text(df_node, ann_type: str, language: str) -> str | None:
-    """Return the AnnotationText of the annotation whose AnnotationType matches.
-
-    Mirrors discovery._keyword_annotation: namespace-agnostic, prefers the
-    provider language, falls back to English, then the first available.
-    """
-    for child in df_node:
-        if _local_tag(child) != "Annotations":
-            continue
-        for ann in child:
-            if _local_tag(ann) != "Annotation":
-                continue
-            if not any(
-                _local_tag(s) == "AnnotationType" and (s.text or "").strip() == ann_type
-                for s in ann
-            ):
-                continue
-            texts: dict[str, str] = {}
-            for s in ann:
-                if _local_tag(s) == "AnnotationText" and s.text and s.text.strip():
-                    lang = s.get("{http://www.w3.org/XML/1998/namespace}lang", "")
-                    texts[lang] = s.text.strip()
-            if not texts:
-                return None
-            return texts.get(language) or texts.get("en") or next(iter(texts.values()))
-    return None
-
-
 def collect_metadata_links(provider_cfg: dict, agency: str, language: str) -> dict[str, dict]:
     """One catalog call -> {df_id: {report_id, metadata_set_id, base_url}} for linked dataflows."""
-    ann = provider_cfg["metadata_annotation"]
+    ann_config = provider_cfg.get("annotations", {})
     content = opensdmx.base.sdmx_request_xml(_struct_path(f"dataflow/{agency}"))
     root, ns = xml_parse(content)
 
     links: dict[str, dict] = {}
     for df in root.iter("{" + ns.get("structure", "") + "}Dataflow"):
         df_id = df.get("id") or ""
-        url = _annotation_text(df, ann, language)
+        url = _annotation_value(_annotations(df, language), ann_config, "metadata_url")
         if not url:
             continue
         q = parse_qs(urlparse(url).query)
@@ -214,9 +186,9 @@ def print_stats(provider: str) -> None:
 def run(provider: str, pause: float) -> int:
     set_provider(provider)
     cfg = get_provider()
-    if not cfg.get("metadata_annotation"):
+    if not cfg.get("annotations", {}).get("metadata_url"):
         print(f"Provider '{provider}' declares no metadata channel "
-              f"(missing 'metadata_annotation' in portals.json).", file=sys.stderr)
+              f"(missing 'annotations.metadata_url' in portals.json).", file=sys.stderr)
         return 1
 
     agency = cfg["agency_id"]
@@ -225,7 +197,7 @@ def run(provider: str, pause: float) -> int:
     attr_id = cfg.get("metadata_description_attribute", "DATA_SOURCE")
     link_attr = cfg.get("metadata_link_attribute")
 
-    print(f"Collecting {cfg['metadata_annotation']} links from the {provider} catalog...")
+    print(f"Collecting metadata links from the {provider} catalog...")
     links = collect_metadata_links(cfg, agency, language)
     total_linked = len(links)
     if not total_linked:

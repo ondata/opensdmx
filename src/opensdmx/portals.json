@@ -48,8 +48,10 @@
     "hub_node_id": "1",
     "hub_dataset_agency": "IT1",
     "hub_timeout": 15.0,
-    "keyword_annotation": "LAYOUT_DATAFLOW_KEYWORDS",
-    "metadata_annotation": "METADATA_URL",
+    "annotations": {
+      "keywords": { "type": "LAYOUT_DATAFLOW_KEYWORDS", "value": "text" },
+      "metadata_url": { "type": "METADATA_URL", "value": "text" }
+    },
     "metadata_api_path": "/api/getMetadata",
     "metadata_description_attribute": "DATA_SOURCE",
     "metadata_link_attribute": "DATA_SOURCE_LINK"

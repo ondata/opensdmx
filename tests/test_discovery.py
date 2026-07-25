@@ -637,6 +637,86 @@ def test_keyword_annotation_absent_returns_none():
     assert _keyword_annotation(_df_node(_KEYWORDS_ANN), "NOPE", "it") is None
 
 
+# --- _annotations (single-pass reader) -------------------------------------
+
+_PRESENCE_ANN = (
+    "<com:Annotations>"
+    "<com:Annotation><com:AnnotationType>READY_FOR_PRODUCTION</com:AnnotationType>"
+    "</com:Annotation>"
+    "<com:Annotation><com:AnnotationType>LINkEDDATAFLOWNODE</com:AnnotationType>"
+    "<com:AnnotationTitle>node-7</com:AnnotationTitle></com:Annotation>"
+    "</com:Annotations>"
+)
+
+
+def test_annotations_reads_title_field():
+    from opensdmx.discovery import _annotations
+
+    # LAST_UPDATE carries its value in AnnotationTitle, not AnnotationText —
+    # the old text-only reader returned None here.
+    anns = _annotations(_df_node(_KEYWORDS_ANN), "it")
+    assert anns["LAST_UPDATE"].title == "2024"
+    assert anns["LAST_UPDATE"].text is None
+
+
+def test_annotations_language_fallback_on_text():
+    from opensdmx.discovery import _annotations
+
+    anns = _annotations(_df_node(_KEYWORDS_ANN), "fr")  # fr absent → en
+    assert anns["LAYOUT_DATAFLOW_KEYWORDS"].text == "Crop+region, province"
+
+
+def test_annotations_presence_only_and_literal_type():
+    from opensdmx.discovery import _annotations
+
+    anns = _annotations(_df_node(_PRESENCE_ANN), "it")
+    # present but empty → all-None Annotation, membership still answers
+    assert "READY_FOR_PRODUCTION" in anns
+    assert anns["READY_FOR_PRODUCTION"] == (None, None, None)
+    # literal type string (lowercase k) is not normalised
+    assert anns["LINkEDDATAFLOWNODE"].title == "node-7"
+
+
+def test_annotations_no_annotations_is_empty():
+    from opensdmx.discovery import _annotations
+
+    assert _annotations(_df_node(), "it") == {}
+
+
+def test_annotation_value_resolves_by_config_key():
+    from opensdmx.discovery import _annotation_value, _annotations
+
+    anns = _annotations(_df_node(_KEYWORDS_ANN), "it")
+    config = {
+        "keywords": {"type": "LAYOUT_DATAFLOW_KEYWORDS", "value": "text"},
+        "updated": {"type": "LAST_UPDATE", "value": "title"},
+        "ready": {"type": "READY_FOR_PRODUCTION", "value": "presence"},
+        "absent": {"type": "NOPE", "value": "text"},
+    }
+    assert _annotation_value(anns, config, "keywords") == "Coltivazione+regione, provincia, comune"
+    assert _annotation_value(anns, config, "updated") == "2024"
+    assert _annotation_value(anns, config, "absent") is None
+    assert _annotation_value(anns, config, "unknown-key") is None
+    # presence resolves to "true" when the annotation is present
+    ready = _annotations(_df_node(_PRESENCE_ANN), "it")
+    assert _annotation_value(ready, config, "ready") == "true"
+
+
+def test_annotation_value_tolerates_malformed_config():
+    from opensdmx.discovery import _annotation_value, _annotations
+
+    anns = _annotations(_df_node(_KEYWORDS_ANN), "it")
+    # spec not a dict, missing type, and an unknown/dangerous value field all → None
+    assert _annotation_value(anns, {"k": "LAYOUT_DATAFLOW_KEYWORDS"}, "k") is None
+    assert _annotation_value(anns, {"k": {"value": "text"}}, "k") is None
+    assert (
+        _annotation_value(
+            anns, {"k": {"type": "LAYOUT_DATAFLOW_KEYWORDS", "value": "__class__"}}, "k"
+        )
+        is None
+    )
+
+
 def test_cached_dataflows_backfills_df_keywords(tmp_path):
     """A legacy cache lacking df_keywords still yields the column (schema stability)."""
     from opensdmx import discovery
