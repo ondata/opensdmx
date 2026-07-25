@@ -241,6 +241,7 @@ ISTAT's `annotations` block also produces three nullable catalog columns, stored
 | `df_last_update` | `LAST_UPDATE` | per-dataflow freshness; **raw string**, either ISO 8601 (`2026-07-22T08:34:26Z`) or `MM/dd/yyyy HH:MM:SS` — not pre-parsed |
 | `df_notes` | `DATAFLOW_NOTES` | methodological caveats; folded into embeddings |
 | `df_bulk_files` | `ATTACHED_DATA_FILES` | direct bulk download(s), format `URL\|LABEL` |
+| `df_geo_dim` | `GEO_ID` | the dataflow's territorial dimension when not the default `ITTER107`/`REF_AREA` (e.g. `RESIDENCE_TERR`); feeds the nightly territorial classifier |
 
 ---
 

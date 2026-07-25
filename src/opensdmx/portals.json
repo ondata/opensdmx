@@ -53,7 +53,8 @@
       "metadata_url": { "type": "METADATA_URL", "value": "text" },
       "last_update": { "type": "LAST_UPDATE", "value": "title" },
       "notes": { "type": "DATAFLOW_NOTES", "value": "text" },
-      "bulk_files": { "type": "ATTACHED_DATA_FILES", "value": "text" }
+      "bulk_files": { "type": "ATTACHED_DATA_FILES", "value": "text" },
+      "geo_dim": { "type": "GEO_ID", "value": "title" }
     },
     "metadata_api_path": "/api/getMetadata",
     "metadata_description_attribute": "DATA_SOURCE",

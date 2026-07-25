@@ -754,7 +754,10 @@ _CATALOG_ANN = (
     "</com:Annotation>"
     "<com:Annotation><com:AnnotationType>ATTACHED_DATA_FILES</com:AnnotationType>"
     '<com:AnnotationText xml:lang="it">https://x/full.csv.zip|DOWNLOAD_ZIP</com:AnnotationText>'
-    "</com:Annotation></com:Annotations>"
+    "</com:Annotation>"
+    "<com:Annotation><com:AnnotationType>GEO_ID</com:AnnotationType>"
+    "<com:AnnotationTitle>RESIDENCE_TERR</com:AnnotationTitle></com:Annotation>"
+    "</com:Annotations>"
 )
 
 
@@ -766,10 +769,12 @@ def test_annotation_value_resolves_catalog_fields():
         "last_update": {"type": "LAST_UPDATE", "value": "title"},
         "notes": {"type": "DATAFLOW_NOTES", "value": "text"},
         "bulk_files": {"type": "ATTACHED_DATA_FILES", "value": "text"},
+        "geo_dim": {"type": "GEO_ID", "value": "title"},
     }
     # last_update reads the title; notes/bulk read the text, not the literal title label
     assert _annotation_value(anns, config, "last_update") == "2026-07-22T08:34:26.801Z"
     assert _annotation_value(anns, config, "notes") == "Dati provinciali non confrontabili dal 2017"
     assert _annotation_value(anns, config, "bulk_files") == "https://x/full.csv.zip|DOWNLOAD_ZIP"
+    assert _annotation_value(anns, config, "geo_dim") == "RESIDENCE_TERR"
     # absent annotation → None
     assert _annotation_value(_annotations(_df_node(), "it"), config, "notes") is None

@@ -24,7 +24,11 @@ For each dataflow we query the ISTAT databrowser **hub** (`databrowserhub/api/co
 
 ### 2. Identifying the territorial dimension
 
-We keep the dimension whose id **starts with `ITTER`** (older dataflows) **or equals `REF_AREA`** (newer ones). Same code hierarchy (`CL_ITTER107`), different dimension name.
+We keep the dimension whose id **starts with `ITTER`** (older dataflows) **or equals `REF_AREA`** (newer ones) — same `CL_ITTER107` code hierarchy — **plus any dimension ISTAT names as territorial via the `GEO_ID` annotation**.
+
+Some dataflows carry their territory on a differently-named dimension (`RESIDENCE_TERR`, `REGION_OF_STUDY`, …). ISTAT declares the exception on the dataflow with a `GEO_ID` annotation, captured as the `df_geo_dim` catalog column. `GEO_ID` is set on only ~27 dataflows, but it reveals the *names*, which appear on many more (`RESIDENCE_TERR` alone on ~79). We collect the distinct `df_geo_dim` values across the catalog and add them to the territorial-dimension set, so each discovered name is classified **wherever it occurs** — e.g. this is what puts the births survey (`RESIDENCE_TERR`) into the view.
+
+**Gate on the name, never on code shape.** A dimension is territorial only if its id is in the set; only then are its codes classified by format. The 6-digit municipality pattern also matches non-geographic classifications (`ECOICOP_2`, `COICOP_REV_ISTAT`), so widening by code shape would misclassify them — the `GEO_ID` name-gating is the safeguard.
 
 ### 3. Classifying a single code
 

@@ -1,5 +1,19 @@
 # LOG
 
+## 2026-07-25 - feat: territorial dimension from the GEO_ID annotation
+
+- feat(discovery): capture `GEO_ID` into a new `df_geo_dim` catalog column — the
+  territorial dimension ISTAT names on a dataflow when it is not the default
+  `ITTER107`/`REF_AREA` (e.g. `RESIDENCE_TERR`).
+- feat(constraints_archive): the nightly territorial classifier now treats as
+  territorial the default dimensions **plus the distinct `df_geo_dim` names
+  discovered across the catalog**, applying each name wherever it occurs. Gated on
+  the dimension name only — never on code shape (`ECOICOP_2` has 6-digit codes but
+  is not geography). Recovers 77 previously-invisible dataflows (incl. births `25_74`)
+  while correctly excluding the 31 `ECOICOP` dataflows.
+- Verified in a dry run over `data/constraints/istat.parquet`: classifiable dataflows
+  1,749 → 1,826; `RESIDENCE_TERR` discovered from `GEO_ID`; `ECOICOP` not included.
+
 ## 2026-07-25 - feat: consume LAST_UPDATE / DATAFLOW_NOTES / ATTACHED_DATA_FILES
 
 - feat(discovery): three new nullable catalog columns read from ISTAT's `annotations`
