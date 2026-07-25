@@ -634,17 +634,22 @@ def _annotation_value(
     ``ann_config`` is the provider's ``annotations`` block
     (``{stable_key: {type, value}}``); ``value`` is ``text``, ``title`` or
     ``presence``. Returns ``"true"`` for a present ``presence`` annotation.
+
+    Defensive against a malformed/hand-edited config: a missing ``type`` or an
+    unknown ``value`` field yields ``None`` rather than raising or reading an
+    arbitrary attribute off the ``Annotation`` tuple.
     """
-    spec = ann_config.get(key)
-    if not spec:
+    if not isinstance(spec := ann_config.get(key), dict):
         return None
-    ann = anns.get(spec["type"])
+    ann = anns.get(spec.get("type"))
     if ann is None:
         return None
     field = spec.get("value", "text")
     if field == "presence":
         return "true"
-    return getattr(ann, field, None)
+    if field not in Annotation._fields:  # only title/text/url are readable
+        return None
+    return getattr(ann, field)
 
 
 def _keyword_annotation(df_node: Any, ann_type: str, language: str) -> str | None:

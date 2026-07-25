@@ -41,7 +41,7 @@ One call (`dataflow/IT1/all?references=none`, 13.6 MB, 4,899 dataflows) gives th
 |---|---:|---:|---|
 | `DDBDataflow` | 4,511 | 92.1% | — (internal hash) |
 | **`LAST_UPDATE`** | 4,511 | 92.1% | **no** |
-| `METADATA_URL` | 3,974 | 81.1% | **yes** (`metadata_annotation`) |
+| `METADATA_URL` | 3,974 | 81.1% | **yes** (`annotations.metadata_url`) |
 | **`LAYOUT_ROW`** | 3,945 | 80.5% | **no** |
 | **`LAYOUT_COLUMN`** | 3,945 | 80.5% | **no** |
 | **`LAYOUT_FILTER`** | 3,941 | 80.4% | **no** |
@@ -52,7 +52,7 @@ One call (`dataflow/IT1/all?references=none`, 13.6 MB, 4,899 dataflows) gives th
 | **`ATTACHED_DATA_FILES`** | 366 | 7.5% | **no** |
 | **`DATAFLOW_HIDDEN`** | 217 | 4.4% | **no** |
 | **`DATAFLOW_NOTES`** | 145 | 3.0% | **no** |
-| `LAYOUT_DATAFLOW_KEYWORDS` | 144 | 2.9% | **yes** (`keyword_annotation`) |
+| `LAYOUT_DATAFLOW_KEYWORDS` | 144 | 2.9% | **yes** (`annotations.keywords`) |
 | `LAYOUT_ROW_SECTION` | 137 | 2.8% | no |
 | `CRITERIA_SELECTION` | 124 | 2.5% | no |
 | `LAYOUT_REFERENCE_METADATA` | 119 | 2.4% | no — but 107/119 duplicate `METADATA_URL` |
@@ -180,7 +180,7 @@ That is the same assumption `docs/territorial-classification.md` makes (§2: kee
 
 ## If any of this gets implemented
 
-New annotation reads must be declared in `portals.json`, following the existing pattern (`keyword_annotation`, `metadata_annotation` at lines 51–52) — never behind a per-provider `if`. Since ISTAT and INPS appear to run the same software, an annotation declared this way may serve both.
+New annotation reads must be declared in the provider's `annotations` block in `portals.json` (`{stable_key: {type, value: text|title|presence}}`) and read through the shared single-pass reader — never behind a per-provider `if`. Since ISTAT and INPS appear to run the same software, an annotation declared this way may serve both.
 
 ---
 

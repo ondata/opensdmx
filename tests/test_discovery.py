@@ -702,6 +702,21 @@ def test_annotation_value_resolves_by_config_key():
     assert _annotation_value(ready, config, "ready") == "true"
 
 
+def test_annotation_value_tolerates_malformed_config():
+    from opensdmx.discovery import _annotation_value, _annotations
+
+    anns = _annotations(_df_node(_KEYWORDS_ANN), "it")
+    # spec not a dict, missing type, and an unknown/dangerous value field all → None
+    assert _annotation_value(anns, {"k": "LAYOUT_DATAFLOW_KEYWORDS"}, "k") is None
+    assert _annotation_value(anns, {"k": {"value": "text"}}, "k") is None
+    assert (
+        _annotation_value(
+            anns, {"k": {"type": "LAYOUT_DATAFLOW_KEYWORDS", "value": "__class__"}}, "k"
+        )
+        is None
+    )
+
+
 def test_cached_dataflows_backfills_df_keywords(tmp_path):
     """A legacy cache lacking df_keywords still yields the column (schema stability)."""
     from opensdmx import discovery
