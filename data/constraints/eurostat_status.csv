@@ -3198,3 +3198,334 @@ For more information check: https://developer",2026-07-25
 HTEC_EMP_NISCED,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity and educational attainment level (1994-2008),ok,sdmx,6,86,0,"",2026-07-25
 HTEC_EMP_NISCED2,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity and educational attainment level (2008-2026),ok,sdmx,6,96,0,"",2026-07-25
 HTEC_EMP_NISCO,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity and occupation (1994-2008),ok,sdmx,6,85,0,"",2026-07-25
+HTEC_EMP_NISCO2,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity and occupation (2008-2026),ok,sdmx,6,96,0,"",2026-07-25
+HTEC_EMP_REG,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity and NUTS 2 region (1999-2008),ok,sdmx,6,512,0,"",2026-07-25
+HTEC_EMP_REG2,Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity and NUTS 2 region (2008-2026),ok,sdmx,6,569,0,"",2026-07-25
+HTEC_EMP_RISCED,"Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity, NUTS 1 region and educational attainment level (1999-2008)",ok,sdmx,6,201,0,"",2026-07-25
+HTEC_EMP_RISCED2,"Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity, NUTS 1 region and educational attainment level (2008-2026)",ok,sdmx,6,219,0,"",2026-07-25
+HTEC_EMP_RISCO,"Employed persons in technology and knowledge-intensive sectors by NACE Rev. 1.1 activity, NUTS 1 region and occupation (1999-2008)",ok,sdmx,6,200,0,"",2026-07-25
+HTEC_EMP_RISCO2,"Employed persons in technology and knowledge-intensive sectors by NACE Rev. 2 activity, NUTS 1 region and occupation (2008-2026)",ok,sdmx,6,219,0,"",2026-07-25
+HTEC_EMP_SBS,"Employment statistics on high-tech industries and Knowledge Intensive Services at the national level (1995-2007, NACE Rev. 1.1)",ok,sdmx,5,58,0,"",2026-07-25
+HTEC_EMP_SBS2,"Employment statistics on high-tech industries and Knowledge Intensive Services at the national level (from 2008 onwards, NACE Rev. 2)",ok,sdmx,5,53,0,"",2026-07-25
+HTEC_KIA_EMP,Employed persons in knowledge-intensive activities by NACE Rev. 1.1 activity (2000-2008),ok,sdmx,6,52,0,"",2026-07-25
+HTEC_KIA_EMP2,Employed persons in knowledge-intensive activities by NACE Rev. 2 activity (2008-2026),ok,sdmx,6,64,0,"",2026-07-25
+HTEC_KIA_EMP2$DV_1869,Employed persons in knowledge-intensive activities by NACE Rev. 2 activity (2008-2026),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HTEC_KIA_EMP2$DV_1869'
+For more information check: https://developer",2026-07-25
+HTEC_SI_EXP4,"High-tech exports - Exports of high technology products as a share of total exports (from 2007, SITC Rev. 4)",ok,sdmx,4,49,0,"",2026-07-25
+HTEC_STI_EXP,Business enterprise R&D expenditure in high-tech sectors by NACE Rev. 1.1 (1993-2009),ok,sdmx,5,65,0,"",2026-07-25
+HTEC_STI_EXP2,Business enterprise R&D expenditure in high-tech sectors by NACE Rev. 2,ok,sdmx,5,75,0,"",2026-07-25
+HTEC_STI_PERS,Business enterprise R&D personnel in high-tech sectors by NACE Rev. 1.1 (1993-2009),ok,sdmx,6,68,0,"",2026-07-25
+HTEC_STI_PERS2,Business enterprise R&D personnel in high-tech sectors by NACE Rev. 2,ok,sdmx,6,77,0,"",2026-07-25
+HTEC_TRD_GROUP4,"High-tech trade by high-tech group of products - million euro (from 2007, SITC Rev. 4)",ok,sdmx,7,64,0,"",2026-07-25
+HTEC_TRD_TOT4,"Total high-tech trade - million euro, % of total (from 2007, SITC Rev. 4)",ok,sdmx,6,55,0,"",2026-07-25
+ICW_AFF_01,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by income quantiles - experimental statistics,ok,sdmx,6,90,0,"",2026-07-25
+ICW_AFF_02,"Disposable income of households (with expenditure greater than zero) spent on essential goods and services by risk of income poverty, level of expenditure and material deprivation - experimental statistics",ok,sdmx,8,83,0,"",2026-07-25
+ICW_AFF_03,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by risk of income poverty or social exclusion - experimental statistics,ok,sdmx,6,77,0,"",2026-07-25
+ICW_AFF_04,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by household composition - experimental statistics,ok,sdmx,6,81,0,"",2026-07-25
+ICW_AFF_05,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by degree of urbanisation - experimental statistics,ok,sdmx,6,78,0,"",2026-07-25
+ICW_AFF_06,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by activity status of the reference person - experimental statistics,ok,sdmx,6,82,0,"",2026-07-25
+ICW_AFF_07,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by age group of the reference person - experimental statistics,ok,sdmx,6,81,0,"",2026-07-25
+ICW_AFF_08,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by educational attainment level of the reference person - experimental statistics,ok,sdmx,6,86,0,"",2026-07-25
+ICW_AFF_09,Disposable income of households (with expenditure greater than zero) spent on essential goods and services by overburden status - experimental statistics,ok,sdmx,6,77,0,"",2026-07-25
+ICW_CAR_01,Distribution of households by age of the reference person - experimental statistics,ok,sdmx,5,50,0,"",2026-07-25
+ICW_CAR_02,Distribution of households by household type - experimental statistics,ok,sdmx,5,44,0,"",2026-07-25
+ICW_CAR_03,Distribution of households by educational attainment level of the reference person - experimental statistics,ok,sdmx,5,48,0,"",2026-07-25
+ICW_CAR_04,Distribution of households by activity status of the reference person - experimental statistics,ok,sdmx,5,44,0,"",2026-07-25
+ICW_POV_01,"Persons with low level of expenditure by risk of income poverty, material deprivation and work intensity - experimental statistics",ok,sdmx,8,49,0,"",2026-07-25
+ICW_POV_02,Households at risk of asset-based vulnerability - experimental statistics,ok,sdmx,6,46,0,"",2026-07-25
+ICW_POV_03,Proportion of dissaving households - experimental statistics,ok,sdmx,5,39,0,"",2026-07-25
+ICW_POV_04,Proportion of dissaving households by level of expenditure and age of the reference person - experimental statistics,ok,sdmx,7,57,0,"",2026-07-25
+ICW_POV_05,Proportion of dissaving households by level of expenditure and household type - experimental statistics,ok,sdmx,7,50,0,"",2026-07-25
+ICW_POV_06,Proportion of dissaving households by level of expenditure and income quintile - experimental statistics,ok,sdmx,7,49,0,"",2026-07-25
+ICW_POV_07,Proportion of dissaving households by level of expenditure and educational attainment level of the reference person - experimental statistics,ok,sdmx,7,54,0,"",2026-07-25
+ICW_POV_08,Proportion of dissaving households by level of expenditure and degree of urbanisation - experimental statistics,ok,sdmx,7,46,0,"",2026-07-25
+ICW_POV_09,Proportion of dissaving households by level of expenditure and activity status of the household reference person - experimental statistics,ok,sdmx,7,51,0,"",2026-07-25
+ICW_POV_10,Persons at two-fold risk of poverty by age and sex - experimental statistics,ok,sdmx,7,50,0,"",2026-07-25
+ICW_POV_11,Persons at two-fold risk of poverty by household type - experimental statistics,ok,sdmx,6,47,0,"",2026-07-25
+ICW_POV_12,Persons at two-fold risk of poverty by activity status- experimental statistics,ok,sdmx,6,48,0,"",2026-07-25
+ICW_RES_01,"Share of households and economic resources by income, consumption and wealth quantiles - experimental statistics",ok,sdmx,8,65,0,"",2026-07-25
+ICW_RES_02,"Mean and median economic resources of households by income, consumption and wealth quantiles - experimental statistics",ok,sdmx,9,63,0,"",2026-07-25
+ICW_SR_01,Median saving rate by age of the reference person - experimental statistics,ok,sdmx,5,54,0,"",2026-07-25
+ICW_SR_02,Median saving rate by household type - experimental statistics,ok,sdmx,5,44,0,"",2026-07-25
+ICW_SR_03,Median saving rate by income quintile - experimental statistics,ok,sdmx,5,43,0,"",2026-07-25
+ICW_SR_04,Median saving rate by educational attainment level of the reference person - experimental statistics,ok,sdmx,5,49,0,"",2026-07-25
+ICW_SR_05,Gini coefficient on household population - experimental statistics,ok,sdmx,5,41,0,"",2026-07-25
+ICW_SR_06,Median consumption by income decile - experimental statistics,ok,sdmx,5,48,0,"",2026-07-25
+ICW_SR_07,Proportion of consumption decile by income decile - experimental statistics,ok,sdmx,6,57,0,"",2026-07-25
+ICW_SR_08,Aggregate propensity to consume by age of the reference person - experimental statistics,ok,sdmx,5,54,0,"",2026-07-25
+ICW_SR_09,Aggregate propensity to consume by household type - experimental statistics,ok,sdmx,5,44,0,"",2026-07-25
+ICW_SR_10,Aggregate propensity to consume by income quintile - experimental statistics,ok,sdmx,5,43,0,"",2026-07-25
+ICW_SR_11,Aggregate propensity to consume by educational attainment level of the reference person - experimental statistics,ok,sdmx,5,49,0,"",2026-07-25
+ICW_SR_12,Median saving rate by the self-declared level of difficulty to make ends meet - experimental statistics,ok,sdmx,5,43,0,"",2026-07-25
+ICW_SR_13,Median saving rate by degree of urbanisation - experimental statistics,ok,sdmx,5,41,0,"",2026-07-25
+ICW_SR_14,Aggregate propensity to consume by degree of urbanisation - experimental statistics,ok,sdmx,5,41,0,"",2026-07-25
+ICW_SR_15,Median saving rate by activity status of the reference person - experimental statistics,ok,sdmx,5,45,0,"",2026-07-25
+ICW_SR_16,Aggregate propensity to consume by activity status of the reference person - experimental statistics,ok,sdmx,5,45,0,"",2026-07-25
+ICW_TAX_01,Distribution of VAT paid by households as a percentage of their gross income by age of the reference person - experimental statistics,ok,sdmx,6,52,0,"",2026-07-25
+ICW_TAX_02,Distribution of VAT paid by households as a percentage of their gross income by household type - experimental statistics,ok,sdmx,6,43,0,"",2026-07-25
+ICW_TAX_03,Distribution of VAT paid by households as a percentage of their gross income by income quintile - experimental statistics,ok,sdmx,6,42,0,"",2026-07-25
+ICW_TAX_04,Distribution of direct taxes paid by households as a percentage of their gross income by age of the reference person - experimental statistics,ok,sdmx,6,68,0,"",2026-07-25
+ICW_TAX_05,Distribution of direct taxes paid by households as a percentage of their gross income by household type - experimental statistics,ok,sdmx,6,58,0,"",2026-07-25
+ICW_TAX_06,Distribution of direct taxes paid by households as a percentage of their gross income by income quintile - experimental statistics,ok,sdmx,6,57,0,"",2026-07-25
+ICW_TAX_07,Distribution of direct and indirect taxes paid by households as a percentage of their gross income by age of the reference person - experimental statistics,ok,sdmx,6,52,0,"",2026-07-25
+ICW_TAX_08,Distribution of direct and indirect taxes paid by households as a percentage of their gross income by household type - experimental statistics,ok,sdmx,6,43,0,"",2026-07-25
+ICW_TAX_09,Distribution of direct and indirect taxes paid by households as a percentage of their gross income by income quintile - experimental statistics,ok,sdmx,6,42,0,"",2026-07-25
+ICW_TAX_10,VAT rate by COICOP consumption purpose - experimental statistics,ok,sdmx,5,103,0,"",2026-07-25
+ILC_ATS01,"Children receiving formal childcare services by age, income group and degree of urbanisation (2016)",ok,sdmx,8,53,0,"",2026-07-25
+ILC_ATS02,"Children receiving paid formal childcare services by age, household type, income group and contributor (2016)",ok,sdmx,8,60,0,"",2026-07-25
+ILC_ATS03,"Children receiving formal childcare services by household type, income group, degree of urbanisation and level of difficulty to afford formal childcare services (2016)",ok,sdmx,8,59,0,"",2026-07-25
+ILC_ATS04,"Children by household type, income group, degree of urbanisation and main reason for not meeting needs for formal childcare services (2016)",ok,sdmx,8,60,0,"",2026-07-25
+ILC_ATS05,"Persons paying tuition fees by sex, age, income group and cost of tuition (2016)",ok,sdmx,8,56,0,"",2026-07-25
+ILC_ATS06,"Persons in formal education by sex, age, income group and contributor (2016)",ok,sdmx,8,60,0,"",2026-07-25
+ILC_ATS07,"Persons paying for formal education by household type, income group, degree of urbanisation and level of difficulty to pay (2016)",ok,sdmx,8,69,0,"",2026-07-25
+ILC_ATS07$DV_3461,"Persons paying for formal education by household type, income group, degree of urbanisation and level of difficulty to pay (2016)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_ATS07$DV_3461'
+For more information check: https://developer.moz",2026-07-25
+ILC_ATS08,"Persons by sex, age, household type, income group, degree of urbanisation and main reason for not meeting needs for formal education (2016)",ok,sdmx,10,78,0,"",2026-07-25
+ILC_ATS09,"Persons participating in training related to hobbies by sex, age, income group, most frequent activity status and educational attainment level (2016)",ok,sdmx,9,63,0,"",2026-07-25
+ILC_ATS10,"Persons participating in training related to professional activity by sex, age, income group, most frequent activity status and educational attainment level (2016)",ok,sdmx,9,63,0,"",2026-07-25
+ILC_ATS11,"Persons not participating in training related to professional activity by sex, age, income group, most frequent activity status, educational attainment level and reason of non participation (2016)",ok,sdmx,10,69,0,"",2026-07-25
+ILC_ATS12,"Persons using health care services by household type, income group and level of difficulty to afford care services (2016)",ok,sdmx,7,65,0,"",2026-07-25
+ILC_ATS14,"Persons using professional homecare services by household type, income group, degree of urbanisation and frequency (2016)",ok,sdmx,8,66,0,"",2026-07-25
+ILC_ATS17,"Persons providing or not informal homecare services by sex, age, degree of urbanisation, most frequent activity status and addressee of care (2016)",ok,sdmx,9,66,0,"",2026-07-25
+ILC_ATS18,"Persons providing informal care or assistance by sex, age, degree of urbanisation, most frequent activity status and frequency (2016)",ok,sdmx,9,65,0,"",2026-07-25
+ILC_ATS19,"Persons in households with at least one user of professional homecare services by degree of urbanisation, risk of poverty threshold and care status",ok,sdmx,8,50,0,"",2026-07-25
+ILC_ATS19B,"Persons in households with at least one user of professional homecare services by age, sex, care status and disability (activity limitation)",ok,sdmx,8,56,0,"",2026-07-25
+ILC_ATS19C,"Persons in households with at least one user of professional homecare services by age, disability (activity limitation), care status and risk of poverty or social exclusion",ok,sdmx,8,56,0,"",2026-07-25
+ILC_ATS20,"Persons in households with at least one person needing professional homecare services by age, reason for not receiving (more) professional homecare services and risk of poverty or social exclusion",ok,sdmx,7,57,0,"",2026-07-25
+ILC_ATS20B,"Persons in households with at least one person needing professional homecare services by sex, reason for not receiving (more) professional homecare services and degree of urbanisation",ok,sdmx,7,53,0,"",2026-07-25
+ILC_ATS21,Persons in households paying for professional homecare services received within the household by disability (activity limitation) and difficulty to pay professional homecare services,ok,sdmx,6,50,0,"",2026-07-25
+ILC_ATS21A,Persons in households paying for professional homecare services received within the household by age and difficulty to pay professional homecare services,ok,sdmx,6,52,0,"",2026-07-25
+ILC_ATS22,Persons in households with at least one person that reported a need for long-term care by care status and household composition,ok,sdmx,6,49,0,"",2026-07-25
+ILC_ATSB01A,"Employed people entitled or not to unemployment and/or sickness benefits by status in employment, age and sex",ok,sdmx,9,58,0,"",2026-07-25
+ILC_ATSB01B,Employed people entitled or not to unemployment and/or sickness benefits by status in employment and disability (activity limitation),ok,sdmx,8,51,0,"",2026-07-25
+ILC_ATSB02A,"Employed people entitled or not to unemployment and/or sickness benefits by status in employment, age, sex and working time arrangements",ok,sdmx,10,61,0,"",2026-07-25
+ILC_ATSB02B,"Employed people entitled or not to unemployment and/or sickness benefits by status in employment, disability (activity limitation) and working time arrangements",ok,sdmx,9,54,0,"",2026-07-25
+ILC_ATSB03A,"Employees entitled or not to unemployment and/or sickness benefits by age, sex and type of contract",ok,sdmx,9,58,0,"",2026-07-25
+ILC_ATSB03B,Employees entitled or not to unemployment and/or sickness benefits by disability (activity limitation) and type of contract,ok,sdmx,8,51,0,"",2026-07-25
+ILC_ATSC01,"Children receiving formal childcare services by age, risk of poverty threshold and type of cost",ok,sdmx,7,51,0,"",2026-07-25
+ILC_ATSC01A,Children receiving formal childcare services by level of difficulty in affording childcare,ok,sdmx,5,47,0,"",2026-07-25
+ILC_ATSC01B,"Children receiving formal childcare services by age, degree of urbanisation and type of cost",ok,sdmx,7,50,0,"",2026-07-25
+ILC_ATSC01C,"Children receiving formal childcare services by risk of poverty threshold, degree of urbanisation and type of cost",ok,sdmx,8,50,0,"",2026-07-25
+ILC_ATSC02,"Unmet needs for formal childcare services by main reason, risk of poverty or social exclusion and household composition",ok,sdmx,7,58,0,"",2026-07-25
+ILC_ATSC02A,"Unmet needs for formal childcare services by main reason, risk of poverty or social exclusion and age",ok,sdmx,7,56,0,"",2026-07-25
+ILC_ATSD01,"Persons feeling discriminated against by life situation, sex, age, disability (activity limitation), and risk of poverty or social exclusion",ok,sdmx,9,54,0,"",2026-07-25
+ILC_ATSD01$DV_3201,"Persons feeling discriminated against by life situation, sex, age, disability (activity limitation), and risk of poverty or social exclusion",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_ATSD01$DV_3201'
+For more information check: https://developer.mo",2026-07-25
+ILC_ATSD02,"Persons feeling discriminated against by life situation, sex and group of country of birth",ok,sdmx,7,50,0,"",2026-07-25
+ILC_ATSD02$DV_3202,"Persons feeling discriminated against by life situation, sex and group of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_ATSD02$DV_3202'
+For more information check: https://developer.mo",2026-07-25
+ILC_ATST01,"Persons using public transport by frequency, age, sex and risk of poverty or social exclusion",ok,sdmx,8,53,0,"",2026-07-25
+ILC_ATST02,"Persons not using public transport regularly by reason, frequency, age, sex and risk of poverty or social exclusion",ok,sdmx,9,58,0,"",2026-07-25
+ILC_ATST03,"Persons using public transport by frequency, age, sex and disability (activity limitation)",ok,sdmx,8,52,0,"",2026-07-25
+ILC_ATST04,"Persons not using public transport regularly by reason, frequency, age, sex and disability (activity limitation)",ok,sdmx,9,57,0,"",2026-07-25
+ILC_ATST05,"Persons using public transport by frequency, degree of urbanization and household composition",ok,sdmx,7,55,0,"",2026-07-25
+ILC_ATST06,"Persons not using public transport regularly by reason, frequency, degree of urbanization and household composition",ok,sdmx,8,60,0,"",2026-07-25
+ILC_CAINDFORM25,"Children in formal childcare or education by age group, duration and risk of poverty or social exclusion",ok,sdmx,7,62,0,"",2026-07-25
+ILC_CAINDFORM25B,"Children in formal childcare or education by age group, duration and risk of poverty or social exclusion - % of children in the respective at risk of poverty or social exclusion situation",ok,sdmx,7,62,0,"",2026-07-25
+ILC_CAINDFORM25Q,"Children in formal childcare or education by age group, duration and income quintile",ok,sdmx,7,65,0,"",2026-07-25
+ILC_CAINDFORMAL,Children in formal childcare or education by age group and duration - % over the population of each age group,ok,sdmx,6,68,0,"",2026-07-25
+ILC_CAINDFORMAL$DV_1905,Children in formal childcare or education by age group and duration - % over the population of each age group,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_CAINDFORMAL$DV_1905'
+For more information check: https://develop",2026-07-25
+ILC_CAINDOTHER,Other types of childcare by age group and duration - % over the population of each age group,ok,sdmx,6,75,0,"",2026-07-25
+ILC_CAMDFORG0,Median number of weekly hours of formal care by age group - children with at least 1 hour of formal care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAMDOTHG0,Median number of weekly hours of other types of care by age group - children with at least one hour of other types of care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAMNFORALL,Average number of weekly hours of formal care by age group - children with or without formal care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAMNFORG0,Average number of weekly hours of formal care by age group - children with at least 1 hour of formal care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAMNOTHALL,Average number of weekly hours of other types of care by age group - children with or without other types of care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAMNOTHG0,Average number of weekly hours of other types of care by age group - children with at least one hour of other types of care,ok,sdmx,4,71,0,"",2026-07-25
+ILC_CAPARENTS,Children cared only by their parents by age group - % over the population of each age group,ok,sdmx,5,72,0,"",2026-07-25
+ILC_CHG01,Children with at least one parent born outside the EU by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHG02,Children living in single-parent households by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHG03,Children with at least one parent with disability by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHG04,Children living in households facing housing cost overburden by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHG05,Children living in overcrowded households by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHG06,Children living in households unable to keep home adequately warm by at risk of poverty or social exclusion situation (population aged 0-17),ok,sdmx,5,55,0,"",2026-07-25
+ILC_CHMD01,Child specific material deprivation rate by age (children aged less than 16 years),ok,sdmx,5,51,0,"",2026-07-25
+ILC_CHMD02,Child specific material deprivation rate by household composition (children aged less than 16 years),ok,sdmx,5,49,0,"",2026-07-25
+ILC_CHMD03,Child specific material deprivation rate by educational attainment level of their parents (children aged less than 16 years),ok,sdmx,5,46,0,"",2026-07-25
+ILC_CHMD04,Mean number of deprivation items among the children deprived (children aged less than 16 years),ok,sdmx,5,42,0,"",2026-07-25
+ILC_CHMD05,Children (aged less than 16) unable to participate in school trips and school events due to financial reasons by risk of poverty or social exclusion,ok,sdmx,5,44,0,"",2026-07-25
+ILC_CHMD06,Children (aged less than 16) unable to participate in regular leisure activities due to financial reasons by risk of poverty or social exclusion,ok,sdmx,5,44,0,"",2026-07-25
+ILC_CHMD07,Children (aged less than 16) unable to have fresh fruits and vegetables once a day due to financial reasons by risk of poverty or social exclusion,ok,sdmx,5,44,0,"",2026-07-25
+ILC_CHMD08,"Children (aged less than 16) unable to have a meal with meat, chicken, fish (or vegetarian equivalent) at least once a day due to financial reasons by risk of poverty or social exclusion",ok,sdmx,5,44,0,"",2026-07-25
+ILC_CHSB01,Children having one of their parents living outside the household,ok,sdmx,4,35,0,"",2026-07-25
+ILC_CHSB02,Parents spending enough time with children living with them,ok,sdmx,4,35,0,"",2026-07-25
+ILC_DI01,Distribution of income by quantiles,ok,sdmx,6,114,0,"",2026-07-25
+ILC_DI02,Distribution of income by different income groups,ok,sdmx,6,85,0,"",2026-07-25
+ILC_DI03,Mean and median income by age and sex,ok,sdmx,7,111,0,"",2026-07-25
+ILC_DI04,Distribution of income by household composition,ok,sdmx,6,102,0,"",2026-07-25
+ILC_DI05,Mean and median income by most frequent activity status,ok,sdmx,8,101,0,"",2026-07-25
+ILC_DI06,Mean and median income by main source of income (1995-2001),ok,sdmx,6,32,0,"",2026-07-25
+ILC_DI07,Distribution of income by work intensity of the houshold (population aged 0 to 64 years),ok,sdmx,9,79,0,"",2026-07-25
+ILC_DI07H,Mean and median income by work intensity of the household (1995-2001),ok,sdmx,9,35,0,"",2026-07-25
+ILC_DI08,Mean and median income by educational attainment level,ok,sdmx,8,84,0,"",2026-07-25
+ILC_DI09,Mean and median income by tenure status,ok,sdmx,8,96,0,"",2026-07-25
+ILC_DI10,Mean and median income by ability to make ends meet,ok,sdmx,6,95,0,"",2026-07-25
+ILC_DI11,Income quintile share ratio S80/S20 for disposable income by sex and age group,ok,sdmx,6,77,0,"",2026-07-25
+ILC_DI11A,Income quintile share ratio S80/S20 for gross market income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11B,Income quintile share ratio S80/S20 for net market income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11C,Income quintile share ratio S80/S20 for gross total disposable income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11D,Income quintile share ratio S80/S50 for disposable income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11E,Income quintile share ratio S50/S20 for disposable income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11F,Income quintile share ratio S40/S100 for disposable income by sex and age group,ok,sdmx,6,67,0,"",2026-07-25
+ILC_DI11G,Effect of taxes on income quintile share ratio S80/S20,ok,sdmx,4,58,0,"",2026-07-25
+ILC_DI11H,Effect of social transfers on income quintile share ratio S80/S20,ok,sdmx,4,58,0,"",2026-07-25
+ILC_DI11I,Effect of taxes and social transfers on income quintile share ratio S80/S20,ok,sdmx,4,58,0,"",2026-07-25
+ILC_DI11_R,Income quintile share ratio S80/S20 by NUTS 2 region,ok,sdmx,4,396,0,"",2026-07-25
+ILC_DI12,Gini coefficient of equivalised disposable income by age,ok,sdmx,5,56,0,"",2026-07-25
+ILC_DI12B,Gini coefficient of equivalised disposable income before social transfers (pensions included in social transfers),ok,sdmx,4,71,0,"",2026-07-25
+ILC_DI12C,Gini coefficient of equivalised disposable income before social transfers (pensions excluded from social transfers),ok,sdmx,4,71,0,"",2026-07-25
+ILC_DI13,Mean and median income before social transfers (pensions included in social transfers) by age and sex,ok,sdmx,7,86,0,"",2026-07-25
+ILC_DI13B,Distribution of income before social transfers (pensions included in social transfers) by household composition,ok,sdmx,6,81,0,"",2026-07-25
+ILC_DI14,Mean and median income before social transfers (pensions excluded from social transfers) by age and sex,ok,sdmx,7,86,0,"",2026-07-25
+ILC_DI14B,Distribution of income before social transfers (pensions excluded from social transfers) by household composition,ok,sdmx,6,81,0,"",2026-07-25
+ILC_DI15,Mean and median income by group of citizenship (population aged 18 and over),ok,sdmx,8,97,0,"",2026-07-25
+ILC_DI15$DV_3562,Mean and median income by group of citizenship (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_DI15$DV_3562'
+For more information check: https://developer.mozi",2026-07-25
+ILC_DI16,Mean and median income by group of country of birth (population aged 18 and over),ok,sdmx,8,97,0,"",2026-07-25
+ILC_DI16$DV_1987,Mean and median income by group of country of birth (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_DI16$DV_1987'
+For more information check: https://developer.mozi",2026-07-25
+ILC_DI17,Mean and median income by degree of urbanisation,ok,sdmx,8,85,0,"",2026-07-25
+ILC_DI18,Income in real terms (2010 SILC=100),ok,sdmx,5,53,0,"",2026-07-25
+ILC_DI20,Share of people having income greater or equal to specific national thresholds by age and sex,ok,sdmx,8,80,0,"",2026-07-25
+ILC_DI23,Share of people having income greater or equal to specific national thresholds by degree of urbanisation,ok,sdmx,7,73,0,"",2026-07-25
+ILC_DI27,Share of people having income greater or equal to specific national thresholds by educational attainment level,ok,sdmx,7,75,0,"",2026-07-25
+ILC_DI30A,Transitions of income within one year by income decile and decile change,ok,sdmx,6,83,0,"",2026-07-25
+ILC_DI30B,Transitions of income within two years by income decile and decile change,ok,sdmx,6,82,0,"",2026-07-25
+ILC_DI30C,Transitions of income within three years by income decile and decile change,ok,sdmx,6,82,0,"",2026-07-25
+ILC_DI31,Distribution of population by income groups,ok,sdmx,7,64,0,"",2026-07-25
+ILC_ENEVH_01,"Persons living in dwellings with energy efficiency improvements in last five years by age, tenure status, type of building and risk of poverty or social exclusion",ok,sdmx,9,53,0,"",2026-07-25
+ILC_ENEVH_02,Persons unable to keep home adequately warm by year of construction and risk of poverty or social exclusion,ok,sdmx,7,47,0,"",2026-07-25
+ILC_ENEVH_03,Persons in households with arrears on utility bills by year of construction and risk of poverty or social exclusion,ok,sdmx,7,47,0,"",2026-07-25
+ILC_HCH01,"Persons with financial burden of health care by level of difficulty, type of health care, household composition and risk of poverty threshold",ok,sdmx,8,63,0,"",2026-07-25
+ILC_HCH02,"Persons with financial burden of health care by level of difficulty, type of health care, degree of urbanization and income quantile",ok,sdmx,8,58,0,"",2026-07-25
+ILC_HCH03,"Persons visiting a doctor in the last 12 months by medical speciality, number of visits, educational attainment level, sex and age",ok,sdmx,9,69,0,"",2026-07-25
+ILC_HCH04,"Persons visiting a doctor in the last 12 months by medical speciality, frequency, most frequent activity status, degree of urbanization and income quantile",ok,sdmx,9,66,0,"",2026-07-25
+ILC_HCH05,"Persons performing physical activity when working by type of activity, educational attainment level, sex and age (2017)",ok,sdmx,8,60,0,"",2026-07-25
+ILC_HCH05B,"Employed persons performing physical activity when working by type of activity, educational attainment level, sex and age",ok,sdmx,8,65,0,"",2026-07-25
+ILC_HCH06,"Persons performing physical activity when working by type of activity, most frequent activity status, income quantile and degree of urbanization (2017)",ok,sdmx,8,58,0,"",2026-07-25
+ILC_HCH06B,"Employed persons performing physical activity when working by type of activity, income quantile and degree of urbanization",ok,sdmx,7,57,0,"",2026-07-25
+ILC_HCH07,"Persons performing physical activity outside working time by duration in a typical week, educational attainment level, sex and age (2017)",ok,sdmx,8,61,0,"",2026-07-25
+ILC_HCH07B,"Persons performing physical activity outside working time by frequency in a typical week, educational attainment level, sex and age",ok,sdmx,8,66,0,"",2026-07-25
+ILC_HCH08,"Persons performing physical activity outside working time by duration in a typical week, most frequent activity status, income quantile and degree of urbanization (2017)",ok,sdmx,8,59,0,"",2026-07-25
+ILC_HCH08B,"Persons performing physical activity outside working time by frequency in a typical week, most frequent activity status, income quantile and degree of urbanization",ok,sdmx,8,62,0,"",2026-07-25
+ILC_HCH09,"Persons performing physical activity outside working time by duration in a typical week, body mass index and age (2017)",ok,sdmx,7,59,0,"",2026-07-25
+ILC_HCH09B,"Persons performing physical activity outside working time by frequency in a typical week, body mass index and age",ok,sdmx,7,64,0,"",2026-07-25
+ILC_HCH10,"Person distribution by body mass index, educational attainment level, sex and age",ok,sdmx,8,67,0,"",2026-07-25
+ILC_HCH11,"Persons eating fruit, vegetables or salad by educational attainment level, risk of poverty threshold, most frequent activity status and sex",ok,sdmx,10,68,0,"",2026-07-25
+ILC_HCH12,"Children by level of general health, household composition, quantile and age",ok,sdmx,8,66,0,"",2026-07-25
+ILC_HCH12A,Children by level of general health and risk of poverty or social exclusion situation,ok,sdmx,6,51,0,"",2026-07-25
+ILC_HCH13,"Children with limitation in activities due to health problems, by income group, household composition and age",ok,sdmx,8,61,0,"",2026-07-25
+ILC_HCH13$DV_2941,"Children with limitation in activities due to health problems, by income group, household composition and age",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_HCH13$DV_2941'
+For more information check: https://developer.moz",2026-07-25
+ILC_HCH14,"Children with unmet needs for medical examination or treatment by income group, household composition and degree of urbanization",ok,sdmx,8,55,0,"",2026-07-25
+ILC_HCH14A,Children with unmet needs for medical examination or treatment by type of health care and risk of poverty or social exclusion,ok,sdmx,6,49,0,"",2026-07-25
+ILC_HCH15,Children with unmet needs for medical examination or treatment by specific reason,ok,sdmx,6,52,0,"",2026-07-25
+ILC_HCH16,"Persons reporting basic activity difficulty by sex, age, level of difficulty and educational attainment level",ok,sdmx,8,70,0,"",2026-07-25
+ILC_HCH16$DV_2262,"Persons reporting basic activity difficulty by sex, age, level of difficulty and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_HCH16$DV_2262'
+For more information check: https://developer.moz",2026-07-25
+ILC_HCH17,"Persons reporting basic activity difficulty by sex, age, level of difficulty and income quintile",ok,sdmx,8,72,0,"",2026-07-25
+ILC_HCH17$DV_2261,"Persons reporting basic activity difficulty by sex, age, level of difficulty and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_HCH17$DV_2261'
+For more information check: https://developer.moz",2026-07-25
+ILC_HCH18,"Persons reporting basic activity difficulty by sex, age, level of difficulty and degree of urbanization",ok,sdmx,8,68,0,"",2026-07-25
+ILC_HCH18$DV_2263,"Persons reporting basic activity difficulty by sex, age, level of difficulty and degree of urbanization",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_HCH18$DV_2263'
+For more information check: https://developer.moz",2026-07-25
+ILC_HCH19,"Persons reporting basic activity difficulty by sex, age, level of difficulty, type of basic action and risk of poverty threshold",ok,sdmx,9,77,0,"",2026-07-25
+ILC_HCH19$DV_2264,"Persons reporting basic activity difficulty by sex, age, level of difficulty, type of basic action and risk of poverty threshold",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_HCH19$DV_2264'
+For more information check: https://developer.moz",2026-07-25
+ILC_HCH20,"Persons visiting a doctor in the last 12 months by sex, age, level of disability (activity limitation), medical specialty and number of visits",ok,sdmx,9,77,0,"",2026-07-25
+ILC_HCH21,"Persons with financial burden of health care by sex, age, level of disability (activity limitation), type of health care and level of difficulty",ok,sdmx,9,75,0,"",2026-07-25
+ILC_HCH22,"Person distribution by frequency of tobacco consumption, sex, age and risk of poverty or social exclusion situation",ok,sdmx,8,65,0,"",2026-07-25
+ILC_HCH23,"Person distribution by frequency of alcohol consumption, sex, age and risk of poverty or social exclusion situation",ok,sdmx,8,65,0,"",2026-07-25
+ILC_HCMH01,Average size of dwelling by income quintile and tenure status,ok,sdmx,6,54,0,"",2026-07-25
+ILC_HCMH02,Average size of dwelling by household type and degree of urbanisation,ok,sdmx,6,50,0,"",2026-07-25
+ILC_HCMP03,Share of population living in a dwelling not comfortably cool during summer time by income quintile and degree of urbanisation,ok,sdmx,6,51,0,"",2026-07-25
+ILC_HCMP04,Distribution of population by level of overall satisfaction with the dwelling and household type,ok,sdmx,6,51,0,"",2026-07-25
+ILC_HCMP05,Share of population having moved to other dwelling within the last five year period by tenure status and degree of urbanisation,ok,sdmx,6,50,0,"",2026-07-25
+ILC_HCMP06,"Distribution of population by level of difficulty in accessing public transport, income quintile and degree of urbanisation",ok,sdmx,7,55,0,"",2026-07-25
+ILC_IGTP01,Transition of educational attainment level from parents to current adults (population aged 25 - 59),ok,sdmx,7,56,0,"",2026-07-25
+ILC_IGTP02,Transition of ability to make ends meet from childhood to current situation (population aged 25 - 59) (2011),ok,sdmx,7,49,0,"",2026-07-25
+ILC_IGTP03,At-risk-of poverty rate for adults (aged 25 to 59 years) by educational attainment level of their parents,ok,sdmx,5,44,0,"",2026-07-25
+ILC_IGTP04,At-risk-of poverty rate for adults (aged 25 to 59 years) by level of financial situation of their households when respondent was around 14 years old,ok,sdmx,5,42,0,"",2026-07-25
+ILC_IGTP05,Inability to afford basic school needs (books and equipment for school) when respondent was around 14 years old,ok,sdmx,6,56,0,"",2026-07-25
+ILC_IGTP06,"Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) daily when respondent was around 14 years old",ok,sdmx,6,56,0,"",2026-07-25
+ILC_IGTP07,Inability to afford one week annual holiday away from home when respondent was around 14 years old,ok,sdmx,6,56,0,"",2026-07-25
+ILC_IGTP08,"Persons unable to afford basic school needs when they were around 14 years old by sex, current age and educational attainment level",ok,sdmx,7,59,0,"",2026-07-25
+ILC_IW01,In-work at-risk-of-poverty rate by age and sex,ok,sdmx,7,89,0,"",2026-07-25
+ILC_IW01$DV_1302,In-work at-risk-of-poverty rate by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_IW01$DV_1302'
+For more information check: https://developer.mozi",2026-07-25
+ILC_IW01$DV_1990,In-work at-risk-of-poverty rate by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_IW01$DV_1990'
+For more information check: https://developer.mozi",2026-07-25
+ILC_IW02,In-work at-risk-of-poverty rate by household type,ok,sdmx,5,77,0,"",2026-07-25
+ILC_IW02$DV_3463,In-work at-risk-of-poverty rate by household type,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_IW02$DV_3463'
+For more information check: https://developer.mozi",2026-07-25
+ILC_IW03,In-work at-risk-of-poverty rate by work intensity of the household (population aged 18 to 64 years),ok,sdmx,6,70,0,"",2026-07-25
+ILC_IW04,In-work at-risk-of-poverty rate by educational attainment level,ok,sdmx,5,74,0,"",2026-07-25
+ILC_IW05,In-work at-risk-of-poverty rate by type of contract,ok,sdmx,6,76,0,"",2026-07-25
+ILC_IW06,In-work at-risk-of-poverty rate by months worked,ok,sdmx,5,73,0,"",2026-07-25
+ILC_IW07,In-work at-risk-of-poverty rate by full-/part-time work,ok,sdmx,5,73,0,"",2026-07-25
+ILC_IW15,In-work at-risk-of-poverty rate by group of citizenship (population aged 18 and over),ok,sdmx,7,94,0,"",2026-07-25
+ILC_IW15$DV_1992,In-work at-risk-of-poverty rate by group of citizenship (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_IW15$DV_1992'
+For more information check: https://developer.mozi",2026-07-25
+ILC_IW16,In-work at-risk-of-poverty rate by group of country of birth (population aged 18 and over),ok,sdmx,7,94,0,"",2026-07-25
+ILC_IW16$DV_1991,In-work at-risk-of-poverty rate by group of country of birth (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_IW16$DV_1991'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI01,At-risk-of-poverty thresholds,ok,sdmx,7,85,0,"",2026-07-25
+ILC_LI02,"At-risk-of-poverty rate by poverty threshold, age and sex - EU-SILC and ECHP surveys",ok,sdmx,8,121,0,"",2026-07-25
+ILC_LI02$DV_3541,"At-risk-of-poverty rate by poverty threshold, age and sex - EU-SILC and ECHP surveys",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI02$DV_3541'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI02$DV_3542,"At-risk-of-poverty rate by poverty threshold, age and sex - EU-SILC and ECHP surveys",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI02$DV_3542'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI02$DV_3581,"At-risk-of-poverty rate by poverty threshold, age and sex - EU-SILC and ECHP surveys",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI02$DV_3581'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI03,At-risk-of-poverty rate by poverty threshold and household type - EU-SILC and ECHP surveys,ok,sdmx,7,106,0,"",2026-07-25
+ILC_LI04,At-risk-of-poverty rate by poverty threshold and most frequent activity in the previous year - EU-SILC and ECHP surveys,ok,sdmx,9,89,0,"",2026-07-25
+ILC_LI05,At-risk-of-poverty rate by poverty threshold and main source of income (1995-2001),ok,sdmx,8,42,0,"",2026-07-25
+ILC_LI06,"At-risk-of-poverty rate by poverty threshold, work intensity of the household and broad age groups - EU-SILC survey",ok,sdmx,10,88,0,"",2026-07-25
+ILC_LI06$DV_3601,"At-risk-of-poverty rate by poverty threshold, work intensity of the household and broad age groups - EU-SILC survey",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI06$DV_3601'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI06H,At-risk-of-poverty rate by poverty threshold and work intensity of the household (1995-2002),ok,sdmx,9,43,0,"",2026-07-25
+ILC_LI07,At-risk-of-poverty rate by poverty threshold and educational attainment level - EU-SILC survey,ok,sdmx,9,81,0,"",2026-07-25
+ILC_LI08,At-risk-of-poverty rate by poverty threshold and tenure status - EU-SILC and ECHP surveys,ok,sdmx,9,99,0,"",2026-07-25
+ILC_LI09,"At-risk-of-poverty rate before social transfers (pensions included in social transfers) by poverty threshold, age and sex - EU-SILC and ECHP surveys",ok,sdmx,8,95,0,"",2026-07-25
+ILC_LI09B,At-risk-of-poverty rate before social transfers (pensions included in social transfers) by household type,ok,sdmx,5,90,0,"",2026-07-25
+ILC_LI09C,"At-risk-of-poverty rate before social transfers (excluding pensions) by age, sex and group of country of birth",ok,sdmx,9,67,0,"",2026-07-25
+ILC_LI09D,"At-risk-of-poverty rate before social transfers (excluding pensions) by age, sex and educational attainment level",ok,sdmx,9,63,0,"",2026-07-25
+ILC_LI09F,"At-risk-of-poverty rate before social transfers (excluding pensions) by age, sex, household composition and household work intensity",ok,sdmx,10,69,0,"",2026-07-25
+ILC_LI10,"At-risk-of-poverty rate before social transfers (pensions excluded from social transfers) by poverty threshold, age and sex - EU-SILC and ECHP surveys",ok,sdmx,8,95,0,"",2026-07-25
+ILC_LI10B,At-risk-of-poverty rate before social transfers (pensions excluded from social transfers) by household type,ok,sdmx,5,90,0,"",2026-07-25
+ILC_LI10_R,At-risk-of-poverty rate before social transfers (pensions excluded from social transfers) by NUTS 2 region,ok,sdmx,4,447,0,"",2026-07-25
+ILC_LI11,Relative at risk of poverty gap by poverty threshold - EU-SILC and ECHP surveys,ok,sdmx,8,95,0,"",2026-07-25
+ILC_LI11$DV_3582,Relative at risk of poverty gap by poverty threshold - EU-SILC and ECHP surveys,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI11$DV_3582'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI11$DV_3602,Relative at risk of poverty gap by poverty threshold - EU-SILC and ECHP surveys,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI11$DV_3602'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI11$DV_3641,Relative at risk of poverty gap by poverty threshold - EU-SILC and ECHP surveys,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI11$DV_3641'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI12,Relative poverty gap by risk of poverty and work intensity of the household,ok,sdmx,7,64,0,"",2026-07-25
+ILC_LI13,Relative poverty gap by risk of poverty and work intensity of the households with income from benefits,ok,sdmx,7,57,0,"",2026-07-25
+ILC_LI20,"At-risk-of-poverty rate by age and sex, anchored to the 1998 base year (1998–2001)",ok,sdmx,8,38,0,"",2026-07-25
+ILC_LI21,Persistent at-risk-of-poverty rate by sex and age - EU-SILC and ECHP surveys,ok,sdmx,8,78,0,"",2026-07-25
+ILC_LI21$DV_3603,Persistent at-risk-of-poverty rate by sex and age - EU-SILC and ECHP surveys,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI21$DV_3603'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI22,At-risk-of-poverty rate anchored at a fixed moment in time (2019) by age and sex - EU-SILC survey,ok,sdmx,8,54,0,"",2026-07-25
+ILC_LI22$DV_3604,At-risk-of-poverty rate anchored at a fixed moment in time (2019) by age and sex - EU-SILC survey,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI22$DV_3604'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI22B,At-risk-of-poverty rate anchored at a fixed moment in time (2008) by age and sex,ok,sdmx,8,64,0,"",2026-07-25
+ILC_LI23,Persistent at-risk-of-poverty rate by household type,ok,sdmx,7,69,0,"",2026-07-25
+ILC_LI24,Persistent at-risk-of-poverty rate by educational attainment level,ok,sdmx,8,69,0,"",2026-07-25
+ILC_LI31,At-risk-of-poverty rate by group of citizenship (population aged 18 and over),ok,sdmx,7,94,0,"",2026-07-25
+ILC_LI31$DV_1981,At-risk-of-poverty rate by group of citizenship (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI31$DV_1981'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI32,"At-risk-of-poverty rate by age, sex and group of country of birth",ok,sdmx,9,82,0,"",2026-07-25
+ILC_LI32$DV_3421,"At-risk-of-poverty rate by age, sex and group of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI32$DV_3421'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI32$DV_3422,"At-risk-of-poverty rate by age, sex and group of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI32$DV_3422'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI33,At-risk-of poverty rate for children by citizenship of their parents (population aged 0 to 17),ok,sdmx,5,73,0,"",2026-07-25
+ILC_LI33$DV_1983,At-risk-of poverty rate for children by citizenship of their parents (population aged 0 to 17),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI33$DV_1983'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI34,At-risk-of poverty rate for children by country of birth of their parents (population aged 0 to 17),ok,sdmx,5,73,0,"",2026-07-25
+ILC_LI34$DV_1982,At-risk-of poverty rate for children by country of birth of their parents (population aged 0 to 17),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI34$DV_1982'
+For more information check: https://developer.mozi",2026-07-25
+ILC_LI41,At-risk-of-poverty rate by NUTS 2 region,ok,sdmx,4,447,0,"",2026-07-25

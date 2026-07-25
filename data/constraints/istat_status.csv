@@ -3144,3 +3144,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 72_158_DF_DCAR_PROC_CIV_1,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",ok,hub,5,10,0,"",2026-07-25
 730_1006,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,140,0,"",2026-07-25
 730_1006_DF_DCCN_SQCN_B14_1,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,140,0,"",2026-07-25
+730_1047,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,46,0,"",2026-07-25
+730_1047_DF_DCCN_PILN_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,ok,hub,6,46,0,"",2026-07-25
+730_1048,Principali aggregati annnuali di contabilità nazionale - edizioni ottobre 2014 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1048_DF_DCCN_ANA_B14_1,Produzione e valore aggiunto per branca di attività - edizioni ottobre 2014 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1048_DF_DCCN_ANA_B14_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - aprile 2019,ok,hub,7,114,0,"",2026-07-25
+730_1048_DF_DCCN_ANA_B14_3,Imposte e contributi alla produzione per branca di attività - edizioni ottobre 2014 - aprile 2019,ok,hub,7,112,0,"",2026-07-25
+730_1048_DF_DCCN_ANA_B14_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria - edizioni ottobre 2014 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1048_DF_DCCN_ANA_B14_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria - edizioni ottobre 2014 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1048_DF_DCCN_ANA_B14_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni ottobre 2014 - aprile 2019,ok,hub,7,96,0,"",2026-07-25
+730_1048_DF_DCCN_ANA_B14_7,Valori pro capite - edizioni ottobre 2014 - aprile 2019,ok,hub,6,31,0,"",2026-07-25
+730_1049,"Occupazione regolare, irregolare e popolazione - edizioni ottobre 2014 - aprile 2019",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1049_DF_DCCN_OCCNSEC2010_B14_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate - edizioni ottobre 2014 - aprile 2019",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+730_1049_DF_DCCN_OCCNSEC2010_B14_2,Tassi di irregolarità - edizioni ottobre 2014 - aprile 2019,ok,hub,7,60,0,"",2026-07-25
+730_1049_DF_DCCN_OCCNSEC2010_B14_3,Popolazione media annua - edizioni ottobre 2014 - aprile 2019,ok,hub,5,10,0,"",2026-07-25
+732_1051,Conto economico delle risorse e degli impieghi  e contributi alla crescita del Pil - edizioni ottobre 2014 - agosto 2019,ok,hub,6,73,0,"",2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2014 - agosto 2019,ok,hub,6,64,0,"",2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_2,Contributi alla crescita del PIL - edizioni dicembre 2014 - agosto 2019,ok,hub,6,61,0,"",2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni maggio 2016 - luglio 2019,ok,hub,6,50,0,"",2026-07-25
+732_1052,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,ok,hub,6,46,0,"",2026-07-25
+732_1052_DF_DCCN_PILQ_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,ok,hub,6,46,0,"",2026-07-25
+732_1053,Principali aggregati trimestrali di Contabilità Nazionale - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+732_1053_DF_DCCN_QNA_B14_1,Valore aggiunto per branca di attività - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+732_1053_DF_DCCN_QNA_B14_2,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2014 - agosto 2019,ok,hub,8,47,0,"",2026-07-25
+732_1053_DF_DCCN_QNA_B14_3,Spesa per i consumi finali delle famiglie - edizioni ottobre 2014 - agosto 2019,ok,hub,6,39,0,"",2026-07-25
+732_1053_DF_DCCN_QNA_B14_4,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+732_1053_DF_DCCN_QNA_B14_5,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+732_1053_DF_DCCN_QNA_B14_6,Costi e margini per branca di attività - edizioni dicembre 2014 - agosto 2019,ok,hub,6,44,0,"",2026-07-25
+732_1054,Occupazione per branca di attività - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+732_1054_DF_DCCN_OCCQSEC2010_B14_1,Occupazione per branca di attività - edizioni ottobre 2014 - agosto 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+733_1055,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale - edizioni ottobre 2015 - aprile 2019",ok,hub,9,249,0,"",2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_1,Sequenza dei conti - edizioni ottobre 2015 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2015 - aprile 2019,ok,hub,8,24,0,"",2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_3,Stock di attività non finanziarie - edizioni marzo 2015 - dicembre 2018,ok,hub,9,38,0,"",2026-07-25
+733_1056,Occupazione per branca di attività - edizioni ottobre 2014 - aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+733_1056_DF_DCCN_OCCSISEC2010_B14_1,Occupazione per branca di attività - edizioni ottobre 2014 - aprile 2019,ok,hub,8,55,0,"",2026-07-25
+733_1056_DF_DCCN_OCCSISEC2010_B14_2,Occupazione per sottosettore - edizioni ottobre 2015 - aprile 2019,ok,hub,7,29,0,"",2026-07-25
+734_1059,Conto trimestrale - edizioni gennaio 2016 - giugno 2019,ok,hub,9,54,0,"",2026-07-25
+734_1059_DF_DCCN_FPQ_B14_1,Conto economico - edizioni gennaio 2016 - giugno 2019,ok,hub,7,45,0,"",2026-07-25
+734_1059_DF_DCCN_FPQ_B14_2,Indicatori (in rapporto al PIL) - edizioni gennaio 2016 - giugno 2019,ok,hub,7,28,0,"",2026-07-25
+734_1060,Conto annuale - edizioni fino ad aprile 2019,ok,hub,9,328,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_1,Conto economico per sottosettore - edizioni ottobre 2015 - aprile 2019,ok,hub,7,270,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_2,Indicatori (in rapporto al PIL) - edizioni maggio 2016 - aprile 2019,ok,hub,7,33,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_3,Redditi e retribuzione pro capite per sottosettore - edizioni aprile 2017 - aprile 2019,ok,hub,7,16,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_4,Investimenti fissi lordi per sottosettore - edizioni maggio 2016 - aprile 2019,ok,hub,8,36,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_5,Imposte e contributi sociali per sottosettore - edizioni aprile 2017 - aprile 2019,ok,hub,7,151,0,"",2026-07-25
+734_1060_DF_DCCN_FPA_B14_6,Formazione della spesa per consumi finali - edizioni aprile 2017 - aprile 2019,ok,hub,6,25,0,"",2026-07-25
+734_1061,Uscite annuali per sottosettore - edizioni fino ad aprile 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+734_1061_DF_DCCN_OTEPPA_B14_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre) - edizioni dicembre 2015 - aprile 2019,ok,hub,8,103,0,"",2026-07-25
+734_1061_DF_DCCN_OTEPPA_B14_2,Voci di uscita per funzione (COFOG 2 e 3 cifre) - edizioni dicembre 2015 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1082,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,61,0,"",2026-07-25
+737_1082_DF_DCCN_SQCT_B14_1,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,61,0,"",2026-07-25
+737_1083,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,46,0,"",2026-07-25
+737_1083_DF_DCCN_PILT_B14_1,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,46,0,"",2026-07-25
+737_1084,Principali aggregati territoriali di Contabilità nazionale - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_1,Valore aggiunto per branca di attività - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_4,Spesa per consumi finali della Pa per funzione di spesa - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_5,Investimenti fissi lordi per branca proprietaria - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1084_DF_DCCN_TNA_B14_6,Valori pro capite - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,165,0,"",2026-07-25
+737_1087,"Occupazione regolare, irregolare e popolazione - edizioni ottobre 2014 - dicembre 2018",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_1,Occupazione regionale - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_2,Occupazione provinciale - edizioni ottobre 2014 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_3,Tasso di irregolarità - edizioni ottobre 2014 - dicembre 2018,ok,hub,6,46,0,"",2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_4,Popolazione media annua - edizioni ottobre 2014 - dicembre 2018,ok,hub,5,37,0,"",2026-07-25
+737_1093,Reddito disponibile delle famiglie nelle regioni italiane - edizioni novembre 2015 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+737_1093_DF_DCCN_ISTITUZ_TNA_B14_1,Reddito disponibile delle famiglie nelle regioni italiane - edizioni novembre 2015 - dicembre 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071,Persone indagate presso le procure - adulti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_1,Iscritti presso le procure per tipo di decisione,ok,hub,4,16,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_10,"Reati violenti - luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_11,"Reati violenti - sesso, luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_12,Reati violenti - classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_13,Reati violenti - luogo di nascita,ok,hub,5,52,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_2,"Imputati - età, luogo di nascita",ok,hub,7,25,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_3,"Imputati - luogo del primo reato iscritto nel procedimento, luogo di nascita",ok,hub,5,64,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_4,Imputati per numero di tipologie di reato,ok,hub,6,15,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_5,Imputati per numero di reati,ok,hub,6,15,0,"",2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_6,"Imputati per tipologia di reato - luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_7,"Imputati per tipologia di reato - sesso, luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_8,Imputati per tipologia reato -  valori per 100.000 abitanti per classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1071_DF_DCCV_IMPUTATI_A_9,Imputati per tipologia reato - luogo di nascita,ok,hub,6,540,0,"",2026-07-25
+73_1072,Persone indagate presso le procure - minori,ok,hub,10,441,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_1,Iscritti presso le procure per tipo di decisione,ok,hub,3,15,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_10,"Reati violenti - luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_11,"Reati violenti - sesso, luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_12,Reati violenti - classe di età,ok,hub,6,32,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_13,Reati violenti - luogo di nascita,ok,hub,5,50,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_2,"Imputati - sesso, età, luogo di nascita",ok,hub,8,18,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_3,"Imputati - luogo del primo reato iscritto nel procedimento, luogo di nascita",ok,hub,5,64,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_4,Imputati per numero di tipologie di reato,ok,hub,5,14,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_5,Imputati per numero di reati,ok,hub,5,14,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_6,"Imputati per tipologia di reato - luogo di nascita (regione), classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_7,"Imputati per tipologia di reato - sesso, luogo di nascita, classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_8,Imputati per tipologia reato - valori per 100.000 abitanti per classe di età,ok,hub,6,346,0,"",2026-07-25
+73_1072_DF_DCCV_IMPUTATI_M_9,Imputati per tipologia reato - valori per 100.000 abitanti per regione,ok,hub,5,351,0,"",2026-07-25
+73_1187,Altri delitti denunciati dalle forze di polizia all'autorità giudiziaria,ok,hub,7,182,0,"",2026-07-25
+73_1187_DF_DCCV_ALTRIDELPS_1,In totale e per centomila abitanti,ok,hub,4,167,0,"",2026-07-25
+73_1187_DF_DCCV_ALTRIDELPS_2,Per mese del commesso delitto,ok,hub,5,179,0,"",2026-07-25
+73_160,Procedimenti penali,ok,hub,5,25,0,"",2026-07-25
+73_160_DF_DCAR_NUM_PROC_PEN_1,Procedimenti penali,ok,hub,5,25,0,"",2026-07-25
+73_173,Detenuti adulti presenti nelle carceri italiane,ok,hub,9,198,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_1,Reati,ok,hub,7,96,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_2,Età,ok,hub,7,52,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_3,Luogo di nascita,ok,hub,6,72,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_4,Provenienza geografica,ok,hub,6,56,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_5,Posizione giuridica,ok,hub,7,50,0,"",2026-07-25
+73_173_DF_DCCV_DETENUTI_6,Capienza delle strutture e detenuti ogni 100 posti,ok,hub,6,38,0,"",2026-07-25
+73_230,Autori e vittime dei delitti denunciati dalle forze di polizia all' autorità giudiziaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_230_DF_DCCV_AUTVITTPS_1,"Sesso, età, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_230_DF_DCCV_AUTVITTPS_2,Stranieri - paesi di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_230_DF_DCCV_AUTVITTPS_3,"Sesso, età - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_230_DF_DCCV_AUTVITTPS_4,Cittadinanza - reg.,ok,hub,6,201,0,"",2026-07-25
+73_230_DF_DCCV_AUTVITTPS_5,"Delitti violenti, sesso, età, cittadinanza",ok,hub,8,23,0,"",2026-07-25
+73_230_DF_DCCV_AUTVITTPS_6,"Delitti violenti, sesso, età - reg.",ok,hub,7,156,0,"",2026-07-25
+73_230_DF_DCCV_AUTVITTPS_7,"Autori di delitto - sesso, età, cittadinanza - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_230_DF_DCCV_AUTVITTPS_8,"Vittime di delitto - sesso, età, cittadinanza - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_342,Segnalazioni relative a persone denunciate e arrestate o fermate dalle forze di polizia,ok,hub,4,193,0,"",2026-07-25
+73_342_DF_DCCV_SEGNALAZPS_1,Segnalazioni in totale,ok,hub,4,192,0,"",2026-07-25
+73_342_DF_DCCV_SEGNALAZPS_2,Segnalazioni relative a minori,ok,hub,4,86,0,"",2026-07-25
+73_436,Procedimenti e reati al momento della decisione del PM - minori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_1,"Procedimenti e reati, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_10,"Dettaglio reati, identità autore, mese di accadimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_11,"Dettaglio reati, intervallo medio e mediano tra iscrizione e definizione del procedimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_12,"Procedimenti in totale, dettaglio reati, tipo di decisione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_13,"Reati violenti, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_14,"Reati violenti, distretto corte d'appello, mese di definizione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_15,"Reati violenti, mese di definizione, numero autori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_16,"Reati violenti, delitti concorrenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_17,"Reati violenti, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_18,"Reati violenti, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_19,"Reati violenti dopo la decisione del PM, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_2,Procedimenti e reati al momento della decisione del PM - minori - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_20,"Reati violenti, autore ignoto, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_21,"Reati violenti, identità autore, mese di accadimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_22,"Reati violenti, tipo di decisione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_3,"Procedimenti, Distretto corte d'Appello, mese di definizione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_4,"Procedimenti, mese di definizione, numero autori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_5,"Procedimenti, delitti concorrenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_6,"Procedimenti, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_7,"Procedimenti, dettaglio reati, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_8,"Reati, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_436_DF_DCCV_PROCEEDCRIME_M_9,"Reati, autore ignoto, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440,Procedimenti e reati al momento della decisione del PM - adulti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_1,"Procedimenti e reati, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_10,"Dettaglio reati, identità autore, mese di accadimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_11,"Dettaglio reati, intervallo medio e mediano tra iscrizione e definizione del procedimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_12,"Procedimenti in totale, dettaglio reati, tipo di decisione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_13,"Dettaglio reati, identità autore, definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_14,"Reati violenti, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_15,"Reati violenti, distretto corte d'appello, mese di definizione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_16,"Reati violenti, mese di definizione, numero autori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_17,"Reati violenti, delitti concorrenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_18,"Reati violenti, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_19,"Reati violenti, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_2,Procedimenti e reati al momento della decisione del PM - adulti - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_20,"Reati violenti dopo la decisione del PM, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_21,"Reati violenti, autore ignoto, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_22,"Reati violenti, identità autore, mese di accadimento",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_23,"Reati violenti, tipo di decisione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_24,"Reati violenti, identità autore, definizione del reato - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_3,"Procedimenti, Distretto corte d'Appello, mese di definizione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_4,"Procedimenti, mese di definizione, numero autori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_5,"Procedimenti, delitti concorrenti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_6,"Procedimenti, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_7,"Procedimenti, dettaglio reati, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_8,"Reati, intervallo tra iscrizione e definizione del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_440_DF_DCCV_PROCEEDCRIME_A_9,"Reati, autore ignoto, tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58,Condannati con sentenza irrevocabile - Caratteristiche delle sentenze,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_1,"Reati, natura del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_10,"Intervallo fra delitto e sentenza, reati, ufficio di giudizio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_11,"Reati commessi, ufficio giudiziario, anno del commesso reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_12,"Dettaglio reati commessi, età al momento del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_13,Dettaglio reati commessi - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_14,"Reati violenti, natura del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_15,"Reati violenti, misure di sicurezza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_16,"Reati violenti per condannati con precedenti penali, età al momento del reato più grave",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_17,"Reati violenti, ufficio di giudizio, intervallo fra reato e sentenza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_18,"Reati violenti, precedenti penali",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_19,"Intervallo fra delitto e sentenza, reati violenti, ufficio di giudizio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_2,"Reati, misure di sicurezza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_20,"Reati violenti commessi, ufficio giudiziario, anno del commesso reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_21,"Reati violenti commessi, età al momento del reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_22,Reati violenti commessi - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_3,"Reati, età al momento del reato più grave",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_4,"Reati, ufficio di giudizio, intervallo fra reato e sentenza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_5,"Dettaglio reati, precedenti penali",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_6,"Natura del reato, età al momento del reato più grave",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_7,"Ufficio di giudizio, distretto di corte d'appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_8,"Misure di sicurezza, distretto di corte d'appello",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_58_DF_DCCV_CONDCRIM1_9,"Distretto di corte d'appello, età al momento del reato più grave - Minori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59,Condannati con sentenza irrevocabile - Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_1,"Reati, ufficio giudiziario, anno del commesso reato",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_10,"Provenienza geografica italiana, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_11,Provenienza geografica italiana - reg,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_12,Provenienza geografica italiana - Minori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_13,"Provenienza geografica estera, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_14,Provenienza geografica estera - rip.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_15,"Reati violenti, ufficio giudiziario, anno del commesso delitto",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_16,"Reati violenti, provenienza geografica estera",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25
+73_59_DF_DCCV_CONDGEO1_17,Reati violenti - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-25

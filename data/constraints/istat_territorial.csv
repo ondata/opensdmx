@@ -1748,3 +1748,61 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 72_158_DF_DCAR_PROC_CIV_1,"Procedimenti civili - lavoro, previdenza e assistenza obbligatorie",REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1006,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1006_DF_DCCN_SQCN_B14_1,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1047,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1047_DF_DCCN_PILN_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048_DF_DCCN_ANA_B14_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048_DF_DCCN_ANA_B14_3,Imposte e contributi alla produzione per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048_DF_DCCN_ANA_B14_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048_DF_DCCN_ANA_B14_7,Valori pro capite - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1049_DF_DCCN_OCCNSEC2010_B14_2,Tassi di irregolarità - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1049_DF_DCCN_OCCNSEC2010_B14_3,Popolazione media annua - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1051,Conto economico delle risorse e degli impieghi  e contributi alla crescita del Pil - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_2,Contributi alla crescita del PIL - edizioni dicembre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1051_DF_DCCN_SQCQ_B14_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni maggio 2016 - luglio 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1052,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1052_DF_DCCN_PILQ_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1053_DF_DCCN_QNA_B14_2,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1053_DF_DCCN_QNA_B14_3,Spesa per i consumi finali delle famiglie - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1053_DF_DCCN_QNA_B14_6,Costi e margini per branca di attività - edizioni dicembre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1055,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale - edizioni ottobre 2015 - aprile 2019",REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_3,Stock di attività non finanziarie - edizioni marzo 2015 - dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1056_DF_DCCN_OCCSISEC2010_B14_1,Occupazione per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1056_DF_DCCN_OCCSISEC2010_B14_2,Occupazione per sottosettore - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1059,Conto trimestrale - edizioni gennaio 2016 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1059_DF_DCCN_FPQ_B14_1,Conto economico - edizioni gennaio 2016 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1059_DF_DCCN_FPQ_B14_2,Indicatori (in rapporto al PIL) - edizioni gennaio 2016 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060,Conto annuale - edizioni fino ad aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_1,Conto economico per sottosettore - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_2,Indicatori (in rapporto al PIL) - edizioni maggio 2016 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_3,Redditi e retribuzione pro capite per sottosettore - edizioni aprile 2017 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_4,Investimenti fissi lordi per sottosettore - edizioni maggio 2016 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_5,Imposte e contributi sociali per sottosettore - edizioni aprile 2017 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1060_DF_DCCN_FPA_B14_6,Formazione della spesa per consumi finali - edizioni aprile 2017 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1061_DF_DCCN_OTEPPA_B14_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre) - edizioni dicembre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+737_1082,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1082_DF_DCCN_SQCT_B14_1,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1083,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1083_DF_DCCN_PILT_B14_1,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1084_DF_DCCN_TNA_B14_6,Valori pro capite - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_3,Tasso di irregolarità - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1087_DF_DCCN_OCCTSEC2010_B14_4,Popolazione media annua - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+73_1187,Altri delitti denunciati dalle forze di polizia all'autorità giudiziaria,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_1187_DF_DCCV_ALTRIDELPS_1,In totale e per centomila abitanti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_1187_DF_DCCV_ALTRIDELPS_2,Per mese del commesso delitto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_160,Procedimenti penali,REF_AREA,nazionale,nazionale,1,2026-07-25
+73_160_DF_DCAR_NUM_PROC_PEN_1,Procedimenti penali,REF_AREA,nazionale,nazionale,1,2026-07-25
+73_173,Detenuti adulti presenti nelle carceri italiane,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_173_DF_DCCV_DETENUTI_1,Reati,REF_AREA,nazionale,nazionale,1,2026-07-25
+73_173_DF_DCCV_DETENUTI_2,Età,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_173_DF_DCCV_DETENUTI_3,Luogo di nascita,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_173_DF_DCCV_DETENUTI_4,Provenienza geografica,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_173_DF_DCCV_DETENUTI_5,Posizione giuridica,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_173_DF_DCCV_DETENUTI_6,Capienza delle strutture e detenuti ogni 100 posti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_230_DF_DCCV_AUTVITTPS_4,Cittadinanza - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_230_DF_DCCV_AUTVITTPS_5,"Delitti violenti, sesso, età, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-25
+73_230_DF_DCCV_AUTVITTPS_6,"Delitti violenti, sesso, età - reg.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_342,Segnalazioni relative a persone denunciate e arrestate o fermate dalle forze di polizia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_342_DF_DCCV_SEGNALAZPS_1,Segnalazioni in totale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_342_DF_DCCV_SEGNALAZPS_2,Segnalazioni relative a minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
