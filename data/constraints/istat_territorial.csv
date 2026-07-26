@@ -1806,3 +1806,23 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 73_342,Segnalazioni relative a persone denunciate e arrestate o fermate dalle forze di polizia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_342_DF_DCCV_SEGNALAZPS_1,Segnalazioni in totale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_342_DF_DCCV_SEGNALAZPS_2,Segnalazioni relative a minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_59_DF_DCCV_CONDGEO1_4,"Reati, ufficio giudiziario - Minori",REF_AREA,nazionale,nazionale,1,2026-07-26
+73_67_DF_DCCV_DELITTIPS_1,Tipo di reato,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-07-26
+73_67_DF_DCCV_DELITTIPS_2,"Tipo, identità dell'autore, commessi durante l'anno - grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
+73_67_DF_DCCV_DELITTIPS_4,Con autore noto e periodo del commesso delitto - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
+73_67_DF_DCCV_DELITTIPS_5,"Delitti di cui si è scoperto l'autore, tipo - grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
+73_67_DF_DCCV_DELITTIPS_6,"Delitti di cui si è scoperto l'autore, tipo",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-26
+73_67_DF_DCCV_DELITTIPS_7,Delitti di cui si è scoperto l'autore - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
+73_67_DF_DCCV_DELITTIPS_8,Tasso di delittuosità - grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
+73_67_DF_DCCV_DELITTIPS_9,Tasso di delittuosità - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_1,"Istituzioni, risorse umane e genere  -  dati comunali - Dati di sintesi",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_10,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi)",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_11,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (divisioni), classe dei dipendenti, sesso dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_12,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi)",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_2,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi), classe di unità locali",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_3,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi), classe della risorsa umana nel complesso",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_4,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi), classe del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_6,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi), classe dei volontari",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_7,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_8,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1097_DF_DICA_IPSTRIPCOM_9,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (divisioni), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26

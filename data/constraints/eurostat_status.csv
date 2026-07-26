@@ -3529,3 +3529,334 @@ ILC_LI34,At-risk-of poverty rate for children by country of birth of their paren
 ILC_LI34$DV_1982,At-risk-of poverty rate for children by country of birth of their parents (population aged 0 to 17),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LI34$DV_1982'
 For more information check: https://developer.mozi",2026-07-25
 ILC_LI41,At-risk-of-poverty rate by NUTS 2 region,ok,sdmx,4,447,0,"",2026-07-25
+ILC_LI43,At-risk-of-poverty rate by degree of urbanisation,ok,sdmx,5,72,0,"",2026-07-26
+ILC_LI45,At-risk-of-poverty rate after deducting housing costs by age and sex,ok,sdmx,6,79,0,"",2026-07-26
+ILC_LI48,At-risk-of-poverty rate after deducting housing costs by degree of urbanisation,ok,sdmx,5,72,0,"",2026-07-26
+ILC_LI51,Distribution of population by number of years spent in poverty within a four-year period,ok,sdmx,8,75,0,"",2026-07-26
+ILC_LI60,At-risk-of poverty rate for children by educational attainment level of their parents (population aged 0 to 17),ok,sdmx,6,78,0,"",2026-07-26
+ILC_LI70,Persons receiving benefits (other than old age benefits) by risk of poverty and work intensity of the household (population aged 18 to 64),ok,sdmx,7,63,0,"",2026-07-26
+ILC_LI70B,Persons receiving benefits (other than old age benefits) by sex and most frequent activity status,ok,sdmx,7,58,0,"",2026-07-26
+ILC_LI71,"Persons receiving benefits (other than old age benefits) by risk of poverty thresholds, work intensity of the household and percentage of the benefits in total disposable income (population aged 18 to 64)",ok,sdmx,8,57,0,"",2026-07-26
+ILC_LI80,"Impact of social transfers (excluding pensions) on poverty reduction by age, sex and group of country of birth",ok,sdmx,9,67,0,"",2026-07-26
+ILC_LI80A,"Impact of social transfers (excluding pensions) on poverty reduction by age, sex and educational attainment level",ok,sdmx,9,63,0,"",2026-07-26
+ILC_LI80B,"Impact of social transfers (excluding pensions) on poverty reduction by age, sex, household composition and household work intensity",ok,sdmx,10,69,0,"",2026-07-26
+ILC_LVHD01,Persons having experienced housing difficulties in their lifetime by sex and current risk of poverty or social exclusion situation,ok,sdmx,6,44,0,"",2026-07-26
+ILC_LVHD02,Persons having experienced housing difficulties in their lifetime by sex and type of temporary solution (effect),ok,sdmx,6,45,0,"",2026-07-26
+ILC_LVHD03,Persons having experienced housing difficulties in their lifetime by sex and group of country of birth,ok,sdmx,6,45,0,"",2026-07-26
+ILC_LVHD04,Persons having experienced housing difficulties in their lifetime by sex and group of current country of citizenship,ok,sdmx,6,45,0,"",2026-07-26
+ILC_LVHD05,Persons having experienced housing difficulties in their lifetime by sex and reason,ok,sdmx,6,50,0,"",2026-07-26
+ILC_LVHD06,Persons having overcome housing difficulties experienced in their lifetime by sex and reason,ok,sdmx,6,47,0,"",2026-07-26
+ILC_LVHD07,"Persons still experiencing housing difficulties by sex, age and risk of poverty or social exclusion situation",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHD08,"Persons having experienced renting difficulties in the last 12 months by sex, age and risk of poverty or social exclusion situation",ok,sdmx,7,60,0,"",2026-07-26
+ILC_LVHD09,"Persons having experienced renting difficulties in the last 12 months by sex, age and group of country of birth",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHD10,"Persons having experienced renting difficulties in the last 12 months by sex, age and group of country of citizenship",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHD11,"Persons having experienced renting difficulties in the last 12 months by sex, age and level of disability (activity limitation)",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHD12,"Persons having experienced renting difficulties in the last 12 months by sex, age and educational attainment",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHD13,"Persons having experienced renting difficulties in the last 12 months by income quintile, household composition and degree of urbanization",ok,sdmx,7,55,0,"",2026-07-26
+ILC_LVHE01,"Persons living in private households by heating system used in the dwelling and sex, age, risk of poverty or social exclusion situation of the person",ok,sdmx,8,58,0,"",2026-07-26
+ILC_LVHE02,"Persons living in private households by heating system used in the dwelling, household composition and degree of urbanisation",ok,sdmx,7,64,0,"",2026-07-26
+ILC_LVHE03,"Persons living in private households by heating system used in the dwelling and sex, age, level of disability (activity limitation)",ok,sdmx,8,58,0,"",2026-07-26
+ILC_LVHE04,"Persons heating their dwelling with district heating by used energy source, household composition and degree of urbanisation",ok,sdmx,7,61,0,"",2026-07-26
+ILC_LVHE05,"Persons heating their dwelling with other than district heating by used energy source, household composition and degree of urbanisation",ok,sdmx,7,65,0,"",2026-07-26
+ILC_LVHE06,"Persons heating their dwelling with other than district heating by used energy source and sex, age, level of disability (activity limitation)",ok,sdmx,8,60,0,"",2026-07-26
+ILC_LVHE07,"Persons heating their dwelling with other than district heating by used energy source and sex, age, risk of poverty or social exclusion situation",ok,sdmx,8,59,0,"",2026-07-26
+ILC_LVHE08,"Persons living in dwellings with energy efficiency improvements in last five years by sex, age and risk of poverty or social exclusion",ok,sdmx,8,59,0,"",2026-07-26
+ILC_LVHE09,Persons living in dwellings with energy efficiency improvements in last five years by household composition and degree of urbanisation,ok,sdmx,7,64,0,"",2026-07-26
+ILC_LVHE10,"Persons living in dwellings with energy efficiency improvements in last five years by sex, age and level of disability (activity limitation)",ok,sdmx,8,61,0,"",2026-07-26
+ILC_LVHE11,"Persons living in a dwelling not comfortably warm during winter by sex, age and risk of poverty or social exclusion situation",ok,sdmx,7,51,0,"",2026-07-26
+ILC_LVHE12,"Persons living in a dwelling not comfortably warm during winter by sex, household composition and degree of urbanisation",ok,sdmx,7,60,0,"",2026-07-26
+ILC_LVHE13,"Persons living in a dwelling not comfortably warm during winter by sex, age and level of disability (activity limitation)",ok,sdmx,7,51,0,"",2026-07-26
+ILC_LVHE14,"Persons living in a dwelling not comfortably warm during winter by sex, age and group of country of birth",ok,sdmx,7,52,0,"",2026-07-26
+ILC_LVHE15,"Persons living in a dwelling not comfortably warm during winter by sex, age and group of country of citizenship",ok,sdmx,7,52,0,"",2026-07-26
+ILC_LVHL01,"Distribution of population aged 18 and over by health status, age group, sex and degree of urbanisation",ok,sdmx,8,83,0,"",2026-07-26
+ILC_LVHL02,"Distribution of population over 18 years by most frequent activity status, age group and sex",ok,sdmx,8,88,0,"",2026-07-26
+ILC_LVHL03,"Distribution of population aged 18 and over by occupation, income group and sex",ok,sdmx,7,87,0,"",2026-07-26
+ILC_LVHL04,"Distribution of population aged 18 and over by part-time or full-time employment, income group and sex",ok,sdmx,7,79,0,"",2026-07-26
+ILC_LVHL11,Persons living in households with very low work intensity by age and sex (population aged 0 to 59 years) - EU 2020 strategy,ok,sdmx,6,99,0,"",2026-07-26
+ILC_LVHL11N,Persons living in households with very low work intensity by age and sex (population aged 0 to 64 years),ok,sdmx,6,82,0,"",2026-07-26
+ILC_LVHL11N$DV_1181,Persons living in households with very low work intensity by age and sex (population aged 0 to 64 years),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHL11N$DV_1181'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHL12,Persons living in households with very low work intensity by most frequent activity status (population aged 18 to 59 years) - EU 2020 strategy,ok,sdmx,7,90,0,"",2026-07-26
+ILC_LVHL12N,People living in households with very low work intensity by most frequent activity status (population aged 18 to 64 years),ok,sdmx,7,83,0,"",2026-07-26
+ILC_LVHL13,Persons living in households with very low work intensity by income quantile and household composition (population aged 0 to 59 years) - EU 2020 strategy,ok,sdmx,6,92,0,"",2026-07-26
+ILC_LVHL13N,People living in households with very low work intensity by income quintile and household type (population aged 0 to 64 years),ok,sdmx,6,86,0,"",2026-07-26
+ILC_LVHL14,Persons living in households with very low work intensity by educational attainment level (population aged 18 to 59 years) - EU 2020 strategy,ok,sdmx,7,86,0,"",2026-07-26
+ILC_LVHL14N,People living in households with very low work intensity by educational attainment level (population aged 18 to 64 years),ok,sdmx,7,79,0,"",2026-07-26
+ILC_LVHL15,Persons living in households with very low work intensity by group of citizenship (population aged 18 to 59 years) - EU 2020 strategy,ok,sdmx,7,89,0,"",2026-07-26
+ILC_LVHL15N,People living in households with very low work intensity by group of citizenship (population aged 18 to 64 years),ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVHL15N$DV_2000,People living in households with very low work intensity by group of citizenship (population aged 18 to 64 years),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHL15N$DV_2000'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHL16,Persons living in households with very low work intensity by group of country of birth (population aged 18 to 59 years) - EU 2020 strategy,ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHL16N,People living in households with very low work intensity by group of country of birth (population aged 18 to 64 years),ok,sdmx,7,89,0,"",2026-07-26
+ILC_LVHL16N$DV_1182,People living in households with very low work intensity by group of country of birth (population aged 18 to 64 years),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHL16N$DV_1182'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHL16N$DV_1999,People living in households with very low work intensity by group of country of birth (population aged 18 to 64 years),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHL16N$DV_1999'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHL17,Persons living in households with very low work intensity by tenure status (population aged 0 to 59 years) - EU 2020 strategy,ok,sdmx,5,77,0,"",2026-07-26
+ILC_LVHL17N,People living in households with very low work intensity by tenure status (population aged 0 to 64 years),ok,sdmx,5,65,0,"",2026-07-26
+ILC_LVHL21,Persons living in households with very low work intensity by NUTS 2 region (population aged 0 to 59 years) - EU 2020 strategy,ok,sdmx,4,340,0,"",2026-07-26
+ILC_LVHL21N,Persons living in households with very low work intensity by NUTS 2 region (population aged 0 to 64 years),ok,sdmx,4,431,0,"",2026-07-26
+ILC_LVHL23,Persons living in households with very low work intensity by degree of urbanisation (population aged 0 to 59 years) - EU 2020 strategy,ok,sdmx,5,74,0,"",2026-07-26
+ILC_LVHL23N,Persons living in households with very low work intensity by degree of urbanisation (population aged 0 to 64 years) - EU 2030 strategy,ok,sdmx,5,56,0,"",2026-07-26
+ILC_LVHL30,Labour transitions by employment status,ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVHL30$DV_1323,Labour transitions by employment status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHL30$DV_1323'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVHL32,Labour transitions by type of contract,ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVHL33,Labour transitions - change in employment security compared to previous year by sex and previous employment status,ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVHL34,Labour transitions - income decile change compared to previous year by sex and previous income decile,ok,sdmx,7,88,0,"",2026-07-26
+ILC_LVHL35,Labour transitions - change in qualification level (employment status and pay level) compared to previous year by sex and previous employment status,ok,sdmx,7,77,0,"",2026-07-26
+ILC_LVHL36,Labour transitions from temporary to permanent contracts by sex -3-year average,ok,sdmx,5,68,0,"",2026-07-26
+ILC_LVHL60,Children living in households with very low work intensity by educational attainment level of their parents (population aged 0 to 17 years) - EU 2020 strategy,ok,sdmx,6,77,0,"",2026-07-26
+ILC_LVHL60N,Children living in households with very low work intensity by educational attainment level of their parents (population aged 0 to 17 years),ok,sdmx,6,66,0,"",2026-07-26
+ILC_LVHO01,"Distribution of population by degree of urbanisation, dwelling type and income group",ok,sdmx,7,83,0,"",2026-07-26
+ILC_LVHO01$DV_3503,"Distribution of population by degree of urbanisation, dwelling type and income group",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO01$DV_3503'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVHO02,"Distribution of population by tenure status, type of household and income group",ok,sdmx,7,98,0,"",2026-07-26
+ILC_LVHO02$DV_3561,"Distribution of population by tenure status, type of household and income group",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO02$DV_3561'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVHO03,Average number of rooms per person by tenure status and dwelling type from 2003 onwards,ok,sdmx,6,78,0,"",2026-07-26
+ILC_LVHO03H,Average number of rooms per person by tenure status and dwelling type until 2001,ok,sdmx,5,33,0,"",2026-07-26
+ILC_LVHO04,Average number of rooms per person by type of household and income group from 2003,ok,sdmx,6,91,0,"",2026-07-26
+ILC_LVHO04D,Average number of rooms per person by degree of urbanization,ok,sdmx,5,72,0,"",2026-07-26
+ILC_LVHO04H,Average number of rooms per person by type of household and income group until 2001,ok,sdmx,5,42,0,"",2026-07-26
+ILC_LVHO04N,Average number of rooms per person by NUTS 2 region,ok,sdmx,4,313,0,"",2026-07-26
+ILC_LVHO05A,"Overcrowding rate by age, sex and poverty status - total population",ok,sdmx,7,93,0,"",2026-07-26
+ILC_LVHO05A$DV_2685,"Overcrowding rate by age, sex and poverty status - total population",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO05A$DV_2685'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO05A$DV_3563,"Overcrowding rate by age, sex and poverty status - total population",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO05A$DV_3563'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO05B,Overcrowding rate by household type - total population,ok,sdmx,5,89,0,"",2026-07-26
+ILC_LVHO05C,Overcrowding rate by tenure status - total population,ok,sdmx,5,75,0,"",2026-07-26
+ILC_LVHO05D,Overcrowding rate by degree of urbanisation - total population,ok,sdmx,5,71,0,"",2026-07-26
+ILC_LVHO05Q,Overcrowding rate by income quintile - total population,ok,sdmx,5,77,0,"",2026-07-26
+ILC_LVHO06,"Overcrowding rate by age, sex and poverty status - population without single-person households",ok,sdmx,7,93,0,"",2026-07-26
+ILC_LVHO06Q,Overcrowding rate by income quintile - population without single-person households,ok,sdmx,5,77,0,"",2026-07-26
+ILC_LVHO07A,"Housing cost overburden rate by age, sex and poverty status",ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHO07A$DV_1186,"Housing cost overburden rate by age, sex and poverty status",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO07A$DV_1186'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO07A$DV_2003,"Housing cost overburden rate by age, sex and poverty status",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO07A$DV_2003'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO07A$DV_2682,"Housing cost overburden rate by age, sex and poverty status",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO07A$DV_2682'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO07B,Housing cost overburden rate by income quintile,ok,sdmx,5,77,0,"",2026-07-26
+ILC_LVHO07C,Housing cost overburden rate by tenure status,ok,sdmx,5,76,0,"",2026-07-26
+ILC_LVHO07C$DV_3481,Housing cost overburden rate by tenure status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO07C$DV_3481'
+For more information check: https://developer.m",2026-07-26
+ILC_LVHO07D,Housing cost overburden rate by degree of urbanisation,ok,sdmx,5,72,0,"",2026-07-26
+ILC_LVHO07E,Housing cost overburden rate by household type,ok,sdmx,5,90,0,"",2026-07-26
+ILC_LVHO07_R,Housing cost overburden rate by NUTS 2 region,ok,sdmx,4,340,0,"",2026-07-26
+ILC_LVHO08A,"Median of the housing cost burden distribution by age, sex and poverty status",ok,sdmx,7,81,0,"",2026-07-26
+ILC_LVHO08B,Median of the housing cost burden distribution by degree of urbanisation,ok,sdmx,5,71,0,"",2026-07-26
+ILC_LVHO15,"Overcrowding rate by age, sex and group of citizenship (total population aged 18 and over)",ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHO16,"Overcrowding rate by age, sex and group of country of birth (total population aged 18 and over)",ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHO25,"Housing cost overburden rate by age, sex and group of citizenship (total population aged 18 and over)",ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHO25$DV_2022,"Housing cost overburden rate by age, sex and group of citizenship (total population aged 18 and over)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO25$DV_2022'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVHO26,"Housing cost overburden rate by age, sex and group of country of birth (total population aged 18 and over)",ok,sdmx,7,94,0,"",2026-07-26
+ILC_LVHO26$DV_2021,"Housing cost overburden rate by age, sex and group of country of birth (total population aged 18 and over)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVHO26$DV_2021'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVHO27,Distribution of population by housing cost burden and sex,ok,sdmx,6,79,0,"",2026-07-26
+ILC_LVHO28,Distribution of population by housing cost burden and tenure status,ok,sdmx,6,80,0,"",2026-07-26
+ILC_LVHO29,Distribution of population by housing cost burden and degree of urbanisation,ok,sdmx,6,76,0,"",2026-07-26
+ILC_LVHO30,Distribution of population by housing cost burden and household type,ok,sdmx,6,80,0,"",2026-07-26
+ILC_LVHO31,Average size of dwelling by household composition and degree of urbanisation,ok,sdmx,6,50,0,"",2026-07-26
+ILC_LVHO32,Average size of dwelling by income quintile and tenure status,ok,sdmx,6,50,0,"",2026-07-26
+ILC_LVHO50A,"Share of people living in under-occupied dwellings by age, sex and poverty status - total population",ok,sdmx,7,81,0,"",2026-07-26
+ILC_LVHO50B,Share of people living in under-occupied dwellings by household type and income quintile - total population,ok,sdmx,6,86,0,"",2026-07-26
+ILC_LVHO50C,Share of people living in under-occupied dwellings by tenure status - total population,ok,sdmx,5,74,0,"",2026-07-26
+ILC_LVHO50D,Share of people living in under-occupied dwellings by degree of urbanisation - total population,ok,sdmx,5,71,0,"",2026-07-26
+ILC_LVPH01,Average household size,ok,sdmx,4,71,0,"",2026-07-26
+ILC_LVPH02,Distribution of households by household type from 2003 onwards,ok,sdmx,5,88,0,"",2026-07-26
+ILC_LVPH02H,Distribution of households by household type until 2001,ok,sdmx,5,33,0,"",2026-07-26
+ILC_LVPH03,Distribution of households by household size,ok,sdmx,5,77,0,"",2026-07-26
+ILC_LVPH04,Distribution of households by household type and income level,ok,sdmx,6,91,0,"",2026-07-26
+ILC_LVPH04$DV_2602,Distribution of households by household type and income level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVPH04$DV_2602'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVPH05,Distribution of households with children by number of children,ok,sdmx,5,75,0,"",2026-07-26
+ILC_LVPS01,Distribution of population by sex and age,ok,sdmx,6,89,0,"",2026-07-26
+ILC_LVPS02,Distribution of population by household type and income group,ok,sdmx,6,91,0,"",2026-07-26
+ILC_LVPS03,Distribution of population by work intensity of the household (population aged 0 to 64 years),ok,sdmx,8,74,0,"",2026-07-26
+ILC_LVPS04,Distribution of population aged 18 and over by educational attainment level and age group,ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVPS08,Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years),ok,sdmx,6,83,0,"",2026-07-26
+ILC_LVPS08$DV_1041,Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVPS08$DV_1041'
+For more information check: https://developer.mo",2026-07-26
+ILC_LVPS09,Share of young adults aged 18-34 living with their parents by self-defined current economic status,ok,sdmx,6,79,0,"",2026-07-26
+ILC_LVPS10,Share of young adults aged 18-34 living with their parents by type of contract,ok,sdmx,6,75,0,"",2026-07-26
+ILC_LVPS15,Distribution of population by group of citizenship and tenure status (population aged 18 and over),ok,sdmx,8,95,0,"",2026-07-26
+ILC_LVPS16,Distribution of population by group of country of birth and tenure status (population aged 18 and over),ok,sdmx,8,95,0,"",2026-07-26
+ILC_LVPS20,Share of children (aged less than 18) living with their parents by type of household,ok,sdmx,5,75,0,"",2026-07-26
+ILC_LVPS25,Distribution of children (aged less than 18) by educational attainment level of their parents and income group,ok,sdmx,7,81,0,"",2026-07-26
+ILC_LVPS30,Distribution of population aged 65 and over by type of household,ok,sdmx,6,78,0,"",2026-07-26
+ILC_MDDD01,"Material deprivation for the 'Economic strain' dimension, by number of item of deprivation",ok,sdmx,7,97,0,"",2026-07-26
+ILC_MDDD02,"Material deprivation for the 'Durables' dimension, by number of item of deprivation",ok,sdmx,7,92,0,"",2026-07-26
+ILC_MDDD03,"Material deprivation for the 'Economic strain' and 'Durables' dimensions, by number of item of deprivation",ok,sdmx,7,92,0,"",2026-07-26
+ILC_MDDD04A,"Material deprivation for the 'Housing' dimension, by household type, poverty status and by number of items of deprivation",ok,sdmx,7,92,0,"",2026-07-26
+ILC_MDDD04B,"Material deprivation for the 'Housing' dimension, by age, sex and by number of item of deprivation",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDD04B$DV_2721,"Material deprivation for the 'Housing' dimension, by age, sex and by number of item of deprivation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDDD04B$DV_2721'
+For more information check: https://developer.m",2026-07-26
+ILC_MDDD05,"Material deprivation for the 'Environment' dimension, by number of item of deprivation",ok,sdmx,7,91,0,"",2026-07-26
+ILC_MDDD11,Severe material deprivation rate by age and sex,ok,sdmx,6,103,0,"",2026-07-26
+ILC_MDDD11$DV_655,Severe material deprivation rate by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDDD11$DV_655'
+For more information check: https://developer.moz",2026-07-26
+ILC_MDDD12,Severe material deprivation rate by most frequent activity status (population aged 18 and over),ok,sdmx,7,91,0,"",2026-07-26
+ILC_MDDD13,Severe material deprivation rate by income quintile and household type,ok,sdmx,6,90,0,"",2026-07-26
+ILC_MDDD14,Severe material deprivation rate by educational attainment level (population aged 18 and over),ok,sdmx,7,87,0,"",2026-07-26
+ILC_MDDD15,Severe material deprivation rate by group of citizenship (population aged 18 and over),ok,sdmx,7,88,0,"",2026-07-26
+ILC_MDDD16,Severe material deprivation rate by group of country of birth (population aged 18 and over),ok,sdmx,7,93,0,"",2026-07-26
+ILC_MDDD17,Severe material deprivation rate by tenure status,ok,sdmx,5,70,0,"",2026-07-26
+ILC_MDDD21,Severe material deprivation rate by NUTS 2 region,ok,sdmx,4,315,0,"",2026-07-26
+ILC_MDDD23,Severe material deprivation rate by degree of urbanisation,ok,sdmx,5,72,0,"",2026-07-26
+ILC_MDDD60,Severe material deprivation rate for children by educational attainment level of their parents (population aged 0 to 17 years),ok,sdmx,6,72,0,"",2026-07-26
+ILC_MDDU01,Persons who cannot afford a telephone,ok,sdmx,6,88,0,"",2026-07-26
+ILC_MDDU02,Persons who cannot afford a colour TV,ok,sdmx,6,88,0,"",2026-07-26
+ILC_MDDU03,Persons who cannot afford a computer,ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDDU03A,"Persons who cannot afford a computer by sex, age, degree of urbanisation and educational attainment",ok,sdmx,8,81,0,"",2026-07-26
+ILC_MDDU03B,"Persons who cannot afford a computer by sex, age and a risk of poverty or social exclusion situation",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU03C,"Persons not having a computer for other reasons than affordability by sex, age and at risk of poverty threshold",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU03D,"Persons not having a computer for other reasons than affordability by sex, age, degree of urbanisation and educational attainment",ok,sdmx,8,81,0,"",2026-07-26
+ILC_MDDU03E,"Persons not having a computer for other reasons than affordability by sex, age and a risk of poverty or social exclusion situation",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU03F,"Persons who cannot afford a computer by sex, age, and risk of poverty threshold",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU04,Persons who cannot afford a washing machine,ok,sdmx,6,88,0,"",2026-07-26
+ILC_MDDU05,Persons who cannot afford a personal car,ok,sdmx,6,93,0,"",2026-07-26
+ILC_MDDU05A,"Persons who cannot afford a personal car by sex, age and degree of urbanisation",ok,sdmx,7,77,0,"",2026-07-26
+ILC_MDDU05B,"Persons who cannot afford a personal car by sex, age and risk of poverty threshold",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU05C,Persons who cannot afford a personal car by household composition,ok,sdmx,5,72,0,"",2026-07-26
+ILC_MDDU06A,"Persons who cannot afford to replace worn-out clothes by some new (not second-hand) ones by age, sex and income group",ok,sdmx,7,87,0,"",2026-07-26
+ILC_MDDU06B,Persons who cannot afford to replace worn-out clothes by some new (not second-hand) ones by employment status and income quintile,ok,sdmx,6,74,0,"",2026-07-26
+ILC_MDDU07A,"Persons who cannot afford internet connection for personal use at home by age, sex and income group",ok,sdmx,7,87,0,"",2026-07-26
+ILC_MDDU07B,Persons who cannot afford internet connection for personal use at home by employment status and income quintile,ok,sdmx,6,74,0,"",2026-07-26
+ILC_MDDU07C,"Persons who cannot afford internet connection for personal use at home by sex, age, degree of urbanisation and educational attainment",ok,sdmx,8,81,0,"",2026-07-26
+ILC_MDDU07D,"Persons who cannot afford internet connection for personal use at home by sex, age and a risk of poverty or social exclusion situation",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU07E,"Persons not having internet connection for personal use at home for other reasons than affordability by sex, age and at risk of poverty threshold",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU07F,"Persons not having internet connection for personal use at home for other reasons than affordability by sex, age, degree of urbanisation and educational attainment",ok,sdmx,8,81,0,"",2026-07-26
+ILC_MDDU07G,"Persons not having internet connection for personal use at home for other reasons than affordability by sex, age and a risk of poverty or social exclusion situation",ok,sdmx,7,79,0,"",2026-07-26
+ILC_MDDU08A,"Persons who cannot afford two pairs of properly fitting shoes by age, sex and risk of poverty threshold",ok,sdmx,8,77,0,"",2026-07-26
+ILC_MDDU08B,Persons who cannot afford two pairs of properly fitting shoes by most frequent activity status and income quantile,ok,sdmx,6,67,0,"",2026-07-26
+ILC_MDDW01,Noise from neighbours or from the street,ok,sdmx,6,86,0,"",2026-07-26
+ILC_MDDW02,"Pollution, grime or other environmental problems",ok,sdmx,6,86,0,"",2026-07-26
+ILC_MDDW03,"Crime, violence or vandalism in the area",ok,sdmx,6,86,0,"",2026-07-26
+ILC_MDDW04,Noise from neighbours or from the street by degree of urbanisation,ok,sdmx,6,69,0,"",2026-07-26
+ILC_MDDW05,"Pollution, grime or other environmental problems by degree of urbanisation",ok,sdmx,6,69,0,"",2026-07-26
+ILC_MDDW06,"Crime, violence or vandalism in the area by degree of urbanisation",ok,sdmx,6,69,0,"",2026-07-26
+ILC_MDED01,"Share of housing costs in disposable household income, by type of household and income group",ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDED02,"Share of rent related to occupied dwelling in disposable household income, by type of household and income group",ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDED03,Total housing costs in pps,ok,sdmx,7,94,0,"",2026-07-26
+ILC_MDED04,Financial burden of the total housing cost,ok,sdmx,7,90,0,"",2026-07-26
+ILC_MDED05,Financial burden of the repayment of debts from hire purchases or loans,ok,sdmx,7,94,0,"",2026-07-26
+ILC_MDES01,Inability to keep home adequately warm,ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDES01_R,Inability to keep home adequately warm by NUTS 2 region,ok,sdmx,4,375,0,"",2026-07-26
+ILC_MDES02,Inability to afford paying for one week annual holiday away from home,ok,sdmx,6,93,0,"",2026-07-26
+ILC_MDES03,"Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) every second day",ok,sdmx,6,93,0,"",2026-07-26
+ILC_MDES03$DV_2702,"Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) every second day",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDES03$DV_2702'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDES03_R,"Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) every second day by NUTS 2 region",ok,sdmx,4,380,0,"",2026-07-26
+ILC_MDES04,Inability to face unexpected financial expenses,ok,sdmx,6,93,0,"",2026-07-26
+ILC_MDES04_R,Inability to face unexpected financial expenses by NUTS 2 region,ok,sdmx,4,392,0,"",2026-07-26
+ILC_MDES05,"Arrears (mortgage or rent, utility bills or hire purchase) from 2003 onwards",ok,sdmx,6,93,0,"",2026-07-26
+ILC_MDES05H,"Arrears (mortgage or rent, utility bills or hire purchase) until 2001",ok,sdmx,7,46,0,"",2026-07-26
+ILC_MDES05_R,"Arrears (mortgage or rent, utility bills or hire purchase) by NUTS 2 region",ok,sdmx,4,380,0,"",2026-07-26
+ILC_MDES06,Arrears on mortgage or rent payments,ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDES07,Arrears on utility bills,ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDES08,Arrears on hire purchase instalments or other loan payments,ok,sdmx,6,91,0,"",2026-07-26
+ILC_MDES09,Inability to make ends meet,ok,sdmx,7,99,0,"",2026-07-26
+ILC_MDES10A,"Persons who cannot afford to get-together with friends or family (relatives) for a drink or meal at least once a month by age, sex and income group",ok,sdmx,7,86,0,"",2026-07-26
+ILC_MDES10B,Persons who cannot afford to get-together with friends or family (relatives) for a drink or meal at least once a month by employment status and income quintile,ok,sdmx,6,74,0,"",2026-07-26
+ILC_MDES11A,"Persons who cannot afford to regularly participate in a leisure activity by age, sex and income group",ok,sdmx,7,86,0,"",2026-07-26
+ILC_MDES11B,Persons who cannot afford to regularly participate in a leisure activity by employment status and income quintile,ok,sdmx,6,74,0,"",2026-07-26
+ILC_MDES12A,"Persons who cannot afford to spend a small amount of money each week on themselves by age, sex and income group",ok,sdmx,7,84,0,"",2026-07-26
+ILC_MDES12B,Persons who cannot afford to spend a small amount of money each week on themselves by employment status and income quintile,ok,sdmx,6,74,0,"",2026-07-26
+ILC_MDES13A,"Persons who cannot afford a regular use of public transport by age, sex and income group",ok,sdmx,7,70,0,"",2026-07-26
+ILC_MDES13B,Persons who cannot afford a regular use of public transport by employment status and income quintile,ok,sdmx,6,60,0,"",2026-07-26
+ILC_MDHO01,"Total population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor",ok,sdmx,8,93,0,"",2026-07-26
+ILC_MDHO01C,"Children (aged 0 to 17) living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor",ok,sdmx,6,73,0,"",2026-07-26
+ILC_MDHO02,"Total population having neither a bath, nor a shower in their dwelling",ok,sdmx,8,92,0,"",2026-07-26
+ILC_MDHO02C,"Children (aged 0 to 17) having neither a bath, nor a shower in their dwelling",ok,sdmx,6,71,0,"",2026-07-26
+ILC_MDHO03,Total population not having indoor flushing toilet for the sole use of their household,ok,sdmx,8,92,0,"",2026-07-26
+ILC_MDHO03C,Children (aged 0 to 17) not having indoor flushing toilet for the sole use of their household,ok,sdmx,6,71,0,"",2026-07-26
+ILC_MDHO04,Total population considering their dwelling as too dark,ok,sdmx,8,93,0,"",2026-07-26
+ILC_MDHO04C,Children (aged 0 to 17) living in households considering their dwelling as too dark,ok,sdmx,6,73,0,"",2026-07-26
+ILC_MDHO05,"Total population having neither a bath, nor a shower, nor indoor flushing toilet in their household",ok,sdmx,8,93,0,"",2026-07-26
+ILC_MDHO06A,"Severe housing deprivation rate by age, sex and poverty status",ok,sdmx,7,88,0,"",2026-07-26
+ILC_MDHO06A$DV_1184,"Severe housing deprivation rate by age, sex and poverty status",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDHO06A$DV_1184'
+For more information check: https://developer.m",2026-07-26
+ILC_MDHO06A$DV_2701,"Severe housing deprivation rate by age, sex and poverty status",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDHO06A$DV_2701'
+For more information check: https://developer.m",2026-07-26
+ILC_MDHO06B,Severe housing deprivation rate by household type,ok,sdmx,5,84,0,"",2026-07-26
+ILC_MDHO06C,Severe housing deprivation rate by tenure status,ok,sdmx,6,73,0,"",2026-07-26
+ILC_MDHO06D,Severe housing deprivation rate by degree of urbanisation,ok,sdmx,5,66,0,"",2026-07-26
+ILC_MDHO06Q,Severe housing deprivation rate by income quintile,ok,sdmx,5,72,0,"",2026-07-26
+ILC_MDHO07,Persons who cannot afford to replace worn-out furniture by income group and type of household,ok,sdmx,6,80,0,"",2026-07-26
+ILC_MDSD01,"Material and social deprivation rate by age, sex and most frequent activity status",ok,sdmx,7,97,0,"",2026-07-26
+ILC_MDSD02,Material and social deprivation rate by income quintile and household type,ok,sdmx,6,85,0,"",2026-07-26
+ILC_MDSD03,"Material and social deprivation rate by age, sex and educational attainment level",ok,sdmx,7,94,0,"",2026-07-26
+ILC_MDSD03$DV_1165,"Material and social deprivation rate by age, sex and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD03$DV_1165'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD04,"Material and social deprivation rate by age, sex and group of citizenship",ok,sdmx,7,96,0,"",2026-07-26
+ILC_MDSD05,"Material and social deprivation rate by age, sex and group of country of birth",ok,sdmx,7,96,0,"",2026-07-26
+ILC_MDSD05$DV_1166,"Material and social deprivation rate by age, sex and group of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD05$DV_1166'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD06,Material and social deprivation rate by tenure status,ok,sdmx,5,65,0,"",2026-07-26
+ILC_MDSD07,Material and social deprivation rate by age and sex,ok,sdmx,6,103,0,"",2026-07-26
+ILC_MDSD07$DV_2621,Material and social deprivation rate by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD07$DV_2621'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD08,Material and social deprivation rate by NUTS 2 region,ok,sdmx,4,301,0,"",2026-07-26
+ILC_MDSD09,Material and social deprivation rate by degree of urbanisation,ok,sdmx,5,61,0,"",2026-07-26
+ILC_MDSD10,Material and social deprivation rate for children by age and educational attainment level of their parents,ok,sdmx,6,71,0,"",2026-07-26
+ILC_MDSD11,Severe material and social deprivation rate by age and sex,ok,sdmx,6,103,0,"",2026-07-26
+ILC_MDSD11$DV_1994,Severe material and social deprivation rate by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD11$DV_1994'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD12,"Severe material and social deprivation by age, sex and most frequent activity status",ok,sdmx,7,91,0,"",2026-07-26
+ILC_MDSD13,Severe material and social deprivation by income quantile and household composition,ok,sdmx,6,79,0,"",2026-07-26
+ILC_MDSD14,"Severe material and social deprivation by age, sex and educational attainment level",ok,sdmx,7,87,0,"",2026-07-26
+ILC_MDSD15,"Severe material and social deprivation by age, sex and group of citizenship",ok,sdmx,7,91,0,"",2026-07-26
+ILC_MDSD15$DV_1995,"Severe material and social deprivation by age, sex and group of citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD15$DV_1995'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD16,"Severe material and social deprivation by age, sex and group of country of birth",ok,sdmx,7,91,0,"",2026-07-26
+ILC_MDSD16$DV_1996,"Severe material and social deprivation by age, sex and group of country of birth",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_MDSD16$DV_1996'
+For more information check: https://developer.mo",2026-07-26
+ILC_MDSD17,Severe material and social deprivation by tenure status,ok,sdmx,5,58,0,"",2026-07-26
+ILC_MDSD18,Severe material and social deprivation by NUTS 2 region,ok,sdmx,4,431,0,"",2026-07-26
+ILC_MDSD19,Severe material and social deprivation by degree of urbanization,ok,sdmx,5,54,0,"",2026-07-26
+ILC_MDSD20,Severe material and social deprivation of children by educational attainment level of their parents,ok,sdmx,6,63,0,"",2026-07-26
+ILC_MDSD21,"Severe material and social deprivation by age, sex and work intensity of the household",ok,sdmx,7,66,0,"",2026-07-26
+ILC_ODBT01,Arrears on non-housing bills by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT02,Arrears on non-housing bills by income quintile,ok,sdmx,5,44,0,"",2026-07-26
+ILC_ODBT03,Loans (excluding mortgages on purchase of main residence) by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT04,Loans (excluding mortgages on purchase of main residence) by income quintile,ok,sdmx,5,44,0,"",2026-07-26
+ILC_ODBT05,Persons with loans for property purposes by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT06,Persons with loans for transport purposes by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT07,Persons with loans for education purposes by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT08,Persons with loans to cover daily living expenses by risk of poverty threshold,ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT09,"Persons with loans for purposes other than property, transport, education and daily living expenses by risk of poverty threshold",ok,sdmx,6,42,0,"",2026-07-26
+ILC_ODBT10,Savings in a typical month by household habits and risk of poverty threshold,ok,sdmx,7,47,0,"",2026-07-26
+ILC_ODBT11,Savings in a typical month by household habits and income quintile,ok,sdmx,6,49,0,"",2026-07-26
+ILC_ODBT12,Persons owning real estate other than main residence by risk of poverty threshold,ok,sdmx,6,43,0,"",2026-07-26
+ILC_ODBT13,Persons owning real estate other than main residence by income quantile,ok,sdmx,5,45,0,"",2026-07-26
+ILC_ODBT14,Households maintaining the same standard of living using savings by duration and risk of poverty threshold,ok,sdmx,7,46,0,"",2026-07-26
+ILC_ODBT15,Households maintaining the same standard of living using savings by duration and income quintile,ok,sdmx,6,48,0,"",2026-07-26
+ILC_PECS01,Persons at risk of poverty or social exclusion - EU2030 target,ok,sdmx,5,57,0,"",2026-07-26
+ILC_PEES01,"Persons by risk of poverty, material deprivation, work intensity of the household, age and sex of the person - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,9,81,0,"",2026-07-26
+ILC_PEES01N,"Persons by risk of poverty, material deprivation, work intensity of the household, age and sex of the person - intersections of EU 2030 poverty target indicators",ok,sdmx,9,79,0,"",2026-07-26
+ILC_PEES02,"Persons by risk of poverty, material deprivation, work intensity of the household and most frequent activity status (population aged 18 and over) - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,74,0,"",2026-07-26
+ILC_PEES03,"Persons by risk of poverty, material deprivation, work intensity of the household and income quantile - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,72,0,"",2026-07-26
+ILC_PEES04,"Persons by risk of poverty, material deprivation, work intensity of the household and household composition - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,74,0,"",2026-07-26
+ILC_PEES05,"Persons by risk of poverty, material deprivation, work intensity of the household and educational attainment level (population aged 18 and over) - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,69,0,"",2026-07-26
+ILC_PEES06,"Persons by risk of poverty, material deprivation, work intensity of the household and citizenship (population aged 18 and over) - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,74,0,"",2026-07-26
+ILC_PEES07,"Persons by risk of poverty, material deprivation, work intensity of the household and country of birth (population aged 18 and over) - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,74,0,"",2026-07-26
+ILC_PEES08,"Persons by risk of poverty, material deprivation, work intensity of the household and tenure status - intersections of EU 2020 Strategy poverty target indicators",ok,sdmx,8,68,0,"",2026-07-26
+ILC_PEPS01,Persons at risk of poverty or social exclusion by age and sex - EU 2020 strategy,ok,sdmx,6,104,0,"",2026-07-26
+ILC_PEPS01N,Persons at risk of poverty or social exclusion by age and sex,ok,sdmx,6,96,0,"",2026-07-26
+ILC_PEPS01N$DV_1161,Persons at risk of poverty or social exclusion by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS01N$DV_1161'
+For more information check: https://developer.m",2026-07-26
+ILC_PEPS01N$DV_1944,Persons at risk of poverty or social exclusion by age and sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS01N$DV_1944'
+For more information check: https://developer.m",2026-07-26
+ILC_PEPS02,Persons at risk of poverty or social exclusion by most frequent activity status (population aged 18 and over) - EU 2020 strategy,ok,sdmx,7,91,0,"",2026-07-26
+ILC_PEPS02N,Persons at risk of poverty or social exclusion by most frequent activity status (population aged 18 and over),ok,sdmx,7,86,0,"",2026-07-26
+ILC_PEPS03,Persons at risk of poverty or social exclusion by income quantile and household composition - EU 2020 strategy,ok,sdmx,6,90,0,"",2026-07-26
+ILC_PEPS03N,Persons at risk of poverty or social exclusion by income quantile and household composition,ok,sdmx,6,85,0,"",2026-07-26
+ILC_PEPS04,Persons at risk of poverty or social exclusion by educational attainment level (population aged 18 and over) - EU 2020 strategy,ok,sdmx,7,87,0,"",2026-07-26
+ILC_PEPS04N,Persons at risk of poverty or social exclusion by educational attainment level (population aged 18 and over),ok,sdmx,7,82,0,"",2026-07-26
+ILC_PEPS05,Persons at risk of poverty or social exclusion by group of citizenship (population aged 18 and over) - EU 2020 strategy,ok,sdmx,7,88,0,"",2026-07-26
+ILC_PEPS05N,Persons at risk of poverty or social exclusion by group of citizenship (population aged 18 and over),ok,sdmx,7,81,0,"",2026-07-26
+ILC_PEPS05N$DV_1962,Persons at risk of poverty or social exclusion by group of citizenship (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS05N$DV_1962'
+For more information check: https://developer.m",2026-07-26
