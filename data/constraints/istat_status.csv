@@ -3531,3 +3531,193 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 742_1106_DF_DCSI_CPI_RELAZIONI_11,"Relazioni tra imprese - Divisione Ateco (2 digit), classe di addetti  (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-26
 742_1106_DF_DCSI_CPI_RELAZIONI_12,"Tipo di controparti - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-26
 742_1106_DF_DCSI_CPI_RELAZIONI_13,"Motivi della relazione - Divisione Ateco (2 digit), classe di addetti (2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-26
+742_1106_DF_DCSI_CPI_RELAZIONI_14,"Numero delle controparti - Divisione Ateco (2 digit), classe di addetti (2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_15,"Difficoltà nell'attivare relazioni - Divisione Ateco (2 digit), classe di addetti (2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_16,Relazioni tra imprese - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_17,Tipo di controparti - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_18,Motivi della relazione - Classe di Ateco (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_19,Numero delle controparti - Classe di Ateco (4 digit) (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_2,Tipo di controparti - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_20,Difficoltà nell'attivare relazioni - Classe di Ateco (4 digit) (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_21,Aree funzionali interessate - Macrosettori economici - prov. (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_22,"Aree funzionali interessate - Divisione Ateco (2 digit), classe di addetti (2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_23,"Aree funzionali interessate - Sezione Ateco, classe di addetti - reg.(2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_24,Aree funzionali interessate - Classe di Ateco (4 digit) (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_25,Subfornitore principale - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_26,"Subfornitore principale - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_27,"Subfornitore principale - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_28,Subfornitore principale - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_29,Main customer - Economic sectors - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_3,Motivi della relazione - Macrosettori economici - prov. (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_30,"Committente principale - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_31,"Committente principale - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_32,Committente principale - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_33,Attività imprese partner - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_34,"Attività imprese partner - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_35,"Attività imprese partner - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_36,Attività imprese partner - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_4,Numero delle controparti - Macrosettori economici - prov. (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_5,Difficoltà nell'attivare relazioni - Macrosettori economici - prov. (2018 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_6,"Relazioni tra imprese - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_7,"Tipo di controparti - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_8,"Difficoltà nell'attivare relazioni - Sezione Ateco, classe di addetti - reg.(2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1106_DF_DCSI_CPI_RELAZIONI_9,"Motivi della relazione - Sezione Ateco, classe di addetti - reg. (2018 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_10,"Ostacoli alla capacità competitiva - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_11,Ostacoli alla capacità competitiva - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_12,Punti di forza della capacità competitiva - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_13,Mercato geografico di riferimento - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_14,"Ostacoli alla capacità competitiva - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_15,"Punti di forza della capacità competitiva - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_16,"Mercato geografico di riferimento - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_17,Competitività e mercato - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_18,Mercato geografico di riferimento - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_19,Punti di forza della capacità competitiva - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_20,Ostacoli alla capacità competitiva - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_21,Cliente - Macrosettori economici - prov.(2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_22,"Cliente - Sezione Ateco, classe di addetti - reg.(2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_23,"Cliente - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_24,Cliente - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_25,Criterio di determinazione dei prezzi - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_26,"Prices determination criterion - Nace sectors, class of persons employed - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_27,"Criterio di determinazione dei prezzi - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_28,Criterio di determinazione dei prezzi - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_29,Capacità competitiva - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_30,"Capacità competitiva - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_31,"Capacità competitiva - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_32,Capacità competitiva - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_5,"Competitività e mercato - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_6,"Competitività e mercato - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_7,Competitività e mercato - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_8,"Mercato geografico di riferimento - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1107_DF_DCSI_CPI_MERCATO_9,"Punti di forza della capacità competitiva - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_10,"Utilizzo delle fonti - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_11,Utilizzo delle fonti - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_12,"Fonti di finanziamento - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_13,Dipendenza da fonti esterne - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_14,"Dipendenza da fonti esterne - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_15,"Dipendenza da fonti esterne - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_16,Dipendenza da fonti esterne - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_17,Dipendenza dalle banche - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_18,"Dipendenza dalle banche - Sezione Ateco, classe di addetti - reg. (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_19,"Dipendenza dalle banche - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_20,Dipendenza dalle banche - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_21,Numero di banche - NUM - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_22,"Numero di banche - NUM - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_23,"Numero di banche - NUM - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_24,Numero di banche - NUM - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_25,Quota di indebitamento - QUO - Macrosettori economici - prov.,ok,hub,6,148,0,"",2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_26,Tipologia della banca principale - TIP - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_27,Determinanti nella scelta della banca - DET - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_28,Richieste di valutazione della banca - RIC - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_29,Strumenti per migliorare la posizione creditizia - STR - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_30,"Quota di indebitamento - QUO - Divisione Ateco (2 digit), classe di addetti",ok,hub,6,108,0,"",2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_31,"Tipologia della banca principale - TIP - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_32,"Determinanti nella scelta della banca - DET - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_33,"Richieste di valutazione della banca - RIC - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_34,"Strumenti per migliorare la posizione creditizia - STR - Divisione Ateco (2 digit), classe di addetti",ok,hub,6,110,0,"",2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_35,Quota di indebitamento - QUO - Classe di Ateco (4 digit),ok,hub,6,851,0,"",2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_36,Tipologia della banca principale - TIP - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_37,Determinanti nella scelta della banca - DET - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_38,Richieste di valutazione della banca - RIC - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_39,Strumenti per migliorare la posizione creditizia - STR - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_40,"Quota di indebitamento - QUO - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_41,"Tipologia della banca principale - TIP - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_42,"Determinanti nella scelta della banca - DET - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_43,"Richieste di valutazione della banca - RIC - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_44,"Strumenti per migliorare la posizione creditizia - STR - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_5,Fonti di finanziamento - Macrosettori economici - prov. (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_6,Utilizzo delle fonti - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_7,"Fonti di finanziamento - Divisione Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_8,"Utilizzo delle fonti - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_9,Fonti di finanziamento - Classe di Ateco (4 digit) (2018-2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_1,"Internazionalizzazione produttiva - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_10,"Aree di delocalizzazione - Contratti/Accordi - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_11,"Destinazione della produzione - Contratti/Accordi - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_12,"Aree di delocalizzazione - IDE - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_13,"Destinazione della produzione - IDE - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_14,"Aree di delocalizzazione - Contratti/Accordi - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_15,"Destinazione della produzione - Contratti/Accordi - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_16,Aree di delocalizzazione - IDE - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_17,Destinazione della produzione - IDE - Classe di Ateco (4 digit),ok,hub,9,589,0,"",2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_18,Aree di delocalizzazione - Contratti/Accordi - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_19,Destinazione della produzione - Contratti/Accordi - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_2,Internazionalizzazione produttiva - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_20,Destinazione della produzione - Contratti/Accordi - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_21,Tipo di impresa cui è stato fornito un servizio - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_22,"Tipo di impresa cui è stato fornito un servizio - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_23,"Tipo di impresa cui è stato fornito un servizio - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_24,Tipo di impresa cui è stato fornito un servizio - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_25,Tipo di impresa cui è stato commissionato un servizio - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_26,"Tipo di impresa cui è stato commissionato un servizio - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_27,"Tipo di impresa cui è stato commissionato un servizio - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_28,Tipo di impresa cui è stato commissionato un servizio - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_29,Aree di delocalizzazione dell'attività produttiva - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_3,"Internazionalizzazione produttiva - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_30,"Aree di delocalizzazione dell'attività produttiva - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_31,"Aree di delocalizzazione dell'attività produttiva - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_32,Aree di delocalizzazione dell'attività produttiva - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_33,Ostacoli alla delocalizzazione - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_34,"Ostacoli alla delocalizzazione - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_35,"Ostacoli alla delocalizzazione - Divisione Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_36,Ostacoli alla delocalizzazione - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_4,Internazionalizzazione produttiva - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_5,Aree di delocalizzazione - IDE - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_6,Destinazione della produzione - IDE - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_7,Aree di delocalizzazione - Contratti/Accordi - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_8,"Aree di delocalizzazione - IDE - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_9,"Destinazione della produzione - IDE - Sezione Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_1,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Macrosettori economici - prov",ok,hub,5,150,0,"",2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_10,"Strumenti finanziari - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_11,Strumenti finanziari - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_12,"Strumenti finanziari - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_13,Modalità di finanziamento - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_14,"Modalità di finanziamento - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_15,Modalità di finanziamento - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_16,"Modalità di finanziamento - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_2,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_3,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Classe di Ateco (4 digit)",ok,hub,5,897,0,"",2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_4,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Divisione di Ateco (2 digit), classe di addetti",ok,hub,5,116,0,"",2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_5,Motivazioni - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_6,"Motivazioni - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_7,Motivazioni - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_8,"Motivazioni - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_9,Strumenti finanziari - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_1,"Strategie per la sostenibilità ambientale - Sezioni Ateco, classe di addetti - reg.",ok,hub,5,60,0,"",2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_10,"Azioni per ridurre i consumi - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_11,Azioni per ridurre i consumi - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_12,"Azioni per ridurre i consumi - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_13,Strategie di promozione - Macrosettori economici - prov,ok,hub,6,155,0,"",2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_14,"Strategie di promozione - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_15,Strategie di promozione - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_16,"Strategie di promozione - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_2,"Strategie per la sostenibilità ambientale - Divisione di Ateco (2 digit), classe di addetti",ok,hub,5,111,0,"",2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_3,Strategie per la sostenibilità ambientale - Classe di Ateco (4 digit),ok,hub,5,892,0,"",2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_4,Strategie per la sostenibilità ambientale - Macro settori economici - prov,ok,hub,5,145,0,"",2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_5,Tipologie di investimento - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_6,"Tipologie di investimento - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_7,"Tipologie di investimento - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_8,Tipologie di investimento - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_9,Azioni per ridurre i consumi - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_1,Strategie per il benessere lavorativo e di interesse collettivo - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_10,"Azioni intraprese a sostegno della genitorialità - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_11,Azioni intraprese a sostegno della genitorialità - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_12,"Azioni intraprese a sostegno della genitorialità - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_13,Azioni da intraprendere a sostegno della genitorialità - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_14,"Azioni da intraprendere a sostegno della genitorialità - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_15,"Azioni da intraprendere a sostegno della genitorialità - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_16,Azioni da intraprendere a sostegno della genitorialità - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_17,Iniziative di interesse collettivo - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_18,"Iniziative di interesse collettivo - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_19,Iniziative di interesse collettivo - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_2,"Strategie per il benessere lavorativo e di interesse collettivo - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_20,"Iniziative di interesse collettivo - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_3,"Strategie per il benessere lavorativo e di interesse collettivo - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_4,Strategie per il benessere lavorativo e di interesse collettivo - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_5,Benessere lavorativo - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_6,"Benessere lavorativo - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_7,Benessere lavorativo - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_8,"Benessere lavorativo - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1138_DF_DCSI_CPI_LABCOLL_9,Azioni intraprese a sostegno della genitorialità - Macrosettori economici - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1139_DF_DCSI_CPI_LOCSEC_1,Strategie a beneficio del territorio e per la sicurezza - Macrosettori economici - prov.,ok,hub,5,146,0,"",2026-07-27
+742_1139_DF_DCSI_CPI_LOCSEC_10,"Fattori di successo delle iniziative - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27
+742_1139_DF_DCSI_CPI_LOCSEC_11,"Fattori di successo delle iniziative - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-27

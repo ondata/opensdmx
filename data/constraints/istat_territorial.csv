@@ -1826,3 +1826,17 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 741_1097_DF_DICA_IPSTRIPCOM_7,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_8,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_9,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (divisioni), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+742_1111_DF_DCSI_CPI_FINANZA_25,Quota di indebitamento - QUO - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_30,"Quota di indebitamento - QUO - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_34,"Strumenti per migliorare la posizione creditizia - STR - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1111_DF_DCSI_CPI_FINANZA_35,Quota di indebitamento - QUO - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1115_DF_DCSI_CPI_INTERNAZ_17,Destinazione della produzione - IDE - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_1,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Macrosettori economici - prov",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_3,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Classe di Ateco (4 digit)",REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1136_DF_DCSI_CPI_ENVRESSINT_4,"Azioni per sostenibilità ambientale, responsabilità sociale e sicurezza - Divisione di Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_1,"Strategie per la sostenibilità ambientale - Sezioni Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_13,Strategie di promozione - Macrosettori economici - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_2,"Strategie per la sostenibilità ambientale - Divisione di Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_3,Strategie per la sostenibilità ambientale - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-07-27
+742_1137_DF_DCSI_CPI_ENVIROM_4,Strategie per la sostenibilità ambientale - Macro settori economici - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
+742_1139_DF_DCSI_CPI_LOCSEC_1,Strategie a beneficio del territorio e per la sicurezza - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27

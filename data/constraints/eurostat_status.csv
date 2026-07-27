@@ -3860,3 +3860,372 @@ ILC_PEPS05,Persons at risk of poverty or social exclusion by group of citizenshi
 ILC_PEPS05N,Persons at risk of poverty or social exclusion by group of citizenship (population aged 18 and over),ok,sdmx,7,81,0,"",2026-07-26
 ILC_PEPS05N$DV_1962,Persons at risk of poverty or social exclusion by group of citizenship (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS05N$DV_1962'
 For more information check: https://developer.m",2026-07-26
+ILC_PEPS06,Persons at risk of poverty or social exclusion by group of country of birth (population aged 18 and over) - EU 2020 strategy,ok,sdmx,7,93,0,"",2026-07-27
+ILC_PEPS06N,Persons at risk of poverty or social exclusion by group of country of birth (population aged 18 and over),ok,sdmx,7,88,0,"",2026-07-27
+ILC_PEPS06N$DV_1162,Persons at risk of poverty or social exclusion by group of country of birth (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS06N$DV_1162'
+For more information check: https://developer.m",2026-07-27
+ILC_PEPS06N$DV_1961,Persons at risk of poverty or social exclusion by group of country of birth (population aged 18 and over),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PEPS06N$DV_1961'
+For more information check: https://developer.m",2026-07-27
+ILC_PEPS07,Persons at risk of poverty or social exclusion by tenure status - EU 2020 strategy,ok,sdmx,5,69,0,"",2026-07-27
+ILC_PEPS07N,Persons at risk of poverty or social exclusion by tenure status,ok,sdmx,5,65,0,"",2026-07-27
+ILC_PEPS11,Persons at risk of poverty or social exclusion by NUTS 2 region - EU 2020 strategy,ok,sdmx,4,353,0,"",2026-07-27
+ILC_PEPS11N,Persons at risk of poverty or social exclusion by NUTS 2 region,ok,sdmx,4,430,0,"",2026-07-27
+ILC_PEPS13,Persons at risk of poverty or social exclusion by degree of urbanisation - EU 2020 strategy,ok,sdmx,5,72,0,"",2026-07-27
+ILC_PEPS13N,Persons at risk of poverty or social exclusion by degree of urbanisation,ok,sdmx,5,60,0,"",2026-07-27
+ILC_PEPS60,Children at risk of poverty or social exclusion by educational attainment level of their parents (population aged 0 to 17 years) - EU 2020 strategy,ok,sdmx,6,71,0,"",2026-07-27
+ILC_PEPS60N,Children at risk of poverty or social exclusion by educational attainment level of their parents (population aged 0 to 17 years),ok,sdmx,6,65,0,"",2026-07-27
+ILC_PNP1,At-risk-of-poverty rate of older people by sex and selected age groups - EU-SILC and ECHP surveys,ok,sdmx,8,82,0,"",2026-07-27
+ILC_PNP10,Gender differences in the relative median income ratio (65+),ok,sdmx,7,72,0,"",2026-07-27
+ILC_PNP11,Gender differences in the aggregate replacement ratio for pensions (excluding other social benefits),ok,sdmx,4,58,0,"",2026-07-27
+ILC_PNP12,Gender differences in the at-risk-of-poverty rate by age,ok,sdmx,5,73,0,"",2026-07-27
+ILC_PNP13,Average gender pension gap by age group,ok,sdmx,6,57,0,"",2026-07-27
+ILC_PNP13M,Median gender pension gap by age group,ok,sdmx,6,57,0,"",2026-07-27
+ILC_PNP14,Gender coverage rate in pension by age group,ok,sdmx,5,74,0,"",2026-07-27
+ILC_PNP2,Relative median income ratio (65+) - EU-SILC and ECHP surveys,ok,sdmx,6,77,0,"",2026-07-27
+ILC_PNP2$DV_3583,Relative median income ratio (65+) - EU-SILC and ECHP surveys,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PNP2$DV_3583'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PNP3,Aggregate replacement ratio for pensions (excluding other social benefits) by sex,ok,sdmx,5,61,0,"",2026-07-27
+ILC_PNP9,At-risk-of-poverty rate of persons living in single-person households below-above 65 years by sex,ok,sdmx,6,76,0,"",2026-07-27
+ILC_PNS1,"At-risk-of-poverty rate of older people, by age and sex - EU-SILC and ECHP surveys",ok,sdmx,8,83,0,"",2026-07-27
+ILC_PNS11,Gender differences in the relative median income ratio (60+),ok,sdmx,7,75,0,"",2026-07-27
+ILC_PNS2,Relative median income ratio (60+),ok,sdmx,6,70,0,"",2026-07-27
+ILC_PNS4,Inequality of income distribution S80/S20 income quintile share ratio - EU-SILC and ECHP surveys,ok,sdmx,6,74,0,"",2026-07-27
+ILC_PNS5,Relative median at-risk-of-poverty gap of elderly people - EU-SILC and ECHP surveys,ok,sdmx,8,79,0,"",2026-07-27
+ILC_PNS6,At-risk-of-poverty rate for pensioners - EU-SILC and ECHP surveys,ok,sdmx,9,69,0,"",2026-07-27
+ILC_PNS7,At-risk-of-poverty rate of older people by tenure status - EU-SILC and ECHP surveys,ok,sdmx,9,84,0,"",2026-07-27
+ILC_PNS8,Dispersion around the at-risk-of-poverty threshold by sex and selected age groups - EU-SILC and ECHP surveys,ok,sdmx,8,83,0,"",2026-07-27
+ILC_PW01,"Overall life satisfaction by sex, age and educational attainment",ok,sdmx,9,71,0,"",2026-07-27
+ILC_PW01$DV_2761,"Overall life satisfaction by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW01$DV_2761'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PW01B,"Life satisfaction by sex, age, educational attainment and domain",ok,sdmx,9,74,0,"",2026-07-27
+ILC_PW01B$DV_2749,"Life satisfaction by sex, age, educational attainment and domain",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW01B$DV_2749'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW01B$DV_2751,"Life satisfaction by sex, age, educational attainment and domain",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW01B$DV_2751'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW01B$DV_2781,"Life satisfaction by sex, age, educational attainment and domain",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW01B$DV_2781'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW02,"Overall life satisfaction by income quintile, household composition and degree of urbanisation",ok,sdmx,9,64,0,"",2026-07-27
+ILC_PW02B,"Life satisfaction by income quintile, household composition, degree of urbanisation and domain",ok,sdmx,9,67,0,"",2026-07-27
+ILC_PW03,"Trust in others by sex, age and educational attainment",ok,sdmx,9,71,0,"",2026-07-27
+ILC_PW03$DV_2762,"Trust in others by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW03$DV_2762'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PW03B,"Level of trust by sex, age, educational attainment and domain (2013)",ok,sdmx,9,61,0,"",2026-07-27
+ILC_PW03B$DV_2763,"Level of trust by sex, age, educational attainment and domain (2013)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW03B$DV_2763'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW04,"Trust in others by income quintile, household composition and degree of urbanisation",ok,sdmx,9,64,0,"",2026-07-27
+ILC_PW04B,"Level of trust by income quintile, household composition, degree of urbanisation and domain (2013)",ok,sdmx,9,56,0,"",2026-07-27
+ILC_PW05,"Overall life satisfaction by level of satisfaction, age and educational attainment",ok,sdmx,9,73,0,"",2026-07-27
+ILC_PW05$DV_2768,"Overall life satisfaction by level of satisfaction, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW05$DV_2768'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PW05B,"Persons rating their life satisfaction as high, medium or low by sex, age, educational attainment and domain",ok,sdmx,9,74,0,"",2026-07-27
+ILC_PW05B$DV_2764,"Persons rating their life satisfaction as high, medium or low by sex, age, educational attainment and domain",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW05B$DV_2764'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW05B$DV_2766,"Persons rating their life satisfaction as high, medium or low by sex, age, educational attainment and domain",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW05B$DV_2766'
+For more information check: https://developer.moz",2026-07-27
+ILC_PW06,"Persons having someone to rely on in case of need by sex, age and educational attainment",ok,sdmx,7,59,0,"",2026-07-27
+ILC_PW07,"Persons having someone to rely on in case of need by income quintile, degree of urbanisation and household composition",ok,sdmx,7,57,0,"",2026-07-27
+ILC_PW08,"Persons being happy in the last 4 weeks by sex, age, educational attainment and frequency",ok,sdmx,8,68,0,"",2026-07-27
+ILC_PW08$DV_426,"Persons being happy in the last 4 weeks by sex, age, educational attainment and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW08$DV_426'
+For more information check: https://developer.mozil",2026-07-27
+ILC_PW09,"Persons being happy in the last 4 weeks by income quintile, degree of urbanisation, household composition and frequency",ok,sdmx,8,63,0,"",2026-07-27
+ILC_PW10,"Persons feeling left out from society by sex, age and educational attainment",ok,sdmx,7,52,0,"",2026-07-27
+ILC_PW11,"Persons feeling left out from society by income quintile, degree of urbanisation and household composition",ok,sdmx,7,52,0,"",2026-07-27
+ILC_PW12,"Persons feeling left out from society by sex, age and level of disability (activity limitation)",ok,sdmx,7,53,0,"",2026-07-27
+ILC_PW12$DV_2547,"Persons feeling left out from society by sex, age and level of disability (activity limitation)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW12$DV_2547'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PW13,"Persons feeling left out from society by sex, age and risk of poverty threshold",ok,sdmx,7,51,0,"",2026-07-27
+ILC_PW14,Satisfaction with the job by risk of poverty threshold and level of disability (activity limitation),ok,sdmx,7,47,0,"",2026-07-27
+ILC_PW15,"Satisfaction with the job by sex, age and educational attainment",ok,sdmx,8,66,0,"",2026-07-27
+ILC_PW15$DV_2750,"Satisfaction with the job by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_PW15$DV_2750'
+For more information check: https://developer.mozi",2026-07-27
+ILC_PW16,"Satisfaction with the dwelling by level of satisfaction, risk of poverty threshold and level of disability (activity limitation)",ok,sdmx,7,48,0,"",2026-07-27
+ILC_PW17,"Satisfaction with the dwelling by level of satisfaction, sex, age and educational attainment",ok,sdmx,8,66,0,"",2026-07-27
+ILC_SBJP01,Subjective poverty by sex and age,ok,sdmx,6,65,0,"",2026-07-27
+ILC_SBJP02,Subjective poverty by educational attainment level (population aged 18 and over),ok,sdmx,5,62,0,"",2026-07-27
+ILC_SBJP03,Subjective poverty by most frequent activity status (population aged 18 and over),ok,sdmx,5,66,0,"",2026-07-27
+ILC_SBJP04,Subjective poverty by tenure status,ok,sdmx,5,63,0,"",2026-07-27
+ILC_SBJP05,Subjective poverty by degree of urbanization,ok,sdmx,5,58,0,"",2026-07-27
+ILC_SCP01,"Persons participating in any cultural or sport activities in the last 12 months by sex, age and educational attainment",ok,sdmx,8,71,0,"",2026-07-27
+ILC_SCP01$DV_1061,"Persons participating in any cultural or sport activities in the last 12 months by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP01$DV_1061'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP02,"Persons participating in any cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation and frequency",ok,sdmx,8,60,0,"",2026-07-27
+ILC_SCP03,"Persons participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and frequency",ok,sdmx,9,79,0,"",2026-07-27
+ILC_SCP03$DV_1062,"Persons participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP03$DV_1062'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP03$DV_550,"Persons participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP03$DV_550'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP03$DV_551,"Persons participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP03$DV_551'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP03$DV_552,"Persons participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP03$DV_552'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP04,"Persons participating in in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and frequency",ok,sdmx,9,67,0,"",2026-07-27
+ILC_SCP04$DV_2341,"Persons participating in in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP04$DV_2341'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP04$DV_2401,"Persons participating in in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP04$DV_2401'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP04$DV_2741,"Persons participating in in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP04$DV_2741'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP05,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and reasons",ok,sdmx,9,80,0,"",2026-07-27
+ILC_SCP05$DV_1063,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP05$DV_1063'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP05$DV_561,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP05$DV_561'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP05$DV_562,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP05$DV_562'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP05$DV_563,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, educational attainment, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP05$DV_563'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP06,"Persons not participating in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and reasons",ok,sdmx,9,69,0,"",2026-07-27
+ILC_SCP06$DV_2361,"Persons not participating in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP06$DV_2361'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP06$DV_2402,"Persons not participating in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP06$DV_2402'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP06$DV_2742,"Persons not participating in cultural or sport activities in the last 12 months by income quintile, household composition, degree of urbanisation, activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP06$DV_2742'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP07,"Persons practicing artistic activities by sex, age, educational attainment and frequency",ok,sdmx,8,75,0,"",2026-07-27
+ILC_SCP07$DV_101,"Persons practicing artistic activities by sex, age, educational attainment and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP07$DV_101'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP07$DV_1064,"Persons practicing artistic activities by sex, age, educational attainment and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP07$DV_1064'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP08,"Persons practicing artistic activities by income quintile, household composition, degree of urbanisation and frequency",ok,sdmx,8,64,0,"",2026-07-27
+ILC_SCP08$DV_2362,"Persons practicing artistic activities by income quintile, household composition, degree of urbanisation and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP08$DV_2362'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP09,"Persons getting together with family (relatives) or friends by sex, age, educational attainment and frequency",ok,sdmx,9,73,0,"",2026-07-27
+ILC_SCP09$DV_2743,"Persons getting together with family (relatives) or friends by sex, age, educational attainment and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP09$DV_2743'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP10,"Persons getting together with family and relatives or friends by income quintile, household composition, degree of urbanisation and frequency",ok,sdmx,9,66,0,"",2026-07-27
+ILC_SCP10$DV_2744,"Persons getting together with family and relatives or friends by income quintile, household composition, degree of urbanisation and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP10$DV_2744'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP11,"Persons having contacts with family (relatives) or friends by sex, age, educational attainment and frequency",ok,sdmx,9,74,0,"",2026-07-27
+ILC_SCP11$DV_2745,"Persons having contacts with family (relatives) or friends by sex, age, educational attainment and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP11$DV_2745'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP12,"Persons having contacts with family and relatives or friends by income quintile, household composition, degree of urbanisation and frequency",ok,sdmx,9,67,0,"",2026-07-27
+ILC_SCP12$DV_2746,"Persons having contacts with family and relatives or friends by income quintile, household composition, degree of urbanisation and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP12$DV_2746'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP13,"Persons communicating via social media by sex, age, educational attainment and frequency",ok,sdmx,8,59,0,"",2026-07-27
+ILC_SCP14,"Persons communicating via social media by income quintile, household composition, degree of urbanisation and frequency",ok,sdmx,8,59,0,"",2026-07-27
+ILC_SCP15,"Persons having someone to ask for help by sex, age and educational attainment",ok,sdmx,7,53,0,"",2026-07-27
+ILC_SCP15$DV_433,"Persons having someone to ask for help by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP15$DV_433'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP16,"Persons having someone to ask for help by income quintile, household composition and degree of urbanisation",ok,sdmx,7,53,0,"",2026-07-27
+ILC_SCP17,"Persons having someone to discuss personal matters by sex, age and educational attainment",ok,sdmx,7,54,0,"",2026-07-27
+ILC_SCP17$DV_434,"Persons having someone to discuss personal matters by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP17$DV_434'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP18,"Persons having someone to discuss personal matters by income quintile, household composition and degree of urbanisation",ok,sdmx,7,54,0,"",2026-07-27
+ILC_SCP19,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age and educational attainment",ok,sdmx,8,73,0,"",2026-07-27
+ILC_SCP19$DV_1042,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP19$DV_1042'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP19$DV_312,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP19$DV_312'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP19$DV_313,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age and educational attainment",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP19$DV_313'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP20,"Persons participating in formal/informal voluntary activities or active citizenship by income quintile, household composition and degree of urbanisation",ok,sdmx,8,62,0,"",2026-07-27
+ILC_SCP20$DV_2747,"Persons participating in formal/informal voluntary activities or active citizenship by income quintile, household composition and degree of urbanisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP20$DV_2747'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP21,"Persons not participating in formal/informal voluntary activities or active citizenship in the last 12 months by sex, age, educational attainment and reasons",ok,sdmx,9,62,0,"",2026-07-27
+ILC_SCP21$DV_436,"Persons not participating in formal/informal voluntary activities or active citizenship in the last 12 months by sex, age, educational attainment and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP21$DV_436'
+For more information check: https://developer.mozi",2026-07-27
+ILC_SCP22,"Persons not participating in formal/informal voluntary activities or active citizenship in the last 12 months by income quintile, household composition, degree of urbanisation and reasons",ok,sdmx,9,62,0,"",2026-07-27
+ILC_SCP22$DV_2441,"Persons not participating in formal/informal voluntary activities or active citizenship in the last 12 months by income quintile, household composition, degree of urbanisation and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP22$DV_2441'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP23,"Persons participating in formal voluntary activities by sex, age, educational attainment and type of organisation",ok,sdmx,8,67,0,"",2026-07-27
+ILC_SCP23$DV_2363,"Persons participating in formal voluntary activities by sex, age, educational attainment and type of organisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP23$DV_2363'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP23$DV_2403,"Persons participating in formal voluntary activities by sex, age, educational attainment and type of organisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP23$DV_2403'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP24,"Persons participating in formal voluntary activities by income quintile, household composition and type of organisation",ok,sdmx,8,61,0,"",2026-07-27
+ILC_SCP24$DV_2364,"Persons participating in formal voluntary activities by income quintile, household composition and type of organisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP24$DV_2364'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP24$DV_2404,"Persons participating in formal voluntary activities by income quintile, household composition and type of organisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP24$DV_2404'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP25,"Persons not participating in active citizenship by sex, age, educational attainment level and reasons",ok,sdmx,8,63,0,"",2026-07-27
+ILC_SCP26,"Persons not participating in active citizenship by income quintile, household composition, degree of urbanization and reasons",ok,sdmx,8,58,0,"",2026-07-27
+ILC_SCP27,"Persons reading books in the last 12 months by sex, age, educational attainment and number of books",ok,sdmx,8,66,0,"",2026-07-27
+ILC_SCP27$DV_2365,"Persons reading books in the last 12 months by sex, age, educational attainment and number of books",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP27$DV_2365'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP28,"Persons reading books in the last 12 months by risk of poverty threshold, household composition, degree of urbanization and number of books",ok,sdmx,8,57,0,"",2026-07-27
+ILC_SCP28$DV_2366,"Persons reading books in the last 12 months by risk of poverty threshold, household composition, degree of urbanization and number of books",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP28$DV_2366'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP29,"Persons not reading books in the last 12 months by sex, age, educational attainment and reasons",ok,sdmx,8,67,0,"",2026-07-27
+ILC_SCP29$DV_2381,"Persons not reading books in the last 12 months by sex, age, educational attainment and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP29$DV_2381'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP30,"Persons not reading books in the last 12 months by risk of poverty threshold, household composition, degree of urbanization and reasons",ok,sdmx,8,58,0,"",2026-07-27
+ILC_SCP30$DV_2382,"Persons not reading books in the last 12 months by risk of poverty threshold, household composition, degree of urbanization and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP30$DV_2382'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP31,"Persons reading books in the last 12 months by sex, age, risk of poverty or social exclusion situation and number of books",ok,sdmx,8,65,0,"",2026-07-27
+ILC_SCP31$DV_2383,"Persons reading books in the last 12 months by sex, age, risk of poverty or social exclusion situation and number of books",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP31$DV_2383'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP32,"Persons not reading books in the last 12 months by sex, age, risk of poverty or social exclusion situation and reasons",ok,sdmx,8,66,0,"",2026-07-27
+ILC_SCP32$DV_2384,"Persons not reading books in the last 12 months by sex, age, risk of poverty or social exclusion situation and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP32$DV_2384'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP33,"Persons reading books in the last 12 months by sex, age, level of disability (activity limitation) and number of books",ok,sdmx,8,67,0,"",2026-07-27
+ILC_SCP33$DV_2385,"Persons reading books in the last 12 months by sex, age, level of disability (activity limitation) and number of books",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP33$DV_2385'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP33$DV_2541,"Persons reading books in the last 12 months by sex, age, level of disability (activity limitation) and number of books",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP33$DV_2541'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP34,"Persons not reading books in the last 12 months by sex, age, level of disability (activity limitation) and reasons",ok,sdmx,8,68,0,"",2026-07-27
+ILC_SCP34$DV_2386,"Persons not reading books in the last 12 months by sex, age, level of disability (activity limitation) and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP34$DV_2386'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP34$DV_2542,"Persons not reading books in the last 12 months by sex, age, level of disability (activity limitation) and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP34$DV_2542'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP35,"Persons getting together with family (relatives) or friends by sex, age, level of disability (activity limitation) and frequency",ok,sdmx,9,69,0,"",2026-07-27
+ILC_SCP35$DV_2545,"Persons getting together with family (relatives) or friends by sex, age, level of disability (activity limitation) and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP35$DV_2545'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP36,"Persons having contacts with family (relatives) or friends by sex, age, level of disability (activity limitation) and frequency",ok,sdmx,9,71,0,"",2026-07-27
+ILC_SCP36$DV_2546,"Persons having contacts with family (relatives) or friends by sex, age, level of disability (activity limitation) and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP36$DV_2546'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP37,"Persons participating in cultural or sport activities by sex, age, level of disability (activity limitation), activity type and frequency",ok,sdmx,9,70,0,"",2026-07-27
+ILC_SCP37$DV_2387,"Persons participating in cultural or sport activities by sex, age, level of disability (activity limitation), activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP37$DV_2387'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP37$DV_2405,"Persons participating in cultural or sport activities by sex, age, level of disability (activity limitation), activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP37$DV_2405'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP37$DV_2543,"Persons participating in cultural or sport activities by sex, age, level of disability (activity limitation), activity type and frequency",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP37$DV_2543'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP38,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, level of disability (activity limitation), activity type and reasons",ok,sdmx,9,71,0,"",2026-07-27
+ILC_SCP38$DV_2388,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, level of disability (activity limitation), activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP38$DV_2388'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP38$DV_2406,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, level of disability (activity limitation), activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP38$DV_2406'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP38$DV_2544,"Persons not participating in cultural or sport activities in the last 12 months by sex, age, level of disability (activity limitation), activity type and reasons",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP38$DV_2544'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP39,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age, level of disability (activity limitation) and activity type",ok,sdmx,8,66,0,"",2026-07-27
+ILC_SCP39$DV_2548,"Persons participating in formal/informal voluntary activities or active citizenship by sex, age, level of disability (activity limitation) and activity type",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP39$DV_2548'
+For more information check: https://developer.moz",2026-07-27
+ILC_SCP40,"Persons not participating in active citizenship by sex, age and level of disability (activity limitation)",ok,sdmx,8,64,0,"",2026-07-27
+ILC_SCP40$DV_2549,"Persons not participating in active citizenship by sex, age and level of disability (activity limitation)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_SCP40$DV_2549'
+For more information check: https://developer.moz",2026-07-27
+ILC_SIP8,Material and social deprivation rate by number of items of deprivation,ok,sdmx,7,92,0,"",2026-07-27
+ILC_SIS4,Mean number of deprivation items among the deprived,ok,sdmx,6,67,0,"",2026-07-27
+INN_BAS,Basic economic information on the enterprises (2000),ok,sdmx,8,67,0,"",2026-07-27
+INN_C1011,"Number of innovating enterprises supported by government, by NACE Rev. 1.1 (1996)",ok,sdmx,6,42,0,"",2026-07-27
+INN_C1012,"Number of innovating enterprises supported by government, by size class (1996)",ok,sdmx,7,32,0,"",2026-07-27
+INN_C1021,"Number of innovating enterprises having applied for a patent, by NACE Rev. 1.1 (1996)",ok,sdmx,6,43,0,"",2026-07-27
+INN_C1022,"Number of innovating enterprises having applied for a patent, by size class (1996)",ok,sdmx,7,31,0,"",2026-07-27
+INN_C11,"Enterprises in the population and realised sample, by NACE Rev. 1.1 (1996)",ok,sdmx,6,43,0,"",2026-07-27
+INN_C12,"Enterprises in the population and realised sample, by size class (1996)",ok,sdmx,7,31,0,"",2026-07-27
+INN_C13,"Enterprises in the population and realised sample in manufacturing sector, by sector of technology (1996)",ok,sdmx,7,31,0,"",2026-07-27
+INN_C211,"Number of enterprises with innovation activity, by NACE Rev. 1.1 (1996)",ok,sdmx,6,49,0,"",2026-07-27
+INN_C212,"Number of enterprises with innovation activity, by size class (1996)",ok,sdmx,7,37,0,"",2026-07-27
+INN_C213,"Number of enterprises with innovation activity in manufacturing sector, by sector of technology (1996)",ok,sdmx,7,35,0,"",2026-07-27
+INN_C214,"Innovating firms' level of export intensity, by size class (1996)",ok,sdmx,7,39,0,"",2026-07-27
+INN_C215,"Innovating firms' type (independent or non-independent), by size class (1996)",ok,sdmx,7,36,0,"",2026-07-27
+INN_C221,Who developed the innovation activity by NACE Rev. 1.1 (1996),ok,sdmx,6,54,0,"",2026-07-27
+INN_C222,Who developed the innovation activity by size class (1996),ok,sdmx,7,42,0,"",2026-07-27
+INN_C31,"Turnover due to innovating products, by NACE Rev. 1.1 (1996)",ok,sdmx,6,41,0,"",2026-07-27
+INN_C32,"Turnover due to innovating products, by size class (1996)",ok,sdmx,7,35,0,"",2026-07-27
+INN_C33,"Turnover due to innovating products in manufacturing sector, by sector of technology (1996)",ok,sdmx,7,35,0,"",2026-07-27
+INN_C411,"Innovation intensity, by NACE Rev. 1.1 (1996)",ok,sdmx,6,41,0,"",2026-07-27
+INN_C412,"Innovation intensity, by size class (1996)",ok,sdmx,7,33,0,"",2026-07-27
+INN_C413,"Innovation intensity in manufacturing sector, by sector of technology (1996)",ok,sdmx,7,31,0,"",2026-07-27
+INN_C421,"Innovation expenditures, by NACE Rev. 1.1 (1996)",ok,sdmx,6,47,0,"",2026-07-27
+INN_C422,"Innovation expenditures, by size class (1996)",ok,sdmx,7,37,0,"",2026-07-27
+INN_C511,"Type of innovating firms' engagement in R&D, by NACE Rev. 1.1 (1996)",ok,sdmx,6,46,0,"",2026-07-27
+INN_C512,"Type of innovating firms' engagement in R&D, by size class (1996)",ok,sdmx,7,34,0,"",2026-07-27
+INN_C521,"Innovating firms' level of R&D intensity, by size class (1996)",ok,sdmx,7,34,0,"",2026-07-27
+INN_C611,"Number of innovating enterprises considering the following objectives as very important, by NACE Rev. 1.1 (1996)",ok,sdmx,6,53,0,"",2026-07-27
+INN_C612,"Number of innovating enterprises considering the following objectives as very important, by size class (1996)",ok,sdmx,7,41,0,"",2026-07-27
+INN_C621,"Number of innovating enterprises considering the different listed objectives as not relevant, by NACE Rev. 1.1 (1996)",ok,sdmx,6,53,0,"",2026-07-27
+INN_C622,"Number of innovating enterprises considering the different listed objectives as not relevant, by size class (1996)",ok,sdmx,7,41,0,"",2026-07-27
+INN_C711,Number of innovating enterprises considering the listed sources of information as very important by NACE Rev. 1.1 (1996),ok,sdmx,6,55,0,"",2026-07-27
+INN_C712,"Number of innovating enterprises considering the listed sources of information as very important, by size class (1996)",ok,sdmx,7,43,0,"",2026-07-27
+INN_C721,Number of innovating enterprises considering the listed sources of information as not relevant by NACE Rev. 1.1 (1996),ok,sdmx,6,55,0,"",2026-07-27
+INN_C722,"Number of innovating enterprises considering the listed sources of information as not relevant, by size class (1996)",ok,sdmx,7,43,0,"",2026-07-27
+INN_C811,"Number of innovating enterprises with innovation cooperation, by NACE Rev. 1.1 (1996)",ok,sdmx,6,44,0,"",2026-07-27
+INN_C812,"Number of innovating enterprises with innovation cooperation, by size class (1996)",ok,sdmx,7,32,0,"",2026-07-27
+INN_C821,"Type of partner chosen, by NACE Rev. 1.1 (1996)",ok,sdmx,6,50,0,"",2026-07-27
+INN_C822,"Type of partner chosen, by size class (1996)",ok,sdmx,7,38,0,"",2026-07-27
+INN_C831,"Location of partner, by NACE Rev. 1.1 (1996)",ok,sdmx,6,48,0,"",2026-07-27
+INN_C832,"Location of partner, by size class (1996)",ok,sdmx,7,36,0,"",2026-07-27
+INN_C911,"Number of innovating enterprises with progress problems, by NACE Rev. 1.1 (1996)",ok,sdmx,6,45,0,"",2026-07-27
+INN_C912,"Number of innovating enterprises with progress problems, by size class (1996)",ok,sdmx,7,33,0,"",2026-07-27
+INN_C921,"Hampering factors for innovating enterprises with seriously delayed projects, by NACE Rev. 1.1 (1996)",ok,sdmx,6,51,0,"",2026-07-27
+INN_C922,"Hampering factors for innovating enterprises with seriously delayed projects, by size class (1996)",ok,sdmx,7,39,0,"",2026-07-27
+INN_C931,"Hampering factors for innovating enterprises with abolished projects, by NACE Rev. 1.1 (1996)",ok,sdmx,6,51,0,"",2026-07-27
+INN_C932,"Hampering factors for innovating enterprises with abolished projects, by size class (1996)",ok,sdmx,7,39,0,"",2026-07-27
+INN_C941,"Hampering factors for innovating enterprises with not even started projects, by NACE Rev. 1.1 (1996)",ok,sdmx,6,51,0,"",2026-07-27
+INN_C942,"Hampering factors for innovating enterprises with not even started projects, by size class (1996)",ok,sdmx,7,39,0,"",2026-07-27
+INN_CHA,Other important strategic and organizational changes (2000),ok,sdmx,8,71,0,"",2026-07-27
+INN_CIS10_BAS,Basic economic information on the enterprises by NACE Rev. 2 activity and size class (2016),ok,sdmx,8,156,0,"",2026-07-27
+INN_CIS10_COOP,"Product and/or process innovative enterprises engaged in co-operation by co-operation partner, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,156,0,"",2026-07-27
+INN_CIS10_EDUC,"Enterprises by percentage of employees with university education, by NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,143,0,"",2026-07-27
+INN_CIS10_EXP,"Expenditures in product and/or process innovative enterprises by area of expenditure, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,148,0,"",2026-07-27
+INN_CIS10_GEN,"Enterprise by administrative state of the enterprise, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS10_HAM,"Innovative enterprises by hampering factor for innovation activities, level of importance of the hampering factor, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS10_IACT,"Product and/or process innovative enterprises by type of innovation activity, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,150,0,"",2026-07-27
+INN_CIS10_IPR,"Enterprises by intellectual property rights (IPRs) and licensing in the enterprise, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS10_LEGIS,"Innovative enterprises whose innovation activities have been affected, or not affected, by legislation or regulations, by type of effect, NACE Rev.2 activity and size class (2016)",ok,sdmx,8,132,0,"",2026-07-27
+INN_CIS10_LEGIST,"Innovative enterprises whose innovation activities have been affected by legislation or regulations by subject of the regulation/legislation, type of effect, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS10_LOGEXP,"Enterprises with expenditures for innovation in logistics by size classes of expenditure, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,142,0,"",2026-07-27
+INN_CIS10_LOGIN,"Enterprise that introduced innovation in logistics by type of innovation, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,140,0,"",2026-07-27
+INN_CIS10_LOGINR,"Enterprises which introduced innovations in logistics by reason of the introduction, level of importance of the reason, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,137,0,"",2026-07-27
+INN_CIS10_LOGNOIN,"Enterprises that did not introduce innovation in logistics by barrier, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,135,0,"",2026-07-27
+INN_CIS10_MO,"Product and/or process innovative enterprises that have introduced organisational and/or marketing innovation by type of innovation, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,143,0,"",2026-07-27
+INN_CIS10_MRK,"Enterprise by place where goods and/or services are sold, and place of largest market in terms of turnover, by NACE Rev. 2 activity and size class (2016)",ok,sdmx,9,147,0,"",2026-07-27
+INN_CIS10_NOIN,"Non- innovative enterprises by barrier against innovation activities, level of importance of the barrier, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,156,0,"",2026-07-27
+INN_CIS10_PROD,"Product and process innovative enterprises which introduced innovation by type of innovation, innovation developer, NACE Rev.2 activity and size class (2016)",ok,sdmx,9,161,0,"",2026-07-27
+INN_CIS10_PRODN,Product innovative enterprises that have introduced new or significantly improved products by NACE Rev. 2 activity and size class (2016),ok,sdmx,7,143,0,"",2026-07-27
+INN_CIS10_PRODT,"Turnover of product innovative enterprises from new or significantly improved products, by NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,141,0,"",2026-07-27
+INN_CIS10_PUB,"Product and/or process innovative enterprises that received public funding for innovation activities by source of funding, NACE Rev. 2 activity and size class (2016)",ok,sdmx,7,140,0,"",2026-07-27
+INN_CIS10_SOU,"Product and/or process innovative enterprises which used information for their innovation activities, by source of information, level of importance of the source, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,145,0,"",2026-07-27
+INN_CIS10_SPEC,"Enterprises that introduced innovation of specific types by type of the innovation, NACE Rev. 2 activity and size class (2016)",ok,sdmx,8,155,0,"",2026-07-27
+INN_CIS10_STRAT,"Innovative and non-innovative enterprises by type of business strategy applied, importance of the strategy, NACE Rev. 2 activity and size class (2016)",ok,sdmx,9,139,0,"",2026-07-27
+INN_CIS10_TYPE,Enterprises by NACE Rev. 2 activity and size class (2016),ok,sdmx,7,164,0,"",2026-07-27
+INN_CIS11_BAS,"Enterprises, employed persons and turnover by type of enterprise, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,159,0,"",2026-07-27
+INN_CIS11_CO,"Enterprises that co-operated on business activities with other enterprises or organisations by field of activities, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,153,0,"",2026-07-27
+INN_CIS11_COOP,"Enterprises that co-operated on R&D and other innovation activities with other enterprises or organisations, by kind and location of co-operation partner, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,165,0,"",2026-07-27
+INN_CIS11_EDUC,"Enterprises by percentage of persons employed with university education, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,139,0,"",2026-07-27
+INN_CIS11_EXP,"Expenditures of enterprises by area of expenditure, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,162,0,"",2026-07-27
+INN_CIS11_FIN,"Enterprises that tried to obtain funding for research and development (R&D) or other innovation activities, by type of finance and effect, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,143,0,"",2026-07-27
+INN_CIS11_FINRD,Enterprises that obtained debt or equity finance for R&D or other innovation activities by NACE Rev. 2 activity and size class (2018),ok,sdmx,7,138,0,"",2026-07-27
+INN_CIS11_GEN,"Enterprises by their belonging to an enterprise group, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS11_GS,"Enterprises that offered standardised, customised or co-created goods or services by type of goods and services, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,139,0,"",2026-07-27
+INN_CIS11_GSCO,"Enterprises that offered co-created or customised goods or services by type of cooperation partner, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS11_GSCOT,"Enterprises by percentage of turnover from customised or co-created goods or services, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,130,0,"",2026-07-27
+INN_CIS11_HAM,"Enterprises by hampering factor for innovation activities, level of importance of the hampering factor, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,155,0,"",2026-07-27
+INN_CIS11_IGL,"Enterprises that tried to obtain intra-group loans within the enterprise group by outcome, NACE Rev. 2 activity and size class (2018)",ok,sdmx,7,129,0,"",2026-07-27
+INN_CIS11_IGLRD,Enterprises that obtained intra-group loans for R&D or other innovation activities within the enterprise group by NACE Rev. 2 activity and size class (2018),ok,sdmx,6,127,0,"",2026-07-27
+INN_CIS11_INACT,Enterprises with innovation activities during 2016 and 2018 by NACE Rev. 2 activity and size class (2018),ok,sdmx,7,149,0,"",2026-07-27
+INN_CIS11_INEX,"Innovative enterprises by level of meeting expectations towards innovation, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,139,0,"",2026-07-27
+INN_CIS11_INRD,Enterprises with research and development (R&D) activities during 2016 and 2018 by NACE Rev. 2 activity and size class (2018),ok,sdmx,7,151,0,"",2026-07-27
+INN_CIS11_IPR,"Enterprises that applied for a patent, registered an industrial design, trade mark or used trade secrets, by NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,146,0,"",2026-07-27
+INN_CIS11_IPRIN,"Enterprises that purchased or licensed in intellectual property rights by type of issuing organisation, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,143,0,"",2026-07-27
+INN_CIS11_IPROUT,"Enterprises that licenced out, sold, exchanged intellectual property rights by type of transaction, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS11_LEGIST,"Enterprises whose innovation activities have been affected by legislation or regulations by subject of the regulation/legislation, effect, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,142,0,"",2026-07-27
+INN_CIS11_MRK,"Enterprises by market place, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,143,0,"",2026-07-27
+INN_CIS11_MRKT,"Turnover of enterprises by market place, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,142,0,"",2026-07-27
+INN_CIS11_PF_BAS,"Enterprises, employed persons and turnover by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,56,0,"",2026-07-27
+INN_CIS11_PF_CO,"Enterprises that co-operated on R&D and other innovation activities by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,53,0,"",2026-07-27
+INN_CIS11_PF_FIN,"Enterprises that tried to obtain funding for research and development (R&D) or other innovation activities by innovation profile, type of finance and effect, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,56,0,"",2026-07-27
+INN_CIS11_PF_IPR,"Enterprises that applied for a patent, registered an industrial design, trade mark or used trade secrets, by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,57,0,"",2026-07-27
+INN_CIS11_PF_MRKT,"Turnover of enterprises by innovation profile, market place, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,52,0,"",2026-07-27
+INN_CIS11_PF_PRODT,"Turnover of enterprises from new or significantly improved products, by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,53,0,"",2026-07-27
+INN_CIS11_PF_PUB,"Enterprises that received public funding for research and development (R&D) or other innovation activities, by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,52,0,"",2026-07-27
+INN_CIS11_PF_PURMES,"Enterprises that purchased machinery, equipment or software by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,50,0,"",2026-07-27
+INN_CIS11_PF_STRAT,"Enterprises attaching high importance to business strategies by innovation profile, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,60,0,"",2026-07-27
+INN_CIS11_PROD,"Enterprises that introduced an innovation by type of innovation, developer, NACE Rev.2 activity and size class (2018)",ok,sdmx,8,154,0,"",2026-07-27
+INN_CIS11_PRODN,"Product innovative enterprises that have introduced at least one new or significantly improved product by type of innovation, NACE Rev. 2 activity and size class (2018)",ok,sdmx,7,151,0,"",2026-07-27
+INN_CIS11_PRODT,"Turnover of enterprises from new or significantly improved products, by NACE Rev. 2 activity and size class (2018)",ok,sdmx,7,148,0,"",2026-07-27
+INN_CIS11_PUB,"Enterprises that received public funding for research and development (R&D) or other innovation activities, by source of funding, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,151,0,"",2026-07-27
+INN_CIS11_PURMES,"Enterprises that purchased machinery, equipment or software by NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS11_PURTS,"Enterprises that purchased technical services by cooperation partner, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,134,0,"",2026-07-27
+INN_CIS11_SOU,"Enterprises by kind of channels to acquire information relevant for innovation, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,141,0,"",2026-07-27
+INN_CIS11_SPEC,"Enterprises that introduced new or improved processes by type of innovation, NACE Rev. 2 activity and size class (2018)",ok,sdmx,7,153,0,"",2026-07-27
+INN_CIS11_SRC,"Enterprises that acquiesce or transfer resources and business activities within the enterprise group, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS11_STRAT,"Enterprises by type of business strategy applied, importance of the strategy, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,153,0,"",2026-07-27
+INN_CIS11_TXAL,Enterprises that use tax incentives or allowances for innovative activities and research and development (R&D) by NACE Rev. 2 activity and size class (2018),ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS11_WORG,"Enterprises by level of importance of work organization methods, NACE Rev. 2 activity and size class (2018)",ok,sdmx,9,137,0,"",2026-07-27
+INN_CIS11_YREG,"Enterprises by year of registration and by type of enterprise, NACE Rev. 2 activity and size class (2018)",ok,sdmx,8,140,0,"",2026-07-27
+INN_CIS12_BAS,"Enterprises, employed persons and turnover by type of enterprise, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,160,0,"",2026-07-27
+INN_CIS12_CLIM,"Enterprises by type and importance of factors related to climate change, NACE Rev.2 activity and size class (2020)",ok,sdmx,9,146,0,"",2026-07-27
+INN_CIS12_CO,"Enterprises that co-operated on business activities with other enterprises or organisations by field of activities, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,154,0,"",2026-07-27
+INN_CIS12_COND,"Enterprises by type and importance of market conditions, NACE Rev.2 activity and size class (2020)",ok,sdmx,9,146,0,"",2026-07-27
+INN_CIS12_COOP,"Innovative enterprises that co-operated on R&D and other innovation activities with other enterprises or organisations, by kind and location of co-operation partner, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,163,0,"",2026-07-27
+INN_CIS12_EDUC,"Enterprises by percentage of employees with university education, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,141,0,"",2026-07-27
+INN_CIS12_ENVE,"Enterprises by type and importance of environmental benefits obtained within the enterprise by introducing business process innovation, by NACE Rev.2 activity and size class (2020)",ok,sdmx,8,145,0,"",2026-07-27
+INN_CIS12_ENVF,"Enterprises by type and importance of factors driving environmental innovations, NACE Rev.2 activity and size class (2020)",ok,sdmx,8,146,0,"",2026-07-27
+INN_CIS12_ENVU,"Enterprises by type and importance of environmental benefits obtained during the consumption or use of an innovative product of the enterprise, by NACE Rev.2 activity and size class (2020)",ok,sdmx,8,143,0,"",2026-07-27
+INN_CIS12_EXP,"Enterprises and expenditure of enterprises on innovation activities by area of expenditure, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,156,0,"",2026-07-27
+INN_CIS12_EXPT,"Enterprises and total expenditure of enterprises by area of expenditure, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,140,0,"",2026-07-27
+INN_CIS12_FIN,"Enterprises that tried to obtain funding for research and development (R&D) or other innovation activities, by type of finance and effect, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,142,0,"",2026-07-27
+INN_CIS12_FINRD,Enterprises that obtained debt or equity finance for R&D or other innovation activities by NACE Rev. 2 activity and size class (2020),ok,sdmx,8,141,0,"",2026-07-27
+INN_CIS12_GEN,"Enterprises by their belonging to an enterprise group, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,144,0,"",2026-07-27
+INN_CIS12_GS,"Enterprises that offered standardised, customised or co-created goods or services by type of goods and services, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,138,0,"",2026-07-27
