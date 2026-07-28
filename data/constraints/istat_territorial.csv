@@ -1840,3 +1840,117 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 742_1137_DF_DCSI_CPI_ENVIROM_3,Strategie per la sostenibilità ambientale - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-07-27
 742_1137_DF_DCSI_CPI_ENVIROM_4,Strategie per la sostenibilità ambientale - Macro settori economici - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
 742_1139_DF_DCSI_CPI_LOCSEC_1,Strategie a beneficio del territorio e per la sicurezza - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
+742_1142_DF_CPI_INNOVDIG_1,Innovazione e piattaforme digitali - Macrosettori economici - prov (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-28
+742_1142_DF_CPI_INNOVDIG_11,"Piattaforme digitali - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-07-28
+742_1142_DF_CPI_INNOVDIG_13,Conseguenze dell'utilizzo di piattaforme digitali - Macrosettori economici - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-28
+742_1142_DF_CPI_INNOVDIG_14,"Conseguenze dell'utilizzo di piattaforme digitali - Sezioni Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+742_1142_DF_CPI_INNOVDIG_15,"Conseguenze dell'utilizzo di piattaforme digitali - Divisione di Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-28
+742_1142_DF_CPI_INNOVDIG_3,"Innovazione e piattaforme digitali - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-07-28
+742_1142_DF_CPI_INNOVDIG_9,Piattaforme digitali - Macrosettori economici - prov (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-28
+742_1145_DF_CPI_CLOUDINV_21,Conseguenze dei processi di digitalizzazione - Macrosettori economici - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-28
+742_1145_DF_CPI_CLOUDINV_22,"Conseguenze dei processi di digitalizzazione - Sezioni Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+742_1145_DF_CPI_CLOUDINV_24,Conseguenze dei processi di digitalizzazione - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-07-28
+74_171,Procedimenti di giustizia amministrativa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-28
+74_171_DF_DCAR_PROC_AMM_1,Procedimenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-28
+74_171_DF_DCAR_PROC_AMM_2,Consiglio di stato,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+74_171_DF_DCAR_PROC_AMM_3,Consiglio di giustizia amministrativa per la Regione siciliana,REF_AREA,regione,nazionale|ripartizione|regione,3,2026-07-28
+74_171_DF_DCAR_PROC_AMM_4,Serie interrotte,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+74_172,Decisioni di giustizia amministrativa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-28
+74_172_DF_DCAR_DEC_AMM_1,Decisioni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-28
+74_172_DF_DCAR_DEC_AMM_2,Consiglio di stato - serie interrotte,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+750_1117_DF_DCCN_VAAGSIPET_B14_1,Produzione e valore aggiunto ai prezzi base - edizioni giugno 2015 - maggio 2019,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+760_1140,Sistema dei conti della sanità - versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-28
+760_1140_DF_DCCN_SHA_B14_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento - edizioni giugno 2018 e giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-28
+760_1140_DF_DCCN_SHA_B14_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore - edizioni giugno 2018 e giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-28
+760_1140_DF_DCCN_SHA_B14_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento - edizioni giugno 2018 e giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-28
+77_47,Atti notarili,REF_AREA,nazionale,nazionale,1,2026-07-28
+77_47_DF_DCAR_ATT_NOTAR_1,Atti notarili,REF_AREA,nazionale,nazionale,1,2026-07-28
+77_68,Convenzioni contenute negli atti notarili,REF_AREA,nazionale,nazionale,1,2026-07-28
+77_68_DF_DCAR_CONV_ATT_NOT_1,Convenzioni contenute negli atti notarili,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112,Donne che hanno subito violenza - caratteristiche demografiche e abitudini,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_1,Tipo di autore e regione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_10,"Tipo di autore, titolo di studio della donna",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_11,"Tipo di autore, condizione professionale della donna",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_2,Dettaglio tipo di violenza e tipo di autore,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_3,"Cittadinanza, età",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_4,"Cittadinanza, condizione professionale",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_5,"Cittadinanza, titolo di studio",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_6,"Cittadinanza, stato civile",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_7,"Cittadinanza, presenza di limitazioni nelle attività quotidiane",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_8,"Tipo di autore, età della donna",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1112_DF_DCCV_VIOL_CARAT_9,"Tipo di autore, stato civile della donna",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_1,"Vittime – sesso, classi età, regione",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_10,"Vittime - sesso, motivo contatto, regione",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_11,"Vittime - sesso, presenza figli",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_12,"Vittime con figli -sesso, violenza assistita/subita figli",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_13,"Vittime con figli che assistono - sesso, violenza assistita figli, reazioni figli",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_14,"Vittime - sesso, tipo violenza, stato d’animo della vittima",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_2,"Vittime – sesso, classi età, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_3,"Vittime – sesso, titolo di studio, denuncia e motivo del ritiro",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_4,"Vittime – sesso, stato civile, tipo violenza",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_5,"Vittime – sesso, stato civile, regione",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_6,"Vittime - sesso, stato occupazionale, denuncia/non denuncia",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_7,"Vittime - sesso, denuncia/non denuncia, regione",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_8,"Vittime - sesso, tipo violenza, regione",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-28
+78_1121_DF_DCCV_1522_VITTIME_9,"Vittime - sesso, tipo violenza, stato occupazionale",REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161,Opinioni su ruoli di genere e su violenza contro le donne – adulti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_1,Accordo o accettabilità di almeno uno stereotipo - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_10,Accettabilità violenza nella coppia - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_11,Accettabilità violenza nella coppia - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_12,Accettabilità violenza nella coppia - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_13,Percezione diffusione violenza nella coppia - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_14,Percezione diffusione violenza nella coppia - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_15,Percezione diffusione violenza nella coppia - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_16,Indicazione di alcune cause della violenza nella coppia - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_17,Indicazione di alcune cause della violenza nella coppia - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_18,Indicazione di alcune cause della violenza nella coppia - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_19,Cosa si consiglierebbe a una donna che ha subito violenza dal compagno - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_2,Accordo o accettabilità di almeno uno stereotipo - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_20,Cosa si consiglierebbe a una donna che ha subito violenza dal compagno - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_21,Cosa si consiglierebbe a una donna che ha subito violenza dal compagno - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_3,Accordo o accettabilità di almeno uno stereotipo - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_4,Opinioni su ruoli tradizionali - età,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_5,Opinioni su ruoli tradizionali - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_6,Opinioni su ruoli tradizionali - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_7,Opinioni su violenza sessuale - età,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_8,Opinioni su violenza sessuale - titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1161_DF_DCCV_RUOLIGEN_9,Opinioni su violenza sessuale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-28
+78_1205,Utenti del 1522 ( numero antiviolenza e stalking ),REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_1,"Motivi della chiamata, sesso, nazionalità, regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_10,Modalità di conoscenza del 1522 (%) - chiamate valide,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_11,"Caratteristiche della violenza - sesso, nazionalità , regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_12,Caratteristiche della violenza (%) - chiamate valide,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_13,"Esito della telefonata - sesso, nazionalità, regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_2,Motivo della chiamata (%),REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_3,"Tipologia utenti– sesso, nazionalità, regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_4,Tipologia di utenza (%),REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_5,"Presenza disabilità - sesso , regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_6,Presenza disabilità (%) - chiamate valide,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_7,"Orientamento sessuale - sesso, regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_8,Orientamento sessuale (%) - chiamate valide,REF_AREA,nazionale,nazionale,1,2026-07-28
+78_1205_DF_DCCV_1522UTENTI4_9,"Modalità di conoscenza del 1522 - nazionalità , regione (chiamate valide)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+78_1260,Centri  antiviolenza,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_1,Risorse e impieghi: schema di sintesi - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_2,Risorse per attività e tipo di flusso - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione) - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_5,Vettori di indicatori chiave sui flussi di energia - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_8,Intensità energetica - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1027_DF_DCCN_PEFA_B19_9,Intensità di emissione  dei consumi energetici - edizioni dicembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1028_DF_DCCN_EGSS_B19_1,"Produzione, valore aggiunto, esportazioni - edizioni febbraio 2020 - dicembre 2023",REF_AREA,nazionale,nazionale,1,2026-07-28
+7_1028_DF_DCCN_EGSS_B19_2,Occupazione (unità di lavoro) - edizioni febbraio 2020 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_187_DF_DCCN_CONTIEMATMREV2_B19_1,Attività produttive - edizioni novembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_187_DF_DCCN_CONTIEMATMREV2_B19_2,Famiglie - edizioni novembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_187_DF_DCCN_CONTIEMATMREV2_B19_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP - edizioni novembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_187_DF_DCCN_CONTIEMATMREV2_B19_5,Intensità della occupazione - edizioni novembre 2019 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_26_DF_DCCN_IMPAMB1_B19_1,Categoria di imposta - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_26_DF_DCCN_IMPAMB1_B19_2,Unità che corrisponde l'imposta - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_26_DF_DCCN_IMPAMB1_B19_3,Gettito corrisposto dalle attività economiche - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_26_DF_DCCN_IMPAMB1_B19_4,Classe CEPA - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_26_DF_DCCN_IMPAMB1_B19_5,Destinazione del gettito - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_334_DF_DCCN_FLUMAT_B19_1,Indicatori aggregati nazionali - edizioni febbraio 2020 - giugno 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_334_DF_DCCN_FLUMAT_B19_2,Estrazione interna di materiali utilizzati - edizioni febbraio 2020 - giugno 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_334_DF_DCCN_FLUMAT_B19_3,Scambi con il resto del mondo - edizioni febbraio 2020 - giugno 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_334_DF_DCCN_FLUMAT_B19_4,Indicatori aggregati regionali - edizioni febbraio 2022 - giugno 2024,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-28
+7_953,Spese per la protezione dell'ambiente - edizioni febbraio 2020 - febbraio 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_953_DF_DCCN_SPESAPROTAMB_B19_1,Spesa nazionale - edizioni febbraio 2020 - febbraio 2024,REF_AREA,nazionale,nazionale,1,2026-07-28
+7_953_DF_DCCN_SPESAPROTAMB_B19_2,Aggregati economici per settore istituzionale - edizioni febbraio 2020 - febbraio 2024,REF_AREA,nazionale,nazionale,1,2026-07-28

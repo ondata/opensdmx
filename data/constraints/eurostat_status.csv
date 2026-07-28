@@ -4229,3 +4229,329 @@ INN_CIS12_FIN,"Enterprises that tried to obtain funding for research and develop
 INN_CIS12_FINRD,Enterprises that obtained debt or equity finance for R&D or other innovation activities by NACE Rev. 2 activity and size class (2020),ok,sdmx,8,141,0,"",2026-07-27
 INN_CIS12_GEN,"Enterprises by their belonging to an enterprise group, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,144,0,"",2026-07-27
 INN_CIS12_GS,"Enterprises that offered standardised, customised or co-created goods or services by type of goods and services, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,138,0,"",2026-07-27
+INN_CIS12_HAM,"Enterprises by hampering factor for innovation activities, level of importance of the hampering factor, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,154,0,"",2026-07-28
+INN_CIS12_IGL,"Enterprises that tried to obtain intra-group loans within the enterprise group by outcome, NACE Rev. 2 activity and size class (2020)",ok,sdmx,7,126,0,"",2026-07-28
+INN_CIS12_IGLRD,Enterprises that obtained intra-group loans for R&D or other innovation activities within the enterprise group by NACE Rev. 2 activity and size class (2020),ok,sdmx,6,125,0,"",2026-07-28
+INN_CIS12_INACT,Enterprises with innovation activities during 2018 and 2020 by NACE Rev. 2 activity and size class (2020),ok,sdmx,7,151,0,"",2026-07-28
+INN_CIS12_INRD,Enterprises with research and development (R&D) activities during 2018 and 2020 by NACE Rev. 2 activity and size class (2020),ok,sdmx,7,152,0,"",2026-07-28
+INN_CIS12_IPR,"Enterprises that applied for a patent, registered an industrial design, trade mark or used trade secrets, by NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,145,0,"",2026-07-28
+INN_CIS12_IPRIN,"Enterprises that purchased or licensed in intellectual property rights by type of issuing organisation, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS12_IPROUT,"Enterprises that licenced out, sold, exchanged intellectual property rights by type of transaction, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS12_LEGIST,"Enterprises whose innovation activities have been affected by legislation or regulations by subject of the regulation/legislation, effect, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,139,0,"",2026-07-28
+INN_CIS12_MRK,"Enterprises by market place, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,143,0,"",2026-07-28
+INN_CIS12_MRKT,"Turnover of enterprises by market place, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,143,0,"",2026-07-28
+INN_CIS12_PF_BAS,"Enterprises, employed persons and turnover by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,55,0,"",2026-07-28
+INN_CIS12_PF_CO,"Enterprises that co-operated on R&D and other innovation activities by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,52,0,"",2026-07-28
+INN_CIS12_PF_FIN,"Enterprises that tried to obtain funding for research and development (R&D) or other innovation activities by innovation profile, type of finance and effect, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,53,0,"",2026-07-28
+INN_CIS12_PF_IPR,"Enterprises that applied for a patent, registered an industrial design, trade mark or used trade secrets, by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,54,0,"",2026-07-28
+INN_CIS12_PF_MRKT,"Turnover of enterprises by innovation profile, market place, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,52,0,"",2026-07-28
+INN_CIS12_PF_PRODT,"Turnover of enterprises from new or significantly improved products, by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,52,0,"",2026-07-28
+INN_CIS12_PF_PUB,"Enterprises that received public funding for research and development (R&D) or other innovation activities, by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,52,0,"",2026-07-28
+INN_CIS12_PF_PURMES,"Enterprises that purchased machinery, equipment or software by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,48,0,"",2026-07-28
+INN_CIS12_PF_STRAT,"Enterprises attaching high importance to business strategies by innovation profile, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,58,0,"",2026-07-28
+INN_CIS12_PROD,"Enterprises that introduced an innovation by type of innovation, developer, NACE Rev.2 activity and size class (2020)",ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS12_PRODN,"Product innovative enterprises that have introduced at least one new or significantly improved product by type of innovation, NACE Rev. 2 activity and size class (2020)",ok,sdmx,7,152,0,"",2026-07-28
+INN_CIS12_PRODT,"Turnover of enterprises from new or significantly improved products, by NACE Rev. 2 activity and size class (2020)",ok,sdmx,7,149,0,"",2026-07-28
+INN_CIS12_PUB,"Enterprises that received public funding for research and development (R&D) or other innovation activities, by source of funding, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,153,0,"",2026-07-28
+INN_CIS12_PURMES,"Enterprises that purchased machinery, equipment or software by NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,138,0,"",2026-07-28
+INN_CIS12_SPEC,"Enterprises that introduced new or improved processes by type of innovation, NACE Rev. 2 activity and size class (2020)",ok,sdmx,7,154,0,"",2026-07-28
+INN_CIS12_SRC,"Enterprises that acquiesce or transfer resources and business activities within the enterprise group, NACE Rev. 2 activity and size class (2020)",ok,sdmx,8,135,0,"",2026-07-28
+INN_CIS12_STRAT,"Enterprises by type of business strategy applied, importance of the strategy, NACE Rev. 2 activity and size class (2020)",ok,sdmx,9,153,0,"",2026-07-28
+INN_CIS12_TXAL,Enterprises that use tax incentives or allowances for innovative activities and research and development (R&D) by NACE Rev. 2 activity and size class (2020),ok,sdmx,8,138,0,"",2026-07-28
+INN_CIS12_YREG,"Enterprises by year of registration and by type of enterprise, NACE Rev.2 activity and size class (2020)",ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS13_BAS,"Enterprises, employed persons and turnover by innovation status, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS13_BAS_IP,"Enterprises, employed persons and turnover by innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,71,0,"",2026-07-28
+INN_CIS13_BAS_IP_R,Enterprises and employed persons by innovation capabilities and NUTS 2 region (CIS2022),ok,sdmx,8,209,0,"",2026-07-28
+INN_CIS13_BAS_R,"Enterprises, employed persons and turnover by innovation status and NUTS 2 region (CIS2022)",ok,sdmx,8,214,0,"",2026-07-28
+INN_CIS13_BMOD,"Enterprises that implemented fundamental changes to their business model, by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,129,0,"",2026-07-28
+INN_CIS13_CLIM,"Enterprises by type and importance of factors related to climate change, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,137,0,"",2026-07-28
+INN_CIS13_CO,"Enterprises that co-operated on business activities with other entities by innovation status, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS13_COND,"Enterprises by type and importance of market conditions, NACE Rev.2 activity and size class (CIS2022)",ok,sdmx,9,139,0,"",2026-07-28
+INN_CIS13_COOP,"Innovation active enterprises that co-operated with other entities, by kind and location of co-operation partner, NACE Rev. 2 and size class (CIS2022)",ok,sdmx,8,159,0,"",2026-07-28
+INN_CIS13_COOP_IP,"Innovation-active enterprises that co-operated with other entities, by innovation profile, kind and location of co-operation partner, NACE Rev. 2 and size class (CIS2022)",ok,sdmx,9,80,0,"",2026-07-28
+INN_CIS13_CO_IP,"Enterprises that co-operated on business activities with other entities, by innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,72,0,"",2026-07-28
+INN_CIS13_CO_R,Enterprises that co-operated on innovation activities with other entities by NUTS 2 region (CIS2022),ok,sdmx,8,207,0,"",2026-07-28
+INN_CIS13_ECO,"Innovation active enterprises that introduced innovations with environmental benefits within the enterprise, by type of contribution and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,152,0,"",2026-07-28
+INN_CIS13_ECO_IP,"Innovation-active enterprises that introduced innovations with environmental benefits within the enterprise, by innovation profile, type of contribution and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,71,0,"",2026-07-28
+INN_CIS13_EDUC,"Enterprises by percentage of employees with university education, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,134,0,"",2026-07-28
+INN_CIS13_ENV,"Innovation active enterprise by type and importance of environmental benefits obtained during the consumption or use of a good or service by the end user, by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS13_ENVF,"Innovation active enterprises by type and importance of factors driving environmental innovations, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,142,0,"",2026-07-28
+INN_CIS13_ENV_IP,"Innovation-active enterprise by type and importance of environmental benefits obtained during the consumption or use of a good or service by the end user, by innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,69,0,"",2026-07-28
+INN_CIS13_EXP,"Innovation active enterprises' expenditure on R&D and innovation by type, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,7,153,0,"",2026-07-28
+INN_CIS13_EXPT,"Enterprises' expenditure by area, innovations status, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,129,0,"",2026-07-28
+INN_CIS13_EXP_R,Innovation active enterprises' expenditure on R&D and innovation by type and NUTS 2 region (CIS2022),ok,sdmx,7,209,0,"",2026-07-28
+INN_CIS13_FIN,"Enterprises by access to private funding, type of private funding and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,149,0,"",2026-07-28
+INN_CIS13_FINRD,"Enterprises that obtained private funding by usage for R&D or other innovation activities, type of private funding, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,149,0,"",2026-07-28
+INN_CIS13_FINRD_IP,"Enterprises that obtained private funding by usage for R&D or other innovation activities, by innovation profile, type of private funding, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,71,0,"",2026-07-28
+INN_CIS13_FIN_IP,"Enterprises by access to private funding, innovation profile, type of private funding and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,71,0,"",2026-07-28
+INN_CIS13_GEN,"Enterprises by their belonging to an enterprise group, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,136,0,"",2026-07-28
+INN_CIS13_GS,"Enterprises that offered standardised, customised or co-created goods or services by type of goods and services, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,128,0,"",2026-07-28
+INN_CIS13_IGL,"Enterprises that tried to obtain intra-group loans within the enterprise group by outcome, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,121,0,"",2026-07-28
+INN_CIS13_IGLRD,Enterprises that obtained intra-group loans for R&D or other innovation activities within the enterprise group by NACE Rev. 2 activity and size class (CIS2022),ok,sdmx,7,120,0,"",2026-07-28
+INN_CIS13_INACT,Innovation active enterprises without implemented innovation by NACE Rev. 2 activity and size class (CIS2022),ok,sdmx,7,145,0,"",2026-07-28
+INN_CIS13_INRD,Innovation active enterprise with research and development (R&D) activities by NACE Rev. 2 activity and size class (CIS2022),ok,sdmx,7,147,0,"",2026-07-28
+INN_CIS13_IPR,"Enterprises that applied for a patent, registered an industrial design, trade mark or used trade secrets, by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,137,0,"",2026-07-28
+INN_CIS13_IPROUT,"Enterprises that licenced out, sold, exchanged intellectual property rights by type of transaction, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,134,0,"",2026-07-28
+INN_CIS13_MRK,"Enterprises by market place, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,135,0,"",2026-07-28
+INN_CIS13_MRKT,"Turnover of enterprises by market place, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,135,0,"",2026-07-28
+INN_CIS13_PROD,"Enterprises that introduced an innovation by type of innovation, developer, NACE Rev.2 activity and size class (CIS2022)",ok,sdmx,8,147,0,"",2026-07-28
+INN_CIS13_PRODN,"Enterprises that introduced new or significantly improved products by type of innovation, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,7,148,0,"",2026-07-28
+INN_CIS13_PRODT,Turnover from new or significantly improved products by NACE Rev. 2 activity and size class (CIS2022),ok,sdmx,7,145,0,"",2026-07-28
+INN_CIS13_PRODT_IP,"Turnover from new or significantly improved products, by innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,66,0,"",2026-07-28
+INN_CIS13_PRODT_R,Turnover from new or significantly improved products by NUTS 2 region (CIS2022),ok,sdmx,7,208,0,"",2026-07-28
+INN_CIS13_PUB,"Enterprises by access to public funding, type of public funding and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS13_PUB_IP,"Enterprises by access to public funding, innovation profile, type of public funding and effect, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,77,0,"",2026-07-28
+INN_CIS13_PURMES,"Enterprises that purchased machinery, equipment or software by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,131,0,"",2026-07-28
+INN_CIS13_REAS,"Enterprises by reason why they did not have any (or not more) innovation activities, by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,147,0,"",2026-07-28
+INN_CIS13_REAS_IP,"Enterprises by reason why they did not have any (or not more) innovation activities, by innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,71,0,"",2026-07-28
+INN_CIS13_SPEC,"Enterprises that introduced new or improved business processes by type of innovation, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,7,150,0,"",2026-07-28
+INN_CIS13_SRC,"Enterprises that acquiesce or transfer resources and business activities within the enterprise group, by NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,9,131,0,"",2026-07-28
+INN_CIS13_STRAT,"Enterprises by type of business strategy applied, importance of the strategy, NACE Rev.2 activity and size class (CIS2022)",ok,sdmx,9,146,0,"",2026-07-28
+INN_CIS13_TXAL,Enterprises that use tax incentives or allowances for innovative activities and research and development (R&D) by NACE Rev. 2 activity and size class (CIS2022),ok,sdmx,8,131,0,"",2026-07-28
+INN_CIS13_YREG,"Enterprises by age and innovation status, NACE Rev.2 activity and size class (CIS2022)",ok,sdmx,8,146,0,"",2026-07-28
+INN_CIS13_YREG_IP,"Enterprises by age and innovation profile, NACE Rev. 2 activity and size class (CIS2022)",ok,sdmx,8,68,0,"",2026-07-28
+INN_CIS14_BAS,"Enterprises, employed persons and turnover by innovation status, NACE Rev. 2 activity and size class (CIS2024)",ok,sdmx,8,42,0,"",2026-07-28
+INN_CIS14_CO,"Enterprises that co-operated on business activities with other entities by innovation status, NACE Rev. 2 activity and size class (CIS2024)",ok,sdmx,8,36,0,"",2026-07-28
+INN_CIS14_EXP,"Innovation active enterprises' expenditure on research and development (R&D) and innovation by type, NACE Rev. 2 activity and size class (CIS2024)",ok,sdmx,7,35,0,"",2026-07-28
+INN_CIS4_BAS,Basic economic information on the enterprises (2004),ok,sdmx,8,108,0,"",2026-07-28
+INN_CIS4_COOP,Innovation co-operation during 2002-2004 (2004),ok,sdmx,8,118,0,"",2026-07-28
+INN_CIS4_EFF,Highly important effects of innovation during 2002-2004 (2004),ok,sdmx,8,109,0,"",2026-07-28
+INN_CIS4_EXP,Innovation activity and expenditure (2004),ok,sdmx,8,114,0,"",2026-07-28
+INN_CIS4_GEN,General information about the enterprises (2004),ok,sdmx,8,101,0,"",2026-07-28
+INN_CIS4_HAM,Hampered innovation activities (2004),ok,sdmx,8,115,0,"",2026-07-28
+INN_CIS4_MO,Organisational and marketing innovations (2004),ok,sdmx,8,98,0,"",2026-07-28
+INN_CIS4_OREF,Highly important effects of organisational innovation (2004),ok,sdmx,8,97,0,"",2026-07-28
+INN_CIS4_PAT,Patents and other protection methods (2004),ok,sdmx,8,99,0,"",2026-07-28
+INN_CIS4_PROD,Product and process innovation (2004),ok,sdmx,8,120,0,"",2026-07-28
+INN_CIS4_PUB,Public funding of innovation (2004),ok,sdmx,8,99,0,"",2026-07-28
+INN_CIS4_SOU,Highly important source of information for innovation during 2002-2004 (2004),ok,sdmx,8,104,0,"",2026-07-28
+INN_CIS5_BAS,Basic economic information on the enterprises (2006),ok,sdmx,8,117,0,"",2026-07-28
+INN_CIS5_COOP,Innovation co-operation during 2004-2006 (2006),ok,sdmx,8,129,0,"",2026-07-28
+INN_CIS5_EFF,Highly important effects of innovation during 2004-2006 (2006),ok,sdmx,8,112,0,"",2026-07-28
+INN_CIS5_EXP,Innovation activity and expenditure (2006),ok,sdmx,8,120,0,"",2026-07-28
+INN_CIS5_GEN,General information about the enterprises (2006),ok,sdmx,8,111,0,"",2026-07-28
+INN_CIS5_HAM,Hampered innovation activities (2006),ok,sdmx,8,118,0,"",2026-07-28
+INN_CIS5_MO,Organisational and marketing innovations (2006),ok,sdmx,8,105,0,"",2026-07-28
+INN_CIS5_OREF,Highly important effects of organisational innovation (2006),ok,sdmx,8,101,0,"",2026-07-28
+INN_CIS5_PAT,Patents and other protection methods (2006),ok,sdmx,8,106,0,"",2026-07-28
+INN_CIS5_PROD,Product and process innovation (2006),ok,sdmx,8,145,0,"",2026-07-28
+INN_CIS5_PUB,Public funding of innovation (2006),ok,sdmx,8,106,0,"",2026-07-28
+INN_CIS5_SOU,Highly important source of information for innovation during 2004-2006 (2006),ok,sdmx,8,110,0,"",2026-07-28
+INN_CIS6_BAS,Basic economic information on the enterprises (2008),ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS6_COOP,Innovation co-operation during 2006-2008 (2008),ok,sdmx,8,161,0,"",2026-07-28
+INN_CIS6_ECO,Innovations with environmental benefits (2008),ok,sdmx,8,143,0,"",2026-07-28
+INN_CIS6_ECOMOT,Motivation to introduce an environmental innovation (2008),ok,sdmx,8,138,0,"",2026-07-28
+INN_CIS6_ECOPRO,Enterprises with procedures in place to regularly identify and reduce environmental impacts (2008),ok,sdmx,8,137,0,"",2026-07-28
+INN_CIS6_EXP,Innovation activity and expenditure in 2008 (2008),ok,sdmx,8,152,0,"",2026-07-28
+INN_CIS6_GEN,General information about the enterprises (2008),ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS6_MKOBJ,Highly important objectives of marketing innovation (2008),ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS6_MKTYPE,Implementation type of a new marketing method (2008),ok,sdmx,8,142,0,"",2026-07-28
+INN_CIS6_MO,Organisational and marketing innovations (2008),ok,sdmx,8,145,0,"",2026-07-28
+INN_CIS6_OBJ,Highly important innovation objectives during 2006-2008 (2008),ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS6_OROBJ,Highly important objectives of organisational innovation (2008),ok,sdmx,8,142,0,"",2026-07-28
+INN_CIS6_ORTYPE,Implementation type of a new organisational method (2008),ok,sdmx,8,141,0,"",2026-07-28
+INN_CIS6_PROD,Product and process innovation (2008),ok,sdmx,8,175,0,"",2026-07-28
+INN_CIS6_PUB,Public funding of innovation (2008),ok,sdmx,8,139,0,"",2026-07-28
+INN_CIS6_SOU,Highly important source of information for innovation during 2006-2008 (2008),ok,sdmx,8,143,0,"",2026-07-28
+INN_CIS6_TYPE,Enterprises by type of innovation activity (2008),ok,sdmx,8,154,0,"",2026-07-28
+INN_CIS7_BAS,Basic economic information on the enterprises (2010),ok,sdmx,8,159,0,"",2026-07-28
+INN_CIS7_COOP,Types of co-operation partner for product and process innovation (2010),ok,sdmx,8,160,0,"",2026-07-28
+INN_CIS7_CSK,In-house and external skills available in the enterprises (2010),ok,sdmx,8,168,0,"",2026-07-28
+INN_CIS7_EXP,Innovation activities and expenditures (2010),ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS7_GEN,General information about the enterprises (2010),ok,sdmx,8,152,0,"",2026-07-28
+INN_CIS7_HAM,Hampered innovation activities (2010),ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS7_MKOBJ,Highly important objectives for marketing innovation (2010),ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS7_MKTYPE,Implementation type of a new marketing method (2010),ok,sdmx,8,145,0,"",2026-07-28
+INN_CIS7_MO,Organisational and marketing innovation (2010),ok,sdmx,8,148,0,"",2026-07-28
+INN_CIS7_OBJ,Highly important objectives for product and process innovation (2010),ok,sdmx,8,147,0,"",2026-07-28
+INN_CIS7_OROBJ,Highly important objectives for organisational innovation (2010),ok,sdmx,8,142,0,"",2026-07-28
+INN_CIS7_ORTYPE,Implementation type of a new organisational method (2010),ok,sdmx,8,144,0,"",2026-07-28
+INN_CIS7_PROD,Product and process innovation (2010),ok,sdmx,8,179,0,"",2026-07-28
+INN_CIS7_PUB,Public funding for innovation activities (2010),ok,sdmx,8,140,0,"",2026-07-28
+INN_CIS7_SOU,Highly important sources of information for product and process innovation (2010),ok,sdmx,8,144,0,"",2026-07-28
+INN_CIS7_SUCMET,Methods stimulating new ideas or creativity (2010),ok,sdmx,8,142,0,"",2026-07-28
+INN_CIS7_TYPE,Enterprises by type of innovation (2010),ok,sdmx,8,157,0,"",2026-07-28
+INN_CIS8_BAS,Basic economic information on the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,159,0,"",2026-07-28
+INN_CIS8_COMP,Methods for maintaining or increasing the competitiveness in the enterprises - as highly important and not used - by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,146,0,"",2026-07-28
+INN_CIS8_COOP,Types of co-operation of the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,160,0,"",2026-07-28
+INN_CIS8_EXP,Innovation activities and expenditures in 2012 in the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,154,0,"",2026-07-28
+INN_CIS8_GEN,General information on the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,150,0,"",2026-07-28
+INN_CIS8_GOALS,Goals of innovative and non-innovative enterprises - as highly important and not relevant - by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,137,0,"",2026-07-28
+INN_CIS8_MO,Organisational and marketing innovation in product and process innovative enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,139,0,"",2026-07-28
+INN_CIS8_OBST,Obstacles of innovative and non-innovative enterprises - as highly important and not relevant - by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,146,0,"",2026-07-28
+INN_CIS8_PROC,Public sector procurement and innovation in the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,142,0,"",2026-07-28
+INN_CIS8_PROD,Product and process innovative enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,180,0,"",2026-07-28
+INN_CIS8_PUB,Public funding in the enterprises by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,137,0,"",2026-07-28
+INN_CIS8_SOU,Sources of information for enterprises - as highly important and not used - by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,149,0,"",2026-07-28
+INN_CIS8_SPEC,"Enterprises by specific types of innovation, NACE Rev. 2 activity and size class (2012)",ok,sdmx,8,151,0,"",2026-07-28
+INN_CIS8_STRAT,Strategies of innovative and non-innovative enterprises - as highly important and not relevant - by NACE Rev. 2 activity and size class (2012),ok,sdmx,8,144,0,"",2026-07-28
+INN_CIS8_TYPE,"Enterprises by main types of innovation, NACE Rev. 2 activity and size class (2012)",ok,sdmx,8,160,0,"",2026-07-28
+INN_CIS9_BAS,Basic economic information on the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,163,0,"",2026-07-28
+INN_CIS9_COOP,Types of co-operation of the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,167,0,"",2026-07-28
+INN_CIS9_ECODR,"Importance of the drivers to introduce innovations with environmental benefits and procedures to reduce environmental impacts in the enterprises, by NACE Rev. 2 activity and size class (2014)",ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS9_ENV,Environmental benefits due to innovation in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,153,0,"",2026-07-28
+INN_CIS9_EXP,Innovation activities and expenditures in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,159,0,"",2026-07-28
+INN_CIS9_GEN,General information on the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,152,0,"",2026-07-28
+INN_CIS9_IPR,Intellectual property rights and licensing in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,144,0,"",2026-07-28
+INN_CIS9_MO,Organisational and marketing innovation in product and process innovative enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,143,0,"",2026-07-28
+INN_CIS9_NOIN,Importance of the reasons to not innovate and of the barriers to innovation in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,155,0,"",2026-07-28
+INN_CIS9_PROC,Public sector procurement and innovation in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,144,0,"",2026-07-28
+INN_CIS9_PROD,Product and process innovative enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,181,0,"",2026-07-28
+INN_CIS9_PUB,Public funding in the enterprises by NACE Rev. 2 activity and size class (2014),ok,sdmx,8,141,0,"",2026-07-28
+INN_CIS9_SPEC,"Enterprises by specific types of innovation, NACE Rev. 2 activity and size class (2014)",ok,sdmx,8,153,0,"",2026-07-28
+INN_CIS9_TYPE,"Enterprises by main types of innovation, NACE Rev. 2 activity and size class (2014)",ok,sdmx,8,163,0,"",2026-07-28
+INN_CISL,The first community innovation light survey - CIS light (2002-2003),ok,sdmx,8,38,0,"",2026-07-28
+INN_COAB,Innovation co-operation during 1998-2000 - absolute value (2000),ok,sdmx,8,222,0,"",2026-07-28
+INN_COPC,Innovation co-operation during 1998-2000 - % (2000),ok,sdmx,8,222,0,"",2026-07-28
+INN_EFF,Effects of innovation during 1998-2000 (2000),ok,sdmx,8,99,0,"",2026-07-28
+INN_EXP,Innovation activity and expenditure (2000),ok,sdmx,8,93,0,"",2026-07-28
+INN_GEN,General information about the enterprises (2000),ok,sdmx,8,82,0,"",2026-07-28
+INN_HAM,Hampered innovation activities (2000),ok,sdmx,8,120,0,"",2026-07-28
+INN_IRD,Intramural R&D (2000),ok,sdmx,8,49,0,"",2026-07-28
+INN_PAT,Patents and other protection methods (2000),ok,sdmx,8,81,0,"",2026-07-28
+INN_PROD,Product and process innovation (2000),ok,sdmx,8,93,0,"",2026-07-28
+INN_PUB,Public funding of innovation (2000),ok,sdmx,8,67,0,"",2026-07-28
+INN_SCO,The European Innovation scoreboard indicators (2000),ok,sdmx,8,52,0,"",2026-07-28
+INN_SOU,Source of information for innovation during 1998-2000 (2000),ok,sdmx,8,100,0,"",2026-07-28
+IRT_EURYLD_A,Euro yield curves - annual data,ok,sdmx,6,59,0,"",2026-07-28
+IRT_EURYLD_D,Euro yield curves - daily data,ok,sdmx,6,5946,0,"",2026-07-28
+IRT_EURYLD_M,Euro yield curves - monthly data,ok,sdmx,6,299,0,"",2026-07-28
+IRT_EURYLD_Q,Euro yield curves - quarterly data,ok,sdmx,6,125,0,"",2026-07-28
+IRT_H_CGBY_A,Central government bond yields - annual data,ok,sdmx,4,44,0,"",2026-07-28
+IRT_H_CGBY_M,Central government bond yields - monthly data,ok,sdmx,4,330,0,"",2026-07-28
+IRT_H_CGBY_Q,Central government bond yields - quarterly data,ok,sdmx,4,122,0,"",2026-07-28
+IRT_H_DDMR_A,Day-to-day rates for euro area countries - annual data,ok,sdmx,4,66,0,"",2026-07-28
+IRT_H_DDMR_M,Day-to-day rates for euro area countries - monthly data,ok,sdmx,4,694,0,"",2026-07-28
+IRT_H_DDMR_Q,Day-to-day rates for euro area countries - quarterly data,ok,sdmx,4,201,0,"",2026-07-28
+IRT_H_EURCOE_D,Euro yields - coefficients - daily data,ok,sdmx,5,1670,0,"",2026-07-28
+IRT_H_EURYLD_A,Euro yield curves - annual data,ok,sdmx,5,42,0,"",2026-07-28
+IRT_H_EURYLD_D,Euro yield curves - daily data,ok,sdmx,5,1699,0,"",2026-07-28
+IRT_H_EURYLD_M,Euro yield curves - monthly data,ok,sdmx,5,115,0,"",2026-07-28
+IRT_H_EURYLD_Q,Euro yield curves - quarterly data,ok,sdmx,5,62,0,"",2026-07-28
+IRT_H_MR3_A,3-month rates for euro area countries - annual data,ok,sdmx,4,66,0,"",2026-07-28
+IRT_H_MR3_M,3-month rates for euro area countries - monthly data,ok,sdmx,4,560,0,"",2026-07-28
+IRT_H_MR3_Q,3-month rates for euro area countries - quarterly data,ok,sdmx,4,201,0,"",2026-07-28
+IRT_LT_GBY10_A,"Government bond yields, 10 years' maturity - annual data",ok,sdmx,4,69,0,"",2026-07-28
+IRT_LT_GBY10_M,"Government bond yields, 10 years' maturity - monthly data",ok,sdmx,4,923,0,"",2026-07-28
+IRT_LT_MCBY_A,EMU convergence criterion series - annual data,ok,sdmx,4,109,0,"",2026-07-28
+IRT_LT_MCBY_M,EMU convergence criterion series - monthly data,ok,sdmx,4,590,0,"",2026-07-28
+IRT_LT_MCBY_Q,EMU convergence criterion series - quarterly data,ok,sdmx,4,218,0,"",2026-07-28
+IRT_ST_A,Money market interest rates - annual data,ok,sdmx,4,77,0,"",2026-07-28
+IRT_ST_M,Money market interest rates - monthly data,ok,sdmx,4,700,0,"",2026-07-28
+IRT_ST_Q,Money market interest rates - quarterly data,ok,sdmx,4,247,0,"",2026-07-28
+ISOC_AI_IAIU,Individuals - use of generative AI tools,ok,sdmx,6,150,0,"",2026-07-28
+ISOC_AI_IAIU$DV_3341,Individuals - use of generative AI tools,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_AI_IAIU$DV_3341'
+For more information check: https://developer.",2026-07-28
+ISOC_AI_IAIUXR,Individuals - reasons for not using generative AI tools,ok,sdmx,6,152,0,"",2026-07-28
+ISOC_AI_IAIUXR$DV_3342,Individuals - reasons for not using generative AI tools,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_AI_IAIUXR$DV_3342'
+For more information check: https://develope",2026-07-28
+ISOC_BDE15AG,Percentage of the ICT sector in Gross value added,ok,sdmx,4,57,0,"",2026-07-28
+ISOC_BDE15AP,Percentage of the ICT sector personnel in total employment,ok,sdmx,4,57,0,"",2026-07-28
+ISOC_BDE15AR2,Business expenditure on R&D (BERD) in ICT sector as % of total R&D expenditure by NACE Rev. 2 activity,ok,sdmx,5,77,0,"",2026-07-28
+ISOC_BDE15AV,Percentage change of value added by ICT sector at current prices,ok,sdmx,4,56,0,"",2026-07-28
+ISOC_CBS,Broadband internet coverage by speed,ok,sdmx,6,53,0,"",2026-07-28
+ISOC_CBT,Broadband internet coverage by technology,ok,sdmx,6,70,0,"",2026-07-28
+ISOC_CICCE_USE,Cloud computing services by size class of enterprise,ok,sdmx,7,100,0,"",2026-07-28
+ISOC_CICCE_USEN2,Cloud computing services by NACE Rev. 2 activity,ok,sdmx,7,140,0,"",2026-07-28
+ISOC_CICCI_USE,Individuals - use of cloud services (2014-2020),ok,sdmx,6,175,0,"",2026-07-28
+ISOC_CICCI_USE$DV_514,Individuals - use of cloud services (2014-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CICCI_USE$DV_514'
+For more information check: https://developer",2026-07-28
+ISOC_CIEGI_AC,E-government activities of individuals via websites,ok,sdmx,6,263,0,"",2026-07-28
+ISOC_CIEGI_AC$DV_1461,E-government activities of individuals via websites,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CIEGI_AC$DV_1461'
+For more information check: https://developer",2026-07-28
+ISOC_CIEGI_AC$DV_515,E-government activities of individuals via websites,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CIEGI_AC$DV_515'
+For more information check: https://developer.",2026-07-28
+ISOC_CIEGI_PB22,Problems experienced when using e-government websites (from 2022 onwards),ok,sdmx,6,167,0,"",2026-07-28
+ISOC_CIEGI_RTX,Reasons for not submitting completed forms to public authorities' websites,ok,sdmx,6,230,0,"",2026-07-28
+ISOC_CIEGI_RTX$DV_516,Reasons for not submitting completed forms to public authorities' websites,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CIEGI_RTX$DV_516'
+For more information check: https://developer",2026-07-28
+ISOC_CIMOBE_USE,Use of mobile connections to the internet by size class of enterprise,ok,sdmx,7,69,0,"",2026-07-28
+ISOC_CIMOBE_USEN2,Use of mobile connections to the internet by NACE Rev. 2 activity,ok,sdmx,7,109,0,"",2026-07-28
+ISOC_CIMOBP_USE,Use of mobile connections to the internet by employees by size class of enterprise,ok,sdmx,7,66,0,"",2026-07-28
+ISOC_CIMOBP_USEN2,Use of mobile connections to the internet by employees by NACE Rev. 2 activity,ok,sdmx,7,106,0,"",2026-07-28
+ISOC_CISCE_IC,Security incidents and consequences by size class of enterprise,ok,sdmx,7,66,0,"",2026-07-28
+ISOC_CISCE_ICN2,Security incidents and consequences by NACE Rev.2 activity,ok,sdmx,7,109,0,"",2026-07-28
+ISOC_CISCE_RA,"Security policy, measures, risks and staff awareness by size class of enterprise",ok,sdmx,7,95,0,"",2026-07-28
+ISOC_CISCE_RAN2,"Security policy, measures, risks and staff awareness by NACE Rev.2 activity",ok,sdmx,7,135,0,"",2026-07-28
+ISOC_CISCI_ACFAS,Management of accounts of a free app or service,ok,sdmx,6,165,0,"",2026-07-28
+ISOC_CISCI_AX,Activities via internet not done because of security concerns (2010-2019),ok,sdmx,6,147,0,"",2026-07-28
+ISOC_CISCI_AX$DV_534,Activities via internet not done because of security concerns (2010-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CISCI_AX$DV_534'
+For more information check: https://developer.",2026-07-28
+ISOC_CISCI_F,Safety copies and back up files (2007-2019),ok,sdmx,6,147,0,"",2026-07-28
+ISOC_CISCI_F$DV_536,Safety copies and back up files (2007-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CISCI_F$DV_536'
+For more information check: https://developer.m",2026-07-28
+ISOC_CISCI_IP,Identification procedures used for online services (2018),ok,sdmx,6,137,0,"",2026-07-28
+ISOC_CISCI_IP20,Identification procedures used for online services (2020 onwards),ok,sdmx,6,135,0,"",2026-07-28
+ISOC_CISCI_IP20$DV_2901,Identification procedures used for online services (2020 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CISCI_IP20$DV_2901'
+For more information check: https://develop",2026-07-28
+ISOC_CISCI_PB,Security related problems experienced when using the internet (2004-2019),ok,sdmx,6,176,0,"",2026-07-28
+ISOC_CISCI_PB$DV_538,Security related problems experienced when using the internet (2004-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CISCI_PB$DV_538'
+For more information check: https://developer.",2026-07-28
+ISOC_CISCI_PRV,Privacy and protection of personal information (2015-2016),ok,sdmx,6,142,0,"",2026-07-28
+ISOC_CISCI_PRV20,Privacy and protection of personal data (2020 onwards),ok,sdmx,6,157,0,"",2026-07-28
+ISOC_CISCI_SP,"Trust, security and privacy - smartphones (2018)",ok,sdmx,6,138,0,"",2026-07-28
+ISOC_CISCI_SP20,"Trust, security and privacy - smartphones (2020 onwards)",ok,sdmx,6,136,0,"",2026-07-28
+ISOC_CISCI_SP20$DV_2902,"Trust, security and privacy - smartphones (2020 onwards)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CISCI_SP20$DV_2902'
+For more information check: https://develop",2026-07-28
+ISOC_CISMP,Social media use by purpose and size class of enterprise,ok,sdmx,7,75,0,"",2026-07-28
+ISOC_CISMPN2,Social media use by purpose and NACE Rev. 2 activity,ok,sdmx,7,115,0,"",2026-07-28
+ISOC_CISMT,"Social media use by type, internet advertising and size class of enterprise",ok,sdmx,7,86,0,"",2026-07-28
+ISOC_CISMTN2,"Social media use by type, internet advertising and NACE Rev. 2 activity",ok,sdmx,7,126,0,"",2026-07-28
+ISOC_CIWEB,Websites and functionalities by size class of enterprise,ok,sdmx,7,94,0,"",2026-07-28
+ISOC_CIWEBN2,Websites and functionalities by NACE Rev. 2 activity,ok,sdmx,7,135,0,"",2026-07-28
+ISOC_CI_AC_I,Individuals - internet activities,ok,sdmx,6,311,0,"",2026-07-28
+ISOC_CI_AC_I$DV_1043,Individuals - internet activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_AC_I$DV_1043'
+For more information check: https://developer.",2026-07-28
+ISOC_CI_AC_I$DV_1122,Individuals - internet activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_AC_I$DV_1122'
+For more information check: https://developer.",2026-07-28
+ISOC_CI_AC_I$DV_2801,Individuals - internet activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_AC_I$DV_2801'
+For more information check: https://developer.",2026-07-28
+ISOC_CI_AC_I$DV_645,Individuals - internet activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_AC_I$DV_645'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_AC_I$DV_649,Individuals - internet activities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_AC_I$DV_649'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_CE_I,Individuals - use of collaborative economy (2017-2019),ok,sdmx,6,157,0,"",2026-07-28
+ISOC_CI_CFP_CU,Individuals - computer use (2002-2017),ok,sdmx,6,173,0,"",2026-07-28
+ISOC_CI_CFP_CU$DV_633,Individuals - computer use (2002-2017),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_CFP_CU$DV_633'
+For more information check: https://developer",2026-07-28
+ISOC_CI_CFP_FU,Individuals - frequency of computer use (2003-2017),ok,sdmx,6,172,0,"",2026-07-28
+ISOC_CI_CFP_FU$DV_284,Individuals - frequency of computer use (2003-2017),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_CFP_FU$DV_284'
+For more information check: https://developer",2026-07-28
+ISOC_CI_CM_H,Households - availability of computers (2006-2017),ok,sdmx,6,72,0,"",2026-07-28
+ISOC_CI_CM_H$DV_507,Households - availability of computers (2006-2017),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_CM_H$DV_507'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_CM_PN2,Use of computers and the internet by employees by NACE Rev. 2 activity,ok,sdmx,7,118,0,"",2026-07-28
+ISOC_CI_CM_PS,Use of computers and the internet by employees by size class of enterprise,ok,sdmx,7,77,0,"",2026-07-28
+ISOC_CI_DEV_I,Individuals - devices used to access the internet,ok,sdmx,6,161,0,"",2026-07-28
+ISOC_CI_DEV_I$DV_2883,Individuals - devices used to access the internet,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_DEV_I$DV_2883'
+For more information check: https://developer",2026-07-28
+ISOC_CI_HM,Individuals - encountering hostile or degrading online messages,ok,sdmx,6,151,0,"",2026-07-28
+ISOC_CI_IFP_FU,Individuals - frequency of internet use,ok,sdmx,6,258,0,"",2026-07-28
+ISOC_CI_IFP_FU$DV_281,Individuals - frequency of internet use,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IFP_FU$DV_281'
+For more information check: https://developer",2026-07-28
+ISOC_CI_IFP_IU,Individuals - internet use,ok,sdmx,6,260,0,"",2026-07-28
+ISOC_CI_IFP_IU$DV_628,Individuals - internet use,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IFP_IU$DV_628'
+For more information check: https://developer",2026-07-28
+ISOC_CI_IFP_PU,Individuals - places of internet use (2002-2019),ok,sdmx,6,195,0,"",2026-07-28
+ISOC_CI_IFP_PU$DV_509,Individuals - places of internet use (2002-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IFP_PU$DV_509'
+For more information check: https://developer",2026-07-28
+ISOC_CI_IM_I,Individuals - mobile internet access (2011-2019),ok,sdmx,6,167,0,"",2026-07-28
+ISOC_CI_IM_I$DV_510,Individuals - mobile internet access (2011-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IM_I$DV_510'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_IN_EN2,Internet access by NACE Rev. 2 activity,ok,sdmx,7,120,0,"",2026-07-28
+ISOC_CI_IN_ES,Internet access by size class of enterprise,ok,sdmx,7,79,0,"",2026-07-28
+ISOC_CI_IN_H,Households - level of internet access,ok,sdmx,5,88,0,"",2026-07-28
+ISOC_CI_IN_H$DV_512,Households - level of internet access,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IN_H$DV_512'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_IT_EN2,Type of connections to the internet by NACE Rev. 2 activity,ok,sdmx,7,133,0,"",2026-07-28
+ISOC_CI_IT_ES,Type of connections to the internet by size class of enterprise,ok,sdmx,7,93,0,"",2026-07-28
+ISOC_CI_IT_H,Households - type of connection to the internet (2003-2021),ok,sdmx,6,93,0,"",2026-07-28
+ISOC_CI_IT_H$DV_513,Households - type of connection to the internet (2003-2021),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_CI_IT_H$DV_513'
+For more information check: https://developer.m",2026-07-28
+ISOC_CI_MVIN2,Meetings via the internet by NACE Rev. 2 activity,ok,sdmx,7,96,0,"",2026-07-28
+ISOC_CI_MVIS,Meetings via the internet by size class of enterprise,ok,sdmx,7,54,0,"",2026-07-28
+ISOC_CI_RAN2,Remote access by NACE Rev. 2 activity,ok,sdmx,7,119,0,"",2026-07-28
+ISOC_CI_RAS,Remote access by size class of enterprise,ok,sdmx,7,79,0,"",2026-07-28
+ISOC_CI_STV_I,Individuals - internet activities using smart TV (2016),ok,sdmx,6,121,0,"",2026-07-28
+ISOC_EB_AI,Artificial intelligence by size class of enterprise,ok,sdmx,7,119,0,"",2026-07-28
+ISOC_EB_AIN2,Artificial intelligence by NACE Rev. 2 activity,ok,sdmx,7,161,0,"",2026-07-28
