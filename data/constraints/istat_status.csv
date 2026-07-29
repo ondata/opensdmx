@@ -3921,3 +3921,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 7_953,Spese per la protezione dell'ambiente - edizioni febbraio 2020 - febbraio 2024,ok,hub,9,90,0,"",2026-07-28
 7_953_DF_DCCN_SPESAPROTAMB_B19_1,Spesa nazionale - edizioni febbraio 2020 - febbraio 2024,ok,hub,7,22,0,"",2026-07-28
 7_953_DF_DCCN_SPESAPROTAMB_B19_2,Aggregati economici per settore istituzionale - edizioni febbraio 2020 - febbraio 2024,ok,hub,7,43,0,"",2026-07-28
+7_953_DF_DCCN_SPESAPROTAMB_B19_3,Investimenti e produzione ausiliaria delle società come produttori ausiliari per attività economica - edizioni febbraio 2020 - febbraio 2024,ok,hub,8,64,0,"",2026-07-29
+82_87,Aspetti della vita quotidiana - Famiglie,ok,hub,5,313,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_1,Coppie con figli,ok,hub,3,21,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_10,Ampiezza della famiglia,ok,hub,4,11,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_100,Difficoltà a raggiungere alcuni servizi,ok,hub,4,47,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_101,Energia elettrica - regioni e tipo di comune,ok,hub,4,46,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_102,Gas - regioni e tipo di comune,ok,hub,4,47,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_103,Modulistica fiscale,ok,hub,4,44,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_104,Mobilità e condizioni delle strade,ok,hub,4,55,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_105,Altri problemi,ok,hub,4,55,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_11,Tipologie familiari,ok,hub,3,20,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_12,Tipologie familiari - regioni e tipo comune,ok,hub,4,58,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_13,Giudizio sulla situazione economica - ampiezza della famiglia,ok,hub,5,21,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_14,Giudizio sulla situazione economica - reg. e tipo di comune,ok,hub,4,49,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_15,Possesso di beni durevoli - reg. e tipo di comune,ok,hub,4,64,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_16,Spazi esterni e riscaldamento nell'abitazione,ok,hub,4,42,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_17,Modalità di fornitura del gas,ok,hub,4,46,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_18,Cambio dell'abitazione,ok,hub,4,19,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_19,"Spese, acqua e altri problemi dell'abitazione",ok,hub,4,46,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_2,Coppie con figli - reg.,ok,hub,4,43,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_3,Coppie senza figli - reg.,ok,hub,4,44,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_4,"Monogenitori - sesso, età, stato civile",ok,hub,3,32,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_5,"Monogenitori - sesso, stato civile, ripartizioni",ok,hub,4,24,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_6,Monogenitori  - regioni e tipo di comune,ok,hub,4,42,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_7,Monogenitori - numero ed età dei figli,ok,hub,3,13,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_8,"Persone sole -  sesso, età, stato civile",ok,hub,3,56,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_9,Persone sole - ripartizioni e tipo di comune,ok,hub,4,30,0,"",2026-07-29
+83_277,Imprese agricole e addetti,ok,hub,7,255,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_1,Settori economici (Ateco 5 cifre),ok,hub,4,111,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_2,Settori economici (Ateco 4 cifre) - rip.,ok,hub,4,65,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_3,Settori economici (Ateco 3 cifre) - prov.,ok,hub,4,155,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_4,"Classe di addetti, settori economici (Ateco 3 cifre)",ok,hub,5,26,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_5,Classe di addetti - prov.,ok,hub,5,144,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_6,"Forma giuridica, settori economici (Ateco 3 cifre)",ok,hub,5,25,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_7,"Forma giuridica, classe di addetti - reg.",ok,hub,6,41,0,"",2026-07-29
+83_277_DF_DICA_ASIAAGR_8,Forma giuridica - prov,ok,hub,5,143,0,"",2026-07-29
+83_63,Aspetti della vita quotidiana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_100,Sport - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_101,"Sport - età, titolo di studio",ok,hub,6,22,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_102,Sport - condizione e posizione nella professione,ok,hub,6,26,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_103,Sport - regioni e tipo di comune,ok,hub,4,45,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_104,Incontri con amici - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_105,"Incontri con amici - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_106,Incontri con amici - condizione e posizione nella professione,ok,hub,6,28,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_107,Incontri con amici - regioni e tipo di comune,ok,hub,4,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_108,Informazione politica - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_109,"Informazione politica - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_110,Informazione politica - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_111,Informazione politica - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_112,Informazione politica (canale) - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_113,Informazione politica (frequenza) - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_114,Informazione politica (motivo) - regioni e tipo di comune,ok,hub,5,46,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_115,Discussione e attività politica - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_116,"Discussione e attività politica - età, titolo di studio",ok,hub,6,29,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_117,Discussione e attività politica - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_118,Discussione e attività politica - posizione nella professione,ok,hub,6,25,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_119,Discussione politica - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_120,Giovani che vivono in famiglia,ok,hub,6,31,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_121,Giovani che vivono in famiglia - reg.,ok,hub,6,44,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_122,Attività politica - regioni e tipo di comune,ok,hub,5,46,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_123,Fiducia negli altri - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_124,"Fiducia negli altri - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_125,Fiducia negli altri - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_126,Fiducia negli altri - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_127,Fiducia interpersonale - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_128,Fiducia verso particolari persone - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_129,Associazionismo - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_130,"Associazionismo - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_131,Associazionismo - condizione e posizione nella professione,ok,hub,6,27,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_132,Associazionismo - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_133,Pratica religiosa - età dettaglio,ok,hub,5,21,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_134,"Pratica religiosa - età, titolo di studio",ok,hub,6,19,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_135,Pratica religiosa - condizione e posizione nella professione,ok,hub,6,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_136,Pratica religiosa - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_137,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_138,"Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_139,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - condizione professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_140,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_141,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - regioni e tipo di comune,ok,hub,5,52,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_142,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - età dettaglio,ok,hub,5,20,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_143,"Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - età, titolo di studio",ok,hub,6,19,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_144,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - condizione e posizione nella professione,ok,hub,6,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_145,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_146,Soddisfazione per alcuni aspetti - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_147,"Soddisfazione per alcuni aspetti - età, titolo di studio",ok,hub,6,41,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_148,Soddisfazione per alcuni aspetti - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_149,Soddisfazione per alcuni aspetti - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_150,Soddisfazione per alcuni aspetti - regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_151,Soddisfazione per il lavoro - età dettaglio,ok,hub,4,19,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_152,"Soddisfazione per il lavoro - età, titolo di studio",ok,hub,6,21,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_153,Soddisfazione per il lavoro - condizione e posizione nella professione,ok,hub,6,18,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_154,Soddisfazione per il lavoro - ripartizioni e tipo di comune,ok,hub,5,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_155,"Treno, pullman e autobus - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_156,"Treno, pullman e autobus - condizione professionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_157,"Treno, pullman e autobus - posizione nella professione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_158,Treno - regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_159,Pullman - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_160,Autobus - regioni e tipo di comune,ok,hub,5,56,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_161,Tipo di certificato richiesto e autocertificazione - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_162,"Tipo di certificato richiesto e autocertificazione - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_163,Tipo di certificato richiesto e autocertificazione - condizione professionale,ok,hub,6,33,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_164,Tipo di certificato richiesto e autocertificazione - posizione nella professione,ok,hub,6,29,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_165,Tipo di certificato richiesto e autocertificazione - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_166,Spostamenti abituali per andare a scuola,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_167,Spostamenti verso scuola - regioni e tipo di comune,ok,hub,5,55,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_168,Spostamenti per andare a lavoro - Età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_169,Spostamenti per andare a lavoro - condizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_170,Spostamenti per andare a lavoro - regioni e tipo di comune,ok,hub,5,55,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_201,Abitudine al fumo - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_202,"Abitudine al fumo - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_203,Abitudine al fumo - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_204,Abitudine al fumo - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_205,Stato di salute- età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_206,"Stato di salute - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_207,Stato di salute- posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_208,Stato di salute - regioni e tipo di comune,ok,hub,4,54,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_209,Consumo di farmaci - età dettaglio,ok,hub,5,19,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_210,"Consumo di farmaci - età, titolo di studio",ok,hub,6,17,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_211,Consumo di farmaci - posizione nella professione,ok,hub,5,20,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_212,Consumo di farmaci - regioni e tipo di comune,ok,hub,4,40,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_213,Ricorso al pronto soccorso e alla guardia medica - età dettaglio,ok,hub,5,22,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_214,"Ricorso al pronto soccorso e alla guardia medica - età, titolo di studio",ok,hub,6,20,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_215,Ricorso al pronto soccorso e alla guardia medica - posizione nella professione,ok,hub,5,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_216,Ricorso al pronto soccorso e alla guardia medica - regioni e tipo di comune,ok,hub,4,43,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_217,Ricoveri ospedalieri - età dettaglio,ok,hub,5,25,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_218,"Ricoveri ospedalieri - età, titolo di studio",ok,hub,6,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_219,Ricoveri ospedalieri - posizione nella professione,ok,hub,5,26,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_220,Ricoveri ospedalieri - regioni e tipo di comune,ok,hub,4,46,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_221,Soddisfazione per i vari aspetti del ricovero - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_222,"Soddisfazione per i vari aspetti del ricovero - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_223,Soddisfazione per i vari aspetti del ricovero - posizione nella professione,ok,hub,5,32,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_224,Spettacoli - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_225,"Spettacoli - sesso, età, titolo di studio",ok,hub,6,25,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_226,Spettacoli - condizione occupazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_227,Spettacoli - regioni e tipo di comune,ok,hub,5,51,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_228,"Tv e radio - sesso, età, titolo di studio",ok,hub,6,21,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_229,Tv e radio - dettaglio età,ok,hub,5,25,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_230,Tv e radio - condizione occupazionale,ok,hub,5,24,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_231,Tv e radio - regioni e tipo di comune,ok,hub,4,44,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_232,"Quotidiani e libri - sesso, età, titolo di studio",ok,hub,6,23,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_233,Quotidiani e libri - dettaglio età,ok,hub,5,26,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_234,Quotidiani e libri - condizione occupazionale,ok,hub,5,26,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_235,Quotidiani e libri - regioni e tipo di comune,ok,hub,4,46,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_236,"Internet - sesso, età titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_237,Internet - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_238,Internet - condizione occupazionale,ok,hub,5,27,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_239,Internet - reg. e tipo di comune,ok,hub,4,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_240,"PC - sesso, età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_241,PC - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_242,PC - condizione occupazionale,ok,hub,5,27,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_243,PC - reg. e tipo di comune,ok,hub,4,47,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_256,Soddisfazione per i vari aspetti del ricovero - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE__YOUTH_1,"Giovani - Cultura sport, salute e stili di vita",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85,Aspetti della vita quotidiana - Persone,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_100,"Anagrafe, ASL - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_101,"Anagrafe, ASL - condizione professionale",ok,hub,6,41,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_102,"Anagrafe, ASL - posizione nella professione",ok,hub,6,37,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_103,Anagrafe - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_104,ASL - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_105,"Ufficio postale, banca - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_106,"Ufficio postale, banca - condizione professionale",ok,hub,6,60,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_107,"Ufficio postale, banca - posizione nella professione",ok,hub,6,56,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_108,Ufficio postale - regioni e tipo di comune,ok,hub,6,78,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_109,Banca - regioni e tipo di comune,ok,hub,6,53,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_201,Persone andate in vacanza - serie storica,ok,hub,5,26,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_202,Persone andate in vacanza - classe di età,ok,hub,5,26,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_203,Persone andate in vacanza - titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_204,Persone andate in vacanza - condizione nella professione,ok,hub,5,25,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_205,Persone andate in vacanza - numero di periodi,ok,hub,4,45,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_206,Persone non andate in vacanza - serie storica,ok,hub,5,29,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_207,Persone non andate in vacanza - classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_208,Persone non andate in vacanza - titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_209,Persone non andate in vacanza - condizione nella professione,ok,hub,5,28,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_210,Persone non andate in vacanza - motivi della mancata vacanza,ok,hub,5,49,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_211,Acqua e bevande gassate - età dettaglio,ok,hub,5,29,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_212,"Acqua e bevande gassate - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_213,Acqua e bevande gassate - posizione nella professione,ok,hub,5,30,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_214,Acqua e bevande gassate - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_215,Vino e birra - età dettaglio,ok,hub,5,29,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_216,"Vino e birra - età, titolo di studio",ok,hub,6,27,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_217,Vino e birra - posizione nella professione,ok,hub,5,30,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_218,Vino e birra - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_219,"Aperitivi, amari e liquori - età dettaglio",ok,hub,5,27,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_220,"Aperitivi, amari e liquori - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_221,"Aperitivi, amari e liquori - posizione nella professione",ok,hub,5,28,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_222,"Aperitivi, amari e liquori - regioni e tipo di comune",ok,hub,4,48,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_223,Alcolici fuori pasto - età dettaglio,ok,hub,5,22,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_224,"Alcolici fuori pasto - età, titolo di studio",ok,hub,6,20,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_225,Alcolici fuori pasto - posizione nella professione,ok,hub,5,23,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_226,Alcolici fuori pasto - regioni e tipo di comune,ok,hub,4,43,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_227,Indice di massa corporea e controllo del peso - sesso,ok,hub,4,32,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_228,Indice di massa corporea - età dettaglio,ok,hub,5,20,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_229,"Indice di massa corporea - età, titolo di studio",ok,hub,6,21,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_230,Indice di massa corporea - posizione nella professione,ok,hub,5,24,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_231,Indice di massa corporea - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_232,Incidenti in ambiente domestico - età dettaglio,ok,hub,5,22,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_233,"Incidenti in ambiente domestico - età, titolo di studio",ok,hub,6,20,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_234,Incidenti in ambiente domestico - posizione nella professione,ok,hub,5,23,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_235,Incidenti in ambiente domestico - regioni e tipo di comune,ok,hub,5,44,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_236,Abitudini nei pasti - età dettaglio,ok,hub,5,30,0,"",2026-07-29

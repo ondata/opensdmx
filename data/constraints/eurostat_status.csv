@@ -4555,3 +4555,316 @@ ISOC_CI_RAS,Remote access by size class of enterprise,ok,sdmx,7,79,0,"",2026-07-
 ISOC_CI_STV_I,Individuals - internet activities using smart TV (2016),ok,sdmx,6,121,0,"",2026-07-28
 ISOC_EB_AI,Artificial intelligence by size class of enterprise,ok,sdmx,7,119,0,"",2026-07-28
 ISOC_EB_AIN2,Artificial intelligence by NACE Rev. 2 activity,ok,sdmx,7,161,0,"",2026-07-28
+ISOC_EB_BD,Big data analysis by size class of enterprise,ok,sdmx,7,85,0,"",2026-07-29
+ISOC_EB_BDN2,Big data analysis by NACE Rev. 2 activity,ok,sdmx,7,110,0,"",2026-07-29
+ISOC_EB_DAN2,Data analytics by NACE Rev. 2 activity,ok,sdmx,7,127,0,"",2026-07-29
+ISOC_EB_DAS,Data analytics by size class of enterprise,ok,sdmx,7,85,0,"",2026-07-29
+ISOC_EB_ICS,"Integration with customers/suppliers, supply chain management by size class of enterprise",ok,sdmx,7,80,0,"",2026-07-29
+ISOC_EB_ICSN2,"Integration with customers/suppliers, supply chain management by NACE Rev. 2 activity",ok,sdmx,7,121,0,"",2026-07-29
+ISOC_EB_IIP,Integration of internal processes by size class of enterprise,ok,sdmx,7,88,0,"",2026-07-29
+ISOC_EB_IIPN2,Integration of internal processes by NACE Rev. 2 activity,ok,sdmx,7,129,0,"",2026-07-29
+ISOC_EB_IOT,Internet of Things by size class of enterprise,ok,sdmx,7,73,0,"",2026-07-29
+ISOC_EB_IOTN2,Internet of Things by NACE Rev. 2 activity,ok,sdmx,7,116,0,"",2026-07-29
+ISOC_EB_P3D,3D printing and robotics by size class of enterprise,ok,sdmx,7,91,0,"",2026-07-29
+ISOC_EB_P3DN2,3D printing and robotics by NACE Rev. 2 activity,ok,sdmx,7,134,0,"",2026-07-29
+ISOC_ECO_DD,Disposal of ICT devices no longer in use,ok,sdmx,6,178,0,"",2026-07-29
+ISOC_ECO_IC,Important characteristics when buying ICT devices,ok,sdmx,6,161,0,"",2026-07-29
+ISOC_EC_CE_I,Internet purchases - collaborative economy (2020 onwards),ok,sdmx,6,180,0,"",2026-07-29
+ISOC_EC_EBUYN2,E-commerce purchases by NACE Rev. 2 activity,ok,sdmx,7,97,0,"",2026-07-29
+ISOC_EC_EBUYS,E-commerce purchases by size class of enterprise,ok,sdmx,7,71,0,"",2026-07-29
+ISOC_EC_ESELN2,E-commerce sales of enterprises by NACE Rev. 2 activity,ok,sdmx,7,144,0,"",2026-07-29
+ISOC_EC_ESELS,E-commerce sales of enterprises by size class of enterprise,ok,sdmx,7,103,0,"",2026-07-29
+ISOC_EC_EVALN2,Value of e-commerce sales by NACE Rev. 2 activity,ok,sdmx,7,127,0,"",2026-07-29
+ISOC_EC_EVALN2M,Monetary value of e-commerce sales by NACE Rev. 2 activity,ok,sdmx,7,108,0,"",2026-07-29
+ISOC_EC_EVALS,Value of e-commerce sales by size class of enterprise,ok,sdmx,7,86,0,"",2026-07-29
+ISOC_EC_EVALSM,Monetary value of e-commerce sales by size class of enterprise,ok,sdmx,7,65,0,"",2026-07-29
+ISOC_EC_IB20,Internet purchases by individuals (2020 onwards),ok,sdmx,6,211,0,"",2026-07-29
+ISOC_EC_IBGS,Internet purchases - goods or services (2020 onwards),ok,sdmx,6,220,0,"",2026-07-29
+ISOC_EC_IBGS$DV_901,Internet purchases - goods or services (2020 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_IBGS$DV_901'
+For more information check: https://developer.m",2026-07-29
+ISOC_EC_IBM,Internet purchases - money spent (2020-2021),ok,sdmx,6,140,0,"",2026-07-29
+ISOC_EC_IBOS,Internet purchases - origin of sellers (2020-2023),ok,sdmx,6,162,0,"",2026-07-29
+ISOC_EC_IBUY,Internet purchases by individuals (2002-2019),ok,sdmx,6,249,0,"",2026-07-29
+ISOC_EC_IBUY$DV_308,Internet purchases by individuals (2002-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_IBUY$DV_308'
+For more information check: https://developer.m",2026-07-29
+ISOC_EC_IBUY$DV_314,Internet purchases by individuals (2002-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_IBUY$DV_314'
+For more information check: https://developer.m",2026-07-29
+ISOC_EC_IFI,Financial activities over the internet (2016-2019),ok,sdmx,6,139,0,"",2026-07-29
+ISOC_EC_IFI20,Financial activities over the internet (2020 onwards),ok,sdmx,6,174,0,"",2026-07-29
+ISOC_EC_IFI20$DV_2903,Financial activities over the internet (2020 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_IFI20$DV_2903'
+For more information check: https://developer",2026-07-29
+ISOC_EC_INB,Perceived barriers to buying/ordering over the internet (2002-2019),ok,sdmx,6,165,0,"",2026-07-29
+ISOC_EC_INB$DV_540,Perceived barriers to buying/ordering over the internet (2002-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_INB$DV_540'
+For more information check: https://developer.mo",2026-07-29
+ISOC_EC_INB21,Internet purchases - perceived barriers (2021),ok,sdmx,6,132,0,"",2026-07-29
+ISOC_EC_IPRB,Problems encountered by individuals when buying/ordering over the internet (2002-2019),ok,sdmx,6,171,0,"",2026-07-29
+ISOC_EC_IPRB$DV_541,Problems encountered by individuals when buying/ordering over the internet (2002-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_EC_IPRB$DV_541'
+For more information check: https://developer.m",2026-07-29
+ISOC_EC_IPRB21,Internet purchases - problems encountered (2021 onwards),ok,sdmx,6,153,0,"",2026-07-29
+ISOC_EC_WSOBS,Obstacles for web sales by size class of enterprise,ok,sdmx,7,65,0,"",2026-07-29
+ISOC_EC_WSOBSN2,Obstacles for web sales by NACE Rev. 2 activity,ok,sdmx,7,108,0,"",2026-07-29
+ISOC_EID_IEID,Use of electronic identification (eID),ok,sdmx,6,163,0,"",2026-07-29
+ISOC_ENV_ICT_AE,Air emissions from the ICT sector by NACE Rev. 2 activity,ok,sdmx,6,76,0,"",2026-07-29
+ISOC_ENV_ICT_AEC,Contribution of the ICT sector to the air emissions in the economy by NACE Rev. 2 activity,ok,sdmx,6,73,0,"",2026-07-29
+ISOC_ENV_ICT_AED,Distribution of air emissions from the ICT sector by NACE Rev. 2 activity,ok,sdmx,6,72,0,"",2026-07-29
+ISOC_ENV_ICT_NRG,Data centres' electricity consumption,ok,sdmx,6,51,0,"",2026-07-29
+ISOC_E_CVD,Covid-19 Impact on ICT usage by size class of enterprise,ok,sdmx,7,59,0,"",2026-07-29
+ISOC_E_CVDN2,Covid-19 Impact on ICT usage by NACE Rev. 2 activity,ok,sdmx,7,101,0,"",2026-07-29
+ISOC_E_DII,Digital Intensity by size class of enterprise,ok,sdmx,7,82,0,"",2026-07-29
+ISOC_E_DIIN2,Digital Intensity by NACE Rev. 2 activity,ok,sdmx,7,122,0,"",2026-07-29
+ISOC_E_ENVN2,ICT and environment by NACE Rev. 2 activity,ok,sdmx,7,103,0,"",2026-07-29
+ISOC_E_ENVS,ICT and environment by size class of enterprise,ok,sdmx,7,61,0,"",2026-07-29
+ISOC_IC_BIPER2,R&D personnel in ICT sector as % of total R&D personnel by NACE Rev. 2 activity,ok,sdmx,5,74,0,"",2026-07-29
+ISOC_IIOT_BX,Internet of Things - barriers to use,ok,sdmx,6,187,0,"",2026-07-29
+ISOC_IIOT_USE,Internet of Things - use,ok,sdmx,6,184,0,"",2026-07-29
+ISOC_IIU_IUPRB,Individuals - difficulties encountered when using the internet,ok,sdmx,6,140,0,"",2026-07-29
+ISOC_IIU_IUXR,Individuals - reasons for not using the internet,ok,sdmx,6,139,0,"",2026-07-29
+ISOC_IT_ICT_GD,International trade in ICT goods,ok,sdmx,7,303,0,"",2026-07-29
+ISOC_IT_ICT_GS,Share of ICT goods in total international trade in goods,ok,sdmx,7,304,0,"",2026-07-29
+ISOC_IT_ICT_SS,Share of ICT services in total international trade in services,ok,sdmx,7,177,0,"",2026-07-29
+ISOC_IW_AP,Use of ICT at work and activities performed (2018),ok,sdmx,6,156,0,"",2026-07-29
+ISOC_IW_HEM,"Work from home, from an external site or on the move (2018)",ok,sdmx,6,160,0,"",2026-07-29
+ISOC_IW_IMP,Impact of ICT on tasks and skills (2018),ok,sdmx,6,171,0,"",2026-07-29
+ISOC_PBO,Mobile and fixed broadband internet prices by type of offer (least expensive),ok,sdmx,5,96,0,"",2026-07-29
+ISOC_PIBI_RNI,Households - reasons for not having internet access at home (2005-2019),ok,sdmx,6,91,0,"",2026-07-29
+ISOC_PIBI_RNI$DV_543,Households - reasons for not having internet access at home (2005-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_PIBI_RNI$DV_543'
+For more information check: https://developer.",2026-07-29
+ISOC_R_BLT12_I,Individuals who ordered goods or services over the internet for private use,ok,sdmx,5,424,0,"",2026-07-29
+ISOC_R_BROAD_H,Households with broadband access,ok,sdmx,4,380,0,"",2026-07-29
+ISOC_R_CICCE_USEN2,Cloud computing services by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,200,0,"",2026-07-29
+ISOC_R_CISCE_ICN2,Security incidents and consequences by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,165,0,"",2026-07-29
+ISOC_R_CISCE_RAN2,"Security policy, measures, risks and staff awareness by NACE Rev. 2 activity and NUTS 2 region",ok,sdmx,7,159,0,"",2026-07-29
+ISOC_R_CI_CM_PN2,"Use of computers and the internet by employees, by NACE Rev. 2 activity and NUTS 2 region",ok,sdmx,7,199,0,"",2026-07-29
+ISOC_R_CI_IN_EN2,Internet access by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,202,0,"",2026-07-29
+ISOC_R_CI_IT_EN2,Type of connections to the internet by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,208,0,"",2026-07-29
+ISOC_R_CUX_I,Individuals who have never used a computer (2006-2017),ok,sdmx,4,363,0,"",2026-07-29
+ISOC_R_DSKL_I,Individuals' level of digital skills by NUTS 1 region (from 2025 onwards),ok,sdmx,5,152,0,"",2026-07-29
+ISOC_R_EB_AIN2,Artificial intelligence by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,212,0,"",2026-07-29
+ISOC_R_EB_DAN2,Data analytics by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,202,0,"",2026-07-29
+ISOC_R_EB_ICSN2,"Integration with customers/suppliers, supply chain management by NACE Rev. 2 activity and NUTS 2 region",ok,sdmx,7,156,0,"",2026-07-29
+ISOC_R_EB_IIPN2,Integration of internal processes by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,202,0,"",2026-07-29
+ISOC_R_EC_ESELN2,E-commerce sales of enterprises by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,200,0,"",2026-07-29
+ISOC_R_EC_EVALN2,Value of e-commerce sales by NACE Rev. 2 activity and NUTS 2 region,ok,sdmx,7,197,0,"",2026-07-29
+ISOC_R_GOV_I,Individuals who used the internet for interaction with public authorities,ok,sdmx,5,413,0,"",2026-07-29
+ISOC_R_IACC_H,Households with access to the internet at home,ok,sdmx,4,413,0,"",2026-07-29
+ISOC_R_IUMD_I,Individuals who accessed the internet away from home or work (2012-2019),ok,sdmx,4,368,0,"",2026-07-29
+ISOC_R_IUSE_I,"Individuals who used the internet, frequency of use and activities",ok,sdmx,5,423,0,"",2026-07-29
+ISOC_R_SKE_ITSPEN2,Enterprises that employ ICT specialists by NACE Rev.2 activity and NUTS 2 region,ok,sdmx,7,154,0,"",2026-07-29
+ISOC_SKE_FCT,Enterprises - ICT functions performed by size class of enterprise,ok,sdmx,7,85,0,"",2026-07-29
+ISOC_SKE_FCTN2,Enterprises - ICT functions performed by NACE Rev.2 activity,ok,sdmx,7,125,0,"",2026-07-29
+ISOC_SKE_ITRCRN2,Enterprises that recruited or tried to recruit ICT specialists by NACE Rev.2 activity,ok,sdmx,7,116,0,"",2026-07-29
+ISOC_SKE_ITRCRS,Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise,ok,sdmx,7,76,0,"",2026-07-29
+ISOC_SKE_ITSPE,Enterprises that employ ICT specialists by size class of enterprise,ok,sdmx,7,67,0,"",2026-07-29
+ISOC_SKE_ITSPEN2,Enterprises that employ ICT specialists by NACE Rev.2 activity,ok,sdmx,7,107,0,"",2026-07-29
+ISOC_SKE_ITTN2,Enterprises that provided training to develop/upgrade ICT skills of their personnel by NACE Rev.2 activity,ok,sdmx,7,111,0,"",2026-07-29
+ISOC_SKE_ITTS,Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise,ok,sdmx,7,71,0,"",2026-07-29
+ISOC_SKI_ITAGE,Employed persons with information and communications technology (ICT) education by age,ok,sdmx,5,67,0,"",2026-07-29
+ISOC_SKI_ITEDU,Employed persons with information and communications technology (ICT) education by educational attainment level,ok,sdmx,5,67,0,"",2026-07-29
+ISOC_SKI_ITEMP,Persons with information and communications technology (ICT) education by labour status,ok,sdmx,5,67,0,"",2026-07-29
+ISOC_SKI_ITSEX,Employed persons with information and communications technology (ICT) education by sex,ok,sdmx,5,67,0,"",2026-07-29
+ISOC_SKS_ITSPA,Employed information and communications technology (ICT) specialists by age,ok,sdmx,5,64,0,"",2026-07-29
+ISOC_SKS_ITSPA$DV_1847,Employed information and communications technology (ICT) specialists by age,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SKS_ITSPA$DV_1847'
+For more information check: https://develope",2026-07-29
+ISOC_SKS_ITSPE,Employed information and communications technology (ICT) specialists by educational attainment level,ok,sdmx,5,65,0,"",2026-07-29
+ISOC_SKS_ITSPN2,Employed information and communications technology (ICT) specialists by NACE Rev. 2 activity (2008-2026),ok,sdmx,5,99,0,"",2026-07-29
+ISOC_SKS_ITSPS,Employed information and communications technology (ICT) specialists by sex,ok,sdmx,5,64,0,"",2026-07-29
+ISOC_SKS_ITSPS$DV_1846,Employed information and communications technology (ICT) specialists by sex,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SKS_ITSPS$DV_1846'
+For more information check: https://develope",2026-07-29
+ISOC_SKS_ITSPT,Employed information and communications technology (ICT) specialists,ok,sdmx,4,62,0,"",2026-07-29
+ISOC_SK_CSKL_I,Individuals' level of computer skills (2003-2019),ok,sdmx,6,214,0,"",2026-07-29
+ISOC_SK_CSKL_I$DV_266,Individuals' level of computer skills (2003-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SK_CSKL_I$DV_266'
+For more information check: https://developer",2026-07-29
+ISOC_SK_CSKL_I21,Individuals' level of computer skills (2021 onwards),ok,sdmx,6,163,0,"",2026-07-29
+ISOC_SK_DSKL_I,Individuals' level of digital skills (2015-2019),ok,sdmx,6,183,0,"",2026-07-29
+ISOC_SK_DSKL_I$DV_317,Individuals' level of digital skills (2015-2019),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SK_DSKL_I$DV_317'
+For more information check: https://developer",2026-07-29
+ISOC_SK_DSKL_I21,Individuals' level of digital skills (from 2021 onwards),ok,sdmx,6,208,0,"",2026-07-29
+ISOC_SK_DSKL_I21$DV_2882,Individuals' level of digital skills (from 2021 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SK_DSKL_I21$DV_2882'
+For more information check: https://develo",2026-07-29
+ISOC_SK_EDIC_I21,"Evaluating data, information and digital content (2021 onwards)",ok,sdmx,6,163,0,"",2026-07-29
+ISOC_SK_HOW_I,Way of obtaining ICT skills (2005-2018),ok,sdmx,6,193,0,"",2026-07-29
+ISOC_SK_HOW_I$DV_264,Way of obtaining ICT skills (2005-2018),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ISOC_SK_HOW_I$DV_264'
+For more information check: https://developer.",2026-07-29
+ISOC_SK_OJA1,"Labour market demand for ICT specialists in online job advertisements, by NUTS 2 region - experimental statistics",ok,sdmx,4,359,0,"",2026-07-29
+ISOC_SK_OJA2,Distribution by occupation (ISCO-08) of the labour market demand for ICT specialists in online job advertisements - experimental statistics,ok,sdmx,5,68,0,"",2026-07-29
+ISOC_SK_OJA3,"Percentage change in the number of online job advertisements for ICT specialists, by NUTS 2 region - experimental statistics",ok,sdmx,4,353,0,"",2026-07-29
+ISOC_TF,Fixed broadband internet traffic,ok,sdmx,4,47,0,"",2026-07-29
+ISOC_TMI,Mobile broadband internet traffic (within the country),ok,sdmx,4,55,0,"",2026-07-29
+ISOC_TMO,Mobile broadband internet traffic (outside the country),ok,sdmx,4,41,0,"",2026-07-29
+ISS_11ACTRL,Enterprises by control of foreign affiliates and economic activity - experimental statistics,ok,sdmx,7,41,0,"",2026-07-29
+ISS_11ADEVEMP,Development of employment in foreign affiliates by business function and economic activity (2009-2011) - experimental statistics,ok,sdmx,8,37,0,"",2026-07-29
+ISS_11AESTEMP,"Control of foreign affiliates and estimated employment by business function, country location of affiliates and economic activity - experimental statistics",ok,sdmx,8,47,0,"",2026-07-29
+ISS_11DDEVEMP,"Development of employment of the enterprise by business function, sourcing status and economic activity (2009-2011) - experimental statistics",ok,sdmx,9,42,0,"",2026-07-29
+ISS_11DESTEMP,Estimated employment by business function and economic activity - experimental statistics,ok,sdmx,7,35,0,"",2026-07-29
+ISS_11GENTGI,Enterprises by enterprise group identification and economic activity - experimental statistics,ok,sdmx,7,46,0,"",2026-07-29
+ISS_11GENTGISS,"Enterprises by enterprise group identification, sourcing status and economic activity - experimental statistics",ok,sdmx,8,33,0,"",2026-07-29
+ISS_11SBBAR,Barriers considered for international sourcing by sourcing status and economic activity (2009-2011) - experimental statistics,ok,sdmx,9,45,0,"",2026-07-29
+ISS_11SBGRID,"Enterprises by enterprise group identification, motivation for international sourcing and economic activity (2009-2011) - experimental statistics",ok,sdmx,9,42,0,"",2026-07-29
+ISS_11SBMOT,Motivation factors for international sourcing by economic activity (2009-2011) - experimental statistics,ok,sdmx,8,39,0,"",2026-07-29
+ISS_11SBPROX,"Importance of physical proximity of support business functions to the core business function by business function, sourcing status and economic activity - experimental statistics",ok,sdmx,9,39,0,"",2026-07-29
+ISS_11SFDEST,Country destination of international sourcing by business function and economic activity (2009-2011) - experimental statistics,ok,sdmx,8,46,0,"",2026-07-29
+ISS_11SFJOB,Jobs lost by business function and economic activity (2009-2011) - experimental statistics,ok,sdmx,7,34,0,"",2026-07-29
+ISS_11SFPART,Kind of business partner by business function and economic activity (2009-2011) - experimental statistics,ok,sdmx,8,37,0,"",2026-07-29
+ISS_11SFSOUR,Sourcing status by business function and economic activity (2009-2011) - experimental statistics,ok,sdmx,8,39,0,"",2026-07-29
+ISS_11SRENTBCK,Enterprises by backsourcing status (2009-2011) - experimental statistics,ok,sdmx,7,28,0,"",2026-07-29
+ISS_11SRENTLOC,Enterprises by relocation status (2009-2011) - experimental statistics,ok,sdmx,7,28,0,"",2026-07-29
+ISS_11SRMOT,Motivation factors for backsourcing (2009-2011) - experimental statistics,ok,sdmx,8,36,0,"",2026-07-29
+ISS_18BFBCK,Enterprises by movement of business functions from abroad and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,28,0,"",2026-07-29
+ISS_18BFMMAG,Enterprises by type of movement of business functions from abroad and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,30,0,"",2026-07-29
+ISS_18BFMOT,Enterprises by motivation factors for moving business functions from abroad and by NACE Rev.2 activity - experimental statistics,ok,sdmx,8,39,0,"",2026-07-29
+ISS_18BFMOVE,"Enterprises by status of movement of business functions from abroad, business function and NACE Rev.2 activity - experimental statistics",ok,sdmx,8,29,0,"",2026-07-29
+ISS_18EMBF,Estimated employment by business function and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,35,0,"",2026-07-29
+ISS_18GENEG,Enterprises by enterprise group identification and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,45,0,"",2026-07-29
+ISS_18GENENS,"Enterprises by enterprise group identification, sourcing status and NACE Rev.2 activity - experimental statistics",ok,sdmx,8,32,0,"",2026-07-29
+ISS_18MEG,"Enterprises by enterprise group identification, motivation for international sourcing and NACE Rev.2 activity - experimental statistics",ok,sdmx,9,41,0,"",2026-07-29
+ISS_18MSO,Enterprises by motivation factors for international sourcing and by NACE Rev.2 activity - experimental statistics,ok,sdmx,8,38,0,"",2026-07-29
+ISS_18SOBAR,"Enterprises by barriers considered for international sourcing, sourcing status and NACE Rev.2 activity - experimental statistics",ok,sdmx,9,43,0,"",2026-07-29
+ISS_18SOBFEC,Enterprises by sourcing status and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,41,0,"",2026-07-29
+ISS_18SODEST,"Enterprises by country destination of international sourcing, business function and NACE Rev.2 activity - experimental statistics",ok,sdmx,8,45,0,"",2026-07-29
+ISS_18SOJOBL,Jobs relocated abroad by business functions and by NACE Rev.2 activity - experimental statistics,ok,sdmx,7,35,0,"",2026-07-29
+ISS_18SOJOBN,Jobs created by NACE Rev.2 activity - experimental statistics,ok,sdmx,6,25,0,"",2026-07-29
+ISS_18SOPART,"Enterprises by business partner, business function and NACE Rev.2 activity - experimental statistics",ok,sdmx,8,40,0,"",2026-07-29
+ISS_21COVB,"Enterprises by type of trade barrier due to COVID-19, level of impact of COVID-19 and NACE Rev.2 activity aggregate - experimental statistics",ok,sdmx,8,37,0,"",2026-07-29
+ISS_21COVIS,Enterprises by type of COVID-19 impact on international sourcing - experimental statistics,ok,sdmx,7,34,0,"",2026-07-29
+ISS_21COVT,Enterprises by impact of COVID-19 on turnover and NACE rev.2 activity aggregate - experimental statistics,ok,sdmx,8,25,0,"",2026-07-29
+ISS_21EMBF,"Employees and self-employed persons by business function, NACE Rev.2 activity aggregate and size class - experimental statistics",ok,sdmx,8,39,0,"",2026-07-29
+ISS_21GVCBA,Enterprises by type of buyer power asymmetry in the global value chain and NACE rev.2 activity aggregate - experimental statistics,ok,sdmx,7,18,0,"",2026-07-29
+ISS_21GVCMS,Enterprises by means of services supply and NACE rev.2 activity aggregate - experimental statistics,ok,sdmx,7,20,0,"",2026-07-29
+ISS_21GVCPG,"Enterprises purchasing goods from abroad by type of goods, business partner and trade region - experimental statistics",ok,sdmx,9,42,0,"",2026-07-29
+ISS_21GVCPS,"Enterprises purchasing services from abroad by type of services, business partner and trade region - experimental statistics",ok,sdmx,9,43,0,"",2026-07-29
+ISS_21GVCSA,Enterprises by type of supplier power asymmetry in the global value chain and NACE rev.2 activity aggregate - experimental statistics,ok,sdmx,7,18,0,"",2026-07-29
+ISS_21GVCSG,"Enterprises supplying goods abroad by type of goods, business partner and trade region - experimental statistics",ok,sdmx,9,42,0,"",2026-07-29
+ISS_21GVCSS,"Enterprises supplying services abroad by type of services, business partner and trade region - experimental statistics",ok,sdmx,9,43,0,"",2026-07-29
+ISS_21MSO,"Enterprises by motivation factors for international sourcing, level of importance of motivation factors and NACE Rev.2 activity aggregate - experimental statistics",ok,sdmx,8,39,0,"",2026-07-29
+ISS_21SOBAR,"Enterprises by barriers considered for international sourcing, level of importance of barriers and NACE Rev.2 activity aggregate - experimental statistics",ok,sdmx,8,41,0,"",2026-07-29
+ISS_21SOBFEC,Enterprises by international sourcing status and NACE Rev.2 activity - experimental statistics,ok,sdmx,7,45,0,"",2026-07-29
+ISS_21SODEST,"Enterprises by NACE Rev.2 activity aggregate, destination of international sourcing and type of business functions - experimental statistics",ok,sdmx,8,49,0,"",2026-07-29
+ISS_21SOJOBL,"Jobs lost or relocated abroad as a result of international sourcing by NACE Rev.2 activity aggregate, business function and job skill requirement - experimental statistics",ok,sdmx,8,39,0,"",2026-07-29
+ISS_21SOJOBN,"Jobs created as a result of international sourcing by NACE Rev.2 activity aggregate, business function and job skill requirement - experimental statistics",ok,sdmx,8,39,0,"",2026-07-29
+ISS_21SOPART,"Enterprises sourcing business functions abroad by NACE Rev.2 activity aggregate, type of business function and business partner - experimental statistics",ok,sdmx,9,43,0,"",2026-07-29
+ISS_21SOPREF,Enterprises by international sourcing status prior to the reference period and NACE Rev.2 activity aggregate - experimental statistics,ok,sdmx,7,16,0,"",2026-07-29
+ISS_21SOPTC,"Enterprises sourcing complete business functions abroad by NACE Rev.2 activity aggregate, type of business function and business partner - experimental statistics",ok,sdmx,9,43,0,"",2026-07-29
+ISS_21SOPTCD,"Enterprises sourcing complete business functions domestically by NACE Rev.2 activity aggregate, type of business function and business partner - experimental statistics",ok,sdmx,9,31,0,"",2026-07-29
+ISS_21SOPTD,"Enterprises sourcing business functions domestically by NACE Rev.2 activity aggregate, type of business function and business partner - experimental statistics",ok,sdmx,9,31,0,"",2026-07-29
+ISS_BARR,Importance of barriers met for engaging in international sourcing of activities by sourcing status and economic activity (figures and %) - collection round 2007 - experimental statistics,ok,sdmx,8,54,0,"",2026-07-29
+ISS_CTRY,Country destination for international sourcing by enterprises currently planning to engage in international sourcing by business functions and economic activity (figures and %) - collection round 2007 - experimental statistics,ok,sdmx,8,53,0,"",2026-07-29
+ISS_DEST,Destination country of international sourcing by business functions and economic activity - collection round 2007 - experimental statistics,ok,sdmx,7,53,0,"",2026-07-29
+ISS_ECON,Enterprises by sourcing and economic activity - collection round 2007 - experimental statistics,ok,sdmx,6,36,0,"",2026-07-29
+ISS_EMPL,Level of expected impact on employment of international sourcing by enterprises currently engaged or planning to engage in international sourcing by sourcing status and economic activity (figures and %) - collection round 2007 - experimental statistics,ok,sdmx,8,43,0,"",2026-07-29
+ISS_FAC,Importance of motivation factors for international sourcing by economic activity - collection round 2007 - experimental statistics,ok,sdmx,7,46,0,"",2026-07-29
+ISS_FUNC,Domestic or international sourcing of different business functions by economic activity - collection round 2007 - experimental statistics,ok,sdmx,7,47,0,"",2026-07-29
+ISS_IMP,Impact level of international sourcing activities by economic activity - collection round 2007 - experimental statistics,ok,sdmx,7,44,0,"",2026-07-29
+ISS_JOB,Job loss and creation as a result of international sourcing activity by economic activity - collection round 2007 - experimental statistics,ok,sdmx,6,41,0,"",2026-07-29
+ISS_PART,Kind of business partners engaged in international sourcing by business function and economic activity - collection round 2007 - experimental statistics,ok,sdmx,7,48,0,"",2026-07-29
+ISS_PLAN,Importance of motivation factors for international sourcing by enterprises currently planning to engage in international sourcing by economic activity (figures and %) - collection round 2007 - experimental statistics,ok,sdmx,8,47,0,"",2026-07-29
+ISS_STAT,Enterprises by sourcing status and enterprise group identification - collection round 2007 - experimental statistics,ok,sdmx,6,28,0,"",2026-07-29
+IWW_AC_NBAC,Accidents in inland waterway transport,ok,sdmx,5,44,0,"",2026-07-29
+IWW_EC_EMPLOY,Employment in inland waterways transport enterprises by number of vessels in enterprises (1990 - 2012),ok,sdmx,5,49,0,"",2026-07-29
+IWW_EC_EMPSEX,Employment in inland waterways transport enterprises by sex (1990 - 2012),ok,sdmx,5,44,0,"",2026-07-29
+IWW_EC_ENT_C,Carrying capacity of the inland waterway transport enterprises vessels by number of vessels in enterprises (1990 - 2012),ok,sdmx,5,50,0,"",2026-07-29
+IWW_EC_ENT_N,Inland waterway transport enterprises by number of vessels (1990 - 2012),ok,sdmx,5,52,0,"",2026-07-29
+IWW_EC_INVEST,Expenditure on inland waterway transport infrastructure and freight vessels,ok,sdmx,5,67,0,"",2026-07-29
+IWW_EQ_AGE,"Self-propelled vessels, tugs and pushers and their power by year of construction",ok,sdmx,6,74,0,"",2026-07-29
+IWW_EQ_AGE_LOA,Load capacity of self-propelled vessels by year of construction,ok,sdmx,5,66,0,"",2026-07-29
+IWW_EQ_LOADCAP,"Self-propelled vessels, dumb and pushed vessels by load capacity",ok,sdmx,6,77,0,"",2026-07-29
+IWW_EQ_POWER_LO,Power of self-propelled vessels by load capacity,ok,sdmx,5,66,0,"",2026-07-29
+IWW_GO_ACSIZE,Container transport by size of container,ok,sdmx,7,58,0,"",2026-07-29
+IWW_GO_ACTYGF07,Container transport by type of goods and country/region of loading and unloading (2007),ok,sdmx,7,81,0,"",2026-07-29
+IWW_GO_ACTYGO,Container transport by type of goods and coverage (from 2007 onwards),ok,sdmx,6,138,0,"",2026-07-29
+IWW_GO_ACTYGO07,Container transport by type of goods and coverage (2007),ok,sdmx,6,40,0,"",2026-07-29
+IWW_GO_ACTYGOFL,Container transport by type of goods and country/region of loading and unloading (from 2007 onwards),ok,sdmx,7,574,0,"",2026-07-29
+IWW_GO_ADAGO,Inland waterway transport of dangerous goods,ok,sdmx,6,51,0,"",2026-07-29
+IWW_GO_ANAVE,Inland waterway transport by nationality of vessel and coverage,ok,sdmx,6,159,0,"",2026-07-29
+IWW_GO_ANAVEF06,Inland waterway transport by nationality of vessel and country/region of loading and unloading (1982-2006),ok,sdmx,7,363,0,"",2026-07-29
+IWW_GO_ANAVEFL,Inland waterway transport by nationality of vessel and country/region of loading and unloading (2007 onwards),ok,sdmx,7,858,0,"",2026-07-29
+IWW_GO_APORT,Freight loaded and unloaded in ports for inland waterway transport,ok,sdmx,5,777,0,"",2026-07-29
+IWW_GO_ATYCA,"Inland waterway transport by type of cargo, type of goods and coverage",ok,sdmx,7,139,0,"",2026-07-29
+IWW_GO_ATYCAFL,Inland waterway transport by type of cargo and country/region of loading and unloading,ok,sdmx,7,658,0,"",2026-07-29
+IWW_GO_ATYGO,Transport by type of good (from 2007 onwards with NST2007),ok,sdmx,7,155,0,"",2026-07-29
+IWW_GO_ATYGO07,Transport by type of good (1982-2007),ok,sdmx,7,86,0,"",2026-07-29
+IWW_GO_ATYGOF07,Inland waterway transport by type of goods and country/region of loading and unloading (1982-2007),ok,sdmx,7,435,0,"",2026-07-29
+IWW_GO_ATYGOFL,Transport by type of good (country/regional flows from 2007 onwards),ok,sdmx,7,873,0,"",2026-07-29
+IWW_GO_ATYVE,Transport by type of vessel,ok,sdmx,6,80,0,"",2026-07-29
+IWW_GO_ATYVEFL,Transport by type of vessel (country/regional flows),ok,sdmx,7,783,0,"",2026-07-29
+IWW_GO_QCNAVE,"Container transport by nationality of vessel, loading status and coverage - quarterly data",ok,sdmx,7,150,0,"",2026-07-29
+IWW_GO_QNAVE,Inland waterway transport by nationality of vessel and coverage - quarterly data,ok,sdmx,6,294,0,"",2026-07-29
+IWW_IF_HORDIM,"Navigable inland waterways, by horizontal dimensions of vessels and pushed convoys",ok,sdmx,5,75,0,"",2026-07-29
+IWW_IF_INFRASTR,Length of navigable inland waterways by waterway type,ok,sdmx,5,73,0,"",2026-07-29
+IWW_TF_VETF,Vessel traffic,ok,sdmx,6,35,0,"",2026-07-29
+JVS_A_ISCO3_R1,Job vacancy statistics by occupation and NUTS 1 region (OJA breakdowns) - annual data – experimental statistics,ok,sdmx,6,241,0,"",2026-07-29
+JVS_A_NACE1,"Job vacancy statistics by occupation, NUTS 2 region and NACE Rev. 1.1 activity - annual data (2000-2008)",ok,sdmx,7,249,0,"",2026-07-29
+JVS_A_NACE2,"Job vacancy statistics by occupation, NUTS 2 region and NACE Rev. 2 activity - annual data (2008-2015)",ok,sdmx,7,199,0,"",2026-07-29
+JVS_A_R21,Job vacancy rate by NACE Rev. 2.1 activity - annual data,ok,sdmx,6,89,0,"",2026-07-29
+JVS_A_RATE_R2,Job vacancy rate by NACE Rev. 2 activity - annual data (2008-2025),ok,sdmx,6,91,0,"",2026-07-29
+JVS_Q_ISCO_R2,"Job vacancy statistics by NACE Rev. 2 activity, occupation and NUTS 2 region - quarterly data (2001-2025)",ok,sdmx,8,257,0,"",2026-07-29
+JVS_Q_ISCO_R21,"Job vacancy statistics by NACE Rev. 2.1 activity, occupation and NUTS 2 region - quarterly data",ok,sdmx,8,244,0,"",2026-07-29
+JVS_Q_NACE1,Job vacancy statistics by NACE Rev. 1.1 activity - quarterly data (2001Q1-2009Q4),ok,sdmx,7,94,0,"",2026-07-29
+JVS_Q_NACE2,Job vacancy statistics by NACE Rev. 2 activity - quarterly data (2001-2025),ok,sdmx,7,175,0,"",2026-07-29
+JVS_Q_R21,Job vacancy statistics by NACE Rev. 2.1 activity - quarterly data (from 2001 onwards),ok,sdmx,7,178,0,"",2026-07-29
+LAN_LCV_ART,Land covered by artificial surfaces by NUTS 2 region,ok,sdmx,5,476,0,"",2026-07-29
+LAN_LCV_ARTI,Land covered by artificial surfaces - index,ok,sdmx,4,43,0,"",2026-07-29
+LAN_LCV_FAO,Land cover for FAO Forest categories by NUTS 2 region,ok,sdmx,5,469,0,"",2026-07-29
+LAN_LCV_OVW,Land cover overview by NUTS 2 region,ok,sdmx,5,557,0,"",2026-07-29
+LAN_SETTL,Settlement area,ok,sdmx,4,47,0,"",2026-07-29
+LAN_USE_OVW,Land use overview by NUTS 2 region,ok,sdmx,5,484,0,"",2026-07-29
+LC_AN_COSTH,Hourly labour costs by NACE Rev. 1.1 activity,ok,sdmx,5,68,0,"",2026-07-29
+LC_AN_COSTM,Monthly labour costs by NACE Rev. 1.1 activity,ok,sdmx,5,67,0,"",2026-07-29
+LC_AN_COST_R2,Labour costs by NACE Rev. 2 activity,ok,sdmx,7,83,0,"",2026-07-29
+LC_AN_STRUC,Structure of labour cost by NACE Rev. 1.1 activity,ok,sdmx,6,70,0,"",2026-07-29
+LC_AN_STRUC_R2,Structure of labour cost by NACE Rev. 2 activity,ok,sdmx,7,81,0,"",2026-07-29
+LC_LCI_LEV,Labour cost levels by NACE Rev. 2 activity,ok,sdmx,6,89,0,"",2026-07-29
+LC_LCI_R1_A,"Labour cost index by NACE Rev. 1.1 activity - nominal value, annual data",ok,sdmx,6,77,0,"",2026-07-29
+LC_LCI_R1_COW,Labour cost index by NACE Rev. 1.1 activity - country weights,ok,sdmx,4,50,0,"",2026-07-29
+LC_LCI_R1_ITW,Labour cost index by NACE Rev. 1.1 activity - item weights,ok,sdmx,5,62,0,"",2026-07-29
+LC_LCI_R1_Q,"Labour cost index by NACE Rev. 1.1 activity - nominal value, quarterly data",ok,sdmx,7,119,0,"",2026-07-29
+LC_LCI_R2_A,"Labour cost index by NACE Rev. 2 activity - nominal value, annual data",ok,sdmx,6,103,0,"",2026-07-29
+LC_LCI_R2_COW,Labour cost index by NACE Rev. 2 activity - country weights,ok,sdmx,4,61,0,"",2026-07-29
+LC_LCI_R2_ITW,Labour cost index by NACE Rev. 2 activity - item weights,ok,sdmx,6,101,0,"",2026-07-29
+LC_LCI_R2_Q,"Labour cost index by NACE Rev. 2 activity - nominal value, quarterly data",ok,sdmx,7,198,0,"",2026-07-29
+LC_N00COST,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,8,126,0,"",2026-07-29
+LC_N00HOUR,"Hours worked compared to hours paid, by NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,5,105,0,"",2026-07-29
+LC_N00NUM1,"Number of employees, hours worked and paid, by working time and NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,8,121,0,"",2026-07-29
+LC_N00NUM2,"Average hours worked and paid per employee, by working time and NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,8,121,0,"",2026-07-29
+LC_N00STRUC,"Structure of labour cost by NACE Rev. 1.1 activity - % of total cost, LCS survey 2000",ok,sdmx,6,139,0,"",2026-07-29
+LC_N00STU,"Number of statistical units selected for the survey, by NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,7,111,0,"",2026-07-29
+LC_N00TEMP,"Temporary staff: labour cost, number of employees and number of hours worked by NACE Rev. 1.1 activity - LCS survey 2000",ok,sdmx,5,87,0,"",2026-07-29
+LC_N04COST,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 1.1 activity - LCS survey 2004",ok,sdmx,8,141,0,"",2026-07-29
+LC_N04HOUR,"Hours worked compared to hours paid, by NACE Rev. 1.1 activity - LCS survey 2004",ok,sdmx,6,123,0,"",2026-07-29
+LC_N04NUM1,"Number of employees, hours worked and paid, by working time and NACE Rev. 1.1 activity - LCS survey 2004",ok,sdmx,8,138,0,"",2026-07-29
+LC_N04NUM2,"Average hours worked and paid per employee, by working time and NACE Rev. 1.1 activity - LCS survey 2004",ok,sdmx,8,138,0,"",2026-07-29
+LC_N04STRUC,"Structure of labour cost by NACE Rev. 1.1 activity - % of total cost, LCS survey 2004",ok,sdmx,7,158,0,"",2026-07-29
+LC_N04STU,"Number of statistical units selected for the survey, by NACE Rev. 1.1 activity - LCS survey 2004",ok,sdmx,7,125,0,"",2026-07-29
+LC_N08COST_R1,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 1.1 activity - LCS survey 2008",ok,sdmx,8,135,0,"",2026-07-29
+LC_N08HOUR_R1,"Hours worked compared to hours paid, by NACE Rev. 1.1 activity - LCS survey 2008",ok,sdmx,6,125,0,"",2026-07-29
+LC_N08NUM1_R1,"Number of employees, hours worked and paid, by working time and NACE Rev. 1.1 activity - LCS survey 2008",ok,sdmx,8,134,0,"",2026-07-29
+LC_N08NUM2_R1,"Average hours worked and paid per employee, by working time and NACE Rev. 1.1 activity - LCS survey 2008",ok,sdmx,8,132,0,"",2026-07-29
+LC_N08STRUC_R1,"Structure of labour cost by NACE Rev. 1.1 activity - % of total cost, LCS survey 2008",ok,sdmx,7,152,0,"",2026-07-29
+LC_N08STU_R1,"Number of statistical units selected for the survey, by NACE Rev. 1.1 activity - LCS survey 2008",ok,sdmx,7,126,0,"",2026-07-29
+LC_NCOSTOT_R2,"Labour cost, wages and salaries (including apprentices) by NACE Rev. 2 activity",ok,sdmx,8,179,0,"",2026-07-29
+LC_NCOST_R2,"Labour cost, wages and salaries, direct remuneration (excluding apprentices) by NACE Rev. 2 activity",ok,sdmx,8,185,0,"",2026-07-29
+LC_NHOUR_R2,"Hours worked compared to hours paid, by NACE Rev. 2 activity",ok,sdmx,6,170,0,"",2026-07-29
+LC_NNUM1_R2,"Number of employees, hours worked and paid, by working time and NACE Rev. 2 activity",ok,sdmx,8,186,0,"",2026-07-29
+LC_NNUM2_R2,"Average hours worked and paid per employee, by working time and NACE Rev. 2 activity",ok,sdmx,8,184,0,"",2026-07-29
+LC_NSTRUC_R2,Structure of labour cost by NACE Rev. 2 activity - % of total cost,ok,sdmx,7,204,0,"",2026-07-29
+LC_NSTU_R2,"Number of statistical units selected for the survey, by NACE Rev. 2 activity",ok,sdmx,7,178,0,"",2026-07-29
+LC_R00COST,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2000",ok,sdmx,8,164,0,"",2026-07-29
+LC_R00NUM1,"Number of employees and hours worked, by working time, NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2000",ok,sdmx,8,162,0,"",2026-07-29
+LC_R00NUM2,"Average hours worked per employee, by working time, NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2000",ok,sdmx,8,159,0,"",2026-07-29
+LC_R00STRUC,"Structure of labour cost by NACE Rev. 1.1 activity and NUTS 1 region - % of total cost, LCS survey 2000",ok,sdmx,6,205,0,"",2026-07-29
+LC_R00STU,"Number of statistical units selected for the survey, by NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2000",ok,sdmx,7,133,0,"",2026-07-29
+LC_R04COST,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2004",ok,sdmx,8,172,0,"",2026-07-29
+LC_R04NUM1,"Number of employees and hours worked, by working time, NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2004",ok,sdmx,8,171,0,"",2026-07-29
+LC_R04NUM2,"Average hours worked per employee, by working time, NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2004",ok,sdmx,8,168,0,"",2026-07-29
+LC_R04STRUC,"Structure of labour cost by NACE Rev. 1.1 activity and NUTS 1 region - % of total cost, LCS survey 2004",ok,sdmx,7,178,0,"",2026-07-29
+LC_R04STU,"Number of statistical units selected for the survey, by NACE Rev. 1.1 activity and NUTS 1 region - LCS survey 2004",ok,sdmx,7,154,0,"",2026-07-29
+LC_RCOST_R2,"Labour cost, wages and salaries, direct remuneration by NACE Rev. 2 activity and NUTS 1 region",ok,sdmx,8,249,0,"",2026-07-29
+LC_RNUM1_R2,"Number of employees and hours worked, by working time, NACE Rev. 2 activity and NUTS 1 region",ok,sdmx,8,251,0,"",2026-07-29
+LC_RNUM2_R2,"Average hours worked per employee, by working time, NACE Rev. 2 activity and NUTS 1 region",ok,sdmx,8,247,0,"",2026-07-29
+LC_RSTRUC_R2,Structure of labour cost by NACE Rev. 2 activity and NUTS 1 region - % of total cost,ok,sdmx,7,257,0,"",2026-07-29
+LC_RSTU_R2,"Number of statistical units, by NACE Rev. 2 activity and NUTS 1 region",ok,sdmx,7,243,0,"",2026-07-29
+LFSA_AGAED,Labour force by educational attainment level,ok,sdmx,7,122,0,"",2026-07-29
+LFSA_AGAN,Labour force by citizenship,ok,sdmx,7,116,0,"",2026-07-29
+LFSA_ARGACOB,Labour force participation rates by country of birth,ok,sdmx,7,117,0,"",2026-07-29
+LFSA_ARGAED,Labour force participation rates by educational attainment level,ok,sdmx,7,124,0,"",2026-07-29
+LFSA_ARGAEDCOB,Labour force participation rates by educational attainment level and country of birth,ok,sdmx,8,106,0,"",2026-07-29
+LFSA_ARGAEDDL,Labour force participation rates by level of disability (activity limitation) and educational attainment level,ok,sdmx,8,77,0,"",2026-07-29
