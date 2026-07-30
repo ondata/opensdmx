@@ -4121,3 +4121,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_85_DF_DCCV_AVQ_PERSONE1_234,Incidenti in ambiente domestico - posizione nella professione,ok,hub,5,23,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_235,Incidenti in ambiente domestico - regioni e tipo di comune,ok,hub,5,44,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_236,Abitudini nei pasti - età dettaglio,ok,hub,5,30,0,"",2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_237,"Abitudini nei pasti - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_238,Abitudini nei pasti - posizione nella professione,ok,hub,5,29,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_239,Abitudini nei pasti - regioni e tipo di comune,ok,hub,4,49,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_240,"Salumi, carni, uova, pesce - età dettaglio",ok,hub,5,27,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_241,"Salumi, carni, uova, pesce - età, titolo di studio",ok,hub,6,23,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_242,"Salumi, carni, uova, pesce - posizione nella professione",ok,hub,5,26,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_243,"Salumi, carni, uova, pesce - regioni e tipo di comune",ok,hub,4,46,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_244,"Pane, legumi, dolci, latte e formaggi - età dettaglio",ok,hub,5,27,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_245,"Pane, legumi, dolci, latte e formaggi - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_246,"Pane, legumi, dolci, latte e formaggi - posizione nella professione",ok,hub,5,26,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_247,"Pane, legumi, dolci, latte e formaggi - regioni e tipo di comune",ok,hub,4,46,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_248,"Verdure, ortaggi e frutta - età dettaglio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_249,"Verdure, ortaggi e frutta - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_250,"Verdure, ortaggi e frutta - posizione nella professione",ok,hub,5,28,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_251,"Verdure, ortaggi e frutta - regioni e tipo di comune",ok,hub,4,48,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_252,Olio e sale - età dettaglio,ok,hub,5,25,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_253,"Olio e sale - età, titolo di studio",ok,hub,6,21,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_254,Olio e sale - posizione nella professione,ok,hub,5,24,0,"",2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_255,Olio e sale - regioni e tipo di comune,ok,hub,4,44,0,"",2026-07-30
+85_170,Volontariato in organizzazioni,ok,hub,9,51,0,"",2026-07-30
+85_170_DF_DCSA_VOLON_ORG_1,"Sesso, appartenenza a più gruppi o associazioni, settore dell'organizzazione",empty,hub,0,0,0,"",2026-07-30
+85_170_DF_DCSA_VOLON_ORG_2,"Sesso, motivo dell'attività gratuita",empty,hub,0,0,0,"",2026-07-30
+85_170_DF_DCSA_VOLON_ORG_3,"Sesso, tipo di organizzazione",empty,hub,0,0,0,"",2026-07-30
+85_170_DF_DCSA_VOLON_ORG_4,"Sesso, ricadute personali",empty,hub,0,0,0,"",2026-07-30
+85_171,Volontariato in organizzazioni,ok,hub,9,54,0,"",2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_1,"Volontariato organizzato - Sesso, appartenenza a più gruppi o associazioni, settore dell'organizzazione",ok,hub,6,22,0,"",2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_2,"Volontariato organizzato - Sesso, tipo di organizzazione",ok,hub,5,13,0,"",2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_3,"Volontariato organizzato - Sesso, motivazioni",ok,hub,5,16,0,"",2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_4,"Volontariato organizzato - Sesso, ricadute personali",ok,hub,5,18,0,"",2026-07-30
+85_83,Volontariato con o senza organizzazioni,ok,hub,12,98,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_1,"Sesso, età",ok,hub,5,18,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_2,"Sesso, attività svolta",ok,hub,6,25,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_3,"Sesso, numero di anni di attività gratuita",ok,hub,6,18,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_4,"Titolo di studio, condizione lavorativa",ok,hub,6,21,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_5,Ampiezza della famiglia e risorse economiche,ok,hub,6,20,0,"",2026-07-30
+85_83_DF_DCSA_VOLON_6,Regioni e tipo di comuni,ok,hub,6,43,0,"",2026-07-30
+85_84,Volontariato con o senza organizzazioni,ok,hub,12,97,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_1,"Volontariato - Sesso, età e tipo di volontariato",ok,hub,6,20,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_2,Attività volontaria - Sesso e tipo di volontariato,ok,hub,6,25,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_3,Numero di anni di attività volontaria - Sesso e tipo di volontariato,ok,hub,6,19,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_4,"Volontariato - Titolo di studio, condizione lavorativa",ok,hub,6,22,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_5,Volontariato - Ampiezza della famiglia e risorse economiche,ok,hub,6,20,0,"",2026-07-30
+85_84_DF_DCSA_VOLON1_6,Volontariato - Regioni e tipo di comuni,ok,hub,4,42,0,"",2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_1,Indicatori di produttività - edizioni novembre 2019 - aprile 2024,ok,hub,7,75,0,"",2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_2,Contributi alla crescita del valore aggiunto - edizioni novembre 2019 - aprile 2024,ok,hub,7,71,0,"",2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_3,Contributi alla crescita della produttività del lavoro - edizioni novembre 2019 - aprile 2024,ok,hub,7,69,0,"",2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_4,Serie per il calcolo delle produttività - edizioni novembre 2019 - aprile 2024,ok,hub,7,83,0,"",2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_5,Contributi settoriali alla variazione della produttività del lavoro - edizioni novembre 2019 - aprile 2024,ok,hub,7,64,0,"",2026-07-30
+8_277,Imprese - Ent (1 impresa corrisponde a 1 o più unità giuridiche attive),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_1,Imprese e addetti (Ent) - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_10,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 1 cifra) - Tipo di relazione e Governance - regioni,ok,hub,6,56,0,"",2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_2,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 5 cifre) - Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_3,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 4 cifre) - ripartizioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_4,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 3 cifre) - regioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_5,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 2 cifre) , classe di addetti - ripartizioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_6,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Tipo di relazione",ok,hub,7,39,0,"",2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_7,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Governance",ok,hub,7,40,0,"",2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_8,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 2 cifre) - Tipo di relazione,ok,hub,5,104,0,"",2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_9,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 2 cifre) - Governance,ok,hub,5,105,0,"",2026-07-30
+91_963,Sistema dei conti della sanità,ok,hub,7,43,0,"",2026-07-30
+91_963_DF_DCCN_SHA_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento,ok,hub,6,33,0,"",2026-07-30
+91_963_DF_DCCN_SHA_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore,ok,hub,6,33,0,"",2026-07-30
+91_963_DF_DCCN_SHA_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento,ok,hub,6,25,0,"",2026-07-30
+92_1225,Principali aggregati annnuali di contabilità nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225_DF_DCCN_ANA1_1,Produzione e valore aggiunto per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225_DF_DCCN_ANA1_2,Redditi da lavoro dipendente e componenti per branca di attività,ok,hub,7,106,0,"",2026-07-30
+92_1225_DF_DCCN_ANA1_3,Imposte e contributi alla produzione per branca di attività,ok,hub,7,104,0,"",2026-07-30
+92_1225_DF_DCCN_ANA1_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225_DF_DCCN_ANA1_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225_DF_DCCN_ANA1_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 3 cifre) e durata,ok,hub,7,104,0,"",2026-07-30
+92_1225_DF_DCCN_ANA1_7,Valori pro capite,ok,hub,6,27,0,"",2026-07-30
+92_143,Principali aggregati per branca di attività -  (Nace Rev.1.1) - edizioni precedenti ottobre 2011,ok,hub,11,94,0,"",2026-07-30
+92_504,Principali aggregati annnuali di contabilità nazionale - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_1,Produzione e valore aggiunto per branca di attività - edizioni settembre 2019 - marzo 2024,ok,hub,8,118,0,"",2026-07-30
+92_504_DF_DCCN_ANA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_3,Imposte e contributi alla produzione per branca di attività - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_7,Valori pro capite - edizioni settembre 2019 - marzo 2024,ok,hub,6,31,0,"",2026-07-30
+92_504_NOTE_TIME,test note time,empty,hub,0,0,0,"",2026-07-30
+92_505,Sequenza dei conti,ok,hub,6,132,0,"",2026-07-30
+92_505_DF_DCCN_SQCN_1,Sequenza dei conti,ok,hub,6,132,0,"",2026-07-30
+92_506,Prodotto interno lordo e principali componenti,ok,hub,6,38,0,"",2026-07-30
+92_506_DF_DCCN_PILN_1,Prodotto interno lordo e principali componenti,ok,hub,6,38,0,"",2026-07-30
+92_507,Occupazione regolare e irregolare,ok,hub,9,123,0,"",2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_2,Tassi di irregolarità,ok,hub,7,54,0,"",2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_3,Popolazione media annua,ok,hub,5,8,0,"",2026-07-30
+93_1095,Reddito disponibile delle famiglie  nelle regioni italiane,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1095_DF_DCCN_ISTITUZ_TNA1_1,Reddito disponibile delle famiglie nelle regioni italiane,ok,hub,8,130,0,"",2026-07-30
+93_1227,Principali aggregati territoriali di Contabilità Nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227_DF_DCCN_TNA1_1,Valore aggiunto per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227_DF_DCCN_TNA1_2,Redditi da lavoro dipendente e componenti per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227_DF_DCCN_TNA1_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 2 cifre) e durata,ok,hub,7,60,0,"",2026-07-30
+93_1227_DF_DCCN_TNA1_4,Spesa per consumi finali della Pa per funzione di spesa,ok,hub,7,52,0,"",2026-07-30
+93_1227_DF_DCCN_TNA1_5,Investimenti fissi lordi per branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227_DF_DCCN_TNA1_6,Valori pro capite,ok,hub,6,160,0,"",2026-07-30
+93_209,Aggregati dei conti per branca di attività (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_256,Occupazione per branca di attività economica (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_379,Occupazione regolare ed irregolare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_1,Occupazione regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_2,Occupazione provinciale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_3,Tasso di irregolarità,ok,hub,6,44,0,"",2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_4,Popolazione media annua,ok,hub,5,38,0,"",2026-07-30
+93_382,Sequenza dei conti,ok,hub,6,59,0,"",2026-07-30
+93_382_DF_DCCN_SQCT_1,Sequenza dei conti,ok,hub,6,59,0,"",2026-07-30
+93_48,"Conti della branca agricoltura, silvicoltura e pesca",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_48_DF_DCCN_VAAGSIPET_1,Produzione e valore aggiunto ai prezzi base,ok,hub,7,46,0,"",2026-07-30
+93_48_DF_DCCN_VAAGSIPET_2,Prodotti e voci di costo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_498,Prodotto interno lordo lato produzione,ok,hub,6,151,0,"",2026-07-30
+93_498_DF_DCCN_PILT_1,Prodotto interno lordo lato produzione,ok,hub,6,151,0,"",2026-07-30
+93_500,Principali aggregati territoriali di Contabilità Nazionale - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_1,Valore aggiunto per branca di attività - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_4,Spesa per consumi finali della Pa per funzione di spesa - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_5,Investimenti fissi lordi per branca proprietaria - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500_DF_DCCN_TNA_6,Valori pro capite - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_1063,Stock  di attività non finanziarie  e sequenza dei conti per settore istituzionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_1,Sequenza dei conti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_2,Indicatori su famiglie consumatrici e società non finanziarie,ok,hub,8,19,0,"",2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_4,Investimenti fissi lordi per tipo di investimento,ok,hub,8,29,0,"",2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_5,Stock di attività non finanziarie,ok,hub,9,273,0,"",2026-07-30
+94_251,Sequenza dei conti - edizioni fino a settembre 2015,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_335,Occupazione per branca di attività - edizioni marzo 2012 e marzo 2013,ok,hub,10,32,0,"",2026-07-30
+94_571,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_805,Occupazione  per branca di attività,ok,hub,9,49,0,"",2026-07-30
+94_805_DF_DCCN_OCCSISEC2010_1,Occupazione per branca di attività,ok,hub,8,48,0,"",2026-07-30
+94_805_DF_DCCN_OCCSISEC2010_2,Occupazione per sottosettore,ok,hub,7,21,0,"",2026-07-30
+95_42,Conto trimestrale,ok,hub,9,47,0,"",2026-07-30
+95_42_DF_DCCN_FPQ_1,Conto economico,ok,hub,7,38,0,"",2026-07-30
+95_42_DF_DCCN_FPQ_2,Indicatori (in rapporto al PIL),ok,hub,7,21,0,"",2026-07-30
+95_815,Conto annuale per sottosettore,ok,hub,9,347,0,"",2026-07-30
+95_815_DF_DCCN_FPA_1,Conto economico per sottosettore,ok,hub,7,101,0,"",2026-07-30
+95_815_DF_DCCN_FPA_2,Indicatori (in rapporto al PIL),ok,hub,7,36,0,"",2026-07-30
+95_815_DF_DCCN_FPA_3,Redditi e retribuzione pro capite per sottosettore,ok,hub,7,15,0,"",2026-07-30
+95_815_DF_DCCN_FPA_4,Investimenti fissi lordi per sottosettore,ok,hub,8,34,0,"",2026-07-30
+95_815_DF_DCCN_FPA_5,Imposte e contributi sociali per sottosettore,ok,hub,7,202,0,"",2026-07-30
+95_815_DF_DCCN_FPA_6,Formazione della spesa per consumi finali,ok,hub,7,26,0,"",2026-07-30
+95_94,Uscite annuali per sottosettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+95_94_DF_DCCN_OTEPPA_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre),ok,hub,8,98,0,"",2026-07-30
+95_94_DF_DCCN_OTEPPA_2,Voci di uscita per funzione (COFOG 2 e 3 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+96_1068,Conti della Protezione sociale versione 2014,ok,hub,7,95,0,"",2026-07-30
+96_1068_DF_DCCN_PROTSOC_B14_1,Conti economici consolidati - edizioni maggio 2015 e aprile 2019,ok,hub,6,86,0,"",2026-07-30
+96_1068_DF_DCCN_PROTSOC_B14_2,"Prestazioni secondo evento, rischio e bisogno - edizioni maggio 2015 e aprile 2019",ok,hub,7,53,0,"",2026-07-30
+96_1069,Conti della Protezione sociale versione 2011,ok,hub,7,88,0,"",2026-07-30
+97_1027,Conti dei flussi fisici di energia (PEFA),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027_DF_DCCN_PEFA_1,Risorse e impieghi: schema di sintesi,ok,hub,7,30,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_2,Risorse per attività e tipo di flusso,ok,hub,7,154,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_3,Impieghi per attività e tipo di flusso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027_DF_DCCN_PEFA_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione),ok,hub,7,153,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_5B,Vettori di indicatori chiave sui flussi di energia,ok,hub,6,130,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_6,Tavola di raccordo: consumo di energia,ok,hub,6,22,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_7,Impieghi dei flussi di energia per tipo di uso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027_DF_DCCN_PEFA_8,Intensità energetica,ok,hub,6,99,0,"",2026-07-30
+97_1027_DF_DCCN_PEFA_9,Intensità di emissione  dei consumi energetici,ok,hub,6,106,0,"",2026-07-30
+97_1028,Conti dei beni e servizi ambientali,ok,hub,9,51,0,"",2026-07-30
+97_1028_DF_DCCN_EGSS_1,"Produzione, valore aggiunto, esportazioni",ok,hub,7,46,0,"",2026-07-30
+97_1028_DF_DCCN_EGSS_2,Occupazione (unità di lavoro),ok,hub,6,42,0,"",2026-07-30
+97_187,Emissioni atmosferiche NAMEA (NACE Rev.2),ok,hub,10,155,0,"",2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_1,Attività produttive,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_2,Famiglie,ok,hub,6,39,0,"",2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP,ok,hub,6,39,0,"",2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_4,Intensità della produzione e del valore aggiunto,ok,hub,7,134,0,"",2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_5,Intensità della occupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_26,Gettito delle imposte ambientali,ok,hub,11,145,0,"",2026-07-30
+97_26_DF_DCCN_IMPAMB1_1,Categoria di imposta,ok,hub,6,38,0,"",2026-07-30
+97_26_DF_DCCN_IMPAMB1_2,Unità che corrisponde l'imposta,ok,hub,7,16,0,"",2026-07-30
+97_26_DF_DCCN_IMPAMB1_3,Gettito corrisposto dalle attività economiche,ok,hub,8,107,0,"",2026-07-30
+97_26_DF_DCCN_IMPAMB1_4,Classe CEPA,empty,hub,0,0,0,"",2026-07-30
+97_26_DF_DCCN_IMPAMB1_5,Destinazione del gettito,ok,hub,6,11,0,"",2026-07-30
+97_334,Conti dei flussi di materia,ok,hub,6,111,0,"",2026-07-30
+97_334_DF_DCCN_FLUMAT_1,Indicatori aggregati nazionali,ok,hub,4,17,0,"",2026-07-30
+97_334_DF_DCCN_FLUMAT_2,Estrazione interna di materiali utilizzati,ok,hub,5,43,0,"",2026-07-30
+97_334_DF_DCCN_FLUMAT_3,Scambi con il resto del mondo,ok,hub,5,62,0,"",2026-07-30
+97_334_DF_DCCN_FLUMAT_4,Indicatori aggregati regionali,ok,hub,4,39,0,"",2026-07-30
+97_366,Conti della Protezione sociale,ok,hub,7,89,0,"",2026-07-30
+97_366_DF_DCCN_PROTSOC_1,Conti economici consolidati,ok,hub,6,80,0,"",2026-07-30
+97_366_DF_DCCN_PROTSOC_2,"Prestazioni secondo evento, rischio e bisogno",ok,hub,7,48,0,"",2026-07-30
+97_79,Emissioni atmosferiche NAMEA (NACE Rev.1.1),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_932,Conti dell'impiego di energia versione 2014,ok,hub,9,77,0,"",2026-07-30
+97_953,Spese per la protezione dell'ambiente,ok,hub,9,58,0,"",2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_1,Spesa nazionale,ok,hub,7,18,0,"",2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_2,Aggregati economici per settore istituzionale,ok,hub,7,32,0,"",2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_3,"Investimenti, consumi intermedi e produzione ausiliaria delle società come produttori ausiliari per attività economica",ok,hub,8,40,0,"",2026-07-30
+98_1066,Misure di produttività - Conti versione 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_1,Indicatori di produttività - edizioni marzo 2015 - marzo 2019,ok,hub,6,73,0,"",2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_2,Contributi alla crescita del valore aggiunto - edizioni marzo 2015 - marzo 2019,ok,hub,6,69,0,"",2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_3,Contributi alla crescita della produttività del lavoro - edizioni marzo 2015 - marzo 2019,ok,hub,6,67,0,"",2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_4,Serie per il calcolo delle produttività - edizioni marzo 2015 - marzo 2019,ok,hub,6,81,0,"",2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_5,Contributi settoriali alla variazione della produttività del lavoro - edizioni marzo 2015 - marzo 2019,ok,hub,6,62,0,"",2026-07-30
+98_1067,Misure di produttività - Conti versione 2011,ok,hub,7,85,0,"",2026-07-30
+98_197,Misure di produttività,ok,hub,7,103,0,"",2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_1,Indicatori di produttività,ok,hub,6,68,0,"",2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_2,Contributi alla crescita del valore aggiunto,ok,hub,6,64,0,"",2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,ok,hub,6,62,0,"",2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,ok,hub,6,76,0,"",2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,ok,hub,6,57,0,"",2026-07-30

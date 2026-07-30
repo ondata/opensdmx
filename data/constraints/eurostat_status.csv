@@ -4868,3 +4868,340 @@ LFSA_ARGACOB,Labour force participation rates by country of birth,ok,sdmx,7,117,
 LFSA_ARGAED,Labour force participation rates by educational attainment level,ok,sdmx,7,124,0,"",2026-07-29
 LFSA_ARGAEDCOB,Labour force participation rates by educational attainment level and country of birth,ok,sdmx,8,106,0,"",2026-07-29
 LFSA_ARGAEDDL,Labour force participation rates by level of disability (activity limitation) and educational attainment level,ok,sdmx,8,77,0,"",2026-07-29
+LFSA_ARGAEDN,Labour force participation rates by educational attainment level and citizenship,ok,sdmx,8,107,0,"",2026-07-30
+LFSA_ARGAN,Labour force participation rates by citizenship,ok,sdmx,7,119,0,"",2026-07-30
+LFSA_ARGANEDM,"Labour force participation rates by migration status, citizenship and educational attainment level",ok,sdmx,9,79,0,"",2026-07-30
+LFSA_E2GED,Persons having a second job by educational attainment level,ok,sdmx,7,99,0,"",2026-07-30
+LFSA_E2GIS,Persons having a second job by occupation in the first job,ok,sdmx,7,104,0,"",2026-07-30
+LFSA_E2GPS,Persons having a second job by professional status of both jobs,ok,sdmx,8,108,0,"",2026-07-30
+LFSA_EEGAED,Employees by educational attainment level,ok,sdmx,7,111,0,"",2026-07-30
+LFSA_EEGAIS,Employees by occupation,ok,sdmx,7,122,0,"",2026-07-30
+LFSA_EEGAN2,Employees by economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,7,108,0,"",2026-07-30
+LFSA_EEGANA,Employees by economic activity (NACE Rev. 1.1) (1992-2008),ok,sdmx,7,106,0,"",2026-07-30
+LFSA_EEGATM,Employees by migration status and employment contract,ok,sdmx,8,68,0,"",2026-07-30
+LFSA_EETPGAR,Employees who could not find a permanent or full-time job,ok,sdmx,7,97,0,"",2026-07-30
+LFSA_EFTPT,Employed persons by professional status and full-time/part-time employment,ok,sdmx,8,121,0,"",2026-07-30
+LFSA_EGAD,Employed persons by job tenure,ok,sdmx,7,92,0,"",2026-07-30
+LFSA_EGAD$DV_1742,Employed persons by job tenure,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EGAD$DV_1742'
+For more information check: https://developer.moz",2026-07-30
+LFSA_EGAED,Employed persons by educational attainment level,ok,sdmx,7,122,0,"",2026-07-30
+LFSA_EGAFTSM,"Employed persons by migration status, professional status and full-time/part-time employment",ok,sdmx,9,73,0,"",2026-07-30
+LFSA_EGAI2D,Employed persons by detailed occupation (ISCO-08 two digit level),ok,sdmx,7,117,0,"",2026-07-30
+LFSA_EGAIDL,Employed persons by level of disability (activity limitation) and occupation,ok,sdmx,8,82,0,"",2026-07-30
+LFSA_EGAIS,Employed persons by professional status and occupation,ok,sdmx,8,125,0,"",2026-07-30
+LFSA_EGAIS$DV_574,Employed persons by professional status and occupation,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EGAIS$DV_574'
+For more information check: https://developer.moz",2026-07-30
+LFSA_EGAISEDM,"Employed persons by migration status, occupation and educational attainment level",ok,sdmx,9,83,0,"",2026-07-30
+LFSA_EGAN,Employed persons by citizenship,ok,sdmx,7,116,0,"",2026-07-30
+LFSA_EGAN2,Employed persons by economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,7,106,0,"",2026-07-30
+LFSA_EGAN2$DV_3148,Employed persons by economic activity (NACE Rev. 2) (2008-2026),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EGAN2$DV_3148'
+For more information check: https://developer.mo",2026-07-30
+LFSA_EGAN22D,Employed persons by detailed economic activity (NACE Rev. 2 two-digit level) (2008-2026),ok,sdmx,7,174,0,"",2026-07-30
+LFSA_EGAN22D$DV_3149,Employed persons by detailed economic activity (NACE Rev. 2 two-digit level) (2008-2026),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EGAN22D$DV_3149'
+For more information check: https://developer.",2026-07-30
+LFSA_EGANA,Employed persons by economic activity (NACE Rev. 1.1) (1992-2008),ok,sdmx,7,104,0,"",2026-07-30
+LFSA_EGANA2D,Employed persons by detailed economic activity (NACE Rev. 1.1 two-digit level) (1992-2008),ok,sdmx,7,143,0,"",2026-07-30
+LFSA_EGAPS,Employed persons by professional status,ok,sdmx,7,130,0,"",2026-07-30
+LFSA_EGASDL,Employed persons by level of disability (activity limitation) and professional status,ok,sdmx,8,77,0,"",2026-07-30
+LFSA_EGASJT,Employed persons by professional status and job tenure,ok,sdmx,7,93,0,"",2026-07-30
+LFSA_EGDN2,Employed persons by job tenure and economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,8,98,0,"",2026-07-30
+LFSA_EGISED,Employed persons by occupation and educational attainment level,ok,sdmx,8,107,0,"",2026-07-30
+LFSA_EHOMP,Employed persons working from home by professional status - % of total employment,ok,sdmx,8,113,0,"",2026-07-30
+LFSA_EISN2,Employed persons by occupation and economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,8,98,0,"",2026-07-30
+LFSA_ENEWASC,Newly employed by professional status and country of birth - % of persons in current job for 12 months or less in total employment,ok,sdmx,7,88,0,"",2026-07-30
+LFSA_ENEWASN,Newly employed by professional status and citizenship - % of persons in current job for 12 months or less in total employment,ok,sdmx,7,89,0,"",2026-07-30
+LFSA_EOQGAC,Over-qualification rates by country of birth,ok,sdmx,7,87,0,"",2026-07-30
+LFSA_EOQGAC$DV_1882,Over-qualification rates by country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EOQGAC$DV_1882'
+For more information check: https://developer.m",2026-07-30
+LFSA_EOQGAN,Over-qualification rates by citizenship,ok,sdmx,7,88,0,"",2026-07-30
+LFSA_EOQGAN$DV_1881,Over-qualification rates by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EOQGAN$DV_1881'
+For more information check: https://developer.m",2026-07-30
+LFSA_EOQGAN2,Over-qualification rates by economic activity (NACE Rev. 2),ok,sdmx,7,91,0,"",2026-07-30
+LFSA_EPGAED,Persons in full-time/part-time employment by educational attainment level,ok,sdmx,8,115,0,"",2026-07-30
+LFSA_EPGAIS,Persons in full-time/part-time employment by occupation,ok,sdmx,8,113,0,"",2026-07-30
+LFSA_EPGAN2,Persons in full-time/part-time employment by economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,7,88,0,"",2026-07-30
+LFSA_EPGAN6,"Persons in full-time/part-time employment by economic activity (NACE Rev. 1.1, A6) (1992-2008)",ok,sdmx,8,94,0,"",2026-07-30
+LFSA_EPGANA,Persons in full-time/part-time employment by economic activity (NACE Rev. 1.1) (1992-2008),ok,sdmx,7,86,0,"",2026-07-30
+LFSA_EPGAR,Persons in part-time employment by main reason,ok,sdmx,7,118,0,"",2026-07-30
+LFSA_EPGAR$DV_575,Persons in part-time employment by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EPGAR$DV_575'
+For more information check: https://developer.moz",2026-07-30
+LFSA_EPGN62,"Persons in full-time/part-time employment by economic activity (NACE Rev. 2, A10) (2008-2026)",ok,sdmx,8,101,0,"",2026-07-30
+LFSA_EPPGA,Persons in part-time employment by age - % of total employment,ok,sdmx,6,110,0,"",2026-07-30
+LFSA_EPPGACOB,Persons in part-time employment by country of birth - % of total employment,ok,sdmx,7,88,0,"",2026-07-30
+LFSA_EPPGAI,Persons in involuntary part-time employment - % of total part-time employment,ok,sdmx,6,110,0,"",2026-07-30
+LFSA_EPPGAI$DV_577,Persons in involuntary part-time employment - % of total part-time employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EPPGAI$DV_577'
+For more information check: https://developer.mo",2026-07-30
+LFSA_EPPGAN,Persons in part-time employment by citizenship - % of total employment,ok,sdmx,7,89,0,"",2026-07-30
+LFSA_EPPGAN$DV_1907,Persons in part-time employment by citizenship - % of total employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EPPGAN$DV_1907'
+For more information check: https://developer.m",2026-07-30
+LFSA_ERGACOB,Employment rates by country of birth,ok,sdmx,7,117,0,"",2026-07-30
+LFSA_ERGACOB$DV_1741,Employment rates by country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ERGACOB$DV_1741'
+For more information check: https://developer.",2026-07-30
+LFSA_ERGAED,Employment rates by educational attainment level,ok,sdmx,7,126,0,"",2026-07-30
+LFSA_ERGAED$DV_319,Employment rates by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ERGAED$DV_319'
+For more information check: https://developer.mo",2026-07-30
+LFSA_ERGAEDCOB,Employment rates by educational attainment level and country of birth,ok,sdmx,8,106,0,"",2026-07-30
+LFSA_ERGAEDN,Employment rates by educational attainment level and citizenship,ok,sdmx,8,108,0,"",2026-07-30
+LFSA_ERGAN,Employment rates by citizenship,ok,sdmx,7,118,0,"",2026-07-30
+LFSA_ERGAN$DV_1908,Employment rates by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ERGAN$DV_1908'
+For more information check: https://developer.mo",2026-07-30
+LFSA_ERGANEDM,"Employment rates by migration status, citizenship and educational attainment level",ok,sdmx,9,80,0,"",2026-07-30
+LFSA_ERGANEDM$DV_1721,"Employment rates by migration status, citizenship and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ERGANEDM$DV_1721'
+For more information check: https://developer",2026-07-30
+LFSA_ESEGA,Employed persons by European socio-economic group and age,ok,sdmx,6,124,0,"",2026-07-30
+LFSA_ESEGATYP,Employed persons working at atypical working time by European socio-economic group - % of total employment,ok,sdmx,6,106,0,"",2026-07-30
+LFSA_ESEGED,Employed persons by European socio-economic group and educational attainment level,ok,sdmx,7,115,0,"",2026-07-30
+LFSA_ESEGG,Employed persons by European socio-economic group and sex,ok,sdmx,7,111,0,"",2026-07-30
+LFSA_ESEGN2,Employed persons by European socio-economic group and NACE Rev. 2 activity (2008-2026),ok,sdmx,7,93,0,"",2026-07-30
+LFSA_ESEGP,Employed persons by European socio-economic group and working time,ok,sdmx,7,112,0,"",2026-07-30
+LFSA_ESEGT,Employees by European socio-economic group and employment contract,ok,sdmx,7,105,0,"",2026-07-30
+LFSA_ESGACOB,Self-employed persons by country of birth,ok,sdmx,8,120,0,"",2026-07-30
+LFSA_ESGAED,Self-employed persons by educational attainment level,ok,sdmx,8,115,0,"",2026-07-30
+LFSA_ESGAED$DV_581,Self-employed persons by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ESGAED$DV_581'
+For more information check: https://developer.mo",2026-07-30
+LFSA_ESGAIS,Self-employed persons by occupation,ok,sdmx,8,125,0,"",2026-07-30
+LFSA_ESGAN,Self-employed persons by citizenship,ok,sdmx,8,121,0,"",2026-07-30
+LFSA_ESGAN2,Self-employed persons by economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,8,98,0,"",2026-07-30
+LFSA_ESGANA,Self-employed persons by economic activity (NACE Rev. 1.1) (1992-2008),ok,sdmx,8,96,0,"",2026-07-30
+LFSA_ETGADC,Temporary employees by duration of the employment contract,ok,sdmx,7,129,0,"",2026-07-30
+LFSA_ETGAED,Temporary employees by educational attainment level,ok,sdmx,7,113,0,"",2026-07-30
+LFSA_ETGAIS,Temporary employees by occupation,ok,sdmx,7,124,0,"",2026-07-30
+LFSA_ETGAN2,Temporary employees by economic activity (NACE Rev. 2) (2008-2026),ok,sdmx,7,110,0,"",2026-07-30
+LFSA_ETGANA,Temporary employees by economic activity (NACE Rev. 1.1) (1992-2008),ok,sdmx,7,108,0,"",2026-07-30
+LFSA_ETGAR,Temporary employees by main reason,ok,sdmx,7,122,0,"",2026-07-30
+LFSA_ETGAR$DV_1081,Temporary employees by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETGAR$DV_1081'
+For more information check: https://developer.mo",2026-07-30
+LFSA_ETGAR$DV_1873,Temporary employees by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETGAR$DV_1873'
+For more information check: https://developer.mo",2026-07-30
+LFSA_ETGAR$DV_601,Temporary employees by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETGAR$DV_601'
+For more information check: https://developer.moz",2026-07-30
+LFSA_ETGAR$DV_622,Temporary employees by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETGAR$DV_622'
+For more information check: https://developer.moz",2026-07-30
+LFSA_ETPGACOB,Temporary employees by country of birth - % of total employees,ok,sdmx,7,90,0,"",2026-07-30
+LFSA_ETPGACOB$DV_1886,Temporary employees by country of birth - % of total employees,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETPGACOB$DV_1886'
+For more information check: https://developer",2026-07-30
+LFSA_ETPGAN,Temporary employees by citizenship - % of total employees,ok,sdmx,7,91,0,"",2026-07-30
+LFSA_ETPGAN$DV_1885,Temporary employees by citizenship - % of total employees,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_ETPGAN$DV_1885'
+For more information check: https://developer.m",2026-07-30
+LFSA_EWH2N2,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 2) (2008-2026)",ok,sdmx,9,107,0,"",2026-07-30
+LFSA_EWH2NA,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 1.1) (1992-2008)",ok,sdmx,9,105,0,"",2026-07-30
+LFSA_EWHAIS,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and occupation",ok,sdmx,9,121,0,"",2026-07-30
+LFSA_EWHAN2,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and economic activity (NACE Rev. 2) (2008-2026)",ok,sdmx,9,107,0,"",2026-07-30
+LFSA_EWHANA,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and economic activity (NACE Rev. 1.1) (1992-2008)",ok,sdmx,9,105,0,"",2026-07-30
+LFSA_EWHUIS,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and occupation",ok,sdmx,9,121,0,"",2026-07-30
+LFSA_EWHUN2,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and economic activity (NACE Rev. 2) (2008-2026)",ok,sdmx,9,107,0,"",2026-07-30
+LFSA_EWHUNA,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and economic activity (NACE Rev. 1.1) (1992-2008)",ok,sdmx,9,105,0,"",2026-07-30
+LFSA_EWPEVE,Employed persons working in the evenings by professional status - % of total employment,ok,sdmx,8,114,0,"",2026-07-30
+LFSA_EWPEVE$DV_604,Employed persons working in the evenings by professional status - % of total employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EWPEVE$DV_604'
+For more information check: https://developer.mo",2026-07-30
+LFSA_EWPNIG,Employed persons working at nights by professional status - % of total employment,ok,sdmx,8,114,0,"",2026-07-30
+LFSA_EWPNIG$DV_605,Employed persons working at nights by professional status - % of total employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EWPNIG$DV_605'
+For more information check: https://developer.mo",2026-07-30
+LFSA_EWPSAT,Employed persons working on Saturdays by professional status - % of total employment,ok,sdmx,8,114,0,"",2026-07-30
+LFSA_EWPSAT$DV_606,Employed persons working on Saturdays by professional status - % of total employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EWPSAT$DV_606'
+For more information check: https://developer.mo",2026-07-30
+LFSA_EWPSHI,Employees working shifts - % of total employees,ok,sdmx,6,102,0,"",2026-07-30
+LFSA_EWPSUN,Employed persons working on Sundays by professional status - % of total employment,ok,sdmx,8,114,0,"",2026-07-30
+LFSA_EWPSUN$DV_607,Employed persons working on Sundays by professional status - % of total employment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_EWPSUN$DV_607'
+For more information check: https://developer.mo",2026-07-30
+LFSA_IGAED,Persons outside the labour force by educational attainment level,ok,sdmx,7,112,0,"",2026-07-30
+LFSA_IGAN,Persons outside the labour force by citizenship,ok,sdmx,7,116,0,"",2026-07-30
+LFSA_IGAR,Persons outside the labour force not seeking employment by main reason,ok,sdmx,7,109,0,"",2026-07-30
+LFSA_IGAR$DV_1902,Persons outside the labour force not seeking employment by main reason,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_IGAR$DV_1902'
+For more information check: https://developer.moz",2026-07-30
+LFSA_IGAWW,Persons outside the labour force not seeking employment by willingness to work,ok,sdmx,7,110,0,"",2026-07-30
+LFSA_IPGA,Persons outside the labour force - % of total population in private households,ok,sdmx,6,121,0,"",2026-07-30
+LFSA_IPGA$DV_610,Persons outside the labour force - % of total population in private households,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_IPGA$DV_610'
+For more information check: https://developer.mozi",2026-07-30
+LFSA_IPGAEDDL,Persons outside the labour force by level of disability (activity limitation) and educational attainment level - % of total population in private households,ok,sdmx,8,77,0,"",2026-07-30
+LFSA_PFGACEDM,"Foreign-born population in private households by main reason for migrating, country of birth and educational attainment level",ok,sdmx,9,74,0,"",2026-07-30
+LFSA_PFGANWSM,"Foreign-born population in private households by main reason for migrating, citizenship and labour status",ok,sdmx,9,71,0,"",2026-07-30
+LFSA_PGACCPM,"Population in private households by migration status, country of birth and country of birth of parents",ok,sdmx,9,76,0,"",2026-07-30
+LFSA_PGACCPM$DV_1802,"Population in private households by migration status, country of birth and country of birth of parents",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_PGACCPM$DV_1802'
+For more information check: https://developer.",2026-07-30
+LFSA_PGACWS,Population in private households by country of birth and labour status,ok,sdmx,8,119,0,"",2026-07-30
+LFSA_PGAED,Population in private households by educational attainment level,ok,sdmx,7,123,0,"",2026-07-30
+LFSA_PGAIED,Population in private households by participation in education and training (last 4 weeks),ok,sdmx,7,108,0,"",2026-07-30
+LFSA_PGANEDM,"Population in private households by migration status, citizenship and educational attainment level",ok,sdmx,9,79,0,"",2026-07-30
+LFSA_PGANEDM$DV_1806,"Population in private households by migration status, citizenship and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_PGANEDM$DV_1806'
+For more information check: https://developer.",2026-07-30
+LFSA_PGANWS,Population in private households by citizenship and labour status,ok,sdmx,8,121,0,"",2026-07-30
+LFSA_PGAUWS,Population in private households by degree of urbanisation and labour status,ok,sdmx,8,129,0,"",2026-07-30
+LFSA_QOE_3A2,Long working hours in the main job by professional status and occupation,ok,sdmx,8,91,0,"",2026-07-30
+LFSA_QOE_3A2$DV_608,Long working hours in the main job by professional status and occupation,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_QOE_3A2$DV_608'
+For more information check: https://developer.m",2026-07-30
+LFSA_QOE_3A4,Weekly working hours by professional status and occupation,ok,sdmx,9,104,0,"",2026-07-30
+LFSA_QOE_3B3,Work on weekends by professional status and occupation,ok,sdmx,8,88,0,"",2026-07-30
+LFSA_QOE_4A2,Job tenure by professional status and occupation,ok,sdmx,9,94,0,"",2026-07-30
+LFSA_QOE_4A6R1,Temporary employment agency workers by NACE Rev. 1.1 activity (2006-2008),ok,sdmx,7,51,0,"",2026-07-30
+LFSA_QOE_4A6R2,Temporary employment agency workers by NACE Rev. 2 activity (2008-2026),ok,sdmx,7,70,0,"",2026-07-30
+LFSA_QOE_4AX1R1,Precarious employment by NACE Rev. 1.1 activity (2000-2008),ok,sdmx,7,60,0,"",2026-07-30
+LFSA_QOE_4AX1R2,Precarious employment by NACE Rev. 2 activity (2008-2026),ok,sdmx,7,72,0,"",2026-07-30
+LFSA_SUP_AGE,Supplementary indicators on labour market slack by age,ok,sdmx,7,77,0,"",2026-07-30
+LFSA_SUP_COB,Supplementary indicators on labour market slack by country of birth,ok,sdmx,8,75,0,"",2026-07-30
+LFSA_SUP_DL,Supplementary indicators on labour market slack by level of disability (activity limitation),ok,sdmx,8,55,0,"",2026-07-30
+LFSA_SUP_EDU,Supplementary indicators on labour market slack by educational attainment level,ok,sdmx,8,77,0,"",2026-07-30
+LFSA_SUP_NAT,Supplementary indicators on labour market slack by citizenship,ok,sdmx,8,76,0,"",2026-07-30
+LFSA_UGAD,Unemployed persons by duration of unemployment,ok,sdmx,7,115,0,"",2026-07-30
+LFSA_UGADRA,Unemployed persons by duration of unemployment and distinction registration/benefits,ok,sdmx,8,123,0,"",2026-07-30
+LFSA_UGAN,Unemployed persons by citizenship,ok,sdmx,7,111,0,"",2026-07-30
+LFSA_UGATES,Unemployed persons by type of employment sought,ok,sdmx,7,105,0,"",2026-07-30
+LFSA_UGMSW,Unemployed persons by methods used for seeking work - % of total unemployment,ok,sdmx,6,72,0,"",2026-07-30
+LFSA_UGPIS,Unemployed persons by previous occupation,ok,sdmx,6,90,0,"",2026-07-30
+LFSA_UPGACOB,Persons in long-term unemployment (12 months or more) by country of birth - % of total unemployment,ok,sdmx,7,116,0,"",2026-07-30
+LFSA_UPGACOB$DV_1842,Persons in long-term unemployment (12 months or more) by country of birth - % of total unemployment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_UPGACOB$DV_1842'
+For more information check: https://developer.",2026-07-30
+LFSA_UPGADL,Persons in long-term unemployment (12 months or more) by level of disability (activity limitation) - % of total unemployment,ok,sdmx,7,69,0,"",2026-07-30
+LFSA_UPGAN,Persons in long-term unemployment (12 months or more) by citizenship - % of total unemployment,ok,sdmx,7,119,0,"",2026-07-30
+LFSA_UPGAN$DV_1822,Persons in long-term unemployment (12 months or more) by citizenship - % of total unemployment,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_UPGAN$DV_1822'
+For more information check: https://developer.mo",2026-07-30
+LFSA_URGACOB,Unemployment rates by country of birth,ok,sdmx,7,111,0,"",2026-07-30
+LFSA_URGACOB$DV_1762,Unemployment rates by country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_URGACOB$DV_1762'
+For more information check: https://developer.",2026-07-30
+LFSA_URGAED,Unemployment rates by educational attainment level,ok,sdmx,7,123,0,"",2026-07-30
+LFSA_URGAED$DV_611,Unemployment rates by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_URGAED$DV_611'
+For more information check: https://developer.mo",2026-07-30
+LFSA_URGAEDDL,Unemployment rates by level of disability (activity limitation) and educational attainment level,ok,sdmx,8,77,0,"",2026-07-30
+LFSA_URGAN,Unemployment rates by citizenship,ok,sdmx,7,116,0,"",2026-07-30
+LFSA_URGAN$DV_1909,Unemployment rates by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_URGAN$DV_1909'
+For more information check: https://developer.mo",2026-07-30
+LFSA_URGANEDM,"Unemployment rates by migration status, citizenship and educational attainment level",ok,sdmx,9,79,0,"",2026-07-30
+LFSA_URGANEDM$DV_1763,"Unemployment rates by migration status, citizenship and educational attainment level",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSA_URGANEDM$DV_1763'
+For more information check: https://developer",2026-07-30
+LFSI_ABS_Q_H,Absences from work by main reason - quarterly data (2006–2020),ok,sdmx,8,109,0,"",2026-07-30
+LFSI_ABS_W,Weekly absences from work - experimental statistics (2015-2022),ok,sdmx,6,458,0,"",2026-07-30
+LFSI_ABT_Q,Absences from work by sex and age - quarterly data,ok,sdmx,7,119,0,"",2026-07-30
+LFSI_AHW_Q,Actual hours worked in the main job - index (2021 = 100) - quarterly data,ok,sdmx,7,116,0,"",2026-07-30
+LFSI_AHW_Q_H,Actual hours worked in the main job - index (2006 = 100) - quarterly data (2006–2020),ok,sdmx,7,102,0,"",2026-07-30
+LFSI_DWL_A,Duration of working life,ok,sdmx,5,68,0,"",2026-07-30
+LFSI_EDUC_A,Employment by educational attainment level - annual data,ok,sdmx,7,71,0,"",2026-07-30
+LFSI_EDUC_A_H,Employment by educational attainment level - annual data (1998–2020),ok,sdmx,7,80,0,"",2026-07-30
+LFSI_EDUC_Q,Employment by educational attainment level - quarterly data,ok,sdmx,8,128,0,"",2026-07-30
+LFSI_EDUC_Q_H,Employment by educational attainment level - quarterly data (1998–2020),ok,sdmx,8,152,0,"",2026-07-30
+LFSI_EMP_A,Employment and labour force by sex and age - annual data,ok,sdmx,7,75,0,"",2026-07-30
+LFSI_EMP_A$DV_1906,Employment and labour force by sex and age - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSI_EMP_A$DV_1906'
+For more information check: https://developer.mo",2026-07-30
+LFSI_EMP_A_H,Employment and labour force by sex and age - annual data (1992–2020),ok,sdmx,7,86,0,"",2026-07-30
+LFSI_EMP_Q,Employment and labour force by sex and age - quarterly data,ok,sdmx,8,149,0,"",2026-07-30
+LFSI_EMP_Q_H,Employment and labour force by sex and age - quarterly data (1989–2020),ok,sdmx,8,188,0,"",2026-07-30
+LFSI_HWA_A,Employed persons by actual hours worked in main and second job during the reference week - annual data,ok,sdmx,7,58,0,"",2026-07-30
+LFSI_HWA_Q,Employed persons by actual hours worked in main and second job during the reference week - quarterly data,ok,sdmx,8,77,0,"",2026-07-30
+LFSI_HWU_A,Employed persons by usual weekly hours of work in main and second job - annual data,ok,sdmx,7,57,0,"",2026-07-30
+LFSI_HWU_Q,Employed persons by usual weekly hours of work in main and second job - quarterly data,ok,sdmx,8,76,0,"",2026-07-30
+LFSI_JHH_A,Population in jobless private households - % of persons living in private households where no-one is employed,ok,sdmx,5,62,0,"",2026-07-30
+LFSI_LEA_Q,Recent job leavers by sex and age - quarterly data,ok,sdmx,7,119,0,"",2026-07-30
+LFSI_LONG_A,Labour market transitions - annual data,ok,sdmx,6,77,0,"",2026-07-30
+LFSI_LONG_E01,"Transition from unemployment to employment by duration of unemployment (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,7,63,0,"",2026-07-30
+LFSI_LONG_E02,"Transition from unemployment to employment by previous work experience (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,7,62,0,"",2026-07-30
+LFSI_LONG_E03,"Transition from unemployment to employment by degree of urbanisation (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,6,59,0,"",2026-07-30
+LFSI_LONG_E04,"Transition from employment to unemployment by degree of urbanisation (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,6,58,0,"",2026-07-30
+LFSI_LONG_E06,"Transition from outside the labour force to employment by labour market attachment (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,7,62,0,"",2026-07-30
+LFSI_LONG_E07,"Job-to-job transitions (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,6,59,0,"",2026-07-30
+LFSI_LONG_E08,"Transition from part-time work to full-time work (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,6,59,0,"",2026-07-30
+LFSI_LONG_E09,"Transition from fixed term contracts to permanent contracts (annual averages of quarterly transitions, estimated probabilities) - experimental statistics",ok,sdmx,6,58,0,"",2026-07-30
+LFSI_LONG_Q,Labour market transitions - quarterly data,ok,sdmx,7,148,0,"",2026-07-30
+LFSI_NEET_A,Young persons neither in employment nor in education and training (NEET rates) - annual data,ok,sdmx,6,69,0,"",2026-07-30
+LFSI_NEET_A_H,Young persons neither in employment nor in education and training (NEET rates) - annual data (2006–2020),ok,sdmx,6,65,0,"",2026-07-30
+LFSI_NEET_Q,Young persons neither in employment nor in education and training (NEET rates) - quarterly data,ok,sdmx,7,142,0,"",2026-07-30
+LFSI_NEET_Q_H,Young persons neither in employment nor in education and training (NEET rates) - quarterly data (2006–2020),ok,sdmx,7,113,0,"",2026-07-30
+LFSI_PT_A,Part-time employment and temporary contracts - annual data,ok,sdmx,7,77,0,"",2026-07-30
+LFSI_PT_A$DV_921,Part-time employment and temporary contracts - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSI_PT_A$DV_921'
+For more information check: https://developer.mozi",2026-07-30
+LFSI_PT_A_H,Part-time employment and temporary contracts - annual data (1993–2020),ok,sdmx,7,85,0,"",2026-07-30
+LFSI_PT_Q,Part-time employment and temporary contracts - quarterly data,ok,sdmx,8,151,0,"",2026-07-30
+LFSI_PT_Q_H,Part-time employment and temporary contracts - quarterly data (1992–2020),ok,sdmx,8,174,0,"",2026-07-30
+LFSI_SIZ_M,"Realised sample size - monthly data, experimental statistics (2011-2022)",ok,sdmx,4,179,0,"",2026-07-30
+LFSI_SLA_A,Labour market slack by sex and age - annual data,ok,sdmx,7,79,0,"",2026-07-30
+LFSI_SLA_A_H,Labour market slack by sex and age - annual data (1992–2020),ok,sdmx,7,88,0,"",2026-07-30
+LFSI_SLA_Q,Labour market slack by sex and age - quarterly data,ok,sdmx,8,152,0,"",2026-07-30
+LFSI_SLA_Q_H,Labour market slack by sex and age - quarterly data (1992–2020),ok,sdmx,8,178,0,"",2026-07-30
+LFSI_STA_Q,Recent job starters by sex and age - quarterly data,ok,sdmx,7,119,0,"",2026-07-30
+LFSI_SUP_A,Supplementary indicators to unemployment - annual data,ok,sdmx,7,79,0,"",2026-07-30
+LFSI_SUP_A_H,Supplementary indicators to unemployment - annual data (1992–2020),ok,sdmx,7,88,0,"",2026-07-30
+LFSI_SUP_Q,Supplementary indicators to unemployment - quarterly data,ok,sdmx,8,152,0,"",2026-07-30
+LFSI_SUP_Q_H,Supplementary indicators to unemployment - quarterly data (1992–2020),ok,sdmx,8,178,0,"",2026-07-30
+LFSO_04ANWKISNA,"Number of employees having annualised working hours by sex, age, occupation and economic activity",ok,sdmx,8,63,0,"",2026-07-30
+LFSO_04AVOVISCO,"Average number of overtime hours of employees, by sex, age and occupation",ok,sdmx,6,52,0,"",2026-07-30
+LFSO_04AVOVNA11,"Average number of overtime hours of employees, by sex, age and economic activity",ok,sdmx,6,50,0,"",2026-07-30
+LFSO_04AVPOISCO,"Average number of paid overtime hours of employees, by sex, age and occupation",ok,sdmx,6,52,0,"",2026-07-30
+LFSO_04AVPONA11,"Average number of paid overtime hours of employees, by sex, age and economic activity",ok,sdmx,6,50,0,"",2026-07-30
+LFSO_04ONCWISNA,"Number of employees working on call by sex, age, occupation and economic activity",ok,sdmx,8,63,0,"",2026-07-30
+LFSO_04OWNMISCO,"Number of self-employed persons who can control their own work methods and schedule, by sex, age and occupation",ok,sdmx,7,59,0,"",2026-07-30
+LFSO_04PEOVISCO,"Percentage of employees working overtime, by sex, age and occupation",ok,sdmx,6,52,0,"",2026-07-30
+LFSO_04PEOVNA11,"Percentage of employees working overtime, by sex, age and economic activity",ok,sdmx,6,50,0,"",2026-07-30
+LFSO_04PEPOISCO,"Percentage of employees working paid overtime, by sex, age and occupation",ok,sdmx,6,51,0,"",2026-07-30
+LFSO_04PEPONA11,"Percentage of employees working paid overtime, by sex, age and economic activity",ok,sdmx,6,49,0,"",2026-07-30
+LFSO_04SHIPISCO,"Shift work patterns used by employees, by sex, age and occupation",ok,sdmx,7,61,0,"",2026-07-30
+LFSO_04SHIPNA11,"Shift work patterns used by employees, by sex, age and economic activity",ok,sdmx,7,59,0,"",2026-07-30
+LFSO_04SINCNA11,"Number of self-employed persons who work for one single client or customer, by sex, age and economic activity",ok,sdmx,7,55,0,"",2026-07-30
+LFSO_04VAHRHWUS,"Average usual working hours of employees, by possibility to work variable hours in the reference week, sex and age",ok,sdmx,6,54,0,"",2026-07-30
+LFSO_04VAHRISCO,"Number of employees with the possibility to work variable hours in the reference week, by sex, age and occupation",ok,sdmx,7,62,0,"",2026-07-30
+LFSO_04VAWKHWUS,"Average usual working hours of employees, by possibility to have variable working hours, sex and age",ok,sdmx,6,54,0,"",2026-07-30
+LFSO_04VAWKISCO,"Number of employees with variable working hours, by sex, age and occupation",ok,sdmx,7,62,0,"",2026-07-30
+LFSO_04VAWKNA11,"Number of employees with variable working hours, by sex, age and economic activity",ok,sdmx,7,60,0,"",2026-07-30
+LFSO_04WK1PISCO,"Number of employees finding it convenient for personal life to do shift work or on-call work, by sex, age and occupation",ok,sdmx,7,58,0,"",2026-07-30
+LFSO_04WK1PNA11,"Number of employees finding it convenient for personal life to do shift work or on-call work, by sex, age and economic activity",ok,sdmx,7,56,0,"",2026-07-30
+LFSO_04WK2PISCO,"Number of employees finding it convenient for personal life to work in the evening, or at night, or during weekends, by sex, age and occupation",ok,sdmx,7,53,0,"",2026-07-30
+LFSO_04WK2PNA11,"Number of employees finding it convenient for personal life to work in the evening, or at night, or during weekends, by sex, age and economic activity",ok,sdmx,7,51,0,"",2026-07-30
+LFSO_04WKTPISCO,"Number of part-time employees, by working time pattern compared with 'full-timers', sex, age and occupation",ok,sdmx,7,61,0,"",2026-07-30
+LFSO_04WKTPNA11,"Number of part-time employees by working time pattern compared with 'full-timers', sex, age and economic activity",ok,sdmx,7,59,0,"",2026-07-30
+LFSO_05CHANGE,Number of employed persons between 15 and 64 years old wishing to change the organisation of their working life and care responsibilities,ok,sdmx,8,60,0,"",2026-07-30
+LFSO_05CHANGH,Average usual working hours of employed persons between 15 and 64 years old by wish to change the organisation of their working life and care responsibilities,ok,sdmx,8,60,0,"",2026-07-30
+LFSO_05CHANGP,Number of persons between 15 and 64 years old wishing to change the organisation of their working life and care responsibilities,ok,sdmx,7,56,0,"",2026-07-30
+LFSO_05NOWRE1,"Main reasons (linked with care of other people in need of care) given by employed persons between 15 and 64 years old for not working or not working more, by working time pattern",ok,sdmx,8,64,0,"",2026-07-30
+LFSO_05NOWRE2,"Main reasons (linked with care of other people in need of care) given by employed persons between 15 and 64 years old for not working or not working more, by occupation",ok,sdmx,8,72,0,"",2026-07-30
+LFSO_05NOWREE,Main childcare-related reasons given by employed persons between 15 and 64 years old for not working or not working more,ok,sdmx,8,63,0,"",2026-07-30
+LFSO_05NOWREH,Average usual working hours of employed persons between 15 and 64 years old by main childcare-related reasons given for not working or not working more,ok,sdmx,8,63,0,"",2026-07-30
+LFSO_05NOWREP,Main childcare-related reasons given by persons between 15 and 64 years old for not working or not working more,ok,sdmx,7,59,0,"",2026-07-30
+LFSO_05POSOE1,"Number of employed persons between 15 and 64 years old who can take whole days off for family reasons, by economic activity",ok,sdmx,8,79,0,"",2026-07-30
+LFSO_05POSOE2,"Number of employed persons between 15 and 64 years old who can take whole days off for family reasons, by occupation",ok,sdmx,8,66,0,"",2026-07-30
+LFSO_05POSSE1,"Number of employed persons between 15 and 64 years old who can vary start/end of working day for family reasons, by economic activity",ok,sdmx,8,79,0,"",2026-07-30
+LFSO_05POSSE2,"Number of employed persons between 15 and 64 years old who can vary start/end of working day for family reasons, by occupation",ok,sdmx,8,66,0,"",2026-07-30
+LFSO_05REDUC1,"Number of employed persons between 15 and 64 years old having to make working time arrangements over the last 12 months to care for children, by working time pattern",ok,sdmx,8,64,0,"",2026-07-30
+LFSO_05REDUC2,"Number of employed persons between 15 and 64 years old having to make working time arrangements over the last 12 months to care for children, by occupation",ok,sdmx,8,72,0,"",2026-07-30
+LFSO_05REGCE,Number of employed persons between 15 and 64 years old regularly taking care of other children or people in need of care,ok,sdmx,8,61,0,"",2026-07-30
+LFSO_05REGCH,Average usual working hours of employed persons between 15 and 64 years old by regular care of other children or people in need of care,ok,sdmx,7,55,0,"",2026-07-30
+LFSO_05REGCP,Number of persons between 15 and 64 years old regularly taking care of other children up to 14 or people older than 15 in need of care,ok,sdmx,7,56,0,"",2026-07-30
+LFSO_05TIMEE1,"Number of employed persons between 15 and 64 years old taking time off over the last 12 months for family sickness or emergencies, by educational attainment level",ok,sdmx,8,60,0,"",2026-07-30
+LFSO_05TIMEE2,"Number of employed persons between 15 and 64 years old taking time off over the last 12 months for family sickness or emergencies, by economic activity",ok,sdmx,8,80,0,"",2026-07-30
+LFSO_05TIMEE3,"Number of employed persons between 15 and 64 years old taking time off over the last 12 months for family sickness or emergencies, by occupation",ok,sdmx,8,67,0,"",2026-07-30
+LFSO_05TYPECE,Main type of childcare used by employed persons between 15 and 64 years old for own/spouse's children up to 14 while working,ok,sdmx,8,62,0,"",2026-07-30
+LFSO_05TYPECH,Average usual working hours of employed persons between 15 and 64 years old by main type of childcare used for own/spouse's children up to 14 while working,ok,sdmx,7,56,0,"",2026-07-30
+LFSO_06FINIAGPS,Average age at which employed persons started receiving a retirement pension - by sex and main financial incentive to stay at work,ok,sdmx,6,45,0,"",2026-07-30
+LFSO_06FINIISCO,Main financial incentives for employed persons who are entitled to receive an individual retirement pension to stay at work - by sex and occupation (1 000),ok,sdmx,7,54,0,"",2026-07-30
+LFSO_06FINIYRSP,Average number of years spent working - by sex and main financial incentive to stay at work,ok,sdmx,6,46,0,"",2026-07-30
+LFSO_06FLEXISCO,Number of employed persons who would stay longer at work (or not) if more flexible working time arrangements were available - by sex and occupation (1 000),ok,sdmx,7,52,0,"",2026-07-30
+LFSO_06FLEXISPR,Number of not employed persons who would have stayed longer at work (or not) if more flexible working time arrangements had been available - by sex and occupation (previous job) (1 000),ok,sdmx,7,54,0,"",2026-07-30
+LFSO_06HLSAISCO,Number of employed persons who would stay longer at work (or not) if their workplace was healthier and/or safer - by sex and occupation (1 000),ok,sdmx,7,52,0,"",2026-07-30
+LFSO_06HLSAISPR,Number of not employed persons who would have stayed longer at work (or not) if their workplace had been healthier and/or safer - by sex and occupation (previous job) (1 000),ok,sdmx,7,54,0,"",2026-07-30
+LFSO_06OPSKISCO,Number of employed persons who would stay longer at work (or not) if they could update their skills - by sex and occupation (1 000),ok,sdmx,7,52,0,"",2026-07-30
+LFSO_06OPSKISPR,Number of not employed persons who would have stayed longer at work (or not) if they had had more opportunities to update their skills - by sex and occupation (previous job) (1 000),ok,sdmx,7,54,0,"",2026-07-30
+LFSO_06OTBNAGPS,Average age at which not employed persons started receiving a retirement pension - by granting of other individual benefits and sex,ok,sdmx,6,47,0,"",2026-07-30
+LFSO_06OTBNYRSP,"Not employed persons, average number of years spent working - by granting of other individual benefits and sex",ok,sdmx,6,47,0,"",2026-07-30
+LFSO_06PLAGFTPT,"Number of employed persons - by planned age for stopping work, sex and full time/part time work (1 000)",ok,sdmx,7,51,0,"",2026-07-30
+LFSO_06REASAGPS,Average age at which not employed persons started receiving a retirement pension - by sex and main reason for retirement or early retirement,ok,sdmx,6,46,0,"",2026-07-30
+LFSO_06REASSTAF,Main reasons for retirement or early retirement - by sex and main labour status just after leaving last job (1 000),ok,sdmx,7,53,0,"",2026-07-30
+LFSO_06REDEFTPT,"Number of employed persons who reduced their working hours in a move to full retirement - by sex, age and full time/part time work (1 000)",ok,sdmx,8,51,0,"",2026-07-30
+LFSO_06REDNSAGE,Number of not employed persons having reduced their working hours in a move to full retirement - by sex and age (1 000),ok,sdmx,7,48,0,"",2026-07-30
+LFSO_06STAFAGPS,Average age at which not employed persons started receiving a retirement pension - by sex and main labour status just after leaving last job,ok,sdmx,6,46,0,"",2026-07-30
+LFSO_06YRSPISCO,"Employed persons, average number of years spent working of employed persons - by sex and occupation",ok,sdmx,6,48,0,"",2026-07-30
+LFSO_06YRSPISPR,"Not employed persons, average number of years spent working - by sex and occupation (previous job)",ok,sdmx,6,49,0,"",2026-07-30
+LFSO_06YRSPNA11,"Employed persons, average number of years spent working, by sex and economic activity (NACE Rev. 1.1)",ok,sdmx,6,46,0,"",2026-07-30
+LFSO_06YRSPNAPR,"Not employed persons, average number of years spent working, by sex and economic activity (previous job, NACE Rev. 1.1)",ok,sdmx,6,47,0,"",2026-07-30
+LFSO_08COBR,Migrants by main reason for migration and country of birth - % of total migrants (2008),ok,sdmx,7,40,0,"",2026-07-30
+LFSO_08COBSMF,"Population in private households by country of birth, country of birth of mother and father (2008)",ok,sdmx,8,63,0,"",2026-07-30
+LFSO_08COBSP,"Population in private households by country of birth, country of birth of parents and labour status (2008)",ok,sdmx,8,56,0,"",2026-07-30
+LFSO_08COBSPED,"Population in private households by country of birth, country of birth of parents, educational attainment level and labour status (2008)",ok,sdmx,9,61,0,"",2026-07-30
+LFSO_08RESR,Migrants by main reason for migration and years of residence - % of total migrants (2008),ok,sdmx,7,37,0,"",2026-07-30
+LFSO_10CCHILDC,Persons making weekly use of childcare services for their youngest child (2010),ok,sdmx,9,62,0,"",2026-07-30
+LFSO_10CNOWCAR,Persons by main care related reasons for not working or working part-time (2010),ok,sdmx,9,60,0,"",2026-07-30
+LFSO_10CNOWCHI,Persons by main childcare related reasons for not working or working part-time (2010),ok,sdmx,9,60,0,"",2026-07-30
+LFSO_10CREGCAR,Persons taking care of other children or persons in need of care (2010),ok,sdmx,9,59,0,"",2026-07-30
+LFSO_10FPOSORG,Employees who can take a whole day off for family reasons by occupation (2010),ok,sdmx,8,61,0,"",2026-07-30
+LFSO_10FPOSSTE,Employees by their perceived possibility to vary start and/or stop of the working day for family reasons (2010),ok,sdmx,9,83,0,"",2026-07-30
+LFSO_10FVARECO,Employees by flexibility of their working schedule and economic activity (2010),ok,sdmx,9,77,0,"",2026-07-30
+LFSO_10FVAREDU,Employees by flexibility of their working schedule and educational attainment level (2010),ok,sdmx,9,59,0,"",2026-07-30
+LFSO_10LPARLEA,Persons who took parental leave to care for their youngest child aged less than eight by duration of parental leave (2010),ok,sdmx,8,57,0,"",2026-07-30
+LFSO_10LREDWOR,Persons who reduced their working time to care for their youngest child aged less than eight (2010),ok,sdmx,8,53,0,"",2026-07-30
+LFSO_10LSTOPWO,Persons who stopped work to care for their youngest child aged less than eight by duration of absence (2010),ok,sdmx,8,57,0,"",2026-07-30
+LFSO_12AGEPENS,Age at which the person first received an old-age pension (2012),ok,sdmx,7,43,0,"",2026-07-30

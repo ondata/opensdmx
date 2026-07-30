@@ -2028,3 +2028,128 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 83_85_DF_DCCV_AVQ_PERSONE1_226,Alcolici fuori pasto - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_231,Indice di massa corporea - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_235,Incidenti in ambiente domestico - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_239,Abitudini nei pasti - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_243,"Salumi, carni, uova, pesce - regioni e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_247,"Pane, legumi, dolci, latte e formaggi - regioni e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_251,"Verdure, ortaggi e frutta - regioni e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_255,Olio e sale - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-30
+85_170,Volontariato in organizzazioni,REF_AREA,nazionale,nazionale,1,2026-07-30
+85_171,Volontariato in organizzazioni,REF_AREA,nazionale,nazionale,1,2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_1,"Volontariato organizzato - Sesso, appartenenza a più gruppi o associazioni, settore dell'organizzazione",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_2,"Volontariato organizzato - Sesso, tipo di organizzazione",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_3,"Volontariato organizzato - Sesso, motivazioni",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_171_DF_DCSA_VOLON_ORG1_4,"Volontariato organizzato - Sesso, ricadute personali",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_83,Volontariato con o senza organizzazioni,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-30
+85_83_DF_DCSA_VOLON_6,Regioni e tipo di comuni,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-30
+85_84,Volontariato con o senza organizzazioni,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-30
+85_84_DF_DCSA_VOLON1_1,"Volontariato - Sesso, età e tipo di volontariato",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_84_DF_DCSA_VOLON1_2,Attività volontaria - Sesso e tipo di volontariato,REF_AREA,nazionale,nazionale,1,2026-07-30
+85_84_DF_DCSA_VOLON1_3,Numero di anni di attività volontaria - Sesso e tipo di volontariato,REF_AREA,nazionale,nazionale,1,2026-07-30
+85_84_DF_DCSA_VOLON1_4,"Volontariato - Titolo di studio, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-07-30
+85_84_DF_DCSA_VOLON1_5,Volontariato - Ampiezza della famiglia e risorse economiche,REF_AREA,nazionale,nazionale,1,2026-07-30
+85_84_DF_DCSA_VOLON1_6,Volontariato - Regioni e tipo di comuni,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_1,Indicatori di produttività - edizioni novembre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_2,Contributi alla crescita del valore aggiunto - edizioni novembre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_3,Contributi alla crescita della produttività del lavoro - edizioni novembre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_4,Serie per il calcolo delle produttività - edizioni novembre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_197_DF_DCCN_PRODUTTIVITA_B19_5,Contributi settoriali alla variazione della produttività del lavoro - edizioni novembre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_10,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 1 cifra) - Tipo di relazione e Governance - regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_6,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Tipo di relazione",REF_AREA,nazionale,nazionale,1,2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_7,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Governance",REF_AREA,nazionale,nazionale,1,2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_8,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 2 cifre) - Tipo di relazione,REF_AREA,nazionale,nazionale,1,2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_9,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 2 cifre) - Governance,REF_AREA,nazionale,nazionale,1,2026-07-30
+91_963,Sistema dei conti della sanità,REF_AREA,nazionale,nazionale,1,2026-07-30
+91_963_DF_DCCN_SHA_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento,REF_AREA,nazionale,nazionale,1,2026-07-30
+91_963_DF_DCCN_SHA_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore,REF_AREA,nazionale,nazionale,1,2026-07-30
+91_963_DF_DCCN_SHA_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_1225_DF_DCCN_ANA1_2,Redditi da lavoro dipendente e componenti per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_1225_DF_DCCN_ANA1_3,Imposte e contributi alla produzione per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_1225_DF_DCCN_ANA1_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 3 cifre) e durata,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_1225_DF_DCCN_ANA1_7,Valori pro capite,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_143,Principali aggregati per branca di attività -  (Nace Rev.1.1) - edizioni precedenti ottobre 2011,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_504_DF_DCCN_ANA_1,Produzione e valore aggiunto per branca di attività - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_504_DF_DCCN_ANA_7,Valori pro capite - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_505,Sequenza dei conti,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_505_DF_DCCN_SQCN_1,Sequenza dei conti,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_506,Prodotto interno lordo e principali componenti,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_506_DF_DCCN_PILN_1,Prodotto interno lordo e principali componenti,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_507,Occupazione regolare e irregolare,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_2,Tassi di irregolarità,REF_AREA,nazionale,nazionale,1,2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_3,Popolazione media annua,REF_AREA,nazionale,nazionale,1,2026-07-30
+93_1095_DF_DCCN_ISTITUZ_TNA1_1,Reddito disponibile delle famiglie nelle regioni italiane,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_1227_DF_DCCN_TNA1_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 2 cifre) e durata,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_1227_DF_DCCN_TNA1_4,Spesa per consumi finali della Pa per funzione di spesa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_1227_DF_DCCN_TNA1_6,Valori pro capite,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_3,Tasso di irregolarità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_379_DF_DCCN_OCCTSEC2010_4,Popolazione media annua,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_382,Sequenza dei conti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_382_DF_DCCN_SQCT_1,Sequenza dei conti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+93_48_DF_DCCN_VAAGSIPET_1,Produzione e valore aggiunto ai prezzi base,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-30
+93_498,Prodotto interno lordo lato produzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-30
+93_498_DF_DCCN_PILT_1,Prodotto interno lordo lato produzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_2,Indicatori su famiglie consumatrici e società non finanziarie,REF_AREA,nazionale,nazionale,1,2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_4,Investimenti fissi lordi per tipo di investimento,REF_AREA,nazionale,nazionale,1,2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_5,Stock di attività non finanziarie,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-30
+94_335,Occupazione per branca di attività - edizioni marzo 2012 e marzo 2013,REF_AREA,nazionale,nazionale,1,2026-07-30
+94_805,Occupazione  per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-30
+94_805_DF_DCCN_OCCSISEC2010_1,Occupazione per branca di attività,REF_AREA,nazionale,nazionale,1,2026-07-30
+94_805_DF_DCCN_OCCSISEC2010_2,Occupazione per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_42,Conto trimestrale,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_42_DF_DCCN_FPQ_1,Conto economico,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_42_DF_DCCN_FPQ_2,Indicatori (in rapporto al PIL),REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815,Conto annuale per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_1,Conto economico per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_2,Indicatori (in rapporto al PIL),REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_3,Redditi e retribuzione pro capite per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_4,Investimenti fissi lordi per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_5,Imposte e contributi sociali per sottosettore,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_815_DF_DCCN_FPA_6,Formazione della spesa per consumi finali,REF_AREA,nazionale,nazionale,1,2026-07-30
+95_94_DF_DCCN_OTEPPA_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre),REF_AREA,nazionale,nazionale,1,2026-07-30
+96_1068,Conti della Protezione sociale versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-30
+96_1068_DF_DCCN_PROTSOC_B14_1,Conti economici consolidati - edizioni maggio 2015 e aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+96_1068_DF_DCCN_PROTSOC_B14_2,"Prestazioni secondo evento, rischio e bisogno - edizioni maggio 2015 e aprile 2019",REF_AREA,nazionale,nazionale,1,2026-07-30
+96_1069,Conti della Protezione sociale versione 2011,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_1,Risorse e impieghi: schema di sintesi,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_2,Risorse per attività e tipo di flusso,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione),REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_5B,Vettori di indicatori chiave sui flussi di energia,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_6,Tavola di raccordo: consumo di energia,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_8,Intensità energetica,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1027_DF_DCCN_PEFA_9,Intensità di emissione  dei consumi energetici,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1028,Conti dei beni e servizi ambientali,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1028_DF_DCCN_EGSS_1,"Produzione, valore aggiunto, esportazioni",REF_AREA,nazionale,nazionale,1,2026-07-30
+97_1028_DF_DCCN_EGSS_2,Occupazione (unità di lavoro),REF_AREA,nazionale,nazionale,1,2026-07-30
+97_187,Emissioni atmosferiche NAMEA (NACE Rev.2),REF_AREA,nazionale,nazionale,1,2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_2,Famiglie,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_4,Intensità della produzione e del valore aggiunto,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_26,Gettito delle imposte ambientali,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_26_DF_DCCN_IMPAMB1_1,Categoria di imposta,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_26_DF_DCCN_IMPAMB1_2,Unità che corrisponde l'imposta,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_26_DF_DCCN_IMPAMB1_3,Gettito corrisposto dalle attività economiche,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_26_DF_DCCN_IMPAMB1_5,Destinazione del gettito,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_334,Conti dei flussi di materia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-30
+97_334_DF_DCCN_FLUMAT_1,Indicatori aggregati nazionali,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_334_DF_DCCN_FLUMAT_2,Estrazione interna di materiali utilizzati,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_334_DF_DCCN_FLUMAT_3,Scambi con il resto del mondo,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_334_DF_DCCN_FLUMAT_4,Indicatori aggregati regionali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-07-30
+97_366,Conti della Protezione sociale,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_366_DF_DCCN_PROTSOC_1,Conti economici consolidati,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_366_DF_DCCN_PROTSOC_2,"Prestazioni secondo evento, rischio e bisogno",REF_AREA,nazionale,nazionale,1,2026-07-30
+97_932,Conti dell'impiego di energia versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_953,Spese per la protezione dell'ambiente,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_1,Spesa nazionale,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_2,Aggregati economici per settore istituzionale,REF_AREA,nazionale,nazionale,1,2026-07-30
+97_953_DF_DCCN_SPESAPROTAMB_3,"Investimenti, consumi intermedi e produzione ausiliaria delle società come produttori ausiliari per attività economica",REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_1,Indicatori di produttività - edizioni marzo 2015 - marzo 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_2,Contributi alla crescita del valore aggiunto - edizioni marzo 2015 - marzo 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_3,Contributi alla crescita della produttività del lavoro - edizioni marzo 2015 - marzo 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_4,Serie per il calcolo delle produttività - edizioni marzo 2015 - marzo 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1066_DF_DCCN_PRODUTTIVITA_B14_5,Contributi settoriali alla variazione della produttività del lavoro - edizioni marzo 2015 - marzo 2019,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_1067,Misure di produttività - Conti versione 2011,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197,Misure di produttività,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_1,Indicatori di produttività,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_2,Contributi alla crescita del valore aggiunto,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,REF_AREA,nazionale,nazionale,1,2026-07-30
+98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
