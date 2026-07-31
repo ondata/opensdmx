@@ -4321,3 +4321,203 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,ok,hub,6,62,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,ok,hub,6,76,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,ok,hub,6,57,0,"",2026-07-30
+9_951,Cave e miniere,ok,hub,6,72,0,"",2026-07-31
+9_951_DF_DCCV_CAVE_MIN_1,Siti estrattivi,ok,hub,5,36,0,"",2026-07-31
+9_951_DF_DCCV_CAVE_MIN_2,Risorse minerali non energetiche estratte (in unità di peso),ok,hub,6,57,0,"",2026-07-31
+9_951_DF_DCCV_CAVE_MIN_3,Risorse minerali non energetiche estratte (in unità di volume),ok,hub,6,56,0,"",2026-07-31
+9_951_DF_DCCV_CAVE_MIN_4,Acque minerali naturali estratte a fini di produzione (in unità di peso e volume),ok,hub,3,31,0,"",2026-07-31
+9_951_DF_DCCV_CAVE_MIN_5,Indicatore Intesità di Estrazione (in unità di peso e volume),ok,hub,3,35,0,"",2026-07-31
+BULK_MS_VIDEO,Le macchine della statistica 2016,empty,hub,0,0,0,"",2026-07-31
+CATCUBE,Lista Cubi,empty,hub,0,0,0,"",2026-07-31
+CPI,Prezzi al consumo,ok,hub,5,5,0,"",2026-07-31
+DCAT_CENSAGRIC2020_AGE_INF,Aziende per tipo di informatizzazione ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-31
+DCAT_CENSAGRIC2020_GAIN,Aziende con attività connesse,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-31
+DCCV_CARGEOMOR_COM,Superfici esposte a rischio idrogeologico,ok,hub,3,8127,0,"",2026-07-31
+DCCV_CARGEOMOR_ST_COM,Superfici territoriali,ok,hub,3,8720,0,"",2026-07-31
+DCSS_BULK_ABITAZIONI,Abitazioni,empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_CONVIVENZE,Convivenze anagrafiche,empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_FAMIGLIE,Famiglie per numero di componenti,empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_FAM_POP,Numero di famiglie e popolazione residente in famiglia,empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_ISTR_LAV_PEN_2,"Istruzione, lavoro, spostamenti pendolari e cittadinanza",empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_POP_CAMPI_ATTR,"Campi attrezzati, insediamenti tollerati e spontanei",empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_POP_DEMCITMIG,Caratteristiche demografiche e cittadinanza,empty,hub,0,0,0,"",2026-07-31
+DCSS_BULK_SENZA_TETTO,Senza tetto e senza fissa dimora,empty,hub,0,0,0,"",2026-07-31
+DF_BES_TERRIT,Bes dei territori,ok,hub,6,224,0,"",2026-07-31
+DF_BES_TERRIT_0,Indicatori per singolo territorio,ok,hub,6,224,0,"",2026-07-31
+DF_BES_TERRIT_0T,Indicatori e territorio,ok,hub,6,224,0,"",2026-07-31
+DF_BES_TERRIT_1,Salute,ok,hub,6,149,0,"",2026-07-31
+DF_BES_TERRIT_10,Ambiente,ok,hub,6,156,0,"",2026-07-31
+DF_BES_TERRIT_11,"Innovazione, ricerca e creatività",ok,hub,6,147,0,"",2026-07-31
+DF_BES_TERRIT_12,Qualità dei servizi,ok,hub,6,153,0,"",2026-07-31
+DF_BES_TERRIT_2,Istruzione e formazione,ok,hub,6,156,0,"",2026-07-31
+DF_BES_TERRIT_3,Lavoro e conciliazione dei tempi di vita,ok,hub,6,149,0,"",2026-07-31
+DF_BES_TERRIT_4,Benessere economico,ok,hub,6,152,0,"",2026-07-31
+DF_BES_TERRIT_5,Relazioni sociali,ok,hub,6,143,0,"",2026-07-31
+DF_BES_TERRIT_6,Politica e istituzioni,ok,hub,6,152,0,"",2026-07-31
+DF_BES_TERRIT_7,Sicurezza,ok,hub,6,151,0,"",2026-07-31
+DF_BES_TERRIT_9,Paesaggio e patrimonio culturale,ok,hub,6,148,0,"",2026-07-31
+DF_BULK_2014TABLES,Tavole 2014,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_AGRMULTI_INN_1,Innovazione,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_AGRMULTI_RISK_1,Gestione del rischio,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_AGRMULTI_SUST_1,Sostenibilità,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_AGRMULTI_WATER_1,Risorse idriche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_ANIMALFEED,Mangimi serie interrotte 2003-2014,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_BANKRUPTCI,Fallimenti serie interrotte 1990-2007,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2000_1,Censimento agricoltura 2000,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ALLEVAMENTI,Consistenza degli allevamenti,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ALLEVAMENTIBIO,Consistenza degli allevamenti biologici certificati,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ALLEVAMENTIDOP,Consistenza degli allevamenti DOP e/o IGP,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ALLEVAMENTIUBI,Consistenza degli allevamenti per ubicazione delle unità agricole,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ATTIVCON,Attività remunerative connesse alle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_ATTIVCONBIO,Attività remunerative connesse alle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CAPOAZ,Capo azienda,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CAPOAZBIO,Capo azienda delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_COMMERCIALIZ,Commercializzazione delle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_COMMERCIALIZBIO,Commercializzazione delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CONTOTERZ,Contoterzismo delle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CONTOTERZBIO,Contoterzismo delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CONTRICAUT,Altre informazioni economiche delle aziende agricole,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_CONTRICAUTBIO,Altre informazioni economiche delle aziende agricole biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZALL,Stabulazione del bestiame,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZALLBIO,Stabulazione del bestiame delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZEXP,Letame e liquame portati fuori dall'azienda,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZEXPBIO,Letame e liquame portati fuori dall'azienda biologica,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZIMP,Impianti di stoccaggio e trattamento degli effluenti zootecnici,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZIMPBIO,Impianti di stoccaggio e trattamento degli effluenti zootecnici delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZPAS,Pascolo del bestiame,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GAEZPASBIO,Pascolo del bestiame delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSCON,Metodi di produzione dei seminativi,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSCONBIO,Metodi di produzione dei seminativi delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSGES,Metodi di produzione delle legnose agrarie,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSGESBIO,Metodi di produzione delle legnose agrarie delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSZOO,Applicazione degli effluenti zootecnici,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_GCSZOOBIO,Applicazione degli effluenti zootecnici delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IMPENRIN,Impianti di produzione di energia rinnovabile delle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IMPENRINBIO,Impianti di produzione di energia rinnovabile delle aziende agricole biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IRRIGAB,Aziende e superficie irrigabile,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IRRIGAB_BIO,Aziende biologiche e superficie irrigabile,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IRRIGATFG,"Aziende, superficie irrigata e volumi irrigui",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_IRRIGATFG_BIO,"Aziende biologiche, superficie irrigata e volumi irrigui",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_MANODOPALTR1,Altra manodopera aziendale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_MANODOPALTRBIO,Altra manodopera delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_MANODOPFAM,Manodopera familiare,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_MANODOPFAMBIO,Manodopera familiare delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTAUS2,Altre caratteristiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTAUSBIO,Altre caratteristiche delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTAUSDOP,Altre caratteristiche delle aziende DOP e/o IGP,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTGEN,Caratteristiche delle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTGENBIO,Caratteristiche delle aziende biologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_NOTGENDOP,Caratteristiche delle aziende DOP e/o IGP,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_SERIESTOR1,Serie storiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_TIPOLOGIA,Caratteristiche tipologiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_UTILTERR,Utilizzazione del terreno delle aziende,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_UTILTERRBIO,Utilizzazione del terreno condotto con metodo biologico,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_UTILTERRDOP,Utilizzazione del terreno per coltivazioni DOP e/o IGP,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_UTILTERRUBI,Utilizzazione del terreno per ubicazione delle unità agricole,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAG2010_DICA_VITE,Notizie sulla vite e relativo materiale di propagazione,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CAUSESOFDE,Cause di morte - Short_list V2024-01-30,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ACD,Occupazione delle imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ADIPP,Dipendenti delle imprese per tipologia di beneficiari di sgravi contributivi,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ADIPW,Dipendenti delle imprese (15vc),empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ADIPW1,Dipendenti delle imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_AESTC,Lavoratori esterni delle imprese per periodo di attività e compensi percepiti,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_AESTL,Lavoratori esterni delle imprese per tipologia di lavoratore,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_AIND,Indipendenti delle imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_AINT,Lavoratori temporanei delle imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUE1,Imprese e risorse umane,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEABR,Abruzzo,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEBAS1,Basilicata PROVA,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEBAS2,Basilicata,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUECAL,Calabria,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUECAM,Campania,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEEMI,Emilia-Romagna,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEFRI,Friuli-Venezia Giulia,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUELAZ,Lazio,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUELIG,Liguria,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUELOM,Lombardia,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEMAR,Marche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEMOL,Molise,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEOCC,Occupazione nelle Imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEPIE,Piemonte,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEPUG,Puglia,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUESAR,Sardegna,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUESIC,Sicilia,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUETAA,Trentino Alto Adige / Südtirol,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUETOS,Toscana,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEUMB,Umbria,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEVDA,Valle d'Aosta / Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUEVEN,Veneto,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAUL,Unità locali e addetti delle unità locali - Dati sino al livello comunale e per Sistema locale del lavoro 2001,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_ASIAULOCC,Occupazione delle unità locali delle imprese,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPICTDCOM,Dotazione di risorse ICT - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPICTDNP,Dotazione di risorse ICT,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPICTUCOM,Utilizzo di risorse ICT - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPICTUNP,Utilizzo di risorse ICT,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPIF,"Attività formativa del personale 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPO,"Occupazione per tipologia contrattuale, regime orario e classe di età 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPQLTFCOM,Sostenibilità ambientale - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPQLTFNP,Sostenibilità ambientale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPQLTGCOM,Salute e sicurezza nei luoghi di lavoro e trasparenza - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPQLTGNP,Salute e sicurezza nei luoghi di lavoro e trasparenza,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPSTRIPCOM,"Istituzioni, risorse umane e genere - dati comunali 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPSTRIPNP,"Istituzioni, risorse umane e genere 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPSTRULCOM,"Unità locali, risorse umane e genere - dati comunali 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPSTRULNP,"Unità locali, risorse umane e genere 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_IPSUL,"Unità locali, funzioni e servizi offerti",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSCUM,Capitale umano - Dati sino al livello regionale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSFIN1,Finanza - Dati sino al livello provinciale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSINN1,Innovazione - Dati sino al livello regionale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSINT1,Internazionalizzazione - Dati sino al livello regionale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSMER,Competitività e mercato - Dati sino al livello provinciale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSPCGDEM,"Proprietà, controllo, gestione - caratteristiche demografiche",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSPCGEVP1,"Proprietà, controllo, gestione - eventi precedenti",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSPCGTOT1,"Proprietà, controllo, gestione",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_MPSRLZ1,Relazioni tra imprese - Dati sino al livello regionale,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01BCOM,Risorse economiche - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01C,"Risorse umane 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01CB,Risorse umane e risorse economiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01CCOM,Risorse umane - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01GCOM,Caratteristiche istituzione - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01P,Periodo assunzione forma giuridica,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01PB,Periodo assunzione forma giuridica e risorse economiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01PCOM,Periodo assunzione forma giuridica - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N01SS,"Attività prevalente e secondaria 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N02M,"Mission 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N02MCOM,Mission - municipal level,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N02S,Servizi offerti,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N02SCOM,Servizi offerti - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03ACOM,Tipo di attività economica - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03B,Risorse economiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03FCOM,Tipologia di finanziamento prevalente - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03G,"Caratteristiche istituzione 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03OCOM,Orientamento dell'istituzione - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N03S,Servizi offerti,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N04E,Entrate,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N04ECOM,Entrate - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N04U,Uscite,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N04UCOM,Uscite - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05B,Risorse economiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05C,Categorie professionali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05CB,Categorie professionali e risorse economiche,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05CCOM,Categorie professionali - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05GCOM,Istituzioni lavoratori dipendenti e lavoratori esterni - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05W,"Lavoratori dipendenti e lavoratori esterni 2011, 2015",empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N05WCOM,Tipo contratto e regime orario dei dipendenti - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06ECOM,Titolo di studio dei volontari - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06GCOM,Istituzioni con volontari - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06I,Istituzioni con volontari,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06PCOM,Condizione occupazionale dei volontari - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06T,Volontari,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N06YCOM,Classe di età dei volontari - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N07A,Struttura,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N07ACOM,Struttura - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N07B,Entrate ed uscite,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N07BCOM,Entrate ed uscite - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08C,Tipologia di contatti diretti per raccolta fondi,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08CCOM,Tipologia di contatti diretti per raccolta fondi - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08M,Modalità raccolta fondi,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08MCOM,Modalità raccolta fondi - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08S,Strumenti comunicazione,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N08SCOM,Strumenti comunicazione - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N09AG,Forme aggregative,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N09AGCOM,Forme aggregative - dati comunali,empty,hub,0,0,0,"",2026-07-31

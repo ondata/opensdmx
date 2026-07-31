@@ -2153,3 +2153,26 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,REF_AREA,nazionale,nazionale,1,2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
+9_951,Cave e miniere,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-31
+9_951_DF_DCCV_CAVE_MIN_1,Siti estrattivi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
+9_951_DF_DCCV_CAVE_MIN_2,Risorse minerali non energetiche estratte (in unità di peso),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
+9_951_DF_DCCV_CAVE_MIN_3,Risorse minerali non energetiche estratte (in unità di volume),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
+9_951_DF_DCCV_CAVE_MIN_4,Acque minerali naturali estratte a fini di produzione (in unità di peso e volume),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
+9_951_DF_DCCV_CAVE_MIN_5,Indicatore Intesità di Estrazione (in unità di peso e volume),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-31
+CPI,Prezzi al consumo,REF_AREA,nazionale,nazionale,1,2026-07-31
+DCCV_CARGEOMOR_COM,Superfici esposte a rischio idrogeologico,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8117,2026-07-31
+DCCV_CARGEOMOR_ST_COM,Superfici territoriali,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8717,2026-07-31
+DF_BES_TERRIT,Bes dei territori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_0,Indicatori per singolo territorio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_0T,Indicatori e territorio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_1,Salute,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-31
+DF_BES_TERRIT_10,Ambiente,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_11,"Innovazione, ricerca e creatività",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-31
+DF_BES_TERRIT_12,Qualità dei servizi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_2,Istruzione e formazione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_3,Lavoro e conciliazione dei tempi di vita,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-31
+DF_BES_TERRIT_4,Benessere economico,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_5,Relazioni sociali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-31
+DF_BES_TERRIT_6,Politica e istituzioni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_7,Sicurezza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_BES_TERRIT_9,Paesaggio e patrimonio culturale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31

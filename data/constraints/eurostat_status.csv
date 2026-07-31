@@ -5205,3 +5205,310 @@ LFSO_10LPARLEA,Persons who took parental leave to care for their youngest child 
 LFSO_10LREDWOR,Persons who reduced their working time to care for their youngest child aged less than eight (2010),ok,sdmx,8,53,0,"",2026-07-30
 LFSO_10LSTOPWO,Persons who stopped work to care for their youngest child aged less than eight by duration of absence (2010),ok,sdmx,8,57,0,"",2026-07-30
 LFSO_12AGEPENS,Age at which the person first received an old-age pension (2012),ok,sdmx,7,43,0,"",2026-07-30
+LFSO_12EARLYRET,Early retirement among persons who receive an old-age pension (2012),ok,sdmx,7,42,0,"",2026-07-31
+LFSO_12PENSION,Persons who receive a pension (2012),ok,sdmx,8,52,0,"",2026-07-31
+LFSO_12PENSTYP,Persons who receive a pension by type (2012),ok,sdmx,6,41,0,"",2026-07-31
+LFSO_12REASNOT,Persons outside the labour force who receive a pension by reason to quit working (2012),ok,sdmx,7,50,0,"",2026-07-31
+LFSO_12REDUCHRS,Persons who reduced their working hours in a move towards retirement (2012),ok,sdmx,7,41,0,"",2026-07-31
+LFSO_12STAYWORK,Persons who receive a pension by reason to continue working (2012),ok,sdmx,7,46,0,"",2026-07-31
+LFSO_12WORKLONG,Persons outside the labour force who receive a pension who would have wished to stay longer in employment (2012),ok,sdmx,6,41,0,"",2026-07-31
+LFSO_14B1DR,"First generation of immigrants by citizenship, duration and reason for migration (2014)",ok,sdmx,8,55,0,"",2026-07-31
+LFSO_14BEDUC,"Population in private households by educational attainment level, migration status and educational attainment level of parents (ISCED11F) (2014)",ok,sdmx,9,60,0,"",2026-07-31
+LFSO_14BLANG,"Immigrants by skills in host country language, migration status and citizenship (2014)",ok,sdmx,7,50,0,"",2026-07-31
+LFSO_14HHCOMPCOB,"Private households by migration status, country of birth of parents and household composition (2014)",ok,sdmx,7,53,0,"",2026-07-31
+LFSO_14HHWKCOB,"Private households by country of birth of parents, labour status and years of residence (2014)",ok,sdmx,7,46,0,"",2026-07-31
+LFSO_14HHWKMG,"Private households by migration status, labour status and years of residence (2014)",ok,sdmx,7,47,0,"",2026-07-31
+LFSO_14L1EMPR,Employment rate of first generation of immigrants by years of residence and reason for migration (2014),ok,sdmx,8,53,0,"",2026-07-31
+LFSO_14LACTR,"Labour force participation rate by migration status, citizenship and educational attainment level (2014)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_14LEECM,"Employees by methods to find current job, migration status, educational attainment level and type of contract (2014)",ok,sdmx,8,60,0,"",2026-07-31
+LFSO_14LEEOW,"Employees by migration status, educational attainment level, occupation and working time (2014)",ok,sdmx,8,61,0,"",2026-07-31
+LFSO_14LEL,"Population in private households by labour status, migration status and educational attainment level (2014)",ok,sdmx,9,58,0,"",2026-07-31
+LFSO_14LEMP,"Employed persons by migration status, professional status, type of contract and full-time/part-time employment (2014)",ok,sdmx,8,54,0,"",2026-07-31
+LFSO_14LEMPR,"Employment rate by migration status, citizenship and educational attainment level (2014)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_14LOQ,Self-declared over-qualified employees by migration status and educational attainment level - % of total employees (2014),ok,sdmx,8,54,0,"",2026-07-31
+LFSO_14LUNER,"Unemployment rate by migration status, citizenship and educational attainment level (2014)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_14OCITI,"Persons not in employment or over-qualified for their job by obstacles to getting a suitable job, migration status, labour status and citizenship (2014)",ok,sdmx,8,52,0,"",2026-07-31
+LFSO_14OEDUC,"Persons not in employment or over-qualified for their job by obstacles to getting a suitable job, migration status, labour status and educational attainment level (2014)",ok,sdmx,8,49,0,"",2026-07-31
+LFSO_14PCITI,Population in private households by migration status and citizenship (2014),ok,sdmx,8,61,0,"",2026-07-31
+LFSO_14PCITIRK,Ranking of citizenship by migration status (2014),ok,sdmx,8,138,0,"",2026-07-31
+LFSO_14PCOB,Population in private households by migration status and country of birth (2014),ok,sdmx,8,61,0,"",2026-07-31
+LFSO_14PCOBP,"Population in private households by migration status, country of birth and country of birth of parents (2014)",ok,sdmx,9,70,0,"",2026-07-31
+LFSO_14PCOBRK,Ranking of country of birth of first generation of immigrants (2014),ok,sdmx,7,109,0,"",2026-07-31
+LFSO_14PURB,Population in private households by migration status and degree of urbanisation (2014),ok,sdmx,8,53,0,"",2026-07-31
+LFSO_16AGENCY,Temporary employment agency workers by educational attainment level and work experience while studying - % of total employees (2016),ok,sdmx,8,56,0,"",2026-07-31
+LFSO_16CMT4J,"Population in private households ready to have more than one hour travel time each way to work by educational attainment level, work experience while studying and labour status (2016)",ok,sdmx,10,71,0,"",2026-07-31
+LFSO_16ELVNCOM,Early leavers from education and training who started but never completed upper secondary education by reason (2016),ok,sdmx,7,48,0,"",2026-07-31
+LFSO_16ELVNSTA,Early leavers from education and training who never started upper secondary education by reason (2016),ok,sdmx,7,49,0,"",2026-07-31
+LFSO_16EMPRT,Employment rate by educational attainment level and work experience while studying (2016),ok,sdmx,8,63,0,"",2026-07-31
+LFSO_16FEDUC,"Population in private households by educational attainment level, work experience while studying and participation in formal education (2016)",ok,sdmx,9,70,0,"",2026-07-31
+LFSO_16FINDMET,"Employees by educational attainment level, work experience while studying and method used for finding current job (2016)",ok,sdmx,9,70,0,"",2026-07-31
+LFSO_16HUSUW,"Employed persons by educational attainment level, work experience while studying and usual weekly hours worked (2016)",ok,sdmx,9,71,0,"",2026-07-31
+LFSO_16INART,Labour force non-participation rate by educational attainment level and work experience while studying (2016),ok,sdmx,8,63,0,"",2026-07-31
+LFSO_16INVPT,Persons in involuntary part-time employment by educational attainment level and work experience while studying - % of total part-time employment (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16INVTEMP,Employees with involuntary temporary contracts by educational attainment level and work experience while studying - % of total employees with temporary contracts (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16JOBTEN,"Employed persons by educational attainment level, work experience while studying and job tenure (2016)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_16LONGW,Employed persons with long working hours in the main job by educational attainment level and work experience while studying - % of total employment (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16MOVE4J,"Population in private households ready to move residence to find a job by educational attainment level, work experience while studying and labour status (2016)",ok,sdmx,10,73,0,"",2026-07-31
+LFSO_16NFEDUC,"Population in private households by educational attainment level, work experience while studying and participation in non-formal education and training (2016)",ok,sdmx,9,70,0,"",2026-07-31
+LFSO_16OKLEV,"Employed persons by educational attainment level, work experience while studying and match between education and job (2016)",ok,sdmx,9,69,0,"",2026-07-31
+LFSO_16PRECEMP,Employees in precarious employment by educational attainment level and work experience while studying - % of total employees (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16SHIFTW,Employees working shifts by educational attainment level and work experience while studying - % of total employees (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16SUPEMP,"Employed persons by educational attainment level, work experience while studying and type of assistance for finding current job (2016)",ok,sdmx,9,67,0,"",2026-07-31
+LFSO_16SUPNEMP,"Persons not in employment by educational attainment level, work experience while studying and type of assistance for finding a job (2016)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_16UNERT,Unemployment rate by educational attainment level and work experience while studying (2016),ok,sdmx,8,63,0,"",2026-07-31
+LFSO_16WKENDW,Employed persons working on weekends by educational attainment level and work experience while studying - % of total employment (2016),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_16WORKEXP,Population in private households by educational attainment level and work experience while studying (2016),ok,sdmx,8,64,0,"",2026-07-31
+LFSO_16YMGHIED,Population in private households in tertiary education by educational attainment level and work experience while studying (2016),ok,sdmx,8,54,0,"",2026-07-31
+LFSO_16YMGNEDNC,"Population in private households with medium educational attainment not in formal education who started but never completed tertiary education by reason, educational attainment level and work experience while studying (2016)",ok,sdmx,9,62,0,"",2026-07-31
+LFSO_16YMGNEDNS,"Population in private households with medium educational attainment not in formal education who never started tertiary education by reason, educational attainment level and work experience while studying (2016)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_17CS2J,Persons having a second job by professional status in the main job and professional status in the second job (2017),ok,sdmx,7,57,0,"",2026-07-31
+LFSO_17CSAG,"Employed persons by professional status, educational attainment level and age (2017)",ok,sdmx,8,67,0,"",2026-07-31
+LFSO_17CSCB,"Employed persons by professional status, educational attainment level and country of birth (2017)",ok,sdmx,8,62,0,"",2026-07-31
+LFSO_17CSNA,"Employed persons by professional status, educational attainment level and economic activity (2017)",ok,sdmx,8,79,0,"",2026-07-31
+LFSO_17CSNJ,"Employed persons by professional status, educational attainment level and number of jobs (2017)",ok,sdmx,8,60,0,"",2026-07-31
+LFSO_17CSOC,"Employed persons by professional status, educational attainment level and occupation (2017)",ok,sdmx,8,68,0,"",2026-07-31
+LFSO_17CSPWT,"Employed persons by professional status, educational attainment level and preferred working time (2017)",ok,sdmx,8,61,0,"",2026-07-31
+LFSO_17CSUR,"Employed persons by professional status, educational attainment level and degree of urbanisation (2017)",ok,sdmx,8,61,0,"",2026-07-31
+LFSO_17CSWEW,Employed persons who work on weekends by professional status and educational attainment level (2017),ok,sdmx,8,61,0,"",2026-07-31
+LFSO_17CSWWH,"Employed persons by professional status, educational attainment level and usual weekly hours worked (2017)",ok,sdmx,8,63,0,"",2026-07-31
+LFSO_17JSAUT,Employed persons by job autonomy and professional status (2017),ok,sdmx,7,57,0,"",2026-07-31
+LFSO_17JSCB,"Employed persons by job satisfaction, professional status and country of birth (2017)",ok,sdmx,8,63,0,"",2026-07-31
+LFSO_17JSED,"Employed persons by job satisfaction, professional status and educational attainment level (2017)",ok,sdmx,8,62,0,"",2026-07-31
+LFSO_17JSOC,"Employed persons by job satisfaction, professional status and occupation (2017)",ok,sdmx,8,69,0,"",2026-07-31
+LFSO_17PSCB,Employed persons by current and preferred professional status and country of birth (2017),ok,sdmx,8,62,0,"",2026-07-31
+LFSO_17PSED,Employed persons by current and preferred professional status and educational attainment level (2017),ok,sdmx,8,61,0,"",2026-07-31
+LFSO_17PSOBST,Employees and family workers who wish to be self-employed by main reason for not being self-employed (2017),ok,sdmx,6,48,0,"",2026-07-31
+LFSO_17SEBUSP,Self-employed persons by business partners and professional status (2017),ok,sdmx,7,53,0,"",2026-07-31
+LFSO_17SECLNT,Self-employed persons by number and importance of clients in the last 12 months (2017),ok,sdmx,6,49,0,"",2026-07-31
+LFSO_17SEDIFF,Self-employed persons by main difficulty as self-employed and professional status (2017),ok,sdmx,7,58,0,"",2026-07-31
+LFSO_17SENEES,Self-employed persons without employees by main reason for not having employees and country of birth (2017),ok,sdmx,7,58,0,"",2026-07-31
+LFSO_17SEPHIR,Self-employed persons by planned hiring of employees or subcontractors and professional status (2017),ok,sdmx,7,55,0,"",2026-07-31
+LFSO_17SEREAS,Self-employed persons by main reason for becoming self-employed and professional status (2017),ok,sdmx,7,57,0,"",2026-07-31
+LFSO_17SEWORG,Self-employed persons having at least one client in the last 12 months by control over working time (2017),ok,sdmx,6,46,0,"",2026-07-31
+LFSO_18CEFFDU,Employed persons with childcare responsibilities by effect on employment and degree of urbanisation (2018),ok,sdmx,8,65,0,"",2026-07-31
+LFSO_18CEFFDU$DV_1901,Employed persons with childcare responsibilities by effect on employment and degree of urbanisation (2018),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSO_18CEFFDU$DV_1901'
+For more information check: https://developer",2026-07-31
+LFSO_18CEFFED,Employed persons with childcare responsibilities by effect on employment and educational attainment level (2018),ok,sdmx,8,65,0,"",2026-07-31
+LFSO_18COBS,Population in private households not using childcare services by main reason (2018),ok,sdmx,8,64,0,"",2026-07-31
+LFSO_18CRESCB,Population in private households by care responsibilities and country of birth (2018),ok,sdmx,8,71,0,"",2026-07-31
+LFSO_18CRESDU,Population in private households by care responsibilities and degree of urbanisation (2018),ok,sdmx,8,68,0,"",2026-07-31
+LFSO_18CRESED,Population in private households by care responsibilities and educational attainment level (2018),ok,sdmx,8,68,0,"",2026-07-31
+LFSO_18CRESHC,Population in private households by care responsibilities and household composition (2018),ok,sdmx,8,67,0,"",2026-07-31
+LFSO_18CRESLS,Population in private households by care responsibilities and labour status (2018),ok,sdmx,8,68,0,"",2026-07-31
+LFSO_18CRESNAT,Population in private households by care responsibilities and citizenship (2018),ok,sdmx,8,71,0,"",2026-07-31
+LFSO_18CUSECB,Population in private households with childcare responsibilities by use of childcare services and country of birth (2018),ok,sdmx,9,67,0,"",2026-07-31
+LFSO_18CUSEDU,Population in private households with childcare responsibilities by use of childcare services and degree of urbanisation (2018),ok,sdmx,9,64,0,"",2026-07-31
+LFSO_18CUSEED,Population in private households with childcare responsibilities by use of childcare services and educational attainment level (2018),ok,sdmx,9,64,0,"",2026-07-31
+LFSO_18CUSEFP,Population in private households with childcare responsibilities by use of childcare services and full-time/part-time employment (2018),ok,sdmx,9,63,0,"",2026-07-31
+LFSO_18CUSELS,Population in private households with childcare responsibilities by use of childcare services and labour status (2018),ok,sdmx,9,64,0,"",2026-07-31
+LFSO_18CUSENAT,Population in private households with childcare responsibilities by use of childcare services and citizenship (2018),ok,sdmx,9,67,0,"",2026-07-31
+LFSO_18CUSEPS,Population in private households with childcare responsibilities by use of childcare services and professional status (2018),ok,sdmx,9,65,0,"",2026-07-31
+LFSO_18PARLVED,Population in private households with work interruption for childcare by type of leave and educational attainment level (2018),ok,sdmx,8,61,0,"",2026-07-31
+LFSO_18POSEEDU,"Employees with care responsibilities by working time flexibility for care, educational attainment level and degree of urbanisation (2018)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_18POSEI,Employees with care responsibilities by working time flexibility for care and occupation (2018),ok,sdmx,8,68,0,"",2026-07-31
+LFSO_18POWTEDU,"Employees with care responsibilities by flexibility for taking whole days off for care, educational attainment level and degree of urbanisation (2018)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_18POWTI,Employees with care responsibilities by flexibility for taking whole days off for care and occupation (2018),ok,sdmx,8,68,0,"",2026-07-31
+LFSO_18REDSTED,Persons in employment or with previous employment experience by effects of care of incapacitated relatives on employment and educational attainment level (2018),ok,sdmx,8,62,0,"",2026-07-31
+LFSO_18STLENED,Population in private households with work interruption for childcare by duration of interruption and educational attainment level (2018),ok,sdmx,8,63,0,"",2026-07-31
+LFSO_18STWKCB,Population in private households by effects of childcare on employment and country of birth (2018),ok,sdmx,8,66,0,"",2026-07-31
+LFSO_18STWKCB$DV_1989,Population in private households by effects of childcare on employment and country of birth (2018),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSO_18STWKCB$DV_1989'
+For more information check: https://developer",2026-07-31
+LFSO_18STWKED,Population in private households by effects of childcare on employment and educational attainment level (2018),ok,sdmx,8,63,0,"",2026-07-31
+LFSO_18STWKNAT,Population in private households by effects of childcare on employment and citizenship (2018),ok,sdmx,8,66,0,"",2026-07-31
+LFSO_18WOBSDU,Employed persons with care responsibilities by main obstacle at work for reconciliation and degree of urbanisation (2018),ok,sdmx,8,65,0,"",2026-07-31
+LFSO_18WOBSED,Employed persons with care responsibilities by main obstacle at work for reconciliation and educational attainment level (2018),ok,sdmx,8,65,0,"",2026-07-31
+LFSO_19FXWT01,"Employed persons by working time flexibility, educational attainment level and professional status (2019)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_19FXWT02,"Employees by working time flexibility, type of employment contract and size of the local unit (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19FXWT02$DV_1871,"Employees by working time flexibility, type of employment contract and size of the local unit (2019)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSO_19FXWT02$DV_1871'
+For more information check: https://developer",2026-07-31
+LFSO_19FXWT03,"Employed persons by working time flexibility, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,72,0,"",2026-07-31
+LFSO_19FXWT04,"Employed persons by level of difficulty to take one or two hours off at short notice, educational attainment level and professional status (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19FXWT05,"Employed persons by level of difficulty to take one or two hours off at short notice, household composition and working from home (2019)",ok,sdmx,9,68,0,"",2026-07-31
+LFSO_19FXWT06,"Employed persons by level of difficulty to take one or two hours off at short notice, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19FXWT07,"Employed persons by level of difficulty to take one or two days of leave at short notice, educational attainment level and professional status (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19FXWT08,"Employees by level of difficulty to take one or two days of leave at short notice, type of employment contract and size of the local unit (2019)",ok,sdmx,9,69,0,"",2026-07-31
+LFSO_19FXWT09,"Employed persons by level of difficulty to take one or two days of leave at short notice, household composition and working from home (2019)",ok,sdmx,9,68,0,"",2026-07-31
+LFSO_19FXWT10,"Employed persons by level of difficulty to take one or two days of leave at short notice, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19FXWT11,"Employed persons by frequency of adapting working time to fulfil work tasks, educational attainment level and professional status (2019)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_19FXWT12,"Employees by frequency of adapting working time to fulfil work tasks, type of employment contract and size of the local unit (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19FXWT13,"Employed persons by frequency of adapting working time to fulfil work tasks, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,72,0,"",2026-07-31
+LFSO_19FXWT14,"Employed persons by frequency of work-related contacts during leisure time (in last two months), educational attainment level and professional status (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19FXWT15,"Employees by frequency of work-related contacts during leisure time (in last two months), type of employment contract and size of the local unit (2019)",ok,sdmx,9,69,0,"",2026-07-31
+LFSO_19FXWT16,"Employed persons by frequency of work-related contacts during leisure time (in last two months), economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19MTWK17,"Employees by recording presence or working hours, educational attainment level and size of the local unit (2019)",ok,sdmx,9,64,0,"",2026-07-31
+LFSO_19MTWK18,"Employees by recording presence or working hours, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19MTWK19,"Employed persons by frequency of working under time pressure, educational attainment level and professional status (2019)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_19MTWK20,"Employed persons by frequency of working under time pressure, size of the local unit and atypical working time (2019)",ok,sdmx,9,62,0,"",2026-07-31
+LFSO_19MTWK21,"Employed persons by frequency of working under time pressure, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19MTWK22,Average usual weekly hours worked in the main job by frequency of working under time pressure and frequency of work-related contacts during leisure time (in last two months) (2019),ok,sdmx,8,62,0,"",2026-07-31
+LFSO_19MTWK23,"Employed persons by job autonomy, educational attainment level and professional status (2019)",ok,sdmx,9,64,0,"",2026-07-31
+LFSO_19MTWK24,"Employed persons by job autonomy, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,73,0,"",2026-07-31
+LFSO_19PLWK25,"Employed persons by main place of work, educational attainment level and degree of urbanisation (2019)",ok,sdmx,9,62,0,"",2026-07-31
+LFSO_19PLWK26,"Employed persons by main place of work, frequency of working at other locations and working from home (2019)",ok,sdmx,9,64,0,"",2026-07-31
+LFSO_19PLWK27,"Employed persons by main place of work, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,73,0,"",2026-07-31
+LFSO_19PLWK28,"Employed persons by commuting time, educational attainment level and degree of urbanisation (2019)",ok,sdmx,9,71,0,"",2026-07-31
+LFSO_19PLWK29,"Employed persons by commuting time, household composition and working from home (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_19PLWK30,"Employed persons by commuting time, economic activity (NACE Rev. 2) and occupation (2019)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_21DISC01,"Employed persons by reason for discrimination in the current job, country of birth and educational attainment level (2021)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_21DISC02,"Employed persons by reason for discrimination in the current job, migration status and professional status (2021)",ok,sdmx,9,65,0,"",2026-07-31
+LFSO_21DISC02$DV_1912,"Employed persons by reason for discrimination in the current job, migration status and professional status (2021)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSO_21DISC02$DV_1912'
+For more information check: https://developer",2026-07-31
+LFSO_21DISC03,"Employed persons by reason for discrimination in the current job, citizenship and occupation (2021)",ok,sdmx,9,69,0,"",2026-07-31
+LFSO_21DISC03$DV_1910,"Employed persons by reason for discrimination in the current job, citizenship and occupation (2021)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSO_21DISC03$DV_1910'
+For more information check: https://developer",2026-07-31
+LFSO_21DISC04,"Employed persons by reason for discrimination in the current job, size of the local unit and economic activity (2021)",ok,sdmx,9,80,0,"",2026-07-31
+LFSO_21EDUC01,"Population in private households by country where the highest level of education was successfully completed, country of birth and educational attainment level (2021)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_21EDUC02,"Population in private households with the highest level of education obtained abroad by application for formal recognition of the education in the host country, country of educational attainment level and country of birth (2021)",ok,sdmx,9,59,0,"",2026-07-31
+LFSO_21EDUC03,"Population in private households with the highest level of education obtained abroad by outcome of applying for recognition of the education in the host country, educational attainment level and country of educational attainment level (2021)",ok,sdmx,9,54,0,"",2026-07-31
+LFSO_21EDUC04,"Population in private households with the highest level of education obtained abroad by reason for not applying for recognition of the education in the host country, educational attainment level and country of educational attainment level (2021)",ok,sdmx,9,56,0,"",2026-07-31
+LFSO_21EDUC05,"Employed foreign-born by change in skill level from last job before migrating to current job, country of birth and educational attainment level (2021)",ok,sdmx,9,60,0,"",2026-07-31
+LFSO_21EDUC06,"Employed foreign-born by change in skill level from last job before migrating to current job, country of birth and professional status (2021)",ok,sdmx,9,61,0,"",2026-07-31
+LFSO_21EDUC07,Employed foreign-born by change in skill level from last job before migrating to current job and main reason for migrating (2021),ok,sdmx,8,58,0,"",2026-07-31
+LFSO_21EDUC08,"Population in private households by educational attainment level of the parents, migration status and educational attainment level (2021)",ok,sdmx,9,68,0,"",2026-07-31
+LFSO_21EDUC09,"Population in private households by educational attainment level of the parents, country of birth and labour status (2021)",ok,sdmx,9,64,0,"",2026-07-31
+LFSO_21JSAT01,"Employed persons by job satisfaction, country of birth and educational attainment level (2021)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_21JSAT02,"Employed persons by job satisfaction, size of the local unit and economic activity (2021)",ok,sdmx,9,77,0,"",2026-07-31
+LFSO_21JSAT03,"Employed persons by job satisfaction, citizenship and occupation (2021)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_21JSAT04,"Employed persons by job satisfaction, working from home and working time flexibility (2021)",ok,sdmx,9,58,0,"",2026-07-31
+LFSO_21JSAT05,"Employed persons by job satisfaction, migration status and professional status (2021)",ok,sdmx,9,62,0,"",2026-07-31
+LFSO_21JSAT06,"Employees by job satisfaction, supervisory responsibilities and type of employment contract (2021)",ok,sdmx,9,55,0,"",2026-07-31
+LFSO_21LANG01,"Foreign-born population in private households by level of skills in the main host country language before migrating, country of birth and educational attainment level (2021)",ok,sdmx,9,62,0,"",2026-07-31
+LFSO_21LANG02,"Foreign-born population in private households by level of current skills in the main host country language, country of birth and educational attainment level (2021)",ok,sdmx,9,61,0,"",2026-07-31
+LFSO_21LANG03,"Foreign-born population in private households by level of current skills in the main host country language, citizenship and labour status (2021)",ok,sdmx,9,64,0,"",2026-07-31
+LFSO_21LANG04,"Foreign-born population in private households by participation in a course for the main host country language after migrating, country of birth and educational attainment level (2021)",ok,sdmx,9,54,0,"",2026-07-31
+LFSO_21LANG05,"Foreign-born population in private households by reason for not participating in a course for the main host country language after migrating, country of birth and educational attainment level (2021)",ok,sdmx,9,55,0,"",2026-07-31
+LFSO_21OBST01,"Foreign-born population in private households by main obstacle to get a suitable job, country of birth and educational attainment level (2021)",ok,sdmx,9,65,0,"",2026-07-31
+LFSO_21OBST02,"Foreign-born population in private households by main obstacle to get a suitable job, citizenship and labour status (2021)",ok,sdmx,9,63,0,"",2026-07-31
+LFSO_21OBST03,"Foreign-born population in private households by main obstacle to get a suitable job, country of birth and main reason for migrating (2021)",ok,sdmx,9,66,0,"",2026-07-31
+LFSO_21OBST04,Foreign-born population in private households by time required to find the first paid job in the host country and country of birth (2021),ok,sdmx,8,54,0,"",2026-07-31
+LFSO_21OBST05,Foreign-born population in private households by time required to find the first paid job in the host country and citizenship (2021),ok,sdmx,8,58,0,"",2026-07-31
+LFSO_22ASWT01,"Employed persons by working time spent on cognitive tasks, professional status and educational attainment level (2022)",ok,sdmx,9,73,0,"",2026-07-31
+LFSO_22ASWT02,"Employed persons by working time spent on cognitive tasks, full-time/part-time employment and economic activity (2022)",ok,sdmx,9,90,0,"",2026-07-31
+LFSO_22ASWT03,"Employed persons by working time spent on manual tasks, professional status and educational attainment level (2022)",ok,sdmx,9,73,0,"",2026-07-31
+LFSO_22ASWT04,"Employed persons by working time spent on manual tasks, full-time/part-time employment and economic activity (2022)",ok,sdmx,9,90,0,"",2026-07-31
+LFSO_22ASWT05,"Employed persons by working time spent on social tasks, professional status and educational attainment level (2022)",ok,sdmx,9,73,0,"",2026-07-31
+LFSO_22ASWT06,"Employed persons by working time spent on social tasks, full-time/part-time employment and economic activity (2022)",ok,sdmx,9,90,0,"",2026-07-31
+LFSO_22DMSC01,Employed persons by working time spent on using digital devices and on another specific task (reading documents) (2022),ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22DMSC02,Employed persons by working time spent on using digital devices and on another specific task (doing relatively complex calculations) (2022),ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22DMSC03,Employed persons by working time spent on using digital devices and on another specific task (interacting with people from the same enterprise or organisation) (2022),ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22DMSC04,Employed persons by working time spent on using digital devices and on another specific task (interacting with people from outside the enterprise or organisation) (2022),ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22DMSC05,"Employed persons by working time spent on using digital devices and on another specific task (advising, training or teaching) (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22MANT01,"Employed persons by working time spent on doing hard physical work, migration status and educational attainment level (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22MANT02,"Employees by working time spent on doing hard physical work, employment contract and full-time/part-time employment (2022)",ok,sdmx,9,67,0,"",2026-07-31
+LFSO_22MANT03,"Employed persons by working time spent on tasks involving finger dexterity, migration status and educational attainment level (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22MANT04,"Employees by working time spent on tasks involving finger dexterity, employment contract and full-time/part-time employment (2022)",ok,sdmx,9,67,0,"",2026-07-31
+LFSO_22WRKM01,"Employed persons by level of standardization of tasks, level of repetitiveness of tasks and job autonomy (2022)",ok,sdmx,9,81,0,"",2026-07-31
+LFSO_22WRKM02,"Employed persons by level of standardization of tasks, level of repetitiveness of tasks and educational attainment level (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22WRKM03,"Employed persons by job autonomy, economic activity and occupation (2022)",ok,sdmx,9,105,0,"",2026-07-31
+LFSO_22WRKM04,"Employed persons by job autonomy, educational attainment level and professional status (2022)",ok,sdmx,9,76,0,"",2026-07-31
+LFSO_22WRKM05,"Employed persons by job autonomy, migration status and citizenship (2022)",ok,sdmx,9,79,0,"",2026-07-31
+LFSO_22WRKM06,"Employees by job autonomy, employment contract and full-time/part-time employment (2022)",ok,sdmx,9,71,0,"",2026-07-31
+LFSO_22WRKM07,"Employed persons by level of repetitiveness of tasks, economic activity and occupation (2022)",ok,sdmx,9,101,0,"",2026-07-31
+LFSO_22WRKM08,"Employed persons by level of repetitiveness of tasks, educational attainment level and professional status (2022)",ok,sdmx,9,72,0,"",2026-07-31
+LFSO_22WRKM09,"Employed persons by level of repetitiveness of tasks, migration status and citizenship (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22WRKM10,"Employees by level of repetitiveness of tasks, employment contract and full-time/part-time employment (2022)",ok,sdmx,9,67,0,"",2026-07-31
+LFSO_22WRKM11,"Employed persons by level of standardization of tasks, economic activity and occupation (2022)",ok,sdmx,9,101,0,"",2026-07-31
+LFSO_22WRKM12,"Employed persons by level of standardization of tasks, educational attainment level and professional status (2022)",ok,sdmx,9,72,0,"",2026-07-31
+LFSO_22WRKM13,"Employed persons by level of standardization of tasks, migration status and citizenship (2022)",ok,sdmx,9,75,0,"",2026-07-31
+LFSO_22WRKM14,"Employees by level of standardization of tasks, employment contract and full-time/part-time employment (2022)",ok,sdmx,9,67,0,"",2026-07-31
+LFSO_23PENS01,Persons receiving an old-age or disability pension by type and labour status (2023),ok,sdmx,8,55,0,"",2026-07-31
+LFSO_23PENS02,Persons receiving an old-age pension by type (2023),ok,sdmx,7,44,0,"",2026-07-31
+LFSO_23PENS03,Age at which the person started receiving an old-age pension (2023),ok,sdmx,7,42,0,"",2026-07-31
+LFSO_23PENS04,Persons receiving an old-age pension by first statutory pension receipt with/without reduction or bonus (2023),ok,sdmx,7,44,0,"",2026-07-31
+LFSO_23PENS05,Age at which the person started receiving a disability pension or other periodic disability cash benefits (2023),ok,sdmx,7,42,0,"",2026-07-31
+LFSO_23PENS06,Persons receiving an old-age pension by their work situation at the beginning of pension receipt (2023),ok,sdmx,7,45,0,"",2026-07-31
+LFSO_23PENS07,Persons receiving an old-age pension and stopped working at the beginning of pension receipt by reason (2023),ok,sdmx,7,48,0,"",2026-07-31
+LFSO_23PENS08,Persons receiving an old-age pension and continued working at the beginning of pension receipt by reason (2023),ok,sdmx,7,47,0,"",2026-07-31
+LFSO_23PENS09,Persons receiving an old-age pension and re-entered the labour market after the beginning of pension receipt (2023),ok,sdmx,6,39,0,"",2026-07-31
+LFSO_23PENS10,Persons receiving an old-age pension and re-entered the labour market after the beginning of pension receipt by reason (2023),ok,sdmx,7,43,0,"",2026-07-31
+LFSO_23PENS11,Persons receiving an old-age pension by their work situation at the beginning of pension receipt and current or previous professional status (2023),ok,sdmx,8,50,0,"",2026-07-31
+LFSO_23PENS12,Persons receiving an old-age pension by their work situation at the beginning of pension receipt and current or previous occupation (2023),ok,sdmx,8,57,0,"",2026-07-31
+LFSO_23PENS13,Persons not receiving a statutory nor an occupational old-age pension by type of financial old-age provision (2023),ok,sdmx,7,44,0,"",2026-07-31
+LFSO_24EAB01,Persons by formal education or training abandoned and educational attainment level (2024),ok,sdmx,8,57,0,"",2026-07-31
+LFSO_24EAB02,Persons by level of the formal education or training abandoned and educational attainment level (2024),ok,sdmx,8,59,0,"",2026-07-31
+LFSO_24EAB03,Persons by level of the formal education or training abandoned and reason (2024),ok,sdmx,8,60,0,"",2026-07-31
+LFSO_24EAB04,Persons neither in employment nor in education and training by educational attainment level and formal education or training abandoned (NEET rates) (2024),ok,sdmx,8,57,0,"",2026-07-31
+LFSO_24LMK01,Employment rate by work experience while studying and country of birth (2024),ok,sdmx,9,63,0,"",2026-07-31
+LFSO_24LMK02,Unemployment rate by work experience while studying and country of birth (2024),ok,sdmx,9,60,0,"",2026-07-31
+LFSO_24LMK03,Labour force participation rate by work experience while studying and country of birth (2024),ok,sdmx,9,63,0,"",2026-07-31
+LFSO_24LMK04,Persons in part-time employment by work experience while studying (2024),ok,sdmx,8,57,0,"",2026-07-31
+LFSO_24LMK05,Persons in part-time employment by work experience while studying and reason (2024),ok,sdmx,9,62,0,"",2026-07-31
+LFSO_24LMK06,Temporary employees by work experience while studying (2024),ok,sdmx,8,57,0,"",2026-07-31
+LFSO_24LMK07,Employees with involuntary temporary contracts by work experience while studying (2024),ok,sdmx,8,54,0,"",2026-07-31
+LFSO_24LMK08,Employed persons by work experience while studying and job tenure (2024),ok,sdmx,9,62,0,"",2026-07-31
+LFSO_24MATCH01,Persons by match between educational attainment level and current/last main job and work experience while studying (2024),ok,sdmx,9,67,0,"",2026-07-31
+LFSO_24MATCH02,Persons by match between educational attainment level and current/last main job and occupation (2024),ok,sdmx,9,70,0,"",2026-07-31
+LFSO_24MATCH03,Persons not in formal education by match between educational attainment level and current/last main job and years since completion of highest level of education (2024),ok,sdmx,9,65,0,"",2026-07-31
+LFSO_24MATCH04,Persons by match between educational attainment level and current/last main job and country of birth (2024),ok,sdmx,9,63,0,"",2026-07-31
+LFSO_24MATCH05,Persons by match between field of education and current/last main job and work experience while studying (2024),ok,sdmx,9,68,0,"",2026-07-31
+LFSO_24MATCH06,Persons by match between field of education and current/last main job and field of education (2024),ok,sdmx,9,67,0,"",2026-07-31
+LFSO_24MATCH07,Persons by match between field of education and current/last main job and occupation (2024),ok,sdmx,9,68,0,"",2026-07-31
+LFSO_24MATCH08,Persons not in formal education by match between field of education and current/last main job and years since completion of highest level of education (2024),ok,sdmx,9,62,0,"",2026-07-31
+LFSO_24MATCH09,Persons by match between field of education and current/last main job and country of birth (2024),ok,sdmx,9,61,0,"",2026-07-31
+LFSO_24MATCH10,Persons by match between skills and current/last main job and work experience while studying (2024),ok,sdmx,9,67,0,"",2026-07-31
+LFSO_24MATCH11,Persons by match between skills and current/last main job and occupation (2024),ok,sdmx,9,70,0,"",2026-07-31
+LFSO_24MATCH12,Persons not in formal education by match between skills and current/last main job and years since completion of highest level of education (2024),ok,sdmx,9,65,0,"",2026-07-31
+LFSO_24MATCH13,Persons not in formal education by match between skills and current/last main job and job tenure (2024),ok,sdmx,9,64,0,"",2026-07-31
+LFSO_24MATCH14,Persons by match between skills and current/last main job and country of birth (2024),ok,sdmx,9,63,0,"",2026-07-31
+LFSO_24TERT01,Persons with tertiary education by medium educational attainment qualifications (2024),ok,sdmx,7,46,0,"",2026-07-31
+LFSO_24TERT02,Employment rate of persons with tertiary education by medium educational attainment qualifications (2024),ok,sdmx,7,45,0,"",2026-07-31
+LFSO_24TERT03,Unemployment rate of persons with tertiary education by medium educational attainment qualifications (2024),ok,sdmx,7,45,0,"",2026-07-31
+LFSQ_AGACOB,Labour force by country of birth - quarterly data,ok,sdmx,7,197,0,"",2026-07-31
+LFSQ_AGAED,Labour force by educational attainment level - quarterly data,ok,sdmx,7,192,0,"",2026-07-31
+LFSQ_AGAN,Labour force by citizenship - quarterly data,ok,sdmx,7,198,0,"",2026-07-31
+LFSQ_ARGACOB,Labour force participation rates by country of birth - quarterly data,ok,sdmx,7,197,0,"",2026-07-31
+LFSQ_ARGAED,Labour force participation rates by educational attainment level - quarterly data,ok,sdmx,7,194,0,"",2026-07-31
+LFSQ_ARGAN,Labour force participation rates by citizenship - quarterly data,ok,sdmx,7,198,0,"",2026-07-31
+LFSQ_E2GED,Persons having a second job by educational attainment level - quarterly data,ok,sdmx,7,169,0,"",2026-07-31
+LFSQ_E2GIS,Persons having a second job by occupation in the first job - quarterly data,ok,sdmx,7,174,0,"",2026-07-31
+LFSQ_E2GPS,Persons having a second job by professional status of both jobs - quarterly data,ok,sdmx,8,178,0,"",2026-07-31
+LFSQ_EEGAED,Employees by educational attainment level - quarterly data,ok,sdmx,7,181,0,"",2026-07-31
+LFSQ_EEGAIS,Employees by occupation - quarterly data,ok,sdmx,7,192,0,"",2026-07-31
+LFSQ_EEGAN2,Employees by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,7,163,0,"",2026-07-31
+LFSQ_EEGAN21,Employees by economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,7,89,0,"",2026-07-31
+LFSQ_EEGANA,Employees by economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data,ok,sdmx,7,133,0,"",2026-07-31
+LFSQ_EFTPT,Employed persons by professional status and full-time/part-time employment - quarterly data,ok,sdmx,8,191,0,"",2026-07-31
+LFSQ_EGACOB,Employed persons by country of birth - quarterly data,ok,sdmx,7,197,0,"",2026-07-31
+LFSQ_EGAED,Employed persons by educational attainment level - quarterly data,ok,sdmx,7,192,0,"",2026-07-31
+LFSQ_EGAIS,Employed persons by professional status and occupation - quarterly data,ok,sdmx,8,200,0,"",2026-07-31
+LFSQ_EGAN,Employed persons by citizenship - quarterly data,ok,sdmx,7,198,0,"",2026-07-31
+LFSQ_EGAN2,Employed persons by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,7,160,0,"",2026-07-31
+LFSQ_EGAN2$DV_3146,Employed persons by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSQ_EGAN2$DV_3146'
+For more information check: https://developer.mo",2026-07-31
+LFSQ_EGAN21,Employed persons by economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,7,86,0,"",2026-07-31
+LFSQ_EGAN212D,Employed persons by detailed economic activity (NACE Rev. 2.1 two-digit level) - quarterly data,ok,sdmx,7,151,0,"",2026-07-31
+LFSQ_EGAN22D,Employed persons by detailed economic activity (NACE Rev. 2 two-digit level) (2008-2026) - quarterly data,ok,sdmx,7,228,0,"",2026-07-31
+LFSQ_EGAN22D$DV_3147,Employed persons by detailed economic activity (NACE Rev. 2 two-digit level) (2008-2026) - quarterly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFSQ_EGAN22D$DV_3147'
+For more information check: https://developer.",2026-07-31
+LFSQ_EGANA,Employed persons by economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data,ok,sdmx,7,130,0,"",2026-07-31
+LFSQ_EGANA2D,Employed persons by detailed economic activity (NACE Rev. 1.1 two-digit level) (1998-2008) - quarterly data,ok,sdmx,7,170,0,"",2026-07-31
+LFSQ_EGAPS,Employed persons by professional status - quarterly data,ok,sdmx,7,200,0,"",2026-07-31
+LFSQ_EGDN2,Employed persons by job tenure and economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,8,154,0,"",2026-07-31
+LFSQ_EGDN21,Employed persons by job tenure and economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,8,80,0,"",2026-07-31
+LFSQ_EGISED,Employed persons by occupation and educational attainment level - quarterly data,ok,sdmx,8,177,0,"",2026-07-31
+LFSQ_EISN2,Employed persons by occupation and economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,8,153,0,"",2026-07-31
+LFSQ_EISN21,Employed persons by occupation and economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,8,79,0,"",2026-07-31
+LFSQ_EPGAED,Persons in full-time/part-time employment by educational attainment level - quarterly data,ok,sdmx,8,185,0,"",2026-07-31
+LFSQ_EPGAIS,Persons in full-time/part-time employment by occupation - quarterly data,ok,sdmx,8,183,0,"",2026-07-31
+LFSQ_EPGAN2,Persons in full-time/part-time employment by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,8,172,0,"",2026-07-31
+LFSQ_EPGAN21,Persons in full-time/part-time employment by economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,8,97,0,"",2026-07-31
+LFSQ_EPGANA,Persons in full-time/part-time employment by economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data,ok,sdmx,8,137,0,"",2026-07-31
+LFSQ_EPPGA,Persons in part-time employment by age - % of total employment - quarterly data,ok,sdmx,6,180,0,"",2026-07-31
+LFSQ_ERGACOB,Employment rates by country of birth - quarterly data,ok,sdmx,7,197,0,"",2026-07-31
+LFSQ_ERGAED,Employment rates by educational attainment level - quarterly data,ok,sdmx,7,194,0,"",2026-07-31
+LFSQ_ERGAN,Employment rates by citizenship - quarterly data,ok,sdmx,7,198,0,"",2026-07-31
+LFSQ_ERGANEDM,"Employment rates by migration status, citizenship and educational attainment level - quarterly data",ok,sdmx,9,95,0,"",2026-07-31
+LFSQ_ESGAED,Self-employed persons by educational attainment level - quarterly data,ok,sdmx,8,185,0,"",2026-07-31
+LFSQ_ESGAIS,Self-employed persons by occupation - quarterly data,ok,sdmx,8,195,0,"",2026-07-31
+LFSQ_ESGAN2,Self-employed persons by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,8,153,0,"",2026-07-31
+LFSQ_ESGAN21,Self-employed persons by economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,8,79,0,"",2026-07-31
+LFSQ_ESGANA,Self-employed persons by economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data,ok,sdmx,8,123,0,"",2026-07-31
+LFSQ_ETGADC,Temporary employees by duration of the employment contract - quarterly data,ok,sdmx,7,199,0,"",2026-07-31
+LFSQ_ETGAED,Temporary employees by educational attainment level - quarterly data,ok,sdmx,7,183,0,"",2026-07-31
+LFSQ_ETGAIS,Temporary employees by occupation - quarterly data,ok,sdmx,7,194,0,"",2026-07-31
+LFSQ_ETGAN2,Temporary employees by economic activity (NACE Rev. 2) (2008-2026) - quarterly data,ok,sdmx,7,165,0,"",2026-07-31
+LFSQ_ETGAN21,Temporary employees by economic activity (NACE Rev. 2.1) - quarterly data,ok,sdmx,7,91,0,"",2026-07-31
+LFSQ_ETGANA,Temporary employees by economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data,ok,sdmx,7,135,0,"",2026-07-31
+LFSQ_ETPGA,Temporary employees - % of total employees - quarterly data,ok,sdmx,6,182,0,"",2026-07-31
+LFSQ_EWH2N2,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 2) (2008-2026) - quarterly data",ok,sdmx,9,162,0,"",2026-07-31
+LFSQ_EWH2N21,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 2.1) - quarterly data",ok,sdmx,9,88,0,"",2026-07-31
