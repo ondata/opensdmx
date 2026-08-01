@@ -2954,6 +2954,8 @@ HLTH_SILC_07,"Level of disability (activity limitation) by sex, age and educatio
 HLTH_SILC_08,"Self-reported unmet needs for medical examination by sex, age, main reason declared and income quintile",ok,sdmx,8,106,0,"",2026-07-25
 HLTH_SILC_08$DV_3521,"Self-reported unmet needs for medical examination by sex, age, main reason declared and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_08$DV_3521'
 For more information check: https://developer.",2026-07-25
+HLTH_SILC_08$DV_3681,"Self-reported unmet needs for medical examination by sex, age, main reason declared and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_08$DV_3681'
+For more information check: https://developer.",2026-08-01
 HLTH_SILC_08B,"Self-reported unmet needs for medical examination due to financial reasons, long waiting list or distance by sex, age and risk of poverty threshold - % of the persons having the same needs",ok,sdmx,8,55,0,"",2026-07-25
 HLTH_SILC_08B_R,"Self-reported unmet needs for medical examination due to financial reasons, long waiting list or distance by NUTS-2-region - % of the persons having the same needs",ok,sdmx,5,285,0,"",2026-07-25
 HLTH_SILC_08C,"Persons reporting needs for medical examination or treatment by sex, age and at risk of poverty and social exclusion situation",ok,sdmx,7,66,0,"",2026-07-25
@@ -2968,6 +2970,12 @@ HLTH_SILC_10$DV_2042,"Self-perceived health by sex, age and income quintile",err
 For more information check: https://developer.",2026-07-25
 HLTH_SILC_10$DV_290,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_290'
 For more information check: https://developer.m",2026-07-25
+HLTH_SILC_10$DV_3682,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_3682'
+For more information check: https://developer.",2026-08-01
+HLTH_SILC_10$DV_3683,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_3683'
+For more information check: https://developer.",2026-08-01
+HLTH_SILC_10$DV_3684,"Self-perceived health by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_10$DV_3684'
+For more information check: https://developer.",2026-08-01
 HLTH_SILC_11,"People having a long-standing illness or health problem, by sex, age and income quintile",ok,sdmx,7,97,0,"",2026-07-25
 HLTH_SILC_11$DV_3662,"People having a long-standing illness or health problem, by sex, age and income quintile",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/HLTH_SILC_11$DV_3662'
 For more information check: https://developer.",2026-07-25
@@ -5512,3 +5520,308 @@ LFSQ_ETGANA,Temporary employees by economic activity (NACE Rev. 1.1) (1998-2008)
 LFSQ_ETPGA,Temporary employees - % of total employees - quarterly data,ok,sdmx,6,182,0,"",2026-07-31
 LFSQ_EWH2N2,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 2) (2008-2026) - quarterly data",ok,sdmx,9,162,0,"",2026-07-31
 LFSQ_EWH2N21,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 2.1) - quarterly data",ok,sdmx,9,88,0,"",2026-07-31
+LFSQ_EWH2NA,"Average actual weekly hours worked in the second job of persons who worked in this job during the reference week by professional status, economic activity and full-time/part-time employment in the first job (NACE Rev. 1.1) (1998-2008) - quarterly data",ok,sdmx,9,132,0,"",2026-08-01
+LFSQ_EWHAIS,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and occupation - quarterly data",ok,sdmx,9,191,0,"",2026-08-01
+LFSQ_EWHAN2,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and economic activity (NACE Rev. 2) (2008-2026) - quarterly data",ok,sdmx,9,162,0,"",2026-08-01
+LFSQ_EWHAN21,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and economic activity (NACE Rev. 2.1) - quarterly data",ok,sdmx,9,88,0,"",2026-08-01
+LFSQ_EWHANA,"Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by professional status, full-time/part-time employment and economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data",ok,sdmx,9,132,0,"",2026-08-01
+LFSQ_EWHUIS,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and occupation - quarterly data",ok,sdmx,9,191,0,"",2026-08-01
+LFSQ_EWHUN2,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and economic activity (NACE Rev. 2) (2008-2026) - quarterly data",ok,sdmx,9,162,0,"",2026-08-01
+LFSQ_EWHUN21,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and economic activity (NACE Rev. 2.1) - quarterly data",ok,sdmx,9,88,0,"",2026-08-01
+LFSQ_EWHUNA,"Average usual weekly hours worked in the main job by professional status, full-time/part-time employment and economic activity (NACE Rev. 1.1) (1998-2008) - quarterly data",ok,sdmx,9,132,0,"",2026-08-01
+LFSQ_IGACOB,Persons outside the labour force by country of birth - quarterly data,ok,sdmx,7,197,0,"",2026-08-01
+LFSQ_IGAED,Persons outside the labour force by educational attainment level - quarterly data,ok,sdmx,7,182,0,"",2026-08-01
+LFSQ_IGAN,Persons outside the labour force by citizenship - quarterly data,ok,sdmx,7,198,0,"",2026-08-01
+LFSQ_IGAWW,Persons outside the labour force not seeking employment by willingness to work - quarterly data,ok,sdmx,7,179,0,"",2026-08-01
+LFSQ_IPGA,Persons outside the labour force - % of total population in private households - quarterly data,ok,sdmx,6,191,0,"",2026-08-01
+LFSQ_PGACWS,Population in private households by country of birth and labour status - quarterly data,ok,sdmx,8,200,0,"",2026-08-01
+LFSQ_PGAED,Population in private households by educational attainment level - quarterly data,ok,sdmx,7,193,0,"",2026-08-01
+LFSQ_PGAIED,Population in private households by participation in education and training (last 4 weeks) - quarterly data,ok,sdmx,7,178,0,"",2026-08-01
+LFSQ_PGANEDM,"Population in private households by migration status, citizenship and educational attainment level - quarterly data",ok,sdmx,9,95,0,"",2026-08-01
+LFSQ_PGANWS,Population in private households by citizenship and labour status - quarterly data,ok,sdmx,8,201,0,"",2026-08-01
+LFSQ_PGAUWS,Population in private households by degree of urbanisation and labour status - quarterly data,ok,sdmx,8,199,0,"",2026-08-01
+LFSQ_SUP_AGE,Supplementary indicators on labour market slack by age - quarterly data,ok,sdmx,7,138,0,"",2026-08-01
+LFSQ_SUP_EDU,Supplementary indicators on labour market slack by educational attainment level - quarterly data,ok,sdmx,8,138,0,"",2026-08-01
+LFSQ_UGACOB,Unemployed persons by country of birth - quarterly data,ok,sdmx,7,192,0,"",2026-08-01
+LFSQ_UGAD,Unemployed persons by duration of unemployment - quarterly data,ok,sdmx,7,184,0,"",2026-08-01
+LFSQ_UGAN,Unemployed persons by citizenship - quarterly data,ok,sdmx,7,193,0,"",2026-08-01
+LFSQ_UGATES,Unemployed persons by type of employment sought - quarterly data,ok,sdmx,7,158,0,"",2026-08-01
+LFSQ_UGMSW,Unemployed persons by methods used for seeking work - % of total unemployment - quarterly data,ok,sdmx,6,144,0,"",2026-08-01
+LFSQ_UGPIS,Unemployed persons by previous occupation - quarterly data,ok,sdmx,6,147,0,"",2026-08-01
+LFSQ_UPGAL,Persons in long-term unemployment (12 months or more) - % of total unemployment - quarterly data,ok,sdmx,6,174,0,"",2026-08-01
+LFSQ_URGACOB,Unemployment rates by country of birth - quarterly data,ok,sdmx,7,192,0,"",2026-08-01
+LFSQ_URGAED,Unemployment rates by educational attainment level - quarterly data,ok,sdmx,7,193,0,"",2026-08-01
+LFSQ_URGAN,Unemployment rates by citizenship - quarterly data,ok,sdmx,7,193,0,"",2026-08-01
+LFST_DPW_01,Share of digital platform workers (in the last 12 months) by educational attainment level - experimental statistics,ok,sdmx,7,15,0,"",2026-08-01
+LFST_DPW_02,Share of digital platform workers (in the last 12 months) by type of task or service - experimental statistics,ok,sdmx,7,23,0,"",2026-08-01
+LFST_DPW_03,Distribution of digital platform workers (in the last 12 months) by number of hours worked in the last month - experimental statistics,ok,sdmx,7,17,0,"",2026-08-01
+LFST_DPW_04,Distribution of digital platform workers (at least one hour in the last month) by educational attainment level - experimental statistics,ok,sdmx,7,13,0,"",2026-08-01
+LFST_DPW_05,Distribution of digital platform workers (at least one hour in the last month) by labour status - experimental statistics,ok,sdmx,7,12,0,"",2026-08-01
+LFST_DPW_06,Distribution of digital platform workers (at least one hour in the last month) by share of platform income in their earnings - experimental statistics,ok,sdmx,7,14,0,"",2026-08-01
+LFST_DPW_07,Distribution of digital platform workers (at least one hour in the last month) by social insurance coverage and risk - experimental statistics,ok,sdmx,8,18,0,"",2026-08-01
+LFST_DPW_08,Distribution of digital platform workers (at least one hour in the last month) by type of work assignment - experimental statistics,ok,sdmx,7,13,0,"",2026-08-01
+LFST_DPW_09,Distribution of digital platform workers (at least one hour in the last month) by consequences of rejecting the task or service - experimental statistics,ok,sdmx,7,12,0,"",2026-08-01
+LFST_DPW_10,Distribution of digital platform workers (at least one hour in the last month) by working hours setting - experimental statistics,ok,sdmx,7,12,0,"",2026-08-01
+LFST_DPW_11,Distribution of digital platform workers (at least one hour in the last month) by price setting - experimental statistics,ok,sdmx,7,14,0,"",2026-08-01
+LFST_HH2JCHI,Percentage of adults having a second job by number of children and age of the youngest child,ok,sdmx,8,78,0,"",2026-08-01
+LFST_HH2JTY,Percentage of persons having a second job by household composition,ok,sdmx,7,81,0,"",2026-08-01
+LFST_HHACEDAY,"Adults by number of children, age of youngest child and household composition",ok,sdmx,9,93,0,"",2026-08-01
+LFST_HHACEDNC,"Adults by number of children, age of youngest child and educational attainment level",ok,sdmx,9,86,0,"",2026-08-01
+LFST_HHACWNC,"Adults by number of children, age of youngest child and labour status",ok,sdmx,9,85,0,"",2026-08-01
+LFST_HHANTYCH,"Persons per private household by household composition, number of children and age of youngest child",ok,sdmx,7,82,0,"",2026-08-01
+LFST_HHANWHTC,"Persons per private household by household composition, number of children and labour status within households",ok,sdmx,7,86,0,"",2026-08-01
+LFST_HHEREDCH,"Employment rate of adults by educational attainment level, number of children and age of youngest child",ok,sdmx,9,84,0,"",2026-08-01
+LFST_HHEREDCH$DV_1343,"Employment rate of adults by educational attainment level, number of children and age of youngest child",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHEREDCH$DV_1343'
+For more information check: https://developer",2026-08-01
+LFST_HHEREDCH$DV_1904,"Employment rate of adults by educational attainment level, number of children and age of youngest child",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHEREDCH$DV_1904'
+For more information check: https://developer",2026-08-01
+LFST_HHEREDCH$DV_2683,"Employment rate of adults by educational attainment level, number of children and age of youngest child",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHEREDCH$DV_2683'
+For more information check: https://developer",2026-08-01
+LFST_HHEREDTY,Employment rate by educational attainment level and household composition,ok,sdmx,8,89,0,"",2026-08-01
+LFST_HHINDED,Persons by household composition and educational attainment level,ok,sdmx,8,92,0,"",2026-08-01
+LFST_HHINDWS,Persons by household composition and labour status,ok,sdmx,8,91,0,"",2026-08-01
+LFST_HHMGSCOMP,"Private households by migration status, labour status and household composition",ok,sdmx,7,73,0,"",2026-08-01
+LFST_HHNHTYCH,"Private households by household composition, number of children and age of youngest child",ok,sdmx,7,82,0,"",2026-08-01
+LFST_HHNHTYCH$DV_3041,"Private households by household composition, number of children and age of youngest child",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHNHTYCH$DV_3041'
+For more information check: https://developer",2026-08-01
+LFST_HHNHWHTC,"Private households by household composition, number of children and labour status within households",ok,sdmx,7,86,0,"",2026-08-01
+LFST_HHNHWHTC$DV_3042,"Private households by household composition, number of children and labour status within households",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHNHWHTC$DV_3042'
+For more information check: https://developer",2026-08-01
+LFST_HHPTECHI,Percentage of adults in part-time employment by number of children and age of youngest child,ok,sdmx,8,78,0,"",2026-08-01
+LFST_HHPTECHI$DV_1903,Percentage of adults in part-time employment by number of children and age of youngest child,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHPTECHI$DV_1903'
+For more information check: https://developer",2026-08-01
+LFST_HHPTETY,Percentage of persons employed part-time by household composition,ok,sdmx,7,81,0,"",2026-08-01
+LFST_HHSECHI,Percentage of self-employed adults by number of children and age of youngest child,ok,sdmx,8,78,0,"",2026-08-01
+LFST_HHSETY,Percentage of self-employed persons by household composition,ok,sdmx,7,81,0,"",2026-08-01
+LFST_HHTEMCHI,Percentage of adult temporary employees by number of children and age of youngest child,ok,sdmx,8,78,0,"",2026-08-01
+LFST_HHTEMTY,Percentage of temporary employees by household composition,ok,sdmx,7,81,0,"",2026-08-01
+LFST_HHWAHCHI,Percentage of employed adults working from home by number of children and age of youngest child,ok,sdmx,8,78,0,"",2026-08-01
+LFST_HHWAHCHI$DV_1872,Percentage of employed adults working from home by number of children and age of youngest child,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_HHWAHCHI$DV_1872'
+For more information check: https://developer",2026-08-01
+LFST_HHWAHTY,Percentage of employed persons working from home by household composition,ok,sdmx,7,81,0,"",2026-08-01
+LFST_HHWHACC,"Adults by labour status within households, number of children and age of youngest child",ok,sdmx,7,77,0,"",2026-08-01
+LFST_HHWHCHIT,Children per private household by labour status within households and household composition,ok,sdmx,6,81,0,"",2026-08-01
+LFST_HHWHNPT,Persons by labour status within households and household composition,ok,sdmx,6,82,0,"",2026-08-01
+LFST_LMBERCITA,Employment rate of EU/EFTA citizens who usually reside in another EU/EFTA country by citizenship and age,ok,sdmx,6,84,0,"",2026-08-01
+LFST_LMBERCITED,Employment rate of EU/EFTA citizens who usually reside in another EU/EFTA country by citizenship and educational attainment level,ok,sdmx,7,87,0,"",2026-08-01
+LFST_LMBERCITG,Employment rate of EU/EFTA citizens who usually reside in another EU/EFTA country by citizenship and sex,ok,sdmx,7,84,0,"",2026-08-01
+LFST_LMBERCOBA,Employment rate of EU/EFTA born persons who usually reside in another EU/EFTA country by country of birth and age,ok,sdmx,6,84,0,"",2026-08-01
+LFST_LMBERCOBED,Employment rate of EU/EFTA born persons who usually reside in another EU/EFTA country by country of birth and educational attainment level,ok,sdmx,7,87,0,"",2026-08-01
+LFST_LMBERCOBG,Employment rate of EU/EFTA born persons who usually reside in another EU/EFTA country by country of birth and sex,ok,sdmx,7,84,0,"",2026-08-01
+LFST_LMBPCITA,EU/EFTA citizens of working age who usually reside in another EU/EFTA country by citizenship and age,ok,sdmx,6,84,0,"",2026-08-01
+LFST_LMBPCITED,EU/EFTA citizens of working age who usually reside in another EU/EFTA country by citizenship and educational attainment level,ok,sdmx,7,87,0,"",2026-08-01
+LFST_LMBPCITG,EU/EFTA citizens of working age who usually reside in another EU/EFTA country by citizenship and sex,ok,sdmx,7,84,0,"",2026-08-01
+LFST_LMBPCOBA,EU/EFTA born persons of working age who usually reside in another EU/EFTA country by country of birth and age,ok,sdmx,6,84,0,"",2026-08-01
+LFST_LMBPCOBED,EU/EFTA born persons of working age who usually reside in another EU/EFTA country by country of birth and educational attainment level,ok,sdmx,7,87,0,"",2026-08-01
+LFST_LMBPCOBG,EU/EFTA born persons of working age who usually reside in another EU/EFTA country by country of birth and sex,ok,sdmx,7,84,0,"",2026-08-01
+LFST_RIMGACGA,Recent immigrants in the labour force by country of birth,ok,sdmx,7,69,0,"",2026-08-01
+LFST_RIMGANGA,Recent immigrants in the labour force by citizenship,ok,sdmx,7,68,0,"",2026-08-01
+LFST_RIMGECGA,Employed recent immigrants by country of birth,ok,sdmx,7,69,0,"",2026-08-01
+LFST_RIMGENGA,Employed recent immigrants by citizenship,ok,sdmx,7,68,0,"",2026-08-01
+LFST_RIMGPCGA,Recent immigrants by country of birth,ok,sdmx,7,68,0,"",2026-08-01
+LFST_RIMGPNGA,Recent immigrants by citizenship,ok,sdmx,7,67,0,"",2026-08-01
+LFST_R_AREDCOBU,"Labour force participation rates by educational attainment level, country of birth and degree of urbanisation",ok,sdmx,9,95,0,"",2026-08-01
+LFST_R_AREDNU,"Labour force participation rates by educational attainment level, citizenship and degree of urbanisation",ok,sdmx,9,96,0,"",2026-08-01
+LFST_R_E2PGAEDCU,"Persons in part-time employment by educational attainment level, country of birth and degree of urbanisation",ok,sdmx,9,96,0,"",2026-08-01
+LFST_R_E2PGAEDNU,"Persons in part-time employment by educational attainment level, citizenship and degree of urbanisation",ok,sdmx,9,97,0,"",2026-08-01
+LFST_R_E2SGACU,Self-employed persons by country of birth and degree of urbanisation,ok,sdmx,9,93,0,"",2026-08-01
+LFST_R_E2SGANU,Self-employed persons by citizenship and degree of urbanisation,ok,sdmx,9,94,0,"",2026-08-01
+LFST_R_E2TGAEDCU,"Temporary employees by educational attainment level, country of birth and degree of urbanisation",ok,sdmx,9,96,0,"",2026-08-01
+LFST_R_E2TGAEDNU,"Temporary employees by educational attainment level, citizenship and degree of urbanisation",ok,sdmx,9,97,0,"",2026-08-01
+LFST_R_EDATD_16,Regional disparities in the rate of early leavers from education and training (NUTS level 2),ok,sdmx,6,55,0,"",2026-08-01
+LFST_R_EDATD_22,Regional disparities in the rate of young people neither in employment nor in education and training (NEET) (NUTS level 2),ok,sdmx,6,56,0,"",2026-08-01
+LFST_R_EGAD,Employed persons by job tenure and NUTS 2 region,ok,sdmx,7,558,0,"",2026-08-01
+LFST_R_EGADU,Employed persons by job tenure and degree of urbanisation,ok,sdmx,8,97,0,"",2026-08-01
+LFST_R_EREDCOBU,"Employment rates by educational attainment level, country of birth and degree of urbanisation",ok,sdmx,9,95,0,"",2026-08-01
+LFST_R_EREDCOBU$DV_617,"Employment rates by educational attainment level, country of birth and degree of urbanisation",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_R_EREDCOBU$DV_617'
+For more information check: https://develope",2026-08-01
+LFST_R_EREDNU,"Employment rates by educational attainment level, citizenship and degree of urbanisation",ok,sdmx,9,96,0,"",2026-08-01
+LFST_R_ERGAU,Employment rates by degree of urbanisation,ok,sdmx,7,112,0,"",2026-08-01
+LFST_R_LFE2ECOMM,Employed persons commuting to work by country of work and NUTS 2 region,ok,sdmx,7,551,0,"",2026-08-01
+LFST_R_LFE2EEDU,Employed persons by educational attainment level and NUTS 2 region,ok,sdmx,7,555,0,"",2026-08-01
+LFST_R_LFE2EFTPT,Persons in full-time/part-time employment by professional status and NUTS 2 region,ok,sdmx,8,564,0,"",2026-08-01
+LFST_R_LFE2EHOUR,Average usual weekly hours worked in the main job by NUTS 2 region,ok,sdmx,6,551,0,"",2026-08-01
+LFST_R_LFE2EHRWA,Average actual weekly hours worked in the main job of persons who worked in this job during the reference week by NUTS 2 region,ok,sdmx,6,551,0,"",2026-08-01
+LFST_R_LFE2EMP,Employed persons by NUTS 2 region,ok,sdmx,6,556,0,"",2026-08-01
+LFST_R_LFE2EMPRC,"Employment rates by educational attainment level, country of birth and NUTS 2 region",ok,sdmx,8,560,0,"",2026-08-01
+LFST_R_LFE2EMPRT,Employment rates by NUTS 2 region,ok,sdmx,6,556,0,"",2026-08-01
+LFST_R_LFE2EMPRTN,"Employment rates by educational attainment level, citizenship and NUTS 2 region",ok,sdmx,8,561,0,"",2026-08-01
+LFST_R_LFE2EN1,Employed persons by economic activity and NUTS 2 region (NACE Rev. 1.1) (1999-2008),ok,sdmx,7,499,0,"",2026-08-01
+LFST_R_LFE2EN2,Employed persons by economic activity and NUTS 2 region (NACE Rev. 2) (2008-2026),ok,sdmx,7,553,0,"",2026-08-01
+LFST_R_LFE2EN2$DV_3150,Employed persons by economic activity and NUTS 2 region (NACE Rev. 2) (2008-2026),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/LFST_R_LFE2EN2$DV_3150'
+For more information check: https://develope",2026-08-01
+LFST_R_LFE2ESTAT,Employed persons by professional status and NUTS 2 region,ok,sdmx,7,558,0,"",2026-08-01
+LFST_R_LFP2ACEDU,Labour force by educational attainment level and NUTS 2 region,ok,sdmx,7,552,0,"",2026-08-01
+LFST_R_LFP2ACT,Labour force by NUTS 2 region,ok,sdmx,6,556,0,"",2026-08-01
+LFST_R_LFP2ACTRC,"Labour force participation rates by educational attainment level, country of birth and NUTS 2 region",ok,sdmx,8,560,0,"",2026-08-01
+LFST_R_LFP2ACTRT,Labour force participation rates by NUTS 2 region,ok,sdmx,6,555,0,"",2026-08-01
+LFST_R_LFP2ACTRTN,"Labour force participation rates by educational attainment level, citizenship and NUTS 2 region",ok,sdmx,8,561,0,"",2026-08-01
+LFST_R_LFSD2HH,Private households by degree of urbanisation and NUTS 2 region,ok,sdmx,5,523,0,"",2026-08-01
+LFST_R_LFSD2POP,Population in private households by educational attainment level and NUTS 2 region,ok,sdmx,7,562,0,"",2026-08-01
+LFST_R_LFSD2PWC,"Population in private households by country of birth, labour status and NUTS 2 region",ok,sdmx,8,562,0,"",2026-08-01
+LFST_R_LFSD2PWN,"Population in private households by citizenship, labour status and NUTS 2 region",ok,sdmx,8,563,0,"",2026-08-01
+LFST_R_LFU2GAC,Unemployed persons by country of birth and NUTS 2 region,ok,sdmx,7,555,0,"",2026-08-01
+LFST_R_LFU2GACU,Unemployed persons by country of birth and degree of urbanisation,ok,sdmx,8,90,0,"",2026-08-01
+LFST_R_LFU2GAN,Unemployed persons by citizenship and NUTS 2 region,ok,sdmx,7,556,0,"",2026-08-01
+LFST_R_LFU2GANU,Unemployed persons by citizenship and degree of urbanisation,ok,sdmx,8,91,0,"",2026-08-01
+LFST_R_LFU2LTU,Persons in long-term unemployment (12 months or more) by educational attainment level and NUTS 2 region,ok,sdmx,7,558,0,"",2026-08-01
+LFST_R_LFU3PERS,Unemployed persons by educational attainment level and NUTS 2 region,ok,sdmx,7,559,0,"",2026-08-01
+LFST_R_LFU3RT,Unemployment rates by educational attainment level and NUTS 2 region,ok,sdmx,7,560,0,"",2026-08-01
+LFST_R_LFUR2GAC,Unemployment rates by country of birth and NUTS 2 region,ok,sdmx,7,555,0,"",2026-08-01
+LFST_R_LFUR2GACU,Unemployment rates by country of birth and degree of urbanisation,ok,sdmx,8,90,0,"",2026-08-01
+LFST_R_LFUR2GAN,Unemployment rates by citizenship and NUTS 2 region,ok,sdmx,7,556,0,"",2026-08-01
+LFST_R_LFUR2GANU,Unemployment rates by citizenship and degree of urbanisation,ok,sdmx,8,91,0,"",2026-08-01
+LFST_R_LMDER,"Regional disparities in employment rates (NUTS level 2, NUTS level 3)",ok,sdmx,7,72,0,"",2026-08-01
+LFST_R_LMDGEG,Regional disparities in gender employment gap (NUTS level 2),ok,sdmx,6,59,0,"",2026-08-01
+LFST_R_LMDLTU,Regional disparities in long-term unemployment rates (NUTS level 2),ok,sdmx,6,58,0,"",2026-08-01
+LFST_R_LMDUR,"Regional disparities in unemployment rates (NUTS level 2, NUTS level 3)",ok,sdmx,7,72,0,"",2026-08-01
+LFST_R_PGAUM,Population in private households by migration status and degree of urbanisation,ok,sdmx,8,69,0,"",2026-08-01
+LFST_R_PGAUWSC,"Population in private households by country of birth, labour status and degree of urbanisation",ok,sdmx,9,97,0,"",2026-08-01
+LFST_R_PGAUWSN,"Population in private households by citizenship, labour status and degree of urbanisation",ok,sdmx,9,98,0,"",2026-08-01
+LFST_R_SLA_GA,Labour market slack by NUTS 2 region,ok,sdmx,7,541,0,"",2026-08-01
+LFST_R_URGAU,Unemployment rates by degree of urbanisation,ok,sdmx,7,111,0,"",2026-08-01
+MAR_GO_AA,Gross weight of goods handled in all ports by direction - annual data,ok,sdmx,5,1803,0,"",2026-08-01
+MAR_GO_AM_BE,Gross weight of goods transported to/from main ports - Belgium,ok,sdmx,8,461,0,"",2026-08-01
+MAR_GO_AM_BG,Gross weight of goods transported to/from main ports - Bulgaria,ok,sdmx,8,379,0,"",2026-08-01
+MAR_GO_AM_CY,Gross weight of goods transported to/from main ports - Cyprus,ok,sdmx,8,371,0,"",2026-08-01
+MAR_GO_AM_DE,Gross weight of goods transported to/from main ports - Germany,ok,sdmx,8,589,0,"",2026-08-01
+MAR_GO_AM_DK,Gross weight of goods transported to/from main ports - Denmark,ok,sdmx,8,463,0,"",2026-08-01
+MAR_GO_AM_EE,Gross weight of goods transported to/from main ports - Estonia,ok,sdmx,8,346,0,"",2026-08-01
+MAR_GO_AM_EL,Gross weight of goods transported to/from main ports - Greece,ok,sdmx,8,604,0,"",2026-08-01
+MAR_GO_AM_ES,Gross weight of goods transported to/from main ports - Spain,ok,sdmx,8,561,0,"",2026-08-01
+MAR_GO_AM_FI,Gross weight of goods transported to/from main ports - Finland,ok,sdmx,8,378,0,"",2026-08-01
+MAR_GO_AM_FR,Gross weight of goods transported to/from main ports - France,ok,sdmx,8,548,0,"",2026-08-01
+MAR_GO_AM_HR,Gross weight of goods transported to/from main ports - Croatia,ok,sdmx,8,343,0,"",2026-08-01
+MAR_GO_AM_IE,Gross weight of goods transported to/from main ports - Ireland,ok,sdmx,8,368,0,"",2026-08-01
+MAR_GO_AM_IT,Gross weight of goods transported to/from main ports - Italy,ok,sdmx,8,606,0,"",2026-08-01
+MAR_GO_AM_LT,Gross weight of goods transported to/from main ports - Lithuania,ok,sdmx,8,336,0,"",2026-08-01
+MAR_GO_AM_LV,Gross weight of goods transported to/from main ports - Latvia,ok,sdmx,8,352,0,"",2026-08-01
+MAR_GO_AM_ME,Gross weight of goods transported to/from main ports - Montenegro,ok,sdmx,8,188,0,"",2026-08-01
+MAR_GO_AM_MT,Gross weight of goods transported to/from main ports - Malta,ok,sdmx,8,361,0,"",2026-08-01
+MAR_GO_AM_NL,Gross weight of goods transported to/from main ports - Netherlands,ok,sdmx,8,492,0,"",2026-08-01
+MAR_GO_AM_NO,Gross weight of goods transported to/from main ports - Norway,ok,sdmx,8,491,0,"",2026-08-01
+MAR_GO_AM_PL,Gross weight of goods transported to/from main ports - Poland,ok,sdmx,8,438,0,"",2026-08-01
+MAR_GO_AM_PT,Gross weight of goods transported to/from main ports - Portugal,ok,sdmx,8,458,0,"",2026-08-01
+MAR_GO_AM_RO,Gross weight of goods transported to/from main ports - Romania,ok,sdmx,8,379,0,"",2026-08-01
+MAR_GO_AM_SE,Gross weight of goods transported to/from main ports - Sweden,ok,sdmx,8,555,0,"",2026-08-01
+MAR_GO_AM_SI,Gross weight of goods transported to/from main ports - Slovenia,ok,sdmx,8,381,0,"",2026-08-01
+MAR_GO_AM_TR,Gross weight of goods transported to/from main ports - Türkiye,ok,sdmx,8,446,0,"",2026-08-01
+MAR_GO_AM_UK,Gross weight of goods transported to/from main ports - United Kingdom,ok,sdmx,8,475,0,"",2026-08-01
+MAR_GO_QM,Gross weight of goods transported to/from main ports by direction and type of traffic (national and international) - quarterly data,ok,sdmx,6,1022,0,"",2026-08-01
+MAR_GO_QMC,Gross weight of goods handled in main ports by direction and type of cargo - quarterly data,ok,sdmx,6,1020,0,"",2026-08-01
+MAR_GO_QM_BE,Gross weight of goods transported to/from main ports - Belgium - quarterly data,ok,sdmx,7,395,0,"",2026-08-01
+MAR_GO_QM_BG,Gross weight of goods transported to/from main ports - Bulgaria - quarterly data,ok,sdmx,7,338,0,"",2026-08-01
+MAR_GO_QM_C1999,Volume of containers transported to/from main ports - quarterly data (1997 - 1999),ok,sdmx,8,344,0,"",2026-08-01
+MAR_GO_QM_C2002,Volume of containers transported to/from main ports - quarterly data (2000 - 2002),ok,sdmx,8,537,0,"",2026-08-01
+MAR_GO_QM_C2004,Volume of containers transported to/from main ports - quarterly data (2003 - 2004),ok,sdmx,8,532,0,"",2026-08-01
+MAR_GO_QM_C2006,Volume of containers transported to/from main ports - quarterly data (2005 - 2006),ok,sdmx,8,556,0,"",2026-08-01
+MAR_GO_QM_C2008,Volume of containers transported to/from main ports - quarterly data (2007 - 2008),ok,sdmx,8,560,0,"",2026-08-01
+MAR_GO_QM_C2010,Volume of containers transported to/from main ports - quarterly data (2009 - 2010),ok,sdmx,8,574,0,"",2026-08-01
+MAR_GO_QM_C2012,Volume of containers transported to/from main ports - quarterly data (2011 - 2012),ok,sdmx,8,580,0,"",2026-08-01
+MAR_GO_QM_C2014,Volume of containers transported to/from main ports - quarterly data (2013 - 2014),ok,sdmx,8,608,0,"",2026-08-01
+MAR_GO_QM_C2016,Volume of containers transported to/from main ports - quarterly data (2015 - 2016),ok,sdmx,8,597,0,"",2026-08-01
+MAR_GO_QM_C2018,Volume of containers transported to/from main ports - quarterly data (2017 - 2018),ok,sdmx,8,623,0,"",2026-08-01
+MAR_GO_QM_C2020,Volume of containers transported to/from main ports - quarterly data (2019 - 2020),ok,sdmx,8,605,0,"",2026-08-01
+MAR_GO_QM_C2022,Volume of containers transported to/from main ports - quarterly data (2021 - 2022),ok,sdmx,8,568,0,"",2026-08-01
+MAR_GO_QM_C2024,Volume of containers transported to/from main ports - quarterly data (2023 - 2024),ok,sdmx,8,573,0,"",2026-08-01
+MAR_GO_QM_C2026,Volume of containers transported to/from main ports – quarterly data (2025 – 2026),ok,sdmx,8,559,0,"",2026-08-01
+MAR_GO_QM_CY,Gross weight of goods transported to/from main ports - Cyprus - quarterly data,ok,sdmx,7,345,0,"",2026-08-01
+MAR_GO_QM_DE,Gross weight of goods transported to/from main ports - Germany - quarterly data,ok,sdmx,7,508,0,"",2026-08-01
+MAR_GO_QM_DK,Gross weight of goods transported to/from main ports - Denmark - quarterly data,ok,sdmx,7,403,0,"",2026-08-01
+MAR_GO_QM_EE,Gross weight of goods transported to/from main ports - Estonia - quarterly data,ok,sdmx,7,318,0,"",2026-08-01
+MAR_GO_QM_EL,Gross weight of goods transported to/from main ports - Greece - quarterly data,ok,sdmx,7,574,0,"",2026-08-01
+MAR_GO_QM_ES,Gross weight of goods transported to/from main ports - Spain - quarterly data,ok,sdmx,7,447,0,"",2026-08-01
+MAR_GO_QM_FI,Gross weight of goods transported to/from main ports - Finland - quarterly data,ok,sdmx,7,370,0,"",2026-08-01
+MAR_GO_QM_FR,Gross weight of goods transported to/from main ports - France - quarterly data,ok,sdmx,7,445,0,"",2026-08-01
+MAR_GO_QM_HR,Gross weight of goods transported to/from main ports - Croatia - quarterly data,ok,sdmx,7,309,0,"",2026-08-01
+MAR_GO_QM_IE,Gross weight of goods transported to/from main ports - Ireland - quarterly data,ok,sdmx,7,357,0,"",2026-08-01
+MAR_GO_QM_IT,Gross weight of goods transported to/from main ports - Italy - quarterly data,ok,sdmx,7,501,0,"",2026-08-01
+MAR_GO_QM_LT,Gross weight of goods transported to/from main ports - Lithuania - quarterly data,ok,sdmx,7,318,0,"",2026-08-01
+MAR_GO_QM_LV,Gross weight of goods transported to/from main ports - Latvia - quarterly data,ok,sdmx,7,331,0,"",2026-08-01
+MAR_GO_QM_ME,Gross weight of goods transported to/from main ports - Montenegro - quarterly data,ok,sdmx,7,174,0,"",2026-08-01
+MAR_GO_QM_MT,Gross weight of goods transported to/from main ports - Malta - quarterly data,ok,sdmx,7,348,0,"",2026-08-01
+MAR_GO_QM_NL,Gross weight of goods transported to/from main ports - Netherlands - quarterly data,ok,sdmx,7,444,0,"",2026-08-01
+MAR_GO_QM_NO,Gross weight of goods transported to/from main ports - Norway - quarterly data,ok,sdmx,7,385,0,"",2026-08-01
+MAR_GO_QM_PL,Gross weight of goods transported to/from main ports - Poland - quarterly data,ok,sdmx,7,353,0,"",2026-08-01
+MAR_GO_QM_PT,Gross weight of goods transported to/from main ports - Portugal - quarterly data,ok,sdmx,7,419,0,"",2026-08-01
+MAR_GO_QM_RO,Gross weight of goods transported to/from main ports - Romania - quarterly data,ok,sdmx,7,350,0,"",2026-08-01
+MAR_GO_QM_SE,Gross weight of goods transported to/from main ports - Sweden - quarterly data,ok,sdmx,7,463,0,"",2026-08-01
+MAR_GO_QM_SI,Gross weight of goods transported to/from main ports - Slovenia - quarterly data,ok,sdmx,7,333,0,"",2026-08-01
+MAR_GO_QM_TR,Gross weight of goods transported to/from main ports - Türkiye - quarterly data,ok,sdmx,7,409,0,"",2026-08-01
+MAR_GO_QM_UK,Gross weight of goods transported to/from main ports - United Kingdom - quarterly data,ok,sdmx,7,424,0,"",2026-08-01
+MAR_MG_AA_CWH,Country level - gross weight of goods handled in all ports,ok,sdmx,4,65,0,"",2026-08-01
+MAR_MG_AA_CWHD,"Country level - gross weight of goods handled in all ports, by direction",ok,sdmx,5,69,0,"",2026-08-01
+MAR_MG_AA_PWHD,Gross weight of goods handled in the top 20 EU ports by direction,ok,sdmx,5,60,0,"",2026-08-01
+MAR_MG_AM_CVH,"Country level - volume (in TEUs) of containers handled in main ports, by loading status",ok,sdmx,5,64,0,"",2026-08-01
+MAR_MG_AM_CWHC,"Country level - gross weight of goods handled in main ports, by type of cargo",ok,sdmx,5,70,0,"",2026-08-01
+MAR_MG_AM_CWHG,"Country level - Gross weight of goods handled in main ports, by type of goods",ok,sdmx,5,71,0,"",2026-08-01
+MAR_MG_AM_CWT,Country level - gross weight of goods transported to/from main ports,ok,sdmx,4,62,0,"",2026-08-01
+MAR_MG_AM_CWTT,"Country level - gross weight of goods transported to/from main ports, by type of traffic",ok,sdmx,5,75,0,"",2026-08-01
+MAR_MG_AM_PVH,Volume of containers handled in the top 20 EU main ports by loading status,ok,sdmx,5,59,0,"",2026-08-01
+MAR_MG_AM_PWHC,Gross weight of goods handled in the top 20 EU main ports by type of cargo,ok,sdmx,5,65,0,"",2026-08-01
+MAR_MP_AA_CPH,Country level - passengers embarked and disembarked in all ports,ok,sdmx,4,64,0,"",2026-08-01
+MAR_MP_AA_CPHD,"Country level - passengers embarked and disembarked in all ports, by direction",ok,sdmx,5,69,0,"",2026-08-01
+MAR_MP_AA_PPHD,Passengers embarked and disembarked in the top 20 EU ports,ok,sdmx,5,57,0,"",2026-08-01
+MAR_MP_AM_CFT,Passengers (excluding cruise passengers) transported from/to the main ports,ok,sdmx,4,55,0,"",2026-08-01
+MAR_MP_AM_CFTT,Passengers (excluding cruise passengers) transported from/to the main ports by transport coverage,ok,sdmx,5,68,0,"",2026-08-01
+MAR_MT_AM_CSVI,Vessels arriving in the main ports by type of vessels - annual data,ok,sdmx,5,78,0,"",2026-08-01
+MAR_PA_AA,Passengers embarked and disembarked in all ports by direction - annual data,ok,sdmx,5,1790,0,"",2026-08-01
+MAR_PA_QM,Passengers (excluding cruise passengers) transported from/to the main ports by direction and transport coverage - quarterly data,ok,sdmx,6,835,0,"",2026-08-01
+MAR_PA_QM_BE,Passengers (excluding cruise passengers) transported from/to the main ports - Belgium - quarterly data,ok,sdmx,7,324,0,"",2026-08-01
+MAR_PA_QM_DE,Passengers (excluding cruise passengers) transported from/to the main ports - Germany - quarterly data,ok,sdmx,7,319,0,"",2026-08-01
+MAR_PA_QM_DK,Passengers (excluding cruise passengers) transported from/to the main ports - Denmark - quarterly data,ok,sdmx,7,226,0,"",2026-08-01
+MAR_PA_QM_EE,Passengers (excluding cruise passengers) transported from/to the main ports - Estonia - quarterly data,ok,sdmx,7,261,0,"",2026-08-01
+MAR_PA_QM_EL,Passengers (excluding cruise passengers) transported from/to the main ports - Greece - quarterly data,ok,sdmx,7,366,0,"",2026-08-01
+MAR_PA_QM_ES,Passengers (excluding cruise passengers) transported from/to the main ports - Spain - quarterly data,ok,sdmx,7,310,0,"",2026-08-01
+MAR_PA_QM_FI,Passengers (excluding cruise passengers) transported from/to the main ports - Finland - quarterly data,ok,sdmx,7,205,0,"",2026-08-01
+MAR_PA_QM_FR,Passengers (excluding cruise passengers) transported from/to the main ports - France - quarterly data,ok,sdmx,7,399,0,"",2026-08-01
+MAR_PA_QM_HR,Passengers (excluding cruise passengers) transported from/to the main ports - Croatia - quarterly data,ok,sdmx,7,246,0,"",2026-08-01
+MAR_PA_QM_IE,Passengers (excluding cruise passengers) transported from/to the main ports - Ireland - quarterly data,ok,sdmx,7,192,0,"",2026-08-01
+MAR_PA_QM_IT,Passengers (excluding cruise passengers) transported from/to the main ports - Italy - quarterly data,ok,sdmx,7,499,0,"",2026-08-01
+MAR_PA_QM_LT,Passengers (excluding cruise passengers) transported from/to the main ports - Lithuania - quarterly data,ok,sdmx,7,284,0,"",2026-08-01
+MAR_PA_QM_LV,Passengers (excluding cruise passengers) transported from/to the main ports - Latvia - quarterly data,ok,sdmx,7,124,0,"",2026-08-01
+MAR_PA_QM_ME,Passengers (excluding cruise passengers) transported from/to the main ports - Montenegro - quarterly data,ok,sdmx,7,58,0,"",2026-08-01
+MAR_PA_QM_MT,Passengers (excluding cruise passengers) transported from/to the main ports - Malta - quarterly data,ok,sdmx,7,106,0,"",2026-08-01
+MAR_PA_QM_NL,Passengers (excluding cruise passengers) transported from/to the main ports - Netherlands - quarterly data,ok,sdmx,7,407,0,"",2026-08-01
+MAR_PA_QM_NO,Passengers (excluding cruise passengers) transported from/to the main ports - Norway - quarterly data,ok,sdmx,7,140,0,"",2026-08-01
+MAR_PA_QM_PL,Passengers (excluding cruise passengers) transported from/to the main ports - Poland - quarterly data,ok,sdmx,7,262,0,"",2026-08-01
+MAR_PA_QM_PT,Passengers (excluding cruise passengers) transported from/to the main ports - Portugal - quarterly data,ok,sdmx,7,260,0,"",2026-08-01
+MAR_PA_QM_SE,Passengers (excluding cruise passengers) transported from/to the main ports - Sweden - quarterly data,ok,sdmx,7,226,0,"",2026-08-01
+MAR_PA_QM_TR,Passengers (excluding cruise passengers) transported from/to the main ports - Türkiye - quarterly data,ok,sdmx,7,262,0,"",2026-08-01
+MAR_PA_QM_UK,Passengers (excluding cruise passengers) transported from/to the main ports - United Kingdom - quarterly data,ok,sdmx,7,346,0,"",2026-08-01
+MAR_QG_QM_CWH,Country level - gross weight of goods handled in main ports,ok,sdmx,4,116,0,"",2026-08-01
+MAR_QG_QM_EWH,EU level - top 20 extra-EU maritime trade flows by gross weight of goods handled in EU main ports,ok,sdmx,6,125,0,"",2026-08-01
+MAR_QG_QM_EWHD,"EU level - gross weight of goods handled in main ports, by direction",ok,sdmx,4,92,0,"",2026-08-01
+MAR_QG_QM_EWHG,"EU level - gross weight of goods handled in main ports, by various types of partner geographical areas",ok,sdmx,4,98,0,"",2026-08-01
+MAR_QG_QM_EWHK,"EU level - gross weight of goods handled in main ports, by type of cargo",ok,sdmx,4,96,0,"",2026-08-01
+MAR_QG_QM_EWHP,EU level - top 10 extra-EU partner countries by gross weight of goods handled in EU main ports,ok,sdmx,4,106,0,"",2026-08-01
+MAR_QG_QM_EWHT,"EU level - gross weight of goods handled in main ports, by type of traffic",ok,sdmx,4,94,0,"",2026-08-01
+MAR_QG_QM_PVH,Top 5 ports for volume of containers - volume (in TEUs) of containers handled in each port,ok,sdmx,4,98,0,"",2026-08-01
+MAR_QG_QM_PWH,Top 5 ports - gross weight of goods handled in each port,ok,sdmx,4,99,0,"",2026-08-01
+MAR_QG_QM_PWHB,Top 5 ports for dry bulk- gross weight of dry bulk goods handled in each port,ok,sdmx,4,103,0,"",2026-08-01
+MAR_QG_QM_PWHC,Top 5 ports for containers - gross weight of goods in containers handled in each port,ok,sdmx,4,98,0,"",2026-08-01
+MAR_QG_QM_PWHL,Top 5 ports for liquid bulk - gross weight of liquid bulk goods handled in each port,ok,sdmx,4,99,0,"",2026-08-01
+MAR_QG_QM_PWHO,Top 5 ports for other cargo not elsewhere specified - gross weight of goods in other cargo not elsewhere specified handled in each port,ok,sdmx,4,109,0,"",2026-08-01
+MAR_QG_QM_PWHR,Top 5 ports for Ro-ro units - gross weight of goods in Ro-Ro units handled in each port,ok,sdmx,4,101,0,"",2026-08-01
+MAR_SG_AM_CV,"Short sea shipping - country level - volume (in TEUs) of containers transported to/from main ports, by loading status",ok,sdmx,5,56,0,"",2026-08-01
+MAR_SG_AM_CW,Short sea shipping - country level - gross weight of goods transported to/from main ports,ok,sdmx,5,58,0,"",2026-08-01
+MAR_SG_AM_CWD,"Short sea shipping - country level - gross weight of goods transported to/from main ports, by direction",ok,sdmx,5,57,0,"",2026-08-01
+MAR_SG_AM_CWK,"Short sea shipping - country level - gross weight of goods transported to/from main ports, by type of cargo",ok,sdmx,5,61,0,"",2026-08-01
+MAR_SG_AM_CWS,"Short sea shipping - country level - gross weight of goods transported to/from main ports, by sea region of partner ports",ok,sdmx,5,60,0,"",2026-08-01
+MAR_SG_AM_EWX,"Short sea shipping - EU level - gross weight of goods transported to/from main ports, by type of cargo for each sea region of partner ports",ok,sdmx,5,38,0,"",2026-08-01
+MAR_SG_AM_PW,Gross weight of goods transported in short sea shipping from/to the top 20 EU ports,ok,sdmx,5,67,0,"",2026-08-01
+MAR_SG_AM_PWB,Gross weight of dry bulk goods transported in short sea shipping from/to the top 5 EU ports for dry bulk goods,ok,sdmx,5,38,0,"",2026-08-01
+MAR_SG_AM_PWC,Gross weight of goods in containers transported in short sea shipping from/to the top 5 EU ports for goods in containers,ok,sdmx,5,36,0,"",2026-08-01
+MAR_SG_AM_PWL,Gross weight of liquid bulk goods transported in short sea shipping from/to the top 5 EU ports for liquid bulk goods,ok,sdmx,5,40,0,"",2026-08-01
+MAR_SG_AM_PWR,Gross weight of goods in Ro-ro units transported in short sea shipping from/to the top 5 EU ports for goods in Ro-ro units,ok,sdmx,5,38,0,"",2026-08-01
+MAR_TF_QM,Vessels arriving in the main ports by type and size of vessels - quarterly data,ok,sdmx,6,1146,0,"",2026-08-01
+MAR_TP_GO,Maritime goods transport performed in the Exclusive Economic Zone (EEZ) of the countries,ok,sdmx,5,51,0,"",2026-08-01
+MAR_TP_PA,Maritime passenger transport performed in the Exclusive Economic Zone (EEZ) of the countries,ok,sdmx,5,51,0,"",2026-08-01
+MAR_TP_SSS,Maritime goods short-sea shipping performed in the Exclusive Economic Zone (EEZ) of the countries,ok,sdmx,5,51,0,"",2026-08-01
+MAR_V_EST,Vessels arriving in main EU ports by type of vessels (estimates) - experimental statistics,ok,sdmx,5,56,0,"",2026-08-01
+MET_10R_3EMP,Employment by NACE Rev. 2 activity and metropolitan typology,ok,sdmx,6,351,0,"",2026-08-01
+MET_10R_3GDP,Gross domestic product (GDP) at current market prices by metropolitan region,ok,sdmx,4,350,0,"",2026-08-01
+MET_10R_3GVA,Gross value added at basic prices by metropolitan region,ok,sdmx,5,365,0,"",2026-08-01
+MET_10R_3PGDP,Average annual population to calculate regional GDP data by metropolitan region,ok,sdmx,4,344,0,"",2026-08-01
+MET_BD_EN2,Employer business demography by NACE Rev. 2activity and metropolitan region (2008-2020),ok,sdmx,6,262,0,"",2026-08-01
+MET_BD_ESIZE,Employer business demography by size class and metropolitan region (2008-2019),ok,sdmx,7,258,0,"",2026-08-01
