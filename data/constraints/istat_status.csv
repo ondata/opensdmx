@@ -4521,3 +4521,203 @@ DF_BULK_CEN2011_DICA_N08S,Strumenti comunicazione,empty,hub,0,0,0,"",2026-07-31
 DF_BULK_CEN2011_DICA_N08SCOM,Strumenti comunicazione - dati comunali,empty,hub,0,0,0,"",2026-07-31
 DF_BULK_CEN2011_DICA_N09AG,Forme aggregative,empty,hub,0,0,0,"",2026-07-31
 DF_BULK_CEN2011_DICA_N09AGCOM,Forme aggregative - dati comunali,empty,hub,0,0,0,"",2026-07-31
+DF_BULK_CEN2011_DICA_N09AZ,Ambito azione,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N09AZCOM,Ambito azione - dati comunali,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N09CC,"Contratti, convenzioni",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N09CCCOM,"Contratti, convenzioni - dati comunali",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N09PI,"Patti, intese",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N09PICOM,"Patti, intese - dati comunali",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N10G,Risorse umane,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N10GCOM,Risorse umane - dati comunali,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N10N,"Periodo assunzione forma giuridica, numerosità",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N10NCOM,"Periodo assunzione forma giuridica, numerosità - dati comunali",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N11EU1,"Modalità di attività, entrate, uscite",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N11G1,Struttura,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N12G,"Periodo assunzione forma giuridica, orientamento istituzione",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N12SS,"Attività secondaria, servizi offerti",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N13F,"Adesione forme aggregative, strumenti comunicazione",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N13G,"Periodo assunzione forma giuridica, tipologia affiliazioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_N14E,Entrate,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_N14G,Tipologia di disagio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_N14S,Attività secondaria,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVABR,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVBAS,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVCAL,Calabria,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVCAM,Campania,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVEMI,Emilia-Romagna,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVFRI,Friuli-Venezia Giulia,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVLAZ,Lazio,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVLIG,Liguria,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVLOM,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVMAR,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVMOL,Molise,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVNPPROV,"Settore di attività (ICNPO), forma giuridica e classe di addetti - Dati fino al livello comunale",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVPIE,Piemonte,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVPROV,Sedi e risorse umane,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVPUG,Puglia,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVSAR,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVSIC,Sicilia,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVTAA,Trentino Alto Adige / Südtirol,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVTOS,Toscana,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVUMB,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVVDA,Valle d'Aosta / Vallée d'Aoste,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CEN2011_DICA_TRASVVEN,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COECLASS,Classificazioni,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_COECPA,Classificazioni delle merci secondo le attività economiche (CPAteco 2007) e RPI,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COECTCI,Classificazione tipo del commercio internazionale (CTCI),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COEINDEXES,Numeri indici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COENOTES,Note sui dati e note metodologiche,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_COENST,Nomenclatura uniforme delle merci per le statistiche dei trasporti (NST 2007),empty,hub,0,0,0,"",2026-08-02
+DF_BULK_COEPORTAL,Statistiche del commercio estero - Home page del portale,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_COESH6,Nomenclatura combinata (NC8) - sistema armonizzato (SH6),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COMP_FRA_IND_MUN,Nota metodologica - Indice composito di fragilità comunale,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_CUBO_LOC_TEST,Cubo_loc_TEST,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DCCV_OCCUP16,prova dim16,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DCCV_OCCUPATIT,Occupati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DCCV_OCCUP_15,PROVA DIM15,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DCSP_NIC1B2015,NIC - Dati mensili dal 2016,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DCSP_NICUNOBB2010,NIC – Dati mensili dal 2011,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_ABIT_PR,Abitazioni occupate da persone residenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ABIT_PR_COM,Abitazioni occupate da persone residenti - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ABIT_PR_COM1,Abitazioni occupate da persone residenti - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ALLOGGI,Alloggi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ALLOGGI_TEST,Alloggi - TEST,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_CARATT_ATTL,Caratteristiche dell'attività lavorativa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CARATT_ATTL_COM,Occupati per sezioni di attività economica - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CARATT_ATTL_TS,Occupati e in cerca di prima occupazione per titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_COMPOP,Numero di comuni e popolazione residente - Dati provvisori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_COMPOPDEF,Numero di comuni e popolazione residente - Dati definitivi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_CONDPROF,Condizione professionale o non professionale della popolazione residente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CONDPROF_COP,Condizione professionale o non professionale dei componenti della coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CONDPROF_NUC,Condizione professionale o non professionale dei nuclei familiari costituiti da un solo genitore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CONDPROF_TEST,Condizione professionale o non professionale della popolazione residente_TEST,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CONV,Convivenze,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_COPPIE1,Coppie,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_EDIFICI1,Edifici,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_EDIFICI1_COM,Edifici per stato d'uso,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_EDIFICIRES,Edifici residenziali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_FAMST_CARATT,Famiglie con almeno uno straniero residente,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_FAMST_CARATT1,Famiglie con almeno uno straniero residente per tipologia della famiglia,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_FAM_ABITBS,Famiglie per caratteristiche dell'abitazione e beni e servizi posseduti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_FAM_ABITED,Famiglie in abitazione per caratteristiche dell'abitazione e dell'edificio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_FAM_CARATT,Caratteristiche delle famiglie,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_FAM_CARATT1,Famiglie per titolo di godimento,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_FAM_CARATT4,Famiglie per tipologia di famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_FAM_CARATT5,Famiglie per caratteristiche della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_FAM_CARATT_TEST_NOTA,Caratteristiche delle famiglie - test nota,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_FORMAZIONE1,Popolazione  residente che ha concluso o frequenta corsi di formazione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_GRADOISTR,Grado di istruzione della popolazione residente di 6 anni e più,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_GRADOISTR1,Grado di istruzione dettagliato della popolazione residente di 6 anni e più,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_INDIC_EDU,Indicatori relativi all'istruzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_INDIC_LAV,Indicatori relativi al lavoro,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ISCRFREQ,Popolazione residente che frequenta o è iscritta ad un corso regolare di studi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_LCAB_AE,Abitazioni ed edifici per tipo di località abitata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_LCAB_PF,Popolazione residente e famiglie per tipo di località abitata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_NUCLEI,Nuclei familiari,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_PEND,Spostamenti per studio o lavoro,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_POPALED,"Popolazione residente, alloggi ed edifici - Dati provvisori",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_POPINALL,Popolazione residente in famiglia che vive in alloggio,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_POPINCV,Popolazione in convivenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_POPINFM,Popolazione residente in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_POPINFM1,Popolazione residente in famiglia per tipologia della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_POPLEGALE,Popolazione residente - Dati definitivi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_POP_RESPRE,Popolazione residente e popolazione presente,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_POP_RSPR_CITT1,Popolazione residente per cittadinanza - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_POP_RSPR_CITT2,Popolazione residente per cittadinanza,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_POP_RS_DMP1,Popolazione residente: luogo di nascita e dimora precedente,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DICA_STANZE,Stanze in abitazioni occupate da persone residenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_TITPOST,Popolazione residente che ha conseguito titoli di studio post-laurea o post-diploma AFAM,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_TITSTUDIO,Titolo di studio della popolazione residente di 6 anni e più,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DS_POP_INFAMCONV_TEST,ds pop in fam conv,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DS_SSA_TEST,ds  serie storiche alloggi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DS_SSF_TEST,ds  serie storiche famiglie,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DS_SSP_TEST,ds  serie storiche popolazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DS_SS_TEST,ds  serie storiche,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CPO2011_DS_STRANIERI_TEST,ds stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DS_TEST_PUT,ds test put,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CRIMESINTO,"Delitti in totale e delitti commessi da autori noti, per tipo di delitto – Anni 1983-2003",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_CRIMESPERS,"Delitti, persone e condannati serie 1985-2008",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCCN_FPA,Raccordo tra fabbisogno del settore pubblico ed indebitamento netto delle amministrazioni pubbliche,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCIS_SPESESERSOC1,Interventi e servizi sociali dei comuni -  BULKDOWNLOAD,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_DCSC_CAPACOFTUR,Capacità degli esercizi ricettivi per tipo di alloggio e per comune,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSC_OCCUPCOLLE,"Movimento dei clienti (arrivi e presenze) negli esercizi ricettivi per tipologia ricettiva, residenza dei clienti e comune di destinazione",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSC_TURISAREA,"Movimento dei clienti (arrivi e presenze) negli esercizi ricettivi per aree e classificazioni territoriali (brand turistici, urbanizzazione, comuni costieri e altre classificazioni)",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_FOI1B2010_TB4,Tabelle dei coefficienti di raccordo dalla base precedente alla base 2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_FOI1B2015_NUTS3,Tabella dei coefficienti di raccordo dalla base precedente alla base 2010 e alla base 2015 - per provincia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_DCSP_FOI1B2015_TB4,Splicing coefficients from base 1995 to base 2010 and from base 2010 to base 2015,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_FOI1B2025_TB1,Tabelle dei coefficienti di raccordo dalla base 1995 al 2010 - base 2010 al 2015 - base 2015 al 2025 - Codici Ecoicop 2,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_NUTS1,Tabella dei coefficienti di raccordo da base dicembre 1998 a base 2010 e da base 2010 a base 2015 - per ripartizione,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_NUTS2,Tabella dei coefficienti di raccordo da base dicembre 1998 a base 2010 e da base 2010 a base 2015 - per regione,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_NUTS3,"Tabella dei coefficienti di raccordo dalla base precedente alla base 2010 e dalla base 2010 alla base 2015, per provincia",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_RECONNIC,RICOSTRUZIONE STORICA DEGLI INDICI DEI PREZZI AL CONSUMO PER L'INTERA COLLETTIVITA' (NIC) IN BASE 2015 =100 PER GLI ANNI 1996-2015,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_DCSP_NIC1B2015_SPLICECO,Tabella dei coefficienti di raccordo da base Dicembre 1998 a base 2010 e da base 2010 a base 2015 per ECOICOP per area geografica,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_SPLICI,Tabella dei coefficienti di raccordo da base 2010 a base 2015 per aggregati speciali e per area geografica,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_TB2,Tabella di corrispondenza classificazione e coefficienti di raccordo da base 1995 a base 2010 e da base 2010 a base 2015,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2015_TB3,Aggregati speciali NIC  - Coefficienti di raccordo da base 1995 a base 2010 e da base 2010 a base 2015,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2025_TB1,Tabelle dei coefficienti di raccordo dalla base 1995 al 2010 - base 2010 al 2015 - base 2015 al 2025 - Codici Ecoicop 2,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2025_TB2,Tabelle dei coefficienti di raccordo dalla base 1995 al 2010 - base 2010 al 2015 - base 2015 al 2025 - Tipologie di prodotto,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NIC1B2025_TB3,Tabelle dei coefficienti di raccordo da base 2015 a base 2025 per regione (Ecoicopv2),empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICDUEB2010_CPI,Ricostruzione storica degli indici dei prezzi al consumo per l'intera collettività (NIC) in base 2010=100 per gli anni 1996-2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICDUEB2010_TB2,Tabella di corrispondenza classificazione e coefficienti di raccordo da base 1995 a base 2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICDUEB2010_TB3,"Tabelle dei coefficienti di raccordo dalla base precedente a base 2010 per ripartizione geografica, regione, provincia e aggregati speciali",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICUNOBB2010_CPI,Ricostruzione storica degli indici dei prezzi al consumo per l'intera collettività (NIC) in base 2010=100 per gli anni 1996-2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICUNOBB2010_NIC,Dettaglio composizione degli aggregati speciali NIC,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICUNOBB2010_TB2,Tabella di corrispondenza classificazione e coefficienti di raccordo da base 1995 a base 2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCSP_NICUNOBB2010_TB3,"Tabelle dei coefficienti di raccordo dalla base precedente a base 2010 per ripartizione geografica, regione, provincia e aggregati speciali",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DIPS_SIR_IND_TERR_DRT,Nota metodologica - imprese,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DIPS_SIR_IND_TERR_DRT_OCC_RBI,Nota metodologica - occupazione nelle imprese,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DIVORCESSE,Divorzi serie 1980-2007,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_ENTERPRISE,Imprese - Occupazione dal 2018 al 2024,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_ENT_GEN,Quota occupazione femminile (parità di genere) 2022 e 2023,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_ENT_PERS_EMPL,Tavole aggiuntive per imprese e addetti_1997_2011,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_FARMSTRUCT,Struttura delle aziende agricole serie interrotte 2003-2007,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_FISHERYBRO,Pesca serie interrotte 2001-2019,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_FLOWERSBRO,Fiori serie interrotte 2002-2007,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_FORESTRYBR,Foreste o silvicoltura serie interrotte 2001-2015,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_GLOSSARYDE,Glossario Popolazione residente - bilancio,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_GLOSSARYST,Glossario Stranieri residenti - Bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_HIGHSCHOOL,Diplomati serie 1998-2007,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_HOURLYWAGE,Retribuzione oraria e per dipendente (base 2000),empty,hub,0,0,0,"",2026-08-02
+DF_BULK_HUNTINGBRO,Caccia serie interrotte 2001-2008,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_HVD,HVD,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_LOCALUNITS,Unità locali - Occupazione dal 2018 al 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_NOTASULTAS,Nota sul tasso standardizzato di mortalità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_PEND_LAV_2021_1,Matrice di pendolarismo per lavoro,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PEND_LAV_2021_2,Matrice di pendolarismo per lavoro - leggimi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PERMANENTC,Coltivazioni legnose agrarie serie interrotte 2002-2017,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_POPOLAZION,Popolazione  per condizione professionale e sesso – Tabella di sintesi - Dati trimestrali,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PREVIOUSBA,Basi precedenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_PROCEEDING,Procedimenti e decisioni serie 1980-2008,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_PROTECTION,"Tutela, affidamento e adozioni dei minori e Procedimenti civili serie interrrotte 1990-2007",empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PROTESTSSE,Protesti serie 1990-2009,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PUBLISHEDB,Opere librarie pubblicate serie 1984-2009,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_REPORTSOFP,"Segnalazioni relative a persone e a minori denunciati, per tipo di delitto – Anni 1983-2003",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_SCHOOLSSER,Scuole serie 2002-2009,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SEEDSBROKE,Sementi serie interrotte 2003-2010,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SEPARATION,Separazioni serie 1980-2007,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_STATEARCHI,Archivi di stato 2008,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_STATEOWNED,Biblioteche pubbliche statali serie 1985-2008,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_STIMEPERGR,Stime per grandi comuni e errori campionari- aggiornamento media annua,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBCOM1991,Censimento della popolazione e delle abitazioni 1991,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBCOM2001,Censimento della popolazione e delle abitazioni 2001,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBCOM2011,Censimento della popolazione e delle abitazioni 2011,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBCOM2021,Dati comuni capoluogo delle citta' metropolitane_,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBCOM2023,Dati comuni capoluogo delle città metropolitane,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUBREG2021,Dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_SUBREG2023,Dati regionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_SUBREG_CORRIS,Corrispondenza tra il codice e il nome della Regione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_SUICIDESAN,Suicidi e tentativi di suicidio serie interrotte 1985-2008,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_SUICIDI,Suicidi e malattie associate - metadati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_SURVEYCALE,Calendario della rilevazione (Estimative),empty,hub,0,0,0,"",2026-08-02
+DF_BULK_UNIVERSITY,Università serie 2002-2007,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_UNIVERSITY_DEGREE,Laureati serie 1998-2007,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_WAGESACCOR,Retribuzioni contrattuali (base 2000),empty,hub,0,0,0,"",2026-08-02
+DF_CENSAGRIC2020_AGE_TRA,Aziende con corsi di formazione per età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_COMP_FRA_IND_MUNICIPAL_01,Indice composito di fragilità e sue componenti - livello comunale,ok,hub,3,8051,0,"",2026-08-02
+DF_COMP_FRA_IND_MUNICIPAL_02,Indice composito di fragilità e sue componenti - per singolo comune,ok,hub,3,8051,0,"",2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE,"Aziende e superficie utilizzata e aziende biologiche, per età del capo azienda",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_ASS,Aziende per tipo di associazionismo ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_EDU,Aziende per titolo di studio ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_GAIN,Aziende con attività connesse per età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_GAIN_SPA2023_1,Aziende con attività connesse,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_INV,Aziende per tipo di investimento ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02

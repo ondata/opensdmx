@@ -5825,3 +5825,329 @@ MET_10R_3GVA,Gross value added at basic prices by metropolitan region,ok,sdmx,5,
 MET_10R_3PGDP,Average annual population to calculate regional GDP data by metropolitan region,ok,sdmx,4,344,0,"",2026-08-01
 MET_BD_EN2,Employer business demography by NACE Rev. 2activity and metropolitan region (2008-2020),ok,sdmx,6,262,0,"",2026-08-01
 MET_BD_ESIZE,Employer business demography by size class and metropolitan region (2008-2019),ok,sdmx,7,258,0,"",2026-08-01
+MET_BD_HGN,Business demography and high growth enterprises by NACE Rev. 2 activity and metropolitan region,ok,sdmx,6,335,0,"",2026-08-02
+MET_BD_HGN2,Business demography and high growth enterprise by NACE Rev. 2 activity and metropolitan region (2008-2020),ok,sdmx,6,264,0,"",2026-08-02
+MET_BD_SIZE,Business demography by size class and metropolitan region (2008-2020),ok,sdmx,7,259,0,"",2026-08-02
+MET_BD_SIZE_R,Business demography by size class and metropolitan region,ok,sdmx,7,333,0,"",2026-08-02
+MET_BD_SLG1_NR,Employer business demography by NACE Rev. 2 activity and metropolitan region,ok,sdmx,6,337,0,"",2026-08-02
+MET_BD_SLG1_SIZER,Employer business demography by size class and metropolitan region,ok,sdmx,7,332,0,"",2026-08-02
+MET_BIRTHS,Live births (total) by metropolitan region,ok,sdmx,4,402,0,"",2026-08-02
+MET_CRIM_GEN,Crimes recorded by the police by metropolitan region,ok,sdmx,5,342,0,"",2026-08-02
+MET_D3AREA,Area of the region by metropolitan region,ok,sdmx,5,406,0,"",2026-08-02
+MET_D3DENS,Population density by metropolitan region,ok,sdmx,3,372,0,"",2026-08-02
+MET_DEATHS,Deaths (total) by metropolitan region,ok,sdmx,4,402,0,"",2026-08-02
+MET_EDAT_LFSE4,"Population aged 25-64 by educational attainment level, sex and metropolitan region",ok,sdmx,7,342,0,"",2026-08-02
+MET_GIND3,Demographic balance and crude rates by metropolitan region,ok,sdmx,4,403,0,"",2026-08-02
+MET_LFE3EMP,"Employment by sex, age and metropolitan region",ok,sdmx,6,380,0,"",2026-08-02
+MET_LFE3EMPRT,Employment rates by sex and age and metropolitan region,ok,sdmx,6,380,0,"",2026-08-02
+MET_LFP3POP,"Economically active population by sex, age and metropolitan region",ok,sdmx,6,385,0,"",2026-08-02
+MET_LFSD3POP,"Population by sex, age and metropolitan region",ok,sdmx,6,381,0,"",2026-08-02
+MET_LFU3PERS,"Unemployment by sex, age and metropolitan region",ok,sdmx,6,384,0,"",2026-08-02
+MET_LFU3RT,"Unemployment rates by sex, age and metropolitan region",ok,sdmx,6,385,0,"",2026-08-02
+MET_PAT_EPIPC,"Patent applications to the EPO by priority year, by international patent classification (IPC) sections, classes and metropolitan region (1977-2012)",ok,sdmx,5,467,0,"",2026-08-02
+MET_PAT_EPTEC,High-tech patent applications to the EPO by priority year and metropolitan region (1977-2012),ok,sdmx,5,325,0,"",2026-08-02
+MET_PAT_EPTOT,Patent applications to the EPO by priority year and metropolitan region (1977-2012),ok,sdmx,4,336,0,"",2026-08-02
+MET_PJANAGGR3,"Population on 1 January by broad age group, sex and metropolitan region",ok,sdmx,5,412,0,"",2026-08-02
+MET_PJANGRP3,"Population on 1 January by five year age group, sex and metropolitan region",ok,sdmx,6,405,0,"",2026-08-02
+MET_PROJ_19RANMIG,"Assumptions for net migration by age, sex, type of projection and metropolitan region",ok,sdmx,7,364,0,"",2026-08-02
+MET_PROJ_19RDBI,Demographic balances and indicators by type of projection and metropolitan region,ok,sdmx,6,366,0,"",2026-08-02
+MET_PROJ_19RDTH,"Projected deaths by age, sex, type of projection and metropolitan region",ok,sdmx,7,364,0,"",2026-08-02
+MET_PROJ_19RP,"Population on 1st January by age, sex, type of projection and metropolitan region",ok,sdmx,7,364,0,"",2026-08-02
+MET_ROAD_GONL,"National annual road freight transport by region of loading, group of goods and metropolitan region",ok,sdmx,5,360,0,"",2026-08-02
+MET_ROAD_GONU,"National annual road freight transport by region of unloading, group of goods and metropolitan region",ok,sdmx,5,360,0,"",2026-08-02
+MIGR_ACQ,"Acquisition of citizenship by age group, sex and former citizenship",ok,sdmx,8,385,0,"",2026-08-02
+MIGR_ACQ1CTZ,"Acquisition of citizenship by age group, sex and level of human development of former citizenship",ok,sdmx,8,99,0,"",2026-08-02
+MIGR_ACQS,Residents who acquired citizenship as a share of resident non-citizens by former citizenship and sex,ok,sdmx,6,57,0,"",2026-08-02
+MIGR_ASYACCA,"Asylum applicants having had their applications processed under the accelerated procedure, by age, sex and citizenship - annual aggregated data",ok,sdmx,7,258,0,"",2026-08-02
+MIGR_ASYACCM,"Asylum applicants having had their applications processed under the accelerated procedure, by age, sex and citizenship - monthly data",ok,sdmx,7,319,0,"",2026-08-02
+MIGR_ASYACCM$DV_961,"Asylum applicants having had their applications processed under the accelerated procedure, by age, sex and citizenship - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYACCM$DV_961'
+For more information check: https://developer.m",2026-08-02
+MIGR_ASYAPP1MP,First-time asylum applicants - per thousand persons,ok,sdmx,4,53,0,"",2026-08-02
+MIGR_ASYAPP1MPM,"First-time asylum applicants - per hundred thousand persons, monthly data",ok,sdmx,5,257,0,"",2026-08-02
+MIGR_ASYAPP1PC,First-time asylum applicants - % of total asylum applicants,ok,sdmx,4,53,0,"",2026-08-02
+MIGR_ASYAPP1UP,First-time asylum applications of unaccompanied minors - % of total first-time asylum applications of minors,ok,sdmx,4,38,0,"",2026-08-02
+MIGR_ASYAPPCTZA,"Asylum applicants by type, citizenship, age and sex - annual aggregated data",ok,sdmx,8,275,0,"",2026-08-02
+MIGR_ASYAPPCTZA$DV_2985,"Asylum applicants by type, citizenship, age and sex - annual aggregated data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYAPPCTZA$DV_2985'
+For more information check: https://develop",2026-08-02
+MIGR_ASYAPPCTZM,"Asylum applicants by type, citizenship, age and sex - monthly data",ok,sdmx,8,479,0,"",2026-08-02
+MIGR_ASYAPPCTZM$DV_2982,"Asylum applicants by type, citizenship, age and sex - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYAPPCTZM$DV_2982'
+For more information check: https://develop",2026-08-02
+MIGR_ASYCTZ,Asylum applicants by citizenship - annual data (until 2007),ok,sdmx,5,258,0,"",2026-08-02
+MIGR_ASYCTZM,First time asylum applicants by citizenship - monthly data (until December 2007),ok,sdmx,5,342,0,"",2026-08-02
+MIGR_ASYDCFINA,"Final decisions in appeal or review on applications by type of decision, citizenship, age and sex - annual data",ok,sdmx,8,278,0,"",2026-08-02
+MIGR_ASYDCFINA$DV_2983,"Final decisions in appeal or review on applications by type of decision, citizenship, age and sex - annual data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYDCFINA$DV_2983'
+For more information check: https://develope",2026-08-02
+MIGR_ASYDCFSTA,"First instance decisions on applications by type of decision, citizenship, age and sex - annual aggregated data",ok,sdmx,8,278,0,"",2026-08-02
+MIGR_ASYDCFSTA$DV_2984,"First instance decisions on applications by type of decision, citizenship, age and sex - annual aggregated data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYDCFSTA$DV_2984'
+For more information check: https://develope",2026-08-02
+MIGR_ASYDCFSTQ,"First instance decisions on applications by type of decision, citizenship, age and sex - quarterly data",ok,sdmx,8,334,0,"",2026-08-02
+MIGR_ASYDCFSTQ$DV_2981,"First instance decisions on applications by type of decision, citizenship, age and sex - quarterly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYDCFSTQ$DV_2981'
+For more information check: https://develope",2026-08-02
+MIGR_ASYDCTZM,Decisions on asylum applications by citizenship (until December 2007) - monthly data,ok,sdmx,6,311,0,"",2026-08-02
+MIGR_ASYDCTZY,Decisions on asylum applications by citizenship (until 2007) - annual data,ok,sdmx,6,250,0,"",2026-08-02
+MIGR_ASYDEC1P,Positive first instance decisions - per thousand persons,ok,sdmx,4,53,0,"",2026-08-02
+MIGR_ASYDEC1PC,Asylum decisions at first instance by type of decision - % of total decisions at first instance - annual data,ok,sdmx,6,236,0,"",2026-08-02
+MIGR_ASYDEC1PCQ,Asylum decisions at first instance by type of decision - % of total decisions at first instance - quarterly data,ok,sdmx,6,291,0,"",2026-08-02
+MIGR_ASYDECFP,Asylum decisions at final instance by type of decision - % of total decisions at final instance,ok,sdmx,6,236,0,"",2026-08-02
+MIGR_ASYMRCA,Applicants having benefited from material reception conditions at the end of the reference year - annual data,ok,sdmx,4,40,0,"",2026-08-02
+MIGR_ASYPENCTZM,"Persons subject of asylum applications pending at the end of the month by citizenship, age and sex - monthly data",ok,sdmx,7,476,0,"",2026-08-02
+MIGR_ASYPENCTZM$DV_723,"Persons subject of asylum applications pending at the end of the month by citizenship, age and sex - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYPENCTZM$DV_723'
+For more information check: https://develope",2026-08-02
+MIGR_ASYRELFA,"Resettled persons by age, sex, citizenship and resettlement framework - annual data",ok,sdmx,8,263,0,"",2026-08-02
+MIGR_ASYRESA,"Resettled persons by age, sex and citizenship - annual data",ok,sdmx,7,271,0,"",2026-08-02
+MIGR_ASYRESA$DV_629,"Resettled persons by age, sex and citizenship - annual data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYRESA$DV_629'
+For more information check: https://developer.m",2026-08-02
+MIGR_ASYRESCRA,"Resettled persons by age, sex, citizenship and country of previous residence - annual data",ok,sdmx,8,461,0,"",2026-08-02
+MIGR_ASYRESDA,"Resettled persons by age, sex, citizenship and decision - annual data",ok,sdmx,8,263,0,"",2026-08-02
+MIGR_ASYTPFA,"Decisions granting temporary protection by citizenship, age and sex - annual aggregated data",ok,sdmx,7,256,0,"",2026-08-02
+MIGR_ASYTPFA$DV_1381,"Decisions granting temporary protection by citizenship, age and sex - annual aggregated data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYTPFA$DV_1381'
+For more information check: https://developer.",2026-08-02
+MIGR_ASYTPFM,"Decisions granting temporary protection by citizenship, age and sex - monthly data",ok,sdmx,7,304,0,"",2026-08-02
+MIGR_ASYTPFM$DV_1383,"Decisions granting temporary protection by citizenship, age and sex - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYTPFM$DV_1383'
+For more information check: https://developer.",2026-08-02
+MIGR_ASYTPFPOP,Decisions granting temporary protection by citizenship - per thousand persons,ok,sdmx,5,89,0,"",2026-08-02
+MIGR_ASYTPFQ,"Decisions granting temporary protection by citizenship, age and sex - quarterly data",ok,sdmx,7,271,0,"",2026-08-02
+MIGR_ASYTPFQ$DV_1382,"Decisions granting temporary protection by citizenship, age and sex - quarterly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYTPFQ$DV_1382'
+For more information check: https://developer.",2026-08-02
+MIGR_ASYTPSM,"Beneficiaries of temporary protection at the end of the month by citizenship, age and sex - monthly data",ok,sdmx,7,304,0,"",2026-08-02
+MIGR_ASYTPSM$DV_1384,"Beneficiaries of temporary protection at the end of the month by citizenship, age and sex - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYTPSM$DV_1384'
+For more information check: https://developer.",2026-08-02
+MIGR_ASYTPSPOP,Beneficiaries of temporary protection by citizenship - per thousand persons,ok,sdmx,5,89,0,"",2026-08-02
+MIGR_ASYTPWQ,Decisions withdrawing temporary protection by citizenship and reason - quarterly data,ok,sdmx,6,264,0,"",2026-08-02
+MIGR_ASYUMACCA,"Unaccompanied minor asylum applicants having had their applications processed under the accelerated procedure, by age, sex and citizenship - annual aggregated data",ok,sdmx,7,254,0,"",2026-08-02
+MIGR_ASYUMACCM,"Unaccompanied minor asylum applicants having had their applications processed under the accelerated procedure, by age, sex and citizenship - monthly data",ok,sdmx,7,315,0,"",2026-08-02
+MIGR_ASYUMACTA,"Unaccompanied minor asylum applicants by type, citizenship, age and sex - annual aggregated data",ok,sdmx,8,257,0,"",2026-08-02
+MIGR_ASYUMACTM,"Unaccompanied minor asylum applicants by type, citizenship, age and sex - monthly data",ok,sdmx,8,318,0,"",2026-08-02
+MIGR_ASYUMDCFA,"First instance decisions on applications of unaccompanied minors by type of decision, citizenship, age and sex - annual aggregated data",ok,sdmx,8,259,0,"",2026-08-02
+MIGR_ASYUMDCFNA,"Final decisions in appeal or review on applications of unaccompanied minors by type of decision, citizenship, age and sex - annual data",ok,sdmx,8,260,0,"",2026-08-02
+MIGR_ASYUMDCFQ,"First instance decisions on applications of unaccompanied minors by type of decision, citizenship, age and sex - quarterly data",ok,sdmx,8,276,0,"",2026-08-02
+MIGR_ASYUMPCTM,"Unaccompanied minors subject of asylum applications pending at the end of the month by citizenship, age and sex - monthly data",ok,sdmx,7,315,0,"",2026-08-02
+MIGR_ASYUMRESA,"Resettled unaccompanied minors by age, sex and citizenship - annual data",ok,sdmx,7,253,0,"",2026-08-02
+MIGR_ASYUMTPFA,"Decisions granting temporary protection to unaccompanied minors by citizenship, age and sex - annual aggregated data",ok,sdmx,7,253,0,"",2026-08-02
+MIGR_ASYUMTPFM,"Decisions granting temporary protection to unaccompanied minors by citizenship, age and sex - monthly data",ok,sdmx,7,300,0,"",2026-08-02
+MIGR_ASYUMTPFQ,"Decisions granting temporary protection to unaccompanied minors by citizenship, age and sex - quarterly data",ok,sdmx,7,268,0,"",2026-08-02
+MIGR_ASYUMTPSM,"Unaccompanied minors benefiting from temporary protection at the end of the month by citizenship, age and sex - monthly data",ok,sdmx,7,300,0,"",2026-08-02
+MIGR_ASYUMTPWQ,Decisions withdrawing temporary protection to unaccompanied minors by citizenship and reason - quarterly data,ok,sdmx,6,264,0,"",2026-08-02
+MIGR_ASYUMWFNA,"Decisions withdrawing status granted as final decision in appeal or review to unaccompanied minors by type of status withdrawn, citizenship and reason - annual data",ok,sdmx,7,255,0,"",2026-08-02
+MIGR_ASYUMWIFA,"Decisions withdrawing status granted at first instance decision to unaccompanied minors by type of status withdrawn, citizenship and reason - annual aggregated data",ok,sdmx,7,255,0,"",2026-08-02
+MIGR_ASYUMWIFQ,"Decisions withdrawing status granted at first instance decision to unaccompanied minors by type of status withdrawn, citizenship and reason - quarterly data",ok,sdmx,7,272,0,"",2026-08-02
+MIGR_ASYUMWITA,"Asylum applications of unaccompanied minors withdrawn by citizenship, age, sex and type of withdrawal - annual aggregated data",ok,sdmx,8,258,0,"",2026-08-02
+MIGR_ASYUMWITM,"Asylum applications of unaccompanied minors withdrawn by citizenship, age, sex and type of withdrawal - monthly data",ok,sdmx,8,319,0,"",2026-08-02
+MIGR_ASYUNAA,"Asylum applicants considered to be unaccompanied minors by citizenship, age and sex - annual data",ok,sdmx,7,269,0,"",2026-08-02
+MIGR_ASYWITFINA,"Decisions withdrawing status granted as final decision in appeal or review by type of status withdrawn, citizenship and reason - annual data",ok,sdmx,7,269,0,"",2026-08-02
+MIGR_ASYWITFSTA,"Decisions withdrawing status granted at first instance decision by type of status withdrawn, citizenship and reason - annual aggregated data",ok,sdmx,7,269,0,"",2026-08-02
+MIGR_ASYWITFSTQ,"Decisions withdrawing status granted at first instance decision by type of status withdrawn, citizenship and reason - quarterly data",ok,sdmx,7,325,0,"",2026-08-02
+MIGR_ASYWITHA,"Asylum applications withdrawn by citizenship, age, sex and type of withdrawal - annual aggregated data",ok,sdmx,8,276,0,"",2026-08-02
+MIGR_ASYWITHA$DV_1021,"Asylum applications withdrawn by citizenship, age, sex and type of withdrawal - annual aggregated data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYWITHA$DV_1021'
+For more information check: https://developer",2026-08-02
+MIGR_ASYWITHM,"Asylum applications withdrawn by citizenship, age, sex and type of withdrawal - monthly data",ok,sdmx,8,480,0,"",2026-08-02
+MIGR_ASYWITHM$DV_941,"Asylum applications withdrawn by citizenship, age, sex and type of withdrawal - monthly data",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_ASYWITHM$DV_941'
+For more information check: https://developer.",2026-08-02
+MIGR_DUBDEDACI,"Decisions on incoming 'Dublin' requests based on EURODAC by submitting country (PARTNER), type of request, sex and type of applicant",ok,sdmx,10,106,0,"",2026-08-02
+MIGR_DUBDEDACO,"Decisions on outgoing 'Dublin' requests based on EURODAC by receiving country (PARTNER), type of request, sex and type of applicant",ok,sdmx,10,106,0,"",2026-08-02
+MIGR_DUBDI,"Decisions on incoming 'Dublin' requests by submitting country (PARTNER), type of decision, type of request, legal provision, sex and type of applicant",ok,sdmx,10,128,0,"",2026-08-02
+MIGR_DUBDO,"Decisions on outgoing 'Dublin' requests by receiving country (PARTNER), type of decision, type of request, legal provision, sex and type of applicant",ok,sdmx,10,128,0,"",2026-08-02
+MIGR_DUBDUNI,"Unilateral 'Dublin' decisions by partner country, type of decision, sex and type of applicant",ok,sdmx,8,97,0,"",2026-08-02
+MIGR_DUBREDACI,"Incoming 'Dublin' requests based on EURODAC by submitting country (PARTNER), type of request, legal provision, sex and type of applicant",ok,sdmx,9,103,0,"",2026-08-02
+MIGR_DUBREDACO,"Outgoing 'Dublin' requests based on EURODAC by receiving country (PARTNER), type of request, legal provision, sex and type of applicant",ok,sdmx,9,103,0,"",2026-08-02
+MIGR_DUBRESI,"Incoming responses to 'Dublin' requests for information by submitting country (PARTNER), legal provision, duration of response, sex and type of applicant",ok,sdmx,9,104,0,"",2026-08-02
+MIGR_DUBRESO,"Outgoing responses to 'Dublin' requests for information by receiving country (PARTNER), legal provision, duration of response, sex and type of applicant",ok,sdmx,9,105,0,"",2026-08-02
+MIGR_DUBRI,"Incoming 'Dublin' requests by submitting country (PARTNER), type of request, legal provision, sex and type of applicant",ok,sdmx,9,125,0,"",2026-08-02
+MIGR_DUBRINFI,"Incoming 'Dublin' requests for information by submitting country (PARTNER), legal provision, sex and type of applicant",ok,sdmx,8,101,0,"",2026-08-02
+MIGR_DUBRINFO,"Outgoing 'Dublin' requests for information by receiving country (PARTNER), legal provision, sex and type of applicant",ok,sdmx,8,101,0,"",2026-08-02
+MIGR_DUBRO,"Outgoing 'Dublin' requests by receiving country (PARTNER), type of request, legal provision, sex and type of applicant",ok,sdmx,9,125,0,"",2026-08-02
+MIGR_DUBRPENI,"Pending 'Dublin' incoming requests by submitting country (PARTNER), type of request, sex and type of applicant",ok,sdmx,8,99,0,"",2026-08-02
+MIGR_DUBRPENO,"Pending 'Dublin' outgoing requests by receiving country (PARTNER), type of request, sex and type of applicant",ok,sdmx,8,100,0,"",2026-08-02
+MIGR_DUBTI,"Incoming 'Dublin' transfers by submitting country (PARTNER), legal provision, duration of transfer, sex and type of applicant",ok,sdmx,9,127,0,"",2026-08-02
+MIGR_DUBTO,"Outgoing 'Dublin' transfers by receiving country (PARTNER), legal provision, duration of transfer, sex and type of applicant",ok,sdmx,9,127,0,"",2026-08-02
+MIGR_DUBTPENI,"Pending incoming 'Dublin' transfers by submitting country (PARTNER), sex and type of applicant",ok,sdmx,7,90,0,"",2026-08-02
+MIGR_DUBTPENO,"Pending outgoing 'Dublin' transfers by receiving country (PARTNER), sex and type of applicant",ok,sdmx,7,89,0,"",2026-08-02
+MIGR_EILPOP,Persons subject to immigration law enforcement - per thousand persons,ok,sdmx,5,58,0,"",2026-08-02
+MIGR_EILRETPC,Returns by type of return - % of total returns,ok,sdmx,5,60,0,"",2026-08-02
+MIGR_EIORD,Third country nationals ordered to leave - annual data (rounded),ok,sdmx,7,240,0,"",2026-08-02
+MIGR_EIORD$DV_1261,Third country nationals ordered to leave - annual data (rounded),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_EIORD$DV_1261'
+For more information check: https://developer.mo",2026-08-02
+MIGR_EIORD1,"Third country nationals ordered to leave by citizenship, age and sex - quarterly data (rounded)",ok,sdmx,7,255,0,"",2026-08-02
+MIGR_EIORD2,"Third-country unaccompanied minors ordered to leave, by citizenship, age and sex of the minor - quarterly data (rounded)",ok,sdmx,7,238,0,"",2026-08-02
+MIGR_EIPRE,Third country nationals found to be illegally present - annual data (rounded),ok,sdmx,9,254,0,"",2026-08-02
+MIGR_EIPRE$DV_1221,Third country nationals found to be illegally present - annual data (rounded),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_EIPRE$DV_1221'
+For more information check: https://developer.mo",2026-08-02
+MIGR_EIRFS,Third country nationals refused entry at the external borders - annual data (rounded),ok,sdmx,7,244,0,"",2026-08-02
+MIGR_EIRTN,Third country nationals returned following an order to leave - annual data (rounded),ok,sdmx,8,242,0,"",2026-08-02
+MIGR_EIRTN$DV_1241,Third country nationals returned following an order to leave - annual data (rounded),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_EIRTN$DV_1241'
+For more information check: https://developer.mo",2026-08-02
+MIGR_EIRTN1,"Third-country nationals returned following an order to leave, by type of return, citizenship, country of destination, age and sex - quarterly data",ok,sdmx,9,265,0,"",2026-08-02
+MIGR_EIRTN2,"Third-country unaccompanied minors returned following an order to leave, by type of return, citizenship, country of destination, age and sex of the minor - quarterly data (rounded)",ok,sdmx,9,248,0,"",2026-08-02
+MIGR_EIRT_AGR,Third-country nationals who have left the territory to a third country by type of agreement procedure and citizenship,ok,sdmx,6,215,0,"",2026-08-02
+MIGR_EIRT_ASS,Third-country nationals who have left the territory by type of assistance received and citizenship,ok,sdmx,6,216,0,"",2026-08-02
+MIGR_EIRT_DES,Third-country nationals who have left the territory to a third country by destination country and citizenship,ok,sdmx,6,213,0,"",2026-08-02
+MIGR_EIRT_VOL,Third-country nationals who have left the territory by type of return and citizenship,ok,sdmx,6,221,0,"",2026-08-02
+MIGR_EMI1CTZ,"Emigration by age group, sex and citizenship",ok,sdmx,8,387,0,"",2026-08-02
+MIGR_EMI2,Emigration by age and sex,ok,sdmx,7,189,0,"",2026-08-02
+MIGR_EMI3NXT,"Emigration by age group, sex and country of next usual residence",ok,sdmx,8,402,0,"",2026-08-02
+MIGR_EMI4CTB,"Emigration by age group, sex and country of birth",ok,sdmx,8,385,0,"",2026-08-02
+MIGR_EMI5NXT,Emigration by group of country of next usual residence,ok,sdmx,5,54,0,"",2026-08-02
+MIGR_EMICTZNXT,"Emigration by age group, sex, group of citizenship and group of country of next residence - ad hoc data collection (2015-2020)",ok,sdmx,8,53,0,"",2026-08-02
+MIGR_IMM10CTB,"Immigration by age group, sex and level of human development of the country of birth",ok,sdmx,8,100,0,"",2026-08-02
+MIGR_IMM11PRV,"Immigration by age group, sex and level of human development of the country of previous residence",ok,sdmx,8,99,0,"",2026-08-02
+MIGR_IMM12PRV,Immigration by broad group of country of previous residence,ok,sdmx,5,54,0,"",2026-08-02
+MIGR_IMM1CTZ,"Immigration by age group, sex and citizenship",ok,sdmx,8,399,0,"",2026-08-02
+MIGR_IMM2CTZ,"Immigration by age, sex and group of citizenship",ok,sdmx,8,189,0,"",2026-08-02
+MIGR_IMM3CTB,"Immigration by age group, sex and country of birth",ok,sdmx,8,389,0,"",2026-08-02
+MIGR_IMM4CTB,"Immigration by age, sex and group of country of birth",ok,sdmx,8,168,0,"",2026-08-02
+MIGR_IMM5PRV,"Immigration by age group, sex and country of previous residence",ok,sdmx,8,406,0,"",2026-08-02
+MIGR_IMM6CTZ,"Immigration by sex, citizenship and group of country of birth",ok,sdmx,7,355,0,"",2026-08-02
+MIGR_IMM7CTB,"Immigration by sex, country of birth and group of citizenship",ok,sdmx,7,373,0,"",2026-08-02
+MIGR_IMM8,Immigration by age and sex,ok,sdmx,7,182,0,"",2026-08-02
+MIGR_IMM9CTZ,"Immigration by age group, sex and level of human development of the country of citizenship",ok,sdmx,8,101,0,"",2026-08-02
+MIGR_IMMCTZPRV,"Immigration by age group, sex, group of citizenship and group of country of previous residence - ad hoc data collection (2015-2020)",ok,sdmx,8,54,0,"",2026-08-02
+MIGR_LCT,Loss of citizenship by sex and new citizenship,ok,sdmx,6,327,0,"",2026-08-02
+MIGR_NETMIGR,Net migration by age and sex,ok,sdmx,7,155,0,"",2026-08-02
+MIGR_POP1CTZ,"Population on 1 January by age group, sex and citizenship",ok,sdmx,7,392,0,"",2026-08-02
+MIGR_POP1CTZ$DV_1764,"Population on 1 January by age group, sex and citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_POP1CTZ$DV_1764'
+For more information check: https://developer.",2026-08-02
+MIGR_POP2CTZ,"Population on 1 January by age, sex and broad group of citizenship",ok,sdmx,7,186,0,"",2026-08-02
+MIGR_POP3CTB,"Population on 1 January by age group, sex and country of birth",ok,sdmx,7,412,0,"",2026-08-02
+MIGR_POP4CTB,"Population on 1 January by age, sex and group of country of birth",ok,sdmx,7,187,0,"",2026-08-02
+MIGR_POP5CTZ,"Population on 1 January by sex, citizenship and group of country of birth",ok,sdmx,7,356,0,"",2026-08-02
+MIGR_POP6CTB,"Population on 1 January by sex, country of birth and group of citizenship",ok,sdmx,7,375,0,"",2026-08-02
+MIGR_POP7CTZ,"Population on 1 January by age group, sex and level of human development of the country of citizenship",ok,sdmx,7,105,0,"",2026-08-02
+MIGR_POP8CTB,"Population on 1 January by age group, sex and level of human development of the country of birth",ok,sdmx,7,103,0,"",2026-08-02
+MIGR_POP9CTZ,EU and EFTA citizens who are usual residents in another EU/EFTA country as of 1 January,ok,sdmx,7,106,0,"",2026-08-02
+MIGR_RESBC11,"Persons subject to EU Blue Card decisions by length of validity, age, sex, citizenship and occupation",ok,sdmx,10,263,0,"",2026-08-02
+MIGR_RESBC12,"Persons subject to EU Blue Card decisions by length of validity, age, sex, citizenship and size of employer",ok,sdmx,10,249,0,"",2026-08-02
+MIGR_RESBC13,"Persons subject to EU Blue Card decisions by length of validity duration, age, sex, citizenship and economic sector of employer",ok,sdmx,10,266,0,"",2026-08-02
+MIGR_RESBC2,"Persons subject to decisions on residence permits for family reunification with EU Blue Card holders, by duration, age, sex and citizenship",ok,sdmx,9,244,0,"",2026-08-02
+MIGR_RESBC31,"EU Blue Card holders admitted for long-term mobility by length of validity, age, sex, citizenship and previous country of residence",ok,sdmx,9,269,0,"",2026-08-02
+MIGR_RESBC34,"EU Blue Card holders’ family members admitted for long-term mobility by age, sex, citizenship, and previous country of residence",ok,sdmx,8,265,0,"",2026-08-02
+MIGR_RESBC41,"Persons subject to a rejected application for EU Blue Cards by reason, age, sex, citizenship and occupation",ok,sdmx,9,241,0,"",2026-08-02
+MIGR_RESBC42,"Persons subject to a rejected application for EU Blue Cards by reason, age, sex, citizenship and size of employer",ok,sdmx,9,227,0,"",2026-08-02
+MIGR_RESBC43,"Persons subject to a rejected application for EU Blue Cards by reason, age, sex, citizenship and economic sector of employer",ok,sdmx,9,244,0,"",2026-08-02
+MIGR_RESBC5,"EU Blue Cards granted to beneficiaries of international protection by length of validity, age, sex and citizenship of the holder",ok,sdmx,8,221,0,"",2026-08-02
+MIGR_RESBC6,"EU Blue Cards granted to beneficiary of free movement rights by length of validity, age, sex and citizenship of the holder",ok,sdmx,8,221,0,"",2026-08-02
+MIGR_RESBC7,"Long-term permits granted to former EU Blue Card holders by age, sex, and citizenship",ok,sdmx,7,216,0,"",2026-08-02
+MIGR_RESCHANGE,Change of immigration status permits by reason and citizenship,ok,sdmx,6,250,0,"",2026-08-02
+MIGR_RESCHST,"Change of immigration status permits by age, sex and citizenship",ok,sdmx,7,246,0,"",2026-08-02
+MIGR_RESCHST$DV_1285,"Change of immigration status permits by age, sex and citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_RESCHST$DV_1285'
+For more information check: https://developer.",2026-08-02
+MIGR_RESEDU,"First permits issued for education reasons by reason, length of validity and citizenship",ok,sdmx,7,240,0,"",2026-08-02
+MIGR_RESFAM,"First permits issued for family reasons by reason, length of validity and citizenship",ok,sdmx,7,246,0,"",2026-08-02
+MIGR_RESFAS,"First permits by reason, age, sex and citizenship",ok,sdmx,8,262,0,"",2026-08-02
+MIGR_RESFAS$DV_1281,"First permits by reason, age, sex and citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_RESFAS$DV_1281'
+For more information check: https://developer.m",2026-08-02
+MIGR_RESFIRST,"First permits by reason, length of validity and citizenship",ok,sdmx,7,242,0,"",2026-08-02
+MIGR_RESFPC,First residence permits by reasons - % of total first residence permits,ok,sdmx,5,57,0,"",2026-08-02
+MIGR_RESFRPS1,First permits issued for family reunification with a beneficiary of protection status,ok,sdmx,7,230,0,"",2026-08-02
+MIGR_RESFRPS2,Permits valid at the end of the year for family reunification with a beneficiary of protection status,ok,sdmx,7,230,0,"",2026-08-02
+MIGR_RESICT1_1,"Intra-corporate transferee permits issued, renewed and withdrawn by type of permit, length of validity and citizenship",ok,sdmx,8,229,0,"",2026-08-02
+MIGR_RESICT1_2,"Intra-corporate transferee permits issued by type of permit, economic sector and citizenship",ok,sdmx,7,245,0,"",2026-08-02
+MIGR_RESICT1_3,"Intra-corporate transferee permits issued by type of permit, length of validity, transferee position and citizenship",ok,sdmx,8,230,0,"",2026-08-02
+MIGR_RESICT2_1,Intra-corporate notifications received by length of validity and citizenship,ok,sdmx,7,227,0,"",2026-08-02
+MIGR_RESICT2_2,Intra-corporate notifications received by economic sector and citizenship,ok,sdmx,7,246,0,"",2026-08-02
+MIGR_RESICT3,Intra-corporate transferee permits for long-term mobility issued and notifications received by citizenship and first Member State of residence,ok,sdmx,7,252,0,"",2026-08-02
+MIGR_RESLAS,"Long-term residents by age, sex and citizenship on 31 December of each year",ok,sdmx,7,257,0,"",2026-08-02
+MIGR_RESLAS$DV_1283,"Long-term residents by age, sex and citizenship on 31 December of each year",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_RESLAS$DV_1283'
+For more information check: https://developer.m",2026-08-02
+MIGR_RESLONG,Long-term residents by citizenship on 31 December of each year,ok,sdmx,6,236,0,"",2026-08-02
+MIGR_RESLTR,Long-term residence permits issued during the year,ok,sdmx,6,226,0,"",2026-08-02
+MIGR_RESLTRA,"Long-term residence permits issued during the year by age, sex and citizenship",ok,sdmx,7,247,0,"",2026-08-02
+MIGR_RESLTRA$DV_1284,"Long-term residence permits issued during the year by age, sex and citizenship",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_RESLTRA$DV_1284'
+For more information check: https://developer.",2026-08-02
+MIGR_RESOCC,"First permits issued for remunerated activities by reason, length of validity and citizenship",ok,sdmx,7,243,0,"",2026-08-02
+MIGR_RESOTH,"First permits issued for other reasons by reason, length of validity and citizenship",ok,sdmx,7,245,0,"",2026-08-02
+MIGR_RESPOP,First residence permits - per thousand persons,ok,sdmx,4,53,0,"",2026-08-02
+MIGR_RESSHARE,Long-term residents among all non-EU citizens holding residence permits by citizenship on 31 December - %,ok,sdmx,6,234,0,"",2026-08-02
+MIGR_RESSING,"Single Permits issued by type of decision, length of validity",ok,sdmx,7,60,0,"",2026-08-02
+MIGR_RESSPC,Valid permits by reasons - % of total valid permits,ok,sdmx,5,59,0,"",2026-08-02
+MIGR_RESSRATH,"Authorisations for study and research by reason, type of decision, citizenship and length of validity",ok,sdmx,8,238,0,"",2026-08-02
+MIGR_RESSRLTM,"Authorisations for long-term mobility of researchers by reason, type of decision, citizenship and length of validity",ok,sdmx,8,229,0,"",2026-08-02
+MIGR_RESSRNTF,"Notifications for research and study by reason, decision, citizenship and length of validity",ok,sdmx,8,231,0,"",2026-08-02
+MIGR_RESSW1_1,"Authorisations for the purpose of seasonal work by status, length of validity, economic sector and citizenship",ok,sdmx,8,252,0,"",2026-08-02
+MIGR_RESSW2,"Authorisations issued for the purpose of seasonal work by economic sector, sex and citizenship",ok,sdmx,7,247,0,"",2026-08-02
+MIGR_RESVALID,"All valid permits by reason, length of validity and citizenship on 31 December of each year",ok,sdmx,7,244,0,"",2026-08-02
+MIGR_RESVAS,"All valid permits by age, sex and citizenship on 31 December of each year",ok,sdmx,7,261,0,"",2026-08-02
+MIGR_RESVAS$DV_1282,"All valid permits by age, sex and citizenship on 31 December of each year",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/MIGR_RESVAS$DV_1282'
+For more information check: https://developer.m",2026-08-02
+MIPS_SA,Macroeconomic imbalance procedure - Statistical annex indicators,ok,sdmx,6,148,0,"",2026-08-02
+NAIDA_10_A10,Gross value added by A*10 industry- international data cooperation annual data,ok,sdmx,6,227,0,"",2026-08-02
+NAIDA_10_GDP,GDP and main aggregates - international data cooperation annual data,ok,sdmx,5,303,0,"",2026-08-02
+NAIDA_10_PE,Employment and population - international data cooperation annual data,ok,sdmx,5,273,0,"",2026-08-02
+NAIDQ_10_A10,Gross value added by A*10 industry- international data cooperation quarterly data,ok,sdmx,7,282,0,"",2026-08-02
+NAIDQ_10_GDP,GDP and main aggregates - international data cooperation quarterly data,ok,sdmx,6,364,0,"",2026-08-02
+NAIDQ_10_PE,Employment and population - international data cooperation quarterly data,ok,sdmx,6,268,0,"",2026-08-02
+NAIDSA_10_F_BS,Financial balance sheets - international data cooperation,ok,sdmx,8,194,0,"",2026-08-02
+NAIDSA_10_F_TR,Financial transactions - international data cooperation,ok,sdmx,8,235,0,"",2026-08-02
+NAIDSA_10_NF_TR,Non-financial transactions - selected international annual data,ok,sdmx,7,248,0,"",2026-08-02
+NAIDSQ_10_F_BS,Financial balance sheets - international data cooperation - quarterly data,ok,sdmx,8,454,0,"",2026-08-02
+NAIDSQ_10_F_TR,Financial transactions - international data cooperation - quarterly data,ok,sdmx,8,439,0,"",2026-08-02
+NAIDSQ_10_NF_TR,Non-financial transactions - selected international quarterly data,ok,sdmx,8,461,0,"",2026-08-02
+NAIO_10_CP15,Supply table at basic prices incl. transformation into purchasers' prices,ok,sdmx,7,301,0,"",2026-08-02
+NAIO_10_CP16,Use table at purchasers' prices,ok,sdmx,7,315,0,"",2026-08-02
+NAIO_10_CP1610,Use table at basic prices,ok,sdmx,7,322,0,"",2026-08-02
+NAIO_10_CP1620,Table of trade and transport margins,ok,sdmx,7,299,0,"",2026-08-02
+NAIO_10_CP1630,Table of taxes less subsidies on product,ok,sdmx,7,299,0,"",2026-08-02
+NAIO_10_CP1700,Symmetric input-output table at basic prices (product by product),ok,sdmx,7,303,0,"",2026-08-02
+NAIO_10_CP1750,Symmetric input-output table at basic prices (industry by industry),ok,sdmx,7,288,0,"",2026-08-02
+NAIO_10_FCP_II1,"EU inter-country input-output table at basic prices, industry by industry (2010-2013)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_II2,"EU inter-country input-output table at basic prices, industry by industry (2014-2017)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_II3,"EU inter-country input-output table at basic prices, industry by industry (2018-2021)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_II4,"EU inter-country input-output table at basic prices, industry by industry (2022 and onwards)",ok,sdmx,7,245,0,"",2026-08-02
+NAIO_10_FCP_IP1,"EU inter-country input-output table at basic prices, product by product (2010-2013)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_IP2,"EU inter-country input-output table at basic prices, product by product (2014-2017)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_IP3,"EU inter-country input-output table at basic prices, product by product (2018-2021)",ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_IP4,"EU inter-country input-output table at basic prices, product by product (2022 and onwards)",ok,sdmx,7,245,0,"",2026-08-02
+NAIO_10_FCP_S1,EU inter-country supply table at basic prices (2010-2013),ok,sdmx,6,184,0,"",2026-08-02
+NAIO_10_FCP_S2,EU inter-country supply table at basic prices (2014-2017),ok,sdmx,6,184,0,"",2026-08-02
+NAIO_10_FCP_S3,EU inter-country supply table at basic prices (2018-2021),ok,sdmx,6,184,0,"",2026-08-02
+NAIO_10_FCP_S4,EU inter-country supply table at basic prices (2022 and onwards),ok,sdmx,6,183,0,"",2026-08-02
+NAIO_10_FCP_U1,EU inter-country use table at basic prices (2010-2013),ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_U2,EU inter-country use table at basic prices (2014-2017),ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_U3,EU inter-country use table at basic prices (2018-2021),ok,sdmx,7,246,0,"",2026-08-02
+NAIO_10_FCP_U4,EU inter-country use table at basic prices (2022 and onwards),ok,sdmx,7,245,0,"",2026-08-02
+NAIO_10_FGDE,Domestic value added in exports - EU perspective (FIGARO application),ok,sdmx,7,174,0,"",2026-08-02
+NAIO_10_FGDEE,Domestic employment in exports - EU perspective (FIGARO application),ok,sdmx,7,174,0,"",2026-08-02
+NAIO_10_FGDEM,Domestic employment in exports - EU country perspective (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_FGDF,Domestic value added in foreign final use by industry of origin (FIGARO application),ok,sdmx,6,176,0,"",2026-08-02
+NAIO_10_FGDFE,Domestic employment in foreign final use by industry of origin (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_FGDFEF,Domestic employment in final use by final producer industry (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_FGDFI,Domestic value added in final use by final producer industry (FIGARO application),ok,sdmx,6,176,0,"",2026-08-02
+NAIO_10_FGDM,Domestic value added in exports - EU country perspective (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_FGFD,Foreign value added in domestic final use by industry of origin (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_FGFEIE,Foreign value added in exports by exporting country and importing country - EU perspective (FIGARO application),ok,sdmx,7,147,0,"",2026-08-02
+NAIO_10_FGFEIM,Foreign value added in exports by exporting country and importing country - EU country perspective (FIGARO application),ok,sdmx,7,178,0,"",2026-08-02
+NAIO_10_FGFOEE,Foreign value added in exports by country of origin and exporting country - EU perspective (FIGARO application),ok,sdmx,7,170,0,"",2026-08-02
+NAIO_10_FGFOEM,Foreign value added in exports by country of origin and exporting country - EU country perspective (FIGARO application),ok,sdmx,7,228,0,"",2026-08-02
+NAIO_10_FGFOIE,Foreign value added in exports by country of origin and importing country - EU perspective (FIGARO application),ok,sdmx,7,142,0,"",2026-08-02
+NAIO_10_FGFOIM,Foreign value added in exports by country of origin and importing country - EU country perspective (FIGARO application),ok,sdmx,7,200,0,"",2026-08-02
+NAIO_10_FGGVCE,Global value chain participation - EU perspective (FIGARO application),ok,sdmx,5,48,0,"",2026-08-02
+NAIO_10_FGGVCM,Global value chain participation - EU country perspective (FIGARO application),ok,sdmx,5,47,0,"",2026-08-02
+NAIO_10_FGTE,Exports by industry (FIGARO application),ok,sdmx,6,177,0,"",2026-08-02
+NAIO_10_FGTEX,Trading partner exposure (FIGARO application),ok,sdmx,6,170,0,"",2026-08-02
+NAIO_10_FGTI,Imports by industry (FIGARO application),ok,sdmx,6,175,0,"",2026-08-02
+NAIO_10_PYP15,Supply table at basic prices incl. transformation into purchasers' prices (previous years prices),ok,sdmx,7,296,0,"",2026-08-02
+NAIO_10_PYP16,Use table at purchasers' prices (previous years prices),ok,sdmx,7,313,0,"",2026-08-02
+NAIO_10_PYP1610,Use table at basic prices (previous years prices),ok,sdmx,7,296,0,"",2026-08-02
+NAIO_10_PYP1620,Table of trade and transport margins (previous years prices),ok,sdmx,7,274,0,"",2026-08-02
+NAIO_10_PYP1630,Table of taxes less subsidies on products (previous years prices),ok,sdmx,7,274,0,"",2026-08-02
+NAIO_10_PYP1700,Symmetric input-output table at basic prices (product by product) (previous years prices),ok,sdmx,7,266,0,"",2026-08-02
+NAIO_10_PYP1750,Symmetric input-output table at basic prices (industry by industry) (previous years prices),ok,sdmx,7,192,0,"",2026-08-02
+NAMA_10R_2COE,Compensation of employees by NUTS 2 region,ok,sdmx,5,457,0,"",2026-08-02
+NAMA_10R_2EMHRW,Employment (thousand hours worked) by NUTS 2 region,ok,sdmx,6,441,0,"",2026-08-02
+NAMA_10R_2GDP,Gross domestic product (GDP) at current market prices by NUTS 2 region,ok,sdmx,4,504,0,"",2026-08-02
+NAMA_10R_2GFCF,Gross fixed capital formation by NUTS 2 region for total economy and general government,ok,sdmx,6,460,0,"",2026-08-02
+NAMA_10R_2GVAGR,Gross domestic product (GDP) and Gross value added (GVA) in volume by NUTS 2 region,ok,sdmx,5,478,0,"",2026-08-02
+NAMA_10R_2HHINC,Income of households by NUTS 2 region,ok,sdmx,6,437,0,"",2026-08-02
+NAMA_10R_2LP10,Compensation per employee and hours worked per employed person by NUTS 2 region and by industry,ok,sdmx,6,444,0,"",2026-08-02
+NAMA_10R_2NLP,Nominal Labour productivity by NUTS 2 region,ok,sdmx,5,436,0,"",2026-08-02
+NAMA_10R_2RLP,Real Labour productivity by NUTS 2 region,ok,sdmx,5,425,0,"",2026-08-02
+NAMA_10R_3EMPERS,Employment (thousand persons) by NUTS 3 region,ok,sdmx,6,1675,0,"",2026-08-02
+NAMA_10R_3EMPERS$DV_1564,Employment (thousand persons) by NUTS 3 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/NAMA_10R_3EMPERS$DV_1564'
+For more information check: https://develo",2026-08-02
+NAMA_10R_3GDP,Gross domestic product (GDP) at current market prices by NUTS 3 region,ok,sdmx,4,1847,0,"",2026-08-02
+NAMA_10R_3GDP$DV_1562,Gross domestic product (GDP) at current market prices by NUTS 3 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/NAMA_10R_3GDP$DV_1562'
+For more information check: https://developer",2026-08-02
+NAMA_10R_3GVA,Gross value added at basic prices by NUTS 3 region,ok,sdmx,5,1860,0,"",2026-08-02
+NAMA_10R_3GVA$DV_2861,Gross value added at basic prices by NUTS 3 region,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/NAMA_10R_3GVA$DV_2861'
+For more information check: https://developer",2026-08-02
+NAMA_10R_3NLP,Nominal Labour productivity by NUTS 3 region,ok,sdmx,5,1653,0,"",2026-08-02
+NAMA_10R_3POPGDP,Average annual population to calculate regional GDP data (thousand persons) by NUTS 3 region,ok,sdmx,4,1782,0,"",2026-08-02

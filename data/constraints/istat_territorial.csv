@@ -934,6 +934,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 25_326_DF_DCIS_FECONDITA1_6,Età media delle madri al parto per anno di evento e cittadinanza della madre,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_326_DF_DCIS_FECONDITA1_7,"Tassi di fecondità specifici per età della madre, anno di evento e cittadinanza della madre (per mille donne)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_326_DF_DCIS_FECONDITA1_8,Età media dei padri alla nascita del figlio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_74,Nati vivi,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_944_DF_DCIS_ARCH_FEC_5,Principali indicatori,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 26_295_DF_DCIS_MORTALITA1_1,Classi di età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 26_295_DF_DCIS_MORTALITA1_2,Singole età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 26_29_DF_DCIS_DECESSI_2,Morti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
@@ -1229,9 +1231,19 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_728_DF_DCCV_POVERTA_BRKN1_7,Principali indicatori,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-07-20
 392_584,Dottorati - caratteristiche socio-demografiche e curriculum,REF_AREA,nazionale,nazionale,1,2026-07-20
 392_585,Dottorati - retribuzione e orario di lavoro,REF_AREA,nazionale,nazionale,1,2026-07-20
+392_585,Dottorati - retribuzione e orario di lavoro,RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,3,2026-07-20
+392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_1,Retribuzioni per residenza e area disciplinare,RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,3,2026-07-20
 392_586,Dottorati - mobilità territoriale,REF_AREA,nazionale,nazionale,1,2026-07-20
 392_636,Dottorati - condizione occupazionale,REF_AREA,nazionale,nazionale,1,2026-07-20
+392_636,Dottorati - condizione occupazionale,RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,8,2026-07-20
+392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_1,"Condizione occupazionale, sesso, residenza",RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,8,2026-07-20
 392_708,Dottorati - ricerca di lavoro e soddisfazione,REF_AREA,nazionale,nazionale,1,2026-07-20
+39_1005,Suicidi - popolazione di 15 anni e oltre,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
+39_1005_DF_DCIS_SUICIDI_1,Suicidi - popolazione di 15 anni e oltre - Principali dati,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
+39_1005_DF_DCIS_SUICIDI_2,Sesso ed età,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
+39_1005_DF_DCIS_SUICIDI_4,Modalità del suicidio,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
+39_1005_DF_DCIS_SUICIDI_6,Istruzione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
+39_1005_DF_DCIS_SUICIDI_8,Mese del decesso,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
 39_1_DF_DCIS_IND_MORT_EDU_1,Indicatori di mortalità per causa e titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_2,Causa ed età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-07-20
@@ -1372,6 +1384,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 56_189,Indicatori sull'università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
 56_189_DF_INDUNIV_1,Indicatori sull' università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
 56_77_DF_DCIS_SANSCUOLE_2,Scuole con alunni con disabilità e postazioni informatiche adattate,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-23
+56_858_DF_DCIS_ISCRITTI1_1,Iscritti,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-07-23
 5_42,Conto trimestrale - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_42_DF_DCCN_FPQ_B19_1,Conto economico - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_42_DF_DCCN_FPQ_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
@@ -1490,6 +1503,46 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 669_1116_DF_DCCN_FLUMAT_B14_3,Scambi con il resto del mondo - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
 669_1119_DF_DCCN_EGSS_B14_1,"Produzione, valore aggiunto, esportazioni - edizione febbraio 2019",REF_AREA,nazionale,nazionale,1,2026-07-24
 669_1119_DF_DCCN_EGSS_B14_2,Occupazione (unità di lavoro) - edizione febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_1220,Viaggi e loro organizzazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1220_DF_DCCV_VIAGGI_ORG_1,Prenotazione dell'alloggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1220_DF_DCCV_VIAGGI_ORG_2,Prenotazione del trasporto,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1220_DF_DCCV_VIAGGI_ORG_3,Prenotazione via internet,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1220_DF_DCCV_VIAGGI_ORG_4,Prenotazione dell'alloggio via internet,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1220_DF_DCCV_VIAGGI_ORG_5,Prenotazione del trasporto via internet,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221,Viaggi per motivo,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_1,Vacanze,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_2,Vacanze di 4 notti e più,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_3,Vacanze di piacere/svago - dati annuali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_4,Vacanze di piacere/svago - dati trimestrali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_5,Vacanze di piacere/svago per luogo di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_6,Vacanze di piacere /svago per durata,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_7,Viaggi di lavoro,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_8,Viaggi culturali - dati trimestrali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_1221_DF_DCCV_VIAGGI_CAPI_2_9,Viaggi culturali per tipo di attività,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_161,Persone andate e non andate in vacanza,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_265,Spesa per viaggi in alloggi a pagamento,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_265_DF_DCCV_VIAGGI_SPESE_CAPI_1,Viaggi in totale,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_265_DF_DCCV_VIAGGI_SPESE_CAPI_2,Vacanze,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_265_DF_DCCV_VIAGGI_SPESE_CAPI_3,Tipo di alloggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_338,Visite in giornata (escursioni),RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_338_DF_DCCV_ESC_CAPI_1,Dati trimestrali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_338_DF_DCCV_ESC_CAPI_2,Motivo prevalente,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_338_DF_DCCV_ESC_CAPI_3,Mezzo di trasporto prevalente,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_338_DF_DCCV_ESC_CAPI_4,Regione di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_356,Persone che hanno viaggiato,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_356_DF_DCCV_TURISTI_CAPI_1,Viaggiatori per 100 residenti,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_356_DF_DCCV_TURISTI_CAPI_6,Residenza,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_356_DF_DCCV_TURISTI_CAPI_7,Viaggiatori per lavoro,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_357,Pernottamenti in viaggio,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_1,Pernottamenti in Italia e regione di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_2,Pernottamenti all'estero e paese di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_3,Destinazione e tipo di viaggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_4,Sesso e classe di età,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_5,Condizione professionale,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_6,Destinazione e residenza,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_7,Destinazione e tipo di alloggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_8,N. medio notti in viaggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_357_DF_DCCV_TURNOT_CAPI_9,Notti di vacanza per 1.000 residenti (medie giornaliere),RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
 68_359,Viaggi per caratteristiche del viaggiatore,REF_AREA,regione,nazionale|ripartizione|regione,10,2026-07-24
 68_359_DF_DCCV_VIAGGI_RES_1,"Viaggi per sesso, classe di età della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale",REF_AREA,nazionale,nazionale,1,2026-07-24
 68_359_DF_DCCV_VIAGGI_RES_10,Viaggi per sesso e tipologia del viaggio. Dati percentuali sul totale dei viaggi dello stesso tipo - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
@@ -1595,6 +1648,32 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 68_381_DF_DCCV_TURNOT_7,Notti all'estero per paese di destinazione e tipologia del viaggio. Dati assoluti (in migliaia) - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
 68_381_DF_DCCV_TURNOT_8,Notti delle persone di 15 anni e più per condizione e posizione nella professione della persona che ha viaggiato e tipologia del viaggio. Dati assoluti (in migliaia),REF_AREA,nazionale,nazionale,1,2026-07-24
 68_381_DF_DCCV_TURNOT_9,Notti di vacanza e lavoro per trimestre. Dati percentuali sul totale delle notti in viaggio - Livello Nazionale,REF_AREA,nazionale,nazionale,1,2026-07-24
+68_697,Viaggi per motivo,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_1,Vacanze,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_2,Vacanze di 4 notti e più,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_3,Vacanze di piacere/svago - dati annuali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_4,Vacanze di piacere/svago - dati trimestrali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_5,Vacanze di piacere/svago per luogo di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_697_DF_DCCV_VIAGGI_CAPI_6,Vacanze di piacere /svago per durata,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698,Viaggi e loro caratteristiche,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_1,Destinazione - dati trimestrali,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_10,Regione di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_11,Paese estero di destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_12,Viaggi procapite,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_2,Alloggio e destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_3,Mezzo di trasporto e destinazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_5,Tipo di prenotazione e destinazione (fino al 2018),RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_6,Prenotazione dell'alloggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_7,Prenotazione del trasporto,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_8,Prenotazione via internet,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_698_DF_DCCV_VIAGGI_CHARACT_CAPI_9,Mese di inizio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
+68_699,Viaggi per caratteristiche del viaggiatore,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,9,2026-07-24
+68_699_DF_DCCV_VIAGGI_RES_CAPI_3,Residenza e destinazione,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,9,2026-07-24
+68_699_DF_DCCV_VIAGGI_RES_CAPI_4,Residenza e tipo di viaggio,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,9,2026-07-24
+68_699_DF_DCCV_VIAGGI_RES_CAPI_5,Vacanze - residenza e tipo di alloggio,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_699_DF_DCCV_VIAGGI_RES_CAPI_6,Vacanze - residenza e mezzo di trasporto,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
+68_702,Viaggi e pernottamenti - Serie ricostruite 1997-2013,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,4,2026-07-24
+68_702_DF_DCCV_TUR_RIC_CAPI_2,Residenza - rip.,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,4,2026-07-24
 6_20,Ricerca e Sviluppo,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-24
 6_20_DF_DCSP_RS_1,Spesa (% sul Pil),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_10,Addetti per titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2176,3 +2255,5 @@ DF_BES_TERRIT_5,Relazioni sociali,REF_AREA,provincia,nazionale|ripartizione|regi
 DF_BES_TERRIT_6,Politica e istituzioni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
 DF_BES_TERRIT_7,Sicurezza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
 DF_BES_TERRIT_9,Paesaggio e patrimonio culturale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
+DF_COMP_FRA_IND_MUNICIPAL_01,Indice composito di fragilità e sue componenti - livello comunale,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8037,2026-08-02
+DF_COMP_FRA_IND_MUNICIPAL_02,Indice composito di fragilità e sue componenti - per singolo comune,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8037,2026-08-02
