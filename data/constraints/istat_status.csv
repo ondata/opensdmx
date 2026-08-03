@@ -92,7 +92,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 111_111,Indicatori  permessi di costruire,ok,hub,5,10,0,"",2026-07-16
 111_111_DF_DCSC_PERM_RAP1_1,Nuovi fabbricati residenziali,ok,hub,5,8,0,"",2026-07-16
 111_111_DF_DCSC_PERM_RAP1_2,Nuova edilizia non residenziale,ok,hub,5,7,0,"",2026-07-16
-111_263,Fiducia delle imprese manifatturiere,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+111_263,Fiducia delle imprese manifatturiere,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 111_263_DF_DCSC_FIDIMPRMAN_1,Clima e saldi mensili destagionalizzati,ok,hub,6,36,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_10,"Clima, saldi e frequenze mensili grezzi - rip.",ok,hub,5,77,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_11,"Clima, saldi e frequenze mensili grezzi per Ateco",ok,hub,6,166,0,"",2026-07-16
@@ -110,7 +110,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 111_263_DF_DCSC_FIDIMPRMAN_22,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,ok,hub,5,58,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_23,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per Ateco,ok,hub,5,96,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_24,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi per classe di addetti,ok,hub,6,58,0,"",2026-07-16
-111_263_DF_DCSC_FIDIMPRMAN_3,"Clima, saldi e frequenze mensili grezzi per Ateco",error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+111_263_DF_DCSC_FIDIMPRMAN_3,"Clima, saldi e frequenze mensili grezzi per Ateco",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 111_263_DF_DCSC_FIDIMPRMAN_4,Saldi e frequenze mensili grezzi per classe di addetti,ok,hub,6,82,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_5,Modulo trimestrale imprese esportatrici e capacità produttiva destagionalizzati,ok,hub,5,18,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_6,Modulo trimestrale imprese esportatrici e capacità produttiva grezzi - rip.,ok,hub,5,88,0,"",2026-07-16
@@ -148,7 +148,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 115_333_DF_DCSC_INDXPRODIND_1_4,Mensili (base 2010),ok,hub,5,348,0,"",2026-07-16
 115_333_DF_DCSC_INDXPRODIND_1_5,Mensili (base 2005),ok,hub,5,307,0,"",2026-07-16
 115_333_DF_DCSC_INDXPRODIND_1_6,Indice della produzione industriale - Mensili (base 2021),ok,hub,5,353,0,"",2026-07-16
-115_362,Indice della produzione nelle costruzioni,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-16
+115_362,Indice della produzione nelle costruzioni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 115_362_DF_DCSC_INDXPRODCOSTR_1_1,Indice della produzione nelle costruzioni - Mensili (base 2015),ok,hub,5,7,0,"",2026-07-16
 115_362_DF_DCSC_INDXPRODCOSTR_1_2,Mensili (base 2010),ok,hub,5,7,0,"",2026-07-16
 115_362_DF_DCSC_INDXPRODCOSTR_1_3,Mensili (base 2005),ok,hub,5,8,0,"",2026-07-16
@@ -242,23 +242,23 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 121_393_DF_DCSC_TRAMAR_4,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST 2007,ok,hub,8,97,0,"",2026-07-17
 121_393_DF_DCSC_TRAMAR_5,Navigazione di cabotaggio per regione italiana di imbarco e sbarco,ok,hub,7,56,0,"",2026-07-17
 121_393_DF_DCSC_TRAMAR_6,"Merci, navi arrivate e tonnellate di stazza lorda per regione",ok,hub,11,42,0,"",2026-07-17
-121_393_DF_DCSC_TRAMAR_7,Porto e tipo merce NST/R,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+121_393_DF_DCSC_TRAMAR_7,Porto e tipo merce NST/R,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 121_393_DF_DCSC_TRAMAR_8,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST/R,ok,hub,8,99,0,"",2026-07-17
-122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 122_54_DF_DCSC_TUR_1,Capacità degli esercizi ricettivi per tipo di esercizio - com.,ok,hub,8,12695,0,"",2026-07-17
 122_54_DF_DCSC_TUR_10,Tipo di località e paese di residenza,ok,hub,8,29,0,"",2026-07-17
 122_54_DF_DCSC_TUR_11,Per regione e per residenza del cliente - mensili e annuali,ok,hub,7,43,0,"",2026-07-17
 122_54_DF_DCSC_TUR_12,Per tipo di esercizio e residenza del cliente - annuali,ok,hub,7,21,0,"",2026-07-17
 122_54_DF_DCSC_TUR_13,"Arrivi, presenze, permanenza media - Mensili",ok,hub,7,19,0,"",2026-07-17
 122_54_DF_DCSC_TUR_2,Dimensione dell'albergo - prov.,ok,hub,8,156,0,"",2026-07-17
-122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 122_54_DF_DCSC_TUR_4,Residenti per regione di origine,ok,hub,7,43,0,"",2026-07-17
 122_54_DF_DCSC_TUR_5,Paese di origine,ok,hub,7,78,0,"",2026-07-17
 122_54_DF_DCSC_TUR_6,Tipo di località,ok,hub,8,29,0,"",2026-07-17
 122_54_DF_DCSC_TUR_7,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - annuali,ok,hub,7,169,0,"",2026-07-17
-122_54_DF_DCSC_TUR_8,Residenti per regione di origine,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
-122_54_DF_DCSC_TUR_9,Paese di origine - prov,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
-123_712,Indicatori di bilancio e dati sul personale delle unità istituzionali,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+122_54_DF_DCSC_TUR_8,Residenti per regione di origine,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+122_54_DF_DCSC_TUR_9,Paese di origine - prov,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+123_712,Indicatori di bilancio e dati sul personale delle unità istituzionali,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 123_712_DF_DCAR_INDBILPER_1,Indicatori di bilancio e dati sul personale delle unità istituzionali,ok,hub,3,11440,0,"",2026-07-17
 123_713,Numero e tipo di unità istituzionali,ok,hub,3,64,0,"",2026-07-17
 123_713_DF_DCAR_UI_1,Numero e tipo di unità istituzionali,ok,hub,3,64,0,"",2026-07-17
@@ -295,38 +295,38 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 140_180,Nic - mensili sino al  2010 (base 1995),ok,hub,5,482,0,"",2026-07-17
 143_1043,Indici dei prezzi alla produzione delle costruzioni,ok,hub,5,14,0,"",2026-07-17
 143_1043_DF_DCSC_INDPREPROCOSTR_1,Prezzi alla produzione delle costruzioni (base 2015),ok,hub,5,13,0,"",2026-07-17
-143_1043_DF_DCSC_INDPREPROCOSTR_2,Prezzi alla produzione delle costruzioni (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_1043_DF_DCSC_INDPREPROCOSTR_2,Prezzi alla produzione delle costruzioni (base 2021),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 143_222,Indice dei prezzi all'importazione - dati mensili,ok,hub,6,146,0,"",2026-07-17
 143_222_DF_DCSC_PREIMPIND_1,Prezzi all'importazione - Dati mensili (base 2015),ok,hub,6,145,0,"",2026-07-17
-143_222_DF_DCSC_PREIMPIND_2,Prezzi all'importazione - Dati mensili (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_222_DF_DCSC_PREIMPIND_2,Prezzi all'importazione - Dati mensili (base 2021),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 143_497,Prezzi delle abitazioni (Ipab),ok,hub,5,28,0,"",2026-07-17
 143_497_DF_DCSP_IPAB_1,Trimestrali dal 2010 al 2024 (base 2015),ok,hub,5,19,0,"",2026-07-17
-143_497_DF_DCSP_IPAB_2,Medie annue dal 2010 al 2024 (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_497_DF_DCSP_IPAB_2,Medie annue dal 2010 al 2024 (base 2015),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 143_497_DF_DCSP_IPAB_3,Pesi dal 2010,ok,hub,4,6,0,"",2026-07-17
 143_497_DF_DCSP_IPAB_4,Trimestrali dal 2010 al 2016 (base 2010),ok,hub,5,9,0,"",2026-07-17
-143_497_DF_DCSP_IPAB_5,Medie annue dal 2010 al 2016 (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+143_497_DF_DCSP_IPAB_5,Medie annue dal 2010 al 2016 (base 2010),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 143_497_DF_DCSP_IPAB_6,Trimestrali dal 2010 (base 2025),ok,hub,5,19,0,"",2026-07-17
 143_497_DF_DCSP_IPAB_7,Medie annue dal 2010 (base 2025),ok,hub,5,18,0,"",2026-07-17
-144_107_DF_DCSP_FOI3_1,Foi - pesi sino al 2010,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_107_DF_DCSP_FOI3_1,Foi - pesi sino al 2010,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 144_110_DF_DCSP_FOI1_1,Foi - mensili sino al 2010 (base 1995),ok,hub,5,139,0,"",2026-07-17
 144_118_DF_DCSP_FOI2_1,Foi - medie annue sino al 2010 (base 1995),ok,hub,5,138,0,"",2026-07-17
-144_125_DF_DCSP_NICDUE_1,Classificazione Coicop (2 cifre) (base dicembre 1998) - prov.,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_125_DF_DCSP_NICDUE_1,Classificazione Coicop (2 cifre) (base dicembre 1998) - prov.,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 144_125_DF_DCSP_NICDUE_2,Tipologie di prodotto (base 1995),ok,hub,5,38,0,"",2026-07-17
-144_125_DF_DCSP_NICDUE_3,Classificazione Coicop (5 cifre) (base 1995),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_125_DF_DCSP_NICDUE_3,Classificazione Coicop (5 cifre) (base 1995),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 144_126_DF_DCSP_NICTRE_1,Tipologie di prodotto,ok,hub,4,36,0,"",2026-07-17
-144_126_DF_DCSP_NICTRE_2,Classificazione Coicop (5 cifre),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_126_DF_DCSP_NICTRE_2,Classificazione Coicop (5 cifre),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 144_180_DF_DCSP_NICUNOB_1,Classificazione Coicop (2 cifre) (base dicembre 1998),ok,hub,5,139,0,"",2026-07-17
-144_180_DF_DCSP_NICUNOB_2,Tipologie di prodotto (base 1995),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+144_180_DF_DCSP_NICUNOB_2,Tipologie di prodotto (base 1995),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 144_180_DF_DCSP_NICUNOB_3,Classificazione Coicop (5 cifre) (base 1995),ok,hub,5,331,0,"",2026-07-17
-145_360,Prezzi alla produzione dell'industria,error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_360,Prezzi alla produzione dell'industria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 145_360_DF_DCSC_PREZZPIND_1_1,Prezzi alla produzione dell'industria - mensili (base 2015),ok,hub,6,351,0,"",2026-07-17
-145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 145_360_DF_DCSC_PREZZPIND_1_3,Mensili (base 2005),ok,hub,6,322,0,"",2026-07-17
-145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 145_361,Costi di costruzione,ok,hub,5,61,0,"",2026-07-17
-145_361_DF_DCSC_FABBRESID_1_1,Fabbricato residenziale e capannone industriale - mensili (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_1,Fabbricato residenziale e capannone industriale - mensili (base 2015),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),ok,hub,5,9,0,"",2026-07-17
-145_361_DF_DCSC_FABBRESID_1_3,Tronchi stradali - serie interrotta - mensili (base 2015),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_3,Tronchi stradali - serie interrotta - mensili (base 2015),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
 145_361_DF_DCSC_FABBRESID_1_4,Fabbricato residenziale - mensili (base 2010),ok,hub,5,30,0,"",2026-07-17
 145_361_DF_DCSC_FABBRESID_1_5,Tronchi stradali - mensili (base 2010),error,"",0,0,1,RuntimeError: hub bulk endpoint returned no data,2026-07-17
 145_361_DF_DCSC_FABBRESID_1_6,Fabbricato residenziale dal 2000 al 2012 (base 2005) - mensili,ok,hub,5,27,0,"",2026-07-17
@@ -4721,3 +4721,180 @@ DF_DCAT_CENSAGRIC2020_AGE_EDU,Aziende per titolo di studio ed età del capo azie
 DF_DCAT_CENSAGRIC2020_AGE_GAIN,Aziende con attività connesse per età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
 DF_DCAT_CENSAGRIC2020_AGE_GAIN_SPA2023_1,Aziende con attività connesse,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
 DF_DCAT_CENSAGRIC2020_AGE_INV,Aziende per tipo di investimento ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_INV_SPA2023_1,Aziende con investimenti,ok,hub,5,49,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_AGE_MANDUR,Aziende per durata della conduzione ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_AGE_MANTOV,"Aziende per soggetto da cui è stata rilevata la conduzione, per età del capo azienda",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_AGE_MAR,Aziende per tipo di commercializzazione ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_AGE_OWN,Aziende e superifici per titolo di possesso ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_AGE_SELF,Aziende per autoconsumo della produzione finale ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_AU_CATTLE_1,Unità agricole e numero di capi per tipo di allevamento e zona altimetrica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_CATTLE_ALL,Aziende e capi per tipo di allevamento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_CATTLE_SPA2023_1,Aziende e capi per tipo di allevamento,ok,hub,5,101,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_CROPS_ALL,Aziende con superficie agricola utilizzata per tipo di coltivazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_CROPS_SPA2023_1,Aziende con superficie agricola utilizzata per tipo di coltivazione,ok,hub,4,123,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_ECSIZE_ALL,Dimensione economica e orientamento tecnico economico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_INV_ALL,Aziende con investimenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRCROPS_SPA2023_1,Aziende e superfici irrigate per tipo di coltivazione,ok,hub,4,70,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSIS,Aziende e superfici irrigate per sistema di irrigazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSIS_SPA2023,Aziende e superfici irrigate per sistema di irrigazione,ok,hub,4,37,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSOU,Aziende e superfici irrigate per fonte di approvvigionamento,ok,hub,4,7840,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSOU_SPA2023_1,Aziende e superfici irrigate per fonte di approvvigionamento,ok,hub,4,37,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_LABCAT_ALL,Aziende e giornate di lavoro per sesso e categoria di manodopera,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_LABCAT_SPA2023_1,Aziende e giornate di lavoro per sesso e categoria di manodopera,ok,hub,5,45,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_LEGOWN_ALL,Aziende e superfici per forma giuridica e titolo di possesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_LEGOWN_SPA2023_1,Aziende e superfici per forma giuridica e titolo di possesso,ok,hub,5,53,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_ORG_CATTLE_ALL,Aziende e capi per tipo di allevamento biologico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_ORG_CROPS,Aziende con superfice biologica per tipo di coltivazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_QUAL_ALL,"Numero e giornate di lavoro del capo azienda per titolo di studio, categoria di manodopera del capo azienda, sesso, età del capo azienda",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_QUAL_SPA2023_1,"Numero e giornate di lavoro del capo azienda per titolo di studio, categoria di manodopera del capo azienda, sesso, età del capo azienda",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SAUAZONE_SPA2023_1,Aziende per classi di superfici (SAU),ok,hub,4,43,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_AZONE_ALL,Aziende per classi di superfici (SAU) e zona altimetrica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SELF,Aziende per quota di autoconsumo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SELF_SPA2023_1,Aziende per quota di autoconsumo e classe di superficie,ok,hub,5,46,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SUBC,Aziende per tipo di contoterzismo e classe di superfice,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SUBC_SPA2023_1,Aziende con contoterzismo e classe di superfice,ok,hub,5,45,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_TURN,Aziende per fonte di ricavo e classe di superfice,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_TURN_1,Aziende per fonte di ricavo e classe di superficie,ok,hub,5,48,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_ALL,Aziende agricole e superfici,ok,hub,3,8038,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_IRRCROPS,Aziende e superfici irrigate per tipo di coltivazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS,"Aziende e superfici irrigabili, irrigate, consulenza irrigua",ok,hub,3,7894,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_SPA2023_1,Aziende agricole e superfici,ok,hub,3,43,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_SPA2023_2,"Aziende e superfici irrigabili, irrigate, consulenza irrigua",ok,hub,3,35,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_TRAI_ALL,"Capi azienda con corsi di formazione, per sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_TRAI_SPA2023,"Capi azienda con corsi di formazione, per sesso ed età",ok,hub,5,39,0,"",2026-08-03
+DF_DCAT_CENSAGRIC2020_UA_CROPS_1,Unità agricole e superfici per zona altimentrica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCAT_CENSAGRIC2020_UA_CROPS_2,Unità agricole con superficie agricola utilizzata per tipo di coltivazione e zona altimetrica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSE_CPA_AT2007_COE_OPT_A_REG_ALL_PROV_LAZIO,CPAteco 2007 dato annuale a livello provinciale - dal 1991 - Lazio,ok,hub,6,337,0,"",2026-08-03
+DF_DCSE_CPA_AT2007_COE_OPT_A_REG_ALL_REG,CPAteco 2007 dato annuale a livello provinciale - dal 1991 - Regioni,ok,hub,6,359,0,"",2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_M_CONJ_FIL1,CPA Ateco 2007 dati annuali e mensili a livello nazionale (filtro 1),ok,hub,6,324,0,"",2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_M_CONJ_FIL2,CPA Ateco 2007 dati annuali e mensili a livello nazionale (filtro 2),ok,hub,6,364,0,"",2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_Q_CONJ_PROV_LAZIO,CPA Ateco 2007 dati annuali e trimestrali a livello provinciale - Lazio,ok,hub,6,300,0,"",2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_Q_CONJ_REG,CPA Ateco 2007 dati annuali e trimestrali a livello regionale,ok,hub,6,330,0,"",2026-08-03
+DF_DCSE_NC8_A_M_CONJ_2_EXP1,Nomenclatura combinata (NC8) (quantità e valore) dati mensili (Filtro EXP1),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSE_NC8_A_M_CONJ_2_EXP2,Nomenclatura combinata (NC8) (quantità e valore) dati mensili (Filtro EXP1),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ABITAZIONI_TV_1,Abitazioni occupate e non occupate - comuni,ok,hub,3,8061,0,"",2026-08-03
+DF_DCSS_ABITAZIONI_TV_2,"Abitazioni occupate a titolo di proprietà, affitto, altro titolo - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_BEST_PPC_1_GC,Famiglie per percezione del rischio di criminalità nella zona in cui abitano - province e grandi comuni,ok,hub,4,170,0,"",2026-08-03
+DF_DCSS_BEST_PPC_2_GC,Persone di 14 anni e più per livello di soddisfazione della vita - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_BEST_PPC_3_GC,Persone di 14 anni e più che hanno parenti su cui contare - province e grandi comuni,ok,hub,5,171,0,"",2026-08-03
+DF_DCSS_BEST_PPC_4_GC,Persone di 14 anni e più che hanno amici su cui contare - province e grandi comuni,ok,hub,5,172,0,"",2026-08-03
+DF_DCSS_BEST_PPC_5_GC,Persone di 14 anni e più che hanno vicini su cui contare - province e grandi comuni,ok,hub,5,172,0,"",2026-08-03
+DF_DCSS_BEST_PPC_6_GC,Persone di 14 anni e più per percezione della sicurezza camminando al buio da soli nella zona in cui abitano - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_1,Automobili di proprietà per cittadinanza del proprietario - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_2,Automobili di proprietà per numero di componenti della famiglia - comuni,ok,hub,4,8039,0,"",2026-08-03
+DF_DCSS_CARS_3,Automobili di proprietà per cittadinanza dei componenti della famiglia - comuni,ok,hub,4,8037,0,"",2026-08-03
+DF_DCSS_CARS_PARK_1,Automobili di proprietà per cittadinanza del proprietario - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_PARK_2,Automobili di proprietà per numero di componenti della famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_PARK_3,Automobili di proprietà per cittadinanza dei componenti della famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_PARK_4,Famiglie per disponibilità di posto auto privato - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CARS_PARK_5,Famiglie che dispongono di posto auto privato per tipo di posto auto - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CONVIVENZE_TV_1,"Popolazione residente in convivenza per tipo di convivenza, sesso, classi di età e cittadinanza - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CONVIVENZE_TV_2,Popolazione residente in convivenza per tipo di convivenza e sesso - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CONVIVENZE_TV_3,Convivenze anagrafiche per numero di componenti in convivenza - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_CONVIVENZE_TV_4,Convivenze anagrafiche per tipo di convivenza - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_EMPLP_1_COM,Occupati per sesso e posizione nella professione - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_EMPLP_2_COM,Occupati per sesso e settori di attività economica - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMIGLIE_TV_1,Famiglie per numero di componenti - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMIGLIE_TV_2,Famiglie con almeno uno straniero residente  - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMIGLIE_TV_3,Famiglie con tutti i componenti stranieri - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMILY_NUCLEI_1_GC,Nuclei familiari per tipo di nucleo e numero di figli - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMILY_NUCLEI_2_GC,"Coppie per tipo di coppia, stato coniugale e presenza di figli - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMILY_NUCLEI_3_GC,"Coppie per classe di età del partner 1, del partner 2 e presenza di figli - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAMILY_NUCLEI_4_GC,"Nuclei familiari monogenitore per tipo di nucleo, sesso e classe di età del genitore - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAM_POP_TV_1,Numero di famiglie e popolazione residente in famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FAM_POP_TV_2,Numero medio di componenti per famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FORPOP_1_GC,Popolazione straniera per stato civile - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FORPOP_2_GC,Popolazione straniera per posizione in famiglia o non in famiglia - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FORPOP_3_GC,Popolazione straniera per posizione nel nucleo - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FPHH_FNCL_1_GC,"Popolazione straniera residente in famiglia per sesso, classe di età e tipologia della famiglia - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FPHH_FNCL_2_GC,Famiglie con almeno uno straniero residente per tipologia di famiglia - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_FPHH_FNCL_3_GC,Nuclei familiari con almeno uno straniero residente per tipologia di nucleo e area geografica di cittadinanza della persona di riferimento - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_1_COM,Popolazione per stato civile - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_2_COM,Popolazione per posizione in famiglia o non in famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_3_COM,Popolazione per paese di nascita - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_4_COM,Famiglie per tipo di famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_5_COM,Nuclei familiari per tipo di nucleo familiare - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_6_COM,Nuclei familiari per numero di componenti - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_7_COM,Abitazioni occupate e non occupate per tipo di edificio - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HCUE_COM_8_COM,Alloggi occupati - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_1_COM,Famiglie per titolo di godimento - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_2_PROV,Abitazioni per epoca di costruzione e stato di occupazione - regioni e province,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_3_PROV,Abitazioni occupate da almeno una persona residente per classi di superficie e numero di occupanti - regioni e province,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_4_PROV,Abitazioni occupate da almeno una persona residente per densità abitativa - regioni e province,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_5_PROV,Abitazioni occupate da almeno una persona residente per tipo di impianto di riscaldamento - regioni e province,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_HUDW_6_COM,Famiglie per tipo di alloggio - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ISTR_LAV_PEN_2_TV_1,Popolazione residente di 9 anni e più per grado di istruzione ed età - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ISTR_LAV_PEN_2_TV_2,Popolazione residente di 9 anni e più per grado di istruzione e cittadinanza - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ISTR_LAV_PEN_2_TV_3,Popolazione residente di 15 anni e più per condizione professionale ed età - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ISTR_LAV_PEN_2_TV_4,Popolazione residente di 15 anni e più per condizione professionale e cittadinanza - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_ISTR_LAV_PEN_2_TV_5,Popolazione residente che si sposta giornalmente per studio o lavoro - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_LCAS_FRISC_1,Occupati per utilizzo di lavoro da casa e sesso - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_LCAS_FRISC_2,Occupati per utilizzo di lavoro da casa e classi di età - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_LCAS_FRISC_3,Popolazione residente di 14 anni e più per frequenza di un corso di formazione/aggiornamento professionale e sesso - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_LCAS_FRISC_4,Popolazione residente fino a 8 anni per frequenza di asilo nido/scuola dell'infanzia/scuola primaria e sesso - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_LCAS_FRISC_5,Popolazione residente di 9 anni e più per iscrizione a un corso regolare di studi  - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_10_COM,"Popolazione straniera nata in italia e all'estero per grado di istruzione, cittadinanza e luogo di nascita dei genitori - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_1_COM,"Popolazione italiana dalla nascita, italiana per acquisizione e straniera/apolide per luogo di nascita dei genitori - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_2_COM,Popolazione italiana nata in Italia per luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_3_COM,Popolazione italiana nata all'estero (immigrata) per luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_4_COM,Popolazione italiana per acquisizione nata in Italia per cittadinanza precedente e luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_5_COM,Popolazione italiana per acquisizione nata all'estero (immigrata) per cittadinanza precedente e luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_6_COM,Popolazione straniera nata in Italia per cittadinanza e luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_7_COM,Popolazione straniera nata all'estero (immigrata) per cittadinanza e luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_8_COM,Popolazione italiana nata in Italia e all'estero per grado di istruzione e luogo di nascita dei genitori - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_MIGR_BACKG_PAR_TV_9_COM,"Popolazione italiana per acquisizione nata in Italia e all'estero per grado di istruzione, cittadinanza precedente e luogo di nascita dei genitori - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPHH_PHH_1_GC,"Popolazione residente in famiglia per sesso, classe di età, e posizione nella famiglia - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPHH_PHH_2_COM,Popolazione residente in famiglia per tipologia della famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPHH_PHH_3_GC,Popolazione residente in famiglia per numero di componenti e tpologia della famiglia - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPHH_PHH_4_COM,Famiglie per tipologia della famiglia - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPHH_PHH_5_GC,Famiglie per numero di componenti e tipologia della famiglia - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPRESABR_1_GC,"Popolazione che è stata residente all'estero per classi di età,  anno di arrivo e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPRESABR_2_GC,Popolazione che è stata residente all'estero per anno di arrivo e luogo di nascita - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPRESABR_3_GC,Popolazione che è stata residente all'estero per anno di arrivo e area geografica di cittadinanza - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPRESABR_4_REGIO,"Popolazione che è stata residente all'estero per anno di arrivo, luogo di nascita e area geografica di cittadinanza - regioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POPRES_SERIES_TV_1,Popolazione residente - Serie storica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_CAMPI_ATTR_TV_1,"Popolazione che vive nei campi attrezzati, negli insediamenti tollerati e spontanei - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_SETA_1,"Popolazione residente per singole età, sesso e cittadinanza - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_TV_1,Popolazione residente per classi di età (quinquennali) e sesso - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_TV_2,"Popolazione residente per classi di età (decennali), sesso e cittadinanza - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_TV_3,Popolazione straniera residente per area geografica e paesi di cittadinanza - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_TV_4,Popolazione straniera residente per principali paesi di cittadinanza - comuni con più di 20.000 ab.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_DEMCITMIG_TV_5,Indicatori demografici - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_POP_LEGALE_TV,Popolazione legale pubblicata nella GU Serie Generale n.53 del 03-03-2023 - Suppl. Ordinario n.10,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_1_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_2_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_3_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_4_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_5_GC,Popolazione residente per grado di istruzione e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_RESPOP_PL1Y_6_GC,Popolazione residente per condizione professionale e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DCSS_SENZA_TETTO_TV_1,Persone senza tetto e senza fissa dimora - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIFF_REPORT,Dataflow per la diffusione di report,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_MUN_1,Indicatori e territorio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_MUN_2,Indicatori per singolo territorio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_1,Indicatori e territorio (addetti - imprese),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_2,Indicatori per singolo territorio (addetti - imprese),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_3,Indicatori e territorio (indipendenti),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_4,Indicatori per singolo territorio (indipendenti),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_5,Indicatori e territorio (dipendenti),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_6,Indicatori per singolo territorio (dipendenti),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_DIPS_SIR_IND_TERR_DRT_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+DF_TST,Crops in Italy,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+EMP,Occupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+FSI07,Indicatori di solidità finanziaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+GGO,Operazioni del governo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+IND,Indice della produzione industriale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+MET,Commercio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+NAG_08,Conti nazionali - metodologia 2008,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+POP,Popolazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+PPI,Prezzi alla produzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+SDDS_PLUS_CPI_DF_167_744_1,Prezzi al consumo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+SDDS_PLUS_NAG_08_DF_163_156_1,Conti nazionali - prezzi correnti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+SDDS_PLUS_NAG_08_DF_163_156_2,Conti nazionali - valori concatenati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+SDDS_PLUS_POP_DF_22_315_1,Popolazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+TEST_LINKED_DF_DCSP_PREZZIAGR_1,TEST_LINKED_DF_DCSP_PREZZIAGR_1,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+UEM,Disoccupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03
+WOE,Retribuzioni contrattuali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-03

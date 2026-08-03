@@ -2257,3 +2257,34 @@ DF_BES_TERRIT_7,Sicurezza,REF_AREA,provincia,nazionale|ripartizione|regione|prov
 DF_BES_TERRIT_9,Paesaggio e patrimonio culturale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-07-31
 DF_COMP_FRA_IND_MUNICIPAL_01,Indice composito di fragilità e sue componenti - livello comunale,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8037,2026-08-02
 DF_COMP_FRA_IND_MUNICIPAL_02,Indice composito di fragilità e sue componenti - per singolo comune,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8037,2026-08-02
+DF_DCAT_CENSAGRIC2020_AGE_INV_SPA2023_1,Aziende con investimenti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_CATTLE_SPA2023_1,Aziende e capi per tipo di allevamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_CROPS_SPA2023_1,Aziende con superficie agricola utilizzata per tipo di coltivazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRCROPS_SPA2023_1,Aziende e superfici irrigate per tipo di coltivazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSIS_SPA2023,Aziende e superfici irrigate per sistema di irrigazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSOU,Aziende e superfici irrigate per fonte di approvvigionamento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,7831,2026-08-03
+DF_DCAT_CENSAGRIC2020_IRRSOU_SPA2023_1,Aziende e superfici irrigate per fonte di approvvigionamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_LABCAT_SPA2023_1,Aziende e giornate di lavoro per sesso e categoria di manodopera,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_LEGOWN_SPA2023_1,Aziende e superfici per forma giuridica e titolo di possesso,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SAUAZONE_SPA2023_1,Aziende per classi di superfici (SAU),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SELF_SPA2023_1,Aziende per quota di autoconsumo e classe di superficie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_SUBC_SPA2023_1,Aziende con contoterzismo e classe di superfice,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SAU_TURN_1,Aziende per fonte di ricavo e classe di superficie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_ALL,Aziende agricole e superfici,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8023,2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_IRR_CONS,"Aziende e superfici irrigabili, irrigate, consulenza irrigua",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,7887,2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_SPA2023_1,Aziende agricole e superfici,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_SURF_SPA2023_2,"Aziende e superfici irrigabili, irrigate, consulenza irrigua",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_TRAI_SPA2023,"Capi azienda con corsi di formazione, per sesso ed età",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCSE_CPA_AT2007_COE_OPT_A_REG_ALL_PROV_LAZIO,CPAteco 2007 dato annuale a livello provinciale - dal 1991 - Lazio,REF_AREA,provincia,ripartizione|regione|provincia,8,2026-08-03
+DF_DCSE_CPA_AT2007_COE_OPT_A_REG_ALL_REG,CPAteco 2007 dato annuale a livello provinciale - dal 1991 - Regioni,REF_AREA,provincia,ripartizione|regione|provincia,26,2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_M_CONJ_FIL1,CPA Ateco 2007 dati annuali e mensili a livello nazionale (filtro 1),REF_AREA,provincia,provincia,1,2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_M_CONJ_FIL2,CPA Ateco 2007 dati annuali e mensili a livello nazionale (filtro 2),REF_AREA,provincia,provincia,1,2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_Q_CONJ_PROV_LAZIO,CPA Ateco 2007 dati annuali e trimestrali a livello provinciale - Lazio,REF_AREA,provincia,ripartizione|regione|provincia,8,2026-08-03
+DF_DCSE_CPA_ATECO2007_COE_A_Q_CONJ_REG,CPA Ateco 2007 dati annuali e trimestrali a livello regionale,REF_AREA,provincia,ripartizione|regione|provincia,30,2026-08-03
+DF_DCSS_ABITAZIONI_TV_1,Abitazioni occupate e non occupate - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8057,2026-08-03
+DF_DCSS_BEST_PPC_1_GC,Famiglie per percezione del rischio di criminalità nella zona in cui abitano - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-03
+DF_DCSS_BEST_PPC_3_GC,Persone di 14 anni e più che hanno parenti su cui contare - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-03
+DF_DCSS_BEST_PPC_4_GC,Persone di 14 anni e più che hanno amici su cui contare - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-03
+DF_DCSS_BEST_PPC_5_GC,Persone di 14 anni e più che hanno vicini su cui contare - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-03
+DF_DCSS_CARS_2,Automobili di proprietà per numero di componenti della famiglia - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8031,2026-08-03
+DF_DCSS_CARS_3,Automobili di proprietà per cittadinanza dei componenti della famiglia - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8031,2026-08-03
