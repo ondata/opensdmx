@@ -6479,3 +6479,305 @@ PRC_PPP_IND_1,"Purchasing power parities, price level indices, nominal and real 
 PRC_PPP_IND_1$DV_3405,"Purchasing power parities, price level indices, nominal and real expenditures by analytical categories - based on COICOP 2018",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/PRC_PPP_IND_1$DV_3405'
 For more information check: https://developer",2026-08-03
 PRC_REM_AVG,Average remuneration of national civil servants in central public administration,ok,sdmx,6,49,0,"",2026-08-03
+PRC_REM_CS,Remuneration indexes of national civil servants in central public administration,ok,sdmx,6,82,0,"",2026-08-04
+PRC_REM_GDP,GDP weights used in the calculation of the global specific indicator,ok,sdmx,4,43,0,"",2026-08-04
+PRC_REM_IDX,Joint Index,ok,sdmx,4,28,0,"",2026-08-04
+PRC_REM_NR,National civil servants in central public administration,ok,sdmx,5,54,0,"",2026-08-04
+PROJ_19NAASFR,Assumptions for fertility rates by age and type of projection,ok,sdmx,6,155,0,"",2026-08-04
+PROJ_19NAASMR,"Assumptions for probability of dying by age, sex and type of projection",ok,sdmx,7,220,0,"",2026-08-04
+PROJ_19NALEXP,"Projected life expectancy by age (in completed years), sex and type of projection",ok,sdmx,7,200,0,"",2026-08-04
+PROJ_19NANMIG,"Assumptions for net migration by age, sex and type of projection",ok,sdmx,7,223,0,"",2026-08-04
+PROJ_19NDBI,Demographic balances and indicators by type of projection,ok,sdmx,5,144,0,"",2026-08-04
+PROJ_19NP,"Population on 1st January by age, sex and type of projection",ok,sdmx,7,231,0,"",2026-08-04
+PROJ_19RAASFR3,"Assumptions for fertility rates by age, type of projection and NUTS 3 region",ok,sdmx,6,1339,0,"",2026-08-04
+PROJ_19RAASMR3,"Assumptions for probability of dying by age, sex, type of projection and NUTS 3 region",ok,sdmx,7,1404,0,"",2026-08-04
+PROJ_19RALEXP3,"Projected life expectancy by age (reached during the year), sex, type of projection and NUTS 3 region",ok,sdmx,7,1404,0,"",2026-08-04
+PROJ_19RANMIG3,"Assumptions for net migration by age, sex, type of projection and NUTS 3 region",ok,sdmx,7,1406,0,"",2026-08-04
+PROJ_19RDBI3,Demographic balances and indicators by type of projection and NUTS 3 region,ok,sdmx,5,1323,0,"",2026-08-04
+PROJ_19RDTH3,"Projected deaths by age, sex, type of projection and NUTS 3 region",ok,sdmx,7,1406,0,"",2026-08-04
+PROJ_19RP3,"Population on 1st January by age, sex, type of projection and NUTS 3 region",ok,sdmx,7,1408,0,"",2026-08-04
+PROJ_23NAASFR,Assumptions for fertility rates by age and type of projection,ok,sdmx,6,151,0,"",2026-08-04
+PROJ_23NAASMR,"Assumptions for mortality rates by age, sex and type of projection",ok,sdmx,7,216,0,"",2026-08-04
+PROJ_23NALEXP,"Projected life expectancy by age (in completed years), sex and type of projection",ok,sdmx,7,216,0,"",2026-08-04
+PROJ_23NANMIG,"Assumptions for net migration by age, sex and type of projection",ok,sdmx,7,219,0,"",2026-08-04
+PROJ_23NDBI,Demographic balances and indicators by type of projection,ok,sdmx,5,139,0,"",2026-08-04
+PROJ_23NP,"Population on 1st January by age, sex and type of projection",ok,sdmx,7,233,0,"",2026-08-04
+PROJ_25NAASFR,Assumptions for fertility rates by age and type of projection,ok,sdmx,6,148,0,"",2026-08-04
+PROJ_25NAASMR,"Assumptions for mortality rates by age, sex and type of projection",ok,sdmx,7,213,0,"",2026-08-04
+PROJ_25NALEXP,"Projected life expectancy by age, sex and type of projection",ok,sdmx,7,213,0,"",2026-08-04
+PROJ_25NANMIG,"Assumptions for net migration by age, sex and type of projection",ok,sdmx,7,219,0,"",2026-08-04
+PROJ_25NDBI,Demographic balances and indicators by type of projection,ok,sdmx,5,136,0,"",2026-08-04
+PROJ_25NP,"Population on 1st January by age, sex and type of projection",ok,sdmx,7,230,0,"",2026-08-04
+PROJ_25RAASFR,"Assumptions for total fertility rates, type of projection and NUTS 3 region (5-year averages)",ok,sdmx,6,1184,0,"",2026-08-04
+PROJ_25RALEXP,"Projected life expectancy at birth, by sex, type of projection and NUTS 3 region (5-year averages)",ok,sdmx,7,1186,0,"",2026-08-04
+PROJ_25RDBAL,Demographic balances by type of projection and NUTS3 region (5-year aggregates),ok,sdmx,5,1187,0,"",2026-08-04
+PROJ_25RP5,"Population on 1st January by age group, sex, type of projection and NUTS 3 region",ok,sdmx,7,1218,0,"",2026-08-04
+PROJ_25RPIND,Population structure indicators by type of projection and NUTS3 region,ok,sdmx,5,1199,0,"",2026-08-04
+PROJ_STP22,Short-term update of the projected population (2022-2032),ok,sdmx,5,57,0,"",2026-08-04
+PROJ_STP24,Short-term population projections (2023-2050),ok,sdmx,5,73,0,"",2026-08-04
+PROJ_STP25,Short-term population projections (2024-2050),ok,sdmx,5,72,0,"",2026-08-04
+QOE_EWCS_1C3,Employed persons discriminated at work during the last 12 months by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_3C3,Mean duration of commuting time one-way between work and home by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_4A5,Employed persons expecting a possible loss of their job in the next 6 months by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_6_1,Employed persons participating in job-related non-formal education and training in the past 12 months by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_6_2,"Volume of job-related non-formal education and training per participant in the last 12 months by duration, sex and age",ok,sdmx,7,47,0,"",2026-08-04
+QOE_EWCS_6_3,Employed persons perceiving that their job-related non-formal education and training helped to improve the way they work by sex and age,ok,sdmx,6,40,0,"",2026-08-04
+QOE_EWCS_6_4,Employed persons whose job involves improving their skills by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_6_5,Employed persons whose work experience and job skills would be helpful to find another job by sex and age,ok,sdmx,6,41,0,"",2026-08-04
+QOE_EWCS_6_6,Employed persons having the opportunity to use their knowledge and skills in their current job by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7A1,Employed persons having a good relationship with their colleagues by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7A2,Employees having a good relationship with their supervisor by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7A3,"Employed persons exposed to employment-related physical, psychological or sexual violence in the last 12 months by sex and age",ok,sdmx,6,41,0,"",2026-08-04
+QOE_EWCS_7B1,Employed persons being able to choose their methods of work or to influence their pace of work by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7B2,Employees receiving regular feedback from their supervisor by sex and age,ok,sdmx,6,40,0,"",2026-08-04
+QOE_EWCS_7B3,Employed persons thinking that they do useful work by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7B4,Employed persons having to work at very high speed or to tight deadlines by sex and age,ok,sdmx,6,42,0,"",2026-08-04
+QOE_EWCS_7B5,Employed persons being able to influence decisions that affect their work by sex and age,ok,sdmx,6,41,0,"",2026-08-04
+RAIL_AC_CATNMBR,Railway accidents by type of accident - annual data (2004-2015),ok,sdmx,5,60,0,"",2026-08-04
+RAIL_AC_CATVICT,Railway victims by type of accident - annual data (2004-2015),ok,sdmx,7,64,0,"",2026-08-04
+RAIL_AC_DNGGOOD,Accidents involving the transport of dangerous goods - annual data (2004-2015),ok,sdmx,5,55,0,"",2026-08-04
+RAIL_EC_EMPLO_A,"Employment in principal railway enterprises, by type of railway activity (until 2012)",ok,sdmx,5,82,0,"",2026-08-04
+RAIL_EC_EMPLO_S,Persons employed in principal railway enterprises by sex (until 2012),ok,sdmx,5,78,0,"",2026-08-04
+RAIL_EC_ENT,Railway enterprises by type of enterprise,ok,sdmx,5,99,0,"",2026-08-04
+RAIL_EC_EXPEND,Expenditure on rolling stock and railway infrastructure,ok,sdmx,5,78,0,"",2026-08-04
+RAIL_EQ_LOCON,Locomotives and railcars by source of energy,ok,sdmx,6,80,0,"",2026-08-04
+RAIL_EQ_LOCOP,Tractive power of locomotives and railcars by source of energy,ok,sdmx,6,80,0,"",2026-08-04
+RAIL_EQ_PA_CSB,Seat/berth capacity of passenger railway vehicles,ok,sdmx,5,80,0,"",2026-08-04
+RAIL_EQ_PA_CTY,Seat capacity of passenger railway vehicles by type of vehicles,ok,sdmx,5,78,0,"",2026-08-04
+RAIL_EQ_PA_NCA,Passenger railway vehicles by category of vehicle (until 2012),ok,sdmx,5,81,0,"",2026-08-04
+RAIL_EQ_PA_NTY,"Passenger railway vehicles, by type of vehicle",ok,sdmx,5,80,0,"",2026-08-04
+RAIL_EQ_TRSET,Trainsets and capacity by type of speed,ok,sdmx,5,53,0,"",2026-08-04
+RAIL_EQ_VANS,Railway transport vans,ok,sdmx,4,93,0,"",2026-08-04
+RAIL_EQ_WAGON,Wagons and their load capacity by type of wagons,ok,sdmx,5,102,0,"",2026-08-04
+RAIL_GO_CONSGMT,Goods transported by type of consignment,ok,sdmx,5,48,0,"",2026-08-04
+RAIL_GO_CONTNBR,Volume of containers transported,ok,sdmx,7,67,0,"",2026-08-04
+RAIL_GO_CONTOLD,Transport of containers or road vehicles (1982-2002),ok,sdmx,6,48,0,"",2026-08-04
+RAIL_GO_CONTWGT,Goods transported in intermodal transport units,ok,sdmx,6,67,0,"",2026-08-04
+RAIL_GO_DNGGOOD,Railway transport of dangerous goods,ok,sdmx,5,74,0,"",2026-08-04
+RAIL_GO_GRGOOD7,Goods transported by group of goods - based on NST/R (2003-2007),ok,sdmx,5,67,0,"",2026-08-04
+RAIL_GO_GRPGOOD,Goods transported by group of goods - from 2008 onwards based on NST 2007,ok,sdmx,5,77,0,"",2026-08-04
+RAIL_GO_INTCMGN,International transport of goods from the loading country to the reporting country,ok,sdmx,5,130,0,"",2026-08-04
+RAIL_GO_INTGONG,International transport of goods from the reporting country to the unloading country,ok,sdmx,5,136,0,"",2026-08-04
+RAIL_GO_INTLD,International transport of goods from the loading country to the reporting country (1982-2002) - monthly data,ok,sdmx,5,339,0,"",2026-08-04
+RAIL_GO_INTUNLD,International transport of goods from the reporting country to the unloading country (1982-2002) - monthly data,ok,sdmx,5,338,0,"",2026-08-04
+RAIL_GO_ITU,Empty and loaded intermodal transport units,ok,sdmx,7,68,0,"",2026-08-04
+RAIL_GO_NATDIST,National transport of goods by distance class and group of goods (1982-2002),ok,sdmx,6,70,0,"",2026-08-04
+RAIL_GO_NATLREG,National transport by loading region and by group of goods (Directive 80/1177/EEC) (1982-2002),ok,sdmx,5,191,0,"",2026-08-04
+RAIL_GO_NATMNTH,National transport (Directive 80/1177/EEC) (1982-2002) - monthly data,ok,sdmx,4,293,0,"",2026-08-04
+RAIL_GO_NATUREG,National transport of goods by unloading region and by group of goods (1982-2002),ok,sdmx,5,191,0,"",2026-08-04
+RAIL_GO_QUARTAL,Goods transported (detailed reporting only ) - quarterly data,ok,sdmx,4,130,0,"",2026-08-04
+RAIL_GO_TOTAL,Goods transported,ok,sdmx,4,62,0,"",2026-08-04
+RAIL_GO_TRSGGDS,Transit transport by group of goods (1982-2002),ok,sdmx,6,64,0,"",2026-08-04
+RAIL_GO_TRSORDE,Transit transport of goods by loading and unloading countries,ok,sdmx,6,214,0,"",2026-08-04
+RAIL_GO_TYPEALL,Goods transported by type of transport (2004-2016),ok,sdmx,5,61,0,"",2026-08-04
+RAIL_GO_TYPEPAS,Goods transported by type of transport (detailed reporting only ),ok,sdmx,5,67,0,"",2026-08-04
+RAIL_IF_ELECTRI,Length of electrified railway lines by type of current,ok,sdmx,5,84,0,"",2026-08-04
+RAIL_IF_LINE_GA,Length of electrified and non-electrified railway lines by track gauge,ok,sdmx,6,85,0,"",2026-08-04
+RAIL_IF_LINE_NA,Length of electric and non-electric railway lines by nature of transport,ok,sdmx,6,86,0,"",2026-08-04
+RAIL_IF_LINE_SP,Length of railway lines by maximum permitted speed,ok,sdmx,5,81,0,"",2026-08-04
+RAIL_IF_LINE_TR,Length of railway lines by number of tracks and electrification of lines,ok,sdmx,6,93,0,"",2026-08-04
+RAIL_IF_LVLCROS,Level crossings by type,ok,sdmx,5,52,0,"",2026-08-04
+RAIL_IF_TRACKS,Length of railway tracks by electrification of tracks,ok,sdmx,5,79,0,"",2026-08-04
+RAIL_IF_TRAFF,Length of railway lines equipped with the railway traffic management system (ERTMS),ok,sdmx,5,41,0,"",2026-08-04
+RAIL_PA_INTCMNG,International transport of passengers from the country of embarkation to the reporting country,ok,sdmx,6,115,0,"",2026-08-04
+RAIL_PA_INTGONG,International transport of passengers from the reporting country to the country of disembarkation,ok,sdmx,6,111,0,"",2026-08-04
+RAIL_PA_NBCAR,"Passenger cars in accompanied passenger car railway transport, by type of transport (1979-2012)",ok,sdmx,5,64,0,"",2026-08-04
+RAIL_PA_NBPASS,"Passengers in accompanied passenger car railway transport, by type of transport (1979-2012)",ok,sdmx,5,57,0,"",2026-08-04
+RAIL_PA_QUARTAL,Passengers transported (detailed reporting only) - (quarterly data),ok,sdmx,4,130,0,"",2026-08-04
+RAIL_PA_SPEED,Passengers transported by type of train speed,ok,sdmx,5,63,0,"",2026-08-04
+RAIL_PA_TOTAL,Passengers transported,ok,sdmx,4,62,0,"",2026-08-04
+RAIL_PA_TYPEPAS,Passenger transport by type of transport (detailed reporting only),ok,sdmx,5,63,0,"",2026-08-04
+RAIL_TF_HAULMOV,Hauled railway vehicle traffic performance by train category and source of energy (gross tkm hauled),ok,sdmx,7,97,0,"",2026-08-04
+RAIL_TF_HAUSEAT,Hauled passenger railway vehicle traffic performance by type of railway vehicle speed - seat km (until 2012),ok,sdmx,5,73,0,"",2026-08-04
+RAIL_TF_HAUTKMO,Hauled vehicle traffic performance - tkm (until 2012),ok,sdmx,4,56,0,"",2026-08-04
+RAIL_TF_HAUTYPE,Hauled railway vehicle traffic performance by type of railway vehicle (vehicle-km),ok,sdmx,5,89,0,"",2026-08-04
+RAIL_TF_NS10_AT,Train traffic on the rail network - Austria (2010),ok,sdmx,5,186,0,"",2026-08-04
+RAIL_TF_NS10_BE,Train traffic on the rail network - Belgium (2010),ok,sdmx,5,245,0,"",2026-08-04
+RAIL_TF_NS10_BG,Train traffic on the rail network - Bulgaria (2010),ok,sdmx,5,69,0,"",2026-08-04
+RAIL_TF_NS10_CH,Train traffic on the rail network - Switzerland (2010),ok,sdmx,5,2739,0,"",2026-08-04
+RAIL_TF_NS10_CZ,Train traffic on the rail network - Czech Republic (2010),ok,sdmx,5,278,0,"",2026-08-04
+RAIL_TF_NS10_DE,Train traffic on the rail network - Germany (2010),ok,sdmx,5,5806,0,"",2026-08-04
+RAIL_TF_NS10_DK,Train traffic on the rail network - Denmark (2010),ok,sdmx,5,99,0,"",2026-08-04
+RAIL_TF_NS10_EE,Train traffic on the rail network - Estonia (2010),ok,sdmx,5,20,0,"",2026-08-04
+RAIL_TF_NS10_EL,Train traffic on the rail network - Greece (2010),ok,sdmx,5,71,0,"",2026-08-04
+RAIL_TF_NS10_ES,Train traffic on the rail network - Spain (2010),ok,sdmx,5,2192,0,"",2026-08-04
+RAIL_TF_NS10_FI,Train traffic on the rail network - Finland (2010),ok,sdmx,5,133,0,"",2026-08-04
+RAIL_TF_NS10_FR,Train traffic on the rail network - France (2010),ok,sdmx,5,3495,0,"",2026-08-04
+RAIL_TF_NS10_HR,Train traffic on the rail network - Croatia (2010),ok,sdmx,5,32,0,"",2026-08-04
+RAIL_TF_NS10_HU,Train traffic on the rail network - Hungary (2010),ok,sdmx,5,146,0,"",2026-08-04
+RAIL_TF_NS10_IE,Train traffic on the rail network - Ireland (2010),ok,sdmx,5,60,0,"",2026-08-04
+RAIL_TF_NS10_IT,Train traffic on the rail network - Italia (2010),ok,sdmx,5,2015,0,"",2026-08-04
+RAIL_TF_NS10_LI,Train traffic on the rail network - Liechtenstein (2010),ok,sdmx,5,8,0,"",2026-08-04
+RAIL_TF_NS10_LT,Train traffic on the rail network - Lithuania (2010),ok,sdmx,5,61,0,"",2026-08-04
+RAIL_TF_NS10_LU,Train traffic on the rail network - Luxembourg (2010),ok,sdmx,5,51,0,"",2026-08-04
+RAIL_TF_NS10_LV,Train traffic on the rail network - Latvia (2010),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS10_MK,Train traffic on the rail network - the Former Yugoslav Republic of Macedonia (2010),ok,sdmx,5,11,0,"",2026-08-04
+RAIL_TF_NS10_NL,Train traffic on the rail network - Netherlands (2010),ok,sdmx,5,242,0,"",2026-08-04
+RAIL_TF_NS10_NO,Train traffic on the rail network - Norway (2010),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS10_PL,Train traffic on the rail network - Poland (2010),ok,sdmx,5,502,0,"",2026-08-04
+RAIL_TF_NS10_PT,Train traffic on the rail network - Portugal (2010),ok,sdmx,5,59,0,"",2026-08-04
+RAIL_TF_NS10_RO,Train traffic on the rail network - Romania (2010),ok,sdmx,5,155,0,"",2026-08-04
+RAIL_TF_NS10_SE,Train traffic on the rail network - Sweden (2010),ok,sdmx,5,474,0,"",2026-08-04
+RAIL_TF_NS10_SI,Train traffic on the rail network - Slovenia (2010),ok,sdmx,5,147,0,"",2026-08-04
+RAIL_TF_NS10_SK,Train traffic on the rail network - Slovakia (2010),ok,sdmx,5,140,0,"",2026-08-04
+RAIL_TF_NS10_TR,Train traffic on the rail network - Türkiye (2010),ok,sdmx,5,186,0,"",2026-08-04
+RAIL_TF_NS10_UK,Train traffic on the rail network - United Kingdom (2010),ok,sdmx,5,3060,0,"",2026-08-04
+RAIL_TF_NS15_AT,Train traffic on the rail network - Austria (2015),ok,sdmx,5,204,0,"",2026-08-04
+RAIL_TF_NS15_BE,Train traffic on the rail network - Belgium (2015),ok,sdmx,5,245,0,"",2026-08-04
+RAIL_TF_NS15_BG,Train traffic on the rail network - Bulgaria (2015),ok,sdmx,5,70,0,"",2026-08-04
+RAIL_TF_NS15_CH,Train traffic on the rail network - Switzerland (2015),ok,sdmx,5,1050,0,"",2026-08-04
+RAIL_TF_NS15_CZ,Train traffic on the rail network - Czech Republic (2015),ok,sdmx,5,81,0,"",2026-08-04
+RAIL_TF_NS15_DE,Train traffic on the rail network - Germany (2015),ok,sdmx,5,3190,0,"",2026-08-04
+RAIL_TF_NS15_DK,Train traffic on the rail network - Denmark (2015),ok,sdmx,5,97,0,"",2026-08-04
+RAIL_TF_NS15_EE,Train traffic on the rail network - Estonia (2015),ok,sdmx,5,20,0,"",2026-08-04
+RAIL_TF_NS15_ES,Train traffic on the rail network - Spain (2015),ok,sdmx,5,2710,0,"",2026-08-04
+RAIL_TF_NS15_FI,Train traffic on the rail network - Finland (2015),ok,sdmx,5,133,0,"",2026-08-04
+RAIL_TF_NS15_FR,Train traffic on the rail network - France (2015),ok,sdmx,5,6749,0,"",2026-08-04
+RAIL_TF_NS15_HR,Train traffic on the rail network - Croatia (2015),ok,sdmx,5,197,0,"",2026-08-04
+RAIL_TF_NS15_HU,Train traffic on the rail network - Hungary (2015),ok,sdmx,5,213,0,"",2026-08-04
+RAIL_TF_NS15_IE,Train traffic on the rail network - Ireland (2015),ok,sdmx,5,63,0,"",2026-08-04
+RAIL_TF_NS15_IT,Train traffic on the rail network - Italia (2015),ok,sdmx,5,2017,0,"",2026-08-04
+RAIL_TF_NS15_LI,Train traffic on the rail network - Liechtenstein (2015),ok,sdmx,5,8,0,"",2026-08-04
+RAIL_TF_NS15_LT,Train traffic on the rail network - Lithuania (2015),ok,sdmx,5,61,0,"",2026-08-04
+RAIL_TF_NS15_LU,Train traffic on the rail network - Luxembourg (2015),ok,sdmx,5,51,0,"",2026-08-04
+RAIL_TF_NS15_LV,Train traffic on the rail network - Latvia (2015),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS15_MK,Train traffic on the rail network - the Former Yugoslav Republic of Macedonia (2015),ok,sdmx,5,11,0,"",2026-08-04
+RAIL_TF_NS15_NL,Train traffic on the rail network - Netherlands (2015),ok,sdmx,5,244,0,"",2026-08-04
+RAIL_TF_NS15_NO,Train traffic on the rail network - Norway (2015),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS15_PL,Train traffic on the rail network - Poland (2015),ok,sdmx,5,532,0,"",2026-08-04
+RAIL_TF_NS15_PT,Train traffic on the rail network - Portugal (2015),ok,sdmx,5,110,0,"",2026-08-04
+RAIL_TF_NS15_RO,Train traffic on the rail network - Romania (2015),ok,sdmx,5,155,0,"",2026-08-04
+RAIL_TF_NS15_SE,Train traffic on the rail network - Sweden (2015),ok,sdmx,5,393,0,"",2026-08-04
+RAIL_TF_NS15_SI,Train traffic on the rail network - Slovenia (2015),ok,sdmx,5,147,0,"",2026-08-04
+RAIL_TF_NS15_SK,Train traffic on the rail network - Slovakia (2015),ok,sdmx,5,140,0,"",2026-08-04
+RAIL_TF_NS15_TR,Train traffic on the rail network - Türkiye (2015),ok,sdmx,5,168,0,"",2026-08-04
+RAIL_TF_NS15_UK,Train traffic on the rail network - United Kingdom (2015),ok,sdmx,5,3397,0,"",2026-08-04
+RAIL_TF_NS20_AT,Train traffic on the rail network - Austria (2020),ok,sdmx,5,204,0,"",2026-08-04
+RAIL_TF_NS20_BG,Train traffic on the rail network - Bulgaria (2020),ok,sdmx,5,70,0,"",2026-08-04
+RAIL_TF_NS20_CH,Train traffic on the rail network - Switzerland (2020),ok,sdmx,5,2884,0,"",2026-08-04
+RAIL_TF_NS20_CZ,Train traffic on the rail network - Czechia (2020),ok,sdmx,5,79,0,"",2026-08-04
+RAIL_TF_NS20_DE,Train traffic on the rail network - Germany (2020),ok,sdmx,5,5831,0,"",2026-08-04
+RAIL_TF_NS20_DK,Train traffic on the rail network - Denmark (2020),ok,sdmx,5,121,0,"",2026-08-04
+RAIL_TF_NS20_EE,Train traffic on the rail network - Estonia (2020),ok,sdmx,5,20,0,"",2026-08-04
+RAIL_TF_NS20_EL,Train traffic on the rail network - Greece (2020),ok,sdmx,5,91,0,"",2026-08-04
+RAIL_TF_NS20_ES,Train traffic on the rail network - Spain (2020),ok,sdmx,5,2342,0,"",2026-08-04
+RAIL_TF_NS20_FI,Train traffic on the rail network - Finland (2020),ok,sdmx,5,135,0,"",2026-08-04
+RAIL_TF_NS20_FR,Train traffic on the rail network - France (2020),ok,sdmx,5,16979,0,"",2026-08-04
+RAIL_TF_NS20_HR,Train traffic on the rail network - Croatia (2020),ok,sdmx,5,199,0,"",2026-08-04
+RAIL_TF_NS20_HU,Train traffic on the rail network - Hungary (2020),ok,sdmx,5,102,0,"",2026-08-04
+RAIL_TF_NS20_IE,Train traffic on the rail network - Ireland (2020),ok,sdmx,5,65,0,"",2026-08-04
+RAIL_TF_NS20_IT,Train traffic on the rail network - Italy (2020),ok,sdmx,5,2039,0,"",2026-08-04
+RAIL_TF_NS20_LT,Train traffic on the rail network - Lithuania (2020),ok,sdmx,5,62,0,"",2026-08-04
+RAIL_TF_NS20_LU,Train traffic on the rail network - Luxembourg (2020),ok,sdmx,5,49,0,"",2026-08-04
+RAIL_TF_NS20_LV,Train traffic on the rail network - Latvia (2020),ok,sdmx,5,24,0,"",2026-08-04
+RAIL_TF_NS20_MK,Train traffic on the rail network - North Macedonia (2020),ok,sdmx,5,11,0,"",2026-08-04
+RAIL_TF_NS20_NL,Train traffic on the rail network - Netherlands (2020),ok,sdmx,5,324,0,"",2026-08-04
+RAIL_TF_NS20_NO,Train traffic on the rail network - Norway (2020),ok,sdmx,5,24,0,"",2026-08-04
+RAIL_TF_NS20_PL,Train traffic on the rail network - Poland (2020),ok,sdmx,5,662,0,"",2026-08-04
+RAIL_TF_NS20_PT,Train traffic on the rail network - Portugal (2020),ok,sdmx,5,110,0,"",2026-08-04
+RAIL_TF_NS20_RO,Train traffic on the rail network - Romania (2020),ok,sdmx,5,155,0,"",2026-08-04
+RAIL_TF_NS20_SE,Train traffic on the rail network - Sweden (2020),ok,sdmx,5,408,0,"",2026-08-04
+RAIL_TF_NS20_SI,Train traffic on the rail network - Slovenia (2020),ok,sdmx,5,131,0,"",2026-08-04
+RAIL_TF_NS20_SK,Train traffic on the rail network - Slovakia (2020),ok,sdmx,5,140,0,"",2026-08-04
+RAIL_TF_NS20_TR,Train traffic on the rail network - Türkiye (2020),ok,sdmx,5,184,0,"",2026-08-04
+RAIL_TF_NS_AT,Train traffic on the rail network - Austria (2005),ok,sdmx,5,185,0,"",2026-08-04
+RAIL_TF_NS_BE,Train traffic on the rail network - Belgium (2005),ok,sdmx,5,245,0,"",2026-08-04
+RAIL_TF_NS_CZ,Train traffic on the rail network - Czech Republic (2005),ok,sdmx,5,278,0,"",2026-08-04
+RAIL_TF_NS_DE,Train traffic on the rail network - Germany (2005),ok,sdmx,5,5758,0,"",2026-08-04
+RAIL_TF_NS_DK,Train traffic on the rail network - Denmark (2005),ok,sdmx,5,99,0,"",2026-08-04
+RAIL_TF_NS_EE,Train traffic on the rail network - Estonia (2005),ok,sdmx,5,12,0,"",2026-08-04
+RAIL_TF_NS_EL,Train traffic on the rail network - Greece (2005),ok,sdmx,5,57,0,"",2026-08-04
+RAIL_TF_NS_ES,Train traffic on the rail network - Spain (2005),ok,sdmx,5,1588,0,"",2026-08-04
+RAIL_TF_NS_FI,Train traffic on the rail network - Finland (2005),ok,sdmx,5,131,0,"",2026-08-04
+RAIL_TF_NS_FR,Train traffic on the rail network - France (2005),ok,sdmx,5,1925,0,"",2026-08-04
+RAIL_TF_NS_HU,Train traffic on the rail network - Hungaria (2005),ok,sdmx,5,151,0,"",2026-08-04
+RAIL_TF_NS_IE,Train traffic on the rail network - Ireland (2005),ok,sdmx,5,59,0,"",2026-08-04
+RAIL_TF_NS_IT,Train traffic on the rail network - Italia (2005),ok,sdmx,5,1755,0,"",2026-08-04
+RAIL_TF_NS_LI,Train traffic on the rail network - Liechtenstein (2005),ok,sdmx,5,7,0,"",2026-08-04
+RAIL_TF_NS_LT,Train traffic on the rail network - Lithuania (2005),ok,sdmx,5,61,0,"",2026-08-04
+RAIL_TF_NS_LU,Train traffic on the rail network - Luxembourg (2005),ok,sdmx,5,51,0,"",2026-08-04
+RAIL_TF_NS_LV,Train traffic on the rail network - Latvia (2005),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS_NL,Train traffic on the rail network - Netherlands (2005),ok,sdmx,5,236,0,"",2026-08-04
+RAIL_TF_NS_NO,Train traffic on the rail network - Norway (2005),ok,sdmx,5,23,0,"",2026-08-04
+RAIL_TF_NS_PL,Train traffic on the rail network - Poland (2005),ok,sdmx,5,494,0,"",2026-08-04
+RAIL_TF_NS_PT,Train traffic on the rail network - Portugal (2005),ok,sdmx,5,43,0,"",2026-08-04
+RAIL_TF_NS_SE,Train traffic on the rail network - Sweden (2005),ok,sdmx,5,418,0,"",2026-08-04
+RAIL_TF_NS_SI,Train traffic on the rail network - Slovenia (2005),ok,sdmx,5,147,0,"",2026-08-04
+RAIL_TF_NS_SK,Train traffic on the rail network - Slovakia (2005),ok,sdmx,5,140,0,"",2026-08-04
+RAIL_TF_NS_TR,Train traffic on the rail network - Türkiye (2005),ok,sdmx,5,188,0,"",2026-08-04
+RAIL_TF_NS_UK,Train traffic on the rail network - United Kingdom (2005),ok,sdmx,5,3025,0,"",2026-08-04
+RAIL_TF_PASSMOV,Passenger train traffic performance by type of train speed,ok,sdmx,5,98,0,"",2026-08-04
+RAIL_TF_TRAINMV,Goods and passenger train traffic performance,ok,sdmx,5,63,0,"",2026-08-04
+RAIL_TF_TRAVEH,Train traffic performance by train category and source of energy,ok,sdmx,7,61,0,"",2026-08-04
+RAIL_TF_VEHIMOV,Vehicle traffic performance by type of tractive vehicle and source of energy (until 2012),ok,sdmx,6,73,0,"",2026-08-04
+RD_B_BERDCON,BERD by concentration of personnel (ranking),ok,sdmx,5,33,0,"",2026-08-04
+RD_E_BERDCOST,BERD by NACE Rev. 1.1 activity and type of expenditure (1981-2010),ok,sdmx,6,161,0,"",2026-08-04
+RD_E_BERDCOSTR2,BERD by NACE Rev. 2 activity and type of expenditure,ok,sdmx,6,189,0,"",2026-08-04
+RD_E_BERDFUND,BERD by NACE Rev. 1.1 activity and source of funds (1981-2010),ok,sdmx,6,162,0,"",2026-08-04
+RD_E_BERDFUNDR2,BERD by NACE Rev. 2 activity and source of funds,ok,sdmx,6,190,0,"",2026-08-04
+RD_E_BERDIND,BERD by NACE Rev. 1.1 activity (1981-2010),ok,sdmx,5,156,0,"",2026-08-04
+RD_E_BERDINDR2,BERD by NACE Rev. 2 activity,ok,sdmx,5,184,0,"",2026-08-04
+RD_E_BERDPFR2,BERD by industry orientation (NACE Rev. 2 activity),ok,sdmx,5,184,0,"",2026-08-04
+RD_E_BERDSIZE,BERD by size class and source of funds,ok,sdmx,6,115,0,"",2026-08-04
+RD_E_FUNDGERD,GERD by source of funds,ok,sdmx,5,98,0,"",2026-08-04
+RD_E_GERDACT,GERD by sector of performance and type of R&D,ok,sdmx,6,108,0,"",2026-08-04
+RD_E_GERDCOST,GERD by sector of performance and type of expenditure,ok,sdmx,6,114,0,"",2026-08-04
+RD_E_GERDFUND,GERD by sector of performance and source of funds,ok,sdmx,6,117,0,"",2026-08-04
+RD_E_GERDINS,GERD by sector of performance and type of institution,ok,sdmx,5,72,0,"",2026-08-04
+RD_E_GERDREG,GERD by sector of performance and NUTS 2 region,ok,sdmx,5,691,0,"",2026-08-04
+RD_E_GERDSC,GERD by sector of performance and fields of R&D,ok,sdmx,6,155,0,"",2026-08-04
+RD_E_GERDSOBJ07,GERD by sector of performance and socioeconomic objectives (NABS 2007),ok,sdmx,6,94,0,"",2026-08-04
+RD_E_GERDSOBJ92,GERD by sector of performance and socioeconomic objectives (NABS 1992) (1980-2007),ok,sdmx,6,92,0,"",2026-08-04
+RD_E_GERDTOT,GERD by sector of performance,ok,sdmx,5,103,0,"",2026-08-04
+RD_P_BEMPOCC,R&D personnel and researchers in business enterprise sector by NACE Rev. 1.1 activity and sex (1980-2010),ok,sdmx,7,156,0,"",2026-08-04
+RD_P_BEMPOCCR2,R&D personnel and researchers in business enterprise sector by NACE Rev. 2 activity and sex,ok,sdmx,7,183,0,"",2026-08-04
+RD_P_CON,R&D personnel and researchers in the business enterprise sector by concentration of personnel (ranking),ok,sdmx,6,33,0,"",2026-08-04
+RD_P_FEMRES,Share of female researchers by sector of performance,ok,sdmx,5,88,0,"",2026-08-04
+RD_P_PERSAGE,"Researchers by sector of performance, age class and sex",ok,sdmx,7,105,0,"",2026-08-04
+RD_P_PERSCITZ,"Researchers by sector of performance, country of citizenship and sex",ok,sdmx,7,107,0,"",2026-08-04
+RD_P_PERSCITZ$DV_1863,"Researchers by sector of performance, country of citizenship and sex",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/RD_P_PERSCITZ$DV_1863'
+For more information check: https://developer",2026-08-04
+RD_P_PERSLF,Share of R&D personnel and researchers in total active population and employment by sector of performance and sex,ok,sdmx,7,102,0,"",2026-08-04
+RD_P_PERSOCC,"R&D personnel by sector of performance, professional position and sex",ok,sdmx,7,105,0,"",2026-08-04
+RD_P_PERSOCC$DV_1861,"R&D personnel by sector of performance, professional position and sex",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/RD_P_PERSOCC$DV_1861'
+For more information check: https://developer.",2026-08-04
+RD_P_PERSQUAL,"R&D personnel and researchers by sector of performance, educational attainment level (ISCED1997) and sex (1980-2015)",ok,sdmx,8,99,0,"",2026-08-04
+RD_P_PERSQUAL11,"R&D personnel and researchers by sector of performance, educational attainment level and sex",ok,sdmx,8,73,0,"",2026-08-04
+RD_P_PERSREG,"R&D personnel and researchers by sector of performance, sex and NUTS 2 region",ok,sdmx,7,696,0,"",2026-08-04
+RD_P_PERSSCI,"R&D personnel and researchers by sector of performance, fields of R&D and sex",ok,sdmx,8,154,0,"",2026-08-04
+RD_P_PERSSIZE,R&D personnel and researchers in business enterprise sector by size class and sex,ok,sdmx,7,104,0,"",2026-08-04
+RD_P_SEN,Researchers in the higher education sector by seniority category,ok,sdmx,7,54,0,"",2026-08-04
+REG_AREA3,Area by NUTS 3 region,ok,sdmx,5,2348,0,"",2026-08-04
+ROAD_EC_EMPL,Persons employed in goods road transport enterprises by employment size classes (1988-2012),ok,sdmx,5,69,0,"",2026-08-04
+ROAD_EC_EMPL_S,Persons employed in goods road transport enterprises by sex (1988-2012),ok,sdmx,5,66,0,"",2026-08-04
+ROAD_EC_ENTEMP,Goods road transport enterprises by employment size classes (1988-2012),ok,sdmx,5,64,0,"",2026-08-04
+ROAD_EC_ENTVEH,Goods road transport enterprises by number of vehicles (1988-2012),ok,sdmx,5,65,0,"",2026-08-04
+ROAD_EC_INVEST,Expenditure on road transport vehicles and road infrastructure,ok,sdmx,5,78,0,"",2026-08-04
+ROAD_EQR_BUM,"New motor coaches, buses and trolley buses by type of motor energy (until 2013)",ok,sdmx,5,74,0,"",2026-08-04
+ROAD_EQR_BUSMOT,"New motor coaches, buses and trolley buses by type of motor energy",ok,sdmx,5,72,0,"",2026-08-04
+ROAD_EQR_BUSSEA,"Seat capacity of new motor coaches, buses and trolley buses",ok,sdmx,4,69,0,"",2026-08-04
+ROAD_EQR_BUSVEH,"New motor coaches, buses and trolley buses , by type of vehicles",ok,sdmx,5,97,0,"",2026-08-04
+ROAD_EQR_CARBUA,"New passenger cars, motor coaches, buses and trolley buses by alternative motor energy (until 2012)",ok,sdmx,6,56,0,"",2026-08-04
+ROAD_EQR_CARMOT,New passenger cars by type of motor energy and engine size,ok,sdmx,6,101,0,"",2026-08-04
+ROAD_EQR_CARPDA,New passenger cars by type of motor energy,ok,sdmx,5,74,0,"",2026-08-04
+ROAD_EQR_LORALT,New lorries by alternative motor energy and load capacity of +/- 1500 kg (until 2012),ok,sdmx,6,42,0,"",2026-08-04
+ROAD_EQR_LORMOT,"New lorries, by type of motor energy",ok,sdmx,6,74,0,"",2026-08-04
+ROAD_EQR_LORMOT_H,New lorries by motor energy and load capacity of +/- 1500kg (until 2012),ok,sdmx,6,67,0,"",2026-08-04
+ROAD_EQR_LORRIN_H,New lorries by load capacity (until 2012),ok,sdmx,5,70,0,"",2026-08-04
+ROAD_EQR_LORRIT,New lorries and their load capacity by permissible maximum gross weight,ok,sdmx,5,66,0,"",2026-08-04
+ROAD_EQR_LORRIT_H,Load capacity of new lorries (until 2012),ok,sdmx,5,60,0,"",2026-08-04
+ROAD_EQR_LRSTN,"New lorries, road tractors, semi-trailers and trailers by type of carriage (until 2012)",ok,sdmx,6,68,0,"",2026-08-04
+ROAD_EQR_LSTTT,"Load capacity of new lorries, semi-trailers and trailers, by type of carriage (until 2012)",ok,sdmx,6,57,0,"",2026-08-04
+ROAD_EQR_MOPEDS,New mopeds and motorcycles by type of motor energy,ok,sdmx,6,64,0,"",2026-08-04
+ROAD_EQR_MOTORS,New motorcycles by engine size,ok,sdmx,5,96,0,"",2026-08-04
+ROAD_EQR_SEMIT,"New semi-trailers and their load capacity, by permissible maximum gross weight",ok,sdmx,5,56,0,"",2026-08-04
+ROAD_EQR_SEMITN,New semi-trailers and their load capacity (until 2012),ok,sdmx,5,64,0,"",2026-08-04
+ROAD_EQR_SPURP,New special purpose road vehicles,ok,sdmx,4,57,0,"",2026-08-04
+ROAD_EQR_TRACM,New road tractors by type of motor energy (until 2013),ok,sdmx,5,75,0,"",2026-08-04
+ROAD_EQR_TRACMOT,New road tractors by type of motor energy,ok,sdmx,5,68,0,"",2026-08-04
+ROAD_EQR_TRAIL,"New trailers and their load capacity, by permissible maximum gross weight",ok,sdmx,5,61,0,"",2026-08-04
+ROAD_EQR_TRAILN,New trailers and their load capacity (until 2012),ok,sdmx,5,63,0,"",2026-08-04
+ROAD_EQR_TRAMS,New trams,ok,sdmx,4,36,0,"",2026-08-04
+ROAD_EQR_UNLWEIG,New passenger cars by unloaded weight,ok,sdmx,5,99,0,"",2026-08-04
+ROAD_EQR_ZEV,New zero-emission vehicles by type of vehicle and type of motor energy,ok,sdmx,6,67,0,"",2026-08-04
+ROAD_EQS_BUSAGE,"Motor coaches, buses and trolley buses by age",ok,sdmx,5,108,0,"",2026-08-04
