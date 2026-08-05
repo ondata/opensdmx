@@ -281,6 +281,22 @@ def test_values_json_in_dataflow_is_null_without_constraints():
     assert all(r["in_dataflow"] is None for r in json.loads(result.output))
 
 
+@pytest.mark.parametrize("cached", [{"SEX": ["1", "2"]}, None])
+def test_values_csv_schema_is_stable_regardless_of_cache(cached):
+    """The CSV header must not gain or lose a column depending on cache state."""
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=cached):
+        result = runner.invoke(app, ["--output", "csv", "values", "TEST_DF", "SEX"])
+
+    assert result.exit_code == 0, result.output
+    lines = result.output.strip().splitlines()
+    assert lines[0] == "id,name,in_dataflow"
+    # Unknown membership is an empty cell, not a missing column.
+    assert lines[1] == ("1,Males,true" if cached else "1,Males,")
+
+
 # ── tree command: error paths and depth semantics ────────────────────
 
 

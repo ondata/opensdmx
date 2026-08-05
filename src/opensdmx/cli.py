@@ -620,8 +620,14 @@ def values(
     # "unknown" — never "no valid codes", since a provider's constraints can
     # omit a dimension entirely.
     present = constrained_codes(get_cached_available_constraints(ds["df_id"]), dim)
-    if present is not None:
-        val_df = val_df.with_columns(pl.col("id").is_in(list(present)).alias("in_dataflow"))
+    # The column is always there, null when membership is unknown: a CSV schema
+    # that gains and loses a column depending on cache state is unusable for
+    # whatever consumes it.
+    val_df = val_df.with_columns(
+        pl.col("id").is_in(list(present)).alias("in_dataflow")
+        if present is not None
+        else pl.lit(None, dtype=pl.Boolean).alias("in_dataflow")
+    )
 
     # Counted before --grep: the footer reports the dataflow's coverage of the
     # whole codelist, not of whatever subset the user grepped.
