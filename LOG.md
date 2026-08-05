@@ -10,6 +10,23 @@
 - #66 as filed does not reproduce: `contentconstraint/ESTAT/LFSQ_URGAN` returns `citizen` today and the repro `get` exits 0 with data — most likely a stale partial constraint cache entry (7-day TTL). Closed as not reproducible.
 - New `discovery.constrained_codes()` (pure, case/dash-insensitive, `None` when the dimension is unknown) + 17 tests.
 
+## 2026-08-05 - eval: agent-loop evaluation harness (DeepEval, Target C)
+
+- New `eval/` package (not in core deps; `deepeval` behind the `[eval]` extra) that scores the **agent loop** — an LLM orchestrating the opensdmx CLI with the `sdmx-explorer` skill — end-to-end. Plan in `tasks/todo-deepeval-agent-loop.md`.
+- **Gold set** `eval/goldset/cases.yaml`: 10 cases across eurostat/oecd/imf/ecb/istat, tagged by `failure_mode` (discovery / filters / provenance / value-rounding). Every canonical_query validated live (returns rows).
+- **Deterministic core** (no LLM judge — the point of opensdmx): `QueryConvergenceMetric` (agent's declared provider+dataset == gold) + `ValueCorrectnessMetric` (re-run the agent's declared query AND the gold canonical query live, compare cells within tolerance). Judge metrics (`Faithfulness`, `GEval`) on GLM-5.2/ZAI behind `--judge`.
+- **Routing**: agents Claude+Gemini via OpenRouter (`OPENROUTER_API_KEY`); judge GLM-5.2 via ZAI (`ZAI_API_KEY`, neutral). Freemium `GEMINI_API_KEY` only an optional fallback (`GEMINI_RPM` throttle).
+- Agent harness (`eval/agent.py`) runs the skill as system prompt, exposes a `run_opensdmx` tool, and asks for a final structured `ANSWER={...}` block; `eval/shims/` is a PATH shim that tees every opensdmx call to JSONL (retrieval context + convergence analysis).
+- **Verified end-to-end**: Claude seed case (StatGPT IMF WEO) → real discovery 23 steps → `QueryConvergence 1.0 / ValueCorrectness 1.0`, matching the StatGPT figures.
+- **Filed 2 CLI issues found in validation**: #66 `constraints` omits dimensions that `info` shows (lfsq_urgan `citizen`) → misleading "check filter values"; #67 `values` returns codelist codes not present in the dataflow (HICP `unit`) → invalid filters.
+- Run: `uv run python -m eval.run --model all`, report in `eval/results/<date>/`.
+
+## 2026-08-04 - spike: embedding-only semantic search over ISTAT descriptions
+
+- Prototype `tmp/semantic_route_test.py`: fastembed (multilingual MiniLM, ONNX/CPU) + cosine over the 3,949 harvested descriptions. No LLM, no API.
+- 16–18 ms per query after a one-time ~155 s corpus embedding (~6 MB cache). Birth/inflation/road-accident queries nail top-5; out-of-domain query correctly rejected by a 0.45 threshold.
+- Validates the approved fastembed self-contained semantics plan; findings + current bibliography in `docs/future-ideas.md`.
+
 ## 2026-07-25 - feat: territorial dimension from the GEO_ID annotation
 
 - feat(discovery): capture `GEO_ID` into a new `df_geo_dim` catalog column — the
