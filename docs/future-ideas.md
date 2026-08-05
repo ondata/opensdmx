@@ -153,3 +153,26 @@ opensdmx's differentiator vs LLM-inside routers: because the agent drives `searc
 | StatBridge | statbridge.net | SaaS MCP + topic registry, built on sdmx1 |
 | OpenEcon Data | github.com/hanlulong/openecon-data | 330k indicators, federated multi-source search |
 | oecddatabuilder | pypi.org/project/oecddatabuilder | YAML recipe for reproducible OECD pipelines |
+
+## Embedding-Only Semantic Search & Routing — prototype validated (2026-08-04)
+
+Tested embedding-based semantic search over the harvested ISTAT descriptions (`src/opensdmx/data/descriptions/istat.parquet`, 3,949 docs) with **no LLM**: fastembed (`sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`, 384 dim, ONNX on CPU) + cosine similarity. Prototype: `tmp/semantic_route_test.py`.
+
+### Results
+
+- One-time corpus embedding: ~155 s on CPU; cache ~6 MB (`.npy`).
+- Query latency: **16–18 ms** per query, embedding included. Works on minimal hardware, zero tokens.
+- Quality on Italian natural-language queries:
+  - "dammi i dati sulle nascite" → all top-5 are birth dataflows (`25_74*`) ✅
+  - "inflazione e prezzi al consumo" → IPCA/NIC dataflows ✅
+  - "incidenti stradali nelle province" → road-accident dataflows ✅
+  - "quanti stranieri vivono in italia" → residence permits (relevant, arguably not the best possible set) ~
+  - "quante persone lavorano nel settore agricolo" → generic employment + agritourism (weak: compound intents dilute) ⚠️
+  - "previsioni meteo" (out-of-domain) → top score 0.40, correctly **below the 0.45 routing threshold** → no match ✅
+
+### Takeaways
+
+- Confirms the approved self-contained semantics plan (fastembed, no Ollama): retrieval quality is good enough for a first-pass ranker; a threshold gives a deterministic "no match" guardrail instead of hallucinated picks.
+- Same embeddings can also do **intent routing** (route query → action: search / territorial view / fetch) in a future no-LLM app — the pattern Aurelio's semantic-router popularized.
+- Corpus hygiene matters: catalog names like "dataflow eliminato" surface in top results; deleted dataflows should be filtered before indexing.
+- Literature check (2025-2026): lightweight routers reach 80–88% accuracy at <4 ms vs ~91% for LLMs at 60–700 ms — [GQR-Bench, arXiv:2505.14524](https://arxiv.org/abs/2505.14524); simple kNN over embeddings beats learned routers — [arXiv:2505.12601](https://arxiv.org/abs/2505.12601); tool-calling routers are an active 2026 topic — [Switchcraft, arXiv:2605.07112](https://doi.org/10.48550/arxiv.2605.07112), [NTILC, arXiv:2606.06566](https://arxiv.org/abs/2606.06566). Reference libraries: [semantic-router](https://github.com/aurelio-labs/semantic-router) (FastEmbed encoder supported), [SynaptoRoute](https://github.com/sitanshukr08/SynaptoRoute).
