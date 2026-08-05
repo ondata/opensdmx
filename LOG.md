@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-08-05 - feat: `values` cross-references the dataflow's constraints (#67, #66)
+
+- Returning the whole codelist was never wrong — a codelist is a shared definition, not one dataflow's inventory. What was missing is the link to `constraints`: of the 759 `CL_UNIT` codes listed for `PRC_HICP_MANR`, exactly one (`RCH_A`) is usable as a filter there, with no signal in the output.
+- feat(values): the output now carries that link. When the dataflow's constraints are already cached, each row gets an `in_dataflow` flag (`true`/`false`, `null` when unknown) plus a coverage footer; otherwise a pointer to `opensdmx constraints`. Both paths are a **local cache read** — zero extra network calls, so the cheap command stays cheap.
+- `in_dataflow` is a real field in JSON and CSV, and the CSV header no longer changes shape with cache state (caught in review: the column used to disappear when membership was unknown).
+- No filtering added to `values`: `constraints <df> <dim>` already returns exactly the codes present, byte-identically. `values` keeps showing the whole codelist *with* the valid ones marked — the view `constraints` cannot give.
+- feat(get/plot): the 400/404 hint now also names the dimensions left unfiltered instead of only blaming filter values (#66).
+- #66 as filed does not reproduce: `contentconstraint/ESTAT/LFSQ_URGAN` returns `citizen` today and the repro `get` exits 0 with data — most likely a stale partial constraint cache entry (7-day TTL). Closed as not reproducible.
+- New `discovery.constrained_codes()` (pure, case/dash-insensitive, `None` when the dimension is unknown) + 17 tests.
+
 ## 2026-07-25 - feat: territorial dimension from the GEO_ID annotation
 
 - feat(discovery): capture `GEO_ID` into a new `df_geo_dim` catalog column — the
