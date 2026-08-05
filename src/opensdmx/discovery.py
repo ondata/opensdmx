@@ -1182,6 +1182,35 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in result.items()}
 
 
+def constrained_codes(
+    avail: dict[str, Any] | None, dimension_id: str
+) -> set[str] | None:
+    """Codes present in the dataflow for one dimension, or None when unknown.
+
+    `avail` is a constraint mapping — either the `{dim_id: DataFrame}` returned
+    by `get_available_values` or the `{dim_id: [codes]}` shape stored in the
+    cache. The dimension is matched the same way as everywhere else in the CLI:
+    case-insensitively, with '-' equivalent to '_'.
+
+    Returns None (not an empty set) when nothing is known about the dimension:
+    providers using `contentconstraint` omit whole dimensions from the response,
+    so "absent" must never be read as "no valid codes".
+    """
+    if not avail:
+        return None
+    target = _normalise_dim(dimension_id)
+    for dim_id, codes in avail.items():
+        if _normalise_dim(dim_id) != target:
+            continue
+        if isinstance(codes, pl.DataFrame):
+            if codes.is_empty() or "id" not in codes.columns:
+                return None
+            return set(codes["id"].to_list())
+        code_list = list(codes)
+        return set(code_list) if code_list else None
+    return None
+
+
 def _normalise_dim(name: str) -> str:
     """Normalise a dimension name for matching: upper-case, '-' same as '_'.
 
