@@ -939,12 +939,49 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
+174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-05
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,236,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_4,"Classe di addetti, settori economici (Ateco 5 cifre) - Italia",REF_AREA,nazionale,nazionale,1,2026-08-05
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+183_203_DF_DICA_ACDP_1,Imprese - occupati - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_203_DF_DICA_ACDP_12,"Sesso, classe di addetti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_13,"Sesso, forma giuridica",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_14,"Sesso, età impresa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_15,"Età, classe di addetti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_16,"Età, forma giuridica",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_17,"Età, età impresa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_18,"Paese nascita, classe di addetti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_19,"Paese nascita, forma giuridica",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_2,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_203_DF_DICA_ACDP_20,"Paese nascita, età impresa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_207_DF_DICA_AESTCP_13,Classe di addetti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_207_DF_DICA_AESTCP_2,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_207_DF_DICA_AESTCP_3,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_207_DF_DICA_AESTCP_4,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_207_DF_DICA_AESTCP_5,"Macrosettori economici, età impresa",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_207_DF_DICA_AESTCP_6,"Macrosettori economici, impresa con dipendenti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_207_DF_DICA_AESTCP_7,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_207_DF_DICA_AESTCP_8,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_207_DF_DICA_AESTCP_9,Forma giuridica - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_208,Imprese - lavoratori esterni,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_208_DF_DICA_AESTLP_1,Imprese - lavoratori esterni - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_208_DF_DICA_AESTLP_10,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_208_DF_DICA_AESTLP_11,Classe di addetti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_208_DF_DICA_AESTLP_12,Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_208_DF_DICA_AESTLP_13,Età impresa e impresa con dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_208_DF_DICA_AESTLP_2,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_208_DF_DICA_AESTLP_3,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_208_DF_DICA_AESTLP_4,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_208_DF_DICA_AESTLP_5,"Macrosettori economici, età impresa e impresa con dipendenti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_208_DF_DICA_AESTLP_6,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_208_DF_DICA_AESTLP_7,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_208_DF_DICA_AESTLP_8,Forma giuridica - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_208_DF_DICA_AESTLP_9,Età impresa e impresa con dipendenti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_275,Imprese - lavoratori indipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_275_DF_DICA_AINDP_1,Imprese - lavoratori indipendenti - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
 183_275_DF_DICA_AINDP_10,Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_275_DF_DICA_AINDP_11,Età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_275_DF_DICA_AINDP_12,Paese di nascita,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
@@ -956,12 +993,31 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 183_275_DF_DICA_AINDP_18,"Impresa con dipendenti, paese di nascita",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_275_DF_DICA_AINDP_19,"Impresa con dipendenti, tipo di lavoratore indipendente",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_275_DF_DICA_AINDP_2,Settori economici (Ateco 3 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
+183_275_DF_DICA_AINDP_3,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_275_DF_DICA_AINDP_4,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_275_DF_DICA_AINDP_5,"Macrosettori economici, età impresa, impresa con dipendenti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_275_DF_DICA_AINDP_6,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
 183_275_DF_DICA_AINDP_7,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
+183_275_DF_DICA_AINDP_8,Forma giuridica - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_275_DF_DICA_AINDP_9,"Età della impresa, impresa con dipendenti - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_276,Imprese - lavoratori temporanei,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_276_DF_DICA_AINTP_1,Imprese - lavoratori temporanei - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_276_DF_DICA_AINTP_10,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_276_DF_DICA_AINTP_11,Classe di addetti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_276_DF_DICA_AINTP_12,Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_13,Età impresa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_276_DF_DICA_AINTP_14,"Impresa con dipendenti, sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_276_DF_DICA_AINTP_15,"Impresa con dipendenti, età",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_276_DF_DICA_AINTP_16,"Impresa con dipendenti, paese di nascita",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_276_DF_DICA_AINTP_17,"Impresa con dipendenti, periodo di attività svolto nell'impresa utilizzatrice",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_276_DF_DICA_AINTP_2,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_276_DF_DICA_AINTP_3,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_276_DF_DICA_AINTP_4,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_276_DF_DICA_AINTP_5,"Macrosettori economici, età impresa, impresa con dipendenti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_276_DF_DICA_AINTP_6,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_276_DF_DICA_AINTP_7,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_276_DF_DICA_AINTP_8,Forma giuridica - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_276_DF_DICA_AINTP_9,"Età impresa, impresa con dipendenti - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
 183_277_DF_DICA_ASIAUE1P_1,Imprese e addetti - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-07-17
 183_277_DF_DICA_ASIAUE1P_2,"Forma giuridica, settori economici (Ateco 5 cifre) - Italia",REF_AREA,nazionale,nazionale,1,2026-07-17
 183_277_DF_DICA_ASIAUE1P_3,"Forma giuridica, settori economici (Ateco 4 cifre) - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
@@ -970,12 +1026,66 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 183_285_DF_DICA_ASIAULP_1,Unità locali e addetti - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
 183_285_DF_DICA_ASIAULP_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,239,2026-07-17
 183_285_DF_DICA_ASIAULP_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12470,2026-07-17
+183_285_DF_DICA_ASIAULP_4,"Classe di addetti, settori economici (Ateco 5 cifre) - Italia",REF_AREA,nazionale,nazionale,1,2026-08-05
 183_285_DF_DICA_ASIAULP_5,"Classe di addetti, settori economici (Ateco 4 cifre) - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-17
 183_285_DF_DICA_ASIAULP_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-07-17
 183_285_DF_DICA_ASIAULP_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12470,2026-07-17
+183_286,Imprese - lavoratori dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_1,Imprese - lavoratori dipendenti - Principali dati,REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_10,"Forma giuridica, età - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_11,"Forma giuridica, paese di nascita - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_12,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_13,Settori economici (Ateco 1 cifra) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_14,Classe di addetti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_15,Forma giuridica - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_16,Età impresa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_17,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_18,"Macrosettori economici, età impresa",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_19,Macrosettori economici - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_2,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_20,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_21,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_22,Età impresa - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_23,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_24,"Forma giuridica, sesso - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_25,"Forma giuridica, età - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_26,"Forma giuridica, paese di nascita - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_27,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_28,Settori economici (Ateco 1 cifra) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_29,Classe di addetti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_3,"Macrosettori economici, età impresa",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_30,Forma giuridica - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_286_DF_DICA_ADIPWP_31,Età impresa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_286_DF_DICA_ADIPWP_32,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_33,"Macrosettori economici, età impresa",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_34,Macrosettori economici - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_35,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_36,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_37,Età impresa - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_38,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_39,"Forma giuridica, sesso - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_4,Macrosettori economici - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_40,"Forma giuridica, età - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_41,"Forma giuridica, paese di nascita - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_42,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_43,Settori economici (Ateco 1 cifra) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_286_DF_DICA_ADIPWP_44,Classe di addetti - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_286_DF_DICA_ADIPWP_45,Forma giuridica - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_46,Età impresa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_286_DF_DICA_ADIPWP_5,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-05
+183_286_DF_DICA_ADIPWP_6,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_7,Età impresa - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_286_DF_DICA_ADIPWP_8,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_286_DF_DICA_ADIPWP_9,"Forma giuridica, sesso - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_332,Unità locali - lavoratori dipendenti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_332_DF_DICA_ASIAULOCCP_1,"Classe di addetti, sesso, età - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_332_DF_DICA_ASIAULOCCP_2,"Classe di addetti, paese di nascita - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_332_DF_DICA_ASIAULOCCP_3,"Classe di addetti, qualifica professionale - prov",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+183_332_DF_DICA_ASIAULOCCP_4,"Settori economici (Ateco 3 cifre), sesso - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_332_DF_DICA_ASIAULOCCP_5,"Settori economici (Ateco 3 cifre), età - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_332_DF_DICA_ASIAULOCCP_6,"Settori economici (Ateco 3 cifre), paese di nascita - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_332_DF_DICA_ASIAULOCCP_7,"Settori economici (Ateco 3 cifre), qualifica professionale - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_336,Imprese - lavoratori dipendenti beneficiari di sgravi contributivi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
 183_336_DF_DICA_ADIPPP_1,"Sesso, macrosettori economici",REF_AREA,nazionale,nazionale,1,2026-07-17
 183_336_DF_DICA_ADIPPP_2,"Sesso, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-17
 183_336_DF_DICA_ADIPPP_3,Sesso - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
@@ -985,21 +1095,54 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 183_336_DF_DICA_ADIPPP_7,"Paese di nascita, macrosettori economici",REF_AREA,nazionale,nazionale,1,2026-07-17
 183_336_DF_DICA_ADIPPP_8,"Paese di nascita, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-17
 183_336_DF_DICA_ADIPPP_9,Paese di nascita - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
+183_464,Imprese - occupati per titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
 183_464_DF_DICA_TISTUDIO_1,Imprese - occupati per titolo di studio - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-17
+183_464_DF_DICA_TISTUDIO_2,Qualifica professionale - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_464_DF_DICA_TISTUDIO_3,"Paese di nascita, sesso, età - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_464_DF_DICA_TISTUDIO_4,Sesso - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_464_DF_DICA_TISTUDIO_5,Età - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
+183_464_DF_DICA_TISTUDIO_6,Paese di nascita - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
 18_157_DF_DCCV_BILENERG_1,Usi finali,REF_AREA,nazionale,nazionale,1,2026-07-17
 18_157_DF_DCCV_BILENERG_2,Consumo interno lordo,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_635,Consumi energetici delle famiglie,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-05
 18_635_DF_DCCV_CENERG_1,Spesa per tipo di fonte,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
 18_635_DF_DCCV_CENERG_10,Legna e pellets - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
 18_635_DF_DCCV_CENERG_11,Legna - tipo e canale approvvigionamento - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
 18_635_DF_DCCV_CENERG_12,Lampadine - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
 18_635_DF_DCCV_CENERG_13,Elettrodomestici - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_2,"Impianto riscaldamento - disponibilità, tipo e fonte - reg.",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-05
 18_635_DF_DCCV_CENERG_3,Impianto riscaldamento - tipo per fonte e frequenza d'uso,REF_AREA,nazionale,nazionale,1,2026-07-17
+18_635_DF_DCCV_CENERG_4,Impianto riscaldamento - frequenza d'uso - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-05
 18_635_DF_DCCV_CENERG_5,Impianto riscaldamento - ore di accensione - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
+18_635_DF_DCCV_CENERG_6,"Impianto condizionamento - disponibilità, tipo e frequenza d'uso - reg.",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-05
+18_635_DF_DCCV_CENERG_7,Impianto condizionamento - ore di accensione - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-05
 18_635_DF_DCCV_CENERG_8,"Riscaldamento acqua - disponibilità, tipo di impianto e fonte - reg.",REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
 18_635_DF_DCCV_CENERG_9,Riscaldamento acqua - tipo di impianto e fonte di alimentazione,REF_AREA,nazionale,nazionale,1,2026-07-17
+19_366_DF_DCCN_PROTSOC_B19_1,Conti economici consolidati - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+19_366_DF_DCCN_PROTSOC_B19_2,"Prestazioni secondo evento, rischio e bisogno - edizioni ottobre 2019 - aprile 2024",REF_AREA,nazionale,nazionale,1,2026-08-05
+1_1064,Sequenza dei conti trimestrali per settore istituzionale - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_1,Sequenza dei conti - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_2,Indicatori su famiglie e società non finanziarie - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_1064_DF_DCCN_ISTITUZ_QNA1_B19_3,Aggregati destagionalizzati - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_184,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_184_DF_DCCN_PILQ_B19_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_88,Occupazione per branca di attività e popolazione - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_88_DF_DCCN_OCCQSEC2010_B19_1,Occupazione per branca di attività - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_88_DF_DCCN_OCCQSEC2010_B19_2,Popolazione media del periodo - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_963_DF_DCCN_SHA_B19_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento - edizioni giugno 2020 - maggio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_963_DF_DCCN_SHA_B19_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore - edizioni giugno 2020 - maggio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_963_DF_DCCN_SHA_B19_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento - edizioni giugno 2020 - maggio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+22_1201,Popolazione semi-super centenaria (105 anni e più),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-05
+22_1201_DF_DCIS_SSCENT_1,Popolazione semi-super centenaria (105 anni e più),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-05
+22_222_DF_DCSC_NONRESID_CONSTR_1,Fabbricati non residenziali nuovi e relative abitazioni - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-08-05
+22_222_DF_DCSC_NONRESID_CONSTR_10,Ampliamenti di fabbricati non residenziali con o senza sopraelevazione - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-08-05
 22_222_DF_DCSC_NONRESID_CONSTR_2,Ampliamenti di fabbricati non residenziali e relative abitazioni - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-17
 22_222_DF_DCSC_NONRESID_CONSTR_3,Fabbricati non residenziali nuovi e ampliamenti per titolo abilitativo - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_4,Fabbricati non residenziali nuovi e ampliamenti per durata prevista dei lavori - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-08-05
 22_222_DF_DCSC_NONRESID_CONSTR_5,Superfici dei fabbricati non residenziali nuovi per destinazione d'uso - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
+22_222_DF_DCSC_NONRESID_CONSTR_6,Superfici degli ampliamenti di fabbricati non residenziali per destinazione d'uso - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-08-05
+22_222_DF_DCSC_NONRESID_CONSTR_7,Fabbricati non residenziali nuovi e ampliamenti per destinazione economica - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-08-05
+22_222_DF_DCSC_NONRESID_CONSTR_8,Fabbricati non residenziali nuovi e ampliamenti per richiedente il titolo abilitativo - regioni e classi di comune,REF_AREA,regione,nazionale|ripartizione|regione,41,2026-08-05
 22_222_DF_DCSC_NONRESID_CONSTR_9,Fabbricati non residenziali nuovi per tipologia dell'impianto - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-07-17
 22_289,Popolazione residente  al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8128,2026-07-17
 22_289_DF_DCIS_POPRES1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17

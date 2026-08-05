@@ -6781,3 +6781,317 @@ ROAD_EQR_TRAMS,New trams,ok,sdmx,4,36,0,"",2026-08-04
 ROAD_EQR_UNLWEIG,New passenger cars by unloaded weight,ok,sdmx,5,99,0,"",2026-08-04
 ROAD_EQR_ZEV,New zero-emission vehicles by type of vehicle and type of motor energy,ok,sdmx,6,67,0,"",2026-08-04
 ROAD_EQS_BUSAGE,"Motor coaches, buses and trolley buses by age",ok,sdmx,5,108,0,"",2026-08-04
+ROAD_EQS_BUSMOT,"Motor coaches, buses and trolley buses, by type of motor energy",ok,sdmx,5,72,0,"",2026-08-05
+ROAD_EQS_BUSMOT_H,"Motor coaches, buses and trolley buses by type of motor energy (until 2013)",ok,sdmx,5,83,0,"",2026-08-05
+ROAD_EQS_BUSSEA,"Seats /berths in motor coaches, buses and trolley buses",ok,sdmx,4,67,0,"",2026-08-05
+ROAD_EQS_BUSVEH,"Motor coaches, buses and trolley buses, by type of vehicle",ok,sdmx,5,106,0,"",2026-08-05
+ROAD_EQS_CARAGE,Passenger cars by age,ok,sdmx,5,63,0,"",2026-08-05
+ROAD_EQS_CARALT,Passenger cars by alternative motor energy (until 2012),ok,sdmx,5,61,0,"",2026-08-05
+ROAD_EQS_CAREMISS,Passenger cars by Euro emission standard,ok,sdmx,5,51,0,"",2026-08-05
+ROAD_EQS_CARHAB,Passenger cars - per thousand inhabitants,ok,sdmx,4,81,0,"",2026-08-05
+ROAD_EQS_CARMOT,"Passenger cars, by type of motor energy and size of engine",ok,sdmx,6,107,0,"",2026-08-05
+ROAD_EQS_CARPDA,"Passenger cars, by type of motor energy",ok,sdmx,6,77,0,"",2026-08-05
+ROAD_EQS_LORMOT,"Lorries, by type of motor energy",ok,sdmx,6,75,0,"",2026-08-05
+ROAD_EQS_LORMOT_H,Lorries by type of motor energy and load capacity (until 2012),ok,sdmx,6,85,0,"",2026-08-05
+ROAD_EQS_LORNUM_H,Lorries by load capacity (until 2012),ok,sdmx,5,88,0,"",2026-08-05
+ROAD_EQS_LORROA,Lorries and road tractors by age and type of vehicle,ok,sdmx,6,69,0,"",2026-08-05
+ROAD_EQS_LORROA_H,Lorries and road tractors by age (until 2012),ok,sdmx,6,87,0,"",2026-08-05
+ROAD_EQS_LORTON,Lorries and their load capacity by permissible maximum gross weight,ok,sdmx,5,65,0,"",2026-08-05
+ROAD_EQS_LORTON_H,Load capacity of lorries (until 2012),ok,sdmx,5,76,0,"",2026-08-05
+ROAD_EQS_MOPEDS,Mopeds and motorcycles by type of motor energy,ok,sdmx,6,105,0,"",2026-08-05
+ROAD_EQS_MOTORC,Motorcycles by engine size,ok,sdmx,5,103,0,"",2026-08-05
+ROAD_EQS_ROAENE,Road tractors by type of motor energy,ok,sdmx,5,71,0,"",2026-08-05
+ROAD_EQS_ROAENE_H,Road tractors by type of motor energy (until 2013),ok,sdmx,5,77,0,"",2026-08-05
+ROAD_EQS_SEMIT,"Semi-trailers and their load capacity, by permissible maximum gross weight",ok,sdmx,5,56,0,"",2026-08-05
+ROAD_EQS_SEMITN,Semi-trailers by load capacity (until 2012),ok,sdmx,5,77,0,"",2026-08-05
+ROAD_EQS_SPURP,Special purpose road vehicles,ok,sdmx,4,58,0,"",2026-08-05
+ROAD_EQS_TRAIL,"Trailers and their load capacity, by permissible maximum gross weight",ok,sdmx,5,60,0,"",2026-08-05
+ROAD_EQS_TRAILN,Trailers by load capacity (until 2012),ok,sdmx,5,82,0,"",2026-08-05
+ROAD_EQS_TRAMS,Trams,ok,sdmx,4,77,0,"",2026-08-05
+ROAD_EQS_UNLWEIG,Passenger cars by unloaded weight,ok,sdmx,5,79,0,"",2026-08-05
+ROAD_EQS_ZEV,Stock of zero-emission vehicles at 31st December by type of vehicle and type of motor energy,ok,sdmx,6,67,0,"",2026-08-05
+ROAD_GO_CA_C,"Road cabotage transport by country in which cabotage takes place (t, tkm) - (from 1999 onwards)",ok,sdmx,4,91,0,"",2026-08-05
+ROAD_GO_CA_D_C,Road cabotage transport by country in which cabotage takes place (tkm) - (1991-1997),ok,sdmx,4,26,0,"",2026-08-05
+ROAD_GO_CA_D_HA,Road cabotage transport performed by each reporting country (tkm) - (1991-1998),ok,sdmx,4,27,0,"",2026-08-05
+ROAD_GO_CA_HAC,"Road cabotage transport of reporting country by country in which cabotage takes place (t, tkm) - (from 1999 onwards)",ok,sdmx,5,127,0,"",2026-08-05
+ROAD_GO_CTA7GTT,"Cross-trade road freight transport of reporting country by country of loading and unloading, type of goods and type of transport (t) - annual data (1990-2007)",ok,sdmx,8,233,0,"",2026-08-05
+ROAD_GO_CTA_GTT,"Cross-trade road freight transport of reporting country by country of loading and unloading, type of goods and type of transport (t) - annual data (from 2008 onwards)",ok,sdmx,8,212,0,"",2026-08-05
+ROAD_GO_CTQ_TT,"Cross-trade road freight transport of reporting country by country of loading and unloading and type of transport (t, tkm) - quarterly data",ok,sdmx,7,351,0,"",2026-08-05
+ROAD_GO_IA7LGTT,"International road freight transport - loaded goods in reporting country by country of unloading, type of goods and type of transport (t) - annual data (1982-2007)",ok,sdmx,7,168,0,"",2026-08-05
+ROAD_GO_IA7UGTT,"International road freight transport - unloaded goods in reporting country by country of loading, type of goods and type of transport (t)- annual data (1982-2007)",ok,sdmx,7,165,0,"",2026-08-05
+ROAD_GO_IA_LGTT,"International road freight transport - loaded goods in reporting country by country of unloading, type of goods and type of transport (t) - annual data (from 2008 onwards)",ok,sdmx,7,152,0,"",2026-08-05
+ROAD_GO_IA_LTT,International road freight transport - loaded goods in reporting country by country of unloading and type of transport (tkm) - annual data,ok,sdmx,6,172,0,"",2026-08-05
+ROAD_GO_IA_RC,"International road freight transport of reporting country, by country of loading and unloading (t, tkm) - annual data",ok,sdmx,6,229,0,"",2026-08-05
+ROAD_GO_IA_RCTG,"International road freight transport of reporting countryby country of loading and unloading and type of goods (t, tkm) - annual data (1999-2007)",ok,sdmx,7,204,0,"",2026-08-05
+ROAD_GO_IA_TC,"International road freight transport by country of loading and unloading (t, tkm) - annual data, EU aggregates (1999-2013)",ok,sdmx,6,180,0,"",2026-08-05
+ROAD_GO_IA_TCTG,"International road freight transport by country of loading and unloading and type of goods (t, tkm) - annual data, EU aggregates (1999-2007)",ok,sdmx,7,176,0,"",2026-08-05
+ROAD_GO_IA_UGTT,"International road freight transport - unloaded goods in reporting country by country of loading, type of goods and type of transport (t) - annual data (from 2008 onwards)",ok,sdmx,7,144,0,"",2026-08-05
+ROAD_GO_IA_UTT,International road freight transport - unloaded goods in reporting country by country of loading and type of transport (tkm) - annual data,ok,sdmx,6,169,0,"",2026-08-05
+ROAD_GO_IQ_LTT,"International road freight transport - loaded goods in reporting country by country of unloading and type of transport (t, tkm) - quarterly data",ok,sdmx,6,273,0,"",2026-08-05
+ROAD_GO_IQ_UTT,"International road freight transport - unloaded goods in reporting country by country of loading and type of transport (t, tkm) - quarterly data",ok,sdmx,6,270,0,"",2026-08-05
+ROAD_GO_NA7DCTG,"National road freight transport by distance class, type of goods and type of transport (t) - annual data (1982-2007)",ok,sdmx,7,88,0,"",2026-08-05
+ROAD_GO_NA7RL3G,National road freight transport by region of loading (NUTS 3) and type of goods (t) - annual data (1999-2007),ok,sdmx,5,1442,0,"",2026-08-05
+ROAD_GO_NA7RU3G,National road freight transport by region of unloading (NUTS 3) and by type of goods (t) - annual data (1999-2007),ok,sdmx,5,1442,0,"",2026-08-05
+ROAD_GO_NA7TGTT,"National road freight transport by type of goods and type of transport (t, tkm) - annual data (1982-2007)",ok,sdmx,6,84,0,"",2026-08-05
+ROAD_GO_NA_DCTG,"National road freight transport by distance class, type of goods and type of transport (t) - annual data (from 2008 onwards)",ok,sdmx,7,82,0,"",2026-08-05
+ROAD_GO_NA_DCTT,National road freight transport by distance class and type of transport (tkm) - annual data,ok,sdmx,6,86,0,"",2026-08-05
+ROAD_GO_NA_RL2G,National road freight transport by region of loading and type of goods (t) - annual data (1982-1999),ok,sdmx,5,179,0,"",2026-08-05
+ROAD_GO_NA_RL3G,National road freight transport by region of loading (NUTS 3) and type of goods (t) - annual data (from 2008 onwards),ok,sdmx,5,2289,0,"",2026-08-05
+ROAD_GO_NA_RL3G$DV_1581,National road freight transport by region of loading (NUTS 3) and type of goods (t) - annual data (from 2008 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ROAD_GO_NA_RL3G$DV_1581'
+For more information check: https://develop",2026-08-05
+ROAD_GO_NA_RU2G,National road freight transport by region of unloading and type of goods (t) - annual data (1982-1999),ok,sdmx,5,179,0,"",2026-08-05
+ROAD_GO_NA_RU3G,National road freight transport by region of unloading (NUTS 3) and type of goods (t) - annual data (from 2008 onwards),ok,sdmx,5,2289,0,"",2026-08-05
+ROAD_GO_NA_RU3G$DV_1582,National road freight transport by region of unloading (NUTS 3) and type of goods (t) - annual data (from 2008 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ROAD_GO_NA_RU3G$DV_1582'
+For more information check: https://develop",2026-08-05
+ROAD_GO_NA_TGTT,"National road transport by type of goods and type of transport (t, tkm) - annual data (from 2008 onwards)",ok,sdmx,6,78,0,"",2026-08-05
+ROAD_GO_TA7DCTG,"Road freight transport by distance class and type of goods (t, tkm, vehicle-km, basic transport operations) - annual data (1999-2007)",ok,sdmx,6,75,0,"",2026-08-05
+ROAD_GO_TA7TG,"Road freight transport by type of goods and type of transport (t, tkm) - annual data (1999-2007)",ok,sdmx,6,67,0,"",2026-08-05
+ROAD_GO_TA_AGEV,"Road freight transport by age of vehicle (tkm, vehicle-km, journeys) - annual data",ok,sdmx,5,80,0,"",2026-08-05
+ROAD_GO_TA_AXLE,"Road freight transport by axle configuration of vehicle (tkm, vehicle-km, journeys) - annual data",ok,sdmx,5,78,0,"",2026-08-05
+ROAD_GO_TA_DC,"Road freight transport by distance class and type of transport (t, tkm, vehicle-km, basic transport operations) - annual data",ok,sdmx,6,82,0,"",2026-08-05
+ROAD_GO_TA_DCTG,"Road freight transport by distance class and type of goods (t, tkm, vehicle-km, basic transport operations) - annual data (from 2008 onwards)",ok,sdmx,6,90,0,"",2026-08-05
+ROAD_GO_TA_DG,"Road freight transport of dangerous goods by type of dangerous goods and territorial coverage (tkm, vehicle-km, basic transport operations) - annual data",ok,sdmx,6,86,0,"",2026-08-05
+ROAD_GO_TA_LC,"Road freight transport by load capacity (LC) of vehicle and type of transport (tkm, vehicle-km, journeys) - annual data",ok,sdmx,6,78,0,"",2026-08-05
+ROAD_GO_TA_MPLW,"Road freight transport by maximum permissible laden weight (MPLW) of vehicle (tkm, vehicle-km, journeys) - annual data",ok,sdmx,5,74,0,"",2026-08-05
+ROAD_GO_TA_NACE,"Road freight transport by NACE Rev. 2 activity of the vehicle operator (tkm, vehicle-km, journeys) - annual data",ok,sdmx,5,654,0,"",2026-08-05
+ROAD_GO_TA_RL,"Road freight transport by region of loading (t, tkm, journeys) - annual data",ok,sdmx,5,3110,0,"",2026-08-05
+ROAD_GO_TA_RU,"Road freight transport by region of unloading (t, tkm, journeys) - annual data",ok,sdmx,5,3151,0,"",2026-08-05
+ROAD_GO_TA_TCRG,"Road freight transport by type of cargo and distance class (t, tkm, vehicle-km, basic transport operations) - annual data",ok,sdmx,6,80,0,"",2026-08-05
+ROAD_GO_TA_TG,"Road freight transport by type of goods and type of transport (t, tkm) - annual data",ok,sdmx,6,83,0,"",2026-08-05
+ROAD_GO_TA_TOTT,"Road freight transport by type of operation and type of transport (t, tkm, vehicle-km) - annual data",ok,sdmx,6,83,0,"",2026-08-05
+ROAD_GO_TA_TRA,"Road freight transport vehicle transit movements by transit country (t, journeys) - annual data",ok,sdmx,5,139,0,"",2026-08-05
+ROAD_GO_TA_TRAT,"Road freight transport vehicle transit movements by transit country, loading status and maximum permissible laden weight (MPLW) of vehicle (t, journeys) - annual data, EU aggregates",ok,sdmx,7,118,0,"",2026-08-05
+ROAD_GO_TA_VM,"Road freight transport vehicle movements by loading status, type of transport and territorial coverage (vehicle-km, journeys) - annual data",ok,sdmx,7,77,0,"",2026-08-05
+ROAD_GO_TQ_TOTT,"Road freight transport by type of operation and type of transport - (t, tkm, vehicle-km) - quarterly data",ok,sdmx,6,200,0,"",2026-08-05
+ROAD_GO_TQ_TRAT,"Road freight transport vehicle transit movements by transit country, loading status and maximum permissible laden weight (MPLW) of vehicle (t, journeys) - quarterly data, EU totals",ok,sdmx,7,199,0,"",2026-08-05
+ROAD_IF_BAREA,Length of other roads within/outside built-up areas,ok,sdmx,5,102,0,"",2026-08-05
+ROAD_IF_BSURFA,Length of paved and unpaved roads,ok,sdmx,5,102,0,"",2026-08-05
+ROAD_IF_MOTORWA,Length of motorways and e-roads,ok,sdmx,5,109,0,"",2026-08-05
+ROAD_IF_RCHCAT,Recharging points per power category by NUTS 3 region - experimental statistics,ok,sdmx,5,141,0,"",2026-08-05
+ROAD_IF_RCHEV,"Electric vehicle recharging pools, stations and points and their power output",ok,sdmx,5,43,0,"",2026-08-05
+ROAD_IF_RCHEVPOW,Recharging points for electric vehicles per power category,ok,sdmx,5,47,0,"",2026-08-05
+ROAD_IF_RCHTOT,Recharging points by NUTS 3 region - experimental statistics,ok,sdmx,4,133,0,"",2026-08-05
+ROAD_IF_RCHTRAT,Maximum and average travel time between recharging points by NUTS 3 region - experimental statistics,ok,sdmx,5,60,0,"",2026-08-05
+ROAD_IF_ROADSC,"Length of state, provincial and communal roads",ok,sdmx,5,103,0,"",2026-08-05
+ROAD_PA_BUSCOA,Passenger transport performance of buses and coaches registered in the reporting country by transport coverage,ok,sdmx,5,62,0,"",2026-08-05
+ROAD_PA_MOV,National passenger road transport performance by type of vehicles registered in the reporting country,ok,sdmx,5,99,0,"",2026-08-05
+ROAD_TERT_GO,"Territorialised road freight transport, by transport coverage - annual data",ok,sdmx,5,58,0,"",2026-08-05
+ROAD_TF_BUSCOA,Buses and coaches traffic performance registered in the reporting country by transport covarage,ok,sdmx,5,56,0,"",2026-08-05
+ROAD_TF_ROAD,National road traffic performance by type of vehicle and type of road,ok,sdmx,6,57,0,"",2026-08-05
+ROAD_TF_ROAD_H,National road traffic performance by type of vehicle and type of road (until 2012),ok,sdmx,6,56,0,"",2026-08-05
+ROAD_TF_VEH,"Road traffic performance by category of vehicle registration and traffic, type of vehicle and motor energy",ok,sdmx,7,71,0,"",2026-08-05
+ROAD_TF_VEHAGE,"Road traffic performance on national and foreign territory by age of vehicle, type of vehicle and motor energy",ok,sdmx,7,67,0,"",2026-08-05
+ROAD_TF_VEHMOV,Road motor vehicle traffic performance by traffic and registration location and type of vehicle,ok,sdmx,6,57,0,"",2026-08-05
+ROAD_TF_VEH_H,"Road traffic performance by traffic and registration location, type of vehicle and motor energy (until 2012)",ok,sdmx,7,69,0,"",2026-08-05
+SBS_CRE_6G_01,Annual enterprise statistics by geographical breakdown (2001-2005),ok,sdmx,6,78,0,"",2026-08-05
+SBS_CRE_ELEGSTA,Number of enterprises and balance sheet total by legal status (1997-2012),ok,sdmx,6,62,0,"",2026-08-05
+SBS_CRE_ERES,Number of enterprises and balance sheet total by residence of the parent enterprise (1997-2012),ok,sdmx,6,56,0,"",2026-08-05
+SBS_CRE_ESC,Number of enterprises by size class of balance sheet total (1997-2012),ok,sdmx,6,61,0,"",2026-08-05
+SBS_CRE_GBEEA,Business written by EEA branches (1997-2001),ok,sdmx,9,53,0,"",2026-08-05
+SBS_CRE_GBNEEA,Business written in non-EEA countries (1997-2001),ok,sdmx,9,45,0,"",2026-08-05
+SBS_CRE_GEEA,Number of EEA branches (1997-2001),ok,sdmx,9,55,0,"",2026-08-05
+SBS_CRE_GFINSUB,Financial subsidiaries in other countries (1997-2001),ok,sdmx,9,51,0,"",2026-08-05
+SBS_CRE_GNEEA,Number of branches in non-EEA countries (1997-2001),ok,sdmx,9,37,0,"",2026-08-05
+SBS_CRE_ICAT,Number of enterprises and persons employed by category of credit institutions (1997-2012),ok,sdmx,6,59,0,"",2026-08-05
+SBS_CRE_PACC,Number of accounts linked to CPA categories (1997-2001),ok,sdmx,10,44,0,"",2026-08-05
+SBS_CRE_PCPAY,Commissions payable by product (1997-2001),ok,sdmx,10,58,0,"",2026-08-05
+SBS_CRE_PCREC,Commissions receivable by product (1997-2001),ok,sdmx,10,58,0,"",2026-08-05
+SBS_CRE_PINTPAY,Interests payable and similar charges by product (1997-2001),ok,sdmx,10,55,0,"",2026-08-05
+SBS_CRE_PINTREX,Interests receivable and similar income by product (1997-2001),ok,sdmx,10,56,0,"",2026-08-05
+SBS_CRE_PLOANS,Number of loans and advances to customers linked to CPA categories (1997-2001),ok,sdmx,10,53,0,"",2026-08-05
+SBS_CRE_PROD,Annual enterprise statistics by product (2002-2007),ok,sdmx,6,62,0,"",2026-08-05
+SBS_CRE_RREG,"Number of local units, persons employed and wages and salaries by NUTS 2 region (1997-2007)",ok,sdmx,5,151,0,"",2026-08-05
+SBS_CRE_TANNEX1,Economic variables being part of Annex1 to Council Regulation 58/97 (1992-2001),ok,sdmx,8,66,0,"",2026-08-05
+SBS_CRE_TENT,Annual enterprise statistics (1999-2012),ok,sdmx,5,92,0,"",2026-08-05
+SBS_CRE_TSPE,"Sector specific variables - profit and loss account, balance sheet, additional accounting variables (1992-2001)",ok,sdmx,9,72,0,"",2026-08-05
+SBS_ENV_2B_02,"Environmental protection expenditure by environmental domains (NACE Rev. 1.1, C-E) (2001-2007)",ok,sdmx,6,83,0,"",2026-08-05
+SBS_ENV_2B_95,"Environmental protection expenditure in industry (NACE Rev. 1.1, C-E) (1995-2001)",ok,sdmx,5,47,0,"",2026-08-05
+SBS_ENV_2O_SC01,"Environmental protection expenditure by size class (NACE Rev. 1.1, C-E) (2001-2007)",ok,sdmx,6,83,0,"",2026-08-05
+SBS_ENV_DOM_R2,"Environmental protection expenditure by environmental domains (NACE Rev. 2, B-E) (2008-2015)",ok,sdmx,6,83,0,"",2026-08-05
+SBS_ENV_SC_R2,"Environmental protection expenditure by size class (NACE Rev. 2, B-E) (2008-2018)",ok,sdmx,6,81,0,"",2026-08-05
+SBS_INS_5A,Annual enterprise statistics (1985-2012),ok,sdmx,5,176,0,"",2026-08-05
+SBS_INS_5B,Annual enterprise statistics by legal status (1995-2012),ok,sdmx,6,64,0,"",2026-08-05
+SBS_INS_5C,Annual enterprise statistics according to the country of residence of the parent enterprise (1995-2012),ok,sdmx,6,62,0,"",2026-08-05
+SBS_INS_5D1,Annual enterprise statistics by size class of gross premium written (1995-2012),ok,sdmx,6,62,0,"",2026-08-05
+SBS_INS_5D2,Annual enterprise statistics by size class of technical provisions (1995-2012),ok,sdmx,6,58,0,"",2026-08-05
+SBS_INS_5E,Annual enterprise statistics by product (1995-2007),ok,sdmx,6,79,0,"",2026-08-05
+SBS_INS_5FCO04,Annual enterprise statistics by geographical breakdown (2004-2007),ok,sdmx,6,81,0,"",2026-08-05
+SBS_INS_5FCO96,Annual enterprise statistics by geographical breakdown (1995-2003),ok,sdmx,6,70,0,"",2026-08-05
+SBS_INS_5FFP04,Annual enterprise statistics by geographical breakdown and products (2004-2007),ok,sdmx,7,86,0,"",2026-08-05
+SBS_INS_5FFP96,Annual enterprise statistics by geographical breakdown and products (1995-2003),ok,sdmx,7,77,0,"",2026-08-05
+SBS_IS_2J_INTAN,"Multi-yearly enterprise statistics - intangible investment and subcontracting (NACE Rev. 1.1, C-F) (1997-2007)",ok,sdmx,5,432,0,"",2026-08-05
+SBS_IS_2K_SUB02,"Multi-yearly enterprise statistics - subcontracting by size class (NACE Rev. 1.1, C-F) (2002-2007)",ok,sdmx,6,210,0,"",2026-08-05
+SBS_IS_2K_SUB99,"Multi-yearly enterprise statistics - subcontracting by size class (NACE Rev. 1.1, C-F) (1999-2001)",ok,sdmx,6,194,0,"",2026-08-05
+SBS_IS_INV_R2,"Multiannual enterprise statistics - intangible investment statistics for industry and construction (NACE Rev. 2, B-F) (2009-2018)",ok,sdmx,5,464,0,"",2026-08-05
+SBS_IS_SC_R2,"Multi-yearly enterprise statistics - subcontracting by size class for construction (NACE Rev. 2, F) (2008-2020)",ok,sdmx,6,54,0,"",2026-08-05
+SBS_IS_SUBC_R2,"Multi-yearly enterprise statistics - subcontracting for industry and construction (NACE Rev. 2, B-F) (2008-2020)",ok,sdmx,5,487,0,"",2026-08-05
+SBS_MLENV_DOM_R2,Multiannual enterprises statistics on environmental protection expenditure by environmental domains for industry (NACE Rev. 2 B-E) (2010-2016),ok,sdmx,6,72,0,"",2026-08-05
+SBS_MLENV_SC_R2,Multiannual enterprises statistics on environmental protection expenditure by size class for industry (NACE Rev. 2 B-E) (2010-2016),ok,sdmx,6,71,0,"",2026-08-05
+SBS_NA_1A_SE,Annual detailed enterprise statistics on services (NACE Rev. 1.1 H-K) (1995-2007),ok,sdmx,5,199,0,"",2026-08-05
+SBS_NA_1A_SE_R2,Annual detailed enterprise statistics for services (NACE Rev. 2 H-N and S95) (2005-2020),ok,sdmx,5,327,0,"",2026-08-05
+SBS_NA_2A_DADE,"Annual detailed enterprise statistics on manufacturing subsections DA-DE and total manufacturing (NACE Rev. 1.1, D) (1995-2008)",ok,sdmx,5,244,0,"",2026-08-05
+SBS_NA_2A_DFDN,"Annual detailed enterprise statistics on manufacturing, subsections DF-DN and total (NACE Rev. 1.1, D) (1995-2008)",ok,sdmx,5,332,0,"",2026-08-05
+SBS_NA_2A_EL,"Annual detailed enterprise statistics on electricity, gas and water supply (NACE Rev. 1.1, E) (1995-2008)",ok,sdmx,5,132,0,"",2026-08-05
+SBS_NA_2A_MI,"Annual detailed enterprise statistics on mining and quarrying (NACE Rev. 1.1, C) (1995-2008)",ok,sdmx,5,146,0,"",2026-08-05
+SBS_NA_2C_OWN,"Annual enterprise statistics by type of ownership in industry and construction (NACE Rev. 1.1, C-F) (1995-2001)",ok,sdmx,6,212,0,"",2026-08-05
+SBS_NA_3B_TR,Annual detailed enterprise statistics on trade (NACE Rev. 1.1 G) (1990-2008),ok,sdmx,5,203,0,"",2026-08-05
+SBS_NA_4A_CO,"Annual detailed enterprise statistics on construction (NACE Rev. 1.1, F) (1995-2008)",ok,sdmx,5,141,0,"",2026-08-05
+SBS_NA_CON_R2,"Annual detailed enterprise statistics for construction (NACE Rev. 2, F) (2005-2020)",ok,sdmx,5,146,0,"",2026-08-05
+SBS_NA_DT_R2,Annual detailed enterprise statistics for trade (NACE Rev. 2 G) (2005-2020),ok,sdmx,5,213,0,"",2026-08-05
+SBS_NA_INDC_LGT,"Long time series covering enterprises with 20 persons employed and more, main indicators (NACE Rev. 1.1, C-F) (1985-2008)",ok,sdmx,5,249,0,"",2026-08-05
+SBS_NA_IND_R2,"Annual detailed enterprise statistics for industry (NACE Rev. 2, B-E) (2005-2020)",ok,sdmx,5,526,0,"",2026-08-05
+SBS_NA_SCA_R2,Annual enterprise statistics for special aggregates of NACE Rev.2 activities (2005-2020),ok,sdmx,5,199,0,"",2026-08-05
+SBS_NA_SCA_R2$DV_123,Annual enterprise statistics for special aggregates of NACE Rev.2 activities (2005-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_NA_SCA_R2$DV_123'
+For more information check: https://developer.",2026-08-05
+SBS_OVW_ACT,Enterprises by detailed NACE Rev. 2 activity and special aggregates,ok,sdmx,5,1009,0,"",2026-08-05
+SBS_OVW_ACT$DV_1481,Enterprises by detailed NACE Rev. 2 activity and special aggregates,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_OVW_ACT$DV_1481'
+For more information check: https://developer.m",2026-08-05
+SBS_OVW_ACT$DV_1521,Enterprises by detailed NACE Rev. 2 activity and special aggregates,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_OVW_ACT$DV_1521'
+For more information check: https://developer.m",2026-08-05
+SBS_OVW_ACT$DV_1587,Enterprises by detailed NACE Rev. 2 activity and special aggregates,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_OVW_ACT$DV_1587'
+For more information check: https://developer.m",2026-08-05
+SBS_OVW_ACT$DV_2301,Enterprises by detailed NACE Rev. 2 activity and special aggregates,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_OVW_ACT$DV_2301'
+For more information check: https://developer.m",2026-08-05
+SBS_OVW_IEP,"Investment, expenditure and purchases of enterprises by NACE Rev. 2 activity",ok,sdmx,5,94,0,"",2026-08-05
+SBS_OVW_SMC,Enterprises by extended size classes (including Small Mid Caps) and NACE Rev. 2 activity,ok,sdmx,6,55,0,"",2026-08-05
+SBS_PART_BSCL,Enterprises in business services - net turnover by residence of client,ok,sdmx,5,50,0,"",2026-08-05
+SBS_PART_BSPRD,Enterprises in business services - net turnover by kind of product (CPA 2.1),ok,sdmx,5,140,0,"",2026-08-05
+SBS_PART_CON,"Enterprises in construction (NACE Rev.2, F) - net turnover",ok,sdmx,5,39,0,"",2026-08-05
+SBS_PART_RT,"Enterprises in retail trade (NACE Rev.2, G47) - net turnover",ok,sdmx,5,32,0,"",2026-08-05
+SBS_PART_WTSCT,"Enterprises in wholesale trade, repair of vehicles and motorcycles (NACE Rev.2, G) by size class of turnover",ok,sdmx,6,76,0,"",2026-08-05
+SBS_PART_WTSTCK,"Enterprises in wholesale trade, repair of vehicles and motorcycles (NACE Rev.2, G) - changes in stocks",ok,sdmx,5,43,0,"",2026-08-05
+SBS_PART_XRTVC,"Enterprises in NACE Rev.2 Sections B to G (except G45, G47) - net turnover from selected activities",ok,sdmx,5,208,0,"",2026-08-05
+SBS_PEN_7A,Autonomous pension funds - all indicators (1997-2012),ok,sdmx,5,114,0,"",2026-08-05
+SBS_PEN_7B1,Autonomous pension funds - number of enterprises by size class of investments (1997-2012),ok,sdmx,5,49,0,"",2026-08-05
+SBS_PEN_7B2,Autonomous pension funds - number of enterprises by size class of members (1997-2012),ok,sdmx,5,52,0,"",2026-08-05
+SBS_PEN_7C,Autonomous pension funds - total investments by currencies (2003-2012),ok,sdmx,5,38,0,"",2026-08-05
+SBS_PEN_7D,Autonomous pension funds - geographical breakdown (1997-2012),ok,sdmx,6,53,0,"",2026-08-05
+SBS_PEN_7E,Non-autonomous pension funds (1997-2007),ok,sdmx,5,39,0,"",2026-08-05
+SBS_PEN_ENTEEA,Enterprises with members in other EEA countries (1988-2000),ok,sdmx,7,30,0,"",2026-08-05
+SBS_PU_2L_97,"Multi-yearly enterprise statistics - purchases of energy products (NACE Rev. 1.1, C, D, F) (1997-2001)",ok,sdmx,5,408,0,"",2026-08-05
+SBS_PU_4L_02,"Multi-yearly enterprise statistics - purchases of energy products (NACE Rev. 1.1, C, D, F) (1999-2007)",ok,sdmx,5,207,0,"",2026-08-05
+SBS_R_3F_MY,Multi yearly statistics by NUTS 2 region (NUTS 2006) (1999-2004),ok,sdmx,5,291,0,"",2026-08-05
+SBS_R_3K_MY_R2,"Multiannual statistics for distributive trades (NACE Rev. 2, G) by NUTS 2 region (2009-2014)",ok,sdmx,5,484,0,"",2026-08-05
+SBS_R_NUTS03,SBS data by NUTS 2 region (NUTS 2006) and NACE Rev. 1.1 (1995-2007),ok,sdmx,5,550,0,"",2026-08-05
+SBS_R_NUTS06_R2,SBS data by NUTS 2 region and NACE Rev. 2 (2008-2020),ok,sdmx,5,656,0,"",2026-08-05
+SBS_R_NUTS2021,Enterprises by NUTS 2 region and NACE Rev.2 activity,ok,sdmx,5,517,0,"",2026-08-05
+SBS_SCTRN_DT_R2,"Distributive trades by size class of turnover (NACE Rev. 2, G) (2008-2018)",ok,sdmx,6,86,0,"",2026-08-05
+SBS_SC_1B_SE02,"Services by employment size class (NACE Rev. 1.1, H-K) (2002-2007)",ok,sdmx,6,121,0,"",2026-08-05
+SBS_SC_1B_SE95,"Services by employment size class (NACE Rev. 1.1, H-K) (1995-2001)",ok,sdmx,6,125,0,"",2026-08-05
+SBS_SC_1B_SE_R2,"Services by employment size class (NACE Rev. 2, H-N, S95) (2005-2020)",ok,sdmx,6,179,0,"",2026-08-05
+SBS_SC_1B_SE_R2$DV_664,"Services by employment size class (NACE Rev. 2, H-N, S95) (2005-2020)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_1B_SE_R2$DV_664'
+For more information check: https://develope",2026-08-05
+SBS_SC_2D_DADE02,"Manufacturing, subsections DA-DE and total (NACE Rev. 1.1, D) by employment size class (from 2002 onwards)",ok,sdmx,6,128,0,"",2026-08-05
+SBS_SC_2D_DADE95,"Manufacturing, subsections DA-DE and total (NACE Rev. 1.1, D) by employment size class (1995-2001)",ok,sdmx,6,132,0,"",2026-08-05
+SBS_SC_2D_DFDN02,"Manufacturing subsections DF-DN and total (NACE Rev. 1.1, D) by employment size class (2002-2007)",ok,sdmx,6,176,0,"",2026-08-05
+SBS_SC_2D_DFDN95,"Manufacturing, subsections DF-DN and total (NACE Rev. 1.1, D) by employment size class (1995-1997)",ok,sdmx,6,171,0,"",2026-08-05
+SBS_SC_2D_DFDN98,"Manufacturing, subsections DF-DN and total (NACE Rev. 1.1, D) by employment size class (1998-2001)",ok,sdmx,6,177,0,"",2026-08-05
+SBS_SC_2D_EL02,"Electricity, gas and water by employment size class (NACE Rev. 1.1, E) (2002-2007)",ok,sdmx,6,84,0,"",2026-08-05
+SBS_SC_2D_EL95,"Electricity, gas and water by employment size class (NACE Rev. 1.1, E) (1995-2001)",ok,sdmx,6,90,0,"",2026-08-05
+SBS_SC_2D_MI02,"Mining and quarrying by employment size class (NACE Rev. 1.1, C) (2002-2007)",ok,sdmx,6,99,0,"",2026-08-05
+SBS_SC_2D_MI95,"Mining and quarrying by employment size class (NACE Rev. 1.1, C) (1995-2001)",ok,sdmx,6,106,0,"",2026-08-05
+SBS_SC_3CE_TR02,"Distributive trades by employment size class (NACE Rev. 1.1, G) (2002-2007)",ok,sdmx,6,76,0,"",2026-08-05
+SBS_SC_3CE_TR95,"Distributive trades by employment size class (NACE Rev. 1, G) (1995-2007)",ok,sdmx,6,88,0,"",2026-08-05
+SBS_SC_3CTRN_TR,"Distributive trades by size class of turnover (NACE Rev. 1.1, G) (1995-2007)",ok,sdmx,6,83,0,"",2026-08-05
+SBS_SC_4D_CO02,"Construction by employment size class (NACE Rev. 1.1, F) (2002-2007)",ok,sdmx,6,81,0,"",2026-08-05
+SBS_SC_4D_CO95,"Construction by employment size class (NACE Rev. 1.1, F) (1995-2001)",ok,sdmx,6,84,0,"",2026-08-05
+SBS_SC_CON_R2,"Construction by employment size class (NACE Rev. 2, F) (2005-2020)",ok,sdmx,6,103,0,"",2026-08-05
+SBS_SC_DT_R2,"Distributive trades by employment size class (NACE Rev. 2, G) (2005-2020)",ok,sdmx,6,96,0,"",2026-08-05
+SBS_SC_IND_R2,"Industry by employment size class (NACE Rev. 2, B-E) (2005-2020)",ok,sdmx,6,246,0,"",2026-08-05
+SBS_SC_IND_R2$DV_665,"Industry by employment size class (NACE Rev. 2, B-E) (2005-2020)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_IND_R2$DV_665'
+For more information check: https://developer.",2026-08-05
+SBS_SC_OVW,Enterprise statistics by size class and NACE Rev. 2 activity (from 2021 onwards),ok,sdmx,6,426,0,"",2026-08-05
+SBS_SC_OVW$DV_1482,Enterprise statistics by size class and NACE Rev. 2 activity (from 2021 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_OVW$DV_1482'
+For more information check: https://developer.mo",2026-08-05
+SBS_SC_OVW$DV_1601,Enterprise statistics by size class and NACE Rev. 2 activity (from 2021 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_OVW$DV_1601'
+For more information check: https://developer.mo",2026-08-05
+SBS_SC_OVW$DV_2302,Enterprise statistics by size class and NACE Rev. 2 activity (from 2021 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_OVW$DV_2302'
+For more information check: https://developer.mo",2026-08-05
+SBS_SC_OVW$DV_3243,Enterprise statistics by size class and NACE Rev. 2 activity (from 2021 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_OVW$DV_3243'
+For more information check: https://developer.mo",2026-08-05
+SBS_SC_SCA_R2,Annual enterprise statistics by size class for special aggregates of NACE Rev.2 activities (2005-2020),ok,sdmx,6,298,0,"",2026-08-05
+SBS_SC_SCA_R2$DV_342,Annual enterprise statistics by size class for special aggregates of NACE Rev.2 activities (2005-2020),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SBS_SC_SCA_R2$DV_342'
+For more information check: https://developer.",2026-08-05
+SBS_TURN_CON_R2,"Turnover statistics for construction (NACE Rev. 2, F) (2008-2020)",ok,sdmx,5,51,0,"",2026-08-05
+SBS_TURN_IND_R2,"Turnover statistics for industry (NACE Rev. 2, B-E) (2008-2018)",ok,sdmx,5,188,0,"",2026-08-05
+SDG_01_10,Persons at risk of poverty or social exclusion,ok,sdmx,5,56,0,"",2026-08-05
+SDG_01_10A,Share of persons at risk of poverty or social exclusion by degree of urbanisation,ok,sdmx,5,56,0,"",2026-08-05
+SDG_01_20,Persons at risk of monetary poverty after social transfers - EU-SILC and ECHP surveys,ok,sdmx,8,74,0,"",2026-08-05
+SDG_01_20A,Persons at risk of monetary poverty after social transfers by citizenship,ok,sdmx,7,73,0,"",2026-08-05
+SDG_01_31,Severe material and social deprivation rate by age group and sex,ok,sdmx,6,59,0,"",2026-08-05
+SDG_01_40,"Persons living in households with very low work intensity, by age group",ok,sdmx,6,57,0,"",2026-08-05
+SDG_01_41,In work at-risk-of-poverty rate,ok,sdmx,7,71,0,"",2026-08-05
+SDG_01_50,Housing cost overburden rate by poverty status,ok,sdmx,7,73,0,"",2026-08-05
+SDG_02_10,Obesity rate by body mass index (BMI),ok,sdmx,5,51,0,"",2026-08-05
+SDG_02_20,Agricultural real factor income per annual work unit (AWU),ok,sdmx,5,66,0,"",2026-08-05
+SDG_02_30,Government support to agricultural research and development,ok,sdmx,5,69,0,"",2026-08-05
+SDG_02_40,Area under organic farming,ok,sdmx,6,69,0,"",2026-08-05
+SDG_02_53,Use and risk of chemical pesticides,ok,sdmx,5,44,0,"",2026-08-05
+SDG_02_60,Ammonia emissions from agriculture,ok,sdmx,4,72,0,"",2026-08-05
+SDG_03_11,Healthy life years at birth by sex,ok,sdmx,6,61,0,"",2026-08-05
+SDG_03_12,Healthy life expectancy based on self-perceived health,ok,sdmx,6,62,0,"",2026-08-05
+SDG_03_20,Share of people with good or very good perceived health by sex,ok,sdmx,8,72,0,"",2026-08-05
+SDG_03_30,Smoking prevalence by sex,ok,sdmx,6,48,0,"",2026-08-05
+SDG_03_41,"Standardised death rate due to tuberculosis, HIV and hepatitis by type of disease",ok,sdmx,4,70,0,"",2026-08-05
+SDG_03_42,Standardised preventable and treatable mortality,ok,sdmx,7,59,0,"",2026-08-05
+SDG_03_60,Self-reported unmet need for medical examination and care by sex,ok,sdmx,8,69,0,"",2026-08-05
+SDG_03_70,Consumption of antibiotics in the community and hospital sectors - defined daily doses (DDD) per day,ok,sdmx,4,44,0,"",2026-08-05
+SDG_04_10,Early leavers from education and training by sex,ok,sdmx,7,72,0,"",2026-08-05
+SDG_04_10A,Early leavers from education and training by citizenship,ok,sdmx,8,68,0,"",2026-08-05
+SDG_04_20,Persons aged 25-34 with tertiary educational attainment level,ok,sdmx,7,72,0,"",2026-08-05
+SDG_04_31,Participation in early childhood education by sex (children aged 3 and over),ok,sdmx,5,56,0,"",2026-08-05
+SDG_04_40,"Low achieving 15-year-olds in reading, mathematics or science",ok,sdmx,6,58,0,"",2026-08-05
+SDG_04_60,Adult participation in learning by sex,ok,sdmx,6,71,0,"",2026-08-05
+SDG_04_70,"Share of individuals having at least basic digital skills, by sex",ok,sdmx,6,49,0,"",2026-08-05
+SDG_05_11,Physical and sexual violence to women by age group,ok,sdmx,5,46,0,"",2026-08-05
+SDG_05_20,Gender pay gap in unadjusted form,ok,sdmx,5,64,0,"",2026-08-05
+SDG_05_30,"Gender employment gap, by type of employment",ok,sdmx,6,62,0,"",2026-08-05
+SDG_05_40,Persons outside the labour force due to caring responsibilities by sex,ok,sdmx,7,67,0,"",2026-08-05
+SDG_05_50,Seats held by women in national parliaments and governments,ok,sdmx,6,70,0,"",2026-08-05
+SDG_05_61,Positions held by women in senior management,ok,sdmx,6,54,0,"",2026-08-05
+SDG_06_10,"Population having neither a bath, nor a shower, nor indoor flushing toilet in their household by poverty status",ok,sdmx,8,70,0,"",2026-08-05
+SDG_06_20,Population connected to at least secondary wastewater treatment,ok,sdmx,5,68,0,"",2026-08-05
+SDG_06_30,Biochemical oxygen demand in rivers,ok,sdmx,4,56,0,"",2026-08-05
+SDG_06_40,Nitrate in groundwater,ok,sdmx,5,56,0,"",2026-08-05
+SDG_06_50,Phosphate in rivers,ok,sdmx,5,56,0,"",2026-08-05
+SDG_06_60,"Water exploitation index, plus (WEI+)",ok,sdmx,5,65,0,"",2026-08-05
+SDG_06_70,Pesticides in rivers,ok,sdmx,4,46,0,"",2026-08-05
+SDG_07_10,Primary energy consumption,ok,sdmx,4,66,0,"",2026-08-05
+SDG_07_11,Final energy consumption,ok,sdmx,4,66,0,"",2026-08-05
+SDG_07_20,Final energy consumption in households per capita,ok,sdmx,4,71,0,"",2026-08-05
+SDG_07_30,Energy productivity,ok,sdmx,4,69,0,"",2026-08-05
+SDG_07_40,Share of renewable energy in gross final energy consumption by sector,ok,sdmx,5,69,0,"",2026-08-05
+SDG_07_50,Energy import dependency by products,ok,sdmx,5,75,0,"",2026-08-05
+SDG_07_60,Population unable to keep home adequately warm by poverty status,ok,sdmx,6,72,0,"",2026-08-05
+SDG_08_10,Real GDP per capita,ok,sdmx,5,70,0,"",2026-08-05
+SDG_08_11,Investment share of GDP by institutional sectors,ok,sdmx,5,68,0,"",2026-08-05
+SDG_08_20,Young persons neither in employment nor in education and training (NEET) by sex,ok,sdmx,6,67,0,"",2026-08-05
+SDG_08_20A,Young persons neither in employment nor in education and training (NEET) by citizenship,ok,sdmx,9,69,0,"",2026-08-05
+SDG_08_30,Employment rate by sex,ok,sdmx,7,62,0,"",2026-08-05
+SDG_08_30A,Employment rate by citizenship,ok,sdmx,7,71,0,"",2026-08-05
+SDG_08_40,Long-term unemployment rate by sex,ok,sdmx,7,62,0,"",2026-08-05
+SDG_08_60,"Fatal accidents at work per 100 000 workers, by sex",ok,sdmx,7,57,0,"",2026-08-05
+SDG_09_10,Gross domestic expenditure on R&D by sector,ok,sdmx,5,77,0,"",2026-08-05
+SDG_09_30,R&D personnel by sector,ok,sdmx,7,77,0,"",2026-08-05
+SDG_09_40,Patent applications to the European Patent Office by applicants' / inventors' country of residence,ok,sdmx,5,67,0,"",2026-08-05
+SDG_09_50,Share of buses and trains in inland passenger transport,ok,sdmx,5,68,0,"",2026-08-05
+SDG_09_60,Share of rail and inland waterways in inland freight transport,ok,sdmx,5,59,0,"",2026-08-05
+SDG_09_70,Air emissions intensity of manufacturing,ok,sdmx,7,58,0,"",2026-08-05
+SDG_10_10,Purchasing power adjusted GDP per capita,ok,sdmx,6,76,0,"",2026-08-05
+SDG_10_20,Disparities in adjusted gross disposable income of households per capita,ok,sdmx,4,29,0,"",2026-08-05
+SDG_10_30,Relative median at-risk-of-poverty gap,ok,sdmx,8,73,0,"",2026-08-05
+SDG_10_41,Income quintile share ratio,ok,sdmx,6,70,0,"",2026-08-05
+SDG_10_50,Income share of the bottom 40 % of the population,ok,sdmx,4,70,0,"",2026-08-05
+SDG_10_60,Asylum applications by state of procedure,ok,sdmx,5,55,0,"",2026-08-05
+SDG_11_11,Severe housing deprivation rate by poverty status,ok,sdmx,7,69,0,"",2026-08-05
+SDG_11_20,"Population living in households considering that they suffer from noise, by poverty status",ok,sdmx,6,68,0,"",2026-08-05
+SDG_11_32,Soil sealing,ok,sdmx,4,49,0,"",2026-08-05
+SDG_11_40,"Road traffic deaths, by type of roads",ok,sdmx,5,69,0,"",2026-08-05
+SDG_11_52,Premature deaths due to exposure to fine particulate matter (PM2.5),ok,sdmx,6,63,0,"",2026-08-05
+SDG_11_60,Recycling rate of municipal waste,ok,sdmx,4,67,0,"",2026-08-05
+SDG_12_10,Consumption of chemicals by hazardousness - EU aggregate,ok,sdmx,6,29,0,"",2026-08-05
+SDG_12_21,Material footprint,ok,sdmx,6,65,0,"",2026-08-05
+SDG_12_31,Consumption footprint - single weighted score,ok,sdmx,5,51,0,"",2026-08-05
+SDG_12_41,Circular material use rate,ok,sdmx,4,56,0,"",2026-08-05
+SDG_12_51,Generation of waste by hazardousness,ok,sdmx,7,59,0,"",2026-08-05
+SDG_12_61,Gross value added in environmental goods and services sector,ok,sdmx,8,59,0,"",2026-08-05
