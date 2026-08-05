@@ -165,6 +165,28 @@ def _load_and_filter(dataset_id: str, filters: dict[str, Any]) -> dict[str, Any]
     return ds
 
 
+def _print_bad_request_hint(dataset_id: str, ds: dict[str, Any] | None) -> None:
+    """Explain a 400/404 on a data request without guessing which part is wrong.
+
+    Two things can be off: a filter value that does not exist, or a dimension
+    left unfiltered (a legal wildcard slot for most providers, but some reject
+    it). Naming the unfiltered dimensions turns the old blanket "check filter
+    values" into something the user can act on.
+    """
+    err_console.print(
+        f"[yellow]Hint:[/yellow] check filter values with: "
+        f"[cyan]opensdmx constraints {dataset_id}[/cyan]"
+    )
+    if not ds:
+        return
+    unfiltered = [d for d, v in ds.get("filters", {}).items() if v in ("", ".")]
+    if unfiltered:
+        err_console.print(
+            f"[yellow]Hint:[/yellow] no filter set on: [bold]{', '.join(unfiltered)}[/bold] "
+            f"— those slots are left as wildcards; set them if the provider rejects the query."
+        )
+
+
 def _fetch_frame(
     ds: dict[str, Any],
     *,
@@ -555,7 +577,13 @@ def values(
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive)"),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
-    """Show available values for a dimension.
+    """Show a dimension's codelist — its definition, not the dataflow's content.
+
+    A codelist is shared across dataflows, so most of its codes are usually
+    absent from any single one: `opensdmx constraints DATASET_ID DIM` is the
+    command that lists the codes you can actually filter on. When those
+    constraints are already cached, the `in_dataflow` column flags each code
+    here for free, with no extra request.
 
     Default provider: eurostat. Use --provider to switch.
 
@@ -569,7 +597,11 @@ def values(
     _apply_provider(provider)
     _apply_headers(header)
 
+    import polars as pl
+
     from . import get_dimension_values, load_dataset
+    from .db_cache import get_cached_available_constraints
+    from .discovery import constrained_codes
     try:
         with _status_ctx("[dim]Loading...[/dim]"):
             ds = load_dataset(dataset_id)
@@ -582,22 +614,57 @@ def values(
         err_console.print(f"[yellow]No values found for dimension:[/yellow] {dim}")
         raise typer.Exit(1)
 
+    # Which of these codes exist in the dataflow? Read from the local cache
+    # only: a codelist lookup must never start paying for the constraint chain
+    # (slow, rate-limited on some providers) it never used before. None means
+    # "unknown" — never "no valid codes", since a provider's constraints can
+    # omit a dimension entirely.
+    present = constrained_codes(get_cached_available_constraints(ds["df_id"]), dim)
+    if present is not None:
+        val_df = val_df.with_columns(pl.col("id").is_in(list(present)).alias("in_dataflow"))
+
+    # Counted before --grep: the footer reports the dataflow's coverage of the
+    # whole codelist, not of whatever subset the user grepped.
+    total = len(val_df)
+    n_present = int(val_df["in_dataflow"].sum()) if present is not None else 0
+
     if grep:
         val_df = _filter_by_grep(val_df, grep, ["id", "name"])
 
     if _output_mode != "table":
-        rows = [{"id": r["id"] or "", "name": r["name"] or ""} for r in val_df.iter_rows(named=True)]
+        rows = [
+            {"id": r["id"] or "", "name": r["name"] or "", "in_dataflow": r.get("in_dataflow")}
+            for r in val_df.iter_rows(named=True)
+        ]
         _emit(rows, df=val_df)
         return
 
     table = Table(title=f"{dataset_id} / {dim}", show_lines=False)
     table.add_column("id", style="cyan", no_wrap=True)
     table.add_column("name")
+    if present is not None:
+        table.add_column("in_dataflow", no_wrap=True)
 
     for row in val_df.iter_rows(named=True):
-        table.add_row(row["id"] or "", row["name"] or "")
+        cells = [row["id"] or "", row["name"] or ""]
+        if present is not None:
+            cells.append("[green]yes[/green]" if row["in_dataflow"] else "[dim]no[/dim]")
+        table.add_row(*cells)
 
     console.print(table)
+
+    if present is not None:
+        console.print(
+            f"[dim]{n_present} of {total} codes are present in this dataflow "
+            f"(cached constraints). Just those:[/dim] "
+            f"[cyan]opensdmx constraints {dataset_id} {dim}[/cyan]"
+        )
+    else:
+        console.print(
+            "[dim]This is the codelist definition — most codes may be absent from this "
+            "dataflow. For the codes actually present:[/dim] "
+            f"[cyan]opensdmx constraints {dataset_id} {dim}[/cyan]"
+        )
 
 
 @app.command()
@@ -1344,6 +1411,7 @@ def get(
 
     filters = _parse_extra_filters(ctx)
 
+    ds: dict[str, Any] | None = None
     try:
         ds = _load_and_filter(dataset_id, filters)
 
@@ -1383,7 +1451,7 @@ def get(
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         if e.response.status_code in (400, 404):
-            err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
+            _print_bad_request_hint(dataset_id, ds)
         raise typer.Exit(1)
     except typer.Exit:
         # typer.Exit subclasses RuntimeError, so the handler below would swallow
@@ -1544,6 +1612,7 @@ def plot(
 
         filters = _parse_extra_filters(ctx)
 
+        ds = None
         try:
             ds = _load_and_filter(dataset_id, filters)
             df = _fetch_frame(ds, start_period=start_period, end_period=end_period)
@@ -1551,7 +1620,7 @@ def plot(
         except httpx.HTTPStatusError as e:
             err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
             if e.response.status_code in (400, 404):
-                err_console.print("[yellow]Hint:[/yellow] check filter values with: opensdmx constraints <dataset_id>")
+                _print_bad_request_hint(dataset_id, ds)
             raise typer.Exit(1)
         except typer.Exit:
             raise

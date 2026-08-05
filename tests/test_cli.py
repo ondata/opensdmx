@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -172,6 +173,112 @@ def test_constraints_single_dim_missing_suggests_values():
     assert "REF_AREA" in flat
     assert "not exposed by contentconstraint" in flat
     assert "opensdmx values TEST_DF REF_AREA" in flat
+
+
+# ── 400/404 hint on data requests (issue #66) ────────────────────────
+
+
+def test_bad_request_hint_names_unfiltered_dimensions(capsys):
+    from opensdmx.cli import _print_bad_request_hint
+
+    ds = _fake_constraints_dataset()
+    ds["filters"] = {"FREQ": "Q", "REF_AREA": ".", "SEX": "."}
+    _print_bad_request_hint("TEST_DF", ds)
+
+    out = re.sub(r"\s+", " ", capsys.readouterr().err)
+    assert "opensdmx constraints TEST_DF" in out
+    assert "no filter set on: REF_AREA, SEX" in out
+
+
+def test_bad_request_hint_without_dataset(capsys):
+    """Failure before the dataset loads: only the generic hint, no crash."""
+    from opensdmx.cli import _print_bad_request_hint
+
+    _print_bad_request_hint("TEST_DF", None)
+
+    out = re.sub(r"\s+", " ", capsys.readouterr().err)
+    assert "opensdmx constraints TEST_DF" in out
+    assert "no filter set on" not in out
+
+
+def test_bad_request_hint_all_dimensions_filtered(capsys):
+    from opensdmx.cli import _print_bad_request_hint
+
+    ds = _fake_constraints_dataset()
+    ds["filters"] = {"FREQ": "Q", "REF_AREA": "IT", "SEX": "1"}
+    _print_bad_request_hint("TEST_DF", ds)
+
+    assert "no filter set on" not in capsys.readouterr().err
+
+
+# ── values command: codelist vs dataflow content (issue #67) ─────────
+
+
+def _fake_codelist_values():
+    """A codelist wider than the dataflow: only '1' and '2' are actually used."""
+    import polars as pl
+
+    return pl.DataFrame({"id": ["1", "2", "9"], "name": ["Males", "Females", "Unknown"]})
+
+
+def test_values_annotates_from_cached_constraints():
+    """Cache hit → in_dataflow column + coverage footer, with no extra fetch."""
+    import re
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value={"SEX": ["1", "2"]}), \
+         patch("opensdmx.discovery.get_available_values") as fetch:
+        result = runner.invoke(app, ["values", "TEST_DF", "SEX"])
+
+    assert result.exit_code == 0, result.output
+    fetch.assert_not_called()  # annotation must stay a local cache read
+    flat = re.sub(r"\s+", " ", result.output)
+    assert "in_dataflow" in flat
+    assert "2 of 3 codes are present in this dataflow" in flat
+    assert "opensdmx constraints TEST_DF SEX" in flat
+
+
+def test_values_without_cached_constraints_hints_at_constraints():
+    """No constraint knowledge → full codelist plus a pointer to `constraints`."""
+    import re
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None):
+        result = runner.invoke(app, ["values", "TEST_DF", "SEX"])
+
+    assert result.exit_code == 0, result.output
+    flat = re.sub(r"\s+", " ", result.output)
+    assert "codelist definition" in flat
+    assert "opensdmx constraints TEST_DF SEX" in flat
+    assert "in_dataflow" not in flat
+
+
+def test_values_json_carries_in_dataflow_field():
+    """The JSON consumer gets the flag as data, not as terminal prose."""
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value={"SEX": ["1", "2"]}):
+        result = runner.invoke(app, ["--output", "json", "values", "TEST_DF", "SEX"])
+
+    assert result.exit_code == 0, result.output
+    payload = json.loads(result.output)
+    assert [r["in_dataflow"] for r in payload] == [True, True, False]
+
+
+def test_values_json_in_dataflow_is_null_without_constraints():
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None):
+        result = runner.invoke(app, ["--output", "json", "values", "TEST_DF", "SEX"])
+
+    assert result.exit_code == 0, result.output
+    assert all(r["in_dataflow"] is None for r in json.loads(result.output))
 
 
 # ── tree command: error paths and depth semantics ────────────────────

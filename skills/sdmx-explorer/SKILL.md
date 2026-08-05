@@ -525,8 +525,25 @@ opensdmx info PRC_HICP_MANR
 not the codes actually present. Use it only when you need labels for codes you already
 know are valid and `opensdmx constraints` doesn't provide enough detail.
 
-**Never use `opensdmx values` to validate filter codes.** A code present in the codelist
-may return no data if it doesn't exist in this specific dataflow.
+**Never use `opensdmx values` to validate filter codes** — that is what `opensdmx constraints
+<df> <dim>` is for. A code present in the codelist may return no data if it doesn't exist in
+this specific dataflow: `CL_UNIT` carries 759 codes, of which `PRC_HICP_MANR` uses exactly one
+(`RCH_A`).
+
+**Since v0.21.0 the output says so.** When the dataflow's constraints are already cached,
+`values` adds an `in_dataflow` column (`true`/`false`; `null` in JSON/CSV when unknown) and a
+footer with the coverage count; otherwise it prints a pointer to `constraints`. Both paths are
+local — `values` makes **no extra network call** and stays as cheap as before.
+
+```
+$ opensdmx values PRC_HICP_MANR unit --grep "RCH_A|MEUR_KP"
+│ MEUR_KP     │ Million euro at constant prices  │ no  │
+│ RCH_A       │ Annual rate of change            │ yes │
+1 of 759 codes are present in this dataflow (cached constraints). Just those: opensdmx constraints PRC_HICP_MANR unit
+```
+
+That annotated view is the reason to use `values` at all when exploring: it shows the whole
+codelist *with* the valid codes marked, while `constraints` shows only the valid ones.
 
 **Filter names (v0.15.0+).** Dimension names match case-insensitively, and `-` and `_`
 are equivalent — `--na-item`, `--na_item` and `--NA_ITEM` all reach `NA_ITEM`. A name
@@ -655,8 +672,9 @@ Once the user has specified their choices, build the query and fetch the data.
 ### Building the query — critical rules
 
 1. **Dimension order must match the `opensdmx info` output exactly.** Never guess the order.
-2. **Use only codes confirmed by `opensdmx constraints`**, never codes from `opensdmx values`
-   or other sources. Providers often return 404 or empty results for invalid codes.
+2. **Use only codes confirmed by `opensdmx constraints`** (or codes marked `in_dataflow: true`
+   by `opensdmx values`, which reads the same constraints), never unmarked codes from
+   `opensdmx values` or other sources. Providers often return 404 or empty results for invalid codes.
 3. **For dimensions with a single available value**, include that value — don't skip them.
 4. **For unfiltered dimensions** (user wants all values), use `.` as wildcard.
 
