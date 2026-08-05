@@ -19,10 +19,17 @@ wheels/
 # Temp data files
 data.csv
 
+# Local secrets — .env.example is the tracked template, .env never is
+.env
+
 # Internal working notes
 tasks/
 tmp/
 tmp.md
+
+# Evaluation harness — work in progress, keep local until it lands
+eval/
+docs/eval.md
 
 # OpenSpec (local only)
 openspec/

@@ -42,6 +42,9 @@ guide = [
     "chatlas[google]>=0.7",
     "questionary>=2.1.1",
 ]
+eval = [
+    "deepeval>=3.0",
+]
 
 [project.scripts]
 opensdmx = "opensdmx:main"
