@@ -1,0 +1,49 @@
+name: Substack archive scraper
+
+# Git scraping dell'archivio della newsletter: ogni run riscrive il JSON,
+# la history di git conserva il diff (post nuovi, titoli cambiati, reazioni).
+#
+# Substack risponde 403 (cf-mitigated: challenge) a tutte le richieste dagli IP
+# dei runner GitHub, su ogni path del dominio: le chiamate passano da r.jina.ai.
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - test/substack-feed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: substack-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Fetch archive
+        env:
+          # Facoltativa: senza, Reader funziona lo stesso con un rate limit più basso.
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+        run: bash scripts/fetch_substack.sh ondata data/substack/ondata.json
+
+      - name: Show latest posts
+        run: |
+          jq 'length' data/substack/ondata.json
+          jq -r '.[:5][] | "\(.post_date[0:10])  \(.title)"' data/substack/ondata.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/substack/ondata.json
+          git diff --staged --quiet || git commit -m "scrape: substack archive $(date -u +%Y-%m-%d)"
+          git push
