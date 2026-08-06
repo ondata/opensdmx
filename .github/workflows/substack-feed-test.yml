@@ -1,0 +1,55 @@
+name: Substack feed reachability test
+
+# Test usa e getta: verifica se un runner GitHub riesce a scaricare un feed
+# Substack, o se Cloudflare blocca gli IP datacenter.
+
+on:
+  push:
+    branches:
+      - test/substack-feed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Raw curl probe
+        run: |
+          set +e
+          for sub in ondata platformer; do
+            for ua in "ondata-feed-fetcher/1.0 (+https://ondata.it)" \
+                      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"; do
+              echo "=============================================="
+              echo ">>> https://$sub.substack.com/feed"
+              echo ">>> UA: ${ua:0:40}"
+              curl -sSL -A "$ua" --max-time 30 \
+                   -D - -o "/tmp/$sub.body" \
+                   -w '\n>>> RESULT: http=%{http_code} type=%{content_type} url=%{url_effective}\n' \
+                   "https://$sub.substack.com/feed"
+              echo ">>> primi 200 byte del body:"
+              head -c 200 "/tmp/$sub.body"; echo
+            done
+          done
+          echo "=============================================="
+          echo ">>> IP pubblico del runner:"
+          curl -sS --max-time 15 https://api.ipify.org; echo
+
+      - name: Parse feed with Python (stdlib only)
+        run: python3 scripts/fetch_feed.py ondata --out data
+
+      - name: Show result
+        run: |
+          ls -la data/
+          python3 -c "import json;d=json.load(open('data/ondata.json'));print(len(d),'post');[print('-',p['pubDate'],p['title']) for p in d[:10]]"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: substack-feed-json
+          path: data/
