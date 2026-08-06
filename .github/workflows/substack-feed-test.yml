@@ -1,7 +1,9 @@
 name: Substack feed reachability test
 
-# Test usa e getta: verifica se un runner GitHub riesce a scaricare un feed
-# Substack, o se Cloudflare blocca gli IP datacenter.
+# Test usa e getta: da un runner GitHub, quali endpoint Substack rispondono?
+#   1. /feed              -> atteso 403 (Cloudflare challenge sugli IP datacenter)
+#   2. /api/v1/archive    -> da verificare: stessa regola o path meno protetto?
+#   3. gli stessi via r.jina.ai (senza API key: rate limit basso ma sufficiente)
 
 on:
   push:
@@ -18,38 +20,32 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Raw curl probe
+      - name: Direct probes
         run: |
           set +e
-          for sub in ondata platformer; do
-            for ua in "ondata-feed-fetcher/1.0 (+https://ondata.it)" \
-                      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"; do
-              echo "=============================================="
-              echo ">>> https://$sub.substack.com/feed"
-              echo ">>> UA: ${ua:0:40}"
-              curl -sSL -A "$ua" --max-time 30 \
-                   -D - -o "/tmp/$sub.body" \
-                   -w '\n>>> RESULT: http=%{http_code} type=%{content_type} url=%{url_effective}\n' \
-                   "https://$sub.substack.com/feed"
-              echo ">>> primi 200 byte del body:"
-              head -c 200 "/tmp/$sub.body"; echo
-            done
-          done
+          probe () {
+            echo "=============================================="
+            echo ">>> $1"
+            curl -sSL --max-time 30 -D /tmp/h -o /tmp/b \
+                 -w '>>> RESULT: http=%{http_code} type=%{content_type}\n' "$1"
+            grep -iE '^(HTTP/|cf-mitigated|cf-ray|server):' /tmp/h
+            echo ">>> primi 200 byte:"; head -c 200 /tmp/b; echo
+          }
+          probe "https://ondata.substack.com/feed"
+          probe "https://ondata.substack.com/api/v1/archive?sort=new&limit=5"
+          probe "https://ondata.substack.com/archive"
           echo "=============================================="
-          echo ">>> IP pubblico del runner:"
-          curl -sS --max-time 15 https://api.ipify.org; echo
+          echo ">>> IP pubblico del runner:"; curl -sS --max-time 15 https://api.ipify.org; echo
 
-      - name: Parse feed with Python (stdlib only)
-        run: python3 scripts/fetch_feed.py ondata --out data
-
-      - name: Show result
+      - name: Same endpoints through r.jina.ai (no API key)
         run: |
-          ls -la data/
-          python3 -c "import json;d=json.load(open('data/ondata.json'));print(len(d),'post');[print('-',p['pubDate'],p['title']) for p in d[:10]]"
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: substack-feed-json
-          path: data/
+          set +e
+          for target in "https://ondata.substack.com/feed" \
+                        "https://ondata.substack.com/api/v1/archive?sort=new&limit=5"; do
+            echo "=============================================="
+            echo ">>> r.jina.ai -> $target"
+            curl -sS --max-time 60 -H "Accept: application/json" -H "X-No-Cache: true" \
+                 -w '\n>>> RESULT: http=%{http_code}\n' \
+                 "https://r.jina.ai/$target" -o /tmp/j
+            head -c 300 /tmp/j; echo
+          done
