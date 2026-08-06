@@ -7095,3 +7095,309 @@ SDG_12_31,Consumption footprint - single weighted score,ok,sdmx,5,51,0,"",2026-0
 SDG_12_41,Circular material use rate,ok,sdmx,4,56,0,"",2026-08-05
 SDG_12_51,Generation of waste by hazardousness,ok,sdmx,7,59,0,"",2026-08-05
 SDG_12_61,Gross value added in environmental goods and services sector,ok,sdmx,8,59,0,"",2026-08-05
+SDG_13_10,Domestic net greenhouse gas emissions,ok,sdmx,5,72,0,"",2026-08-06
+SDG_13_11,EU net greenhouse gas emissions (according to EU climate policies and targets),ok,sdmx,5,41,0,"",2026-08-06
+SDG_13_21,"Net greenhouse gas emissions of the Land use, Land use change and Forestry (LULUCF) sector",ok,sdmx,4,71,0,"",2026-08-06
+SDG_13_31,Average CO2 emissions per km from new passenger cars,ok,sdmx,4,57,0,"",2026-08-06
+SDG_13_40,Economic losses from weather- and climate-related extremes,ok,sdmx,6,92,0,"",2026-08-06
+SDG_13_50,Contribution to the international 100bn USD commitment on climate related expending,ok,sdmx,4,43,0,"",2026-08-06
+SDG_13_70,Green bond issuance by type of issuer,ok,sdmx,5,17,0,"",2026-08-06
+SDG_13_70A,Green bond issuance by corporates and governments,ok,sdmx,4,41,0,"",2026-08-06
+SDG_14_10,Marine protected areas,ok,sdmx,5,43,0,"",2026-08-06
+SDG_14_21,"Estimated trends in fish stock biomass, by fishing areas",ok,sdmx,4,27,0,"",2026-08-06
+SDG_14_30,"Estimated trends in fishing pressure, by fishing area",ok,sdmx,4,27,0,"",2026-08-06
+SDG_14_40,Bathing waters with excellent quality by location,ok,sdmx,5,56,0,"",2026-08-06
+SDG_14_51,Mean surface seawater acidity,ok,sdmx,4,45,0,"",2026-08-06
+SDG_14_60,Marine waters affected by eutrophication,ok,sdmx,6,66,0,"",2026-08-06
+SDG_15_11,Forest area,ok,sdmx,5,48,0,"",2026-08-06
+SDG_15_20,Surface of the terrestrial protected areas,ok,sdmx,5,50,0,"",2026-08-06
+SDG_15_42,Drought impact area on ecosystems,ok,sdmx,5,69,0,"",2026-08-06
+SDG_15_50,Area at risk of severe soil erosion by water,ok,sdmx,6,43,0,"",2026-08-06
+SDG_15_60,Common bird index by type of species - EU aggregate,ok,sdmx,6,43,0,"",2026-08-06
+SDG_15_61,Grassland butterfly index - EU aggregate,ok,sdmx,5,40,0,"",2026-08-06
+SDG_16_10,Standardised death rate due to homicide by sex,ok,sdmx,7,72,0,"",2026-08-06
+SDG_16_20,"Population reporting occurrence of crime, violence or vandalism in their area by poverty status",ok,sdmx,6,68,0,"",2026-08-06
+SDG_16_30,General government total expenditure on law courts,ok,sdmx,4,63,0,"",2026-08-06
+SDG_16_40,Perceived independence of the justice system,ok,sdmx,5,53,0,"",2026-08-06
+SDG_16_50,Corruption Perceptions Index,ok,sdmx,4,60,0,"",2026-08-06
+SDG_16_70,Victims of trafficking in human beings by sex,ok,sdmx,6,64,0,"",2026-08-06
+SDG_17_10,Official development assistance as share of gross national income,ok,sdmx,5,60,0,"",2026-08-06
+SDG_17_20,EU financing to developing countries by financing source,ok,sdmx,5,69,0,"",2026-08-06
+SDG_17_31,Imports from developing countries by their group of income levels,ok,sdmx,5,59,0,"",2026-08-06
+SDG_17_40,General government gross debt,ok,sdmx,6,65,0,"",2026-08-06
+SDG_17_50,Share of environmental taxes in total tax revenues,ok,sdmx,5,61,0,"",2026-08-06
+SDG_17_60,"High-speed internet coverage, by type of area",ok,sdmx,6,46,0,"",2026-08-06
+SPRT_EMP_AGE,Employed persons in sport by age,ok,sdmx,5,59,0,"",2026-08-06
+SPRT_EMP_EDU,Employed persons in sport by educational attainment level,ok,sdmx,5,60,0,"",2026-08-06
+SPRT_EMP_SEX,Employed persons in sport by sex,ok,sdmx,5,58,0,"",2026-08-06
+SPRT_PCS_HBS,Mean consumption expenditure of private households on sporting goods and services by COICOP consumption purpose,ok,sdmx,5,51,0,"",2026-08-06
+SPRT_PCS_QNT,Mean consumption expenditure of private households on sporting goods and services by income quintile,ok,sdmx,5,41,0,"",2026-08-06
+SPRT_PCS_SEA,Persons attending live sport events in the last 12 months by sex and age (2007 and 2011),ok,sdmx,7,44,0,"",2026-08-06
+SPRT_PCS_SEE,Persons attending live sport events in the last 12 months by sex and educational attainment level (2007 and 2011),ok,sdmx,7,40,0,"",2026-08-06
+SPRT_TRD_PRD,Intra and extra-EU trade in sporting goods by product,ok,sdmx,7,87,0,"",2026-08-06
+SPRT_TRD_PRT,Intra and extra-EU trade in sporting goods by product and partner,ok,sdmx,7,174,0,"",2026-08-06
+SPR_EXP_FDI,Expenditure on disability function by type of benefit and means-testing,ok,sdmx,7,116,0,"",2026-08-06
+SPR_EXP_FEX,Expenditure on social exclusion function by type of benefit and means-testing,ok,sdmx,7,110,0,"",2026-08-06
+SPR_EXP_FFA,Expenditure on family/children function by type of benefit and means-testing,ok,sdmx,7,115,0,"",2026-08-06
+SPR_EXP_FHO,Expenditure on housing function by type of benefit and means-testing,ok,sdmx,7,102,0,"",2026-08-06
+SPR_EXP_FOL,Expenditure on old age function by type of benefit and means-testing,ok,sdmx,7,113,0,"",2026-08-06
+SPR_EXP_FSI,Expenditure on sickness and health care function by type of benefit and means-testing,ok,sdmx,7,116,0,"",2026-08-06
+SPR_EXP_FSU,Expenditure on survivors function by type of benefit and means-testing,ok,sdmx,7,110,0,"",2026-08-06
+SPR_EXP_FTM,"Expenditure on social benefits by function, type of benefit and means-testing",ok,sdmx,8,117,0,"",2026-08-06
+SPR_EXP_FUN,Expenditure on unemployment function by type of benefit and means-testing,ok,sdmx,7,116,0,"",2026-08-06
+SPR_EXP_FUNC,Expenditure on social benefits by function,ok,sdmx,6,109,0,"",2026-08-06
+SPR_EXP_PENS,Expenditure on pensions by type of pension and means-testing,ok,sdmx,6,105,0,"",2026-08-06
+SPR_EXP_TYPE,Expenditure on social protection by type of expenditure,ok,sdmx,5,100,0,"",2026-08-06
+SPR_NET_FUNC,Gross and net expenditure on social benefits by function,ok,sdmx,6,84,0,"",2026-08-06
+SPR_NET_FUNC$DV_3001,Gross and net expenditure on social benefits by function,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/SPR_NET_FUNC$DV_3001'
+For more information check: https://developer.",2026-08-06
+SPR_NET_GROS,Gross and net social protection expenditure,ok,sdmx,5,72,0,"",2026-08-06
+SPR_NET_MEAN,Gross and net expenditure on social benefits by means-testing,ok,sdmx,6,75,0,"",2026-08-06
+SPR_NET_SHAF,Share of social benefits subject to taxes or social contributions by function,ok,sdmx,6,85,0,"",2026-08-06
+SPR_NET_SHAM,Share of social benefits subject to taxes or social contributions by means-testing,ok,sdmx,6,76,0,"",2026-08-06
+SPR_PNS_BEN,"Pension beneficiaries by type of pension, sex and means-testing",ok,sdmx,8,80,0,"",2026-08-06
+SPR_REC_SCON,Social contributions by type of contributors,ok,sdmx,5,103,0,"",2026-08-06
+SPR_REC_SUMS,Social protection receipts by institutional sector,ok,sdmx,5,104,0,"",2026-08-06
+SPR_REC_SUMT,Social protection receipts by type,ok,sdmx,5,105,0,"",2026-08-06
+SPR_REC_SUTS,Social protection receipts by type and institutional sector,ok,sdmx,7,109,0,"",2026-08-06
+SPR_UBR_BEN,"Unemployment benefits recipients by sex, age and type of benefit",ok,sdmx,8,42,0,"",2026-08-06
+SPR_UBR_BENM,"Unemployment benefits recipients by sex, means testing and type of benefit",ok,sdmx,8,33,0,"",2026-08-06
+STS_COBP_A,Building permits by type of building - annual data,ok,sdmx,7,93,0,"",2026-08-06
+STS_COBP_A$DV_3227,Building permits by type of building - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/STS_COBP_A$DV_3227'
+For more information check: https://developer.mo",2026-08-06
+STS_COBP_M,Building permits by type of building - monthly data,ok,sdmx,7,428,0,"",2026-08-06
+STS_COBP_Q,Building permits by type of building - quarterly data,ok,sdmx,7,196,0,"",2026-08-06
+STS_COBP_Q$DV_3226,Building permits by type of building - quarterly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/STS_COBP_Q$DV_3226'
+For more information check: https://developer.mo",2026-08-06
+STS_COLB_A,Labour input in construction - annual data,ok,sdmx,7,88,0,"",2026-08-06
+STS_COLB_M,Labour input in construction - monthly data,ok,sdmx,7,400,0,"",2026-08-06
+STS_COLB_Q,Labour input in construction - quarterly data,ok,sdmx,7,201,0,"",2026-08-06
+STS_COPI_A,"Construction producer prices or costs, new residential buildings - annual data",ok,sdmx,7,121,0,"",2026-08-06
+STS_COPI_M,"Construction producer prices or costs, new residential buildings - monthly data",ok,sdmx,7,578,0,"",2026-08-06
+STS_COPI_Q,"Construction producer prices or costs, new residential buildings - quarterly data",ok,sdmx,7,341,0,"",2026-08-06
+STS_COPR_A,Production in construction - annual data,ok,sdmx,7,104,0,"",2026-08-06
+STS_COPR_M,Production in construction - monthly data,ok,sdmx,7,609,0,"",2026-08-06
+STS_COPR_Q,Production in construction - quarterly data,ok,sdmx,7,246,0,"",2026-08-06
+STS_INLB_A,Labour input in industry - annual data,ok,sdmx,7,146,0,"",2026-08-06
+STS_INLB_M,Labour input in industry - monthly data,ok,sdmx,7,484,0,"",2026-08-06
+STS_INLB_Q,Labour input in industry - quarterly data,ok,sdmx,7,260,0,"",2026-08-06
+STS_INPI_A,Import prices in industry - annual data,ok,sdmx,7,434,0,"",2026-08-06
+STS_INPI_M,Import prices in industry - monthly data,ok,sdmx,7,1137,0,"",2026-08-06
+STS_INPI_Q,Import prices in industry - quarterly data,ok,sdmx,7,621,0,"",2026-08-06
+STS_INPPD_A,"Producer prices in industry, domestic market - annual data",ok,sdmx,7,454,0,"",2026-08-06
+STS_INPPD_M,"Producer prices in industry, domestic market - monthly data",ok,sdmx,7,1022,0,"",2026-08-06
+STS_INPPD_Q,"Producer prices in industry, domestic market - quarterly data",ok,sdmx,7,610,0,"",2026-08-06
+STS_INPPND_A,"Producer prices in industry, non domestic market - annual data",ok,sdmx,7,469,0,"",2026-08-06
+STS_INPPND_M,"Producer prices in industry, non domestic market - monthly data",ok,sdmx,7,1180,0,"",2026-08-06
+STS_INPPND_Q,"Producer prices in industry, non domestic market - quarterly data",ok,sdmx,7,664,0,"",2026-08-06
+STS_INPP_A,"Producer prices in industry, total - annual data",ok,sdmx,7,456,0,"",2026-08-06
+STS_INPP_M,"Producer prices in industry, total - monthly data",ok,sdmx,7,1013,0,"",2026-08-06
+STS_INPP_Q,"Producer prices in industry, total - quarterly data",ok,sdmx,7,609,0,"",2026-08-06
+STS_INPR_A,Production in industry - annual data,ok,sdmx,7,483,0,"",2026-08-06
+STS_INPR_M,Production in industry - monthly data,ok,sdmx,7,1295,0,"",2026-08-06
+STS_INPR_Q,Production in industry - quarterly data,ok,sdmx,7,710,0,"",2026-08-06
+STS_INTVD_A,"Turnover in industry, domestic market - annual data",ok,sdmx,7,144,0,"",2026-08-06
+STS_INTVD_M,"Turnover in industry, domestic market - monthly data",ok,sdmx,7,548,0,"",2026-08-06
+STS_INTVD_Q,"Turnover in industry, domestic market - quarterly data",ok,sdmx,7,257,0,"",2026-08-06
+STS_INTVND_A,"Turnover in industry, non domestic market - annual data",ok,sdmx,7,146,0,"",2026-08-06
+STS_INTVND_M,"Turnover in industry, non domestic market - monthly data",ok,sdmx,7,550,0,"",2026-08-06
+STS_INTVND_Q,"Turnover in industry, non domestic market - quarterly data",ok,sdmx,7,258,0,"",2026-08-06
+STS_INTV_A,"Turnover in industry, total - annual data",ok,sdmx,7,219,0,"",2026-08-06
+STS_INTV_M,"Turnover in industry, total - monthly data",ok,sdmx,7,623,0,"",2026-08-06
+STS_INTV_Q,"Turnover in industry, total - quarterly data",ok,sdmx,7,331,0,"",2026-08-06
+STS_RB_A,Business registration and bankruptcy index by NACE Rev. 2 activity - annual data,ok,sdmx,7,66,0,"",2026-08-06
+STS_RB_M,Business registration and bankruptcy index by NACE Rev. 2 activity - monthly data,ok,sdmx,7,175,0,"",2026-08-06
+STS_RB_Q,Business registration and bankruptcy index by NACE Rev. 2 activity - quarterly data,ok,sdmx,7,103,0,"",2026-08-06
+STS_SELB_A,Labour input in services - annual data,ok,sdmx,7,129,0,"",2026-08-06
+STS_SELB_M,Labour input in services - monthly data,ok,sdmx,7,453,0,"",2026-08-06
+STS_SELB_Q,Labour input in services - quarterly data,ok,sdmx,7,242,0,"",2026-08-06
+STS_SEPP_A,Service producer prices - annual data,ok,sdmx,7,123,0,"",2026-08-06
+STS_SEPP_Q,Service producer prices - quarterly data,ok,sdmx,7,216,0,"",2026-08-06
+STS_SEPR_A,Production in services - annual data,ok,sdmx,7,106,0,"",2026-08-06
+STS_SEPR_M,Production in services - monthly data,ok,sdmx,7,398,0,"",2026-08-06
+STS_SEPR_Q,Production in services - quarterly data,ok,sdmx,7,187,0,"",2026-08-06
+STS_SETU_A,Turnover in services - annual data,ok,sdmx,7,129,0,"",2026-08-06
+STS_SETU_A$DV_666,Turnover in services - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/STS_SETU_A$DV_666'
+For more information check: https://developer.moz",2026-08-06
+STS_SETU_M,Turnover in services - monthly data,ok,sdmx,7,482,0,"",2026-08-06
+STS_SETU_M$DV_667,Turnover in services - monthly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/STS_SETU_M$DV_667'
+For more information check: https://developer.moz",2026-08-06
+STS_SETU_Q,Turnover in services - quarterly data,ok,sdmx,7,228,0,"",2026-08-06
+STS_SETU_Q$DV_668,Turnover in services - quarterly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/STS_SETU_Q$DV_668'
+For more information check: https://developer.moz",2026-08-06
+STS_TOT_PROD_A,Market production - annual data,ok,sdmx,7,44,0,"",2026-08-06
+STS_TOT_PROD_M,Market production - monthly data,ok,sdmx,7,226,0,"",2026-08-06
+STS_TOT_PROD_Q,Market production - quarterly data,ok,sdmx,7,95,0,"",2026-08-06
+STS_TRLB_A,Labour input in wholesale and retail trade - annual data,ok,sdmx,7,103,0,"",2026-08-06
+STS_TRLB_M,Labour input in wholesale and retail trade - monthly data,ok,sdmx,7,425,0,"",2026-08-06
+STS_TRLB_Q,Labour input in wholesale and retail trade - quarterly data,ok,sdmx,7,216,0,"",2026-08-06
+STS_TRTU_A,Turnover and volume of sales in wholesale and retail trade - annual data,ok,sdmx,7,123,0,"",2026-08-06
+STS_TRTU_M,Turnover and volume of sales in wholesale and retail trade - monthly data,ok,sdmx,7,516,0,"",2026-08-06
+STS_TRTU_Q,Turnover and volume of sales in wholesale and retail trade - quarterly data,ok,sdmx,7,232,0,"",2026-08-06
+TAG00001,Agricultural holdings by agricultural area,ok,sdmx,5,61,0,"",2026-08-06
+TAG00007,Farm land use,ok,sdmx,6,57,0,"",2026-08-06
+TAG00014,Number of dairy cows,ok,sdmx,6,60,0,"",2026-08-06
+TAG00016,Number of bovine animals,ok,sdmx,6,60,0,"",2026-08-06
+TAG00017,Number of sheep,ok,sdmx,6,60,0,"",2026-08-06
+TAG00018,Number of pigs,ok,sdmx,6,60,0,"",2026-08-06
+TAG00020,Farm labour force,ok,sdmx,6,57,0,"",2026-08-06
+TAG00025,Utilised agricultural area by categories,ok,sdmx,5,62,0,"",2026-08-06
+TAG00027,"Cereals for the production of grain (including seed) by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00029,Agricultural holdings by age of holder,ok,sdmx,8,57,0,"",2026-08-06
+TAG00037,Collection of cow's milk,ok,sdmx,5,56,0,"",2026-08-06
+TAG00038,Production of butter,ok,sdmx,5,56,0,"",2026-08-06
+TAG00039,Production of milk powder,ok,sdmx,5,56,0,"",2026-08-06
+TAG00040,Production of cheese,ok,sdmx,5,56,0,"",2026-08-06
+TAG00041,Production of milk on farms,ok,sdmx,5,57,0,"",2026-08-06
+TAG00042,Production of pigmeat in slaughterhouses,ok,sdmx,6,59,0,"",2026-08-06
+TAG00043,Production of poultry meat in slaughterhouses,ok,sdmx,6,59,0,"",2026-08-06
+TAG00044,Production of bovine meat in slaughterhouses,ok,sdmx,6,59,0,"",2026-08-06
+TAG00045,Production of sheepmeat and goat meat in slaughterhouses,ok,sdmx,6,59,0,"",2026-08-06
+TAG00046,"Producer price indices, total agricultural production",ok,sdmx,6,52,0,"",2026-08-06
+TAG00047,"Wheat and spelt by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00048,"Producer price indices, crop products",ok,sdmx,6,52,0,"",2026-08-06
+TAG00049,"Rye and winter cereal mixtures by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00050,"Producer price indices, animals and animal products",ok,sdmx,6,52,0,"",2026-08-06
+TAG00051,"Barley by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00052,"Purchase price indices, total means of agricultural production",ok,sdmx,6,52,0,"",2026-08-06
+TAG00053,"Oats and spring cereal mixtures by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00054,Crop output - basic and producer prices,ok,sdmx,6,58,0,"",2026-08-06
+TAG00055,Animal output - basic and producer prices,ok,sdmx,6,58,0,"",2026-08-06
+TAG00056,Gross value added of the agricultural industry - basic and producer prices,ok,sdmx,6,58,0,"",2026-08-06
+TAG00057,Indicator A of the income from agricultural activity,ok,sdmx,5,56,0,"",2026-08-06
+TAG00059,Selling prices of soft wheat,ok,sdmx,5,56,0,"",2026-08-06
+TAG00060,Selling prices of barley,ok,sdmx,5,56,0,"",2026-08-06
+TAG00061,Selling prices of oats,ok,sdmx,5,56,0,"",2026-08-06
+TAG00062,Selling prices of maize,ok,sdmx,5,56,0,"",2026-08-06
+TAG00063,Selling prices of main crop potatoes,ok,sdmx,5,56,0,"",2026-08-06
+TAG00064,Selling prices of sugar beet (unit value),ok,sdmx,5,56,0,"",2026-08-06
+TAG00065,Selling prices of calves,ok,sdmx,5,56,0,"",2026-08-06
+TAG00066,Selling prices of pigs (light),ok,sdmx,5,56,0,"",2026-08-06
+TAG00067,Selling prices of piglets,ok,sdmx,5,56,0,"",2026-08-06
+TAG00068,Selling prices of chickens (live 1st choice),ok,sdmx,5,56,0,"",2026-08-06
+TAG00069,Selling prices of sheep,ok,sdmx,5,56,0,"",2026-08-06
+TAG00070,Selling prices of raw cow's milk,ok,sdmx,5,56,0,"",2026-08-06
+TAG00071,Selling prices of fresh eggs,ok,sdmx,5,56,0,"",2026-08-06
+TAG00075,Aquaculture production in tonnes and value,ok,sdmx,8,62,0,"",2026-08-06
+TAG00076,Catches in all fishing region,ok,sdmx,6,57,0,"",2026-08-06
+TAG00083,"Fishing fleet, total tonnage",ok,sdmx,6,57,0,"",2026-08-06
+TAG00093,"Grain maize and corn-cob-mix by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00094,"Dry pulses and protein crops for the production of grain (including seed and mixtures of cereals and pulses) by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00100,"Rape, turnip rape, sunflower seeds and soya by area",ok,sdmx,5,60,0,"",2026-08-06
+TAG00101,"Green maize by area, production and humidity",ok,sdmx,5,60,0,"",2026-08-06
+TAG00102,Output of the agricultural industry - basic and producer prices,ok,sdmx,6,58,0,"",2026-08-06
+TAG00103,Root crops and plants harvested green from arable land by area,ok,sdmx,5,62,0,"",2026-08-06
+TAG00115,Fresh vegetables and strawberries by area,ok,sdmx,5,62,0,"",2026-08-06
+TAG00116,"Fishing Fleet, Number of Vessels",ok,sdmx,6,57,0,"",2026-08-06
+TAG00120,Permanent crops for human consumption by area,ok,sdmx,5,62,0,"",2026-08-06
+TAG00121,Grapes by production,ok,sdmx,5,61,0,"",2026-08-06
+TAG00122,Olives by production,ok,sdmx,5,59,0,"",2026-08-06
+TAG00123,Agricultural holdings by economic size of the farm (Standard Output in Euro),ok,sdmx,7,64,0,"",2026-08-06
+TAG00124,Agricultural holdings with livestock,ok,sdmx,7,60,0,"",2026-08-06
+TAG00125,Agricultural holdings by age of manager,ok,sdmx,7,60,0,"",2026-08-06
+TAG00126,Agricultural holdings by training of manager,ok,sdmx,6,55,0,"",2026-08-06
+TAG00127,Agricultural holdings with organic utilised agricultural area,ok,sdmx,8,52,0,"",2026-08-06
+TAG00128,Agricultural holdings by legal form,ok,sdmx,6,56,0,"",2026-08-06
+TAI02,Sales of pesticides by type of pesticide,ok,sdmx,5,218,0,"",2026-08-06
+TAI03,Share of irrigable and irrigated areas in utilised agricultural area (UAA),ok,sdmx,5,47,0,"",2026-08-06
+TAI04,Final energy consumption by agriculture and forestry sector – tonne of oil equivalent per hectare of UAA,ok,sdmx,3,56,0,"",2026-08-06
+TAI05,Share of main land types in utilised agricultural area (UAA) by NUTS 2 region,ok,sdmx,5,377,0,"",2026-08-06
+TAI06,Share of main livestock types in total livestock units (LSU) by NUTS 2 region,ok,sdmx,5,385,0,"",2026-08-06
+TAI07,Ammonia emissions from agriculture - % of total emissions,ok,sdmx,5,55,0,"",2026-08-06
+TAI08,Greenhouse gas emissions from agriculture,ok,sdmx,6,67,0,"",2026-08-06
+TAI10,Estimated soil loss by water erosion by land cover type,ok,sdmx,6,50,0,"",2026-08-06
+TAI11,Share of landcover types affected by severe erosion,ok,sdmx,6,50,0,"",2026-08-06
+TEC00001,Gross domestic product at market prices,ok,sdmx,5,62,0,"",2026-08-06
+TEC00009,Final consumption expenditure of households and non-profit institutions serving households,ok,sdmx,5,61,0,"",2026-08-06
+TEC00010,Final consumption expenditure of general government,ok,sdmx,5,61,0,"",2026-08-06
+TEC00011,Gross fixed capital formation (investments),ok,sdmx,5,61,0,"",2026-08-06
+TEC00013,Compensation of employees,ok,sdmx,5,61,0,"",2026-08-06
+TEC00021,Total general government revenue,ok,sdmx,6,57,0,"",2026-08-06
+TEC00023,Total general government expenditure,ok,sdmx,6,63,0,"",2026-08-06
+TEC00027,HICP - all items - annual average indices,ok,sdmx,5,59,0,"",2026-08-06
+TEC00033,ECU/EUR exchange rates versus national currencies,ok,sdmx,5,34,0,"",2026-08-06
+TEC00038,"Current account transactions - credits, debits and balance",ok,sdmx,10,66,0,"",2026-08-06
+TEC00039,"Current account transactions - goods: credits, debits and balance",ok,sdmx,10,66,0,"",2026-08-06
+TEC00040,"Current account transactions - services: credits, debits and balance",ok,sdmx,10,66,0,"",2026-08-06
+TEC00041,"Current account transactions - primary income: credits, debits and balance",ok,sdmx,10,66,0,"",2026-08-06
+TEC00042,"Current account transactions - secondary income: credits, debits and balance",ok,sdmx,10,66,0,"",2026-08-06
+TEC00097,EMU convergence criterion series - annual data,ok,sdmx,4,55,0,"",2026-08-06
+TEC00104,Gross debt-to-income ratio of households,ok,sdmx,6,57,0,"",2026-08-06
+TEC00105,Inward FDI stocks in % of GDP,ok,sdmx,7,60,0,"",2026-08-06
+TEC00106,Outward FDI stocks in % of GDP,ok,sdmx,7,60,0,"",2026-08-06
+TEC00107,"FDI flows intensity, market integration",ok,sdmx,7,61,0,"",2026-08-06
+TEC00108,Employment by NACE Rev.2 - percentage change Q/Q-1,ok,sdmx,7,69,0,"",2026-08-06
+TEC00109,Employment by NACE Rev.2 - thousand persons,ok,sdmx,7,69,0,"",2026-08-06
+TEC00110,"Goods and services, imports and exports",ok,sdmx,5,61,0,"",2026-08-06
+TEC00112,"Employment, domestic concept - Total",ok,sdmx,6,59,0,"",2026-08-06
+TEC00113,Adjusted gross disposable income of households per capita in PPS,ok,sdmx,7,58,0,"",2026-08-06
+TEC00114,GDP per capita in PPS,ok,sdmx,5,59,0,"",2026-08-06
+TEC00115,Real GDP growth rate - volume,ok,sdmx,5,60,0,"",2026-08-06
+TEC00116,Nominal labour productivity per person employed (ESA 2010),ok,sdmx,5,57,0,"",2026-08-06
+TEC00118,HICP - inflation rate,ok,sdmx,5,58,0,"",2026-08-06
+TEC00120,Price level indices,ok,sdmx,5,59,0,"",2026-08-06
+TEC00121,Price and volume convergence between EU Member States,ok,sdmx,6,20,0,"",2026-08-06
+TEC00127,General government deficit/surplus,ok,sdmx,6,59,0,"",2026-08-06
+TEC00131,Household saving rate,ok,sdmx,6,57,0,"",2026-08-06
+TEC00132,Investment by institutional sectors,ok,sdmx,5,59,0,"",2026-08-06
+TEC00134,"Final consumption expenditure of households, by consumption purpose",ok,sdmx,5,91,0,"",2026-08-06
+TEIBP010,"Balance of payments, current account, monthly data",ok,sdmx,10,54,0,"",2026-08-06
+TEIBP020,"Balance of payments, capital account, monthly data",ok,sdmx,10,54,0,"",2026-08-06
+TEIBP030,"Balance of payments, current and capital account, monthly data",ok,sdmx,10,54,0,"",2026-08-06
+TEIBP040,"Balance of payments, financial account, monthly data",ok,sdmx,10,58,0,"",2026-08-06
+TEIBP041,International investment position - quarterly data,ok,sdmx,9,62,0,"",2026-08-06
+TEIBP050,"Balance of payments, current account, quarterly data",ok,sdmx,10,63,0,"",2026-08-06
+TEIBP051,"Balance of payments, current account, quarterly data - % of GDP",ok,sdmx,8,61,0,"",2026-08-06
+TEIBP060,"Balance of payments, capital account, quarterly data",ok,sdmx,10,59,0,"",2026-08-06
+TEIBP070,"Balance of payments, current and capital account, quarterly data",ok,sdmx,10,59,0,"",2026-08-06
+TEIBP110,"Balance of payments, financial account, net, quarterly data",ok,sdmx,10,63,0,"",2026-08-06
+TEIBS010,Economic sentiment indicator,ok,sdmx,5,50,0,"",2026-08-06
+TEIBS020,Confidence indicators by sector,ok,sdmx,5,54,0,"",2026-08-06
+TEIBS030,Employment expectations indicator,ok,sdmx,6,51,0,"",2026-08-06
+TEIBS040,Employment expectations by sectors,ok,sdmx,6,54,0,"",2026-08-06
+TEIBS070,Current level of capacity utilization in manufacturing industry,ok,sdmx,5,50,0,"",2026-08-06
+TEICP000,HICP - all items,ok,sdmx,5,61,0,"",2026-08-06
+TEICP010,HICP - food,ok,sdmx,5,58,0,"",2026-08-06
+TEICP020,HICP - alcohol and tobacco,ok,sdmx,5,58,0,"",2026-08-06
+TEICP030,HICP - clothing,ok,sdmx,5,58,0,"",2026-08-06
+TEICP040,HICP - housing,ok,sdmx,5,58,0,"",2026-08-06
+TEICP050,HICP - household equipment,ok,sdmx,5,58,0,"",2026-08-06
+TEICP060,HICP - health,ok,sdmx,5,58,0,"",2026-08-06
+TEICP070,HICP - transport,ok,sdmx,5,58,0,"",2026-08-06
+TEICP080,HICP - communications,ok,sdmx,5,58,0,"",2026-08-06
+TEICP090,HICP - recreation and culture,ok,sdmx,5,58,0,"",2026-08-06
+TEICP100,HICP - education,ok,sdmx,5,58,0,"",2026-08-06
+TEICP110,HICP - hotels and restaurants,ok,sdmx,5,58,0,"",2026-08-06
+TEICP120,HICP - miscellaneous goods and services,ok,sdmx,5,58,0,"",2026-08-06
+TEICP130,HICP - insurance and financial services,ok,sdmx,5,58,0,"",2026-08-06
+TEICP200,"HICP - all items excluding energy, food, alcohol and tobacco",ok,sdmx,5,59,0,"",2026-08-06
+TEICP210,HICP - all items excluding energy,ok,sdmx,5,59,0,"",2026-08-06
+TEICP220,HICP - all items excluding energy and unprocessed food,ok,sdmx,5,59,0,"",2026-08-06
+TEICP230,HICP - all items excluding energy and seasonal food,ok,sdmx,5,59,0,"",2026-08-06
+TEICP240,HICP - all items excluding tobacco,ok,sdmx,5,59,0,"",2026-08-06
+TEICP250,HICP - energy,ok,sdmx,5,59,0,"",2026-08-06
+TEICP260,"HICP - food, alcohol and tobacco",ok,sdmx,5,59,0,"",2026-08-06
+TEICP270,House price index (2025 = 100) - quarterly data,ok,sdmx,5,54,0,"",2026-08-06
+TEICP280,HICP - services,ok,sdmx,5,59,0,"",2026-08-06
+TEICP290,HICP - non-energy industrial goods,ok,sdmx,5,59,0,"",2026-08-06
+TEIET010,Exports of goods - total,ok,sdmx,7,21,0,"",2026-08-06
+TEIET020,"Exports of goods - food, drinks and tobacco",ok,sdmx,7,21,0,"",2026-08-06
+TEIET030,Exports of goods - raw materials,ok,sdmx,7,21,0,"",2026-08-06
+TEIET040,"Exports of goods - mineral fuels, lubricants and related materials",ok,sdmx,7,21,0,"",2026-08-06
+TEIET050,Exports of goods - chemicals and related products,ok,sdmx,7,21,0,"",2026-08-06
+TEIET060,Exports of goods - other manufactured products,ok,sdmx,7,21,0,"",2026-08-06
+TEIET070,Exports of goods - machinery and transport equipment,ok,sdmx,7,20,0,"",2026-08-06
+TEIET110,Imports of goods - total,ok,sdmx,7,21,0,"",2026-08-06
+TEIET120,"Imports of goods - food, drinks and tobacco",ok,sdmx,7,21,0,"",2026-08-06
+TEIET130,Imports of goods - raw materials,ok,sdmx,7,21,0,"",2026-08-06
+TEIET140,"Imports of goods - mineral fuels, lubricants and related materials",ok,sdmx,7,21,0,"",2026-08-06
+TEIET150,Imports of goods - chemicals and related products,ok,sdmx,7,21,0,"",2026-08-06
+TEIET160,Imports of goods - other manufactured products,ok,sdmx,7,21,0,"",2026-08-06
+TEIET170,Imports of goods - machinery and transport equipment,ok,sdmx,7,21,0,"",2026-08-06
+TEIET210,Balance of trade - EU and euro area aggregates,ok,sdmx,7,21,0,"",2026-08-06
+TEIET215,Balance of trade,ok,sdmx,7,46,0,"",2026-08-06
+TEIET300,Unit value of exports,ok,sdmx,7,21,0,"",2026-08-06
+TEIET310,Unit value of imports,ok,sdmx,7,21,0,"",2026-08-06
+TEIIS010,Domestic producer prices - total industry (excluding construction),ok,sdmx,7,57,0,"",2026-08-06
+TEIIS011,Import prices - total industry,ok,sdmx,7,41,0,"",2026-08-06
+TEIIS012,Import prices - manufacturing,ok,sdmx,7,42,0,"",2026-08-06

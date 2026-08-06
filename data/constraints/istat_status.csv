@@ -1382,13 +1382,13 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 22_289_DF_DCIS_POPRES1_6,Lombardia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-05
 22_289_DF_DCIS_POPRES1_7,Provincia Autonoma Bolzano/Bozen,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-05
 22_289_DF_DCIS_POPRES1_8,Provincia Autonoma Trento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-05
-22_289_DF_DCIS_POPRES1_9,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-22_289_LT,Popolazione residente al 1° gennaio - provincia di Latina,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-22_293,Indicatori  demografici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_289_DF_DCIS_POPRES1_9,Veneto,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+22_289_LT,Popolazione residente al 1° gennaio - provincia di Latina,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+22_293,Indicatori  demografici,ok,hub,3,161,0,"",2026-08-06
 22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,ok,hub,3,161,0,"",2026-07-17
-22_315,Popolazione residente  - bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-22_315_DF_DASH_DCIS_POPORESBIL1_24,Tutti i comuni per singola età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315,Popolazione residente  - bilancio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+22_315_DF_DASH_DCIS_POPORESBIL1_24,Tutti i comuni per singola età,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 22_315_DF_DCIS_POPORESBIL1_10,Friuli-Venezia Giulia,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_11,Emilia-Romagna,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_12,Toscana,empty,hub,0,0,0,"",2026-07-17
@@ -1399,13 +1399,13 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 22_315_DF_DCIS_POPORESBIL1_17,Molise,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_18,Campania,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_19,Puglia,empty,hub,0,0,0,"",2026-07-17
-22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 22_315_DF_DCIS_POPORESBIL1_20,Basilicata,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_21,Calabria,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_22,Sicilia,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_23,Sardegna,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,ok,hub,4,12499,0,"",2026-07-17
-22_315_DF_DCIS_POPORESBIL1_3,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+22_315_DF_DCIS_POPORESBIL1_3,Piemonte,empty,hub,0,0,0,"",2026-08-06
 22_315_DF_DCIS_POPORESBIL1_4,Valle d'Aosta/Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_5,Liguria,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_6,Lombardia,empty,hub,0,0,0,"",2026-07-17
@@ -1413,19 +1413,19 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 22_315_DF_DCIS_POPORESBIL1_8,Provincia Autonoma Trento,empty,hub,0,0,0,"",2026-07-17
 22_315_DF_DCIS_POPORESBIL1_9,Veneto,empty,hub,0,0,0,"",2026-07-17
 22_389,Popolazione residente al 1° gennaio - ultimo anno disponibile,empty,hub,0,0,0,"",2026-07-17
-24_1149,Unioni civili-Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_1,Sesso (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_2,Stato civile (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_3,"Classe di età, stato civile e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_4,"Titolo di studio, stato civile e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_5,Mese di costituzione e sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_6,Regime patrimoniale e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1149_DF_DCIS_UNIONDEMO_7,"Uniti per età, anno di nascita e stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1150,Unioni civili - Indicatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1150_DF_DCIS_UNIONIND_1,Indicatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1150_DF_DCIS_UNIONIND_2,Età media delle donne per stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1150_DF_DCIS_UNIONIND_3,Età media degli uomini per stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1151,Unioni civili - Caratteristiche socio-professionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1149,Unioni civili-Caratteristiche demografiche,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_1,Sesso (%),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_2,Stato civile (%),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_3,"Classe di età, stato civile e sesso",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_4,"Titolo di studio, stato civile e sesso",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_5,Mese di costituzione e sesso,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_6,Regime patrimoniale e titolo di studio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1149_DF_DCIS_UNIONDEMO_7,"Uniti per età, anno di nascita e stato civile",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1150,Unioni civili - Indicatori,ok,hub,5,162,0,"",2026-08-06
+24_1150_DF_DCIS_UNIONIND_1,Indicatori,ok,hub,3,146,0,"",2026-08-06
+24_1150_DF_DCIS_UNIONIND_2,Età media delle donne per stato civile,ok,hub,4,147,0,"",2026-08-06
+24_1150_DF_DCIS_UNIONIND_3,Età media degli uomini per stato civile,ok,hub,4,147,0,"",2026-08-06
+24_1151,Unioni civili - Caratteristiche socio-professionali,ok,hub,13,166,0,"",2026-08-06
 24_1151_DF_DCIS_UNIONISOC_1,Regime patrimoniale e posizione professionale,ok,hub,6,34,0,"",2026-07-17
 24_1151_DF_DCIS_UNIONISOC_2,Regime patrimoniale e condizione professionale,ok,hub,6,30,0,"",2026-07-17
 24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,ok,hub,6,34,0,"",2026-07-17
@@ -1434,68 +1434,68 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 24_1151_DF_DCIS_UNIONISOC_6,Regione di residenza,ok,hub,4,57,0,"",2026-07-17
 24_1151_DF_DCIS_UNIONISOC_7,Regione di nascita unito 2 e di residenza unito 1,ok,hub,4,57,0,"",2026-07-17
 24_1151_DF_DCIS_UNIONISOC_8,Regione di nascita unito 1 e di residenza unito 2,ok,hub,4,57,0,"",2026-07-17
-24_1152,Unioni civili - Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_2,Unioni civili con almeno uno straniero per area di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_3,Unioni civili con almeno uno straniero per paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_4,Unioni civili di entrambi stranieri per paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_5,Unioni civili di entrambi stranieri per paese e confronto cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_6,Unioni civili per tipologia di coppia e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_1152_DF_DCIS_UNIONICIT_7,Unioni civili per tipologia di coppia e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_1152,Unioni civili - Cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,ok,hub,8,155,0,"",2026-08-06
+24_1152_DF_DCIS_UNIONICIT_2,Unioni civili con almeno uno straniero per area di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_3,Unioni civili con almeno uno straniero per paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_4,Unioni civili di entrambi stranieri per paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_5,Unioni civili di entrambi stranieri per paese e confronto cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_6,Unioni civili per tipologia di coppia e titolo di studio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_1152_DF_DCIS_UNIONICIT_7,Unioni civili per tipologia di coppia e stato civile,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 24_186,Matrimoni,empty,hub,0,0,0,"",2026-07-17
-24_186_DF_DCIS_MATRDEMO_1,Rito (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_10,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_11,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_12,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_13,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_14,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_15,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_16,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_17,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_18,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_19,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_2,Stato civile (%),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_20,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_21,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_22,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_23,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_24,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_25,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_26,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_27,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_28,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_29,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_3,Età e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_30,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_4,Classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_5,"Rito, classe di età, stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_6,"Rito, titolo di studio, stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_7,"Rito, mese di celebrazione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_8,Regime patrimoniale e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_186_DF_DCIS_MATRDEMO_9,Tipo di comune e rito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_186_DF_DCIS_MATRDEMO_1,Rito (%),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_10,Piemonte,ok,hub,4,1237,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_11,Valle d'Aosta/Vallée d'Aoste,ok,hub,4,83,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_12,Liguria,ok,hub,4,248,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_13,Lombardia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_14,Provincia Autonoma Bolzano/Bozen,ok,hub,4,125,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_15,Provincia Autonoma Trento,ok,hub,4,259,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_16,Veneto,ok,hub,4,608,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_17,Friuli-Venezia Giulia,ok,hub,4,237,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_18,Emilia-Romagna,ok,hub,4,380,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_19,Toscana,ok,hub,4,319,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_2,Stato civile (%),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_20,Umbria,ok,hub,4,102,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_21,Marche,ok,hub,4,305,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_22,Lazio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_23,Abruzzo,ok,hub,4,317,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_24,Molise,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_25,Campania,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_26,Puglia,ok,hub,4,283,0,"",2026-08-06
+24_186_DF_DCIS_MATRDEMO_27,Basilicata,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_28,Calabria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_29,Sicilia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_3,Età e stato civile,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_30,Sardegna,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_4,Classi di età,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_5,"Rito, classe di età, stato civile",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_6,"Rito, titolo di studio, stato civile",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_7,"Rito, mese di celebrazione",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_8,Regime patrimoniale e titolo di studio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_186_DF_DCIS_MATRDEMO_9,Tipo di comune e rito,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",ok,hub,5,21,0,"",2026-07-17
-24_386,Matrimoni - Caratteristiche socio-professionali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_2,Regime patrimoniale e condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_3,Regione di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_4,Regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_386,Matrimoni - Caratteristiche socio-professionali,ok,hub,14,200,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",ok,hub,7,41,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_2,Regime patrimoniale e condizione professionale,ok,hub,6,30,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_3,Regione di nascita,ok,hub,6,59,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_4,Regione di residenza,ok,hub,5,58,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,ok,hub,5,58,0,"",2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,ok,hub,5,58,0,"",2026-08-06
 24_446,Matrimoni - Cittadinanza,empty,hub,0,0,0,"",2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_1,Matrimoni - Cittadinanza - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_2,Matrimoni per tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_3,Tipologia di coppia e area di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_4,Tipologia di coppia e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_1,Matrimoni - Cittadinanza - Principali dati,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_2,Matrimoni per tipologia di coppia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_3,Tipologia di coppia e area di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_4,Tipologia di coppia e paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 24_446_DF_DCIS_MATRIMONICIT_5,Matrimoni di sposi entrambi stranieri per cittadinanza,empty,hub,0,0,0,"",2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_6,Matrimoni di sposi entrambi stranieri per uguaglianza o meno della cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_7,Tipologia di coppia e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_8,Primi o secondi matrimoni per tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_447,Sposi - Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_447_DF_DCIS_SPOSI_1,"Età, anno di nascita e stato civile",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_447_DF_DCIS_SPOSI_2,Età e durata della vedovanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_447_DF_DCIS_SPOSI_3,Età e durata del divorzio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+24_446_DF_DCIS_MATRIMONICIT_6,Matrimoni di sposi entrambi stranieri per uguaglianza o meno della cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_7,Tipologia di coppia e titolo di studio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_8,Primi o secondi matrimoni per tipologia di coppia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,ok,hub,8,161,0,"",2026-08-06
+24_447,Sposi - Caratteristiche demografiche,ok,hub,10,436,0,"",2026-08-06
+24_447_DF_DCIS_SPOSI_1,"Età, anno di nascita e stato civile",ok,hub,5,182,0,"",2026-08-06
+24_447_DF_DCIS_SPOSI_2,Età e durata della vedovanza,ok,hub,6,104,0,"",2026-08-06
+24_447_DF_DCIS_SPOSI_3,Età e durata del divorzio,ok,hub,6,100,0,"",2026-08-06
+24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",ok,hub,6,168,0,"",2026-08-06
 24_84,Matrimoni - Indicatori,ok,hub,5,193,0,"",2026-07-17
 24_84_DF_DCIS_MATRIND_1,Indicatori di nuzialità,ok,hub,3,179,0,"",2026-07-17
 24_84_DF_DCIS_MATRIND_2,Età media degli sposi per stato civile,ok,hub,4,149,0,"",2026-07-17
@@ -1509,56 +1509,56 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 25_1242_DF_DCCV_FERTINT1_5,Intenzione di avere figli in futuro,ok,hub,6,18,0,"",2026-07-17
 25_1242_DF_DCCV_FERTINT1_6,Intenzione di avere figli in futuro per numero di figli avuti,ok,hub,6,17,0,"",2026-07-17
 25_1242_DF_DCCV_FERTINT1_7,Intenzione di avere figli in futuro delle persone con lo stesso territorio di residenza,ok,hub,4,21,0,"",2026-07-17
-25_326,Indicatori  di fecondità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_326,Indicatori  di fecondità,ok,hub,5,183,0,"",2026-08-06
 25_326_DF_DCIS_FECONDITA1_5,Tasso di fecondità totale per anno di evento e cittadinanza della madre,ok,hub,4,142,0,"",2026-07-17
 25_326_DF_DCIS_FECONDITA1_6,Età media delle madri al parto per anno di evento e cittadinanza della madre,ok,hub,4,142,0,"",2026-07-17
 25_326_DF_DCIS_FECONDITA1_7,"Tassi di fecondità specifici per età della madre, anno di evento e cittadinanza della madre (per mille donne)",ok,hub,5,179,0,"",2026-07-17
 25_326_DF_DCIS_FECONDITA1_8,Età media dei padri alla nascita del figlio,ok,hub,3,139,0,"",2026-07-17
 25_74,Nati vivi,ok,hub,13,446,0,"",2026-07-17
-25_74_DF_DCIS_NATI1_10,Padre - Età e stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_11,Genitori - Età (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_12,Genitori - Stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_13,Stato civile di lei e di lui,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_14,Età di lei e di lui,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_15,Caratteristiche della madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_16,Caratteristiche del padre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_17,Stime  (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_7,Madre - Età e stato civile (capoluoghi prov.),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_8,Madre - Età e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI1_9,Madre - Età e anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_1,Nati serie storica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_2,Sesso e cittadinanza del nato - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_3,Continente di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_4,Macro area di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_5,Paese di cittadinanza estera del nato - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_6,Nati dentro e fuori dal matrimonio - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_7,Età e cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_8,"Cittadinanza dei genitori, classe di età dei genitori - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_74_DF_DCIS_NATI2_9,"Cittadinanza dei genitori, stato civile dei genitori - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944,Tavole di fecondità per ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944_DF_DCIS_ARCH_FEC_10,Età media al parto per coorte e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944_DF_DCIS_ARCH_FEC_11,"Tassi di fecondità specifci per età della madre, coorte e ordine di nascita (per mille donne)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_74_DF_DCIS_NATI1_10,Padre - Età e stato civile (capoluoghi prov.),ok,hub,6,163,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_11,Genitori - Età (capoluoghi prov.),ok,hub,6,168,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_12,Genitori - Stato civile (capoluoghi prov.),ok,hub,6,158,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_13,Stato civile di lei e di lui,ok,hub,7,163,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_14,Età di lei e di lui,ok,hub,7,173,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_15,Caratteristiche della madre,ok,hub,7,168,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_16,Caratteristiche del padre,ok,hub,7,168,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_17,Stime  (capoluoghi prov.),ok,hub,5,156,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_7,Madre - Età e stato civile (capoluoghi prov.),ok,hub,6,163,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_8,Madre - Età e cittadinanza,ok,hub,6,184,0,"",2026-08-06
+25_74_DF_DCIS_NATI1_9,Madre - Età e anno di nascita,ok,hub,6,279,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_1,Nati serie storica - prov.,ok,hub,4,141,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_2,Sesso e cittadinanza del nato - prov.,ok,hub,4,146,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_3,Continente di cittadinanza estera del nato - reg.,ok,hub,4,41,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_4,Macro area di cittadinanza estera del nato - reg.,ok,hub,4,53,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_5,Paese di cittadinanza estera del nato - reg.,ok,hub,4,243,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_6,Nati dentro e fuori dal matrimonio - prov.,ok,hub,5,145,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_7,Età e cittadinanza della madre - prov.,ok,hub,6,182,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_8,"Cittadinanza dei genitori, classe di età dei genitori - prov.",ok,hub,7,166,0,"",2026-08-06
+25_74_DF_DCIS_NATI2_9,"Cittadinanza dei genitori, stato civile dei genitori - prov.",ok,hub,7,156,0,"",2026-08-06
+25_944,Tavole di fecondità per ordine di nascita,ok,hub,7,340,0,"",2026-08-06
+25_944_DF_DCIS_ARCH_FEC_10,Età media al parto per coorte e ordine di nascita,ok,hub,5,220,0,"",2026-08-06
+25_944_DF_DCIS_ARCH_FEC_11,"Tassi di fecondità specifci per età della madre, coorte e ordine di nascita (per mille donne)",ok,hub,6,262,0,"",2026-08-06
 25_944_DF_DCIS_ARCH_FEC_5,Principali indicatori,ok,hub,4,213,0,"",2026-07-17
-25_944_DF_DCIS_ARCH_FEC_6,Tasso di fecondità totale per anno di evento e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944_DF_DCIS_ARCH_FEC_7,Età media al parto per anno di evento e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944_DF_DCIS_ARCH_FEC_8,"Tassi di fecondità specifici per età della madre, anno di evento e ordine di nascita (per mille donne)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-25_944_DF_DCIS_ARCH_FEC_9,Tasso di fecondità totale per coorte e ordine di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-26_29,Decessi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-26_295,Tavole di mortalità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+25_944_DF_DCIS_ARCH_FEC_6,Tasso di fecondità totale per anno di evento e ordine di nascita,ok,hub,5,216,0,"",2026-08-06
+25_944_DF_DCIS_ARCH_FEC_7,Età media al parto per anno di evento e ordine di nascita,ok,hub,5,216,0,"",2026-08-06
+25_944_DF_DCIS_ARCH_FEC_8,"Tassi di fecondità specifici per età della madre, anno di evento e ordine di nascita (per mille donne)",ok,hub,6,253,0,"",2026-08-06
+25_944_DF_DCIS_ARCH_FEC_9,Tasso di fecondità totale per coorte e ordine di nascita,ok,hub,5,220,0,"",2026-08-06
+26_29,Decessi,ok,hub,9,200,0,"",2026-08-06
+26_295,Tavole di mortalità,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 26_295_DF_DCIS_MORTALITA1_1,Classi di età,ok,hub,5,11612,0,"",2026-07-17
 26_295_DF_DCIS_MORTALITA1_2,Singole età,ok,hub,5,11708,0,"",2026-07-17
-26_29_DF_DCIS_DECESSI_1,Indicatori sintetici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_29_DF_DCIS_DECESSI_1,Indicatori sintetici,ok,hub,5,151,0,"",2026-08-06
 26_29_DF_DCIS_DECESSI_2,Morti,ok,hub,9,12526,0,"",2026-07-17
-26_29_DF_DCIS_DECESSI_3,Quozienti  specifici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_239,Investimenti fissi lordi per branca proprietaria (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_242,Spesa per consumi finali delle famiglie - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_243,Spesa per consumi finali della Pa - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_248,Prodotto interno lordo lato produzione - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_254,Sequenza dei conti - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_298,Aggregati dei conti per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_301,Occupazione per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-270_303,Investimenti fissi lordi per branca proprietaria (NACE Rev.2) - edizioni febbraio 2012 - novembre 2013,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
-272_1164,Relazioni di parentela e reti di supporto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-17
+26_29_DF_DCIS_DECESSI_3,Quozienti  specifici,ok,hub,6,166,0,"",2026-08-06
+270_239,Investimenti fissi lordi per branca proprietaria (NACE Rev.1.1) - edizione ottobre 2010,ok,hub,10,75,0,"",2026-08-06
+270_242,Spesa per consumi finali delle famiglie - edizioni fino a novembre 2013,ok,hub,10,63,0,"",2026-08-06
+270_243,Spesa per consumi finali della Pa - edizioni fino a novembre 2013,ok,hub,9,56,0,"",2026-08-06
+270_248,Prodotto interno lordo lato produzione - edizioni fino a novembre 2013,ok,hub,9,48,0,"",2026-08-06
+270_254,Sequenza dei conti - edizioni fino a novembre 2013,ok,hub,8,70,0,"",2026-08-06
+270_298,Aggregati dei conti per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,ok,hub,10,200,0,"",2026-08-06
+270_301,Occupazione per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,ok,hub,10,201,0,"",2026-08-06
+270_303,Investimenti fissi lordi per branca proprietaria (NACE Rev.2) - edizioni febbraio 2012 - novembre 2013,ok,hub,9,85,0,"",2026-08-06
+272_1164,Relazioni di parentela e reti di supporto,ok,hub,9,65,0,"",2026-08-06
 272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,ok,hub,4,26,0,"",2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",ok,hub,5,24,0,"",2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_3,Persone per numero di nonni non conviventi per sesso e età,ok,hub,6,16,0,"",2026-07-18
@@ -1601,14 +1601,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 27_385_DF_DCIS_DIVORDEMCONG_7,Età al matrimonio e anno di matrimonio,ok,hub,6,65,0,"",2026-07-18
 27_385_DF_DCIS_DIVORDEMCONG_8,Età al matrimonio - marito,ok,hub,4,39,0,"",2026-07-18
 27_385_DF_DCIS_DIVORDEMCONG_9,Età al matrimonio - moglie,ok,hub,4,39,0,"",2026-07-18
-27_467,Separazioni -  Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_467,Separazioni -  Caratteristiche demografiche,ok,hub,12,259,0,"",2026-08-06
 27_467_DF_DCIS_SEPARAZDEMCONG1_1,Separazioni - Caratteristiche demografiche - Principali dati,ok,hub,3,32,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_2,Regione di nascita,ok,hub,5,73,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_3,Regione di residenza,ok,hub,5,73,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_4,Età alla separazione - coniugi,ok,hub,5,25,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_5,Età alla separazione - marito,ok,hub,4,42,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_6,Età alla separazione - moglie,ok,hub,4,42,0,"",2026-07-18
-27_467_DF_DCIS_SEPARAZDEMCONG1_7,Età al matrimonio e anno di matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_7,Età al matrimonio e anno di matrimonio,ok,hub,6,76,0,"",2026-08-06
 27_467_DF_DCIS_SEPARAZDEMCONG1_8,Età al matrimonio - marito,ok,hub,4,41,0,"",2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_9,Età al matrimonio - moglie,ok,hub,4,41,0,"",2026-07-18
 27_468,Separazioni -  Caratteristiche socio-professionali,ok,hub,9,78,0,"",2026-07-18
@@ -1631,14 +1631,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 27_469_DF_DCIS_SEPARAZFIG1_7,Presenza di figli affidati,ok,hub,4,36,0,"",2026-07-18
 27_469_DF_DCIS_SEPARAZFIG1_8,Anno di matrimonio,ok,hub,4,58,0,"",2026-07-18
 27_469_DF_DCIS_SEPARAZFIG1_9,Età dei figli affidati e tipo di affidamento,ok,hub,5,28,0,"",2026-07-18
-27_470,Divorzi -  Caratteristiche demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_470,Divorzi -  Caratteristiche demografiche,ok,hub,12,259,0,"",2026-08-06
 27_470_DF_DCIS_DIVORDEMCONG1_1,Divorzi - Caratteristiche demografiche - Principali dati,ok,hub,3,32,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_2,Regione di nascita,ok,hub,5,73,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_3,Regione di residenza,ok,hub,5,73,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_4,Età al divorzio - coniugi,ok,hub,5,25,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_5,Età al divorzio - marito,ok,hub,4,42,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_6,Età al divorzio - moglie,ok,hub,4,42,0,"",2026-07-18
-27_470_DF_DCIS_DIVORDEMCONG1_7,Età al matrimonio e anno di matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_7,Età al matrimonio e anno di matrimonio,ok,hub,6,76,0,"",2026-08-06
 27_470_DF_DCIS_DIVORDEMCONG1_8,Età al matrimonio - marito,ok,hub,4,41,0,"",2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_9,Età al matrimonio - moglie,ok,hub,4,41,0,"",2026-07-18
 27_474,Separazioni -  Indicatori,ok,hub,3,88,0,"",2026-07-18
@@ -1706,7 +1706,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 27_945_DF_DCIS_DIVFIG1_12,Età dei figli affidati,ok,hub,4,50,0,"",2026-07-18
 27_945_DF_DCIS_DIVFIG1_13,Tipo di affidamento,ok,hub,4,37,0,"",2026-07-18
 27_945_DF_DCIS_DIVFIG1_2,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,ok,hub,4,39,0,"",2026-07-18
-27_945_DF_DCIS_DIVFIG1_3,Durata del matrimonio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+27_945_DF_DCIS_DIVFIG1_3,Durata del matrimonio,ok,hub,4,52,0,"",2026-08-06
 27_945_DF_DCIS_DIVFIG1_4,Anno e rito di celebrazione del matrimonio,ok,hub,5,61,0,"",2026-07-18
 27_945_DF_DCIS_DIVFIG1_5,Anno di matrimonio e numero di figli,ok,hub,5,91,0,"",2026-07-18
 27_945_DF_DCIS_DIVFIG1_6,Anno di matrimonio e presenza di figli affidati,ok,hub,5,89,0,"",2026-07-18
@@ -1721,25 +1721,25 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 27_946_DF_DCIS_DIVORZIND1_4,Provvedimenti economici per i figli,ok,hub,3,44,0,"",2026-07-18
 27_946_DF_DCIS_DIVORZIND1_5,Provvedimenti economici per i figli minori,ok,hub,3,35,0,"",2026-07-18
 27_946_DF_DCIS_DIVORZIND1_6,Assegnazione dell'abitazione,ok,hub,3,38,0,"",2026-07-18
-284_103,Principali aggregati per branca di attività (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_103,Principali aggregati per branca di attività (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014,ok,hub,10,120,0,"",2026-08-06
 284_104,Valori pro capite - edizioni ottobre 2011 - marzo 2014,ok,hub,7,18,0,"",2026-07-18
 284_159,Prodotto interno lordo e principali componenti - edizioni fino a marzo 2014,ok,hub,7,41,0,"",2026-07-18
 284_238,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.1.1) - edizioni precedenti ottobre 2011",empty,hub,0,0,0,"",2026-07-18
-284_240,Spesa per consumi finali delle famiglie - edizioni fino a marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
-284_249,Investimenti - edizioni fino a marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_240,Spesa per consumi finali delle famiglie - edizioni fino a marzo 2014,ok,hub,10,110,0,"",2026-08-06
+284_249,Investimenti - edizioni fino a marzo 2014,ok,hub,10,32,0,"",2026-08-06
 284_252,Sequenza dei conti - edizioni fino a marzo 2014,ok,hub,8,141,0,"",2026-07-18
-284_302,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
-284_9,Occupazione regolare ed irregolare - edizioni ottobre 2011 - marzo 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+284_302,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014",ok,hub,9,77,0,"",2026-08-06
+284_9,Occupazione regolare ed irregolare - edizioni ottobre 2011 - marzo 2014,ok,hub,10,117,0,"",2026-08-06
 285_245,Contributi alla crescita del PIL - edizioni fino ad agosto 2014,ok,hub,8,30,0,"",2026-07-18
-28_185,Migrazioni (Trasferimenti di residenza),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185,Migrazioni (Trasferimenti di residenza),ok,hub,10,926,0,"",2026-08-06
 28_185_DF_DCIS_MIGRAZIONI_1,Migrazioni interne  - Italiani e stranieri,ok,hub,6,71,0,"",2026-07-18
 28_185_DF_DCIS_MIGRAZIONI_2,Immigrati - cittadinanza,ok,hub,7,226,0,"",2026-07-18
-28_185_DF_DCIS_MIGRAZIONI_3,Immigrati - paesi di provenienza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
-28_185_DF_DCIS_MIGRAZIONI_4,Immigrati - province di destinazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_3,Immigrati - paesi di provenienza,ok,hub,8,224,0,"",2026-08-06
+28_185_DF_DCIS_MIGRAZIONI_4,Immigrati - province di destinazione,ok,hub,8,165,0,"",2026-08-06
 28_185_DF_DCIS_MIGRAZIONI_5,Emigrati - cittadinanza,ok,hub,7,221,0,"",2026-07-18
-28_185_DF_DCIS_MIGRAZIONI_6,Emigrati - paesi di destinazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
-28_185_DF_DCIS_MIGRAZIONI_7,Emigrati - province di origine,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
-29_316,Stranieri residenti - Bilancio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_6,Emigrati - paesi di destinazione,ok,hub,7,221,0,"",2026-08-06
+28_185_DF_DCIS_MIGRAZIONI_7,Emigrati - province di origine,ok,hub,7,163,0,"",2026-08-06
+29_316,Stranieri residenti - Bilancio,ok,hub,4,8087,0,"",2026-08-06
 29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",ok,hub,4,158,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_10,Emilia-Romagna,empty,hub,0,0,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_11,Toscana,empty,hub,0,0,0,"",2026-07-18
@@ -1759,81 +1759,81 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 29_316_DF_DCIS_POPSTRBIL1_3,Valle d'Aosta/Vallée d'Aoste,empty,hub,0,0,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_4,Liguria,empty,hub,0,0,0,"",2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_5,Lombardia,empty,hub,0,0,0,"",2026-07-18
-29_316_DF_DCIS_POPSTRBIL1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_316_DF_DCIS_POPSTRBIL1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_316_DF_DCIS_POPSTRBIL1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_316_DF_DCIS_POPSTRBIL1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317,Stranieri residenti al 1° gennaio - Cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_1,"Italia, regioni, province - Paese di cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_10,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_11,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_12,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_13,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_14,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_316_DF_DCIS_POPSTRBIL1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_316_DF_DCIS_POPSTRBIL1_7,Provincia Autonoma Trento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_316_DF_DCIS_POPSTRBIL1_8,Veneto,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_316_DF_DCIS_POPSTRBIL1_9,Friuli-Venezia Giulia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317,Stranieri residenti al 1° gennaio - Cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_1,"Italia, regioni, province - Paese di cittadinanza",ok,hub,5,359,0,"",2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_10,Emilia-Romagna,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_11,Toscana,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_12,Umbria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_13,Marche,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_14,Lazio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 29_317_DF_DCIS_POPSTRCIT1_15,Abruzzo,empty,hub,0,0,0,"",2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_16,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_17,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_18,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_19,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_2,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_20,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_21,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_22,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_23,Tutti i comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_24,"Italia, regioni, province - Area geopolitica di cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_4,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_5,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_317_DF_DCIS_POPSTRCIT1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_348,Permessi di soggiorno dei cittadini non comunitari,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_317_DF_DCIS_POPSTRCIT1_16,Molise,ok,hub,5,305,0,"",2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_17,Campania,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_18,Puglia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_19,Basilicata,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_2,Piemonte,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_20,Calabria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_21,Sicilia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_22,Sardegna,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_23,Tutti i comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_24,"Italia, regioni, province - Area geopolitica di cittadinanza",ok,hub,5,161,0,"",2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_4,Liguria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_5,Lombardia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_7,Provincia Autonoma Trento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_8,Veneto,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_9,Friuli-Venezia Giulia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_348,Permessi di soggiorno dei cittadini non comunitari,empty,hub,0,0,0,"",2026-08-06
 29_348_DF_DCIS_PERMSOGG1_1,Tipo di permesso e cittadinanza,ok,hub,5,76,0,"",2026-07-19
-29_348_DF_DCIS_PERMSOGG1_10,"Cittadinanza, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_10,"Cittadinanza, sesso, età",ok,hub,5,84,0,"",2026-08-06
 29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",ok,hub,6,149,0,"",2026-07-19
 29_348_DF_DCIS_PERMSOGG1_2,Tipo di permesso e classe di età,ok,hub,6,21,0,"",2026-07-19
-29_348_DF_DCIS_PERMSOGG1_3,Tipo di permesso e stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_348_DF_DCIS_PERMSOGG1_5,Provincia e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_348_DF_DCIS_PERMSOGG1_3,Tipo di permesso e stato civile,ok,hub,6,15,0,"",2026-08-06
+29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,ok,hub,6,141,0,"",2026-08-06
+29_348_DF_DCIS_PERMSOGG1_5,Provincia e cittadinanza,ok,hub,5,204,0,"",2026-08-06
+29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,ok,hub,6,149,0,"",2026-08-06
 29_348_DF_DCIS_PERMSOGG1_7,Provincia e stato civile,ok,hub,6,143,0,"",2026-07-19
 29_348_DF_DCIS_PERMSOGG1_8,Cittadinanza e motivo del permesso,ok,hub,6,209,0,"",2026-07-19
 29_348_DF_DCIS_PERMSOGG1_9,Cittadinanza e stato civile,ok,hub,5,77,0,"",2026-07-19
-29_7,Stranieri residenti al 1° gennaio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_1,"Italia, regioni, province",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_10,Emilia-Romagna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_11,Toscana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_12,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_13,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_14,Lazio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_15,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_16,Molise,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_17,Campania,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_18,Puglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_19,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_2,Piemonte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_20,Calabria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_21,Sicilia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_22,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_23,Tutti i comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_4,Liguria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7,Stranieri residenti al 1° gennaio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_1,"Italia, regioni, province",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_10,Emilia-Romagna,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_11,Toscana,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_12,Umbria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_13,Marche,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_14,Lazio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_15,Abruzzo,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_16,Molise,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_17,Campania,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_18,Puglia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_19,Basilicata,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_2,Piemonte,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_20,Calabria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_21,Sicilia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_22,Sardegna,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_23,Tutti i comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_3,Valle d'Aosta/Vallée d'Aoste,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_4,Liguria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 29_7_DF_DCIS_POPSTRRES1_5,Lombardia,empty,hub,0,0,0,"",2026-07-19
-29_7_DF_DCIS_POPSTRRES1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_7,Provincia Autonoma Trento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_8,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_7_DF_DCIS_POPSTRRES1_9,Friuli-Venezia Giulia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_849,Acquisizioni di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_849_DF_DCIS_ACQCITIZ_1,Modalità di acquisizione e classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_7_DF_DCIS_POPSTRRES1_6,Provincia Autonoma Bolzano/Bozen,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_7,Provincia Autonoma Trento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_8,Veneto,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_7_DF_DCIS_POPSTRRES1_9,Friuli-Venezia Giulia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_849,Acquisizioni di cittadinanza,ok,hub,7,179,0,"",2026-08-06
+29_849_DF_DCIS_ACQCITIZ_1,Modalità di acquisizione e classe di età,ok,hub,6,19,0,"",2026-08-06
 29_849_DF_DCIS_ACQCITIZ_2,Principali paesi di cittadinanza,ok,hub,5,57,0,"",2026-07-19
 29_849_DF_DCIS_ACQCITIZ_3,Modalità di acquisizione,ok,hub,6,39,0,"",2026-07-19
 29_849_DF_DCIS_ACQCITIZ_4,Sesso,ok,hub,5,145,0,"",2026-07-19
-29_956,Stranieri residenti e condizioni di vita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_1,Cittadinanza ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_10,Lingua madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_11,"Uso dell'italiano in famiglia e con amici, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_12,"Uso dell'italiano in famiglia e con amici, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956,Stranieri residenti e condizioni di vita,ok,hub,14,173,0,"",2026-08-06
+29_956_DF_DCIS_CV_STRA_1,Cittadinanza ed età,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_956_DF_DCIS_CV_STRA_10,Lingua madre,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_956_DF_DCIS_CV_STRA_11,"Uso dell'italiano in famiglia e con amici, sesso ed età",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
+29_956_DF_DCIS_CV_STRA_12,"Uso dell'italiano in famiglia e con amici, cittadinanza",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 29_956_DF_DCIS_CV_STRA_13,"Uso dell'italiano in famiglia e con amici, presenza in Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
 29_956_DF_DCIS_CV_STRA_14,"Uso dell'italiano in famiglia e con amici, tipologia familiare",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
 29_956_DF_DCIS_CV_STRA_15,Uso dell'italiano dei cittadini stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19

@@ -1150,13 +1150,43 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_289_DF_DCIS_POPRES1_24,Tutti i comuni per singola età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 22_289_DF_DCIS_POPRES1_25,Tutti i comuni per stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 22_289_DF_DCIS_POPRES1_26,Tutti i comuni per singola età e stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+22_293,Indicatori  demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+24_1150,Unioni civili - Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_1150_DF_DCIS_UNIONIND_1,Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_1150_DF_DCIS_UNIONIND_2,Età media delle donne per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_1150_DF_DCIS_UNIONIND_3,Età media degli uomini per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_1151,Unioni civili - Caratteristiche socio-professionali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-06
 24_1151_DF_DCIS_UNIONISOC_1,Regime patrimoniale e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_2,Regime patrimoniale e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_4,Sesso e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_186_DF_DCIS_MATRDEMO_10,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1232,2026-08-06
+24_186_DF_DCIS_MATRDEMO_11,Valle d'Aosta/Vallée d'Aoste,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,78,2026-08-06
+24_186_DF_DCIS_MATRDEMO_12,Liguria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,243,2026-08-06
+24_186_DF_DCIS_MATRDEMO_14,Provincia Autonoma Bolzano/Bozen,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,120,2026-08-06
+24_186_DF_DCIS_MATRDEMO_15,Provincia Autonoma Trento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,254,2026-08-06
+24_186_DF_DCIS_MATRDEMO_16,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,603,2026-08-06
+24_186_DF_DCIS_MATRDEMO_17,Friuli-Venezia Giulia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,232,2026-08-06
+24_186_DF_DCIS_MATRDEMO_18,Emilia-Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,375,2026-08-06
+24_186_DF_DCIS_MATRDEMO_19,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,314,2026-08-06
+24_186_DF_DCIS_MATRDEMO_20,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-06
+24_186_DF_DCIS_MATRDEMO_21,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,300,2026-08-06
+24_186_DF_DCIS_MATRDEMO_23,Abruzzo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,312,2026-08-06
+24_186_DF_DCIS_MATRDEMO_26,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,278,2026-08-06
 24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
+24_386,Matrimoni - Caratteristiche socio-professionali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",REF_AREA,nazionale,nazionale,1,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_2,Regime patrimoniale e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_3,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_4,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,REF_AREA,nazionale,nazionale,1,2026-08-06
+24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,REF_AREA,nazionale,nazionale,1,2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
+24_447,Sposi - Caratteristiche demografiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
+24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 24_84,Matrimoni - Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
 24_84_DF_DCIS_MATRIND_1,Indicatori di nuzialità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
 24_84_DF_DCIS_MATRIND_2,Età media degli sposi per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-17
@@ -1170,15 +1200,55 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 25_1242_DF_DCCV_FERTINT1_5,Intenzione di avere figli in futuro,REF_AREA,nazionale,nazionale,1,2026-07-17
 25_1242_DF_DCCV_FERTINT1_6,Intenzione di avere figli in futuro per numero di figli avuti,REF_AREA,nazionale,nazionale,1,2026-07-17
 25_1242_DF_DCCV_FERTINT1_7,Intenzione di avere figli in futuro delle persone con lo stesso territorio di residenza,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
+25_326,Indicatori  di fecondità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 25_326_DF_DCIS_FECONDITA1_5,Tasso di fecondità totale per anno di evento e cittadinanza della madre,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_326_DF_DCIS_FECONDITA1_6,Età media delle madri al parto per anno di evento e cittadinanza della madre,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_326_DF_DCIS_FECONDITA1_7,"Tassi di fecondità specifici per età della madre, anno di evento e cittadinanza della madre (per mille donne)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_326_DF_DCIS_FECONDITA1_8,Età media dei padri alla nascita del figlio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 25_74,Nati vivi,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_74_DF_DCIS_NATI1_10,Padre - Età e stato civile (capoluoghi prov.),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_11,Genitori - Età (capoluoghi prov.),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_12,Genitori - Stato civile (capoluoghi prov.),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_13,Stato civile di lei e di lui,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_14,Età di lei e di lui,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_15,Caratteristiche della madre,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_16,Caratteristiche del padre,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_17,Stime  (capoluoghi prov.),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_7,Madre - Età e stato civile (capoluoghi prov.),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_8,Madre - Età e cittadinanza,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI1_9,Madre - Età e anno di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-06
+25_74_DF_DCIS_NATI2_1,Nati serie storica - prov.,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_74_DF_DCIS_NATI2_2,Sesso e cittadinanza del nato - prov.,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_74_DF_DCIS_NATI2_3,Continente di cittadinanza estera del nato - reg.,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,30,2026-08-06
+25_74_DF_DCIS_NATI2_4,Macro area di cittadinanza estera del nato - reg.,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,30,2026-08-06
+25_74_DF_DCIS_NATI2_5,Paese di cittadinanza estera del nato - reg.,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,30,2026-08-06
+25_74_DF_DCIS_NATI2_6,Nati dentro e fuori dal matrimonio - prov.,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_74_DF_DCIS_NATI2_7,Età e cittadinanza della madre - prov.,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_74_DF_DCIS_NATI2_8,"Cittadinanza dei genitori, classe di età dei genitori - prov.",RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_74_DF_DCIS_NATI2_9,"Cittadinanza dei genitori, stato civile dei genitori - prov.",RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944,Tavole di fecondità per ordine di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944_DF_DCIS_ARCH_FEC_10,Età media al parto per coorte e ordine di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944_DF_DCIS_ARCH_FEC_11,"Tassi di fecondità specifci per età della madre, coorte e ordine di nascita (per mille donne)",RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 25_944_DF_DCIS_ARCH_FEC_5,Principali indicatori,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+25_944_DF_DCIS_ARCH_FEC_6,Tasso di fecondità totale per anno di evento e ordine di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944_DF_DCIS_ARCH_FEC_7,Età media al parto per anno di evento e ordine di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944_DF_DCIS_ARCH_FEC_8,"Tassi di fecondità specifici per età della madre, anno di evento e ordine di nascita (per mille donne)",RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+25_944_DF_DCIS_ARCH_FEC_9,Tasso di fecondità totale per coorte e ordine di nascita,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+26_29,Decessi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 26_295_DF_DCIS_MORTALITA1_1,Classi di età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 26_295_DF_DCIS_MORTALITA1_2,Singole età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
+26_29_DF_DCIS_DECESSI_1,Indicatori sintetici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 26_29_DF_DCIS_DECESSI_2,Morti,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+26_29_DF_DCIS_DECESSI_3,Quozienti  specifici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
+270_239,Investimenti fissi lordi per branca proprietaria (NACE Rev.1.1) - edizione ottobre 2010,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+270_242,Spesa per consumi finali delle famiglie - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+270_243,Spesa per consumi finali della Pa - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+270_248,Prodotto interno lordo lato produzione - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+270_254,Sequenza dei conti - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+270_298,Aggregati dei conti per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
+270_301,Occupazione per branca di attività (NACE Rev.2) - edizioni fino a novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
+270_303,Investimenti fissi lordi per branca proprietaria (NACE Rev.2) - edizioni febbraio 2012 - novembre 2013,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-06
+272_1164,Relazioni di parentela e reti di supporto,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-06
 272_1164_DF_DCCV_RELAZ_PARENT_1,Relazioni di parentela per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_2,"Relazioni di parentela - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
 272_1164_DF_DCCV_RELAZ_PARENT_3,Persone per numero di nonni non conviventi per sesso e età,REF_AREA,nazionale,nazionale,1,2026-07-18
@@ -1221,12 +1291,14 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 27_385_DF_DCIS_DIVORDEMCONG_7,Età al matrimonio e anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_385_DF_DCIS_DIVORDEMCONG_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_385_DF_DCIS_DIVORDEMCONG_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467,Separazioni -  Caratteristiche demografiche,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-06
 27_467_DF_DCIS_SEPARAZDEMCONG1_1,Separazioni - Caratteristiche demografiche - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_4,Età alla separazione - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_5,Età alla separazione - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_6,Età alla separazione - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_467_DF_DCIS_SEPARAZDEMCONG1_7,Età al matrimonio e anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-08-06
 27_467_DF_DCIS_SEPARAZDEMCONG1_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_467_DF_DCIS_SEPARAZDEMCONG1_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_468,Separazioni -  Caratteristiche socio-professionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
@@ -1249,12 +1321,14 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 27_469_DF_DCIS_SEPARAZFIG1_7,Presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_469_DF_DCIS_SEPARAZFIG1_8,Anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_469_DF_DCIS_SEPARAZFIG1_9,Età dei figli affidati e tipo di affidamento,REF_AREA,nazionale,nazionale,1,2026-07-18
+27_470,Divorzi -  Caratteristiche demografiche,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-06
 27_470_DF_DCIS_DIVORDEMCONG1_1,Divorzi - Caratteristiche demografiche - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_2,Regione di nascita,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_3,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_4,Età al divorzio - coniugi,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_5,Età al divorzio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_6,Età al divorzio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_470_DF_DCIS_DIVORDEMCONG1_7,Età al matrimonio e anno di matrimonio,REF_AREA,nazionale,nazionale,1,2026-08-06
 27_470_DF_DCIS_DIVORDEMCONG1_8,Età al matrimonio - marito,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_470_DF_DCIS_DIVORDEMCONG1_9,Età al matrimonio - moglie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_474,Separazioni -  Indicatori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
@@ -1322,6 +1396,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 27_945_DF_DCIS_DIVFIG1_12,Età dei figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_945_DF_DCIS_DIVFIG1_13,Tipo di affidamento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_945_DF_DCIS_DIVFIG1_2,Periodo intercorso tra la separazione e l'iscrizione a ruolo del procedimento,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+27_945_DF_DCIS_DIVFIG1_3,Durata del matrimonio,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-06
 27_945_DF_DCIS_DIVFIG1_4,Anno e rito di celebrazione del matrimonio,REF_AREA,nazionale,nazionale,1,2026-07-18
 27_945_DF_DCIS_DIVFIG1_5,Anno di matrimonio e numero di figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_945_DF_DCIS_DIVFIG1_6,Anno di matrimonio e presenza di figli affidati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
@@ -1336,21 +1411,39 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 27_946_DF_DCIS_DIVORZIND1_4,Provvedimenti economici per i figli,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_946_DF_DCIS_DIVORZIND1_5,Provvedimenti economici per i figli minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_946_DF_DCIS_DIVORZIND1_6,Assegnazione dell'abitazione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
+284_103,Principali aggregati per branca di attività (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014,REF_AREA,nazionale,nazionale,1,2026-08-06
 284_104,Valori pro capite - edizioni ottobre 2011 - marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
 284_159,Prodotto interno lordo e principali componenti - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+284_240,Spesa per consumi finali delle famiglie - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-08-06
+284_249,Investimenti - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-08-06
 284_252,Sequenza dei conti - edizioni fino a marzo 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+284_302,"Investimenti fissi lordi, stock di capitale e ammortamenti per tipo di investimento e branca proprietaria (Nace Rev.2) - edizioni ottobre 2011 - marzo 2014",REF_AREA,nazionale,nazionale,1,2026-08-06
+284_9,Occupazione regolare ed irregolare - edizioni ottobre 2011 - marzo 2014,REF_AREA,nazionale,nazionale,1,2026-08-06
 285_245,Contributi alla crescita del PIL - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-18
+28_185,Migrazioni (Trasferimenti di residenza),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 28_185_DF_DCIS_MIGRAZIONI_1,Migrazioni interne  - Italiani e stranieri,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-18
 28_185_DF_DCIS_MIGRAZIONI_2,Immigrati - cittadinanza,REF_AREA,provincia,provincia,1,2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_4,Immigrati - province di destinazione,REF_AREA,provincia,provincia,1,2026-08-06
 28_185_DF_DCIS_MIGRAZIONI_5,Emigrati - cittadinanza,REF_AREA,nazionale,nazionale,1,2026-07-18
+28_185_DF_DCIS_MIGRAZIONI_6,Emigrati - paesi di destinazione,REF_AREA,nazionale,nazionale,1,2026-08-06
+28_185_DF_DCIS_MIGRAZIONI_7,Emigrati - province di origine,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-08-06
+29_316,Stranieri residenti - Bilancio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8063,2026-08-06
 29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8063,2026-07-18
+29_317_DF_DCIS_POPSTRCIT1_1,"Italia, regioni, province - Paese di cittadinanza",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_16,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,139,2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_24,"Italia, regioni, province - Area geopolitica di cittadinanza",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-06
 29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
+29_348_DF_DCIS_PERMSOGG1_5,Provincia e cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
+29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
 29_348_DF_DCIS_PERMSOGG1_7,Provincia e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
 29_348_DF_DCIS_PERMSOGG1_8,Cittadinanza e motivo del permesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_849,Acquisizioni di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
 29_849_DF_DCIS_ACQCITIZ_2,Principali paesi di cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-19
 29_849_DF_DCIS_ACQCITIZ_3,Modalità di acquisizione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-19
 29_849_DF_DCIS_ACQCITIZ_4,Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-19
+29_956,Stranieri residenti e condizioni di vita,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-06
 32_38_DF_DCCV_QUINTOREDD_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 32_38_DF_DCCV_QUINTOREDD_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 32_38_DF_DCCV_QUINTOREDD_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
