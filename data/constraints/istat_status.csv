@@ -1834,129 +1834,129 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 29_956_DF_DCIS_CV_STRA_10,Lingua madre,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 29_956_DF_DCIS_CV_STRA_11,"Uso dell'italiano in famiglia e con amici, sesso ed età",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
 29_956_DF_DCIS_CV_STRA_12,"Uso dell'italiano in famiglia e con amici, cittadinanza",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-06
-29_956_DF_DCIS_CV_STRA_13,"Uso dell'italiano in famiglia e con amici, presenza in Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_14,"Uso dell'italiano in famiglia e con amici, tipologia familiare",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_15,Uso dell'italiano dei cittadini stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_16,"Uso dell'italiano al lavoro, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_17,Uso dell'italiano al lavoro e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_18,"Eventi discriminatori dichiarati, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_19,Eventi discriminatori dichiarati e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_2,Cittadinanza e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_20,Eventi discriminatori dichiarati e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_21,Eventi discriminatori dichiarati e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_22,Eventi discriminatori dichiarati dagli stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_23,"Soddisfazione per vita e lavoro, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_24,"Soddisfazione per vita e lavoro, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_25,"Grado di soddisfazione, sesso ed età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_26,Grado di soddisfazione e cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_27,Grado di soddisfazione e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_28,"Grado di soddisfazione, titolo di studio e condizione occupazionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_29,Grado di soddisfazione e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_3,Sesso e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_30,Grado di soddisfazione dei cittadini stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_31,Grado di soddisfazione ed eventi discriminatori dichiarati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_4,Sesso e titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_5,"Tipologia familiare, cittadinanza e sesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_6,Tipologia familiare e presenza in Italia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_7,Famiglie con stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_8,Coppie con stranieri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-29_956_DF_DCIS_CV_STRA_9,Età media degli stranieri in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_505,Sequence of accounts - editions from September 2019 to March 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_505_DF_DCCN_SQCN_B19_1,Sequenza dei conti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_506,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_506_DF_DCCN_PILN_B19_1,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_507,Occupazione regolare e irregolare per branca di attività e popolazione - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_507_DF_DCCN_OCCNSEC2010_B19_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate - edizioni settembre 2019 - marzo 2024",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_507_DF_DCCN_OCCNSEC2010_B19_2,Tassi di irregolarità - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-2_507_DF_DCCN_OCCNSEC2010_B19_3,Popolazione media annua - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_1008,Reddito delle persone fisiche (Irpef)  - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_1008_DF_MEF_REDDITIIRPEF_COM_1,Contribuenti e principali categorie di reddito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_1008_DF_MEF_REDDITIIRPEF_COM_2,Contribuenti e reddito complessivo per classi di importo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264,Fiducia dei consumatori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_1,Climi grezzi (base 2021=100) - Climi grezzi e destagionalizzati (base 2010=100) - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_10,Climi grezzi e destagionalizzati - livello nazionale e ripartizionale (base 2010=100),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_11,Saldi mensili grezzi e destagionalizzati - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_12,Saldi mensili grezzi per classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_13,Saldi mensili grezzi per sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_14,Saldi mensili grezzi per livello di istruzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_15,Saldi mensili grezzi per condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_16,Domande mensili grezze - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_17,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_18,Previsioni di spesa - saldi e domande mensili grezzi fino a dicembre 2005 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_2,Saldi mensili grezzi - livello nazionale e ripartizionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_3,Saldi mensili grezzi per classi di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_4,Saldi mensili grezzi per sesso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_5,Saldi mensili grezzi per livello di istruzione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_6,Saldi mensili grezzi per condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_7,Domande mensili grezze - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_8,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-30_264_DF_DCSC_FIDCONS_9,Previsioni di spesa - saldi e domande mensili grezzi da gen 1998 fino a dic 2005 - livello nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124,Spesa media mensile familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124_DF_DCCV_SPEMMFAM_1,Tipo di Spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124_DF_DCCV_SPEMMFAM_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124_DF_DCCV_SPEMMFAM_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124_DF_DCCV_SPEMMFAM_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_124_DF_DCCV_SPEMMFAM_5,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_163,Comportamento di spesa delle famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_163_DF_DCCV_FAMCOMPORT_1,Cambiamenti nelle abitudini di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_199,Omogeneità della spesa per consumi regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_199_DF_DCCV_INDCONSUMI_1,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_199_DF_DCCV_INDCONSUMI_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_199_DF_DCCV_INDCONSUMI_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_199_DF_DCCV_INDCONSUMI_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_206,Quinto di spesa della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_206_DF_DCCV_SPQUINTO_1,Regioni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_206_DF_DCCV_SPQUINTO_2,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_206_DF_DCCV_SPQUINTO_3,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_206_DF_DCCV_SPQUINTO_4,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_213,famiglie che hanno effettuato la spesa per alcune voci di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_213_DF_DCCV_SPEFFCOMP_1,Famiglie e tipo di consumi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_214,Dettaglio della spesa effettiva,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_214_DF_DCCV_SPEFFDETT_1,Spesa media mensile e tipologia di acquisti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739,Spese per consumi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_1,Cambiamenti nelle abitudini di spesa (2018-2021),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_10,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_11,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_2,Cambiamenti nelle abitudini di spesa (2014-2017),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_3,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_4,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_5,Titolo di studio della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_6,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_7,Quantili di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_8,Voce di spesa (ECoicop),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_739_DF_DCCV_SPEMEFAM_9,Ampiezza e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740,Spese per consumi - Coicop 2018,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_1,Cambiamenti nelle abitudini di spesa (dal 2018),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_10,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_11,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_2,Cambiamenti nelle abitudini di spesa (2014-2017),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_3,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_4,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_5,Titolo di studio della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_6,Condizione professionale della persona di riferimento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_7,Quantili di spesa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_8,Voce di spesa (Coicop 2018),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-31_740_DF_DCCV_SPEMEFAM_COICOP_2018_9,Ampiezza e tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_221,Omogeneità del reddito regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_221_DF_DCCV_GINIREDD_1,Omogeneità del reddito regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223,Famiglie per fonte di reddito,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_2,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_3,Minori e anziani in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_4,Sesso ed età del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_5,Titolo di studio e condizione professionale del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_223_DF_DCCV_FONTEPRED_6,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292,Reddito netto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_2,Tipologia familiare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_3,Minori in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_4,Anziani in famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_5,Sesso del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_6,Classe di età del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_7,Titolo di studio del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_8,Condizione professionale del principale percettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_292_DF_DCCV_REDNETFAMFONTERED_9,Regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
-32_38,Quinto di reddito equivalente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-19
+29_956_DF_DCIS_CV_STRA_13,"Uso dell'italiano in famiglia e con amici, presenza in Italia",ok,hub,6,24,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_14,"Uso dell'italiano in famiglia e con amici, tipologia familiare",ok,hub,7,23,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_15,Uso dell'italiano dei cittadini stranieri in coppia,ok,hub,6,14,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_16,"Uso dell'italiano al lavoro, sesso ed età",ok,hub,7,19,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_17,Uso dell'italiano al lavoro e cittadinanza,ok,hub,5,22,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_18,"Eventi discriminatori dichiarati, sesso ed età",ok,hub,7,25,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_19,Eventi discriminatori dichiarati e cittadinanza,ok,hub,5,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_2,Cittadinanza e presenza in Italia,ok,hub,5,26,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_20,Eventi discriminatori dichiarati e titolo di studio,ok,hub,7,23,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_21,Eventi discriminatori dichiarati e tipologia familiare,ok,hub,6,25,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_22,Eventi discriminatori dichiarati dagli stranieri in coppia,ok,hub,6,14,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_23,"Soddisfazione per vita e lavoro, sesso ed età",ok,hub,7,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_24,"Soddisfazione per vita e lavoro, cittadinanza",ok,hub,5,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_25,"Grado di soddisfazione, sesso ed età",ok,hub,6,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_26,Grado di soddisfazione e cittadinanza,ok,hub,4,23,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_27,Grado di soddisfazione e presenza in Italia,ok,hub,5,21,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_28,"Grado di soddisfazione, titolo di studio e condizione occupazionale",ok,hub,6,25,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_29,Grado di soddisfazione e tipologia familiare,ok,hub,5,21,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_3,Sesso e presenza in Italia,ok,hub,6,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_30,Grado di soddisfazione dei cittadini stranieri in coppia,ok,hub,5,15,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_31,Grado di soddisfazione ed eventi discriminatori dichiarati,ok,hub,5,38,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_4,Sesso e titolo di studio,ok,hub,6,20,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_5,"Tipologia familiare, cittadinanza e sesso",ok,hub,6,28,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_6,Tipologia familiare e presenza in Italia,ok,hub,6,22,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_7,Famiglie con stranieri,ok,hub,5,21,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_8,Coppie con stranieri,ok,hub,5,17,0,"",2026-08-07
+29_956_DF_DCIS_CV_STRA_9,Età media degli stranieri in coppia,ok,hub,6,15,0,"",2026-08-07
+2_505,Sequence of accounts - editions from September 2019 to March 2024,ok,hub,6,140,0,"",2026-08-07
+2_505_DF_DCCN_SQCN_B19_1,Sequenza dei conti - edizioni settembre 2019 - marzo 2024,ok,hub,6,140,0,"",2026-08-07
+2_506,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,ok,hub,6,46,0,"",2026-08-07
+2_506_DF_DCCN_PILN_B19_1,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,ok,hub,6,46,0,"",2026-08-07
+2_507,Occupazione regolare e irregolare per branca di attività e popolazione - edizioni settembre 2019 - marzo 2024,ok,hub,9,131,0,"",2026-08-07
+2_507_DF_DCCN_OCCNSEC2010_B19_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate - edizioni settembre 2019 - marzo 2024",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+2_507_DF_DCCN_OCCNSEC2010_B19_2,Tassi di irregolarità - edizioni settembre 2019 - marzo 2024,ok,hub,7,50,0,"",2026-08-07
+2_507_DF_DCCN_OCCNSEC2010_B19_3,Popolazione media annua - edizioni settembre 2019 - marzo 2024,ok,hub,5,16,0,"",2026-08-07
+30_1008,Reddito delle persone fisiche (Irpef)  - comuni,ok,hub,4,8504,0,"",2026-08-07
+30_1008_DF_MEF_REDDITIIRPEF_COM_1,Contribuenti e principali categorie di reddito,ok,hub,3,11575,0,"",2026-08-07
+30_1008_DF_MEF_REDDITIIRPEF_COM_2,Contribuenti e reddito complessivo per classi di importo,ok,hub,4,11589,0,"",2026-08-07
+30_264,Fiducia dei consumatori,ok,hub,8,246,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_1,Climi grezzi (base 2021=100) - Climi grezzi e destagionalizzati (base 2010=100) - livello nazionale e ripartizionale,ok,hub,4,18,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_10,Climi grezzi e destagionalizzati - livello nazionale e ripartizionale (base 2010=100),ok,hub,4,13,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_11,Saldi mensili grezzi e destagionalizzati - livello nazionale e ripartizionale,ok,hub,4,20,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_12,Saldi mensili grezzi per classi di età,ok,hub,5,20,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_13,Saldi mensili grezzi per sesso,ok,hub,5,18,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_14,Saldi mensili grezzi per livello di istruzione,ok,hub,5,19,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_15,Saldi mensili grezzi per condizione professionale,ok,hub,5,22,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_16,Domande mensili grezze - livello nazionale,ok,hub,4,84,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_17,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,ok,hub,4,22,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_18,Previsioni di spesa - saldi e domande mensili grezzi fino a dicembre 2005 - livello nazionale,ok,hub,4,22,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_2,Saldi mensili grezzi - livello nazionale e ripartizionale,ok,hub,4,21,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_3,Saldi mensili grezzi per classi di età,ok,hub,5,21,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_4,Saldi mensili grezzi per sesso,ok,hub,5,19,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_5,Saldi mensili grezzi per livello di istruzione,ok,hub,5,20,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_6,Saldi mensili grezzi per condizione professionale,ok,hub,5,23,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_7,Domande mensili grezze - livello nazionale,ok,hub,4,89,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_8,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,ok,hub,4,22,0,"",2026-08-07
+30_264_DF_DCSC_FIDCONS_9,Previsioni di spesa - saldi e domande mensili grezzi da gen 1998 fino a dic 2005 - livello nazionale,ok,hub,4,22,0,"",2026-08-07
+31_124,Spesa media mensile familiare,ok,hub,8,156,0,"",2026-08-07
+31_124_DF_DCCV_SPEMMFAM_1,Tipo di Spesa,ok,hub,5,105,0,"",2026-08-07
+31_124_DF_DCCV_SPEMMFAM_2,Ampiezza della famiglia,ok,hub,6,111,0,"",2026-08-07
+31_124_DF_DCCV_SPEMMFAM_3,Tipologia familiare,ok,hub,6,117,0,"",2026-08-07
+31_124_DF_DCCV_SPEMMFAM_4,Condizione professionale della persona di riferimento,ok,hub,6,116,0,"",2026-08-07
+31_124_DF_DCCV_SPEMMFAM_5,Regioni,ok,hub,5,53,0,"",2026-08-07
+31_163,Comportamento di spesa delle famiglia,ok,hub,6,19,0,"",2026-08-07
+31_163_DF_DCCV_FAMCOMPORT_1,Cambiamenti nelle abitudini di spesa,ok,hub,6,19,0,"",2026-08-07
+31_199,Omogeneità della spesa per consumi regionale,ok,hub,6,60,0,"",2026-08-07
+31_199_DF_DCCV_INDCONSUMI_1,Regioni,ok,hub,3,31,0,"",2026-08-07
+31_199_DF_DCCV_INDCONSUMI_2,Ampiezza della famiglia,ok,hub,4,10,0,"",2026-08-07
+31_199_DF_DCCV_INDCONSUMI_3,Tipologia familiare,ok,hub,4,16,0,"",2026-08-07
+31_199_DF_DCCV_INDCONSUMI_4,Condizione professionale della persona di riferimento,ok,hub,4,15,0,"",2026-08-07
+31_206,Quinto di spesa della famiglia,ok,hub,8,65,0,"",2026-08-07
+31_206_DF_DCCV_SPQUINTO_1,Regioni,ok,hub,5,36,0,"",2026-08-07
+31_206_DF_DCCV_SPQUINTO_2,Ampiezza della famiglia,ok,hub,6,15,0,"",2026-08-07
+31_206_DF_DCCV_SPQUINTO_3,Tipologia familiare,ok,hub,6,21,0,"",2026-08-07
+31_206_DF_DCCV_SPQUINTO_4,Condizione professionale della persona di riferimento,ok,hub,6,20,0,"",2026-08-07
+31_213,famiglie che hanno effettuato la spesa per alcune voci di spesa,ok,hub,5,75,0,"",2026-08-07
+31_213_DF_DCCV_SPEFFCOMP_1,Famiglie e tipo di consumi,ok,hub,5,75,0,"",2026-08-07
+31_214,Dettaglio della spesa effettiva,ok,hub,5,67,0,"",2026-08-07
+31_214_DF_DCCV_SPEFFDETT_1,Spesa media mensile e tipologia di acquisti,ok,hub,5,67,0,"",2026-08-07
+31_739,Spese per consumi,ok,hub,11,585,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_1,Cambiamenti nelle abitudini di spesa (2018-2021),ok,hub,5,26,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_10,Condizione professionale della persona di riferimento,ok,hub,5,24,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_11,Regioni e tipo di comune,ok,hub,4,38,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_2,Cambiamenti nelle abitudini di spesa (2014-2017),ok,hub,5,26,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_3,Ampiezza della famiglia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_739_DF_DCCV_SPEMEFAM_4,Tipologia familiare,ok,hub,5,56,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_5,Titolo di studio della persona di riferimento,ok,hub,5,184,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_6,Condizione professionale della persona di riferimento,ok,hub,5,89,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_7,Quantili di spesa,ok,hub,5,195,0,"",2026-08-07
+31_739_DF_DCCV_SPEMEFAM_8,Voce di spesa (ECoicop),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_739_DF_DCCV_SPEMEFAM_9,Ampiezza e tipologia familiare,ok,hub,6,29,0,"",2026-08-07
+31_740,Spese per consumi - Coicop 2018,ok,hub,11,612,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_1,Cambiamenti nelle abitudini di spesa (dal 2018),ok,hub,5,21,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_10,Condizione professionale della persona di riferimento,ok,hub,5,24,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_11,Regioni e tipo di comune,ok,hub,4,38,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_2,Cambiamenti nelle abitudini di spesa (2014-2017),ok,hub,5,21,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_3,Ampiezza della famiglia,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_4,Tipologia familiare,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_5,Titolo di studio della persona di riferimento,ok,hub,5,221,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_6,Condizione professionale della persona di riferimento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_7,Quantili di spesa,ok,hub,5,222,0,"",2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_8,Voce di spesa (Coicop 2018),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_9,Ampiezza e tipologia familiare,ok,hub,6,29,0,"",2026-08-07
+32_221,Omogeneità del reddito regionale,ok,hub,5,33,0,"",2026-08-07
+32_221_DF_DCCV_GINIREDD_1,Omogeneità del reddito regionale,ok,hub,5,33,0,"",2026-08-07
+32_223,Famiglie per fonte di reddito,ok,hub,13,90,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_1,Ampiezza della famiglia,ok,hub,5,13,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_2,Tipologia familiare,ok,hub,5,17,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_3,Minori e anziani in famiglia,ok,hub,6,16,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_4,Sesso ed età del principale percettore,ok,hub,6,16,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,20,0,"",2026-08-07
+32_223_DF_DCCV_FONTEPRED_6,Regioni e tipo di comune,ok,hub,4,42,0,"",2026-08-07
+32_292,Reddito netto,ok,hub,14,94,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_1,Ampiezza della famiglia,ok,hub,6,21,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_2,Tipologia familiare,ok,hub,6,25,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_3,Minori in famiglia,ok,hub,6,21,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_4,Anziani in famiglia,ok,hub,6,50,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_5,Sesso del principale percettore,ok,hub,6,19,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_6,Classe di età del principale percettore,ok,hub,6,22,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_7,Titolo di studio del principale percettore,ok,hub,6,21,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_8,Condizione professionale del principale percettore,ok,hub,6,24,0,"",2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_9,Regioni e tipo di comune,ok,hub,5,46,0,"",2026-08-07
+32_38,Quinto di reddito equivalente,ok,hub,14,83,0,"",2026-08-07
 32_38_DF_DCCV_QUINTOREDD_1,Ampiezza della famiglia,ok,hub,6,15,0,"",2026-07-20
 32_38_DF_DCCV_QUINTOREDD_2,Tipologia familiare,ok,hub,6,19,0,"",2026-07-20
 32_38_DF_DCCV_QUINTOREDD_3,Minori e anziani in famiglia,ok,hub,7,18,0,"",2026-07-20
@@ -1970,14 +1970,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 33_179_DF_DCCV_ABITAFFOLL_4,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,16,0,"",2026-07-20
 33_179_DF_DCCV_ABITAFFOLL_5,Livello del reddito e abitazione in affitto o di proprietà,ok,hub,5,12,0,"",2026-07-20
 33_179_DF_DCCV_ABITAFFOLL_6,Regioni e tipo di comune,ok,hub,3,38,0,"",2026-07-20
-33_225,Spesa per l'abitazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+33_225,Spesa per l'abitazione,ok,hub,12,89,0,"",2026-08-07
 33_225_DF_DCCV_ABITSPESA_1,Abitazione in affitto o di proprietà,ok,hub,4,7,0,"",2026-07-20
 33_225_DF_DCCV_ABITSPESA_2,Ampiezza della famiglia e tipologia familiare,ok,hub,5,20,0,"",2026-07-20
 33_225_DF_DCCV_ABITSPESA_3,Minori e anziani in famiglia,ok,hub,5,13,0,"",2026-07-20
 33_225_DF_DCCV_ABITSPESA_4,Sesso e età del principale percettore,ok,hub,5,13,0,"",2026-07-20
 33_225_DF_DCCV_ABITSPESA_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,5,17,0,"",2026-07-20
 33_225_DF_DCCV_ABITSPESA_6,Regioni e tipo di comune,ok,hub,3,39,0,"",2026-07-20
-33_290,Titolo di godimento dell'abitazione (in affitto o di proprietà),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+33_290,Titolo di godimento dell'abitazione (in affitto o di proprietà),ok,hub,14,94,0,"",2026-08-07
 33_290_DF_DCCV_TITGODABIT_1,Ampiezza della famiglia e tipologia familiare,ok,hub,7,22,0,"",2026-07-20
 33_290_DF_DCCV_TITGODABIT_2,Minori e anziani in famiglia,ok,hub,7,15,0,"",2026-07-20
 33_290_DF_DCCV_TITGODABIT_3,Sesso e età del principale percettore,ok,hub,7,15,0,"",2026-07-20
@@ -2051,7 +2051,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 34_217_DF_DCCV_CARICOPES_4,Sesso ed età del principale percettore,ok,hub,6,16,0,"",2026-07-20
 34_217_DF_DCCV_CARICOPES_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,20,0,"",2026-07-20
 34_217_DF_DCCV_CARICOPES_6,Ripartizioni e tipo di comune,ok,hub,4,21,0,"",2026-07-20
-34_218,Famiglie che non possono permettersi alcuni beni durevoli,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_218,Famiglie che non possono permettersi alcuni beni durevoli,ok,hub,13,73,0,"",2026-08-07
 34_218_DF_DCCV_DIFFBENDUR_1,Ampiezza della famiglia,ok,hub,5,17,0,"",2026-07-20
 34_218_DF_DCCV_DIFFBENDUR_2,Tipologia familiare,ok,hub,5,21,0,"",2026-07-20
 34_218_DF_DCCV_DIFFBENDUR_3,Minori e anziani in famiglia,ok,hub,6,20,0,"",2026-07-20
@@ -2065,7 +2065,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 34_219_DF_DCCV_NOSOLDI_4,Sesso ed età del principale percettore,ok,hub,6,18,0,"",2026-07-20
 34_219_DF_DCCV_NOSOLDI_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,22,0,"",2026-07-20
 34_219_DF_DCCV_NOSOLDI_6,Ripartizioni e tipo di comune,ok,hub,4,23,0,"",2026-07-20
-34_220,Famiglie per reddito minimo per arrivare a fine mese senza difficoltà,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_220,Famiglie per reddito minimo per arrivare a fine mese senza difficoltà,ok,hub,13,71,0,"",2026-08-07
 34_220_DF_DCCV_REDDFINMES_1,Ampiezza della famiglia,ok,hub,5,15,0,"",2026-07-20
 34_220_DF_DCCV_REDDFINMES_2,Tipologia familiare,ok,hub,5,19,0,"",2026-07-20
 34_220_DF_DCCV_REDDFINMES_3,Minori e anziani in famiglia,ok,hub,6,18,0,"",2026-07-20
@@ -2079,8 +2079,8 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 34_226_DF_PERCEPIT_4,Sesso ed età del principale percettore,ok,hub,6,16,0,"",2026-07-20
 34_226_DF_PERCEPIT_5,Titolo di studio e condizione professionale del principale percettore,ok,hub,6,20,0,"",2026-07-20
 34_226_DF_PERCEPIT_6,"Ripartizioni, regioni e tipo di comune",ok,hub,4,42,0,"",2026-07-20
-34_280,Famiglie che non possono permettersi alcune spese,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
-34_280_DF_DCCV_FAMNOVOCISPESA_1,Ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_280,Famiglie che non possono permettersi alcune spese,ok,hub,13,68,0,"",2026-08-07
+34_280_DF_DCCV_FAMNOVOCISPESA_1,Ampiezza della famiglia,ok,hub,5,12,0,"",2026-08-07
 34_280_DF_DCCV_FAMNOVOCISPESA_2,Tipologia familiare,ok,hub,5,16,0,"",2026-07-20
 34_280_DF_DCCV_FAMNOVOCISPESA_3,Minori e anziani in famiglia,ok,hub,6,15,0,"",2026-07-20
 34_280_DF_DCCV_FAMNOVOCISPESA_4,Sesso ed età del principale percettore,ok,hub,6,15,0,"",2026-07-20
@@ -2090,7 +2090,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 34_727_DF_DCCV_POVERTA_1,Principali indicatori,ok,hub,3,25,0,"",2026-07-20
 34_727_DF_DCCV_POVERTA_10,Individui poveri - regione di residenza,ok,hub,3,33,0,"",2026-07-20
 34_727_DF_DCCV_POVERTA_11,Linee e soglie di povertà relativa,ok,hub,5,18,0,"",2026-07-20
-34_727_DF_DCCV_POVERTA_2,Famiglie povere - ampiezza della famiglia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_727_DF_DCCV_POVERTA_2,Famiglie povere - ampiezza della famiglia,ok,hub,4,14,0,"",2026-08-07
 34_727_DF_DCCV_POVERTA_3,Famiglie povere - tipologia familiare,ok,hub,5,45,0,"",2026-07-20
 34_727_DF_DCCV_POVERTA_4,Famiglie povere - età della persona di riferimento,ok,hub,4,14,0,"",2026-07-20
 34_727_DF_DCCV_POVERTA_5,Famiglie povere - condizione professionale della persona di riferimento,ok,hub,4,21,0,"",2026-07-20
@@ -2099,22 +2099,22 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 34_727_DF_DCCV_POVERTA_8,Famiglie povere - regione di residenza,ok,hub,3,33,0,"",2026-07-20
 34_727_DF_DCCV_POVERTA_9,Individui poveri - sesso ed età,ok,hub,5,13,0,"",2026-07-20
 34_728,Povertà serie interrotte - 1997-2021,ok,hub,11,142,0,"",2026-07-20
-34_728_DF_DCCV_POVERTA_BRKN1_1,Famiglie povere - caratteristiche socio-demografiche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
-34_728_DF_DCCV_POVERTA_BRKN1_2,Famiglie povere - regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_1,Famiglie povere - caratteristiche socio-demografiche,ok,hub,8,72,0,"",2026-08-07
+34_728_DF_DCCV_POVERTA_BRKN1_2,Famiglie povere - regione di residenza,ok,hub,3,34,0,"",2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_3,Famiglie povere - tipo comune di residenza,ok,hub,3,20,0,"",2026-07-20
-34_728_DF_DCCV_POVERTA_BRKN1_4,Individui poveri - regione di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_4,Individui poveri - regione di residenza,ok,hub,3,34,0,"",2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_5,Individui poveri - sesso ed età,ok,hub,5,13,0,"",2026-07-20
-34_728_DF_DCCV_POVERTA_BRKN1_6,Linee e soglie di povertà relativa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_6,Linee e soglie di povertà relativa,ok,hub,5,18,0,"",2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_7,Principali indicatori,ok,hub,3,25,0,"",2026-07-20
 392_584,Dottorati - caratteristiche socio-demografiche e curriculum,ok,hub,13,61,0,"",2026-07-20
-392_584_DF_DCCV_TRANSIZ_DOTT_DEM_1,"Cittadinanza, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+392_584_DF_DCCV_TRANSIZ_DOTT_DEM_1,"Cittadinanza, età",ok,hub,6,17,0,"",2026-08-07
 392_584_DF_DCCV_TRANSIZ_DOTT_DEM_2,Stato civile,ok,hub,6,17,0,"",2026-07-20
 392_584_DF_DCCV_TRANSIZ_DOTT_DEM_3,"Titolo conseguito nei termini, area disciplinare",ok,hub,7,31,0,"",2026-07-20
 392_584_DF_DCCV_TRANSIZ_DOTT_DEM_4,Fonte di finanziamento durante il dottorato,ok,hub,6,14,0,"",2026-07-20
 392_584_DF_DCCV_TRANSIZ_DOTT_DEM_5,Titolo di studio del padre e della madre,ok,hub,6,18,0,"",2026-07-20
 392_585,Dottorati - retribuzione e orario di lavoro,ok,hub,9,45,0,"",2026-07-20
 392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_1,Retribuzioni per residenza e area disciplinare,ok,hub,6,29,0,"",2026-07-20
-392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_2,Retribuzione e tipo di occupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_2,Retribuzione e tipo di occupazione,ok,hub,5,19,0,"",2026-08-07
 392_585_DF_DCCV_TRANSIZ_DOTT_REDDITO_3,"Dottori, ore settimanali lavorate e tipo di occupazione",ok,hub,6,20,0,"",2026-07-20
 392_586,Dottorati - mobilità territoriale,ok,hub,9,40,0,"",2026-07-20
 392_586_DF_DCCV_TRANSIZ_DOTT_MOBILITA_1,"Periodi di formazione all'estero, area disciplinare",ok,hub,5,27,0,"",2026-07-20
@@ -2135,83 +2135,83 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_2,Tipo di occupazione e orario desiderati,ok,hub,6,20,0,"",2026-07-20
 392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_3,Luogo di lavoro desiderato e preferenza per lavoro di ricerca,ok,hub,6,19,0,"",2026-07-20
 392_708_DF_DCCV_TRANSIZ_DOTT_SODDIS_4,Soddisfazione (da 0 a 10) per il lavoro e il dottorato,ok,hub,4,23,0,"",2026-07-20
-395_344,Sequenza dei conti trimestrali per settore istituzionale - Conti versione 2011,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
-396_61,Reddito disponibile delle famiglie nelle regioni italiane - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+395_344,Sequenza dei conti trimestrali per settore istituzionale - Conti versione 2011,ok,hub,9,137,0,"",2026-08-07
+396_61,Reddito disponibile delle famiglie nelle regioni italiane - edizione ottobre 2010,ok,hub,7,124,0,"",2026-08-07
 39_1,Indicatori di mortalità per causa per titolo di studio,empty,hub,0,0,0,"",2026-07-20
 39_1005,Suicidi - popolazione di 15 anni e oltre,ok,hub,12,103,0,"",2026-07-20
 39_1005_DF_DCIS_SUICIDI_1,Suicidi - popolazione di 15 anni e oltre - Principali dati,ok,hub,5,42,0,"",2026-07-20
 39_1005_DF_DCIS_SUICIDI_2,Sesso ed età,ok,hub,6,22,0,"",2026-07-20
-39_1005_DF_DCIS_SUICIDI_3,Malattie associate,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_1005_DF_DCIS_SUICIDI_3,Malattie associate,ok,hub,8,30,0,"",2026-08-07
 39_1005_DF_DCIS_SUICIDI_4,Modalità del suicidio,ok,hub,7,30,0,"",2026-07-20
 39_1005_DF_DCIS_SUICIDI_5,Modalità del suicidio e malattie associate,ok,hub,7,23,0,"",2026-07-20
 39_1005_DF_DCIS_SUICIDI_6,Istruzione,ok,hub,8,30,0,"",2026-07-20
-39_1005_DF_DCIS_SUICIDI_7,Stato civile,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_1005_DF_DCIS_SUICIDI_7,Stato civile,ok,hub,8,30,0,"",2026-08-07
 39_1005_DF_DCIS_SUICIDI_8,Mese del decesso,ok,hub,7,57,0,"",2026-07-20
 39_1005_DF_DCIS_SUICIDI_9,Cittadinanza,ok,hub,5,21,0,"",2026-07-20
 39_1_DF_DCIS_IND_MORT_EDU_1,Indicatori di mortalità per causa e titolo di studio,ok,hub,7,69,0,"",2026-07-20
-39_493,Mortalità per territorio di evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
-39_493_DF_DCIS_CMORTE1_EV_1,Causa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493,Mortalità per territorio di evento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_493_DF_DCIS_CMORTE1_EV_1,Causa - prov.,ok,hub,6,237,0,"",2026-08-07
 39_493_DF_DCIS_CMORTE1_EV_2,Causa ed età,ok,hub,7,127,0,"",2026-07-20
-39_493_DF_DCIS_CMORTE1_EV_3,Causa e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
-39_493_DF_DCIS_CMORTE1_EV_4,Età e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_3,Causa e paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_493_DF_DCIS_CMORTE1_EV_4,Età e paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
 39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",ok,hub,9,11631,0,"",2026-07-20
-39_493_DF_DCIS_CMORTE1_EV_6,Anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_6,Anno di nascita,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
 39_494,Mortalità per territorio di residenza,empty,hub,0,0,0,"",2026-07-20
-39_494_DF_DCIS_CMORTE1_RES_1,Causa - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_2,Causa ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_3,Causa e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_4,Età e paese di cittadinanza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_5,"Istruzione, stato civile e mese di decesso",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_6,Anno di nascita,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_7,Anno di matrimonio ed età del coniuge,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_494_DF_DCIS_CMORTE1_RES_8,Quozienti di mortalità - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57,Cause multiple di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57_DF_DCIS_CMORTEM_1,Rapporto tra causa iniziale e causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57_DF_DCIS_CMORTEM_2,Numero di patologie per causa iniziale di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57_DF_DCIS_CMORTEM_3,Numero di menzioni per causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57_DF_DCIS_CMORTEM_4,Mortalità infantile - rapporto tra causa iniziale e causa multipla,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_57_DF_DCIS_CMORTEM_5,Mortalità infantile - numero di menzioni per causa multipla di morte,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_700,Mortalità infantile per territorio di evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_700_DF_DCIS_CMORTEINF2_EV_1,Causa ed età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_700_DF_DCIS_CMORTEINF2_EV_2,Causa e cittadinanza della madre,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_700_DF_DCIS_CMORTEINF2_EV_3,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_700_DF_DCIS_CMORTEINF2_EV_4,Cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_701,Mortalità infantile per territorio di residenza,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_701_DF_DCIS_CMORTEINF2_RES_1,Causa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_701_DF_DCIS_CMORTEINF2_RES_2,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_701_DF_DCIS_CMORTEINF2_RES_3,Cittadinanza della madre - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-39_701_DF_DCIS_CMORTEINF2_RES_4,Quozienti di mortalità infantile - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_156,Conto economico delle risorse e degli impieghi e contributi alla crescita del Pil - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_156_DF_DCCN_SQCQ_B19_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_156_DF_DCCN_SQCQ_B19_2,Contributi alla crescita del PIL - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-3_48_DF_DCCN_VAAGSIPET_B19_2,Prodotti e voci di costo - edizioni maggio 2020 - giugno 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_269_1,Incidenti stradali con lesioni alle persone (Lazio),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_270_DF_DCIS_MORTIFERITISTR1_1_1,dataflow eliminato,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_270_DF_DCIS_MORTIFERITISTR1_TS1_1,"Morti e feriti in incidenti stradali - Anni 2001, 2002, 2003",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_270_DF_DCIS_MORTIFERITISTR1_TS2_1,"Morti e feriti in incidenti stradali - Anni 2004, 2005, 2006",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_270_DF_DCIS_MORTIFERITISTR1_TS3_1,"Morti e feriti in incidenti stradali - Anni 2007, 2008, 2009",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_271,Veicoli coinvolti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_271_DF_DCIS_VEICOLIINCID1_1,Veicoli coinvolti in incidenti stradali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_287,Indicatori di incidentalità stradale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_287_DF_DCIS_INDINCIDENT_1,Indice di mortalità,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_287_DF_DCIS_INDINCIDENT_2,Indice di lesività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_288,Veicoli - Pubblico registro automobilistico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_288_DF_DCIS_VEICOLIPRA_1,Veicoli - Pubblico registro automobilistico,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_983,"Incidenti, morti e feriti - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_983_DF_DCIS_INCIDMORFER_COM_1,"Incidenti, morti e feriti - comuni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_993,Veicoli - Pubblico registro automobilistico - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-41_993_DCIS_VEICOLIPRA_COM_1,Veicoli - Pubblico registro automobilistico - comuni,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108,Interruzioni volontarie della gravidanza caratteristiche dell'evento,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_1,"Tipo di intervento, terapia antalgica e settimane di amenorrea",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_10,Luogo di aborto - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_11,Tipo di complicazione - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_12,Presenza di malformazioni fetali - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_2,"Tipo di intervento, terapia antalgica ed età gestazionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
-42_1108_DF_DCIS_IVG_CARATTEV1_3,Tipo di intervento - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
+39_494_DF_DCIS_CMORTE1_RES_1,Causa - prov.,ok,hub,6,242,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_2,Causa ed età,ok,hub,7,263,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_3,Causa e paese di cittadinanza,ok,hub,6,300,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_4,Età e paese di cittadinanza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_5,"Istruzione, stato civile e mese di decesso",ok,hub,9,11631,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_6,Anno di nascita,ok,hub,8,11744,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_7,Anno di matrimonio ed età del coniuge,ok,hub,9,11728,0,"",2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_8,Quozienti di mortalità - prov.,ok,hub,6,291,0,"",2026-08-07
+39_57,Cause multiple di morte,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_57_DF_DCIS_CMORTEM_1,Rapporto tra causa iniziale e causa multipla di morte,ok,hub,5,55,0,"",2026-08-07
+39_57_DF_DCIS_CMORTEM_2,Numero di patologie per causa iniziale di morte,ok,hub,6,61,0,"",2026-08-07
+39_57_DF_DCIS_CMORTEM_3,Numero di menzioni per causa multipla di morte,ok,hub,6,71,0,"",2026-08-07
+39_57_DF_DCIS_CMORTEM_4,Mortalità infantile - rapporto tra causa iniziale e causa multipla,ok,hub,5,73,0,"",2026-08-07
+39_57_DF_DCIS_CMORTEM_5,Mortalità infantile - numero di menzioni per causa multipla di morte,ok,hub,6,76,0,"",2026-08-07
+39_700,Mortalità infantile per territorio di evento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_1,Causa ed età,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_2,Causa e cittadinanza della madre,ok,hub,6,185,0,"",2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_3,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_4,Cittadinanza della madre - prov.,ok,hub,5,288,0,"",2026-08-07
+39_701,Mortalità infantile per territorio di residenza,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_1,Causa,ok,hub,6,43,0,"",2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_2,"Età, istruzione ed età della madre, filiazione e mese di decesso - prov.",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_3,Cittadinanza della madre - prov.,ok,hub,5,291,0,"",2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_4,Quozienti di mortalità infantile - prov.,ok,hub,5,150,0,"",2026-08-07
+3_156,Conto economico delle risorse e degli impieghi e contributi alla crescita del Pil - edizioni ottobre 2019 - settembre 2024,ok,hub,6,80,0,"",2026-08-07
+3_156_DF_DCCN_SQCQ_B19_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2019 - settembre 2024,ok,hub,6,71,0,"",2026-08-07
+3_156_DF_DCCN_SQCQ_B19_2,Contributi alla crescita del PIL - edizioni ottobre 2019 - settembre 2024,ok,hub,6,69,0,"",2026-08-07
+3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,ok,hub,6,29,0,"",2026-08-07
+3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,ok,hub,7,49,0,"",2026-08-07
+3_48_DF_DCCN_VAAGSIPET_B19_2,Prodotti e voci di costo - edizioni maggio 2020 - giugno 2024,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_269_1,Incidenti stradali con lesioni alle persone (Lazio),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,ok,hub,10,11633,0,"",2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,ok,hub,11,234,0,"",2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_1_1,dataflow eliminato,ok,hub,11,234,0,"",2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS1_1,"Morti e feriti in incidenti stradali - Anni 2001, 2002, 2003",ok,hub,11,234,0,"",2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS2_1,"Morti e feriti in incidenti stradali - Anni 2004, 2005, 2006",ok,hub,11,234,0,"",2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS3_1,"Morti e feriti in incidenti stradali - Anni 2007, 2008, 2009",ok,hub,11,234,0,"",2026-08-07
+41_271,Veicoli coinvolti in incidenti stradali,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_271_DF_DCIS_VEICOLIINCID1_1,Veicoli coinvolti in incidenti stradali,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_287,Indicatori di incidentalità stradale,ok,hub,4,146,0,"",2026-08-07
+41_287_DF_DCIS_INDINCIDENT_1,Indice di mortalità,ok,hub,4,145,0,"",2026-08-07
+41_287_DF_DCIS_INDINCIDENT_2,Indice di lesività,ok,hub,4,145,0,"",2026-08-07
+41_288,Veicoli - Pubblico registro automobilistico,ok,hub,4,153,0,"",2026-08-07
+41_288_DF_DCIS_VEICOLIPRA_1,Veicoli - Pubblico registro automobilistico,ok,hub,4,153,0,"",2026-08-07
+41_983,"Incidenti, morti e feriti - comuni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_983_DF_DCIS_INCIDMORFER_COM_1,"Incidenti, morti e feriti - comuni",ok,hub,4,8722,0,"",2026-08-07
+41_993,Veicoli - Pubblico registro automobilistico - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+41_993_DCIS_VEICOLIPRA_COM_1,Veicoli - Pubblico registro automobilistico - comuni,ok,hub,4,8654,0,"",2026-08-07
+42_1108,Interruzioni volontarie della gravidanza caratteristiche dell'evento,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_1,"Tipo di intervento, terapia antalgica e settimane di amenorrea",ok,hub,7,28,0,"",2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_10,Luogo di aborto - prov.,ok,hub,4,152,0,"",2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_11,Tipo di complicazione - prov.,ok,hub,4,153,0,"",2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_12,Presenza di malformazioni fetali - prov.,ok,hub,5,150,0,"",2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_2,"Tipo di intervento, terapia antalgica ed età gestazionale",ok,hub,6,26,0,"",2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_3,Tipo di intervento - prov.,ok,hub,5,156,0,"",2026-08-07
 42_1108_DF_DCIS_IVG_CARATTEV1_4,Terapia antalgica - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
 42_1108_DF_DCIS_IVG_CARATTEV1_5,Settimane di amenorrea - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21
 42_1108_DF_DCIS_IVG_CARATTEV1_6,Età gestazionale - prov.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-21

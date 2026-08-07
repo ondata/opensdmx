@@ -7401,3 +7401,303 @@ TEIET310,Unit value of imports,ok,sdmx,7,21,0,"",2026-08-06
 TEIIS010,Domestic producer prices - total industry (excluding construction),ok,sdmx,7,57,0,"",2026-08-06
 TEIIS011,Import prices - total industry,ok,sdmx,7,41,0,"",2026-08-06
 TEIIS012,Import prices - manufacturing,ok,sdmx,7,42,0,"",2026-08-06
+TEIIS013,Import prices - intermediate goods,ok,sdmx,7,41,0,"",2026-08-07
+TEIIS014,Import prices - capital goods,ok,sdmx,7,41,0,"",2026-08-07
+TEIIS015,Import prices - consumer durables,ok,sdmx,7,41,0,"",2026-08-07
+TEIIS016,Import prices - consumer non-durables,ok,sdmx,7,41,0,"",2026-08-07
+TEIIS020,Domestic producer prices - manufacturing,ok,sdmx,7,57,0,"",2026-08-07
+TEIIS030,Domestic producer prices - energy,ok,sdmx,7,56,0,"",2026-08-07
+TEIIS040,Domestic producer prices - intermediate goods,ok,sdmx,7,56,0,"",2026-08-07
+TEIIS050,Domestic producer prices - capital goods,ok,sdmx,7,56,0,"",2026-08-07
+TEIIS060,Domestic producer prices - consumer durables,ok,sdmx,7,55,0,"",2026-08-07
+TEIIS070,Domestic producer prices - consumer non-durables,ok,sdmx,7,56,0,"",2026-08-07
+TEIIS080,Production in industry - total (excluding construction),ok,sdmx,6,57,0,"",2026-08-07
+TEIIS090,Production in industry - manufacturing,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS100,Production in industry - energy,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS110,Production in industry - intermediate goods,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS120,Production in industry - capital goods,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS130,Production in industry - consumer durables,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS140,Production in industry - consumer non-durables,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS150,Turnover in industry - manufacturing,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS160,Turnover in industry - intermediate goods,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS170,Turnover in industry - capital goods,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS180,Turnover in industry - consumer durables,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS190,Turnover in industry - consumer non-durables,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS200,Retail trade turnover - total,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS210,"Retail trade turnover - food, beverages and tobacco",ok,sdmx,6,57,0,"",2026-08-07
+TEIIS220,Retail trade turnover - non food,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS230,Retail trade turnover - automotive fuel,ok,sdmx,6,56,0,"",2026-08-07
+TEIIS240,Retail trade volume of sales - total,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS250,"Retail trade volume of sales - food, beverages and tobacco",ok,sdmx,6,57,0,"",2026-08-07
+TEIIS260,Retail trade volume of sales - non food,ok,sdmx,6,57,0,"",2026-08-07
+TEIIS270,Retail trade volume of sales - automotive fuel,ok,sdmx,6,56,0,"",2026-08-07
+TEIIS400,Labour input - total industry (excluding construction),ok,sdmx,7,57,0,"",2026-08-07
+TEIIS500,Production in construction,ok,sdmx,6,46,0,"",2026-08-07
+TEIIS510,Construction cost of new residential buildings,ok,sdmx,7,59,0,"",2026-08-07
+TEIIS521,Labour input in construction,ok,sdmx,6,56,0,"",2026-08-07
+TEIIS550,Building permits - monthly data,ok,sdmx,6,37,0,"",2026-08-07
+TEIIS715,Production in services,ok,sdmx,7,54,0,"",2026-08-07
+TEIIS721,Service producer prices,ok,sdmx,7,67,0,"",2026-08-07
+TEILM010,Unemployment by sex,ok,sdmx,7,57,0,"",2026-08-07
+TEILM011,Unemployment by sex - age group 15-24,ok,sdmx,7,56,0,"",2026-08-07
+TEILM012,Unemployment by sex - age group 25-74,ok,sdmx,7,56,0,"",2026-08-07
+TEILM020,Unemployment rate by sex,ok,sdmx,7,57,0,"",2026-08-07
+TEILM021,Unemployment rate by sex - age group 15-24,ok,sdmx,7,57,0,"",2026-08-07
+TEILM022,Unemployment rate by sex - age group 25-74,ok,sdmx,7,56,0,"",2026-08-07
+TEILM100,Labour cost index by NACE Rev. 2,ok,sdmx,6,53,0,"",2026-08-07
+TEILM120,Labour cost index by NACE Rev. 2 - percentage change Q/Q-1,ok,sdmx,7,75,0,"",2026-08-07
+TEILM130,Labour cost index by NACE Rev. 2 - percentage change Q/Q-4,ok,sdmx,7,75,0,"",2026-08-07
+TEILM140,Labour cost index by NACE Rev. 2 - Index (2020=100),ok,sdmx,7,74,0,"",2026-08-07
+TEILM310,Job vacancy rate by NACE Rev. 2 - quarterly data,ok,sdmx,7,66,0,"",2026-08-07
+TEIMF040,3-month-interest rate,ok,sdmx,4,27,0,"",2026-08-07
+TEIMF050,Long term government bond yields,ok,sdmx,4,44,0,"",2026-08-07
+TEIMF060,"Euro yield curve by maturity (1, 5 and 10 years)",ok,sdmx,6,19,0,"",2026-08-07
+TEIMF100,Day-to-day money market interest rates,ok,sdmx,4,27,0,"",2026-08-07
+TEIMF200,Euro/national currency exchange rates,ok,sdmx,5,30,0,"",2026-08-07
+TEIMF250,Real effective exchange rate - 42 trading partners,ok,sdmx,5,51,0,"",2026-08-07
+TEINA010,"Gross domestic product, current prices",ok,sdmx,6,56,0,"",2026-08-07
+TEINA011,"Gross domestic product, volumes",ok,sdmx,5,58,0,"",2026-08-07
+TEINA020,"Final consumption expenditure of households and NPISH, current prices",ok,sdmx,6,56,0,"",2026-08-07
+TEINA021,"Final consumption expenditure of households and NPISH, volumes",ok,sdmx,5,58,0,"",2026-08-07
+TEINA022,Household final consumption expenditures by durability - percentage change Q/Q-1,ok,sdmx,6,57,0,"",2026-08-07
+TEINA023,Household final consumption expenditures by durability - percentage change Q/Q-4,ok,sdmx,6,57,0,"",2026-08-07
+TEINA030,"Government final consumption expenditure, current prices",ok,sdmx,6,56,0,"",2026-08-07
+TEINA031,"Government final consumption expenditure, volumes",ok,sdmx,5,58,0,"",2026-08-07
+TEINA040,"Gross fixed capital formation, current prices",ok,sdmx,6,56,0,"",2026-08-07
+TEINA041,"Gross fixed capital formation, volumes",ok,sdmx,5,57,0,"",2026-08-07
+TEINA042,Gross fixed capital formation by asset (AN_F6) - percentage change Q/Q-1,ok,sdmx,6,61,0,"",2026-08-07
+TEINA043,Gross fixed capital formation by asset (AN_F6) - percentage change Q/Q-4,ok,sdmx,6,61,0,"",2026-08-07
+TEINA050,"External balance of goods and services, current prices",ok,sdmx,6,56,0,"",2026-08-07
+TEINA075_R2,Compensation of employees - NACE Rev. 2,ok,sdmx,7,63,0,"",2026-08-07
+TEINA080,Gross national income,ok,sdmx,8,46,0,"",2026-08-07
+TEINA090,Gross disposable income,ok,sdmx,8,46,0,"",2026-08-07
+TEINA100,Gross saving,ok,sdmx,8,46,0,"",2026-08-07
+TEINA110,GDP deflator,ok,sdmx,6,56,0,"",2026-08-07
+TEINA200,General government deficit (-) and surplus (+) - annual data,ok,sdmx,6,47,0,"",2026-08-07
+TEINA205,General government deficit (-) and surplus (+) - quarterly data,ok,sdmx,6,51,0,"",2026-08-07
+TEINA210,General government gross fixed capital formation - annual data,ok,sdmx,6,47,0,"",2026-08-07
+TEINA225,General government gross debt - annual data,ok,sdmx,6,47,0,"",2026-08-07
+TEINA230,General government gross debt - quarterly data,ok,sdmx,6,48,0,"",2026-08-07
+TEINA305,"Employment by NACE Rev.2 - percentage change Q/Q-4, NSA",ok,sdmx,6,64,0,"",2026-08-07
+TEINA306,"Employment by NACE Rev.2 - percentage change Q/Q-4, SCA",ok,sdmx,6,57,0,"",2026-08-07
+TEINA310,"Employment by NACE Rev.2 - percentage change Q/Q-1, SCA",ok,sdmx,6,57,0,"",2026-08-07
+TEINA400_R2,Gross value added - NACE Rev. 2: TOTAL - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA402_R2,Gross value added - NACE Rev. 2: TOTAL - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA404_R2,Gross value added - NACE Rev. 2: A - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA406_R2,Gross value added - NACE Rev. 2: A - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA408_R2,Gross value added - NACE Rev. 2: B-E - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA410_R2,Gross value added - NACE Rev. 2: B-E - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA412_R2,Gross value added - NACE Rev. 2: C - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA414_R2,Gross value added - NACE Rev. 2: C - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA416_R2,Gross value added - NACE Rev. 2: F - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA418_R2,Gross value added - NACE Rev. 2: F - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA420_R2,Gross value added - NACE Rev. 2: G-I - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA422_R2,Gross value added - NACE Rev. 2: G-I - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA424_R2,Gross value added - NACE Rev. 2: J - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA426_R2,Gross value added - NACE Rev. 2: J - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA428_R2,Gross value added - NACE Rev. 2: K - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA430_R2,Gross value added - NACE Rev. 2: K - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA432_R2,Gross value added - NACE Rev. 2: L - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA434_R2,Gross value added - NACE Rev. 2: L - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA436_R2,Gross value added - NACE Rev. 2: M_N - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA438_R2,Gross value added - NACE Rev. 2: M_N - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA440_R2,Gross value added - NACE Rev. 2: O-Q - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA442_R2,Gross value added - NACE Rev. 2: O-Q - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA444_R2,Gross value added - NACE Rev. 2: R-U - current prices,ok,sdmx,6,57,0,"",2026-08-07
+TEINA446_R2,Gross value added - NACE Rev. 2: R-U - volumes,ok,sdmx,6,58,0,"",2026-08-07
+TEINA500,Household saving rate,ok,sdmx,7,40,0,"",2026-08-07
+TEINA510,Households investment rate,ok,sdmx,6,38,0,"",2026-08-07
+TEINA515,Investment rate of non-financial corporations,ok,sdmx,6,39,0,"",2026-08-07
+TEINA520,Profit share of non-financial corporations,ok,sdmx,7,41,0,"",2026-08-07
+TEN00001,Water resources: long-term annual average,ok,sdmx,5,53,0,"",2026-08-07
+TEN00003,Fresh water abstraction by source per capita - m³ per capita,ok,sdmx,6,62,0,"",2026-08-07
+TEN00006,Water abstracted by sector of use,ok,sdmx,6,66,0,"",2026-08-07
+TEN00030,Sewage sludge production and disposal from urban wastewater (in dry substance (d.s)),ok,sdmx,6,66,0,"",2026-08-07
+TEN00062,Recovery rates for packaging waste,ok,sdmx,6,63,0,"",2026-08-07
+TEN00063,Recycling rates for packaging waste,ok,sdmx,5,61,0,"",2026-08-07
+TEN00106,Generation of waste by economic activity,ok,sdmx,7,68,0,"",2026-08-07
+TEN00108,Generation of waste by waste category,ok,sdmx,7,65,0,"",2026-08-07
+TEN00110,Waste generated by households by year and waste category,ok,sdmx,7,65,0,"",2026-08-07
+TEN00119,Market share of the largest generator in the electricity market,ok,sdmx,6,49,0,"",2026-08-07
+TEN00120,Implicit tax rate on energy,ok,sdmx,4,55,0,"",2026-08-07
+TEN00121,Gross available energy by product,ok,sdmx,6,73,0,"",2026-08-07
+TEN00122,Total energy supply by product,ok,sdmx,6,73,0,"",2026-08-07
+TEN00123,Final energy consumption by product,ok,sdmx,6,73,0,"",2026-08-07
+TEN00124,Final energy consumption by sector,ok,sdmx,6,66,0,"",2026-08-07
+TEN00125,Final energy consumption in households by type of fuel,ok,sdmx,6,72,0,"",2026-08-07
+TEN00126,Final energy consumption in transport by type of fuel,ok,sdmx,6,75,0,"",2026-08-07
+TEN00127,Final energy consumption in road transport by type of fuel,ok,sdmx,6,73,0,"",2026-08-07
+TEN00129,Final energy consumption in industry by type of fuel,ok,sdmx,6,73,0,"",2026-08-07
+TEN00135,National expenditure on environmental protection,ok,sdmx,6,79,0,"",2026-08-07
+TEN00136,Environmental protection investments of total economy,ok,sdmx,4,56,0,"",2026-08-07
+TEN00137,Domestic material consumption per capita,ok,sdmx,6,58,0,"",2026-08-07
+TEN00138,Landfill rate of waste excluding major mineral wastes,ok,sdmx,5,51,0,"",2026-08-07
+TEN00139,Energy taxes,ok,sdmx,6,58,0,"",2026-08-07
+TEN00141,Environmental tax revenues as share of total taxes,ok,sdmx,5,57,0,"",2026-08-07
+TEPSR_LM210,Gender gap in part-time employment,ok,sdmx,6,67,0,"",2026-08-07
+TEPSR_LM220,Gender employment gap by NUTS 2 region,ok,sdmx,4,374,0,"",2026-08-07
+TEPSR_LM230,Gender employment gap by degree of urbanisation,ok,sdmx,5,70,0,"",2026-08-07
+TEPSR_LM410,People at risk of poverty or social exclusion by sex,ok,sdmx,6,58,0,"",2026-08-07
+TEPSR_LM411,People at risk of poverty or social exclusion by age,ok,sdmx,6,63,0,"",2026-08-07
+TEPSR_LM412,Children (aged less than 18) at risk of poverty or social exclusion,ok,sdmx,6,56,0,"",2026-08-07
+TEPSR_LM420,Severe material and social deprivation rate by sex,ok,sdmx,6,58,0,"",2026-08-07
+TEPSR_LM430,People living in households with very low work intensity by sex,ok,sdmx,6,58,0,"",2026-08-07
+TEPSR_LM440,Severe housing deprivation rate by tenure status,ok,sdmx,6,63,0,"",2026-08-07
+TEPSR_SP110,General government expenditure by function,ok,sdmx,7,68,0,"",2026-08-07
+TEPSR_SP200,Disability employment gap by level of activity limitation and sex,ok,sdmx,6,66,0,"",2026-08-07
+TEPSR_SP210,Children aged less than 3 years in formal childcare,ok,sdmx,6,66,0,"",2026-08-07
+TEPSR_SP310,Out-of-pocket expenditure on healthcare,ok,sdmx,5,68,0,"",2026-08-07
+TEPSR_SP320,Healthy life years at age 65 by sex,ok,sdmx,6,67,0,"",2026-08-07
+TEPSR_SP410,Individuals who have basic or above basic overall digital skills by sex,ok,sdmx,6,52,0,"",2026-08-07
+TEPSR_SPI110,At-risk-of poverty rate for children (aged less than 18) by sex,ok,sdmx,8,71,0,"",2026-08-07
+TEPSR_SPI120,Severe material and social deprivation rate for children (aged less than 18) by sex,ok,sdmx,6,58,0,"",2026-08-07
+TEPSR_SPI130,Children (aged less than 18) living in households with very low work intensity by sex,ok,sdmx,6,58,0,"",2026-08-07
+TEPSR_WC110,Employment rate by age,ok,sdmx,7,74,0,"",2026-08-07
+TEPSR_WC130,Activity rate by sex,ok,sdmx,7,70,0,"",2026-08-07
+TEPSR_WC160,Activity rate by age,ok,sdmx,7,72,0,"",2026-08-07
+TEPSR_WC170,Unemployment rate by age,ok,sdmx,7,73,0,"",2026-08-07
+TEPSR_WC220,Employed persons by job tenure,ok,sdmx,7,73,0,"",2026-08-07
+TEPSR_WC230,Labour transitions from temporary to permanent contracts by sex -3-year average,ok,sdmx,5,64,0,"",2026-08-07
+TEPSR_WC310,The real gross disposable income of households per capita (index = 2008),ok,sdmx,7,67,0,"",2026-08-07
+TESEM010,Employment rate by sex,ok,sdmx,7,70,0,"",2026-08-07
+TESEM020,Early leavers from education and training (age group 18-24),ok,sdmx,7,68,0,"",2026-08-07
+TESEM030,Tertiary educational attainment (age group 30-34),ok,sdmx,7,70,0,"",2026-08-07
+TESEM040,Overall employment growth,ok,sdmx,5,67,0,"",2026-08-07
+TESEM050,"Employment rate of older workers, age group 55-64",ok,sdmx,7,68,0,"",2026-08-07
+TESEM060,Gender employment gap,ok,sdmx,6,67,0,"",2026-08-07
+TESEM070,Youth employment rate (age group 20-29),ok,sdmx,7,68,0,"",2026-08-07
+TESEM080,Employment rate of low skilled persons (age group 20-64),ok,sdmx,7,68,0,"",2026-08-07
+TESEM090,Employment rate of non-EU nationals (age group 20-64),ok,sdmx,7,68,0,"",2026-08-07
+TESEM100,Part-time employment rate,ok,sdmx,7,69,0,"",2026-08-07
+TESEM110,Temporary employees as percentage of the total number of employees,ok,sdmx,7,68,0,"",2026-08-07
+TESEM120,Unemployment rate by sex,ok,sdmx,6,69,0,"",2026-08-07
+TESEM130,Long-term unemployment rate by sex,ok,sdmx,7,70,0,"",2026-08-07
+TESEM140,Youth unemployment rate by sex,ok,sdmx,6,69,0,"",2026-08-07
+TESEM150,Young persons neither in employment nor in education and training (NEET) by sex,ok,sdmx,8,72,0,"",2026-08-07
+TESEM160,Labour productivity per person employed and hour worked (EU27_2020=100),ok,sdmx,5,67,0,"",2026-08-07
+TESEM170,Nominal unit labour cost growth,ok,sdmx,5,67,0,"",2026-08-07
+TESEM180,Gender pay gap in unadjusted form,ok,sdmx,5,62,0,"",2026-08-07
+TESEM190,Involuntary temporary employment,ok,sdmx,7,69,0,"",2026-08-07
+TESEM200,Newly employed,ok,sdmx,7,68,0,"",2026-08-07
+TESEM210,At-risk of poverty rate of unemployed persons,ok,sdmx,9,61,0,"",2026-08-07
+TESEM220,Tax rate on low wage earners - Unemployment trap,ok,sdmx,4,66,0,"",2026-08-07
+TESEM240,Percentage of population (age group 25-64) in private households with at least upper secondary educational attainment,ok,sdmx,7,68,0,"",2026-08-07
+TESOV016,Relative median at-risk-of-poverty risk gap - EU-SILC survey,ok,sdmx,8,69,0,"",2026-08-07
+TESOV092,At-risk-of-poverty rate anchored at a fixed moment in time (2019) by age group - EU-SILC survey,ok,sdmx,8,60,0,"",2026-08-07
+TESOV110,In-work at-risk-of-poverty rate by sex,ok,sdmx,7,74,0,"",2026-08-07
+TESOV190,Distribution of population by household types - EU-SILC survey,ok,sdmx,6,64,0,"",2026-08-07
+TESOV250,At-risk-of-poverty rate before social transfers by sex - EU-SILC survey,ok,sdmx,8,65,0,"",2026-08-07
+TESOV252,At-risk-of-poverty rate before social transfers by age group - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESPM010,At-risk-of-poverty rate,ok,sdmx,8,63,0,"",2026-08-07
+TESPM020,At-risk-of-poverty threshold for a single household,ok,sdmx,7,60,0,"",2026-08-07
+TESPM030,Severe material and social deprivation rate,ok,sdmx,6,60,0,"",2026-08-07
+TESPM040,Children at risk of poverty or social exclusion,ok,sdmx,6,62,0,"",2026-08-07
+TESPM050,Impact of social transfers (excluding pensions) on poverty reduction by sex,ok,sdmx,8,74,0,"",2026-08-07
+TESPM050_R,Impact of social transfers (excluding pensions) on poverty reduction by sex and NUTS 2 region,ok,sdmx,4,445,0,"",2026-08-07
+TESPM060,At risk-of-poverty rate for the population living in (quasi-)jobless households,ok,sdmx,10,64,0,"",2026-08-07
+TESPM070,In-work at-risk-of-poverty rate,ok,sdmx,7,63,0,"",2026-08-07
+TESPM080,Youth unemployment ratio (age group 15-24),ok,sdmx,6,531,0,"",2026-08-07
+TESPM090,At risk of poverty or social exclusion rate for elderly (65+),ok,sdmx,6,62,0,"",2026-08-07
+TESPM100,Aggregate replacement ratio,ok,sdmx,5,58,0,"",2026-08-07
+TESPM110,Self-reported unmet need for medical care by sex,ok,sdmx,8,72,0,"",2026-08-07
+TESPM120,Healthy life years at 65 - males,ok,sdmx,6,57,0,"",2026-08-07
+TESPM130,Healthy life years at 65 - females,ok,sdmx,6,57,0,"",2026-08-07
+TESPM140,Housing cost overburden rate,ok,sdmx,7,63,0,"",2026-08-07
+TESPM150,Persistent-at-risk-of-poverty rate,ok,sdmx,8,63,0,"",2026-08-07
+TESPM151,Inequality of income distribution,ok,sdmx,6,58,0,"",2026-08-07
+TESPN010,At-risk-of-poverty rate of older people by sex - EU-SILC survey,ok,sdmx,8,65,0,"",2026-08-07
+TESPN020,Median relative income of elderly people - EU-SILC survey,ok,sdmx,6,61,0,"",2026-08-07
+TESPN050,At-risk-of-poverty rate of older people by detailed age group - EU-SILC survey,ok,sdmx,8,68,0,"",2026-08-07
+TESPN060,Median relative income of elderly people (60+) - EU-SILC survey,ok,sdmx,6,63,0,"",2026-08-07
+TESPN070,Aggregate replacement ratio for pensions (excluding other social benefits) by sex,ok,sdmx,5,64,0,"",2026-08-07
+TESPN080,Income inequality for older people - EU-SILC survey,ok,sdmx,6,64,0,"",2026-08-07
+TESPN090,Relative median poverty risk gap of elderly people - EU-SILC survey,ok,sdmx,8,64,0,"",2026-08-07
+TESPN100,At-risk-of-poverty rate for pensioners - EU-SILC survey,ok,sdmx,9,63,0,"",2026-08-07
+TESPN110,At-risk-of-poverty rate of elderly people by tenure status - EU-SILC survey,ok,sdmx,9,66,0,"",2026-08-07
+TESPN120,Dispersion around the at-risk-of-poverty threshold for elderly people - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESPN240,Gender differences in the at-risk-of-poverty rate by age - EU-SILC survey,ok,sdmx,5,62,0,"",2026-08-07
+TESPN250,Gender differences in the relative income of elderly people (65+) - EU-SILC survey,ok,sdmx,7,62,0,"",2026-08-07
+TESPN260,Gender differences in the aggregate replacement ratio for pensions (excluding other social benefits) - EU-SILC survey,ok,sdmx,4,57,0,"",2026-08-07
+TESPN270,Gender differences in the relative income of older people - EU-SILC survey,ok,sdmx,7,63,0,"",2026-08-07
+TESSI010,At-risk-of-poverty rate by sex,ok,sdmx,8,74,0,"",2026-08-07
+TESSI012,At-risk-of-poverty rate by age group - EU-SILC survey,ok,sdmx,8,68,0,"",2026-08-07
+TESSI014,At-risk-of-poverty threshold - EU-SILC survey,ok,sdmx,7,62,0,"",2026-08-07
+TESSI020,Persistent at-risk-of poverty rate by sex - EU-SILC survey,ok,sdmx,8,60,0,"",2026-08-07
+TESSI022,Persistent at-risk-of poverty rate by age group - EU-SILC survey,ok,sdmx,8,61,0,"",2026-08-07
+TESSI030,Relative median poverty risk gap by age group - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESSI080,Material Deprivation rate by sex - EU-SILC survey,ok,sdmx,7,61,0,"",2026-08-07
+TESSI082,Material Deprivation rate by age group - EU-SILC survey,ok,sdmx,7,62,0,"",2026-08-07
+TESSI120,At-risk-of poverty rate by detailed age group - EU-SILC survey,ok,sdmx,8,68,0,"",2026-08-07
+TESSI121,At-risk-of poverty rate by household type - EU-SILC survey,ok,sdmx,7,61,0,"",2026-08-07
+TESSI122,At-risk-of-poverty rate of households without dependent children by work intensity - EU-SILC survey,ok,sdmx,10,69,0,"",2026-08-07
+TESSI123,At-risk-of-poverty rate of households with at least one dependent child by work intensity - EU-SILC survey,ok,sdmx,10,69,0,"",2026-08-07
+TESSI124,At-risk-of poverty rate by most frequent activity status - EU-SILC survey,ok,sdmx,9,66,0,"",2026-08-07
+TESSI125,At-risk-of poverty rate by tenure status - EU-SILC survey,ok,sdmx,9,66,0,"",2026-08-07
+TESSI126,Dispersion around the at-risk-of-poverty threshold - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESSI150,Depth of material deprivation - EU-SILC survey,ok,sdmx,6,60,0,"",2026-08-07
+TESSI160,Housing cost overburden rate by sex - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI161,Housing cost overburden rate by age group - EU-SILC survey,ok,sdmx,7,66,0,"",2026-08-07
+TESSI162,Housing cost overburden rate by income quintile - EU-SILC survey,ok,sdmx,5,65,0,"",2026-08-07
+TESSI163,Housing cost overburden rate by poverty status - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI164,Housing cost overburden rate by tenure status - EU-SILC survey,ok,sdmx,5,64,0,"",2026-08-07
+TESSI165,Housing cost overburden rate by degree of urbanisation - EU-SILC survey,ok,sdmx,5,62,0,"",2026-08-07
+TESSI166,Housing cost overburden rate by household type - EU-SILC survey,ok,sdmx,5,63,0,"",2026-08-07
+TESSI170,Overcrowding rate by sex - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI171,Overcrowding rate by age group - EU-SILC survey,ok,sdmx,7,66,0,"",2026-08-07
+TESSI172,Overcrowding rate by poverty status - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI173,Overcrowding rate by tenure status - EU-SILC survey,ok,sdmx,5,64,0,"",2026-08-07
+TESSI174,Overcrowding rate by degree of urbanisation - EU-SILC survey,ok,sdmx,5,62,0,"",2026-08-07
+TESSI175,Overcrowding rate by household type - EU-SILC survey,ok,sdmx,5,63,0,"",2026-08-07
+TESSI176,Overcrowding rate by sex - population without single-person households - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI177,Overcrowding rate by age group - population without single-person households - EU-SILC survey,ok,sdmx,7,66,0,"",2026-08-07
+TESSI178,Overcrowding rate by poverty status - population without single-person households - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI180,Income quintile share ratio (S80/S20) by sex,ok,sdmx,6,73,0,"",2026-08-07
+TESSI190,Gini coefficient of equivalised disposable income,ok,sdmx,5,58,0,"",2026-08-07
+TESSI191,Gini coefficient of equivalised disposable income for children (aged less than 18,ok,sdmx,5,58,0,"",2026-08-07
+TESSI220,At-risk-of-poverty rate anchored at a fixed moment in time (2019) by sex - EU-SILC survey,ok,sdmx,8,59,0,"",2026-08-07
+TESSI230,At-risk-of-poverty rate before social transfers by sex - EU-SILC survey,ok,sdmx,8,65,0,"",2026-08-07
+TESSI250,In-work at-risk-of-poverty rate by working time - EU-SILC survey,ok,sdmx,5,62,0,"",2026-08-07
+TESSI291,Housing deprivation rate by number of item - EU-SILC survey,ok,sdmx,7,67,0,"",2026-08-07
+TESSI292,"Share of total population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames of floor - EU-SILC survey",ok,sdmx,8,68,0,"",2026-08-07
+TESSI293,"Share of total population having neither a bath, nor a shower in their dwelling - EU-SILC survey",ok,sdmx,8,66,0,"",2026-08-07
+TESSI294,Share of total population not having indoor flushing toilet for the sole use of their household - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESSI295,Share of total population considering their dwelling as too dark - EU-SILC survey,ok,sdmx,8,66,0,"",2026-08-07
+TESSI300,Median of the housing cost burden distribution by sex - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI301,Median of the housing cost burden distribution by age group - EU-SILC survey,ok,sdmx,7,66,0,"",2026-08-07
+TESSI302,Median of the housing cost burden distribution by poverty status - EU-SILC survey,ok,sdmx,7,65,0,"",2026-08-07
+TESSI303,Median of the housing cost burden distribution by degree of urbanisation - EU-SILC survey,ok,sdmx,5,62,0,"",2026-08-07
+TET00001,"Trade volume indices, by reporting country",ok,sdmx,6,59,0,"",2026-08-07
+TET00002,"International trade, by reporting country, total product",ok,sdmx,7,46,0,"",2026-08-07
+TET00003,Exports of goods and services in % of GDP,ok,sdmx,5,62,0,"",2026-08-07
+TET00004,Imports of goods and services in % of GDP,ok,sdmx,5,62,0,"",2026-08-07
+TET00011,"Intra-EU27 (from 2020) trade, by Member State, total product",ok,sdmx,6,61,0,"",2026-08-07
+TET00012,"Extra-EU27 (from 2020) trade, by Member State, total product",ok,sdmx,6,61,0,"",2026-08-07
+TET00013,"Extra-EU27 (from 2020) trade, by product group",ok,sdmx,6,28,0,"",2026-08-07
+TET00028,"Trade unit value indices, by reporting country",ok,sdmx,6,59,0,"",2026-08-07
+TET00037,Share of trade with the EU27 (from 2020),ok,sdmx,6,58,0,"",2026-08-07
+TET00038,"International trade of EFTA and enlargement countries, by reporting country, total product",ok,sdmx,6,30,0,"",2026-08-07
+TET00065,"Extra-euro area (EA20) trade, by main partners, total product",ok,sdmx,6,41,0,"",2026-08-07
+TET00066,"Extra-euro area (EA20) trade, by product group",ok,sdmx,6,28,0,"",2026-08-07
+TET00067,"Extra-EU imports by Member State, shares by invoicing currency",ok,sdmx,8,56,0,"",2026-08-07
+TET00068,"Extra-EU exports by Member State, shares by invoicing currency",ok,sdmx,8,56,0,"",2026-08-07
+TET00071,"Trade in goods, by main world traders - EU27 (from 2020)",ok,sdmx,5,39,0,"",2026-08-07
+TGS00003,Regional gross domestic product by NUTS 2 region,ok,sdmx,4,324,0,"",2026-08-07
+TGS00006,Regional gross domestic product (PPS per inhabitant in % of the EU27 (from 2020) average) by NUTS 2 region,ok,sdmx,4,323,0,"",2026-08-07
+TGS00007,Employment rate (persons aged 15-64) by NUTS 2 region,ok,sdmx,6,369,0,"",2026-08-07
+TGS00010,Unemployment rate by NUTS 2 region,ok,sdmx,7,375,0,"",2026-08-07
+TGS00024,Population density by NUTS 2 region,ok,sdmx,4,354,0,"",2026-08-07
+TGS00026,Disposable income of private households by NUTS 2 region,ok,sdmx,6,275,0,"",2026-08-07
+TGS00027,"Total population, Candidate countries and potential candidates",ok,sdmx,4,26,0,"",2026-08-07
+TGS00036,Primary income of private households by NUTS 2 region,ok,sdmx,6,275,0,"",2026-08-07
+TGS00037,Gross domestic product (GDP) and Gross value added (GVA) in volume by NUTS 2 region,ok,sdmx,5,309,0,"",2026-08-07
+TGS00038,Human resources in science and technology (HRST) by NUTS 2 region,ok,sdmx,5,366,0,"",2026-08-07
+TGS00039,Employed persons in high-tech sectors by NUTS 2 region (2008-2026),ok,sdmx,6,367,0,"",2026-08-07
+TGS00042,Intramural R&D expenditure (GERD) by NUTS 2 region,ok,sdmx,5,444,0,"",2026-08-07
+TGS00043,Researchers in all sectors by NUTS 2 region,ok,sdmx,7,447,0,"",2026-08-07
+TGS00045,Animal populations by NUTS 2 region,ok,sdmx,5,398,0,"",2026-08-07
+TGS00046,Production of cow's milk on farms by NUTS 2 region,ok,sdmx,5,419,0,"",2026-08-07
+TGS00047,Households that have internet access at home by NUTS 2 region,ok,sdmx,4,240,0,"",2026-08-07
+TGS00050,Individuals regularly using the internet by NUTS 2 region,ok,sdmx,5,241,0,"",2026-08-07
+TGS00052,Individuals who ordered goods or services over the internet for private use in the last year by NUTS 2 region,ok,sdmx,5,241,0,"",2026-08-07
+TGS00057,All causes of death by NUTS 2 region,ok,sdmx,7,347,0,"",2026-08-07
+TGS00058,Death due to cancer by NUTS 2 region,ok,sdmx,7,349,0,"",2026-08-07

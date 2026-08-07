@@ -1444,6 +1444,122 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 29_849_DF_DCIS_ACQCITIZ_3,Modalità di acquisizione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-19
 29_849_DF_DCIS_ACQCITIZ_4,Sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-19
 29_956,Stranieri residenti e condizioni di vita,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-06
+29_956_DF_DCIS_CV_STRA_13,"Uso dell'italiano in famiglia e con amici, presenza in Italia",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_14,"Uso dell'italiano in famiglia e con amici, tipologia familiare",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_15,Uso dell'italiano dei cittadini stranieri in coppia,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_16,"Uso dell'italiano al lavoro, sesso ed età",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_17,Uso dell'italiano al lavoro e cittadinanza,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_18,"Eventi discriminatori dichiarati, sesso ed età",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_19,Eventi discriminatori dichiarati e cittadinanza,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_2,Cittadinanza e presenza in Italia,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_20,Eventi discriminatori dichiarati e titolo di studio,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_21,Eventi discriminatori dichiarati e tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_22,Eventi discriminatori dichiarati dagli stranieri in coppia,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_23,"Soddisfazione per vita e lavoro, sesso ed età",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_24,"Soddisfazione per vita e lavoro, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_25,"Grado di soddisfazione, sesso ed età",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_26,Grado di soddisfazione e cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_27,Grado di soddisfazione e presenza in Italia,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_28,"Grado di soddisfazione, titolo di studio e condizione occupazionale",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_29,Grado di soddisfazione e tipologia familiare,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_3,Sesso e presenza in Italia,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_30,Grado di soddisfazione dei cittadini stranieri in coppia,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_31,Grado di soddisfazione ed eventi discriminatori dichiarati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_4,Sesso e titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_5,"Tipologia familiare, cittadinanza e sesso",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_6,Tipologia familiare e presenza in Italia,REF_AREA,nazionale,nazionale,1,2026-08-07
+29_956_DF_DCIS_CV_STRA_7,Famiglie con stranieri,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_8,Coppie con stranieri,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+29_956_DF_DCIS_CV_STRA_9,Età media degli stranieri in coppia,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_505,Sequence of accounts - editions from September 2019 to March 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_505_DF_DCCN_SQCN_B19_1,Sequenza dei conti - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_506,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_506_DF_DCCN_PILN_B19_1,Prodotto interno lordo e principali componenti - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_507,Occupazione regolare e irregolare per branca di attività e popolazione - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_507_DF_DCCN_OCCNSEC2010_B19_2,Tassi di irregolarità - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+2_507_DF_DCCN_OCCNSEC2010_B19_3,Popolazione media annua - edizioni settembre 2019 - marzo 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_1008,Reddito delle persone fisiche (Irpef)  - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8475,2026-08-07
+30_1008_DF_MEF_REDDITIIRPEF_COM_1,Contribuenti e principali categorie di reddito,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-08-07
+30_1008_DF_MEF_REDDITIIRPEF_COM_2,Contribuenti e reddito complessivo per classi di importo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-08-07
+30_264,Fiducia dei consumatori,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+30_264_DF_DCSC_FIDCONS_1,Climi grezzi (base 2021=100) - Climi grezzi e destagionalizzati (base 2010=100) - livello nazionale e ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+30_264_DF_DCSC_FIDCONS_10,Climi grezzi e destagionalizzati - livello nazionale e ripartizionale (base 2010=100),REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+30_264_DF_DCSC_FIDCONS_11,Saldi mensili grezzi e destagionalizzati - livello nazionale e ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+30_264_DF_DCSC_FIDCONS_12,Saldi mensili grezzi per classi di età,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_13,Saldi mensili grezzi per sesso,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_14,Saldi mensili grezzi per livello di istruzione,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_15,Saldi mensili grezzi per condizione professionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_16,Domande mensili grezze - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_17,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_18,Previsioni di spesa - saldi e domande mensili grezzi fino a dicembre 2005 - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_2,Saldi mensili grezzi - livello nazionale e ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-08-07
+30_264_DF_DCSC_FIDCONS_3,Saldi mensili grezzi per classi di età,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_4,Saldi mensili grezzi per sesso,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_5,Saldi mensili grezzi per livello di istruzione,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_6,Saldi mensili grezzi per condizione professionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_7,Domande mensili grezze - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_8,Previsioni di spesa - saldi e domande trimestrali grezzi da gennaio 2006 - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+30_264_DF_DCSC_FIDCONS_9,Previsioni di spesa - saldi e domande mensili grezzi da gen 1998 fino a dic 2005 - livello nazionale,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_124,Spesa media mensile familiare,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_124_DF_DCCV_SPEMMFAM_1,Tipo di Spesa,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_124_DF_DCCV_SPEMMFAM_2,Ampiezza della famiglia,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_124_DF_DCCV_SPEMMFAM_3,Tipologia familiare,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_124_DF_DCCV_SPEMMFAM_4,Condizione professionale della persona di riferimento,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_124_DF_DCCV_SPEMMFAM_5,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_163,Comportamento di spesa delle famiglia,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_163_DF_DCCV_FAMCOMPORT_1,Cambiamenti nelle abitudini di spesa,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_199,Omogeneità della spesa per consumi regionale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_199_DF_DCCV_INDCONSUMI_1,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_199_DF_DCCV_INDCONSUMI_2,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_199_DF_DCCV_INDCONSUMI_3,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_199_DF_DCCV_INDCONSUMI_4,Condizione professionale della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_206,Quinto di spesa della famiglia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_206_DF_DCCV_SPQUINTO_1,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_206_DF_DCCV_SPQUINTO_2,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_206_DF_DCCV_SPQUINTO_3,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_206_DF_DCCV_SPQUINTO_4,Condizione professionale della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_213,famiglie che hanno effettuato la spesa per alcune voci di spesa,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_213_DF_DCCV_SPEFFCOMP_1,Famiglie e tipo di consumi,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_214,Dettaglio della spesa effettiva,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_214_DF_DCCV_SPEFFDETT_1,Spesa media mensile e tipologia di acquisti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_739,Spese per consumi,REF_AREA,regione,nazionale|ripartizione|regione,33,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_1,Cambiamenti nelle abitudini di spesa (2018-2021),REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_10,Condizione professionale della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_11,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_2,Cambiamenti nelle abitudini di spesa (2014-2017),REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_4,Tipologia familiare,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_5,Titolo di studio della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_6,Condizione professionale della persona di riferimento,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_7,Quantili di spesa,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_739_DF_DCCV_SPEMEFAM_9,Ampiezza e tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_740,Spese per consumi - Coicop 2018,REF_AREA,regione,nazionale|ripartizione|regione,33,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_1,Cambiamenti nelle abitudini di spesa (dal 2018),REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_10,Condizione professionale della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_11,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_2,Cambiamenti nelle abitudini di spesa (2014-2017),REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_5,Titolo di studio della persona di riferimento,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_7,Quantili di spesa,REF_AREA,nazionale,nazionale,1,2026-08-07
+31_740_DF_DCCV_SPEMEFAM_COICOP_2018_9,Ampiezza e tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_221,Omogeneità del reddito regionale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+32_221_DF_DCCV_GINIREDD_1,Omogeneità del reddito regionale,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+32_223,Famiglie per fonte di reddito,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
+32_223_DF_DCCV_FONTEPRED_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_223_DF_DCCV_FONTEPRED_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_223_DF_DCCV_FONTEPRED_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_223_DF_DCCV_FONTEPRED_4,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_223_DF_DCCV_FONTEPRED_5,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-08-07
+32_223_DF_DCCV_FONTEPRED_6,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
+32_292,Reddito netto,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_1,Ampiezza della famiglia,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_2,Tipologia familiare,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_3,Minori in famiglia,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_4,Anziani in famiglia,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_5,Sesso del principale percettore,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_6,Classe di età del principale percettore,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_7,Titolo di studio del principale percettore,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_8,Condizione professionale del principale percettore,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-07
+32_292_DF_DCCV_REDNETFAMFONTERED_9,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
+32_38,Quinto di reddito equivalente,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-07
 32_38_DF_DCCV_QUINTOREDD_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 32_38_DF_DCCV_QUINTOREDD_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 32_38_DF_DCCV_QUINTOREDD_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1457,12 +1573,14 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 33_179_DF_DCCV_ABITAFFOLL_4,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_179_DF_DCCV_ABITAFFOLL_5,Livello del reddito e abitazione in affitto o di proprietà,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_179_DF_DCCV_ABITAFFOLL_6,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-20
+33_225,Spesa per l'abitazione,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
 33_225_DF_DCCV_ABITSPESA_1,Abitazione in affitto o di proprietà,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_225_DF_DCCV_ABITSPESA_2,Ampiezza della famiglia e tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_225_DF_DCCV_ABITSPESA_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_225_DF_DCCV_ABITSPESA_4,Sesso e età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_225_DF_DCCV_ABITSPESA_5,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_225_DF_DCCV_ABITSPESA_6,Regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-20
+33_290,Titolo di godimento dell'abitazione (in affitto o di proprietà),REF_AREA,regione,nazionale|ripartizione|regione,36,2026-08-07
 33_290_DF_DCCV_TITGODABIT_1,Ampiezza della famiglia e tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_290_DF_DCCV_TITGODABIT_2,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 33_290_DF_DCCV_TITGODABIT_3,Sesso e età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1516,6 +1634,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_217_DF_DCCV_CARICOPES_4,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_217_DF_DCCV_CARICOPES_5,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_217_DF_DCCV_CARICOPES_6,Ripartizioni e tipo di comune,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-07-20
+34_218,Famiglie che non possono permettersi alcuni beni durevoli,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-08-07
 34_218_DF_DCCV_DIFFBENDUR_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_218_DF_DCCV_DIFFBENDUR_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_218_DF_DCCV_DIFFBENDUR_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1529,6 +1648,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_219_DF_DCCV_NOSOLDI_4,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_219_DF_DCCV_NOSOLDI_5,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_219_DF_DCCV_NOSOLDI_6,Ripartizioni e tipo di comune,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-07-20
+34_220,Famiglie per reddito minimo per arrivare a fine mese senza difficoltà,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-08-07
 34_220_DF_DCCV_REDDFINMES_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_220_DF_DCCV_REDDFINMES_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_220_DF_DCCV_REDDFINMES_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1542,6 +1662,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_226_DF_PERCEPIT_4,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_226_DF_PERCEPIT_5,Titolo di studio e condizione professionale del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_226_DF_PERCEPIT_6,"Ripartizioni, regioni e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-20
+34_280,Famiglie che non possono permettersi alcune spese,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-08-07
+34_280_DF_DCCV_FAMNOVOCISPESA_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-08-07
 34_280_DF_DCCV_FAMNOVOCISPESA_2,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_280_DF_DCCV_FAMNOVOCISPESA_3,Minori e anziani in famiglia,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_280_DF_DCCV_FAMNOVOCISPESA_4,Sesso ed età del principale percettore,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1551,6 +1673,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_727_DF_DCCV_POVERTA_1,Principali indicatori,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-07-20
 34_727_DF_DCCV_POVERTA_10,Individui poveri - regione di residenza,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-20
 34_727_DF_DCCV_POVERTA_11,Linee e soglie di povertà relativa,REF_AREA,nazionale,nazionale,1,2026-07-20
+34_727_DF_DCCV_POVERTA_2,Famiglie povere - ampiezza della famiglia,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-07
 34_727_DF_DCCV_POVERTA_3,Famiglie povere - tipologia familiare,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-20
 34_727_DF_DCCV_POVERTA_4,Famiglie povere - età della persona di riferimento,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-20
 34_727_DF_DCCV_POVERTA_5,Famiglie povere - condizione professionale della persona di riferimento,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-20
@@ -1559,8 +1682,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 34_727_DF_DCCV_POVERTA_8,Famiglie povere - regione di residenza,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-20
 34_727_DF_DCCV_POVERTA_9,Individui poveri - sesso ed età,REF_AREA,nazionale,nazionale,1,2026-07-20
 34_728,Povertà serie interrotte - 1997-2021,REF_AREA,regione,nazionale|ripartizione|regione,42,2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_1,Famiglie povere - caratteristiche socio-demografiche,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-08-07
+34_728_DF_DCCV_POVERTA_BRKN1_2,Famiglie povere - regione di residenza,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_3,Famiglie povere - tipo comune di residenza,REF_AREA,regione,nazionale|ripartizione|regione,16,2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_4,Individui poveri - regione di residenza,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_5,Individui poveri - sesso ed età,REF_AREA,nazionale,nazionale,1,2026-07-20
+34_728_DF_DCCV_POVERTA_BRKN1_6,Linee e soglie di povertà relativa,REF_AREA,nazionale,nazionale,1,2026-08-07
 34_728_DF_DCCV_POVERTA_BRKN1_7,Principali indicatori,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-07-20
 392_584,Dottorati - caratteristiche socio-demografiche e curriculum,REF_AREA,nazionale,nazionale,1,2026-07-20
 392_585,Dottorati - retribuzione e orario di lavoro,REF_AREA,nazionale,nazionale,1,2026-07-20
@@ -1571,15 +1698,61 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 392_636,Dottorati - condizione occupazionale,RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,8,2026-07-20
 392_636_DF_DCCV_TRANSIZ_DOTT_OCCUPAZ_1,"Condizione occupazionale, sesso, residenza",RESIDENCE_TERR,provincia,nazionale|ripartizione|provincia,8,2026-07-20
 392_708,Dottorati - ricerca di lavoro e soddisfazione,REF_AREA,nazionale,nazionale,1,2026-07-20
+395_344,Sequenza dei conti trimestrali per settore istituzionale - Conti versione 2011,REF_AREA,nazionale,nazionale,1,2026-08-07
+396_61,Reddito disponibile delle famiglie nelle regioni italiane - edizione ottobre 2010,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-07
 39_1005,Suicidi - popolazione di 15 anni e oltre,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
 39_1005_DF_DCIS_SUICIDI_1,Suicidi - popolazione di 15 anni e oltre - Principali dati,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
 39_1005_DF_DCIS_SUICIDI_2,Sesso ed età,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
+39_1005_DF_DCIS_SUICIDI_3,Malattie associate,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-07
 39_1005_DF_DCIS_SUICIDI_4,Modalità del suicidio,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
 39_1005_DF_DCIS_SUICIDI_6,Istruzione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-20
+39_1005_DF_DCIS_SUICIDI_7,Stato civile,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-07
 39_1005_DF_DCIS_SUICIDI_8,Mese del decesso,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-07-20
 39_1_DF_DCIS_IND_MORT_EDU_1,Indicatori di mortalità per causa e titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-20
+39_493_DF_DCIS_CMORTE1_EV_1,Causa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-07
 39_493_DF_DCIS_CMORTE1_EV_2,Causa ed età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-20
 39_493_DF_DCIS_CMORTE1_EV_5,"Istruzione, stato civile e mese di decesso",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-07-20
+39_494_DF_DCIS_CMORTE1_RES_1,Causa - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_2,Causa ed età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_3,Causa e paese di cittadinanza,REF_AREA,provincia,provincia,1,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_5,"Istruzione, stato civile e mese di decesso",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_6,Anno di nascita,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_7,Anno di matrimonio ed età del coniuge,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11576,2026-08-07
+39_494_DF_DCIS_CMORTE1_RES_8,Quozienti di mortalità - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+39_57_DF_DCIS_CMORTEM_1,Rapporto tra causa iniziale e causa multipla di morte,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-07
+39_57_DF_DCIS_CMORTEM_2,Numero di patologie per causa iniziale di morte,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-07
+39_57_DF_DCIS_CMORTEM_3,Numero di menzioni per causa multipla di morte,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-07
+39_57_DF_DCIS_CMORTEM_4,Mortalità infantile - rapporto tra causa iniziale e causa multipla,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-07
+39_57_DF_DCIS_CMORTEM_5,Mortalità infantile - numero di menzioni per causa multipla di morte,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_2,Causa e cittadinanza della madre,REF_AREA,nazionale,nazionale,1,2026-08-07
+39_700_DF_DCIS_CMORTEINF2_EV_4,Cittadinanza della madre - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_1,Causa,REF_AREA,nazionale,nazionale,1,2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_3,Cittadinanza della madre - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+39_701_DF_DCIS_CMORTEINF2_RES_4,Quozienti di mortalità infantile - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+3_156,Conto economico delle risorse e degli impieghi e contributi alla crescita del Pil - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+3_156_DF_DCCN_SQCQ_B19_1,Conto economico delle risorse e degli impieghi - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+3_156_DF_DCCN_SQCQ_B19_2,Contributi alla crescita del PIL - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
+3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
+41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11565,2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_1_1,dataflow eliminato,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS1_1,"Morti e feriti in incidenti stradali - Anni 2001, 2002, 2003",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS2_1,"Morti e feriti in incidenti stradali - Anni 2004, 2005, 2006",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
+41_270_DF_DCIS_MORTIFERITISTR1_TS3_1,"Morti e feriti in incidenti stradali - Anni 2007, 2008, 2009",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
+41_287,Indicatori di incidentalità stradale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-07
+41_287_DF_DCIS_INDINCIDENT_1,Indice di mortalità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-07
+41_287_DF_DCIS_INDINCIDENT_2,Indice di lesività,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-07
+41_288,Veicoli - Pubblico registro automobilistico,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-08-07
+41_288_DF_DCIS_VEICOLIPRA_1,Veicoli - Pubblico registro automobilistico,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-08-07
+41_983_DF_DCIS_INCIDMORFER_COM_1,"Incidenti, morti e feriti - comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8716,2026-08-07
+41_993_DCIS_VEICOLIPRA_COM_1,Veicoli - Pubblico registro automobilistico - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8636,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_1,"Tipo di intervento, terapia antalgica e settimane di amenorrea",REF_AREA,nazionale,nazionale,1,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_10,Luogo di aborto - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_11,Tipo di complicazione - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_12,Presenza di malformazioni fetali - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_2,"Tipo di intervento, terapia antalgica ed età gestazionale",REF_AREA,nazionale,nazionale,1,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_3,Tipo di intervento - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
 47_940_DF_DCIS_SPESESERSOC1_1,Indicatori - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-22
 47_940_DF_DCIS_SPESESERSOC1_4,Utenti e spesa - prov. e com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
 47_940_DF_DCIS_SPESESERSOC1_5,Utenti e spesa - Ambiti territoriali sociali (Ats),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
