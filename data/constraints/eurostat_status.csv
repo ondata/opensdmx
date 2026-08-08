@@ -81,7 +81,9 @@ APRO_CPNHR,Crop production in national humidity by NUTS 2 region,ok,sdmx,5,759,0
 APRO_CPNHR_H,Crop production by NUTS 2 region - historical data (1975-1999),ok,sdmx,5,734,0,"",2026-07-16
 APRO_CPSH1,Crop production in EU standard humidity,ok,sdmx,5,288,0,"",2026-07-16
 APRO_CPSHR,Crop production in EU standard humidity by NUTS 2 region,ok,sdmx,5,759,0,"",2026-07-16
+APRO_EC_EGGCON,Production of eggs for consumption,ok,sdmx,5,50,0,"",2026-08-08
 APRO_EC_EGGHEN,Production of eggs for consumption and number of laying hens (2013-2024),ok,sdmx,6,49,0,"",2026-07-16
+APRO_EC_EGGORG,Production of certified organic eggs for consumption,ok,sdmx,5,54,0,"",2026-08-08
 APRO_EC_LSHEN,Laying hens population - annual data (1960-2012),ok,sdmx,5,85,0,"",2026-07-16
 APRO_EC_POULA,Poultry - annual data,ok,sdmx,6,117,0,"",2026-07-16
 APRO_EC_POULM,Poultry - monthly data,ok,sdmx,6,772,0,"",2026-07-16
@@ -110,6 +112,7 @@ APRO_MT_LS_R,Animal populations by NUTS 2 region,ok,sdmx,5,656,0,"",2026-07-16
 APRO_MT_PANN,Slaughtering in slaughterhouses - annual data,ok,sdmx,6,160,0,"",2026-07-16
 APRO_MT_PCATLHS,"Production forecasts for bovines, sheep and goats - bi-annual data",ok,sdmx,6,119,0,"",2026-07-16
 APRO_MT_PHEADM,Meat production and foreign trade - monthly data,ok,sdmx,6,1001,0,"",2026-07-16
+APRO_MT_PORG,Slaughtering of certified organic animals,ok,sdmx,6,63,0,"",2026-08-08
 APRO_MT_PPIGHQ,Production forecasts for pigs - quarterly data,ok,sdmx,6,170,0,"",2026-07-16
 APRO_MT_PSLOTHM,"Estimates of slaughtering, other than in slaughterhouses - monthly data",ok,sdmx,6,245,0,"",2026-07-16
 APRO_MT_PWGTM,Slaughtering in slaughterhouses - monthly data,ok,sdmx,6,994,0,"",2026-07-16
@@ -3405,6 +3408,14 @@ ILC_DI31,Distribution of population by income groups,ok,sdmx,7,64,0,"",2026-07-2
 ILC_ENEVH_01,"Persons living in dwellings with energy efficiency improvements in last five years by age, tenure status, type of building and risk of poverty or social exclusion",ok,sdmx,9,53,0,"",2026-07-25
 ILC_ENEVH_02,Persons unable to keep home adequately warm by year of construction and risk of poverty or social exclusion,ok,sdmx,7,47,0,"",2026-07-25
 ILC_ENEVH_03,Persons in households with arrears on utility bills by year of construction and risk of poverty or social exclusion,ok,sdmx,7,47,0,"",2026-07-25
+ILC_ENEVT_01,"Persons by primary mode of transport used, sex, age and risk of poverty or social exclusion",ok,sdmx,8,56,0,"",2026-08-08
+ILC_ENEVT_01A,"Persons by primary mode of transport used, household composition, degree of urbanisation and risk of poverty or social exclusion",ok,sdmx,8,54,0,"",2026-08-08
+ILC_ENEVT_02,"Persons able to reach workplace/school/university within one hour using public transport, cycling or walking by sex, age and risk of poverty or social exclusion",ok,sdmx,7,47,0,"",2026-08-08
+ILC_ENEVT_02A,"Persons able to reach workplace/school/university within one hour using public transport, cycling or walking by household composition, degree of urbanisation and risk of poverty or social exclusion",ok,sdmx,7,48,0,"",2026-08-08
+ILC_ENEVT_03,"Persons by number of cars in the household, household composition, degree of urbanisation and risk of poverty or social exclusion",ok,sdmx,8,58,0,"",2026-08-08
+ILC_ENEVT_04,"Persons by household car fuel type, household composition, degree of urbanisation and risk of poverty or social exclusion",ok,sdmx,8,61,0,"",2026-08-08
+ILC_ENEVT_05,"Persons by frequency of air travel in the last 12 months, sex, age and risk of poverty or social exclusion",ok,sdmx,8,53,0,"",2026-08-08
+ILC_ENEVT_05A,"Persons by frequency of air travel in the last 12 months, household composition, degree of urbanisation and risk of poverty or social exclusion",ok,sdmx,8,51,0,"",2026-08-08
 ILC_HCH01,"Persons with financial burden of health care by level of difficulty, type of health care, household composition and risk of poverty threshold",ok,sdmx,8,63,0,"",2026-07-25
 ILC_HCH02,"Persons with financial burden of health care by level of difficulty, type of health care, degree of urbanization and income quantile",ok,sdmx,8,58,0,"",2026-07-25
 ILC_HCH03,"Persons visiting a doctor in the last 12 months by medical speciality, number of visits, educational attainment level, sex and age",ok,sdmx,9,69,0,"",2026-07-25
@@ -7701,3 +7712,295 @@ TGS00050,Individuals regularly using the internet by NUTS 2 region,ok,sdmx,5,241
 TGS00052,Individuals who ordered goods or services over the internet for private use in the last year by NUTS 2 region,ok,sdmx,5,241,0,"",2026-08-07
 TGS00057,All causes of death by NUTS 2 region,ok,sdmx,7,347,0,"",2026-08-07
 TGS00058,Death due to cancer by NUTS 2 region,ok,sdmx,7,349,0,"",2026-08-07
+TGS00059,Death due to ischaemic heart diseases by NUTS 2 region,ok,sdmx,7,349,0,"",2026-08-08
+TGS00060,Death due to accidents by NUTS 2 region,ok,sdmx,7,349,0,"",2026-08-08
+TGS00061,Death due to transport accidents by NUTS 2 region,ok,sdmx,7,349,0,"",2026-08-08
+TGS00064,Available beds in hospitals by NUTS 2 region,ok,sdmx,4,322,0,"",2026-08-08
+TGS00075,Maritime transport of passengers by NUTS 2 region,ok,sdmx,5,169,0,"",2026-08-08
+TGS00076,Maritime transport of freight by NUTS 2 region,ok,sdmx,5,167,0,"",2026-08-08
+TGS00077,Air transport of passengers by NUTS 2 region,ok,sdmx,5,302,0,"",2026-08-08
+TGS00078,Air transport of freight by NUTS 2 region,ok,sdmx,5,294,0,"",2026-08-08
+TGS00096,Population on 1 January by NUTS 2 region,ok,sdmx,6,366,0,"",2026-08-08
+TGS00099,"Population change by NUTS 2 region - Crude rates of total change, natural change and net migration plus adjustment",ok,sdmx,4,365,0,"",2026-08-08
+TGS00100,Total fertility rate by NUTS 2 region,ok,sdmx,5,360,0,"",2026-08-08
+TGS00101,Life expectancy at birth by sex and NUTS 2 region,ok,sdmx,6,363,0,"",2026-08-08
+TGS00103,At-risk-of-poverty rate by NUTS 2 region,ok,sdmx,4,288,0,"",2026-08-08
+TGS00104,Severe material deprivation rate by NUTS 2 region,ok,sdmx,4,205,0,"",2026-08-08
+TGS00105,Persons aged 25-34 with tertiary educational attainment level by sex and NUTS 1 region,ok,sdmx,7,142,0,"",2026-08-08
+TGS00106,Early leavers from education and training by sex and NUTS 1 region,ok,sdmx,6,141,0,"",2026-08-08
+TGS00107,People at risk of poverty or social exclusion by NUTS 2 region,ok,sdmx,4,291,0,"",2026-08-08
+TGS00108,People living in households with very low work intensity by NUTS 2 region (population aged 0 to 59 years),ok,sdmx,4,222,0,"",2026-08-08
+TGS00109,Persons aged 25-64 with tertiary educational attainment level by sex and NUTS 2 region,ok,sdmx,7,370,0,"",2026-08-08
+TGS00111,Nights spent at tourist accommodation establishments by NUTS 2 region,ok,sdmx,6,401,0,"",2026-08-08
+TGS00112,Number of establishments and bed-places by NUTS 2 region,ok,sdmx,6,401,0,"",2026-08-08
+TGS00113,Rail network by NUTS 2 region,ok,sdmx,5,369,0,"",2026-08-08
+TGS00114,Motorways network by NUTS 2 region,ok,sdmx,5,369,0,"",2026-08-08
+TIN00028,Internet use by individuals,ok,sdmx,6,62,0,"",2026-08-08
+TIN00074,Percentage of the ICT sector in Gross value added,ok,sdmx,4,58,0,"",2026-08-08
+TIN00085,Percentage of the ICT sector personnel in total employment,ok,sdmx,4,58,0,"",2026-08-08
+TIN00086,Percentage change of value added by ICT sector at current prices,ok,sdmx,4,58,0,"",2026-08-08
+TIN00091,Individuals regularly using the internet,ok,sdmx,6,59,0,"",2026-08-08
+TIN00092,Individuals frequently using the internet,ok,sdmx,6,59,0,"",2026-08-08
+TIN00093,Individuals who have never used the internet,ok,sdmx,6,59,0,"",2026-08-08
+TIN00094,Individuals using the internet for sending/receiving e-mails,ok,sdmx,6,59,0,"",2026-08-08
+TIN00095,Individuals using the internet for finding information about goods and services,ok,sdmx,6,59,0,"",2026-08-08
+TIN00096,Individuals using the internet for buying goods or services,ok,sdmx,6,54,0,"",2026-08-08
+TIN00098,Individuals using the internet for selling goods or services,ok,sdmx,6,59,0,"",2026-08-08
+TIN00099,Individuals using the internet for internet banking,ok,sdmx,6,59,0,"",2026-08-08
+TIN00101,Individuals using the internet for seeking health-related information,ok,sdmx,6,59,0,"",2026-08-08
+TIN00102,Individuals using the internet for looking for a job or sending a job application,ok,sdmx,6,59,0,"",2026-08-08
+TIN00103,Individuals using the internet for doing an online course,ok,sdmx,6,59,0,"",2026-08-08
+TIN00110,Share of enterprises' turnover on e-commerce,ok,sdmx,7,59,0,"",2026-08-08
+TIN00111,Enterprises having received orders online (at least 1%) - % of enterprises,ok,sdmx,7,59,0,"",2026-08-08
+TIN00116,"Share of enterprises using any business software (ERP, CRM or BI)",ok,sdmx,7,49,0,"",2026-08-08
+TIN00127,Individuals using the internet for participating in social networks,ok,sdmx,6,59,0,"",2026-08-08
+TIN00129,Individuals using the internet for taking part in online consultations or voting,ok,sdmx,6,70,0,"",2026-08-08
+TIN00134,Level of internet access - households,ok,sdmx,5,58,0,"",2026-08-08
+TIN00140,High-tech exports,ok,sdmx,4,55,0,"",2026-08-08
+TIN00171,Nights spent at tourist accommodation establishments by residents/non-residents - monthly data,ok,sdmx,6,60,0,"",2026-08-08
+TIN00172,Percentage change (compared to corresponding period of the previous year) in nights spent at tourist accommodation establishments by residents/non-residents - monthly data,ok,sdmx,6,60,0,"",2026-08-08
+TIN00173,"Net occupancy rate of bed-places and bedrooms in hotels and similar accommodations (NACE Rev. 2, I, 55.1) - monthly data",ok,sdmx,5,58,0,"",2026-08-08
+TIN00174,Arrivals of residents/non-residents at tourist accommodation establishments,ok,sdmx,6,59,0,"",2026-08-08
+TIN00175,Nights spent at tourist accommodation establishments by residents/non-residents,ok,sdmx,6,59,0,"",2026-08-08
+TIN00176,Nights spent at tourist accommodation establishments by country/world region of residence of the tourist,ok,sdmx,6,60,0,"",2026-08-08
+TIN00177,Nights spent at tourist accommodation establishments by NACE,ok,sdmx,6,61,0,"",2026-08-08
+TIN00180,"Net occupancy rate of bed-places and bedrooms in hotels and similar accommodation (NACE Rev. 2, I, 55.1) (from 2012 onwards)",ok,sdmx,6,58,0,"",2026-08-08
+TIN00181,Number of establishments and bed-places,ok,sdmx,6,59,0,"",2026-08-08
+TIN00182,Number of bed-places by NACE Rev.2 (I),ok,sdmx,6,62,0,"",2026-08-08
+TIN00185,Persons participating in tourism for personal purposes - number of tourists,ok,sdmx,6,59,0,"",2026-08-08
+TIN00186,Participation in tourism for personal purposes - % of total population,ok,sdmx,6,59,0,"",2026-08-08
+TIN00187,Persons participating in tourism for personal purposes by age group - number of tourists,ok,sdmx,7,67,0,"",2026-08-08
+TIN00188,Trips by purpose,ok,sdmx,7,63,0,"",2026-08-08
+TIN00189,Trips by duration of the trip,ok,sdmx,7,65,0,"",2026-08-08
+TIN00190,Trips by detailed country/world region of main destination,ok,sdmx,7,121,0,"",2026-08-08
+TIN00191,Nights spent by purpose,ok,sdmx,7,63,0,"",2026-08-08
+TIN00192,Nights spent by duration of the trip,ok,sdmx,7,65,0,"",2026-08-08
+TIN00193,Nights spent by detailed country/world region of the main destination,ok,sdmx,7,121,0,"",2026-08-08
+TIN00194,Expenditure by category of expenditure,ok,sdmx,9,68,0,"",2026-08-08
+TIN00195,Average expenditure per trip,ok,sdmx,9,60,0,"",2026-08-08
+TIN00196,Average expenditure per night,ok,sdmx,9,60,0,"",2026-08-08
+TIPSBD10,"Gross non-performing loans, domestic and foreign entities - % of gross loans",ok,sdmx,4,43,0,"",2026-08-08
+TIPSBD20,"Consolidated banking leverage, domestic and foreign entities (asset-to-equity multiple)",ok,sdmx,4,50,0,"",2026-08-08
+TIPSBD30,Tier-1 capital ratio banking sector,ok,sdmx,4,50,0,"",2026-08-08
+TIPSBD40,Return on equity of banks,ok,sdmx,4,50,0,"",2026-08-08
+TIPSBP10,Current account balance - 3 year average,ok,sdmx,8,70,0,"",2026-08-08
+TIPSBP100,"Direct investment liabilities (stocks) - annual data, % of GDP",ok,sdmx,8,70,0,"",2026-08-08
+TIPSBP11,"Current account, main components, net balance - annual data, % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSBP12,"Current account, main component, credit - annual data, % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSBP13,"Current account, main components, debit - annual data, % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSBP14,"Current account, main components, net balance - annual data, million units of national currency",ok,sdmx,9,70,0,"",2026-08-08
+TIPSBP15,"Current account, main components, credit - annual data, million units of national currency",ok,sdmx,9,70,0,"",2026-08-08
+TIPSBP16,"Current account, main components, debit - annual data, million units of national currency",ok,sdmx,9,70,0,"",2026-08-08
+TIPSBP17,Capital account - annual data,ok,sdmx,10,67,0,"",2026-08-08
+TIPSBP18,Financial account - annual data,ok,sdmx,10,67,0,"",2026-08-08
+TIPSBP19,"Financial account by components, net balance - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSBP20,Current account balance - annual data,ok,sdmx,10,73,0,"",2026-08-08
+TIPSBP21,"Direct investment in the reporting economy, main components - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSBP22,"Direct investment abroad, main components - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSBP40,Current account balance - quarterly data,ok,sdmx,10,167,0,"",2026-08-08
+TIPSBP41,"Current account, main components, net balance - quarterly data, % of GDP",ok,sdmx,8,169,0,"",2026-08-08
+TIPSBP42,"Current account, main components, credit - quarterly data, % of GDP",ok,sdmx,8,169,0,"",2026-08-08
+TIPSBP43,"Current account, main components, debit - quarterly data, % of GDP",ok,sdmx,8,169,0,"",2026-08-08
+TIPSBP44,"Current account, main components, net balance - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSBP45,"Current account, main components, credit - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSBP46,"Current account, main components, debit - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSBP47,Capital account - quarterly data,ok,sdmx,10,167,0,"",2026-08-08
+TIPSBP48,Financial account - quarterly data,ok,sdmx,10,167,0,"",2026-08-08
+TIPSBP49,"Financial account, main components - quarterly data, million units of national currency",ok,sdmx,9,165,0,"",2026-08-08
+TIPSBP50,Net Lending/Borrowing (current and capital account) - quarterly data,ok,sdmx,10,167,0,"",2026-08-08
+TIPSBP51,"Direct investment in the reporting economy - quarterly data, % of GDP",ok,sdmx,8,165,0,"",2026-08-08
+TIPSBP52,"Direct investment in the reporting economy, main components - quarterly data, million units of national currency",ok,sdmx,9,165,0,"",2026-08-08
+TIPSBP53,"Direct investment abroad - quarterly data, % of GDP",ok,sdmx,8,165,0,"",2026-08-08
+TIPSBP54,"Direct investment abroad, main components - quarterly data, million units of national currency",ok,sdmx,9,165,0,"",2026-08-08
+TIPSBP60,Share of exports of advanced economies,ok,sdmx,7,73,0,"",2026-08-08
+TIPSBP70,Net Lending/Borrowing (current and capital account) - annual data,ok,sdmx,10,73,0,"",2026-08-08
+TIPSBP90,"Direct investment liabilities (flows) - annual data, % of GDP",ok,sdmx,8,70,0,"",2026-08-08
+TIPSCP10,Core inflation differential vis-à-vis EA,ok,sdmx,5,59,0,"",2026-08-08
+TIPSEN10,Net trade balance of energy products - % of GDP,ok,sdmx,6,59,0,"",2026-08-08
+TIPSER10,"Real effective exchange rate - percentage changes, 42 trading partners",ok,sdmx,4,81,0,"",2026-08-08
+TIPSER11,Nominal effective exchange rate - 42 trading partners,ok,sdmx,5,66,0,"",2026-08-08
+TIPSER12,Nominal effective exchange rate - euro area trading partners,ok,sdmx,5,65,0,"",2026-08-08
+TIPSER13,"Real effective exchange rate - index, 42 trading partners",ok,sdmx,5,64,0,"",2026-08-08
+TIPSER20,Real effective exchange rate - euro area trading partners,ok,sdmx,5,84,0,"",2026-08-08
+TIPSEX10,Export market shares - 3 years % change,ok,sdmx,7,69,0,"",2026-08-08
+TIPSEX11,Export market shares by items - 1 year % change,ok,sdmx,7,71,0,"",2026-08-08
+TIPSEX12,"Exports of high technology products as a share of total exports, SITC Rev. 4 - %",ok,sdmx,4,46,0,"",2026-08-08
+TIPSEX13,Export market shares in volume,ok,sdmx,5,64,0,"",2026-08-08
+TIPSEX20,Export market shares by items - % of world total,ok,sdmx,7,65,0,"",2026-08-08
+TIPSFS10,"Total financial sector liabilities, non-consolidated - annual data",ok,sdmx,8,69,0,"",2026-08-08
+TIPSFS11,"Total financial sector liabilities, by sub-sectors, non-consolidated - % of GDP",ok,sdmx,8,73,0,"",2026-08-08
+TIPSFS12,"Total financial sector liabilities, by sub-sectors, non-consolidated - million units of national currency",ok,sdmx,8,73,0,"",2026-08-08
+TIPSFS13,"Total financial sector liabilities, by instruments, non-consolidated - % of GDP",ok,sdmx,8,74,0,"",2026-08-08
+TIPSFS14,"Total financial sector liabilities, by instruments, non-consolidated - million units of national currency",ok,sdmx,8,74,0,"",2026-08-08
+TIPSFS20,"Financial sector leverage, debt to equity, non-consolidated - %",ok,sdmx,8,67,0,"",2026-08-08
+TIPSFS30,"Total financial sector liabilities, consolidated",ok,sdmx,8,69,0,"",2026-08-08
+TIPSFS31,"Total financial sector liabilities, by sub-sectors, consolidated - % of GDP",ok,sdmx,8,73,0,"",2026-08-08
+TIPSFS32,"Total financial sector liabilities, by sub-sectors, consolidated - million units of national currency",ok,sdmx,8,73,0,"",2026-08-08
+TIPSFS33,"Total financial sector liabilities, by instruments, consolidated - % of GDP",ok,sdmx,8,74,0,"",2026-08-08
+TIPSFS34,"Total financial sector liabilities, by instruments, consolidated - million units of national currency",ok,sdmx,8,74,0,"",2026-08-08
+TIPSGO10,"General government gross debt (EDP concept), consolidated - annual data",ok,sdmx,6,66,0,"",2026-08-08
+TIPSGO11,Government consolidated gross debt by components - annual data,ok,sdmx,6,68,0,"",2026-08-08
+TIPSGO20,"General government gross debt (EDP concept), consolidated - quarterly data",ok,sdmx,6,160,0,"",2026-08-08
+TIPSHO10,"House price index, deflated - annual data",ok,sdmx,4,59,0,"",2026-08-08
+TIPSHO20,"House price index, nominal - annual data",ok,sdmx,4,61,0,"",2026-08-08
+TIPSHO30,"House price index, deflated - quarterly data",ok,sdmx,4,118,0,"",2026-08-08
+TIPSHO40,House price index - quarterly data,ok,sdmx,4,119,0,"",2026-08-08
+TIPSHO41,Final consumption expenditure of households and non-profit institutions serving households - quarterly data,ok,sdmx,6,162,0,"",2026-08-08
+TIPSHO50,Residential building permits - annual data,ok,sdmx,7,56,0,"",2026-08-08
+TIPSHO60,Standardised house price-to-income ratio - annual data,ok,sdmx,4,59,0,"",2026-08-08
+TIPSII10,Net international investment position - annual data,ok,sdmx,10,73,0,"",2026-08-08
+TIPSII12,"Direct investment - annual data, million units of national currency",ok,sdmx,9,67,0,"",2026-08-08
+TIPSII13,"Direct investment assets, by instruments - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSII14,"Direct investment liabilities, by instruments - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSII15,"Portfolio investment - annual data, million units of national currency",ok,sdmx,9,67,0,"",2026-08-08
+TIPSII16,"Portfolio investment assets, by instuments - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSII17,"Portfolio investment liabilities, by instruments - annual data, million units of national currency",ok,sdmx,9,68,0,"",2026-08-08
+TIPSII18,"Financial derivatives and employee stock options - annual data, million units of national currency",ok,sdmx,9,67,0,"",2026-08-08
+TIPSII19,"Financial derivatives and employee stock options, by sectors - annual data, million units of national currency",ok,sdmx,9,72,0,"",2026-08-08
+TIPSII20,"Net external debt - annual data, % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSII21,"Other investment - annual data, million units of national currency",ok,sdmx,9,67,0,"",2026-08-08
+TIPSII22,"Other investment by sectors - annual data, million units of national currency",ok,sdmx,9,72,0,"",2026-08-08
+TIPSII30,"Net external debt - quarterly data, % of GDP",ok,sdmx,8,160,0,"",2026-08-08
+TIPSII40,"Net international investment position - quarterly data, % of GDP",ok,sdmx,8,161,0,"",2026-08-08
+TIPSII41,"International investment position - quarterly data, million units of national currency",ok,sdmx,9,166,0,"",2026-08-08
+TIPSII42,"Direct investment - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSII43,"Portfolio investment - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSII44,"Financial derivatives and employee stock options - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSII45,"Other investment - quarterly data, million units of national currency",ok,sdmx,9,167,0,"",2026-08-08
+TIPSII50,Net international investment position excluding non-defaultable instruments - % of GDP,ok,sdmx,8,70,0,"",2026-08-08
+TIPSLC10,People at risk of poverty or social exclusion,ok,sdmx,6,46,0,"",2026-08-08
+TIPSLC20,People at risk of poverty after social transfer,ok,sdmx,8,67,0,"",2026-08-08
+TIPSLC30,Severely materially and socially deprived people,ok,sdmx,6,46,0,"",2026-08-08
+TIPSLC40,People living in households with very low work intensity,ok,sdmx,6,46,0,"",2026-08-08
+TIPSLM10,Nominal unit labour cost per hour worked,ok,sdmx,5,65,0,"",2026-08-08
+TIPSLM100,Employment rate,ok,sdmx,7,58,0,"",2026-08-08
+TIPSLM13,"Compensation of employees - annual data, million units of national currency",ok,sdmx,5,64,0,"",2026-08-08
+TIPSLM14,"Compensation of employees - quarterly data, million units of national currency",ok,sdmx,6,163,0,"",2026-08-08
+TIPSLM15,"Labour force participation rate, aged 15-64 - annual averages",ok,sdmx,7,58,0,"",2026-08-08
+TIPSLM16,Population aged 15-74 in private households - LFS,ok,sdmx,8,66,0,"",2026-08-08
+TIPSLM20,"Nominal unit labour cost per hour worked - annual data, percentage change and index (2015 = 100)",ok,sdmx,5,68,0,"",2026-08-08
+TIPSLM40,Nominal unit labour cost (NULC) per hour worked - quarterly data,ok,sdmx,6,161,0,"",2026-08-08
+TIPSLM50,Unit labour cost performance related to the euro area - annual data,ok,sdmx,4,61,0,"",2026-08-08
+TIPSLM60,Labour force participation rate,ok,sdmx,6,58,0,"",2026-08-08
+TIPSLM70,"Long-term unemployment rate, % of active population aged 15-74",ok,sdmx,6,58,0,"",2026-08-08
+TIPSLM80,Youth unemployment rate - % of active population aged 15-24,ok,sdmx,6,58,0,"",2026-08-08
+TIPSLM90,Young persons (aged 15-24) neither in employment nor in education and training - % of total population in private households in the same age group,ok,sdmx,6,58,0,"",2026-08-08
+TIPSNA10,Gross domestic product (GDP) at market prices - annual data,ok,sdmx,5,66,0,"",2026-08-08
+TIPSNA15,Gross domestic product (GDP) at market prices - quarterly data,ok,sdmx,6,161,0,"",2026-08-08
+TIPSNA20,Gross fixed capital formation at current prices,ok,sdmx,5,66,0,"",2026-08-08
+TIPSNA30,Terms of trade by items - 5 years % change,ok,sdmx,5,66,0,"",2026-08-08
+TIPSNA40,Real GDP per capita,ok,sdmx,5,64,0,"",2026-08-08
+TIPSNA50,"Residential construction - annual data, % of GDP",ok,sdmx,5,64,0,"",2026-08-08
+TIPSNA51,Final consumption expenditure of households and non-profit institutions serving households - annual data,ok,sdmx,5,66,0,"",2026-08-08
+TIPSNA60,"Employment, domestic concept - annual data",ok,sdmx,6,66,0,"",2026-08-08
+TIPSNA61,"Employment, domestic concept - quarterly data, thousands persons, not seasonally adjusted",ok,sdmx,7,163,0,"",2026-08-08
+TIPSNA62,"Employees, domestic concept - annual data",ok,sdmx,6,66,0,"",2026-08-08
+TIPSNA70,Labour productivity per hour worked - annual data,ok,sdmx,5,65,0,"",2026-08-08
+TIPSNA71,Real labour productivity per hour worked - quarterly data,ok,sdmx,6,161,0,"",2026-08-08
+TIPSNF10,"Net lending (+) /net borrowing (-), by sub-sector - current prices, million units of national currency",ok,sdmx,7,69,0,"",2026-08-08
+TIPSNF11,"Net savings by sub-sectors - current prices, million units of national currency",ok,sdmx,7,69,0,"",2026-08-08
+TIPSPC10,"Private sector credit flow, non-consolidated",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPC13,"Private sector credit flow: debt securities by sectors, non-consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC14,"Private sector credit flow: debt securities by sectors, non-consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC15,"Private sector credit flow: loans by sectors, non-consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC16,"Private sector credit flow: loans by sectors, non-consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC20,"Private sector credit flow, consolidated - % GDP",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPC23,"Private sector credit flow: debt securities by sectors, consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC24,"Private sector credit flow: debt securities by sectors, consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC25,"Private sector credit flow: loans by sectors, consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC26,"Private sector credit flow: loans by sectors, consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPC30,"Non-financial corporations excluding foreign direct investments credit flow, consolidated",ok,sdmx,8,64,0,"",2026-08-08
+TIPSPC40,"Household including non-profit institutions serving households (NPISH) credit flow, consolidated",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPD10,"Private sector debt, non-consolidated",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPD13,"Private sector debt: debt securities by sectors, non-consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD14,"Private sector debt: debt securities by sectors, non-consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD15,"Private sector debt: loans, by sectors, non-consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD16,"Private sector debt: loans by sectors, non-consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD20,"Private sector debt, consolidated - % of GDP",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPD22,"Household debt including non-profit institutions serving households, consolidated",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPD23,"Private sector debt: debt securities, by sectors, consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD24,"Private sector debt: debt securities, by sectors, consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD25,"Private sector debt: loans, by sectors, consolidated - % of GDP",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD26,"Private sector debt: loans, by sectors, consolidated - million units of national currency",ok,sdmx,8,69,0,"",2026-08-08
+TIPSPD30,"Non-financial corporations debt, consolidated - % of GDP",ok,sdmx,8,68,0,"",2026-08-08
+TIPSPD35,"Non-financial corporations debt excluding foreign direct investments, consolidated",ok,sdmx,8,63,0,"",2026-08-08
+TIPSPD40,"Household including non-profit institutions serving households (NPISH) debt, consolidated",ok,sdmx,8,67,0,"",2026-08-08
+TIPSST10,Gross domestic expenditure on research and development (R&D),ok,sdmx,5,64,0,"",2026-08-08
+TIPSUN10,Unemployment rate - 3 year average,ok,sdmx,6,57,0,"",2026-08-08
+TIPSUN20,Unemployment rate - annual data,ok,sdmx,6,59,0,"",2026-08-08
+TIPSUN30,"Unemployment rate - quarterly data, seasonally adjusted",ok,sdmx,7,128,0,"",2026-08-08
+TOUR_CAP_NAT,"Establishments, bedrooms and bed-places in tourist accommodation",ok,sdmx,6,91,0,"",2026-08-08
+TOUR_CAP_NATDC,"Establishments, bedrooms and bed-places in tourist accommodation, by degree of urbanisation and coastal/non-coastal area",ok,sdmx,7,74,0,"",2026-08-08
+TOUR_CAP_NATS,"Establishments, bedrooms and bed-places in hotels and similar accommodation by size class",ok,sdmx,6,71,0,"",2026-08-08
+TOUR_CAP_NUTS2,"Establishments, bedrooms and bed-places in tourist accommodation, by NUTS 2 region",ok,sdmx,6,1101,0,"",2026-08-08
+TOUR_CAP_NUTS2DC,"Establishments, bedrooms and bed-places in tourist accommodation, by degree of urbanisation and coastal/non-coastal area and NUTS 2 region",ok,sdmx,7,500,0,"",2026-08-08
+TOUR_CAP_NUTS3,"Establishments, bedrooms and bed-places in tourist accommodation by NUTS 3 region - annual data (1990-2011)",ok,sdmx,6,1952,0,"",2026-08-08
+TOUR_CE_OAM,Guest nights spent at short-stay accommodation offered via collaborative economy platforms by mode of accommodation - experimental statistics,ok,sdmx,5,45,0,"",2026-08-08
+TOUR_CE_OAN3,Guest nights spent at short-stay accommodation offered via collaborative economy platforms by NUTS 3 region - experimental statistics,ok,sdmx,6,1308,0,"",2026-08-08
+TOUR_CE_OAN3$DV_3222,Guest nights spent at short-stay accommodation offered via collaborative economy platforms by NUTS 3 region - experimental statistics,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TOUR_CE_OAN3$DV_3222'
+For more information check: https://developer.",2026-08-08
+TOUR_CE_OAR,Guest nights spent at short-stay accommodation offered via collaborative economy platforms by country of residence of the guest - experimental statistics,ok,sdmx,5,100,0,"",2026-08-08
+TOUR_CE_OARC,Short-stay accommodation offered via collaborative economy platforms by residence of the guest and cities - experimental statistics,ok,sdmx,6,317,0,"",2026-08-08
+TOUR_CE_OARC$DV_3223,Short-stay accommodation offered via collaborative economy platforms by residence of the guest and cities - experimental statistics,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TOUR_CE_OARC$DV_3223'
+For more information check: https://developer.",2026-08-08
+TOUR_CE_OASC,Guest nights spent at short-stay accommodation offered via collaborative economy platforms by size class of accommodation - experimental statistics,ok,sdmx,5,45,0,"",2026-08-08
+TOUR_CE_OAW,"Guest nights spent at short-stay accommodation offered via collaborative economy platforms by NUTS 1 and NUTS 2 region, by world region of residence of the guest - experimental statistics",ok,sdmx,5,413,0,"",2026-08-08
+TOUR_CE_OMN12,"Short-stay accommodation offered via collaborative economy platforms by months, residence of the guest and NUTS 1 and NUTS 2 region - experimental statistics",ok,sdmx,7,423,0,"",2026-08-08
+TOUR_CE_OMN12$DV_3225,"Short-stay accommodation offered via collaborative economy platforms by months, residence of the guest and NUTS 1 and NUTS 2 region - experimental statistics",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TOUR_CE_OMN12$DV_3225'
+For more information check: https://developer",2026-08-08
+TOUR_CE_OMR,Short-stay accommodation offered via collaborative economy platforms by months and residence of the guest - experimental statistics,ok,sdmx,7,62,0,"",2026-08-08
+TOUR_DEM_EXAC,Expenditure on accommodation by main mode of accommodation,ok,sdmx,9,72,0,"",2026-08-08
+TOUR_DEM_EXACW,Expenditure on accommodation by trip arrangement and booking channel of the main mode of accommodation (from 2020 onwards),ok,sdmx,10,58,0,"",2026-08-08
+TOUR_DEM_EXAGE,Expenditure by age group of the tourist,ok,sdmx,9,74,0,"",2026-08-08
+TOUR_DEM_EXED11,Expenditure by educational attainment level of the tourist,ok,sdmx,9,68,0,"",2026-08-08
+TOUR_DEM_EXINC,Expenditure by household income quartile of the tourist,ok,sdmx,9,69,0,"",2026-08-08
+TOUR_DEM_EXLS,Expenditure by duration of the trip,ok,sdmx,8,69,0,"",2026-08-08
+TOUR_DEM_EXMD,Expenditure by month of departure of the trip,ok,sdmx,9,89,0,"",2026-08-08
+TOUR_DEM_EXORG,Expenditure by type of trip arrangement (2014-2019),ok,sdmx,9,63,0,"",2026-08-08
+TOUR_DEM_EXPKTW,Expenditure related to package trips (2012-2019),ok,sdmx,8,114,0,"",2026-08-08
+TOUR_DEM_EXPUR,Expenditure by purpose of the trip,ok,sdmx,8,67,0,"",2026-08-08
+TOUR_DEM_EXPW,"Expenditure during package trips by duration, category of expenditure, purpose and main destination of the trip (from 2020 onwards)",ok,sdmx,10,121,0,"",2026-08-08
+TOUR_DEM_EXQ,"Expenditure by purpose, duration, destination and sex of the tourist  (1996-2011)",ok,sdmx,8,110,0,"",2026-08-08
+TOUR_DEM_EXQ1,"Expenditure by purpose, duration, destination and age group (1996-2011)",ok,sdmx,8,113,0,"",2026-08-08
+TOUR_DEM_EXQ2,"Expenditure on trips by purpose, duration, destination and main mode of transport (1996-2011)",ok,sdmx,8,115,0,"",2026-08-08
+TOUR_DEM_EXQ3,"Expenditure on trips by purpose, duration, destination and trip arrangement (1996-2011)",ok,sdmx,8,112,0,"",2026-08-08
+TOUR_DEM_EXQ4,"Expenditure on trips by purpose, duration, destination and main mode of accommodation (1996-2011)",ok,sdmx,8,118,0,"",2026-08-08
+TOUR_DEM_EXSEX,Expenditure by sex of the tourist,ok,sdmx,9,67,0,"",2026-08-08
+TOUR_DEM_EXTOT,"Expenditure by duration, purpose, main destination of the trip and expenditure category",ok,sdmx,9,71,0,"",2026-08-08
+TOUR_DEM_EXTOTW,Expenditure by detailed country/world region of the main destination of the trip,ok,sdmx,9,130,0,"",2026-08-08
+TOUR_DEM_EXTR,Expenditure on transport by main mode of transport,ok,sdmx,9,76,0,"",2026-08-08
+TOUR_DEM_EXTRW,Expenditure on transport by booking channel for main mode of transport (from 2020 onwards),ok,sdmx,10,58,0,"",2026-08-08
+TOUR_DEM_EXWS,Expenditure by activity status of the tourist,ok,sdmx,9,68,0,"",2026-08-08
+TOUR_DEM_NPAGE,Persons not participating in tourism by reason and age group,ok,sdmx,6,60,0,"",2026-08-08
+TOUR_DEM_NPED11,Persons not participating in tourism by reason and educational attainment level,ok,sdmx,6,54,0,"",2026-08-08
+TOUR_DEM_NPINC,Persons not participating in tourism by reason and household income,ok,sdmx,6,55,0,"",2026-08-08
+TOUR_DEM_NPSEX,Persons not participating in tourism by reason and sex,ok,sdmx,6,53,0,"",2026-08-08
+TOUR_DEM_NPWS,Persons not participating in tourism by reason and employment status,ok,sdmx,6,55,0,"",2026-08-08
+TOUR_DEM_SDVA,Same-day visits - annual data,ok,sdmx,6,109,0,"",2026-08-08
+TOUR_DEM_SDVEXA,Expenditure on same-day visits - annual data,ok,sdmx,6,102,0,"",2026-08-08
+TOUR_DEM_SDVEXQ,Expenditure on same-day visits - quarterly data,ok,sdmx,6,134,0,"",2026-08-08
+TOUR_DEM_SDVQ,Same-day visits - quarterly data,ok,sdmx,6,141,0,"",2026-08-08
+TOUR_DEM_TNAC,Nights spent by main mode of accommodation,ok,sdmx,8,74,0,"",2026-08-08
+TOUR_DEM_TNACB,Nights spent by booking channel for the main mode of accommodation (from 2020 onwards),ok,sdmx,9,55,0,"",2026-08-08
+TOUR_DEM_TNAGE,Nights spent by age group of the tourist,ok,sdmx,8,71,0,"",2026-08-08
+TOUR_DEM_TNED11,Nights spent by educational attainment level of the tourist,ok,sdmx,8,65,0,"",2026-08-08
+TOUR_DEM_TNHD,Nights spent by type of destination of the trip (personal trips only),ok,sdmx,8,66,0,"",2026-08-08
+TOUR_DEM_TNINC,Nights spent by household income quartile of the tourist,ok,sdmx,8,66,0,"",2026-08-08
+TOUR_DEM_TNLS,Nights spent by duration of the trip,ok,sdmx,7,67,0,"",2026-08-08
+TOUR_DEM_TNMD,Nights spent by month of departure,ok,sdmx,8,86,0,"",2026-08-08
+TOUR_DEM_TNORG,Nights spent by trip arrangement (2014-2019),ok,sdmx,8,60,0,"",2026-08-08
+TOUR_DEM_TNPUR,Nights spent by purpose of the trip,ok,sdmx,7,64,0,"",2026-08-08
+TOUR_DEM_TNPW,"Nights spent during package trips by duration, purpose and main destination of the trip (from 2020 onwards)",ok,sdmx,9,114,0,"",2026-08-08
+TOUR_DEM_TNQ,"Nights spent by purpose, duration, destination and sex of the tourist  (1996-2011)",ok,sdmx,8,112,0,"",2026-08-08
+TOUR_DEM_TNQ1,"Nights spent by purpose, duration, destination and main mode of accommodation (1996-2011)",ok,sdmx,8,106,0,"",2026-08-08
+TOUR_DEM_TNQ2,"Nights spent by purpose, duration, destination and month of departure (1996-2011)",ok,sdmx,8,130,0,"",2026-08-08
+TOUR_DEM_TNSEX,Nights spent by sex of the tourist,ok,sdmx,8,64,0,"",2026-08-08
+TOUR_DEM_TNTOT,"Nights spent by duration, purpose and main destination of the trip",ok,sdmx,7,61,0,"",2026-08-08
+TOUR_DEM_TNTR,Nights spent by main mode of transport used for the trip,ok,sdmx,8,73,0,"",2026-08-08
+TOUR_DEM_TNTRB,Nights spent by booking channel for the main mode of transport used for the trip (from 2020 onwards),ok,sdmx,9,56,0,"",2026-08-08
+TOUR_DEM_TNW,Nights spent by detailed country/world region of the main destination of the trip,ok,sdmx,7,121,0,"",2026-08-08
+TOUR_DEM_TNWS,Nights spent by activity status of the tourist,ok,sdmx,8,65,0,"",2026-08-08
+TOUR_DEM_TOAGE,Persons participating in tourism for personal purposes by age group,ok,sdmx,7,68,0,"",2026-08-08
+TOUR_DEM_TOED11,Persons participating in tourism for personal purposes by educational attainment level,ok,sdmx,7,62,0,"",2026-08-08
+TOUR_DEM_TOINC,Persons participating in tourism for personal purposes by household income quartile,ok,sdmx,7,63,0,"",2026-08-08
+TOUR_DEM_TOQ,"Persons participating in tourism by destination, purpose, duration and sex of the tourist (1996-2011)",ok,sdmx,8,111,0,"",2026-08-08

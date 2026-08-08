@@ -1753,9 +1753,91 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 42_1108_DF_DCIS_IVG_CARATTEV1_12,Presenza di malformazioni fetali - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
 42_1108_DF_DCIS_IVG_CARATTEV1_2,"Tipo di intervento, terapia antalgica ed età gestazionale",REF_AREA,nazionale,nazionale,1,2026-08-07
 42_1108_DF_DCIS_IVG_CARATTEV1_3,Tipo di intervento - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-07
+42_1108_DF_DCIS_IVG_CARATTEV1_4,Terapia antalgica - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_1108_DF_DCIS_IVG_CARATTEV1_5,Settimane di amenorrea - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_1108_DF_DCIS_IVG_CARATTEV1_6,Età gestazionale - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_1108_DF_DCIS_IVG_CARATTEV1_8,Giorni di attesa tra certificazione e intervento - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_1108_DF_DCIS_IVG_CARATTEV1_9,Livello di urgenza - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_210,Interruzioni volontarie della gravidanza - Migrazione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_210_DF_DCIS_IVG_MIGRAZIONE_1,Indicatori di emigrazione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,141,2026-08-08
+42_210_DF_DCIS_IVG_MIGRAZIONE_2,Indicatori di immigrazione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
+42_210_DF_DCIS_IVG_MIGRAZIONE_3,Eventi per regione di residenza della donna e regione di intervento,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,33,2026-08-08
+42_320,Aborti spontanei - dimissioni rispetto al luogo di nascita della donna,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+42_320_DF_DCIS_ABORTISPONTN_1,Aborti spontanei - dimissioni rispetto al luogo di nascita della donna,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_1,Età e settimane di amenorrea,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_10,Stato civile - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_11,Titolo di studio - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_12,Condizione professionale - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_14,Utilizzo di tecniche di procreazione medicalmente assistita - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_16,Numero medio settimane di amenorrea - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_17,Età media della donna - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_2,"Età, stato civile e titolo di studio",REF_AREA,nazionale,nazionale,1,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_3,Età e condizione professionale,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_4,"Età, storia riproduttiva della donna e numerosità dell'evento",REF_AREA,nazionale,nazionale,1,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_5,Numero medio di settimane di amenorrea,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_6,Tassi e rapporti,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_7,"Tassi e rapporti standardizzati, tasso di abortività spontanea totale",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+42_324_DF_DCIS_ABORTISPONTR_9,Settimane di amenorrea - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_1,Età e paese di cittadinanza della donna,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_11,Tipo di intervento - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_15,Metodo di procreazione medicalmente assistita - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_2,Età della donna e settimana di amenorrea,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_3,Età della donna e utilizzo di tecniche di procreazione medicalmente assistita,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_4,Età della donna e metodo di procreazione medicalmente assistita,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_5,"Tipo di intervento, di complicazione e settimana di amenorrea",REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_6,Degenza media per tipo intervento e settimane di amenorrea,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_7,Regione di residenza della donna,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_7,Regione di residenza della donna,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+42_325_DF_DCIS_ABORTISPONTL_8,Degenza media e tipo di complicazione,REF_AREA,nazionale,nazionale,1,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_10,Età - prov. di nascita,RESIDENCE_TERR,provincia,nazionale|provincia,2,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_12,Minorenni per assenso - prov. di residenza,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_18,Storia riproduttiva - prov. di residenza,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_3,"Età, stato civile e titolo di studio",RESIDENCE_TERR,nazionale,nazionale,1,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_5,Tasso di abortività volontaria (per 1000 donne) totale e stadardizzato,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_6,Tasso di abortività volontaria per età e stato civile (per 1000 donne),RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_7,Tasso di abortività volontaria delle donne minorenni (per 1000 donne),RESIDENCE_TERR,regione,nazionale|ripartizione|regione,30,2026-08-08
+42_70_DF_DCIS_IVG_CARATTDON_8,Età media all'interruzione volontaria di gravidanza - prov. di residenza,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,144,2026-08-08
+43_236,Strutture sanitarie per l'assistenza di base - serie interrotte,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_236_DF_DCIS_ASSBASE_1,Strutture sanitarie per l'assistenza di base - serie interrotte,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_237,Strutture sanitarie distrettuali - serie interrotte,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_237_DF_DCIS_STRSANDISTR_1,Tipologia delle strutture sanitarie distrettuali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_237_DF_DCIS_STRSANDISTR_2,Attività delle strutture sanitarie distrettuali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_283_DF_DCIS_OSPDISTPSICHRES_1,Sesso ed età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+43_283_DF_DCIS_OSPDISTPSICHRES_2,Sesso e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+43_283_DF_DCIS_OSPDISTPSICHRES_5,Degenza media in ricovero ordinario,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-08
+43_283_DF_DCIS_OSPDISTPSICHRES_6,Pazienti ricoverati in luogo diverso da quello di residenza - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-08
+43_283_DF_DCIS_OSPDISTPSICHRES_7,Pazienti ricoverati in luogo diverso da quello di residenza - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-08
+43_284,Dimissioni per disturbi psichici rispetto al luogo di dimissione,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+43_284_DF_DCIS_OSPDISTPSICHRIC_7,Pazienti ricoverati in luogo diverso da quello di residenza - reg.,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+43_495_DF_DCIS_OSPEDSSN_1,Struttura e attività degli istituti di cura del SSN,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-08
+43_495_DF_DCIS_OSPEDSSN_2,Struttura e attività degli istituti di cura del SSN per area di specializzazione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-08
+43_495_DF_DCIS_OSPEDSSN_3,Apparecchiature biomedicali negli istituti di cura del SSN,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-08
+43_495_DF_DCIS_OSPEDSSN_4,Personale degli istituti di cura del SSN,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-08
+43_967,Istituti di cura,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+43_967_DF_DCIS_OSPED_1,Istituti pubblici e privati e loro attività,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+43_967_DF_DCIS_OSPED_2,Posti letto e attività per specializzazione clinica,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+43_973,Personale sanitario,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+43_973_DF_DCIS_PERS_SANIT_1,Personale sanitario,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+43_98,Visite mediche ed accertamenti diagnostici,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_98_DF_DCIS_RSERVSAN_1,Visite mediche,REF_AREA,nazionale,nazionale,1,2026-08-08
+43_98_DF_DCIS_RSERVSAN_2,Visite mediche - valori standardizzati e regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_98_DF_DCIS_RSERVSAN_3,Accertamenti diagnostici,REF_AREA,nazionale,nazionale,1,2026-08-08
+43_98_DF_DCIS_RSERVSAN_4,Accertamenti diagnostici - valori standardizzati e regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+43_994,Istituti di cura  - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,797,2026-08-08
+43_994_DF_DCIS_OSPED_COM_1,Istituti pubblici e privati,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,797,2026-08-08
+43_994_DF_DCIS_OSPED_COM_2,Posti letto per specializzazione clinica,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,797,2026-08-08
+46_812_DF_DCAR_PENSIONATI2_1,Principali dati,REF_AREA,provincia,provincia,1,2026-08-08
+46_812_DF_DCAR_PENSIONATI2_4,Indicatori - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+47_1219_DF_DCIS_SPESESERSOC1_RP_2,Spesa per ente gestore - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+47_850_DF_DCIS_SERVSOCEDU1_2,Servizi offerti dai comuni - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+47_850_DF_DCIS_SERVSOCEDU1_3,Servizi offerti dai comuni - prov. e com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-08
+47_850_DF_DCIS_SERVSOCEDU1_6,Servizi sul territorio - prov. e com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-08
 47_940_DF_DCIS_SPESESERSOC1_1,Indicatori - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-22
+47_940_DF_DCIS_SPESESERSOC1_2,Spesa per ente gestore - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
+47_940_DF_DCIS_SPESESERSOC1_3,Utenti e spesa - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-08
 47_940_DF_DCIS_SPESESERSOC1_4,Utenti e spesa - prov. e com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
 47_940_DF_DCIS_SPESESERSOC1_5,Utenti e spesa - Ambiti territoriali sociali (Ats),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-22
+498_1104,Persone a rischio povertà o esclusione sociale,REF_AREA,ripartizione,nazionale|ripartizione,15,2026-08-08
 498_1104_DF_DCCV_RISKPOV_1,Ampiezza della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
 498_1104_DF_DCCV_RISKPOV_10,Tipologia familiare,REF_AREA,nazionale,nazionale,1,2026-07-22
 498_1104_DF_DCCV_RISKPOV_11,Fonte principale di reddito della famiglia,REF_AREA,nazionale,nazionale,1,2026-07-22
@@ -1786,6 +1868,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 49_37_DF_DCIS_PRESIDI1_7,Posti letto per funzione di protezione sociale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_37_DF_DCIS_PRESIDI1_8,Posti letto per livello di assistenza sanitaria - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_37_DF_DCIS_PRESIDI1_9,Posti letto per natura giuridica del titolare e finanziamenti pubblici - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62,Ospiti dei presidi residenziali socio-assistenziali e socio-sanitari,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
 49_62_DF_DCIS_OSPITIPRESIDI1_1,Ospiti dei presidi residenziali socio-assistenziali e socio-sanitari - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_10,Minori dimessi per tipo di destinazione - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_11,Adulti per età - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
@@ -1793,39 +1876,73 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 49_62_DF_DCIS_OSPITIPRESIDI1_13,Adulti per carattere di residenzialità - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_14,Adulti per funzione della protezione sociale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_15,Adulti per livello di assistenza sanitaria - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_16,Anziani per età e tipo di disagio - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
 49_62_DF_DCIS_OSPITIPRESIDI1_17,Anziani per tipo di residenzialità - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_18,Anziani per genere e funzione della protezione sociale - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
+49_62_DF_DCIS_OSPITIPRESIDI1_19,Anziani per genere e livello di assistenza sanitaria - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
 49_62_DF_DCIS_OSPITIPRESIDI1_2,Minori per età - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_20,Stranieri per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_21,Stranieri minori per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_22,Stranieri minori per tipo di disagio - rip.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_23,Stranieri minori per motivo ingresso - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_24,Stranieri adulti per genere e tipo di disagio - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_25,Stranieri anziani per genere e tipo di disagio - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-08
 49_62_DF_DCIS_OSPITIPRESIDI1_27,Stranieri minori per provenienza - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_3,Minori per genere - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_4,Minori per tipo di disagio - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_5,Minori per tipo di residenzialità - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 49_62_DF_DCIS_OSPITIPRESIDI1_6,Minori per funzione della protezione sociale - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_7,Minori per livello di assistenza sanitaria - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-08
 49_62_DF_DCIS_OSPITIPRESIDI1_8,Minori per motivo di ingresso - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+49_62_DF_DCIS_OSPITIPRESIDI1_9,Minori per condizione di adottabilità - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-08
+4_1063,Sequenza dei conti per settore istituzionale e stock di attività non finanziarie - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-08
 4_1063_DF_DCCN_ISTITUZ_ANA1_B19_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-22
 4_1063_DF_DCCN_ISTITUZ_ANA1_B19_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-22
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_4,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-08
+4_1063_DF_DCCN_ISTITUZ_ANA1_B19_5,Stock di attività non finanziarie  - edizioni luglio 2021 - gennaio 2024,REF_AREA,nazionale,nazionale,1,2026-08-08
+4_805_DF_DCCN_OCCSISEC2010_B19_1,Occupazione per branca di attività - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-08
+52_1044,Scuole,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
+52_1044_DF_DCIS_SCUOLE_1,Scuole - Principali dati,REF_AREA,nazionale,nazionale,1,2026-08-08
+52_1044_DF_DCIS_SCUOLE_10,Secondaria I grado - indicatori scolastici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
+52_1044_DF_DCIS_SCUOLE_11,"Secondaria II grado - scuole, classi e studenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
 52_1044_DF_DCIS_SCUOLE_12,Secondaria II grado - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
+52_1044_DF_DCIS_SCUOLE_13,Secondaria II grado - indicatori scolastici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
 52_1044_DF_DCIS_SCUOLE_14,Secondaria II grado - diplomati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-07-22
 52_1044_DF_DCIS_SCUOLE_15,Secondaria II grado - ripetenti per anno di corso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-07-22
 52_1044_DF_DCIS_SCUOLE_3,Infanzia - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
+52_1044_DF_DCIS_SCUOLE_5,"Primaria - scuole, classi e alunni",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-08-08
+52_1044_DF_DCIS_SCUOLE_6,Primaria - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-08-08
 52_1044_DF_DCIS_SCUOLE_7,Primaria - indicatori scolastici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,136,2026-07-22
 52_1044_DF_DCIS_SCUOLE_9,Secondaria I grado - insegnanti delle scuole statali,REF_AREA,regione,nazionale|ripartizione|regione,24,2026-07-22
 52_1194_DF_DCCV_POPTIT1_UNT2020_1,Popolazione per titolo di studio e età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
 52_1194_DF_DCCV_POPTIT1_UNT2020_2,Popolazione per titolo di studio e regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-22
+52_1194_DF_DCCV_POPTIT1_UNT2020_3,Popolazione per titolo di studio - italiani e stranieri,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
 52_1203,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-22
 52_1203_DF_DCCV_ESL_UNT2020_1,Giovani dai 18 ai 24 anni d'età che abbandonano prematuramente gli studi - regolamento precedente (fino al 2020) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-22
+52_1203_DF_DCCV_ESL_UNT2020_2,Condizione professionale,REF_AREA,nazionale,nazionale,1,2026-08-08
 52_1203_DF_DCCV_ESL_UNT2020_3,Valori assoluti,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
+532_1195,Popolazione per condizione professionale - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_10,Serie ricostruite dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_12,Tutte le età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_14,Ruolo in famiglia,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_16,Status di studente,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_18,Serie ricostruite dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_2,Tutte le età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_3,Cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_5,"Cittadinanza, ruolo in famiglia",REF_AREA,nazionale,nazionale,1,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_7,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+532_1195_DF_DCCV_POPCOND1_UNT2020_9,Serie ricostruite dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
+532_930_DF_DCCV_POPCOND1_1,Classe di età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-08
 532_930_DF_DCCV_POPCOND1_3,Status di studente,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
+532_930_DF_DCCV_POPCOND1_5,Serie ricostruite dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
 533_957_DF_DCSC_RACLI_1,Classe di età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 533_957_DF_DCSC_RACLI_10,Paese di nascita - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
 533_957_DF_DCSC_RACLI_12,Tipo di contratto - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
 533_957_DF_DCSC_RACLI_14,Classe di dipendenti - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
 533_957_DF_DCSC_RACLI_16,Giorni retribuiti - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+533_957_DF_DCSC_RACLI_18,Classe di eta- 2 digit,REF_AREA,nazionale,nazionale,1,2026-08-08
 533_957_DF_DCSC_RACLI_2,Retribuzione oraria per paese di nascita,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+533_957_DF_DCSC_RACLI_20,Titolo di studio - 2 digit,REF_AREA,nazionale,nazionale,1,2026-08-08
 533_957_DF_DCSC_RACLI_22,Regime orario- 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
 533_957_DF_DCSC_RACLI_24,Qualifica contrattuale - 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
 533_957_DF_DCSC_RACLI_5,Retribuzione oraria per regime orario,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
