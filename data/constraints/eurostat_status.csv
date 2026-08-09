@@ -8004,3 +8004,305 @@ TOUR_DEM_TOAGE,Persons participating in tourism for personal purposes by age gro
 TOUR_DEM_TOED11,Persons participating in tourism for personal purposes by educational attainment level,ok,sdmx,7,62,0,"",2026-08-08
 TOUR_DEM_TOINC,Persons participating in tourism for personal purposes by household income quartile,ok,sdmx,7,63,0,"",2026-08-08
 TOUR_DEM_TOQ,"Persons participating in tourism by destination, purpose, duration and sex of the tourist (1996-2011)",ok,sdmx,8,111,0,"",2026-08-08
+TOUR_DEM_TOSEX,Persons participating in tourism for personal purposes by sex,ok,sdmx,7,61,0,"",2026-08-09
+TOUR_DEM_TOTOT,Persons participating in tourism for personal purposes by duration of the stay and destination,ok,sdmx,6,58,0,"",2026-08-09
+TOUR_DEM_TOWS,Persons participating in tourism for personal purposes by activity status,ok,sdmx,7,63,0,"",2026-08-09
+TOUR_DEM_TTAC,Trips by main mode of accommodation,ok,sdmx,8,74,0,"",2026-08-09
+TOUR_DEM_TTACB,Trips by booking channel for the main mode of accommodation (from 2020 onwards),ok,sdmx,9,56,0,"",2026-08-09
+TOUR_DEM_TTAGE,Trips by age group of the tourist,ok,sdmx,8,71,0,"",2026-08-09
+TOUR_DEM_TTED11,Trips by educational attainment level of the tourist,ok,sdmx,8,65,0,"",2026-08-09
+TOUR_DEM_TTHD,Trips by type of destination (personal trips only),ok,sdmx,8,66,0,"",2026-08-09
+TOUR_DEM_TTINC,Trips by household income quartile of the tourist,ok,sdmx,8,66,0,"",2026-08-09
+TOUR_DEM_TTLS,Trips by duration of the trip,ok,sdmx,7,67,0,"",2026-08-09
+TOUR_DEM_TTMD,Trips by month of departure,ok,sdmx,8,86,0,"",2026-08-09
+TOUR_DEM_TTORG,Trips by trip arrangement (2014-2019),ok,sdmx,8,60,0,"",2026-08-09
+TOUR_DEM_TTPUR,Trips by purpose,ok,sdmx,7,64,0,"",2026-08-09
+TOUR_DEM_TTPW,"Package trips by duration, purpose and main destination (from 2020 onwards)",ok,sdmx,9,114,0,"",2026-08-09
+TOUR_DEM_TTQ,"Trips by purpose, duration, destination and sex of the tourist (1996-2011)",ok,sdmx,8,112,0,"",2026-08-09
+TOUR_DEM_TTQ1,"Trips by purpose, duration, destination and main mode of accommodation (1996-2011)",ok,sdmx,8,111,0,"",2026-08-09
+TOUR_DEM_TTQ2,"Trips by purpose, duration, destination and month of departure (1996-2011)",ok,sdmx,8,137,0,"",2026-08-09
+TOUR_DEM_TTSEX,Trips by sex of the tourist,ok,sdmx,8,64,0,"",2026-08-09
+TOUR_DEM_TTTOT,"Trips by duration, purpose and main destination",ok,sdmx,7,61,0,"",2026-08-09
+TOUR_DEM_TTTR,Trips by main mode of transport,ok,sdmx,8,73,0,"",2026-08-09
+TOUR_DEM_TTTRB,Trips by booking channel for the main mode of transport (from 2020 onwards),ok,sdmx,9,56,0,"",2026-08-09
+TOUR_DEM_TTW,Trips by detailed country/world region of main destination,ok,sdmx,7,121,0,"",2026-08-09
+TOUR_DEM_TTWS,Trips by activity status of the tourist,ok,sdmx,8,65,0,"",2026-08-09
+TOUR_LFS1R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and full-time/part-time employment (2008-2026),ok,sdmx,7,72,0,"",2026-08-09
+TOUR_LFS2R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and age (2008-2026),ok,sdmx,7,74,0,"",2026-08-09
+TOUR_LFS3R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and educational attainment level (2008-2026),ok,sdmx,7,73,0,"",2026-08-09
+TOUR_LFS4R2,Employed persons in selected tourism industries (NACE Rev. 2) by employment contract (2008-2026),ok,sdmx,6,67,0,"",2026-08-09
+TOUR_LFS5R2,Employed persons in selected tourism industries (NACE Rev. 2) by job tenure (2008-2026),ok,sdmx,6,68,0,"",2026-08-09
+TOUR_LFS6R2,"Employed persons in selected tourism industries (NACE Rev. 2) by professional status, full-time/part-time employment and sex (2008-2026)",ok,sdmx,8,72,0,"",2026-08-09
+TOUR_LFSQ1R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and full-time/part-time employment (2008-2026) - quarterly data,ok,sdmx,7,127,0,"",2026-08-09
+TOUR_LFSQ1R21,Employed persons in selected tourism industries (NACE Rev. 2.1) by professional status and full-time/part-time employment - quarterly data,ok,sdmx,7,52,0,"",2026-08-09
+TOUR_LFSQ2R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and age (2008-2026) - quarterly data,ok,sdmx,7,129,0,"",2026-08-09
+TOUR_LFSQ2R21,Employed persons in selected tourism industries (NACE Rev. 2.1) by professional status and age - quarterly data,ok,sdmx,7,54,0,"",2026-08-09
+TOUR_LFSQ3R2,Employed persons in selected tourism industries (NACE Rev. 2) by professional status and educational attainment level (2008-2026) - quarterly data,ok,sdmx,7,128,0,"",2026-08-09
+TOUR_LFSQ3R21,Employed persons in selected tourism industries (NACE Rev. 2.1) by professional status and educational attainment level - quarterly data,ok,sdmx,7,53,0,"",2026-08-09
+TOUR_LFSQ4R2,Employed persons in selected tourism industries (NACE Rev. 2) by employment contract (2008-2026) - quarterly data,ok,sdmx,6,122,0,"",2026-08-09
+TOUR_LFSQ4R21,Employed persons in selected tourism industries (NACE Rev. 2.1) by employment contract - quarterly data,ok,sdmx,6,47,0,"",2026-08-09
+TOUR_LFSQ5R2,Employed persons in selected tourism industries (NACE Rev. 2) by job tenure (2008-2026) - quarterly data,ok,sdmx,6,123,0,"",2026-08-09
+TOUR_LFSQ5R21,Employed persons in selected tourism industries (NACE Rev. 2.1) by job tenure - quarterly data,ok,sdmx,6,48,0,"",2026-08-09
+TOUR_LFSQ6R2,"Employed persons in selected tourism industries (NACE Rev. 2) by professional status, full-time/part-time employment and sex (2008-2026) - quarterly data",ok,sdmx,8,127,0,"",2026-08-09
+TOUR_LFSQ6R21,"Employed persons in selected tourism industries (NACE Rev. 2.1) by professional status, full-time/part-time employment and sex - quarterly data",ok,sdmx,8,52,0,"",2026-08-09
+TOUR_OCC_ANOR,Net occupancy rate of bed-places and bedrooms in hotels and similar accommodation (NACE Rev. 2 activity I55.1) by size class,ok,sdmx,6,67,0,"",2026-08-09
+TOUR_OCC_ANOR2,Net occupancy rate of bed-places and bedrooms in hotels and similar accommodation (NACE Rev. 2 activity I55.1) by NUTS 2 region,ok,sdmx,5,579,0,"",2026-08-09
+TOUR_OCC_ARM,Arrivals at tourist accommodation establishments - monthly data,ok,sdmx,6,494,0,"",2026-08-09
+TOUR_OCC_ARN2,Arrivals at tourist accommodation establishments by NUTS 2 region,ok,sdmx,6,608,0,"",2026-08-09
+TOUR_OCC_ARNAT,Arrivals at tourist accommodation establishments,ok,sdmx,6,90,0,"",2026-08-09
+TOUR_OCC_ARNRAW,Arrivals at tourist accommodation establishments by country of origin of the tourist,ok,sdmx,6,152,0,"",2026-08-09
+TOUR_OCC_ARNRMW,Arrivals at tourist accommodation establishments by country of origin of the tourist - monthly data (1990-2011),ok,sdmx,6,366,0,"",2026-08-09
+TOUR_OCC_MNOR,"Net occupancy rate of bed-places and bedrooms in hotels and similar accommodation (NACE Rev. 2, I, 55.1) - monthly data",ok,sdmx,5,485,0,"",2026-08-09
+TOUR_OCC_NIM,Nights spent at tourist accommodation establishments - monthly data,ok,sdmx,6,494,0,"",2026-08-09
+TOUR_OCC_NIM$DV_3224,Nights spent at tourist accommodation establishments - monthly data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TOUR_OCC_NIM$DV_3224'
+For more information check: https://developer.",2026-08-09
+TOUR_OCC_NIN2,Nights spent at tourist accommodation establishments by NUTS 3 region,ok,sdmx,6,1920,0,"",2026-08-09
+TOUR_OCC_NIN2DC,Nights spent at tourist accommodation establishments by degree of urbanisation and coastal/non-coastal area and NUTS 2 region,ok,sdmx,7,502,0,"",2026-08-09
+TOUR_OCC_NIN2M,Nights spent at tourist accommodation establishments by month and NUTS 2 region (from 2020 onwards),ok,sdmx,7,833,0,"",2026-08-09
+TOUR_OCC_NIN3,Nights spent at tourist accommodation establishments by NUTS 3 region (from 2020 onwards),ok,sdmx,6,1760,0,"",2026-08-09
+TOUR_OCC_NIN3$DV_3221,Nights spent at tourist accommodation establishments by NUTS 3 region (from 2020 onwards),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TOUR_OCC_NIN3$DV_3221'
+For more information check: https://developer",2026-08-09
+TOUR_OCC_NINAT,Nights spent at tourist accommodation establishments,ok,sdmx,6,94,0,"",2026-08-09
+TOUR_OCC_NINATDC,Nights spent at tourist accommodation establishments by degree of urbanisation and coastal/non-coastal area,ok,sdmx,7,79,0,"",2026-08-09
+TOUR_OCC_NINATS,Nights spent at hotels and similar accommodation (NACE Rev.2 activity I55.1) by size class,ok,sdmx,6,70,0,"",2026-08-09
+TOUR_OCC_NINC,Nights spent at tourist accommodation establishments for selected cities (from 2020 onwards),ok,sdmx,6,715,0,"",2026-08-09
+TOUR_OCC_NINRAW,Nights spent at tourist accommodation establishments  by country of origin of the tourist,ok,sdmx,6,151,0,"",2026-08-09
+TOUR_OCC_NINRMW,Nights spent at tourist accommodation establishments by country of origin of the tourist - monthly data (1990-2011),ok,sdmx,6,370,0,"",2026-08-09
+TPS00001,Population on 1 January,ok,sdmx,4,68,0,"",2026-08-09
+TPS00003,Population density,ok,sdmx,4,55,0,"",2026-08-09
+TPS00005,Population as a percentage of EU27 (from 2020) population,ok,sdmx,4,42,0,"",2026-08-09
+TPS00010,Population by age group,ok,sdmx,4,72,0,"",2026-08-09
+TPS00014,Mean age at first marriage by sex,ok,sdmx,4,65,0,"",2026-08-09
+TPS00017,Mean age of women at childbirth and at birth of first child,ok,sdmx,4,67,0,"",2026-08-09
+TPS00019,"Population change - crude rates of total change, natural change and net migration plus adjustment",ok,sdmx,4,70,0,"",2026-08-09
+TPS00024,Acquisition of citizenship,ok,sdmx,8,65,0,"",2026-08-09
+TPS00027,Infant mortality rate,ok,sdmx,5,68,0,"",2026-08-09
+TPS00028,Proportion of population aged 65 and over,ok,sdmx,4,67,0,"",2026-08-09
+TPS00029,Deaths and crude death rate,ok,sdmx,4,69,0,"",2026-08-09
+TPS00044,Practising physicians,ok,sdmx,6,57,0,"",2026-08-09
+TPS00045,Practising dentists,ok,sdmx,6,57,0,"",2026-08-09
+TPS00046,Hospital beds,ok,sdmx,6,58,0,"",2026-08-09
+TPS00048,Discharges from hospitals,ok,sdmx,8,62,0,"",2026-08-09
+TPS00053,Employment rates of recent graduates,ok,sdmx,8,62,0,"",2026-08-09
+TPS00065,Persons aged 25-64 with at least upper secondary educational attainment level by sex,ok,sdmx,7,61,0,"",2026-08-09
+TPS00066,Unemployment rates (persons aged 25-64) by educational attainment level,ok,sdmx,7,61,0,"",2026-08-09
+TPS00071,Hours worked per week of full-time employment,ok,sdmx,9,61,0,"",2026-08-09
+TPS00073,Employees with temporary contracts - annual data,ok,sdmx,7,64,0,"",2026-08-09
+TPS00082,Social benefits by function - million EUR,ok,sdmx,6,66,0,"",2026-08-09
+TPS00083,Net social benefits by function,ok,sdmx,6,66,0,"",2026-08-09
+TPS00098,Expenditure on social protection as percentage of GDP,ok,sdmx,5,58,0,"",2026-08-09
+TPS00099,Expenditure on social protection per inhabitant at constant prices,ok,sdmx,5,57,0,"",2026-08-09
+TPS00100,Expenditure on social protection per inhabitant in PPS,ok,sdmx,5,57,0,"",2026-08-09
+TPS00101,Expenditure on social protection by type,ok,sdmx,5,60,0,"",2026-08-09
+TPS00103,Expenditure on pensions as percentage of GDP,ok,sdmx,6,59,0,"",2026-08-09
+TPS00106,Social benefits by function - % of total benefits,ok,sdmx,6,69,0,"",2026-08-09
+TPS00107,Social benefits by function - PPS per inhabitant,ok,sdmx,6,68,0,"",2026-08-09
+TPS00108,Social protection receipts by type as percentage of GDP,ok,sdmx,5,61,0,"",2026-08-09
+TPS00116,"Death due to cancer, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00119,"Death due to other ischaemic heart diseases, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00122,"Death due to suicide, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00125,"Death due to accidents, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00128,"Death due to pneumonia, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00131,"Death due to chronic liver disease, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00134,"Death due to diseases of the nervous system, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00137,"Death due to diabetes mellitus, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00140,"Death due to alcoholic abuse, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00143,"Death due to AIDS (HIV-disease), by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00146,"Death due to homicide, assault, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00149,"Death due to drugs dependence, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00150,Healthy life years at birth by sex,ok,sdmx,6,59,0,"",2026-08-09
+TPS00151,"At-risk-of-poverty-rate, by highest level of education attained",ok,sdmx,9,63,0,"",2026-08-09
+TPS00152,"Causes of death, by sex",ok,sdmx,7,59,0,"",2026-08-09
+TPS00155,Minimum wages,ok,sdmx,4,58,0,"",2026-08-09
+TPS00157,Population without the citizenship of the reporting country,ok,sdmx,7,61,0,"",2026-08-09
+TPS00159,Employed persons working part-time - annual data,ok,sdmx,7,60,0,"",2026-08-09
+TPS00165,"Death due to transport accidents, by sex",ok,sdmx,7,62,0,"",2026-08-09
+TPS00167,Licensed physicians,ok,sdmx,6,57,0,"",2026-08-09
+TPS00170,First permits by reason,ok,sdmx,7,62,0,"",2026-08-09
+TPS00171,All valid permits by reason on 31 December of each year,ok,sdmx,7,62,0,"",2026-08-09
+TPS00172,"Job vacancies in number and % - NACE Rev. 2, B-S, quarterly data",ok,sdmx,7,59,0,"",2026-08-09
+TPS00173,Labour costs annual data - NACE Rev. 2,ok,sdmx,6,58,0,"",2026-08-09
+TPS00176,Immigration,ok,sdmx,8,71,0,"",2026-08-09
+TPS00177,Emigration,ok,sdmx,8,70,0,"",2026-08-09
+TPS00178,Foreign-born population,ok,sdmx,7,58,0,"",2026-08-09
+TPS00181,Jobless households - children,ok,sdmx,5,57,0,"",2026-08-09
+TPS00182,Jobless households by sex,ok,sdmx,5,59,0,"",2026-08-09
+TPS00184,At-risk-of-poverty rate after social transfers by sex,ok,sdmx,8,62,0,"",2026-08-09
+TPS00185,Formal child care by duration and age group,ok,sdmx,5,61,0,"",2026-08-09
+TPS00186,Persons aged 20-24 with at least upper secondary educational attainment level by sex,ok,sdmx,7,61,0,"",2026-08-09
+TPS00189,Asylum applicants by type - monthly data,ok,sdmx,8,61,0,"",2026-08-09
+TPS00190,Persons subject of asylum applications pending at the end of the month - monthly data,ok,sdmx,7,58,0,"",2026-08-09
+TPS00191,Asylum applicants by type - annual aggregated data,ok,sdmx,8,61,0,"",2026-08-09
+TPS00192,First instance decisions on asylum applications by type of decision - annual aggregated data,ok,sdmx,8,64,0,"",2026-08-09
+TPS00193,Final decisions on asylum applications by type of decision - annual data,ok,sdmx,8,64,0,"",2026-08-09
+TPS00194,Asylum applicants considered to be unaccompanied minors - annual data,ok,sdmx,7,58,0,"",2026-08-09
+TPS00195,Resettled persons - annual data,ok,sdmx,7,58,0,"",2026-08-09
+TPS00197,Persons with at most lower secondary educational attainment level by age,ok,sdmx,7,63,0,"",2026-08-09
+TPS00198,Old-age-dependency ratio,ok,sdmx,4,67,0,"",2026-08-09
+TPS00199,Total fertility rate,ok,sdmx,4,66,0,"",2026-08-09
+TPS00202,Suicide death rate by age group,ok,sdmx,7,62,0,"",2026-08-09
+TPS00203,Unemployment rate,ok,sdmx,6,60,0,"",2026-08-09
+TPS00204,Live births and crude birth rate,ok,sdmx,4,69,0,"",2026-08-09
+TPS00205,Life expectancy at birth by sex,ok,sdmx,6,69,0,"",2026-08-09
+TPS00206,Crude marriage rate,ok,sdmx,4,68,0,"",2026-08-09
+TPS00207,Total health care expenditure,ok,sdmx,5,66,0,"",2026-08-09
+TPS00208,Life expectancy at birth by sex,ok,sdmx,6,58,0,"",2026-08-09
+TPS00214,Long-term care (health) expenditure,ok,sdmx,5,66,0,"",2026-08-09
+TPS00215,Exposure of VET graduates to work-based learning,ok,sdmx,10,57,0,"",2026-08-09
+TPS00216,Crude divorce rate,ok,sdmx,4,67,0,"",2026-08-09
+TPS00217,Female tertiary education graduates in STEM education fields - % of all tertiary education graduates in STEM education fields,ok,sdmx,7,60,0,"",2026-08-09
+TQOE1C2,Employed women being in managerial positions by age,ok,sdmx,8,82,0,"",2026-08-09
+TQOE3A5,Employed persons having more than one job by sex,ok,sdmx,8,62,0,"",2026-08-09
+TQOE3B4,Employees with a flexible work schedule by sex,ok,sdmx,10,53,0,"",2026-08-09
+TQOE4A3,Employed persons being self-employed without employees by sex,ok,sdmx,8,62,0,"",2026-08-09
+TRAN_HV_FRMOD,Modal split of inland freight transport,ok,sdmx,5,57,0,"",2026-08-09
+TRAN_HV_FRTRA,Volume of freight transport relative to GDP,ok,sdmx,4,52,0,"",2026-08-09
+TRAN_HV_MS_FRMOD,"Modal split of air, sea and inland freight transport",ok,sdmx,5,54,0,"",2026-08-09
+TRAN_HV_MS_FRMOD6,"Modal split of air, sea, inland and oil pipeline freight transport",ok,sdmx,5,55,0,"",2026-08-09
+TRAN_HV_MS_PSMOD,"Modal split of air, sea and inland passenger transport",ok,sdmx,5,54,0,"",2026-08-09
+TRAN_HV_PSMOD,Modal split of inland passenger transport,ok,sdmx,5,78,0,"",2026-08-09
+TRAN_HV_PSTRA,Volume of passenger transport relative to GDP,ok,sdmx,4,73,0,"",2026-08-09
+TRAN_IM_MOSP,Modal shift potential of long-distance road freight in containers - tonne-kilometre,ok,sdmx,4,47,0,"",2026-08-09
+TRAN_IM_MOSPT,Modal shift potential of long-distance road freight in containers - tonne,ok,sdmx,4,47,0,"",2026-08-09
+TRAN_IM_UIWW,Unitisation in inland waterways freight transport - tonne-kilometre for gross-gross weight of goods,ok,sdmx,4,36,0,"",2026-08-09
+TRAN_IM_UMAR,Unitisation in maritime freight transport - tonnes for gross weight of goods,ok,sdmx,5,50,0,"",2026-08-09
+TRAN_IM_UMOD,Unitisation in the different modes of transport - tonne-kilometre for gross weight of goods,ok,sdmx,5,26,0,"",2026-08-09
+TRAN_IM_URAIL,Unitisation in rail freight transport- tonne-kilometre for gross-gross weight of goods,ok,sdmx,5,55,0,"",2026-08-09
+TRAN_IM_UROAD,Unitisation in road freight transport - tonne-kilometre for gross weight of goods,ok,sdmx,5,51,0,"",2026-08-09
+TRAN_R_ACCI,Victims in road accidents by NUTS 2 region,ok,sdmx,5,551,0,"",2026-08-09
+TRAN_R_AVGO_NM,Air transport of freight by NUTS 2 region,ok,sdmx,5,479,0,"",2026-08-09
+TRAN_R_AVGO_OM,Air transport of freight by NUTS 2 region - questionnaire (1978-2002),ok,sdmx,5,305,0,"",2026-08-09
+TRAN_R_AVPA_NM,Air transport of passengers by NUTS 2 region,ok,sdmx,5,489,0,"",2026-08-09
+TRAN_R_AVPA_OM,Air transport of passengers by NUTS 2 region - questionnaire (1978-2002),ok,sdmx,5,321,0,"",2026-08-09
+TRAN_R_ELVEHST,Stock of electric vehicles by category and NUTS 2 region,ok,sdmx,5,435,0,"",2026-08-09
+TRAN_R_MAGO_NM,Maritime transport of freight by NUTS 2 region,ok,sdmx,5,286,0,"",2026-08-09
+TRAN_R_MAGO_OM,Maritime transport of freight by NUTS 2 region - questionnaire (1978-2002),ok,sdmx,5,300,0,"",2026-08-09
+TRAN_R_MAPA_NM,Maritime transport of passengers by NUTS 2 region,ok,sdmx,5,295,0,"",2026-08-09
+TRAN_R_MAPA_OM,Maritime transport of passengers by NUTS 2 region - questionnaire (1978-2002),ok,sdmx,5,276,0,"",2026-08-09
+TRAN_R_NET,"Road, rail and navigable inland waterways networks by NUTS 2 region",ok,sdmx,5,596,0,"",2026-08-09
+TRAN_R_PTAREA,Share of area covered by public transport vs private car in a given time period by NUTS 3 region - experimental statistics,ok,sdmx,6,53,0,"",2026-08-09
+TRAN_R_PTLINE,Public transport lines by NUTS 3 region - experimental statistics,ok,sdmx,4,54,0,"",2026-08-09
+TRAN_R_PTPOP,Share of population reached by public transport vs private car in a given time period by NUTS 3 region - experimental statistics,ok,sdmx,6,53,0,"",2026-08-09
+TRAN_R_PTSTOP,Public transport stops by NUTS 3 region - experimental statistics,ok,sdmx,4,54,0,"",2026-08-09
+TRAN_R_RAGO,Railway transport - national and international railway goods transport by loading/unloading NUTS 2 region,ok,sdmx,6,928,0,"",2026-08-09
+TRAN_R_RAPA,Railway transport - national and international railway passengers transport by embarking/disembarking NUTS 2 region,ok,sdmx,6,907,0,"",2026-08-09
+TRAN_R_VEHST,Stock of vehicles by category and NUTS 2 region,ok,sdmx,5,564,0,"",2026-08-09
+TRAN_SF_AVIAAC,"Air accidents by type of aircraft operation, country of occurrence and country of registration of aircraft",ok,sdmx,8,93,0,"",2026-08-09
+TRAN_SF_AVIAAW,"Air accident victims in aerial works, by country of occurrence and country of registration of aircraft (2006-2023)",ok,sdmx,6,93,0,"",2026-08-09
+TRAN_SF_AVIACA,"Air accident victims in commercial air transport, by country of occurrence and country of registration of aircraft (1990-2023)",ok,sdmx,6,109,0,"",2026-08-09
+TRAN_SF_AVIAGAH,"Air accident victims in general aviation, by country of occurrence and country of registration of aircraft – MTOM > 2250 kg (1990-2023)",ok,sdmx,6,109,0,"",2026-08-09
+TRAN_SF_AVIAGAL,Air accident victims in general aviation by country of occurrence and country of registration of aircraft – MTOM > 2250 kg (1990-2023),ok,sdmx,6,93,0,"",2026-08-09
+TRAN_SF_AVIAVI,"Air accidents victims by type of aircraft operation, country of occurrence and country of registration of aircraft",ok,sdmx,8,94,0,"",2026-08-09
+TRAN_SF_MARV,Maritime accident victims by sea basin of occurrence and country of registration of vessels,ok,sdmx,6,30,0,"",2026-08-09
+TRAN_SF_MARVES,"Maritime accident victims by sea basin of occurrence, country of registration of vessels and type of vessels",ok,sdmx,7,40,0,"",2026-08-09
+TRAN_SF_MARVPER,"Maritime accident victims by sea basin of occurrence, country of registration of vessels and category of victims",ok,sdmx,7,34,0,"",2026-08-09
+TRAN_SF_RAILAC,Rail accidents by type of accident,ok,sdmx,5,62,0,"",2026-08-09
+TRAN_SF_RAILDG,Rail accidents involving the transport of dangerous goods,ok,sdmx,5,57,0,"",2026-08-09
+TRAN_SF_RAILSU,Suicides involving railways,ok,sdmx,4,51,0,"",2026-08-09
+TRAN_SF_RAILVI,Rail accidents victims by type of accident and category of persons involved,ok,sdmx,7,72,0,"",2026-08-09
+TRAN_SF_ROADNU,Road accidents by NUTS 3 region,ok,sdmx,4,2397,0,"",2026-08-09
+TRAN_SF_ROADRO,Persons killed in road accidents by type of road,ok,sdmx,5,67,0,"",2026-08-09
+TRAN_SF_ROADUS,"Persons killed in road accidents by age, sex and category of persons involved",ok,sdmx,7,80,0,"",2026-08-09
+TRAN_SF_ROADVE,Persons killed in road accidents by type of vehicle,ok,sdmx,5,90,0,"",2026-08-09
+TRNG_AES_100,Participation rate in education and training by sex,ok,sdmx,7,55,0,"",2026-08-09
+TRNG_AES_101,Participation rate in education and training by age,ok,sdmx,6,58,0,"",2026-08-09
+TRNG_AES_102,Participation rate in education and training by educational attainment level,ok,sdmx,7,58,0,"",2026-08-09
+TRNG_AES_103,Participation rate in education and training by labour status,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_104,Participation rate in education and training by occupation,ok,sdmx,7,57,0,"",2026-08-09
+TRNG_AES_105,Participation rate in education and training by degree of urbanisation,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_112,Participation rate in education and training by level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-08-09
+TRNG_AES_120,Participation rate in job-related non-formal education and training by type and sex,ok,sdmx,7,55,0,"",2026-08-09
+TRNG_AES_121,Participation rate in job-related non-formal education and training by type and age,ok,sdmx,6,58,0,"",2026-08-09
+TRNG_AES_122,Participation rate in job-related non-formal education and training by type and educational attainment level,ok,sdmx,7,58,0,"",2026-08-09
+TRNG_AES_123,Participation rate in job-related non-formal education and training by type and labour status,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_124,Participation rate in job-related non-formal education and training by type and occupation,ok,sdmx,7,57,0,"",2026-08-09
+TRNG_AES_125,Participation rate in job-related non-formal education and training by degree of urbanisation,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_126,Participation rate in job-related non-formal education and training by level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-08-09
+TRNG_AES_147,Average instruction hours spent on education and training by age,ok,sdmx,6,58,0,"",2026-08-09
+TRNG_AES_148,Average instruction hours spent on education and training by educational attainment level,ok,sdmx,7,58,0,"",2026-08-09
+TRNG_AES_149,Average instruction hours spent on education and training by labour status,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_150,Average instruction hours spent on education and training by occupation,ok,sdmx,7,57,0,"",2026-08-09
+TRNG_AES_151,Average instruction hours spent on education and training by sex,ok,sdmx,7,55,0,"",2026-08-09
+TRNG_AES_152,Average instruction hours spent on education and training by degree of urbanisation,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_153,Average instruction hours spent on education and training by level of disability (activity limitation),ok,sdmx,7,49,0,"",2026-08-09
+TRNG_AES_165,Distribution of education and training activities by field (ISCED-F 1999) (2007-2011),ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_166,Distribution of education and training activities by field (ISCED-F 2013),ok,sdmx,7,63,0,"",2026-08-09
+TRNG_AES_170,Distribution of non-formal education and training activities by provider,ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_173,Distribution of instruction hours by field (ISCED-F 1999) (2007-2011),ok,sdmx,7,56,0,"",2026-08-09
+TRNG_AES_174,Distribution of instruction hours by field (ISCED-F 2013),ok,sdmx,7,62,0,"",2026-08-09
+TRNG_AES_175,Persons who want to participate in education and training,ok,sdmx,6,54,0,"",2026-08-09
+TRNG_AES_176,Persons who want to participate in education and training but do not by reason and sex,ok,sdmx,7,68,0,"",2026-08-09
+TRNG_AES_177,Persons who want to participate in education and training but do not by reason and age,ok,sdmx,6,71,0,"",2026-08-09
+TRNG_AES_178,Persons who want to participate in education and training but do not by reason and educational attainment level,ok,sdmx,7,71,0,"",2026-08-09
+TRNG_AES_179,Persons who want to participate in education and training but do not by main reason and sex,ok,sdmx,7,64,0,"",2026-08-09
+TRNG_AES_180,Persons who want to participate in education and training but do not by main reason and age,ok,sdmx,6,67,0,"",2026-08-09
+TRNG_AES_181,Persons who want to participate in education and training but do not by main reason and educational attainment level,ok,sdmx,7,67,0,"",2026-08-09
+TRNG_AES_182,Persons searching for information on learning possibilities by type and sex,ok,sdmx,7,57,0,"",2026-08-09
+TRNG_AES_183,Persons searching for information on learning possibilities by type and age,ok,sdmx,6,60,0,"",2026-08-09
+TRNG_AES_184,Persons searching for information on learning possibilities by type and educational attainment level,ok,sdmx,7,60,0,"",2026-08-09
+TRNG_AES_186,Effect of the search for information on learning possibilities (2007-2011),ok,sdmx,6,43,0,"",2026-08-09
+TRNG_AES_187,Sources of information used for getting information on learning possibilities (2007-2011),ok,sdmx,7,47,0,"",2026-08-09
+TRNG_AES_188,Distribution of non-formal education and training activities by type and sex,ok,sdmx,7,58,0,"",2026-08-09
+TRNG_AES_189,Distribution of non-formal education and training activities by type and age,ok,sdmx,6,61,0,"",2026-08-09
+TRNG_AES_190,Distribution of non-formal education and training activities by type and educational attainment level,ok,sdmx,7,61,0,"",2026-08-09
+TRNG_AES_192,Persons who do not want to participate in education and training by main reason and sex,ok,sdmx,7,55,0,"",2026-08-09
+TRNG_AES_193,Persons who do not want to participate in education and training by main reason and age,ok,sdmx,6,58,0,"",2026-08-09
+TRNG_AES_194,Persons who do not want to participate in education and training by main reason and educational attainment level,ok,sdmx,7,58,0,"",2026-08-09
+TRNG_AES_195,Persons who do not participate in education or training by main reason and sex,ok,sdmx,7,57,0,"",2026-08-09
+TRNG_AES_196,Persons who do not participate in education or training by main reason and age,ok,sdmx,6,60,0,"",2026-08-09
+TRNG_AES_197,Persons who do not participate in education or training by main reason and educational attainment level,ok,sdmx,7,60,0,"",2026-08-09
+TRNG_AES_200,Participation rate in informal learning by source of learning and sex,ok,sdmx,8,58,0,"",2026-08-09
+TRNG_AES_201,Participation rate in informal learning by source of learning and age,ok,sdmx,7,61,0,"",2026-08-09
+TRNG_AES_202,Participation rate in informal learning by source of learning and educational attainment level,ok,sdmx,8,61,0,"",2026-08-09
+TRNG_AES_203,Participation rate in informal learning by source of learning and labour status,ok,sdmx,8,59,0,"",2026-08-09
+TRNG_AES_204,Participation rate in informal learning by source of learning and occupation,ok,sdmx,8,60,0,"",2026-08-09
+TRNG_AES_205,Participation rate in informal learning by source of learning and degree of urbanisation,ok,sdmx,8,59,0,"",2026-08-09
+TRNG_AES_206,Participation rate in informal learning by source of learning and level of disability (activity limitation),ok,sdmx,8,53,0,"",2026-08-09
+TRNG_ANY1,Participation in any learning activities by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-09
+TRNG_ANY2,Participation in any learning activities by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-09
+TRNG_ANY3,Participation in any learning activities by degree of urbanisation (2003),ok,sdmx,6,33,0,"",2026-08-09
+TRNG_ANY4,Participation in any learning activities by NACE Rev. 1.1 activity (2003),ok,sdmx,6,41,0,"",2026-08-09
+TRNG_ANY5,Participation in any learning activities by size of the local unit (2003),ok,sdmx,6,41,0,"",2026-08-09
+TRNG_ANY6,Participation in any learning activities by occupation (2003),ok,sdmx,6,42,0,"",2026-08-09
+TRNG_CVT_01N1,Enterprises providing training by type of training and NACE Rev. 1.1 activity - % of all enterprises (2005),ok,sdmx,6,50,0,"",2026-08-09
+TRNG_CVT_01N2,Enterprises providing training by type of training and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,6,55,0,"",2026-08-09
+TRNG_CVT_01S,Enterprises providing training by type of training and size class - % of all enterprises,ok,sdmx,6,54,0,"",2026-08-09
+TRNG_CVT_02N1,Enterprises not providing training by reason for non-provision and NACE Rev. 1.1 activity - % of non-training enterprises (2005),ok,sdmx,6,47,0,"",2026-08-09
+TRNG_CVT_02N2,Enterprises not providing training by reason for non-provision and NACE Rev. 2 activity - % of non-training enterprises,ok,sdmx,6,53,0,"",2026-08-09
+TRNG_CVT_02S,Enterprises not providing training by reason for non-provision and size class - % of non-training enterprises,ok,sdmx,6,52,0,"",2026-08-09
+TRNG_CVT_03N1,Enterprises providing training by factor limiting provision and NACE Rev. 1.1 activity - % of training enterprises (2005),ok,sdmx,6,45,0,"",2026-08-09
+TRNG_CVT_03N2,Enterprises providing training by factor limiting provision and NACE Rev. 2 activity - % of training enterprises,ok,sdmx,6,53,0,"",2026-08-09
+TRNG_CVT_03S,Enterprises providing training by factor limiting provision and size class - % of training enterprises,ok,sdmx,6,52,0,"",2026-08-09
+TRNG_CVT_04N1,"Enterprises providing training by participation intensity, type of training and NACE Rev. 1.1 activity - % of training enterprises (2005)",ok,sdmx,7,50,0,"",2026-08-09
+TRNG_CVT_04N2,"Enterprises providing training by participation intensity, type of training and NACE Rev. 2 activity - % of training enterprises",ok,sdmx,7,55,0,"",2026-08-09
+TRNG_CVT_04S,"Enterprises providing training by participation intensity, type of training and size class - % of training enterprises",ok,sdmx,7,54,0,"",2026-08-09
+TRNG_CVT_06N1,Enterprises providing training in previous year by type of training and NACE Rev. 1.1 activity - % of all enterprises (2005),ok,sdmx,6,43,0,"",2026-08-09
+TRNG_CVT_06N2,Enterprises providing training in previous year by type of training and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,6,48,0,"",2026-08-09
+TRNG_CVT_06S,Enterprises providing training in previous year by type of training and size class - % of all enterprises,ok,sdmx,6,47,0,"",2026-08-09
+TRNG_CVT_07N1,"Enterprises with CVT planning by type of planning, type of training provided and NACE Rev. 1.1 activity - % of all enterprises (2005)",ok,sdmx,7,49,0,"",2026-08-09
+TRNG_CVT_07N2,"Enterprises with CVT planning by type of planning, type of training provided and NACE Rev. 2 activity - % of all enterprises",ok,sdmx,7,56,0,"",2026-08-09
+TRNG_CVT_07S,"Enterprises with CVT planning by type of planning, type of training provided and size class - % of all enterprises",ok,sdmx,7,55,0,"",2026-08-09
+TRNG_CVT_08N1,"Enterprises with CVT agreement by type of agreement, type of training provided and NACE Rev. 1.1 activity - % of all enterprises (2005)",ok,sdmx,7,48,0,"",2026-08-09
+TRNG_CVT_08N2,"Enterprises with CVT agreement by type of agreement, type of training provided and NACE Rev. 2 activity - % of all enterprises",ok,sdmx,7,55,0,"",2026-08-09
+TRNG_CVT_08S,"Enterprises with CVT agreement by type of agreement, type of training provided and size class - % of all enterprises",ok,sdmx,7,54,0,"",2026-08-09
+TRNG_CVT_09N1,Enterprises with staff representatives involved in the management of CVT by type of involvement and NACE Rev. 1.1 activity - % of all enterprises (2005),ok,sdmx,6,44,0,"",2026-08-09
+TRNG_CVT_09N2,Enterprises with staff representatives involved in the management of CVT by type of involvement and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,6,51,0,"",2026-08-09
+TRNG_CVT_09S,Enterprises with staff representatives involved in the management of CVT by type of involvement and size class - % of all enterprises,ok,sdmx,6,50,0,"",2026-08-09
+TRNG_CVT_10N2,Main skills needed for the development of the enterprise by type of skill and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,6,57,0,"",2026-08-09
+TRNG_CVT_10S,Main skills needed for the development of the enterprise by type of skill and size class - % of all enterprises,ok,sdmx,6,55,0,"",2026-08-09
+TRNG_CVT_11N2,Usual reaction to future skill needs by type of reaction and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,6,48,0,"",2026-08-09
+TRNG_CVT_11S,Usual reaction to future skill needs by type of reaction and size class - % of all enterprises,ok,sdmx,6,46,0,"",2026-08-09
+TRNG_CVT_12N1,Participants in CVT courses by sex and NACE Rev. 1.1 activity - % of persons employed in all enterprises (2005),ok,sdmx,6,42,0,"",2026-08-09
+TRNG_CVT_12N2,Participants in CVT courses by sex and NACE Rev. 2 activity - % of persons employed in all enterprises,ok,sdmx,6,47,0,"",2026-08-09
+TRNG_CVT_12S,Participants in CVT courses by sex and size class - % of persons employed in all enterprises,ok,sdmx,6,46,0,"",2026-08-09
+TRNG_CVT_13N1,Participants in CVT courses by sex and NACE Rev. 1.1 activity - % of persons employed in enterprises providing CVT courses (2005),ok,sdmx,6,42,0,"",2026-08-09
+TRNG_CVT_13N2,Participants in CVT courses by sex and NACE Rev. 2 activity - % of persons employed in enterprises providing CVT courses,ok,sdmx,6,47,0,"",2026-08-09
+TRNG_CVT_13S,Participants in CVT courses by sex and size class - % of persons employed in enterprises providing CVT courses,ok,sdmx,6,46,0,"",2026-08-09
+TRNG_CVT_14N1,Participants in CVT courses by type of CVT planning and NACE Rev. 1.1 activity - % of persons employed in all enterprises (2005),ok,sdmx,6,44,0,"",2026-08-09
+TRNG_CVT_14N2,Participants in CVT courses by type of CVT planning and NACE Rev. 2 activity - % of persons employed in all enterprises,ok,sdmx,6,49,0,"",2026-08-09
+TRNG_CVT_14S,Participants in CVT courses by type of CVT planning and size class - % of persons employed in all enterprises,ok,sdmx,6,48,0,"",2026-08-09
+TRNG_CVT_15N1,Participants in CVT courses by type of CVT agreement and NACE Rev. 1.1 activity - % of persons employed in all enterprises (2005),ok,sdmx,6,43,0,"",2026-08-09
+TRNG_CVT_15N2,Participants in CVT courses by type of CVT agreement and NACE Rev. 2 activity - % of persons employed in all enterprises,ok,sdmx,6,48,0,"",2026-08-09
+TRNG_CVT_15S,Participants in CVT courses by type of CVT agreement and size class - % of persons employed in all enterprises,ok,sdmx,6,47,0,"",2026-08-09
+TRNG_CVT_16N1,Cost of CVT courses by type and NACE Rev. 1.1 activity - % of total labour cost of all enterprises (2005),ok,sdmx,6,42,0,"",2026-08-09
+TRNG_CVT_16N2,Cost of CVT courses by type and NACE Rev. 2 activity - % of total labour cost of all enterprises,ok,sdmx,6,48,0,"",2026-08-09

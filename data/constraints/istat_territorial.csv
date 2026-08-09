@@ -1944,41 +1944,65 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 533_957_DF_DCSC_RACLI_2,Retribuzione oraria per paese di nascita,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 533_957_DF_DCSC_RACLI_20,Titolo di studio - 2 digit,REF_AREA,nazionale,nazionale,1,2026-08-08
 533_957_DF_DCSC_RACLI_22,Regime orario- 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
+533_957_DF_DCSC_RACLI_23,Classe di dipendenti - 2 digit,REF_AREA,nazionale,nazionale,1,2026-08-09
 533_957_DF_DCSC_RACLI_24,Qualifica contrattuale - 2 digit,REF_AREA,nazionale,nazionale,1,2026-07-22
+533_957_DF_DCSC_RACLI_25,Giorni retribuiti - 2 digit,REF_AREA,nazionale,nazionale,1,2026-08-09
+533_957_DF_DCSC_RACLI_3,Titolo di studio,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-09
 533_957_DF_DCSC_RACLI_5,Retribuzione oraria per regime orario,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
+533_957_DF_DCSC_RACLI_6,Retribuzione oraria per classe di dipendenti,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-09
 533_957_DF_DCSC_RACLI_8,Sesso - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
 533_957_DF_DCSC_RACLI_9,Classe di età - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
+534_1037,Ore lavorate - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-08-09
 534_1037_DF_DCSC_ORE10_2_1,Monte ore lavorate (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_1037_DF_DCSC_ORE10_2_2,Ore lavorate per dipendente (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_3,Ore di straordinario e di Cig,REF_AREA,nazionale,nazionale,1,2026-08-09
 534_1037_DF_DCSC_ORE10_2_4,Monte ore lavorate (base 2010) - 10 e più dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
 534_1037_DF_DCSC_ORE10_2_5,Ore lavorate per dipendente (base 2010) - 10 e più dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1037_DF_DCSC_ORE10_2_6,Ore lavorate per dipendente (base 2005) - 10 e più dipendenti,REF_AREA,nazionale,nazionale,1,2026-08-09
 534_1037_DF_DCSC_ORE10_2_7,Monte ore lavorate (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_1037_DF_DCSC_ORE10_2_8,Ore lavorate per dipendente (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_1038,Posti vacanti - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-08-09
 534_1038_DF_DCSC_POSTIVAC_2_1,Posti vacanti - Imprese con dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_1,Ore lavorate per dipendente (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_49_DF_DCSC_GI_ORE_10,Ore di sciopero (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_49_DF_DCSC_GI_ORE_11,Ore lavorate per dipendente (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_12,Ore di straordinario e Cig (base 2005),REF_AREA,nazionale,nazionale,1,2026-08-09
+534_49_DF_DCSC_GI_ORE_13,Ore di sciopero (base 2005),REF_AREA,nazionale,nazionale,1,2026-08-09
+534_49_DF_DCSC_GI_ORE_15,Ore di straordinario e Cig (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-09
+534_49_DF_DCSC_GI_ORE_16,Ore di sciopero (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_49_DF_DCSC_GI_ORE_2,Ore di straordinario e Cig (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_3,Ore di sciopero (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_49_DF_DCSC_GI_ORE_4,Ore lavorate per dipendente - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_5,Ore di straordinario e Cig - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_49_DF_DCSC_GI_ORE_6,Ore lavorate per dipendente (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_49_DF_DCSC_GI_ORE_7,Ore lavorate per dipendente - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_49_DF_DCSC_GI_ORE_8,Ore di straordinario e Cig (base 2010),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_49_DF_DCSC_GI_ORE_9,Ore di straordinario e Cig - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_1,Dipendenti (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_10,Quota part time - Ateco 2 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_50_DF_DCSC_GI_OCC_11,Tassi di ingresso e di uscita (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_12,Tassi di ingresso e di uscita - Ateco 3 cifre (base 2010),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_13,Dipendenti (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_14,Quota part time (base 2005),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_15,Tassi di ingresso e di uscita (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_50_DF_DCSC_GI_OCC_16,Dipendenti (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_17,Quota part time (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_18,Tassi di ingresso e di uscita (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_2,Quota part time (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_3,Tassi di ingresso e di uscita (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_50_DF_DCSC_GI_OCC_5,Quota part time - Ateco 2 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-22
+534_50_DF_DCSC_GI_OCC_6,Tassi di ingresso e di uscita - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 534_50_DF_DCSC_GI_OCC_7,Dipendenti (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 534_50_DF_DCSC_GI_OCC_9,Quota part time (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-22
 535_194,Retribuzioni lorde - Imprese con almeno 500 dipendenti,REF_AREA,nazionale,nazionale,1,2026-07-22
+535_194_DF_DCSC_GI_RE_1,Dati grezzi (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-09
 535_194_DF_DCSC_GI_RE_10,Dati destagionalizzati (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
 535_194_DF_DCSC_GI_RE_3,Dati destagionalizzati (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
 535_194_DF_DCSC_GI_RE_4,Dati grezzi (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
 535_194_DF_DCSC_GI_RE_6,Dati destagionalizzati (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-23
 535_194_DF_DCSC_GI_RE_7,Dati grezzi (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
 535_194_DF_DCSC_GI_RE_8,Dati destagionalizzati (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-23
+536_193,Imprese con almeno 500 dipendenti,REF_AREA,nazionale,nazionale,1,2026-08-09
 536_193_DF_DCSC_GI_COS_1,Dati grezzi (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
 536_193_DF_DCSC_GI_COS_10,Dati destagionalizzati (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-23
 536_193_DF_DCSC_GI_COS_2,Dati grezzi - Ateco 3 cifre (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-23
@@ -2006,16 +2030,25 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 56_188_DF_DCIS_DOCENTI_1,Docenti universitari 2007-2011,REF_AREA,nazionale,nazionale,1,2026-07-23
 56_189,Indicatori sull'università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
 56_189_DF_INDUNIV_1,Indicatori sull' università,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
+56_77,Servizi per gli alunni con disabilità,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-09
+56_77_DF_DCIS_SANSCUOLE_1,Scuole per presenza di barriere architettoniche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-09
 56_77_DF_DCIS_SANSCUOLE_2,Scuole con alunni con disabilità e postazioni informatiche adattate,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-23
+56_858,Iscritti all'università,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-09
 56_858_DF_DCIS_ISCRITTI1_1,Iscritti,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-07-23
+56_858_DF_DCIS_ISCRITTI1_3,Iscritti per regione dell'ateneo e di residenza (2008-2010),RESIDENCE_TERR,regione,nazionale|ripartizione|regione,30,2026-08-09
 5_42,Conto trimestrale - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_42_DF_DCCN_FPQ_B19_1,Conto economico - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_42_DF_DCCN_FPQ_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815,Conto annuale - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-09
 5_815_DF_DCCN_FPA_B19_1,Conto economico per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_815_DF_DCCN_FPA_B19_2,Indicatori (in rapporto al PIL) - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_815_DF_DCCN_FPA_B19_3,Redditi e retribuzione pro capite per sottosettore -edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
 5_815_DF_DCCN_FPA_B19_4,Investimenti fissi lordi per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_815_DF_DCCN_FPA_B19_5,Imposte e contributi sociali per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-09
 5_815_DF_DCCN_FPA_B19_6,Formazione della spesa per consumi finali - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-07-23
+5_94,Uscite annuali per sottosettore - edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-09
+5_94_DF_DCCN_OTEPPA_B19_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre) -  edizioni ottobre 2019 - aprile 2024,REF_AREA,nazionale,nazionale,1,2026-08-09
+5_94_DF_DCCN_OTEPPA_B19_2,Voci di uscita per funzione (COFOG 2 e 3 cifre) - edizioni febbraio 2020 - dicembre 2023,REF_AREA,nazionale,nazionale,1,2026-08-09
 609_1,Ambiente urbano,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,258,2026-07-23
 609_1_DF_DCCV_URBANENV_1,Acqua - consumo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-23
 609_1_DF_DCCV_URBANENV_10,Energia - teleriscaldamento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,248,2026-07-23
@@ -2048,7 +2081,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 60_130_DF_DCCV_ICT_5,Attività svolte su internet - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
 60_130_DF_DCCV_ICT_7,Interazione con la PA - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
 60_130_DF_DCCV_ICT_9,Acquisti o ordini - reg. e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-07-23
+60_195,Musei ed istituzioni similari,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-09
+60_195_DF_DCIS_MUSVIS_1,Musei ed istituzioni similari - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-09
 60_195_DF_DCIS_MUSVIS_2,Appartenenza a circuito museale,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
+60_195_DF_DCIS_MUSVIS_3,Tipo di gestione e accesso gratuito,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-09
+60_195_DF_DCIS_MUSVIS_4,Periodo di apertura,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-09
+60_195_DF_DCIS_MUSVIS_5,Tipo di servizi e dotazioni,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-09
 60_3,Archivi di stato,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
 60_3_DF_DCIS_ARCHIVIST_1,Attività svolte,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
 60_3_DF_DCIS_ARCHIVIST_2,Superficie per destinazione di uso,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-23
@@ -2107,25 +2145,41 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 613_936_DF_DCCV_DIPL_RIC_1,Ricerca di lavoro e occupazione attuale,REF_AREA,provincia,provincia,1,2026-07-23
 613_936_DF_DCCV_DIPL_RIC_2,Ricerca di lavoro e regione di dimora abituale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,29,2026-07-23
 613_936_DF_DCCV_DIPL_RIC_3,"Occupazione, orario e luogo di lavoro desiderati",REF_AREA,provincia,provincia,1,2026-07-23
+61_69,Opere librarie pubblicate,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
+61_69_DF_DCIS_PUBBLICATE3_1,Opere librarie pubblicate - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
 61_69_DF_DCIS_PUBBLICATE3_2,Prezzo e copie stampate,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-23
+669_1073,Gettito delle imposte ambientali versione 2014,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1073_DF_DCCN_IMPAMB1_B14_1,Categoria di imposta - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1073_DF_DCCN_IMPAMB1_B14_2,Unità che corrisponde l'imposta - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
+669_1073_DF_DCCN_IMPAMB1_B14_3,Gettito corrisposto dalle attività produttive - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1073_DF_DCCN_IMPAMB1_B14_4,Classe CEPA - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1073_DF_DCCN_IMPAMB1_B14_5,Destinazione del gettito - edizioni dicembre 2014 - ottobre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1080,Emissioni atmosferiche NAMEA (NACE Rev. 2) versione 2014,REF_AREA,nazionale,nazionale,1,2026-08-09
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_1,Attività produttive - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_2,Famiglie - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1080_DF_DCCN_CONTIEMATMREV2_B14_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_4,Intensità della produzione e del valore aggiunto - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
+669_1080_DF_DCCN_CONTIEMATMREV2_B14_5,Intensità dell'occupazione - edizioni novembre 2014 - novembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1081,Conti dei flussi fisici di energia (PEFA) versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1081_DF_DCCN_PEFA_B14_1,"Risorse e impieghi, schema di sintesi - edizione dicembre 2018",REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1081_DF_DCCN_PEFA_B14_2,Risorse per attività e tipo di flusso - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1081_DF_DCCN_PEFA_B14_3,Impieghi per attività e tipo di flusso - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1081_DF_DCCN_PEFA_B14_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione) - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1081_DF_DCCN_PEFA_B14_5,Vettori di indicatori chiave sui flussi di energia - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1081_DF_DCCN_PEFA_B14_6,Tavola di raccordo: consumo di energia - edizione dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1113,Spese per la protezione dell'ambiente versione 2014,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1113_DF_DCCN_SPESAPROTAMB_B14_1,Spesa nazionale - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1113_DF_DCCN_SPESAPROTAMB_B14_2,Aggregati economici per settore istituzionale - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
+669_1113_DF_DCCN_SPESAPROTAMB_B14_3,Investimenti e produzione ausiliaria delle società come produttori ausiliari per attività economica - edizioni aprile 2018 e gennaio 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1116,Conti dei flussi di materia versione 2014,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1116_DF_DCCN_FLUMAT_B14_1,Indicatori aggregati - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-23
 669_1116_DF_DCCN_FLUMAT_B14_2,Estrazione interna di materiali utilizzati - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
 669_1116_DF_DCCN_FLUMAT_B14_3,Scambi con il resto del mondo - edizioni gennaio 2016 - febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+669_1119,Conti dei beni e servizi ambientali versione 2014,REF_AREA,nazionale,nazionale,1,2026-08-09
 669_1119_DF_DCCN_EGSS_B14_1,"Produzione, valore aggiunto, esportazioni - edizione febbraio 2019",REF_AREA,nazionale,nazionale,1,2026-07-24
 669_1119_DF_DCCN_EGSS_B14_2,Occupazione (unità di lavoro) - edizione febbraio 2019,REF_AREA,nazionale,nazionale,1,2026-07-24
+669_964,Gettito delle imposte ambientali,REF_AREA,nazionale,nazionale,1,2026-08-09
+669_967,Emissioni atmosferiche NAMEA (NACE Rev. 2) versione 2011,REF_AREA,nazionale,nazionale,1,2026-08-09
 68_1220,Viaggi e loro organizzazione,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
 68_1220_DF_DCCV_VIAGGI_ORG_1,Prenotazione dell'alloggio,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
 68_1220_DF_DCCV_VIAGGI_ORG_2,Prenotazione del trasporto,RESIDENCE_TERR,nazionale,nazionale,1,2026-07-24
@@ -2297,11 +2351,13 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 68_699_DF_DCCV_VIAGGI_RES_CAPI_6,Vacanze - residenza e mezzo di trasporto,RESIDENCE_TERR,ripartizione,nazionale|ripartizione,6,2026-07-24
 68_702,Viaggi e pernottamenti - Serie ricostruite 1997-2013,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,4,2026-07-24
 68_702_DF_DCCV_TUR_RIC_CAPI_2,Residenza - rip.,RESIDENCE_TERR,regione,nazionale|ripartizione|regione,4,2026-07-24
+6_1095_DF_DCCN_ISTITUZ_TNA1_B19_1,Reddito disponibile delle famiglie nelle regioni italiane - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
 6_20,Ricerca e Sviluppo,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-24
 6_20_DF_DCSP_RS_1,Spesa (% sul Pil),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_10,Addetti per titolo di studio,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_11,Addetti per disciplina scientifica,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_12,Addetti delle imprese per settore economico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_20_DF_DCSP_RS_13,Addetti - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
 6_20_DF_DCSP_RS_14,Spesa delle imprese per settore utilizzatore,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_15,Spesa in R&S intra-muros delle imprese per controllo societario,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_2,Stanziamenti delle amministrazioni centrali e locali,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2312,6 +2368,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_20_DF_DCSP_RS_7,Spesa - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 6_20_DF_DCSP_RS_8,Spesa delle imprese per classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_20_DF_DCSP_RS_9,Spesa delle imprese per settore economico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_379_DF_DCCN_OCCTSEC2010_B19_1,Occupazione regionale - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+6_379_DF_DCCN_OCCTSEC2010_B19_2,Occupazione provinciale - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-09
 6_379_DF_DCCN_OCCTSEC2010_B19_3,Tasso di irregolarità - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 6_379_DF_DCCN_OCCTSEC2010_B19_4,Popolazione media annua - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 6_382_DF_DCCN_SQCT_B19_1,Sequenza dei conti - edizioni gennaio 2020 - dicembre 2023,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
@@ -2336,6 +2394,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_39_DF_DCSP_ICT_7,Fatturazione elettronica,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_39_DF_DCSP_ICT_8,Cloud Computing,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_39_DF_DCSP_ICT_9,Analisi di dati e Big Data,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471,Innovazione nelle imprese con almeno 10 addetti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
 6_471_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2344,13 +2403,27 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_471_DF_DCSP_LACIS_14,Implementazione dell'attività innovativa di prodotto e/o processo e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_15,Implementazione dell'attività innovativa di prodotto e/o processo e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_16,Tipo di finanziamento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_17,Tipo di finaziamento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_19,Tipo di innovazione di prodotto/processo introdotta e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_24,Tipo di spesa per l'innovazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_25,Tipo di spesa per l'innovazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_26,Localizzazione del partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_27,Localizzazione del partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_29,Tipo di partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_3,Tipo di attività innovativa e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_30,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_DF_DCSP_LACIS_31,Approfondimenti sui dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
+6_471_DF_DCSP_LACIS_32,Strategie aziendali e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_33,Strategie aziendali e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_34,Tipi di prodotti e servizi venduti e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_35,Tipi di prodotti e servizi venduti e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_36,Forme di tutela della proprietà industriale e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_DF_DCSP_LACIS_37,Forme di tutela della proprietà industriale e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_38,"Tecnologia, servizi tecnici e conoscenze acquisite e classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_39,"Tecnologia, servizi tecnici e conoscenze acquisite e settori economici (Ateco 2 cifre)",REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_DF_DCSP_LACIS_67,Benefici ambientali (Ateco 2 cifre),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 6_471_DF_DCSP_LACIS_68,Benefici ambientali e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_69,Fattori ambientali (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2358,6 +2431,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_471_DF_DCSP_LACIS_71,Conseguenze dell'emergenza sanitaria COVID-19 e classe di addetti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 6_471_DF_DCSP_LACIS_72,Conseguenze dell'emergenza sanitaria COVID-19 (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_DF_DCSP_LACIS_73,Conseguenze dell'emergenza sanitaria COVID-19 su spese per innovazione e fatturato e classe di addetti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_DF_DCSP_LACIS_74,Conseguenze dell'emergenza sanitaria COVID-19 su spese per innovazione e fatturato (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_75,Cambiamento climatico e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_DF_DCSP_LACIS_76,Cambiamento climatico (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_1,Innovazione nelle imprese con almeno 10 addetti - Serie storica - fino al 2020 - Principali dati,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_10,Mercato di riferimento e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_11,Mercato di riferimento e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2370,8 +2446,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_471_TS_DF_DCSP_LACIS_18,Tipo di innovazione di prodotto/processo introdotta e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_19,Tipo di innovazione di prodotto/processo introdotta e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_2,Tipo di attività innovativa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_20,Metodi di sviluppo dell'innovazione di prodotto/processo e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_21,Metodi di sviluppo dell'innovazione di prodotto/processo e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_22,Fatturato derivante da nuovi prodotti e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_23,Fatturato derivante da nuovi prodotti e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_24,Tipo di spesa per l'innovazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_25,Tipo di spesa per l'innovazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_26,Localizzazione del partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_27,Localizzazione del partner della cooperazione e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_28,Tipo di partner della cooperazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2379,9 +2459,19 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 6_471_TS_DF_DCSP_LACIS_3,Tipo di attività innovativa e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_30,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 6_471_TS_DF_DCSP_LACIS_31,Approfondimenti sui dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+6_471_TS_DF_DCSP_LACIS_32,Strategie aziendali e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_33,Strategie aziendali e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_34,Tipi di prodotti e servizi venduti e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_35,Tipi di prodotti e servizi venduti e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_36,Forme di tutela della proprietà industriale e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_37,Forme di tutela della proprietà industriale e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_38,"Tecnologia, servizi tecnici e conoscenze acquisite e classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_39,"Tecnologia, servizi tecnici e conoscenze acquisite e settori economici (Ateco 2 cifre)",REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_4,Età dell'impresa e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_40,Pratiche di organizzazione del lavoro e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-08-09
+6_471_TS_DF_DCSP_LACIS_41,Pratiche di organizzazione del lavoro e settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_5,Età dell'impresa e classe di addetti e settori economici (Ateco 2 digit),REF_AREA,nazionale,nazionale,1,2026-07-25
+6_471_TS_DF_DCSP_LACIS_6,Impatto degli interventi legislativo-normativi e settori economici (Ateco 2 digit),REF_AREA,nazionale,nazionale,1,2026-08-09
 6_471_TS_DF_DCSP_LACIS_7,Impatto degli interventi legislativo-normativi e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_8,Fattori che hanno scoraggiato attività di innovazione e settori economici (Ateco 2 digit),REF_AREA,nazionale,nazionale,1,2026-07-25
 6_471_TS_DF_DCSP_LACIS_9,Fattori che hanno scoraggiato attività di innovazione e classe di addetti,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2452,10 +2542,16 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 730_1006_DF_DCCN_SQCN_B14_1,Sequenza dei conti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1047,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1047_DF_DCCN_PILN_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048,Principali aggregati annnuali di contabilità nazionale - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
+730_1048_DF_DCCN_ANA_B14_1,Produzione e valore aggiunto per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 730_1048_DF_DCCN_ANA_B14_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1048_DF_DCCN_ANA_B14_3,Imposte e contributi alla produzione per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1048_DF_DCCN_ANA_B14_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
+730_1048_DF_DCCN_ANA_B14_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 730_1048_DF_DCCN_ANA_B14_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1048_DF_DCCN_ANA_B14_7,Valori pro capite - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+730_1049,"Occupazione regolare, irregolare e popolazione - edizioni ottobre 2014 - aprile 2019",REF_AREA,nazionale,nazionale,1,2026-08-09
+730_1049_DF_DCCN_OCCNSEC2010_B14_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate - edizioni ottobre 2014 - aprile 2019",REF_AREA,nazionale,nazionale,1,2026-08-09
 730_1049_DF_DCCN_OCCNSEC2010_B14_2,Tassi di irregolarità - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 730_1049_DF_DCCN_OCCNSEC2010_B14_3,Popolazione media annua - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 732_1051,Conto economico delle risorse e degli impieghi  e contributi alla crescita del Pil - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2464,12 +2560,20 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 732_1051_DF_DCCN_SQCQ_B14_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni maggio 2016 - luglio 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 732_1052,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 732_1052_DF_DCCN_PILQ_B14_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1053,Principali aggregati trimestrali di Contabilità Nazionale - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
+732_1053_DF_DCCN_QNA_B14_1,Valore aggiunto per branca di attività - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 732_1053_DF_DCCN_QNA_B14_2,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 732_1053_DF_DCCN_QNA_B14_3,Spesa per i consumi finali delle famiglie - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1053_DF_DCCN_QNA_B14_4,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
+732_1053_DF_DCCN_QNA_B14_5,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 732_1053_DF_DCCN_QNA_B14_6,Costi e margini per branca di attività - edizioni dicembre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+732_1054,Occupazione per branca di attività - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
+732_1054_DF_DCCN_OCCQSEC2010_B14_1,Occupazione per branca di attività - edizioni ottobre 2014 - agosto 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 733_1055,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale - edizioni ottobre 2015 - aprile 2019",REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1055_DF_DCCN_ISTITUZ_ANA_B14_1,Sequenza dei conti - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 733_1055_DF_DCCN_ISTITUZ_ANA_B14_2,Indicatori su famiglie consumatrici e società non finanziarie - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 733_1055_DF_DCCN_ISTITUZ_ANA_B14_3,Stock di attività non finanziarie - edizioni marzo 2015 - dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-07-25
+733_1056,Occupazione per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 733_1056_DF_DCCN_OCCSISEC2010_B14_1,Occupazione per branca di attività - edizioni ottobre 2014 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 733_1056_DF_DCCN_OCCSISEC2010_B14_2,Occupazione per sottosettore - edizioni ottobre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 734_1059,Conto trimestrale - edizioni gennaio 2016 - giugno 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
@@ -2482,14 +2586,27 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 734_1060_DF_DCCN_FPA_B14_4,Investimenti fissi lordi per sottosettore - edizioni maggio 2016 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 734_1060_DF_DCCN_FPA_B14_5,Imposte e contributi sociali per sottosettore - edizioni aprile 2017 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
 734_1060_DF_DCCN_FPA_B14_6,Formazione della spesa per consumi finali - edizioni aprile 2017 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1061,Uscite annuali per sottosettore - edizioni fino ad aprile 2019,REF_AREA,nazionale,nazionale,1,2026-08-09
 734_1061_DF_DCCN_OTEPPA_B14_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre) - edizioni dicembre 2015 - aprile 2019,REF_AREA,nazionale,nazionale,1,2026-07-25
+734_1061_DF_DCCN_OTEPPA_B14_2,Voci di uscita per funzione (COFOG 2 e 3 cifre) - edizioni dicembre 2015 - dicembre 2018,REF_AREA,nazionale,nazionale,1,2026-08-09
 737_1082,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 737_1082_DF_DCCN_SQCT_B14_1,Sequenza dei conti - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 737_1083,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 737_1083_DF_DCCN_PILT_B14_1,Prodotto interno lordo lato produzione - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1084,Principali aggregati territoriali di Contabilità nazionale - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-09
+737_1084_DF_DCCN_TNA_B14_1,Valore aggiunto per branca di attività - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-09
+737_1084_DF_DCCN_TNA_B14_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+737_1084_DF_DCCN_TNA_B14_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+737_1084_DF_DCCN_TNA_B14_4,Spesa per consumi finali della Pa per funzione di spesa - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+737_1084_DF_DCCN_TNA_B14_5,Investimenti fissi lordi per branca proprietaria - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
 737_1084_DF_DCCN_TNA_B14_6,Valori pro capite - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-07-25
+737_1087,"Occupazione regolare, irregolare e popolazione - edizioni ottobre 2014 - dicembre 2018",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-09
+737_1087_DF_DCCN_OCCTSEC2010_B14_1,Occupazione regionale - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+737_1087_DF_DCCN_OCCTSEC2010_B14_2,Occupazione provinciale - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-09
 737_1087_DF_DCCN_OCCTSEC2010_B14_3,Tasso di irregolarità - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
 737_1087_DF_DCCN_OCCTSEC2010_B14_4,Popolazione media annua - edizioni ottobre 2014 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-07-25
+737_1093,Reddito disponibile delle famiglie nelle regioni italiane - edizioni novembre 2015 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
+737_1093_DF_DCCN_ISTITUZ_TNA_B14_1,Reddito disponibile delle famiglie nelle regioni italiane - edizioni novembre 2015 - dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,32,2026-08-09
 73_1187,Altri delitti denunciati dalle forze di polizia all'autorità giudiziaria,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_1187_DF_DCCV_ALTRIDELPS_1,In totale e per centomila abitanti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_1187_DF_DCCV_ALTRIDELPS_2,Per mese del commesso delitto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
@@ -2502,12 +2619,60 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 73_173_DF_DCCV_DETENUTI_4,Provenienza geografica,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 73_173_DF_DCCV_DETENUTI_5,Posizione giuridica,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
 73_173_DF_DCCV_DETENUTI_6,Capienza delle strutture e detenuti ogni 100 posti,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_230,Autori e vittime dei delitti denunciati dalle forze di polizia all' autorità giudiziaria,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-09
+73_230_DF_DCCV_AUTVITTPS_1,"Sesso, età, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_230_DF_DCCV_AUTVITTPS_2,Stranieri - paesi di cittadinanza,REF_AREA,nazionale,nazionale,1,2026-08-09
+73_230_DF_DCCV_AUTVITTPS_3,"Sesso, età - reg.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-09
 73_230_DF_DCCV_AUTVITTPS_4,Cittadinanza - reg.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_230_DF_DCCV_AUTVITTPS_5,"Delitti violenti, sesso, età, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-07-25
 73_230_DF_DCCV_AUTVITTPS_6,"Delitti violenti, sesso, età - reg.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
+73_230_DF_DCCV_AUTVITTPS_7,"Autori di delitto - sesso, età, cittadinanza - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-09
+73_230_DF_DCCV_AUTVITTPS_8,"Vittime di delitto - sesso, età, cittadinanza - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-09
 73_342,Segnalazioni relative a persone denunciate e arrestate o fermate dalle forze di polizia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_342_DF_DCCV_SEGNALAZPS_1,Segnalazioni in totale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-25
 73_342_DF_DCCV_SEGNALAZPS_2,Segnalazioni relative a minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-25
+73_436,Procedimenti e reati al momento della decisione del PM - minori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_1,"Procedimenti e reati, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_10,"Dettaglio reati, identità autore, mese di accadimento",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_11,"Dettaglio reati, intervallo medio e mediano tra iscrizione e definizione del procedimento",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_12,"Procedimenti in totale, dettaglio reati, tipo di decisione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_13,"Reati violenti, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_14,"Reati violenti, distretto corte d'appello, mese di definizione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_15,"Reati violenti, mese di definizione, numero autori",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_16,"Reati violenti, delitti concorrenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_17,"Reati violenti, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_18,"Reati violenti, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_19,"Reati violenti dopo la decisione del PM, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_2,Procedimenti e reati al momento della decisione del PM - minori - Principali dati,REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_20,"Reati violenti, autore ignoto, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_21,"Reati violenti, identità autore, mese di accadimento",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_22,"Reati violenti, tipo di decisione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_3,"Procedimenti, Distretto corte d'Appello, mese di definizione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_4,"Procedimenti, mese di definizione, numero autori",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_5,"Procedimenti, delitti concorrenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_6,"Procedimenti, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_7,"Procedimenti, dettaglio reati, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_8,"Reati, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_436_DF_DCCV_PROCEEDCRIME_M_9,"Reati, autore ignoto, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_10,"Dettaglio reati, identità autore, mese di accadimento",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_11,"Dettaglio reati, intervallo medio e mediano tra iscrizione e definizione del procedimento",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_12,"Procedimenti in totale, dettaglio reati, tipo di decisione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_13,"Dettaglio reati, identità autore, definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_15,"Reati violenti, distretto corte d'appello, mese di definizione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_16,"Reati violenti, mese di definizione, numero autori",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_17,"Reati violenti, delitti concorrenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_18,"Reati violenti, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_19,"Reati violenti, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_20,"Reati violenti dopo la decisione del PM, intervallo tra iscrizione e definizione del reato",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_21,"Reati violenti, autore ignoto, tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_22,"Reati violenti, identità autore, mese di accadimento",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_23,"Reati violenti, tipo di decisione",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_24,"Reati violenti, identità autore, definizione del reato - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_5,"Procedimenti, delitti concorrenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_6,"Procedimenti, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440_DF_DCCV_PROCEEDCRIME_A_9,"Reati, autore ignoto, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_58,Condannati con sentenza irrevocabile - Caratteristiche delle sentenze,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-09
+73_58_DF_DCCV_CONDCRIM1_1,"Reati, natura del reato",REF_AREA,nazionale,nazionale,1,2026-08-09
 73_59_DF_DCCV_CONDGEO1_4,"Reati, ufficio giudiziario - Minori",REF_AREA,nazionale,nazionale,1,2026-07-26
 73_67_DF_DCCV_DELITTIPS_1,Tipo di reato,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-07-26
 73_67_DF_DCCV_DELITTIPS_2,"Tipo, identità dell'autore, commessi durante l'anno - grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
