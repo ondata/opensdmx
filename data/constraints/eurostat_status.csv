@@ -8306,3 +8306,348 @@ TRNG_CVT_15N2,Participants in CVT courses by type of CVT agreement and NACE Rev.
 TRNG_CVT_15S,Participants in CVT courses by type of CVT agreement and size class - % of persons employed in all enterprises,ok,sdmx,6,47,0,"",2026-08-09
 TRNG_CVT_16N1,Cost of CVT courses by type and NACE Rev. 1.1 activity - % of total labour cost of all enterprises (2005),ok,sdmx,6,42,0,"",2026-08-09
 TRNG_CVT_16N2,Cost of CVT courses by type and NACE Rev. 2 activity - % of total labour cost of all enterprises,ok,sdmx,6,48,0,"",2026-08-09
+TRNG_CVT_16S,Cost of CVT courses by type and size class - % of total labour cost of all enterprises,ok,sdmx,6,47,0,"",2026-08-10
+TRNG_CVT_17N1,Cost of CVT courses by type and NACE Rev 1.1 activity - per person employed in all enterprises (2005),ok,sdmx,6,44,0,"",2026-08-10
+TRNG_CVT_17N2,Cost of CVT courses by type and NACE Rev. 2 activity - per person employed in all enterprises,ok,sdmx,6,50,0,"",2026-08-10
+TRNG_CVT_17S,Cost of CVT courses by type and size class - per person employed in all enterprises,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_18N1,Cost of CVT courses by type and NACE Rev 1.1 activity - per person employed in enterprises providing CVT courses (2005),ok,sdmx,6,44,0,"",2026-08-10
+TRNG_CVT_18N2,Cost of CVT courses by type and NACE Rev. 2 activity - per person employed in enterprises providing CVT courses,ok,sdmx,6,50,0,"",2026-08-10
+TRNG_CVT_18S,Cost of CVT courses by type and size class - per person employed in enterprises providing CVT courses,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_19N1,Cost of CVT courses by type and NACE Rev. 1.1 activity - per participant (2005),ok,sdmx,6,44,0,"",2026-08-10
+TRNG_CVT_19N2,Cost of CVT courses by type and NACE Rev. 2 activity - per participant,ok,sdmx,6,50,0,"",2026-08-10
+TRNG_CVT_19S,Cost of CVT courses by type and size class - per participant,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_20N1,Cost of CVT courses by type and NACE Rev. 1.1 activity - per training hour (2005),ok,sdmx,6,44,0,"",2026-08-10
+TRNG_CVT_20N2,Cost of CVT courses by type and NACE Rev. 2 activity - per training hour,ok,sdmx,6,50,0,"",2026-08-10
+TRNG_CVT_20S,Cost of CVT courses by type and size class - per training hour,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_21N1,Hours spent in CVT courses by NACE Rev. 1.1 activity - per thousand hours worked in all enterprises (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_21N2,Hours spent in CVT courses by NACE Rev. 2 activity - per thousand hours worked in all enterprises,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_21S,Hours spent in CVT courses by size class - per thousand hours worked in all enterprises,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_22N1,Hours spent in CVT courses by NACE Rev. 1.1 activity - per thousand hours worked in enterprises providing CVT courses (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_22N2,Hours spent in CVT courses by NACE Rev. 2 activity - per thousand hours worked in enterprises providing CVT courses,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_22S,Hours spent in CVT courses by size class - per thousand hours worked in enterprises providing CVT courses,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_23N1,Hours spent in CVT courses by NACE Rev. 1.1 activity - per person employed in all enterprises (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_23N2,Hours spent in CVT courses by NACE Rev. 2 activity - per person employed in all enterprises,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_23S,Hours spent in CVT courses by size class - per person employed in all enterprises,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_24N1,Hours spent in CVT courses by NACE Rev. 1.1 activity - per person employed in enterprises providing CVT courses (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_24N2,Hours spent in CVT courses by NACE Rev. 2 activity - per person employed in enterprises providing CVT courses,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_24S,Hours spent in CVT courses by size class - per person employed in enterprises providing CVT courses,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_25N1,Hours spent in CVT courses by NACE Rev. 1.1 activity - per participant (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_25N2,Hours spent in CVT courses by NACE Rev. 2 activity - per participant,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_25S,Hours spent in CVT courses by size class - per participant,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_26N1,Hours spent in CVT courses by type of course and NACE Rev. 1.1 activity - % of total hours spent in CVT courses (2005),ok,sdmx,6,41,0,"",2026-08-10
+TRNG_CVT_26N2,Hours spent in CVT courses by type of course and NACE Rev. 2 activity - % of total hours spent in CVT courses,ok,sdmx,6,47,0,"",2026-08-10
+TRNG_CVT_26S,Hours spent in CVT courses by type of course and size class - % of total hours spent in CVT courses,ok,sdmx,6,46,0,"",2026-08-10
+TRNG_CVT_27N1,Hours spent in CVT courses by type of CVT planning and NACE Rev. 1.1 activity - per person employed in all enterprises (2005),ok,sdmx,6,44,0,"",2026-08-10
+TRNG_CVT_27N2,Hours spent in CVT courses by type of CVT planning and NACE Rev. 2 activity - per person employed in all enterprises,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_27S,Hours spent in CVT courses by type of CVT planning and size class - per person employed in all enterprises,ok,sdmx,6,48,0,"",2026-08-10
+TRNG_CVT_28N1,Hours spent in CVT courses by type of CVT agreement and NACE Rev. 1.1 activity - per person employed in all enterprises (2005),ok,sdmx,6,43,0,"",2026-08-10
+TRNG_CVT_28N2,Hours spent in CVT courses by type of CVT agreement and NACE Rev. 2 activity - per person employed in all enterprises,ok,sdmx,6,48,0,"",2026-08-10
+TRNG_CVT_28S,Hours spent in CVT courses by type of CVT agreement and size class - per person employed in all enterprises,ok,sdmx,6,47,0,"",2026-08-10
+TRNG_CVT_29N2,Main skills targeted by CVT courses by type of skill and NACE Rev. 2 activity - % of enterprises providing CVT courses,ok,sdmx,6,56,0,"",2026-08-10
+TRNG_CVT_29S,Main skills targeted by CVT courses by type of skill and size class - % of enterprises providing CVT courses,ok,sdmx,6,54,0,"",2026-08-10
+TRNG_CVT_30N2,Main providers used for external CVT courses by type of provider and NACE Rev. 2 activity - % of enterprises providing external CVT courses,ok,sdmx,6,51,0,"",2026-08-10
+TRNG_CVT_30S,Main providers used for external CVT courses by type of provider and size class - % of enterprises providing external CVT courses,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_31N2,Enterprises which assess the outcomes of CVT activities by type of training provided and NACE Rev. 2 activity - % of training enterprises,ok,sdmx,6,47,0,"",2026-08-10
+TRNG_CVT_31S,Enterprises which assess the outcomes of CVT activities by type of training provided and size class - % of training enterprises,ok,sdmx,6,45,0,"",2026-08-10
+TRNG_CVT_32N1,Enterprises which assess the outcomes of CVT activities by assessment method and NACE Rev. 1.1 activity - % of training enterprises (2005),ok,sdmx,6,43,0,"",2026-08-10
+TRNG_CVT_32N2,Enterprises which assess the outcomes of CVT activities by assessment method and NACE Rev. 2 activity - % of training enterprises,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_32S,Enterprises which assess the outcomes of CVT activities by assessment method and size class - % of training enterprises,ok,sdmx,6,48,0,"",2026-08-10
+TRNG_CVT_33N1,Enterprises which assess their future skill needs by type of training provided and NACE Rev. 1.1 activity - % of all enterprises (2005),ok,sdmx,7,48,0,"",2026-08-10
+TRNG_CVT_33N2,Enterprises which assess their future skill needs by type of training provided and NACE Rev. 2 activity - % of all enterprises,ok,sdmx,7,55,0,"",2026-08-10
+TRNG_CVT_33S,Enterprises which assess their future skill needs by type of training provided and size class - % of all enterprises,ok,sdmx,7,54,0,"",2026-08-10
+TRNG_CVT_34N1,Enterprises employing IVT participants by NACE Rev. 1.1 activity - % of all enterprises (2005),ok,sdmx,5,39,0,"",2026-08-10
+TRNG_CVT_34N2,Enterprises employing IVT participants by NACE Rev. 2 activity - % of all enterprises,ok,sdmx,5,44,0,"",2026-08-10
+TRNG_CVT_34S,Enterprises employing IVT participants by size class - % of all enterprises,ok,sdmx,5,43,0,"",2026-08-10
+TRNG_CVT_35N2,Enterprises employing IVT participants by reason and NACE Rev. 2 activity - % of enterprises employing IVT participants,ok,sdmx,6,49,0,"",2026-08-10
+TRNG_CVT_35S,Enterprises employing IVT participants by reason and size class - % of enterprises employing IVT participants,ok,sdmx,6,47,0,"",2026-08-10
+TRNG_FED1,Participation in formal education by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_FED2,Participation in formal education by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_FED3,Participation in formal education by degree of urbanisation (2003),ok,sdmx,6,33,0,"",2026-08-10
+TRNG_FED6,Participation in formal education by sex and labour status (2003),ok,sdmx,7,44,0,"",2026-08-10
+TRNG_FED8,Fields of study in formal education by sex and labour status (2003),ok,sdmx,7,55,0,"",2026-08-10
+TRNG_INF1,Participation in informal learning by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF10,Participants studying in libraries or learning centres by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF11,Participants studying in libraries or learning centres by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF2,Participation in informal learning by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF3,Participation in informal learning by degree of urbanisation (2003),ok,sdmx,6,33,0,"",2026-08-10
+TRNG_INF4,Self-studying (with printed materials) participants by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF5,Self-studying (with printed materials) participants by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF6,Computer based learning participants by sex and age (2003),ok,sdmx,7,44,0,"",2026-08-10
+TRNG_INF7,Computer based learning participants by educational attainment level and labour status (2003),ok,sdmx,7,44,0,"",2026-08-10
+TRNG_INF8,Participants studying by making use of educational broadcasting by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_INF9,Participants studying by making use of educational broadcasting by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_LFSE_01,Participation rate in education and training (last 4 weeks),ok,sdmx,6,97,0,"",2026-08-10
+TRNG_LFSE_01$DV_1801,Participation rate in education and training (last 4 weeks),error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TRNG_LFSE_01$DV_1801'
+For more information check: https://developer.",2026-08-10
+TRNG_LFSE_02,Participation rate in education and training (last 4 weeks) by labour status,ok,sdmx,7,96,0,"",2026-08-10
+TRNG_LFSE_03,Participation rate in education and training (last 4 weeks) by educational attainment level,ok,sdmx,7,88,0,"",2026-08-10
+TRNG_LFSE_03$DV_3301,Participation rate in education and training (last 4 weeks) by educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TRNG_LFSE_03$DV_3301'
+For more information check: https://developer.",2026-08-10
+TRNG_LFSE_04,Participation rate in education and training (last 4 weeks) by NUTS 2 region,ok,sdmx,6,545,0,"",2026-08-10
+TRNG_LFS_04,Participation rate of employees in education and training (last 4 weeks) by occupation,ok,sdmx,7,88,0,"",2026-08-10
+TRNG_LFS_05,Participation rate of employees in education and training (last 4 weeks) by employment contract,ok,sdmx,7,80,0,"",2026-08-10
+TRNG_LFS_06,Participation rate of employees in education and training (last 4 weeks) by full-time/part-time employment,ok,sdmx,7,80,0,"",2026-08-10
+TRNG_LFS_07,Participation rate of employees in education and training (last 4 weeks) by size of the local unit,ok,sdmx,7,88,0,"",2026-08-10
+TRNG_LFS_08A,Participation rate of employees in education and training (last 4 weeks) by NACE Rev. 1.1 activity (2004-2008),ok,sdmx,7,82,0,"",2026-08-10
+TRNG_LFS_08B,Participation rate of employees in education and training (last 4 weeks) by NACE Rev. 2 activity (2008-2026),ok,sdmx,7,95,0,"",2026-08-10
+TRNG_LFS_09,Participation rate in education and training (last 4 weeks) by type of training,ok,sdmx,7,94,0,"",2026-08-10
+TRNG_LFS_10,Participation rate in education and training (last 4 weeks) by type of training and educational attainment level,ok,sdmx,8,102,0,"",2026-08-10
+TRNG_LFS_11,Participation rate in education and training (last 4 weeks) by type of training and labour status,ok,sdmx,8,101,0,"",2026-08-10
+TRNG_LFS_12,Participation rate in education and training (last 4 weeks) by citizenship,ok,sdmx,7,83,0,"",2026-08-10
+TRNG_LFS_12$DV_1803,Participation rate in education and training (last 4 weeks) by citizenship,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TRNG_LFS_12$DV_1803'
+For more information check: https://developer.m",2026-08-10
+TRNG_LFS_13,Participation rate in education and training (last 4 weeks) by country of birth,ok,sdmx,7,82,0,"",2026-08-10
+TRNG_LFS_13$DV_1804,Participation rate in education and training (last 4 weeks) by country of birth,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TRNG_LFS_13$DV_1804'
+For more information check: https://developer.m",2026-08-10
+TRNG_LFS_14,Participation rate in education and training (last 4 weeks) by degree of urbanisation,ok,sdmx,7,82,0,"",2026-08-10
+TRNG_LFS_15,Distribution of participation in formal education and training (last 4 weeks) by education programme,ok,sdmx,8,72,0,"",2026-08-10
+TRNG_LFS_16,Participation rate in education and training (last 4 weeks) by level of disability (activity limitation),ok,sdmx,7,65,0,"",2026-08-10
+TRNG_LFS_17,Participation rate in education and training (last 12 months),ok,sdmx,6,61,0,"",2026-08-10
+TRNG_LFS_18,Participation rate in education and training (last 12 months) by educational attainment level,ok,sdmx,7,62,0,"",2026-08-10
+TRNG_LFS_19,Participation rate in education and training (last 12 months) by labour status,ok,sdmx,7,61,0,"",2026-08-10
+TRNG_LFS_20,Participation rate in education and training (last 12 months) by citizenship,ok,sdmx,7,61,0,"",2026-08-10
+TRNG_LFS_21,Participation rate in education and training (last 12 months) by country of birth,ok,sdmx,7,60,0,"",2026-08-10
+TRNG_LFS_22,Participation rate in education and training (last 12 months) by NUTS 2 region,ok,sdmx,6,444,0,"",2026-08-10
+TRNG_LFS_23,Participation rate in education and training (last 12 months) by degree of urbanisation,ok,sdmx,7,60,0,"",2026-08-10
+TRNG_LFS_24,Participation rate in education and training (last 12 months) by level of disability (activity limitation),ok,sdmx,7,60,0,"",2026-08-10
+TRNG_LFS_25,Participation rate of employees in education and training (last 12 months) by occupation,ok,sdmx,7,66,0,"",2026-08-10
+TRNG_LFS_26,Participation rate of employees in education and training (last 12 months) by employment contract,ok,sdmx,7,58,0,"",2026-08-10
+TRNG_LFS_27,Participation rate of employees in education and training (last 12 months) by full-time/part-time employment,ok,sdmx,7,58,0,"",2026-08-10
+TRNG_LFS_28,Participation rate of employees in education and training (last 12 months) by size of the local unit,ok,sdmx,7,63,0,"",2026-08-10
+TRNG_LFS_29,Participation rate of employees in education and training (last 12 months) by NACE Rev. 2 activity (2008-2026),ok,sdmx,7,77,0,"",2026-08-10
+TRNG_LFS_30,Participation rate in education and training (last 12 months) by type of training,ok,sdmx,7,72,0,"",2026-08-10
+TRNG_LFS_31,Participation rate in education and training (last 12 months) by type of training and educational attainment level,ok,sdmx,8,80,0,"",2026-08-10
+TRNG_LFS_32,Participation rate in education and training (last 12 months) by type of training and labour status,ok,sdmx,8,79,0,"",2026-08-10
+TRNG_LFS_33,Distribution of participation in formal education and training (last 12 months) by education programme,ok,sdmx,8,59,0,"",2026-08-10
+TRNG_NFE1,Participation in non-formal education and training by sex and age (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_NFE11,Participation of employed persons in non-formal education and training by sex and occupation (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_NFE12,Participation of employed persons in non-formal education and training by sex and NACE Rev. 1.1 activity (2003),ok,sdmx,7,44,0,"",2026-08-10
+TRNG_NFE13,Mean instruction hours per employed participant in non-formal education and training by sex and NACE Rev. 1.1 activity (2003),ok,sdmx,6,40,0,"",2026-08-10
+TRNG_NFE14,Mean instruction hours per participant in non-formal education and training by sex and age (2003),ok,sdmx,6,41,0,"",2026-08-10
+TRNG_NFE15,Mean instruction hours per participant in non-formal education and training by sex and labour status (2003),ok,sdmx,6,40,0,"",2026-08-10
+TRNG_NFE16,Mean instruction hours per employed participant in non-formal education and training by sex and occupation (2003),ok,sdmx,6,41,0,"",2026-08-10
+TRNG_NFE18,Mean instruction hours per participant in non-formal education and training by field of learning (2003),ok,sdmx,5,47,0,"",2026-08-10
+TRNG_NFE2,Participation in non-formal education and training by number of activities (2003),ok,sdmx,5,32,0,"",2026-08-10
+TRNG_NFE21,Participation of employed persons in non-formal education and training activities on foreign languages and computers by sex and occupation (2003),ok,sdmx,7,46,0,"",2026-08-10
+TRNG_NFE23,"Participation of employed persons in non-formal education and training by field of study, sex and NACE Rev. 1.1 activity (2003)",ok,sdmx,7,56,0,"",2026-08-10
+TRNG_NFE25,Participation in non-formal education and training within/-out paid hours by sex and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_NFE3,Participation in non-formal education and training by educational attainment level and labour status (2003),ok,sdmx,7,45,0,"",2026-08-10
+TRNG_NFE4,Participation in non-formal education and training by degree of urbanisation (2003),ok,sdmx,6,33,0,"",2026-08-10
+TRNG_NFE5,Participation in job-related non-formal education and training by size of the local unit (2003),ok,sdmx,5,37,0,"",2026-08-10
+TRNG_NFE6,Participation in non-formal education and training by main reason for participating in the taught activity (2003),ok,sdmx,5,37,0,"",2026-08-10
+TRNG_NFE7,Participation in non-formal education and training within (or not) paid working hours (2003),ok,sdmx,5,35,0,"",2026-08-10
+TRNG_NFE8,"Participation in non-formal education and training by number of taught activities, sex and age (2003)",ok,sdmx,7,48,0,"",2026-08-10
+TRNG_NFE9,"Participation in non-formal education and training by number of taught activities, sex and labour status (2003)",ok,sdmx,7,47,0,"",2026-08-10
+TSC00001,Research and development expenditure by sector of performance,ok,sdmx,5,66,0,"",2026-08-10
+TSC00002,Research and development personnel by sector of performance,ok,sdmx,7,67,0,"",2026-08-10
+TSC00003,Total researchers by sector of performance - head count,ok,sdmx,7,68,0,"",2026-08-10
+TSC00004,Total researchers by sector of performance - full time equivalent,ok,sdmx,7,68,0,"",2026-08-10
+TSC00005,Share of women researchers by sector of performance,ok,sdmx,5,64,0,"",2026-08-10
+TSC00006,Share of women researchers in all sectors,ok,sdmx,5,58,0,"",2026-08-10
+TSC00008,Share of government allocations for R&D (GBARD) allocated to defence and total civil socio-economic objectives,ok,sdmx,5,64,0,"",2026-08-10
+TSC00011,Employed persons in high and medium-high technology manufacturing sectors and knowledge-intensive service sectors (2008-2026),ok,sdmx,6,59,0,"",2026-08-10
+TSC00025,Human resources in science and technology (HRST),ok,sdmx,7,61,0,"",2026-08-10
+TTR00001,Volume of passenger transport relative to GDP,ok,sdmx,4,55,0,"",2026-08-10
+TTR00002,Total length of motorways,ok,sdmx,5,62,0,"",2026-08-10
+TTR00003,Total length of railway lines,ok,sdmx,6,62,0,"",2026-08-10
+TTR00005,Goods transport by road,ok,sdmx,6,58,0,"",2026-08-10
+TTR00006,Goods transport by rail,ok,sdmx,4,58,0,"",2026-08-10
+TTR00007,Goods transport by inland waterways,ok,sdmx,6,58,0,"",2026-08-10
+TTR00009,Sea transport of goods,ok,sdmx,5,56,0,"",2026-08-10
+TTR00011,Air transport of goods by country (yearly data),ok,sdmx,7,59,0,"",2026-08-10
+TTR00012,Air transport of passengers by country (yearly data),ok,sdmx,7,59,0,"",2026-08-10
+TTR00015,Rail transport of passengers,ok,sdmx,5,56,0,"",2026-08-10
+TTR00016,Air transport of passengers by country and type of transport (monthly data),ok,sdmx,7,67,0,"",2026-08-10
+TTR00017,Air transport of passengers by airport and type of transport (monthly data),ok,sdmx,7,809,0,"",2026-08-10
+TUS_00AGE,"Time spent, participation time and participation rate in the main activity by sex and age group (2000 and 2010)",ok,sdmx,7,95,0,"",2026-08-10
+TUS_00AGE$DV_166,"Time spent, participation time and participation rate in the main activity by sex and age group (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00AGE$DV_166'
+For more information check: https://developer.mozi",2026-08-10
+TUS_00AGE$DV_167,"Time spent, participation time and participation rate in the main activity by sex and age group (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00AGE$DV_167'
+For more information check: https://developer.mozi",2026-08-10
+TUS_00AGE2,"Time spent, participation time and participation rate in the secondary activity by sex and age group (2000 and 2010)",ok,sdmx,7,50,0,"",2026-08-10
+TUS_00ALONE,Time spent alone (2000 and 2010),ok,sdmx,4,28,0,"",2026-08-10
+TUS_00EDUC,"Time spent, participation time and participation rate in the main activity by sex and educational attainment level (2000 and 2010)",ok,sdmx,7,93,0,"",2026-08-10
+TUS_00EDUC$DV_572,"Time spent, participation time and participation rate in the main activity by sex and educational attainment level (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00EDUC$DV_572'
+For more information check: https://developer.moz",2026-08-10
+TUS_00EDUC$DV_573,"Time spent, participation time and participation rate in the main activity by sex and educational attainment level (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00EDUC$DV_573'
+For more information check: https://developer.moz",2026-08-10
+TUS_00EDUC2,"Time spent, participation time and participation rate in the secondary activity by sex and educational attainment level (2000 and 2010)",ok,sdmx,7,48,0,"",2026-08-10
+TUS_00HHSTATUS,"Time spent, participation time and participation rate in the main activity by sex and household composition (2000 and 2010)",ok,sdmx,7,96,0,"",2026-08-10
+TUS_00HHSTATUS$DV_164,"Time spent, participation time and participation rate in the main activity by sex and household composition (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00HHSTATUS$DV_164'
+For more information check: https://developer",2026-08-10
+TUS_00HHSTATUS$DV_165,"Time spent, participation time and participation rate in the main activity by sex and household composition (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00HHSTATUS$DV_165'
+For more information check: https://developer",2026-08-10
+TUS_00HHSTATUS2,"Time spent, participation time and participation rate in the secondary activity by sex and household composition (2000 and 2010)",ok,sdmx,7,52,0,"",2026-08-10
+TUS_00MEAL,Time spent on eating at home (as main or secondary activity) (2000 and 2010),ok,sdmx,4,28,0,"",2026-08-10
+TUS_00MONTH,"Time spent, participation time and participation rate in the main activity by sex and month of the year (2000 and 2010)",ok,sdmx,7,99,0,"",2026-08-10
+TUS_00MONTH$DV_293,"Time spent, participation time and participation rate in the main activity by sex and month of the year (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00MONTH$DV_293'
+For more information check: https://developer.mo",2026-08-10
+TUS_00MONTH$DV_295,"Time spent, participation time and participation rate in the main activity by sex and month of the year (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00MONTH$DV_295'
+For more information check: https://developer.mo",2026-08-10
+TUS_00NPAYCARE,Time spent providing childcare (as main or secondary activity) (2000 and 2010),ok,sdmx,5,31,0,"",2026-08-10
+TUS_00NPAYWORK,Time spent in unpaid forms of work (as main or secondary activity) by sex and form of work (2000 and 2010),ok,sdmx,6,33,0,"",2026-08-10
+TUS_00PROFSTAT,"Time spent, participation time and participation rate in the main activity by sex and professional status (2000 and 2010)",ok,sdmx,7,93,0,"",2026-08-10
+TUS_00PROFSTAT$DV_162,"Time spent, participation time and participation rate in the main activity by sex and professional status (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00PROFSTAT$DV_162'
+For more information check: https://developer",2026-08-10
+TUS_00PROFSTAT$DV_163,"Time spent, participation time and participation rate in the main activity by sex and professional status (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00PROFSTAT$DV_163'
+For more information check: https://developer",2026-08-10
+TUS_00SCREEN,"Time spent watching TV or other media, playing computer games and any similar screen activities (as main or secondary activity) (2000 and 2010)",ok,sdmx,4,28,0,"",2026-08-10
+TUS_00SCREEN$DV_670,"Time spent watching TV or other media, playing computer games and any similar screen activities (as main or secondary activity) (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00SCREEN$DV_670'
+For more information check: https://developer.m",2026-08-10
+TUS_00SELFSTAT,"Time spent, participation time and participation rate in the main activity by sex and self-declared labour status (2000 and 2010)",ok,sdmx,7,94,0,"",2026-08-10
+TUS_00SELFSTAT$DV_141,"Time spent, participation time and participation rate in the main activity by sex and self-declared labour status (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00SELFSTAT$DV_141'
+For more information check: https://developer",2026-08-10
+TUS_00SELFSTAT$DV_161,"Time spent, participation time and participation rate in the main activity by sex and self-declared labour status (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00SELFSTAT$DV_161'
+For more information check: https://developer",2026-08-10
+TUS_00SIMUACT,Time spent doing more than one activity simultaneously (2000 and 2010),ok,sdmx,4,28,0,"",2026-08-10
+TUS_00STARTIME,Participation rate in the main activity (wide groups) by sex and time of the day (2000 and 2010),ok,sdmx,7,182,0,"",2026-08-10
+TUS_00TRAVEL,Time spent on travelling by mode of transport (2000 and 2010),ok,sdmx,5,33,0,"",2026-08-10
+TUS_00WEEK,"Time spent, participation time and participation rate in the main activity by sex and day of the week (2000 and 2010)",ok,sdmx,7,89,0,"",2026-08-10
+TUS_00WEEK$DV_103,"Time spent, participation time and participation rate in the main activity by sex and day of the week (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00WEEK$DV_103'
+For more information check: https://developer.moz",2026-08-10
+TUS_00WEEK$DV_104,"Time spent, participation time and participation rate in the main activity by sex and day of the week (2000 and 2010)",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_00WEEK$DV_104'
+For more information check: https://developer.moz",2026-08-10
+TUS_00WORK,Time spent in total work (paid and unpaid work as main or secondary activity) by sex and form of work (2000 and 2010),ok,sdmx,6,33,0,"",2026-08-10
+TUS_20AGE,Time spent in the main activity by sex and age group,ok,sdmx,7,82,0,"",2026-08-10
+TUS_20AGE$DV_3343,Time spent in the main activity by sex and age group,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20AGE$DV_3343'
+For more information check: https://developer.moz",2026-08-10
+TUS_20AGE$DV_3381,Time spent in the main activity by sex and age group,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20AGE$DV_3381'
+For more information check: https://developer.moz",2026-08-10
+TUS_20AGE2,Time spent in the secondary activity by sex and age group,ok,sdmx,7,48,0,"",2026-08-10
+TUS_20CHDCARE,Time spent by parents or siblings providing childcare (as main activity) by sex and age group,ok,sdmx,6,23,0,"",2026-08-10
+TUS_20CHDCARE2,Time spent by parents or siblings providing childcare (as secondary activity) by sex and age group,ok,sdmx,6,23,0,"",2026-08-10
+TUS_20EDUC,Time spent in the main activity by sex and educational attainment level,ok,sdmx,7,74,0,"",2026-08-10
+TUS_20EDUC$DV_3345,Time spent in the main activity by sex and educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20EDUC$DV_3345'
+For more information check: https://developer.mo",2026-08-10
+TUS_20EDUC$DV_3383,Time spent in the main activity by sex and educational attainment level,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20EDUC$DV_3383'
+For more information check: https://developer.mo",2026-08-10
+TUS_20EDUC2,Time spent in the secondary activity by sex and educational attainment level,ok,sdmx,7,40,0,"",2026-08-10
+TUS_20HHSTATUS,Time spent in the main activity by sex and household composition,ok,sdmx,7,74,0,"",2026-08-10
+TUS_20HHSTATUS$DV_3344,Time spent in the main activity by sex and household composition,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20HHSTATUS$DV_3344'
+For more information check: https://develope",2026-08-10
+TUS_20HHSTATUS$DV_3382,Time spent in the main activity by sex and household composition,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20HHSTATUS$DV_3382'
+For more information check: https://develope",2026-08-10
+TUS_20HHSTATUS2,Time spent in the secondary activity by sex and household composition,ok,sdmx,7,40,0,"",2026-08-10
+TUS_20LOC,Time spent on main activities by sex and location,ok,sdmx,7,37,0,"",2026-08-10
+TUS_20MEAL,Time spent eating at home by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+TUS_20NPAYCAREW,Time spent providing unpaid care work by sex and age group,ok,sdmx,6,24,0,"",2026-08-10
+TUS_20NPAYDOMW,Time spent providing unpaid domestic work by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+TUS_20NPAYWORK,Time spent in unpaid work by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+TUS_20PERIOD,Time spent in the main activity by sex and period of the year,ok,sdmx,7,87,0,"",2026-08-10
+TUS_20PERIOD$DV_3349,Time spent in the main activity by sex and period of the year,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20PERIOD$DV_3349'
+For more information check: https://developer.",2026-08-10
+TUS_20PERIOD$DV_3387,Time spent in the main activity by sex and period of the year,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20PERIOD$DV_3387'
+For more information check: https://developer.",2026-08-10
+TUS_20PROFSTAT,Time spent in the main activity by sex and professional status,ok,sdmx,7,72,0,"",2026-08-10
+TUS_20PROFSTAT$DV_3347,Time spent in the main activity by sex and professional status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20PROFSTAT$DV_3347'
+For more information check: https://develope",2026-08-10
+TUS_20PROFSTAT$DV_3385,Time spent in the main activity by sex and professional status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20PROFSTAT$DV_3385'
+For more information check: https://develope",2026-08-10
+TUS_20SCREEN,"Time spent watching TV or other media, playing computer games and any similar screen activities by sex and age group",ok,sdmx,6,35,0,"",2026-08-10
+TUS_20SCREEN$DV_3350,"Time spent watching TV or other media, playing computer games and any similar screen activities by sex and age group",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20SCREEN$DV_3350'
+For more information check: https://developer.",2026-08-10
+TUS_20SELFSTAT,Time spent in the main activity by sex and self-declared labour status,ok,sdmx,7,75,0,"",2026-08-10
+TUS_20SELFSTAT$DV_3346,Time spent in the main activity by sex and self-declared labour status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20SELFSTAT$DV_3346'
+For more information check: https://develope",2026-08-10
+TUS_20SELFSTAT$DV_3384,Time spent in the main activity by sex and self-declared labour status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20SELFSTAT$DV_3384'
+For more information check: https://develope",2026-08-10
+TUS_20SELFSTAT$DV_3502,Time spent in the main activity by sex and self-declared labour status,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20SELFSTAT$DV_3502'
+For more information check: https://develope",2026-08-10
+TUS_20SIMUACT,Time spent in simultaneous activities by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+TUS_20STARTIME,Participation rate in the main activity (wide groups) by sex and time of the day,ok,sdmx,7,171,0,"",2026-08-10
+TUS_20TRAVEL,Time spent travelling by sex and mode of transport,ok,sdmx,6,25,0,"",2026-08-10
+TUS_20WEEK,Time spent in the main activity by sex and day of the week,ok,sdmx,7,73,0,"",2026-08-10
+TUS_20WEEK$DV_3348,Time spent in the main activity by sex and day of the week,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20WEEK$DV_3348'
+For more information check: https://developer.mo",2026-08-10
+TUS_20WEEK$DV_3386,Time spent in the main activity by sex and day of the week,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20WEEK$DV_3386'
+For more information check: https://developer.mo",2026-08-10
+TUS_20WORK,Time spent in paid and unpaid work by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+UNE_EDUC_A,Unemployment by educational attainment level - annual data,ok,sdmx,7,68,0,"",2026-08-10
+UNE_EDUC_A_H,Unemployment by educational attainment level - annual data (1998–2020),ok,sdmx,7,78,0,"",2026-08-10
+UNE_EDUC_Q,Unemployment by educational attainment level - quarterly data,ok,sdmx,8,122,0,"",2026-08-10
+UNE_EDUC_Q_H,Unemployment by educational attainment level - quarterly data (1998–2020),ok,sdmx,8,149,0,"",2026-08-10
+UNE_LTU_A,Long-term unemployment by sex - annual data,ok,sdmx,7,72,0,"",2026-08-10
+UNE_LTU_A$DV_1821,Long-term unemployment by sex - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/UNE_LTU_A$DV_1821'
+For more information check: https://developer.moz",2026-08-10
+UNE_LTU_A_H,Long-term unemployment by sex - annual data (1996–2020),ok,sdmx,7,78,0,"",2026-08-10
+UNE_LTU_Q,Long-term unemployment by sex - quarterly data,ok,sdmx,8,145,0,"",2026-08-10
+UNE_LTU_Q_H,Long-term unemployment by sex - quarterly data (1992–2020),ok,sdmx,8,171,0,"",2026-08-10
+UNE_RT_A,Unemployment by sex and age - annual data,ok,sdmx,6,75,0,"",2026-08-10
+UNE_RT_A$DV_1761,Unemployment by sex and age - annual data,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/UNE_RT_A$DV_1761'
+For more information check: https://developer.mozi",2026-08-10
+UNE_RT_A_H,Unemployment by sex and age - annual data (1992–2020),ok,sdmx,6,84,0,"",2026-08-10
+UNE_RT_M,Unemployment by sex and age - monthly data,ok,sdmx,7,572,0,"",2026-08-10
+UNE_RT_Q,Unemployment by sex and age - quarterly data,ok,sdmx,7,148,0,"",2026-08-10
+UNE_RT_Q_H,Unemployment by sex and age - quarterly data (1992–2020),ok,sdmx,7,174,0,"",2026-08-10
+URB_CECFI,Economy and finance - cities and greater cities,ok,sdmx,4,909,0,"",2026-08-10
+URB_CEDUC,Education - cities and greater cities,ok,sdmx,4,1014,0,"",2026-08-10
+URB_CENV,Environment - cities and greater cities,ok,sdmx,4,972,0,"",2026-08-10
+URB_CFERMOR,Fertility and mortality - cities and greater cities,ok,sdmx,4,1012,0,"",2026-08-10
+URB_CLIVCON,Living conditions - cities and greater cities,ok,sdmx,4,1035,0,"",2026-08-10
+URB_CLMA,Labour market - cities and greater cities,ok,sdmx,4,1034,0,"",2026-08-10
+URB_CPOP1,Population on 1 January by age groups and sex - cities and greater cities,ok,sdmx,4,1078,0,"",2026-08-10
+URB_CPOPCB,Population by citizenship and country of birth - cities and greater cities,ok,sdmx,4,990,0,"",2026-08-10
+URB_CPOPSTR,Population structure - cities and greater cities,ok,sdmx,4,1021,0,"",2026-08-10
+URB_CTOUR,Culture and tourism - cities and greater cities,ok,sdmx,4,1011,0,"",2026-08-10
+URB_CTOUR$DV_168,Culture and tourism - cities and greater cities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URB_CTOUR$DV_168'
+For more information check: https://developer.mozi",2026-08-10
+URB_CTOUR$DV_169,Culture and tourism - cities and greater cities,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URB_CTOUR$DV_169'
+For more information check: https://developer.mozi",2026-08-10
+URB_CTRAN,Transport - cities and greater cities,ok,sdmx,4,1016,0,"",2026-08-10
+URB_LEDUC,Education - functional urban areas,ok,sdmx,4,744,0,"",2026-08-10
+URB_LENV,Environment - functional urban areas,ok,sdmx,4,665,0,"",2026-08-10
+URB_LFERMOR,Fertility and mortality - functional urban areas,ok,sdmx,4,763,0,"",2026-08-10
+URB_LLIVCON,Living conditions - functional urban areas,ok,sdmx,4,813,0,"",2026-08-10
+URB_LLMA,Labour market - functional urban areas,ok,sdmx,4,815,0,"",2026-08-10
+URB_LPOP1,Population on 1 January by age groups and sex - functional urban areas,ok,sdmx,4,853,0,"",2026-08-10
+URB_LPOPCB,Population by citizenship and country of birth - functional urban areas,ok,sdmx,4,700,0,"",2026-08-10
+URB_LPOPSTR,Population structure - functional urban areas,ok,sdmx,4,795,0,"",2026-08-10
+URB_LTRAN,Transport - functional urban areas,ok,sdmx,4,752,0,"",2026-08-10
+URB_PERCEP,Perception survey results,ok,sdmx,5,550,0,"",2026-08-10
+URB_PERCEP$DV_283,Perception survey results,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URB_PERCEP$DV_283'
+For more information check: https://developer.moz",2026-08-10
+URB_PERCEP$DV_981,Perception survey results,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URB_PERCEP$DV_981'
+For more information check: https://developer.moz",2026-08-10
+URT_10R_3EMP,Employment by NACE Rev. 2 activity and other typologies,ok,sdmx,7,93,0,"",2026-08-10
+URT_10R_3GDP,Gross domestic product (GDP) at current market prices by other typologies,ok,sdmx,5,72,0,"",2026-08-10
+URT_10R_3GDP$DV_1584,Gross domestic product (GDP) at current market prices by other typologies,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URT_10R_3GDP$DV_1584'
+For more information check: https://developer.",2026-08-10
+URT_10R_3GVA,Gross value added at basic prices by other typologies,ok,sdmx,6,95,0,"",2026-08-10
+URT_10R_3GVA$DV_2961,Gross value added at basic prices by other typologies,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URT_10R_3GVA$DV_2961'
+For more information check: https://developer.",2026-08-10
+URT_10R_3PGDP,Average annual population to calculate regional GDP data by other typologies,ok,sdmx,5,65,0,"",2026-08-10
+URT_BD_EN2,Employer business demography by NACE Rev. 2 activity and other typologies (2008-2020),ok,sdmx,7,87,0,"",2026-08-10
+URT_BD_ESIZE,Employer business demography by size class and other typologies (2008-2019),ok,sdmx,8,83,0,"",2026-08-10
+URT_BD_HGN,Business demography and high growth enterprises by NACE Rev. 2 activity and other typologies,ok,sdmx,7,88,0,"",2026-08-10
+URT_BD_HGN2,Business demography and high growth enterprise by NACE Rev. 2 activity and other typologies (2008-2020),ok,sdmx,7,89,0,"",2026-08-10
+URT_BD_SIZE,Business demography by size class and other typologies (2008-2020),ok,sdmx,8,84,0,"",2026-08-10
+URT_BD_SIZE_R,Business demography by size class and other typologies,ok,sdmx,8,84,0,"",2026-08-10
+URT_BD_SLG1_NR,Employer business demography by NACE Rev. 2 activity and other typologies,ok,sdmx,7,90,0,"",2026-08-10
+URT_BD_SLG1_SIZER,Employer business demography by size class and other typologies,ok,sdmx,8,85,0,"",2026-08-10
+URT_BIRTHS,Live births (total) by other typologies,ok,sdmx,5,90,0,"",2026-08-10
+URT_CRIM_GEN,Crimes recorded by the police by other typologies,ok,sdmx,6,71,0,"",2026-08-10
+URT_D3AREA,Area of the regions by other typologies,ok,sdmx,6,92,0,"",2026-08-10
+URT_D3DENS,Population density by other typologies,ok,sdmx,4,59,0,"",2026-08-10
+URT_DEATHS,Deaths (total) by other typologies,ok,sdmx,5,89,0,"",2026-08-10
+URT_EDAT_LFSE4,"Population aged 25-64 by educational attainment level, sex and other typologies",ok,sdmx,8,70,0,"",2026-08-10
+URT_GIND3,Demographic balance and crude rates by other typologies,ok,sdmx,5,90,0,"",2026-08-10
+URT_GIND3$DV_1583,Demographic balance and crude rates by other typologies,error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URT_GIND3$DV_1583'
+For more information check: https://developer.moz",2026-08-10
+URT_LFE3EMP,"Employment by sex, age and other typologies",ok,sdmx,7,83,0,"",2026-08-10
+URT_LFE3EMPRT,"Employment rates by sex, age and other typologies",ok,sdmx,7,83,0,"",2026-08-10
+URT_LFE3EMPRT$DV_1586,"Employment rates by sex, age and other typologies",error,"",0,0,1,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/URT_LFE3EMPRT$DV_1586'
+For more information check: https://developer",2026-08-10
+URT_LFP3POP,"Economically active population by sex, age and other typologies",ok,sdmx,7,86,0,"",2026-08-10
+URT_LFSD3POP,"Population by sex, age and other typologies",ok,sdmx,7,83,0,"",2026-08-10
+URT_LFU3PERS,"Unemployment by sex, age and other typologies",ok,sdmx,7,86,0,"",2026-08-10
+URT_LFU3RT,"Unemployment rates by sex, age and other typologies",ok,sdmx,7,87,0,"",2026-08-10
+URT_PAT_EPIPC,"Patent applications to the EPO by priority year, international patent classification (IPC) sections, classes and other typologies (1977-2012)",ok,sdmx,6,212,0,"",2026-08-10
+URT_PAT_EPTEC,High-tech patent applications to the EPO by priority year and other typologies (1977-2012),ok,sdmx,6,88,0,"",2026-08-10
+URT_PAT_EPTOT,Patent applications to the EPO by priority year and other typologies (1977-2012),ok,sdmx,5,81,0,"",2026-08-10
+URT_PJANAGGR3,"Population on 1 January by broad age group, sex and other typologies",ok,sdmx,6,98,0,"",2026-08-10
+URT_PJANGRP3,"Population on 1 January by five year age group, sex and other typologies",ok,sdmx,7,85,0,"",2026-08-10
+URT_PROJ_19RANMIG,"Assumptions for net migration by age, sex, type of projection and other typologies",ok,sdmx,8,132,0,"",2026-08-10
+URT_PROJ_19RDBI,Demographic balances and indicators by type of projection and other typologies,ok,sdmx,7,134,0,"",2026-08-10
+URT_PROJ_19RDTH,"Projected deaths by age, sex, type of projection and other typologies",ok,sdmx,8,132,0,"",2026-08-10
+URT_PROJ_19RP,"Population on 1st January by age, sex, type of projection and other typologies",ok,sdmx,8,132,0,"",2026-08-10
+URT_ROAD_GONL,"National annual road freight transport by region of loading, group of goods and other typologies",ok,sdmx,6,88,0,"",2026-08-10

@@ -2673,15 +2673,100 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 73_440_DF_DCCV_PROCEEDCRIME_A_9,"Reati, autore ignoto, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
 73_58,Condannati con sentenza irrevocabile - Caratteristiche delle sentenze,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-09
 73_58_DF_DCCV_CONDCRIM1_1,"Reati, natura del reato",REF_AREA,nazionale,nazionale,1,2026-08-09
+73_58_DF_DCCV_CONDCRIM1_10,"Intervallo fra delitto e sentenza, reati, ufficio di giudizio",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_11,"Reati commessi, ufficio giudiziario, anno del commesso reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_12,"Dettaglio reati commessi, età al momento del reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_13,Dettaglio reati commessi - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_14,"Reati violenti, natura del reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_15,"Reati violenti, misure di sicurezza",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_16,"Reati violenti per condannati con precedenti penali, età al momento del reato più grave",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_17,"Reati violenti, ufficio di giudizio, intervallo fra reato e sentenza",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_18,"Reati violenti, precedenti penali",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_19,"Intervallo fra delitto e sentenza, reati violenti, ufficio di giudizio",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_2,"Reati, misure di sicurezza",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_20,"Reati violenti commessi, ufficio giudiziario, anno del commesso reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_21,"Reati violenti commessi, età al momento del reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_22,Reati violenti commessi - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_3,"Reati, età al momento del reato più grave",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_4,"Reati, ufficio di giudizio, intervallo fra reato e sentenza",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_5,"Dettaglio reati, precedenti penali",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_6,"Natura del reato, età al momento del reato più grave",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_7,"Ufficio di giudizio, distretto di corte d'appello",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_8,"Misure di sicurezza, distretto di corte d'appello",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_58_DF_DCCV_CONDCRIM1_9,"Distretto di corte d'appello, età al momento del reato più grave - Minori",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59,Condannati con sentenza irrevocabile - Caratteristiche demografiche,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-10
+73_59_DF_DCCV_CONDGEO1_1,"Reati, ufficio giudiziario, anno del commesso reato",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_10,"Provenienza geografica italiana, età",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_11,Provenienza geografica italiana - reg,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+73_59_DF_DCCV_CONDGEO1_12,Provenienza geografica italiana - Minori,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+73_59_DF_DCCV_CONDGEO1_13,"Provenienza geografica estera, età",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_14,Provenienza geografica estera - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-10
+73_59_DF_DCCV_CONDGEO1_15,"Reati violenti, ufficio giudiziario, anno del commesso delitto",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_16,"Reati violenti, provenienza geografica estera",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_17,Reati violenti - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-10
+73_59_DF_DCCV_CONDGEO1_18,"Reati violenti, ufficio giudiziario - Minori",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-10
+73_59_DF_DCCV_CONDGEO1_19,"Reati violenti, pena inflitta, periodo reclusione - Minori",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_2,"Reati, provenienza geografica estera",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_20,"Reati violenti, provenienza geografica - Minori",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-10
+73_59_DF_DCCV_CONDGEO1_21,"Reati violenti, età",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_22,"Reati violenti, pena inflitta, periodo reclusione",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_23,"Reati violenti, delitti concorrenti",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_3,Reati - reg.,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-08-10
 73_59_DF_DCCV_CONDGEO1_4,"Reati, ufficio giudiziario - Minori",REF_AREA,nazionale,nazionale,1,2026-07-26
+73_59_DF_DCCV_CONDGEO1_5,"Reati, pena inflitta, periodo reclusione - Minori",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_6,"Reati, provenienza geografica - Minori",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-10
+73_59_DF_DCCV_CONDGEO1_7,"Dettaglio reati, età",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_8,"Dettaglio reati, pena inflitta, periodo reclusione",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_59_DF_DCCV_CONDGEO1_9,"Dettaglio reati, reati concorrenti",REF_AREA,nazionale,nazionale,1,2026-08-10
+73_67,Delitti denunciati dalle forze di polizia all'autorità giudiziaria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-08-10
 73_67_DF_DCCV_DELITTIPS_1,Tipo di reato,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-07-26
 73_67_DF_DCCV_DELITTIPS_2,"Tipo, identità dell'autore, commessi durante l'anno - grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
+73_67_DF_DCCV_DELITTIPS_3,"Con autore noto, tipo e periodo del commesso delitto",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-08-10
 73_67_DF_DCCV_DELITTIPS_4,Con autore noto e periodo del commesso delitto - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
 73_67_DF_DCCV_DELITTIPS_5,"Delitti di cui si è scoperto l'autore, tipo - grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
 73_67_DF_DCCV_DELITTIPS_6,"Delitti di cui si è scoperto l'autore, tipo",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-26
 73_67_DF_DCCV_DELITTIPS_7,Delitti di cui si è scoperto l'autore - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
 73_67_DF_DCCV_DELITTIPS_8,Tasso di delittuosità - grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,40,2026-07-26
 73_67_DF_DCCV_DELITTIPS_9,Tasso di delittuosità - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-26
+740_1088_DF_DICA_N01SS_1,Attività prevalente - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1088_DF_DICA_N01SS_2,Attività prevalente - Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1088_DF_DICA_N01SS_3,Attività prevalente - Attività economica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1088_DF_DICA_N01SS_4,Attività prevalente - Finanziamento prevalente,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1088_DF_DICA_N01SS_5,Attività prevalente - Orientamento istituzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_1,Risorse umane complessive - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_2,Risorse umane complessive - Istituzioni non profit,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_3,Risorse umane complessive -Risorse economiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_4,Risorse umane complessive - Risorse umane,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_5,Istituzioni non profit per caratteristiche istituzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_6,Risorse umane complessive - Risorse economiche per caratteristiche istituzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1089_DF_DICA_N01C_7,Risorse umane complessive - Risorse umane per caratteristiche istituzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1090_DF_DICA_N02M_1,Mission - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1090_DF_DICA_N02M_2,Mission - Periodo di assunzione della forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1090_DF_DICA_N02M_3,Mission - Attività economica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1090_DF_DICA_N02M_4,Mission - Finanziamento prevalente,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1090_DF_DICA_N02M_5,Mission - Orientamento istituzione,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1091_DF_DICA_N03G_1,Istituzioni e risorse umane complessive - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1091_DF_DICA_N03G_2,Istituzioni e risorse umane complessive - Attività economica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1091_DF_DICA_N03G_3,Istituzioni e risorse umane complessive -Orientamento istituzione,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+740_1091_DF_DICA_N03G_4,Istituzioni e risorse umane complessive -Finanziamento prevalente,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1091_DF_DICA_N03G_5,Istituzioni e risorse umane complessive - ICNPO prevalente (completa),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1092_DF_DICA_N05W_1,Risorse umane retribuite,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1120_DF_DICA_N03B_1,Risorse economiche - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1120_DF_DICA_N03B_2,"Risorse economiche - Entrate registrate, classe delle risorse umane",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+740_1120_DF_DICA_N03B_3,"Risorse economiche - Uscite registrate, classe delle risorse umane",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_1,"Istituzioni, risorse umane e genere - Dati di sintesi",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_10,"Istituzioni, risorse umane e genere - Ateco (categorie)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_11,"Istituzioni, risorse umane e genere - Ateco (classi), classe dei dipendenti, sesso dei dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_12,"Istituzioni, risorse umane e genere - Ateco  (categorie)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_13,"Istituzioni, risorse umane e genere - Ateco (categorie), classe dei volontari",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_2,"Istituzioni, risorse umane e genere - Ateco (categorie), forma giuridica e classe di unità locali",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_3,"Istituzioni, risorse umane e genere - Ateco (categorie), forma giuridica e classe della risorsa umana",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_4,"Istituzioni, risorse umane e genere - Ateco (categorie), classe del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,129,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_5,"Istituzioni, risorse umane e genere - Ateco (categorie), classe dei dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_6,"Istituzioni, risorse umane e genere - Ateco (categorie), classe dei volontari",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_7,"Istituzioni, risorse umane e genere - Ateco (gruppi), classe del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_8,"Istituzioni, risorse umane e genere - Ateco (gruppi), classe dei dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1096_DF_DICA_IPSTRIPNP_9,"Istituzioni, risorse umane e genere - Ateco (classi), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
 741_1097_DF_DICA_IPSTRIPCOM_1,"Istituzioni, risorse umane e genere  -  dati comunali - Dati di sintesi",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_10,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (gruppi)",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_11,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (divisioni), classe dei dipendenti, sesso dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
@@ -2693,6 +2778,119 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 741_1097_DF_DICA_IPSTRIPCOM_7,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_8,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco  (gruppi), classe dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
 741_1097_DF_DICA_IPSTRIPCOM_9,"Istituzioni, risorse umane e genere  -  dati comunali - Ateco (divisioni), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-26
+741_1098_DF_DICA_IPSTRULNP_1,"Unità locali, risorse umane e genere - Dati di sintesi",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_10,"Dipendenti - Ateco (classi), classe del dipendenti, sesso del dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_2,"Unità locali - Ateco (categorie), titolo di possesso, classe di superficie delle unità locali",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_3,"Unità locali con personale effettivo in servizio - Ateco (categorie), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_4,"Unità locali con dipendenti - Ateco (categorie), classe dei dipendenti, sesso dei dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_5,"Unità locali - Ateco (categorie), classe dei dipendenti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_6,"Unità locali - Ateco (categorie), classe del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_7,Personale effettivo in servizio - Ateco (categorie),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_8,"Personale effettivo in servizio - Ateco (classi), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1098_DF_DICA_IPSTRULNP_9,Dipendenti - Ateco (categorie),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_1,"Unità locali, risorse umane e genere - dati comunali - Dati di sintesi",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_2,"Unità locali - Ateco (gruppi), classe del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_3,"Unità locali - Ateco (gruppi), classe dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_4,"Unità locali - Ateco (gruppi), titolo di possesso, classe di superficie delle unità locali",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_5,"Unità locali con personale effettivo in servizio - Ateco (gruppi), classe del personale, sesso del personale effettivo",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_6,"Personale effettivo in servizio - Ateco (divisioni), classe del personale effettivo in servizio, sesso del personale effettivo in servizio",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_7,Personale effettivo in servizio - Ateco (gruppi),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_8,"Dipendenti - Ateco (divisioni), classe dei dipendenti, sesso dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1099_DF_DICA_IPSTRULCOM_9,Dipendenti - Ateco (gruppi),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1101_DF_DICA_IPIF_1,Attività formativa del personale - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,125,2026-08-10
+741_1101_DF_DICA_IPIF_2,"Attività formativa del personale - Classe di personale effettivo, tipo di attività formativa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
+741_1101_DF_DICA_IPIF_3,"Attività formativa del personale - Classe di personale effettivo, attività formativa, ore di formazione e partecipanti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_1,"Proprietà, controllo, gestione - Sezione Ateco, classe di addetti - reg.  (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_10,"Conseguenze del passaggio generazionale - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_11,"Conseguenze del passaggio generazionale - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_12,Conseguenze del passaggio generazionale - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_13,Tipo di gestione - Macrosettori economici - prov. (2018-2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_14,"Tipo di gestione - Sezione Ateco, classe di addetti - reg. (2018-2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_15,"Tipo di gestione - Divisione Ateco (2 digit), classe di addetti (2018-2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_16,Tipo di gestione - Classe di Ateco (4 digit) (2018-2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_17,Ostacoli al passaggio generazionale - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_18,"Ostacoli al passaggio generazionale - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_19,"Ostacoli al passaggio generazionale - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_2,"Proprietà, controllo, gestione - Macrosettori economici - prov. (2018 - 2022)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_20,Ostacoli al passaggio generazionale - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_21,Obiettivi strategici perseguiti - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_22,"Obiettivi strategici perseguiti - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_23,"Obiettivi strategici perseguiti - Divisione Ateco (2 digit), classe di addetti (2018 -2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_24,Obiettivi strategici perseguiti - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_25,Obiettivi strategici futuri - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_26,"Obiettivi strategici futuri - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_27,"Obiettivi strategici futuri - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_28,Obiettivi strategici futuri - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_3,"Proprietà, controllo, gestione - Classe di Ateco (4 digit)  (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_4,"Proprietà, controllo, gestione - Divisione Ateco (2 digit), classe di addetti  (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_5,Periodo del passaggio generazionale - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_6,"Periodo del passaggio generazionale - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_7,"Periodo del passaggio generazionale - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_8,Periodo del passaggio generazionale - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1102_DF_DCSI_CPI_CONTROLLO_9,Conseguenze del passaggio generazionale - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_1,Acquisizione di risorse umane - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_10,"Competenze - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_11,"Competenze - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_12,Competenze - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_13,Ostacoli - Macrosettori economici - prov. (2018-2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_14,"Ostacoli - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_15,"Ostacoli - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_16,Ostacoli - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_17,Modalità di acquisizione - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_18,"Modalità di acquisizione - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_19,"Modalità di acquisizione - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_2,"Acquisizione di risorse umane - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_20,Modalità di acquisizione - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_21,Area funzionale interessata - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_22,"Area funzionale interessata - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_23,"Area funzionale interessata - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_24,Area funzionale interessata - Classe di Ateco (4 digit),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_25,Pratiche di gestione del personale - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_26,"Pratiche di gestione del personale - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_27,"Pratiche di gestione del personale - Divisione Ateco (2 digit), classe di addetti (2018 -2019)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_28,Pratiche di gestione del personale - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_29,Pratiche per attrarre e/o trattenere personale qualificato - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_3,"Acquisizione di risorse umane - Sezione Ateco, classe di addetti - reg. (2018 - 2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_30,"Pratiche per attrarre e/o trattenere personale qualificato - Sezione Ateco, classe di addetti - reg. (2018-2022)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_31,"Pratiche per attrarre e/o trattenere personale qualificato - Divisione Ateco (2 digit), classe di addetti (2018 - 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_32,Pratiche per attrarre e/o trattenere personale qualificato - Classe di Ateco (4 digit) (2018-2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_4,Acquisizione di risorse umane - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_5,Posizione professionale - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_6,"Posizione professionale - Sezione Ateco, classe di addetti - reg. (2018-2022)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_7,"Posizione professionale - Divisione Ateco (2 digit), classe di addetti (2018-2022)",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_8,Posizione professionale - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1103_DF_DCSI_CPI_RISORSE_9,Competenze - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_1,Formazione non obbligatoria - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_10,"Competenze - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_11,"Competenze - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_12,Competenze - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_13,Personale coinvolto - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_14,"Personale coinvolto - Sezione Ateco, classe di addetti - reg. (2018 - 2019)",REF_AREA,regione,nazionale|ripartizione|regione,27,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_15,"Personale coinvolto - Divisione Ateco (2 digit), classe di addetti (2018 -2019)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_16,Personale coinvolto - Classe di Ateco (4 digit) (2018 - 2022),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_17,Andamento della spesa per formazione - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_18,"Andamento della spesa per formazione - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_19,"Andamento della spesa per formazione - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_2,"Formazione non obbligatoria - Sezione Ateco, classe di addetti - reg. (2018 - 2019)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_20,Andamento della spesa per formazione - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_21,Limitazione nella spesa o mancata formazione - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_22,"Limitazione nella spesa o mancata formazione - Sezione Ateco, classe di addetti - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_23,"Limitazione nella spesa o mancata formazione - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_24,Limitazione nella spesa o mancata formazione - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_3,Formazione non obbligatoria - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_4,"Formazione non obbligatoria - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_5,Attività di formazione - Macrosettori economici - prov. (2018 - 2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_6,"Attività di formazione - Divisione Ateco (2 digit), classe di addetti (2018 -2019)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_7,Attività di formazione - Classe di Ateco (4 digit),REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_8,"Attività di formazione - Sezione Ateco, classe di addetti - reg. (2018 - 2019)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1105_DF_DCSI_CPI_FORMAZIONE_9,Competenze - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_1,Relazioni tra imprese - Macrosettori economici - prov. (2018-2022),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,133,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_10,"Numero delle controparti - Sezione Ateco, classe di addetti - reg. (2018 2022)",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_11,"Relazioni tra imprese - Divisione Ateco (2 digit), classe di addetti  (2018-2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_12,"Tipo di controparti - Divisione Ateco (2 digit), classe di addetti (2018-2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_13,"Motivi della relazione - Divisione Ateco (2 digit), classe di addetti (2018 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_14,"Numero delle controparti - Divisione Ateco (2 digit), classe di addetti (2018 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
+742_1106_DF_DCSI_CPI_RELAZIONI_15,"Difficoltà nell'attivare relazioni - Divisione Ateco (2 digit), classe di addetti (2018 2022)",REF_AREA,nazionale,nazionale,1,2026-08-10
 742_1111_DF_DCSI_CPI_FINANZA_25,Quota di indebitamento - QUO - Macrosettori economici - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-07-27
 742_1111_DF_DCSI_CPI_FINANZA_30,"Quota di indebitamento - QUO - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
 742_1111_DF_DCSI_CPI_FINANZA_34,"Strumenti per migliorare la posizione creditizia - STR - Divisione Ateco (2 digit), classe di addetti",REF_AREA,nazionale,nazionale,1,2026-07-27
