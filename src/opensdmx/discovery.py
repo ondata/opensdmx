@@ -491,11 +491,17 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
     return description
 
 
-def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
-    """Create a dataset object for a given dataflow ID, structure ID, or description.
+def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
+    """Return the catalog row matching a dataflow ID, structure ID, or description.
 
-    Returns a dict with keys:
-        df_id, version, df_description, df_structure_id, dimensions, filters
+    Matching is case-insensitive on the two IDs and exact on the description.
+    Reads the dataflow catalog only — it never fetches the datastructure, so
+    callers that need just the canonical ``df_id`` (``siblings``) stay
+    independent of the DSD endpoint and of the dimensions cache.
+    :func:`load_dataset` builds on this when the dimensions are needed too.
+
+    Raises:
+        ValueError: if no dataflow matches the identifier.
     """
     all_ds = all_available()
 
@@ -525,6 +531,17 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
             f"Could not find dataset '{dataflow_identifier}' in provider '{provider_name}'.\n"
             f"Use --provider to specify a different provider (e.g. --provider istat, --provider ecb, --provider oecd)."
         )
+
+    return match_row
+
+
+def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
+    """Create a dataset object for a given dataflow ID, structure ID, or description.
+
+    Returns a dict with keys:
+        df_id, version, df_description, df_structure_id, dimensions, filters
+    """
+    match_row = resolve_dataflow(dataflow_identifier)
 
     structure_id = match_row["df_structure_id"] or match_row["df_id"]
     dimensions = _get_dimensions(structure_id)

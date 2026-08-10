@@ -1348,19 +1348,37 @@ def siblings(
     _apply_provider(provider)
 
     from .categories import CategoriesNotSupported, siblings_of
+    from .discovery import resolve_dataflow
 
+    # Resolve against the dataflow catalog only — deliberately not load_dataset,
+    # which fetches the datastructure for dimensions this command never uses.
+    # The lookup is best-effort: it exists to tell "ID doesn't exist" apart from
+    # "exists but not categorized", not to gate the command. `siblings_of` is
+    # already case-insensitive and degrades to blank descriptions when the
+    # dataflow table is unavailable, so a catalog outage must not turn a lookup
+    # the cached category tree can answer into an error.
+    try:
+        canonical_id = resolve_dataflow(dataset_id)["df_id"]
+    except ValueError as e:
+        # Catalog loaded and the ID is genuinely absent: the standard error.
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    except Exception:
+        # Catalog unreachable: carry on with the raw ID and let the category
+        # cache answer. siblings_of logs why the descriptions come back blank.
+        canonical_id = dataset_id.upper()
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
-            groups = siblings_of(dataset_id)
+            groups = siblings_of(canonical_id)
     except CategoriesNotSupported as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
     if not groups:
         err_console.print(
-            f"[yellow]Dataflow {dataset_id} is not categorized (or not found).[/yellow]"
+            f"[yellow]Dataflow {canonical_id} is not categorized in the thematic tree.[/yellow]"
         )
-        raise typer.Exit(0)
+        raise typer.Exit(1)
 
     if _output_mode != "table":
         _emit(groups)
@@ -1843,7 +1861,7 @@ def blacklist(
     except ImportError:
         err_console.print(
             "[red]Error:[/red] questionary not installed.\n"
-            "Run: pip install opensdmx[guide]"
+            r"Run: pip install opensdmx\[guide]"
         )
         raise typer.Exit(1)
 

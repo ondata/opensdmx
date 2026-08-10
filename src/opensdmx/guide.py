@@ -26,7 +26,7 @@ def run_guide(
     except ImportError:
         err_console.print(
             "[red]Error:[/red] questionary not installed.\n"
-            "Run: pip install opensdmx[guide]"
+            r"Run: pip install opensdmx\[guide]"
         )
         raise typer.Exit(1)
 

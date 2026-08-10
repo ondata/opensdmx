@@ -549,6 +549,128 @@ def test_tree_no_scheme_depth_json_emits_category_rows():
     assert [r["cat_id"] for r in rows] == ["CAT_A"]
 
 
+# ── siblings command ─────────────────────────────────────────────────
+
+
+def _siblings_catalog_df():
+    import polars as pl
+
+    return pl.DataFrame(
+        {
+            "df_id": ["DF_X", "DF_Y", "DF_LONELY"],
+            "version": ["1.0", "1.0", "1.0"],
+            "df_structure_id": ["DF_X", "DF_Y", "DF_LONELY"],
+            "df_description": ["Desc for X", "Desc for Y", "Desc for lonely"],
+        }
+    )
+
+
+def _no_dsd_fetch(_structure_id):
+    """Stand-in for discovery._get_dimensions that must never be called.
+
+    `siblings` needs only the canonical df_id, which comes from the dataflow
+    catalog; the datastructure is a separate request that would add latency and
+    make a DSD outage break a lookup the cached category tree can answer alone.
+    Every siblings test runs with this in place, so reintroducing the dependency
+    fails the suite instead of shipping.
+    """
+    raise AssertionError("siblings must not fetch the datastructure")
+
+
+def _invoke_siblings(*args):
+    # Global options (-o, --output) must precede the command name.
+    global_opts = [a for a in args if a in ("-o", "json", "--output")]
+    cmd_args = [a for a in args if a not in global_opts]
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+         patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
+         patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
+        return runner.invoke(app, [*global_opts, "siblings", *cmd_args, "--provider", "istat"])
+
+
+def test_siblings_lowercase_resolves_and_marks_target():
+    """siblings df_x behaves like siblings DF_X: same groups, target marked."""
+    result = _invoke_siblings("df_x")
+    assert result.exit_code == 0, result.output
+    assert "DF_X" in result.output
+    assert "Desc for X" in result.output
+    # the → marker points at the resolved (uppercase) target row
+    target_line = next(
+        line for line in result.output.splitlines() if "DF_X" in line and "Desc for X" in line
+    )
+    assert "→" in target_line
+
+
+def test_siblings_json_lowercase():
+    """JSON mode returns the same payload for any case."""
+    upper = json.loads(_invoke_siblings("-o", "json", "DF_X").output)
+    lower = json.loads(_invoke_siblings("-o", "json", "df_x").output)
+    assert upper == lower
+    target = next(s for s in lower[0]["siblings"] if s["is_target"])
+    assert target["df_id"] == "DF_X"
+    assert target["df_description"] == "Desc for X"
+
+
+def test_siblings_unknown_id_exits_1():
+    """An ID that does not exist is an error (standard load_dataset message)."""
+    result = _invoke_siblings("NOPE")
+    assert result.exit_code == 1
+    assert "Could not find dataset" in (result.output + (result.stderr or ""))
+
+
+def test_siblings_not_categorized_exits_1():
+    """Existing but uncategorized dataflow is not a silent success."""
+    result = _invoke_siblings("DF_LONELY")
+    assert result.exit_code == 1
+    assert "not categorized" in (result.output + (result.stderr or ""))
+
+
+def test_siblings_survives_a_dataflow_catalog_outage():
+    """Category cache answers even when the dataflow endpoint is down.
+
+    Regression guard for the second PR #69 review round: `siblings_of` already
+    tolerates an unavailable dataflow table (left join, blank descriptions), so
+    the ID resolution in the CLI must not turn that outage into an error.
+    """
+    def _boom():
+        raise ConnectionError("dataflow endpoint down")
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+         patch("opensdmx.discovery.all_available", side_effect=_boom), \
+         patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
+        result = runner.invoke(app, ["--output", "json", "siblings", "df_x", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    groups = json.loads(result.output)
+    target = next(s for g in groups for s in g["siblings"] if s["is_target"])
+    assert target["df_id"] == "DF_X"
+    assert target["df_description"] == ""
+
+
+def test_siblings_does_not_fetch_the_datastructure():
+    """The lookup stays on the dataflow catalog and the cached category tree.
+
+    Regression guard for PR #69 review: resolving the ID through load_dataset
+    pulled in the DSD request for dimensions the command never uses, so a
+    datastructure outage turned a working sibling lookup into an error.
+    """
+    calls = []
+
+    def _record(structure_id):
+        calls.append(structure_id)
+        return {}
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+         patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
+         patch("opensdmx.discovery._get_dimensions", side_effect=_record):
+        result = runner.invoke(app, ["siblings", "df_x", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    assert calls == [], f"siblings fetched the datastructure: {calls}"
+
+
 # ── _parse_header ─────────────────────────────────────────────────────
 
 def test_parse_header_valid():
@@ -611,6 +733,43 @@ def test_which_json_output(_no_api_check):
     data = json.loads(result.output)
     assert isinstance(data, list)
     assert any(row["command"] == "get" for row in data)
+
+
+# ── guide command: install hint when the `guide` extra is missing ─────
+
+
+def test_guide_missing_extra_hint_shows_bracket():
+    """The install hint must keep the '[guide]' extra visible.
+
+    Regression: `Run: pip install opensdmx[guide]` was printed through Rich,
+    which parsed `[guide]` as a markup tag and silently dropped it, so the
+    user saw the misleading `pip install opensdmx` — a fix that does not
+    install questionary and loops forever. The extra must survive rendering.
+    """
+    from io import StringIO
+    from pathlib import Path
+
+    import opensdmx.guide as guide_mod
+    from rich.console import Console
+
+    buf = StringIO()
+    real_import = __import__
+
+    def _block_questionary(name, *a, **kw):
+        if name == "questionary":
+            raise ImportError("blocked by test")
+        return real_import(name, *a, **kw)
+
+    import typer
+
+    # patch.object restores err_console even if the assertions fail: leaving the
+    # buffered Console in place would leak into every later test in the session.
+    with patch.object(guide_mod, "err_console", Console(file=buf)), \
+         patch("builtins.__import__", side_effect=_block_questionary), \
+         pytest.raises(typer.Exit):
+        guide_mod.run_guide("unemployment", None, False, Path("data.csv"))
+    assert "questionary not installed" in buf.getvalue()
+    assert "opensdmx[guide]" in buf.getvalue()
 
 
 def test_which_limit(_no_api_check):

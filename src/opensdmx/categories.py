@@ -289,7 +289,12 @@ def siblings_of(df_id: str) -> list[dict[str, Any]]:
     does not expose categories.
     """
     categories_df, categorisation_df = load_categories()
-    memberships = categorisation_df.filter(pl.col("df_id") == df_id)
+    # Case-insensitive match, consistent with load_dataset(): dataflow IDs are
+    # uppercase in the catalogue but users type them in any case.
+    identifier_upper = df_id.upper()
+    memberships = categorisation_df.filter(
+        pl.col("df_id").str.to_uppercase() == identifier_upper
+    )
     if memberships.is_empty():
         return []
 
@@ -325,7 +330,7 @@ def siblings_of(df_id: str) -> list[dict[str, Any]]:
             {
                 "df_id": r["df_id"],
                 "df_description": r["df_description"] or "",
-                "is_target": r["df_id"] == df_id,
+                "is_target": r["df_id"].upper() == identifier_upper,
             }
             for r in sibs.sort("df_id").iter_rows(named=True)
         ]
