@@ -491,7 +491,11 @@ SDDS Plus Indicators Real Sector`, giving the model far more signal to work with
 For ISTAT, embeddings also fold in the authentic survey descriptions harvested
 from EsploraDati (shipped with the package), so queries can match a dataset by
 how it is produced, not just its title. See
-[Dataflow descriptions for semantic search](docs/descriptions.md) for the design.
+[Dataflow descriptions for semantic search](docs/descriptions.md) for the design,
+and [Dataset search](docs/search.md) for how the keyword and semantic paths
+compare — including the measured result that semantic retrieval finds the right
+dataflow 3.4× more often, and that on English queries against Italian metadata
+keyword search finds essentially nothing.
 
 #### Tips for better results
 

@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-08-10 - eval: retrieval keyword vs semantico su ISTAT (54 query)
+
+- Nuovo eval mirato al solo layer di ricerca (nessun agente, nessun giudice LLM): `eval/retrieval.py` + gold set `eval/goldset/retrieval.yaml`, 27 bisogni informativi scritti alla cieca × 2 lingue, gold come famiglia di df_id.
+- Cinque bracci: keyword attuale, stesso scorer su testo esteso, BM25 su testo esteso, semantico nomic, hybrid RRF non pesato.
+- Risultato: il semantico vince nettamente (MRR 0,327 vs 0,073; Success@10 57% vs 17%). Il testo in più aiuta il lessicale solo con lo scorer giusto: allo scorer attuale non serve (0,075, `_score_results` premia i documenti lunghi), a un BM25 vale +85% (0,135) — ma il semantico resta 2,4× il BM25 sullo stesso testo. In inglese su metadati italiani ogni braccio lessicale è a terra (0,012-0,054) e il semantico tiene (0,310); sulla query naive BM25 non aiuta affatto. L'RRF non pesato peggiora.
+- Ricaduta pratica non prevista: sostituire lo scorer di `search_dataset` con BM25 sul testo esteso vale +85% di MRR senza modelli né dipendenze nuove.
+- Ricostruita la cache embedding ISTAT, ferma al 24 luglio e quindi antecedente al cambio di ricetta del testo embeddato (`d8f7dcc`).
+- Report: `eval/results/2026-08-10/retrieval.md`. Impianto e passi aperti: `tasks/todo-retrieval-eval.md`.
+- Nuovo `docs/search.md` **tracciato**: documento di riferimento sulla ricerca — i due percorsi, il testo che ciascuno indicizza (non è lo stesso), il registro delle misure (#52 del 2026-07-20 e l'eval di oggi) e cosa resta aperto. Serviva perché `tasks/`, `eval/` e `docs/eval.md` sono gitignored: fin qui nel repo non c'era traccia del perché la ricerca è fatta così. Linkato dal README accanto a `docs/descriptions.md`.
+- `tasks/todo-search-context.md` diceva ancora "not started" mentre #52 è chiusa e in produzione dalla v0.17.0: corretto in DONE, con il rimando a `docs/search.md` come documento di riferimento.
+
 ## 2026-08-09 - docs: sezione "Human analyst quickstart" nel README (R7 della valutazione)
 
 - Aggiunta sezione per l'utente umano dopo il CLI quick start: tre flussi reali da analista (disoccupazione giovanile con `--labels`, PIL pro capite riproducibile via `--query-file`/`run`, HICP con `plot`) e le tre regole che salvano tempo (dimensioni a valore singolo esplicite, `--labels` sempre, salvare le query riusabili).
