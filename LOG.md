@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-08-10 - v0.21.1 - fix `siblings` e hint d'installazione di `guide` (PR #69)
+
+- fix(siblings): `siblings une_rt_m` falliva con "not categorized" mentre `siblings UNE_RT_M` funzionava — `siblings_of()` filtrava `df_id` a match esatto, mentre `load_dataset()` normalizza il case ovunque. Ora il match è case-insensitive, marcatore `→` compreso, e un ID inesistente dà l'errore standard con exit 1 invece di un exit 0 silenzioso indistinguibile da "esiste ma non è categorizzato".
+- fix(guide): l'hint stampava `pip install opensdmx` senza `[guide]`. La stringa nel sorgente era giusta: Rich leggeva le parentesi quadre come markup e scartava il tag senza controparte. Chi seguiva l'hint installava senza `questionary` e tornava allo stesso messaggio, in loop. Escapato in entrambi i call site.
+- refactor(discovery): nuova `resolve_dataflow()` — match sul catalogo dataflow e nient'altro. `siblings` la usa perché ha bisogno del solo `df_id` canonico; `load_dataset()` ci si appoggia e aggiunge le dimensioni, così le regole di matching restano in un punto solo. **Dai rilievi di review**: risolvere via `load_dataset()` scaricava la datastructure per dimensioni mai usate, aggiungendo una richiesta a ogni lookup e facendo fallire un dataflow categorizzato quando l'endpoint DSD era giù.
+- La risoluzione dell'ID in `siblings` è **best-effort**: `ValueError` (catalogo caricato, ID davvero assente) mantiene l'errore standard; qualunque altro errore prosegue con l'ID grezzo, perché `siblings_of` tollera di proposito un catalogo dataflow irraggiungibile e degrada a descrizioni vuote. Anche questo da un rilievo di review, sul primo fix.
+- Due guardie di regressione: `siblings` non deve toccare la datastructure (tutti i test girano con `_get_dimensions` che solleva) e non deve arrendersi se `all_available()` fallisce.
+- Il test dell'hint `guide` sostituiva `err_console` globalmente senza ripristinarlo, lasciando una Console bufferizzata per tutta la sessione: ora `patch.object`.
+- Suite 352 → 354, ruff e mypy puliti.
+
 ## 2026-08-10 - eval: retrieval keyword vs semantico su ISTAT (54 query)
 
 - Nuovo eval mirato al solo layer di ricerca (nessun agente, nessun giudice LLM): `eval/retrieval.py` + gold set `eval/goldset/retrieval.yaml`, 27 bisogni informativi scritti alla cieca × 2 lingue, gold come famiglia di df_id.
