@@ -625,6 +625,29 @@ def test_siblings_not_categorized_exits_1():
     assert "not categorized" in (result.output + (result.stderr or ""))
 
 
+def test_siblings_survives_a_dataflow_catalog_outage():
+    """Category cache answers even when the dataflow endpoint is down.
+
+    Regression guard for the second PR #69 review round: `siblings_of` already
+    tolerates an unavailable dataflow table (left join, blank descriptions), so
+    the ID resolution in the CLI must not turn that outage into an error.
+    """
+    def _boom():
+        raise ConnectionError("dataflow endpoint down")
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+         patch("opensdmx.discovery.all_available", side_effect=_boom), \
+         patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
+        result = runner.invoke(app, ["--output", "json", "siblings", "df_x", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    groups = json.loads(result.output)
+    target = next(s for g in groups for s in g["siblings"] if s["is_target"])
+    assert target["df_id"] == "DF_X"
+    assert target["df_description"] == ""
+
+
 def test_siblings_does_not_fetch_the_datastructure():
     """The lookup stays on the dataflow catalog and the cached category tree.
 

@@ -1350,20 +1350,23 @@ def siblings(
     from .categories import CategoriesNotSupported, siblings_of
     from .discovery import resolve_dataflow
 
-    # Resolve against the dataflow catalog only (case-insensitive, canonical
-    # df_id): unlike the category lookup it distinguishes "ID doesn't exist"
-    # from "exists but not categorized" with the standard error, and normalizes
-    # `siblings une_rt_m` to UNE_RT_M like every other command. Deliberately not
-    # load_dataset: that fetches the datastructure for the dimensions, which
-    # this command never uses — it would add a request and make a DSD outage
-    # break a lookup the cached category tree can answer on its own.
+    # Resolve against the dataflow catalog only — deliberately not load_dataset,
+    # which fetches the datastructure for dimensions this command never uses.
+    # The lookup is best-effort: it exists to tell "ID doesn't exist" apart from
+    # "exists but not categorized", not to gate the command. `siblings_of` is
+    # already case-insensitive and degrades to blank descriptions when the
+    # dataflow table is unavailable, so a catalog outage must not turn a lookup
+    # the cached category tree can answer into an error.
     try:
-        row = resolve_dataflow(dataset_id)
-    except Exception as e:
+        canonical_id = resolve_dataflow(dataset_id)["df_id"]
+    except ValueError as e:
+        # Catalog loaded and the ID is genuinely absent: the standard error.
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
-
-    canonical_id = row["df_id"]
+    except Exception:
+        # Catalog unreachable: carry on with the raw ID and let the category
+        # cache answer. siblings_of logs why the descriptions come back blank.
+        canonical_id = dataset_id.upper()
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             groups = siblings_of(canonical_id)
