@@ -565,9 +565,16 @@ def _siblings_catalog_df():
     )
 
 
-def _siblings_dims(_structure_id):
-    """Minimal dimensions dict returned by discovery._get_dimensions."""
-    return {"FREQ": {"position": 1, "codelist_id": "CL_FREQ"}}
+def _no_dsd_fetch(_structure_id):
+    """Stand-in for discovery._get_dimensions that must never be called.
+
+    `siblings` needs only the canonical df_id, which comes from the dataflow
+    catalog; the datastructure is a separate request that would add latency and
+    make a DSD outage break a lookup the cached category tree can answer alone.
+    Every siblings test runs with this in place, so reintroducing the dependency
+    fails the suite instead of shipping.
+    """
+    raise AssertionError("siblings must not fetch the datastructure")
 
 
 def _invoke_siblings(*args):
@@ -577,7 +584,7 @@ def _invoke_siblings(*args):
     with patch("opensdmx.cli._check_api_reachable"), \
          patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
          patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
-         patch("opensdmx.discovery._get_dimensions", side_effect=_siblings_dims):
+         patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
         return runner.invoke(app, [*global_opts, "siblings", *cmd_args, "--provider", "istat"])
 
 
@@ -616,6 +623,29 @@ def test_siblings_not_categorized_exits_1():
     result = _invoke_siblings("DF_LONELY")
     assert result.exit_code == 1
     assert "not categorized" in (result.output + (result.stderr or ""))
+
+
+def test_siblings_does_not_fetch_the_datastructure():
+    """The lookup stays on the dataflow catalog and the cached category tree.
+
+    Regression guard for PR #69 review: resolving the ID through load_dataset
+    pulled in the DSD request for dimensions the command never uses, so a
+    datastructure outage turned a working sibling lookup into an error.
+    """
+    calls = []
+
+    def _record(structure_id):
+        calls.append(structure_id)
+        return {}
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+         patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
+         patch("opensdmx.discovery._get_dimensions", side_effect=_record):
+        result = runner.invoke(app, ["siblings", "df_x", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    assert calls == [], f"siblings fetched the datastructure: {calls}"
 
 
 # ── _parse_header ─────────────────────────────────────────────────────
@@ -700,7 +730,6 @@ def test_guide_missing_extra_hint_shows_bracket():
     from rich.console import Console
 
     buf = StringIO()
-    guide_mod.err_console = Console(file=buf)
     real_import = __import__
 
     def _block_questionary(name, *a, **kw):
@@ -710,7 +739,10 @@ def test_guide_missing_extra_hint_shows_bracket():
 
     import typer
 
-    with patch("builtins.__import__", side_effect=_block_questionary), \
+    # patch.object restores err_console even if the assertions fail: leaving the
+    # buffered Console in place would leak into every later test in the session.
+    with patch.object(guide_mod, "err_console", Console(file=buf)), \
+         patch("builtins.__import__", side_effect=_block_questionary), \
          pytest.raises(typer.Exit):
         guide_mod.run_guide("unemployment", None, False, Path("data.csv"))
     assert "questionary not installed" in buf.getvalue()

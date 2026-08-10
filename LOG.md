@@ -37,8 +37,6 @@
 - Problemi aperti: `search "unemployment"` seppellisce UNE_RT_M al #58/146 (ranking per occorrenze, non per importanza); `siblings` case-sensitive con exit code 0 sul fallimento; hint d'installazione `guide` errato (serve `pip install "opensdmx[guide]"`); nessun intervallo temporale in `info`; niente stima righe nel guard di `get`; warning plotnine su stderr.
 - Proposte R1-R6 (senza cambiare architettura): boost ranking senza LLM, fix `siblings`, fix hint `guide`, `info` con periodo quando noto, stima `~N righe` nel guard, silenziare plotnine. R1 (ranking) a maggior ritorno per l'utente umano.
 
-# LOG
-
 ## 2026-08-05 - feat: `values` cross-references the dataflow's constraints (#67, #66)
 
 - Returning the whole codelist was never wrong — a codelist is a shared definition, not one dataflow's inventory. What was missing is the link to `constraints`: of the 759 `CL_UNIT` codes listed for `PRC_HICP_MANR`, exactly one (`RCH_A`) is usable as a filter there, with no signal in the output.

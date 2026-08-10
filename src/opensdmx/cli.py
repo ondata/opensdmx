@@ -1348,19 +1348,22 @@ def siblings(
     _apply_provider(provider)
 
     from .categories import CategoriesNotSupported, siblings_of
-    from .discovery import load_dataset
+    from .discovery import resolve_dataflow
 
-    # Resolve via load_dataset (case-insensitive, canonical df_id): unlike the
-    # category lookup, it distinguishes "ID doesn't exist" from "exists but not
-    # categorized" with the standard error, and normalizes `siblings une_rt_m`
-    # to UNE_RT_M like every other command.
+    # Resolve against the dataflow catalog only (case-insensitive, canonical
+    # df_id): unlike the category lookup it distinguishes "ID doesn't exist"
+    # from "exists but not categorized" with the standard error, and normalizes
+    # `siblings une_rt_m` to UNE_RT_M like every other command. Deliberately not
+    # load_dataset: that fetches the datastructure for the dimensions, which
+    # this command never uses — it would add a request and make a DSD outage
+    # break a lookup the cached category tree can answer on its own.
     try:
-        ds = load_dataset(dataset_id)
+        row = resolve_dataflow(dataset_id)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
-    canonical_id = ds["df_id"]
+    canonical_id = row["df_id"]
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             groups = siblings_of(canonical_id)
