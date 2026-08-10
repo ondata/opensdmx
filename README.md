@@ -71,6 +71,71 @@ opensdmx get TIPSUN20 --sex T --age Y15-74 --start-period 2020 --query-file unem
 opensdmx run unemployment.yaml --out results.csv
 ```
 
+## Human analyst quickstart
+
+opensdmx is designed for AI agents, but it is just as fast in a human hand. These
+are the three flows a socio-economic analyst runs daily, end to end — with the
+rules that make them work.
+
+**Golden rule: check `constraints`, not the dataset title.** A dataflow's
+dimensions change over time (codes appear and disappear). Before building a
+query, ask the CLI which values the dataset *actually* contains today:
+
+```bash
+opensdmx constraints UNE_RT_M        # all dimensions, with a code sample
+opensdmx constraints UNE_RT_M age    # full list for one dimension
+```
+
+Only codes returned here are safe to use as filters. Codes from the general
+SDMX codelist (`opensdmx values`) may not exist in this specific dataset — the
+data returns a 400. When in doubt, `--last-n 1` fetches one observation per
+series: a cheap way to check a query before downloading everything.
+
+**Example 1 — youth unemployment, monthly, Italy vs Spain, with readable labels:**
+
+```bash
+opensdmx get UNE_RT_M --freq M --s_adj SA --age Y_LT25 --unit PC_ACT --sex T \
+  --geo IT+ES --start-period 2024-01 --labels --out youth_ue.csv
+```
+
+`--labels` appends `geo_label` ("Italy"), `age_label` ("Less than 25 years") and
+so on next to the codes — ready for a report. Without it you get bare `IT`, `T`,
+`Y_LT25`.
+
+**Example 2 — GDP per capita, all EU countries, reproducible:**
+
+```bash
+# Build the query once, save it as a reusable template
+opensdmx get NAMA_10_PC --unit CP_EUR_HAB --na_item B1GQ --geo AT+BE+DE+FR+IT \
+  --start-period 2020 --labels --query-file gdp_pc.yaml
+
+# Re-run it any time, even months later, without remembering the parameters
+opensdmx run gdp_pc.yaml --out gdp_pc_latest.csv
+```
+
+**Example 3 — inflation (HICP, all items), latest observation per country, plotted:**
+
+```bash
+opensdmx get PRC_HICP_MANR --coicop CP00 --geo IT+DE+FR+ES --labels --last-n 1
+opensdmx plot PRC_HICP_MANR --coicop CP00 --geo IT+DE+FR+ES --out hicp.png
+```
+
+**Three rules that save time:**
+
+1. **Include the single-value dimensions.** Some dimensions have exactly one
+   value (e.g. `--freq M` in UNE_RT_M). Include it explicitly — never assume
+   the wildcard is free.
+2. **`--labels` early, not late.** It costs nothing and turns codes into names.
+   There is no `--no-labels` penalty: keep it on.
+3. **Save every query you will re-run.** `--query-file` plus `opensdmx run`
+   turns a one-off download into a versioned, shareable recipe. The YAML even
+   stores the human-readable filter descriptions.
+
+For the guided, interactive flow (dataset discovery, schema exploration, filter
+selection step by step) pair opensdmx with the
+[`sdmx-explorer`](https://github.com/ondata/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md)
+Agent Skill — it walks through exactly these phases conversationally.
+
 ## Python quick start
 
 ```python

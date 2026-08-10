@@ -1348,19 +1348,31 @@ def siblings(
     _apply_provider(provider)
 
     from .categories import CategoriesNotSupported, siblings_of
+    from .discovery import load_dataset
 
+    # Resolve via load_dataset (case-insensitive, canonical df_id): unlike the
+    # category lookup, it distinguishes "ID doesn't exist" from "exists but not
+    # categorized" with the standard error, and normalizes `siblings une_rt_m`
+    # to UNE_RT_M like every other command.
+    try:
+        ds = load_dataset(dataset_id)
+    except Exception as e:
+        err_console.print(f"[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+
+    canonical_id = ds["df_id"]
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
-            groups = siblings_of(dataset_id)
+            groups = siblings_of(canonical_id)
     except CategoriesNotSupported as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
 
     if not groups:
         err_console.print(
-            f"[yellow]Dataflow {dataset_id} is not categorized (or not found).[/yellow]"
+            f"[yellow]Dataflow {canonical_id} is not categorized in the thematic tree.[/yellow]"
         )
-        raise typer.Exit(0)
+        raise typer.Exit(1)
 
     if _output_mode != "table":
         _emit(groups)
@@ -1843,7 +1855,7 @@ def blacklist(
     except ImportError:
         err_console.print(
             "[red]Error:[/red] questionary not installed.\n"
-            "Run: pip install opensdmx[guide]"
+            r"Run: pip install opensdmx\[guide]"
         )
         raise typer.Exit(1)
 

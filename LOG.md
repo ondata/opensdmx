@@ -1,5 +1,33 @@
 # LOG
 
+## 2026-08-09 - docs: sezione "Human analyst quickstart" nel README (R7 della valutazione)
+
+- Aggiunta sezione per l'utente umano dopo il CLI quick start: tre flussi reali da analista (disoccupazione giovanile con `--labels`, PIL pro capite riproducibile via `--query-file`/`run`, HICP con `plot`) e le tre regole che salvano tempo (dimensioni a valore singolo esplicite, `--labels` sempre, salvare le query riusabili).
+- Tutti i comandi citati verificati end-to-end contro Eurostat prima di pubblicarli (nessun esempio inventato).
+- Niente codice: solo README.
+
+## 2026-08-09 - fix: l'hint d'installazione di `guide` perdeva `[guide]` (P3 della valutazione)
+
+- Sintomo: `opensdmx guide` diceva `Run: pip install opensdmx` (senza `[guide]`) anche se il sorgente conteneva la stringa giusta — un fix che non installa `questionary` e va in loop.
+- Causa radice: il messaggio passava per Rich, che interpreta `[guide]` come markup e scarta il tag senza controparte. Non era una stringa sbagliata: era renderizzata male.
+- Fix: escape `\[guide]` nei due call site (`guide.py` run_guide e `cli.py` blacklist).
+- Test di regressione: `test_guide_missing_extra_hint_shows_bracket` (blocca l'import di questionary, cattura la Console su buffer, verifica che `[guide]` sopravviva al rendering). 352 passed, ruff/mypy puliti.
+
+## 2026-08-09 - fix: `siblings` case-insensitive + exits 1 on failure (da valutazione v0.21.0)
+
+- `siblings une_rt_m` falliva con "not categorized" mentre `siblings UNE_RT_M` funzionava: `siblings_of()` filtrava `df_id` a match esatto, mentre `load_dataset()` normalizza il case ovunque. Viluppo: match case-insensitive in `siblings_of` (`str.to_uppercase()`) e comparazione `is_target` normalizzata, così il marker `→` colpisce la riga giusta anche con input minuscolo.
+- `siblings` ora risolve l'ID via `load_dataset()` prima della lookup categorie: distingue "ID inesistente" (errore standard `Could not find dataset`, exit 1) da "esiste ma non categorizzato" (exit 1, non più 0 silenzioso).
+- Test: `test_siblings_of_case_insensitive` (library) + 4 CLI test (lowercase, json, not-found, not-categorized); 351 passed, ruff/mypy puliti.
+
+## 2026-08-09 - Valutazione usabilità v0.21.0 (prospettiva analista socio-economico)
+
+- Nuovo doc `docs/evaluation-v0.21.0.md`: valutazione hands-on della CLI da utente analista Eurostat (disoccupazione, PIL pro capite, HICP, NUTS2, popolazione), con tempi misurati e casi d'errore verificati.
+- Punti forti: sub-second su cache calda (0.3-0.8 s), `constraints` fedele alla realtà di campo (verificato: l'API rifiuta `Y15-24` su UNE_RT_M esattamente come il CLI), errori autoesplicativi, `--labels`, riproducibilità YAML (`--query-file`/`run`), `plot` out-of-the-box.
+- Problemi aperti: `search "unemployment"` seppellisce UNE_RT_M al #58/146 (ranking per occorrenze, non per importanza); `siblings` case-sensitive con exit code 0 sul fallimento; hint d'installazione `guide` errato (serve `pip install "opensdmx[guide]"`); nessun intervallo temporale in `info`; niente stima righe nel guard di `get`; warning plotnine su stderr.
+- Proposte R1-R6 (senza cambiare architettura): boost ranking senza LLM, fix `siblings`, fix hint `guide`, `info` con periodo quando noto, stima `~N righe` nel guard, silenziare plotnine. R1 (ranking) a maggior ritorno per l'utente umano.
+
+# LOG
+
 ## 2026-08-05 - feat: `values` cross-references the dataflow's constraints (#67, #66)
 
 - Returning the whole codelist was never wrong — a codelist is a shared definition, not one dataflow's inventory. What was missing is the link to `constraints`: of the 759 `CL_UNIT` codes listed for `PRC_HICP_MANR`, exactly one (`RCH_A`) is usable as a filter there, with no signal in the output.

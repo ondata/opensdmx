@@ -311,6 +311,17 @@ def test_siblings_of_single_category(sample_cache):
     assert others == {"WHEAT", "OATS"}
 
 
+def test_siblings_of_case_insensitive(sample_cache):
+    """Lowercase input resolves to the canonical df_id, like load_dataset()."""
+    for variant in ("rice", "Rice", "RICE"):
+        groups = siblings_of(variant)
+        assert len(groups) == 1
+        g = groups[0]
+        target = next(s for s in g["siblings"] if s["is_target"])
+        assert target["df_id"] == "RICE"
+        assert {s["df_id"] for s in g["siblings"]} == {"WHEAT", "RICE", "OATS"}
+
+
 def test_siblings_of_multi_membership(sample_cache):
     """WHEAT is in both CROPS.CEREALS and LIVESTOCK → two groups."""
     groups = siblings_of("WHEAT")
