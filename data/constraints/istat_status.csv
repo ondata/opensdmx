@@ -3753,59 +3753,59 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 742_1142_DF_CPI_INNOVDIG_2,"Innovazione e piattaforme digitali - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,5,63,0,"",2026-08-11
 742_1142_DF_CPI_INNOVDIG_3,"Innovazione e piattaforme digitali - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,5,115,0,"",2026-07-28
 742_1142_DF_CPI_INNOVDIG_4,Innovazione e piattaforme digitali - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,5,1023,0,"",2026-08-11
-742_1142_DF_CPI_INNOVDIG_5,Progetti di innovazione - Macrosettori economici - prov. (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1142_DF_CPI_INNOVDIG_6,"Progetti di innovazione - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1142_DF_CPI_INNOVDIG_7,"Progetti di innovazione - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1142_DF_CPI_INNOVDIG_8,Progetti di innovazione - Classe di Ateco (4 digit) (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+742_1142_DF_CPI_INNOVDIG_5,Progetti di innovazione - Macrosettori economici - prov. (2018 - 2022),ok,hub,6,161,0,"",2026-08-12
+742_1142_DF_CPI_INNOVDIG_6,"Progetti di innovazione - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,6,76,0,"",2026-08-12
+742_1142_DF_CPI_INNOVDIG_7,"Progetti di innovazione - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,6,127,0,"",2026-08-12
+742_1142_DF_CPI_INNOVDIG_8,Progetti di innovazione - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,6,907,0,"",2026-08-12
 742_1142_DF_CPI_INNOVDIG_9,Piattaforme digitali - Macrosettori economici - prov (2018 - 2022),ok,hub,6,155,0,"",2026-07-28
-742_1145_DF_CPI_CLOUDINV_1,"Software gestionali, cloud, investimenti digitali - Macrosettori economici - prov. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_10,"Servizi cloud - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_11,"Servizi cloud - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_12,Servizi cloud - Classe di Ateco (4 digit) (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_13,Investimenti effettuati - Macrosettori economici - prov. (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_14,"Investimenti effettuati - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_15,"Investimenti effettuati - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_16,Investimenti effettuati - Classe di Ateco (4 digit) (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_17,Investimenti previsti - Macrosettori economici - prov (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_18,"Investimenti previsti - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_19,"Investimenti previsti - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_2,"Software gestionali, cloud, investimenti digitali - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_20,Investimenti previsti - Classe di Ateco (4 digit) (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+742_1145_DF_CPI_CLOUDINV_1,"Software gestionali, cloud, investimenti digitali - Macrosettori economici - prov. (2018 - 2022)",ok,hub,5,149,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_10,"Servizi cloud - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,6,68,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_11,"Servizi cloud - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,6,124,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_12,Servizi cloud - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,6,896,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_13,Investimenti effettuati - Macrosettori economici - prov. (2018 - 2022),ok,hub,6,159,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_14,"Investimenti effettuati - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,6,67,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_15,"Investimenti effettuati - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,6,130,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_16,Investimenti effettuati - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,6,905,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_17,Investimenti previsti - Macrosettori economici - prov (2018 - 2022),ok,hub,6,159,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_18,"Investimenti previsti - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,6,67,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_19,"Investimenti previsti - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,6,130,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_2,"Software gestionali, cloud, investimenti digitali - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,5,64,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_20,Investimenti previsti - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,6,906,0,"",2026-08-12
 742_1145_DF_CPI_CLOUDINV_21,Conseguenze dei processi di digitalizzazione - Macrosettori economici - prov,ok,hub,6,154,0,"",2026-07-28
 742_1145_DF_CPI_CLOUDINV_22,"Conseguenze dei processi di digitalizzazione - Sezioni Ateco, classe di addetti - reg.",ok,hub,6,62,0,"",2026-07-28
-742_1145_DF_CPI_CLOUDINV_23,"Conseguenze dei processi di digitalizzazione - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+742_1145_DF_CPI_CLOUDINV_23,"Conseguenze dei processi di digitalizzazione - Divisione di Ateco (2 digit), classe di addetti",ok,hub,6,124,0,"",2026-08-12
 742_1145_DF_CPI_CLOUDINV_24,Conseguenze dei processi di digitalizzazione - Classe di Ateco (4 digit),ok,hub,6,891,0,"",2026-07-28
-742_1145_DF_CPI_CLOUDINV_3,"Software gestionali, cloud, investimenti digitali - Divisione di Ateco (2 digit), classe di addetti (2018-2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_4,"Software gestionali, cloud, investimenti digitali - Classe di Ateco (4 digit) (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_5,Software per la gestione aziendale - Macrosettori economici - prov. (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_6,"Software per la gestione aziendale - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_7,"Software per la gestione aziendale - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_8,Software per la gestione aziendale - Classe di Ateco (4 digit) (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1145_DF_CPI_CLOUDINV_9,Servizi cloud - Macrosettori economici - prov. (2018 - 2022),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_1,Formazione e competenze digitali - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_10,"Competenze digitali possedute - COMPP - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_11,"Competenze digitali possedute - COMPP - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_12,Competenze digitali possedute - COMPP - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_13,Competenze digitali rilevanti - COMPR - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_14,"Competenze digitali rilevanti - COMPR - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_15,"Competenze digitali rilevanti - COMPR - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_16,Competenze digitali rilevanti - COMPR - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_17,Mansioni professionali rilevanti - MANS - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_18,"Mansioni professionali rilevanti - MANS - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_19,"Mansioni professionali rilevanti - MANS - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_2,"Formazione e competenze digitali - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_20,Mansioni professionali rilevanti - MANS - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_21,Azioni per affrontare le conseguenze - AZI - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_22,"Azioni per affrontare le conseguenze - AZI - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_23,"Azioni per affrontare le conseguenze - AZI - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_24,Azioni per affrontare le conseguenze - AZI - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_3,"Formazione e competenze digitali - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_4,Formazione e competenze digitali - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_5,Attività di formazione - FORM - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_6,"Attività di formazione - FORM - Sezioni Ateco, classe di addetti - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_7,"Attività di formazione - FORM - Divisione di Ateco (2 digit), classe di addetti",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_8,Attività di formazione - FORM - Classe di Ateco (4 digit),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-742_1146_DF_CPI_TRAINDIG_9,Competenze digitali possedute - COMPP - Macrosettori economici - prov,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+742_1145_DF_CPI_CLOUDINV_3,"Software gestionali, cloud, investimenti digitali - Divisione di Ateco (2 digit), classe di addetti (2018-2022)",ok,hub,5,120,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_4,"Software gestionali, cloud, investimenti digitali - Classe di Ateco (4 digit) (2018 - 2022)",ok,hub,5,896,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_5,Software per la gestione aziendale - Macrosettori economici - prov. (2018 - 2022),ok,hub,6,155,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_6,"Software per la gestione aziendale - Sezioni Ateco, classe di addetti - reg. (2018 - 2022)",ok,hub,6,63,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_7,"Software per la gestione aziendale - Divisione di Ateco (2 digit), classe di addetti (2018 - 2022)",ok,hub,6,260,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_8,Software per la gestione aziendale - Classe di Ateco (4 digit) (2018 - 2022),ok,hub,6,900,0,"",2026-08-12
+742_1145_DF_CPI_CLOUDINV_9,Servizi cloud - Macrosettori economici - prov. (2018 - 2022),ok,hub,6,153,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_1,Formazione e competenze digitali - Macrosettori economici - prov,ok,hub,5,148,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_10,"Competenze digitali possedute - COMPP - Sezioni Ateco, classe di addetti - reg.",ok,hub,6,182,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_11,"Competenze digitali possedute - COMPP - Divisione di Ateco (2 digit), classe di addetti",ok,hub,6,126,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_12,Competenze digitali possedute - COMPP - Classe di Ateco (4 digit),ok,hub,6,905,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_13,Competenze digitali rilevanti - COMPR - Macrosettori economici - prov,ok,hub,6,161,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_14,"Competenze digitali rilevanti - COMPR - Sezioni Ateco, classe di addetti - reg.",ok,hub,6,182,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_15,"Competenze digitali rilevanti - COMPR - Divisione di Ateco (2 digit), classe di addetti",ok,hub,6,126,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_16,Competenze digitali rilevanti - COMPR - Classe di Ateco (4 digit),ok,hub,6,905,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_17,Mansioni professionali rilevanti - MANS - Macrosettori economici - prov,ok,hub,7,159,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_18,"Mansioni professionali rilevanti - MANS - Sezioni Ateco, classe di addetti - reg.",ok,hub,7,180,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_19,"Mansioni professionali rilevanti - MANS - Divisione di Ateco (2 digit), classe di addetti",ok,hub,7,124,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_2,"Formazione e competenze digitali - Sezioni Ateco, classe di addetti - reg.",ok,hub,5,169,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_20,Mansioni professionali rilevanti - MANS - Classe di Ateco (4 digit),ok,hub,7,903,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_21,Azioni per affrontare le conseguenze - AZI - Macrosettori economici - prov,ok,hub,6,153,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_22,"Azioni per affrontare le conseguenze - AZI - Sezioni Ateco, classe di addetti - reg.",ok,hub,6,174,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_23,"Azioni per affrontare le conseguenze - AZI - Divisione di Ateco (2 digit), classe di addetti",ok,hub,6,118,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_24,Azioni per affrontare le conseguenze - AZI - Classe di Ateco (4 digit),ok,hub,7,893,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_3,"Formazione e competenze digitali - Divisione di Ateco (2 digit), classe di addetti",ok,hub,5,113,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_4,Formazione e competenze digitali - Classe di Ateco (4 digit),ok,hub,5,892,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_5,Attività di formazione - FORM - Macrosettori economici - prov,ok,hub,6,161,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_6,"Attività di formazione - FORM - Sezioni Ateco, classe di addetti - reg.",ok,hub,6,182,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_7,"Attività di formazione - FORM - Divisione di Ateco (2 digit), classe di addetti",ok,hub,6,126,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_8,Attività di formazione - FORM - Classe di Ateco (4 digit),ok,hub,6,905,0,"",2026-08-12
+742_1146_DF_CPI_TRAINDIG_9,Competenze digitali possedute - COMPP - Macrosettori economici - prov,ok,hub,6,161,0,"",2026-08-12
 74_171,Procedimenti di giustizia amministrativa,ok,hub,5,91,0,"",2026-07-28
 74_171_DF_DCAR_PROC_AMM_1,Procedimenti,ok,hub,5,88,0,"",2026-07-28
 74_171_DF_DCAR_PROC_AMM_2,Consiglio di stato,ok,hub,4,31,0,"",2026-07-28
@@ -3814,17 +3814,17 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 74_172,Decisioni di giustizia amministrativa,ok,hub,4,40,0,"",2026-07-28
 74_172_DF_DCAR_DEC_AMM_1,Decisioni,ok,hub,4,38,0,"",2026-07-28
 74_172_DF_DCAR_DEC_AMM_2,Consiglio di stato - serie interrotte,ok,hub,4,35,0,"",2026-07-28
-750_1117,"Conti della branca agricoltura, silvicoltura e pesca - versione 2014",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+750_1117,"Conti della branca agricoltura, silvicoltura e pesca - versione 2014",ok,hub,8,128,0,"",2026-08-12
 750_1117_DF_DCCN_VAAGSIPET_B14_1,Produzione e valore aggiunto ai prezzi base - edizioni giugno 2015 - maggio 2019,ok,hub,7,49,0,"",2026-07-28
-750_1117_DF_DCCN_VAAGSIPET_B14_2,Prodotti e voci di costo - edizioni giugno 2015 - maggio 2019,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-750_1118,"Conti della branca agricoltura, silvicoltura e pesca - versione 2011",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+750_1117_DF_DCCN_VAAGSIPET_B14_2,Prodotti e voci di costo - edizioni giugno 2015 - maggio 2019,ok,hub,8,123,0,"",2026-08-12
+750_1118,"Conti della branca agricoltura, silvicoltura e pesca - versione 2011",ok,hub,8,124,0,"",2026-08-12
 760_1140,Sistema dei conti della sanità - versione 2014,ok,hub,7,43,0,"",2026-07-28
 760_1140_DF_DCCN_SHA_B14_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento - edizioni giugno 2018 e giugno 2019,ok,hub,6,33,0,"",2026-07-28
 760_1140_DF_DCCN_SHA_B14_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore - edizioni giugno 2018 e giugno 2019,ok,hub,6,33,0,"",2026-07-28
 760_1140_DF_DCCN_SHA_B14_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento - edizioni giugno 2018 e giugno 2019,ok,hub,6,25,0,"",2026-07-28
-76_177,Protesti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-76_177_DF_DCAR_PROTESTI_1,Protesti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-76_177_DF_DCAR_PROTESTI_2,Territorio di iscrizione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+76_177,Protesti,ok,hub,7,319,0,"",2026-08-12
+76_177_DF_DCAR_PROTESTI_1,Protesti,ok,hub,7,187,0,"",2026-08-12
+76_177_DF_DCAR_PROTESTI_2,Territorio di iscrizione,ok,hub,6,289,0,"",2026-08-12
 77_47,Atti notarili,ok,hub,4,105,0,"",2026-07-28
 77_47_DF_DCAR_ATT_NOTAR_1,Atti notarili,ok,hub,4,105,0,"",2026-07-28
 77_68,Convenzioni contenute negli atti notarili,ok,hub,4,247,0,"",2026-07-28
@@ -3841,7 +3841,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 78_1112_DF_DCCV_VIOL_CARAT_7,"Cittadinanza, presenza di limitazioni nelle attività quotidiane",ok,hub,7,18,0,"",2026-07-28
 78_1112_DF_DCCV_VIOL_CARAT_8,"Tipo di autore, età della donna",ok,hub,6,39,0,"",2026-07-28
 78_1112_DF_DCCV_VIOL_CARAT_9,"Tipo di autore, stato civile della donna",ok,hub,6,37,0,"",2026-07-28
-78_1121,Vittime che si rivolgono al 1522 (numero antiviolenza e stalking),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+78_1121,Vittime che si rivolgono al 1522 (numero antiviolenza e stalking),ok,hub,16,256,0,"",2026-08-12
 78_1121_DF_DCCV_1522_VITTIME_1,"Vittime – sesso, classi età, regione",ok,hub,6,47,0,"",2026-07-28
 78_1121_DF_DCCV_1522_VITTIME_10,"Vittime - sesso, motivo contatto, regione",ok,hub,6,43,0,"",2026-07-28
 78_1121_DF_DCCV_1522_VITTIME_11,"Vittime - sesso, presenza figli",ok,hub,6,14,0,"",2026-07-28
@@ -3895,11 +3895,11 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 78_1260,Centri  antiviolenza,ok,hub,12,79,0,"",2026-07-28
 7_1027_DF_DCCN_PEFA_B19_1,Risorse e impieghi: schema di sintesi - edizioni dicembre 2019 - dicembre 2023,ok,hub,7,29,0,"",2026-07-28
 7_1027_DF_DCCN_PEFA_B19_2,Risorse per attività e tipo di flusso - edizioni dicembre 2019 - dicembre 2023,ok,hub,7,155,0,"",2026-07-28
-7_1027_DF_DCCN_PEFA_B19_3,Impieghi per attività e tipo di flusso - edizioni dicembre 2019 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+7_1027_DF_DCCN_PEFA_B19_3,Impieghi per attività e tipo di flusso - edizioni dicembre 2019 - dicembre 2023,ok,hub,7,157,0,"",2026-08-12
 7_1027_DF_DCCN_PEFA_B19_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione) - edizioni dicembre 2019 - dicembre 2023,ok,hub,7,154,0,"",2026-07-28
 7_1027_DF_DCCN_PEFA_B19_5,Vettori di indicatori chiave sui flussi di energia - edizioni dicembre 2019 - dicembre 2023,ok,hub,6,131,0,"",2026-07-28
-7_1027_DF_DCCN_PEFA_B19_6,Tavola di raccordo: consumo di energia - edizioni dicembre 2019 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
-7_1027_DF_DCCN_PEFA_B19_7,Impieghi dei flussi di energia per tipo di uso - edizioni dicembre 2019 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+7_1027_DF_DCCN_PEFA_B19_6,Tavola di raccordo: consumo di energia - edizioni dicembre 2019 - dicembre 2023,ok,hub,6,23,0,"",2026-08-12
+7_1027_DF_DCCN_PEFA_B19_7,Impieghi dei flussi di energia per tipo di uso - edizioni dicembre 2019 - dicembre 2023,ok,hub,7,139,0,"",2026-08-12
 7_1027_DF_DCCN_PEFA_B19_8,Intensità energetica - edizioni dicembre 2019 - dicembre 2023,ok,hub,6,97,0,"",2026-07-28
 7_1027_DF_DCCN_PEFA_B19_9,Intensità di emissione  dei consumi energetici - edizioni dicembre 2019 - dicembre 2023,ok,hub,6,104,0,"",2026-07-28
 7_1028_DF_DCCN_EGSS_B19_1,"Produzione, valore aggiunto, esportazioni - edizioni febbraio 2020 - dicembre 2023",ok,hub,7,64,0,"",2026-07-28
@@ -3907,7 +3907,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 7_187_DF_DCCN_CONTIEMATMREV2_B19_1,Attività produttive - edizioni novembre 2019 - dicembre 2023,ok,hub,6,132,0,"",2026-07-28
 7_187_DF_DCCN_CONTIEMATMREV2_B19_2,Famiglie - edizioni novembre 2019 - dicembre 2023,ok,hub,6,42,0,"",2026-07-28
 7_187_DF_DCCN_CONTIEMATMREV2_B19_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP - edizioni novembre 2019 - dicembre 2023,ok,hub,6,42,0,"",2026-07-28
-7_187_DF_DCCN_CONTIEMATMREV2_B19_4,Intensità della produzione e del valore aggiunto - edizioni novembre 2019 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-28
+7_187_DF_DCCN_CONTIEMATMREV2_B19_4,Intensità della produzione e del valore aggiunto - edizioni novembre 2019 - dicembre 2023,ok,hub,7,137,0,"",2026-08-12
 7_187_DF_DCCN_CONTIEMATMREV2_B19_5,Intensità della occupazione - edizioni novembre 2019 - dicembre 2023,ok,hub,6,132,0,"",2026-07-28
 7_26_DF_DCCN_IMPAMB1_B19_1,Categoria di imposta - edizioni ottobre 2019 - aprile 2024,ok,hub,7,43,0,"",2026-07-28
 7_26_DF_DCCN_IMPAMB1_B19_2,Unità che corrisponde l'imposta - edizioni ottobre 2019 - aprile 2024,ok,hub,8,21,0,"",2026-07-28
@@ -3957,85 +3957,85 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_277_DF_DICA_ASIAAGR_6,"Forma giuridica, settori economici (Ateco 3 cifre)",ok,hub,5,25,0,"",2026-07-29
 83_277_DF_DICA_ASIAAGR_7,"Forma giuridica, classe di addetti - reg.",ok,hub,6,41,0,"",2026-07-29
 83_277_DF_DICA_ASIAAGR_8,Forma giuridica - prov,ok,hub,5,143,0,"",2026-07-29
-83_63,Aspetti della vita quotidiana,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_100,Sport - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63,Aspetti della vita quotidiana,ok,hub,8,1067,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_100,Sport - età dettaglio,ok,hub,5,26,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_101,"Sport - età, titolo di studio",ok,hub,6,22,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_102,Sport - condizione e posizione nella professione,ok,hub,6,26,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_103,Sport - regioni e tipo di comune,ok,hub,4,45,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_104,Incontri con amici - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_105,"Incontri con amici - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_104,Incontri con amici - età dettaglio,ok,hub,5,27,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_105,"Incontri con amici - età, titolo di studio",ok,hub,6,24,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_106,Incontri con amici - condizione e posizione nella professione,ok,hub,6,28,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_107,Incontri con amici - regioni e tipo di comune,ok,hub,4,47,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_108,Informazione politica - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_109,"Informazione politica - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_110,Informazione politica - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_111,Informazione politica - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_108,Informazione politica - età dettaglio,ok,hub,5,43,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_109,"Informazione politica - età, titolo di studio",ok,hub,6,42,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_110,Informazione politica - condizione professionale,ok,hub,6,42,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_111,Informazione politica - posizione nella professione,ok,hub,6,38,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_112,Informazione politica (canale) - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_113,Informazione politica (frequenza) - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_114,Informazione politica (motivo) - regioni e tipo di comune,ok,hub,5,46,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_115,Discussione e attività politica - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_115,Discussione e attività politica - età dettaglio,ok,hub,5,30,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_116,"Discussione e attività politica - età, titolo di studio",ok,hub,6,29,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_117,Discussione e attività politica - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_117,Discussione e attività politica - condizione professionale,ok,hub,6,29,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_118,Discussione e attività politica - posizione nella professione,ok,hub,6,25,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_119,Discussione politica - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_120,Giovani che vivono in famiglia,ok,hub,6,31,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_121,Giovani che vivono in famiglia - reg.,ok,hub,6,44,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_122,Attività politica - regioni e tipo di comune,ok,hub,5,46,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_123,Fiducia negli altri - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_124,"Fiducia negli altri - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_125,Fiducia negli altri - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_126,Fiducia negli altri - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_123,Fiducia negli altri - età dettaglio,ok,hub,5,36,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_124,"Fiducia negli altri - età, titolo di studio",ok,hub,6,35,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_125,Fiducia negli altri - condizione professionale,ok,hub,6,35,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_126,Fiducia negli altri - posizione nella professione,ok,hub,6,31,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_127,Fiducia interpersonale - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_128,Fiducia verso particolari persone - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_129,Associazionismo - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_130,"Associazionismo - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_129,Associazionismo - età dettaglio,ok,hub,5,24,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_130,"Associazionismo - età, titolo di studio",ok,hub,6,23,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_131,Associazionismo - condizione e posizione nella professione,ok,hub,6,27,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_132,Associazionismo - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_133,Pratica religiosa - età dettaglio,ok,hub,5,21,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_134,"Pratica religiosa - età, titolo di studio",ok,hub,6,19,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_135,Pratica religiosa - condizione e posizione nella professione,ok,hub,6,23,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_136,Pratica religiosa - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_137,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_138,"Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_139,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - condizione professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_140,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_137,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età dettaglio,ok,hub,5,29,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_138,"Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - età, titolo di studio",ok,hub,6,28,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_139,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - condizione professione,ok,hub,6,28,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_140,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - posizione nella professione,ok,hub,6,24,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_141,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso - regioni e tipo di comune,ok,hub,5,52,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_142,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - età dettaglio,ok,hub,5,20,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_143,"Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - età, titolo di studio",ok,hub,6,19,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_144,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - condizione e posizione nella professione,ok,hub,6,23,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_145,Grado di soddisfazione (da 0 - a 10) per la vita nel complesso (valore medio e mediano) - regioni e tipo di comune,ok,hub,5,43,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_146,Soddisfazione per alcuni aspetti - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_146,Soddisfazione per alcuni aspetti - età dettaglio,ok,hub,5,42,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_147,"Soddisfazione per alcuni aspetti - età, titolo di studio",ok,hub,6,41,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_148,Soddisfazione per alcuni aspetti - condizione professionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_149,Soddisfazione per alcuni aspetti - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_150,Soddisfazione per alcuni aspetti - regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_148,Soddisfazione per alcuni aspetti - condizione professionale,ok,hub,6,36,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_149,Soddisfazione per alcuni aspetti - posizione nella professione,ok,hub,6,32,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_150,Soddisfazione per alcuni aspetti - regioni e tipo di comune,ok,hub,4,64,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_151,Soddisfazione per il lavoro - età dettaglio,ok,hub,4,19,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_152,"Soddisfazione per il lavoro - età, titolo di studio",ok,hub,6,21,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_153,Soddisfazione per il lavoro - condizione e posizione nella professione,ok,hub,6,18,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_154,Soddisfazione per il lavoro - ripartizioni e tipo di comune,ok,hub,5,23,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_155,"Treno, pullman e autobus - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_156,"Treno, pullman e autobus - condizione professionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_157,"Treno, pullman e autobus - posizione nella professione",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_158,Treno - regioni e tipo di comune,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_155,"Treno, pullman e autobus - età",ok,hub,5,64,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_156,"Treno, pullman e autobus - condizione professionale",ok,hub,6,63,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_157,"Treno, pullman e autobus - posizione nella professione",ok,hub,6,59,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_158,Treno - regioni e tipo di comune,ok,hub,5,54,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_159,Pullman - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_160,Autobus - regioni e tipo di comune,ok,hub,5,56,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_161,Tipo di certificato richiesto e autocertificazione - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_162,"Tipo di certificato richiesto e autocertificazione - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_161,Tipo di certificato richiesto e autocertificazione - età dettaglio,ok,hub,5,33,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_162,"Tipo di certificato richiesto e autocertificazione - età, titolo di studio",ok,hub,6,33,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_163,Tipo di certificato richiesto e autocertificazione - condizione professionale,ok,hub,6,33,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_164,Tipo di certificato richiesto e autocertificazione - posizione nella professione,ok,hub,6,29,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_165,Tipo di certificato richiesto e autocertificazione - regioni e tipo di comune,ok,hub,5,57,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_166,Spostamenti abituali per andare a scuola,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_166,Spostamenti abituali per andare a scuola,ok,hub,5,31,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_167,Spostamenti verso scuola - regioni e tipo di comune,ok,hub,5,55,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_168,Spostamenti per andare a lavoro - Età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_169,Spostamenti per andare a lavoro - condizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_168,Spostamenti per andare a lavoro - Età,ok,hub,5,29,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_169,Spostamenti per andare a lavoro - condizione nella professione,ok,hub,6,28,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_170,Spostamenti per andare a lavoro - regioni e tipo di comune,ok,hub,5,55,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_201,Abitudine al fumo - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_202,"Abitudine al fumo - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_203,Abitudine al fumo - posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_201,Abitudine al fumo - età dettaglio,ok,hub,5,28,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_202,"Abitudine al fumo - età, titolo di studio",ok,hub,6,27,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_203,Abitudine al fumo - posizione nella professione,ok,hub,5,30,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_204,Abitudine al fumo - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_205,Stato di salute- età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_206,"Stato di salute - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_207,Stato di salute- posizione nella professione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_205,Stato di salute- età dettaglio,ok,hub,5,33,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_206,"Stato di salute - età, titolo di studio",ok,hub,6,31,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_207,Stato di salute- posizione nella professione,ok,hub,5,34,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_208,Stato di salute - regioni e tipo di comune,ok,hub,4,54,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_209,Consumo di farmaci - età dettaglio,ok,hub,5,19,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_210,"Consumo di farmaci - età, titolo di studio",ok,hub,6,17,0,"",2026-07-29
@@ -4049,12 +4049,12 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_63_DF_DCCV_AVQ_PERSONE_218,"Ricoveri ospedalieri - età, titolo di studio",ok,hub,6,23,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_219,Ricoveri ospedalieri - posizione nella professione,ok,hub,5,26,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_220,Ricoveri ospedalieri - regioni e tipo di comune,ok,hub,4,46,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_221,Soddisfazione per i vari aspetti del ricovero - età dettaglio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_222,"Soddisfazione per i vari aspetti del ricovero - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_221,Soddisfazione per i vari aspetti del ricovero - età dettaglio,ok,hub,5,30,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_222,"Soddisfazione per i vari aspetti del ricovero - età, titolo di studio",ok,hub,6,29,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_223,Soddisfazione per i vari aspetti del ricovero - posizione nella professione,ok,hub,5,32,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_224,Spettacoli - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_224,Spettacoli - dettaglio età,ok,hub,5,29,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_225,"Spettacoli - sesso, età, titolo di studio",ok,hub,6,25,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_226,Spettacoli - condizione occupazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_226,Spettacoli - condizione occupazionale,ok,hub,5,28,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_227,Spettacoli - regioni e tipo di comune,ok,hub,5,51,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_228,"Tv e radio - sesso, età, titolo di studio",ok,hub,6,21,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_229,Tv e radio - dettaglio età,ok,hub,5,25,0,"",2026-07-29
@@ -4064,39 +4064,39 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_63_DF_DCCV_AVQ_PERSONE_233,Quotidiani e libri - dettaglio età,ok,hub,5,26,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_234,Quotidiani e libri - condizione occupazionale,ok,hub,5,26,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_235,Quotidiani e libri - regioni e tipo di comune,ok,hub,4,46,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_236,"Internet - sesso, età titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_237,Internet - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_236,"Internet - sesso, età titolo di studio",ok,hub,6,24,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_237,Internet - dettaglio età,ok,hub,5,27,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_238,Internet - condizione occupazionale,ok,hub,5,27,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_239,Internet - reg. e tipo di comune,ok,hub,4,47,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_240,"PC - sesso, età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE_241,PC - dettaglio età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_240,"PC - sesso, età, titolo di studio",ok,hub,6,24,0,"",2026-08-12
+83_63_DF_DCCV_AVQ_PERSONE_241,PC - dettaglio età,ok,hub,5,27,0,"",2026-08-12
 83_63_DF_DCCV_AVQ_PERSONE_242,PC - condizione occupazionale,ok,hub,5,27,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_243,PC - reg. e tipo di comune,ok,hub,4,47,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_256,Soddisfazione per i vari aspetti del ricovero - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
-83_63_DF_DCCV_AVQ_PERSONE__YOUTH_1,"Giovani - Cultura sport, salute e stili di vita",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_85,Aspetti della vita quotidiana - Persone,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_100,"Anagrafe, ASL - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE__YOUTH_1,"Giovani - Cultura sport, salute e stili di vita",ok,hub,8,362,0,"",2026-08-12
+83_85,Aspetti della vita quotidiana - Persone,ok,hub,8,529,0,"",2026-08-12
+83_85_DF_DCCV_AVQ_PERSONE1_100,"Anagrafe, ASL - età",ok,hub,5,41,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_101,"Anagrafe, ASL - condizione professionale",ok,hub,6,41,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_102,"Anagrafe, ASL - posizione nella professione",ok,hub,6,37,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_103,Anagrafe - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_104,ASL - regioni e tipo di comune,ok,hub,5,53,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_105,"Ufficio postale, banca - età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_105,"Ufficio postale, banca - età",ok,hub,5,60,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_106,"Ufficio postale, banca - condizione professionale",ok,hub,6,60,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_107,"Ufficio postale, banca - posizione nella professione",ok,hub,6,56,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_108,Ufficio postale - regioni e tipo di comune,ok,hub,6,78,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_109,Banca - regioni e tipo di comune,ok,hub,6,53,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_201,Persone andate in vacanza - serie storica,ok,hub,5,26,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_202,Persone andate in vacanza - classe di età,ok,hub,5,26,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_203,Persone andate in vacanza - titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_203,Persone andate in vacanza - titolo di studio,ok,hub,6,22,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_204,Persone andate in vacanza - condizione nella professione,ok,hub,5,25,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_205,Persone andate in vacanza - numero di periodi,ok,hub,4,45,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_206,Persone non andate in vacanza - serie storica,ok,hub,5,29,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_207,Persone non andate in vacanza - classe di età,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_208,Persone non andate in vacanza - titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_207,Persone non andate in vacanza - classe di età,ok,hub,5,29,0,"",2026-08-12
+83_85_DF_DCCV_AVQ_PERSONE1_208,Persone non andate in vacanza - titolo di studio,ok,hub,6,25,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_209,Persone non andate in vacanza - condizione nella professione,ok,hub,5,28,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_210,Persone non andate in vacanza - motivi della mancata vacanza,ok,hub,5,49,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_211,Acqua e bevande gassate - età dettaglio,ok,hub,5,29,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_212,"Acqua e bevande gassate - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_212,"Acqua e bevande gassate - età, titolo di studio",ok,hub,6,27,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_213,Acqua e bevande gassate - posizione nella professione,ok,hub,5,30,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_214,Acqua e bevande gassate - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_215,Vino e birra - età dettaglio,ok,hub,5,29,0,"",2026-07-29
@@ -4104,7 +4104,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_85_DF_DCCV_AVQ_PERSONE1_217,Vino e birra - posizione nella professione,ok,hub,5,30,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_218,Vino e birra - regioni e tipo di comune,ok,hub,4,50,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_219,"Aperitivi, amari e liquori - età dettaglio",ok,hub,5,27,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_220,"Aperitivi, amari e liquori - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-29
+83_85_DF_DCCV_AVQ_PERSONE1_220,"Aperitivi, amari e liquori - età, titolo di studio",ok,hub,6,25,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_221,"Aperitivi, amari e liquori - posizione nella professione",ok,hub,5,28,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_222,"Aperitivi, amari e liquori - regioni e tipo di comune",ok,hub,4,48,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_223,Alcolici fuori pasto - età dettaglio,ok,hub,5,22,0,"",2026-07-29
@@ -4121,7 +4121,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_85_DF_DCCV_AVQ_PERSONE1_234,Incidenti in ambiente domestico - posizione nella professione,ok,hub,5,23,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_235,Incidenti in ambiente domestico - regioni e tipo di comune,ok,hub,5,44,0,"",2026-07-29
 83_85_DF_DCCV_AVQ_PERSONE1_236,Abitudini nei pasti - età dettaglio,ok,hub,5,30,0,"",2026-07-29
-83_85_DF_DCCV_AVQ_PERSONE1_237,"Abitudini nei pasti - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_237,"Abitudini nei pasti - età, titolo di studio",ok,hub,6,26,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_238,Abitudini nei pasti - posizione nella professione,ok,hub,5,29,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_239,Abitudini nei pasti - regioni e tipo di comune,ok,hub,4,49,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_240,"Salumi, carni, uova, pesce - età dettaglio",ok,hub,5,27,0,"",2026-07-30
@@ -4129,11 +4129,11 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_85_DF_DCCV_AVQ_PERSONE1_242,"Salumi, carni, uova, pesce - posizione nella professione",ok,hub,5,26,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_243,"Salumi, carni, uova, pesce - regioni e tipo di comune",ok,hub,4,46,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_244,"Pane, legumi, dolci, latte e formaggi - età dettaglio",ok,hub,5,27,0,"",2026-07-30
-83_85_DF_DCCV_AVQ_PERSONE1_245,"Pane, legumi, dolci, latte e formaggi - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_245,"Pane, legumi, dolci, latte e formaggi - età, titolo di studio",ok,hub,6,23,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_246,"Pane, legumi, dolci, latte e formaggi - posizione nella professione",ok,hub,5,26,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_247,"Pane, legumi, dolci, latte e formaggi - regioni e tipo di comune",ok,hub,4,46,0,"",2026-07-30
-83_85_DF_DCCV_AVQ_PERSONE1_248,"Verdure, ortaggi e frutta - età dettaglio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-83_85_DF_DCCV_AVQ_PERSONE1_249,"Verdure, ortaggi e frutta - età, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+83_85_DF_DCCV_AVQ_PERSONE1_248,"Verdure, ortaggi e frutta - età dettaglio",ok,hub,5,29,0,"",2026-08-12
+83_85_DF_DCCV_AVQ_PERSONE1_249,"Verdure, ortaggi e frutta - età, titolo di studio",ok,hub,6,25,0,"",2026-08-12
 83_85_DF_DCCV_AVQ_PERSONE1_250,"Verdure, ortaggi e frutta - posizione nella professione",ok,hub,5,28,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_251,"Verdure, ortaggi e frutta - regioni e tipo di comune",ok,hub,4,48,0,"",2026-07-30
 83_85_DF_DCCV_AVQ_PERSONE1_252,Olio e sale - età dettaglio,ok,hub,5,25,0,"",2026-07-30
@@ -4169,13 +4169,13 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 8_197_DF_DCCN_PRODUTTIVITA_B19_3,Contributi alla crescita della produttività del lavoro - edizioni novembre 2019 - aprile 2024,ok,hub,7,69,0,"",2026-07-30
 8_197_DF_DCCN_PRODUTTIVITA_B19_4,Serie per il calcolo delle produttività - edizioni novembre 2019 - aprile 2024,ok,hub,7,83,0,"",2026-07-30
 8_197_DF_DCCN_PRODUTTIVITA_B19_5,Contributi settoriali alla variazione della produttività del lavoro - edizioni novembre 2019 - aprile 2024,ok,hub,7,64,0,"",2026-07-30
-8_277,Imprese - Ent (1 impresa corrisponde a 1 o più unità giuridiche attive),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-8_277_DF_DICA_ASIAUE1P_ENT_1,Imprese e addetti (Ent) - Principali dati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277,Imprese - Ent (1 impresa corrisponde a 1 o più unità giuridiche attive),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
+8_277_DF_DICA_ASIAUE1P_ENT_1,Imprese e addetti (Ent) - Principali dati,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
 8_277_DF_DICA_ASIAUE1P_ENT_10,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 1 cifra) - Tipo di relazione e Governance - regioni,ok,hub,6,56,0,"",2026-07-30
-8_277_DF_DICA_ASIAUE1P_ENT_2,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 5 cifre) - Italia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-8_277_DF_DICA_ASIAUE1P_ENT_3,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 4 cifre) - ripartizioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-8_277_DF_DICA_ASIAUE1P_ENT_4,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 3 cifre) - regioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-8_277_DF_DICA_ASIAUE1P_ENT_5,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 2 cifre) , classe di addetti - ripartizioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+8_277_DF_DICA_ASIAUE1P_ENT_2,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 5 cifre) - Italia",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
+8_277_DF_DICA_ASIAUE1P_ENT_3,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 4 cifre) - ripartizioni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
+8_277_DF_DICA_ASIAUE1P_ENT_4,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 3 cifre) - regioni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
+8_277_DF_DICA_ASIAUE1P_ENT_5,"Imprese e addetti (Ent) - Forma giuridica, settori economici (Ateco 2 cifre) , classe di addetti - ripartizioni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-12
 8_277_DF_DICA_ASIAUE1P_ENT_6,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Tipo di relazione",ok,hub,7,39,0,"",2026-07-30
 8_277_DF_DICA_ASIAUE1P_ENT_7,"Imprese e addetti appartenenti ad un gruppo (Ent) - Forma giuridica, settori economici (Ateco 1 cifra), classe di addetti - Governance",ok,hub,7,40,0,"",2026-07-30
 8_277_DF_DICA_ASIAUE1P_ENT_8,Imprese e addetti appartenenti ad un gruppo (Ent) - Settori economici (Ateco 2 cifre) - Tipo di relazione,ok,hub,5,104,0,"",2026-07-30
@@ -4184,22 +4184,22 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 91_963_DF_DCCN_SHA_1,Spesa sanitaria per tipo di funzione di assistenza sanitaria e finanziamento,ok,hub,6,33,0,"",2026-07-30
 91_963_DF_DCCN_SHA_2,Spesa sanitaria per tipo di funzione di assistenza sanitaria e soggetto erogatore,ok,hub,6,33,0,"",2026-07-30
 91_963_DF_DCCN_SHA_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento,ok,hub,6,25,0,"",2026-07-30
-92_1225,Principali aggregati annnuali di contabilità nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_1225_DF_DCCN_ANA1_1,Produzione e valore aggiunto per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225,Principali aggregati annnuali di contabilità nazionale,ok,hub,10,259,0,"",2026-08-12
+92_1225_DF_DCCN_ANA1_1,Produzione e valore aggiunto per branca di attività,ok,hub,8,110,0,"",2026-08-12
 92_1225_DF_DCCN_ANA1_2,Redditi da lavoro dipendente e componenti per branca di attività,ok,hub,7,106,0,"",2026-07-30
 92_1225_DF_DCCN_ANA1_3,Imposte e contributi alla produzione per branca di attività,ok,hub,7,104,0,"",2026-07-30
-92_1225_DF_DCCN_ANA1_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_1225_DF_DCCN_ANA1_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_1225_DF_DCCN_ANA1_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria,ok,hub,8,84,0,"",2026-08-12
+92_1225_DF_DCCN_ANA1_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,ok,hub,8,83,0,"",2026-08-12
 92_1225_DF_DCCN_ANA1_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 3 cifre) e durata,ok,hub,7,104,0,"",2026-07-30
 92_1225_DF_DCCN_ANA1_7,Valori pro capite,ok,hub,6,27,0,"",2026-07-30
 92_143,Principali aggregati per branca di attività -  (Nace Rev.1.1) - edizioni precedenti ottobre 2011,ok,hub,11,94,0,"",2026-07-30
-92_504,Principali aggregati annnuali di contabilità nazionale - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504,Principali aggregati annnuali di contabilità nazionale - edizioni settembre 2019 - marzo 2024,ok,hub,10,247,0,"",2026-08-12
 92_504_DF_DCCN_ANA_1,Produzione e valore aggiunto per branca di attività - edizioni settembre 2019 - marzo 2024,ok,hub,8,118,0,"",2026-07-30
-92_504_DF_DCCN_ANA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_504_DF_DCCN_ANA_3,Imposte e contributi alla produzione per branca di attività - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_504_DF_DCCN_ANA_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_504_DF_DCCN_ANA_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-92_504_DF_DCCN_ANA_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni settembre 2019 - marzo 2024,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_504_DF_DCCN_ANA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni settembre 2019 - marzo 2024,ok,hub,7,114,0,"",2026-08-12
+92_504_DF_DCCN_ANA_3,Imposte e contributi alla produzione per branca di attività - edizioni settembre 2019 - marzo 2024,ok,hub,7,112,0,"",2026-08-12
+92_504_DF_DCCN_ANA_4,Investimenti fissi lordi per tipo di investimento e branca proprietaria - edizioni settembre 2019 - marzo 2024,ok,hub,8,92,0,"",2026-08-12
+92_504_DF_DCCN_ANA_5,Stock di capitale e ammortamenti per tipo di investimento e branca proprietaria,ok,hub,8,89,0,"",2026-08-12
+92_504_DF_DCCN_ANA_6,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 3 cifre) e durata - edizioni settembre 2019 - marzo 2024,ok,hub,7,96,0,"",2026-08-12
 92_504_DF_DCCN_ANA_7,Valori pro capite - edizioni settembre 2019 - marzo 2024,ok,hub,6,31,0,"",2026-07-30
 92_504_NOTE_TIME,test note time,empty,hub,0,0,0,"",2026-07-30
 92_505,Sequenza dei conti,ok,hub,6,132,0,"",2026-07-30
@@ -4207,48 +4207,48 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 92_506,Prodotto interno lordo e principali componenti,ok,hub,6,38,0,"",2026-07-30
 92_506_DF_DCCN_PILN_1,Prodotto interno lordo e principali componenti,ok,hub,6,38,0,"",2026-07-30
 92_507,Occupazione regolare e irregolare,ok,hub,9,123,0,"",2026-07-30
-92_507_DF_DCCN_OCCNSEC2010_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+92_507_DF_DCCN_OCCNSEC2010_1,"Occupati, unità di lavoro, posizioni lavorative e ore lavorate",ok,hub,8,114,0,"",2026-08-12
 92_507_DF_DCCN_OCCNSEC2010_2,Tassi di irregolarità,ok,hub,7,54,0,"",2026-07-30
 92_507_DF_DCCN_OCCNSEC2010_3,Popolazione media annua,ok,hub,5,8,0,"",2026-07-30
-93_1095,Reddito disponibile delle famiglie  nelle regioni italiane,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1095,Reddito disponibile delle famiglie  nelle regioni italiane,ok,hub,10,132,0,"",2026-08-12
 93_1095_DF_DCCN_ISTITUZ_TNA1_1,Reddito disponibile delle famiglie nelle regioni italiane,ok,hub,8,130,0,"",2026-07-30
-93_1227,Principali aggregati territoriali di Contabilità Nazionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_1227_DF_DCCN_TNA1_1,Valore aggiunto per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_1227_DF_DCCN_TNA1_2,Redditi da lavoro dipendente e componenti per branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227,Principali aggregati territoriali di Contabilità Nazionale,ok,hub,10,248,0,"",2026-08-12
+93_1227_DF_DCCN_TNA1_1,Valore aggiunto per branca di attività,ok,hub,8,191,0,"",2026-08-12
+93_1227_DF_DCCN_TNA1_2,Redditi da lavoro dipendente e componenti per branca di attività,ok,hub,7,83,0,"",2026-08-12
 93_1227_DF_DCCN_TNA1_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2018 2 cifre) e durata,ok,hub,7,60,0,"",2026-07-30
 93_1227_DF_DCCN_TNA1_4,Spesa per consumi finali della Pa per funzione di spesa,ok,hub,7,52,0,"",2026-07-30
-93_1227_DF_DCCN_TNA1_5,Investimenti fissi lordi per branca proprietaria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_1227_DF_DCCN_TNA1_5,Investimenti fissi lordi per branca proprietaria,ok,hub,8,87,0,"",2026-08-12
 93_1227_DF_DCCN_TNA1_6,Valori pro capite,ok,hub,6,160,0,"",2026-07-30
-93_209,Aggregati dei conti per branca di attività (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_256,Occupazione per branca di attività economica (NACE Rev.1.1) - edizione ottobre 2010,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_379,Occupazione regolare ed irregolare,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_379_DF_DCCN_OCCTSEC2010_1,Occupazione regionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_379_DF_DCCN_OCCTSEC2010_2,Occupazione provinciale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_209,Aggregati dei conti per branca di attività (NACE Rev.1.1) - edizione ottobre 2010,ok,hub,11,80,0,"",2026-08-12
+93_256,Occupazione per branca di attività economica (NACE Rev.1.1) - edizione ottobre 2010,ok,hub,10,76,0,"",2026-08-12
+93_379,Occupazione regolare ed irregolare,ok,hub,9,203,0,"",2026-08-12
+93_379_DF_DCCN_OCCTSEC2010_1,Occupazione regionale,ok,hub,8,89,0,"",2026-08-12
+93_379_DF_DCCN_OCCTSEC2010_2,Occupazione provinciale,ok,hub,7,191,0,"",2026-08-12
 93_379_DF_DCCN_OCCTSEC2010_3,Tasso di irregolarità,ok,hub,6,44,0,"",2026-07-30
 93_379_DF_DCCN_OCCTSEC2010_4,Popolazione media annua,ok,hub,5,38,0,"",2026-07-30
 93_382,Sequenza dei conti,ok,hub,6,59,0,"",2026-07-30
 93_382_DF_DCCN_SQCT_1,Sequenza dei conti,ok,hub,6,59,0,"",2026-07-30
-93_48,"Conti della branca agricoltura, silvicoltura e pesca",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_48,"Conti della branca agricoltura, silvicoltura e pesca",ok,hub,8,125,0,"",2026-08-12
 93_48_DF_DCCN_VAAGSIPET_1,Produzione e valore aggiunto ai prezzi base,ok,hub,7,46,0,"",2026-07-30
-93_48_DF_DCCN_VAAGSIPET_2,Prodotti e voci di costo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_48_DF_DCCN_VAAGSIPET_2,Prodotti e voci di costo,ok,hub,8,120,0,"",2026-08-12
 93_498,Prodotto interno lordo lato produzione,ok,hub,6,151,0,"",2026-07-30
 93_498_DF_DCCN_PILT_1,Prodotto interno lordo lato produzione,ok,hub,6,151,0,"",2026-07-30
-93_500,Principali aggregati territoriali di Contabilità Nazionale - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_1,Valore aggiunto per branca di attività - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_4,Spesa per consumi finali della Pa per funzione di spesa - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_5,Investimenti fissi lordi per branca proprietaria - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-93_500_DF_DCCN_TNA_6,Valori pro capite - edizioni gennaio 2020 - dicembre 2023,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-94_1063,Stock  di attività non finanziarie  e sequenza dei conti per settore istituzionale,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
-94_1063_DF_DCCN_ISTITUZ_ANA1_1,Sequenza dei conti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+93_500,Principali aggregati territoriali di Contabilità Nazionale - edizioni gennaio 2020 - dicembre 2023,ok,hub,10,250,0,"",2026-08-12
+93_500_DF_DCCN_TNA_1,Valore aggiunto per branca di attività - edizioni gennaio 2020 - dicembre 2023,ok,hub,8,194,0,"",2026-08-12
+93_500_DF_DCCN_TNA_2,Redditi da lavoro dipendente e componenti per branca di attività - edizioni gennaio 2020 - dicembre 2023,ok,hub,7,86,0,"",2026-08-12
+93_500_DF_DCCN_TNA_3,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni gennaio 2020 - dicembre 2023,ok,hub,7,62,0,"",2026-08-12
+93_500_DF_DCCN_TNA_4,Spesa per consumi finali della Pa per funzione di spesa - edizioni gennaio 2020 - dicembre 2023,ok,hub,7,55,0,"",2026-08-12
+93_500_DF_DCCN_TNA_5,Investimenti fissi lordi per branca proprietaria - edizioni gennaio 2020 - dicembre 2023,ok,hub,8,90,0,"",2026-08-12
+93_500_DF_DCCN_TNA_6,Valori pro capite - edizioni gennaio 2020 - dicembre 2023,ok,hub,6,163,0,"",2026-08-12
+94_1063,Stock  di attività non finanziarie  e sequenza dei conti per settore istituzionale,ok,hub,10,344,0,"",2026-08-12
+94_1063_DF_DCCN_ISTITUZ_ANA1_1,Sequenza dei conti,ok,hub,8,244,0,"",2026-08-12
 94_1063_DF_DCCN_ISTITUZ_ANA1_2,Indicatori su famiglie consumatrici e società non finanziarie,ok,hub,8,19,0,"",2026-07-30
-94_1063_DF_DCCN_ISTITUZ_ANA1_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_1063_DF_DCCN_ISTITUZ_ANA1_3,Valore aggiunto e redditi da lavoro dipendente per branca di attività economica,ok,hub,9,110,0,"",2026-08-12
 94_1063_DF_DCCN_ISTITUZ_ANA1_4,Investimenti fissi lordi per tipo di investimento,ok,hub,8,29,0,"",2026-07-30
 94_1063_DF_DCCN_ISTITUZ_ANA1_5,Stock di attività non finanziarie,ok,hub,9,273,0,"",2026-07-30
-94_251,Sequenza dei conti - edizioni fino a settembre 2015,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_251,Sequenza dei conti - edizioni fino a settembre 2015,ok,hub,8,212,0,"",2026-08-12
 94_335,Occupazione per branca di attività - edizioni marzo 2012 e marzo 2013,ok,hub,10,32,0,"",2026-07-30
-94_571,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+94_571,"Sequenza dei conti e stock di attività non finanziarie, per settore istituzionale",ok,hub,9,249,0,"",2026-08-12
 94_805,Occupazione  per branca di attività,ok,hub,9,49,0,"",2026-07-30
 94_805_DF_DCCN_OCCSISEC2010_1,Occupazione per branca di attività,ok,hub,8,48,0,"",2026-07-30
 94_805_DF_DCCN_OCCSISEC2010_2,Occupazione per sottosettore,ok,hub,7,21,0,"",2026-07-30
@@ -4262,32 +4262,32 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 95_815_DF_DCCN_FPA_4,Investimenti fissi lordi per sottosettore,ok,hub,8,34,0,"",2026-07-30
 95_815_DF_DCCN_FPA_5,Imposte e contributi sociali per sottosettore,ok,hub,7,202,0,"",2026-07-30
 95_815_DF_DCCN_FPA_6,Formazione della spesa per consumi finali,ok,hub,7,26,0,"",2026-07-30
-95_94,Uscite annuali per sottosettore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+95_94,Uscite annuali per sottosettore,ok,hub,9,121,0,"",2026-08-12
 95_94_DF_DCCN_OTEPPA_1,Spesa per consumi per funzione (COFOG 2 e 3 cifre),ok,hub,8,98,0,"",2026-07-30
-95_94_DF_DCCN_OTEPPA_2,Voci di uscita per funzione (COFOG 2 e 3 cifre),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+95_94_DF_DCCN_OTEPPA_2,Voci di uscita per funzione (COFOG 2 e 3 cifre),ok,hub,8,113,0,"",2026-08-12
 96_1068,Conti della Protezione sociale versione 2014,ok,hub,7,95,0,"",2026-07-30
 96_1068_DF_DCCN_PROTSOC_B14_1,Conti economici consolidati - edizioni maggio 2015 e aprile 2019,ok,hub,6,86,0,"",2026-07-30
 96_1068_DF_DCCN_PROTSOC_B14_2,"Prestazioni secondo evento, rischio e bisogno - edizioni maggio 2015 e aprile 2019",ok,hub,7,53,0,"",2026-07-30
 96_1069,Conti della Protezione sociale versione 2011,ok,hub,7,88,0,"",2026-07-30
-97_1027,Conti dei flussi fisici di energia (PEFA),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027,Conti dei flussi fisici di energia (PEFA),ok,hub,7,199,0,"",2026-08-12
 97_1027_DF_DCCN_PEFA_1,Risorse e impieghi: schema di sintesi,ok,hub,7,30,0,"",2026-07-30
 97_1027_DF_DCCN_PEFA_2,Risorse per attività e tipo di flusso,ok,hub,7,154,0,"",2026-07-30
-97_1027_DF_DCCN_PEFA_3,Impieghi per attività e tipo di flusso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027_DF_DCCN_PEFA_3,Impieghi per attività e tipo di flusso,ok,hub,7,156,0,"",2026-08-12
 97_1027_DF_DCCN_PEFA_4,Impieghi rilevanti per le emissioni atmosferiche (impieghi da combustione),ok,hub,7,153,0,"",2026-07-30
 97_1027_DF_DCCN_PEFA_5B,Vettori di indicatori chiave sui flussi di energia,ok,hub,6,130,0,"",2026-07-30
 97_1027_DF_DCCN_PEFA_6,Tavola di raccordo: consumo di energia,ok,hub,6,22,0,"",2026-07-30
-97_1027_DF_DCCN_PEFA_7,Impieghi dei flussi di energia per tipo di uso,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_1027_DF_DCCN_PEFA_7,Impieghi dei flussi di energia per tipo di uso,ok,hub,7,138,0,"",2026-08-12
 97_1027_DF_DCCN_PEFA_8,Intensità energetica,ok,hub,6,99,0,"",2026-07-30
 97_1027_DF_DCCN_PEFA_9,Intensità di emissione  dei consumi energetici,ok,hub,6,106,0,"",2026-07-30
 97_1028,Conti dei beni e servizi ambientali,ok,hub,9,51,0,"",2026-07-30
 97_1028_DF_DCCN_EGSS_1,"Produzione, valore aggiunto, esportazioni",ok,hub,7,46,0,"",2026-07-30
 97_1028_DF_DCCN_EGSS_2,Occupazione (unità di lavoro),ok,hub,6,42,0,"",2026-07-30
 97_187,Emissioni atmosferiche NAMEA (NACE Rev.2),ok,hub,10,155,0,"",2026-07-30
-97_187_DF_DCCN_CONTIEMATMREV2_1,Attività produttive,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_1,Attività produttive,ok,hub,6,129,0,"",2026-08-12
 97_187_DF_DCCN_CONTIEMATMREV2_2,Famiglie,ok,hub,6,39,0,"",2026-07-30
 97_187_DF_DCCN_CONTIEMATMREV2_3,Raccordo tra totale NAMEA e totale UNFCCC/CLRTAP,ok,hub,6,39,0,"",2026-07-30
 97_187_DF_DCCN_CONTIEMATMREV2_4,Intensità della produzione e del valore aggiunto,ok,hub,7,134,0,"",2026-07-30
-97_187_DF_DCCN_CONTIEMATMREV2_5,Intensità della occupazione,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_187_DF_DCCN_CONTIEMATMREV2_5,Intensità della occupazione,ok,hub,6,129,0,"",2026-08-12
 97_26,Gettito delle imposte ambientali,ok,hub,11,145,0,"",2026-07-30
 97_26_DF_DCCN_IMPAMB1_1,Categoria di imposta,ok,hub,6,38,0,"",2026-07-30
 97_26_DF_DCCN_IMPAMB1_2,Unità che corrisponde l'imposta,ok,hub,7,16,0,"",2026-07-30
@@ -4302,13 +4302,13 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 97_366,Conti della Protezione sociale,ok,hub,7,89,0,"",2026-07-30
 97_366_DF_DCCN_PROTSOC_1,Conti economici consolidati,ok,hub,6,80,0,"",2026-07-30
 97_366_DF_DCCN_PROTSOC_2,"Prestazioni secondo evento, rischio e bisogno",ok,hub,7,48,0,"",2026-07-30
-97_79,Emissioni atmosferiche NAMEA (NACE Rev.1.1),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+97_79,Emissioni atmosferiche NAMEA (NACE Rev.1.1),ok,hub,10,140,0,"",2026-08-12
 97_932,Conti dell'impiego di energia versione 2014,ok,hub,9,77,0,"",2026-07-30
 97_953,Spese per la protezione dell'ambiente,ok,hub,9,58,0,"",2026-07-30
 97_953_DF_DCCN_SPESAPROTAMB_1,Spesa nazionale,ok,hub,7,18,0,"",2026-07-30
 97_953_DF_DCCN_SPESAPROTAMB_2,Aggregati economici per settore istituzionale,ok,hub,7,32,0,"",2026-07-30
 97_953_DF_DCCN_SPESAPROTAMB_3,"Investimenti, consumi intermedi e produzione ausiliaria delle società come produttori ausiliari per attività economica",ok,hub,8,40,0,"",2026-07-30
-98_1066,Misure di produttività - Conti versione 2014,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-30
+98_1066,Misure di produttività - Conti versione 2014,ok,hub,7,108,0,"",2026-08-12
 98_1066_DF_DCCN_PRODUTTIVITA_B14_1,Indicatori di produttività - edizioni marzo 2015 - marzo 2019,ok,hub,6,73,0,"",2026-07-30
 98_1066_DF_DCCN_PRODUTTIVITA_B14_2,Contributi alla crescita del valore aggiunto - edizioni marzo 2015 - marzo 2019,ok,hub,6,69,0,"",2026-07-30
 98_1066_DF_DCCN_PRODUTTIVITA_B14_3,Contributi alla crescita della produttività del lavoro - edizioni marzo 2015 - marzo 2019,ok,hub,6,67,0,"",2026-07-30
@@ -4330,8 +4330,8 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 BULK_MS_VIDEO,Le macchine della statistica 2016,empty,hub,0,0,0,"",2026-07-31
 CATCUBE,Lista Cubi,empty,hub,0,0,0,"",2026-07-31
 CPI,Prezzi al consumo,ok,hub,5,5,0,"",2026-07-31
-DCAT_CENSAGRIC2020_AGE_INF,Aziende per tipo di informatizzazione ed età del capo azienda,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-31
-DCAT_CENSAGRIC2020_GAIN,Aziende con attività connesse,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-07-31
+DCAT_CENSAGRIC2020_AGE_INF,Aziende per tipo di informatizzazione ed età del capo azienda,ok,hub,5,8037,0,"",2026-08-12
+DCAT_CENSAGRIC2020_GAIN,Aziende con attività connesse,ok,hub,4,8048,0,"",2026-08-12
 DCCV_CARGEOMOR_COM,Superfici esposte a rischio idrogeologico,ok,hub,3,8127,0,"",2026-07-31
 DCCV_CARGEOMOR_ST_COM,Superfici territoriali,ok,hub,3,8720,0,"",2026-07-31
 DCSS_BULK_ABITAZIONI,Abitazioni,empty,hub,0,0,0,"",2026-07-31
@@ -4536,59 +4536,59 @@ DF_BULK_CEN2011_DICA_N11G1,Struttura,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_N12G,"Periodo assunzione forma giuridica, orientamento istituzione",empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_N12SS,"Attività secondaria, servizi offerti",empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_N13F,"Adesione forme aggregative, strumenti comunicazione",empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_N13G,"Periodo assunzione forma giuridica, tipologia affiliazioni",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_N13G,"Periodo assunzione forma giuridica, tipologia affiliazioni",empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_N14E,Entrate,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_N14G,Tipologia di disagio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_N14G,Tipologia di disagio,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_N14S,Attività secondaria,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVABR,Abruzzo,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CEN2011_DICA_TRASVBAS,Basilicata,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVABR,Abruzzo,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CEN2011_DICA_TRASVBAS,Basilicata,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_TRASVCAL,Calabria,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVCAM,Campania,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVEMI,Emilia-Romagna,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVFRI,Friuli-Venezia Giulia,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVLAZ,Lazio,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVLIG,Liguria,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVLOM,Lombardia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CEN2011_DICA_TRASVMAR,Marche,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVLOM,Lombardia,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CEN2011_DICA_TRASVMAR,Marche,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_TRASVMOL,Molise,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVNPPROV,"Settore di attività (ICNPO), forma giuridica e classe di addetti - Dati fino al livello comunale",empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVPIE,Piemonte,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVPROV,Sedi e risorse umane,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVPROV,Sedi e risorse umane,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_TRASVPUG,Puglia,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVSAR,Sardegna,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVSAR,Sardegna,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_TRASVSIC,Sicilia,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVTAA,Trentino Alto Adige / Südtirol,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CEN2011_DICA_TRASVTOS,Toscana,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVUMB,Umbria,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVUMB,Umbria,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CEN2011_DICA_TRASVVDA,Valle d'Aosta / Vallée d'Aoste,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CEN2011_DICA_TRASVVEN,Veneto,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CEN2011_DICA_TRASVVEN,Veneto,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_COECLASS,Classificazioni,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_COECPA,Classificazioni delle merci secondo le attività economiche (CPAteco 2007) e RPI,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_COECTCI,Classificazione tipo del commercio internazionale (CTCI),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_COEINDEXES,Numeri indici,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COECPA,Classificazioni delle merci secondo le attività economiche (CPAteco 2007) e RPI,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_COECTCI,Classificazione tipo del commercio internazionale (CTCI),empty,hub,0,0,0,"",2026-08-12
+DF_BULK_COEINDEXES,Numeri indici,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_COENOTES,Note sui dati e note metodologiche,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_COENST,Nomenclatura uniforme delle merci per le statistiche dei trasporti (NST 2007),empty,hub,0,0,0,"",2026-08-02
 DF_BULK_COEPORTAL,Statistiche del commercio estero - Home page del portale,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_COESH6,Nomenclatura combinata (NC8) - sistema armonizzato (SH6),error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_COESH6,Nomenclatura combinata (NC8) - sistema armonizzato (SH6),empty,hub,0,0,0,"",2026-08-12
 DF_BULK_COMP_FRA_IND_MUN,Nota metodologica - Indice composito di fragilità comunale,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CPO2011_CUBO_LOC_TEST,Cubo_loc_TEST,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_CUBO_LOC_TEST,Cubo_loc_TEST,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CPO2011_DCCV_OCCUP16,prova dim16,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CPO2011_DCCV_OCCUPATIT,Occupati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DCCV_OCCUP_15,PROVA DIM15,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DCSP_NIC1B2015,NIC - Dati mensili dal 2016,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DCCV_OCCUPATIT,Occupati,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DCCV_OCCUP_15,PROVA DIM15,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DCSP_NIC1B2015,NIC - Dati mensili dal 2016,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CPO2011_DCSP_NICUNOBB2010,NIC – Dati mensili dal 2011,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CPO2011_DICA_ABIT_PR,Abitazioni occupate da persone residenti,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_ABIT_PR_COM,Abitazioni occupate da persone residenti - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_ABIT_PR_COM1,Abitazioni occupate da persone residenti - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_ALLOGGI,Alloggi,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_ABIT_PR,Abitazioni occupate da persone residenti,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_ABIT_PR_COM,Abitazioni occupate da persone residenti - Dati comunali,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_ABIT_PR_COM1,Abitazioni occupate da persone residenti - Dati comunali,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_ALLOGGI,Alloggi,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CPO2011_DICA_ALLOGGI_TEST,Alloggi - TEST,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CPO2011_DICA_CARATT_ATTL,Caratteristiche dell'attività lavorativa,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_CARATT_ATTL_COM,Occupati per sezioni di attività economica - Dati comunali,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_CARATT_ATTL_TS,Occupati e in cerca di prima occupazione per titolo di studio,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_COMPOP,Numero di comuni e popolazione residente - Dati provvisori,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CARATT_ATTL,Caratteristiche dell'attività lavorativa,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_CARATT_ATTL_COM,Occupati per sezioni di attività economica - Dati comunali,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_CARATT_ATTL_TS,Occupati e in cerca di prima occupazione per titolo di studio,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_COMPOP,Numero di comuni e popolazione residente - Dati provvisori,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CPO2011_DICA_COMPOPDEF,Numero di comuni e popolazione residente - Dati definitivi,empty,hub,0,0,0,"",2026-08-02
-DF_BULK_CPO2011_DICA_CONDPROF,Condizione professionale o non professionale della popolazione residente,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
-DF_BULK_CPO2011_DICA_CONDPROF_COP,Condizione professionale o non professionale dei componenti della coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
+DF_BULK_CPO2011_DICA_CONDPROF,Condizione professionale o non professionale della popolazione residente,empty,hub,0,0,0,"",2026-08-12
+DF_BULK_CPO2011_DICA_CONDPROF_COP,Condizione professionale o non professionale dei componenti della coppia,empty,hub,0,0,0,"",2026-08-12
 DF_BULK_CPO2011_DICA_CONDPROF_NUC,Condizione professionale o non professionale dei nuclei familiari costituiti da un solo genitore,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
 DF_BULK_CPO2011_DICA_CONDPROF_TEST,Condizione professionale o non professionale della popolazione residente_TEST,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
 DF_BULK_CPO2011_DICA_CONV,Convivenze,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-02
