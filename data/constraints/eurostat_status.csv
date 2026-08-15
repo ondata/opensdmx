@@ -1310,6 +1310,7 @@ EDUC_UOE_ENRA28,"Out-of-school rate in population of lower secondary school age,
 EDUC_UOE_ENRA29,"Out-of-school rate in population of upper secondary school age, by sex",ok,sdmx,5,53,0,"",2026-07-20
 EDUC_UOE_ENRA30,Distribution of students at education level and programme orientation by sex and field of education,ok,sdmx,7,254,0,"",2026-07-20
 EDUC_UOE_ENRA31,Students enrolled in STEM education fields - per thousand of population aged 20-29,ok,sdmx,6,69,0,"",2026-07-20
+EDUC_UOE_ENRA32,Female students enrolled in STEM fields by education level,ok,sdmx,7,60,0,"",2026-08-15
 EDUC_UOE_ENRP01,"Pupils enrolled in early childhood education by sex, type of institution and intensity of participation",ok,sdmx,8,71,0,"",2026-07-20
 EDUC_UOE_ENRP02,Pupils enrolled in early childhood education by sex and age,ok,sdmx,7,85,0,"",2026-07-20
 EDUC_UOE_ENRP03,Pupils enrolled in early childhood education by sex and NUTS 2 region,ok,sdmx,6,501,0,"",2026-07-20
@@ -8562,6 +8563,7 @@ For more information check: https://developer.mo",2026-08-14
 TUS_20WEEK$DV_3386,Time spent in the main activity by sex and day of the week,error,"",0,0,3,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/TUS_20WEEK$DV_3386'
 For more information check: https://developer.mo",2026-08-14
 TUS_20WORK,Time spent in paid and unpaid work by sex and age group,ok,sdmx,6,35,0,"",2026-08-10
+TUS_20WWHOM,"Time spent alone or with others by sex, age group and person category",ok,sdmx,7,40,0,"",2026-08-15
 UNE_EDUC_A,Unemployment by educational attainment level - annual data,ok,sdmx,7,68,0,"",2026-08-10
 UNE_EDUC_A_H,Unemployment by educational attainment level - annual data (1998–2020),ok,sdmx,7,78,0,"",2026-08-10
 UNE_EDUC_Q,Unemployment by educational attainment level - quarterly data,ok,sdmx,8,122,0,"",2026-08-10
