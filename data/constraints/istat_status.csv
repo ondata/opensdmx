@@ -4822,13 +4822,13 @@ DF_DCSS_HUDW_2_PROV,Abitazioni per epoca di costruzione e stato di occupazione -
 DF_DCSS_HUDW_3_PROV,Abitazioni occupate da almeno una persona residente per classi di superficie e numero di occupanti - regioni e province,ok,hub,5,159,0,"",2026-08-15
 DF_DCSS_HUDW_4_PROV,Abitazioni occupate da almeno una persona residente per densità abitativa - regioni e province,ok,hub,4,146,0,"",2026-08-15
 DF_DCSS_HUDW_5_PROV,Abitazioni occupate da almeno una persona residente per tipo di impianto di riscaldamento - regioni e province,ok,hub,4,142,0,"",2026-08-15
-DF_DCSS_HUDW_6_COM,Famiglie per tipo di alloggio - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_HUDW_6_COM,Famiglie per tipo di alloggio - comuni,ok,hub,3,8038,0,"",2026-08-16
 DF_DCSS_ISTR_LAV_PEN_2_TV_1,Popolazione residente di 9 anni e più per grado di istruzione ed età - comuni,ok,hub,6,12492,0,"",2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_2,Popolazione residente di 9 anni e più per grado di istruzione e cittadinanza - comuni,ok,hub,7,12487,0,"",2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_3,Popolazione residente di 15 anni e più per condizione professionale ed età - comuni,ok,hub,6,12490,0,"",2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_4,Popolazione residente di 15 anni e più per condizione professionale e cittadinanza - comuni,ok,hub,7,12489,0,"",2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_5,Popolazione residente che si sposta giornalmente per studio o lavoro - comuni,ok,hub,6,8125,0,"",2026-08-13
-DF_DCSS_LCAS_FRISC_1,Occupati per utilizzo di lavoro da casa e sesso - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_LCAS_FRISC_1,Occupati per utilizzo di lavoro da casa e sesso - province e grandi comuni,ok,hub,5,171,0,"",2026-08-16
 DF_DCSS_LCAS_FRISC_2,Occupati per utilizzo di lavoro da casa e classi di età - province e grandi comuni,ok,hub,5,172,0,"",2026-08-13
 DF_DCSS_LCAS_FRISC_3,Popolazione residente di 14 anni e più per frequenza di un corso di formazione/aggiornamento professionale e sesso - province e grandi comuni,ok,hub,6,171,0,"",2026-08-13
 DF_DCSS_LCAS_FRISC_4,Popolazione residente fino a 8 anni per frequenza di asilo nido/scuola dell'infanzia/scuola primaria e sesso - province e grandi comuni,ok,hub,6,175,0,"",2026-08-13
@@ -4843,34 +4843,34 @@ DF_DCSS_MIGR_BACKG_PAR_TV_6_COM,Popolazione straniera nata in Italia per cittadi
 DF_DCSS_MIGR_BACKG_PAR_TV_7_COM,Popolazione straniera nata all'estero (immigrata) per cittadinanza e luogo di nascita dei genitori - comuni,ok,hub,7,12500,0,"",2026-08-13
 DF_DCSS_MIGR_BACKG_PAR_TV_8_COM,Popolazione italiana nata in Italia e all'estero per grado di istruzione e luogo di nascita dei genitori - comuni,ok,hub,7,12495,0,"",2026-08-13
 DF_DCSS_MIGR_BACKG_PAR_TV_9_COM,"Popolazione italiana per acquisizione nata in Italia e all'estero per grado di istruzione, cittadinanza precedente e luogo di nascita dei genitori - comuni",ok,hub,8,12499,0,"",2026-08-13
-DF_DCSS_POPHH_PHH_1_GC,"Popolazione residente in famiglia per sesso, classe di età, e posizione nella famiglia - province e grandi comuni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPHH_PHH_2_COM,Popolazione residente in famiglia per tipologia della famiglia - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPHH_PHH_3_GC,Popolazione residente in famiglia per numero di componenti e tpologia della famiglia - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPHH_PHH_4_COM,Famiglie per tipologia della famiglia - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPHH_PHH_5_GC,Famiglie per numero di componenti e tipologia della famiglia - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_POPHH_PHH_1_GC,"Popolazione residente in famiglia per sesso, classe di età, e posizione nella famiglia - province e grandi comuni",ok,hub,6,8068,0,"",2026-08-16
+DF_DCSS_POPHH_PHH_2_COM,Popolazione residente in famiglia per tipologia della famiglia - comuni,ok,hub,4,8057,0,"",2026-08-16
+DF_DCSS_POPHH_PHH_3_GC,Popolazione residente in famiglia per numero di componenti e tpologia della famiglia - province e grandi comuni,ok,hub,5,8064,0,"",2026-08-16
+DF_DCSS_POPHH_PHH_4_COM,Famiglie per tipologia della famiglia - comuni,ok,hub,4,8057,0,"",2026-08-16
+DF_DCSS_POPHH_PHH_5_GC,Famiglie per numero di componenti e tipologia della famiglia - province e grandi comuni,ok,hub,5,8064,0,"",2026-08-16
 DF_DCSS_POPRESABR_1_GC,"Popolazione che è stata residente all'estero per classi di età,  anno di arrivo e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni",ok,hub,8,190,0,"",2026-08-13
-DF_DCSS_POPRESABR_2_GC,Popolazione che è stata residente all'estero per anno di arrivo e luogo di nascita - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPRESABR_3_GC,Popolazione che è stata residente all'estero per anno di arrivo e area geografica di cittadinanza - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POPRESABR_4_REGIO,"Popolazione che è stata residente all'estero per anno di arrivo, luogo di nascita e area geografica di cittadinanza - regioni",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_POPRESABR_2_GC,Popolazione che è stata residente all'estero per anno di arrivo e luogo di nascita - province e grandi comuni,ok,hub,7,194,0,"",2026-08-16
+DF_DCSS_POPRESABR_3_GC,Popolazione che è stata residente all'estero per anno di arrivo e area geografica di cittadinanza - province e grandi comuni,ok,hub,6,193,0,"",2026-08-16
+DF_DCSS_POPRESABR_4_REGIO,"Popolazione che è stata residente all'estero per anno di arrivo, luogo di nascita e area geografica di cittadinanza - regioni",ok,hub,7,212,0,"",2026-08-16
 DF_DCSS_POPRES_SERIES_TV_1,Popolazione residente - Serie storica,ok,hub,3,8063,0,"",2026-08-13
 DF_DCSS_POP_CAMPI_ATTR_TV_1,"Popolazione che vive nei campi attrezzati, negli insediamenti tollerati e spontanei - comuni",ok,hub,6,301,0,"",2026-08-13
 DF_DCSS_POP_DEMCITMIG_SETA_1,"Popolazione residente per singole età, sesso e cittadinanza - comuni",ok,hub,6,12581,0,"",2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_1,Popolazione residente per classi di età (quinquennali) e sesso - comuni,ok,hub,5,12498,0,"",2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_2,"Popolazione residente per classi di età (decennali), sesso e cittadinanza - comuni",ok,hub,6,12493,0,"",2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_3,Popolazione straniera residente per area geografica e paesi di cittadinanza - comuni,ok,hub,5,13136,0,"",2026-08-13
-DF_DCSS_POP_DEMCITMIG_TV_4,Popolazione straniera residente per principali paesi di cittadinanza - comuni con più di 20.000 ab.,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POP_DEMCITMIG_TV_5,Indicatori demografici - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_POP_LEGALE_TV,Popolazione legale pubblicata nella GU Serie Generale n.53 del 03-03-2023 - Suppl. Ordinario n.10,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_RESPOP_PL1Y_1_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_POP_DEMCITMIG_TV_4,Popolazione straniera residente per principali paesi di cittadinanza - comuni con più di 20.000 ab.,ok,hub,4,8191,0,"",2026-08-16
+DF_DCSS_POP_DEMCITMIG_TV_5,Indicatori demografici - comuni,ok,hub,5,8138,0,"",2026-08-16
+DF_DCSS_POP_LEGALE_TV,Popolazione legale pubblicata nella GU Serie Generale n.53 del 03-03-2023 - Suppl. Ordinario n.10,ok,hub,3,8040,0,"",2026-08-16
+DF_DCSS_RESPOP_PL1Y_1_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,ok,hub,6,177,0,"",2026-08-16
 DF_DCSS_RESPOP_PL1Y_2_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,ok,hub,7,176,0,"",2026-08-13
-DF_DCSS_RESPOP_PL1Y_3_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DCSS_RESPOP_PL1Y_4_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima - province e grandi comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_RESPOP_PL1Y_3_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima - province e grandi comuni,ok,hub,6,193,0,"",2026-08-16
+DF_DCSS_RESPOP_PL1Y_4_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima - province e grandi comuni,ok,hub,7,192,0,"",2026-08-16
 DF_DCSS_RESPOP_PL1Y_5_GC,Popolazione residente per grado di istruzione e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,ok,hub,6,176,0,"",2026-08-13
 DF_DCSS_RESPOP_PL1Y_6_GC,Popolazione residente per condizione professionale e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,ok,hub,6,12487,0,"",2026-08-13
-DF_DCSS_SENZA_TETTO_TV_1,Persone senza tetto e senza fissa dimora - comuni,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DCSS_SENZA_TETTO_TV_1,Persone senza tetto e senza fissa dimora - comuni,ok,hub,6,2403,0,"",2026-08-16
 DF_DIFF_REPORT,Dataflow per la diffusione di report,empty,hub,0,0,0,"",2026-08-13
-DF_DIPS_SIR_IND_TERR_DRT_MUN_1,Indicatori e territorio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-DF_DIPS_SIR_IND_TERR_DRT_MUN_2,Indicatori per singolo territorio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+DF_DIPS_SIR_IND_TERR_DRT_MUN_1,Indicatori e territorio,ok,hub,3,8376,0,"",2026-08-16
+DF_DIPS_SIR_IND_TERR_DRT_MUN_2,Indicatori per singolo territorio,ok,hub,3,8376,0,"",2026-08-16
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_1,Indicatori e territorio (addetti - imprese),ok,hub,4,8413,0,"",2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_2,Indicatori per singolo territorio (addetti - imprese),ok,hub,4,8413,0,"",2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_3,Indicatori e territorio (indipendenti),ok,hub,4,8413,0,"",2026-08-13
@@ -4879,22 +4879,22 @@ DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_5,Indicatori e territorio (dipendenti),ok,h
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_6,Indicatori per singolo territorio (dipendenti),ok,hub,4,8413,0,"",2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),ok,hub,4,666,0,"",2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),ok,hub,4,666,0,"",2026-08-13
-DF_DIPS_SIR_IND_TERR_DRT_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-DF_DIPS_SIR_IND_TERR_DRT_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-DF_TST,Crops in Italy,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-EMP,Occupazione,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-FSI07,Indicatori di solidità finanziaria,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-GGO,Operazioni del governo,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-IND,Indice della produzione industriale,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-MET,Commercio,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-NAG_08,Conti nazionali - metodologia 2008,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-POP,Popolazione,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-PPI,Prezzi alla produzione,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-SDDS_PLUS_CPI_DF_167_744_1,Prezzi al consumo,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-SDDS_PLUS_NAG_08_DF_163_156_1,Conti nazionali - prezzi correnti,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-SDDS_PLUS_NAG_08_DF_163_156_2,Conti nazionali - valori concatenati,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-SDDS_PLUS_POP_DF_22_315_1,Popolazione,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-TEST_LINKED_DF_DCSP_PREZZIAGR_1,TEST_LINKED_DF_DCSP_PREZZIAGR_1,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-UEM,Disoccupazione,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
-WOE,Retribuzioni contrattuali,error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-14
+DF_DIPS_SIR_IND_TERR_DRT_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),ok,hub,3,641,0,"",2026-08-16
+DF_DIPS_SIR_IND_TERR_DRT_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),ok,hub,3,641,0,"",2026-08-16
+DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-16
+DF_TST,Crops in Italy,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-16
+EMP,Occupazione,ok,hub,5,5,0,"",2026-08-16
+FSI07,Indicatori di solidità finanziaria,ok,hub,5,5,0,"",2026-08-16
+GGO,Operazioni del governo,ok,hub,5,26,0,"",2026-08-16
+IND,Indice della produzione industriale,ok,hub,5,5,0,"",2026-08-16
+MET,Commercio,ok,hub,5,7,0,"",2026-08-16
+NAG_08,Conti nazionali - metodologia 2008,ok,hub,5,15,0,"",2026-08-16
+POP,Popolazione,ok,hub,5,5,0,"",2026-08-16
+PPI,Prezzi alla produzione,ok,hub,5,5,0,"",2026-08-16
+SDDS_PLUS_CPI_DF_167_744_1,Prezzi al consumo,ok,hub,5,9,0,"",2026-08-16
+SDDS_PLUS_NAG_08_DF_163_156_1,Conti nazionali - prezzi correnti,ok,hub,6,28,0,"",2026-08-16
+SDDS_PLUS_NAG_08_DF_163_156_2,Conti nazionali - valori concatenati,ok,hub,6,37,0,"",2026-08-16
+SDDS_PLUS_POP_DF_22_315_1,Popolazione,ok,hub,4,7,0,"",2026-08-16
+TEST_LINKED_DF_DCSP_PREZZIAGR_1,TEST_LINKED_DF_DCSP_PREZZIAGR_1,ok,hub,5,39,0,"",2026-08-16
+UEM,Disoccupazione,ok,hub,5,6,0,"",2026-08-16
+WOE,Retribuzioni contrattuali,ok,hub,5,6,0,"",2026-08-16

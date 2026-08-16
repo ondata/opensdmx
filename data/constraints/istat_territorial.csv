@@ -3799,11 +3799,13 @@ DF_DCSS_HUDW_2_PROV,Abitazioni per epoca di costruzione e stato di occupazione -
 DF_DCSS_HUDW_3_PROV,Abitazioni occupate da almeno una persona residente per classi di superficie e numero di occupanti - regioni e province,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-15
 DF_DCSS_HUDW_4_PROV,Abitazioni occupate da almeno una persona residente per densità abitativa - regioni e province,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-15
 DF_DCSS_HUDW_5_PROV,Abitazioni occupate da almeno una persona residente per tipo di impianto di riscaldamento - regioni e province,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-15
+DF_DCSS_HUDW_6_COM,Famiglie per tipo di alloggio - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8035,2026-08-16
 DF_DCSS_ISTR_LAV_PEN_2_TV_1,Popolazione residente di 9 anni e più per grado di istruzione ed età - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_2,Popolazione residente di 9 anni e più per grado di istruzione e cittadinanza - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_3,Popolazione residente di 15 anni e più per condizione professionale ed età - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_4,Popolazione residente di 15 anni e più per condizione professionale e cittadinanza - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_ISTR_LAV_PEN_2_TV_5,Popolazione residente che si sposta giornalmente per studio o lavoro - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8114,2026-08-13
+DF_DCSS_LCAS_FRISC_1,Occupati per utilizzo di lavoro da casa e sesso - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-16
 DF_DCSS_LCAS_FRISC_2,Occupati per utilizzo di lavoro da casa e classi di età - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-13
 DF_DCSS_LCAS_FRISC_3,Popolazione residente di 14 anni e più per frequenza di un corso di formazione/aggiornamento professionale e sesso - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-13
 DF_DCSS_LCAS_FRISC_4,Popolazione residente fino a 8 anni per frequenza di asilo nido/scuola dell'infanzia/scuola primaria e sesso - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,162,2026-08-13
@@ -3818,16 +3820,33 @@ DF_DCSS_MIGR_BACKG_PAR_TV_6_COM,Popolazione straniera nata in Italia per cittadi
 DF_DCSS_MIGR_BACKG_PAR_TV_7_COM,Popolazione straniera nata all'estero (immigrata) per cittadinanza e luogo di nascita dei genitori - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_MIGR_BACKG_PAR_TV_8_COM,Popolazione italiana nata in Italia e all'estero per grado di istruzione e luogo di nascita dei genitori - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_MIGR_BACKG_PAR_TV_9_COM,"Popolazione italiana per acquisizione nata in Italia e all'estero per grado di istruzione, cittadinanza precedente e luogo di nascita dei genitori - comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
+DF_DCSS_POPHH_PHH_1_GC,"Popolazione residente in famiglia per sesso, classe di età, e posizione nella famiglia - province e grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8039,2026-08-16
+DF_DCSS_POPHH_PHH_2_COM,Popolazione residente in famiglia per tipologia della famiglia - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8039,2026-08-16
+DF_DCSS_POPHH_PHH_3_GC,Popolazione residente in famiglia per numero di componenti e tpologia della famiglia - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8039,2026-08-16
+DF_DCSS_POPHH_PHH_4_COM,Famiglie per tipologia della famiglia - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8039,2026-08-16
+DF_DCSS_POPHH_PHH_5_GC,Famiglie per numero di componenti e tipologia della famiglia - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8039,2026-08-16
 DF_DCSS_POPRESABR_1_GC,"Popolazione che è stata residente all'estero per classi di età,  anno di arrivo e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,160,2026-08-13
+DF_DCSS_POPRESABR_2_GC,Popolazione che è stata residente all'estero per anno di arrivo e luogo di nascita - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,160,2026-08-16
+DF_DCSS_POPRESABR_3_GC,Popolazione che è stata residente all'estero per anno di arrivo e area geografica di cittadinanza - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,160,2026-08-16
+DF_DCSS_POPRESABR_4_REGIO,"Popolazione che è stata residente all'estero per anno di arrivo, luogo di nascita e area geografica di cittadinanza - regioni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,160,2026-08-16
 DF_DCSS_POPRES_SERIES_TV_1,Popolazione residente - Serie storica,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8061,2026-08-13
 DF_DCSS_POP_CAMPI_ATTR_TV_1,"Popolazione che vive nei campi attrezzati, negli insediamenti tollerati e spontanei - comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,288,2026-08-13
 DF_DCSS_POP_DEMCITMIG_SETA_1,"Popolazione residente per singole età, sesso e cittadinanza - comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_1,Popolazione residente per classi di età (quinquennali) e sesso - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_2,"Popolazione residente per classi di età (decennali), sesso e cittadinanza - comuni",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
 DF_DCSS_POP_DEMCITMIG_TV_3,Popolazione straniera residente per area geografica e paesi di cittadinanza - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
+DF_DCSS_POP_DEMCITMIG_TV_4,Popolazione straniera residente per principali paesi di cittadinanza - comuni con più di 20.000 ab.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8081,2026-08-16
+DF_DCSS_POP_DEMCITMIG_TV_5,Indicatori demografici - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8126,2026-08-16
+DF_DCSS_POP_LEGALE_TV,Popolazione legale pubblicata nella GU Serie Generale n.53 del 03-03-2023 - Suppl. Ordinario n.10,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8038,2026-08-16
+DF_DCSS_RESPOP_PL1Y_1_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,159,2026-08-16
 DF_DCSS_RESPOP_PL1Y_2_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,159,2026-08-13
+DF_DCSS_RESPOP_PL1Y_3_GC,Popolazione residente per classe di età e luogo di dimora abituale 1 anno prima - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,159,2026-08-16
+DF_DCSS_RESPOP_PL1Y_4_GC,Popolazione residente per cittadinanza e luogo di dimora abituale 1 anno prima - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,159,2026-08-16
 DF_DCSS_RESPOP_PL1Y_5_GC,Popolazione residente per grado di istruzione e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,159,2026-08-13
 DF_DCSS_RESPOP_PL1Y_6_GC,Popolazione residente per condizione professionale e luogo di dimora abituale 1 anno prima rispetto alla dimora attuale - province e grandi comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-08-13
+DF_DCSS_SENZA_TETTO_TV_1,Persone senza tetto e senza fissa dimora - comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,2390,2026-08-16
+DF_DIPS_SIR_IND_TERR_DRT_MUN_1,Indicatori e territorio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8348,2026-08-16
+DF_DIPS_SIR_IND_TERR_DRT_MUN_2,Indicatori per singolo territorio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8348,2026-08-16
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_1,Indicatori e territorio (addetti - imprese),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8360,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_2,Indicatori per singolo territorio (addetti - imprese),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8360,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_3,Indicatori e territorio (indipendenti),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8360,2026-08-13
@@ -3836,3 +3855,18 @@ DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_5,Indicatori e territorio (dipendenti),REF_
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_6,Indicatori per singolo territorio (dipendenti),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8360,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),REF_AREA,nazionale,nazionale,613,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),REF_AREA,nazionale,nazionale,613,2026-08-13
+EMP,Occupazione,REF_AREA,nazionale,nazionale,1,2026-08-16
+FSI07,Indicatori di solidità finanziaria,REF_AREA,nazionale,nazionale,1,2026-08-16
+GGO,Operazioni del governo,REF_AREA,nazionale,nazionale,1,2026-08-16
+IND,Indice della produzione industriale,REF_AREA,nazionale,nazionale,1,2026-08-16
+MET,Commercio,REF_AREA,nazionale,nazionale,1,2026-08-16
+NAG_08,Conti nazionali - metodologia 2008,REF_AREA,nazionale,nazionale,1,2026-08-16
+POP,Popolazione,REF_AREA,nazionale,nazionale,1,2026-08-16
+PPI,Prezzi alla produzione,REF_AREA,nazionale,nazionale,1,2026-08-16
+SDDS_PLUS_CPI_DF_167_744_1,Prezzi al consumo,REF_AREA,nazionale,nazionale,1,2026-08-16
+SDDS_PLUS_NAG_08_DF_163_156_1,Conti nazionali - prezzi correnti,REF_AREA,nazionale,nazionale,1,2026-08-16
+SDDS_PLUS_NAG_08_DF_163_156_2,Conti nazionali - valori concatenati,REF_AREA,nazionale,nazionale,1,2026-08-16
+SDDS_PLUS_POP_DF_22_315_1,Popolazione,REF_AREA,nazionale,nazionale,1,2026-08-16
+TEST_LINKED_DF_DCSP_PREZZIAGR_1,TEST_LINKED_DF_DCSP_PREZZIAGR_1,REF_AREA,nazionale,nazionale,1,2026-08-16
+UEM,Disoccupazione,REF_AREA,nazionale,nazionale,1,2026-08-16
+WOE,Retribuzioni contrattuali,REF_AREA,nazionale,nazionale,1,2026-08-16
