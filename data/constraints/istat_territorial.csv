@@ -235,10 +235,13 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 122_54_DF_DCSC_TUR_12,Per tipo di esercizio e residenza del cliente - annuali,REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_13,"Arrivi, presenze, permanenza media - Mensili",REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_2,Dimensione dell'albergo - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-17
 122_54_DF_DCSC_TUR_4,Residenti per regione di origine,REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_5,Paese di origine,REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_6,Tipo di località,REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_7,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
+122_54_DF_DCSC_TUR_8,Residenti per regione di origine,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-17
+122_54_DF_DCSC_TUR_9,Paese di origine - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-17
 123_713,Numero e tipo di unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
 123_713_DF_DCAR_UI_1,Numero e tipo di unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,27,2026-07-17
 123_840,Attività e organizzazione delle unità istituzionali,REF_AREA,regione,nazionale|ripartizione|regione,29,2026-07-17
@@ -297,8 +300,11 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 144_180_DF_DCSP_NICUNOB_1,Classificazione Coicop (2 cifre) (base dicembre 1998),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,119,2026-07-17
 144_180_DF_DCSP_NICUNOB_2,Tipologie di prodotto (base 1995),REF_AREA,nazionale,nazionale,1,2026-08-13
 144_180_DF_DCSP_NICUNOB_3,Classificazione Coicop (5 cifre) (base 1995),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_360,Prezzi alla produzione dell'industria,REF_AREA,nazionale,nazionale,1,2026-08-17
 145_360_DF_DCSC_PREZZPIND_1_1,Prezzi alla produzione dell'industria - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-08-17
 145_360_DF_DCSC_PREZZPIND_1_3,Mensili (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-17
 145_361,Costi di costruzione,REF_AREA,nazionale,nazionale,1,2026-07-17
 145_361_DF_DCSC_FABBRESID_1_1,Fabbricato residenziale e capannone industriale - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-13
 145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17

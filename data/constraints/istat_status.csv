@@ -92,7 +92,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 111_111,Indicatori  permessi di costruire,ok,hub,5,10,0,"",2026-07-16
 111_111_DF_DCSC_PERM_RAP1_1,Nuovi fabbricati residenziali,ok,hub,5,8,0,"",2026-07-16
 111_111_DF_DCSC_PERM_RAP1_2,Nuova edilizia non residenziale,ok,hub,5,7,0,"",2026-07-16
-111_263,Fiducia delle imprese manifatturiere,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+111_263,Fiducia delle imprese manifatturiere,error,"",0,0,4,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-17
 111_263_DF_DCSC_FIDIMPRMAN_1,Clima e saldi mensili destagionalizzati,ok,hub,6,36,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_10,"Clima, saldi e frequenze mensili grezzi - rip.",ok,hub,5,77,0,"",2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_11,"Clima, saldi e frequenze mensili grezzi per Ateco",ok,hub,6,166,0,"",2026-07-16
@@ -244,20 +244,20 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 121_393_DF_DCSC_TRAMAR_6,"Merci, navi arrivate e tonnellate di stazza lorda per regione",ok,hub,11,42,0,"",2026-07-17
 121_393_DF_DCSC_TRAMAR_7,Porto e tipo merce NST/R,ok,hub,9,83,0,"",2026-08-13
 121_393_DF_DCSC_TRAMAR_8,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST/R,ok,hub,8,99,0,"",2026-07-17
-122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,error,"",0,0,4,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-17
 122_54_DF_DCSC_TUR_1,Capacità degli esercizi ricettivi per tipo di esercizio - com.,ok,hub,8,12695,0,"",2026-07-17
 122_54_DF_DCSC_TUR_10,Tipo di località e paese di residenza,ok,hub,8,29,0,"",2026-07-17
 122_54_DF_DCSC_TUR_11,Per regione e per residenza del cliente - mensili e annuali,ok,hub,7,43,0,"",2026-07-17
 122_54_DF_DCSC_TUR_12,Per tipo di esercizio e residenza del cliente - annuali,ok,hub,7,21,0,"",2026-07-17
 122_54_DF_DCSC_TUR_13,"Arrivi, presenze, permanenza media - Mensili",ok,hub,7,19,0,"",2026-07-17
 122_54_DF_DCSC_TUR_2,Dimensione dell'albergo - prov.,ok,hub,8,156,0,"",2026-07-17
-122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+122_54_DF_DCSC_TUR_3,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - mensili,ok,hub,7,155,0,"",2026-08-17
 122_54_DF_DCSC_TUR_4,Residenti per regione di origine,ok,hub,7,43,0,"",2026-07-17
 122_54_DF_DCSC_TUR_5,Paese di origine,ok,hub,7,78,0,"",2026-07-17
 122_54_DF_DCSC_TUR_6,Tipo di località,ok,hub,8,29,0,"",2026-07-17
 122_54_DF_DCSC_TUR_7,Movimento dei clienti negli esercizi ricettivi per tipo di esercizio - annuali,ok,hub,7,169,0,"",2026-07-17
-122_54_DF_DCSC_TUR_8,Residenti per regione di origine,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
-122_54_DF_DCSC_TUR_9,Paese di origine - prov,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+122_54_DF_DCSC_TUR_8,Residenti per regione di origine,ok,hub,7,80,0,"",2026-08-17
+122_54_DF_DCSC_TUR_9,Paese di origine - prov,ok,hub,7,231,0,"",2026-08-17
 123_712,Indicatori di bilancio e dati sul personale delle unità istituzionali,empty,hub,0,0,0,"",2026-08-13
 123_712_DF_DCAR_INDBILPER_1,Indicatori di bilancio e dati sul personale delle unità istituzionali,ok,hub,3,11440,0,"",2026-07-17
 123_713,Numero e tipo di unità istituzionali,ok,hub,3,64,0,"",2026-07-17
@@ -318,11 +318,11 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 144_180_DF_DCSP_NICUNOB_1,Classificazione Coicop (2 cifre) (base dicembre 1998),ok,hub,5,139,0,"",2026-07-17
 144_180_DF_DCSP_NICUNOB_2,Tipologie di prodotto (base 1995),ok,hub,5,39,0,"",2026-08-13
 144_180_DF_DCSP_NICUNOB_3,Classificazione Coicop (5 cifre) (base 1995),ok,hub,5,331,0,"",2026-07-17
-145_360,Prezzi alla produzione dell'industria,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+145_360,Prezzi alla produzione dell'industria,ok,hub,6,356,0,"",2026-08-17
 145_360_DF_DCSC_PREZZPIND_1_1,Prezzi alla produzione dell'industria - mensili (base 2015),ok,hub,6,351,0,"",2026-07-17
-145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+145_360_DF_DCSC_PREZZPIND_1_2,Mensili (base 2010),ok,hub,6,333,0,"",2026-08-17
 145_360_DF_DCSC_PREZZPIND_1_3,Mensili (base 2005),ok,hub,6,322,0,"",2026-07-17
-145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-13
+145_360_DF_DCSC_PREZZPIND_1_4,Prezzi alla produzione dell'industria - mensili (base 2021),ok,hub,6,349,0,"",2026-08-17
 145_361,Costi di costruzione,ok,hub,5,61,0,"",2026-07-17
 145_361_DF_DCSC_FABBRESID_1_1,Fabbricato residenziale e capannone industriale - mensili (base 2015),ok,hub,5,10,0,"",2026-08-13
 145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),ok,hub,5,9,0,"",2026-07-17
