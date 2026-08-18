@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-08-18 - `providers` coverage column (issue #18, PR #71)
+
+- feat(providers): `opensdmx providers` gains a `coverage` column — the share of a provider's cached dataflow catalog that has a category assigned. `categories_supported` only said whether a tree exists; it never said whether the tree reaches everything, and a dataflow with no `Categorisation` is invisible to `tree` while being perfectly reachable by `search`. OECD sits around 89%, so tree-only exploration there silently misses one dataflow in ten. Contributed by @deepusnath.
+- Reads only the on-disk `dataflows.parquet` / `categorisation.parquet` of each provider and never fetches: `?` when nothing is cached yet, `-` where there is no tree. Categorised ids the catalog no longer lists are ignored — the two caches expire independently and counting them pushed the ratio past 100%.
+- The table rounds **down**. `{pct:.0f}` printed Eurostat's 99.90% as `100%`, hiding the ~9 uncategorised dataflows behind the very column meant to reveal them; "almost complete" is the misleading case, not the harmless one.
+- docs: documented in `README.md`, `docs/providers.md`, `skills/sdmx-explorer/SKILL.md` (Step 1b, where the tree-vs-search decision is actually made) and the `providers` docstring, so the three states are explained where they are read.
+- Known cosmetic limit, not introduced here: below ~100 terminal columns the table is too dense and truncates values (`100%` → `10…`), as `agency` and `categories` already did on `main`.
+
 ## 2026-08-18 - `OPENSDMX_OUTPUT` env var (issue #8)
 
 - feat(cli): `--output` now reads `OPENSDMX_OUTPUT`, so a user who always wants JSON can `export OPENSDMX_OUTPUT=json` instead of typing `-o json` on every call — the ask in issue #8. Resolution order is explicit flag > env var > `table`. **The project default is unchanged**: `table` stays the default for everyone, and flipping it project-wide remains a separate decision (the reporter never answered whether the table output caused real friction).

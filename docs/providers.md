@@ -231,6 +231,8 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 
 Fields not specified in `portals.json` fall back to the defaults listed above (applied in `base.py` at load time).
 
+`opensdmx providers` adds one column that is **not** a `portals.json` field: `coverage`, computed by `categories.provider_coverage()`. It is the share of the provider's cached dataflow catalog that has a category assigned — `n_categorized / n_total`, where dataflows the categorisation still references but the catalog no longer lists are ignored, since the two caches expire independently. It answers the question `categories_supported` cannot: the tree exists, but does it reach every dataflow? Below 100% a tree-only exploration misses whatever sits outside it, and a keyword `search` is still warranted. The value is read from the on-disk caches of each provider and never triggers a fetch, so the table shows `?` when nothing is cached yet for a provider and `-` where `categories_supported` is `false`; the structured output carries the raw float (0-100) and `null` for both of those cases, which `categories_supported` disambiguates. The table rounds down, so a catalog one dataflow short of complete reads as `99%`, never `100%`.
+
 The metadata channel (the `metadata_url` annotation + `metadata_api_path` + `metadata_description_attribute`) is served by a service distinct from the SDMX data endpoint and is **not** subject to that endpoint's rate limit. It is consumed offline by `scripts/descriptions_archive.py`, which ships a per-provider description resource under `src/opensdmx/data/descriptions/`; see that folder's README.
 
 ISTAT's `annotations` block also produces these nullable catalog columns, stored as published:

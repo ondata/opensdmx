@@ -315,6 +315,13 @@ Not every provider exposes the thematic tree. Run `opensdmx providers` and check
 the `categories` column (✓/✗). Currently supported: `eurostat`, `istat`, `ecb`,
 `oecd`, `insee`, `abs`, `bis`.
 
+The `coverage` column next to it says how much of that provider's catalog is
+actually reachable from the tree — the share of dataflows that have a category
+assigned. Below 100% some dataflows exist but sit in no branch, so a keyword
+`search` is still worth running. The value comes from the local cache and never
+triggers a fetch: `?` means nothing is cached for that provider yet, `-` that it
+has no tree.
+
 ### Query files
 
 Save any `get` command as a YAML file with `--query-file`. The file captures the full query — provider, dataset, filters with human-readable descriptions, and time range — so it can be re-run, shared, or version-controlled.
