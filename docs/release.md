@@ -38,11 +38,9 @@ gh release create vX.Y.Z --title "vX.Y.Z" --notes "patch release notes here"
 uv build
 twine upload dist/opensdmx-X.Y.Z*
 
-# 8. Verify the published artifact in a clean venv (see step 9 of the full
-#    procedure — a green test suite does not prove the package is installable)
-uv venv /tmp/opensdmx-relcheck
-uv pip install --refresh --python /tmp/opensdmx-relcheck/bin/python opensdmx==X.Y.Z
-/tmp/opensdmx-relcheck/bin/opensdmx --version
+# 8. Verify the published artifact (see step 9 of the full procedure — a green
+#    test suite does not prove the package is installable)
+uvx --refresh --from opensdmx==X.Y.Z opensdmx --version
 
 # 9. Refresh the local CLI install
 uv tool install --editable .
@@ -83,14 +81,14 @@ gh release create vX.Y.Z --title "vX.Y.Z" --notes "release notes here"
 uv build
 twine upload dist/opensdmx-X.Y.Z*
 
-# 9. Verify the PUBLISHED artifact, not the local source: install it in a
-#    clean venv and actually run it. The lock file proves nothing here — a
-#    dependency the code imports but never declares (it only arrived
-#    transitively) installs fine locally and breaks for every new user.
-uv venv /tmp/opensdmx-relcheck
-uv pip install --refresh --python /tmp/opensdmx-relcheck/bin/python opensdmx==X.Y.Z
-/tmp/opensdmx-relcheck/bin/opensdmx --version
-/tmp/opensdmx-relcheck/bin/opensdmx providers   # any real command, not just --version
+# 9. Verify the PUBLISHED artifact, not the local source. `uvx` resolves and
+#    installs from PyPI into a throwaway environment, so this is what a new
+#    user gets. The lock file proves nothing here: a dependency the code
+#    imports but never declares (it only arrived transitively) installs fine
+#    locally and breaks for everyone else. `--refresh` skips a stale index
+#    cache — right after upload the version may not resolve on the first try.
+uvx --refresh --from opensdmx==X.Y.Z opensdmx --version
+uvx --from opensdmx==X.Y.Z opensdmx providers   # a real command, not just --version
 
 # 10. Update local CLI
 uv tool install --editable .
@@ -110,5 +108,5 @@ Every release MUST complete all steps in order:
 - [ ] Pushed to GitHub with tags (`git push origin main --tags`)
 - [ ] GitHub release created with notes (`gh release create`)
 - [ ] Built and published to PyPI (`uv build && twine upload`)
-- [ ] Published artifact installed from PyPI in a clean venv and run (`--version` plus one real command)
+- [ ] Published artifact resolved from PyPI and run (`uvx --refresh --from opensdmx==X.Y.Z opensdmx --version`, plus one real command)
 - [ ] Local CLI updated (`uv tool install --editable .`)
