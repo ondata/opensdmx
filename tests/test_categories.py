@@ -426,6 +426,24 @@ def test_provider_coverage_computes_percentage(tmp_path, monkeypatch):
     assert categories.provider_coverage("istat") == pytest.approx(50.0)
 
 
+def test_provider_coverage_ignores_stale_categorisation_ids(tmp_path, monkeypatch):
+    """Categorised ids missing from the catalog must not inflate coverage.
+
+    The two caches expire independently, so the categorisation can still
+    reference dataflows the catalog has since dropped. Counting those would
+    push the ratio above 100%.
+    """
+    provider_dir = tmp_path / "istat"
+    provider_dir.mkdir()
+    pl.DataFrame({"df_id": ["A", "B"]}).write_parquet(provider_dir / "dataflows.parquet")
+    pl.DataFrame({"df_id": ["A", "B", "GONE"]}).write_parquet(
+        provider_dir / "categorisation.parquet"
+    )
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+
+    assert categories.provider_coverage("istat") == pytest.approx(100.0)
+
+
 def test_provider_coverage_no_cache_returns_none(tmp_path, monkeypatch):
     monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
     assert categories.provider_coverage("oecd") is None
