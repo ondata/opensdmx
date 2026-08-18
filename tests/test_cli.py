@@ -878,3 +878,41 @@ def test_invalid_flag_still_names_the_flag(_no_api_check):
 
     assert result.exit_code == 1
     assert "invalid --output value 'jsn'" in result.output
+
+
+# ── providers coverage column ────────────────────────────────────────
+
+
+def test_providers_json_includes_coverage(_no_api_check):
+    import json
+
+    with patch("opensdmx.categories.provider_coverage", return_value=42.0):
+        result = runner.invoke(app, ["-o", "json", "providers"])
+
+    assert result.exit_code == 0, result.output
+    rows = {r["alias"]: r for r in json.loads(result.output)}
+    # categories_supported=True → the mocked coverage comes through.
+    assert rows["istat"]["coverage"] == 42.0
+    # categories_supported=False → not applicable, never calls provider_coverage.
+    assert rows["worldbank"]["coverage"] is None
+
+
+def test_providers_table_shows_coverage_percent_and_dash(_no_api_check):
+    with patch("opensdmx.categories.provider_coverage", return_value=50.0):
+        result = runner.invoke(app, ["providers"])
+
+    assert result.exit_code == 0, result.output
+    assert "50%" in result.output
+    # worldbank has categories_supported=False → dash, not a percentage.
+    # (the alias column truncates to "world…" at the runner's terminal width)
+    lines = [line for line in result.output.splitlines() if "world" in line]
+    assert lines and "%" not in lines[0]
+
+
+def test_providers_table_shows_unknown_when_uncached(_no_api_check):
+    with patch("opensdmx.categories.provider_coverage", return_value=None):
+        result = runner.invoke(app, ["providers"])
+
+    assert result.exit_code == 0, result.output
+    lines = [line for line in result.output.splitlines() if "istat" in line]
+    assert lines and "?" in lines[0]

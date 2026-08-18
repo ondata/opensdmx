@@ -407,3 +407,63 @@ def test_load_categories_does_not_fetch_dataflows_for_stale_check_without_cache(
     loaded_cats, loaded_cz = categories.load_categories()
     assert loaded_cats.equals(cats_df)
     assert loaded_cz.equals(cz_df)
+
+
+# ── provider_coverage ────────────────────────────────────────────────
+
+
+def test_provider_coverage_computes_percentage(tmp_path, monkeypatch):
+    provider_dir = tmp_path / "istat"
+    provider_dir.mkdir()
+    pl.DataFrame({"df_id": ["A", "B", "C", "D"]}).write_parquet(
+        provider_dir / "dataflows.parquet"
+    )
+    pl.DataFrame({"df_id": ["A", "B", "A"]}).write_parquet(
+        provider_dir / "categorisation.parquet"
+    )
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+
+    assert categories.provider_coverage("istat") == pytest.approx(50.0)
+
+
+def test_provider_coverage_no_cache_returns_none(tmp_path, monkeypatch):
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+    assert categories.provider_coverage("oecd") is None
+
+
+def test_provider_coverage_partial_cache_returns_none(tmp_path, monkeypatch):
+    # Only one of the two required caches exists — still no fetch, no answer.
+    provider_dir = tmp_path / "ecb"
+    provider_dir.mkdir()
+    pl.DataFrame({"df_id": ["A"]}).write_parquet(provider_dir / "dataflows.parquet")
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+
+    assert categories.provider_coverage("ecb") is None
+
+
+def test_provider_coverage_empty_dataflows_returns_none(tmp_path, monkeypatch):
+    provider_dir = tmp_path / "istat"
+    provider_dir.mkdir()
+    pl.DataFrame({"df_id": []}, schema={"df_id": pl.Utf8}).write_parquet(
+        provider_dir / "dataflows.parquet"
+    )
+    pl.DataFrame({"df_id": []}, schema={"df_id": pl.Utf8}).write_parquet(
+        provider_dir / "categorisation.parquet"
+    )
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+
+    assert categories.provider_coverage("istat") is None
+
+
+def test_provider_coverage_independent_of_active_provider(tmp_path, monkeypatch):
+    """Coverage for `alias` must not depend on which provider is globally active."""
+    provider_dir = tmp_path / "istat"
+    provider_dir.mkdir()
+    pl.DataFrame({"df_id": ["A", "B"]}).write_parquet(provider_dir / "dataflows.parquet")
+    pl.DataFrame({"df_id": ["A", "B"]}).write_parquet(provider_dir / "categorisation.parquet")
+    monkeypatch.setattr(categories, "_resolve_cache_base", lambda: tmp_path)
+
+    from opensdmx import base
+
+    monkeypatch.setattr(base, "_active_provider", "eurostat")
+    assert categories.provider_coverage("istat") == pytest.approx(100.0)
