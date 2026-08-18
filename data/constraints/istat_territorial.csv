@@ -310,33 +310,53 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 145_361_DF_DCSC_FABBRESID_1_2,Tronco stradale con tratto in galleria - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
 145_361_DF_DCSC_FABBRESID_1_3,Tronchi stradali - serie interrotta - mensili (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-13
 145_361_DF_DCSC_FABBRESID_1_4,Fabbricato residenziale - mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_5,Tronchi stradali - mensili (base 2010),REF_AREA,nazionale,nazionale,1,2026-08-18
 145_361_DF_DCSC_FABBRESID_1_6,Fabbricato residenziale dal 2000 al 2012 (base 2005) - mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+145_361_DF_DCSC_FABBRESID_1_7,Fabbricato residenziale e capannone industriale - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-18
 145_361_DF_DCSC_FABBRESID_1_8,Tronco stradale con tratto in galleria - mensili (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
 145_362_DCSC_INDICITOL_1,Tipologie omogenee di lavorazioni (TOL) - mensili (base 2022),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376,Prezzi alla produzione dei servizi,REF_AREA,nazionale,nazionale,1,2026-08-18
 145_376_DF_DCSC_PREZPRODSERV_1_1,Trimestrali business to business dal 2006 al 2023 (base 2015),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_2,Medie annue business to business dal 2006 al 2023 (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-18
 145_376_DF_DCSC_PREZPRODSERV_1_3,Trimestrali business to business dal 2006 al 2017 (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_4,Medie annue business to business dal 2006 al 2017 (base 2010),REF_AREA,nazionale,nazionale,1,2026-08-18
 145_376_DF_DCSC_PREZPRODSERV_1_5,Trimestrali business to business dal 2006 al 2012 (base 2006),REF_AREA,nazionale,nazionale,1,2026-07-17
 145_376_DF_DCSC_PREZPRODSERV_1_6,Medie annue business to business dal 2006 al 2012 (base 2006),REF_AREA,nazionale,nazionale,1,2026-07-17
+145_376_DF_DCSC_PREZPRODSERV_1_7,Trimestrali business to business dal 2006 (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-18
 145_376_DF_DCSC_PREZPRODSERV_1_8,Trimestrali business to all dal 2006 (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
 149_319,Tensione contrattuale,REF_AREA,nazionale,nazionale,1,2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_1,Tensioni contrattuale - indicatori (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-18
 149_319_DF_DCSC_RETRCONTR1T_2,Indicatori (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
 149_319_DF_DCSC_RETRCONTR1T_3,Indicatori (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
+149_319_DF_DCSC_RETRCONTR1T_4,Tensione contrattuale - indicatori (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-18
 149_327,"Orario contrattuale, ferie e altre riduzioni orarie - dipendenti a tempo pieno",REF_AREA,nazionale,nazionale,1,2026-07-17
+149_327_DF_DCSC_RETRCONTR1O_1,"Orario contrattuale, ferie e altre riduzioni orarie - dipendenti a tempo pieno",REF_AREA,nazionale,nazionale,1,2026-08-18
 149_577,Posizioni lavorative alle dipendenze,REF_AREA,nazionale,nazionale,1,2026-07-17
+149_577_DF_DCSC_OROS_1_1,Posizioni lavorative alle dipendenze (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-18
 149_577_DF_DCSC_OROS_1_2,Posizioni lavorative alle dipendenze (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
+149_577_DF_DCSC_OROS_1_3,Posizioni lavorative alle dipendenze (base 2021),REF_AREA,nazionale,nazionale,1,2026-08-18
 14_121_DF_DCCV_TRASPUB_1,Trasporto pubblico,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-17
+14_122_DF_DCCV_VERDURB_1,Verde urbano - dati fino al 2009,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,251,2026-08-18
 14_166_DF_DCCV_INTBONRUM_1,Interventi di bonifica del rumore,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,250,2026-07-17
 14_167_DF_DCCV_MONINQACS_1,Inquinamento acustico,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-08-04
 150_105,Occupati per ore settimanali lavorate e numero di ore settimanali lavorate procapite,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_105_DF_DCCV_ORELAVMED_UNT2020_1,Numero di ore medie settimanali effettivamente lavorate pro-capite - livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-08-18
 150_105_DF_DCCV_ORELAVMED_UNT2020_2,Numero di occupati per ore settimanali effettivamente lavorate - livello ripartizionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
+150_1168,Tasso di occupazione  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-08-18
 150_1168_DF_DCCV_TAXOCCUMENS1_UNT2020_1,Tasso di occupazione - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1169,Forze lavoro  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-08-18
 150_1169_DF_DCCV_FORZLVMENS1_UNT2020_1,Forze lavoro  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1170,Occupati -  dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-08-18
 150_1170_DF_DCCV_OCCUPATIMENS1_UNT2020_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1170_DF_DCCV_OCCUPATIMENS1_UNT2020_2,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-08-18
 150_1171,Tasso di attività  - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1171_DF_DCCV_TAXATVTMENS1_UNT2020_1,Tasso di attività - dati mensili - regolamento precedente (fino al 2020),REF_AREA,nazionale,nazionale,1,2026-08-18
 150_1172,Tasso di attività - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 150_1172_DF_DCCV_TAXATVTDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-08-04
 150_1172_DF_DCCV_TAXATVTDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
+150_1173,Forze di lavoro - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-18
 150_1173_DF_DCCV_FORZLVDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1173_DF_DCCV_FORZLVDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-18
 150_1174,Occupati - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-08-04
 150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_2,Macrosettori economici,REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -344,6 +364,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 150_1174_DF_DCCV_OCCUPATITDE1_UNT2020_4,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-04
 150_1175,Tasso di occupazione - dati trimestrali destagionalizzati - regolamento precedente (fino al 2020),REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_1175_DF_DCCV_TAXOCCUDE1_UNT2020_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-18
 150_1188,Occupati (migliaia) - regolamento precedente (fino al 2020),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-04
 150_1188_DF_DCCV_OCCUPATIT1_UNT2020_1,"Occupati (migliaia) - regolamento precedente (fino al 2020)- Titolo di studio, cittadinanza, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 150_1188_DF_DCCV_OCCUPATIT1_UNT2020_10,Occupati (migliaia) - regolamento precedente (fino al 2020)- Ateco 2007 (dettaglio) - posizione professionale,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
@@ -420,7 +441,15 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 150_1191_DF_DCCV_TAXATVT1_UNT2020_7,Dal IV 1992 - dettaglio età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 150_1191_DF_DCCV_TAXATVT1_UNT2020_8,"Dal IV 1992 - Titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 150_1191_DF_DCCV_TAXATVT1_UNT2020_9,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
+150_872,Tasso di occupazione  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
+150_872_DF_DCCV_TAXOCCUMENS1_1,Tasso di occupazione - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
+150_873,Forze lavoro  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
+150_873_DF_DCCV_FORZLVMENS1_1,Forze lavoro - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
+150_875,Occupati -  dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
 150_875_DF_DCCV_OCCUPATIMENS1_1,"Posizione professionale, carattere occupazione",REF_AREA,nazionale,nazionale,1,2026-07-17
+150_875_DF_DCCV_OCCUPATIMENS1_2,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-08-18
+150_876,Tasso di attività  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
+150_876_DF_DCCV_TAXATVTMENS1_1,Tasso di attività - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
 150_880,Tasso di attività - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-08-04
 150_880_DF_DCCV_TAXATVTDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
 150_880_DF_DCCV_TAXATVTDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
@@ -526,7 +555,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_8,Dal I 1977 - età,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 151_1193_DF_DCCV_TAXDISOCCU1_UNT2020_9,Dal I 1977 - titolo di studio,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 151_874,Tasso di disoccupazione  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_874_DF_DCCV_TAXDISOCCUMENS1_1,Tasso di disoccupazione - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
 151_877,Disoccupati  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+151_877_DF_DCCV_DISOCCUPTMENS1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-08-18
 151_877_DF_DCCV_DISOCCUPTMENS1_2,Incidenza dei disoccupati sulla popolazione,REF_AREA,nazionale,nazionale,1,2026-07-17
 151_884,Tasso di disoccupazione - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 151_884_DF_DCCV_TAXDISOCCUDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -590,7 +621,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 152_1196_DF_DCCV_TAXINATT1_UNT2020_8,"Dal IV 1992 - titolo di studio, età",REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-17
 152_1196_DF_DCCV_TAXINATT1_UNT2020_9,Dal IV 1992 - dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-17
 152_878,Tasso di inattività  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+152_878_DF_DCCV_TAXINATTMENS1_1,Tasso di inattività - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
 152_879,Inattivi  - dati mensili,REF_AREA,nazionale,nazionale,1,2026-07-17
+152_879_DF_DCCV_INATTIVMENS1_1,Inattivi - dati mensili,REF_AREA,nazionale,nazionale,1,2026-08-18
 152_886,Tasso di inattività - dati trimestrali destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 152_886_DF_DCCV_TAXINATTDE1_1,"Sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-17
 152_886_DF_DCCV_TAXINATTDE1_2,Ripartizioni,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
@@ -629,6 +662,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 155_274_DF_DCSC_RETRCASSCOMPPA_3,Retribuzioni nella PA (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
 155_274_DF_DCSC_RETRCASSCOMPPA_4,Retribuzioni contrattuali nella PA (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
 155_318,Retribuzioni contrattuali per tipo di contratto,REF_AREA,nazionale,nazionale,1,2026-07-17
+155_318_DF_DCSC_RETRCONTR1C_1,Retribuzioni contrattuali (base 2015),REF_AREA,nazionale,nazionale,1,2026-08-18
 155_318_DF_DCSC_RETRCONTR1C_2,Retribuzioni contrattuali (base 2010),REF_AREA,nazionale,nazionale,1,2026-07-17
 155_318_DF_DCSC_RETRCONTR1C_3,Retribuzioni contrattuali (base 2005),REF_AREA,nazionale,nazionale,1,2026-07-17
 155_318_DF_DCSC_RETRCONTR1C_4,Retribuzioni contrattuali (base 2021),REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -720,6 +754,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 163_241,Spesa per consumi finali delle famiglie - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
 163_246,Costi e margini per branca di attività (NACE Rev.1.1) - edizione settembre 2011,REF_AREA,nazionale,nazionale,1,2026-07-17
 163_247,Prodotto interno lordo lato produzione - edizioni fino ad agosto 2014,REF_AREA,nazionale,nazionale,1,2026-07-17
+163_24_DF_DCCN_QNA_1,Valore aggiunto per branca di attività - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-18
 163_24_DF_DCCN_QNA_2,Investimenti fissi lordi per tipo di investimento - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
 163_24_DF_DCCN_QNA_3,Spesa per i consumi finali delle famiglie - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
 163_24_DF_DCCN_QNA_4,Spesa per consumi finali delle famiglie per voce di spesa (Coicop 2 cifre) e durata - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -738,10 +773,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 164_164_DF_DCIS_RICPOPRES2011_10,Friuli-Venezia Giulia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,222,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_11,Emilia-Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,340,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_12,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,286,2026-08-04
+164_164_DF_DCIS_RICPOPRES2011_13,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-18
 164_164_DF_DCIS_RICPOPRES2011_14,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,236,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_15,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,386,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_16,Abruzzo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,312,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_17,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,141,2026-08-04
+164_164_DF_DCIS_RICPOPRES2011_18,Campania,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,558,2026-08-18
 164_164_DF_DCIS_RICPOPRES2011_19,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,266,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_2,Bilancio demografico dal 21 ottobre 2001 al 31 dicembre 2018,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 164_164_DF_DCIS_RICPOPRES2011_20,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-08-04
@@ -763,6 +800,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 164_305_DF_DCIS_RICPOPRES2001_13,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-17
 164_305_DF_DCIS_RICPOPRES2001_14,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,385,2026-08-04
 164_305_DF_DCIS_RICPOPRES2001_15,Abruzzo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,312,2026-08-04
+164_305_DF_DCIS_RICPOPRES2001_16,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,141,2026-08-18
+164_305_DF_DCIS_RICPOPRES2001_17,Campania,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,559,2026-08-18
 164_305_DF_DCIS_RICPOPRES2001_18,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,266,2026-08-04
 164_305_DF_DCIS_RICPOPRES2001_19,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-07-17
 164_305_DF_DCIS_RICPOPRES2001_2,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1217,2026-08-04
@@ -793,6 +832,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 165_889_DF_DCIS_PREVDEM1_1,Popolazione al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 165_889_DF_DCIS_PREVDEM1_2,Componenti del bilancio demografico,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-04
 165_889_DF_DCIS_PREVDEM1_3,Indicatori demografici,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-04
+167_33_DF_DCSP_NICUNOBB2010_1,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,114,2026-08-18
 167_33_DF_DCSP_NICUNOBB2010_3,Classificazione Coicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-04
 167_34_DF_DCSP_NICDUEB2010_1,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,118,2026-08-04
 167_34_DF_DCSP_NICDUEB2010_2,Classificazione Ecoicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,118,2026-08-04
@@ -801,6 +841,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 167_35_DF_DCSP_NICTREB2010_2,Classificazione Coicop (3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-04
 167_35_DF_DCSP_NICTREB2010_3,Classificazione Coicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-04
 167_742_DF_DCSP_NIC2B2015_3,Classificazione Ecoicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-04
+167_742_DF_DCSP_NIC2B2015_4,Classificazione Ecoicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-18
+167_743,Nic - pesi dal 2016,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
+167_743_DF_DCSP_DCSP_NIC3EC2_3,Classificazione ECOICOP vers.2 (6 cifre),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
 167_743_DF_DCSP_NIC3B2015_1,Prezzi al consumo per l’intera collettività (Nic) - pesi dal 2016 - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
 167_743_DF_DCSP_NIC3B2015_2,Tipologie di prodotto,REF_AREA,nazionale,nazionale,1,2026-07-17
 167_743_DF_DCSP_NIC3B2015_3,Classificazione Ecoicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-07-17
@@ -809,6 +852,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 167_744_DF_DCSP_NIC1B2015_2,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-04
 167_744_DF_DCSP_NIC1B2015_3,Classificazione Ecoicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-04
 167_744_DF_DCSP_NIC1B2015_4,Classificazione Ecoicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-04
+167_745,Nic - mensili dal 2026 (base 2025),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,124,2026-08-18
 167_745_DF_DCSP_NIC1B2025_1,Prezzi al consumo per l’intera collettività (Nic) - mensili dal 2026 (base 2025) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,108,2026-07-17
 167_745_DF_DCSP_NIC1B2025_2,Tipologie di prodotto,REF_AREA,regione,nazionale|ripartizione|regione,4,2026-07-17
 167_745_DF_DCSP_NIC1B2025_3,Classificazione Ecoicop 2 (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,108,2026-07-17
@@ -958,14 +1002,18 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
+174_82_DF_DCCV_LUOGHI_5,"Sesso, età - reg. tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-08-18
 174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-05
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,236,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_4,"Classe di addetti, settori economici (Ateco 5 cifre) - Italia",REF_AREA,nazionale,nazionale,1,2026-08-05
+183_1163_DF_DICA_ASIAULP_TERRIFDATA_5,"Classe di addetti, settori economici (Ateco 4 cifre) - rip.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,9257,2026-08-18
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_6,"Classe di addetti, settori economici (Ateco 3 cifre) - prov.",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_7,"Classe di addetti, settori economici (Ateco 2 cifre) - com.",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 183_203_DF_DICA_ACDP_1,Imprese - occupati - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-05
+183_203_DF_DICA_ACDP_10,"Settori economici (Ateco 3 cifre), età",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
+183_203_DF_DICA_ACDP_11,"Settori economici (Ateco 3 cifre), paese di nascita",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
 183_203_DF_DICA_ACDP_12,"Sesso, classe di addetti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_203_DF_DICA_ACDP_13,"Sesso, forma giuridica",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_203_DF_DICA_ACDP_14,"Sesso, età impresa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
@@ -976,7 +1024,21 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 183_203_DF_DICA_ACDP_19,"Paese nascita, forma giuridica",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
 183_203_DF_DICA_ACDP_2,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
 183_203_DF_DICA_ACDP_20,"Paese nascita, età impresa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_203_DF_DICA_ACDP_3,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-18
+183_203_DF_DICA_ACDP_4,"Macrosettori economici, età impresa",REF_AREA,nazionale,nazionale,1,2026-08-18
+183_203_DF_DICA_ACDP_5,Settori economici (Ateco 2 cifre),REF_AREA,nazionale,nazionale,1,2026-08-18
+183_203_DF_DICA_ACDP_6,Classe di addetti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_203_DF_DICA_ACDP_7,Forma giuridica - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_203_DF_DICA_ACDP_8,Età impresa - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_203_DF_DICA_ACDP_9,"Settori economici (Ateco 3 cifre), sesso",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
+183_207,Imprese - lavoratori esterni per compensi percepiti e periodo di attività,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-18
+183_207_DF_DICA_AESTCP_1,Imprese - lavoratori esterni per compensi percepiti e periodo di attività - Principali dati,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_207_DF_DICA_AESTCP_10,Età impresa - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_207_DF_DICA_AESTCP_11,Impresa con dipendenti - rip.,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-18
+183_207_DF_DICA_AESTCP_12,Regioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
 183_207_DF_DICA_AESTCP_13,Classe di addetti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-05
+183_207_DF_DICA_AESTCP_14,Forma giuridica,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-18
+183_207_DF_DICA_AESTCP_15,Età impresa,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-18
 183_207_DF_DICA_AESTCP_2,Settori economici (Ateco 3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-05
 183_207_DF_DICA_AESTCP_3,"Macrosettori economici, classe di addetti",REF_AREA,nazionale,nazionale,1,2026-08-05
 183_207_DF_DICA_AESTCP_4,"Macrosettori economici, forma giuridica",REF_AREA,nazionale,nazionale,1,2026-08-05
@@ -1153,6 +1215,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 1_963_DF_DCCN_SHA_B19_3,Spesa sanitaria per soggetto erogatore e tipo di finanziamento - edizioni giugno 2020 - maggio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
 22_1201,Popolazione semi-super centenaria (105 anni e più),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-05
 22_1201_DF_DCIS_SSCENT_1,Popolazione semi-super centenaria (105 anni e più),REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-05
+22_1262_DF_DCIS_POPITAEST_1,Popolazione al 1° gennaio per regione italiana e Paese estero di iscrizione AIRE,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
 22_222_DF_DCSC_NONRESID_CONSTR_1,Fabbricati non residenziali nuovi e relative abitazioni - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-08-05
 22_222_DF_DCSC_NONRESID_CONSTR_10,Ampliamenti di fabbricati non residenziali con o senza sopraelevazione - ripartizioni e classi di comune,REF_AREA,ripartizione,nazionale|ripartizione,19,2026-08-05
 22_222_DF_DCSC_NONRESID_CONSTR_2,Ampliamenti di fabbricati non residenziali e relative abitazioni - province e classi di comune,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,150,2026-07-17
@@ -1171,7 +1234,10 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_289_DF_DCIS_POPRES1_26,Tutti i comuni per singola età e stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 22_293,Indicatori  demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
+22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-18
+22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-18
 22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_7,"Uniti per età, anno di nascita e stato civile",REF_AREA,nazionale,nazionale,1,2026-08-18
 24_1150,Unioni civili - Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
 24_1150_DF_DCIS_UNIONIND_1,Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
 24_1150_DF_DCIS_UNIONIND_2,Età media delle donne per stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
@@ -1193,8 +1259,13 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_186_DF_DCIS_MATRDEMO_19,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,314,2026-08-06
 24_186_DF_DCIS_MATRDEMO_20,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-06
 24_186_DF_DCIS_MATRDEMO_21,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,300,2026-08-06
+24_186_DF_DCIS_MATRDEMO_22,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,386,2026-08-18
 24_186_DF_DCIS_MATRDEMO_23,Abruzzo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,312,2026-08-06
+24_186_DF_DCIS_MATRDEMO_24,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,141,2026-08-18
+24_186_DF_DCIS_MATRDEMO_25,Campania,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,560,2026-08-18
 24_186_DF_DCIS_MATRDEMO_26,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,278,2026-08-06
+24_186_DF_DCIS_MATRDEMO_27,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-08-18
+24_186_DF_DCIS_MATRDEMO_28,Calabria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,419,2026-08-18
 24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
 24_386,Matrimoni - Caratteristiche socio-professionali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-06
 24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",REF_AREA,nazionale,nazionale,1,2026-08-06
@@ -1203,6 +1274,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_386_DF_DCIS_MATRIMONI_SOC_4,Regione di residenza,REF_AREA,nazionale,nazionale,1,2026-08-06
 24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,REF_AREA,nazionale,nazionale,1,2026-08-06
 24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,REF_AREA,nazionale,nazionale,1,2026-08-06
+24_446_DF_DCIS_MATRIMONICIT_1,Matrimoni - Cittadinanza - Principali dati,REF_AREA,nazionale,nazionale,1,2026-08-18
 24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 24_447,Sposi - Caratteristiche demografiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
