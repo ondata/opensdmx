@@ -15,6 +15,12 @@
 - docs: env var documented in `README.md`, `.env.example`, the `--help` banner and `skills/sdmx-explorer/SKILL.md`.
 - Pre-existing, untouched: `ruff check` reports 4 findings in `scripts/` (`monitor_latency.py`, `test_istat_endpoints.py`) — unrelated to this change.
 
+## 2026-08-17 - Wayfinder: territorial capability of ISTAT dataflows
+
+- Local map in `tasks/wayfinder/istat-territorial-capability-map.md`: either a verdict verified against the archive, or an explicitly labelled metadata estimate with no live calls; never an inference about the coverage of a given query.
+- Verified what already exists: the `Constraints Archive` workflow refreshes the ISTAT archive daily, and the derived view holds 3,275 rows, 180 of them `REF_AREA` dataflows whose maximum level is `comune`, checked between 2026-07-16 and 2026-08-10. A live check of `101_1039` took ~38 s over 5,632 `REF_AREA` codes, so it cannot sit in a synchronous request.
+- Research on metadata fallbacks: with no archive entry, only an ID matching `_COM_` / `_COM<digit>` or a title containing `com.` supports a defensible municipal estimate (26/26 among the verified dataflows). Every other signal stays `unknown` — never "regional only".
+
 ## 2026-08-10 - v0.21.1 - fix `siblings` e hint d'installazione di `guide` (PR #69)
 
 - fix(siblings): `siblings une_rt_m` falliva con "not categorized" mentre `siblings UNE_RT_M` funzionava — `siblings_of()` filtrava `df_id` a match esatto, mentre `load_dataset()` normalizza il case ovunque. Ora il match è case-insensitive, marcatore `→` compreso, e un ID inesistente dà l'errore standard con exit 1 invece di un exit 0 silenzioso indistinguibile da "esiste ma non è categorizzato".
