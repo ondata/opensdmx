@@ -10,7 +10,7 @@ from typing import Any
 
 import polars as pl
 
-from .base import get_cache_dir, get_provider, sdmx_request_xml
+from .base import _resolve_cache_base, get_cache_dir, get_provider, sdmx_request_xml
 from .cache_config import CATEGORIES_CACHE_TTL
 from .utils import xml_attr_safe, xml_parse
 
@@ -50,6 +50,38 @@ def _categories_cache_path() -> Path:
 
 def _categorisation_cache_path() -> Path:
     return get_cache_dir() / "categorisation.parquet"
+
+
+def provider_coverage(alias: str) -> float | None:
+    """Return the categorisation coverage for `alias` as a 0-100 float, or None.
+
+    Coverage is `n_categorized / n_total` — the share of the provider's
+    cached dataflow catalog that has a category assigned. Reads only the
+    on-disk `dataflows.parquet` / `categorisation.parquet` caches for
+    `alias`'s own cache directory (independent of the currently active
+    provider — this must work while iterating providers other than the
+    active one). Never triggers a fetch: returns None when either cache
+    file is missing, or when the dataflow catalog is empty.
+
+    The two caches expire independently, so the categorisation may still
+    reference dataflows the catalog no longer lists. Only categorised
+    ids present in the catalog count, which keeps the ratio within 0-100
+    instead of letting stale entries push it past 100%.
+    """
+    cache_dir = _resolve_cache_base() / alias
+    dataflows_path = cache_dir / "dataflows.parquet"
+    categorisation_path = cache_dir / "categorisation.parquet"
+    if not (dataflows_path.exists() and categorisation_path.exists()):
+        return None
+
+    catalog_ids = set(pl.read_parquet(dataflows_path, columns=["df_id"])["df_id"].to_list())
+    total = len(catalog_ids)
+    if total == 0:
+        return None
+
+    categorisation = pl.read_parquet(categorisation_path, columns=["df_id"])
+    categorized = categorisation.filter(pl.col("df_id").is_in(list(catalog_ids)))["df_id"].n_unique()
+    return 100.0 * categorized / total
 
 
 def _load_cached() -> tuple[pl.DataFrame, pl.DataFrame] | None:

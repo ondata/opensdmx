@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from collections.abc import Iterator
@@ -904,12 +905,19 @@ def providers() -> None:
     These are curated examples — opensdmx works with any SDMX 2.1 REST endpoint.
     Use --provider <URL> to connect to any provider not listed here.
 
+    The `coverage` column is the share of the provider's dataflow catalog that
+    has a category assigned: below 100% the thematic `tree` cannot reach every
+    dataflow and a `search` fallback is still worth running. It is read from
+    the local cache only, never fetched — `?` means nothing is cached yet for
+    that provider, `-` that the provider has no category tree at all.
+
     Examples:
 
       opensdmx providers
       opensdmx search unemployment --provider ecb
     """
     from .base import PROVIDERS
+    from .categories import provider_coverage
 
     def _cap(cfg: dict[str, Any], key: str) -> str:
         val = cfg.get(key)
@@ -918,6 +926,23 @@ def providers() -> None:
         if val is False:
             return "[red]✗[/red]"
         return "[dim]?[/dim]"
+
+    def _coverage(alias: str, cfg: dict[str, Any]) -> float | None:
+        # Only tree-supporting providers have a categorisation to be
+        # incomplete; others get no coverage concept at all.
+        if not cfg.get("categories_supported"):
+            return None
+        return provider_coverage(alias)
+
+    def _coverage_cell(alias: str, cfg: dict[str, Any]) -> str:
+        if not cfg.get("categories_supported"):
+            return "-"
+        pct = provider_coverage(alias)
+        if pct is None:
+            return "[dim]?[/dim]"
+        # Round down: 99.9% must not read as 100%, or the column would hide
+        # exactly the near-complete tree it exists to warn about.
+        return f"{math.floor(pct)}%"
 
     if _output_mode != "table":
         data = [
@@ -929,6 +954,7 @@ def providers() -> None:
                 "constraints_supported": cfg.get("constraints_supported"),
                 "last_n_supported": cfg.get("last_n_supported"),
                 "categories_supported": cfg.get("categories_supported"),
+                "coverage": _coverage(alias, cfg),
             }
             for alias, cfg in PROVIDERS.items()
         ]
@@ -949,6 +975,7 @@ def providers() -> None:
     table.add_column("constraints", justify="center", no_wrap=True)
     table.add_column("last_n", justify="center", no_wrap=True)
     table.add_column("categories", justify="center", no_wrap=True)
+    table.add_column("coverage", justify="center", no_wrap=True)
 
     for alias, cfg in PROVIDERS.items():
         table.add_row(
@@ -959,6 +986,7 @@ def providers() -> None:
             _cap(cfg, "constraints_supported"),
             _cap(cfg, "last_n_supported"),
             _cap(cfg, "categories_supported"),
+            _coverage_cell(alias, cfg),
         )
 
     console.print(table)

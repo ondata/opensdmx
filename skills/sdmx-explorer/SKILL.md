@@ -152,6 +152,15 @@ Supported providers (check with `opensdmx providers` — `categories` column):
 - ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf` — skip to Step 1c.
 
+**A `✓` does not mean the tree reaches everything.** The `coverage` column next to
+it is the share of the provider's catalog that has a category assigned: a dataflow
+without a `Categorisation` exists in `/dataflow` but appears in no branch, so a
+tree-only exploration will never surface it — silently. When `coverage` is well
+below 100% (OECD sits around 89%), still run a keyword `search` at the end before
+concluding a dataset does not exist. `coverage` is read from the local cache, so
+it shows `?` until you have run a `tree` or `search` on that provider, and `-`
+where there is no tree at all.
+
 `inps` is a **hub-only** provider (Italian social security: pensions, employees,
 companies, employment policies) — everything works, but its dimension IDs are
 uppercase and `get` downloads the full dataflow then filters client-side. See
