@@ -1,12 +1,13 @@
 # LOG
 
-## 2026-08-18 - `providers` coverage column (issue #18, PR #71)
+## 2026-08-18 - v0.22.0 - `providers` coverage column (issue #18, PR #71)
 
 - feat(providers): `opensdmx providers` gains a `coverage` column — the share of a provider's cached dataflow catalog that has a category assigned. `categories_supported` only said whether a tree exists; it never said whether the tree reaches everything, and a dataflow with no `Categorisation` is invisible to `tree` while being perfectly reachable by `search`. OECD sits around 89%, so tree-only exploration there silently misses one dataflow in ten. Contributed by @deepusnath.
 - Reads only the on-disk `dataflows.parquet` / `categorisation.parquet` of each provider and never fetches: `?` when nothing is cached yet, `-` where there is no tree. Categorised ids the catalog no longer lists are ignored — the two caches expire independently and counting them pushed the ratio past 100%.
 - The table rounds **down**. `{pct:.0f}` printed Eurostat's 99.90% as `100%`, hiding the ~9 uncategorised dataflows behind the very column meant to reveal them; "almost complete" is the misleading case, not the harmless one.
 - docs: documented in `README.md`, `docs/providers.md`, `skills/sdmx-explorer/SKILL.md` (Step 1b, where the tree-vs-search decision is actually made) and the `providers` docstring, so the three states are explained where they are read.
 - Known cosmetic limit, not introduced here: below ~100 terminal columns the table is too dense and truncates values (`100%` → `10…`), as `agency` and `categories` already did on `main`.
+- v0.22.0 ships both of today's features: this column and the `OPENSDMX_OUTPUT` env var below (issue #8, PR #70), which had not been released yet.
 
 ## 2026-08-18 - `OPENSDMX_OUTPUT` env var (issue #8)
 
