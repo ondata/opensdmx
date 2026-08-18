@@ -17,6 +17,7 @@ _HELP_FLAGS = {"--help", "-h"}
 
 import httpx
 import typer
+from click.core import ParameterSource
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
@@ -52,7 +53,7 @@ def _parse_header(value: str) -> tuple[str, str]:
     return name.strip(), val.strip()
 
 
-app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs)")
+app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs), OPENSDMX_OUTPUT (default output format)")
 
 # PowerShell and cmd on Windows default to cp1252; force UTF-8 so Rich tables
 # and Unicode labels (e.g. Cyrillic) don't raise UnicodeEncodeError.
@@ -292,11 +293,19 @@ def _check_api_reachable() -> None:
 def _startup(
     ctx: typer.Context,
     version: bool = typer.Option(False, "--version", "-V", callback=_version_callback, is_eager=True, help="Show version and exit"),
-    output: str = typer.Option("table", "--output", "-o", help="Output format: table (default), json, csv"),
+    output: str = typer.Option(
+        "table",
+        "--output",
+        "-o",
+        envvar="OPENSDMX_OUTPUT",
+        help="Output format: table (default), json, csv",
+    ),
 ) -> None:
     global _output_mode
     if output not in ("table", "json", "csv"):
-        err_console.print(f"[red]Error:[/red] invalid --output value '{output}'. Choose: table, json, csv")
+        source = ctx.get_parameter_source("output")
+        origin = "OPENSDMX_OUTPUT" if source == ParameterSource.ENVIRONMENT else "--output"
+        err_console.print(f"[red]Error:[/red] invalid {origin} value '{output}'. Choose: table, json, csv")
         raise typer.Exit(1)
     _output_mode = output
     if ctx.invoked_subcommand is None:

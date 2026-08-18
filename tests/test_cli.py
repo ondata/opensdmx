@@ -830,3 +830,51 @@ def test_search_grep_no_match_exits_cleanly(_no_api_check):
         result = runner.invoke(app, ["search", "comun", "--grep", "zzznomatch"])
     assert result.exit_code == 0
     assert "No datasets found" in result.output
+
+
+# ── --output / OPENSDMX_OUTPUT resolution order (issue #8) ────────────
+
+
+def test_output_env_var_sets_the_default(_no_api_check):
+    """OPENSDMX_OUTPUT=json makes json the default without passing -o."""
+    import json
+
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["search", "comun"], env={"OPENSDMX_OUTPUT": "json"})
+
+    assert result.exit_code == 0, result.output
+    assert [r["df_id"] for r in json.loads(result.output)] == ["AGRI_1", "PERM_2", "BANK_3"]
+
+
+def test_output_flag_wins_over_env_var(_no_api_check):
+    """An explicit -o overrides OPENSDMX_OUTPUT."""
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["-o", "csv", "search", "comun"], env={"OPENSDMX_OUTPUT": "json"})
+
+    assert result.exit_code == 0, result.output
+    assert result.output.splitlines()[0].startswith("df_id,")
+
+
+def test_output_defaults_to_table_without_env_var(_no_api_check):
+    """No flag, no env var: still the Rich table."""
+    with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
+        result = runner.invoke(app, ["search", "comun"], env={"OPENSDMX_OUTPUT": ""})
+
+    assert result.exit_code == 0, result.output
+    assert "│" in result.output
+
+
+def test_invalid_env_var_names_the_env_var_not_the_flag(_no_api_check):
+    """A bad OPENSDMX_OUTPUT must not blame --output, which the user never typed."""
+    result = runner.invoke(app, ["search", "comun"], env={"OPENSDMX_OUTPUT": "jsn"})
+
+    assert result.exit_code == 1
+    assert "invalid OPENSDMX_OUTPUT value 'jsn'" in result.output
+    assert "--output" not in result.output
+
+
+def test_invalid_flag_still_names_the_flag(_no_api_check):
+    result = runner.invoke(app, ["-o", "jsn", "search", "comun"])
+
+    assert result.exit_code == 1
+    assert "invalid --output value 'jsn'" in result.output

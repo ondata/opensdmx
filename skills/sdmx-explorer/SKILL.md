@@ -69,6 +69,17 @@ opensdmx --output csv values TIPSUN20 geo   # CSV for tabular use
 In `--output json` mode: stdout is pure JSON, stderr carries errors/warnings, spinners
 are suppressed. Pipe directly into `jq` or parse in Python.
 
+To avoid repeating the flag, set `OPENSDMX_OUTPUT` once for the session — useful when
+an agent drives the CLI and wants JSON everywhere by default:
+
+```bash
+export OPENSDMX_OUTPUT=json
+opensdmx info TIPSUN20            # JSON
+opensdmx -o table info TIPSUN20   # an explicit flag always wins
+```
+
+The project default stays `table`; the env var only changes it for your own session.
+
 ## Command discovery — `opensdmx which`
 
 When you are unsure which command fits a task, use `which` to find it without

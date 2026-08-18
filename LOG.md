@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-08-18 - `OPENSDMX_OUTPUT` env var (issue #8)
+
+- feat(cli): `--output` now reads `OPENSDMX_OUTPUT`, so a user who always wants JSON can `export OPENSDMX_OUTPUT=json` instead of typing `-o json` on every call — the ask in issue #8. Resolution order is explicit flag > env var > `table`. **The project default is unchanged**: `table` stays the default for everyone, and flipping it project-wide remains a separate decision (the reporter never answered whether the table output caused real friction).
+- fix(cli): an invalid value now names the source that supplied it — `invalid OPENSDMX_OUTPUT value 'jsn'` when it came from the environment, `invalid --output value 'jsn'` when it came from the flag. Blaming a flag the user never typed would have been the natural regression here.
+- docs: env var documented in `README.md`, `.env.example`, the `--help` banner and `skills/sdmx-explorer/SKILL.md`.
+- Pre-existing, untouched: `ruff check` reports 4 findings in `scripts/` (`monitor_latency.py`, `test_istat_endpoints.py`) — unrelated to this change.
+
 ## 2026-08-10 - v0.21.1 - fix `siblings` e hint d'installazione di `guide` (PR #69)
 
 - fix(siblings): `siblings une_rt_m` falliva con "not categorized" mentre `siblings UNE_RT_M` funzionava — `siblings_of()` filtrava `df_id` a match esatto, mentre `load_dataset()` normalizza il case ovunque. Ora il match è case-insensitive, marcatore `→` compreso, e un ID inesistente dà l'errore standard con exit 1 invece di un exit 0 silenzioso indistinguibile da "esiste ma non è categorizzato".
