@@ -74,12 +74,12 @@ def provider_coverage(alias: str) -> float | None:
     if not (dataflows_path.exists() and categorisation_path.exists()):
         return None
 
-    catalog_ids = set(pl.read_parquet(dataflows_path)["df_id"].to_list())
+    catalog_ids = set(pl.read_parquet(dataflows_path, columns=["df_id"])["df_id"].to_list())
     total = len(catalog_ids)
     if total == 0:
         return None
 
-    categorisation = pl.read_parquet(categorisation_path)
+    categorisation = pl.read_parquet(categorisation_path, columns=["df_id"])
     categorized = categorisation.filter(pl.col("df_id").is_in(list(catalog_ids)))["df_id"].n_unique()
     return 100.0 * categorized / total
 

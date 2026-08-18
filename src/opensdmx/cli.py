@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from collections.abc import Iterator
@@ -904,6 +905,12 @@ def providers() -> None:
     These are curated examples — opensdmx works with any SDMX 2.1 REST endpoint.
     Use --provider <URL> to connect to any provider not listed here.
 
+    The `coverage` column is the share of the provider's dataflow catalog that
+    has a category assigned: below 100% the thematic `tree` cannot reach every
+    dataflow and a `search` fallback is still worth running. It is read from
+    the local cache only, never fetched — `?` means nothing is cached yet for
+    that provider, `-` that the provider has no category tree at all.
+
     Examples:
 
       opensdmx providers
@@ -931,7 +938,11 @@ def providers() -> None:
         if not cfg.get("categories_supported"):
             return "-"
         pct = provider_coverage(alias)
-        return "[dim]?[/dim]" if pct is None else f"{pct:.0f}%"
+        if pct is None:
+            return "[dim]?[/dim]"
+        # Round down: 99.9% must not read as 100%, or the column would hide
+        # exactly the near-complete tree it exists to warn about.
+        return f"{math.floor(pct)}%"
 
     if _output_mode != "table":
         data = [

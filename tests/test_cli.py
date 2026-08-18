@@ -916,3 +916,17 @@ def test_providers_table_shows_unknown_when_uncached(_no_api_check):
     assert result.exit_code == 0, result.output
     lines = [line for line in result.output.splitlines() if "istat" in line]
     assert lines and "?" in lines[0]
+
+
+def test_providers_table_rounds_coverage_down(_no_api_check):
+    """99.9% must not render as 100%.
+
+    A catalog one dataflow short of full categorisation is the case the column
+    exists to warn about; rounding it up to 100% would hide it.
+    """
+    with patch("opensdmx.categories.provider_coverage", return_value=99.9):
+        result = runner.invoke(app, ["providers"])
+
+    assert result.exit_code == 0, result.output
+    assert "99%" in result.output
+    assert "100%" not in result.output
