@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-08-18 - v0.22.1 - fix: v0.22.0 was unimportable on a fresh install
+
+- fix(cli): `from click.core import ParameterSource` (added with `OPENSDMX_OUTPUT` in PR #70) crashed every fresh install of v0.22.0 with `ModuleNotFoundError: No module named 'click'`. typer 0.27 dropped its click dependency, and `click` was never declared in `pyproject.toml` — it only ever arrived transitively. The origin of the `--output` value is now read by comparing the parameter source **by name**, so both typer's own enum and click's work and neither is imported.
+- The bug shipped because `uv.lock` still pinned typer 0.24.1, which pulls click in: the whole suite passed against a package no user could install. The lock now tracks typer 0.27.1, so the tests exercise what people actually get, and `tests/test_cli.py` no longer imports `click.exceptions.Exit` either — it uses `typer.Exit`.
+- Added a guard test asserting `src/opensdmx/cli.py` imports no `click`.
+- Verified on a clean venv with typer 0.27.1 and no click installed: the CLI imports, and an invalid value still names its source (`invalid OPENSDMX_OUTPUT value 'jsn'` from the environment, `invalid --output value 'jsn'` from the flag).
+
 ## 2026-08-18 - v0.22.0 - `providers` coverage column (issue #18, PR #71)
 
 - feat(providers): `opensdmx providers` gains a `coverage` column — the share of a provider's cached dataflow catalog that has a category assigned. `categories_supported` only said whether a tree exists; it never said whether the tree reaches everything, and a dataflow with no `Categorisation` is invisible to `tree` while being perfectly reachable by `search`. OECD sits around 89%, so tree-only exploration there silently misses one dataflow in ten. Contributed by @deepusnath.

@@ -18,7 +18,6 @@ _HELP_FLAGS = {"--help", "-h"}
 
 import httpx
 import typer
-from click.core import ParameterSource
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
@@ -304,8 +303,11 @@ def _startup(
 ) -> None:
     global _output_mode
     if output not in ("table", "json", "csv"):
+        # typer 0.27 dropped its click dependency and ships its own
+        # ParameterSource, so compare by name: importing click's enum made the
+        # CLI unimportable on a fresh install (0.22.0).
         source = ctx.get_parameter_source("output")
-        origin = "OPENSDMX_OUTPUT" if source == ParameterSource.ENVIRONMENT else "--output"
+        origin = "OPENSDMX_OUTPUT" if getattr(source, "name", "") == "ENVIRONMENT" else "--output"
         err_console.print(f"[red]Error:[/red] invalid {origin} value '{output}'. Choose: table, json, csv")
         raise typer.Exit(1)
     _output_mode = output

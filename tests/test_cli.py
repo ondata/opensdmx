@@ -8,7 +8,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 import pytest
-from click.exceptions import Exit as ClickExit
+import typer
 from typer.testing import CliRunner
 
 from opensdmx.cli import _apply_provider, _parse_extra_filters, _parse_header, app
@@ -46,7 +46,7 @@ def test_parse_extra_filters_empty():
 
 
 def test_parse_extra_filters_unexpected_arg():
-    with pytest.raises(ClickExit):
+    with pytest.raises(typer.Exit):
         _parse_extra_filters(_ctx(["badarg"]))
 
 
@@ -64,7 +64,7 @@ def test_apply_provider_custom_url():
 
 
 def test_apply_provider_unknown_name():
-    with pytest.raises(ClickExit):
+    with pytest.raises(typer.Exit):
         _apply_provider("not_a_real_provider_xyz")
 
 
@@ -930,3 +930,17 @@ def test_providers_table_rounds_coverage_down(_no_api_check):
     assert result.exit_code == 0, result.output
     assert "99%" in result.output
     assert "100%" not in result.output
+
+
+def test_cli_does_not_import_click():
+    """`click` is not a declared dependency, so the CLI must not import it.
+
+    typer 0.27 dropped click, and `from click.core import ParameterSource`
+    made a fresh install of 0.22.0 fail at import time with ModuleNotFoundError.
+    The locked dev environment kept typer 0.24, which still pulled click in, so
+    the whole suite passed against a package nobody could install.
+    """
+    from pathlib import Path
+
+    source = (Path(__file__).parent.parent / "src" / "opensdmx" / "cli.py").read_text()
+    assert "import click" not in source
