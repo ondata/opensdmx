@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-08-19 - fix: retry interoperabile per `availableconstraint` NBB
+## 2026-08-19 - v0.22.2 - fix: retry interoperabile per `availableconstraint` NBB
 
 - Riprodotta la causa su `https://nsidisseminate-stat.nbb.be/rest`: con l'implicito `references=none`, `constraints EXR` riceve HTTP 200 + HTML d'errore malformato; senza il parametro riceve 57.735 byte di SDMX-XML valido. Ora un errore di parsing su `availableconstraint` attiva un solo retry che rimuove esclusivamente `references`, senza eccezioni basate sull'URL e senza modificare la prima richiesta.
 - Il retry è ristretto a `lxml.etree.XMLSyntaxError`: nessun retry sui successi, su `contentconstraint` o sui provider con `constraint_params={}`. Se fallisce anche il secondo parsing, il flusso termina dopo due chiamate e conserva la causa nei log. La CLI non inventa più che l'endpoint possa non essere supportato quando riceve un risultato vuoto.
