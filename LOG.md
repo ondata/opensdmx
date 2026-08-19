@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-08-19 - fix: retry interoperabile per `availableconstraint` NBB
+
+- Riprodotta la causa su `https://nsidisseminate-stat.nbb.be/rest`: con l'implicito `references=none`, `constraints EXR` riceve HTTP 200 + HTML d'errore malformato; senza il parametro riceve 57.735 byte di SDMX-XML valido. Ora un errore di parsing su `availableconstraint` attiva un solo retry che rimuove esclusivamente `references`, senza eccezioni basate sull'URL e senza modificare la prima richiesta.
+- Il retry è ristretto a `lxml.etree.XMLSyntaxError`: nessun retry sui successi, su `contentconstraint` o sui provider con `constraint_params={}`. Se fallisce anche il secondo parsing, il flusso termina dopo due chiamate e conserva la causa nei log. La CLI non inventa più che l'endpoint possa non essere supportato quando riceve un risultato vuoto.
+- Verifica live pre/post con cache isolate: Eurostat `PRC_HICP_MANR`, ABS `CPI`, BIS `WS_LONG_CPI` e IMF `IMF.RES,WEO` restano exit 0 con conteggi dimensionali identici. NBB `EXR` passa da exit 1 a exit 0 e restituisce `DATA_DOMAIN=27`, `REF_AREA=1`, `INDICATOR=945`, `COUNTERPART_AREA=3`, `FREQ=4`.
+- Gate: ruff pulito su `src/` e `tests/`, mypy strict pulito su 15 file, 376 test verdi. Il 404 storico di `get EXR --REF_AREA BE` resta non riproducibile e fuori scope.
+
 ## 2026-08-18 - v0.22.1 - fix: v0.22.0 was unimportable on a fresh install
 
 - fix(cli): `from click.core import ParameterSource` (added with `OPENSDMX_OUTPUT` in PR #70) crashed every fresh install of v0.22.0 with `ModuleNotFoundError: No module named 'click'`. typer 0.27 dropped its click dependency, and `click` was never declared in `pyproject.toml` — it only ever arrived transitively. The origin of the `--output` value is now read by comparing the parameter source **by name**, so both typer's own enum and click's work and neither is imported.
