@@ -37,6 +37,10 @@ The `categories` column tells you which providers support `tree`:
 - Not supported: `comext`, `bundesbank`, `worldbank`, `imf` — skip `tree` and go
   straight to `search`.
 
+A custom endpoint given as a URL (`--provider https://.../rest`) is not in the
+table: `tree` tries `/categoryscheme` and renders it if the endpoint answers,
+so run it before assuming the provider has no tree.
+
 ## Top-down walkthrough — ISTAT Prezzi
 
 A real example: the user asks "ho bisogno dei prezzi al consumo armonizzati per

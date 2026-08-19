@@ -10,6 +10,8 @@ from typing import Any
 
 import polars as pl
 
+import httpx
+
 from .base import _resolve_cache_base, get_cache_dir, get_provider, sdmx_request_xml
 from .cache_config import CATEGORIES_CACHE_TTL
 from .utils import xml_attr_safe, xml_parse
@@ -161,12 +163,21 @@ def _walk_categories(
         _walk_categories(cat, scheme_id, scheme_name, cat_path, depth + 1, language, ns, rows)
 
 
+def _catalog_agency() -> str:
+    """Agency slot for the /categoryscheme and /categorisation paths.
+
+    A custom URL provider carries no agency_id unless --agency was given: the
+    wildcard keeps the path valid instead of requesting `categoryscheme//ALL/latest`.
+    """
+    provider = get_provider()
+    return str(provider.get("catalog_agency") or provider.get("agency_id") or "ALL")
+
+
 def _fetch_categoryscheme() -> pl.DataFrame:
     """Fetch and parse /categoryscheme into a flat DataFrame."""
     provider = get_provider()
-    catalog_agency = provider.get("catalog_agency", provider["agency_id"])
     language = provider.get("language", "en")
-    path = _struct_path(f"categoryscheme/{catalog_agency}/ALL/latest")
+    path = _struct_path(f"categoryscheme/{_catalog_agency()}/ALL/latest")
     content = sdmx_request_xml(path)
     root, ns = xml_parse(content)
     struct_ns = ns.get("structure", "")
@@ -187,8 +198,8 @@ def _fetch_categorisation() -> pl.DataFrame:
     """Fetch and parse /categorisation into df_id -> (scheme_id, cat_path)."""
     provider = get_provider()
     agency_id = provider["agency_id"]
-    catalog_agency = provider.get("catalog_agency", agency_id)
-    path = _struct_path(f"categorisation/{catalog_agency}/ALL/latest")
+    cross_agency = provider.get("catalog_agency", agency_id) != agency_id
+    path = _struct_path(f"categorisation/{_catalog_agency()}/ALL/latest")
     content = sdmx_request_xml(path)
     root, ns = xml_parse(content)
     struct_ns = ns.get("structure", "")
@@ -209,7 +220,7 @@ def _fetch_categorisation() -> pl.DataFrame:
         # Mirror discovery.all_available(): if provider uses a cross-agency
         # catalog, prefix df_id with the source agency so categorisation rows
         # match the dataflow list (otherwise siblings/filter return empty).
-        if df_id and src_agency and catalog_agency != agency_id:
+        if df_id and src_agency and cross_agency:
             df_id = f"{src_agency},{df_id}"
         scheme_id = tgt.get("maintainableParentID")
         cat_path = tgt.get("id")
@@ -242,7 +253,9 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
         CategoriesNotSupported: provider does not expose /categoryscheme.
     """
     provider = get_provider()
-    if not provider.get("categories_supported", False):
+    # Only a listed provider can *declare* it has no category tree. A custom
+    # --provider URL declares nothing: probe the endpoint instead of assuming.
+    if provider.get("categories_supported") is False:
         supported = supported_providers()
         raise CategoriesNotSupported(
             "Active provider does not expose /categoryscheme. "
@@ -262,8 +275,14 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
         from . import inps
         categories_df, categorisation_df = inps.load_categories()
     else:
-        categories_df = _fetch_categoryscheme()
-        categorisation_df = _fetch_categorisation()
+        try:
+            categories_df = _fetch_categoryscheme()
+            categorisation_df = _fetch_categorisation()
+        except httpx.HTTPStatusError as e:
+            raise CategoriesNotSupported(
+                f"{e.request.url} returned HTTP {e.response.status_code}: no category tree "
+                "could be read from this endpoint (it may not expose one, or need --agency)."
+            ) from e
 
     _warn_stale(categorisation_df)
 

@@ -151,6 +151,9 @@ keyword search only under the conditions listed in Step 1c.
 Supported providers (check with `opensdmx providers` — `categories` column):
 - ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf` — skip to Step 1c.
+- A provider passed as a URL (`--provider https://.../rest`) is not listed, so
+  nothing is declared about it: `tree` probes `/categoryscheme` live and works
+  whenever the endpoint answers. Add `--agency <ID>` if the probe returns 404.
 
 **A `✓` does not mean the tree reaches everything.** The `coverage` column next to
 it is the share of the provider's catalog that has a category assigned: a dataflow

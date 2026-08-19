@@ -485,3 +485,63 @@ def test_provider_coverage_independent_of_active_provider(tmp_path, monkeypatch)
 
     monkeypatch.setattr(base, "_active_provider", "eurostat")
     assert categories.provider_coverage("istat") == pytest.approx(100.0)
+
+
+def test_load_categories_probes_undeclared_provider(monkeypatch, tmp_path):
+    """A custom URL provider declares nothing: probe instead of refusing."""
+    cats_df = pl.DataFrame(
+        {
+            "scheme_id": ["S1"],
+            "scheme_name": ["Scheme one"],
+            "cat_id": ["CAT_A"],
+            "cat_path": ["CAT_A"],
+            "cat_name": ["Cat A"],
+            "cat_description": [""],
+            "parent_path": [""],
+            "depth": [1],
+        },
+        schema_overrides={"depth": pl.Int32},
+    )
+    cz_df = pl.DataFrame({"df_id": ["DF_X"], "scheme_id": ["S1"], "cat_path": ["CAT_A"]})
+
+    monkeypatch.setattr(categories, "get_provider", lambda: {"agency_id": ""})
+    monkeypatch.setattr(categories, "_load_cached", lambda: None)
+    monkeypatch.setattr("opensdmx.discovery._load_cached_dataflows", lambda: None)
+    monkeypatch.setattr(categories, "_fetch_categoryscheme", lambda: cats_df)
+    monkeypatch.setattr(categories, "_fetch_categorisation", lambda: cz_df)
+    monkeypatch.setattr(categories.pl.DataFrame, "write_parquet", lambda self, path: None)
+
+    out_cats, out_cz = categories.load_categories()
+    assert out_cats.height == 1
+    assert out_cz.height == 1
+
+
+def test_load_categories_translates_http_error(monkeypatch):
+    """A failing probe reports the URL and status, not a bare HTTP traceback."""
+    import httpx
+
+    request = httpx.Request("GET", "https://example.org/rest/categoryscheme/ALL/ALL/latest")
+    response = httpx.Response(404, request=request)
+
+    def _boom() -> pl.DataFrame:
+        raise httpx.HTTPStatusError("not found", request=request, response=response)
+
+    monkeypatch.setattr(categories, "get_provider", lambda: {"agency_id": ""})
+    monkeypatch.setattr(categories, "_load_cached", lambda: None)
+    monkeypatch.setattr(categories, "_fetch_categoryscheme", _boom)
+
+    with pytest.raises(CategoriesNotSupported) as excinfo:
+        categories.load_categories()
+    assert "404" in str(excinfo.value)
+    assert "example.org" in str(excinfo.value)
+
+
+def test_catalog_agency_falls_back_to_wildcard(monkeypatch):
+    monkeypatch.setattr(categories, "get_provider", lambda: {"agency_id": ""})
+    assert categories._catalog_agency() == "ALL"
+    monkeypatch.setattr(categories, "get_provider", lambda: {"agency_id": "IT1"})
+    assert categories._catalog_agency() == "IT1"
+    monkeypatch.setattr(
+        categories, "get_provider", lambda: {"agency_id": "IT1", "catalog_agency": "ALL"}
+    )
+    assert categories._catalog_agency() == "ALL"

@@ -1131,7 +1131,9 @@ def tree(
     With --show-dataflows: each category's dataflows appear inline as leaves
     ([df:ID] prefix); otherwise only categories are rendered.
 
-    Not all providers expose categories. Use `opensdmx providers` to check.
+    Not all providers expose categories. Use `opensdmx providers` to check the
+    listed ones; a custom `--provider <URL>` is probed live, since nothing is
+    declared about it.
     In table mode output is an ASCII tree; in -o json|csv a flat table.
 
     Examples:
