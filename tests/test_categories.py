@@ -506,6 +506,7 @@ def test_load_categories_probes_undeclared_provider(monkeypatch, tmp_path):
 
     monkeypatch.setattr(categories, "get_provider", lambda: {"agency_id": ""})
     monkeypatch.setattr(categories, "_load_cached", lambda: None)
+    monkeypatch.setattr("opensdmx.discovery._load_cached_dataflows", lambda: None)
     monkeypatch.setattr(categories, "_fetch_categoryscheme", lambda: cats_df)
     monkeypatch.setattr(categories, "_fetch_categorisation", lambda: cz_df)
     monkeypatch.setattr(categories.pl.DataFrame, "write_parquet", lambda self, path: None)
