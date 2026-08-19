@@ -1,11 +1,11 @@
 # LOG
 
-## 2026-08-19 - v0.22.2 - fix: retry interoperabile per `availableconstraint` NBB
+## 2026-08-19 - v0.22.2 - fix: interoperable retry for `availableconstraint` on NBB
 
-- Riprodotta la causa su `https://nsidisseminate-stat.nbb.be/rest`: con l'implicito `references=none`, `constraints EXR` riceve HTTP 200 + HTML d'errore malformato; senza il parametro riceve 57.735 byte di SDMX-XML valido. Ora un errore di parsing su `availableconstraint` attiva un solo retry che rimuove esclusivamente `references`, senza eccezioni basate sull'URL e senza modificare la prima richiesta.
-- Il retry è ristretto a `lxml.etree.XMLSyntaxError`: nessun retry sui successi, su `contentconstraint` o sui provider con `constraint_params={}`. Se fallisce anche il secondo parsing, il flusso termina dopo due chiamate e conserva la causa nei log. La CLI non inventa più che l'endpoint possa non essere supportato quando riceve un risultato vuoto.
-- Verifica live pre/post con cache isolate: Eurostat `PRC_HICP_MANR`, ABS `CPI`, BIS `WS_LONG_CPI` e IMF `IMF.RES,WEO` restano exit 0 con conteggi dimensionali identici. NBB `EXR` passa da exit 1 a exit 0 e restituisce `DATA_DOMAIN=27`, `REF_AREA=1`, `INDICATOR=945`, `COUNTERPART_AREA=3`, `FREQ=4`.
-- Gate: ruff pulito su `src/` e `tests/`, mypy strict pulito su 15 file, 376 test verdi. Il 404 storico di `get EXR --REF_AREA BE` resta non riproducibile e fuori scope.
+- Reproduced the cause on `https://nsidisseminate-stat.nbb.be/rest`: with the implicit `references=none`, `constraints EXR` gets HTTP 200 plus a malformed HTML error page; without the parameter it gets 57,735 bytes of valid SDMX-XML. A parse error on `availableconstraint` now triggers a single retry that drops `references` and nothing else — no URL-based special cases, and the first request is unchanged.
+- The retry is limited to `lxml.etree.XMLSyntaxError`: no retry on success, on `contentconstraint`, or for providers with `constraint_params={}`. If the second parse fails too, the flow ends after two calls and keeps the cause in the logs. The CLI no longer invents the claim that the endpoint may be unsupported when it gets an empty result.
+- Live before/after check with isolated caches: Eurostat `PRC_HICP_MANR`, ABS `CPI`, BIS `WS_LONG_CPI` and IMF `IMF.RES,WEO` all stay exit 0 with identical dimension counts. NBB `EXR` goes from exit 1 to exit 0 and returns `DATA_DOMAIN=27`, `REF_AREA=1`, `INDICATOR=945`, `COUNTERPART_AREA=3`, `FREQ=4`.
+- Gate: ruff clean on `src/` and `tests/`, mypy strict clean on 15 files, 376 tests green. The historical 404 of `get EXR --REF_AREA BE` remains non-reproducible and out of scope.
 
 ## 2026-08-18 - v0.22.1 - fix: v0.22.0 was unimportable on a fresh install
 
