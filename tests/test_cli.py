@@ -175,6 +175,17 @@ def test_constraints_single_dim_missing_suggests_values():
     assert "opensdmx values TEST_DF REF_AREA" in flat
 
 
+def test_constraints_empty_result_does_not_guess_endpoint_unsupported():
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value={}):
+        result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", "istat"])
+
+    assert result.exit_code == 1
+    assert "No constrained values returned" in result.output
+    assert "may not support" not in result.output
+
+
 # ── 400/404 hint on data requests (issue #66) ────────────────────────
 
 
