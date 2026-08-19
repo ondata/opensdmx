@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-08-19 - fix: `tree` probes the category tree of an unlisted provider
+## 2026-08-19 - v0.22.3 - fix: `tree` probes the category tree of an unlisted provider
 
 - A provider given as a URL (`--provider https://.../rest`) got `Active provider does not expose /categoryscheme` even when it does: `categories_supported` is a *declared* capability of the 15 providers in `portals.json`, and a custom dict never carries the key, so the falsy default was read as a denial. The gate now fires only when a listed provider declares `false`; an undeclared provider is probed live and an `httpx.HTTPStatusError` is translated into `CategoriesNotSupported` naming the URL and the status code.
 - Second cause on the same path: `catalog_agency` fell back to `agency_id`, empty for a custom URL, producing `categoryscheme//ALL/latest` → 404. A single `_catalog_agency()` helper falls back to the `ALL` wildcard for both structure calls. The cross-agency `df_id` prefixing still compares the *configured* `catalog_agency`, so no listed provider changes behaviour.
