@@ -764,8 +764,7 @@ def constraints(
 
     if not avail:
         err_console.print(
-            "[red]Error:[/red] No constrained values returned. "
-            "This provider may not support the availableconstraint endpoint."
+            "[red]Error:[/red] No constrained values returned by the constraint endpoint."
         )
         raise typer.Exit(1)
 

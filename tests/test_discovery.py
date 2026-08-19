@@ -3,7 +3,12 @@
 from __future__ import annotations
 
 import pytest
-from opensdmx.discovery import get_dimension_values, reset_filters, set_filters
+from opensdmx.discovery import (
+    get_available_values,
+    get_dimension_values,
+    reset_filters,
+    set_filters,
+)
 
 
 def _make_dataset(**dims) -> dict:
@@ -168,6 +173,15 @@ _ISTAT_PROVIDER = {
     "constraint_params": {"references": "none"},
 }
 
+_AVAILABLE_CONSTRAINT_XML = b"""<?xml version="1.0"?>
+<message:Structure
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures>
+    <common:KeyValue id="FREQ"><common:Value>A</common:Value></common:KeyValue>
+  </message:Structures>
+</message:Structure>"""
+
 
 def _istat_dataset():
     dims = {
@@ -207,6 +221,100 @@ def test_get_available_values_contentconstraint_200():
     assert set(result.keys()) == {"FREQ", "DATA_TYPE"}
     called_path = mock_req.call_args[0][0]
     assert called_path.startswith("contentconstraint/")
+
+
+def test_availableconstraint_parse_error_retries_without_references():
+    provider = {
+        **_ISTAT_PROVIDER,
+        "constraint_endpoint": "availableconstraint",
+        "constraint_params": {"references": "none", "mode": "available"},
+    }
+
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch(
+             "opensdmx.discovery.sdmx_request_xml",
+             side_effect=[b"<not-xml", _AVAILABLE_CONSTRAINT_XML],
+         ) as mock_req:
+        result = get_available_values(_istat_dataset())
+
+    assert result["FREQ"].to_series().to_list() == ["A"]
+    assert mock_req.call_count == 2
+    assert mock_req.call_args_list[0].kwargs["references"] == "none"
+    assert mock_req.call_args_list[0].kwargs["mode"] == "available"
+    assert "references" not in mock_req.call_args_list[1].kwargs
+    assert mock_req.call_args_list[1].kwargs["mode"] == "available"
+
+
+def test_availableconstraint_valid_xml_does_not_retry():
+    provider = {
+        **_ISTAT_PROVIDER,
+        "constraint_endpoint": "availableconstraint",
+        "constraint_params": {"references": "none"},
+    }
+
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch(
+             "opensdmx.discovery.sdmx_request_xml",
+             return_value=_AVAILABLE_CONSTRAINT_XML,
+         ) as mock_req:
+        result = get_available_values(_istat_dataset())
+
+    assert result["FREQ"].to_series().to_list() == ["A"]
+    assert mock_req.call_count == 1
+    assert mock_req.call_args.kwargs["references"] == "none"
+
+
+def test_contentconstraint_parse_error_does_not_retry():
+    with patch("opensdmx.discovery.get_provider", return_value=_ISTAT_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=b"<not-xml") as mock_req:
+        result = get_available_values(_istat_dataset())
+
+    assert result == {}
+    assert mock_req.call_count == 1
+
+
+def test_availableconstraint_without_references_parse_error_does_not_retry():
+    provider = {
+        **_ISTAT_PROVIDER,
+        "constraint_endpoint": "availableconstraint",
+        "constraint_params": {},
+    }
+
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=b"<not-xml") as mock_req:
+        result = get_available_values(_istat_dataset())
+
+    assert result == {}
+    assert mock_req.call_count == 1
+
+
+def test_availableconstraint_retry_parse_error_stops_after_second_attempt(caplog):
+    provider = {
+        **_ISTAT_PROVIDER,
+        "constraint_endpoint": "availableconstraint",
+        "constraint_params": {"references": "none"},
+    }
+
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints"), \
+         patch(
+             "opensdmx.discovery.sdmx_request_xml",
+             side_effect=[b"<first-bad", b"<second-bad"],
+         ) as mock_req:
+        result = get_available_values(_istat_dataset())
+
+    assert result == {}
+    assert mock_req.call_count == 2
+    assert "Could not retrieve available values" in caplog.text
 
 
 def test_get_available_values_contentconstraint_404_fallback_success():

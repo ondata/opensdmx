@@ -42,6 +42,7 @@ class _DataflowRecord(TypedDict):
 
 import httpx
 import polars as pl
+from lxml import etree
 
 from .base import get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
 from .utils import get_name_by_lang, xml_attr_safe, xml_parse
@@ -1155,7 +1156,31 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
             _max_retries=constraint_max_retries,
             **constraint_params,
         )
-        result = _parse_constraint_xml(content)
+        try:
+            result = _parse_constraint_xml(content)
+        except etree.XMLSyntaxError:
+            if (
+                constraint_endpoint != "availableconstraint"
+                or "references" not in constraint_params
+            ):
+                raise
+            retry_params = {
+                name: value
+                for name, value in constraint_params.items()
+                if name != "references"
+            }
+            logger.warning(
+                "availableconstraint response could not be parsed for %s; "
+                "retrying without references",
+                df_id,
+            )
+            content = sdmx_request_xml(
+                path,
+                _timeout=constraint_timeout,
+                _max_retries=constraint_max_retries,
+                **retry_params,
+            )
+            result = _parse_constraint_xml(content)
     except httpx.TimeoutException:
         provider_name = provider.get("name", "unknown")
         # If no override was set, the module default applied — surface that to the user.
