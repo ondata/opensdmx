@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-08-19 - fix: `tree` probes the category tree of an unlisted provider
+
+- A provider given as a URL (`--provider https://.../rest`) got `Active provider does not expose /categoryscheme` even when it does: `categories_supported` is a *declared* capability of the 15 providers in `portals.json`, and a custom dict never carries the key, so the falsy default was read as a denial. The gate now fires only when a listed provider declares `false`; an undeclared provider is probed live and an `httpx.HTTPStatusError` is translated into `CategoriesNotSupported` naming the URL and the status code.
+- Second cause on the same path: `catalog_agency` fell back to `agency_id`, empty for a custom URL, producing `categoryscheme//ALL/latest` → 404. A single `_catalog_agency()` helper falls back to the `ALL` wildcard for both structure calls. The cross-agency `df_id` prefixing still compares the *configured* `catalog_agency`, so no listed provider changes behaviour.
+- Verified live: `opensdmx tree --provider https://nsidisseminate-stat.nbb.be/rest --depth 1` renders the 9 NBB schemes (`ECO` 50 dataflows, `INT_ECO` 53, …). `--provider worldbank` still refuses with the provider list, and `--provider https://api.worldbank.org/v2/sdmx/rest` reports the HTTP 403 with its URL.
+- `category_context()` (used opportunistically by `search` and `embed`) is cache-only, so no discovery path can now trigger a 1-2 minute build.
+- Gate: ruff clean, mypy strict clean on 15 files, 379 tests green. `skills/sdmx-explorer/` updated (SKILL.md + `references/thematic-tree.md`).
+
 ## 2026-08-19 - v0.22.2 - fix: interoperable retry for `availableconstraint` on NBB
 
 - Reproduced the cause on `https://nsidisseminate-stat.nbb.be/rest`: with the implicit `references=none`, `constraints EXR` gets HTTP 200 plus a malformed HTML error page; without the parameter it gets 57,735 bytes of valid SDMX-XML. A parse error on `availableconstraint` now triggers a single retry that drops `references` and nothing else — no URL-based special cases, and the first request is unchanged.
