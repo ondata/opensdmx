@@ -3952,6 +3952,9 @@ DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_5,Indicatori e territorio (dipendenti),REF_
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_MUN_6,Indicatori per singolo territorio (dipendenti),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8360,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),REF_AREA,nazionale,nazionale,613,2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),REF_AREA,nazionale,nazionale,613,2026-08-13
+DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,141,2026-08-20
+DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,RESIDENCE_TERR,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-20
+DF_TST,Crops in Italy,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,143,2026-08-20
 EMP,Occupazione,REF_AREA,nazionale,nazionale,1,2026-08-16
 FSI07,Indicatori di solidità finanziaria,REF_AREA,nazionale,nazionale,1,2026-08-16
 GGO,Operazioni del governo,REF_AREA,nazionale,nazionale,1,2026-08-16

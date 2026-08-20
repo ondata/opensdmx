@@ -4881,8 +4881,8 @@ DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_1,Indicatori per Sistemi Locali del Lavoro 
 DF_DIPS_SIR_IND_TERR_DRT_OCC_RBI_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),ok,hub,4,666,0,"",2026-08-13
 DF_DIPS_SIR_IND_TERR_DRT_SLL_1,Indicatori per Sistemi Locali del Lavoro (SLL),ok,hub,3,641,0,"",2026-08-16
 DF_DIPS_SIR_IND_TERR_DRT_SLL_2,Indicatori per singolo Sistema Locale del Lavoro (SLL),ok,hub,3,641,0,"",2026-08-16
-DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-16
-DF_TST,Crops in Italy,error,"",0,0,3,HubUnavailable: hub did not answer (timeout or HTTP error),2026-08-16
+DF_TEST_DCIS_ABORTISPONTL,DF TEST IT,ok,hub,13,258,0,"",2026-08-20
+DF_TST,Crops in Italy,ok,hub,5,473,0,"",2026-08-20
 EMP,Occupazione,ok,hub,5,5,0,"",2026-08-16
 FSI07,Indicatori di solidità finanziaria,ok,hub,5,5,0,"",2026-08-16
 GGO,Operazioni del governo,ok,hub,5,26,0,"",2026-08-16
