@@ -886,3 +886,138 @@ def test_annotation_value_resolves_catalog_fields():
     assert _annotation_value(anns, config, "geo_dim") == "RESIDENCE_TERR"
     # absent annotation → None
     assert _annotation_value(_annotations(_df_node(), "it"), config, "notes") is None
+
+
+# ── BM25 ranking (opensdmx.ranking) ───────────────────────────────────
+
+def test_tokenize_splits_on_underscore():
+    """`\\w` swallows underscores, which would make UNE_RT_M a single term.
+
+    Dataflow ids are underscore-separated on every provider, so a query for
+    "une" could never match the id exactly and the id boost would be dead.
+    """
+    from opensdmx.ranking import tokenize
+
+    assert tokenize("UNE_RT_M") == ["une", "rt", "m"]
+    assert tokenize("151_914_DF_DCCV") == ["151", "914", "df", "dccv"]
+
+
+def test_rare_token_outweighs_common_one():
+    """The old scorer weighed every token the same, so a stopword counted
+    like the topic. idf must break that tie."""
+    from opensdmx.ranking import BM25Index
+
+    docs = ["tasso di disoccupazione"] + ["tasso di occupazione"] * 50
+    index = BM25Index(docs, [f"D{i}" for i in range(len(docs))])
+    scores = index.scores("tasso di disoccupazione")
+
+    assert scores[0] > scores[1]
+
+
+def test_long_document_does_not_win_on_length_alone():
+    """Occurrences used to be summed with no denominator, so a long title
+    outranked a short exact one."""
+    from opensdmx.ranking import BM25Index
+
+    docs = ["unemployment rate", "unemployment " * 40]
+    index = BM25Index(docs, ["SHORT", "LONG"])
+    scores = index.scores("unemployment rate")
+
+    assert scores[0] > scores[1]
+
+
+def test_prefix_expansion_keeps_substring_search_working():
+    """`search comun` must still reach "comuni": whole-token BM25 alone would
+    return nothing, which is a documented capability in `search --help`."""
+    from opensdmx.ranking import BM25Index
+
+    index = BM25Index(["dati comunali", "prezzi"], ["A", "B"])
+    scores = index.scores("comun")
+
+    assert scores[0] > 0
+    assert scores[1] == 0
+
+
+def test_exact_match_outranks_prefix_match():
+    from opensdmx.ranking import BM25Index
+
+    index = BM25Index(["comun", "comunali"], ["EXACT", "PREFIX"])
+    scores = index.scores("comun")
+
+    assert scores[0] > scores[1]
+
+
+def test_empty_corpus_does_not_produce_nan_scores():
+    """mean() of an empty array is NaN and NaN is truthy, so an unguarded
+    `or 1.0` would silently make every score NaN."""
+    from opensdmx.ranking import BM25Index
+
+    index = BM25Index([], [])
+
+    assert index.avgdl == 1.0
+    assert index.scores("anything").tolist() == []
+
+
+def test_rank_scores_candidates_using_full_catalog_idf():
+    """idf belongs to the corpus. Building the index on the candidate set
+    would flatten it: every candidate contains the query terms by definition."""
+    import polars as pl
+
+    from opensdmx.ranking import rank
+
+    catalog = pl.DataFrame(
+        {"df_id": ["A", "B", "C"], "df_description": ["rare topic", "common", "common"]}
+    )
+    candidates = catalog.filter(pl.col("df_id") == "A")
+    ranked = rank(catalog, candidates, "rare", text_columns=["df_description"])
+
+    assert ranked.height == 1
+    assert ranked["score"][0] > 0
+
+
+def test_rank_keeps_every_candidate_even_when_unscored():
+    """The caller committed to a result count; unscored rows sort last rather
+    than disappearing."""
+    import polars as pl
+
+    from opensdmx.ranking import rank
+
+    catalog = pl.DataFrame({"df_id": ["A", "B"], "df_description": ["alpha", "beta"]})
+    ranked = rank(catalog, catalog, "alpha", text_columns=["df_description"])
+
+    assert ranked.height == 2
+    assert ranked["df_id"].to_list() == ["A", "B"]
+    assert ranked["score"][1] == 0.0
+
+
+def test_search_punctuation_only_query_falls_back_to_substring():
+    """`search "["` has no word characters, so BM25 cannot rank it."""
+    catalog = pl.DataFrame(
+        {
+            "df_id": ["GDP"],
+            "version": ["1.0"],
+            "df_description": ["Gross [domestic] product"],
+            "df_structure_id": ["DSD"],
+        }
+    )
+    with patch("opensdmx.discovery.all_available", return_value=catalog):
+        res = search_dataset("[")
+
+    assert res["df_id"].to_list() == ["GDP"]
+    assert res["score"].dtype == pl.Float32
+
+
+def test_field_boost_uses_the_same_matching_as_scoring():
+    """The boosts must recognise a term exactly when BM25 does.
+
+    They used to test plain containment (`t in term`) while scoring used exact-or-
+    prefix, so the query token "rt" boosted an id like EXPORT_ALPHA as much as
+    RT_ALPHA — an internal substring outranking a real token match.
+    """
+    from opensdmx.ranking import BM25Index
+
+    docs = ["alpha beta EXPORT_ALPHA", "alpha beta RT_ALPHA"]
+    index = BM25Index(docs, ["EXPORT_ALPHA", "RT_ALPHA"])
+    scores = index.scores("alpha rt")
+
+    assert scores[1] > scores[0]

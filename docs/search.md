@@ -29,7 +29,7 @@ So search cannot be "grep the title". Every improvement below is about finding m
 |---|---|---|
 | command | `opensdmx search <words>` | `opensdmx search --semantic <question>` |
 | entry point | `discovery.search_dataset` | `embed.semantic_search` |
-| method | case-insensitive token match, AND with OR fallback, synthetic relevance score | cosine similarity over embeddings |
+| method | case-insensitive token match, AND with OR fallback, BM25 ranking | cosine similarity over embeddings |
 | requires | nothing (local cache only) | Ollama running + `opensdmx embed` run once |
 
 ### What each path indexes — they are not the same text
@@ -49,9 +49,11 @@ On ISTAT the gap is at its widest: `df_description` averages a handful of words,
 
 ### The keyword scorer
 
-`_score_results` awards, per query token: `+3` if it appears in `df_id`, `+2` if it appears in the first 60 characters of the description, `+1` **per occurrence**, `+1` if it appears in the category context. Tokens are combined with AND; if that returns nothing, it falls back to OR so a single unmatched token cannot wipe out the result set.
+Tokens are combined with AND; if that returns nothing, it falls back to OR so a single unmatched token cannot wipe out the result set. That decides *which* dataflows are candidates. The ranking is **BM25** (`src/opensdmx/ranking.py`), built over the whole catalogue and applied to the candidates.
 
-Two properties of this scorer are worth stating explicitly, because they set the limits of the keyword path: **all words weigh the same** (a match on "per" counts like a match on "consumi"), and **occurrences are summed with no length denominator**, so on long documents the score grows with length rather than with relevance.
+The scorer it replaced awarded, per token, `+3` in `df_id`, `+2` in the first 60 characters of the title, `+1` **per occurrence**, `+1` in the category context. It had two defects that set a hard ceiling on the keyword path: **all words weighed the same** (a match on "per" counted like a match on "consumi"), and **occurrences were summed with no length denominator**, so the score grew with document length rather than with relevance. BM25 fixes both by construction — `idf` down-weights common terms, `b` normalises for length. The field boosts survive, rescaled to the BM25 unit.
+
+Two details worth recording. Tokenisation deliberately splits on the underscore: `\w` would swallow it and turn `UNE_RT_M` into a single term, so no query could ever match an id exactly. And a query token with no exact match in the vocabulary expands to the terms it *prefixes*, at half weight — without that, BM25 would silently kill prefix search (`search comun` on ISTAT: 605 results before, 0 with whole-token BM25 alone).
 
 ## What has been measured
 
@@ -87,14 +89,68 @@ What it establishes:
 
 Caveats recorded with the result: the gold families were compiled with regex matching over `df_description || prose`, and `prose` is indexed by B and not by A, so **the construction bias favours the semantic arm** — B's margin should be read as an upper bound until a `doc-first` block is added. Absolute values are low for every arm, partly because gold families are narrow on generic needs; the comparison *between* arms is unaffected since the gold is identical for all.
 
+### 2026-08-21 — BM25 replaces the scorer, measured on two providers
+
+A second gold set was written for **Eurostat**, same protocol: 25 information needs and their queries written blind with `gold: null` saved to disk, gold filled in a second pass, family gold, one need discarded as undecidable → 24 needs, 48 queries. Eurostat metadata is English, so here `it` measures cross-lingual and `en` monolingual — the mirror image of ISTAT. Eurostat embeddings were built for the run, the first time the semantic arm has been measured on a provider **without** harvested prose.
+
+MRR, before and after the change:
+
+| | Eurostat | Eurostat `en` | ISTAT | ISTAT `it` |
+|---|---|---|---|---|
+| previous scorer | 0.086 | 0.172 | 0.073 | 0.133 |
+| **BM25** | **0.161** | **0.320** | **0.169** | **0.325** |
+| semantic | 0.241 | 0.308 | 0.327 | 0.343 |
+
+What this establishes:
+
+- **The defect was the formula, not the corpus.** Handing the extended text to the old scorer changed nothing (0.075 vs 0.073); handing it to BM25 doubles the baseline on both providers, whose corpora differ by an order of magnitude in length (Eurostat averages 23 tokens per document, ISTAT 208 with prose).
+- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.320 vs 0.308, ISTAT 0.325 vs 0.343 — with no model, no server and no index build. That is the case most users are in on most providers.
+- **Cross-language remains unfixable lexically.** Italian queries on Eurostat score **0.000** across 24 queries before the change and 0.001 after. Only the semantic arm scores at all (0.174). No amount of term weighting invents words the document does not contain.
+- **Semantic works on Eurostat without prose** (0.241, S@10 56%), which had been assumed weak. Longer titles (median 75 characters) and 99.9% category coverage carry it.
+- **A weighted hybrid does not earn its complexity**: it ties the semantic arm on Eurostat and loses on ISTAT. Second time RRF has been rejected on evidence.
+
+Three limitations of the Eurostat gold, recorded because they bound how far these numbers can be pushed:
+
+- **24 needs are not 24 independent observations.** Nine of the twelve topics appear twice, once per register, and five of those pairs carry an *identical* gold — 38 distinct dataflows across 48 queries. That pairing is deliberate and makes the register comparison cleaner than ISTAT's, where naive and technical cover different topics and therefore confound register with subject. The price is that for the overall means the effective n is closer to 12 than 24. The large gaps hold; the decimals between arms do not.
+- **The topics are easier than reality.** The ISTAT gold reaches wine production, livestock, prisoners and building permits. This one covers twelve mainstream macro-social topics — the flagship dataflows, the ones with the best titles.
+- **Two families are too narrow**: `disoccupazione-mensile` lists `UNE_RT_M` while `EI_LMHR_M` answers the query better, and `aspettativa-vita` lists `DEMO_MLEXPEC` while `TPS00208` is the exact match. The gold was **not** retrofitted after seeing arm results — that would be picking the answer by who finds it. Absolute values are therefore understated for every arm equally, leaving the comparison between arms valid.
+
+### What the change looks like on real queries
+
+MRR is an aggregate; these are the same ten queries before and after, top result only, so the shape of the gain is legible.
+
+**ISTAT**
+
+| query | before | after |
+|---|---|---|
+| `tasso di disoccupazione` | `...TAXDISOCCUMENS1_UNT2020` — the series **closed in 2020** ("regolamento precedente") | `151_874` — the current monthly series |
+| `popolazione residente` | `164_346` — intercensal *reconstruction* 1971 | `22_315` — "Popolazione residente - bilancio" |
+| `spesa sanitaria` | `1_963_DF_DCCN_SHA_B19_1` | `91_963_DF_DCCN_SHA_1` |
+| `incidenti stradali` | `41_269_DF_DCIS_INCIDENTISTR1_1` | unchanged |
+| `raccolta differenziata` | `609_1_DF_DCCV_URBANENV_15` | unchanged (a single result: nothing to reorder) |
+
+**Eurostat**
+
+| query | before | after |
+|---|---|---|
+| `unemployment` | `LFSQ_UPGAL` — *long-term* unemployment, top three all long-term | `LFSA_URGAN` — unemployment **rates** |
+| `population on 1 January` | `PROJ_19RP3` — top three all population *projections* | `TPS00001` — "Population on 1 January", the observation |
+| `greenhouse gas emissions` | `ENV_AC_AIGG_Q` — air accounts by NACE | `TAI08` — agriculture |
+| `gross domestic product` | `NAMA_10R_2GVAGR` | `NAMA_10R_3GDP` |
+| `life expectancy at birth` | `TPS00208` | unchanged |
+
+Four of the ten change clearly for the better, four change little or debatably, two are identical. That is the shape the aggregate hides: the gain concentrates where the old scorer failed *systematically* — a long title beating a relevant one, a repeated word beating precision, a superseded vintage tying with the live series. Where the title was already short and specific there was nothing to fix, and nothing moved.
+
+Two of these are worth naming as classes rather than cases. `tasso di disoccupazione` is the vintage tie: both titles scored 16 under the old scorer and the closed series printed first. `unemployment` and `popolazione residente` are the length bias: "Persons in long-term unemployment (12 months or more) - % of total unemployment" won on repetitions, and the 1971 intercensal reconstruction won on length.
+
 ## What follows from this
 
 1. **Semantic search deserves to be available by default**, not behind a flag that requires a running Ollama server. These numbers are the empirical case for a self-contained backend — but as of 2026-08-21 that is a direction, not an approved plan. The plan drafted on 2026-07-16 named `google/embeddinggemma-300m` with `multilingual-e5-small` as fallback, and fastembed 0.8.0 exposes neither, so its premise no longer holds. An earlier attempt to move off Ollama (fastembed with `nomic-embed-text-v1.5-Q`, 2026-03-31) was reverted for poor quality on Italian queries. No candidate backend has yet been scored against the targets in point 4, which is what would settle it.
-2. **Replacing the keyword scorer with BM25 over the extended text is a small, self-contained win** — roughly +85% MRR on ISTAT, no model, no server, no new dependency, works offline on the cache that already ships. The corpus is already on disk; only the lexical path does not read it.
+2. ~~**Replacing the keyword scorer with BM25 is a small, self-contained win.**~~ **Done in v0.23.0** — see the 2026-08-21 block above for what it actually delivered on two providers.
 3. **Do not promote unweighted RRF.** A hybrid, if wanted, must be weighted towards the semantic arm and re-measured.
-4. **A static retriever now has a target to beat**: 0.135 to justify itself over BM25, and something near 0.327 to replace nomic. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
+4. **A static retriever now has a target to beat**: it must clear the shipped lexical path — 0.169 on ISTAT, 0.161 on Eurostat — to justify a model at all, and approach 0.327 to replace nomic. The bar rose when BM25 landed. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
 
-Open, in order: BM25 on `search_dataset`; the `doc-first` counterweight block in the gold set; measuring the extended-text gain on providers other than ISTAT (only ISTAT has harvested prose today); the static-model arm.
+Open, in order: the `doc-first` counterweight block in the gold set; widening the two narrow Eurostat gold families; dropping the 546 `$DV_` bookmark duplicates from Eurostat results (measured +15% MRR on its own, stacks with BM25); the static-model arm.
 
 ## Where the working material lives
 
