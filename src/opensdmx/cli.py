@@ -322,6 +322,7 @@ def _startup(
 
 @app.command()
 def search(
+    ctx: typer.Context,
     keyword: str = typer.Argument(..., help="Keyword to search in dataset titles and IDs"),
     semantic: bool = typer.Option(False, "--semantic", "-s", help="Use semantic search via Ollama embeddings"),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or title, case-insensitive)"),
@@ -333,8 +334,12 @@ def search(
 ) -> None:
     """Search datasets by keyword in the local cache (or semantically with --semantic).
 
-    Matches the dataset title and ID. Results come from the local cache — fast,
-    no network call. Default provider: eurostat. Use --provider to switch.
+    Matches the dataset title, ID and category name. Results come from the local
+    cache — fast, no network call. Default provider: eurostat. Use --provider to
+    switch.
+
+    With --semantic only --n and --grep apply; --category, --page and --all
+    belong to the keyword path and are rejected.
 
     Use --grep to narrow the results with a regex, e.g. to match whole words
     only and avoid matching longer words that merely start the same way.
@@ -359,14 +364,30 @@ def search(
     _apply_provider(provider)
 
     if semantic:
+        page_source = ctx.get_parameter_source("page")
+        page_given = page_source is not None and page_source.name != "DEFAULT"
+        unsupported = [
+            name
+            for name, used in (("--category", category is not None), ("--page", page_given), ("--all", all_results))
+            if used
+        ]
+        if unsupported:
+            err_console.print(
+                f"[red]Error:[/red] {', '.join(unsupported)} cannot be combined with --semantic.\n"
+                "Semantic results are ranked by similarity; only --n and --grep apply."
+            )
+            raise typer.Exit(1)
+
         from .embed import semantic_search
         try:
             with _status_ctx("[dim]Semantic search...[/dim]"):
                 df = semantic_search(keyword, n=n)
         except FileNotFoundError:
+            from .base import _provider_cache_key
+            active = _provider_cache_key()
             err_console.print(
-                "[red]Error:[/red] Embeddings cache not found.\n"
-                "Build it first:  opensdmx embed"
+                f"[red]Error:[/red] No embeddings index for provider '{active}'.\n"
+                f"Build it once:  opensdmx embed --provider {active}"
             )
             raise typer.Exit(1)
         except Exception as e:

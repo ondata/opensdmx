@@ -18,10 +18,15 @@ different starting condition.
 | User names a clear domain ("agricultural prices", "consumer prices in Italy") | `tree` (top-down) | Browse the catalog hierarchy; faster than keyword scanning when many dataflows share a root theme |
 | User names a specific dataflow id (`UNE_RT_M`, `NAMA_10_GDP`) | `info` directly | No discovery needed |
 | User uses standard technical terminology ("unemployment rate", "HICP") | `search "<keyword>"` | Keyword match on title is fast and precise |
-| User uses informal phrasing or zero word overlap ("people without a job") | `search --semantic "<query>"` | Embedding similarity bridges vocabulary gaps |
+| User uses informal phrasing or zero word overlap ("people without a job"), or asks in a language other than the catalogue's | `search --semantic "<query>"` | Embedding similarity bridges vocabulary and language gaps — where the keyword scorer measures near zero |
 | Generic or ambiguous keyword ("impresa", "energia") returning hundreds of hits | `tree` first, then `search --category` | Restrict the search universe before keyword filtering |
 
 When the user's question is a domain (not a technical term), prefer `tree` first.
+
+`search --semantic` requires a running Ollama server and an index built once per
+provider with `opensdmx embed`. Where that index exists it outranks both other
+paths on naturally-phrased questions; where it does not, the command says so and
+the table above collapses to `tree` and `search`.
 
 ## Provider support
 

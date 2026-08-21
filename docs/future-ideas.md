@@ -158,6 +158,8 @@ opensdmx's differentiator vs LLM-inside routers: because the agent drives `searc
 
 Tested embedding-based semantic search over the harvested ISTAT descriptions (`src/opensdmx/data/descriptions/istat.parquet`, 3,949 docs) with **no LLM**: fastembed (`sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`, 384 dim, ONNX on CPU) + cosine similarity. Prototype: `tmp/semantic_route_test.py`.
 
+> **Not the fastembed attempt that was reverted.** `LOG.md` (2026-03-31) records fastembed being tried as an Ollama replacement and reverted for poor quality on Italian queries — that attempt used `nomic-ai/nomic-embed-text-v1.5-Q`, a different model. The two results are about different models and are not in conflict.
+
 ### Results
 
 - One-time corpus embedding: ~155 s on CPU; cache ~6 MB (`.npy`).
@@ -172,7 +174,9 @@ Tested embedding-based semantic search over the harvested ISTAT descriptions (`s
 
 ### Takeaways
 
-- Confirms the approved self-contained semantics plan (fastembed, no Ollama): retrieval quality is good enough for a first-pass ranker; a threshold gives a deterministic "no match" guardrail instead of hallucinated picks.
+- Supports the case for a self-contained backend (no Ollama): retrieval quality is good enough for a first-pass ranker, and a threshold gives a deterministic "no match" guardrail instead of hallucinated picks.
+- **Status of the plan this was meant to confirm (updated 2026-08-21): its premise no longer holds.** The plan approved on 2026-07-16 was built around `google/embeddinggemma-300m`, with `multilingual-e5-small` as fallback, chosen so the same model would carry over to a Rust/Tauri app. fastembed 0.8.0 exposes neither. The plan document itself is no longer on disk. Treat the direction as open, not approved.
+- **This prototype has never been scored.** The evidence above is qualitative, on a corpus of descriptions only, with a different model and dimensionality from the shipping index. [Dataset search](search.md) sets the bar any replacement has to clear on the same gold set — MRR 0.135 to beat BM25, ~0.327 to replace nomic — and no candidate has been measured against it. That measurement, not another spike, is what would settle the question.
 - Same embeddings can also do **intent routing** (route query → action: search / territorial view / fetch) in a future no-LLM app — the pattern Aurelio's semantic-router popularized.
 - Corpus hygiene matters: catalog names like "dataflow eliminato" surface in top results; deleted dataflows should be filtered before indexing.
 - Literature check (2025-2026): lightweight routers reach 80–88% accuracy at <4 ms vs ~91% for LLMs at 60–700 ms — [GQR-Bench, arXiv:2505.14524](https://arxiv.org/abs/2505.14524); simple kNN over embeddings beats learned routers — [arXiv:2505.12601](https://arxiv.org/abs/2505.12601); tool-calling routers are an active 2026 topic — [Switchcraft, arXiv:2605.07112](https://doi.org/10.48550/arxiv.2605.07112), [NTILC, arXiv:2606.06566](https://arxiv.org/abs/2606.06566). Reference libraries: [semantic-router](https://github.com/aurelio-labs/semantic-router) (FastEmbed encoder supported), [SynaptoRoute](https://github.com/sitanshukr08/SynaptoRoute).

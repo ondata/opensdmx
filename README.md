@@ -53,6 +53,10 @@ uv lock --upgrade-package opensdmx  # if used as a library dependency
 pip install --upgrade opensdmx      # if installed with pip
 ```
 
+Everything except semantic search works with this install alone. `opensdmx
+search --semantic` additionally needs a local [Ollama](https://ollama.com)
+server and a one-off index build — see [Semantic search](#semantic-search).
+
 ## CLI quick start
 
 ```bash
@@ -265,8 +269,8 @@ All commands accept `--provider` (`-p`) to select the provider.
 
 | Command | Description |
 |---|---|
-| `opensdmx search <keyword> [--n N] [--grep pattern] [-p provider]` | Keyword search in dataset titles and IDs (default: 20 results); optionally filter by regex |
-| `opensdmx search --semantic <query> [--n N]` | Semantic search (requires `opensdmx embed`) |
+| `opensdmx search <keyword> [--n N] [--grep pattern] [-p provider]` | Keyword search in dataset titles, IDs and category names (default: 50 results per page); optionally filter by regex |
+| `opensdmx search --semantic <query> [--n N] [--grep pattern]` | Semantic search (requires a running Ollama and `opensdmx embed`). Only `--n` and `--grep` apply; `--category`, `--page` and `--all` are rejected |
 | `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
 | `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
@@ -475,18 +479,28 @@ opensdmx tree --scheme t_economy --depth 1
 
 | Mode | How it works | Best for |
 |---|---|---|
-| Keyword (default) | Exact substring match on dataset title | When you know the right technical term |
+| Keyword (default) | Scored token match on title, ID and category name — all tokens must match, falling back to any | When you know the right technical term |
 | `--semantic` | Embedding similarity via Ollama | When you don't know the exact wording, or want conceptually related datasets |
 
 #### Setup
 
-Requires [Ollama](https://ollama.com) with the `nomic-embed-text-v2-moe` model:
+Requires a running [Ollama](https://ollama.com) server with the
+`nomic-embed-text-v2-moe` model, plus one index build per provider:
 
 ```bash
-ollama pull nomic-embed-text-v2-moe
+ollama serve &                        # if not already running
+ollama pull nomic-embed-text-v2-moe   # ~1 GB, once
 opensdmx embed              # build embeddings for default provider (eurostat)
 opensdmx embed -p istat     # build embeddings for ISTAT
 ```
+
+The index is built **on demand, per provider**, and stored in the local cache as
+`embeddings.parquet`. Until you run `opensdmx embed` for a provider,
+`--semantic` reports that no index exists for it. Rebuilding takes one pass over
+the whole catalog; there is no incremental update.
+
+Every provider can be indexed, but the quality of the index depends on how much
+text there is to embed. That is where ISTAT stands apart — see below.
 
 For providers that expose a thematic catalog (Eurostat, ISTAT, ECB, OECD, INSEE,
 ABS, BIS), running `opensdmx tree` once before `opensdmx embed` enriches each
@@ -501,8 +515,9 @@ how it is produced, not just its title. See
 [Dataflow descriptions for semantic search](docs/descriptions.md) for the design,
 and [Dataset search](docs/search.md) for how the keyword and semantic paths
 compare — including the measured result that semantic retrieval finds the right
-dataflow 3.4× more often, and that on English queries against Italian metadata
-keyword search finds essentially nothing.
+dataflow in the top 10 for 57% of queries against 17% for the keyword path, and
+that on English queries against Italian metadata keyword search finds
+essentially nothing.
 
 #### Tips for better results
 
@@ -568,7 +583,7 @@ opensdmx search --semantic "underemployment" # finds involuntary part-time datas
 
 **When keyword search is enough**
 
-When you already know the technical term, keyword search is faster and returns all matching datasets (not capped at 10). `search "unemployment"` returns 114 results; `search --semantic "unemployment"` returns the 10 most similar by score — useful to surface the most relevant ones quickly.
+When you already know the technical term, keyword search is faster and can return every matching dataset with `--all`. `search "unemployment"` returns 114 results; `search --semantic "unemployment"` returns the 50 most similar by score (change with `--n`) — useful to surface the most relevant ones quickly.
 
 **Rule of thumb:** start with a keyword search. If results are empty or off-target, switch to `--semantic`.
 
@@ -578,7 +593,7 @@ The `score` column is the **[cosine similarity](https://en.wikipedia.org/wiki/Co
 
 The model converts text into high-dimensional vectors such that semantically related phrases point in similar directions, regardless of the exact words used. Cosine similarity measures the angle between two such vectors: a score of 1 means identical direction, 0 means orthogonal (unrelated).
 
-The ranking therefore depends entirely on the model: a different model would produce different vectors and a different ordering. The model is fixed — if you rebuild embeddings with `opensdmx embed`, the same model is used.
+The ranking therefore depends entirely on the model: a different model would produce different vectors and a different ordering. Within a given release the model is fixed, so the ranking will not shift under you because the backend changed. It can still shift for a different reason: `opensdmx embed` re-reads the catalog, the category tree and the harvested descriptions as they are *at that moment*, so a rebuild after the caches refresh embeds different text and produces different vectors. Should the backend change in a future release, embeddings will have to be rebuilt — the index does not record which model produced it ([#57](https://github.com/ondata/opensdmx/issues/57)).
 
 ### Caching
 

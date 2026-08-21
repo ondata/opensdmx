@@ -955,3 +955,36 @@ def test_cli_does_not_import_click():
 
     source = (Path(__file__).parent.parent / "src" / "opensdmx" / "cli.py").read_text()
     assert "import click" not in source
+
+
+@pytest.mark.parametrize(
+    "flags,expected",
+    [
+        (["--all"], "--all"),
+        (["--page", "3"], "--page"),
+        (["--category", "FOO"], "--category"),
+        (["--category", "FOO", "--page", "2"], "--category, --page"),
+        # --page 1 equals the default, so a value comparison cannot see it;
+        # only the parameter source can tell "not given" from "given as 1".
+        (["--page", "1"], "--page"),
+    ],
+)
+def test_search_semantic_rejects_keyword_only_flags(flags, expected):
+    """--category/--page/--all used to be accepted and silently ignored.
+
+    The semantic branch returns before the code that reads them, so a user who
+    restricted a search to a category got results drawn from the whole catalogue
+    with no signal that the filter had been dropped.
+    """
+    result = runner.invoke(app, ["search", "--semantic", "x", *flags])
+
+    assert result.exit_code == 1
+    assert f"{expected} cannot be combined with --semantic" in result.output
+
+
+def test_search_semantic_accepts_n_and_grep():
+    """--n and --grep do apply in the semantic branch and must not be rejected."""
+    with patch("opensdmx.embed.semantic_search", side_effect=FileNotFoundError("no index")):
+        result = runner.invoke(app, ["search", "--semantic", "x", "--n", "5", "--grep", "y"])
+
+    assert "cannot be combined" not in result.output

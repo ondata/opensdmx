@@ -56,7 +56,7 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 ### Dataset discovery
 
 - List all available datasets for the active provider (`all_available()`).
-- Search datasets by keyword in their description (`search_dataset()`).
+- Search datasets by keyword in their title, ID and category name (`search_dataset()`). Dataflows expose an SDMX `Name`, not a `Description`.
 - Load a dataset object by dataflow ID, structure ID, or description (`load_dataset()`).
 - Show dimension metadata including position, codelist ID, and description (`dimensions_info()`).
 - Show available dimension values from the codelist (`get_dimension_values()`).
@@ -71,7 +71,7 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 
 ### Semantic search
 
-- Build and store Ollama embedding vectors for all dataset descriptions (`embed` command / `build_embeddings()`).
+- Build and store Ollama embedding vectors for the catalog (`embed` command / `build_embeddings()`), one index per provider, built on demand.
 - Search by semantic similarity against locally built embeddings (`semantic_search()`).
 - Embeddings are stored per provider in the provider cache directory, for example `~/.cache/opensdmx/eurostat/embeddings.parquet`.
 
@@ -99,7 +99,7 @@ Statistical data from international agencies is distributed via SDMX 2.1 REST AP
 
 | Command | Description |
 |---|---|
-| `opensdmx search <keyword>` | Keyword search in dataset descriptions |
+| `opensdmx search <keyword>` | Keyword search in dataset titles, IDs and category names |
 | `opensdmx search --semantic <query>` | Semantic search (requires `opensdmx embed`) |
 | `opensdmx embed` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id>` | Show dataset metadata and dimensions |
