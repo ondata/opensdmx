@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-08-21 - feat: BM25 ranking for keyword search
+## 2026-08-21 - v0.23.0 - feat: BM25 ranking for keyword search
 
 - **The default search path was the worst one, measurably.** `search unemployment` on Eurostat put `UNE_RT_M` — the monthly unemployment rate — at position **65 of 146**, because the old scorer summed raw token occurrences with no length denominator and weighed every query word the same. A long title beat a relevant one; "di" counted like "disoccupazione". Ranking is now BM25 (`src/opensdmx/ranking.py`): idf down-weights common terms, `b` normalises for document length. The field boosts survive, rescaled to the BM25 unit.
 - **Measured on two blind gold sets, not one.** A second gold set was written for Eurostat with the same protocol as the ISTAT one — 25 needs written with `gold: null` saved to disk before looking at the catalogue, gold filled in a second pass, one need discarded as undecidable → 24 needs, 48 queries. Eurostat embeddings were built for the run, the first time the semantic arm has been measured on a provider without harvested prose.
