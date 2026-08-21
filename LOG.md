@@ -8,10 +8,10 @@
   | MRR | Eurostat | Eurostat `en` | ISTAT | ISTAT `it` |
   |---|---|---|---|---|
   | before | 0.086 | 0.172 | 0.073 | 0.133 |
-  | after | **0.166** | **0.330** | **0.169** | **0.326** |
+  | after | **0.161** | **0.320** | **0.169** | **0.325** |
   | semantic | 0.241 | 0.308 | 0.327 | 0.343 |
 
-- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.330 vs 0.308, ISTAT 0.326 vs 0.343 — with no model, no server and no index build. Cross-language is untouched and unfixable lexically: Italian queries on Eurostat score 0.000 across 24 queries before and 0.001 after; only the semantic arm scores at all (0.174).
+- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.320 vs 0.308, ISTAT 0.325 vs 0.343 — with no model, no server and no index build. Cross-language is untouched and unfixable lexically: Italian queries on Eurostat score 0.000 across 24 queries before and 0.001 after; only the semantic arm scores at all (0.174).
 - **The candidate set is chosen exactly as before** — AND over every token, OR only when that is empty. BM25 alone would score any document sharing one token, so "tasso di disoccupazione" would report 2405 matches on ISTAT instead of 28: correct at the top, useless as a total. Only the ordering changed, so result counts, pagination and `--all` behave as they did.
 - **Two things had to be got right or the change would have been silently worse.** Tokenisation splits on the underscore: `\w` swallows it and would turn `UNE_RT_M` into a single term, so no query could ever match an id exactly — a pre-existing test caught this. And a query token with no exact match expands to the terms it *prefixes*, at half weight, because whole-token BM25 kills prefix search outright (`search comun -p istat`: 605 results before, 0 with plain BM25). Prefix, not arbitrary substring: `comun` reaches "comuni" and "comunali", not "incomunicabile".
 - **The index is built per call over the whole catalogue**, never over the candidate set — idf is a property of the corpus, and a candidate set selected by the query contains its terms in every row, which would flatten the signal BM25 exists to provide. Cost measured: 0.14 s on the largest catalogue (Eurostat, 8150 dataflows), 28 ms on OECD, queries 1-18 ms, against a command whose Python import alone is ~1.9 s. No disk index, so nothing to invalidate when the dataflow or category cache refreshes.

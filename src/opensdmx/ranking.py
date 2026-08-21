@@ -7,9 +7,9 @@ queries, Eurostat 48), that cost roughly half the achievable MRR:
 
     provider   scorer      MRR     monolingual MRR
     eurostat   previous    0.086   0.172
-    eurostat   BM25        0.155   0.310
+    eurostat   BM25        0.161   0.320
     istat      previous    0.073   0.133
-    istat      BM25        0.138   0.217
+    istat      BM25        0.169   0.325
 
 BM25 fixes both defects by construction: `idf` down-weights common terms, and
 `b` normalises for document length.
@@ -105,10 +105,15 @@ class BM25Index:
         if not query_tokens:
             return scores
 
+        # One expansion per query token, reused by both the BM25 sum and the field
+        # boosts below: the boosts must recognise a term exactly when scoring does,
+        # or an id like EXPORT_ALPHA would be boosted for the query token "rt".
+        expansions = {t: set(self._expand(t)) for t in set(query_tokens)}
+
         all_idfs: list[float] = []
         for query_token in query_tokens:
             exact = query_token in self.postings
-            for term in self._expand(query_token):
+            for term in expansions[query_token]:
                 all_idfs.append(self.idf[term])
                 weight = 1.0 if exact else PREFIX_WEIGHT
                 posting = self.postings[term]
@@ -122,10 +127,10 @@ class BM25Index:
         unit = float(np.mean(all_idfs)) if all_idfs else 1.0
         for i in np.nonzero(scores > 0)[0]:
             id_hits = sum(
-                1 for t in query_tokens if any(t in term for term in self._id_tokens[i])
+                1 for t in query_tokens if self._id_tokens[i] & expansions[t]
             )
             head_hits = sum(
-                1 for t in query_tokens if any(t in term for term in self._head_tokens[i])
+                1 for t in query_tokens if self._head_tokens[i] & expansions[t]
             )
             scores[i] += (
                 unit * (ID_BOOST * id_hits + HEAD_BOOST * head_hits) / len(query_tokens)

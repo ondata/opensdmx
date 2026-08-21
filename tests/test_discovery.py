@@ -1005,3 +1005,19 @@ def test_search_punctuation_only_query_falls_back_to_substring():
 
     assert res["df_id"].to_list() == ["GDP"]
     assert res["score"].dtype == pl.Float32
+
+
+def test_field_boost_uses_the_same_matching_as_scoring():
+    """The boosts must recognise a term exactly when BM25 does.
+
+    They used to test plain containment (`t in term`) while scoring used exact-or-
+    prefix, so the query token "rt" boosted an id like EXPORT_ALPHA as much as
+    RT_ALPHA — an internal substring outranking a real token match.
+    """
+    from opensdmx.ranking import BM25Index
+
+    docs = ["alpha beta EXPORT_ALPHA", "alpha beta RT_ALPHA"]
+    index = BM25Index(docs, ["EXPORT_ALPHA", "RT_ALPHA"])
+    scores = index.scores("alpha rt")
+
+    assert scores[1] > scores[0]

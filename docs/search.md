@@ -98,13 +98,13 @@ MRR, before and after the change:
 | | Eurostat | Eurostat `en` | ISTAT | ISTAT `it` |
 |---|---|---|---|---|
 | previous scorer | 0.086 | 0.172 | 0.073 | 0.133 |
-| **BM25** | **0.166** | **0.330** | **0.169** | **0.326** |
+| **BM25** | **0.161** | **0.320** | **0.169** | **0.325** |
 | semantic | 0.241 | 0.308 | 0.327 | 0.343 |
 
 What this establishes:
 
 - **The defect was the formula, not the corpus.** Handing the extended text to the old scorer changed nothing (0.075 vs 0.073); handing it to BM25 doubles the baseline on both providers, whose corpora differ by an order of magnitude in length (Eurostat averages 23 tokens per document, ISTAT 208 with prose).
-- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.330 vs 0.308, ISTAT 0.326 vs 0.343 — with no model, no server and no index build. That is the case most users are in on most providers.
+- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.320 vs 0.308, ISTAT 0.325 vs 0.343 — with no model, no server and no index build. That is the case most users are in on most providers.
 - **Cross-language remains unfixable lexically.** Italian queries on Eurostat score **0.000** across 24 queries before the change and 0.001 after. Only the semantic arm scores at all (0.174). No amount of term weighting invents words the document does not contain.
 - **Semantic works on Eurostat without prose** (0.241, S@10 56%), which had been assumed weak. Longer titles (median 75 characters) and 99.9% category coverage carry it.
 - **A weighted hybrid does not earn its complexity**: it ties the semantic arm on Eurostat and loses on ISTAT. Second time RRF has been rejected on evidence.
@@ -148,7 +148,7 @@ Two of these are worth naming as classes rather than cases. `tasso di disoccupaz
 1. **Semantic search deserves to be available by default**, not behind a flag that requires a running Ollama server. These numbers are the empirical case for a self-contained backend — but as of 2026-08-21 that is a direction, not an approved plan. The plan drafted on 2026-07-16 named `google/embeddinggemma-300m` with `multilingual-e5-small` as fallback, and fastembed 0.8.0 exposes neither, so its premise no longer holds. An earlier attempt to move off Ollama (fastembed with `nomic-embed-text-v1.5-Q`, 2026-03-31) was reverted for poor quality on Italian queries. No candidate backend has yet been scored against the targets in point 4, which is what would settle it.
 2. ~~**Replacing the keyword scorer with BM25 is a small, self-contained win.**~~ **Done in v0.23.0** — see the 2026-08-21 block above for what it actually delivered on two providers.
 3. **Do not promote unweighted RRF.** A hybrid, if wanted, must be weighted towards the semantic arm and re-measured.
-4. **A static retriever now has a target to beat**: it must clear the shipped lexical path — 0.169 on ISTAT, 0.166 on Eurostat — to justify a model at all, and approach 0.327 to replace nomic. The bar rose when BM25 landed. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
+4. **A static retriever now has a target to beat**: it must clear the shipped lexical path — 0.169 on ISTAT, 0.161 on Eurostat — to justify a model at all, and approach 0.327 to replace nomic. The bar rose when BM25 landed. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
 
 Open, in order: the `doc-first` counterweight block in the gold set; widening the two narrow Eurostat gold families; dropping the 546 `$DV_` bookmark duplicates from Eurostat results (measured +15% MRR on its own, stacks with BM25); the static-model arm.
 
