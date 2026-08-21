@@ -333,8 +333,12 @@ def search(
 ) -> None:
     """Search datasets by keyword in the local cache (or semantically with --semantic).
 
-    Matches the dataset title and ID. Results come from the local cache — fast,
-    no network call. Default provider: eurostat. Use --provider to switch.
+    Matches the dataset title, ID and category name. Results come from the local
+    cache — fast, no network call. Default provider: eurostat. Use --provider to
+    switch.
+
+    With --semantic only --n and --grep apply; --category, --page and --all
+    belong to the keyword path and are rejected.
 
     Use --grep to narrow the results with a regex, e.g. to match whole words
     only and avoid matching longer words that merely start the same way.
@@ -359,14 +363,27 @@ def search(
     _apply_provider(provider)
 
     if semantic:
+        unsupported = [
+            name
+            for name, used in (("--category", category is not None), ("--page", page != 1), ("--all", all_results))
+            if used
+        ]
+        if unsupported:
+            err_console.print(
+                f"[red]Error:[/red] {', '.join(unsupported)} cannot be combined with --semantic.\n"
+                "Semantic results are ranked by similarity; only --n and --grep apply."
+            )
+            raise typer.Exit(1)
+
         from .embed import semantic_search
         try:
             with _status_ctx("[dim]Semantic search...[/dim]"):
                 df = semantic_search(keyword, n=n)
         except FileNotFoundError:
             err_console.print(
-                "[red]Error:[/red] Embeddings cache not found.\n"
-                "Build it first:  opensdmx embed"
+                "[red]Error:[/red] No embeddings index for this provider.\n"
+                "Build it once:  opensdmx embed"
+                + (f" --provider {provider}" if provider else "")
             )
             raise typer.Exit(1)
         except Exception as e:

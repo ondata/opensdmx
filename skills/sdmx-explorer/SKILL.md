@@ -118,6 +118,16 @@ European statistics, OECD for international comparisons, etc.). If unclear, ask.
 statistical agencies curate a thematic hierarchy that is semantically richer and
 less noisy than any keyword match. Use keyword `search` (Step 1c) only as fallback.
 
+**One exception, when a semantic index exists.** If the provider has been indexed
+(`<cache>/<provider>/embeddings.parquet` — check with `opensdmx search --semantic`,
+which says so if it is missing) *and* the user phrased the request in natural
+language rather than statistical terminology, try `--semantic` **first**, before
+`tree`. Measured on ISTAT: on naturally-phrased questions the keyword scorer
+reaches MRR 0.041 and semantic 0.252, and on English questions against Italian
+metadata keyword search finds essentially nothing while semantic is unaffected.
+When no index exists, or the user already used the right technical term, the
+`tree`-first default stands. See [Dataset search](../../docs/search.md).
+
 ### Step 1a — Extract keywords AND expected dimensions
 
 Before searching, parse the user's question on two levels:
@@ -341,7 +351,8 @@ the most relevant candidates appear first.
 
 > "I didn't find much with a keyword search. I can try a semantic search instead —
 > it matches by meaning, not exact words, so it can find datasets even when the
-> terminology differs. It requires Ollama to be running and is slower (10–30 s).
+> terminology differs. It needs Ollama running, and the first query of a session
+> takes about 10 seconds while the model loads (roughly 1 second after that).
 > Want me to try?"
 
 If the user agrees:
@@ -350,8 +361,17 @@ If the user agrees:
 opensdmx search --semantic "<query>"
 ```
 
-Semantic search returns the top 20 results ranked by similarity score. Pick the
-most relevant candidates (score > 0.5) and continue with Step 1c as normal.
+Semantic search returns the top 50 results ranked by similarity score (`--n` to
+change). Scores are raw cosine similarity: in practice relevant results sit
+between 0.3 and 0.6, and above 0.5 is a strong match. Pick the most relevant
+candidates and continue with Step 1c as normal.
+
+Only `--n` and `--grep` work with `--semantic`; `--category`, `--page` and
+`--all` belong to the keyword path and are rejected.
+
+If the command reports that no index exists, the provider has simply never been
+indexed on this machine — `opensdmx embed -p <provider>` builds it in one pass.
+Tell the user the cost before running it: it embeds the whole catalogue.
 
 ```bash
 # Example: verify age and sex are present

@@ -200,6 +200,6 @@ to enforce the exact cutoff date.
 - Some IDs are **parent containers** (e.g. `25_74`) rather than fetchable
   dataflows — `info` will reveal this. Use the sub-dataflow IDs listed under
   them instead.
-- Search is keyword-based on dataflow descriptions, which are in Italian.
+- Search is keyword-based on dataflow titles, IDs and category names, which are in Italian.
   Phrase queries in Italian for best recall (e.g. `prezzi`, `popolazione`,
   `disoccupazione`).

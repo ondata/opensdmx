@@ -4,6 +4,19 @@ How `opensdmx search` finds a dataflow, why it is shaped this way, and what the 
 
 Companion documents: [Dataflow descriptions for semantic search](descriptions.md) for where the descriptive text comes from, and [Architecture](architecture.md) for the module layout.
 
+## Current state (v0.22.3)
+
+Both paths described below ship today. Concretely:
+
+- **Keyword search needs nothing.** It reads the local dataflow cache and works offline for every provider.
+- **Semantic search runs on [Ollama](https://ollama.com) with `nomic-embed-text-v2-moe`.** The model is a constant in `embed.py`; there is no flag, environment variable or fallback backend. Without a reachable Ollama server the command fails and points you back to the keyword path.
+- **The semantic index is built on demand, per provider**, by `opensdmx embed`, into `<cache>/<provider>/embeddings.parquet`. Every provider can be indexed. Nothing is precomputed and nothing ships in the package.
+- **What differs per provider is the corpus, not the capability.** `df_prose` — the largest source of text by far — is read from a `data/descriptions/<provider>.parquet` shipped inside the wheel, and today only `istat.parquet` exists. Elsewhere the embedded document falls back to id, title and category context. The measurements below were run on ISTAT and should be read as the ceiling, not as a per-provider promise.
+- **Latency**, ISTAT, 4,896 dataflows: about 10 s on the first query of a session (Ollama loading the model), then ~1 s. The cost is the model load, not the similarity maths.
+- **Flags are not shared between the two paths.** Under `--semantic` only `--n` and `--grep` apply; `--category`, `--page` and `--all` belong to the keyword path.
+
+The rest of this document explains why it is shaped this way and what the numbers say.
+
 ## The problem search has to solve
 
 A user asks for "how many people live in Italy" and the catalogue answers with 4,896 ISTAT dataflows whose titles read `Coltivazioni`, `Superfici e produzione - dati in complesso`, `Lazio`, `Età di lei e di lui`. Titles alone carry very little: many are leaf labels that only make sense under their parent topic, and SDMX `<common:Description>` — the field that should hold the long text — is not populated by every provider (ISTAT does not populate it at all).
@@ -76,7 +89,7 @@ Caveats recorded with the result: the gold families were compiled with regex mat
 
 ## What follows from this
 
-1. **Semantic search deserves to be available by default**, not behind a flag that requires a running Ollama server. This is the already-approved self-contained-backend plan; these numbers are its empirical justification.
+1. **Semantic search deserves to be available by default**, not behind a flag that requires a running Ollama server. These numbers are the empirical case for a self-contained backend — but as of 2026-08-21 that is a direction, not an approved plan. The plan drafted on 2026-07-16 named `google/embeddinggemma-300m` with `multilingual-e5-small` as fallback, and fastembed 0.8.0 exposes neither, so its premise no longer holds. An earlier attempt to move off Ollama (fastembed with `nomic-embed-text-v1.5-Q`, 2026-03-31) was reverted for poor quality on Italian queries. No candidate backend has yet been scored against the targets in point 4, which is what would settle it.
 2. **Replacing the keyword scorer with BM25 over the extended text is a small, self-contained win** — roughly +85% MRR on ISTAT, no model, no server, no new dependency, works offline on the cache that already ships. The corpus is already on disk; only the lexical path does not read it.
 3. **Do not promote unweighted RRF.** A hybrid, if wanted, must be weighted towards the semantic arm and re-measured.
 4. **A static retriever now has a target to beat**: 0.135 to justify itself over BM25, and something near 0.327 to replace nomic. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
@@ -85,7 +98,10 @@ Open, in order: BM25 on `search_dataset`; the `doc-first` counterweight block in
 
 ## Where the working material lives
 
-The detailed artifacts are **local only** — `tasks/`, `eval/` and `docs/eval.md` are gitignored, so they are not in the repository:
+The numbers above are reproduced here in full precisely because the artifacts that
+produced them are **not in this repository** — `tasks/`, `eval/` and `docs/eval.md`
+are gitignored. The paths below are a note to whoever holds the working copy, not
+links a reader can follow; nothing in this document depends on opening them.
 
 - `tasks/todo-retrieval-eval.md` — the eval plan, its arms and open items
 - `eval/goldset/retrieval.yaml` — the gold set, with the construction protocol and the gold rule in its header
