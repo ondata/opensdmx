@@ -119,10 +119,15 @@ statistical agencies curate a thematic hierarchy that is semantically richer and
 less noisy than any keyword match. Use keyword `search` (Step 1c) only as fallback.
 
 **One exception, when a semantic index exists.** If the provider has been indexed
-(`<cache>/<provider>/embeddings.parquet` — check with `opensdmx search --semantic`,
-which says so if it is missing) *and* the user phrased the request in natural
-language rather than statistical terminology, try `--semantic` **first**, before
-`tree`. Measured on ISTAT: on naturally-phrased questions the keyword scorer
+*and* the user phrased the request in natural language rather than statistical
+terminology, try `--semantic` **first**, before `tree`.
+
+There is no separate probe: run the search and read the error. `--semantic` needs
+two things, and it names which one is missing — `No embeddings index for provider
+'<name>'` (never indexed here) or `Ollama server not reachable` (the server is
+down, whatever the index). **Either way, do not stop and do not ask the user to
+install anything**: fall back to the `tree`-first path below and carry on. Mention
+`opensdmx embed` only if the user asks why semantic was unavailable. Measured on ISTAT: on naturally-phrased questions the keyword scorer
 reaches MRR 0.041 and semantic 0.252, and on English questions against Italian
 metadata keyword search finds essentially nothing while semantic is unaffected.
 When no index exists, or the user already used the right technical term, the

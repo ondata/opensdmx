@@ -322,6 +322,7 @@ def _startup(
 
 @app.command()
 def search(
+    ctx: typer.Context,
     keyword: str = typer.Argument(..., help="Keyword to search in dataset titles and IDs"),
     semantic: bool = typer.Option(False, "--semantic", "-s", help="Use semantic search via Ollama embeddings"),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or title, case-insensitive)"),
@@ -363,9 +364,11 @@ def search(
     _apply_provider(provider)
 
     if semantic:
+        page_source = ctx.get_parameter_source("page")
+        page_given = page_source is not None and page_source.name != "DEFAULT"
         unsupported = [
             name
-            for name, used in (("--category", category is not None), ("--page", page != 1), ("--all", all_results))
+            for name, used in (("--category", category is not None), ("--page", page_given), ("--all", all_results))
             if used
         ]
         if unsupported:
@@ -380,10 +383,11 @@ def search(
             with _status_ctx("[dim]Semantic search...[/dim]"):
                 df = semantic_search(keyword, n=n)
         except FileNotFoundError:
+            from .base import _provider_cache_key
+            active = _provider_cache_key()
             err_console.print(
-                "[red]Error:[/red] No embeddings index for this provider.\n"
-                "Build it once:  opensdmx embed"
-                + (f" --provider {provider}" if provider else "")
+                f"[red]Error:[/red] No embeddings index for provider '{active}'.\n"
+                f"Build it once:  opensdmx embed --provider {active}"
             )
             raise typer.Exit(1)
         except Exception as e:

@@ -964,6 +964,9 @@ def test_cli_does_not_import_click():
         (["--page", "3"], "--page"),
         (["--category", "FOO"], "--category"),
         (["--category", "FOO", "--page", "2"], "--category, --page"),
+        # --page 1 equals the default, so a value comparison cannot see it;
+        # only the parameter source can tell "not given" from "given as 1".
+        (["--page", "1"], "--page"),
     ],
 )
 def test_search_semantic_rejects_keyword_only_flags(flags, expected):

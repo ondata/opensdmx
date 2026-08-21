@@ -593,7 +593,7 @@ The `score` column is the **[cosine similarity](https://en.wikipedia.org/wiki/Co
 
 The model converts text into high-dimensional vectors such that semantically related phrases point in similar directions, regardless of the exact words used. Cosine similarity measures the angle between two such vectors: a score of 1 means identical direction, 0 means orthogonal (unrelated).
 
-The ranking therefore depends entirely on the model: a different model would produce different vectors and a different ordering. Within a given release the model is fixed, so rebuilding with `opensdmx embed` reproduces the same index. Should the backend change in a future release, embeddings will have to be rebuilt — the index does not record which model produced it ([#57](https://github.com/ondata/opensdmx/issues/57)).
+The ranking therefore depends entirely on the model: a different model would produce different vectors and a different ordering. Within a given release the model is fixed, so the ranking will not shift under you because the backend changed. It can still shift for a different reason: `opensdmx embed` re-reads the catalog, the category tree and the harvested descriptions as they are *at that moment*, so a rebuild after the caches refresh embeds different text and produces different vectors. Should the backend change in a future release, embeddings will have to be rebuilt — the index does not record which model produced it ([#57](https://github.com/ondata/opensdmx/issues/57)).
 
 ### Caching
 
