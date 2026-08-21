@@ -479,7 +479,7 @@ opensdmx tree --scheme t_economy --depth 1
 
 | Mode | How it works | Best for |
 |---|---|---|
-| Keyword (default) | Scored token match on title, ID and category name — all tokens must match, falling back to any | When you know the right technical term |
+| Keyword (default) | BM25 ranking over title, ID and category name — all tokens must match, falling back to any | When you know the right technical term, in the provider's own language |
 | `--semantic` | Embedding similarity via Ollama | When you don't know the exact wording, or want conceptually related datasets |
 
 #### Setup

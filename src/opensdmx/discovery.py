@@ -256,10 +256,18 @@ def _score_results(
 ) -> pl.DataFrame:
     """Add a synthetic relevance score and sort descending.
 
+    Superseded by BM25 (:mod:`opensdmx.ranking`) and no longer on the search path.
+    Kept because `eval/retrieval.py` uses it as the baseline arm: deleting it would
+    make the measurement that justified replacing it unreproducible.
+
     Scoring per token (case-insensitive):
       +3  token found in df_id
       +2  token found in first 60 chars of df_description (topic tends to be upfront)
       +1  each occurrence of token in df_description
+
+    Its two defects, both measured: every token weighs the same regardless of how
+    common it is, and occurrences are summed with no length denominator, so the
+    score grows with document length rather than with relevance.
     """
     has_context = "cat_context" in df.columns
     columns = [*_SEARCH_COLUMNS, "cat_context"] if has_context else None
@@ -334,43 +342,73 @@ def _token_match_expr(token: str, columns: list[str] | None = None) -> pl.Expr:
 
 
 def search_dataset(keyword: str) -> pl.DataFrame:
-    """Search datasets by keyword (case-insensitive) in description and ID.
+    """Search datasets by keyword (case-insensitive) in description, ID and category.
 
-    Splits keyword into tokens. First tries AND (every token must match); if that
-    yields nothing, falls back to OR (any token matches) so a single unmatched
-    token no longer wipes out the whole result set. Results are sorted by a
-    synthetic relevance score (id match, start-of-description, occurrence count),
-    which keeps datasets matching all tokens at the top of the OR fallback.
+    Ranked with BM25 (see :mod:`opensdmx.ranking`): rare words weigh more than
+    common ones, and the score is normalised for document length, so a long title
+    no longer outranks a relevant one just by being long. A token with no exact
+    match expands to the terms it prefixes, at half weight, so prefix search keeps
+    working — `search comun` still reaches "comuni" and "comunali".
+
     Tokens also match the name of the categories a dataflow belongs to, so a
     leaf title such as "Sesso, età" is reachable through its topic. That context
     comes from the local category cache, populated by `opensdmx tree`; without
-    it the search behaves exactly as it did before.
+    it only the title and the id are searched.
+
+    A keyword with no word characters (`search "["`) cannot be tokenised, so it
+    falls back to literal substring matching over the same columns.
 
     Returns columns: df_id, version, df_description, df_structure_id, score —
     plus cat_context and cat_primary when the category cache exists. Those two
     are conditional: callers must use `.get()` or check `df.columns` rather than
-    assume them.
+    assume them. `score` is a float on the BM25 scale, not comparable across
+    queries.
     """
+    from . import ranking
+
     datasets = _with_category_context(all_available())
     columns = [*_SEARCH_COLUMNS, "cat_context"] if "cat_context" in datasets.columns else None
-    tokens = [re.escape(token) for token in keyword.lower().split()]
 
+    if not ranking.tokenize(keyword):
+        return _literal_substring_search(datasets, keyword, columns)
+
+    # The candidate set is chosen exactly as before — AND over every token, OR only
+    # when that is empty. BM25 alone would score any document sharing one token, so
+    # "tasso di disoccupazione" would report 2405 matches on ISTAT instead of a few
+    # hundred: correct at the top, useless as a total. Only the ordering changes here.
+    tokens = [re.escape(token) for token in keyword.lower().split()]
     and_expr = pl.lit(True)
     for token in tokens:
         and_expr = and_expr & _token_match_expr(token, columns)
     results = datasets.filter(and_expr)
 
-    # Fallback: a single unmatched token must not wipe out the whole result set.
-    used_or_fallback = results.is_empty() and len(tokens) > 1
-    if used_or_fallback:
+    if results.is_empty() and len(tokens) > 1:
         or_expr = pl.lit(False)
         for token in tokens:
             or_expr = or_expr | _token_match_expr(token, columns)
         results = datasets.filter(or_expr)
 
+    return ranking.rank(
+        datasets, results, keyword, text_columns=columns or _SEARCH_COLUMNS
+    )
+
+
+def _literal_substring_search(
+    datasets: pl.DataFrame, keyword: str, columns: list[str] | None
+) -> pl.DataFrame:
+    """Fallback for keywords BM25 cannot tokenise, e.g. punctuation only.
+
+    Keeps `search "["` working: the token is regex-escaped and matched literally,
+    and every match scores 1.0 since there is nothing to rank on.
+    """
+    tokens = [re.escape(token) for token in keyword.lower().split()]
+    expr = pl.lit(True)
+    for token in tokens:
+        expr = expr & _token_match_expr(token, columns)
+    results = datasets.filter(expr)
     if results.is_empty():
-        return results
-    return _score_results(results, tokens, prioritize_coverage=used_or_fallback)
+        return results.with_columns(pl.lit(1.0, dtype=pl.Float32).alias("score"))
+    return results.with_columns(pl.lit(1.0, dtype=pl.Float32).alias("score"))
 
 
 def _resolve_codelist_from_concept(scheme_id: str, scheme_agency: str, concept_id: str) -> str | None:

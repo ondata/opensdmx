@@ -349,7 +349,7 @@ pages exist. Keep paginating until you find at least 3 plausible candidates or
 exhaust the results. Only after exhausting pagination should you try a different
 keyword or provider. Use `--all` only as a last resort (may produce very long output).
 
-Results are ranked by relevance score (id match, start-of-description, occurrence count) —
+Results are ranked with BM25 (rare words weigh more, score normalised for title length) —
 the most relevant candidates appear first.
 
 **If keyword search returns 0 or very few results (< 3), offer semantic search:**

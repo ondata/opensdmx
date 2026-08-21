@@ -473,7 +473,7 @@ def search(
                 "df_id": r["df_id"],
                 "df_description": r["df_description"] or "",
                 "category": r.get("cat_primary") or "",
-                "score": r.get("score", 0),
+                "score": round(float(r.get("score", 0.0)), 2),
             }
             for r in page_df.iter_rows(named=True)
         ]
@@ -484,7 +484,12 @@ def search(
         if "cat_primary" not in csv_df.columns:
             csv_df = csv_df.with_columns(pl.lit("").alias("cat_primary"))
         csv_df = csv_df.select(
-            ["df_id", "df_description", pl.col("cat_primary").fill_null("").alias("category"), "score"]
+            [
+                "df_id",
+                "df_description",
+                pl.col("cat_primary").fill_null("").alias("category"),
+                pl.col("score").round(2),
+            ]
         )
         _emit(rows, df=csv_df)
         return
@@ -498,7 +503,7 @@ def search(
         table.add_row(
             row["df_id"],
             compose_title(row["df_description"], row.get("cat_primary")),
-            str(row.get("score", "")),
+            f"{float(row['score']):.2f}" if row.get("score") is not None else "",
         )
 
     console.print(table)

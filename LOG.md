@@ -1,5 +1,24 @@
 # LOG
 
+## 2026-08-21 - feat: BM25 ranking for keyword search
+
+- **The default search path was the worst one, measurably.** `search unemployment` on Eurostat put `UNE_RT_M` — the monthly unemployment rate — at position **65 of 146**, because the old scorer summed raw token occurrences with no length denominator and weighed every query word the same. A long title beat a relevant one; "di" counted like "disoccupazione". Ranking is now BM25 (`src/opensdmx/ranking.py`): idf down-weights common terms, `b` normalises for document length. The field boosts survive, rescaled to the BM25 unit.
+- **Measured on two blind gold sets, not one.** A second gold set was written for Eurostat with the same protocol as the ISTAT one — 25 needs written with `gold: null` saved to disk before looking at the catalogue, gold filled in a second pass, one need discarded as undecidable → 24 needs, 48 queries. Eurostat embeddings were built for the run, the first time the semantic arm has been measured on a provider without harvested prose.
+
+  | MRR | Eurostat | Eurostat `en` | ISTAT | ISTAT `it` |
+  |---|---|---|---|---|
+  | before | 0.086 | 0.172 | 0.073 | 0.133 |
+  | after | **0.166** | **0.330** | **0.169** | **0.326** |
+  | semantic | 0.241 | 0.308 | 0.327 | 0.343 |
+
+- **In the provider's own language the keyword path now matches the semantic one** — Eurostat 0.330 vs 0.308, ISTAT 0.326 vs 0.343 — with no model, no server and no index build. Cross-language is untouched and unfixable lexically: Italian queries on Eurostat score 0.000 across 24 queries before and 0.001 after; only the semantic arm scores at all (0.174).
+- **The candidate set is chosen exactly as before** — AND over every token, OR only when that is empty. BM25 alone would score any document sharing one token, so "tasso di disoccupazione" would report 2405 matches on ISTAT instead of 28: correct at the top, useless as a total. Only the ordering changed, so result counts, pagination and `--all` behave as they did.
+- **Two things had to be got right or the change would have been silently worse.** Tokenisation splits on the underscore: `\w` swallows it and would turn `UNE_RT_M` into a single term, so no query could ever match an id exactly — a pre-existing test caught this. And a query token with no exact match expands to the terms it *prefixes*, at half weight, because whole-token BM25 kills prefix search outright (`search comun -p istat`: 605 results before, 0 with plain BM25). Prefix, not arbitrary substring: `comun` reaches "comuni" and "comunali", not "incomunicabile".
+- **The index is built per call over the whole catalogue**, never over the candidate set — idf is a property of the corpus, and a candidate set selected by the query contains its terms in every row, which would flatten the signal BM25 exists to provide. Cost measured: 0.14 s on the largest catalogue (Eurostat, 8150 dataflows), 28 ms on OECD, queries 1-18 ms, against a command whose Python import alone is ~1.9 s. No disk index, so nothing to invalidate when the dataflow or category cache refreshes.
+- `score` is now a float on the BM25 scale, formatted to 2 decimals in the table, JSON and CSV. `_score_results` is off the search path but kept: `eval/retrieval.py` uses it as the baseline arm, and deleting it would make the measurement unreproducible.
+- Multi-provider: no provider-specific branch. Length normalisation is relative to each corpus, so the 5x spread in title length across providers (unicef averages 2.6 words, abs 13.7) needs no tuning. Verified live on eurostat, istat, oecd, ecb, ilo, abs — including the 9 of 14 cached providers with no category cache, where the corpus is title + id only.
+- Gate: ruff clean, mypy strict clean on 16 source files, 394 tests green (9 new). `docs/search.md` records the measurement, its three declared limitations and a before/after on ten real queries; README and `skills/sdmx-explorer/` updated.
+
 ## 2026-08-21 - v0.22.4 - docs: realign the public record of how search actually works
 
 - **The state, measured, not assumed.** `search --semantic` ships and works: Ollama with `nomic-embed-text-v2-moe`, a hardcoded constant in `embed.py`, no flag and no fallback backend. The index is built **on demand, per provider**, by `opensdmx embed` into `<cache>/<provider>/embeddings.parquet` — nothing is precomputed and nothing ships. Latency on ISTAT (4,896 dataflows): ~10 s on the first query of a session while Ollama loads the model, ~1 s after. What differs per provider is the *corpus*, not the capability: `df_prose` comes from a `data/descriptions/<provider>.parquet` inside the wheel and only `istat.parquet` exists, so elsewhere the embedded document is id + title + category context.
