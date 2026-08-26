@@ -229,6 +229,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 121_393_DF_DCSC_TRAMAR_6,"Merci, navi arrivate e tonnellate di stazza lorda per regione",REF_AREA,nazionale,nazionale,1,2026-07-17
 121_393_DF_DCSC_TRAMAR_7,Porto e tipo merce NST/R,REF_AREA,nazionale,nazionale,1,2026-08-13
 121_393_DF_DCSC_TRAMAR_8,Navigazione internazionale per paesi con almeno un milione di tonnellate movimentate e tipo merce NST/R,REF_AREA,nazionale,nazionale,1,2026-07-17
+122_54,Capacità degli esercizi ricettivi e Movimento dei clienti negli esercizi ricettivi,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8717,2026-08-26
 122_54_DF_DCSC_TUR_1,Capacità degli esercizi ricettivi per tipo di esercizio - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 122_54_DF_DCSC_TUR_10,Tipo di località e paese di residenza,REF_AREA,nazionale,nazionale,1,2026-07-17
 122_54_DF_DCSC_TUR_11,Per regione e per residenza del cliente - mensili e annuali,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
@@ -832,7 +833,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 165_889_DF_DCIS_PREVDEM1_1,Popolazione al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
 165_889_DF_DCIS_PREVDEM1_2,Componenti del bilancio demografico,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-04
 165_889_DF_DCIS_PREVDEM1_3,Indicatori demografici,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-04
+167_33,Nic - mensili dal 2011 al 2015 (base 2010),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,114,2026-08-26
 167_33_DF_DCSP_NICUNOBB2010_1,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,114,2026-08-18
+167_33_DF_DCSP_NICUNOBB2010_2,Classificazione Coicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,114,2026-08-26
 167_33_DF_DCSP_NICUNOBB2010_3,Classificazione Coicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-04
 167_34_DF_DCSP_NICDUEB2010_1,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,118,2026-08-04
 167_34_DF_DCSP_NICDUEB2010_2,Classificazione Ecoicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,118,2026-08-04
@@ -840,6 +843,9 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 167_35_DF_DCSP_NICTREB2010_1,Tipologie di prodotto,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
 167_35_DF_DCSP_NICTREB2010_2,Classificazione Coicop (3 cifre) - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-04
 167_35_DF_DCSP_NICTREB2010_3,Classificazione Coicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-04
+167_742,Nic - medie annue dal 2016 (base 2015),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-26
+167_742_DF_DCSP_NIC2B2015_1,Prezzi al consumo per l’intera collettività (Nic) - medie annue dal 2016 (base 2015) - Principali dati,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-26
+167_742_DF_DCSP_NIC2B2015_2,Tipologie di prodotto,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-26
 167_742_DF_DCSP_NIC2B2015_3,Classificazione Ecoicop (3 cifre) - prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,132,2026-08-04
 167_742_DF_DCSP_NIC2B2015_4,Classificazione Ecoicop (5 cifre),REF_AREA,nazionale,nazionale,1,2026-08-18
 167_743,Nic - pesi dal 2016,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-18
@@ -1237,6 +1243,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-18
 22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-18
 22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+24_1149_DF_DCIS_UNIONDEMO_1,Sesso (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1149_DF_DCIS_UNIONDEMO_2,Stato civile (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1149_DF_DCIS_UNIONDEMO_3,"Classe di età, stato civile e sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-26
+24_1149_DF_DCIS_UNIONDEMO_4,"Titolo di studio, stato civile e sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1149_DF_DCIS_UNIONDEMO_5,Mese di costituzione e sesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1149_DF_DCIS_UNIONDEMO_6,Regime patrimoniale e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_1149_DF_DCIS_UNIONDEMO_7,"Uniti per età, anno di nascita e stato civile",REF_AREA,nazionale,nazionale,1,2026-08-18
 24_1150,Unioni civili - Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
 24_1150_DF_DCIS_UNIONIND_1,Indicatori,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
@@ -1248,15 +1260,23 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_4,Sesso e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
+24_1152_DF_DCIS_UNIONICIT_2,Unioni civili con almeno uno straniero per area di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1152_DF_DCIS_UNIONICIT_3,Unioni civili con almeno uno straniero per paese di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1152_DF_DCIS_UNIONICIT_5,Unioni civili di entrambi stranieri per paese e confronto cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-08-26
+24_1152_DF_DCIS_UNIONICIT_6,Unioni civili per tipologia di coppia e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1152_DF_DCIS_UNIONICIT_7,Unioni civili per tipologia di coppia e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_186_DF_DCIS_MATRDEMO_1,Rito (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
 24_186_DF_DCIS_MATRDEMO_10,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1232,2026-08-06
 24_186_DF_DCIS_MATRDEMO_11,Valle d'Aosta/Vallée d'Aoste,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,78,2026-08-06
 24_186_DF_DCIS_MATRDEMO_12,Liguria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,243,2026-08-06
+24_186_DF_DCIS_MATRDEMO_13,Lombardia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1640,2026-08-26
 24_186_DF_DCIS_MATRDEMO_14,Provincia Autonoma Bolzano/Bozen,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,120,2026-08-06
 24_186_DF_DCIS_MATRDEMO_15,Provincia Autonoma Trento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,254,2026-08-06
 24_186_DF_DCIS_MATRDEMO_16,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,603,2026-08-06
 24_186_DF_DCIS_MATRDEMO_17,Friuli-Venezia Giulia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,232,2026-08-06
 24_186_DF_DCIS_MATRDEMO_18,Emilia-Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,375,2026-08-06
 24_186_DF_DCIS_MATRDEMO_19,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,314,2026-08-06
+24_186_DF_DCIS_MATRDEMO_2,Stato civile (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
 24_186_DF_DCIS_MATRDEMO_20,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-06
 24_186_DF_DCIS_MATRDEMO_21,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,300,2026-08-06
 24_186_DF_DCIS_MATRDEMO_22,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,386,2026-08-18
@@ -1266,6 +1286,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_186_DF_DCIS_MATRDEMO_26,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,278,2026-08-06
 24_186_DF_DCIS_MATRDEMO_27,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-08-18
 24_186_DF_DCIS_MATRDEMO_28,Calabria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,419,2026-08-18
+24_186_DF_DCIS_MATRDEMO_29,Sicilia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,403,2026-08-26
+24_186_DF_DCIS_MATRDEMO_3,Età e stato civile,REF_AREA,nazionale,nazionale,1,2026-08-26
+24_186_DF_DCIS_MATRDEMO_30,Sardegna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,621,2026-08-26
+24_186_DF_DCIS_MATRDEMO_7,"Rito, mese di celebrazione",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_186_DF_DCIS_MATRDEMO_8,Regime patrimoniale e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-26
+24_186_DF_DCIS_MATRDEMO_9,Tipo di comune e rito,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,386,2026-08-26
 24_233_DF_DCAR_ENTIST_PA_2,"Entrate delle università, politecnici ed istituti di istruzione universitaria (euro)",REF_AREA,nazionale,nazionale,1,2026-07-17
 24_386,Matrimoni - Caratteristiche socio-professionali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-08-06
 24_386_DF_DCIS_MATRIMONI_SOC_1,"Settore economico, posizione professionale",REF_AREA,nazionale,nazionale,1,2026-08-06
@@ -1275,6 +1301,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_386_DF_DCIS_MATRIMONI_SOC_5,Regione di nascita della sposa e di residenza dello sposo,REF_AREA,nazionale,nazionale,1,2026-08-06
 24_386_DF_DCIS_MATRIMONI_SOC_6,Regione di nascita dello sposo e di residenza della sposa,REF_AREA,nazionale,nazionale,1,2026-08-06
 24_446_DF_DCIS_MATRIMONICIT_1,Matrimoni - Cittadinanza - Principali dati,REF_AREA,nazionale,nazionale,1,2026-08-18
+24_446_DF_DCIS_MATRIMONICIT_2,Matrimoni per tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
+24_446_DF_DCIS_MATRIMONICIT_3,Tipologia di coppia e area di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
+24_446_DF_DCIS_MATRIMONICIT_4,Tipologia di coppia e paese di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
+24_446_DF_DCIS_MATRIMONICIT_6,Matrimoni di sposi entrambi stranieri per uguaglianza o meno della cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
+24_446_DF_DCIS_MATRIMONICIT_7,Tipologia di coppia e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
+24_446_DF_DCIS_MATRIMONICIT_8,Primi o secondi matrimoni per tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-26
 24_446_DF_DCIS_MATRIMONICIT_9,Rito e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 24_447,Sposi - Caratteristiche demografiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
 24_447_DF_DCIS_SPOSI_4,"Rito, classe di età e titolo di studio",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,142,2026-08-06
@@ -1522,7 +1554,15 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 29_316_DF_DCIS_POPSTRBIL1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-07-18
 29_316_DF_DCIS_POPSTRBIL1_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8063,2026-07-18
 29_317_DF_DCIS_POPSTRCIT1_1,"Italia, regioni, province - Paese di cittadinanza",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_10,Emilia-Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,348,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_11,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,288,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_12,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_13,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,238,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_14,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,385,2026-08-26
 29_317_DF_DCIS_POPSTRCIT1_16,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,139,2026-08-06
+29_317_DF_DCIS_POPSTRCIT1_17,Campania,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,558,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_18,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,268,2026-08-26
+29_317_DF_DCIS_POPSTRCIT1_19,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-08-26
 29_317_DF_DCIS_POPSTRCIT1_2,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1208,2026-08-19
 29_317_DF_DCIS_POPSTRCIT1_20,Calabria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,412,2026-08-19
 29_317_DF_DCIS_POPSTRCIT1_21,Sicilia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,403,2026-08-19
