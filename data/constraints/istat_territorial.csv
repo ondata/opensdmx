@@ -2925,6 +2925,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 73_436_DF_DCCV_PROCEEDCRIME_M_7,"Procedimenti, dettaglio reati, intervallo tra iscrizione e definizione del reato, Distretto corte d'Appello",REF_AREA,nazionale,nazionale,1,2026-08-09
 73_436_DF_DCCV_PROCEEDCRIME_M_8,"Reati, intervallo tra iscrizione e definizione del reato",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
 73_436_DF_DCCV_PROCEEDCRIME_M_9,"Reati, autore ignoto, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
+73_440,Procedimenti e reati al momento della decisione del PM - adulti,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-27
 73_440_DF_DCCV_PROCEEDCRIME_A_1,"Procedimenti e reati, tipo di comune",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-15
 73_440_DF_DCCV_PROCEEDCRIME_A_10,"Dettaglio reati, identità autore, mese di accadimento",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,30,2026-08-09
 73_440_DF_DCCV_PROCEEDCRIME_A_11,"Dettaglio reati, intervallo medio e mediano tra iscrizione e definizione del procedimento",REF_AREA,nazionale,nazionale,1,2026-08-09
@@ -3073,6 +3074,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 741_1099_DF_DICA_IPSTRULCOM_7,Personale effettivo in servizio - Ateco (gruppi),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
 741_1099_DF_DICA_IPSTRULCOM_8,"Dipendenti - Ateco (divisioni), classe dei dipendenti, sesso dei dipendenti",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
 741_1099_DF_DICA_IPSTRULCOM_9,Dipendenti - Ateco (gruppi),REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8504,2026-08-10
+741_1100_DF_DICA_IPO_1,Occupazione per tipologia contrattuale e regime orario - Occupazione per tipologia contrattuale e regime orario,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-08-27
 741_1101_DF_DICA_IPIF_1,Attività formativa del personale - Dati di sintesi,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,125,2026-08-10
 741_1101_DF_DICA_IPIF_2,"Attività formativa del personale - Classe di personale effettivo, tipo di attività formativa",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
 741_1101_DF_DICA_IPIF_3,"Attività formativa del personale - Classe di personale effettivo, attività formativa, ore di formazione e partecipanti",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,134,2026-08-10
