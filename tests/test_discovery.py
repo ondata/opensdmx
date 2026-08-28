@@ -1021,3 +1021,65 @@ def test_field_boost_uses_the_same_matching_as_scoring():
     scores = index.scores("alpha rt")
 
     assert scores[1] > scores[0]
+
+
+# ── hidden catalog entries (Eurostat $DV_ bookmarks) ──────────────────
+
+def _catalog_with_bookmark() -> pl.DataFrame:
+    """Two real datasets and one saved Data Browser view of the first."""
+    return pl.DataFrame(
+        {
+            "df_id": ["LFST_HHEREDCH", "LFST_HHEREDCH$DV_1343", "PRC_HICP_MIDX"],
+            "version": ["1.0", "1.0", "1.0"],
+            "df_description": ["Employment rate", "Employment rate", "HICP"],
+            "df_structure_id": [None, None, None],
+        },
+        schema={
+            "df_id": pl.Utf8,
+            "version": pl.Utf8,
+            "df_description": pl.Utf8,
+            "df_structure_id": pl.Utf8,
+        },
+    )
+
+
+def test_hidden_entries_dropped_for_declaring_provider():
+    """Eurostat declares `$DV_`, so its bookmarks never reach a caller."""
+    from opensdmx.discovery import _catalog_view
+
+    with patch("opensdmx.discovery.get_provider",
+               return_value={"catalog_hidden_id_pattern": r"\$DV_"}), \
+         patch("opensdmx.db_cache.get_invalid_dataset_ids", return_value=set()):
+        visible = _catalog_view(_catalog_with_bookmark(), include_hidden=False)
+        everything = _catalog_view(_catalog_with_bookmark(), include_hidden=True)
+
+    assert visible["df_id"].to_list() == ["LFST_HHEREDCH", "PRC_HICP_MIDX"]
+    assert everything.height == 3
+
+
+def test_hidden_filter_is_a_no_op_without_the_key():
+    """A provider that declares nothing keeps every entry, `$` included."""
+    from opensdmx.discovery import _catalog_view
+
+    with patch("opensdmx.discovery.get_provider", return_value={}), \
+         patch("opensdmx.db_cache.get_invalid_dataset_ids", return_value=set()):
+        visible = _catalog_view(_catalog_with_bookmark(), include_hidden=False)
+
+    assert visible.height == 3
+
+
+def test_hidden_id_still_resolves_when_typed_verbatim():
+    """The ids are handed out by the Data Browser and do serve data."""
+    from opensdmx.discovery import resolve_dataflow
+
+    catalog = _catalog_with_bookmark()
+
+    def _fake_all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
+        return catalog if _include_hidden else catalog.filter(
+            ~pl.col("df_id").str.contains(r"\$DV_")
+        )
+
+    with patch("opensdmx.discovery.all_available", side_effect=_fake_all_available):
+        row = resolve_dataflow("LFST_HHEREDCH$DV_1343")
+
+    assert row["df_id"] == "LFST_HHEREDCH$DV_1343"

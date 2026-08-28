@@ -8,6 +8,7 @@
     "rate_limit": 0.5,
     "language": "en",
     "dataflow_params": {"detail": "allstubs", "references": "none"},
+    "catalog_hidden_id_pattern": "\\$DV_",
     "constraint_endpoint": "contentconstraint",
     "constraint_bulk_supported": false,
     "datastructure_agency": "ESTAT",

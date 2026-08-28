@@ -16,11 +16,14 @@ opensdmx supports 15 configured SDMX 2.1 providers, configured in `src/opensdmx/
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
 | `dataflow_params` | `detail=allstubs&references=none` |
+| `catalog_hidden_id_pattern` | `\$DV_` |
 | `constraint_endpoint` | `contentconstraint` |
 | `datastructure_agency` | `ESTAT` |
 | `data_format_param` | `SDMX-CSV` |
 
 Quirks: Eurostat does not accept `Accept: text/csv`. Data must be requested with `Accept: application/xml` and the `format=SDMX-CSV` query parameter. The `contentconstraint` endpoint is used instead of `availableconstraint`. The `dataflow` request includes `detail=allstubs` and `references=none` for performance.
+
+The catalogue also lists saved Data Browser views as if they were datasets: 548 of 8,152 entries carry a `$DV_` suffix, are annotated `DISSEMINATION_OBJECT_TYPE=EXTRACTION`, reference their parent's DSD and repeat its title (547 of 548), with no description of their own (510 of 548) and no label for the view they store. They are hidden from the catalogue via `catalog_hidden_id_pattern`, which cuts ambiguous titles from 1,114 to 138. The same filter is applied to the categorisation on read, so `tree`, the per-scheme counts and `siblings` agree with `search`. The pattern is anchored on the `$`: real dataflows such as `GBV_DV_AGE` contain `DV_`. They still serve data, so an id typed verbatim is still resolved in the catalogue (see `resolve_dataflow`), but `get` on one returns HTTP 404 until the DSD reference is read from `detail=full`.
 
 ### istat
 
@@ -206,6 +209,7 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 | `rate_limit` | float | `0.5` | Minimum seconds between API calls |
 | `language` | string | `"en"` | Preferred language for dataset descriptions |
 | `dataflow_params` | dict | `{}` | Extra query parameters appended to `dataflow/{agency_id}` requests |
+| `catalog_hidden_id_pattern` | string | absent | Regex on `df_id`: matching catalog entries are hidden from search, tree and counts, but still resolve when the id is given explicitly |
 | `constraint_endpoint` | string | `"availableconstraint"` | Endpoint for fetching available values (`availableconstraint` or `contentconstraint`) |
 | `constraint_bulk_supported` | boolean | `false` | Whether a provider supports catalog-level bulk content constraints |
 | `constraint_params` | dict | absent | Extra query parameters appended to constraint requests |

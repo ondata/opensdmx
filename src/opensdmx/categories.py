@@ -264,7 +264,7 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
 
     cached = _load_cached()
     if cached is not None:
-        return cached
+        return _visible(cached)
 
     logger.info(
         "Building thematic cache from categoryscheme + categorisation "
@@ -292,7 +292,21 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
     except OSError as e:
         logger.warning(f"Could not write categories cache: {e}")
 
-    return categories_df, categorisation_df
+    return _visible((categories_df, categorisation_df))
+
+
+def _visible(loaded: tuple[pl.DataFrame, pl.DataFrame]) -> tuple[pl.DataFrame, pl.DataFrame]:
+    """Drop categorisations of entries the provider hides from its catalog.
+
+    Eurostat categorises its `$DV_` bookmarks like any dataflow, so without this
+    the tree, the per-scheme counts and `siblings` would keep showing entries
+    `search` no longer lists. Applied on read, like the catalog filter it
+    mirrors: the parquet on disk keeps every row.
+    """
+    from .discovery import _filter_hidden
+
+    categories_df, categorisation_df = loaded
+    return categories_df, _filter_hidden(categorisation_df)
 
 
 def _warn_stale(categorisation_df: pl.DataFrame) -> None:
