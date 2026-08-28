@@ -150,7 +150,9 @@ Two of these are worth naming as classes rather than cases. `tasso di disoccupaz
 3. **Do not promote unweighted RRF.** A hybrid, if wanted, must be weighted towards the semantic arm and re-measured.
 4. **A static retriever now has a target to beat**: it must clear the shipped lexical path — 0.169 on ISTAT, 0.161 on Eurostat — to justify a model at all, and approach 0.327 to replace nomic. The bar rose when BM25 landed. If a quantized static model reaches it, semantic search becomes shippable inside the package without Ollama and without onnxruntime.
 
-Open, in order: the `doc-first` counterweight block in the gold set; widening the two narrow Eurostat gold families; dropping the 546 `$DV_` bookmark duplicates from Eurostat results (measured +15% MRR on its own, stacks with BM25); the static-model arm.
+Open, in order: the `doc-first` counterweight block in the gold set; widening the two narrow Eurostat gold families; the static-model arm.
+
+Dropping the `$DV_` bookmark duplicates from Eurostat results — measured +15% MRR on its own, stacking with BM25 — shipped on 2026-08-28: the eval arm applied it ad hoc, the catalogue now hides them everywhere. 548 entries at the time of the change, not 546.
 
 ## Where the working material lives
 

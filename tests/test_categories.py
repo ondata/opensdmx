@@ -545,3 +545,35 @@ def test_catalog_agency_falls_back_to_wildcard(monkeypatch):
         categories, "get_provider", lambda: {"agency_id": "IT1", "catalog_agency": "ALL"}
     )
     assert categories._catalog_agency() == "ALL"
+
+
+def test_load_categories_drops_hidden_entries(monkeypatch):
+    """Hidden catalog entries must not survive in the tree, counts or siblings.
+
+    Eurostat categorises its `$DV_` bookmarks like any other dataflow, so the
+    catalog filter alone would leave them visible everywhere the tree looks.
+    """
+    import polars as pl
+    from opensdmx import categories
+
+    categorisation = pl.DataFrame(
+        {
+            "df_id": ["LFST_HHEREDCH", "LFST_HHEREDCH$DV_1343", "GBV_DV_AGE"],
+            "scheme_id": ["popul", "popul", "popul"],
+            "cat_path": ["a", "a", "a"],
+        }
+    )
+    monkeypatch.setattr(
+        categories, "_load_cached", lambda: (pl.DataFrame({"cat_id": ["a"]}), categorisation)
+    )
+    monkeypatch.setattr(
+        categories, "get_provider", lambda: {"catalog_hidden_id_pattern": r"\$DV_"}
+    )
+    monkeypatch.setattr(
+        "opensdmx.discovery.get_provider", lambda: {"catalog_hidden_id_pattern": r"\$DV_"}
+    )
+
+    _, visible = categories.load_categories()
+
+    # GBV_DV_AGE is a real dataflow: the `$` is what tells a bookmark apart.
+    assert visible["df_id"].to_list() == ["LFST_HHEREDCH", "GBV_DV_AGE"]

@@ -118,7 +118,35 @@ def _filter_invalid(df: pl.DataFrame) -> pl.DataFrame:
     return df
 
 
-def all_available() -> pl.DataFrame:
+def _filter_hidden(df: pl.DataFrame) -> pl.DataFrame:
+    """Drop catalog entries the provider declares as not being datasets.
+
+    Eurostat publishes saved Data Browser views alongside real datasets: 548 of
+    8,152 entries carry a ``$DV_`` suffix, are annotated
+    ``DISSEMINATION_OBJECT_TYPE=EXTRACTION``, point at their parent's DSD and
+    repeat its title verbatim (547 of 548). They are noise in search and in the
+    tree, where they bury the dataset they were extracted from.
+
+    Filtering happens **on read, never before writing the Parquet**: the ids
+    still resolve on the data endpoint, so dropping them at build time would
+    make them permanently unreachable. See ``resolve_dataflow``, which searches
+    the unfiltered catalog when nothing else matches.
+
+    Providers that declare no ``catalog_hidden_id_pattern`` are untouched.
+    """
+    pattern = get_provider().get("catalog_hidden_id_pattern")
+    if not pattern:
+        return df
+    return df.filter(~pl.col("df_id").str.contains(pattern))
+
+
+def _catalog_view(df: pl.DataFrame, include_hidden: bool) -> pl.DataFrame:
+    """The catalog as callers see it: never the invalid ones, hidden ones on request."""
+    df = _filter_invalid(df)
+    return df if include_hidden else _filter_hidden(df)
+
+
+def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
     """List all available datasets for the active provider.
 
     Returns a Polars DataFrame with columns:
@@ -132,11 +160,13 @@ def all_available() -> pl.DataFrame:
     across providers and cache versions (see ``_ensure_catalog_columns``).
 
     Results are cached per provider for the configured dataflow cache TTL.
-    Invalid datasets (marked via guide) are excluded.
+    Invalid datasets (marked via guide) are excluded, and so are the entries a
+    provider declares as not being datasets (see :func:`_filter_hidden`);
+    ``_include_hidden`` keeps the latter, for callers resolving an explicit id.
     """
     cached = _load_cached_dataflows()
     if cached is not None:
-        return _filter_invalid(cached)
+        return _catalog_view(cached, _include_hidden)
 
     provider = get_provider()
 
@@ -152,7 +182,7 @@ def all_available() -> pl.DataFrame:
             df.write_parquet(_dataflow_cache_path())
         except OSError:
             pass
-        return _filter_invalid(df)
+        return _catalog_view(df, _include_hidden)
 
     agency_id = get_agency_id()
     language = provider["language"]
@@ -248,7 +278,7 @@ def all_available() -> pl.DataFrame:
         df.write_parquet(_dataflow_cache_path())
     except OSError:
         pass
-    return _filter_invalid(df)
+    return _catalog_view(df, _include_hidden)
 
 
 def _score_results(
@@ -561,6 +591,16 @@ def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
     # Try description match (case-sensitive, human-readable text)
     if match_row is None:
         rows = all_ds.filter(pl.col("df_description") == dataflow_identifier)
+        if not rows.is_empty():
+            match_row = rows.row(0, named=True)
+
+    # Last resort: the entries hidden from the catalog. Eurostat's `$DV_` ids are
+    # not listed anywhere in the tool, but they are handed out by the Data Browser
+    # and they do serve data, so an id typed verbatim must still resolve.
+    if match_row is None:
+        rows = all_available(_include_hidden=True).filter(
+            pl.col("df_id").str.to_uppercase() == identifier_upper
+        )
         if not rows.is_empty():
             match_row = rows.row(0, named=True)
 

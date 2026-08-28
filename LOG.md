@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-08-28 - fix: hide Eurostat `$DV_` bookmarks from the catalogue (#54, part 1)
+
+- **548 of the "datasets" Eurostat publishes are saved Data Browser views.** Measured on the full catalogue: 548 of 8,152 entries carry a `$DV_` suffix, are annotated `DISSEMINATION_OBJECT_TYPE=EXTRACTION` / `EXTRACTION_TYPE=BOOKMARK`, point at their parent's DSD and repeat its title verbatim (547 of 548). `Individuals - internet activities` appeared 6 times in a search. The id pattern is an exact proxy for the annotation across all 8,152 entries — 548 `$DV_`, 548 `EXTRACTION`, no entry in one set and not the other, and no other id contains `$`.
+- **Effect: ambiguous titles drop from 1,114 (13.7%) to 138 (1.8%)**, catalogue 8,152 → 7,604. Eurostat's apparent title problem was almost entirely these entries.
+- **Filtered on read, never before writing the Parquet.** The bookmark ids do serve data (`data/LFST_HHEREDCH$DV_1343` → HTTP 200, an 8,136-row sub-cube of a 102 MB parent), and the Data Browser hands them out in links. Dropping them at build time would make them permanently unreachable; `resolve_dataflow` searches the unfiltered catalogue when nothing else matches, so an id typed verbatim still resolves in the catalogue. `get` on one still fails with HTTP 404 until the DSD reference lands (part 3 of the plan): under `detail=allstubs` Eurostat sends no structure reference, so the DSD is guessed from the dataflow id — true for datasets, false for bookmarks.
+- **The catalogue filter alone was not enough.** Eurostat categorises the bookmarks like any dataflow, so `tree`, the per-scheme counts and `siblings` kept showing 113 of them in `popul` alone. `load_categories` now applies the same filter on read. The pattern is anchored on the `$`: real dataflows such as `GBV_DV_AGE` contain `DV_` and must survive.
+- Declared as `catalog_hidden_id_pattern` in `portals.json`, read with `.get()` — the other 15 providers are untouched.
+- Measurements and the remaining parts (Description, ESMS URL, missing DSD reference) in [#54](https://github.com/ondata/opensdmx/issues/54#issuecomment-5451429444) and `tasks/todo-eurostat-catalogue.md`.
+
 ## 2026-08-21 - v0.23.0 - feat: BM25 ranking for keyword search
 
 - **The default search path was the worst one, measurably.** `search unemployment` on Eurostat put `UNE_RT_M` — the monthly unemployment rate — at position **65 of 146**, because the old scorer summed raw token occurrences with no length denominator and weighed every query word the same. A long title beat a relevant one; "di" counted like "disoccupazione". Ranking is now BM25 (`src/opensdmx/ranking.py`): idf down-weights common terms, `b` normalises for document length. The field boosts survive, rescaled to the BM25 unit.
