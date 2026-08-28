@@ -205,8 +205,12 @@ def semantic_search(query: str, n: int = 10) -> pl.DataFrame:
     doc_norms = doc_vecs / (np.linalg.norm(doc_vecs, axis=1, keepdims=True) + 1e-10)
     scores = doc_norms @ query_norm
 
-    # Request more candidates to compensate for filtered-out invalid datasets
-    top_idx = np.argsort(scores)[::-1][:n * 2]
+    # Rank everything and stop at n *visible* hits. A fixed candidate window used
+    # to cap this at n * 2, which silently returned fewer than n results whenever
+    # more than half the window was missing from the catalog — invalid datasets
+    # before, and now also the entries a provider hides (Eurostat's 548 `$DV_`
+    # bookmarks are still in an index built before that filter landed).
+    top_idx = np.argsort(scores)[::-1]
 
     catalog = all_available()
     catalog_map = {
