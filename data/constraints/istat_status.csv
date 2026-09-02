@@ -4638,6 +4638,7 @@ DF_BULK_CPO2011_DS_TEST_PUT,ds test put,empty,hub,0,0,0,"",2026-08-13
 DF_BULK_CRIMESINTO,"Delitti in totale e delitti commessi da autori noti, per tipo di delitto – Anni 1983-2003",empty,hub,0,0,0,"",2026-08-02
 DF_BULK_CRIMESPERS,"Delitti, persone e condannati serie 1985-2008",empty,hub,0,0,0,"",2026-08-02
 DF_BULK_DCCN_FPA,Raccordo tra fabbisogno del settore pubblico ed indebitamento netto delle amministrazioni pubbliche,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_DCCV_INCOME_GINI,Nota sul reddito familiare e sull'indice di Gini,empty,hub,0,0,0,"",2026-09-02
 DF_BULK_DCIS_SPESESERSOC1,Interventi e servizi sociali dei comuni -  BULKDOWNLOAD,empty,hub,0,0,0,"",2026-08-13
 DF_BULK_DCSC_CAPACOFTUR,Capacità degli esercizi ricettivi per tipo di alloggio e per comune,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_DCSC_OCCUPCOLLE,"Movimento dei clienti (arrivi e presenze) negli esercizi ricettivi per tipologia ricettiva, residenza dei clienti e comune di destinazione",empty,hub,0,0,0,"",2026-08-02
