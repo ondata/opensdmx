@@ -92,6 +92,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 111_111,Indicatori  permessi di costruire,REF_AREA,nazionale,nazionale,1,2026-07-16
 111_111_DF_DCSC_PERM_RAP1_1,Nuovi fabbricati residenziali,REF_AREA,nazionale,nazionale,1,2026-07-16
 111_111_DF_DCSC_PERM_RAP1_2,Nuova edilizia non residenziale,REF_AREA,nazionale,nazionale,1,2026-07-16
+111_263,Fiducia delle imprese manifatturiere,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-09-11
 111_263_DF_DCSC_FIDIMPRMAN_1,Clima e saldi mensili destagionalizzati,REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_10,"Clima, saldi e frequenze mensili grezzi - rip.",REF_AREA,regione,nazionale|ripartizione|regione,5,2026-07-16
 111_263_DF_DCSC_FIDIMPRMAN_11,"Clima, saldi e frequenze mensili grezzi per Ateco",REF_AREA,nazionale,nazionale,1,2026-07-16
@@ -787,13 +788,34 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 164_164_DF_DCIS_RICPOPRES2011_22,Sicilia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,402,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_23,Sardegna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,385,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+164_164_DF_DCIS_RICPOPRES2011_3,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1192,2026-09-11
 164_164_DF_DCIS_RICPOPRES2011_4,Valle d'Aosta/Vallée d'Aoste,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,78,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_5,Liguria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,241,2026-08-04
+164_164_DF_DCIS_RICPOPRES2011_6,Lombardia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1522,2026-09-11
 164_164_DF_DCIS_RICPOPRES2011_7,Provincia Autonoma Bolzano/Bozen,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,120,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_8,Provincia Autonoma Trento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,179,2026-08-04
 164_164_DF_DCIS_RICPOPRES2011_9,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,573,2026-08-04
+164_279_DF_DCIS_RICPOPRES1991_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,133,2026-09-11
 164_279_DF_DCIS_RICPOPRES1991_10,Emilia Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,353,2026-08-04
+164_279_DF_DCIS_RICPOPRES1991_11,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,300,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_12,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_13,Marche,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_14,Lazio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,383,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_15,Abruzzo,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,312,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_16,Molise,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,141,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_17,Campania,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,557,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_18,Puglia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,265,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_19,Basilicata,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,136,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_2,Piemonte,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1220,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_20,Calabria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,417,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_21,Sicilia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,400,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_22,Sardegna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,373,2026-09-11
 164_279_DF_DCIS_RICPOPRES1991_23,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11557,2026-07-17
+164_279_DF_DCIS_RICPOPRES1991_3,Valle d'Aosta/Vallée d'Aoste,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,78,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_4,Liguria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,242,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_5,Lombardia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1560,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_8,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,592,2026-09-11
+164_279_DF_DCIS_RICPOPRES1991_9,Friuli-Venezia Giulia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,226,2026-09-11
 164_305_DF_DCIS_RICPOPRES2001_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,133,2026-08-04
 164_305_DF_DCIS_RICPOPRES2001_10,Emilia Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,353,2026-08-04
 164_305_DF_DCIS_RICPOPRES2001_11,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,300,2026-08-04
@@ -1235,6 +1257,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_289,Popolazione residente  al 1° gennaio,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8128,2026-07-17
 22_289_DF_DCIS_POPRES1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,139,2026-07-17
 22_289_DF_DCIS_POPRES1_12,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,288,2026-07-17
+22_289_DF_DCIS_POPRES1_1_YOU,"Italia, regioni, province - Giovani",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-09-11
 22_289_DF_DCIS_POPRES1_24,Tutti i comuni per singola età,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 22_289_DF_DCIS_POPRES1_25,Tutti i comuni per stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11578,2026-07-17
 22_289_DF_DCIS_POPRES1_26,Tutti i comuni per singola età e stato civile,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
@@ -1243,6 +1266,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-18
 22_315_DF_DCIS_POPORESBIL1_2,Dati mensili,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-18
 22_315_DF_DCIS_POPORESBIL1_24,Tutti i comuni,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
+24_1149,Unioni civili-Caratteristiche demografiche,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-09-11
 24_1149_DF_DCIS_UNIONDEMO_1,Sesso (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_1149_DF_DCIS_UNIONDEMO_2,Stato civile (%),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_1149_DF_DCIS_UNIONDEMO_3,"Classe di età, stato civile e sesso",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,31,2026-08-26
@@ -1259,9 +1283,11 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_1151_DF_DCIS_UNIONISOC_2,Regime patrimoniale e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_3,Sesso e posizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
 24_1151_DF_DCIS_UNIONISOC_4,Sesso e condizione professionale,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,9,2026-07-17
+24_1152,Unioni civili - Cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-09-11
 24_1152_DF_DCIS_UNIONICIT_1,Unioni civili per sesso e tipologia di coppia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-06
 24_1152_DF_DCIS_UNIONICIT_2,Unioni civili con almeno uno straniero per area di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_1152_DF_DCIS_UNIONICIT_3,Unioni civili con almeno uno straniero per paese di cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
+24_1152_DF_DCIS_UNIONICIT_4,Unioni civili di entrambi stranieri per paese di cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-09-11
 24_1152_DF_DCIS_UNIONICIT_5,Unioni civili di entrambi stranieri per paese e confronto cittadinanza,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-08-26
 24_1152_DF_DCIS_UNIONICIT_6,Unioni civili per tipologia di coppia e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_1152_DF_DCIS_UNIONICIT_7,Unioni civili per tipologia di coppia e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
@@ -1289,6 +1315,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_186_DF_DCIS_MATRDEMO_29,Sicilia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,403,2026-08-26
 24_186_DF_DCIS_MATRDEMO_3,Età e stato civile,REF_AREA,nazionale,nazionale,1,2026-08-26
 24_186_DF_DCIS_MATRDEMO_30,Sardegna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,621,2026-08-26
+24_186_DF_DCIS_MATRDEMO_5,"Rito, classe di età, stato civile",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,33,2026-09-11
+24_186_DF_DCIS_MATRDEMO_6,"Rito, titolo di studio, stato civile",REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8871,2026-09-11
 24_186_DF_DCIS_MATRDEMO_7,"Rito, mese di celebrazione",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-26
 24_186_DF_DCIS_MATRDEMO_8,Regime patrimoniale e titolo di studio,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,140,2026-08-26
 24_186_DF_DCIS_MATRDEMO_9,Tipo di comune e rito,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,386,2026-08-26
