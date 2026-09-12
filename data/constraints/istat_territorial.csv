@@ -1609,6 +1609,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
 29_348_DF_DCIS_PERMSOGG1_7,Provincia e stato civile,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
 29_348_DF_DCIS_PERMSOGG1_8,Cittadinanza e motivo del permesso,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_7_DF_DCIS_POPSTRRES1_1,"Italia, regioni, province",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-09-12
 29_7_DF_DCIS_POPSTRRES1_10,Emilia-Romagna,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,348,2026-08-15
 29_7_DF_DCIS_POPSTRRES1_11,Toscana,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,288,2026-08-15
 29_7_DF_DCIS_POPSTRRES1_12,Umbria,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,97,2026-08-15
@@ -3891,6 +3892,7 @@ DF_DCAT_CENSAGRIC2020_LABCAT_ALL,Aziende e giornate di lavoro per sesso e catego
 DF_DCAT_CENSAGRIC2020_LABCAT_SPA2023_1,Aziende e giornate di lavoro per sesso e categoria di manodopera,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
 DF_DCAT_CENSAGRIC2020_LEGOWN_ALL,Aziende e superfici per forma giuridica e titolo di possesso,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,8023,2026-08-13
 DF_DCAT_CENSAGRIC2020_LEGOWN_SPA2023_1,Aziende e superfici per forma giuridica e titolo di possesso,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-03
+DF_DCAT_CENSAGRIC2020_ORG_CATTLE_ALL,Aziende e capi per tipo di allevamento biologico,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,2988,2026-09-12
 DF_DCAT_CENSAGRIC2020_ORG_CROPS,Aziende con superfice biologica per tipo di coltivazione,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,6404,2026-08-15
 DF_DCAT_CENSAGRIC2020_QUAL_ALL,"Numero e giornate di lavoro del capo azienda per titolo di studio, categoria di manodopera del capo azienda, sesso, età del capo azienda",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,135,2026-08-13
 DF_DCAT_CENSAGRIC2020_QUAL_SPA2023_1,"Numero e giornate di lavoro del capo azienda per titolo di studio, categoria di manodopera del capo azienda, sesso, età del capo azienda",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-13
