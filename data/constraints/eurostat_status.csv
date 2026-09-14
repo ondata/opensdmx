@@ -103,9 +103,11 @@ APRO_MK_STRMK,Milk collection - distribution of enterprises by volume of annual 
 APRO_MK_STRMT,Milk treated - distribution of enterprises by volume of annual production,ok,sdmx,5,69,0,"",2026-07-16
 APRO_MK_STRPD,Powdered dairy products - distribution of enterprises by volume of annual production,ok,sdmx,5,71,0,"",2026-07-16
 APRO_MT_LSAVCH_R,Average livestock population of chicken by NUTS 2 region,ok,sdmx,6,202,0,"",2026-07-16
+APRO_MT_LSAVORG,Average populations of certified organic livestock,ok,sdmx,5,30,0,"",2026-09-14
 APRO_MT_LSCATL,Bovine population,ok,sdmx,6,138,0,"",2026-07-16
 APRO_MT_LSEQUI,Livestock - Equidae - annual data (1960-1997),ok,sdmx,5,71,0,"",2026-07-16
 APRO_MT_LSGOAT,Goats population,ok,sdmx,6,120,0,"",2026-07-16
+APRO_MT_LSORG,Populations of certified organic livestock,ok,sdmx,5,63,0,"",2026-09-14
 APRO_MT_LSPIG,Pig population,ok,sdmx,6,122,0,"",2026-07-16
 APRO_MT_LSSHEEP,Sheep population,ok,sdmx,6,120,0,"",2026-07-16
 APRO_MT_LS_R,Animal populations by NUTS 2 region,ok,sdmx,5,656,0,"",2026-07-16
@@ -3554,6 +3556,8 @@ ILC_LI45,At-risk-of-poverty rate after deducting housing costs by age and sex,ok
 ILC_LI48,At-risk-of-poverty rate after deducting housing costs by degree of urbanisation,ok,sdmx,5,72,0,"",2026-07-26
 ILC_LI51,Distribution of population by number of years spent in poverty within a four-year period,ok,sdmx,8,75,0,"",2026-07-26
 ILC_LI60,At-risk-of poverty rate for children by educational attainment level of their parents (population aged 0 to 17),ok,sdmx,6,78,0,"",2026-07-26
+ILC_LI60A,Gap in at-risk-of-poverty rates for children by educational attainment level of their parents (low versus high),ok,sdmx,5,52,0,"",2026-09-14
+ILC_LI60B,Gap in at-risk-of-poverty rates for children by educational attainment level of their parents (low versus high) - adjusted by prevalence of lower education,ok,sdmx,5,52,0,"",2026-09-14
 ILC_LI70,Persons receiving benefits (other than old age benefits) by risk of poverty and work intensity of the household (population aged 18 to 64),ok,sdmx,7,63,0,"",2026-07-26
 ILC_LI70B,Persons receiving benefits (other than old age benefits) by sex and most frequent activity status,ok,sdmx,7,58,0,"",2026-07-26
 ILC_LI71,"Persons receiving benefits (other than old age benefits) by risk of poverty thresholds, work intensity of the household and percentage of the benefits in total disposable income (population aged 18 to 64)",ok,sdmx,8,57,0,"",2026-07-26
