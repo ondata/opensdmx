@@ -878,6 +878,9 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 165_1245_DF_DCIS_PREVCOM_2,Previsioni comunali: Componenti del bilancio demografico - Scenario mediano,ok,hub,3,11568,0,"",2026-07-17
 165_1245_DF_DCIS_PREVCOM_3,Previsioni comunali: Tassi generici del movimento demografico - Scenario mediano,ok,hub,3,11562,0,"",2026-07-17
 165_1245_DF_DCIS_PREVCOM_4,Previsioni comunali: Principali indicatori strutturali - Scenario mediano,ok,hub,3,11562,0,"",2026-07-17
+165_1300,Previsioni delle forze di lavoro - Anni 2025-2050,empty,hub,0,0,0,"",2026-09-17
+165_1300_DF_DCIS_PREVFOL_1,"Previsioni forze di lavoro: Popolazione residente che vive in famiglia per sesso, condizione professionale e classi quinquennali di età – Scenario mediano",empty,hub,0,0,0,"",2026-09-17
+165_1300_DF_DCIS_PREVFOL_2,Previsioni forze di lavoro: Tassi di attività 15-64 anni e 15-74 anni per sesso e ripartizione territoriale – Scenario mediano,empty,hub,0,0,0,"",2026-09-17
 165_889,Previsioni della popolazione  - Anni 2024-2080,ok,hub,6,190,0,"",2026-07-17
 165_889_DF_DCIS_PREVDEM1_1,Popolazione al 1° gennaio,ok,hub,6,12595,0,"",2026-07-17
 165_889_DF_DCIS_PREVDEM1_2,Componenti del bilancio demografico,ok,hub,4,50,0,"",2026-08-04
@@ -1106,6 +1109,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",ok,hub,9,57,0,"",2026-08-04
 174_80_DF_DCCV_COPPIE_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",ok,hub,7,29,0,"",2026-07-17
 174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,ok,hub,7,51,0,"",2026-08-04
+174_81,Attività quotidiane -persone in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_3,"Coppia con figli, età della donna, età del figlio più piccolo e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",ok,hub,8,30,0,"",2026-09-17
+174_81_DF_DCCV_COPPIE1_7,Coppia con donna di 65 anni e più - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
 174_82,Luoghi frequentati,error,"",0,0,6,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-11
 174_82_DF_DCCV_LUOGHI_1,"Sesso, titolo di studio, ampiezza della famiglia",ok,hub,7,35,0,"",2026-08-04
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",ok,hub,7,605,0,"",2026-08-04
@@ -4685,6 +4696,8 @@ DF_BULK_LOCALUNITS,Unità locali - Occupazione dal 2018 al 2023,empty,hub,0,0,0,
 DF_BULK_NOTASULTAS,Nota sul tasso standardizzato di mortalità,empty,hub,0,0,0,"",2026-08-13
 DF_BULK_PEND_LAV_2021_1,Matrice di pendolarismo per lavoro,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_PEND_LAV_2021_2,Matrice di pendolarismo per lavoro - leggimi,empty,hub,0,0,0,"",2026-08-02
+DF_BULK_PEND_STU_2021_1,Matrice di pendolarismo per studio,empty,hub,0,0,0,"",2026-09-17
+DF_BULK_PEND_STU_2021_2,Matrice di pendolarismo per studio - leggimi,empty,hub,0,0,0,"",2026-09-17
 DF_BULK_PERMANENTC,Coltivazioni legnose agrarie serie interrotte 2002-2017,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_POPOLAZION,Popolazione  per condizione professionale e sesso – Tabella di sintesi - Dati trimestrali,empty,hub,0,0,0,"",2026-08-02
 DF_BULK_PREVIOUSBA,Basi precedenti,empty,hub,0,0,0,"",2026-08-13
