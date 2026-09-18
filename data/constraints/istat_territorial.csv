@@ -1029,7 +1029,14 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_80_DF_DCCV_COPPIE_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-04
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
+174_81,Attività quotidiane -persone in coppia,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-09-18
+174_81_DF_DCCV_COPPIE1_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",REF_AREA,nazionale,nazionale,1,2026-09-18
+174_81_DF_DCCV_COPPIE1_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",REF_AREA,nazionale,nazionale,1,2026-09-18
+174_81_DF_DCCV_COPPIE1_3,"Coppia con figli, età della donna, età del figlio più piccolo e condizione lavorativa della coppia",REF_AREA,nazionale,nazionale,1,2026-09-18
+174_81_DF_DCCV_COPPIE1_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-09-18
+174_81_DF_DCCV_COPPIE1_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,26,2026-09-18
 174_81_DF_DCCV_COPPIE1_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",REF_AREA,nazionale,nazionale,1,2026-09-17
+174_81_DF_DCCV_COPPIE1_7,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-09-18
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_82_DF_DCCV_LUOGHI_5,"Sesso, età - reg. tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-08-18
 174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-05

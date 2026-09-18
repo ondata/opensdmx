@@ -1109,14 +1109,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",ok,hub,9,57,0,"",2026-08-04
 174_80_DF_DCCV_COPPIE_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",ok,hub,7,29,0,"",2026-07-17
 174_80_DF_DCCV_COPPIE_7,Coppia con donna di 65 anni e più - reg.,ok,hub,7,51,0,"",2026-08-04
-174_81,Attività quotidiane -persone in coppia,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
-174_81_DF_DCCV_COPPIE1_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
-174_81_DF_DCCV_COPPIE1_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
-174_81_DF_DCCV_COPPIE1_3,"Coppia con figli, età della donna, età del figlio più piccolo e condizione lavorativa della coppia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
-174_81_DF_DCCV_COPPIE1_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
-174_81_DF_DCCV_COPPIE1_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81,Attività quotidiane -persone in coppia,ok,hub,12,77,0,"",2026-09-18
+174_81_DF_DCCV_COPPIE1_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",ok,hub,10,38,0,"",2026-09-18
+174_81_DF_DCCV_COPPIE1_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",ok,hub,10,35,0,"",2026-09-18
+174_81_DF_DCCV_COPPIE1_3,"Coppia con figli, età della donna, età del figlio più piccolo e condizione lavorativa della coppia",ok,hub,10,39,0,"",2026-09-18
+174_81_DF_DCCV_COPPIE1_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",ok,hub,9,39,0,"",2026-09-18
+174_81_DF_DCCV_COPPIE1_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",ok,hub,9,57,0,"",2026-09-18
 174_81_DF_DCCV_COPPIE1_6,"Coppia con donna di 65 anni e più, titolo di studio della donna",ok,hub,8,30,0,"",2026-09-17
-174_81_DF_DCCV_COPPIE1_7,Coppia con donna di 65 anni e più - reg.,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-17
+174_81_DF_DCCV_COPPIE1_7,Coppia con donna di 65 anni e più - reg.,ok,hub,7,51,0,"",2026-09-18
 174_82,Luoghi frequentati,error,"",0,0,6,HubUnavailable: hub did not answer (timeout or HTTP error),2026-09-11
 174_82_DF_DCCV_LUOGHI_1,"Sesso, titolo di studio, ampiezza della famiglia",ok,hub,7,35,0,"",2026-08-04
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",ok,hub,7,605,0,"",2026-08-04
