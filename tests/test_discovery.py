@@ -847,7 +847,10 @@ def test_cached_dataflows_backfills_df_keywords(tmp_path):
 
     assert loaded is not None
     # Every optional catalog column is backfilled null on a legacy cache.
-    for col in ("df_keywords", "df_last_update", "df_notes", "df_bulk_files", "df_geo_dim"):
+    for col in (
+        "df_keywords", "df_last_update", "df_notes", "df_bulk_files", "df_geo_dim",
+        "df_sdmx_description",
+    ):
         assert col in loaded.columns
         assert loaded[col].to_list() == [None]
 
@@ -1114,3 +1117,112 @@ def test_semantic_search_returns_n_when_the_index_is_stale():
 
     # The three tie on score, so only membership and count are meaningful.
     assert sorted(res["df_id"].to_list()) == ["A", "B", "C"]
+
+
+# ── <common:Description> of the dataflow ─────────────────────────────
+
+_CATALOG_WITH_DESCRIPTION = b"""<?xml version="1.0" encoding="UTF-8"?>
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+<message:Structures><structure:Dataflows>
+<structure:Dataflow id="122_54_DF_DCSC_TUR_1" agencyID="IT1" version="1.0">
+  <common:Name xml:lang="en">Capacity of collective accommodation - com.</common:Name>
+  <common:Name xml:lang="it">Capacita degli esercizi ricettivi - com.</common:Name>
+  <common:Description xml:lang="en">From January 2025, data include short-term rentals.</common:Description>
+  <common:Description xml:lang="it">Da gennaio 2025 i dati includono le locazioni brevi.</common:Description>
+  <structure:Structure><Ref id="DCSC_TUR" agencyID="IT1" version="1.0"/></structure:Structure>
+</structure:Dataflow>
+<structure:Dataflow id="22_289" agencyID="IT1" version="1.0">
+  <common:Name xml:lang="it">Popolazione residente al 1 gennaio</common:Name>
+  <structure:Structure><Ref id="DCIS_POPRES1" agencyID="IT1" version="1.0"/></structure:Structure>
+</structure:Dataflow>
+</structure:Dataflows></message:Structures></message:Structure>"""
+
+
+def _catalog_from_xml(xml: bytes, tmp_path, language: str = "it") -> pl.DataFrame:
+    from opensdmx import discovery
+
+    provider = {"name": "istat", "agency_id": "IT1", "language": language}
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
+         patch("opensdmx.discovery.get_agency_id", return_value="IT1"), \
+         patch("opensdmx.discovery._load_cached_dataflows", return_value=None), \
+         patch.object(discovery, "_dataflow_cache_path", return_value=tmp_path / "dataflows.parquet"), \
+         patch("opensdmx.discovery.sdmx_request_xml", return_value=xml):
+        return discovery.all_available()
+
+
+def test_all_available_reads_dataflow_description_in_catalog_language(tmp_path):
+    """The optional <common:Description> lands in df_sdmx_description; null when absent."""
+    df = _catalog_from_xml(_CATALOG_WITH_DESCRIPTION, tmp_path, language="it")
+    by_id = {r["df_id"]: r for r in df.iter_rows(named=True)}
+
+    assert by_id["122_54_DF_DCSC_TUR_1"]["df_sdmx_description"] == (
+        "Da gennaio 2025 i dati includono le locazioni brevi."
+    )
+    # Name is untouched by the new column
+    assert by_id["122_54_DF_DCSC_TUR_1"]["df_description"].startswith("Capacit")
+    assert by_id["22_289"]["df_sdmx_description"] is None
+
+
+def test_all_available_description_falls_back_to_first_language(tmp_path):
+    df = _catalog_from_xml(_CATALOG_WITH_DESCRIPTION, tmp_path, language="fr")
+    row = df.filter(pl.col("df_id") == "122_54_DF_DCSC_TUR_1").row(0, named=True)
+    assert row["df_sdmx_description"] == "From January 2025, data include short-term rentals."
+
+
+def test_get_description_by_lang_ignores_empty_and_missing():
+    from lxml import etree
+
+    from opensdmx.utils import get_description_by_lang
+
+    ns = {"common": "c"}
+    node = etree.fromstring(
+        b'<df xmlns:common="c" xmlns:xml="http://www.w3.org/XML/1998/namespace">'
+        b'<common:Description xml:lang="it">  </common:Description></df>'
+    )
+    assert get_description_by_lang(node, "it", ns) is None
+    assert get_description_by_lang(etree.fromstring(b"<df/>"), "it", ns) is None
+
+    # Empty in the requested language, populated in another: the populated one wins.
+    node = etree.fromstring(
+        b'<df xmlns:common="c" xmlns:xml="http://www.w3.org/XML/1998/namespace">'
+        b'<common:Description xml:lang="it"> </common:Description>'
+        b'<common:Description xml:lang="en">Break in series from 2025</common:Description></df>'
+    )
+    assert get_description_by_lang(node, "it", ns) == "Break in series from 2025"
+
+
+def test_load_dataset_collects_notes_from_annotation_and_description():
+    """`notes` lists DATAFLOW_NOTES then the SDMX Description, skipping the missing ones."""
+    from opensdmx import discovery
+
+    row = {
+        "df_id": "X", "version": "1.0", "df_description": "X title", "df_structure_id": "DSD",
+        "has_constraint": None, "df_notes": None,
+        "df_sdmx_description": "Da gennaio 2025 discontinuit\u00e0.",
+    }
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        ds = discovery.load_dataset("X")
+    assert ds["notes"] == ["Da gennaio 2025 discontinuit\u00e0."]
+
+    row = {**row, "df_notes": "Dati provinciali non confrontabili", "df_sdmx_description": None}
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        ds = discovery.load_dataset("X")
+    assert ds["notes"] == ["Dati provinciali non confrontabili"]
+
+    # Both present: DATAFLOW_NOTES first, then the SDMX Description.
+    row = {**row, "df_notes": "Dati provinciali non confrontabili",
+           "df_sdmx_description": "Da gennaio 2025 discontinuita."}
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        ds = discovery.load_dataset("X")
+    assert ds["notes"] == ["Dati provinciali non confrontabili", "Da gennaio 2025 discontinuita."]
+
+    # Neither: empty list, so `info` prints nothing.
+    row = {**row, "df_notes": None, "df_sdmx_description": None}
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        assert discovery.load_dataset("X")["notes"] == []

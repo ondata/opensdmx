@@ -125,13 +125,15 @@ def build_embeddings(progress: bool = True) -> None:
 
     # Optional dataflow annotations folded into the embedded text (present only for
     # providers that declare them, and only on a fraction of dataflows):
-    #   df_keywords — LAYOUT_DATAFLOW_KEYWORDS; df_notes — DATAFLOW_NOTES caveats.
+    #   df_keywords — LAYOUT_DATAFLOW_KEYWORDS; df_notes — DATAFLOW_NOTES caveats;
+    #   df_sdmx_description — the dataflow's own <Description>, same kind of caveat.
     keywords = _optional_column("df_keywords")
     notes = _optional_column("df_notes")
+    sdmx_descs = _optional_column("df_sdmx_description")
     texts = [
-        " ".join(part for part in (df_id, desc, cat_ctx, prose_t, kw, note) if part).strip()
-        for df_id, desc, cat_ctx, prose_t, kw, note in zip(
-            ids, descriptions, cat_contexts, proses, keywords, notes
+        " ".join(part for part in (df_id, desc, cat_ctx, prose_t, kw, note, sdesc) if part).strip()
+        for df_id, desc, cat_ctx, prose_t, kw, note, sdesc in zip(
+            ids, descriptions, cat_contexts, proses, keywords, notes, sdmx_descs
         )
     ]
 

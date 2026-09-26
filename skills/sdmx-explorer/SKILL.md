@@ -337,6 +337,11 @@ Then run `opensdmx info <id>` on each one **in parallel** to check their dimensi
 list. Keep only the candidates that contain **all expected dimensions**.
 Discard candidates missing a required dimension — even if the title looks right.
 
+`info` may print one or more `Note:` lines (`notes` in JSON): these are the
+provider's own notices on the dataflow — a series break, a classification change,
+a revision — read from the catalogue at no extra cost. Relay them to the user
+before showing figures; they change how the numbers are read.
+
 **If page 1 (50 results) yields no strong candidates**, paginate before giving up:
 
 ```bash

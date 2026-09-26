@@ -497,7 +497,12 @@ opensdmx embed -p istat     # build embeddings for ISTAT
 The index is built **on demand, per provider**, and stored in the local cache as
 `embeddings.parquet`. Until you run `opensdmx embed` for a provider,
 `--semantic` reports that no index exists for it. Rebuilding takes one pass over
-the whole catalog; there is no incremental update.
+the whole catalog; there is no incremental update, and the index does not notice
+when its source text changes: after an opensdmx upgrade that adds text to the
+embedded document (categories, harvested descriptions, provider notes), run
+`opensdmx embed` again. The rebuild reads the catalogue cache, so if that cache
+predates the upgrade it must expire (7 days) or be refreshed first — a fresh
+cache is what carries the new columns.
 
 Every provider can be indexed, but the quality of the index depends on how much
 text there is to embed. That is where ISTAT stands apart — see below.

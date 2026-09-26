@@ -66,6 +66,34 @@ def get_name_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = No
     return None
 
 
+def get_description_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = None) -> str | None:
+    """Return the direct-child Description element text for the given language.
+
+    Optional in SDMX 2.1 and rarely filled (ISTAT: 28 of 4,910 dataflows, mostly
+    release or discontinuity notices). Falls back to the first Description when
+    the requested language is absent; None when the element is missing or empty.
+    Direct children only: a Description nested in an annotation is not the
+    dataflow's own.
+    """
+    ns = ns or {}
+    descs = node.findall("common:Description", ns) if "common" in ns else []
+    if not descs:
+        descs = node.findall("Description")
+
+    for desc_node in descs:
+        if desc_node.get("{http://www.w3.org/XML/1998/namespace}lang") == lang:
+            text = str(desc_node.text or "").strip()
+            if text:
+                return text
+
+    # No populated match in the requested language: first populated one, any language.
+    for desc_node in descs:
+        text = str(desc_node.text or "").strip()
+        if text:
+            return text
+    return None
+
+
 TITLE_SEPARATOR = " › "
 
 
