@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-09-26 - feat: read the dataflow `<common:Description>` and surface provider notes in `info`
+## 2026-09-26 - v0.25.0 - feat: read the dataflow `<common:Description>` and surface provider notes in `info`
 
 - **Origin: a comparison with the Gramscii open-data catalogue** (Hugging Face `Gramscii-IT/european-open-data-catalogue`, 4,526 ISTAT records). Of everything it collects per ISTAT dataflow, two things were missing on our side: the SDMX `<common:Description>` and the time coverage of the constraints. Both sit inside responses we already download. Coverage, categories, territorial level and harvested prose are wider on our side.
 - **`<common:Description>` measured on the full ISTAT catalogue (4,910 dataflows): 28 filled, none equal to the name.** 27 are release or discontinuity notices ("Da gennaio 2025 i dati degli alloggi in affitto includono anche…", ATECO 2022 reclassification, NIC rebase 2025), 1 is real prose (`DF_BULK_CAG2000_1`). The per-dataflow endpoint returns the same text as the catalogue. Overlap with `DATAFLOW_NOTES`: 1 dataflow. Gramscii stores it as `description`; it is a caveat, not a summary.
