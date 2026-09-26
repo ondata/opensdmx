@@ -39,13 +39,14 @@ class _DataflowRecord(TypedDict):
     df_notes: str | None
     df_bulk_files: str | None
     df_geo_dim: str | None
+    df_sdmx_description: str | None
 
 import httpx
 import polars as pl
 from lxml import etree
 
 from .base import get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
-from .utils import get_name_by_lang, xml_attr_safe, xml_parse
+from .utils import get_description_by_lang, get_name_by_lang, xml_attr_safe, xml_parse
 
 from .cache_config import DATAFLOWS_CACHE_TTL
 
@@ -71,6 +72,7 @@ _OPTIONAL_CATALOG_COLUMNS: dict[str, Any] = {
     "df_notes": pl.Utf8,
     "df_bulk_files": pl.Utf8,
     "df_geo_dim": pl.Utf8,
+    "df_sdmx_description": pl.Utf8,
 }
 
 
@@ -152,12 +154,15 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
     Returns a Polars DataFrame with columns:
         df_id, version, df_description, df_structure_id, has_constraint,
         and the optional dataflow-annotation columns df_keywords,
-        df_last_update, df_notes, df_bulk_files, df_geo_dim.
+        df_last_update, df_notes, df_bulk_files, df_geo_dim, plus
+        df_sdmx_description (the dataflow's own ``<common:Description>``).
 
     The annotation columns are populated only for providers that declare the
     corresponding entries in their ``annotations`` block (currently ISTAT) and
-    are null everywhere else; all columns always exist so the schema is stable
-    across providers and cache versions (see ``_ensure_catalog_columns``).
+    are null everywhere else; ``df_sdmx_description`` is standard SDMX 2.1 and
+    read for every provider, null where the element is absent. All columns
+    always exist so the schema is stable across providers and cache versions
+    (see ``_ensure_catalog_columns``).
 
     Results are cached per provider for the configured dataflow cache TTL.
     Invalid datasets (marked via guide) are excluded, and so are the entries a
@@ -206,6 +211,10 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
             df_id = df_id_raw or ""
         version = xml_attr_safe(df, "version")
         df_description = get_name_by_lang(df, language, ns) or get_name_by_lang(df, "en", ns)
+        # The optional <common:Description>: standard SDMX 2.1, no extra call.
+        # Where filled (ISTAT: 28 dataflows) it is a release or discontinuity
+        # notice rather than a summary of the content.
+        df_sdmx_description = get_description_by_lang(df, language, ns)
 
         # Structure reference
         struct_ns = ns.get("structure", "")
@@ -226,6 +235,7 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
             "df_notes": _annotation_value(anns, ann_config, "notes"),
             "df_bulk_files": _annotation_value(anns, ann_config, "bulk_files"),
             "df_geo_dim": _annotation_value(anns, ann_config, "geo_dim"),
+            "df_sdmx_description": df_sdmx_description,
         })
 
     # Bulk contentconstraint probe: populate has_constraint for providers that support it.
@@ -273,6 +283,7 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
         "df_notes": pl.Utf8,
         "df_bulk_files": pl.Utf8,
         "df_geo_dim": pl.Utf8,
+        "df_sdmx_description": pl.Utf8,
     }).with_columns(pl.Series("has_constraint", has_constraint_col, dtype=pl.Boolean))
     try:
         df.write_parquet(_dataflow_cache_path())
@@ -618,7 +629,9 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
     """Create a dataset object for a given dataflow ID, structure ID, or description.
 
     Returns a dict with keys:
-        df_id, version, df_description, df_structure_id, dimensions, filters
+        df_id, version, df_description, df_structure_id, dimensions, filters,
+        has_constraint, notes (provider notices: DATAFLOW_NOTES annotation and
+        the SDMX Description, in that order, only those present).
     """
     match_row = resolve_dataflow(dataflow_identifier)
 
@@ -634,6 +647,9 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
         "dimensions": dimensions,
         "filters": filters,
         "has_constraint": match_row.get("has_constraint"),
+        "notes": [
+            n for n in (match_row.get("df_notes"), match_row.get("df_sdmx_description")) if n
+        ],
     }
 
 

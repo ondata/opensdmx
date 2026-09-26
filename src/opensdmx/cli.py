@@ -566,6 +566,8 @@ def info(
             "df_structure_id": ds["df_structure_id"],
             "dimensions": dims,
         }
+        if ds.get("notes"):
+            data["notes"] = ds["notes"]
         if _page_url:
             data["page_url"] = _page_url
         _emit(data)
@@ -584,6 +586,8 @@ def info(
     )
     if _page_url:
         meta += f"\nPage:        {_page_url}"
+    for note in ds.get("notes") or []:
+        meta += f"\nNote:        {note}"
     console.print(Panel(meta, title="Dataset Info", expand=False))
 
     if dim_df is None or dim_df.is_empty():

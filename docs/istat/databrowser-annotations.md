@@ -6,6 +6,8 @@ The question behind this pass: *is there anything in ISTAT's own tooling that we
 
 Evidence date: 2026-07-25. The annotation census was run against the live ISTAT catalog on that day.
 
+> **Status 2026-09-26.** The "Used by opensdmx" column below is the state at evidence date. Since then `LAST_UPDATE`, `DATAFLOW_NOTES`, `ATTACHED_DATA_FILES` and `GEO_ID` are consumed: declared under `annotations` in `portals.json`, read into the catalogue columns `df_last_update`, `df_notes`, `df_bulk_files`, `df_geo_dim` (see `all_available` in `discovery.py`). The dataflow's own `<common:Description>` — not an annotation, standard SDMX 2.1 — is read too (`df_sdmx_description`): filled on 28 of 4,910 dataflows, and where filled it is a release or discontinuity notice, shown by `info` as a `Note:` line together with `DATAFLOW_NOTES`.
+
 ---
 
 ## Platform identification — a correction
