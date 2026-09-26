@@ -1184,6 +1184,14 @@ def test_get_description_by_lang_ignores_empty_and_missing():
     assert get_description_by_lang(node, "it", ns) is None
     assert get_description_by_lang(etree.fromstring(b"<df/>"), "it", ns) is None
 
+    # Empty in the requested language, populated in another: the populated one wins.
+    node = etree.fromstring(
+        b'<df xmlns:common="c" xmlns:xml="http://www.w3.org/XML/1998/namespace">'
+        b'<common:Description xml:lang="it"> </common:Description>'
+        b'<common:Description xml:lang="en">Break in series from 2025</common:Description></df>'
+    )
+    assert get_description_by_lang(node, "it", ns) == "Break in series from 2025"
+
 
 def test_load_dataset_collects_notes_from_annotation_and_description():
     """`notes` lists DATAFLOW_NOTES then the SDMX Description, skipping the missing ones."""
@@ -1204,3 +1212,17 @@ def test_load_dataset_collects_notes_from_annotation_and_description():
          patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
         ds = discovery.load_dataset("X")
     assert ds["notes"] == ["Dati provinciali non confrontabili"]
+
+    # Both present: DATAFLOW_NOTES first, then the SDMX Description.
+    row = {**row, "df_notes": "Dati provinciali non confrontabili",
+           "df_sdmx_description": "Da gennaio 2025 discontinuita."}
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        ds = discovery.load_dataset("X")
+    assert ds["notes"] == ["Dati provinciali non confrontabili", "Da gennaio 2025 discontinuita."]
+
+    # Neither: empty list, so `info` prints nothing.
+    row = {**row, "df_notes": None, "df_sdmx_description": None}
+    with patch.object(discovery, "resolve_dataflow", return_value=row), \
+         patch.object(discovery, "_get_dimensions", return_value=["FREQ"]):
+        assert discovery.load_dataset("X")["notes"] == []

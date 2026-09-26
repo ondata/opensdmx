@@ -81,11 +81,16 @@ def get_description_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | No
         descs = node.findall("Description")
 
     for desc_node in descs:
-        if desc_node.get("{http://www.w3.org/XML/1998/namespace}lang") == lang and desc_node.text:
-            return str(desc_node.text).strip() or None
+        if desc_node.get("{http://www.w3.org/XML/1998/namespace}lang") == lang:
+            text = str(desc_node.text or "").strip()
+            if text:
+                return text
 
-    if descs and descs[0].text:
-        return str(descs[0].text).strip() or None
+    # No populated match in the requested language: first populated one, any language.
+    for desc_node in descs:
+        text = str(desc_node.text or "").strip()
+        if text:
+            return text
     return None
 
 
