@@ -6308,6 +6308,7 @@ NRG_IND_RCAEBT,Renewable cooling - ambient energy by technology,ok,sdmx,6,56,0,"
 NRG_IND_RCTCBT,Renewable cooling - technical characteristics by technology,ok,sdmx,6,60,0,"",2026-08-03
 NRG_IND_RE,Rate of electrification,ok,sdmx,5,123,0,"",2026-08-03
 NRG_IND_REN,Main indicators - share of renewable energy,ok,sdmx,5,68,0,"",2026-08-03
+NRG_IND_RESOVSH,Renewable energy sources in overall share,ok,sdmx,6,69,0,"",2026-09-28
 NRG_IND_RFCE,Contribution of renewable fuels to gross final consumption of energy,ok,sdmx,5,66,0,"",2026-08-03
 NRG_IND_RFCER,Share of renewable fuels in gross final consumption of energy from renewables,ok,sdmx,5,66,0,"",2026-08-03
 NRG_IND_RFTCE,Share of renewable fuels in total gross final consumption of energy,ok,sdmx,5,66,0,"",2026-08-03
