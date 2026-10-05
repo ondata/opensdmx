@@ -3701,6 +3701,7 @@ ILC_LVPS01,Distribution of population by sex and age,ok,sdmx,6,89,0,"",2026-07-2
 ILC_LVPS02,Distribution of population by household type and income group,ok,sdmx,6,91,0,"",2026-07-26
 ILC_LVPS03,Distribution of population by work intensity of the household (population aged 0 to 64 years),ok,sdmx,8,74,0,"",2026-07-26
 ILC_LVPS04,Distribution of population aged 18 and over by educational attainment level and age group,ok,sdmx,7,80,0,"",2026-07-26
+ILC_LVPS05,"Distribution of population by sex, age and tenure status",ok,sdmx,7,74,0,"",2026-10-05
 ILC_LVPS08,Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years),ok,sdmx,6,83,0,"",2026-07-26
 ILC_LVPS08$DV_1041,Persons living with their parents or contributing/benefiting from the household income (population aged 18 to 34 years),error,"",0,0,5,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/ILC_LVPS08$DV_1041'
 For more information check: https://developer.mo",2026-08-25
