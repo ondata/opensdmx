@@ -17,6 +17,7 @@ if TYPE_CHECKING:
 _HELP_FLAGS = {"--help", "-h"}
 
 import httpx
+import rich
 import typer
 from rich.console import Console
 from rich.panel import Panel
@@ -391,7 +392,9 @@ def search(
             )
             raise typer.Exit(1)
         except Exception as e:
-            err_console.print(f"[red]Error:[/red] {e}")
+            # Escape the message: it names the `[semantic]` extra, and Rich would
+            # otherwise read the brackets as markup and drop them from the output.
+            err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
             raise typer.Exit(1)
 
         if grep:
@@ -925,7 +928,9 @@ def embed(
     try:
         build_embeddings(progress=True)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        # Escape the message: it names the `[semantic]` extra, and Rich would
+        # otherwise read the brackets as markup and drop them from the output.
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
 

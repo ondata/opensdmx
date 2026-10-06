@@ -8,10 +8,26 @@ for an embedding.
 from __future__ import annotations
 
 import sys
+from unittest.mock import patch
 
 import pytest
+from typer.testing import CliRunner
 
 from opensdmx import embed
+from opensdmx.cli import app
+
+runner = CliRunner()
+
+
+@pytest.fixture(scope="session")
+def pyproject() -> dict:
+    """Parsed `pyproject.toml`, shared by the packaging tests."""
+    import tomllib
+    from pathlib import Path
+
+    return tomllib.loads(
+        Path(__file__).parent.parent.joinpath("pyproject.toml").read_text(encoding="utf-8")
+    )
 
 
 @pytest.fixture
@@ -40,18 +56,35 @@ def test_build_embeddings_explains_the_missing_extra() -> None:
         embed.build_embeddings(progress=False)
 
 
-def test_pyproject_keeps_ollama_out_of_the_hard_dependencies() -> None:
+def test_pyproject_keeps_ollama_out_of_the_hard_dependencies(pyproject: dict) -> None:
     """The install command the error suggests has to name an extra that exists."""
-    import tomllib
-    from pathlib import Path
-
-    pyproject = tomllib.loads(
-        Path(__file__).parent.parent.joinpath("pyproject.toml").read_text(encoding="utf-8")
-    )
     project = pyproject["project"]
 
     assert any(dep.startswith("ollama") for dep in project["optional-dependencies"]["semantic"])
     assert not any(dep.startswith("ollama") for dep in project["dependencies"])
+
+
+@pytest.mark.usefixtures("without_ollama")
+def test_search_semantic_cli_prints_the_install_hint() -> None:
+    """The CLI output must name the extra: Rich would parse `[semantic]` as markup."""
+    # The app's startup callback pings the provider when no rate-limit file exists;
+    # the repo's other CLI tests patch it out so nothing here touches the network.
+    with patch("opensdmx.cli._check_api_reachable"):
+        result = runner.invoke(app, ["search", "--semantic", "unemployment"])
+
+    assert result.exit_code == 1
+    assert 'opensdmx[semantic]' in result.output
+    assert "uv tool install" in result.output
+
+
+@pytest.mark.usefixtures("without_ollama")
+def test_embed_cli_prints_the_install_hint() -> None:
+    """Same contract for `opensdmx embed`: the hint names the extra unescaped."""
+    with patch("opensdmx.cli._check_api_reachable"):
+        result = runner.invoke(app, ["embed"])
+
+    assert result.exit_code == 1
+    assert 'opensdmx[semantic]' in result.output
 
 
 def test_keyword_search_does_not_need_the_ollama_client(without_ollama: None) -> None:
@@ -70,14 +103,8 @@ def test_keyword_search_does_not_need_the_ollama_client(without_ollama: None) ->
     assert results["df_id"][0] == "UNEMP"
 
 
-def test_pyproject_keeps_ollama_in_the_guide_extra() -> None:
+def test_pyproject_keeps_ollama_in_the_guide_extra(pyproject: dict) -> None:
     """`run_guide` calls `semantic_search`, so `[guide]` has to bring the client."""
-    import tomllib
-    from pathlib import Path
-
-    pyproject = tomllib.loads(
-        Path(__file__).parent.parent.joinpath("pyproject.toml").read_text(encoding="utf-8")
-    )
     extras = pyproject["project"]["optional-dependencies"]
 
     for extra in ("semantic", "guide"):

@@ -30,6 +30,7 @@ def _require_ollama() -> Any:
         raise ImportError(
             "Semantic search needs the Ollama Python client, which is an optional extra:\n"
             '  pip install "opensdmx[semantic]"\n'
+            '  uv tool install "opensdmx[semantic]"   # if installed as a CLI with uv\n'
             "It also needs a running Ollama server with the embedding model pulled:\n"
             f"  ollama pull {_EMBED_MODEL}\n"
             "Tip: use keyword search instead:  opensdmx search <keyword>"
