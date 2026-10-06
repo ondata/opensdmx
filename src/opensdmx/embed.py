@@ -1,8 +1,13 @@
-"""Semantic search via Ollama embeddings."""
+"""Semantic search via Ollama embeddings.
+
+The Ollama Python client is the ``semantic`` extra, not a hard dependency: this
+module imports it lazily so that a keyword-only install never needs it.
+"""
 
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import httpx
 import numpy as np
@@ -13,6 +18,26 @@ from .base import get_cache_dir
 _EMBED_MODEL = "nomic-embed-text-v2-moe"
 
 
+def _require_ollama() -> Any:
+    """Import the Ollama client, or point at the extra that provides it.
+
+    Every other command works without it, so the failure has to name the install
+    step rather than surface as a bare ``ModuleNotFoundError``.
+    """
+    try:
+        import ollama
+    except ImportError as exc:
+        raise ImportError(
+            "Semantic search needs the Ollama Python client, which is an optional extra:\n"
+            '  pip install "opensdmx[semantic]"\n'
+            '  uv tool install "opensdmx[semantic]"   # if installed as a CLI with uv\n'
+            "It also needs a running Ollama server with the embedding model pulled:\n"
+            f"  ollama pull {_EMBED_MODEL}\n"
+            "Tip: use keyword search instead:  opensdmx search <keyword>"
+        ) from exc
+    return ollama
+
+
 def _embed_cache_path() -> Path:
     path: Path = get_cache_dir() / "embeddings.parquet"
     return path
@@ -20,7 +45,7 @@ def _embed_cache_path() -> Path:
 
 def _check_ollama() -> None:
     """Raise RuntimeError if Ollama server is unreachable or the embed model is missing."""
-    import ollama
+    ollama = _require_ollama()
 
     try:
         models = ollama.list().models
@@ -41,7 +66,7 @@ def _check_ollama() -> None:
 
 def _embed(texts: list[str]) -> np.ndarray:
     """Embed a list of texts via Ollama. Returns (N, dim) float32 array."""
-    import ollama
+    ollama = _require_ollama()
 
     response = ollama.embed(model=_EMBED_MODEL, input=texts)
     return np.array(response.embeddings, dtype=np.float32)

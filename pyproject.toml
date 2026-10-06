@@ -24,7 +24,6 @@ dependencies = [
     "httpx[socks]>=0.28.1",
     "lxml>=6.0.2",
     "numpy>=2.4.2",
-    "ollama>=0.6.1",
     "pandas>=2.0",
     "platformdirs>=4.9.4",
     "plotnine>=0.15.3",
@@ -38,12 +37,22 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# `guide` needs the Ollama client too: `run_guide` falls back to `semantic_search`
+# when no dataset is supplied (guide.py:72), so without it the command dies with
+# an ImportError even when the embeddings are ready.
 guide = [
     "chatlas[google]>=0.7",
     "questionary>=2.1.1",
+    "ollama>=0.6.1",
 ]
 eval = [
     "deepeval>=3.0",
+]
+# Semantic search (`search --semantic`, `embed`, `semantic_search`,
+# `build_embeddings`). numpy stays a hard dependency: the default keyword path
+# ranks with BM25 in ranking.py, which is numpy-based (discovery.py:408-432).
+semantic = [
+    "ollama>=0.6.1",
 ]
 
 [project.scripts]

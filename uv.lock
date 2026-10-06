@@ -1570,7 +1570,6 @@ dependencies = [
     { name = "httpx", extra = ["socks"] },
     { name = "lxml" },
     { name = "numpy" },
-    { name = "ollama" },
     { name = "pandas" },
     { name = "platformdirs" },
     { name = "plotnine" },
@@ -1589,7 +1588,11 @@ eval = [
 ]
 guide = [
     { name = "chatlas", extra = ["google"] },
+    { name = "ollama" },
     { name = "questionary" },
+]
+semantic = [
+    { name = "ollama" },
 ]
 
 [package.dev-dependencies]
@@ -1610,7 +1613,8 @@ requires-dist = [
     { name = "httpx", extras = ["socks"], specifier = ">=0.28.1" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "numpy", specifier = ">=2.4.2" },
-    { name = "ollama", specifier = ">=0.6.1" },
+    { name = "ollama", marker = "extra == 'guide'", specifier = ">=0.6.1" },
+    { name = "ollama", marker = "extra == 'semantic'", specifier = ">=0.6.1" },
     { name = "pandas", specifier = ">=2.0" },
     { name = "platformdirs", specifier = ">=4.9.4" },
     { name = "plotnine", specifier = ">=0.15.3" },
@@ -1623,7 +1627,7 @@ requires-dist = [
     { name = "tenacity", specifier = ">=9.1.4" },
     { name = "typer", specifier = ">=0.24.1" },
 ]
-provides-extras = ["guide", "eval"]
+provides-extras = ["guide", "eval", "semantic"]
 
 [package.metadata.requires-dev]
 dev = [
