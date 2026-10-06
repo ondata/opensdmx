@@ -265,7 +265,7 @@ plot.save("unemployment.png", dpi=150, width=10, height=5)
 
 ### Commands
 
-All commands accept `--provider` (`-p`) to select the provider.
+All commands accept `--provider` (`-p`) to select the provider; the ones that reach the network also accept `--explain` (see below).
 
 | Command | Description |
 |---|---|
@@ -282,6 +282,23 @@ All commands accept `--provider` (`-p`) to select the provider.
 | `opensdmx run <query.yaml> [--out file] [-p provider]` | Re-run a query saved with `--query-file` |
 | `opensdmx plot <id\|file.csv> [--DIM VALUE] [--geom line\|bar\|barh\|point\|scatter] [--out file] [-p provider]` | Plot data as chart |
 | `opensdmx blacklist [-p provider]` | List and remove datasets from the unavailability blacklist |
+
+### Dry runs: the plan before the request
+
+`--explain` prints the provider requests a command *would* make and stops before the first one, so a plan costs nothing. Steps already served by the local cache are listed as `[cached]`; the first request that is not cached is `[would fetch]`, and the run ends there — whatever follows it depends on that response. The plan goes to stderr, stdout stays empty, and the exit code is 0.
+
+```bash
+$ opensdmx get NAMA_10_GDP --FREQ A --start-period 2020 --last-n 1 --explain
+[cached]      GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT?detail=allstubs&references=none
+[cached]      GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/NAMA_10_GDP
+[would fetch] GET https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/NAMA_10_GDP/A...?format=SDMX-CSV&startPeriod=2020&lastNObservations=1
+```
+
+Here the catalog and the structure were already cached, so the data URL is computable and shown; with a cold cache the plan starts at the catalog. A `get` without `--last-n`/`--first-n`/`--yes` spends a size probe first, and the plan shows that request — it is a real request like any other.
+
+Not every cached step is named, because not every one has a URL to name: constraints come from the local SQLite cache, and on hub-only providers (INPS) the middleware URLs are built outside the shared request path. A plan that ends with `explain: no provider request would be made.` means everything the command needed was already local.
+
+It applies to `get`, `plot`, `run`, `constraints`, `info`, `values`, `search`, `tree` and `siblings`, and follows the shared request path, so it needs no per-provider support — POST-based hubs included. Worth running before an endpoint that limits requests per IP (ISTAT, ~13 s): the exact URL can be checked without spending the request.
 
 ### Examples
 

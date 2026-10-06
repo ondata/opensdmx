@@ -306,6 +306,73 @@ def _rate_limit_check(is_data: bool = False) -> None:
             pass
 
 
+class ExplainStop(BaseException):
+    """Stop signal raised by `--explain` just before a request would be made.
+
+    Derives from `BaseException`, not `Exception`, so the `except Exception`
+    handlers the callers use to turn failures into readable errors cannot
+    swallow it and report a plan as an error: this is control flow, like
+    `KeyboardInterrupt`. `cli.main()` catches it and exits 0.
+    """
+
+
+_explain = False
+
+
+def set_explain(enabled: bool) -> None:
+    """Turn plan mode on or off for this process. The CLI sets it per command."""
+    global _explain
+    _explain = enabled
+
+
+def is_explain() -> bool:
+    """True when the run is planning: no request may be made, no stdout written."""
+    return _explain
+
+
+def _explain_url(url: str, params: Any = None) -> str:
+    """`url` as httpx would send it, query string included.
+
+    Same encoder as the request itself, so a plan line and the call it stands
+    for cannot drift apart.
+    """
+    return str(httpx.URL(url, params=params or None))
+
+
+def _explain_write(marker: str, method: str, url: str, body: Any = None) -> None:
+    """Write one plan line to stderr — stdout carries data, never the plan."""
+    line = f"{marker:<13} {method} {url}"
+    if body is not None:
+        # Same serialization httpx uses for `json=`, so the line shows the body
+        # that would really be sent (key order included).
+        line += " " + json.dumps(body, ensure_ascii=False, separators=(",", ":"))
+    sys.stderr.write(line + "\n")
+    sys.stderr.flush()
+
+
+def explain_cached(method: str, path: str, **params: Any) -> None:
+    """Report a step served from the local cache: `[cached] GET <url>`.
+
+    Called where a cache hit replaces a request, with the same path and params
+    the miss would have used, so the plan names the request that did *not*
+    happen. `path` is relative to the active provider's base URL.
+    """
+    if _explain:
+        _explain_write("[cached]", method, _explain_url(f"{get_base_url()}/{path}", params))
+
+
+def explain_would_fetch(method: str, url: str, *, body: Any = None) -> None:
+    """Print the request about to be made, then stop the run before making it.
+
+    Takes a full URL: callers that build one themselves (the StatKit hub's own
+    `httpx` client) must be able to report exactly what they would send.
+    """
+    if not _explain:
+        return
+    _explain_write("[would fetch]", method, url, body)
+    raise ExplainStop
+
+
 def _is_retryable_exception(exc: BaseException) -> bool:
     """Decide whether a request failure is worth retrying.
 
@@ -350,6 +417,11 @@ def sdmx_request(
     """
     base = _base_url if _base_url is not None else get_base_url()
     url = f"{base}/{path}"
+    # Before the lock and the rate-limit timer: a plan must not wait for a slot
+    # it is never going to use. The flag is checked here as well as inside, so
+    # the URL is only rendered when it will be printed.
+    if _explain:
+        explain_would_fetch(_method, _explain_url(url, params), body=_json_body)
     effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
     effective_attempts = _max_retries if _max_retries is not None else 3
 

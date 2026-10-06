@@ -7,7 +7,7 @@ import math
 import re
 import sys
 from collections.abc import Iterator
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional
 
@@ -22,7 +22,14 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from .base import get_base_url, get_provider, set_extra_headers
+from .base import (
+    ExplainStop,
+    get_base_url,
+    get_provider,
+    is_explain,
+    set_extra_headers,
+    set_explain,
+)
 from .utils import compose_title
 
 def _category_of(df_id: str) -> str:
@@ -62,7 +69,28 @@ if sys.platform == "win32":
         if hasattr(_stream, "reconfigure"):
             _stream.reconfigure(encoding="utf-8", errors="replace")
 
-console = Console()
+class _OutputConsole(Console):
+    """Console for a command's own output — never for the --explain plan.
+
+    When planning, the plan is the only output: data tables, hints and spinners
+    are dropped so stdout stays empty and pipes keep working. Reporting the
+    request that stops the run belongs to `base.explain_would_fetch`, on stderr.
+    """
+
+    def print(self, *objects: Any, **kwargs: Any) -> None:
+        if is_explain():
+            return
+        super().print(*objects, **kwargs)
+
+    def status(self, status: Any = "", **kwargs: Any) -> Any:
+        # A spinner would dirty stdout before the plan is complete — and under
+        # --explain there is no wait to animate in the first place.
+        if is_explain():
+            return nullcontext()
+        return super().status(status, **kwargs)
+
+
+console = _OutputConsole()
 err_console = Console(stderr=True)
 
 # Global output mode — set by --output in the app callback.
@@ -103,6 +131,9 @@ def _emit(data: object, df: pl.DataFrame | None = None) -> None:
     data  — Python list/dict for JSON mode
     df    — Polars DataFrame for CSV mode (falls back to data if None)
     """
+    if is_explain():
+        # The plan is the output under --explain: stdout stays empty.
+        return
     if _output_mode == "json":
         sys.stdout.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
     elif _output_mode == "csv":
@@ -132,6 +163,9 @@ def _emit(data: object, df: pl.DataFrame | None = None) -> None:
 
 def _write_output(df: pl.DataFrame, out: Path | None) -> None:
     """Write a frame to stdout as CSV, or to a file chosen by its suffix."""
+    if is_explain():
+        # The plan is the output under --explain: no data, no file.
+        return
     if out is None:
         sys.stdout.write(df.write_csv())
         return
@@ -222,6 +256,11 @@ def _version_callback(value: bool) -> None:
 
 _PROVIDER_HELP = "Provider name ('eurostat', 'ecb') or custom base URL. Env: OPENSDMX_PROVIDER"
 
+_EXPLAIN_HELP = (
+    "Dry run: print to stderr the provider requests this command would make, cached "
+    "steps included, and stop before the first one. Nothing is fetched; stdout stays empty."
+)
+
 
 def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
     """Parse extra --KEY VALUE args from context as dimension filters.
@@ -272,6 +311,15 @@ def _apply_headers(header: list[str] | None) -> None:
     set_extra_headers(parsed)
 
 
+def _apply_explain(explain: bool) -> None:
+    """Switch the run to planning: no request from here on, and no stdout.
+
+    Called by every command that can reach the network. `_startup` resets it, so
+    a --explain run cannot leak into the next command in the same process.
+    """
+    set_explain(explain)
+
+
 def _check_api_reachable() -> None:
     """Do a lightweight GET check on the active provider's base URL."""
     from .base import _rate_limit_file
@@ -302,6 +350,9 @@ def _startup(
     ),
 ) -> None:
     global _output_mode
+    # Plan mode is per invocation and this callback runs before every command:
+    # reset it so one --explain run cannot leak into the next one.
+    set_explain(False)
     if output not in ("table", "json", "csv"):
         # typer 0.27 dropped its click dependency and ships its own
         # ParameterSource, so compare by name: importing click's enum made the
@@ -316,7 +367,10 @@ def _startup(
         console.print(f"opensdmx {_version('opensdmx')}\n")
         console.print(ctx.get_help())
         raise typer.Exit()
-    if not _HELP_FLAGS.intersection(sys.argv):
+    if not _HELP_FLAGS.intersection(sys.argv) and "--explain" not in sys.argv:
+        # The flag's value arrives with the command, but a plan has to be
+        # printable without the provider being reachable — and must not spend
+        # the reachability GET — so it is read off argv here, like --help above.
         _check_api_reachable()
 
 
@@ -330,6 +384,7 @@ def search(
     page: int = typer.Option(1, "--page", help="Page number, 1-based (default: 1). Use with --n to paginate. Title shows range e.g. '21-40 of 114'."),
     all_results: bool = typer.Option(False, "--all", help="Show ALL results from cache, ignoring --n and --page."),
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict search to a category (leaf id or dotted path). Provider must support categories. See `opensdmx tree`."),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ) -> None:
     """Search datasets by keyword in the local cache (or semantically with --semantic).
@@ -362,6 +417,7 @@ def search(
       opensdmx search comun --provider istat --all --grep "\\bcomuni\\b|comunal"
     """
     _apply_provider(provider)
+    _apply_explain(explain)
 
     if semantic:
         page_source = ctx.get_parameter_source("page")
@@ -379,6 +435,11 @@ def search(
             raise typer.Exit(1)
 
         from .embed import semantic_search
+
+        if is_explain():
+            # Semantic search asks the local Ollama server, not the provider:
+            # there is no request plan to show, and a dry run spends nothing.
+            return
         try:
             with _status_ctx("[dim]Semantic search...[/dim]"):
                 df = semantic_search(keyword, n=n)
@@ -512,6 +573,7 @@ def search(
 @app.command()
 def info(
     dataset_id: str = typer.Argument(..., help="Dataset ID"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
@@ -526,6 +588,7 @@ def info(
     """
     _apply_provider(provider)
     _apply_headers(header)
+    _apply_explain(explain)
     from . import dimensions_info, load_dataset
     try:
         with _status_ctx("[dim]Loading dataset...[/dim]"):
@@ -617,6 +680,7 @@ def values(
     dim: str = typer.Argument(..., help="Dimension ID (e.g. FREQ)"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive)"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
     """Show a dimension's codelist — its definition, not the dataflow's content.
@@ -638,6 +702,7 @@ def values(
     """
     _apply_provider(provider)
     _apply_headers(header)
+    _apply_explain(explain)
 
     import polars as pl
 
@@ -721,6 +786,7 @@ def constraints(
     dimension: Optional[str] = typer.Argument(None, help="Dimension ID (optional); if omitted shows all dimensions"),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     grep: Optional[str] = typer.Option(None, "--grep", help="Filter results by regex (matches id or name, case-insensitive); only applies with DIMENSION"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
     """Show constrained (actually present) values for a dataflow's dimensions.
@@ -742,6 +808,7 @@ def constraints(
     """
     _apply_provider(provider)
     _apply_headers(header)
+    _apply_explain(explain)
 
     import polars as pl
 
@@ -1144,6 +1211,7 @@ def tree(
     category: Optional[str] = typer.Option(None, "--category", "-c", help="Restrict tree to the subtree rooted at this category ID (requires --scheme)."),
     depth: Optional[int] = typer.Option(None, "--depth", "-d", help="Levels to show below the current root (default: 1 without --scheme, unlimited with it)."),
     show_dataflows: bool = typer.Option(False, "--show-dataflows", "-l", help="Inline dataflow leaves under each category (requires --scheme; prefixed [df:ID])."),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
@@ -1178,6 +1246,7 @@ def tree(
     """
     _apply_provider(provider)
     _apply_headers(header)
+    _apply_explain(explain)
 
     from .categories import CategoriesNotSupported, load_categories
 
@@ -1399,6 +1468,7 @@ def tree(
 @app.command()
 def siblings(
     dataset_id: str = typer.Argument(..., help="Dataflow ID to locate in the thematic tree"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ) -> None:
     """Show dataflow siblings — other dataflows in the same category.
@@ -1416,6 +1486,7 @@ def siblings(
       opensdmx siblings NAMA_10_GDP --provider eurostat
     """
     _apply_provider(provider)
+    _apply_explain(explain)
 
     from .categories import CategoriesNotSupported, siblings_of
     from .discovery import resolve_dataflow
@@ -1483,6 +1554,7 @@ def get(
     first_n: Optional[int] = typer.Option(None, "--first-n", help="Return only first N observations per series"),
     yes: bool = typer.Option(False, "--yes", "-y", help="Download all series in a single wildcard bulk request, skipping the confirmation prompt"),
     labels: bool = typer.Option(False, "--labels", help="Append a '<DIM>_label' column with the human-readable name for each dimension code"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
     header: Optional[list[str]] = typer.Option(None, "--header", help="Extra HTTP header in 'Name: Value' format (repeatable)"),
 ) -> None:
@@ -1501,6 +1573,7 @@ def get(
     """
     _apply_provider(provider)
     _apply_headers(header)
+    _apply_explain(explain)
     from . import get_data
 
     filters = _parse_extra_filters(ctx)
@@ -1558,6 +1631,11 @@ def get(
     _write_output(df, out)
 
     if query_file is not None:
+        if is_explain():
+            # A dry run writes nothing, not even the query file. Unreachable
+            # today (the fetch stops the run first), kept so a future no-network
+            # path in get_data cannot quietly write it.
+            return
         import yaml
         from .utils import build_query_dict
         query_dict = build_query_dict(
@@ -1574,6 +1652,7 @@ def get(
 def run(
     query_file: Path = typer.Argument(..., help="YAML query file (created with --query-file)"),
     out: Optional[Path] = typer.Option(None, "--out", help="Output file (.csv/.parquet/.json) — default: stdout"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ) -> None:
     """Run a query from a YAML file saved with --query-file.
@@ -1587,6 +1666,8 @@ def run(
     import yaml
 
     from . import run_query
+
+    _apply_explain(explain)
 
     # Validate --provider here so an unknown name gets the CLI's readable
     # error; run_query applies the rest of the precedence chain.
@@ -1636,6 +1717,7 @@ def plot(
     plot_theme: Optional[str] = typer.Option(None, "--theme", help="Plot theme: minimal (default), bw, classic, 538, tufte, void, dark, light, gray, xkcd"),
     start_period: Optional[str] = typer.Option(None, "--start-period", help="Start period (e.g. 2020, 2020-Q1, 2020-01)"),
     end_period: Optional[str] = typer.Option(None, "--end-period", help="End period (e.g. 2023, 2023-Q4, 2023-12)"),
+    explain: bool = typer.Option(False, "--explain", help=_EXPLAIN_HELP),
     provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
 ) -> None:
     """Plot data as a chart (line, bar, barh, point, heatmap).
@@ -1657,6 +1739,11 @@ def plot(
       opensdmx plot /tmp/data.csv --x quarter --y value --rotate-x 45 --x-all
       opensdmx plot /tmp/data.csv --geom heatmap --x year --color geo --theme 538
     """
+    # Applied before the file-input branch: for a dataflow ID this is a dry run
+    # of the fetch, and for a local file — no request to plan — nothing is
+    # written at all.
+    _apply_explain(explain)
+
     import matplotlib
     matplotlib.use("Agg")
     from plotnine import aes, coord_flip, element_text, facet_wrap, geom_col, geom_line, geom_point, geom_tile, ggplot, labs, scale_x_date, theme
@@ -1851,6 +1938,9 @@ def plot(
         safe_name = re.sub(r"[^\w\-]", "_", ds_description.lower()).strip("_")
         out = Path(f"{safe_name}.png")
     import matplotlib.pyplot as plt
+    if is_explain():
+        # Dry run: the chart is the output, and --explain writes no output.
+        return
     if use_xkcd:
         with plt.xkcd():
             p.save(str(out), dpi=150, width=width, height=height)
@@ -1957,4 +2047,20 @@ def blacklist(
 
 
 def main() -> None:
-    app()
+    try:
+        app()
+    except ExplainStop:
+        # --explain: the request that stopped the run is already on stderr; not
+        # making it is the point, so this is a clean exit, not an error.
+        sys.exit(0)
+    except SystemExit as e:
+        # Click leaves through SystemExit even on success, so a plan that needed
+        # no request at all can only be reported here. A run that failed keeps
+        # its own message: only exit 0 means "plan complete".
+        if e.code in (0, None) and is_explain():
+            err_console.print("[dim]explain: no provider request would be made.[/dim]")
+        raise
+    finally:
+        # An embedding caller (or a test) that catches SystemExit leaves this
+        # process alive with the flag still set: drop it on the way out.
+        set_explain(False)

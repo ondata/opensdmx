@@ -630,6 +630,11 @@ datasets that previously timed out on `availableconstraint`. Some codes
 still carry version/date suffixes (`LBIRTH_FROM2017`, `POP_1JAN2021`) that
 may need stripping when filtering.
 
+Before committing to a request on this provider, `--explain` prints the plan and
+makes none: cached steps are `[cached]`, the first request that is not cached is
+`[would fetch]`, and the run stops there. `opensdmx get <ID> <filters> --explain`
+is the free way to see the exact URL a filter set would send.
+
 For the full step-by-step walkthrough, territory codes, the hub fast path,
 the legacy SDMX REST fallback, and ISTAT-specific quirks, see
 [references/istat-flow.md](references/istat-flow.md).
