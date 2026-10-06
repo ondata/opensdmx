@@ -54,8 +54,13 @@ pip install --upgrade opensdmx      # if installed with pip
 ```
 
 Everything except semantic search works with this install alone. `opensdmx
-search --semantic` additionally needs a local [Ollama](https://ollama.com)
-server and a one-off index build — see [Semantic search](#semantic-search).
+search --semantic` additionally needs the Ollama Python client as an extra,
+a local [Ollama](https://ollama.com) server and a one-off index build — see
+[Semantic search](#semantic-search). On a CLI install:
+
+```bash
+uv tool install "opensdmx[semantic]"   # or: pip install "opensdmx[semantic]"
+```
 
 ## CLI quick start
 
@@ -484,15 +489,21 @@ opensdmx tree --scheme t_economy --depth 1
 
 #### Setup
 
-Requires a running [Ollama](https://ollama.com) server with the
+Requires the Ollama Python client (the `semantic` extra, not installed by
+default), a running [Ollama](https://ollama.com) server with the
 `nomic-embed-text-v2-moe` model, plus one index build per provider:
 
 ```bash
+pip install "opensdmx[semantic]"      # or: uv tool install "opensdmx[semantic]"
 ollama serve &                        # if not already running
 ollama pull nomic-embed-text-v2-moe   # ~1 GB, once
 opensdmx embed              # build embeddings for default provider (eurostat)
 opensdmx embed -p istat     # build embeddings for ISTAT
 ```
+
+Calling `semantic_search`/`build_embeddings` without the extra raises an
+`ImportError` naming the install command; importing them is always safe, so
+existing `from opensdmx import semantic_search` keeps working.
 
 The index is built **on demand, per provider**, and stored in the local cache as
 `embeddings.parquet`. Until you run `opensdmx embed` for a provider,
