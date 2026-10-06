@@ -37,9 +37,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# `guide` needs the Ollama client too: `run_guide` falls back to `semantic_search`
+# when no dataset is supplied (guide.py:72), so without it the command dies with
+# an ImportError even when the embeddings are ready.
 guide = [
     "chatlas[google]>=0.7",
     "questionary>=2.1.1",
+    "ollama>=0.6.1",
 ]
 eval = [
     "deepeval>=3.0",

@@ -55,7 +55,30 @@ def test_pyproject_keeps_ollama_out_of_the_hard_dependencies() -> None:
 
 
 def test_keyword_search_does_not_need_the_ollama_client(without_ollama: None) -> None:
-    """The default path must keep working on an install without the extra."""
-    from opensdmx import ranking
+    """The default path must keep working on an install without the extra.
 
-    assert ranking.tokenize("unemployment rate")
+    Runs the real keyword search over a stub catalog: hiding the client only proves
+    something if a search actually happens.
+    """
+    from tests.test_discovery import _fake_context, _search_with_context
+
+    results = _search_with_context(
+        "unemployment", _fake_context({"UNEMP": "Unemployment monthly"})
+    )
+
+    assert not results.is_empty()
+    assert results["df_id"][0] == "UNEMP"
+
+
+def test_pyproject_keeps_ollama_in_the_guide_extra() -> None:
+    """`run_guide` calls `semantic_search`, so `[guide]` has to bring the client."""
+    import tomllib
+    from pathlib import Path
+
+    pyproject = tomllib.loads(
+        Path(__file__).parent.parent.joinpath("pyproject.toml").read_text(encoding="utf-8")
+    )
+    extras = pyproject["project"]["optional-dependencies"]
+
+    for extra in ("semantic", "guide"):
+        assert any(dep.startswith("ollama") for dep in extras[extra]), extra

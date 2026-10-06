@@ -1588,6 +1588,7 @@ eval = [
 ]
 guide = [
     { name = "chatlas", extra = ["google"] },
+    { name = "ollama" },
     { name = "questionary" },
 ]
 semantic = [
@@ -1612,6 +1613,7 @@ requires-dist = [
     { name = "httpx", extras = ["socks"], specifier = ">=0.28.1" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "numpy", specifier = ">=2.4.2" },
+    { name = "ollama", marker = "extra == 'guide'", specifier = ">=0.6.1" },
     { name = "ollama", marker = "extra == 'semantic'", specifier = ">=0.6.1" },
     { name = "pandas", specifier = ">=2.0" },
     { name = "platformdirs", specifier = ">=4.9.4" },
