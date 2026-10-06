@@ -4332,7 +4332,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,ok,hub,6,62,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,ok,hub,6,76,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,ok,hub,6,57,0,"",2026-07-30
-999_1226_DF_DCCN_NOE_1,Valore aggiunto generato dall'economia non osservata per componente e branca di attività,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-05
+999_1226_DF_DCCN_NOE_1,Valore aggiunto generato dall'economia non osservata per componente e branca di attività,empty,hub,0,0,0,"",2026-10-06
 9_951,Cave e miniere,ok,hub,6,72,0,"",2026-07-31
 9_951_DF_DCCV_CAVE_MIN_1,Siti estrattivi,ok,hub,5,36,0,"",2026-07-31
 9_951_DF_DCCV_CAVE_MIN_2,Risorse minerali non energetiche estratte (in unità di peso),ok,hub,6,57,0,"",2026-07-31
