@@ -361,15 +361,23 @@ def explain_cached(method: str, path: str, **params: Any) -> None:
         _explain_write("[cached]", method, _explain_url(f"{get_base_url()}/{path}", params))
 
 
-def explain_would_fetch(method: str, url: str, *, body: Any = None) -> None:
+def explain_would_fetch(
+    method: str,
+    url: str,
+    *,
+    body: Any = None,
+    probe: bool = False,
+) -> None:
     """Print the request about to be made, then stop the run before making it.
 
     Takes a full URL: callers that build one themselves (the StatKit hub's own
     `httpx` client) must be able to report exactly what they would send.
+    `probe` marks the line as the size probe of `get`, which must not read like
+    the real download it inspects ('--last-n 1' builds the same URL).
     """
     if not _explain:
         return
-    _explain_write("[would fetch]", method, url, body)
+    _explain_write("[would fetch] (size probe)" if probe else "[would fetch]", method, url, body)
     raise ExplainStop
 
 
@@ -401,6 +409,7 @@ def sdmx_request(
     _method: str = "GET",
     _json_body: Any = None,
     _base_url: str | None = None,
+    _explain_probe: bool = False,
     **params: Any,
 ) -> httpx.Response:
     """Make a request to the active SDMX provider with retry logic.
@@ -421,7 +430,7 @@ def sdmx_request(
     # it is never going to use. The flag is checked here as well as inside, so
     # the URL is only rendered when it will be printed.
     if _explain:
-        explain_would_fetch(_method, _explain_url(url, params), body=_json_body)
+        explain_would_fetch(_method, _explain_url(url, params), body=_json_body, probe=_explain_probe)
     effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
     effective_attempts = _max_retries if _max_retries is not None else 3
 
@@ -540,7 +549,7 @@ def _parse_sdmx_json(payload: dict[str, Any]) -> pl.DataFrame:
     return pl.DataFrame(rows).with_columns(pl.col("OBS_VALUE").cast(pl.Float64, strict=False))
 
 
-def sdmx_request_csv(path: str, **params: Any) -> pl.DataFrame:
+def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) -> pl.DataFrame:
     """Make a request and return CSV content as a Polars DataFrame."""
     import io
     import polars as pl
@@ -562,13 +571,28 @@ def sdmx_request_csv(path: str, **params: Any) -> pl.DataFrame:
                 ', '.join(dropped),
             )
         filtered_params = {k: v for k, v in params.items() if k not in unsupported}
-        resp = sdmx_request(path + suffix, accept=data_accept, _is_data=True, **filtered_params)
+        resp = sdmx_request(
+            path + suffix,
+            accept=data_accept,
+            _is_data=True,
+            _explain_probe=_explain_probe,
+            **filtered_params,
+        )
         import re
         text = re.sub(r"\[,", "[null,", resp.text)
         return _parse_sdmx_json(json.loads(text))
     elif fmt:
         # Provider requires a ?format= query param (e.g. Eurostat SDMX-CSV)
-        resp = sdmx_request(path, accept="application/xml", format=fmt, _is_data=True, **params)
+        resp = sdmx_request(
+            path,
+            accept="application/xml",
+            format=fmt,
+            _is_data=True,
+            _explain_probe=_explain_probe,
+            **params,
+        )
     else:
-        resp = sdmx_request(path, accept="text/csv", _is_data=True, **params)
+        resp = sdmx_request(
+            path, accept="text/csv", _is_data=True, _explain_probe=_explain_probe, **params
+        )
     return pl.read_csv(io.BytesIO(resp.content), infer_schema_length=0, null_values=[], schema_overrides={"TIME_PERIOD": pl.Utf8, "OBS_VALUE": pl.Float64, "OBS_FLAG": pl.Utf8, "OBS_STATUS": pl.Utf8, "CONF_STATUS": pl.Utf8})

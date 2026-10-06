@@ -352,8 +352,16 @@ def _warn_stale(categorisation_df: pl.DataFrame) -> None:
         )
 
 
-def siblings_of(df_id: str) -> list[dict[str, Any]]:
+def siblings_of(
+    df_id: str,
+    *,
+    dataflows: pl.DataFrame | None = None,
+) -> list[dict[str, Any]]:
     """Return all dataflow siblings grouped by category.
+
+    `dataflows` is the already-loaded dataflow catalog (columns
+    `df_id`, `df_description`): the CLI passes it so the catalog is read once.
+    `None` reads it here, as before.
 
     A dataflow can belong to multiple categories (cross-listed). This function
     returns one group per (scheme_id, cat_path) membership, each group
@@ -377,13 +385,18 @@ def siblings_of(df_id: str) -> list[dict[str, Any]]:
         return []
 
     from .discovery import all_available
-    try:
-        dataflows = all_available().select(["df_id", "df_description"])
-    except Exception as e:
-        logger.warning(f"Could not load dataflow list for descriptions: {e}")
-        dataflows = pl.DataFrame(
-            schema={"df_id": pl.Utf8, "df_description": pl.Utf8}
-        )
+    if dataflows is None:
+        try:
+            dataflows = all_available().select(["df_id", "df_description"])
+        except Exception as e:
+            logger.warning(f"Could not load dataflow list for descriptions: {e}")
+            dataflows = pl.DataFrame(
+                schema={"df_id": pl.Utf8, "df_description": pl.Utf8}
+            )
+    else:
+        # A caller-provided frame comes from `all_available` itself (the CLI
+        # passes it to avoid a second catalog read and a duplicated plan line).
+        dataflows = dataflows.select(["df_id", "df_description"])
 
     groups = []
     for row in memberships.iter_rows(named=True):

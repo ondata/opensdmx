@@ -1489,7 +1489,15 @@ def siblings(
     _apply_explain(explain)
 
     from .categories import CategoriesNotSupported, siblings_of
-    from .discovery import resolve_dataflow
+    from .discovery import all_available, resolve_dataflow
+
+    # Load the catalog once and share it between resolution and the description
+    # table: `siblings_of` reads it again otherwise, and a plan would name the
+    # same request twice.
+    try:
+        dataflows = all_available()
+    except Exception:
+        dataflows = None
 
     # Resolve against the dataflow catalog only — deliberately not load_dataset,
     # which fetches the datastructure for dimensions this command never uses.
@@ -1499,7 +1507,7 @@ def siblings(
     # dataflow table is unavailable, so a catalog outage must not turn a lookup
     # the cached category tree can answer into an error.
     try:
-        canonical_id = resolve_dataflow(dataset_id)["df_id"]
+        canonical_id = resolve_dataflow(dataset_id, _dataflows=dataflows)["df_id"]
     except ValueError as e:
         # Catalog loaded and the ID is genuinely absent: the standard error.
         err_console.print(f"[red]Error:[/red] {e}")
@@ -1510,7 +1518,7 @@ def siblings(
         canonical_id = dataset_id.upper()
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
-            groups = siblings_of(canonical_id)
+            groups = siblings_of(canonical_id, dataflows=dataflows)
     except CategoriesNotSupported as e:
         err_console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)
@@ -1594,7 +1602,7 @@ def get(
         if not last_n and not first_n and not yes and _probe_supported:
             try:
                 with console.status("[dim]Checking dataset size...[/dim]"):
-                    probe = get_data(ds, last_n_observations=1)
+                    probe = get_data(ds, last_n_observations=1, _explain_probe=True)
                 n_series = len(probe)
                 if n_series > _LARGE_DATASET_THRESHOLD:
                     _scope = "with the current filters" if filters else "no filters set"

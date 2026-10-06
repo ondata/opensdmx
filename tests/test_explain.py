@@ -156,11 +156,52 @@ def test_get_explain_lists_every_cached_step_and_the_data_url(capsys, monkeypatc
     assert f"[cached]      GET {_EUROSTAT}/dataflow/ESTAT?detail=allstubs&references=none" in captured.err
     assert f"[cached]      GET {_EUROSTAT}/datastructure/ESTAT/NAMA_10_GDP" in captured.err
     # FREQ=A and GEO unfiltered -> key `A.`, built from the cached dimension order;
-    # the size probe is the first request when --last-n/--first-n are not given.
+    # the size probe is the first request when --last-n/--first-n are not given, and
+    # it must not read like the real download it inspects (same URL as --last-n 1).
     assert (
-        f"[would fetch] GET {_EUROSTAT}/data/NAMA_10_GDP/A.?format=SDMX-CSV&lastNObservations=1"
+        f"[would fetch] (size probe) GET {_EUROSTAT}/data/NAMA_10_GDP/A.?format=SDMX-CSV&lastNObservations=1"
         in captured.err
     )
+    assert "[would fetch] GET" not in captured.err
+
+
+def test_siblings_lists_the_catalog_once(capsys, monkeypatch):
+    """The plan names each cached request once: `siblings` shares one catalog read
+    between resolution and the description table instead of reading it twice."""
+    categories = pl.DataFrame(
+        {
+            "scheme_id": ["ESTAT"],
+            "scheme_name": ["Eurostat"],
+            "cat_path": ["economy"],
+            "cat_name": ["Economy"],
+        }
+    )
+    categorisation = pl.DataFrame(
+        {
+            "scheme_id": ["ESTAT"],
+            "cat_path": ["economy"],
+            "df_id": ["NAMA_10_GDP"],
+        }
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["opensdmx", "siblings", "NAMA_10_GDP", "--explain", "-p", "eurostat"],
+    )
+    with patch("opensdmx.discovery._load_cached_dataflows", return_value=_catalog()), \
+         patch("opensdmx.categories.load_categories") as load_cats, \
+         patch("opensdmx.base.httpx.Client") as client:
+        load_cats.return_value = (categories, categorisation)
+        with pytest.raises(SystemExit) as stopped:
+            main()
+    assert stopped.value.code == 0
+    client.assert_not_called()
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    catalog_line = (
+        f"[cached]      GET {_EUROSTAT}/dataflow/ESTAT?detail=allstubs&references=none"
+    )
+    assert captured.err.count(catalog_line) == 1
 
 
 def test_inps_plan_starts_at_the_hub_catalog(capsys, monkeypatch):

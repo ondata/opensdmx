@@ -603,8 +603,15 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
     return description
 
 
-def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
+def resolve_dataflow(
+    dataflow_identifier: str,
+    *,
+    _dataflows: pl.DataFrame | None = None,
+) -> dict[str, Any]:
     """Return the catalog row matching a dataflow ID, structure ID, or description.
+
+    `_dataflows` lets a caller that already loaded the catalog reuse it, so a
+    plan does not name the same request twice; `None` reads it here.
 
     Matching is case-insensitive on the two IDs and exact on the description.
     Reads the dataflow catalog only — it never fetches the datastructure, so
@@ -615,7 +622,7 @@ def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
     Raises:
         ValueError: if no dataflow matches the identifier.
     """
-    all_ds = all_available()
+    all_ds = _dataflows if _dataflows is not None else all_available()
 
     match_row = None
     identifier_upper = dataflow_identifier.upper()
