@@ -69,6 +69,7 @@ def get_data(
     end_period: str | None = None,
     last_n_observations: int | None = None,
     first_n_observations: int | None = None,
+    _explain_probe: bool = False,
 ) -> pl.DataFrame:
     """Retrieve data from a dataset using the current filters.
 
@@ -78,6 +79,9 @@ def get_data(
         end_period: optional end date (YYYY-MM-DD or YYYY)
         last_n_observations: optional, return only last N observations per series
         first_n_observations: optional, return only first N observations per series
+        _explain_probe: mark the plan line of this call as the `get` size probe,
+            so a reader cannot mistake it for the data download it inspects.
+            Internal; only `get` sets it.
 
     Returns:
         Polars DataFrame sorted by TIME_PERIOD ascending
@@ -113,7 +117,7 @@ def get_data(
         if first_n_observations is not None:
             params["firstNObservations"] = first_n_observations
 
-        data = sdmx_request_csv(path, **params)
+        data = sdmx_request_csv(path, _explain_probe=_explain_probe, **params)
 
     # Client-side dimension filter for providers that download unfiltered:
     # empty-key (Derzhstat) and hub-only (INPS).

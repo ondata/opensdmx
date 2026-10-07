@@ -45,7 +45,7 @@ import httpx
 import polars as pl
 from lxml import etree
 
-from .base import get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
+from .base import explain_cached, get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
 from .utils import get_description_by_lang, get_name_by_lang, xml_attr_safe, xml_parse
 
 from .cache_config import DATAFLOWS_CACHE_TTL
@@ -148,6 +148,22 @@ def _catalog_view(df: pl.DataFrame, include_hidden: bool) -> pl.DataFrame:
     return df if include_hidden else _filter_hidden(df)
 
 
+def _explain_cached_catalog() -> None:
+    """Report the dataflow request the cached catalog replaced.
+
+    SDMX-REST providers only: hub-only providers (INPS) read the same Parquet
+    file, but wrote it from their middleware endpoints, whose URLs this cannot
+    name — the plan then starts at the first request really made.
+    """
+    provider = get_provider()
+    if provider.get("hub_only"):
+        return
+    catalog_agency = provider.get("catalog_agency", get_agency_id())
+    explain_cached(
+        "GET", _struct_path(f"dataflow/{catalog_agency}"), **provider.get("dataflow_params", {})
+    )
+
+
 def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
     """List all available datasets for the active provider.
 
@@ -171,6 +187,7 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
     """
     cached = _load_cached_dataflows()
     if cached is not None:
+        _explain_cached_catalog()
         return _catalog_view(cached, _include_hidden)
 
     provider = get_provider()
@@ -478,11 +495,25 @@ def _resolve_codelist_from_concept(scheme_id: str, scheme_agency: str, concept_i
     return None
 
 
+def _explain_cached_structure(structure_id: str) -> None:
+    """Report the datastructure request the cached dimensions replaced.
+
+    SDMX-REST providers only: a hub-only provider serves the same shapes from
+    its middleware, whose URLs are not the SDMX-REST ones built here.
+    """
+    provider = get_provider()
+    if provider.get("hub_only"):
+        return
+    agency = provider.get("datastructure_agency", "ALL")
+    explain_cached("GET", _struct_path(f"datastructure/{agency}/{structure_id}"))
+
+
 def _get_dimensions(structure_id: str) -> dict[str, Any]:
     """Fetch dimension metadata for a data structure definition."""
     from .db_cache import get_cached_dims, save_dims
     cached = get_cached_dims(structure_id)
     if cached is not None:
+        _explain_cached_structure(structure_id)
         return cached
 
     if get_provider().get("hub_only"):
@@ -553,6 +584,7 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
         return None
     from .db_cache import get_cached_codelist_info, is_codelist_info_cached, save_codelist_info
     if is_codelist_info_cached(codelist_id):
+        explain_cached("GET", _struct_path(f"codelist/ALL/{codelist_id}"))
         return get_cached_codelist_info(codelist_id)
     try:
         path = _struct_path(f"codelist/ALL/{codelist_id}")
@@ -571,8 +603,15 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
     return description
 
 
-def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
+def resolve_dataflow(
+    dataflow_identifier: str,
+    *,
+    _dataflows: pl.DataFrame | None = None,
+) -> dict[str, Any]:
     """Return the catalog row matching a dataflow ID, structure ID, or description.
+
+    `_dataflows` lets a caller that already loaded the catalog reuse it, so a
+    plan does not name the same request twice; `None` reads it here.
 
     Matching is case-insensitive on the two IDs and exact on the description.
     Reads the dataflow catalog only — it never fetches the datastructure, so
@@ -583,7 +622,7 @@ def resolve_dataflow(dataflow_identifier: str) -> dict[str, Any]:
     Raises:
         ValueError: if no dataflow matches the identifier.
     """
-    all_ds = all_available()
+    all_ds = _dataflows if _dataflows is not None else all_available()
 
     match_row = None
     identifier_upper = dataflow_identifier.upper()
@@ -876,6 +915,7 @@ def _load_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[d
     from .db_cache import get_cached_codelist_values, save_codelist_values
     cached = get_cached_codelist_values(cache_key)
     if cached is not None:
+        explain_cached("GET", f"codelist/ALL/{codelist_id}")
         return cached
 
     path = f"codelist/ALL/{codelist_id}"

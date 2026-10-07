@@ -30,7 +30,7 @@ from typing import Any
 
 import httpx
 
-from .base import get_provider
+from .base import explain_would_fetch, get_provider
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +77,9 @@ def _hub_get_json(path: str, timeout: float) -> dict[str, Any] | None:
     to the existing SDMX REST chain whenever this returns None.
     """
     url = f"{_hub_node_url()}/{path.lstrip('/')}"
+    # This client is built here, not in `base.sdmx_request`: report the request
+    # from the same place, or a dry run would really call the hub.
+    explain_would_fetch("GET", url)
     p = get_provider()
     user_agent = (
         os.environ.get("OPENSDMX_USER_AGENT")
