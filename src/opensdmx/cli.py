@@ -1497,25 +1497,32 @@ def siblings(
     try:
         dataflows = all_available()
     except Exception:
-        dataflows = None
+        # Catalog outage: carry on with the raw ID and an empty descriptions
+        # table, so neither resolution nor siblings_of retry the load.
 
-    # Resolve against the dataflow catalog only — deliberately not load_dataset,
-    # which fetches the datastructure for dimensions this command never uses.
-    # The lookup is best-effort: it exists to tell "ID doesn't exist" apart from
-    # "exists but not categorized", not to gate the command. `siblings_of` is
-    # already case-insensitive and degrades to blank descriptions when the
-    # dataflow table is unavailable, so a catalog outage must not turn a lookup
-    # the cached category tree can answer into an error.
-    try:
-        canonical_id = resolve_dataflow(dataset_id, _dataflows=dataflows)["df_id"]
-    except ValueError as e:
-        # Catalog loaded and the ID is genuinely absent: the standard error.
-        err_console.print(f"[red]Error:[/red] {e}")
-        raise typer.Exit(1)
-    except Exception:
-        # Catalog unreachable: carry on with the raw ID and let the category
-        # cache answer. siblings_of logs why the descriptions come back blank.
+        import polars as pl
+
+        dataflows = pl.DataFrame(
+            schema={"df_id": pl.Utf8, "df_description": pl.Utf8}
+        )
         canonical_id = dataset_id.upper()
+    else:
+        # Resolve against the dataflow catalog only — deliberately not load_dataset,
+        # which fetches the datastructure for dimensions this command never uses.
+        # The lookup is best-effort: it exists to tell "ID doesn't exist" apart from
+        # "exists but not categorized", not to gate the command. `siblings_of` is
+        # already case-insensitive and degrades to blank descriptions when the
+        # dataflow table is unavailable, so a catalog outage must not turn a lookup
+        # the cached category tree can answer into an error.
+        try:
+            canonical_id = resolve_dataflow(dataset_id, _dataflows=dataflows)["df_id"]
+        except ValueError as e:
+            # Catalog loaded and the ID is genuinely absent: the standard error.
+            err_console.print(f"[red]Error:[/red] {e}")
+            raise typer.Exit(1)
+        except Exception:
+            # The hidden-id fallback reloaded and failed: same raw-ID path.
+            canonical_id = dataset_id.upper()
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             groups = siblings_of(canonical_id, dataflows=dataflows)

@@ -204,6 +204,47 @@ def test_siblings_lists_the_catalog_once(capsys, monkeypatch):
     assert captured.err.count(catalog_line) == 1
 
 
+def test_siblings_catalog_outage_loads_once(capsys, monkeypatch):
+    """A catalog outage must not trigger more loads: resolution and the
+    description table both skip a retry when the first read already failed."""
+    categories = pl.DataFrame(
+        {
+            "scheme_id": ["ESTAT"],
+            "scheme_name": ["Eurostat"],
+            "cat_path": ["economy"],
+            "cat_name": ["Economy"],
+        }
+    )
+    categorisation = pl.DataFrame(
+        {
+            "scheme_id": ["ESTAT"],
+            "cat_path": ["economy"],
+            "df_id": ["NAMA_10_GDP"],
+        }
+    )
+    calls = 0
+
+    def _outage(*_args, **_kwargs):
+        nonlocal calls
+        calls += 1
+        raise RuntimeError("catalog unreachable")
+
+    monkeypatch.setattr(
+        sys, "argv", ["opensdmx", "siblings", "nama_10_gdp", "-p", "eurostat"]
+    )
+    with patch("opensdmx.discovery._load_cached_dataflows", side_effect=_outage), \
+         patch("opensdmx.categories.load_categories") as load_cats, \
+         patch("opensdmx.base.httpx.Client") as client:
+        load_cats.return_value = (categories, categorisation)
+        with pytest.raises(SystemExit) as stopped:
+            main()
+    assert stopped.value.code == 0
+    assert calls == 1
+    client.assert_not_called()
+    captured = capsys.readouterr()
+    assert "NAMA_10_GDP" in captured.out  # the category cache still answered
+
+
 def test_inps_plan_starts_at_the_hub_catalog(capsys, monkeypatch):
     """A POST-based hub provider: the plan is the hub's own first request."""
     monkeypatch.setattr(
