@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-10-07 - v0.26.0 - feat: `--explain` dry run; Ollama client moves to the `[semantic]` extra
+
+- **Breaking for semantic search users: the Ollama Python client is no longer installed by default** (#83, closes #75 for the `ollama` part). It moves to a new `[semantic]` extra and stays in `[guide]`, since `run_guide` falls back to `semantic_search`. After upgrading, `search --semantic` and `embed` fail until the extra is installed: `uv tool install "opensdmx[semantic]"` or `pip install "opensdmx[semantic]"`. The error names both commands. `from opensdmx import semantic_search` still imports: the client is loaded only when the function is called.
+- **numpy stays a hard dependency**, contrary to what #75 proposed: the default keyword ranking (BM25 in `ranking.py`) is built on it.
+- **Rich was eating `[semantic]` from the install hint.** The CLI printed the error through markup, so the hint read `pip install "opensdmx"`. Found on a clean wheel install without the extra; both handlers now escape the message, and two `CliRunner` tests check the printed output.
+- **New `--explain` on the nine network commands** (#84, closes #74): dry run that prints the plan to stderr and stops before the first request. Cache hits print as `[cached]` with the request they replaced, the first uncached request as `[would fetch]`, and the size probe `get` sends without `--last-n`/`--first-n`/`--yes` as `[would fetch] (size probe)`. stdout stays empty in every output mode; no chart, no `--query-file`, no provider data written. Hooked in `base.sdmx_request` and in the hub's own client, no per-provider branching.
+- **Verified with the network pointed at a dead proxy**, so no request could leave: cold cache on ISTAT, Eurostat, INPS and OECD exits 0 with only the plan; on a warm cache the cache directory is byte-identical before and after.
+- **`siblings` reads the catalogue once** instead of twice, and on a catalogue outage no longer retries the load in resolution and in the description table.
+- Known limit: on a warm `dataflows.parquet` with no `cache.db`, a dry run creates the empty `cache.db` schema, as any command does on first use.
+- Found during the #84 review and opened separately: `values` returns 404 on Bundesbank, because the codelist URL misses `metadata_prefix` and the `BBK` agency (#85).
+
 ## 2026-09-26 - v0.25.0 - feat: read the dataflow `<common:Description>` and surface provider notes in `info`
 
 - **Origin: a comparison with the Gramscii open-data catalogue** (Hugging Face `Gramscii-IT/european-open-data-catalogue`, 4,526 ISTAT records). Of everything it collects per ISTAT dataflow, two things were missing on our side: the SDMX `<common:Description>` and the time coverage of the constraints. Both sit inside responses we already download. Coverage, categories, territorial level and harvested prose are wider on our side.
