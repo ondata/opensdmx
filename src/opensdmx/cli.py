@@ -937,6 +937,18 @@ def constraints(
         raise typer.Exit(1)
 
     if actual_dim not in avail:
+        if _output_mode != "table":
+            # Same shape as a missing dim in summary mode, so stdout stays
+            # parseable instead of being empty on exit 0.
+            missing = {
+                "dimension_id": actual_dim,
+                "n_values": None,
+                "codes": [],
+                "source": "missing",
+                "hint": f"opensdmx values {dataset_id} {actual_dim}",
+            }
+            _emit(missing, pl.DataFrame([missing]).drop("codes"))
+            return
         err_console.print(
             f"[yellow]Dimension {actual_dim} is not exposed by {constraint_endpoint}.[/yellow]\n"
             f"Fetch the full codelist instead:  "
