@@ -195,6 +195,26 @@ def test_constraints_single_dim_missing_json_emits_hint():
     }
 
 
+def test_constraints_single_dim_missing_csv_emits_hint():
+    """CSV mode: a dim absent from the constraint endpoint yields one parseable row."""
+    import csv
+    import io
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
+        result = runner.invoke(app, ["--output", "csv", "constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    rows = list(csv.DictReader(io.StringIO(result.stdout)))
+    assert rows == [{
+        "dimension_id": "REF_AREA",
+        "n_values": "",
+        "source": "missing",
+        "hint": "opensdmx values TEST_DF REF_AREA",
+    }]
+
+
 def test_constraints_empty_result_does_not_guess_endpoint_unsupported():
     with patch("opensdmx.cli._check_api_reachable"), \
          patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \

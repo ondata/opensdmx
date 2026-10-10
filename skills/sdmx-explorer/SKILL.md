@@ -75,10 +75,13 @@ Every line printed is a line in your context.
 
 On error the command exits 1, writes the message to stderr and leaves stdout empty, so
 the saved file is empty and `jq` on it prints nothing and exits 0. Check the exit code
-before reading the file, otherwise an error looks like an empty result:
+before reading the file, otherwise an error looks like an empty result. Run `jq` only
+after a successful fetch:
 
 ```bash
-opensdmx -o json constraints PRC_HICP_MANR > /tmp/c.json || echo "failed, see stderr"
+if opensdmx -o json constraints PRC_HICP_MANR > /tmp/c.json; then
+  jq 'keys' /tmp/c.json
+fi
 ```
 
 A dimension that exists but is not exposed by the constraint endpoint is not an error:
