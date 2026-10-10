@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-10-10 - skill: two answering principles in `sdmx-explorer`
+
+- **«One dataflow that answers the question is the answer — stop there»**: no sibling dataflows, extra breakdowns or cross-checks the user did not ask for; other options listed as one-liners at the end.
+- **«One question, several readings — name them before choosing»**: when the dataflow carries more than one reading of the question (annual average vs Dec-on-Dec, seasonally adjusted vs raw), say so before the figure, pick one with a reason, give the other when it comes from the same query.
+
 ## 2026-10-10 - v0.26.1 - fix: `constraints <df> <DIM> -o json` no longer leaves stdout empty; skill keeps code lists out of the agent context
 
 - **Single-dimension `constraints` in json/csv mode now emits `{"dimension_id", "n_values": null, "codes": [], "source": "missing", "hint"}`** when the dimension exists but the constraint endpoint does not expose it. Before, it exited 0 with an empty stdout, so `jq` read nothing and the case looked like an empty result. Same shape as a missing dimension in summary mode. Table output unchanged.

@@ -951,6 +951,20 @@ Key points:
 
 ## Key principles
 
+**One dataflow that answers the question is the answer — stop there**
+Once a single dataflow, filtered as the question requires, returns the figures the
+user asked for, present them. Do not fetch sibling dataflows, extra breakdowns or
+longer series to enrich an answer nobody asked to enrich: each extra download and
+each extra pivot costs minutes, and the user has not chosen it. Name what else is
+available (a breakdown by category, a historical series, a related observatory) as
+one-line options at the end, and let the user pick. The same rule holds when the
+user cannot reply (non-interactive run): answer with the one query, list the
+options, and stop. A second dataflow fetched "to confirm" or "to cross-check" the
+first is enrichment too: one filtered query from one dataflow is the answer, and the
+figures are what the provider publishes — they do not need a second source to be
+believed. The only reasons to open a second dataflow are that the first does not
+carry the measure asked for, or that the user explicitly asked for a cross-check.
+
 **Negative results are valid — never force a match**
 The discovery phases handle the "zero results" case (paginate, change keyword,
 offer semantic search). But the more insidious case is when results *exist* yet
@@ -988,6 +1002,16 @@ implicitly agree with using it as a proxy for poverty.
 
 Place this explanation immediately after the data summary, before any offer
 to download or visualize.
+
+**One question, several readings — name them before choosing**
+Many everyday questions map to more than one published measure: "how much did
+prices rise in 2025" can be the annual-average change or the December-on-December
+change; "unemployed in June" can be seasonally adjusted or raw; "house prices" can
+be an index or a level, nominal or deflated. When the dataflow carries more than one
+reading of the same question, say so in one line *before* the figure, give one
+reading as the headline with the reason for choosing it, and give the other reading's
+value too when it comes from the same filtered query. Never let the user discover
+from a footnote that a different, equally official number exists.
 
 **Proposals, not lists**
 When presenting dataflow candidates, reason about each one: explain why it might or
