@@ -1,10 +1,10 @@
 # LOG
 
-## 2026-10-10 - fix: `constraints <df> <DIM> -o json` no longer leaves stdout empty; skill keeps code lists out of the agent context
+## 2026-10-10 - v0.26.1 - fix: `constraints <df> <DIM> -o json` no longer leaves stdout empty; skill keeps code lists out of the agent context
 
 - **Single-dimension `constraints` in json/csv mode now emits `{"dimension_id", "n_values": null, "codes": [], "source": "missing", "hint"}`** when the dimension exists but the constraint endpoint does not expose it. Before, it exited 0 with an empty stdout, so `jq` read nothing and the case looked like an empty result. Same shape as a missing dimension in summary mode. Table output unchanged.
 - **Errors in json mode keep the Unix contract**: exit 1, message on stderr, stdout empty. Checked on Eurostat for a missing dataflow, a missing dimension on `constraints` and `values`, and `info`. No `{"error": ...}` on stdout: it would change the contract of every command.
-- **Skill: write the JSON to a file, then read a count or a slice with `jq`** instead of printing whole code lists into the context, and check the exit code before reading the file. Every `jq` example now runs on the saved file; tested against `PRC_HICP_MANR`. Pattern borrowed from ondata/istat_mcp_server#58.
+- **Skill: write the JSON to a file, then read a count or a slice with `jq`** instead of printing whole code lists into the context, and check the exit code before reading the file. Every `jq` example now runs on the saved file; tested against `PRC_HICP_MANR`. Pattern borrowed from ondata/istat_mcp_server#58. The error-check example is an `if` block, so a failed fetch keeps exit 1; CSV output of the missing-dim case has its own test (#86).
 
 ## 2026-10-07 - v0.26.0 - feat: `--explain` dry run; Ollama client moves to the `[semantic]` extra
 
