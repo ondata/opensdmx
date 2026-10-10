@@ -69,6 +69,21 @@ opensdmx --output csv values TIPSUN20 geo   # CSV for tabular use
 In `--output json` mode: stdout is pure JSON, stderr carries errors/warnings, spinners
 are suppressed. Pipe directly into `jq` or parse in Python.
 
+Code lists can be long (hundreds of `geo` or `REF_AREA` codes). Do not print them whole:
+save the JSON to a file once, then read only what you need (a count, a filter, a slice).
+Every line printed is a line in your context.
+
+On error the command exits 1, writes the message to stderr and leaves stdout empty, so
+the saved file is empty and `jq` on it prints nothing and exits 0. Check the exit code
+before reading the file, otherwise an error looks like an empty result:
+
+```bash
+opensdmx -o json constraints PRC_HICP_MANR > /tmp/c.json || echo "failed, see stderr"
+```
+
+A dimension that exists but is not exposed by the constraint endpoint is not an error:
+the single-dimension call returns `{"source": "missing", "hint": "opensdmx values …"}`.
+
 To avoid repeating the flag, set `OPENSDMX_OUTPUT` once for the session — useful when
 an agent drives the CLI and wants JSON everywhere by default:
 
@@ -531,15 +546,15 @@ before scaling, since not every code in the codelist is necessarily populated
 in the dataflow).
 
 The table view truncates each dimension to a 3-code sample. For the **full list of
-codes per dimension**, use `--output json`:
+codes per dimension**, use `--output json` and write it to a file, then query the file:
 
 ```bash
 # summary: object keyed by dimension → {n_values, codes, source, [hint]}
-opensdmx --output json constraints PRC_HICP_MANR
+opensdmx --output json constraints PRC_HICP_MANR > /tmp/c.json
 # → {"freq": {"n_values": 1, "codes": ["M"], "source": "constraint"}, "geo": {...}, ...}
 
 # all codes + labels for one dimension: array of {id, name}
-opensdmx --output json constraints PRC_HICP_MANR coicop
+opensdmx --output json constraints PRC_HICP_MANR coicop > /tmp/coicop.json
 # → [{"id": "CP00", "name": "All-items HICP"}, {"id": "CP01", "name": "Food and non-alcoholic beverages"}, ...]
 ```
 
@@ -547,17 +562,21 @@ Each dimension entry has a `source` field: `"constraint"` (codes returned by
 the endpoint) or `"missing"` (dim absent from the response). Missing entries
 include a `hint` field with the exact `opensdmx values …` command to run.
 
-Useful `jq` patterns:
+Useful `jq` patterns (on the saved files, so the API is called once):
 
 ```bash
 # list all dimension names
-opensdmx --output json constraints PRC_HICP_MANR | jq 'keys'
+jq 'keys' /tmp/c.json
 
-# get all codes for one dimension
-opensdmx --output json constraints PRC_HICP_MANR | jq '.geo.codes'
+# how many codes one dimension has, and the first few
+jq '.geo.n_values' /tmp/c.json
+jq -c '.geo.codes[:10]' /tmp/c.json
+
+# check whether specific codes are present
+jq '.geo.codes | index("IT") != null' /tmp/c.json
 
 # number of values per dimension (only those exposed by constraint)
-opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | select(.value.source=="constraint") | {dim: .key, n: .value.n_values}'
+jq -c 'to_entries[] | select(.value.source=="constraint") | {dim: .key, n: .value.n_values}' /tmp/c.json
 
 # list dimensions missing from the discovery endpoint (need a follow-up `values` call)
 # Note: for ISTAT this returns nothing — the hub exposes every dimension. Useful on
@@ -565,8 +584,11 @@ opensdmx --output json constraints PRC_HICP_MANR | jq 'to_entries[] | select(.va
 opensdmx --output json constraints NAMA_10_GDP --provider eurostat | jq 'to_entries[] | select(.value.source=="missing") | {dim: .key, hint: .value.hint}'
 
 # find a code by label (case-insensitive)
-opensdmx --output json constraints PRC_HICP_MANR coicop | jq '[.[] | select(.name | ascii_downcase | contains("food"))]'
+jq -c '.[] | select(.name | ascii_downcase | contains("food")) | {id, name}' /tmp/coicop.json
 ```
+
+For a single dimension, `--grep` does the same filtering inside the CLI, with no file:
+`opensdmx constraints PRC_HICP_MANR coicop --grep food`.
 
 Step 2 — get dimension order and structure:
 ```bash

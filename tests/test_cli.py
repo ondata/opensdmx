@@ -175,6 +175,26 @@ def test_constraints_single_dim_missing_suggests_values():
     assert "opensdmx values TEST_DF REF_AREA" in flat
 
 
+def test_constraints_single_dim_missing_json_emits_hint():
+    """JSON mode: a dim absent from the constraint endpoint still yields JSON on stdout."""
+    import json
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
+        result = runner.invoke(app, ["--output", "json", "constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
+
+    assert result.exit_code == 0, result.output
+    payload = json.loads(result.stdout)
+    assert payload == {
+        "dimension_id": "REF_AREA",
+        "n_values": None,
+        "codes": [],
+        "source": "missing",
+        "hint": "opensdmx values TEST_DF REF_AREA",
+    }
+
+
 def test_constraints_empty_result_does_not_guess_endpoint_unsupported():
     with patch("opensdmx.cli._check_api_reachable"), \
          patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
