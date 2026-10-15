@@ -35,10 +35,14 @@ _BUNDESBANK = {
 }
 
 # The catch-all agency, and no metadata prefix: what every other provider uses.
+# `datastructure_agency` is set to the real preset's value on purpose: if the
+# helper ever reused that key instead of `codelist_agency`, this provider would
+# ask for codelist/ESTAT/... and the default test below would fail.
 _EUROSTAT = {
     "name": "Eurostat",
     "base_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1",
     "agency_id": "ESTAT",
+    "datastructure_agency": "ESTAT",
     "language": "en",
 }
 
