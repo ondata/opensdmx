@@ -214,6 +214,7 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 | `constraint_bulk_supported` | boolean | `false` | Whether a provider supports catalog-level bulk content constraints |
 | `constraint_params` | dict | absent | Extra query parameters appended to constraint requests |
 | `datastructure_agency` | string | `"ALL"` | Agency used in `datastructure/{agency}/...` requests |
+| `codelist_agency` | string | `"ALL"` | Agency used in `codelist/{agency}/...` requests, for providers that only answer for their own |
 | `catalog_agency` | string | absent | Agency used for catalog requests when different from `agency_id` |
 | `metadata_prefix` | string | absent | Prefix prepended to structure endpoints for providers that split metadata paths |
 | `data_format_param` | string | absent | If present, sent as `?format={value}` for data requests instead of `Accept: text/csv` |

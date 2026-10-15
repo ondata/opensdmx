@@ -57,6 +57,16 @@ def _struct_path(endpoint: str) -> str:
     return f"{prefix}/{endpoint}" if prefix else endpoint
 
 
+def _codelist_path(codelist_id: str) -> str:
+    """Build the SDMX-REST path for a codelist.
+
+    Most providers answer codelists from the catch-all agency `ALL`; a provider
+    whose server only answers for its own agency declares `codelist_agency`.
+    """
+    agency = get_provider().get("codelist_agency", "ALL")
+    return _struct_path(f"codelist/{agency}/{codelist_id}")
+
+
 def _dataflow_cache_path() -> Path:
     path: Path = get_cache_dir() / "dataflows.parquet"
     return path
@@ -584,10 +594,10 @@ def _get_dimension_description(codelist_id: str | None) -> str | None:
         return None
     from .db_cache import get_cached_codelist_info, is_codelist_info_cached, save_codelist_info
     if is_codelist_info_cached(codelist_id):
-        explain_cached("GET", _struct_path(f"codelist/ALL/{codelist_id}"))
+        explain_cached("GET", _codelist_path(codelist_id))
         return get_cached_codelist_info(codelist_id)
     try:
-        path = _struct_path(f"codelist/ALL/{codelist_id}")
+        path = _codelist_path(codelist_id)
         content = sdmx_request_xml(path)
         root, ns = xml_parse(content)
         struct_ns = ns.get("structure", "")
@@ -915,10 +925,10 @@ def _load_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[d
     from .db_cache import get_cached_codelist_values, save_codelist_values
     cached = get_cached_codelist_values(cache_key)
     if cached is not None:
-        explain_cached("GET", f"codelist/ALL/{codelist_id}")
+        explain_cached("GET", _codelist_path(codelist_id))
         return cached
 
-    path = f"codelist/ALL/{codelist_id}"
+    path = _codelist_path(codelist_id)
     content = sdmx_request_xml(path)
     root, ns = xml_parse(content)
 

@@ -119,6 +119,7 @@
     "agency_id": "BBK",
     "metadata_prefix": "metadata",
     "datastructure_agency": "BBK",
+    "codelist_agency": "BBK",
     "constraints_supported": false,
     "last_n_supported": true,
     "categories_supported": false
