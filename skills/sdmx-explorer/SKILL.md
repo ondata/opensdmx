@@ -182,8 +182,10 @@ of guessing keywords. This is the **default** discovery flow; fall back to
 keyword search only under the conditions listed in Step 1c.
 
 Supported providers (check with `opensdmx providers` — `categories` column):
-- ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`
-- ✗ `comext`, `bundesbank`, `worldbank`, `imf` — skip to Step 1c.
+- ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`
+- ✗ `comext`, `bundesbank`, `worldbank`, `imf`, `derzhstat`, `unicef` — skip to Step 1c.
+  `unicef` is declared ✓ in `opensdmx providers`, but its `categorisation` endpoint
+  answers 404, so `tree` fails: use `search`.
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
   whenever the endpoint answers. Add `--agency <ID>` if the probe returns 404.
@@ -306,7 +308,8 @@ Search for dataflows:
   `opensdmx search "<keyword>"`
 - **ISTAT**: `opensdmx search "<keyword>" --provider istat`
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
-  (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `inps`)
+  (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `bis`, `imf`,
+  `inps`, `ilo`, `unicef`, `derzhstat`, `bfs`)
 
 `search` matches the dataset **title, ID and category name**, by substring.
 
@@ -1062,7 +1065,7 @@ Run `opensdmx providers` for a machine-readable overview — the `constraints` a
 fits the target provider.
 
 The full capability matrix (Eurostat, ISTAT, ECB, OECD, INSEE, Bundesbank, World
-Bank, ABS, BIS, IMF), dimension flag casing, territory code conventions, and what
+Bank, ABS, BIS, IMF, ILO, UNICEF, Derzhstat, BFS), dimension flag casing, territory code conventions, and what
 to do when `constraints` or `last_n` are unsupported, are documented in
 [references/providers.md](references/providers.md).
 
