@@ -29,6 +29,10 @@ references:
 | ABS | ✓ | ✓ | Use `--provider abs`; official Australian statistics |
 | BIS | ✓ | ✓ | Use `--provider bis`; global financial statistics from 63 central banks |
 | IMF | ✓ | ✓ | Use `--provider imf`; WEO dataset: dataflow `WEO`, country codes ISO alpha-3; use `--last-n` with dimension filters (wildcard requests may return HTTP 500) |
+| ILO | ✗ | ✓ | Use `--provider ilo`; ILOSTAT labour statistics, 1,200+ dataflows reachable through `tree`. Country codes ISO alpha-3 (`ITA`); codes carry their dimension as prefix (`SEX_T`, `AGE_10YRBANDS_Y55-64`), so read them with `opensdmx values`. Many series are quarterly. Skip `opensdmx constraints` |
+| UNICEF | ✓ | ✓ | Use `--provider unicef`; child and SDG indicators, country codes ISO alpha-3. One dataflow holds many indicators (`CME` = child mortality, 34 codes in `INDICATOR`): filter `--INDICATOR` after `constraints`. No `tree` (`categorisation` answers 404): use `search` |
+| Derzhstat | ✓ | ✓ | Use `--provider derzhstat`; State Statistics Service of Ukraine. No `tree`: use `search`. Territory codes are KATOTTG (`UA74000000000025378`); dimension filters are applied client-side after the download, so a filtered `get` still downloads every series; narrow it with `--start-period` or `--last-n`, which do reach the server |
+| BFS | ✓ | ✓ | Use `--provider bfs` (alias `fso`); Swiss Federal Statistical Office. Partial SDMX catalogue: population, mobility and transport, crime and criminal justice, then employment, housing, tourism, health, education. **No dataflows for prices or national accounts (GDP)**: look elsewhere for Swiss CPI or GDP. The `tree` misses some dataflows (`DF_VOTATION` exists, the Politics branch is empty), so run `search` too. Totals are `_T` |
 
 ## Dimension flag case
 
@@ -54,7 +58,7 @@ and aggregate codes (`ITG12`, `SLL_*`, etc.).
 
 ## When `constraints` is not supported
 
-For providers marked ✗ in the `constraints` column (ECB, OECD, INSEE, Bundesbank,
+For providers marked ✗ in the `constraints` column (ECB, OECD, INSEE, Bundesbank, ILO,
 World Bank), the standard Phase 2 flow does not apply. Use `opensdmx values
 <dataflow_id> <DIM>` to explore codelists, and probe with a narrow `get`
 (small time window, one or two values per dimension) to verify the query works

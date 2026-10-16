@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-10-16 - docs: `bfs` description states what the catalogue covers
+
+- **The `bfs` description no longer claims economy and prices**: `search` returns nothing for *unemployment*, *prices*, *consumer price*, *GDP*, and the TOPICS tree has no dataflows under Prices or National economy. The description now lists the topics that do have dataflows (population 41, mobility and transport 27, crime and criminal justice 26, then employment, housing, tourism, social security, health, education), so an agent does not look for CPI or GDP there.
+- `docs/providers.md`: the `bfs` quirks also explain the two constraint keys.
+- **Skill `sdmx-explorer` now knows four providers it never listed**: `bfs`, `ilo`, `unicef`, `derzhstat` are in the `tree` and `search` lists and in the capability matrix of `references/providers.md`, each checked live with `search`, `constraints` and `get --last-n 1`. Notes per provider: ILO codes carry the dimension as prefix (`SEX_T`); UNICEF packs many indicators in one dataflow (`CME`, 34 in `INDICATOR`); Derzhstat filters client-side, so period and `--last-n` are the only server-side narrowing; BFS has no prices or GDP.
+- **Found: `tree -p unicef` fails** with 404 on `categorisation/UNICEF/ALL/latest`, although `portals.json` declared `categories_supported: true` (`categoryscheme` answers 200). The flag is now `false`, so `opensdmx providers` shows ✗ and the skill sends the agent to `search`.
+
 ## 2026-10-16 - v0.27.0 - feat: Swiss Federal Statistical Office (`bfs`) provider
 
 - **New built-in provider `bfs`** (alias `fso`, #88 by @alexanderguentert): `https://disseminate.stats.swiss/rest`, a .Stat Suite endpoint. Configuration only, no code change: `agency_id: "all"`, default `Accept: text/csv`, categories on.
