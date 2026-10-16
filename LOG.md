@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-10-16 - v0.27.0 - feat: Swiss Federal Statistical Office (`bfs`) provider
+
+- **New built-in provider `bfs`** (alias `fso`, #88 by @alexanderguentert): `https://disseminate.stats.swiss/rest`, a .Stat Suite endpoint. Configuration only, no code change: `agency_id: "all"`, default `Accept: text/csv`, categories on.
+- **`constraints` works through two keys**: BFS answers 500 to `availableconstraint/{df}?references=none` (the default) and times out without the key, so `bfs` declares `constraint_params: {}` and `constraint_path_suffix: "/all"`.
+- **`lastNObservations` is supported**: the first version of the PR declared it unsupported; tested live, `--last-n 1` returns the latest year.
+- **Checked live**: `search`, `info`, `tree` (schemes INQUIRY and TOPICS), `values`, `get`, `get --last-n` and `constraints` on `DF_STATPOP_REGLING_PERM` and `DF_VOTATION`; the author also checked `constraints` on `DF_AHBB_BEITRAG` and `DF_AREA_IMPV`.
+- Issue #41 closed as overtaken: the provider quirks it named are already declarative keys in `portals.json`. Hooks for custom providers move to #39.
+
 ## 2026-10-15 - v0.26.2 - fix: `values` and `info` descriptions work on Bundesbank
 
 - **`opensdmx values <df> <DIM> -p bundesbank` no longer returns 404** (#87, closes #85). Codelist paths now go through `_codelist_path()`, which applies `metadata_prefix` and reads a new `codelist_agency` key from `portals.json` (default `ALL`). Bundesbank declares `BBK`; every other provider keeps `codelist/ALL/...`. The `description` column of `info` is filled for the same reason.
