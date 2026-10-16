@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-10-16 - docs: `bfs` description states what the catalogue covers
+
+- **The `bfs` description no longer claims economy and prices**: `search` returns nothing for *unemployment*, *prices*, *consumer price*, *GDP*, and the TOPICS tree has no dataflows under Prices or National economy. The description now lists the topics that do have dataflows (population 41, mobility and transport 27, crime and criminal justice 26, then employment, housing, tourism, social security, health, education), so an agent does not look for CPI or GDP there.
+- `docs/providers.md`: the `bfs` quirks also explain the two constraint keys.
+
 ## 2026-10-16 - v0.27.0 - feat: Swiss Federal Statistical Office (`bfs`) provider
 
 - **New built-in provider `bfs`** (alias `fso`, #88 by @alexanderguentert): `https://disseminate.stats.swiss/rest`, a .Stat Suite endpoint. Configuration only, no code change: `agency_id: "all"`, default `Accept: text/csv`, categories on.

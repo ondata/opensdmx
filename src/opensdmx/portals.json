@@ -199,7 +199,7 @@
   "bfs": {
     "name": "Swiss Federal Statistical Office",
     "aliases": ["fso"],
-    "description": "Swiss Federal Statistical Office (BFS/FSO). Covers population, economy, employment, prices, education, health, and environment for Switzerland. Primary source for Swiss official statistics. Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB).",
+    "description": "Swiss Federal Statistical Office (BFS/FSO). Partial SDMX catalogue: strongest on population, mobility and transport, crime and criminal justice; also employment, housing, tourism, social security, health and education. No dataflows for prices or national accounts (GDP). Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB).",
     "base_url": "https://disseminate.stats.swiss/rest",
     "agency_id": "all",
     "rate_limit": 1.0,

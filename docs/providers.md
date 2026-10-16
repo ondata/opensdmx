@@ -211,7 +211,7 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 | `last_n_supported` | `true` |
 | `categories_supported` | `true` |
 
-Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB). Primary source for Swiss official statistics.
+Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB). `availableconstraint` answers 500 to `references=none` and needs the `/all` key, hence `constraint_params: {}` and `constraint_path_suffix: "/all"`. The SDMX catalogue is partial: as of October 2026 the TOPICS tree has no dataflows under Prices or National economy.
 
 ---
 
