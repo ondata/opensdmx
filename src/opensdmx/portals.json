@@ -195,5 +195,19 @@
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": false
+  },
+  "bfs": {
+    "name": "Swiss Federal Statistical Office",
+    "aliases": ["fso"],
+    "description": "Swiss Federal Statistical Office (BFS/FSO). Covers population, economy, employment, prices, education, health, and environment for Switzerland. Primary source for Swiss official statistics. Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB).",
+    "base_url": "https://disseminate.stats.swiss/rest",
+    "agency_id": "all",
+    "rate_limit": 1.0,
+    "language": "en",
+    "constraint_params": {},
+    "constraint_path_suffix": "/all",
+    "constraints_supported": true,
+    "last_n_supported": true,
+    "categories_supported": true
   }
 }

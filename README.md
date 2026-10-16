@@ -177,6 +177,7 @@ opensdmx.set_provider("istat")
 opensdmx.set_provider("oecd")
 opensdmx.set_provider("ecb")
 opensdmx.set_provider("worldbank")
+opensdmx.set_provider("bfs")      # Swiss Federal Statistical Office
 
 # Custom provider (agency_id optional)
 opensdmx.set_provider("https://mysdmx.org/rest")

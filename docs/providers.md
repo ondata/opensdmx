@@ -197,6 +197,22 @@ Quirks: Derzhstat blocks default library user-agents, so opensdmx sends a browse
 
 Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked by a WAF, so `base_url` points at the middleware (the same host as `hub_base_url`) and every catalog/structure/constraint/data call goes through the StatKit Data Browser middleware (`hub_base_url`, POST + GET JSON), routed by the dedicated `inps.py` adapter. The middleware is split into four *nodes* (one per observatory: pensions, employees, companies, employment policies); the `code→nodeId` map lives in `hub_nodes`, and a `df_id→node` index is built once from the four catalogs and cached. Data retrieval downloads the whole dataflow as SDMX-CSV (the middleware has no server-side filter) and filters client-side, mirroring Derzhstat's `data_key_format: "empty"`; the period window is applied client-side by year and `last_n`/`first_n` are unavailable. Territory codes are NUTS 2021 (Lombardia = `ITC4`). See [inps/middleware-api.md](inps/middleware-api.md) for the endpoint reference.
 
+### bfs
+
+| Field | Value |
+|---|---|
+| Name | Swiss Federal Statistical Office |
+| `base_url` | `https://disseminate.stats.swiss/rest` |
+| `agency_id` | `all` |
+| `rate_limit` | 1.0 s |
+| `language` | `en` |
+| `constraints_supported` | `true` |
+| `constraint_path_suffix` | `/all` |
+| `last_n_supported` | `true` |
+| `categories_supported` | `true` |
+
+Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB). Primary source for Swiss official statistics.
+
 ---
 
 ## Provider configuration fields
