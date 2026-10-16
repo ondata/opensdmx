@@ -166,7 +166,7 @@ Quirks: IMF catalog discovery uses `catalog_agency = all`. World Economic Outloo
 | `language` | `en` |
 | `data_format_param` | `csvdata` |
 
-Quirks: UNICEF data requests use `?format=csvdata`.
+Quirks: UNICEF data requests use `?format=csvdata`. No category tree: `categoryscheme` answers 200 but `categorisation/UNICEF/ALL/latest` answers 404, so `categories_supported` is `false`.
 
 ### derzhstat
 

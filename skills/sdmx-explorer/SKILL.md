@@ -184,8 +184,6 @@ keyword search only under the conditions listed in Step 1c.
 Supported providers (check with `opensdmx providers` — `categories` column):
 - ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf`, `derzhstat`, `unicef` — skip to Step 1c.
-  `unicef` is declared ✓ in `opensdmx providers`, but its `categorisation` endpoint
-  answers 404, so `tree` fails: use `search`.
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
   whenever the endpoint answers. Add `--agency <ID>` if the probe returns 404.

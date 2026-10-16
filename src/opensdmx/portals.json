@@ -182,7 +182,7 @@
     "data_format_param": "csvdata",
     "constraints_supported": true,
     "last_n_supported": true,
-    "categories_supported": true
+    "categories_supported": false
   },
   "derzhstat": {
     "name": "Derzhstat",
