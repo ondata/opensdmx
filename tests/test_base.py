@@ -48,6 +48,47 @@ def test_set_provider_preset_ignores_extra_flags():
     assert get_provider()["constraints_supported"] is True
 
 
+def test_set_provider_warns_on_preset_extra_flags(caplog):
+    """A preset drops extra fields, and says so instead of staying silent."""
+    with caplog.at_level("WARNING", logger="opensdmx.base"):
+        set_provider("eurostat", constraints_supported=False)
+    assert get_provider()["constraints_supported"] is True
+    assert "constraints_supported" in caplog.text
+
+
+def test_set_provider_warns_on_unknown_field(caplog):
+    """A typo is still stored (compatibility), but the user is told."""
+    with caplog.at_level("WARNING", logger="opensdmx.base"):
+        set_provider("https://custom.sdmx.org/rest", constraint_supported=False)
+    assert get_provider()["constraint_supported"] is False
+    assert "constraint_supported" in caplog.text
+
+
+def test_set_provider_known_field_does_not_warn(caplog):
+    """Fields used by portals.json are accepted without a warning."""
+    with caplog.at_level("WARNING", logger="opensdmx.base"):
+        set_provider(
+            "https://custom.sdmx.org/rest",
+            constraints_supported=False,
+            user_agent="MyApp/1.0",
+        )
+    assert "user_agent" not in caplog.text
+    assert "constraints_supported" not in caplog.text
+
+
+def test_set_provider_constraint_tuning_does_not_warn(caplog):
+    """The client reads these two fields, though no bundled portal sets them."""
+    with caplog.at_level("WARNING", logger="opensdmx.base"):
+        set_provider(
+            "https://custom.sdmx.org/rest",
+            constraint_timeout=30,
+            constraint_max_retries=1,
+        )
+    assert get_provider()["constraint_timeout"] == 30
+    assert "constraint_timeout" not in caplog.text
+    assert "constraint_max_retries" not in caplog.text
+
+
 def test_set_provider_unknown_name_not_url():
     """Unknown non-URL string is treated as custom URL (no agency)."""
     set_provider("not_a_real_provider")
