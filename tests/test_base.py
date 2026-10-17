@@ -24,6 +24,30 @@ def test_set_provider_custom_url_with_agency():
     assert p["agency_id"] == "XYZ"
 
 
+def test_set_provider_custom_url_carries_portals_flags():
+    """Every portals.json flag can be set for a custom URL, not just four fields."""
+    set_provider(
+        "https://custom.sdmx.org/rest",
+        agency_id="XYZ",
+        constraints_supported=False,
+        user_agent="MyApp/1.0",
+        unsupported_params=["lastNObservations"],
+        base_url="https://evil.example",
+    )
+    p = get_provider()
+    assert p["constraints_supported"] is False
+    assert p["user_agent"] == "MyApp/1.0"
+    assert p["unsupported_params"] == ["lastNObservations"]
+    assert p["agency_id"] == "XYZ"
+    assert p["base_url"] == "https://custom.sdmx.org/rest"  # the named args beat **kwargs
+    assert p["data_key_format"] == "dots"  # still defaults when not passed
+
+
+def test_set_provider_preset_ignores_extra_flags():
+    set_provider("eurostat", constraints_supported=False)
+    assert get_provider()["constraints_supported"] is True
+
+
 def test_set_provider_unknown_name_not_url():
     """Unknown non-URL string is treated as custom URL (no agency)."""
     set_provider("not_a_real_provider")

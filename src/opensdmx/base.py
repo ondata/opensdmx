@@ -75,6 +75,7 @@ def set_provider(
     agency_id: str | None = None,
     rate_limit: float = 0.5,
     language: str = "en",
+    **kwargs: Any,
 ) -> None:
     """Set the active SDMX provider.
 
@@ -83,6 +84,10 @@ def set_provider(
         agency_id:   Required when name_or_url is a URL. Ignored for presets.
         rate_limit:  Minimum seconds between API calls (custom provider only).
         language:    Preferred language for descriptions (custom provider only).
+        **kwargs:    Any other field from portals.json for a custom URL
+                     (constraints_supported, data_format_param, user_agent, ...).
+                     Ignored for presets, like the fields above. Keys are kept
+                     as given: an unknown one is stored and never read.
     """
     global _active_provider
     if name_or_url in PROVIDERS:
@@ -90,6 +95,7 @@ def set_provider(
     else:
         _active_provider = {
             **_DEFAULTS,
+            **kwargs,
             "base_url": name_or_url.rstrip("/"),
             "agency_id": agency_id or "",
             "rate_limit": rate_limit,
