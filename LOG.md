@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-10-18 - v0.28.0 - feat: `set_provider()` accepts any `portals.json` field for a custom URL
+
+- **Custom endpoints get the full provider config** (#90 by @paoValle, part 1 of #39): `set_provider(url, ...)` takes any `portals.json` field as a keyword argument (`constraints_supported`, `user_agent`, `data_format_param`, `unsupported_params`, ...), merged over the defaults. Named arguments (`base_url`, `agency_id`, `rate_limit`, `language`) still win.
+- **Warnings instead of silent drops**: a field not in `_DEFAULTS`, not used by any portal, and not `constraint_timeout`/`constraint_max_retries` is stored but logged as unknown; extra fields passed to a preset are ignored and logged.
+- **Python API only**: the CLI (`--provider`, `resolve_provider()`) cannot pass these fields yet. The user-level `portals.json` override (part 2 of #39) is still open.
+
 ## 2026-10-16 - v0.27.1 - fix: unicef declares no category tree; provider notes for bfs, ilo, unicef, derzhstat
 
 - **The `bfs` description no longer claims economy and prices**: `search` returns nothing for *unemployment*, *prices*, *consumer price*, *GDP*, and the TOPICS tree has no dataflows under Prices or National economy. The description now lists the topics that do have dataflows (population 41, mobility and transport 27, crime and criminal justice 26, then employment, housing, tourism, social security, health, education), so an agent does not look for CPI or GDP there.
