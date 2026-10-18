@@ -179,13 +179,24 @@ opensdmx.set_provider("ecb")
 opensdmx.set_provider("worldbank")
 opensdmx.set_provider("bfs")      # Swiss Federal Statistical Office
 
-# Custom provider (agency_id optional)
+# Custom provider (agency_id optional). Any field of portals.json can be passed,
+# not only agency_id and rate_limit.
 opensdmx.set_provider("https://mysdmx.org/rest")
 opensdmx.set_provider("https://mysdmx.org/rest", agency_id="XYZ", rate_limit=1.0)
+opensdmx.set_provider(
+    "https://mysdmx.org/rest",
+    agency_id="XYZ",
+    constraints_supported=False,
+    user_agent="MyApp/1.0",
+)
 
 # Check active provider
-opensdmx.get_provider()  # returns dict with base_url, agency_id, rate_limit, language
+opensdmx.get_provider()  # the active provider's fields: base_url, agency_id,
+                         # rate_limit, language, and any portal field
 ```
+
+Fields that a preset ignores, and fields that are not in `portals.json` (a typo, say), are
+reported with a `logging` warning instead of being dropped silently.
 
 > **Note on output columns:** Eurostat uses the compact `SDMX-CSV` format (dimensions + `TIME_PERIOD` + `OBS_VALUE`). Other providers (ECB, OECD, etc.) return the generic `text/csv` format, which includes additional series metadata columns (`TITLE`, `UNIT`, `DECIMALS`, etc.). This is expected behavior — filter columns with standard tools if needed.
 

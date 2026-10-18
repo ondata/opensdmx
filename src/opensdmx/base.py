@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import os
 import sys
 import tempfile
@@ -50,6 +51,16 @@ _active_provider: str | dict[str, Any] = "eurostat"
 _timeout: float = 300.0
 _extra_headers: dict[str, str] = {}
 
+# Fields `set_provider` accepts for a custom URL: the defaults, every field any portal
+# in portals.json uses, and the constraint-tuning fields the client reads but that no
+# bundled portal declares yet. Anything else is stored but never read, so warn.
+_EXTRA_FIELDS: frozenset[str] = frozenset({"constraint_timeout", "constraint_max_retries"})
+_KNOWN_FIELDS: frozenset[str] = (
+    frozenset(_DEFAULTS)
+    | frozenset(field for entry in _raw_portals.values() for field in entry)
+    | _EXTRA_FIELDS
+)
+
 _rate_limit_context: str = ""
 
 
@@ -70,11 +81,15 @@ def set_rate_limit_context(msg: str) -> None:
     _rate_limit_context = msg
 
 
+logger = logging.getLogger(__name__)
+
+
 def set_provider(
     name_or_url: str,
     agency_id: str | None = None,
     rate_limit: float = 0.5,
     language: str = "en",
+    **kwargs: Any,
 ) -> None:
     """Set the active SDMX provider.
 
@@ -83,13 +98,35 @@ def set_provider(
         agency_id:   Required when name_or_url is a URL. Ignored for presets.
         rate_limit:  Minimum seconds between API calls (custom provider only).
         language:    Preferred language for descriptions (custom provider only).
+        **kwargs:    Any other field from portals.json for a custom URL
+                     (constraints_supported, data_format_param, user_agent, ...).
+                     Ignored for presets, like the fields above; either way a
+                     warning names what was dropped or not recognized. Keys are
+                     kept as given, so a typo is stored and never read.
     """
     global _active_provider
     if name_or_url in PROVIDERS:
+        if kwargs:
+            # A preset is a fixed entry: the extra fields are accepted by the
+            # signature and dropped, so say it rather than ignore it silently.
+            logger.warning(
+                "set_provider: '%s' is a preset, so %s is ignored; "
+                "use a custom URL to set it.",
+                name_or_url,
+                ", ".join(sorted(kwargs)),
+            )
         _active_provider = name_or_url
     else:
+        unknown = sorted(set(kwargs) - _KNOWN_FIELDS)
+        if unknown:
+            logger.warning(
+                "set_provider: unknown field(s) %s for a custom provider; "
+                "they are stored and never read.",
+                ", ".join(unknown),
+            )
         _active_provider = {
             **_DEFAULTS,
+            **kwargs,
             "base_url": name_or_url.rstrip("/"),
             "agency_id": agency_id or "",
             "rate_limit": rate_limit,
