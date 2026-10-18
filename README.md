@@ -186,8 +186,8 @@ opensdmx.set_provider("https://mysdmx.org/rest", agency_id="XYZ", rate_limit=1.0
 opensdmx.set_provider(
     "https://mysdmx.org/rest",
     agency_id="XYZ",
-    constraints_supported=False,
     user_agent="MyApp/1.0",
+    unsupported_params=["lastNObservations"],
 )
 
 # Check active provider
@@ -196,7 +196,8 @@ opensdmx.get_provider()  # the active provider's fields: base_url, agency_id,
 ```
 
 Fields that a preset ignores, and fields that are not in `portals.json` (a typo, say), are
-reported with a `logging` warning instead of being dropped silently.
+reported with a `logging` warning instead of being dropped silently. `constraints_supported` is
+only a capability flag shown by `opensdmx providers`: it does not change the requests.
 
 > **Note on output columns:** Eurostat uses the compact `SDMX-CSV` format (dimensions + `TIME_PERIOD` + `OBS_VALUE`). Other providers (ECB, OECD, etc.) return the generic `text/csv` format, which includes additional series metadata columns (`TITLE`, `UNIT`, `DECIMALS`, etc.). This is expected behavior — filter columns with standard tools if needed.
 

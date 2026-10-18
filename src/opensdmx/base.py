@@ -99,7 +99,7 @@ def set_provider(
         rate_limit:  Minimum seconds between API calls (custom provider only).
         language:    Preferred language for descriptions (custom provider only).
         **kwargs:    Any other field from portals.json for a custom URL
-                     (constraints_supported, data_format_param, user_agent, ...).
+                     (user_agent, data_format_param, unsupported_params, ...).
                      Ignored for presets, like the fields above; either way a
                      warning names what was dropped or not recognized. Keys are
                      kept as given, so a typo is stored and never read.
@@ -595,25 +595,25 @@ def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) 
     data_accept = provider.get("data_accept")
     fmt = provider.get("data_format_param")
 
+    unsupported = provider.get("unsupported_params", [])
+    dropped = [p for p in unsupported if p in params]
+    if dropped:
+        logger.warning(
+            "Provider '%s' does not support: %s. These parameters will be ignored.",
+            provider.get('name', ''),
+            ', '.join(dropped),
+        )
+    params = {k: v for k, v in params.items() if k not in unsupported}
+
     if data_accept:
         # Provider requires a specific Accept header (e.g. World Bank JSON)
         suffix = provider.get("data_path_suffix", "")
-        unsupported = provider.get("unsupported_params", [])
-        dropped = [p for p in unsupported if p in params]
-        if dropped:
-            import logging
-            logging.getLogger(__name__).warning(
-                "Provider '%s' does not support: %s. These parameters will be ignored.",
-                provider.get('name', ''),
-                ', '.join(dropped),
-            )
-        filtered_params = {k: v for k, v in params.items() if k not in unsupported}
         resp = sdmx_request(
             path + suffix,
             accept=data_accept,
             _is_data=True,
             _explain_probe=_explain_probe,
-            **filtered_params,
+            **params,
         )
         import re
         text = re.sub(r"\[,", "[null,", resp.text)
