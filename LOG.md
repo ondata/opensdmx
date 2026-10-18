@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-10-18 - fix: `unsupported_params` applies on every data request
+## 2026-10-18 - v0.28.1 - fix: `unsupported_params` applies on every data request
 
 - **`unsupported_params` no longer needs `data_accept`**: the drop and its warning ran only inside the `data_accept` branch of `sdmx_request_csv()` (World Bank), so a custom provider set with `set_provider(url, unsupported_params=[...])` still sent the parameter. The filter now runs before the branch. Built-in providers unchanged: only `worldbank` declares the field, and it has `data_accept`.
 - **README and `set_provider()` docstring**: the custom-provider example used `constraints_supported=False`, which is only a capability flag shown by `opensdmx providers` and changes no request. The example now uses `user_agent` and `unsupported_params`, and the README says what `constraints_supported` does.
