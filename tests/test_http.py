@@ -126,6 +126,22 @@ class TestSdmxRequestCsv:
             df = sdmx_request_csv("data/UNE_RT_M")
         assert df["TIME_PERIOD"].dtype == pl.Utf8
 
+    @pytest.mark.parametrize("extra", [{}, {"data_format_param": "SDMX-CSV"}])
+    def test_unsupported_params_dropped_without_data_accept(self, extra):
+        """unsupported_params applies on every data path, not only with data_accept."""
+        set_provider(
+            "https://custom.sdmx.org/rest",
+            unsupported_params=["lastNObservations"],
+            **extra,
+        )
+        resp = MagicMock()
+        resp.content = _CSV_CONTENT
+        with patch("opensdmx.base.sdmx_request", return_value=resp) as mock_req:
+            sdmx_request_csv("data/X", lastNObservations=1, startPeriod="2020")
+        kwargs = mock_req.call_args.kwargs
+        assert "lastNObservations" not in kwargs
+        assert kwargs["startPeriod"] == "2020"
+
 
 # ---------------------------------------------------------------------------
 # Cross-process serialization via portalocker.Lock
