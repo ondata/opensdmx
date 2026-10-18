@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-10-18 - fix: messages name a custom provider by its URL
+
+- **No more `Provider ''` or `provider 'unknown'`**: a provider set with `set_provider(url)` has no `name`, so four messages showed an empty string, `unknown` or `Provider` (the `unsupported_params` warning, dataflow not found, availableconstraint timeout, first constraints call). A new `provider_label()` in `base.py` returns the name, or the base URL when there is none. Built-in providers unchanged: all declare `name`.
+- **Checked live** on the branch with the ECB URL as a custom provider: the warning reads `Provider 'https://data-api.ecb.europa.eu/service' does not support: lastNObservations`, and a missing dataflow names the same URL.
+
 ## 2026-10-18 - v0.28.1 - fix: `unsupported_params` applies on every data request
 
 - **`unsupported_params` no longer needs `data_accept`**: the drop and its warning ran only inside the `data_accept` branch of `sdmx_request_csv()` (World Bank), so a custom provider set with `set_provider(url, unsupported_params=[...])` still sent the parameter. The filter now runs before the branch. Built-in providers unchanged: only `worldbank` declares the field, and it has `data_accept`.
