@@ -45,7 +45,14 @@ import httpx
 import polars as pl
 from lxml import etree
 
-from .base import explain_cached, get_agency_id, get_cache_dir, get_provider, sdmx_request_xml
+from .base import (
+    explain_cached,
+    get_agency_id,
+    get_cache_dir,
+    get_provider,
+    provider_label,
+    sdmx_request_xml,
+)
 from .utils import get_description_by_lang, get_name_by_lang, xml_attr_safe, xml_parse
 
 from .cache_config import DATAFLOWS_CACHE_TTL
@@ -665,7 +672,7 @@ def resolve_dataflow(
             match_row = rows.row(0, named=True)
 
     if match_row is None:
-        provider_name = get_provider().get("name", "unknown")
+        provider_name = provider_label(get_provider())
         raise ValueError(
             f"Could not find dataset '{dataflow_identifier}' in provider '{provider_name}'.\n"
             f"Use --provider to specify a different provider (e.g. --provider istat, --provider ecb, --provider oecd)."
@@ -1326,7 +1333,7 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
             )
             result = _parse_constraint_xml(content)
     except httpx.TimeoutException:
-        provider_name = provider.get("name", "unknown")
+        provider_name = provider_label(provider)
         # If no override was set, the module default applied — surface that to the user.
         from .base import _timeout as _module_timeout
         effective_timeout = constraint_timeout if constraint_timeout is not None else _module_timeout

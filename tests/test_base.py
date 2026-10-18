@@ -2,7 +2,14 @@
 
 from __future__ import annotations
 
-from opensdmx.base import PROVIDERS, get_extra_headers, get_provider, set_extra_headers, set_provider
+from opensdmx.base import (
+    PROVIDERS,
+    get_extra_headers,
+    get_provider,
+    provider_label,
+    set_extra_headers,
+    set_provider,
+)
 
 
 def test_set_provider_preset():
@@ -87,6 +94,14 @@ def test_set_provider_constraint_tuning_does_not_warn(caplog):
     assert get_provider()["constraint_timeout"] == 30
     assert "constraint_timeout" not in caplog.text
     assert "constraint_max_retries" not in caplog.text
+
+
+def test_provider_label_uses_name_or_base_url():
+    """Messages name a custom provider by its URL, not by an empty string."""
+    set_provider("eurostat")
+    assert provider_label(get_provider()) == "Eurostat"
+    set_provider("https://custom.sdmx.org/rest/")
+    assert provider_label(get_provider()) == "https://custom.sdmx.org/rest"
 
 
 def test_set_provider_unknown_name_not_url():

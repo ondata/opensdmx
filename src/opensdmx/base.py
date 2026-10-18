@@ -182,6 +182,11 @@ def get_provider() -> dict[str, Any]:
     return PROVIDERS[_active_provider]
 
 
+def provider_label(provider: dict[str, Any]) -> str:
+    """Name to show in messages: a custom provider has no name, so use its URL."""
+    return str(provider.get("name") or provider["base_url"])
+
+
 def get_base_url() -> str:
     return str(get_provider()["base_url"])
 
@@ -600,7 +605,7 @@ def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) 
     if dropped:
         logger.warning(
             "Provider '%s' does not support: %s. These parameters will be ignored.",
-            provider.get('name', ''),
+            provider_label(provider),
             ', '.join(dropped),
         )
     params = {k: v for k, v in params.items() if k not in unsupported}

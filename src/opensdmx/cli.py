@@ -28,6 +28,7 @@ from .base import (
     get_base_url,
     get_provider,
     is_explain,
+    provider_label,
     set_extra_headers,
     set_explain,
 )
@@ -832,7 +833,7 @@ def constraints(
         import os as _os
         _t = float(_os.environ.get("OPENSDMX_AVAILCONSTRAINT_TIMEOUT", str(provider_constraint_timeout)))
         err_console.print(
-            f"[yellow]⚠ {provider_cfg.get('name', 'Provider')}: first constraints call "
+            f"[yellow]⚠ {provider_label(provider_cfg)}: first constraints call "
             f"(timeout {_t:.0f} s, no retry). Results cached 7 days on success; on timeout, raise "
             f"OPENSDMX_AVAILCONSTRAINT_TIMEOUT.[/yellow]"
         )
