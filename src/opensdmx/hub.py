@@ -148,6 +148,10 @@ def _get_all_dimension_values_via_hub_bulk(
     dimension at once, same cost as a single per-dimension call (~2 s for
     datasets with 10+ dimensions). TIME_PERIOD is excluded from the result.
 
+    A dimension the hub lists with no values is kept with an empty list: the
+    hub answered, but has nothing for it (seen on ISTAT for dimensions that do
+    carry codes in the data, e.g. POSIZ_PROF of 150_875_DF_DCCV_OCCUPATIMENS1_2).
+
     Returns ``{}`` on any error so callers fall through to sequential calls or
     the SDMX-REST chain.
     """
@@ -166,9 +170,7 @@ def _get_all_dimension_values_via_hub_bulk(
             dim_id = criterion.get("id", "")
             if not dim_id or dim_id.upper() == "TIME_PERIOD":
                 continue
-            codes = [v["id"] for v in criterion.get("values", []) if v.get("id")]
-            if codes:
-                result[dim_id] = codes
+            result[dim_id] = [v["id"] for v in criterion.get("values", []) if v.get("id")]
         return result
     except (KeyError, TypeError) as e:
         logger.warning(
@@ -187,6 +189,10 @@ def get_available_values_via_hub(dataset: dict[str, Any]) -> dict[str, list[str]
     configured — so callers fall through to the SDMX-REST chain. TIME_PERIOD
     is excluded (it is a ``TimeDimension`` in the DSD and is normally not in
     ``dataset["dimensions"]``, but we filter defensively).
+
+    When the bulk endpoint lists every dimension but leaves some with no
+    values, the result keeps them as empty lists: the hub answer is partial,
+    and the caller decides whether to look elsewhere for the rest.
     """
     if not get_provider().get("hub_base_url"):
         return {}
@@ -198,6 +204,11 @@ def get_available_values_via_hub(dataset: dict[str, Any]) -> dict[str, list[str]
 
     bulk = _get_all_dimension_values_via_hub_bulk(df_id, version=version)
     if bulk and all(d in bulk for d in dim_ids):
+        empty = [d for d in dim_ids if not bulk[d]]
+        if empty:
+            logger.info(
+                "hub has no values for %s of %s", ", ".join(empty), df_id
+            )
         return {d: bulk[d] for d in dim_ids}
 
     result: dict[str, list[str]] = {}

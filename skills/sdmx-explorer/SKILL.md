@@ -522,7 +522,10 @@ actually exist in this specific dataflow:
 - **ISTAT** — the StatKit Data Browser hub, which returns ground-truth
   values per dimension in sub-second time. Every dimension is exposed,
   including `REF_AREA` (~8,000 comuni). Set `OPENSDMX_DISABLE_HUB=1` to fall
-  back to `contentconstraint`/`availableconstraint`.
+  back to `contentconstraint`/`availableconstraint`. The hub can leave a
+  dimension empty even when the data carries codes for it: `constraints` then
+  asks the slower SDMX endpoints too (30 s to a minute or more), and if those
+  time out or fail it shows the hub dimensions and marks the rest `missing`.
 - **Eurostat** — `contentconstraint`.
 - **All others** — `availableconstraint` (or the provider-specific equivalent).
 
@@ -538,7 +541,8 @@ verify missing dimensions with `opensdmx constraints` or `opensdmx values`.
 
 **Missing dimensions** are now rare. They appear only on providers/datasets
 where the discovery endpoint does not list a particular dimension (e.g. some
-Eurostat dataflows). The CLI flags these inline:
+Eurostat dataflows, or ISTAT dataflows where the hub leaves a dimension empty
+and the SDMX fallback times out). The CLI flags these inline:
 
 ```
 REF_AREA  –  not in contentconstraint — use: opensdmx values <df> REF_AREA
@@ -583,8 +587,9 @@ jq '.geo.codes | index("IT") != null' /tmp/c.json
 jq -c 'to_entries[] | select(.value.source=="constraint") | {dim: .key, n: .value.n_values}' /tmp/c.json
 
 # list dimensions missing from the discovery endpoint (need a follow-up `values` call)
-# Note: for ISTAT this returns nothing — the hub exposes every dimension. Useful on
-# Eurostat dataflows where contentconstraint occasionally omits large geo lists.
+# Note: for ISTAT this is usually empty; it lists the dimensions the hub left empty
+# when the SDMX fallback timed out. Useful on Eurostat dataflows where
+# contentconstraint occasionally omits large geo lists.
 opensdmx --output json constraints NAMA_10_GDP --provider eurostat | jq 'to_entries[] | select(.value.source=="missing") | {dim: .key, hint: .value.hint}'
 
 # find a code by label (case-insensitive)
@@ -843,7 +848,10 @@ curl -s \
   "https://esploradati.istat.it/SDMXWS/rest/data/{dataflow_id}/{dim1.dim2...}?startPeriod={start}&endPeriod={end}"
 ```
 Without the `Accept` header ISTAT returns XML. `endPeriod` has an off-by-one
-bug: request N-1 to receive data through N. See [references/istat-flow.md](references/istat-flow.md) for details.
+bug: request N-1 to receive data through N. Dataflows with an `EDITION`
+dimension return every edition stacked when it is left empty: pin it, and never
+pick the latest by sorting the codes as text; parse the release date from the code instead (`2026M9G1` sorts after
+`2026M10G1`). See [references/istat-flow.md](references/istat-flow.md) for details.
 
 ### Step 3 — Ask the user what to do next
 
