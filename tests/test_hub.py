@@ -5,6 +5,8 @@ from __future__ import annotations
 from unittest.mock import MagicMock, patch
 
 import httpx
+import polars as pl
+import pytest
 
 from opensdmx.hub import (
     _dataset_identifier,
@@ -413,3 +415,96 @@ def test_get_available_values_skips_hub_for_non_hub_provider():
         get_available_values(_dataset(FREQ=1, GEO=2))
 
     hub_called.assert_not_called()
+
+
+# ── hub answers with some dimensions empty ────────────────────────────────
+
+def test_get_all_dimension_values_via_hub_bulk_keeps_dims_listed_empty():
+    """A dimension listed with no values stays in the result as []."""
+    payload = {"criteria": [
+        {"id": "FREQ", "values": [{"id": "M"}]},
+        {"id": "POSIZ_PROF", "values": []},
+    ]}
+    cm, _ = _mock_client_with_response(payload=payload)
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub.httpx.Client", return_value=cm):
+        result = _get_all_dimension_values_via_hub_bulk("DF_X")
+
+    assert result == {"FREQ": ["M"], "POSIZ_PROF": []}
+
+
+def test_get_available_values_via_hub_returns_empty_dims_without_sequential_calls():
+    """Bulk lists every dim, one empty: no per-dim calls, empty dim kept as []."""
+    seq_called = MagicMock()
+    with patch("opensdmx.hub.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.hub._get_all_dimension_values_via_hub_bulk",
+               return_value={"FREQ": ["M"], "REF_AREA": []}), \
+         patch("opensdmx.hub.get_dimension_values_via_hub", side_effect=seq_called):
+        result = get_available_values_via_hub(_dataset(FREQ=1, REF_AREA=2))
+
+    assert result == {"FREQ": ["M"], "REF_AREA": []}
+    seq_called.assert_not_called()
+
+
+def test_get_available_values_hub_partial_runs_rest_and_keeps_its_result():
+    """Hub left a dim empty: the REST chain runs and its complete result wins."""
+    from opensdmx.discovery import get_available_values
+
+    rest = {"FREQ": pl.DataFrame({"id": ["M"]}), "REF_AREA": pl.DataFrame({"id": ["IT"]})}
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints") as save, \
+         patch("opensdmx.hub.get_available_values_via_hub",
+               return_value={"FREQ": ["M"], "REF_AREA": []}), \
+         patch("opensdmx.discovery._get_available_values_rest", return_value=rest):
+        result = get_available_values(_dataset(FREQ=1, REF_AREA=2))
+
+    assert result is rest
+    save.assert_not_called()  # the hub partial is never cached
+
+
+def test_get_available_values_hub_partial_on_rest_timeout():
+    """REST times out: return the dims the hub answered, without caching them."""
+    from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints") as save, \
+         patch("opensdmx.hub.get_available_values_via_hub",
+               return_value={"FREQ": ["M"], "REF_AREA": []}), \
+         patch("opensdmx.discovery._get_available_values_rest",
+               side_effect=ConstraintsTimeout("TEST_DF", 30.0)):
+        result = get_available_values(_dataset(FREQ=1, REF_AREA=2))
+
+    assert list(result) == ["FREQ"]
+    assert result["FREQ"]["id"].to_list() == ["M"]
+    save.assert_not_called()
+
+
+def test_get_available_values_rest_timeout_without_hub_partial_raises():
+    """No hub answer at all: a REST timeout still reaches the caller."""
+    from opensdmx.discovery import ConstraintsTimeout, get_available_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.hub.get_available_values_via_hub", return_value={}), \
+         patch("opensdmx.discovery._get_available_values_rest",
+               side_effect=ConstraintsTimeout("TEST_DF", 30.0)):
+        with pytest.raises(ConstraintsTimeout):
+            get_available_values(_dataset(FREQ=1, REF_AREA=2))
+
+
+def test_get_available_values_hub_partial_when_rest_returns_nothing():
+    """REST fails without a timeout (returns {}): the hub dims are still returned."""
+    from opensdmx.discovery import get_available_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints") as save, \
+         patch("opensdmx.hub.get_available_values_via_hub",
+               return_value={"FREQ": ["M"], "REF_AREA": []}), \
+         patch("opensdmx.discovery._get_available_values_rest", return_value={}):
+        result = get_available_values(_dataset(FREQ=1, REF_AREA=2))
+
+    assert list(result) == ["FREQ"]
+    save.assert_not_called()

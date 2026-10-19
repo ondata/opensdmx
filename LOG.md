@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-10-19 - fix: ISTAT hub dimensions with no values
+
+- **Hub answers with empty dimensions**: on `150_875_DF_DCCV_OCCUPATIMENS1_2` the hub bulk endpoint lists all 9 dims but `POSIZ_PROF` and `PERM_TEMP_EMPLOYEES` with `values: []`, though the data holds `9` for both. The parser dropped them, so the coverage check failed, 7 per-dim calls ran (~0.5 s each) and the log said "hub returned no values ... aborting hub discovery".
+- **Now**: bulk keeps empty dims, no per-dim calls; `get_available_values` runs the REST chain (moved into `_get_available_values_rest()`) for the complete set, and if it times out or returns nothing, returns the dims the hub answered, never cached. Before, both cases gave nothing.
+- **Checked live**: REST answers complete (9 dims) in ~31 s against a 30 s `constraint_fallback_timeout` per call, which explains the intermittent timeout reported; with the timeout forced to 3 s, `constraints` shows 7 dims, 2 `missing`, cache untouched.
+
+## 2026-10-19 - skill: ISTAT `EDITION` dimension
+
+- **Reported "latest edition missing" was a sort error**: `get` on `150_875_DF_DCCV_OCCUPATIMENS1_2` with `EDITION` empty returns all 57 editions, `2026M10G1` (data to 2026-08) included. Edition codes do not sort as text: `2026M9G1` sorts after `2026M10G1`. No code change.
+- **`references/istat-flow.md`**: new section on editions - pick the latest by `max(TIME_PERIOD)` or by parsing the code, pin `--EDITION` in the final query (values are revised between editions). One-line pointer in `SKILL.md`. Both SQL snippets checked on the downloaded data.
+
 ## 2026-10-18 - fix: messages name a custom provider by its URL
 
 - **No more `Provider ''` or `provider 'unknown'`**: a provider set with `set_provider(url)` has no `name`, so four messages showed an empty string, `unknown` or `Provider` (the `unsupported_params` warning, dataflow not found, availableconstraint timeout, first constraints call). A new `provider_label()` in `base.py` returns the name, or the base URL when there is none. Built-in providers unchanged: all declare `name`.

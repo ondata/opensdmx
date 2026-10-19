@@ -9,7 +9,7 @@ that shape the entire exploration flow:
    cheaper than trial-and-error.
 2. **Hub-backed `constraints` (sub-second per dimension)** — for ISTAT,
    `opensdmx constraints` uses the StatKit Data Browser hub by default and
-   returns ground-truth values for **every** dimension, including `REF_AREA`
+   returns the values present in the data for (almost) every dimension, including `REF_AREA`
    (~8,000 comuni) and even on 11-dimension datasets that previously timed out
    on the SDMX REST endpoint. No wildcard cross-join, no 30 s waits.
 3. **Versioned/dated codes** — some codes carry suffixes (`LBIRTH_FROM2017`,
@@ -19,7 +19,8 @@ that shape the entire exploration flow:
 > **Hub note.** The hub call is automatic and transparent. On any hub failure
 > (network error, parse error, partial response) the CLI falls through to the
 > classic SDMX REST chain (`contentconstraint` bulk → `availableconstraint` →
-> `serieskeysonly`) without warning. Set `OPENSDMX_DISABLE_HUB=1` to force the
+> `serieskeysonly`) without warning. When the hub answers but leaves some
+> dimensions empty, the same chain runs; see Step 2 below. Set `OPENSDMX_DISABLE_HUB=1` to force the
 > SDMX REST path for debugging or comparison. See `docs/istat/hub-api.md` for
 > the protocol details.
 
@@ -56,6 +57,16 @@ Constraints: 41_270_DF_DCIS_MORTIFERITISTR1_1
   MONTH              13   1, 2, 3
   …
 ```
+
+The hub can list a dimension with no values although the data has codes for
+it (e.g. `POSIZ_PROF` and `PERM_TEMP_EMPLOYEES` of
+`150_875_DF_DCCV_OCCUPATIMENS1_2`, both `9` in the data, 2026-10-19). In that
+case `constraints` runs the SDMX REST chain (`contentconstraint` →
+`availableconstraint` → `serieskeysonly`), which took 31 s on that dataflow
+and can take a minute or more. If the chain times out or finds nothing, the
+output keeps the dimensions the hub answered and marks the others `missing`:
+take their codes from `opensdmx values` or from a small `get --last-n 1`. That
+partial result is not cached, so the next call tries the full lookup again.
 
 `REF_AREA` is now exposed alongside every other dimension. For the few
 historical cases where it was returned with a `–` placeholder (hub disabled,
@@ -194,6 +205,40 @@ example, `endPeriod=2024-03` returns data through `2024-04`, and
 `endPeriod=2024` returns data through `2025-01-01`. To get data through
 period N, request `endPeriod=N-1`. Filter on `TIME_PERIOD` after download
 to enforce the exact cutoff date.
+
+## Editions (`EDITION` dimension)
+
+Some ISTAT dataflows (e.g. the monthly labour-force series
+`150_875_DF_DCCV_OCCUPATIMENS1_2`, `151_877_DF_DCCV_DISOCCUPTMENS1_1`,
+`152_879_DF_DCCV_INATTIVMENS1_1`) carry an `EDITION` dimension: every release
+is a full vintage of the series, and past values are revised from one edition
+to the next. Leaving `EDITION` empty returns all editions stacked (57 on the
+employment dataflow, 2026-10-19), the latest included.
+
+**Edition codes do not sort as text.** Codes look like `2026M10G1` (year, month,
+day of release): sorted as strings, `2026M9G1` comes after `2026M10G1`, so
+`ORDER BY EDITION DESC` or `max(EDITION)` picks the wrong one and the latest
+edition looks missing. Pick the latest by the data it holds, or by the date in
+the code:
+
+```sql
+-- latest edition = the one reaching the most recent period
+SELECT EDITION, max(TIME_PERIOD) AS last_period
+FROM 'data.csv' GROUP BY EDITION ORDER BY last_period DESC LIMIT 1;
+
+-- or parse the code into a date
+SELECT DISTINCT EDITION,
+  make_date(
+    regexp_extract(EDITION, '^(\d{4})M(\d{1,2})G(\d{1,2})$', 1)::INT,
+    regexp_extract(EDITION, '^(\d{4})M(\d{1,2})G(\d{1,2})$', 2)::INT,
+    regexp_extract(EDITION, '^(\d{4})M(\d{1,2})G(\d{1,2})$', 3)::INT) AS released
+FROM 'data.csv' ORDER BY released DESC LIMIT 1;
+```
+
+**Pin the edition in the final query** (`--EDITION 2026M10G1`) and name it in
+the answer. Values change between editions (employed, January 2021: 22,045.133
+thousand in `2026M3G4`, 22,091.767 in `2026M10G1`), so a query without it is not
+reproducible and mixes vintages if the rows are not filtered.
 
 ## Other quirks
 

@@ -1230,6 +1230,9 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
 
     Steps 2+ are gated by provider config: providers without `hub_base_url`
     skip step 2. Hub failures fall through transparently to the existing chain.
+    When the hub answers but leaves some dimensions empty, the chain runs too;
+    if it times out or finds nothing, the dimensions the hub did answer are
+    returned, uncached.
     """
     from .db_cache import get_cached_available_constraints, save_available_constraints
 
@@ -1261,15 +1264,42 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     # Pass the patched provider explicitly so test patches on get_provider
     # control hub activation deterministically.
     from .hub import is_hub_enabled, get_available_values_via_hub
+    hub_partial: dict[str, list[str]] = {}
     if is_hub_enabled(provider):
         hub_result = get_available_values_via_hub(dataset)
-        if hub_result:
+        if hub_result and all(hub_result.values()):
             try:
                 save_available_constraints(df_id, hub_result)
             except Exception as e:
                 logger.warning("Could not cache hub-derived constraints: %s", e)
             return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in hub_result.items()}
+        # The hub left some dimensions empty: the REST chain may know them.
+        hub_partial = {d: codes for d, codes in hub_result.items() if codes}
 
+    try:
+        rest_result = _get_available_values_rest(dataset, provider)
+    except ConstraintsTimeout:
+        if not hub_partial:
+            raise
+        rest_result = {}
+    if rest_result or not hub_partial:
+        return rest_result
+    # Better the dimensions the hub did answer than nothing. Not cached:
+    # the next run must try REST again for the complete set.
+    logger.warning(
+        "constraints unavailable for %s — showing only the %d dimensions the hub answered",
+        df_id, len(hub_partial),
+    )
+    return {dim_id: pl.DataFrame({"id": codes}) for dim_id, codes in hub_partial.items()}
+
+
+def _get_available_values_rest(dataset: dict[str, Any], provider: dict[str, Any]) -> dict[str, pl.DataFrame]:
+    """SDMX-REST part of `get_available_values` (steps 3-5): constraint
+    endpoints, then the `serieskeysonly` fallback. Caches what it finds;
+    raises ConstraintsTimeout when the last fallback times out."""
+    from .db_cache import save_available_constraints
+
+    df_id = dataset["df_id"]
     constraint_endpoint = provider.get("constraint_endpoint", "availableconstraint")
     constraint_suffix = provider.get("constraint_path_suffix", "")
 
