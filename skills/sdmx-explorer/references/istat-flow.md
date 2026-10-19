@@ -218,15 +218,10 @@ employment dataflow, 2026-10-19), the latest included.
 **Edition codes do not sort as text.** Codes look like `2026M10G1` (year, month,
 day of release): sorted as strings, `2026M9G1` comes after `2026M10G1`, so
 `ORDER BY EDITION DESC` or `max(EDITION)` picks the wrong one and the latest
-edition looks missing. Pick the latest by the data it holds, or by the date in
-the code:
+edition looks missing. Pick the latest by the release date in the code (two
+editions can reach the same last period, so `max(TIME_PERIOD)` alone can tie):
 
 ```sql
--- latest edition = the one reaching the most recent period
-SELECT EDITION, max(TIME_PERIOD) AS last_period
-FROM 'data.csv' GROUP BY EDITION ORDER BY last_period DESC LIMIT 1;
-
--- or parse the code into a date
 SELECT DISTINCT EDITION,
   make_date(
     regexp_extract(EDITION, '^(\d{4})M(\d{1,2})G(\d{1,2})$', 1)::INT,

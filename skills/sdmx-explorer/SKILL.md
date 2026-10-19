@@ -850,7 +850,7 @@ curl -s \
 Without the `Accept` header ISTAT returns XML. `endPeriod` has an off-by-one
 bug: request N-1 to receive data through N. Dataflows with an `EDITION`
 dimension return every edition stacked when it is left empty: pin it, and never
-pick the latest by sorting the codes as text (`2026M9G1` sorts after
+pick the latest by sorting the codes as text; parse the release date from the code instead (`2026M9G1` sorts after
 `2026M10G1`). See [references/istat-flow.md](references/istat-flow.md) for details.
 
 ### Step 3 — Ask the user what to do next

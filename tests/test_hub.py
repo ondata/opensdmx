@@ -508,3 +508,33 @@ def test_get_available_values_hub_partial_when_rest_returns_nothing():
 
     assert list(result) == ["FREQ"]
     save.assert_not_called()
+
+
+def test_get_available_values_hub_partial_when_rest_returns_500():
+    """REST raises ConstraintsUnavailable (HTTP 500): the hub dims are still returned."""
+    from opensdmx.discovery import ConstraintsUnavailable, get_available_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.db_cache.save_available_constraints") as save, \
+         patch("opensdmx.hub.get_available_values_via_hub",
+               return_value={"FREQ": ["M"], "REF_AREA": []}), \
+         patch("opensdmx.discovery._get_available_values_rest",
+               side_effect=ConstraintsUnavailable("TEST_DF")):
+        result = get_available_values(_dataset(FREQ=1, REF_AREA=2))
+
+    assert list(result) == ["FREQ"]
+    save.assert_not_called()
+
+
+def test_get_available_values_rest_500_without_hub_partial_raises():
+    """No hub answer: ConstraintsUnavailable still reaches the caller."""
+    from opensdmx.discovery import ConstraintsUnavailable, get_available_values
+
+    with patch("opensdmx.discovery.get_provider", return_value=_HUB_PROVIDER), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.hub.get_available_values_via_hub", return_value={}), \
+         patch("opensdmx.discovery._get_available_values_rest",
+               side_effect=ConstraintsUnavailable("TEST_DF")):
+        with pytest.raises(ConstraintsUnavailable):
+            get_available_values(_dataset(FREQ=1, REF_AREA=2))

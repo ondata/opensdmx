@@ -3,7 +3,7 @@
 ## 2026-10-19 - fix: ISTAT hub dimensions with no values
 
 - **Hub answers with empty dimensions**: on `150_875_DF_DCCV_OCCUPATIMENS1_2` the hub bulk endpoint lists all 9 dims but `POSIZ_PROF` and `PERM_TEMP_EMPLOYEES` with `values: []`, though the data holds `9` for both. The parser dropped them, so the coverage check failed, 7 per-dim calls ran (~0.5 s each) and the log said "hub returned no values ... aborting hub discovery".
-- **Now**: bulk keeps empty dims, no per-dim calls; `get_available_values` runs the REST chain (moved into `_get_available_values_rest()`) for the complete set, and if it times out or returns nothing, returns the dims the hub answered, never cached. Before, both cases gave nothing.
+- **Now**: bulk keeps empty dims, no per-dim calls; `get_available_values` runs the REST chain (moved into `_get_available_values_rest()`) for the complete set, and if it times out, fails (HTTP 500) or returns nothing, returns the dims the hub answered, never cached. Before, both cases gave nothing.
 - **Checked live**: REST answers complete (9 dims) in ~31 s against a 30 s `constraint_fallback_timeout` per call, which explains the intermittent timeout reported; with the timeout forced to 3 s, `constraints` shows 7 dims, 2 `missing`, cache untouched.
 
 ## 2026-10-19 - skill: ISTAT `EDITION` dimension

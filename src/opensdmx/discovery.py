@@ -1231,8 +1231,8 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     Steps 2+ are gated by provider config: providers without `hub_base_url`
     skip step 2. Hub failures fall through transparently to the existing chain.
     When the hub answers but leaves some dimensions empty, the chain runs too;
-    if it times out or finds nothing, the dimensions the hub did answer are
-    returned, uncached.
+    if it times out, fails (HTTP 500) or finds nothing, the dimensions the hub
+    did answer are returned, uncached.
     """
     from .db_cache import get_cached_available_constraints, save_available_constraints
 
@@ -1278,7 +1278,7 @@ def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
 
     try:
         rest_result = _get_available_values_rest(dataset, provider)
-    except ConstraintsTimeout:
+    except (ConstraintsTimeout, ConstraintsUnavailable):
         if not hub_partial:
             raise
         rest_result = {}
