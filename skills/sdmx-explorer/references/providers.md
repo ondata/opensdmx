@@ -69,3 +69,11 @@ before downloading the full series.
 World Bank does not accept `--last-n`. Use `--start-period` / `--end-period`
 with an explicit date range for previews — passing `--last-n N` causes a parse
 error.
+
+## User-declared providers
+
+The user can add providers, or override fields of a built-in one (for example a slower `rate_limit` for `istat`), in a JSON file merged over the bundled `portals.json`: `$OPENSDMX_PORTALS`, otherwise `$XDG_CONFIG_HOME/opensdmx/portals.json`, otherwise `~/.config/opensdmx/portals.json`. Format and merge rules: [docs/providers.md](https://github.com/ondata/opensdmx/blob/main/docs/providers.md#user-level-provider-overrides).
+
+- A provider declared there is used by name or alias (`--provider mysdmx`) and listed by `opensdmx providers`. It is not in the capability matrix above: its columns show `?` unless the file declares `constraints_supported`, `last_n_supported` or `categories_supported`, so probe instead of assuming. `tree` tries `/categoryscheme` live, `--last-n` is attempted.
+- Lines on stderr starting with `portals:` come from that file: a field of the wrong type, an entry without `base_url`, an alias clash, or a file that cannot be parsed (then the built-in providers are used unchanged). If a user provider is missing or behaves like the built-in one, read those lines first.
+- If the user keeps passing the same `--provider https://...` URL, suggest declaring it once in that file.
