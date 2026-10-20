@@ -33,8 +33,173 @@ _DEFAULTS: dict[str, Any] = {
 
 # Load portals from bundled JSON
 _PORTALS_FILE = Path(__file__).parent / "portals.json"
-with open(_PORTALS_FILE) as f:
-    _raw_portals = json.load(f)
+
+logger = logging.getLogger(__name__)
+
+# Env var naming a user portals file; without it, ~/.config/opensdmx/portals.json
+# (or $XDG_CONFIG_HOME/opensdmx/portals.json) is used when it exists.
+_PORTALS_ENV = "OPENSDMX_PORTALS"
+
+
+def _user_portals_file() -> Path | None:
+    """Return the user-level portals file: $OPENSDMX_PORTALS, else the XDG config path.
+
+    None when there is no home directory to look in: a container running under a UID
+    with no passwd entry has none, and that must not take `import opensdmx` down.
+    """
+    override = os.environ.get(_PORTALS_ENV)
+    if override:
+        try:
+            return Path(override).expanduser()
+        except (OSError, RuntimeError) as exc:
+            logger.warning("portals: cannot expand %s=%s: %s", _PORTALS_ENV, override, exc)
+
+            return None
+
+    config_home = os.environ.get("XDG_CONFIG_HOME")
+    if config_home:
+        return Path(config_home).expanduser() / "opensdmx" / "portals.json"
+
+    try:
+        return Path.home() / ".config" / "opensdmx" / "portals.json"
+    except (OSError, RuntimeError):
+        return None
+
+
+def _is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def _is_alias_list(value: Any) -> bool:
+    return isinstance(value, list) and all(isinstance(alias, str) and alias for alias in value)
+
+
+def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, Any]:
+    """Drop the fields of a user entry that would break ``PROVIDERS`` at runtime.
+
+    A field of the wrong type is reported and left out, so the bundled value (or the
+    default) still applies; the rest of the entry is kept.
+    """
+    fields = dict(entry)
+
+    if "aliases" in fields and not _is_alias_list(fields["aliases"]):
+        logger.warning(
+            "portals: %s: provider '%s': aliases must be a list of non-empty strings, ignored",
+            path,
+            key,
+        )
+        del fields["aliases"]
+
+    if "rate_limit" in fields and not _is_number(fields["rate_limit"]):
+        logger.warning(
+            "portals: %s: provider '%s': rate_limit must be a number, ignored", path, key
+        )
+        del fields["rate_limit"]
+
+    return fields
+
+
+def _warn_alias_collisions(path: Path, portals: dict[str, Any], user_keys: set[str]) -> None:
+    """Report user aliases that would resolve to a different provider than they name."""
+    declared: dict[str, list[str]] = {}
+
+    for key, entry in portals.items():
+        for alias in entry.get("aliases", []):
+            declared.setdefault(alias, []).append(key)
+
+    for key in sorted(user_keys):
+        for alias in portals[key].get("aliases", []):
+            owners = declared.get(alias, [])
+
+            if alias in portals and alias != key:
+                logger.warning(
+                    "portals: %s: alias '%s' of '%s' is also a provider name; "
+                    "the provider name wins",
+                    path,
+                    alias,
+                    key,
+                )
+            elif len(owners) > 1:
+                logger.warning(
+                    "portals: %s: alias '%s' is declared by %s; '%s' wins",
+                    path,
+                    alias,
+                    " and ".join(f"'{owner}'" for owner in owners),
+                    key,
+                )
+
+
+def _load_portals() -> dict[str, Any]:
+    """Bundled providers, overlaid with the user portals file when one exists.
+
+    The user file may add providers or override single fields of a bundled one:
+    entries are merged key by key, so overriding ``rate_limit`` keeps the bundled
+    ``base_url``, name and aliases. Aliases declared there are resolved like the
+    bundled ones.
+
+    A file that cannot be read or parsed is reported and skipped: a typo in a
+    configuration file must not take the library down, and a warning is not the
+    silent drop this override exists to fix.
+    """
+    with open(_PORTALS_FILE) as f:
+        portals: dict[str, Any] = json.load(f)
+
+    path = _user_portals_file()
+
+    if path is None:
+        return portals
+
+    if not path.is_file():
+        if path.exists():
+            logger.warning("portals: %s is not a file; using the bundled providers", path)
+        elif os.environ.get(_PORTALS_ENV):
+            logger.warning(
+                "portals: %s=%s does not exist; using the bundled providers",
+                _PORTALS_ENV,
+                path,
+            )
+
+        return portals
+
+    try:
+        with open(path) as f:
+            user_portals = json.load(f)
+    except (OSError, ValueError) as exc:
+        # UnicodeDecodeError is a ValueError, not a JSONDecodeError: a file saved
+        # as latin-1 must fall back like a syntactically broken one, not crash.
+        logger.warning("portals: ignoring %s: %s", path, exc)
+
+        return portals
+
+    if not isinstance(user_portals, dict):
+        logger.warning("portals: ignoring %s: expected an object of providers", path)
+
+        return portals
+
+    user_keys: set[str] = set()
+
+    for key, entry in user_portals.items():
+        if not isinstance(entry, dict):
+            logger.warning("portals: %s: provider '%s' is not an object, skipped", path, key)
+
+            continue
+
+        merged = {**portals.get(key, {}), **_clean_user_entry(path, key, entry)}
+
+        if not isinstance(merged.get("base_url"), str) or not merged["base_url"].strip():
+            logger.warning("portals: %s: provider '%s' has no base_url, skipped", path, key)
+
+            continue
+
+        portals[key] = merged
+        user_keys.add(key)
+
+    _warn_alias_collisions(path, portals, user_keys)
+
+    return portals
+
+
+_raw_portals = _load_portals()
 
 PROVIDERS: dict[str, dict[str, Any]] = {
     key: {**_DEFAULTS, **entry}
@@ -79,9 +244,6 @@ def set_rate_limit_context(msg: str) -> None:
     """Set a human-readable label shown during rate-limit waits."""
     global _rate_limit_context
     _rate_limit_context = msg
-
-
-logger = logging.getLogger(__name__)
 
 
 def set_provider(
@@ -149,7 +311,9 @@ def resolve_provider(name: str, agency_id: str | None = None) -> None:
     """
     import os
 
-    resolved = PROVIDER_ALIASES.get(name, name)
+    # A provider name wins over an alias of the same spelling: a user provider keyed
+    # `estat` must reach that provider, not the Eurostat alias `estat` expands to.
+    resolved = name if name in PROVIDERS else PROVIDER_ALIASES.get(name, name)
     if resolved not in PROVIDERS and not resolved.startswith("http"):
         valid = ", ".join(sorted(PROVIDERS))
         raise ValueError(f"unknown provider '{name}'. Valid: {valid}")
