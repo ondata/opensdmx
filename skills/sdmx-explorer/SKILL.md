@@ -361,6 +361,13 @@ provider's own notices on the dataflow — a series break, a classification chan
 a revision — read from the catalogue at no extra cost. Relay them to the user
 before showing figures; they change how the numbers are read.
 
+On Eurostat, `info` may also print a `Metadata:` line (`metadata_url` in JSON):
+the dataflow's ESMS report, the methodology page with definitions, coverage and
+reference period. It costs one small extra request and is absent when the
+dataflow publishes no report. Give it to the user alongside the figures and cite
+it in the README; do not guess its filename, which follows the survey, not the
+dataflow (`TOUR_OCC_ARM` → `tour_occ_esms.htm`).
+
 **If page 1 (50 results) yields no strong candidates**, paginate before giving up:
 
 ```bash
