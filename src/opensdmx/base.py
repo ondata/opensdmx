@@ -22,6 +22,9 @@ if TYPE_CHECKING:
 
 # Defaults for fields not specified in portals.json or custom providers
 _DEFAULTS: dict[str, Any] = {
+    # A user-level provider may declare only a base_url; an empty agency is what
+    # set_provider() already gives a custom URL, so get_agency_id() cannot KeyError.
+    "agency_id": "",
     "rate_limit": 0.5,
     "language": "en",
     "dataflow_params": {},
@@ -90,28 +93,40 @@ def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, 
         )
         del fields["aliases"]
 
-    if "rate_limit" in fields and not _is_number(fields["rate_limit"]):
-        logger.warning(
-            "portals: %s: provider '%s': rate_limit must be a number, ignored", path, key
-        )
-        del fields["rate_limit"]
+    for field in ("rate_limit", "data_rate_limit"):
+        if field in fields and not _is_number(fields[field]):
+            logger.warning("portals: %s: provider '%s': %s must be a number, ignored", path, key, field)
+
+            del fields[field]
 
     return fields
 
 
 def _warn_alias_collisions(path: Path, portals: dict[str, Any], user_keys: set[str]) -> None:
-    """Report user aliases that would resolve to a different provider than they name."""
+    """Report user aliases that would resolve to a different provider than they name.
+
+    ``PROVIDER_ALIASES`` keeps the last provider that declares an alias, so that is the
+    winner to name in the warning; a provider key always wins over an alias, because
+    ``resolve_provider()`` looks the name up in ``PROVIDERS`` first.
+    """
     declared: dict[str, list[str]] = {}
 
     for key, entry in portals.items():
         for alias in entry.get("aliases", []):
             declared.setdefault(alias, []).append(key)
 
+    reported: set[str] = set()
+
     for key in sorted(user_keys):
         for alias in portals[key].get("aliases", []):
+            if alias in reported:
+                continue
+
             owners = declared.get(alias, [])
+            winner = owners[-1] if owners else key
 
             if alias in portals and alias != key:
+                reported.add(alias)
                 logger.warning(
                     "portals: %s: alias '%s' of '%s' is also a provider name; "
                     "the provider name wins",
@@ -120,12 +135,13 @@ def _warn_alias_collisions(path: Path, portals: dict[str, Any], user_keys: set[s
                     key,
                 )
             elif len(owners) > 1:
+                reported.add(alias)
                 logger.warning(
                     "portals: %s: alias '%s' is declared by %s; '%s' wins",
                     path,
                     alias,
                     " and ".join(f"'{owner}'" for owner in owners),
-                    key,
+                    winner,
                 )
 
 
@@ -149,8 +165,17 @@ def _load_portals() -> dict[str, Any]:
     if path is None:
         return portals
 
-    if not path.is_file():
-        if path.exists():
+    try:
+        is_file = path.is_file()
+        exists = path.exists()
+    except OSError as exc:
+        # Python 3.12 `is_file()` raises when a parent directory is unsearchable.
+        logger.warning("portals: cannot read %s: %s; using the bundled providers", path, exc)
+
+        return portals
+
+    if not is_file:
+        if exists:
             logger.warning("portals: %s is not a file; using the bundled providers", path)
         elif os.environ.get(_PORTALS_ENV):
             logger.warning(
@@ -296,6 +321,15 @@ def set_provider(
         }
 
 
+def _resolve_provider_name(name: str) -> str:
+    """A provider name wins over an alias of the same spelling.
+
+    A user provider keyed `estat` must reach that provider, not the Eurostat alias
+    `estat` expands to, wherever a name is resolved: the CLI, a saved query, the API.
+    """
+    return name if name in PROVIDERS else PROVIDER_ALIASES.get(name, name)
+
+
 def resolve_provider(name: str, agency_id: str | None = None) -> None:
     """Set the active provider from a preset name, an alias, or a base URL.
 
@@ -313,7 +347,7 @@ def resolve_provider(name: str, agency_id: str | None = None) -> None:
 
     # A provider name wins over an alias of the same spelling: a user provider keyed
     # `estat` must reach that provider, not the Eurostat alias `estat` expands to.
-    resolved = name if name in PROVIDERS else PROVIDER_ALIASES.get(name, name)
+    resolved = _resolve_provider_name(name)
     if resolved not in PROVIDERS and not resolved.startswith("http"):
         valid = ", ".join(sorted(PROVIDERS))
         raise ValueError(f"unknown provider '{name}'. Valid: {valid}")

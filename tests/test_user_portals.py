@@ -9,6 +9,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 from opensdmx.base import _load_portals, _user_portals_file
 
 BUNDLED: dict = json.loads((Path(__file__).parent.parent / "src/opensdmx/portals.json").read_text())
@@ -315,3 +317,109 @@ def test_user_file_reaches_providers_and_aliases_at_import(tmp_path):
         "True",
         BUNDLED["eurostat"]["name"],
     ]
+
+
+def test_invalid_data_rate_limit_is_ignored(monkeypatch, tmp_path, caplog):
+    """`float(provider["data_rate_limit"])` runs on the next data request, not at load."""
+    path = _write_portals(tmp_path / "portals.json", {"oecd": {"data_rate_limit": "oops"}})
+    monkeypatch.setenv("OPENSDMX_PORTALS", str(path))
+
+    with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+        portals = _load_portals()
+
+    assert portals["oecd"]["data_rate_limit"] == BUNDLED["oecd"]["data_rate_limit"]
+    assert any("data_rate_limit must be a number" in record.message for record in caplog.records)
+
+
+def test_a_provider_with_only_a_base_url_has_an_agency(monkeypatch, tmp_path):
+    """A minimal user entry must not KeyError in get_agency_id() on the first request."""
+    path = _write_portals(tmp_path / "portals.json", {"bare": {"base_url": "https://b.example.org/rest"}})
+    code = (
+        "from opensdmx.base import get_agency_id, set_provider;"
+        "set_provider('bare');"
+        "print(repr(get_agency_id()))"
+    )
+
+    result = subprocess.run(
+        [sys.executable, "-c", code],
+        env={**os.environ, "OPENSDMX_PORTALS": str(path)},
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+
+    assert result.stdout.strip() == "''"
+
+
+def test_unsearchable_config_directory_falls_back(monkeypatch, tmp_path, caplog):
+    """`Path.is_file()` raises on Python 3.12 when a parent directory denies search."""
+    blocked = tmp_path / "blocked"
+    blocked.mkdir()
+    (blocked / "portals.json").write_text("{}")
+    blocked.chmod(0)
+
+    try:
+        if os.access(blocked / "portals.json", os.R_OK):
+            pytest.skip("permissions are not enforced for this user")
+
+        monkeypatch.setenv("OPENSDMX_PORTALS", str(blocked / "portals.json"))
+
+        with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+            portals = _load_portals()
+    finally:
+        blocked.chmod(0o700)
+
+    assert portals == BUNDLED
+    assert any("cannot read" in record.message for record in caplog.records)
+
+
+def test_duplicate_alias_warning_names_the_winner(monkeypatch, tmp_path, caplog):
+    path = _write_portals(
+        tmp_path / "portals.json",
+        {
+            "a": {"base_url": "https://a.example.org/rest", "aliases": ["same"]},
+            "b": {"base_url": "https://b.example.org/rest", "aliases": ["same"]},
+        },
+    )
+    monkeypatch.setenv("OPENSDMX_PORTALS", str(path))
+
+    with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+        _load_portals()
+
+    warnings = [r.message for r in caplog.records if "'same' is declared by" in r.message]
+
+    assert len(warnings) == 1
+    assert "'b' wins" in warnings[0]
+
+
+def test_run_query_prefers_a_provider_name_over_an_alias(tmp_path, monkeypatch):
+    """A saved query with `provider: estat` must reach a user provider keyed `estat`."""
+    from unittest.mock import patch
+
+    import yaml
+
+    from opensdmx import base
+    from opensdmx.retrieval import run_query
+
+    providers = dict(base.PROVIDERS)
+    providers["estat"] = {
+        **base._DEFAULTS,
+        "base_url": "https://stat.example.org/rest",
+        "agency_id": "ME",
+    }
+    monkeypatch.setattr(base, "PROVIDERS", providers)
+
+    query = tmp_path / "q.yaml"
+    query.write_text(yaml.dump({"dataset": "TEST_DF", "filters": {}, "provider": "estat"}))
+
+    seen: list[str] = []
+
+    def spy_load(dataset_id):
+        seen.append(base.get_provider()["base_url"])
+        raise RuntimeError("stop")
+
+    with patch("opensdmx.retrieval.load_dataset", side_effect=spy_load):
+        with pytest.raises(RuntimeError):
+            run_query(str(query))
+
+    assert seen == ["https://stat.example.org/rest"]
