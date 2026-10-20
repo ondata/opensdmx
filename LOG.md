@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-10-20 - feat: ESMS metadata link in `info`
+
+- **The link is published, but not where the catalogue looks**: Eurostat carries the ESMS report as an `ESMS_HTML` annotation with an `AnnotationURL`, only at `detail=full`. The catalogue is fetched at `detail=allstubs` (`portals.json`), which strips annotations altogether (checked live: `TOUR_OCC_ARM` answers 1 KB with 0 annotations at allstubs, 4 KB with the two ESMS annotations at full).
+- **`info` now reads it**: a provider that declares `dataflow_metadata_annotation` pays one targeted `dataflow/{agency}/{id}?detail=full&references=none` request, shown as a `Metadata:` line (as `metadata_url` in JSON). The request fails fast (30 s, one attempt) and a failure leaves the rest of the record intact, since the line is decoration.
+- **Why a key of its own**: ISTAT already declares `metadata_url` in `annotations`, where it is the offline description harvester's channel (`docs/descriptions.md`), and it is the provider with the 15 s data rate limit. Keying `info` on that name would give one annotation a second consumer with a live network cost on every `info`; `dataflow_metadata_annotation` is the `info` channel, and a provider that does not declare it is never fetched.
+- **Checked live**: `info TOUR_OCC_ARM` shows `https://ec.europa.eu/eurostat/cache/metadata/en/tour_occ_esms.htm` (the page the issue names), 0.7 s warm; `--explain` lists the new request and stops.
+
 ## 2026-10-19 - v0.28.2 - fix: ISTAT hub dimensions with no values
 
 - **Hub answers with empty dimensions**: on `150_875_DF_DCCV_OCCUPATIMENS1_2` the hub bulk endpoint lists all 9 dims but `POSIZ_PROF` and `PERM_TEMP_EMPLOYEES` with `values: []`, though the data holds `9` for both. The parser dropped them, so the coverage check failed, 7 per-dim calls ran (~0.5 s each) and the log said "hub returned no values ... aborting hub discovery".

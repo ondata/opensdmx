@@ -16,6 +16,7 @@ opensdmx supports 15 configured SDMX 2.1 providers, configured in `src/opensdmx/
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
 | `dataflow_params` | `detail=allstubs&references=none` |
+| `dataflow_metadata_annotation` | `ESMS_HTML` |
 | `catalog_hidden_id_pattern` | `\$DV_` |
 | `constraint_endpoint` | `contentconstraint` |
 | `datastructure_agency` | `ESTAT` |
@@ -225,6 +226,7 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `rate_limit` | float | `0.5` | Minimum seconds between API calls |
 | `language` | string | `"en"` | Preferred language for dataset descriptions |
 | `dataflow_params` | dict | `{}` | Extra query parameters appended to `dataflow/{agency_id}` requests |
+| `dataflow_metadata_annotation` | string | absent | Annotation type (`AnnotationType`) whose `AnnotationURL` is the explanatory-metadata page of a dataflow. `info` fetches that one dataflow at `detail=full` to read it, because a catalogue fetched at `detail=allstubs` carries no annotations; a provider that does not declare it is never fetched for this |
 | `catalog_hidden_id_pattern` | string | absent | Regex on `df_id`: matching catalog entries are hidden from search, tree and counts, but still resolve when the id is given explicitly |
 | `constraint_endpoint` | string | `"availableconstraint"` | Endpoint for fetching available values (`availableconstraint` or `contentconstraint`) |
 | `constraint_bulk_supported` | boolean | `false` | Whether a provider supports catalog-level bulk content constraints |

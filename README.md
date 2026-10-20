@@ -290,7 +290,7 @@ All commands accept `--provider` (`-p`) to select the provider; the ones that re
 | `opensdmx search <keyword> [--n N] [--grep pattern] [-p provider]` | Keyword search in dataset titles, IDs and category names (default: 50 results per page); optionally filter by regex |
 | `opensdmx search --semantic <query> [--n N] [--grep pattern]` | Semantic search (requires a running Ollama and `opensdmx embed`). Only `--n` and `--grep` apply; `--category`, `--page` and `--all` are rejected |
 | `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
-| `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions |
+| `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions, plus Eurostat's ESMS metadata link |
 | `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
 | `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`); optionally filter by regex |
 | `opensdmx tree [--scheme ID] [--category CAT] [--depth N] [-p provider]` | Browse the thematic tree (SDMX `categoryscheme` + `categorisation`); use `--category` to zoom into a subtree; ASCII tree in table mode, flat rows in JSON/CSV |
