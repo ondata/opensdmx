@@ -187,10 +187,12 @@ Supported providers (check with `opensdmx providers` — `categories` column):
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
   whenever the endpoint answers. Add `--agency <ID>` if the probe returns 404.
-- A provider declared in the user's own portals file (see
+- A provider that exists only in the user's own portals file (see
   [references/providers.md](references/providers.md#user-declared-providers))
   is listed with `?` unless the file sets `categories_supported`: treat it
-  like a URL provider and run `tree`, which probes it live.
+  like a URL provider and run `tree`, which probes it live. An override of a
+  bundled provider is not affected: merging is key by key, so it keeps the
+  bundled columns for every field the file does not set.
 
 **A `✓` does not mean the tree reaches everything.** The `coverage` column next to
 it is the share of the provider's catalog that has a category assigned: a dataflow
