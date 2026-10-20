@@ -609,9 +609,14 @@ def info(
         dim_df = None
 
     from .base import get_provider as _get_provider
+    from .discovery import dataflow_metadata_url
     _provider_cfg = _get_provider()
     _page_url_tpl = _provider_cfg.get("dataflow_page_url")
     _page_url = _page_url_tpl.format(dataflow_id=ds["df_id"]) if _page_url_tpl else None
+    _metadata_url: str | None = None
+    if _provider_cfg.get("dataflow_metadata_annotation"):
+        with _status_ctx("[dim]Loading metadata link...[/dim]"):
+            _metadata_url = dataflow_metadata_url(ds["df_id"])
 
     if _output_mode != "table":
         dims = []
@@ -637,6 +642,8 @@ def info(
             data["notes"] = ds["notes"]
         if _page_url:
             data["page_url"] = _page_url
+        if _metadata_url:
+            data["metadata_url"] = _metadata_url
         _emit(data)
         return
 
@@ -653,6 +660,8 @@ def info(
     )
     if _page_url:
         meta += f"\nPage:        {_page_url}"
+    if _metadata_url:
+        meta += f"\nMetadata:    {_metadata_url}"
     for note in ds.get("notes") or []:
         meta += f"\nNote:        {note}"
     console.print(Panel(meta, title="Dataset Info", expand=False))

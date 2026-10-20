@@ -43,6 +43,7 @@ class _DataflowRecord(TypedDict):
 
 import httpx
 import polars as pl
+import portalocker.exceptions
 from lxml import etree
 
 from .base import (
@@ -707,6 +708,48 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
             n for n in (match_row.get("df_notes"), match_row.get("df_sdmx_description")) if n
         ],
     }
+
+
+def dataflow_metadata_url(dataflow_identifier: str) -> str | None:
+    """Return the explanatory-metadata page a single dataflow publishes.
+
+    Eurostat publishes the ESMS report as an ``ESMS_HTML`` annotation, but only
+    at ``detail=full``: the catalogue is fetched at ``detail=allstubs``
+    (``portals.json``), which strips annotations. So a provider that wants this
+    line declares the annotation type in ``dataflow_metadata_annotation`` and
+    pays one targeted dataflow request here. A provider that declares nothing
+    is not touched, and keeps whatever its catalogue already resolves.
+
+    Failures are deliberately swallowed: ``info`` still has to print the rest of
+    the record when the endpoint is slow or the provider stops publishing the
+    annotation. ``ExplainStop`` is a ``BaseException`` and still propagates, so
+    ``--explain`` prints the plan and stops.
+    """
+    annotation_type = get_provider().get("dataflow_metadata_annotation")
+    if not isinstance(annotation_type, str) or not dataflow_identifier:
+        return None
+
+    try:
+        content = sdmx_request_xml(
+            _struct_path(f"dataflow/{get_agency_id()}/{dataflow_identifier}"),
+            _timeout=30,
+            _max_retries=1,
+            detail="full",
+            references="none",
+        )
+        root, _ns = xml_parse(content)
+    except (httpx.HTTPError, OSError, etree.XMLSyntaxError, portalocker.exceptions.LockException) as exc:
+        logger.debug(
+            "Could not fetch metadata annotations for %s: %s", dataflow_identifier, exc
+        )
+        return None
+
+    language = get_provider().get("language", "en")
+    for node in root.iter():
+        if _local_tag(node) == "Dataflow":
+            annotation = _annotations(node, language).get(annotation_type)
+            return annotation.url if annotation else None
+    return None
 
 
 def print_dataset(dataset: dict[str, Any]) -> None:

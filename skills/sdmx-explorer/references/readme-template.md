@@ -53,6 +53,7 @@ For each dataflow, document:
 3. Filters applied — dimension code, value code, human-readable label
 4. Unit of measurement
 5. The exact download URL (curl-compatible, from Phase 4 Step 2)
+6. The methodology page, when `opensdmx info` shows a `Metadata:` line
 
 Example:
 
@@ -67,6 +68,7 @@ Example:
   - Period: 2019–2023
 - **Unit**: million m³ (MIO_M3)
 - **Last updated**: 31/07/2025
+- **Metadata**: https://ec.europa.eu/eurostat/cache/metadata/en/env_nwat_esms.htm
 - **Download URL**:
 
       https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/ENV_WAT_CAT/A.PWS.EP_HH.MIO_M3./ALL/?startPeriod=2019&endPeriod=2023&format=SDMX-CSV
