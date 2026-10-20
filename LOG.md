@@ -1,6 +1,14 @@
 # LOG
 
-## 2026-10-20 - feat: ESMS metadata link in `info`
+## 2026-10-20 - v0.29.0 - feat: user-level portals.json, ESMS metadata link in `info`
+
+- **User-level provider file** (#94): a `portals.json` of your own is merged over the bundled one, read once at import from `$OPENSDMX_PORTALS`, else `$XDG_CONFIG_HOME/opensdmx/portals.json`, else `~/.config/opensdmx/portals.json`. A new key adds a provider (usable by name or alias, listed by `opensdmx providers`); an existing key is merged field by field, so `{"istat": {"rate_limit": 30}}` keeps ISTAT's `base_url`, aliases and quirks.
+- **A broken file does not break the library**: unreadable or invalid JSON, non-list `aliases`, non-numeric `rate_limit`/`data_rate_limit` and entries without `base_url` are reported on stderr (`portals: ...`) and skipped; the bundled providers are used unchanged.
+- **Provider name wins over an alias** of the same spelling, in the CLI and in saved queries; an alias that shadows another provider is reported when the file loads. `categories.supported_providers()` now reads `PROVIDERS`, so user overrides count there too.
+- **Tests pin the user file** (`tests/conftest.py`), so a developer's own config cannot change the suite. Skill updated: user-declared providers show `?` capabilities and are probed, overrides keep the bundled ones.
+- **ESMS metadata link** (#95), details below. Skill updated: relay the `Metadata:` link and cite it in the README template.
+
+### ESMS metadata link in `info` (#95)
 
 - **The link is published, but not where the catalogue looks**: Eurostat carries the ESMS report as an `ESMS_HTML` annotation with an `AnnotationURL`, only at `detail=full`. The catalogue is fetched at `detail=allstubs` (`portals.json`), which strips annotations altogether (checked live: `TOUR_OCC_ARM` answers 1 KB with 0 annotations at allstubs, 4 KB with the two ESMS annotations at full).
 - **`info` now reads it**: a provider that declares `dataflow_metadata_annotation` pays one targeted `dataflow/{agency}/{id}?detail=full&references=none` request, shown as a `Metadata:` line (as `metadata_url` in JSON). The request fails fast (30 s, one attempt) and a failure leaves the rest of the record intact, since the line is decoration.
