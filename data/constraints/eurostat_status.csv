@@ -3899,6 +3899,7 @@ ILC_PEPS13,Persons at risk of poverty or social exclusion by degree of urbanisat
 ILC_PEPS13N,Persons at risk of poverty or social exclusion by degree of urbanisation,ok,sdmx,5,60,0,"",2026-07-27
 ILC_PEPS60,Children at risk of poverty or social exclusion by educational attainment level of their parents (population aged 0 to 17 years) - EU 2020 strategy,ok,sdmx,6,71,0,"",2026-07-27
 ILC_PEPS60N,Children at risk of poverty or social exclusion by educational attainment level of their parents (population aged 0 to 17 years),ok,sdmx,6,65,0,"",2026-07-27
+ILC_PEPS61N,Children at risk of poverty or social exclusion by country of birth of their parents,ok,sdmx,5,57,0,"",2026-10-20
 ILC_PNP1,At-risk-of-poverty rate of older people by sex and selected age groups - EU-SILC and ECHP surveys,ok,sdmx,8,82,0,"",2026-07-27
 ILC_PNP10,Gender differences in the relative median income ratio (65+),ok,sdmx,7,72,0,"",2026-07-27
 ILC_PNP11,Gender differences in the aggregate replacement ratio for pensions (excluding other social benefits),ok,sdmx,4,58,0,"",2026-07-27
@@ -6269,6 +6270,7 @@ NRG_DHDC_C,Customers by type of district network and efficiency of network,ok,sd
 NRG_DHDC_CPL,"Capacities, productions and losses in district networks by type of network and type of plant",ok,sdmx,7,65,0,"",2026-08-03
 NRG_DHDC_E,"Energy removed from district networks by customers, type of networks and efficiency of network",ok,sdmx,7,51,0,"",2026-08-03
 NRG_DHDC_N,Number and length of district networks by type of network and efficiency of network,ok,sdmx,6,48,0,"",2026-08-03
+NRG_D_CV,Final energy consumption by sector - calorific values,ok,sdmx,7,101,0,"",2026-10-20
 NRG_D_HHCV,Disaggregated final energy consumption in households - calorific values,ok,sdmx,6,62,0,"",2026-08-03
 NRG_D_HHQ,Disaggregated final energy consumption in households - quantities,ok,sdmx,6,85,0,"",2026-08-03
 NRG_D_INDCV,Disaggregated final energy consumption in industry - calorific values,ok,sdmx,6,70,0,"",2026-08-03
