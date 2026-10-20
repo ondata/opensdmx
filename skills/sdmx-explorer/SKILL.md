@@ -187,6 +187,12 @@ Supported providers (check with `opensdmx providers` — `categories` column):
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
   whenever the endpoint answers. Add `--agency <ID>` if the probe returns 404.
+- A provider that exists only in the user's own portals file (see
+  [references/providers.md](references/providers.md#user-declared-providers))
+  is listed with `?` unless the file sets `categories_supported`: treat it
+  like a URL provider and run `tree`, which probes it live. An override of a
+  bundled provider is not affected: merging is key by key, so it keeps the
+  bundled columns for every field the file does not set.
 
 **A `✓` does not mean the tree reaches everything.** The `coverage` column next to
 it is the share of the provider's catalog that has a category assigned: a dataflow
@@ -341,8 +347,8 @@ opensdmx search comun --provider istat --all --grep '\bcomuni\b|comunal'
 
 This is the same `--grep` available on `values` and `constraints`.
 
-To see the full list of built-in providers — including which ones support
-`constraints` and `last_n` — run:
+To see the full list of providers — built-in and user-declared, including which
+ones support `constraints` and `last_n` — run:
 ```bash
 opensdmx providers
 ```
@@ -350,6 +356,9 @@ The `constraints` column tells you whether `opensdmx constraints` works for that
 provider (✓ = supported, ✗ = returns 400). The `last_n` column tells you whether
 `--last-n N` is supported in `opensdmx get`. Use this to decide which exploration
 flow to apply before you start (see Phase 2 and provider-specific quirks below).
+A `?` means the capability is not declared, typically for a provider the user
+added in their own portals file: probe it with a narrow command instead of
+assuming either way.
 
 From the search results, pick **5–8 plausible candidates** by title relevance.
 Then run `opensdmx info <id>` on each one **in parallel** to check their dimension

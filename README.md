@@ -221,6 +221,22 @@ export OPENSDMX_AGENCY=XYZ
 opensdmx get MYDATASET
 ```
 
+A private endpoint with more than those four fields — or a different rate limit for a bundled provider — goes in a user-level `portals.json`, merged over the bundled one at import:
+
+```bash
+# ~/.config/opensdmx/portals.json, or any path in $OPENSDMX_PORTALS
+{
+  "mysdmx": {"base_url": "https://sdmx.example.org/rest", "agency_id": "XYZ",
+             "rate_limit": 2.0, "constraints_supported": false}
+}
+```
+
+```bash
+opensdmx get MYDATASET --provider mysdmx
+```
+
+Entries are merged key by key, so `{"istat": {"rate_limit": 30.0}}` changes one field and keeps the rest. See [docs/providers.md](docs/providers.md#user-level-provider-overrides).
+
 ## Python API
 
 | Function | Description |
@@ -660,6 +676,7 @@ Environment variables:
 | `OPENSDMX_PROVIDER` | Provider name or custom base URL (session-wide default) |
 | `OPENSDMX_OUTPUT` | Default output format: `table` (default), `json`, `csv`. An explicit `--output`/`-o` always wins |
 | `OPENSDMX_AGENCY` | Agency ID for custom URL providers |
+| `OPENSDMX_PORTALS` | User portals file, merged over the bundled `portals.json` (default: `~/.config/opensdmx/portals.json`) |
 | `OPENSDMX_CACHE_DIR` | Cache base directory override |
 | `OPENSDMX_DATAFLOWS_CACHE_TTL` | Dataset catalog TTL in seconds (default: `604800` — 7 days) |
 | `OPENSDMX_CATEGORIES_CACHE_TTL` | Category cache TTL in seconds (default: `604800` — 7 days) |

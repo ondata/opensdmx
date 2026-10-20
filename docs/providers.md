@@ -364,3 +364,33 @@ opensdmx search "unemployment" --provider https://mysdmx.example.org/rest
 When a custom URL is given, `agency_id` is optional but recommended. The custom provider uses all default field values unless overridden via `set_provider()` parameters. If `agency_id="XYZ"` is provided, the cache directory uses `XYZ`; otherwise opensdmx derives a short hash from the base URL so different custom URLs do not share cache or lock files.
 
 Custom providers are not persisted; they must be set each time.
+
+---
+
+## User-level provider overrides
+
+A file of your own is merged over the bundled `portals.json`, so a private or enterprise endpoint — or a different rate limit for a bundled one — does not need a fork of the package:
+
+```json
+{
+  "mysdmx": {
+    "name": "My SDMX",
+    "aliases": ["mine"],
+    "base_url": "https://sdmx.example.org/rest",
+    "agency_id": "XYZ",
+    "rate_limit": 2.0,
+    "constraints_supported": false,
+    "data_format_param": "SDMX-CSV"
+  },
+  "istat": {
+    "rate_limit": 30.0
+  }
+}
+```
+
+The file is read from `$OPENSDMX_PORTALS` when set, otherwise from `$XDG_CONFIG_HOME/opensdmx/portals.json`, otherwise from `~/.config/opensdmx/portals.json`. It is read once, at import.
+
+Entries are merged key by key: `mysdmx` above is a new provider, and `istat` keeps its bundled `name`, `base_url`, `agency_id`, aliases and quirks while only `rate_limit` changes. Aliases declared in the file are resolved like the bundled ones, `opensdmx providers` lists the new entries, and any field declared there is accepted by `set_provider()` for a custom URL.
+
+A file that cannot be read or parsed is reported with a warning naming the path and the bundled providers are used unchanged: a typo in a configuration file should not take the library down, and it should not be silent either. A field of the wrong type is reported and left out, so the bundled value still applies; an entry with no `base_url` is skipped; and an alias that names another provider is reported, because the provider name wins over an alias of the same spelling.
+

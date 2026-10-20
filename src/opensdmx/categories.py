@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import logging
 import time
 from pathlib import Path
@@ -236,11 +235,10 @@ def _fetch_categorisation() -> pl.DataFrame:
 
 
 def supported_providers() -> list[str]:
-    """Return list of provider aliases with categories_supported=true in portals.json."""
-    portals_path = Path(__file__).parent / "portals.json"
-    with open(portals_path) as f:
-        portals = json.load(f)
-    return [k for k, v in portals.items() if v.get("categories_supported")]
+    """Return the providers with categories_supported=true, user overrides included."""
+    from .base import PROVIDERS
+
+    return [k for k, v in PROVIDERS.items() if v.get("categories_supported")]
 
 
 def _explain_cached_categories() -> None:
