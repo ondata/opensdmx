@@ -1086,6 +1086,11 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_321_DF_DCCV_ATTPRINC_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",ok,hub,7,44,0,"",2026-08-04
 174_321_DF_DCCV_ATTPRINC_8,"Attività - sesso, titolo di studio, ampiezza della famiglia",ok,hub,7,70,0,"",2026-08-04
 174_321_DF_DCCV_ATTPRINC_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",ok,hub,7,73,0,"",2026-08-04
+174_322,Attività quotidiane,empty,hub,0,0,0,"",2026-10-21
+174_322_DF_DCCV_ATTPRINC1_1,"Sesso, età, titolo di studio, ampiezza della famiglia",empty,hub,0,0,0,"",2026-10-21
+174_322_DF_DCCV_ATTPRINC1_2,"Sesso, cittadinanza",empty,hub,0,0,0,"",2026-10-21
+174_322_DF_DCCV_ATTPRINC1_3,"Sesso, età, condizione lavorativa",empty,hub,0,0,0,"",2026-10-21
+174_322_DF_DCCV_ATTPRINC1_4,"Sesso, stato civile, posizione nel nucleo",empty,hub,0,0,0,"",2026-10-21
 174_65,Distribuzione del carico di lavoro nelle coppie,ok,hub,11,82,0,"",2026-08-04
 174_65_DF_DCCV_ASIMMETRIA_1,"Coppia con o senza figli, età della donna, titolo di studio dell'uomo e della donna, condizione lavorativa della coppia",ok,hub,7,27,0,"",2026-08-04
 174_65_DF_DCCV_ASIMMETRIA_2,"Coppia con o senza figli, età e posizione nella professione della donna, condizione lavorativa della coppia",ok,hub,6,26,0,"",2026-08-04
@@ -1101,6 +1106,14 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_66_DF_DCCV_CONCHI_5,"Sesso, età - rip. e tipo di comune",ok,hub,7,38,0,"",2026-08-04
 174_66_DF_DCCV_CONCHI_6,"Bambini, sesso, età",ok,hub,6,23,0,"",2026-08-04
 174_66_DF_DCCV_CONCHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",ok,hub,7,36,0,"",2026-08-04
+174_67,Tempo trascorso da solo o con altri,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_67_DF_DCCV_CONCHI1_1,"Sesso, titolo di studio, ampiezza della famiglia",ok,hub,9,34,0,"",2026-10-21
+174_67_DF_DCCV_CONCHI1_2,"Sesso, cittadinanza",ok,hub,8,26,0,"",2026-10-21
+174_67_DF_DCCV_CONCHI1_3,"Sesso, condizione lavorativa",ok,hub,8,31,0,"",2026-10-21
+174_67_DF_DCCV_CONCHI1_4,"Sesso, stato civile, posizione nel nucleo",ok,hub,9,34,0,"",2026-10-21
+174_67_DF_DCCV_CONCHI1_5,"Sesso, età - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_67_DF_DCCV_CONCHI1_6,"Bambini, sesso, età",ok,hub,7,24,0,"",2026-10-21
+174_67_DF_DCCV_CONCHI1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",ok,hub,8,37,0,"",2026-10-21
 174_80,Attività quotidiane - persone in coppia,ok,hub,12,77,0,"",2026-08-04
 174_80_DF_DCCV_COPPIE_1,"Coppia con o senza figli, età e titolo di studio della donna, condizione lavorativa della coppia",ok,hub,9,37,0,"",2026-08-04
 174_80_DF_DCCV_COPPIE_2,"Coppia con figli, età della donna, numero di figli e condizione lavorativa della coppia",ok,hub,9,34,0,"",2026-08-04
@@ -1128,6 +1141,17 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",ok,hub,8,42,0,"",2026-08-05
 174_82_DF_DCCV_LUOGHI_8,"Punti orari - sesso, titolo di studio",ok,hub,6,593,0,"",2026-08-05
 174_82_DF_DCCV_LUOGHI_9,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",ok,hub,7,597,0,"",2026-08-05
+174_83,Luoghi frequentati,error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_1,"Sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_10,"Punti orari - sesso, età - rip. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_2,"Sesso, cittadinanza",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_3,"Sesso, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_4,"Sesso, stato civile, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_5,"Sesso, età - reg. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_6,"Bambini, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_8,"Punti orari - sesso, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
+174_83_DF_DCCV_LUOGHI1_9,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-21
 183_1163,Unità locali e addetti - territorio anno riferimento dati,error,"",0,0,7,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-13
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,ok,hub,5,37,0,"",2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,ok,hub,4,2300,0,"",2026-07-17
@@ -1394,6 +1418,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 22_289_DF_DCIS_POPRES1_7,Provincia Autonoma Bolzano/Bozen,error,"",0,0,7,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-13
 22_289_DF_DCIS_POPRES1_8,Provincia Autonoma Trento,ok,hub,6,299,0,"",2026-10-13
 22_289_DF_DCIS_POPRES1_9,Veneto,ok,hub,6,701,0,"",2026-10-13
+22_289_DF_DCIS_POPRES1_YOUNG,Tutti i comuni per singola età e stato civile - Giovani,ok,hub,6,12634,0,"",2026-10-21
 22_289_LT,Popolazione residente al 1° gennaio - provincia di Latina,error,"",0,0,7,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-13
 22_293,Indicatori  demografici,ok,hub,3,161,0,"",2026-08-06
 22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,ok,hub,3,161,0,"",2026-07-17
@@ -2497,6 +2522,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 532_930_DF_DCCV_POPCOND1_3,Status di studente,ok,hub,7,34,0,"",2026-07-22
 532_930_DF_DCCV_POPCOND1_4,Dati regionali,ok,hub,6,49,0,"",2026-08-15
 532_930_DF_DCCV_POPCOND1_5,Serie ricostruite dal I 2004 - età,ok,hub,6,53,0,"",2026-08-08
+532_930_DF_DCCV_POPCOND1_YOUNG,Popolazione per condizione professionale - Giovani,ok,hub,6,58,0,"",2026-10-21
 533_957,Retribuzioni orarie  dei dipendenti del settore privato,ok,hub,15,282,0,"",2026-08-15
 533_957_DF_DCSC_RACLI_1,Classe di età,ok,hub,10,49,0,"",2026-07-22
 533_957_DF_DCSC_RACLI_10,Paese di nascita - prov,ok,hub,5,150,0,"",2026-07-22
@@ -4348,6 +4374,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,ok,hub,6,62,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,ok,hub,6,76,0,"",2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,ok,hub,6,57,0,"",2026-07-30
+999_1226,Valore aggiunto generato dall'economia non osservata per componente e branca di attività,ok,hub,7,66,0,"",2026-10-21
 999_1226_DF_DCCN_NOE_1,Valore aggiunto generato dall'economia non osservata per componente e branca di attività,empty,hub,0,0,0,"",2026-10-06
 9_951,Cave e miniere,ok,hub,6,72,0,"",2026-07-31
 9_951_DF_DCCV_CAVE_MIN_1,Siti estrattivi,ok,hub,5,36,0,"",2026-07-31

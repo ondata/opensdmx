@@ -1027,6 +1027,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_66,Tempo trascorso da solo o con altri,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_66_DF_DCCV_CONCHI_5,"Sesso, età - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_66_DF_DCCV_CONCHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
+174_67_DF_DCCV_CONCHI1_1,"Sesso, titolo di studio, ampiezza della famiglia",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_2,"Sesso, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_3,"Sesso, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_4,"Sesso, stato civile, posizione nel nucleo",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_6,"Bambini, sesso, età",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-21
 174_80,Attività quotidiane - persone in coppia,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
 174_80_DF_DCCV_COPPIE_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - rip.",REF_AREA,ripartizione,nazionale|ripartizione,6,2026-08-04
 174_80_DF_DCCV_COPPIE_5,"Coppia con o senza figli con donna di 25-64 anni, condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
@@ -1290,6 +1296,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 22_289_DF_DCIS_POPRES1_6,Lombardia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,1538,2026-10-13
 22_289_DF_DCIS_POPRES1_8,Provincia Autonoma Trento,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,184,2026-10-13
 22_289_DF_DCIS_POPRES1_9,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,586,2026-10-13
+22_289_DF_DCIS_POPRES1_YOUNG,Tutti i comuni per singola età e stato civile - Giovani,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-10-21
 22_293,Indicatori  demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-06
 22_293_DF_DCIS_INDDEMOG1_1,Indicatori demografici,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-07-17
 22_315_DF_DCIS_POPORESBIL1_1,Dati annuali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,137,2026-08-18
@@ -2263,6 +2270,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 532_930_DF_DCCV_POPCOND1_3,Status di studente,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-07-22
 532_930_DF_DCCV_POPCOND1_4,Dati regionali,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-15
 532_930_DF_DCCV_POPCOND1_5,Serie ricostruite dal I 2004 - età,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-08-08
+532_930_DF_DCCV_POPCOND1_YOUNG,Popolazione per condizione professionale - Giovani,REF_AREA,regione,nazionale|ripartizione|regione,6,2026-10-21
 533_957,Retribuzioni orarie  dei dipendenti del settore privato,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-08-15
 533_957_DF_DCSC_RACLI_1,Classe di età,REF_AREA,ripartizione,nazionale|ripartizione,6,2026-07-22
 533_957_DF_DCSC_RACLI_10,Paese di nascita - prov,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,138,2026-07-22
@@ -3882,6 +3890,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 98_197_DF_DCCN_PRODUTTIVITA_3,Contributi alla crescita della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_4,Serie per il calcolo delle produttività,REF_AREA,nazionale,nazionale,1,2026-07-30
 98_197_DF_DCCN_PRODUTTIVITA_5,Contributi settoriali alla variazione della produttività del lavoro,REF_AREA,nazionale,nazionale,1,2026-07-30
+999_1226,Valore aggiunto generato dall'economia non osservata per componente e branca di attività,REF_AREA,nazionale,nazionale,1,2026-10-21
 9_951,Cave e miniere,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-31
 9_951_DF_DCCV_CAVE_MIN_1,Siti estrattivi,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
 9_951_DF_DCCV_CAVE_MIN_2,Risorse minerali non energetiche estratte (in unità di peso),REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-31
