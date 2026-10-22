@@ -1027,10 +1027,12 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_66,Tempo trascorso da solo o con altri,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_66_DF_DCCV_CONCHI_5,"Sesso, età - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_66_DF_DCCV_CONCHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
+174_67,Tempo trascorso da solo o con altri,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-22
 174_67_DF_DCCV_CONCHI1_1,"Sesso, titolo di studio, ampiezza della famiglia",REF_AREA,nazionale,nazionale,1,2026-10-21
 174_67_DF_DCCV_CONCHI1_2,"Sesso, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-10-21
 174_67_DF_DCCV_CONCHI1_3,"Sesso, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-10-21
 174_67_DF_DCCV_CONCHI1_4,"Sesso, stato civile, posizione nel nucleo",REF_AREA,nazionale,nazionale,1,2026-10-21
+174_67_DF_DCCV_CONCHI1_5,"Sesso, età - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-22
 174_67_DF_DCCV_CONCHI1_6,"Bambini, sesso, età",REF_AREA,nazionale,nazionale,1,2026-10-21
 174_67_DF_DCCV_CONCHI1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-21
 174_80,Attività quotidiane - persone in coppia,REF_AREA,regione,nazionale|ripartizione|regione,26,2026-08-04
@@ -1049,6 +1051,17 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_82_DF_DCCV_LUOGHI_10,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_82_DF_DCCV_LUOGHI_5,"Sesso, età - reg. tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-08-18
 174_82_DF_DCCV_LUOGHI_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-05
+174_83,Luoghi frequentati,REF_AREA,regione,nazionale|ripartizione|regione,34,2026-10-22
+174_83_DF_DCCV_LUOGHI1_1,"Sesso, titolo di studio, ampiezza della famiglia",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_10,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-22
+174_83_DF_DCCV_LUOGHI1_2,"Sesso, cittadinanza",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_3,"Sesso, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_4,"Sesso, stato civile, posizione nel nucleo",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_5,"Sesso, età - reg. tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-10-22
+174_83_DF_DCCV_LUOGHI1_6,"Bambini, sesso, età",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-10-22
+174_83_DF_DCCV_LUOGHI1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_8,"Punti orari - sesso, titolo di studio",REF_AREA,nazionale,nazionale,1,2026-10-22
+174_83_DF_DCCV_LUOGHI1_9,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-10-22
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_1,Unità locali e addetti - Territorio anno riferimento dati - Principali dati,REF_AREA,nazionale,nazionale,11,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_2,Settori economici (Ateco 5 cifre) - tipo e ampiezza demografica dei comuni e prov.,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,236,2026-07-17
 183_1163_DF_DICA_ASIAULP_TERRIFDATA_3,Settori economici (Ateco 3 cifre) - com.,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,12471,2026-07-17
