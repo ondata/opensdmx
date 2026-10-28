@@ -93,6 +93,7 @@ APRO_MK_COLA,Production of main cows' milk products - annual data,ok,sdmx,6,119,
 APRO_MK_COLM,Production of main cows' milk products - monthly data,ok,sdmx,6,764,0,"",2026-07-16
 APRO_MK_FARM,Production and utilization of milk on the farm - annual data,ok,sdmx,5,142,0,"",2026-07-16
 APRO_MK_FATPROT,Fat contents and protein contents (cow's milk) - annual data,ok,sdmx,5,116,0,"",2026-07-16
+APRO_MK_POBORG,Milk collection and resulting certified organic products,ok,sdmx,6,70,0,"",2026-10-28
 APRO_MK_POBTA,Milk collection (all milks) and dairy products obtained - annual data,ok,sdmx,5,195,0,"",2026-07-16
 APRO_MK_STRBT,Butter - distribution of enterprises by volume of annual production,ok,sdmx,5,73,0,"",2026-07-16
 APRO_MK_STRCC,Milk collection - distribution of collection centres by volume of annual collection,ok,sdmx,5,74,0,"",2026-07-16
@@ -1533,6 +1534,7 @@ EF_MP_MS,"Manure storage facilities by utilised agricultural area, size class of
 EF_MP_PRAC,"Soil management practices by arable land area, farmtype, crop rotation and NUTS 2 region",ok,sdmx,9,438,0,"",2026-07-20
 EF_MP_RENERG,Equipment used for production of renewable energy on agricultural holdings by economic size and type of the farm and NUTS 2 region,ok,sdmx,8,429,0,"",2026-07-20
 EF_MP_SOIL,"Soil cover by arable land area, farmtype, crop rotation and NUTS 2 region",ok,sdmx,9,440,0,"",2026-07-20
+EF_MP_SPLAN,"Agricultural holdings with safety plans by age and sex of the farm manager, economic size of the farm and NUTS 2 region",ok,sdmx,9,309,0,"",2026-10-28
 EF_MP_STFAC,Storage facilities for agricultural products in agricultural holdings by type and economic size of the farm and NUTS 2 region,ok,sdmx,8,309,0,"",2026-07-20
 EF_MP_TENURE,"Tenure of agricultural holdings by utilised agricultural area, sex and age of farm manager and NUTS 2 region",ok,sdmx,10,465,0,"",2026-07-20
 EF_MP_TPIRRI,Technical parameters of the irrigation equipment of agricultural holdings and payment terms for irrigation water by NUTS 2 region,ok,sdmx,8,283,0,"",2026-07-20
@@ -2264,6 +2266,21 @@ GBV_VTP_RP,"Persons who have experienced physical/sexual violence by sex, type o
 GBV_VTP_SHWA,"Ever-working persons who have experienced sexual harassment at work, by sex and age group",ok,sdmx,6,22,0,"",2026-07-23
 GBV_VTP_SHWT,"Ever-working persons who have experienced sexual harassment at work, by sex and type of violence",ok,sdmx,6,22,0,"",2026-07-23
 GBV_VTP_TYPE,"Persons who have experienced violence, by sex and type of violence",ok,sdmx,6,24,0,"",2026-07-23
+GLOE_CRM_PEGR,Enterprises importing critical raw materials (CRM) by partner and enterprise group status,ok,sdmx,8,80,0,"",2026-10-28
+GLOE_CRM_PN2,Enterprises importing critical raw materials (CRM) by partner and NACE Rev. 2 activity,ok,sdmx,8,120,0,"",2026-10-28
+GLOE_CRM_PS,Enterprises importing critical raw materials (CRM) by partner and size class,ok,sdmx,8,78,0,"",2026-10-28
+GLOE_EGRSN2,"Enterprises by their enterprise group status, size class and NACE Rev. 2 activity",ok,sdmx,7,147,0,"",2026-10-28
+GLOE_GD_N2,Enterprises importing goods from certain partner countries and areas by NACE Rev. 2 activity,ok,sdmx,7,103,0,"",2026-10-28
+GLOE_GD_SEGR,Enterprises importing goods from certain partner countries and areas by size class and enterprise group status,ok,sdmx,8,69,0,"",2026-10-28
+GLOE_INT_PEGR,"Enterprises by their import and export intensity, partner and enterprise group status",ok,sdmx,8,52,0,"",2026-10-28
+GLOE_INT_PN2,"Enterprises by their import and export intensity, partner and NACE Rev. 2 activity",ok,sdmx,8,92,0,"",2026-10-28
+GLOE_INT_PS,"Enterprises by their import and export intensity, partner and size class",ok,sdmx,8,50,0,"",2026-10-28
+GLOE_NZIG_PEGR,Enterprises importing net-zero industry goods (NZIG) by partner and enterprise group status,ok,sdmx,8,65,0,"",2026-10-28
+GLOE_NZIG_PN2,Enterprises importing net-zero industry goods (NZIG) by partner and NACE Rev. 2 activity,ok,sdmx,8,105,0,"",2026-10-28
+GLOE_NZIG_PS,Enterprises importing net-zero industry goods (NZIG) by partner and size class,ok,sdmx,8,63,0,"",2026-10-28
+GLOE_TRD_EGR,Enterprises by trader type and enterprise group status,ok,sdmx,8,49,0,"",2026-10-28
+GLOE_TRD_N2,Enterprises by trader type and NACE Rev. 2 activity,ok,sdmx,8,88,0,"",2026-10-28
+GLOE_TRD_S,Enterprises by trader type and size class,ok,sdmx,8,47,0,"",2026-10-28
 GOV_10A_EMP,General government employment,ok,sdmx,6,48,0,"",2026-07-23
 GOV_10A_EXP,General government expenditure by function (COFOG),ok,sdmx,7,192,0,"",2026-07-23
 GOV_10A_EXP$DV_578,General government expenditure by function (COFOG),error,"",0,0,5,"HTTPStatusError: Client error '404 Not Found' for url 'https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/datastructure/ESTAT/GOV_10A_EXP$DV_578'
@@ -6888,6 +6905,7 @@ ROAD_IF_BAREA,Length of other roads within/outside built-up areas,ok,sdmx,5,102,
 ROAD_IF_BSURFA,Length of paved and unpaved roads,ok,sdmx,5,102,0,"",2026-08-05
 ROAD_IF_MOTORWA,Length of motorways and e-roads,ok,sdmx,5,109,0,"",2026-08-05
 ROAD_IF_RCHCAT,Recharging points per power category by NUTS 3 region - experimental statistics,ok,sdmx,5,141,0,"",2026-08-05
+ROAD_IF_RCHDEN,Recharging points density by type of access and NUTS 3 region - experimental statistics,ok,sdmx,5,1724,0,"",2026-10-28
 ROAD_IF_RCHEV,"Electric vehicle recharging pools, stations and points and their power output",ok,sdmx,5,43,0,"",2026-08-05
 ROAD_IF_RCHEVPOW,Recharging points for electric vehicles per power category,ok,sdmx,5,47,0,"",2026-08-05
 ROAD_IF_RCHTOT,Recharging points by NUTS 3 region - experimental statistics,ok,sdmx,4,133,0,"",2026-08-05
