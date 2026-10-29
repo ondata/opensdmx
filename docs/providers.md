@@ -256,7 +256,7 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `data_path_suffix` | string | absent | Suffix appended to data paths for providers that require it |
 | `unsupported_params` | list | `[]` | Data request parameters to drop for providers that do not support them |
 | `data_rate_limit` | float | absent | Dedicated rate limit for data requests, separate from structure requests |
-| `rate_limit_group` | string | provider key | Name of the rate-limit timestamp and lock files. Providers with the same group are paced on one timer, for endpoints behind one per-IP limit (`istat_hvd` declares `istat`); cache directories stay per provider |
+| `rate_limit_group` | string | provider key | Name of the rate-limit timestamp and lock files. Providers with the same group are paced on one timer, for endpoints behind one per-IP limit (`istat_hvd` declares `istat`); cache directories stay per provider. Letters, digits, `_`, `.`, `-`, no leading dot. Inside a group there is no `data_rate_limit` split: data calls use the group's single timer with the stricter of the two intervals |
 | `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
 | `data_key_format` | string | `"dots"` | SDMX key path style; `"empty"` omits wildcard dot keys and filters client-side |
 | `hub_base_url` | string | absent | StatKit Data Browser middleware base URL (ISTAT constraints fast path; INPS full backend) |

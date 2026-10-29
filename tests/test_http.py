@@ -764,6 +764,42 @@ class TestRateLimitGroup:
         finally:
             set_provider("eurostat")
 
+    def test_group_members_share_one_lock_even_with_data_rate_limit(self, monkeypatch, tmp_path):
+        """A split member would take `<group>.data.lock` and run beside the unsplit one."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import PROVIDERS, _rate_limit_interval, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        monkeypatch.setitem(PROVIDERS, "istat", {**PROVIDERS["istat"], "data_rate_limit": 40.0})
+
+        try:
+            set_provider("istat")
+            assert not _use_split_rate_limit(is_data=True)
+            istat_data_lock = _rate_limit_lock_file(is_data=True)
+            set_provider("istat_hvd")
+            assert _rate_limit_lock_file(is_data=True) == istat_data_lock
+            assert istat_data_lock.name == "istat.lock"
+
+            # The grouped data call keeps the stricter interval instead of losing it.
+            set_provider("istat")
+            assert _rate_limit_interval(is_data=True) == 40.0
+            assert _rate_limit_interval(is_data=False) == 15.0
+        finally:
+            set_provider("eurostat")
+
+    def test_path_like_group_from_set_provider_falls_back(self, monkeypatch, tmp_path):
+        """`set_provider(url, rate_limit_group=...)` skips the portals.json validation."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("https://a.example.org/rest", agency_id="XYZ", rate_limit_group="../report")
+            assert _rate_limit_file().parent == tmp_path / "rate_limit"
+            assert _rate_limit_file().name == "XYZ.log"
+        finally:
+            set_provider("eurostat")
+
     def test_provider_without_a_group_keeps_its_own_files(self, monkeypatch, tmp_path):
         monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
         from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached

@@ -6,6 +6,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import sys
 import tempfile
 import time
@@ -77,6 +78,11 @@ def _is_alias_list(value: Any) -> bool:
     return isinstance(value, list) and all(isinstance(alias, str) and alias for alias in value)
 
 
+def _is_group_name(value: Any) -> bool:
+    """A ``rate_limit_group`` becomes a file name: no separators, no leading dot."""
+    return isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", value) is not None
+
+
 def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, Any]:
     """Drop the fields of a user entry that would break ``PROVIDERS`` at runtime.
 
@@ -99,8 +105,12 @@ def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, 
 
             del fields[field]
 
-    if "rate_limit_group" in fields and not (isinstance(fields["rate_limit_group"], str) and fields["rate_limit_group"]):
-        logger.warning("portals: %s: provider '%s': rate_limit_group must be a non-empty string, ignored", path, key)
+    if "rate_limit_group" in fields and not _is_group_name(fields["rate_limit_group"]):
+        logger.warning(
+            "portals: %s: provider '%s': rate_limit_group must be a name of letters, digits, '_', '.' or '-', ignored",
+            path,
+            key,
+        )
 
         del fields["rate_limit_group"]
 
@@ -486,8 +496,12 @@ def _rate_limit_dir() -> Path:
 
 
 def _use_split_rate_limit(is_data: bool) -> bool:
-    """True when this call should use the dedicated data rate limit."""
-    return is_data and get_provider().get("data_rate_limit") is not None
+    """True when this call should use the dedicated data rate limit.
+
+    Never inside a shared group: members with and without ``data_rate_limit`` would
+    otherwise take ``<group>.data.lock`` and ``<group>.lock`` and run in parallel.
+    """
+    return is_data and get_provider().get("data_rate_limit") is not None and not _in_rate_limit_group()
 
 
 def _rate_limit_key() -> str:
@@ -499,7 +513,18 @@ def _rate_limit_key() -> str:
     declaring ``"istat"`` lands on the files ``istat`` already uses. Only the rate
     limiter reads it: cache directories stay per provider.
     """
-    return get_provider().get("rate_limit_group") or _provider_cache_key()
+    group = get_provider().get("rate_limit_group")
+
+    return str(group) if _is_group_name(group) else _provider_cache_key()
+
+
+def _in_rate_limit_group() -> bool:
+    """True when another provider shares the active provider's rate-limit files."""
+    key = _rate_limit_key()
+
+    return _is_group_name(get_provider().get("rate_limit_group")) or any(
+        entry.get("rate_limit_group") == key for entry in PROVIDERS.values()
+    )
 
 
 def _rate_limit_file(is_data: bool = False) -> Path:
@@ -520,6 +545,20 @@ def _rate_limit_lock_file(is_data: bool = False) -> Path:
     return _rate_limit_dir() / f"{_rate_limit_key()}{suffix}"
 
 
+def _rate_limit_interval(is_data: bool = False) -> float:
+    """Seconds to keep between this call and the previous one on the same timer."""
+    provider = get_provider()
+
+    if _use_split_rate_limit(is_data):
+        return float(provider["data_rate_limit"])
+
+    # A grouped provider has no split timer: its data calls keep the stricter interval.
+    if is_data and provider.get("data_rate_limit") is not None:
+        return max(float(provider["rate_limit"]), float(provider["data_rate_limit"]))
+
+    return float(provider["rate_limit"])
+
+
 def _rate_limit_check(is_data: bool = False) -> None:
     """Wait if needed to respect the provider's rate limit.
 
@@ -535,11 +574,7 @@ def _rate_limit_check(is_data: bool = False) -> None:
     measured send-to-send, not receive-to-send.
     Cache hits never reach this function — only real HTTP calls apply.
     """
-    provider = get_provider()
-    if _use_split_rate_limit(is_data):
-        min_interval = float(provider["data_rate_limit"])
-    else:
-        min_interval = provider["rate_limit"]
+    min_interval = _rate_limit_interval(is_data)
     rl_file = _rate_limit_file(is_data)
     if rl_file.exists():
         try:

@@ -823,6 +823,29 @@ def test_guide_missing_extra_hint_shows_bracket():
     assert "opensdmx[guide]" in buf.getvalue()
 
 
+@pytest.mark.parametrize("exc_name, args", [("ConstraintsUnavailable", ("x",)), ("ConstraintsTimeout", ("TEST_DF", 30.0))])
+def test_guide_goes_on_when_constraints_are_unavailable(exc_name, args):
+    """Constraints only validate the AI's codes: without them the chosen filters pass as they are."""
+    from pathlib import Path
+
+    import opensdmx.discovery as discovery
+    import opensdmx.guide as guide_mod
+    import typer
+
+    ds = _fake_constraints_dataset()
+    stop = RuntimeError("stop after set_filters")
+
+    with patch("opensdmx.discovery.load_dataset", return_value=ds), \
+         patch("opensdmx.ai.guide_session", return_value={"filters": {"FREQ": "A", "SEX": ["1", "2"]}}), \
+         patch("opensdmx.discovery.get_available_values", side_effect=getattr(discovery, exc_name)(*args)), \
+         patch("opensdmx.discovery.set_filters", side_effect=stop) as set_filters, \
+         patch.object(guide_mod, "err_console"), patch.object(guide_mod, "console"), \
+         pytest.raises(typer.Exit):
+        guide_mod.run_guide("unemployment", "TEST_DF", True, Path("data.csv"))
+
+    set_filters.assert_called_once_with(ds, FREQ="A", SEX=["1", "2"])
+
+
 def test_which_limit(_no_api_check):
     result = runner.invoke(app, ["which", "data", "--limit", "1"])
     assert result.exit_code == 0
