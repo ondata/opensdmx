@@ -20,6 +20,7 @@ references:
 |----------|:-----------:|:------:|-------|
 | Eurostat | ✓ | ✓ | **Default provider** (no `--provider` flag needed); dimension flags are lowercase (`--geo`, `--coicop`); country codes: ISO 3166-1 alpha-2 + EU aggregates like `EU27_2020` |
 | ISTAT | ✓ | ✓ | Use `--provider istat`; `constraints` uses the StatKit Data Browser hub by default — sub-second per dimension, exposes every dim including `REF_AREA`. Dedicated reference: [istat-flow.md](istat-flow.md) |
+| ISTAT HVD | ✗ | ✓ | Use `--provider istat_hvd`; ISTAT High Value Datasets endpoint (`esploradati.istat.it/HVD`), 17 series: HICP, industrial producer prices, employment, unemployment, poverty, inequality, fertility, mortality, population (`DF_POP`), NAMEA air emissions, retail and wholesale sales volume (`BCS_TOR_M`, `BCS_TOW_M`). **Dataflow IDs differ from `istat`**: `DF_DCCV_TAXOCCU1` here merges the 16 `150_*_DF_DCCV_TAXOCCU1_*` of the main catalogue, so do not reuse IDs across the two. No `constraints` (`contentconstraint` 404, `availableconstraint` 500): use `values` and a probe `get` with `--last-n 1`. `tree` works: 15 dataflows under `CS_HVD`, the 2 sales-volume ones under `CS_VND`, the other schemes are empty. Shares ISTAT's per-IP limit: opensdmx paces both providers on one timer |
 | INPS | ✓ | ✗ | Use `--provider inps`; **hub-only** provider (classic SDMX-REST is WAF-blocked, so everything goes through the DataBrowser middleware). Four observatories appear as schemes in `opensdmx tree` (pensioni, dipendenti, imprese, politiche occupazionali). `constraints` returns ground-truth values incl. NUTS-2021 territory codes (Lombardia=`ITC4`); dimension IDs are uppercase (`TERRITORIO`, `INDICATORI`, ...). `opensdmx get` **works**: it downloads the full dataflow (the middleware has no server-side filter) and applies dimension filters client-side; the period window (`--start-period`/`--end-period`) is applied client-side by year, and `--last-n`/`--first-n` are unavailable (`last_n ✗`). |
 | ECB | ✗ | ✓ | Use `--provider ecb`; financial and monetary data; skip `opensdmx constraints`, use `opensdmx values` to explore codelists |
 | OECD | ✗ | ✓ | Use `--provider oecd`; good for international comparisons; skip `opensdmx constraints`, use `opensdmx values` + probe `get` instead |
@@ -59,7 +60,7 @@ and aggregate codes (`ITG12`, `SLL_*`, etc.).
 ## When `constraints` is not supported
 
 For providers marked ✗ in the `constraints` column (ECB, OECD, INSEE, Bundesbank, ILO,
-World Bank), the standard Phase 2 flow does not apply. Use `opensdmx values
+World Bank, ISTAT HVD), the standard Phase 2 flow does not apply. Use `opensdmx values
 <dataflow_id> <DIM>` to explore codelists, and probe with a narrow `get`
 (small time window, one or two values per dimension) to verify the query works
 before downloading the full series.

@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-10-29 - feat: ISTAT HVD provider, shared rate-limit group
+
+- **New provider `istat_hvd`** (#98): ISTAT's High Value Datasets endpoint `esploradati.istat.it/HVD/rest`, 17 consolidated dataflows with IDs of their own. Flags from probes, not copied from `istat`: `constraints` off (`contentconstraint` 404, `availableconstraint` 500), `tree`/`last_n`/filtered `get` on, no annotations. Answered while `SDMXWS` data calls failed.
+- **`rate_limit_group`** in `portals.json`: providers in one group share timestamp and lock files, so `istat` and `istat_hvd` (same host, one per-IP limit) are paced together. Cache directories stay per provider. Invalid values are dropped with a warning.
+
 ## 2026-10-29 - monitor: ISTAT data call disabled
 
 - **ISTAT `get` removed from the latency monitor**: it never succeeded since the monitor started on 2026-05-09 (514 runs: 322 errors 404/500, 192 timeouts at 300s), so it measured nothing. ISTAT `info` and both Eurostat calls stay.

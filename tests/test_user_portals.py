@@ -331,6 +331,25 @@ def test_invalid_data_rate_limit_is_ignored(monkeypatch, tmp_path, caplog):
     assert any("data_rate_limit must be a number" in record.message for record in caplog.records)
 
 
+def test_invalid_rate_limit_group_is_ignored(monkeypatch, tmp_path, caplog):
+    """An empty or non-string group would name the rate-limit file `.log` or `5.log`."""
+    path = _write_portals(
+        tmp_path / "portals.json",
+        {
+            "istat_hvd": {"rate_limit_group": ""},
+            "mine": {"base_url": "https://a.example.org/rest", "rate_limit_group": 5},
+        },
+    )
+    monkeypatch.setenv("OPENSDMX_PORTALS", str(path))
+
+    with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+        portals = _load_portals()
+
+    assert portals["istat_hvd"]["rate_limit_group"] == BUNDLED["istat_hvd"]["rate_limit_group"]
+    assert "rate_limit_group" not in portals["mine"]
+    assert sum("rate_limit_group must be a non-empty string" in record.message for record in caplog.records) == 2
+
+
 def test_a_provider_with_only_a_base_url_has_an_agency(monkeypatch, tmp_path):
     """A minimal user entry must not KeyError in get_agency_id() on the first request."""
     path = _write_portals(tmp_path / "portals.json", {"bare": {"base_url": "https://b.example.org/rest"}})

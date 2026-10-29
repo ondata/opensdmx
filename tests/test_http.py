@@ -743,6 +743,41 @@ class TestConstraintEndpointPathBuild:
 
 
 # ---------------------------------------------------------------------------
+# Shared rate limit (rate_limit_group)
+# ---------------------------------------------------------------------------
+
+class TestRateLimitGroup:
+    """Endpoints behind the same per-IP limit share timestamp and lock files."""
+
+    def test_istat_hvd_shares_the_istat_files(self, monkeypatch, tmp_path):
+        """ISTAT SDMXWS and HVD sit on one host with one 5-requests/min limit."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("istat")
+            istat_files = (_rate_limit_file(), _rate_limit_lock_file())
+            set_provider("istat_hvd")
+            assert (_rate_limit_file(), _rate_limit_lock_file()) == istat_files
+            assert _provider_cache_key() == "istat_hvd"  # the cache stays separate
+        finally:
+            set_provider("eurostat")
+
+    def test_provider_without_a_group_keeps_its_own_files(self, monkeypatch, tmp_path):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("eurostat")
+            assert _rate_limit_file().name == "eurostat.log"
+            assert _rate_limit_lock_file().name == "eurostat.lock"
+        finally:
+            set_provider("eurostat")
+
+
+# ---------------------------------------------------------------------------
 # Split rate limiter (data_rate_limit)
 # ---------------------------------------------------------------------------
 

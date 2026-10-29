@@ -182,7 +182,7 @@ of guessing keywords. This is the **default** discovery flow; fall back to
 keyword search only under the conditions listed in Step 1c.
 
 Supported providers (check with `opensdmx providers` — `categories` column):
-- ✓ `eurostat`, `istat`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`
+- ✓ `eurostat`, `istat`, `istat_hvd`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf`, `derzhstat`, `unicef` — skip to Step 1c.
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
@@ -310,10 +310,14 @@ Search for dataflows:
 
 - **Eurostat** (default provider — no `--provider` flag needed):
   `opensdmx search "<keyword>"`
-- **ISTAT**: `opensdmx search "<keyword>" --provider istat`
+- **ISTAT**: `opensdmx search "<keyword>" --provider istat`. `istat_hvd` is a
+  second ISTAT endpoint with only 17 High Value Datasets (HICP, producer prices,
+  employment, unemployment, poverty, inequality, fertility, mortality, population,
+  NAMEA emissions, retail and wholesale sales volume) and its own dataflow IDs: use it for those series, or when
+  `istat` fails on data calls. It has no `constraints`: explore with `values`.
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
   (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `bis`, `imf`,
-  `inps`, `ilo`, `unicef`, `derzhstat`, `bfs`)
+  `inps`, `ilo`, `unicef`, `derzhstat`, `bfs`, `istat_hvd`)
 
 `search` matches the dataset **title, ID and category name**, by substring.
 
@@ -353,7 +357,7 @@ ones support `constraints` and `last_n` — run:
 opensdmx providers
 ```
 The `constraints` column tells you whether `opensdmx constraints` works for that
-provider (✓ = supported, ✗ = returns 400). The `last_n` column tells you whether
+provider (✓ = supported, ✗ = fails, e.g. 400, 404 or 500). The `last_n` column tells you whether
 `--last-n N` is supported in `opensdmx get`. Use this to decide which exploration
 flow to apply before you start (see Phase 2 and provider-specific quirks below).
 A `?` means the capability is not declared, typically for a provider the user
@@ -1086,7 +1090,7 @@ Run `opensdmx providers` for a machine-readable overview — the `constraints` a
 `last_n` columns reflect verified test results and tell you which exploration flow
 fits the target provider.
 
-The full capability matrix (Eurostat, ISTAT, ECB, OECD, INSEE, Bundesbank, World
+The full capability matrix (Eurostat, ISTAT, ISTAT HVD, ECB, OECD, INSEE, Bundesbank, World
 Bank, ABS, BIS, IMF, ILO, UNICEF, Derzhstat, BFS), dimension flag casing, territory code conventions, and what
 to do when `constraints` or `last_n` are unsupported, are documented in
 [references/providers.md](references/providers.md).

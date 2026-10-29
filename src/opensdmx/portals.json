@@ -62,6 +62,19 @@
     "metadata_description_attribute": "DATA_SOURCE",
     "metadata_link_attribute": "DATA_SOURCE_LINK"
   },
+  "istat_hvd": {
+    "name": "ISTAT HVD",
+    "description": "ISTAT High Value Datasets (EU Regulation 2023/138): a separate SDMX endpoint with 17 consolidated series - harmonised consumer prices (HICP), industrial producer prices, employment, unemployment, poverty, inequality, fertility, mortality, population, NAMEA air emissions, retail and wholesale sales volume. Dataflow IDs differ from the main ISTAT catalogue.",
+    "base_url": "https://esploradati.istat.it/HVD/rest",
+    "agency_id": "IT1",
+    "rate_limit": 15.0,
+    "rate_limit_group": "istat",
+    "language": "it",
+    "constraints_supported": false,
+    "constraint_max_retries": 1,
+    "last_n_supported": true,
+    "categories_supported": true
+  },
   "inps": {
     "name": "INPS",
     "description": "Italian National Social Security Institute statistical observatories: pensions, private-sector employees and temporary workers, companies, and employment policies (NASPI/DIS-COLL). Hub-only provider (SDMX-REST endpoint is WAF-blocked).",
