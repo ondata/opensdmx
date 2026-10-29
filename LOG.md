@@ -1,9 +1,10 @@
 # LOG
 
-## 2026-10-29 - feat: ISTAT HVD provider, shared rate-limit group
+## 2026-10-29 - v0.30.0 - feat: ISTAT HVD provider, shared rate-limit group
 
 - **New provider `istat_hvd`** (#98): ISTAT's High Value Datasets endpoint `esploradati.istat.it/HVD/rest`, 17 consolidated dataflows with IDs of their own. Flags from probes, not copied from `istat`: `constraints` off (`contentconstraint` 404, `availableconstraint` 500), `tree`/`last_n`/filtered `get` on, no annotations. Answered while `SDMXWS` data calls failed.
-- **`rate_limit_group`** in `portals.json`: providers in one group share timestamp and lock files, so `istat` and `istat_hvd` (same host, one per-IP limit) are paced together. Cache directories stay per provider. Invalid values are dropped with a warning.
+- **`rate_limit_group`** in `portals.json`: providers in one group share timestamp and lock files, so `istat` and `istat_hvd` (same host, one per-IP limit) are paced together. Cache directories stay per provider. Inside a group there is one lock (no `data_rate_limit` split) and every member waits the strictest interval of the group. Names are letters, digits, `_`, `.`, `-`; anything path-like is dropped with a warning.
+- **`guide` no longer crashes** when constraints are unavailable or time out (seen on `istat` hidden dataflows and on every `istat_hvd` dataflow): the codes proposed by the AI pass without validation, as for any other constraints failure.
 
 ## 2026-10-29 - monitor: ISTAT data call disabled
 
