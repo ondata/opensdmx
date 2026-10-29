@@ -14,10 +14,7 @@ CALLS = [
     ("istat", "41_269_DF_DCIS_INCIDENTISTR1_1", "info",
      f"{ISTAT_BASE}/dataflow/IT1/41_269_DF_DCIS_INCIDENTISTR1_1/1.0",
      False),
-    ("istat", "41_269_DF_DCIS_INCIDENTISTR1_1", "get",
-     f"{ISTAT_BASE}/data/41_269_DF_DCIS_INCIDENTISTR1_1"
-     f"/A.082053+092009+118006.....1...?startPeriod=2022&endPeriod=2023",
-     False),  # ISTAT returns XML — row count not applicable
+    # ISTAT "get" disabled: never succeeded since 2026-05-09 (only 404/500/timeout)
     ("eurostat", "TRAN_SF_ROADNU", "info",
      f"{ESTAT_BASE}/dataflow/ESTAT/TRAN_SF_ROADNU/1.0?detail=allstubs&references=none",
      False),

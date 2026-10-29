@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-10-29 - monitor: ISTAT data call disabled
+
+- **ISTAT `get` removed from the latency monitor**: it never succeeded since the monitor started on 2026-05-09 (514 runs: 322 errors 404/500, 192 timeouts at 300s), so it measured nothing. ISTAT `info` and both Eurostat calls stay.
+
 ## 2026-10-20 - v0.29.0 - feat: user-level portals.json, ESMS metadata link in `info`
 
 - **User-level provider file** (#94): a `portals.json` of your own is merged over the bundled one, read once at import from `$OPENSDMX_PORTALS`, else `$XDG_CONFIG_HOME/opensdmx/portals.json`, else `~/.config/opensdmx/portals.json`. A new key adds a provider (usable by name or alias, listed by `opensdmx providers`); an existing key is merged field by field, so `{"istat": {"rate_limit": 30}}` keeps ISTAT's `base_url`, aliases and quirks.
