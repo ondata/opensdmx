@@ -546,17 +546,30 @@ def _rate_limit_lock_file(is_data: bool = False) -> Path:
 
 
 def _rate_limit_interval(is_data: bool = False) -> float:
-    """Seconds to keep between this call and the previous one on the same timer."""
+    """Seconds to keep between this call and the previous one on the same timer.
+
+    In a group the timer is shared, so the interval is the strictest of its members:
+    otherwise a call from the faster member could follow one from the slower member
+    after only the faster interval. Data calls also count each member's
+    ``data_rate_limit``, since a group has no split timer.
+    """
     provider = get_provider()
 
     if _use_split_rate_limit(is_data):
         return float(provider["data_rate_limit"])
 
-    # A grouped provider has no split timer: its data calls keep the stricter interval.
-    if is_data and provider.get("data_rate_limit") is not None:
-        return max(float(provider["rate_limit"]), float(provider["data_rate_limit"]))
+    if not _in_rate_limit_group():
+        return float(provider["rate_limit"])
 
-    return float(provider["rate_limit"])
+    key = _rate_limit_key()
+    peers = [provider] + [
+        entry
+        for name, entry in PROVIDERS.items()
+        if (entry["rate_limit_group"] if _is_group_name(entry.get("rate_limit_group")) else name) == key
+    ]
+    fields = ("rate_limit", "data_rate_limit") if is_data else ("rate_limit",)
+
+    return max(float(peer[field]) for peer in peers for field in fields if peer.get(field) is not None)
 
 
 def _rate_limit_check(is_data: bool = False) -> None:

@@ -780,10 +780,15 @@ class TestRateLimitGroup:
             assert _rate_limit_lock_file(is_data=True) == istat_data_lock
             assert istat_data_lock.name == "istat.lock"
 
-            # The grouped data call keeps the stricter interval instead of losing it.
+            # One timer, so the strictest member interval applies to every member.
+            for name in ("istat", "istat_hvd"):
+                set_provider(name)
+                assert _rate_limit_interval(is_data=True) == 40.0
+                assert _rate_limit_interval(is_data=False) == 15.0
+
+            monkeypatch.setitem(PROVIDERS, "istat_hvd", {**PROVIDERS["istat_hvd"], "rate_limit": 20.0})
             set_provider("istat")
-            assert _rate_limit_interval(is_data=True) == 40.0
-            assert _rate_limit_interval(is_data=False) == 15.0
+            assert _rate_limit_interval(is_data=False) == 20.0
         finally:
             set_provider("eurostat")
 
