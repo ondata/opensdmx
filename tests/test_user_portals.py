@@ -331,6 +331,26 @@ def test_invalid_data_rate_limit_is_ignored(monkeypatch, tmp_path, caplog):
     assert any("data_rate_limit must be a number" in record.message for record in caplog.records)
 
 
+@pytest.mark.parametrize("group", ["", 5, "../report", "team/istat", "/tmp/x", ".hidden"])
+def test_invalid_rate_limit_group_is_ignored(monkeypatch, tmp_path, caplog, group):
+    """The group is a file name under `rate_limit/`: a path would write outside it."""
+    path = _write_portals(
+        tmp_path / "portals.json",
+        {
+            "istat_hvd": {"rate_limit_group": group},
+            "mine": {"base_url": "https://a.example.org/rest", "rate_limit_group": group},
+        },
+    )
+    monkeypatch.setenv("OPENSDMX_PORTALS", str(path))
+
+    with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+        portals = _load_portals()
+
+    assert portals["istat_hvd"]["rate_limit_group"] == BUNDLED["istat_hvd"]["rate_limit_group"]
+    assert "rate_limit_group" not in portals["mine"]
+    assert sum("rate_limit_group must be a name" in record.message for record in caplog.records) == 2
+
+
 def test_a_provider_with_only_a_base_url_has_an_agency(monkeypatch, tmp_path):
     """A minimal user entry must not KeyError in get_agency_id() on the first request."""
     path = _write_portals(tmp_path / "portals.json", {"bare": {"base_url": "https://b.example.org/rest"}})

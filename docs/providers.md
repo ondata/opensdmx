@@ -41,6 +41,21 @@ The catalogue also lists saved Data Browser views as if they were datasets: 548 
 
 Quirks: ISTAT enforces a strict rate limit. The 15-second minimum interval between calls avoids HTTP 429 errors. Data is fetched using `Accept: text/csv` (no `data_format_param`). Dataset descriptions are in Italian; the embedded catalog language is `it`. ISTAT supports bulk `contentconstraint` discovery and has an optional Data Browser hub fast path for some metadata.
 
+### istat_hvd
+
+| Field | Value |
+|---|---|
+| Name | ISTAT HVD |
+| `base_url` | `https://esploradati.istat.it/HVD/rest` |
+| `agency_id` | `IT1` |
+| `rate_limit` | 15.0 s |
+| `rate_limit_group` | `istat` |
+| `language` | `it` |
+| `constraints_supported` | `false` |
+| `constraint_max_retries` | `1` |
+
+Quirks: the High Value Datasets endpoint ISTAT publishes under EU Implementing Regulation 2023/138 ([official page](https://www.istat.it/dati/open-data/high-value-datasets/), CC BY 4.0). It is a separate SDMX-RI instance with 17 consolidated dataflows (HICP, industrial producer prices, employment, unemployment, poverty, inequality, fertility, mortality, population, NAMEA air emissions, retail and wholesale sales volume). Dataflow IDs have no numeric prefix and differ from the main catalogue: `DF_DCCV_TAXOCCU1` merges the 16 `150_*_DF_DCCV_TAXOCCU1_*` dataflows of `istat`; `DF_POP` uses the Eurostat DSD `ESTAT/DEM_POP`. Measured on 2026-10-29: `contentconstraint` answers 404 and `availableconstraint` 500, so `constraints` is off; `tree`, `--last-n`, dimension-filtered `get` and `endPeriod` work (no off-by-one on a monthly dataflow). No dataflow carries annotations, so there are no keywords, notes or metadata links. It shares host and per-IP limit with `istat`, hence `rate_limit_group`.
+
 ### comext
 
 | Field | Value |
@@ -231,6 +246,7 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `constraint_endpoint` | string | `"availableconstraint"` | Endpoint for fetching available values (`availableconstraint` or `contentconstraint`) |
 | `constraint_bulk_supported` | boolean | `false` | Whether a provider supports catalog-level bulk content constraints |
 | `constraint_params` | dict | absent | Extra query parameters appended to constraint requests |
+| `constraint_max_retries` | int | `3` | Attempts for a constraint request; `1` stops retrying 5xx on hosts with a strict per-IP limit |
 | `datastructure_agency` | string | `"ALL"` | Agency used in `datastructure/{agency}/...` requests |
 | `codelist_agency` | string | `"ALL"` | Agency used in `codelist/{agency}/...` requests, for providers that only answer for their own |
 | `catalog_agency` | string | absent | Agency used for catalog requests when different from `agency_id` |
@@ -240,6 +256,7 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `data_path_suffix` | string | absent | Suffix appended to data paths for providers that require it |
 | `unsupported_params` | list | `[]` | Data request parameters to drop for providers that do not support them |
 | `data_rate_limit` | float | absent | Dedicated rate limit for data requests, separate from structure requests |
+| `rate_limit_group` | string | provider key | Name of the rate-limit timestamp and lock files. Providers with the same group are paced on one timer, for endpoints behind one per-IP limit (`istat_hvd` declares `istat`); cache directories stay per provider. Letters, digits, `_`, `.`, `-`, no leading dot. Inside a group there is no `data_rate_limit` split: every member waits the strictest interval of the group (`rate_limit`, plus `data_rate_limit` for data calls) |
 | `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
 | `data_key_format` | string | `"dots"` | SDMX key path style; `"empty"` omits wildcard dot keys and filters client-side |
 | `hub_base_url` | string | absent | StatKit Data Browser middleware base URL (ISTAT constraints fast path; INPS full backend) |
@@ -286,7 +303,7 @@ Providers can also define `data_rate_limit`. When present, data requests use a s
    /tmp/opensdmx-{username}  # fallback only
    ```
 
-2. Rate-limit timestamp and lock files are stored under that cache root in `rate_limit/`, keyed by provider.
+2. Rate-limit timestamp and lock files are stored under that cache root in `rate_limit/`, keyed by provider, or by `rate_limit_group` when the provider declares one.
 
 3. Before each HTTP request, opensdmx takes an exclusive file lock for the provider, reads the previous timestamp, and computes the elapsed time. If `elapsed < rate_limit`, it sleeps for the remaining seconds, showing a live countdown on stderr:
 

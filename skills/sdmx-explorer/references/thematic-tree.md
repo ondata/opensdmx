@@ -38,7 +38,7 @@ opensdmx providers
 
 The `categories` column tells you which providers support `tree`:
 
-- Supported: `eurostat`, `istat`, `ecb`, `oecd`, `insee`, `abs`, `bis`
+- Supported: `eurostat`, `istat`, `istat_hvd`, `ecb`, `oecd`, `insee`, `abs`, `bis`
 - Not supported: `comext`, `bundesbank`, `worldbank`, `imf` — skip `tree` and go
   straight to `search`.
 

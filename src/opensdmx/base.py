@@ -6,6 +6,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import sys
 import tempfile
 import time
@@ -77,6 +78,11 @@ def _is_alias_list(value: Any) -> bool:
     return isinstance(value, list) and all(isinstance(alias, str) and alias for alias in value)
 
 
+def _is_group_name(value: Any) -> bool:
+    """A ``rate_limit_group`` becomes a file name: no separators, no leading dot."""
+    return isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", value) is not None
+
+
 def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, Any]:
     """Drop the fields of a user entry that would break ``PROVIDERS`` at runtime.
 
@@ -98,6 +104,15 @@ def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, 
             logger.warning("portals: %s: provider '%s': %s must be a number, ignored", path, key, field)
 
             del fields[field]
+
+    if "rate_limit_group" in fields and not _is_group_name(fields["rate_limit_group"]):
+        logger.warning(
+            "portals: %s: provider '%s': rate_limit_group must be a name of letters, digits, '_', '.' or '-', ignored",
+            path,
+            key,
+        )
+
+        del fields["rate_limit_group"]
 
     return fields
 
@@ -481,14 +496,41 @@ def _rate_limit_dir() -> Path:
 
 
 def _use_split_rate_limit(is_data: bool) -> bool:
-    """True when this call should use the dedicated data rate limit."""
-    return is_data and get_provider().get("data_rate_limit") is not None
+    """True when this call should use the dedicated data rate limit.
+
+    Never inside a shared group: members with and without ``data_rate_limit`` would
+    otherwise take ``<group>.data.lock`` and ``<group>.lock`` and run in parallel.
+    """
+    return is_data and get_provider().get("data_rate_limit") is not None and not _in_rate_limit_group()
+
+
+def _rate_limit_key() -> str:
+    """Name of the rate-limit timestamp and lock files for the active provider.
+
+    A provider that declares ``rate_limit_group`` shares the files of that group, so
+    two endpoints behind the same per-IP limit (ISTAT ``SDMXWS`` and ``HVD``) are paced
+    together. Without it the group is the provider key, which is why ``istat_hvd``
+    declaring ``"istat"`` lands on the files ``istat`` already uses. Only the rate
+    limiter reads it: cache directories stay per provider.
+    """
+    group = get_provider().get("rate_limit_group")
+
+    return str(group) if _is_group_name(group) else _provider_cache_key()
+
+
+def _in_rate_limit_group() -> bool:
+    """True when another provider shares the active provider's rate-limit files."""
+    key = _rate_limit_key()
+
+    return _is_group_name(get_provider().get("rate_limit_group")) or any(
+        entry.get("rate_limit_group") == key for entry in PROVIDERS.values()
+    )
 
 
 def _rate_limit_file(is_data: bool = False) -> Path:
     """Return per-provider rate limit timestamp file."""
     suffix = ".data.log" if _use_split_rate_limit(is_data) else ".log"
-    return _rate_limit_dir() / f"{_provider_cache_key()}{suffix}"
+    return _rate_limit_dir() / f"{_rate_limit_key()}{suffix}"
 
 
 def _rate_limit_lock_file(is_data: bool = False) -> Path:
@@ -500,7 +542,34 @@ def _rate_limit_lock_file(is_data: bool = False) -> Path:
     requests nearly simultaneously — defeating the rate limit.
     """
     suffix = ".data.lock" if _use_split_rate_limit(is_data) else ".lock"
-    return _rate_limit_dir() / f"{_provider_cache_key()}{suffix}"
+    return _rate_limit_dir() / f"{_rate_limit_key()}{suffix}"
+
+
+def _rate_limit_interval(is_data: bool = False) -> float:
+    """Seconds to keep between this call and the previous one on the same timer.
+
+    In a group the timer is shared, so the interval is the strictest of its members:
+    otherwise a call from the faster member could follow one from the slower member
+    after only the faster interval. Data calls also count each member's
+    ``data_rate_limit``, since a group has no split timer.
+    """
+    provider = get_provider()
+
+    if _use_split_rate_limit(is_data):
+        return float(provider["data_rate_limit"])
+
+    if not _in_rate_limit_group():
+        return float(provider["rate_limit"])
+
+    key = _rate_limit_key()
+    peers = [provider] + [
+        entry
+        for name, entry in PROVIDERS.items()
+        if (entry["rate_limit_group"] if _is_group_name(entry.get("rate_limit_group")) else name) == key
+    ]
+    fields = ("rate_limit", "data_rate_limit") if is_data else ("rate_limit",)
+
+    return max(float(peer[field]) for peer in peers for field in fields if peer.get(field) is not None)
 
 
 def _rate_limit_check(is_data: bool = False) -> None:
@@ -518,11 +587,7 @@ def _rate_limit_check(is_data: bool = False) -> None:
     measured send-to-send, not receive-to-send.
     Cache hits never reach this function — only real HTTP calls apply.
     """
-    provider = get_provider()
-    if _use_split_rate_limit(is_data):
-        min_interval = float(provider["data_rate_limit"])
-    else:
-        min_interval = provider["rate_limit"]
+    min_interval = _rate_limit_interval(is_data)
     rl_file = _rate_limit_file(is_data)
     if rl_file.exists():
         try:

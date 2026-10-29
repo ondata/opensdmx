@@ -204,7 +204,7 @@ def run_guide(
             err_console.print(traceback.format_exc())
             raise typer.Exit(1)
 
-        from .discovery import get_available_values
+        from .discovery import ConstraintsTimeout, ConstraintsUnavailable, get_available_values
 
         filters = result["filters"]
         start_period = result.get("start_period") or ""
@@ -218,7 +218,7 @@ def run_guide(
 
         try:
             avail = {dim_id: set(df["id"].to_list()) for dim_id, df in get_available_values(ds).items()}
-        except (httpx.HTTPError, OSError, ValueError):  # constraints optional, fall back to no validation
+        except (httpx.HTTPError, OSError, ValueError, ConstraintsUnavailable, ConstraintsTimeout):  # constraints optional, fall back to no validation
             avail = {}
 
         if avail:

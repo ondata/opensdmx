@@ -743,6 +743,82 @@ class TestConstraintEndpointPathBuild:
 
 
 # ---------------------------------------------------------------------------
+# Shared rate limit (rate_limit_group)
+# ---------------------------------------------------------------------------
+
+class TestRateLimitGroup:
+    """Endpoints behind the same per-IP limit share timestamp and lock files."""
+
+    def test_istat_hvd_shares_the_istat_files(self, monkeypatch, tmp_path):
+        """ISTAT SDMXWS and HVD sit on one host with one 5-requests/min limit."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("istat")
+            istat_files = (_rate_limit_file(), _rate_limit_lock_file())
+            set_provider("istat_hvd")
+            assert (_rate_limit_file(), _rate_limit_lock_file()) == istat_files
+            assert _provider_cache_key() == "istat_hvd"  # the cache stays separate
+        finally:
+            set_provider("eurostat")
+
+    def test_group_members_share_one_lock_even_with_data_rate_limit(self, monkeypatch, tmp_path):
+        """A split member would take `<group>.data.lock` and run beside the unsplit one."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import PROVIDERS, _rate_limit_interval, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        monkeypatch.setitem(PROVIDERS, "istat", {**PROVIDERS["istat"], "data_rate_limit": 40.0})
+
+        try:
+            set_provider("istat")
+            assert not _use_split_rate_limit(is_data=True)
+            istat_data_lock = _rate_limit_lock_file(is_data=True)
+            set_provider("istat_hvd")
+            assert _rate_limit_lock_file(is_data=True) == istat_data_lock
+            assert istat_data_lock.name == "istat.lock"
+
+            # One timer, so the strictest member interval applies to every member.
+            for name in ("istat", "istat_hvd"):
+                set_provider(name)
+                assert _rate_limit_interval(is_data=True) == 40.0
+                assert _rate_limit_interval(is_data=False) == 15.0
+
+            monkeypatch.setitem(PROVIDERS, "istat_hvd", {**PROVIDERS["istat_hvd"], "rate_limit": 20.0})
+            set_provider("istat")
+            assert _rate_limit_interval(is_data=False) == 20.0
+        finally:
+            set_provider("eurostat")
+
+    def test_path_like_group_from_set_provider_falls_back(self, monkeypatch, tmp_path):
+        """`set_provider(url, rate_limit_group=...)` skips the portals.json validation."""
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("https://a.example.org/rest", agency_id="XYZ", rate_limit_group="../report")
+            assert _rate_limit_file().parent == tmp_path / "rate_limit"
+            assert _rate_limit_file().name == "XYZ.log"
+        finally:
+            set_provider("eurostat")
+
+    def test_provider_without_a_group_keeps_its_own_files(self, monkeypatch, tmp_path):
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        from opensdmx.base import _rate_limit_file, _resolve_cache_base_cached
+        _resolve_cache_base_cached.cache_clear()
+
+        try:
+            set_provider("eurostat")
+            assert _rate_limit_file().name == "eurostat.log"
+            assert _rate_limit_lock_file().name == "eurostat.lock"
+        finally:
+            set_provider("eurostat")
+
+
+# ---------------------------------------------------------------------------
 # Split rate limiter (data_rate_limit)
 # ---------------------------------------------------------------------------
 
