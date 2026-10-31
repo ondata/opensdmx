@@ -1088,19 +1088,19 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 174_321_DF_DCCV_ATTPRINC_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",ok,hub,7,73,0,"",2026-08-04
 174_322,Attività quotidiane,empty,hub,0,0,0,"",2026-10-21
 174_322_DF_DCCV_ATTPRINC1_1,"Sesso, età, titolo di studio, ampiezza della famiglia",empty,hub,0,0,0,"",2026-10-21
-174_322_DF_DCCV_ATTPRINC1_10,"Attività - sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_11,"Attività - sesso, rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_12,"Punti orari - sesso, titolo di studio",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_13,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_14,"Punti orari - sesso, età - rip. tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
+174_322_DF_DCCV_ATTPRINC1_10,"Attività - sesso, età",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_11,"Attività - sesso, rip. e tipo di comune",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_12,"Punti orari - sesso, titolo di studio",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_13,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_14,"Punti orari - sesso, età - rip. tipo di comune",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
 174_322_DF_DCCV_ATTPRINC1_2,"Sesso, cittadinanza",empty,hub,0,0,0,"",2026-10-21
 174_322_DF_DCCV_ATTPRINC1_3,"Sesso, età, condizione lavorativa",empty,hub,0,0,0,"",2026-10-21
 174_322_DF_DCCV_ATTPRINC1_4,"Sesso, stato civile, posizione nel nucleo",empty,hub,0,0,0,"",2026-10-21
-174_322_DF_DCCV_ATTPRINC1_5,"Sesso, età - reg. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_6,"Bambini, sesso, età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_8,"Attività - sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
-174_322_DF_DCCV_ATTPRINC1_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
+174_322_DF_DCCV_ATTPRINC1_5,"Sesso, età - reg. e tipo di comune",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_6,"Bambini, sesso, età",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_8,"Attività - sesso, titolo di studio, ampiezza della famiglia",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
+174_322_DF_DCCV_ATTPRINC1_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",error,"",0,0,2,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-31
 174_65,Distribuzione del carico di lavoro nelle coppie,ok,hub,11,82,0,"",2026-08-04
 174_65_DF_DCCV_ASIMMETRIA_1,"Coppia con o senza figli, età della donna, titolo di studio dell'uomo e della donna, condizione lavorativa della coppia",ok,hub,7,27,0,"",2026-08-04
 174_65_DF_DCCV_ASIMMETRIA_2,"Coppia con o senza figli, età e posizione nella professione della donna, condizione lavorativa della coppia",ok,hub,6,26,0,"",2026-08-04
@@ -1838,7 +1838,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 29_348_DF_DCIS_PERMSOGG1_1,Tipo di permesso e cittadinanza,ok,hub,5,76,0,"",2026-07-19
 29_348_DF_DCIS_PERMSOGG1_10,"Cittadinanza, sesso, età",ok,hub,5,84,0,"",2026-08-06
 29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",ok,hub,6,149,0,"",2026-07-19
-29_348_DF_DCIS_PERMSOGG1_12,"Nuovi rilasci nell'anno: sesso, provincia, motivo del permesso e classe di età",error,"",0,0,1,HubUnavailable: hub did not answer (timeout or HTTP error),2026-10-30
+29_348_DF_DCIS_PERMSOGG1_12,"Nuovi rilasci nell'anno: sesso, provincia, motivo del permesso e classe di età",ok,hub,7,155,0,"",2026-10-31
 29_348_DF_DCIS_PERMSOGG1_2,Tipo di permesso e classe di età,ok,hub,6,21,0,"",2026-07-19
 29_348_DF_DCIS_PERMSOGG1_3,Tipo di permesso e stato civile,ok,hub,6,15,0,"",2026-08-06
 29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,ok,hub,6,141,0,"",2026-08-06

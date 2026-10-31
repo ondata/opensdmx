@@ -1653,6 +1653,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 29_317_DF_DCIS_POPSTRCIT1_8,Veneto,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,586,2026-08-19
 29_317_DF_DCIS_POPSTRCIT1_9,Friuli-Venezia Giulia,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,222,2026-08-19
 29_348_DF_DCIS_PERMSOGG1_11,"Sesso, età, provincia",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-07-19
+29_348_DF_DCIS_PERMSOGG1_12,"Nuovi rilasci nell'anno: sesso, provincia, motivo del permesso e classe di età",REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-10-31
 29_348_DF_DCIS_PERMSOGG1_4,Tipo di permesso e provincia,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
 29_348_DF_DCIS_PERMSOGG1_5,Provincia e cittadinanza,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
 29_348_DF_DCIS_PERMSOGG1_6,Provincia e classe di età,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,131,2026-08-06
