@@ -976,6 +976,46 @@ Key points:
   fix it yourself before showing the user
 - Multiple focused charts are better than one overloaded chart
 
+### Step 6b — Maps (Eurostat and Comext only)
+
+When the user asks for a map, or the data is regional and a map would read better
+than a chart, and the provider is **Eurostat** (or **Comext**, `-p comext`, for flow
+maps; its partner codes are ISO, `GR`/`GB` → `EL`/`UK`): build a single self-contained HTML
+page with [eurostat-map](https://github.com/eurostat/eurostat-map). Eurostat `geo`
+codes are the NUTS IDs the library draws, so no code translation is needed. No
+opensdmx command is involved beyond `get`: DuckDB shapes the data, the HTML is
+written from a template.
+
+Key points:
+- One value per region: fix every dimension except `geo`, pick **one** time period
+  (`--last-n 1` mixes years across series), keep one NUTS level (code length).
+- Choropleth for rates and shares, proportional symbols for counts and totals,
+  size + colour symbols for a total and a rate together, flow maps for
+  origin-destination data (Comext trade), callout notes for the region that
+  carries the message.
+- Replace exact zeros with `1e-9`: eurostat-map treats 0 as missing and, on
+  symbol maps, stops colouring every circle after it.
+- The only deliverable is the HTML. PNG and SVG come from the library's own
+  `exportMapToPNG()` / `exportMapToSVG()` behind two buttons in the page: no
+  executable to install.
+- Colours: viridis (5-6 classes) for sequential data, RdBu with a break on the
+  midpoint for diverging data, no-data grey `#969696`.
+- Overseas regions (Canarias, Açores, French DOM, Malta): never `.insets('default')`,
+  which covers eastern Europe; use the inset column layout in the reference, and
+  call `.insets()` last, after data and colours.
+- If a browser automation tool is already available, render the page and check the
+  screenshot before handing it over; tell the user the page needs internet access
+  for the library and NUTS geometries.
+- Other providers (ISTAT, OECD, World Bank...) use territorial codes that do not
+  match NUTS IDs: this recipe does not apply to them.
+
+Full recipe — data prep, HTML template, export, insets, colour rules with sources
+and measured contrast, verification, pitfalls — in
+[references/maps.md](references/maps.md). Other map types:
+[maps-symbols.md](references/maps-symbols.md),
+[maps-flow.md](references/maps-flow.md),
+[maps-annotations.md](references/maps-annotations.md).
+
 ---
 
 ## Key principles
@@ -1101,3 +1141,7 @@ Two providers have flows that diverge enough to deserve their own walkthroughs:
   codes: [references/istat-flow.md](references/istat-flow.md)
 - **World Bank** — single-dataflow architecture (`WDI`), alpha-3 country codes,
   known issue #5: [references/worldbank-flow.md](references/worldbank-flow.md)
+
+Maps of Eurostat data (self-contained HTML with eurostat-map):
+[references/maps.md](references/maps.md), with sub-references for symbols, flows
+and annotations.
