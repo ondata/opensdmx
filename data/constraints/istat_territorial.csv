@@ -1021,6 +1021,16 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 174_321_DF_DCCV_ATTPRINC_14,"Punti orari - sesso, età, rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
 174_321_DF_DCCV_ATTPRINC_5,"Sesso, età - reg. e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-08-04
 174_321_DF_DCCV_ATTPRINC_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-08-04
+174_322_DF_DCCV_ATTPRINC1_10,"Attività - sesso, età",REF_AREA,nazionale,nazionale,1,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_11,"Attività - sesso, rip. e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_12,"Punti orari - sesso, titolo di studio",REF_AREA,nazionale,nazionale,1,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_13,"Punti orari - sesso, posizione nel nucleo, condizione lavorativa",REF_AREA,nazionale,nazionale,1,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_14,"Punti orari - sesso, età - rip. tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_5,"Sesso, età - reg. e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,34,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_6,"Bambini, sesso, età",REF_AREA,nazionale,nazionale,1,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_7,"Bambini, sesso, condizione lavorativa dei genitori - rip. e tipo di comune",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_8,"Attività - sesso, titolo di studio, ampiezza della famiglia",REF_AREA,nazionale,nazionale,1,2026-11-02
+174_322_DF_DCCV_ATTPRINC1_9,"Attività - sesso, condizione lavorativa, posizione nel nucleo",REF_AREA,nazionale,nazionale,1,2026-11-02
 174_65,Distribuzione del carico di lavoro nelle coppie,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-04
 174_65_DF_DCCV_ASIMMETRIA_4,"Coppia con o senza figli, età della donna e condizione lavorativa della coppia - reg.",REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
 174_65_DF_DCCV_ASIMMETRIA_6,Coppia con donna di 65 anni e più - reg.,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
