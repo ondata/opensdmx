@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-11-03 - fix: non-CSV data answers and explained HTTP 413
+## 2026-11-03 - v0.30.1 - fix: non-CSV data answers, explained HTTP 413, get on Bundesbank/BIS/INSEE
 
 - **Data bodies are checked before CSV parsing** (`_read_csv_response` in `base.py`): a ZIP is unpacked and its CSV members concatenated, up to 1 GB expanded (Bundesbank documents zipping SDMX-CSV above 200 series; not tested on a real Bundesbank ZIP); an XML/HTML/JSON body stops with `NonCsvResponseError` showing status, Content-Type and the first 300 characters; Eurostat's asynchronous-delivery envelope (`syncResponse` with a `queued` id) gets its own message with the request id. Before, any 2xx body went straight to `pl.read_csv`. Async polling itself is still out (#40).
 - **HTTP 413 explained**: new optional `portals.json` field `too_large_hint`, printed after `HTTP 413` by `get`, `run` and `plot`; a generic "more filters or a shorter period" hint otherwise. Declared for eurostat, comext (5M-cell limit), bundesbank (data generated in the background, retry later) and oecd (`--last-n`/`--first-n` blocked on very large dataflows). Sources: the Eurostat async API guide, Bundesbank and OECD API docs (docs-only review, no heavy queries).
