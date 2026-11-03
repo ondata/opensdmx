@@ -152,7 +152,7 @@ class TestSdmxRequestCsv:
         assert df["OBS_VALUE"].dtype == pl.Float64
 
     def test_zip_with_one_csv(self):
-        """Bundesbank zips SDMX-CSV above 200 series."""
+        """A zipped CSV answer is unpacked (generic guard, no known provider sends one)."""
         df = self._fetch(self._zip({"data.csv": _CSV_CONTENT}), "application/zip")
         assert df.shape == (2, 4)
         assert df["TIME_PERIOD"].dtype == pl.Utf8
