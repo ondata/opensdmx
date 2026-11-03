@@ -174,14 +174,14 @@ Useful variations:
 - **Classes**: `classificationMethod` accepts `quantile` (default), `equinter`, `jenks`, `ckmeans`, `threshold`. With `threshold` set `.thresholds([5, 10, 15])` — good when the user has meaningful breaks in mind (e.g. the EU average).
 - **Colours**: see the next section. `.colors([...])` takes one colour per class, from low to high. The bundle does not expose a global `d3`, so `d3.interpolate*` functions are not available in the page: always pass explicit hex lists.
 - **Proportional symbols, flows, annotations**: see the sub-references listed at the top.
-- **Single country focus**: keep the European frame but zoom with `.position({ x: <easting>, y: <northing>, z: <metres per pixel> })` in EPSG:3035. For Italy on an 800 × 720 map, `{ x: 4550000, y: 2250000, z: 2600 }` shows the whole country from the Alps to Sicily (verified). For other countries start from the centre of the country in EPSG:3035, check the screenshot and adjust: a larger `y` moves the view north, a larger `z` zooms out.
+- **Single country focus**: keep the European frame but zoom with `.position({ x: <easting>, y: <northing>, z: <metres per pixel> })` in EPSG:3035. For Italy on an 800 × 720 map, `{ x: 4550000, y: 2250000, z: 2600 }` shows the whole country from the Alps to Sicily (verified). For Germany, `{ x: 4330000, y: 3100000, z: 1400 }` (verified on a NUTS 3 map). For other countries start from the centre of the country in EPSG:3035, check the screenshot and adjust: a larger `y` moves the view north, a larger `z` zooms out.
 - **Overseas regions (insets)**: see "Insets for the overseas regions" below. Never use `.insets('default')`: its boxes cover the eastern part of the map.
 
 ## Export to PNG and SVG
 
 The deliverable is the HTML file and nothing else: no executable, no extra install. The PNG and SVG come from the library itself, in the browser of whoever opens the page, through the two buttons of the template:
 
-- `map.exportMapToPNG(width, height, filename)` redraws the SVG on a canvas at `width` × `height` and downloads `filename.png`. Passing twice the on-screen size gives a high-resolution image (1600 × 1440 for an 800 × 720 map).
+- `map.exportMapToPNG(width, height, filename)` redraws the SVG on a canvas at `width` × `height` and downloads `filename.png`. Passing twice the SVG size gives a high-resolution image. The SVG is taller than `.height()` when the header and footer are on: an 800 × 720 map with title and footnote exports at 1600 × 1640, a 1000 × 700 one at 2000 × 1600 (measured).
 - `map.exportMapToSVG(filename)` downloads the SVG, for editing in Inkscape or Illustrator.
 
 Keep the buttons **outside** the `<svg>`, so they do not end up in the image. Fix `.width()` and `.height()`: without them the map takes its size from the browser window, and the same page exports a different framing on every screen.
@@ -296,15 +296,27 @@ The full option list is in the [eurostat-map reference](https://eurostat.github.
 If a browser automation tool is already available in your environment (for example `agent-browser`, or a Playwright/Chrome MCP), render the page before handing it over, the same quality loop as for charts. Do not install one for this.
 
 ```bash
+agent-browser set viewport 1000 1000   # taller than the map, or the element screenshot is cut
 agent-browser open "file://$PWD/map.html"
-agent-browser wait 6000          # geometries arrive over the network
+agent-browser wait 6000          # geometries arrive over the network; ~12 s for a NUTS 3 dorling map
 agent-browser screenshot "#map" "$PWD/map.png"   # the map element only
 agent-browser errors             # must be empty
 agent-browser console            # eurostat-map logs its own errors here, not as page errors
-agent-browser close
+# every region in the data was drawn: "missing" must be empty
+agent-browser eval "(() => {
+  const keys = typeof DATA !== 'undefined' ? Object.keys(DATA)     // choropleth
+             : typeof POP  !== 'undefined' ? Object.keys(POP)      // symbols: the size data
+             : GRAPH.nodes.map(n => n.id);                         // flows
+  const drawn = new Set([...document.querySelectorAll('#map path')]
+    .map(p => p.__data__ && p.__data__.properties && p.__data__.properties.id).filter(Boolean));
+  return JSON.stringify({ checked: keys.length, missing: keys.filter(k => !drawn.has(k)) }); })()"
+agent-browser download "#png" "$PWD/map-export.png"   # optional: the PNG the user would download
+agent-browser close              # last
 ```
 
-Make the viewport taller than the map (`agent-browser set viewport 1000 1000`), otherwise the element screenshot is cut at the window edge. If no such tool is available, say that the map was not rendered and ask the user to open it and report what they see.
+If no such tool is available, say that the map was not rendered and ask the user to open it and report what they see.
+
+Codes in `missing` are regions the geometries do not have, usually a NUTS version mismatch (`nutsYear`): with `nutsYear(2010)` on a 2024 NUTS 2 map the check listed 65 regions. The variable names are those of the templates (`DATA`, `POP`, `GRAPH`): adapt the line if the page uses others. The download goes through the page's own button, so the image is exactly what the user would get (high resolution, see "Export to PNG and SVG"); on symbol maps wait until the dorling layout has settled before it.
 
 Read the screenshot and check:
 

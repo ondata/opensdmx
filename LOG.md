@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-11-03 - skill: map recipe fixes from an end-to-end test
+
+- **Test**: three maps built by following the skill only, rendered with agent-browser and exported through the page button. NUTS 2 diverging choropleth of GDP per head in PPS (`nama_10r_2gdp`, 2024, nine overseas insets); German NUTS 3 size + colour symbols with dorling (`demo_r_gind3` JAN and GROWRT, 2024, two exact zeros); Comext import flows into Poland (`DS-045409`, 2024, top 10 European partners).
+- **Flow maps, imports**: value labels sit on destination nodes, so with imports the only label was the total on the reporter ("203,3 Mld"), no partner codes. `maps-flow.md` now labels the origin countries with `getDefaultLabels().EUR_3035.cc` filtered to the partners (verified: 10 codes on the map).
+- `maps.md`: a check that every data region was drawn (empty list = ok; with `nutsYear(2010)` it lists 65 regions); PNG through the page button with `agent-browser download`; measured export sizes with header and footer (1600 × 1640, 2000 × 1600); verified Germany position `{ x: 4330000, y: 3100000, z: 1400 }`.
+
 ## 2026-11-03 - v0.30.2 - release: Eurostat maps skill, docs, tests
 
 No CLI behaviour change. Ships what landed on `main` after v0.30.1:

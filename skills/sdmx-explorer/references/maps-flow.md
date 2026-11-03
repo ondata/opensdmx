@@ -47,7 +47,7 @@ GRAPH=$(jq -c '
     links: [.[] | {source: "IT", target: (.partner | nuts), value: .v}] }' top.json)
 ```
 
-For imports, swap the roles: the partners are the sources and the reporter is the target.
+For imports, swap the roles: the partners are the sources and the reporter is the target (`links: [.[] | {source: (.partner | nuts), target: "IT", value: .v}]`). Imports also need different labels: see "Imports: label the origin countries" below.
 
 ## Step 3 — Write the HTML
 
@@ -103,6 +103,12 @@ map.build();
   ```
 
   Use Eurostat codes (`EL`, `UK`) on the map, as everywhere else in Eurostat products. With 5 destinations or fewer, names + value usually fit: check the screenshot. Country names in the user's language, if needed elsewhere, come from `new Intl.DisplayNames(['it'], { type: 'region' }).of(iso)` (ISO code: `GR`, `GB`).
+- **Imports: label the origin countries.** The library puts value labels on the **destination** nodes. For exports the destinations are the partners, one label each; for imports there is a single destination, the reporter, so value labels show one label with the total of all flows ("203,3 Mld" on Poland) and no country codes (verified). For imports, drop the value labels and label the partner countries with Eurostat's positioned codes instead; amounts stay in the footnote:
+
+  ```js
+  .labels({ backgrounds: true, shadows: false,
+            labels: eurostatmap.getDefaultLabels().EUR_3035.cc.filter(d => GRAPH.links.some(l => partner(l) === d.text)) })
+  ```
 - **Value labels need a background**: `backgrounds: true` puts a white box behind each label. With the default shadow only, labels that fall on a band ("30,2 Mld" over the France flow) are black text on dark teal.
 - **Number format**: `new Intl.NumberFormat('it-IT', { notation: 'compact' })` gives "70,5 Mld", which is Italian usage for billions; use it for both the flow labels and the width legend.
 - `scale('60M')` is enough at country level and keeps the page light.
