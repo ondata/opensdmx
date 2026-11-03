@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-11-03 - docs: Bundesbank does not zip SDMX-CSV
+
+- **Checked live**: the "more than 200 series or mixed frequencies → ZIP" note in the Bundesbank API docs applies to its BBK-CSV formats. Two series of different frequency: `text/csv` (what the CLI sends) → plain SDMX-CSV; `application/vnd.bbk.data+csv` → plain BBK-CSV (series as columns, German metadata rows); `application/vnd.bbk.data+csv-zip` → ZIP with `BBEX3.D(01).csv` in BBK-CSV. Earlier, 3,240 series of mixed frequency came back as plain SDMX-CSV. The ZIP guard from v0.30.1 stays as a generic guard; statements saying Bundesbank zips SDMX-CSV corrected in `base.py`, the skill and a test docstring.
+
 ## 2026-11-03 - tests: no live reachability probe
 
 - **CI on `main` failed after #101**: CLI tests ran the live `_check_api_reachable` GET, skipped locally only because a rate-limit file already exists; on CI's fresh cache it hit ECB/Eurostat and failed with "API unreachable". An autouse fixture in `tests/conftest.py` now stubs it. Checked with sockets blocked and an empty cache: 521 passed (6 failed before).

@@ -926,8 +926,9 @@ def _parse_structure_specific(content: bytes) -> pl.DataFrame:
 def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
     """Parse a data response as CSV, after checking it is CSV.
 
-    - ZIP body (Bundesbank sends SDMX-CSV with >200 series zipped): the CSV
-      members are parsed and concatenated.
+    - ZIP body: the CSV members are parsed and concatenated. Generic guard: no
+      provider is known to zip an SDMX-CSV answer (Bundesbank zips only its own
+      BBK-CSV format, and only on request; checked 2026-11-03).
     - XML/HTML/JSON body: ``NonCsvResponseError`` with status, Content-Type
       and the start of the body. Eurostat's asynchronous-delivery envelope
       (``syncResponse`` with a ``queued`` id) gets a dedicated message; an
