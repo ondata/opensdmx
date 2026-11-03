@@ -1,5 +1,20 @@
 # LOG
 
+## 2026-11-03 - tests: no live reachability probe
+
+- **CI on `main` failed after #101**: CLI tests ran the live `_check_api_reachable` GET, skipped locally only because a rate-limit file already exists; on CI's fresh cache it hit ECB/Eurostat and failed with "API unreachable". An autouse fixture in `tests/conftest.py` now stubs it. Checked with sockets blocked and an empty cache: 521 passed (6 failed before).
+
+## 2026-11-03 - v0.30.1 - fix: non-CSV data answers, explained HTTP 413, get on Bundesbank/BIS/INSEE
+
+- **Data bodies are checked before CSV parsing** (`_read_csv_response` in `base.py`): a ZIP is unpacked and its CSV members concatenated, up to 1 GB expanded (Bundesbank documents zipping SDMX-CSV above 200 series; not tested on a real Bundesbank ZIP); an XML/HTML/JSON body stops with `NonCsvResponseError` showing status, Content-Type and the first 300 characters; Eurostat's asynchronous-delivery envelope (`syncResponse` with a `queued` id) gets its own message with the request id. Before, any 2xx body went straight to `pl.read_csv`. Async polling itself is still out (#40).
+- **HTTP 413 explained**: new optional `portals.json` field `too_large_hint`, printed after `HTTP 413` by `get`, `run` and `plot`; a generic "more filters or a shorter period" hint otherwise. Declared for eurostat, comext (5M-cell limit), bundesbank (data generated in the background, retry later) and oecd (`--last-n`/`--first-n` blocked on very large dataflows). Sources: the Eurostat async API guide, Bundesbank and OECD API docs (docs-only review, no heavy queries).
+- **`get` fixed on three providers that never returned usable data** (checked live 2026-11-03):
+  - **Bundesbank**: CSV is `;`-separated with `.` for missing values and a trailing blank line; before, `found more fields than defined in 'Schema'`. New `portals.json` fields `data_csv_separator`, `data_csv_null_values`; all-null rows dropped.
+  - **BIS**: answers SDMX-ML to `text/csv`, CSV to `application/vnd.sdmx.data+csv;version=1.0.0`. New field `data_csv_accept`.
+  - **INSEE**: answers only SDMX-ML StructureSpecificData, whatever `Accept` says. Such a message is now parsed (one row per `Obs`, merged with its `Series` attributes) instead of being printed as a one-column table.
+- `NonCsvResponseError` exported from `opensdmx`. Error lines in `get`/`run`/`plot` now escape Rich markup, since they can carry provider text.
+- Skill: new "Too-large or non-CSV answers" section; Comext row in the provider matrix; OECD `--last-n` 413 note.
+
 ## 2026-11-02 - skill: Eurostat maps with eurostat-map
 
 - **sdmx-explorer Step 6b — Maps (Eurostat only)** and new `references/maps.md`: a self-contained HTML page with [eurostat-map](https://github.com/eurostat/eurostat-map) 4.12.1, data from `opensdmx get` inlined via `statData().setData()`. Skill only, no CLI change.

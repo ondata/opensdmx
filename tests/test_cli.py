@@ -7,6 +7,7 @@ import re
 from types import SimpleNamespace
 from unittest.mock import patch
 
+import httpx
 import pytest
 import typer
 from typer.testing import CliRunner
@@ -1051,3 +1052,59 @@ def test_search_semantic_accepts_n_and_grep():
         result = runner.invoke(app, ["search", "--semantic", "x", "--n", "5", "--grep", "y"])
 
     assert "cannot be combined" not in result.output
+
+
+def test_get_non_csv_response_is_a_clean_error():
+    """A non-CSV data body ends `get` with one Error line and exit 1, no traceback."""
+    from opensdmx.base import NonCsvResponseError
+
+    err = NonCsvResponseError("The provider is preparing this extraction asynchronously (request id abc).")
+    with patch("opensdmx.cli._load_and_filter", return_value={"df_id": "X", "filters": {}}), \
+         patch("opensdmx.cli._fetch_frame", side_effect=err):
+        result = runner.invoke(app, ["get", "X", "--last-n", "1"])
+
+    assert result.exit_code == 1
+    assert "Error:" in result.output
+    assert "request id abc" in " ".join(result.output.split())
+    assert "Traceback" not in result.output
+
+
+def _http_413() -> httpx.HTTPStatusError:
+    request = httpx.Request("GET", "https://example.org/data/X")
+    response = httpx.Response(413, request=request)
+    return httpx.HTTPStatusError("413", request=request, response=response)
+
+
+@pytest.mark.parametrize(
+    ("provider", "expected"),
+    [
+        ("bundesbank", "retry the same request later"),
+        ("oecd", "--last-n or --first-n"),
+        ("eurostat", "5 million estimated cells"),
+        ("ecb", "refused the request as too large"),  # no declared hint → default
+    ],
+)
+def test_get_413_prints_provider_hint(provider, expected):
+    with patch("opensdmx.cli._load_and_filter", return_value={"df_id": "X", "filters": {}}), \
+         patch("opensdmx.cli._fetch_frame", side_effect=_http_413()):
+        result = runner.invoke(app, ["get", "X", "--last-n", "1", "--provider", provider])
+
+    flat = " ".join(result.output.split())
+    assert result.exit_code == 1
+    assert "HTTP 413" in flat
+    assert expected in flat
+
+
+def test_get_non_csv_error_with_brackets_is_escaped():
+    """Provider text in the error can contain Rich markup-like brackets."""
+    from opensdmx.base import NonCsvResponseError
+
+    err = NonCsvResponseError("Start of the response: <a href='[/docs]'>[link=foo]x</a>")
+    with patch("opensdmx.cli._load_and_filter", return_value={"df_id": "X", "filters": {}}), \
+         patch("opensdmx.cli._fetch_frame", side_effect=err):
+        result = runner.invoke(app, ["get", "X", "--last-n", "1"])
+
+    flat = " ".join(result.output.split())
+    assert result.exit_code == 1
+    assert "[/docs]" in flat
+    assert "[link=foo]" in flat

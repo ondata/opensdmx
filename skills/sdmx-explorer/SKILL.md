@@ -823,6 +823,29 @@ opensdmx get 22_315_DF_DCIS_POPORESBIL1_24 --provider istat \
 Without `--yes`, the CLI detects that the dataset has many series and stops with a
 warning. With `--yes`, it builds a single wildcard URL (e.g. `data/{df_id}/A..BEG.9`)
 and fetches everything in one call — typically much faster than looping on chunks.
+On Eurostat and Comext a wildcard can hit the 5-million-cell limit: see the next section.
+
+### Too-large or non-CSV answers
+
+Some providers refuse or defer a query that is too big. Read the error and narrow the
+request; do not retry the same call in a loop.
+
+- `HTTP 413` is followed by a `Hint:` line (in `get`, `run` and `plot`): the provider's own
+  advice where declared, otherwise a generic "more filters or a shorter period" hint. Eurostat
+  and Comext refuse above 5 million estimated cells (the product of the codes matched
+  in each dimension): add filters, especially on large dimensions (Comext `product`
+  has over 40,000 CN8 codes), or shorten the period. The OECD blocks `--last-n` /
+  `--first-n` on some very large dataflows: drop them and use `--start-period`.
+  Bundesbank's 413 means the data is being generated: retry the same request later.
+- `Error: The provider is preparing this extraction asynchronously (request id …)`
+  — Eurostat queued the query (roughly 500,000 to 5 million cells, or too many
+  requests from the same IP). Narrow the filters, or retry later.
+- `Error: Expected CSV data but the provider returned …` — the body was not CSV; the
+  message shows its first characters. Read them: they usually name the problem.
+
+A ZIP answer (Bundesbank documents zipping SDMX-CSV above 200 series) is unpacked and
+its CSV files are read, up to 1 GB expanded; a ZIP with no CSV inside stops with an error
+listing its files.
 
 ### Step 1 — Verify with a preview (last observation)
 

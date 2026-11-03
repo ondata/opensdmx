@@ -255,6 +255,10 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `data_accept` | string | absent | If present, used as the data request `Accept` header |
 | `data_path_suffix` | string | absent | Suffix appended to data paths for providers that require it |
 | `unsupported_params` | list | `[]` | Data request parameters to drop for providers that do not support them |
+| `data_csv_accept` | string | `"text/csv"` | `Accept` header for CSV data requests on providers without `data_format_param` (BIS answers XML to `text/csv`, CSV to `application/vnd.sdmx.data+csv;version=1.0.0`) |
+| `data_csv_separator` | string | `","` | Field separator of the provider's CSV (Bundesbank: `;`) |
+| `data_csv_null_values` | list | `[]` | Cell values read as missing (Bundesbank: `.`) |
+| `too_large_hint` | string | absent | Advice printed after an HTTP 413 on a data request (`get`, `run`, `plot`); without it a generic "set more filters or a shorter period" hint is printed |
 | `data_rate_limit` | float | absent | Dedicated rate limit for data requests, separate from structure requests |
 | `rate_limit_group` | string | provider key | Name of the rate-limit timestamp and lock files. Providers with the same group are paced on one timer, for endpoints behind one per-IP limit (`istat_hvd` declares `istat`); cache directories stay per provider. Letters, digits, `_`, `.`, `-`, no leading dot. Inside a group there is no `data_rate_limit` split: every member waits the strictest interval of the group (`rate_limit`, plus `data_rate_limit` for data calls) |
 | `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
