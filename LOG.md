@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-11-03 - v0.30.2 - release: Eurostat maps skill, docs, tests
+
+No CLI behaviour change. Ships what landed on `main` after v0.30.1:
+
+- **Skill: Eurostat maps** (#103), entry of 2026-11-02 below, plus fixes from review: the `--last-n 1` download is now only a preview to choose the year, then the year itself is fetched with `--start-period`/`--end-period` (counts showed when series end, not which regions have a value that year); flow maps label each flow with the partner chosen by direction (target for exports, source for imports) and fall back to value labels when two flows have the same amount.
+- **Docs** (#104): Bundesbank zips only its BBK-CSV formats, not SDMX-CSV (entry below); README DeepWiki badge served by shields.io, since `deepwiki.com/badge.svg` answers 429 and GitHub showed the alt text.
+- **Tests** (#102): live reachability probe stubbed in the whole suite (entry below).
+- `docs/future-ideas.md`: sections from the sdmx-dl, StatCheck, Eurostat API guide and OECDdata reviews; ideas already shipped marked as such.
+
 ## 2026-11-03 - docs: Bundesbank does not zip SDMX-CSV
 
 - **Checked live**: the "more than 200 series or mixed frequencies → ZIP" note in the Bundesbank API docs applies to its BBK-CSV formats. Two series of different frequency: `text/csv` (what the CLI sends) → plain SDMX-CSV; `application/vnd.bbk.data+csv` → plain BBK-CSV (series as columns, German metadata rows); `application/vnd.bbk.data+csv-zip` → ZIP with `BBEX3.D(01).csv` in BBK-CSV. Earlier, 3,240 series of mixed frequency came back as plain SDMX-CSV. The ZIP guard from v0.30.1 stays as a generic guard; statements saying Bundesbank zips SDMX-CSV corrected in `base.py`, the skill and a test docstring.
