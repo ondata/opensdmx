@@ -296,25 +296,27 @@ The full option list is in the [eurostat-map reference](https://eurostat.github.
 If a browser automation tool is already available in your environment (for example `agent-browser`, or a Playwright/Chrome MCP), render the page before handing it over, the same quality loop as for charts. Do not install one for this.
 
 ```bash
+agent-browser set viewport 1000 1000   # taller than the map, or the element screenshot is cut
 agent-browser open "file://$PWD/map.html"
-agent-browser wait 6000          # geometries arrive over the network
+agent-browser wait 6000          # geometries arrive over the network; ~12 s for a NUTS 3 dorling map
 agent-browser screenshot "#map" "$PWD/map.png"   # the map element only
 agent-browser errors             # must be empty
 agent-browser console            # eurostat-map logs its own errors here, not as page errors
-agent-browser close
+# every region in the data was drawn: "missing" must be empty
+agent-browser eval "(() => {
+  const keys = typeof DATA !== 'undefined' ? Object.keys(DATA)     // choropleth
+             : typeof POP  !== 'undefined' ? Object.keys(POP)      // symbols: the size data
+             : GRAPH.nodes.map(n => n.id);                         // flows
+  const drawn = new Set([...document.querySelectorAll('#map path')]
+    .map(p => p.__data__ && p.__data__.properties && p.__data__.properties.id).filter(Boolean));
+  return JSON.stringify({ checked: keys.length, missing: keys.filter(k => !drawn.has(k)) }); })()"
+agent-browser download "#png" "$PWD/map-export.png"   # optional: the PNG the user would download
+agent-browser close              # last
 ```
 
-Make the viewport taller than the map (`agent-browser set viewport 1000 1000`), otherwise the element screenshot is cut at the window edge. If no such tool is available, say that the map was not rendered and ask the user to open it and report what they see.
+If no such tool is available, say that the map was not rendered and ask the user to open it and report what they see.
 
-Check that every region in the data was drawn. The list must be empty; codes in it are regions the geometries do not have, usually a NUTS version mismatch (`nutsYear`):
-
-```bash
-agent-browser eval "(() => { const drawn = new Set([...document.querySelectorAll('#map path')]
-  .map(p => p.__data__ && p.__data__.properties && p.__data__.properties.id).filter(Boolean));
-  return JSON.stringify(Object.keys(DATA).filter(k => !drawn.has(k))); })()"
-```
-
-The same tool can produce the PNG through the page's own button, so the image is exactly what the user would download (high resolution, see "Export to PNG and SVG"): `agent-browser download "#png" "$PWD/map.png"`. For symbol maps wait until the dorling layout has settled (about 12 s for a NUTS 3 map) before clicking.
+Codes in `missing` are regions the geometries do not have, usually a NUTS version mismatch (`nutsYear`): with `nutsYear(2010)` on a 2024 NUTS 2 map the check listed 65 regions. The variable names are those of the templates (`DATA`, `POP`, `GRAPH`): adapt the line if the page uses others. The download goes through the page's own button, so the image is exactly what the user would get (high resolution, see "Export to PNG and SVG"); on symbol maps wait until the dorling layout has settled before it.
 
 Read the screenshot and check:
 
