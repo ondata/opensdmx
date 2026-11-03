@@ -1,5 +1,16 @@
 # LOG
 
+## 2026-11-03 - fix: non-CSV data answers and explained HTTP 413
+
+- **Data bodies are checked before CSV parsing** (`_read_csv_response` in `base.py`): a ZIP is unpacked and its CSV members concatenated, up to 1 GB expanded (Bundesbank documents zipping SDMX-CSV above 200 series; not tested on a real Bundesbank ZIP); an XML/HTML/JSON body stops with `NonCsvResponseError` showing status, Content-Type and the first 300 characters; Eurostat's asynchronous-delivery envelope (`syncResponse` with a `queued` id) gets its own message with the request id. Before, any 2xx body went straight to `pl.read_csv`. Async polling itself is still out (#40).
+- **HTTP 413 explained**: new optional `portals.json` field `too_large_hint`, printed after `HTTP 413` by `get`, `run` and `plot`; a generic "more filters or a shorter period" hint otherwise. Declared for eurostat, comext (5M-cell limit), bundesbank (data generated in the background, retry later) and oecd (`--last-n`/`--first-n` blocked on very large dataflows). Sources: the Eurostat async API guide, Bundesbank and OECD API docs (docs-only review, no heavy queries).
+- **`get` fixed on three providers that never returned usable data** (checked live 2026-11-03):
+  - **Bundesbank**: CSV is `;`-separated with `.` for missing values and a trailing blank line; before, `found more fields than defined in 'Schema'`. New `portals.json` fields `data_csv_separator`, `data_csv_null_values`; all-null rows dropped.
+  - **BIS**: answers SDMX-ML to `text/csv`, CSV to `application/vnd.sdmx.data+csv;version=1.0.0`. New field `data_csv_accept`.
+  - **INSEE**: answers only SDMX-ML StructureSpecificData, whatever `Accept` says. Such a message is now parsed (one row per `Obs`, merged with its `Series` attributes) instead of being printed as a one-column table.
+- `NonCsvResponseError` exported from `opensdmx`. Error lines in `get`/`run`/`plot` now escape Rich markup, since they can carry provider text.
+- Skill: new "Too-large or non-CSV answers" section; Comext row in the provider matrix; OECD `--last-n` 413 note.
+
 ## 2026-10-29 - v0.30.0 - feat: ISTAT HVD provider, shared rate-limit group
 
 - **New provider `istat_hvd`** (#98): ISTAT's High Value Datasets endpoint `esploradati.istat.it/HVD/rest`, 17 consolidated dataflows with IDs of their own. Flags from probes, not copied from `istat`: `constraints` off (`contentconstraint` 404, `availableconstraint` 500), `tree`/`last_n`/filtered `get` on, no annotations. Answered while `SDMXWS` data calls failed.

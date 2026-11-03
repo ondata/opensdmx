@@ -224,6 +224,20 @@ def _print_bad_request_hint(dataset_id: str, ds: dict[str, Any] | None) -> None:
         )
 
 
+_TOO_LARGE_DEFAULT_HINT = (
+    "The provider refused the request as too large: set more filters "
+    "(fewer codes per dimension) or a shorter period."
+)
+
+
+def _print_too_large_hint() -> None:
+    """Explain an HTTP 413 on a data request, with the provider's own advice if declared."""
+    from .base import get_provider
+
+    hint = get_provider().get("too_large_hint") or _TOO_LARGE_DEFAULT_HINT
+    err_console.print(f"[yellow]Hint:[/yellow] {hint}")
+
+
 def _fetch_frame(
     ds: dict[str, Any],
     *,
@@ -1661,13 +1675,15 @@ def get(
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
         if e.response.status_code in (400, 404):
             _print_bad_request_hint(dataset_id, ds)
+        elif e.response.status_code == 413:
+            _print_too_large_hint()
         raise typer.Exit(1)
     except typer.Exit:
         # typer.Exit subclasses RuntimeError, so the handler below would swallow
         # a deliberate exit and reprint it as "Error: 1".
         raise
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     _write_output(df, out)
@@ -1727,11 +1743,13 @@ def run(
         raise typer.Exit(1)
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
+        if e.response.status_code == 413:
+            _print_too_large_hint()
         raise typer.Exit(1)
     except typer.Exit:
         raise
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     _write_output(df, out)
@@ -1844,11 +1862,13 @@ def plot(
             err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
             if e.response.status_code in (400, 404):
                 _print_bad_request_hint(dataset_id, ds)
+            elif e.response.status_code == 413:
+                _print_too_large_hint()
             raise typer.Exit(1)
         except typer.Exit:
             raise
         except Exception as e:
-            err_console.print(f"[red]Error:[/red] {e}")
+            err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
             raise typer.Exit(1)
 
     missing = [col for col in (x, y) if col not in df.columns]
