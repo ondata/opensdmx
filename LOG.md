@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-11-03 - tests: no live reachability probe
+
+- **CI on `main` failed after #101**: CLI tests ran the live `_check_api_reachable` GET, skipped locally only because a rate-limit file already exists; on CI's fresh cache it hit ECB/Eurostat and failed with "API unreachable". An autouse fixture in `tests/conftest.py` now stubs it. Checked with sockets blocked and an empty cache: 521 passed (6 failed before).
+
 ## 2026-11-03 - v0.30.1 - fix: non-CSV data answers, explained HTTP 413, get on Bundesbank/BIS/INSEE
 
 - **Data bodies are checked before CSV parsing** (`_read_csv_response` in `base.py`): a ZIP is unpacked and its CSV members concatenated, up to 1 GB expanded (Bundesbank documents zipping SDMX-CSV above 200 series; not tested on a real Bundesbank ZIP); an XML/HTML/JSON body stops with `NonCsvResponseError` showing status, Content-Type and the first 300 characters; Eurostat's asynchronous-delivery envelope (`syncResponse` with a `queued` id) gets its own message with the request id. Before, any 2xx body went straight to `pl.read_csv`. Async polling itself is still out (#40).
