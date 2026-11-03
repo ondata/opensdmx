@@ -854,11 +854,82 @@ def _parse_sdmx_json(payload: dict[str, Any]) -> pl.DataFrame:
     return pl.DataFrame(rows).with_columns(pl.col("OBS_VALUE").cast(pl.Float64, strict=False))
 
 
-def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) -> pl.DataFrame:
-    """Make a request and return CSV content as a Polars DataFrame."""
+class NonCsvResponseError(Exception):
+    """A data request returned 2xx with a body that is not CSV.
+
+    Raised instead of handing an XML/HTML/JSON body to the CSV parser, which
+    would fail with a parser error or yield garbage rows.
+    """
+
+
+def _parse_csv_bytes(content: bytes) -> pl.DataFrame:
     import io
+
     import polars as pl
 
+    return pl.read_csv(
+        io.BytesIO(content),
+        infer_schema_length=0,
+        null_values=[],
+        schema_overrides={
+            "TIME_PERIOD": pl.Utf8,
+            "OBS_VALUE": pl.Float64,
+            "OBS_FLAG": pl.Utf8,
+            "OBS_STATUS": pl.Utf8,
+            "CONF_STATUS": pl.Utf8,
+        },
+    )
+
+
+def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
+    """Parse a data response as CSV, after checking it is CSV.
+
+    - ZIP body (Bundesbank sends SDMX-CSV with >200 series zipped): the CSV
+      members are parsed and concatenated.
+    - XML/HTML/JSON body: ``NonCsvResponseError`` with status, Content-Type
+      and the start of the body. Eurostat's asynchronous-delivery envelope
+      (``syncResponse`` with a ``queued`` id) gets a dedicated message.
+    """
+    import io
+    import zipfile
+
+    import polars as pl
+
+    content = resp.content
+    if content.startswith(b"PK\x03\x04"):
+        with zipfile.ZipFile(io.BytesIO(content)) as zf:
+            members = [n for n in zf.namelist() if n.lower().endswith(".csv")]
+            if not members:
+                raise NonCsvResponseError(
+                    f"The provider returned a ZIP file with no CSV inside "
+                    f"(members: {', '.join(zf.namelist()) or 'none'})."
+                )
+            frames = [_parse_csv_bytes(zf.read(n)) for n in members]
+        return frames[0] if len(frames) == 1 else pl.concat(frames, how="diagonal")
+
+    head = content.lstrip(b"\xef\xbb\xbf \t\r\n")[:1]
+    if head in (b"<", b"{", b"["):
+        text = content.decode("utf-8", errors="replace")
+        queued = re.search(r"<queued>.*?<id>\s*([^<\s]+)\s*</id>", text, re.S)
+        if "syncResponse" in text and queued:
+            raise NonCsvResponseError(
+                "The provider is preparing this extraction asynchronously "
+                f"(request id {queued.group(1)}): the query is too large to be served "
+                "directly. Narrow the filters (fewer codes per dimension, shorter "
+                "period) or retry the same request later."
+            )
+        snippet = " ".join(text.split())[:300]
+        raise NonCsvResponseError(
+            f"Expected CSV data but the provider returned "
+            f"{resp.headers.get('content-type', 'an unknown content type')} "
+            f"(HTTP {resp.status_code}). Start of the response: {snippet}"
+        )
+
+    return _parse_csv_bytes(content)
+
+
+def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) -> pl.DataFrame:
+    """Make a request and return CSV content as a Polars DataFrame."""
     provider = get_provider()
     data_accept = provider.get("data_accept")
     fmt = provider.get("data_format_param")
@@ -900,4 +971,4 @@ def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) 
         resp = sdmx_request(
             path, accept="text/csv", _is_data=True, _explain_probe=_explain_probe, **params
         )
-    return pl.read_csv(io.BytesIO(resp.content), infer_schema_length=0, null_values=[], schema_overrides={"TIME_PERIOD": pl.Utf8, "OBS_VALUE": pl.Float64, "OBS_FLAG": pl.Utf8, "OBS_STATUS": pl.Utf8, "CONF_STATUS": pl.Utf8})
+    return _read_csv_response(resp)

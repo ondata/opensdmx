@@ -1,5 +1,13 @@
 # LOG
 
+## 2026-11-03 - fix: non-CSV data answers and explained HTTP 413
+
+- **Data bodies are checked before CSV parsing** (`_read_csv_response` in `base.py`): a ZIP is unpacked and its CSV members concatenated (Bundesbank documents zipping SDMX-CSV above 200 series; not tested on a real Bundesbank ZIP, and Bundesbank `get` fails anyway on its semicolon-separated CSV, a pre-existing bug); an XML/HTML/JSON body stops with `NonCsvResponseError` showing status, Content-Type and the first 300 characters; Eurostat's asynchronous-delivery envelope (`syncResponse` with a `queued` id) gets its own message with the request id. Before, any 2xx body went straight to `pl.read_csv`. Async polling itself is still out (#40).
+- **HTTP 413 explained**: new optional `portals.json` field `too_large_hint`, printed after `HTTP 413` by `get`, `run` and `plot`; a generic "more filters or a shorter period" hint otherwise. Declared for eurostat, comext (5M-cell limit), bundesbank (data generated in the background, retry later) and oecd (`--last-n`/`--first-n` blocked on very large dataflows). Sources: the Eurostat async API guide, Bundesbank and OECD API docs (docs-only review, no heavy queries).
+- **Visible change for BIS and INSEE**: asked for `text/csv` they answer SDMX-ML XML with HTTP 200; `get` used to print that XML as a one-column table, now it stops with `Expected CSV data`. Both were already unusable; the real fix (declare the right format in `portals.json`) is a follow-up.
+- `NonCsvResponseError` exported from `opensdmx`. Error lines in `get`/`run`/`plot` now escape Rich markup, since they can carry provider text.
+- Skill: new "Too-large or non-CSV answers" section; Comext row in the provider matrix; OECD `--last-n` 413 note.
+
 ## 2026-10-29 - v0.30.0 - feat: ISTAT HVD provider, shared rate-limit group
 
 - **New provider `istat_hvd`** (#98): ISTAT's High Value Datasets endpoint `esploradati.istat.it/HVD/rest`, 17 consolidated dataflows with IDs of their own. Flags from probes, not copied from `istat`: `constraints` off (`contentconstraint` 404, `availableconstraint` 500), `tree`/`last_n`/filtered `get` on, no annotations. Answered while `SDMXWS` data calls failed.

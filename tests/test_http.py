@@ -126,6 +126,93 @@ class TestSdmxRequestCsv:
             df = sdmx_request_csv("data/UNE_RT_M")
         assert df["TIME_PERIOD"].dtype == pl.Utf8
 
+    @staticmethod
+    def _fetch(content: bytes, content_type: str = "text/csv"):
+        resp = MagicMock()
+        resp.content = content
+        resp.status_code = 200
+        resp.headers = {"content-type": content_type}
+        with patch("opensdmx.base.sdmx_request", return_value=resp):
+            return sdmx_request_csv("data/X")
+
+    @staticmethod
+    def _zip(members: dict[str, bytes]) -> bytes:
+        import io
+        import zipfile
+
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as zf:
+            for name, data in members.items():
+                zf.writestr(name, data)
+        return buf.getvalue()
+
+    def test_plain_csv_unchanged(self):
+        df = self._fetch(_CSV_CONTENT)
+        assert df.shape == (2, 4)
+        assert df["OBS_VALUE"].dtype == pl.Float64
+
+    def test_zip_with_one_csv(self):
+        """Bundesbank zips SDMX-CSV above 200 series."""
+        df = self._fetch(self._zip({"data.csv": _CSV_CONTENT}), "application/zip")
+        assert df.shape == (2, 4)
+        assert df["TIME_PERIOD"].dtype == pl.Utf8
+
+    def test_zip_with_several_csv_concatenated(self):
+        quarterly = b"FREQ,GEO,TIME_PERIOD,OBS_VALUE\nQ,IT,2020-Q1,7.1\n"
+        df = self._fetch(
+            self._zip({"m.csv": _CSV_CONTENT, "q.csv": quarterly}), "application/zip"
+        )
+        assert df.height == 3
+        assert set(df["FREQ"].to_list()) == {"M", "Q"}
+
+    def test_zip_without_csv_raises(self):
+        from opensdmx.base import NonCsvResponseError
+
+        with pytest.raises(NonCsvResponseError, match="no CSV"):
+            self._fetch(self._zip({"readme.txt": b"x"}), "application/zip")
+
+    def test_xml_body_raises_with_snippet(self):
+        from opensdmx.base import NonCsvResponseError
+
+        body = b'<?xml version="1.0"?>\n<error>Something went wrong</error>'
+        with pytest.raises(NonCsvResponseError) as exc:
+            self._fetch(body, "application/xml")
+        msg = str(exc.value)
+        assert "application/xml" in msg
+        assert "HTTP 200" in msg
+        assert "Something went wrong" in msg
+
+    def test_json_body_raises(self):
+        from opensdmx.base import NonCsvResponseError
+
+        with pytest.raises(NonCsvResponseError, match="application/json"):
+            self._fetch(b'{"error": "too big"}', "application/json")
+
+    def test_eurostat_async_envelope_names_the_id(self):
+        from opensdmx.base import NonCsvResponseError
+
+        body = b"""<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Header />
+    <env:Body>
+        <ns0:syncResponse xmlns:ns0="http://estat.ec.europa.eu/disschain/soap/extraction">
+            <processingTime>412</processingTime>
+            <queued>
+                <id>98de05ea-540a-43d3-903b-7c9e14faf808</id>
+                <status>SUBMITTED</status>
+            </queued>
+        </ns0:syncResponse>
+    </env:Body>
+</env:Envelope>"""
+        with pytest.raises(NonCsvResponseError) as exc:
+            self._fetch(body, "text/xml")
+        msg = str(exc.value)
+        assert "asynchronously" in msg
+        assert "98de05ea-540a-43d3-903b-7c9e14faf808" in msg
+
+    def test_csv_with_bom_unchanged(self):
+        df = self._fetch(b"\xef\xbb\xbf" + _CSV_CONTENT)
+        assert df.height == 2
+
     @pytest.mark.parametrize("extra", [{}, {"data_format_param": "SDMX-CSV"}])
     def test_unsupported_params_dropped_without_data_accept(self, extra):
         """unsupported_params applies on every data path, not only with data_accept."""
