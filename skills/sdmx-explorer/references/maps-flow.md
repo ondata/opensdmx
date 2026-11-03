@@ -56,14 +56,18 @@ Same skeleton as maps.md (fixed size, export buttons), with this map definition:
 ```js
 const GRAPH = $GRAPH;
 const fmt = new Intl.NumberFormat('it-IT', { notation: 'compact', maximumFractionDigits: 1 });
-const CODE_BY_VALUE = new Map(GRAPH.links.map(l => [l.value, l.target]));   // flow label = country code, see below
+const REPORTER = 'IT';
+const partner = l => (l.source === REPORTER ? l.target : l.source);   // exports: target; imports: source
+const values = GRAPH.links.map(l => l.value);
+const UNIQUE = new Set(values).size === values.length;                 // lookup by value needs distinct amounts
+const CODE_BY_VALUE = new Map(UNIQUE ? GRAPH.links.map(l => [l.value, partner(l)]) : []);   // flow label = country code, see below
 const map = eurostatmap.map('flow')
   .svgId('map').width(800).height(720).zoomButtons(false)
   .nutsLevel(0).scale('60M')
   .title('Italian exports of goods')
   .subtitle('Top 10 European destinations, 2024, euro')
   .footnote('Bn €: ' + GRAPH.links.slice().sort((a, b) => b.value - a.value)
-      .map(l => l.target + ' ' + (l.value / 1e9).toFixed(1)).join(' · ')
+      .map(l => partner(l) + ' ' + (l.value / 1e9).toFixed(1)).join(' · ')
       + '. Source: Eurostat Comext, dataset DS-045409')   // amounts here, codes on the map
   .footnoteWrap(false)
   .showSourceLink(false)
@@ -87,13 +91,13 @@ map.build();
   - two-letter code + value ("DE 70,5 Mld"): still the same 2 collisions;
   - two-letter code only ("DE"): no collisions.
 
-  So: label each flow with the **two-letter code only**, and put the amounts in the footnote, ordered, one line: `Mld €: DE 70,5 · FR 61,7 · ... · AT 12,5. Fonte: ...`. The band width and the width legend carry the size; the footnote carries the exact figure. The library passes only the node value to `valuesFormatter`, so the code is looked up from the value (flow values are distinct):
+  So: label each flow with the **two-letter code only**, and put the amounts in the footnote, ordered, one line: `Mld €: DE 70,5 · FR 61,7 · ... · AT 12,5. Fonte: ...`. The band width and the width legend carry the size; the footnote carries the exact figure. The library passes only the node value to `valuesFormatter`, so the code is looked up from the value. Two cautions, both handled in the Step 3 code: the partner is `target` for exports but `source` for imports (where the target is the reporter), and the lookup only works when amounts are distinct: if two flows have the same amount, fall back to value labels (`CODE_BY_VALUE` stays empty and `fmt.format(v)` is used).
 
   ```js
-  const CODE_BY_VALUE = new Map(GRAPH.links.map(l => [l.value, l.target]));
+  const CODE_BY_VALUE = new Map(UNIQUE ? GRAPH.links.map(l => [l.value, partner(l)]) : []);
   // .labels({ values: true, backgrounds: true, shadows: false, valuesFormatter: v => CODE_BY_VALUE.get(v) || fmt.format(v) })
   // .footnote('Mld €: ' + GRAPH.links.slice().sort((a, b) => b.value - a.value)
-  //     .map(l => l.target + ' ' + (l.value / 1e9).toLocaleString('it-IT', { maximumFractionDigits: 1 })).join(' · ')
+  //     .map(l => partner(l) + ' ' + (l.value / 1e9).toLocaleString('it-IT', { maximumFractionDigits: 1 })).join(' · ')
   //     + '. Fonte: Eurostat Comext, dataset DS-045409')
   // .footnoteWrap(false)   // the library wraps on any space and splits "AT" from "12,5"; keep it on one line
   ```

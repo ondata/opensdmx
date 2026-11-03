@@ -187,10 +187,10 @@ Reviewed [nbbrd/sdmx-dl](https://github.com/nbbrd/sdmx-dl) (Java, National Bank 
 
 ### Worth adopting
 
-**1. User-extensible source registry** *(high priority, medium effort)*
+**1. User-extensible source registry** *(implemented in v0.29.0: user-level `portals.json`, #94)*
 sdmx-dl reads source definitions from a file that the user can point at (`-s, --sources <file>`, or the `sdmxdl.registry.sourceFile` property / `SDMXDL_REGISTRY_SOURCEFILE` env var), overlaying the built-in registry. In opensdmx a new provider requires a PR to `portals.json`; `--provider <URL>` + `OPENSDMX_AGENCY` already resolve an unlisted endpoint, but with no place to declare its quirks. An overlay file (`OPENSDMX_PROVIDERS_FILE`, same schema as `portals.json`, merged over the built-ins) extends a mechanism that already exists and keeps quirks declarative — no scattered `if provider == ...`.
 
-**2. `--explain` — print the execution plan without fetching** *(high priority, low effort)*
+**2. `--explain` — print the execution plan without fetching** *(implemented: `--explain` on `get` and the other commands)*
 sdmx-dl has a common `--explain` option that writes the execution plan to stderr. opensdmx has no equivalent: `--query-file` saves parameters, not URLs. Printing the exact endpoint(s) a command would call — and stopping there — serves provenance (the AI can inspect the query before spending a call) and rate-limited providers such as ISTAT, where a wrong query costs minutes.
 
 **3. `check access` as a first-class command** *(medium priority, low effort)*
@@ -258,7 +258,7 @@ Reviewed the [Eurostat "Data access via API" user guide](https://ec.europa.eu/eu
 
 ### Worth adopting
 
-**1. Handle asynchronous delivery and `EXTRACTION_TOO_BIG`** *(high priority, medium effort)*
+**1. Handle asynchronous delivery and `EXTRACTION_TOO_BIG`** *(partly implemented in v0.30.1, #101: the queued envelope stops `get` with the request id, a 413 prints a hint; still missing: polling and downloading the queued result)*
 Eurostat estimates the cost of a data query as the product of the positions matched by each dimension filter: below 500,000 cells the answer is synchronous, between 500,000 and 5,000,000 it is asynchronous, above 5,000,000 it is a 413 `EXTRACTION_TOO_BIG`. Requests can also be forced to async by fair-use thresholds (concurrency, requests and cumulative cost per day/7/30 days). An async answer is a SOAP envelope (`syncResponse/queued/id`), to be polled at `/1.0/async/status/<id>` (`SUBMITTED`, `PROCESSING`, `AVAILABLE`, `EXPIRED`, `UNKNOWN_REQUEST`, `ERROR`) and then downloaded. `sdmx_request_csv()` passes the body straight to `pl.read_csv`, so this envelope would be parsed as CSV (not reproduced live, to avoid a heavy query). Applies to Comext too, where unfiltered CN8 products hit the async range easily. Declare it as a quirk in `portals.json`. Bonus: with constraints already cached, `--explain` can estimate the cost and say "sync / async / rejected" before fetching. Tracked in [#40](https://github.com/ondata/opensdmx/issues/40) (closed, not a priority): the guide's examples run on the `/sdmx/2.1/data/` endpoint opensdmx uses, but the prerequisite stays a raw capture of a filtered SDMX-CSV query in the 500k-5M window, to see what comes back. [Guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/asynchronous-api).
 
 **2. `metabase.txt.gz` as the Eurostat constraints source** *(high priority, low effort)*

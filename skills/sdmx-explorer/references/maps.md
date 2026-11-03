@@ -36,7 +36,7 @@ A map shows one number per region. Fix every dimension except `geo` to a single 
 opensdmx get tgs00010 --sex T --isced11 TOTAL --last-n 1 --labels --out data.csv
 ```
 
-`--last-n 1` returns the last observation **of each series**, and series end in different years: in the example above, 289 regions have 2025 and 41 stop at 2019. Never map that mix. Check the coverage per year and pick the year with most regions (usually the latest):
+`--last-n 1` returns the last observation **of each series**, and series end in different years: in the example above, 289 regions have 2025 and 41 stop at 2019. Never map that mix. Use this download only as a preview, to choose the year: check when the series end and pick the year with most regions (usually the latest):
 
 ```bash
 duckdb -c "select year(TIME_PERIOD) y, count(*) n
@@ -45,6 +45,12 @@ duckdb -c "select year(TIME_PERIOD) y, count(*) n
 ```
 
 Read the CSV with `all_varchar=true`: DuckDB otherwise sniffs `sex=T` as a BOOLEAN and codes like `EL`, `NO` can be mangled. Cast only `OBS_VALUE` and `TIME_PERIOD`.
+
+These counts say when each series **ends**, not how many regions have a value in a given year: a region whose series ends in 2025 is missing from the 2024 count even when it has a 2024 value. So fetch the chosen year itself before building the map data:
+
+```bash
+opensdmx get tgs00010 --sex T --isced11 TOTAL --start-period 2025 --end-period 2025 --labels --out data.csv
+```
 
 Then export a JSON object keyed by `geo`, the shape `statData().setData()` expects (`{"AT11": {"value": 5.0, "status": ""}, ...}`). The `status` carries the Eurostat flag (`e` estimated, `p` provisional, `b` break) and the library shows it in the tooltip.
 
