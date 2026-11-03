@@ -15,6 +15,17 @@
 - `NonCsvResponseError` exported from `opensdmx`. Error lines in `get`/`run`/`plot` now escape Rich markup, since they can carry provider text.
 - Skill: new "Too-large or non-CSV answers" section; Comext row in the provider matrix; OECD `--last-n` 413 note.
 
+## 2026-11-02 - skill: Eurostat maps with eurostat-map
+
+- **sdmx-explorer Step 6b — Maps (Eurostat only)** and new `references/maps.md`: a self-contained HTML page with [eurostat-map](https://github.com/eurostat/eurostat-map) 4.12.1, data from `opensdmx get` inlined via `statData().setData()`. Skill only, no CLI change.
+- Recipe verified by rendering real maps headless: NUTS 2 choropleth (`tgs00010`), country proportional symbols (`demo_pjan`), diverging map (`demo_r_gind3`), Italy zoom, overseas insets.
+- Colour rules from the cartographic literature (Brewer, Harrower & Brewer, Crameri et al.) with measured CIEDE2000 contrast between adjacent classes, also under simulated deuteranopia/protanopia: viridis 5-6 classes for sequential data, RdBu for diverging, no-data `#969696`.
+- Readable overseas insets: own 2 × 5 column, mainland shifted left; `.insets('default')` covers eastern Europe. `.insets()` must be called after data and colours, otherwise the whole map renders uncoloured with no error.
+- Sub-references for other map types: `maps-symbols.md` (size, size + colour, dorling), `maps-flow.md` (Comext origin-destination, `GR`/`GB` → `EL`/`UK`), `maps-annotations.md` (callouts with white note box and cased connector).
+- **eurostat-map 4.12-4.13 treats an exact 0 as missing**: class `NaN`, grey region on choropleths; on symbol maps the colour function throws, every later circle stays black and dorling never starts (471/1,333 black circles at NUTS 3). Fix in data prep: 0 → `1e-9`.
+- Export without installing anything: the page carries "PNG/SVG" buttons calling the library's `exportMapToPNG(2w, 2h, name)` / `exportMapToSVG(name)`; fixed `.width/.height`, `zoomButtons(false)`. CSS halos break in the export, so readable text uses SVG boxes/casings.
+- Localisation rules: titles, `noDataText` (map and `colorLegend`), legend `labelFormatter` (decimal comma, "mln"), flow legend labels via `regionColorLegend.labels`; place names by map scale (country codes at NUTS 0, codes + amounts in footnote on flows, annotations at NUTS 2/3).
+
 ## 2026-10-29 - v0.30.0 - feat: ISTAT HVD provider, shared rate-limit group
 
 - **New provider `istat_hvd`** (#98): ISTAT's High Value Datasets endpoint `esploradati.istat.it/HVD/rest`, 17 consolidated dataflows with IDs of their own. Flags from probes, not copied from `istat`: `constraints` off (`contentconstraint` 404, `availableconstraint` 500), `tree`/`last_n`/filtered `get` on, no annotations. Answered while `SDMXWS` data calls failed.

@@ -180,3 +180,123 @@ Tested embedding-based semantic search over the harvested ISTAT descriptions (`s
 - Same embeddings can also do **intent routing** (route query → action: search / territorial view / fetch) in a future no-LLM app — the pattern Aurelio's semantic-router popularized.
 - Corpus hygiene matters: catalog names like "dataflow eliminato" surface in top results; deleted dataflows should be filtered before indexing.
 - Literature check (2025-2026): lightweight routers reach 80–88% accuracy at <4 ms vs ~91% for LLMs at 60–700 ms — [GQR-Bench, arXiv:2505.14524](https://arxiv.org/abs/2505.14524); simple kNN over embeddings beats learned routers — [arXiv:2505.12601](https://arxiv.org/abs/2505.12601); tool-calling routers are an active 2026 topic — [Switchcraft, arXiv:2605.07112](https://doi.org/10.48550/arxiv.2605.07112), [NTILC, arXiv:2606.06566](https://arxiv.org/abs/2606.06566). Reference libraries: [semantic-router](https://github.com/aurelio-labs/semantic-router) (FastEmbed encoder supported), [SynaptoRoute](https://github.com/sitanshukr08/SynaptoRoute).
+
+## sdmx-dl-Inspired (2026-08-19)
+
+Reviewed [nbbrd/sdmx-dl](https://github.com/nbbrd/sdmx-dl) (Java, National Bank of Belgium, EUPL) looking for ideas that fit opensdmx **without changing its logic**. Its source registry (`docs/assets/sources.csv`) is the direct counterpart of our `portals.json`; the CLI is a `verb + noun` hierarchy (`fetch data`, `list flows`, `check status`, `setup completion`).
+
+### Worth adopting
+
+**1. User-extensible source registry** *(implemented in v0.29.0: user-level `portals.json`, #94)*
+sdmx-dl reads source definitions from a file that the user can point at (`-s, --sources <file>`, or the `sdmxdl.registry.sourceFile` property / `SDMXDL_REGISTRY_SOURCEFILE` env var), overlaying the built-in registry. In opensdmx a new provider requires a PR to `portals.json`; `--provider <URL>` + `OPENSDMX_AGENCY` already resolve an unlisted endpoint, but with no place to declare its quirks. An overlay file (`OPENSDMX_PROVIDERS_FILE`, same schema as `portals.json`, merged over the built-ins) extends a mechanism that already exists and keeps quirks declarative — no scattered `if provider == ...`.
+
+**2. `--explain` — print the execution plan without fetching** *(implemented: `--explain` on `get` and the other commands)*
+sdmx-dl has a common `--explain` option that writes the execution plan to stderr. opensdmx has no equivalent: `--query-file` saves parameters, not URLs. Printing the exact endpoint(s) a command would call — and stopping there — serves provenance (the AI can inspect the query before spending a call) and rate-limited providers such as ISTAT, where a wrong query costs minutes.
+
+**3. `check access` as a first-class command** *(medium priority, low effort)*
+sdmx-dl exposes reachability with a fixed output shape: `Source | Accessible | URI | DurationInMillis | ErrorMessage`. We already have the logic in `_check_api_reachable()` and `scripts/monitor_latency.py`, but not as a user-facing command. Promoting it (`opensdmx check <provider>`) is packaging, not new logic. Their `check status` reads an external uptime monitor (Upptime, declared per-source in the registry) — worth noting as an optional `monitor_url` field, not as a dependency.
+
+**4. Language priority list** *(medium priority, low effort)*
+`-l, --languages fr,nl,en` selects the label language with a fallback chain. `portals.json` carries a single `language`; ISTAT and Eurostat both serve multilingual labels, so `--labels` currently gets whatever the provider default is. A priority list is contained and directly improves label quality.
+
+**5. An `evaluate-source` skill for onboarding a new provider** *(medium priority, low effort)*
+`.agents/skills/evaluate-source/SKILL.md` is a checklist for assessing a candidate endpoint: probe `dataflow/all/all/all`, test `detail=allcompletestubs` and the trailing-slash quirk, verify the **whole** chain `flows → structure → data` down to one real observation, capture raw payloads as test fixtures, and treat documentation as a hypothesis to verify against live responses. It is the same discipline we apply by hand; it belongs next to `docs/provider-proposals.md` and the `multiprovider-reviewer` agent.
+
+**6. Probed vs declared capabilities** *(low priority, medium effort)*
+`opensdmx providers` already shows `constraints`/`last_n`/`categories` — but as flags **declared** in `portals.json`. sdmx-dl's `list features` reports what the endpoint actually answers. A `--probe` flag that verifies the declared flags against the live service would keep `portals.json` honest over time.
+
+### Already solved differently
+
+- **`fetch keys` / `SERIES_KEYS_ONLY`** — listing series keys without observations. We cover the same need with `constraints` (real codes, not codelists) plus `--last-n 1`.
+- **Per-source `Confidentiality` driving cache policy** — meaningful when sources are private; all 15 of our providers are public.
+- **Aliases, per-source properties, rate limits** — already in `portals.json`.
+
+### Deliberately not adopted
+
+- **`verb + noun` command hierarchy** (`fetch data`, `list flows`) — cleaner on paper, but it would break every existing script, the saved queries and the `sdmx-explorer` skill. Not worth it.
+- **gRPC/REST web service** (`sdmx-dl-grpc`, ports 4557/4559) — a different product; our bridge to other tools is the CLI plus the Agent Skill / MCP route.
+- **MSAL + OS keystore authentication** — Windows-only in their implementation, and no provider we support requires credentials.
+- **SPI/driver plugin architecture** (`ServiceLoader`, `list plugins`) — the right answer for a Java library with 10+ dialects; over-engineering for a declarative `portals.json`.
+
+## StatCheck/STaR-Inspired (2026-09-23)
+
+Reviewed the work of Inria's CEDAR team (Ioana Manolescu) on statistical fact-checking, presented at the médialab Sciences Po [seminar of 8 October 2026](https://medialab.sciencespo.fr/en/news/statcheck-vers-un-acces-rapide-et-sur-a-des-statistiques-de-qualite-ioana-manolescu-cedar/). StatCheck, built with Radio France journalists over INSEE and Eurostat, chains three problems: finding data files on websites, turning human-oriented spreadsheets into machine-readable tables, and answering a natural-language question from those tables. Only the third one applies to opensdmx.
+
+Sources: [StatCheck in Action, CIKM 2022](https://inria.hal.science/hal-03767992); [STaR: Space and Time-aware Statistic Query Answering, CIKM 2024](https://doi.org/10.1145/3627673.3679209); [STAR: Efficient, Scalable, and Modular Retrieval of Statistical Tables, extended version](https://pierre.senellart.com/publications/gauquier2026star.pdf); [project page](https://team.inria.fr/cedar/projects/statcheck/).
+
+### Worth adopting
+
+**1. Space and time as filters, not as keywords** *(high priority, medium effort)*
+STaR extracts location and time from the query ("youth unemployment *in Sicily* *in 2023*"), uses them only to filter tables by their declared spatial and temporal scope, and ranks the survivors on the stripped remainder ("youth unemployment"). The authors report a clear quality gain over treating the whole query as text. Today `search` feeds "Sicilia" to BM25 as an ordinary token, rewarding titles that mention it instead of dataflows that actually carry regional data. Most pieces already exist: `REF_AREA` and `TIME_PERIOD` coverage per dataflow in `data/constraints/`, the territorial view `istat_territorial.csv`, and the BM25 ranker in `ranking.py`. Missing: a no-LLM extractor (gazetteer of NUTS/ISTAT place names + year regex) and a pre-ranking filter. Must be measured on the existing gold sets before shipping.
+
+**2. Query relaxation along the geographic hierarchy** *(medium priority, low effort once #1 exists)*
+When nothing matches at the requested granularity, STaR climbs the space hierarchy (municipality → province → region → NUTS1) or widens the time range. For an AI orchestrating the CLI, "not available by municipality, available by province in these dataflows" is far more useful than zero results.
+
+**3. Index the labels of the codes actually present** *(medium priority, medium effort)*
+StatCheck indexes, per dataset, the decoded labels of the concept codes it contains (Eurostat dictionaries), not just title and comments. The constraints archive already holds the real codes per dataflow: adding their labels to the search corpus would let "graduates" reach dataflows that contain an `ISCED 5-8` value even when the title does not say so. Index size must be checked against the Eurostat catalogue.
+
+**4. Answer at series level, not only at dataflow level** *(low priority, high effort)*
+StatCheck returns, in priority order, a cell, a row, a column, then the whole table. The SDMX equivalent is proposing a ready-made key — a `get` command with filters inferred from the query. Overlaps with the research-agent direction in the Feynman section above.
+
+### Confirmed design choices
+
+- **Index everything except the values.** Fact values answer questions but never appear in them, so only non-value cells need indexing; this keeps StatCheck's indexes tractable on hundreds of millions of facts. Same principle as indexing metadata and codes rather than observations.
+- **Statistical tables are order-independent.** The authors argue against serialising rows for language models: column order carries no meaning in multidimensional data. Consistent with working on dimensions and codes.
+
+### Not applicable
+
+- **Focused crawling** ([SB-Classifier, arXiv:2602.11874](https://arxiv.org/abs/2602.11874)) and **spreadsheet table extraction** ([Cao et al. 2017](https://inria.hal.science/hal-01496700), [Kronlund-Drouault 2025](https://inria.hal.science/hal-05219883)) solve problems SDMX does not have: the data is already structured and queryable. They are a good argument for *why* SDMX matters.
+- **Claim detection** in text is outside the scope of a data CLI.
+
+### Open question
+
+The extended STAR paper introduces a benchmark for "statistical table discovery". Not yet checked whether it is public; if so, it could complement our gold sets to measure #1.
+
+## Eurostat API Guide-Inspired (2026-11-03)
+
+Reviewed the [Eurostat "Data access via API" user guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access) against the current code. None of the endpoints below is used by opensdmx today.
+
+### Worth adopting
+
+**1. Handle asynchronous delivery and `EXTRACTION_TOO_BIG`** *(partly implemented in v0.30.1, #101: the queued envelope stops `get` with the request id, a 413 prints a hint; still missing: polling and downloading the queued result)*
+Eurostat estimates the cost of a data query as the product of the positions matched by each dimension filter: below 500,000 cells the answer is synchronous, between 500,000 and 5,000,000 it is asynchronous, above 5,000,000 it is a 413 `EXTRACTION_TOO_BIG`. Requests can also be forced to async by fair-use thresholds (concurrency, requests and cumulative cost per day/7/30 days). An async answer is a SOAP envelope (`syncResponse/queued/id`), to be polled at `/1.0/async/status/<id>` (`SUBMITTED`, `PROCESSING`, `AVAILABLE`, `EXPIRED`, `UNKNOWN_REQUEST`, `ERROR`) and then downloaded. `sdmx_request_csv()` passes the body straight to `pl.read_csv`, so this envelope would be parsed as CSV (not reproduced live, to avoid a heavy query). Applies to Comext too, where unfiltered CN8 products hit the async range easily. Declare it as a quirk in `portals.json`. Bonus: with constraints already cached, `--explain` can estimate the cost and say "sync / async / rejected" before fetching. Tracked in [#40](https://github.com/ondata/opensdmx/issues/40) (closed, not a priority): the guide's examples run on the `/sdmx/2.1/data/` endpoint opensdmx uses, but the prerequisite stays a raw capture of a filtered SDMX-CSV query in the 500k-5M window, to see what comes back. [Guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/asynchronous-api).
+
+**2. `metabase.txt.gz` as the Eurostat constraints source** *(high priority, low effort)*
+One gzipped TSV with `dataset / dimension / position` for every Eurostat dataset — the codes actually present. It is what `data/constraints/eurostat.parquet` assembles one dataflow at a time: one daily download would make the archive complete, and `constraints` could work offline. [Guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/catalogue-api/metabase), [file](https://ec.europa.eu/eurostat/api/dissemination/catalogue/metabase.txt.gz).
+
+**3. Table of contents (TOC) for freshness, coverage and descriptions** *(medium priority, low effort)*
+`catalogue/toc/xml` gives, per dataset: last data update, last structure change, data start and end, number of values, short description (EN/FR/DE) and position in the navigation tree. None of this is in the `allstubs` dataflow list. It would enrich `search` and `info` (stale vs current data, years covered) and give real text to semantic search, as METADATA_API does for ISTAT. [Guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/catalogue-api/toc).
+
+### Minor
+
+- **RSS feed of changes** (last 7 days, rebuilt at 11:00 and 23:00): targeted cache invalidation for datasets, structures and codelists that actually changed, instead of the fixed 7-day TTL. [Guide](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/catalogue-api/rss).
+- **`detail=serieskeysonly`** to count series before downloading; **`compressed=true`** to cut transfer size.
+- **`geoLevel`** (`aggregate`, `country`, `nuts1-3`, `city`) exists only in the Statistics API, not in SDMX; the same filter can be done client-side from the length of `geo` codes.
+
+### Already solved differently
+
+- **Server-side labels** (`labels=both` in SDMX 3.0 CSV): `--labels` already covers it.
+- **Fair use** (one request at a time, no parallelism): the built-in rate limiter already serialises calls.
+
+## OECDdata-Inspired (2026-11-03)
+
+Reviewed [OECDdata](https://cran.r-project.org/web/packages/OECDdata/index.html) 0.3.4 (R, MIT, published 2026-11-01), an OECD-only client modelled on `eurodata`: SDMX REST v2 by default, SDMX-CSV 2 payloads, catalogue-resolved short codes, coverage-based `describe`/`compare`.
+
+### Worth adopting
+
+**1. Catalogue-resolved short dataflow IDs** *(high priority, low effort)*
+OECDdata accepts `CLI`, `DF_CLI`, `DSD_STES@DF_CLI` or the full `OECD.SDD.STES,DSD_STES@DF_CLI`. Short forms are matched against the current catalogue (no hard-coded aliases) and ambiguity is an error. In opensdmx, checked 2026-11-03: `opensdmx info DF_CLI -p oecd` and `opensdmx info CLI -p oecd` both fail with `Could not find dataset`; only the full ID works, after a `search`. For an AI orchestrating the CLI this means one call less and fewer invented IDs. Declare it in `portals.json` (the `AGENCY,DSD@DF` shape is OECD-specific), not as an `if provider == "oecd"`.
+
+**2. `compare` — code coverage across dataflows** *(medium priority, low effort)*
+Rows are the union of dimension/code pairs, with one boolean column per dataflow; conflicting labels are joined and warned about, not overwritten. Built on our constraints, it would answer "which of these two dataflows has provinces?" in one output. Same caveat as theirs: matching dimension IDs do not prove the same concept. Different from the cross-provider indicator `compare` in the Feynman section above.
+
+### Minor
+
+- **Explicit offline mode**: accept expired but intact cache entries, and fail explicitly on missing or corrupt ones instead of going to the network. Useful in sandboxes without network.
+- **Read `Retry-After`**: they honour it and fail when the wait exceeds a maximum. We deliberately do not retry on 4xx (ISTAT bans); reading the header only to tell the user how long to wait fits that choice.
+- **Local download budget** (60 attempts per rolling hour, retries included): our limiter spaces calls but has no ceiling.
+
+### Already solved
+
+- Actual constraints vs allowed codelists kept distinct: `constraints` vs `values`.
+- `UNIT_MULT` not applied automatically, free dimensions and series gaps before computing changes: covered as analysis guidance in the sdmx-explorer skill.
