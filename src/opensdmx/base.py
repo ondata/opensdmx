@@ -862,15 +862,24 @@ class NonCsvResponseError(Exception):
     """
 
 
+# Cap on the total uncompressed size of a zipped data answer, so a small, highly
+# compressed body cannot exhaust memory.
+_ZIP_MAX_EXPANDED_BYTES = 1024**3
+
+
 def _parse_csv_bytes(content: bytes) -> pl.DataFrame:
+    """Parse SDMX-CSV bytes, with the active provider's declared separator and
+    missing-value markers (Bundesbank: ``;`` and ``.``)."""
     import io
 
     import polars as pl
 
-    return pl.read_csv(
+    provider = get_provider()
+    df = pl.read_csv(
         io.BytesIO(content),
+        separator=provider.get("data_csv_separator", ","),
         infer_schema_length=0,
-        null_values=[],
+        null_values=list(provider.get("data_csv_null_values", [])),
         schema_overrides={
             "TIME_PERIOD": pl.Utf8,
             "OBS_VALUE": pl.Float64,
@@ -879,6 +888,39 @@ def _parse_csv_bytes(content: bytes) -> pl.DataFrame:
             "CONF_STATUS": pl.Utf8,
         },
     )
+    # Blank lines (Bundesbank ends its CSV with an empty \r\n line) come back as
+    # all-null rows: they carry nothing, drop them.
+    if df.width:
+        df = df.filter(~pl.all_horizontal(pl.all().is_null()))
+    return df
+
+
+def _parse_structure_specific(content: bytes) -> pl.DataFrame:
+    """Flatten an SDMX-ML 2.1 StructureSpecificData message to one row per Obs.
+
+    Each row merges the attributes of the enclosing ``Series`` (dimensions and
+    series attributes) with those of the ``Obs``. Namespaced attributes such as
+    ``xsi:type`` are dropped. Column types follow the CSV path: everything is a
+    string except ``OBS_VALUE``.
+    """
+    import polars as pl
+    from lxml import etree
+
+    root = etree.fromstring(content)
+    rows: list[dict[str, str]] = []
+    for obs in root.iter("{*}Obs"):
+        parent = obs.getparent()
+        attrs: dict[str, str] = {}
+        if parent is not None and etree.QName(parent).localname == "Series":
+            attrs.update({str(k): str(v) for k, v in parent.attrib.items()})
+        attrs.update({str(k): str(v) for k, v in obs.attrib.items()})
+        rows.append({k: v for k, v in attrs.items() if not k.startswith("{")})
+    if not rows:
+        return pl.DataFrame()
+    df = pl.DataFrame(rows, infer_schema_length=None)
+    if "OBS_VALUE" in df.columns:
+        df = df.with_columns(pl.col("OBS_VALUE").cast(pl.Float64))
+    return df
 
 
 def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
@@ -888,7 +930,8 @@ def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
       members are parsed and concatenated.
     - XML/HTML/JSON body: ``NonCsvResponseError`` with status, Content-Type
       and the start of the body. Eurostat's asynchronous-delivery envelope
-      (``syncResponse`` with a ``queued`` id) gets a dedicated message.
+      (``syncResponse`` with a ``queued`` id) gets a dedicated message; an
+      SDMX-ML StructureSpecificData message is parsed instead (INSEE).
     """
     import io
     import zipfile
@@ -904,7 +947,21 @@ def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
                     f"The provider returned a ZIP file with no CSV inside "
                     f"(members: {', '.join(zf.namelist()) or 'none'})."
                 )
-            frames = [_parse_csv_bytes(zf.read(n)) for n in members]
+            frames = []
+            budget = _ZIP_MAX_EXPANDED_BYTES
+            for n in members:
+                # Read at most the remaining budget + 1 byte: declared sizes in
+                # the ZIP header can lie, so the limit is enforced while reading.
+                with zf.open(n) as fh:
+                    data = fh.read(budget + 1)
+                budget -= len(data)
+                if budget < 0:
+                    raise NonCsvResponseError(
+                        f"The provider returned a ZIP that expands beyond "
+                        f"{_ZIP_MAX_EXPANDED_BYTES // 1024**2} MB: refusing to unpack it. "
+                        "Narrow the filters to get a smaller answer."
+                    )
+                frames.append(_parse_csv_bytes(data))
         return frames[0] if len(frames) == 1 else pl.concat(frames, how="diagonal")
 
     head = content.lstrip(b"\xef\xbb\xbf \t\r\n")[:1]
@@ -918,6 +975,10 @@ def _read_csv_response(resp: httpx.Response) -> pl.DataFrame:
                 "directly. Narrow the filters (fewer codes per dimension, shorter "
                 "period) or retry the same request later."
             )
+        if "StructureSpecificData" in text[:1000]:
+            # A standard SDMX-ML data message (INSEE answers only this, whatever
+            # Accept says): parse it instead of rejecting it.
+            return _parse_structure_specific(content)
         snippet = " ".join(text.split())[:300]
         raise NonCsvResponseError(
             f"Expected CSV data but the provider returned "
@@ -969,6 +1030,10 @@ def sdmx_request_csv(path: str, *, _explain_probe: bool = False, **params: Any) 
         )
     else:
         resp = sdmx_request(
-            path, accept="text/csv", _is_data=True, _explain_probe=_explain_probe, **params
+            path,
+            accept=provider.get("data_csv_accept", "text/csv"),
+            _is_data=True,
+            _explain_probe=_explain_probe,
+            **params,
         )
     return _read_csv_response(resp)

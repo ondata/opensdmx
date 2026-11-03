@@ -843,9 +843,9 @@ request; do not retry the same call in a loop.
 - `Error: Expected CSV data but the provider returned …` — the body was not CSV; the
   message shows its first characters. Read them: they usually name the problem.
 
-A ZIP answer is unpacked and its CSV files are read; a ZIP with no CSV inside stops with
-an error listing its files. (Bundesbank documents zipping SDMX-CSV above 200 series, but
-`get` on Bundesbank currently fails anyway: its CSV is semicolon-separated.)
+A ZIP answer (Bundesbank documents zipping SDMX-CSV above 200 series) is unpacked and
+its CSV files are read, up to 1 GB expanded; a ZIP with no CSV inside stops with an error
+listing its files.
 
 ### Step 1 — Verify with a preview (last observation)
 
