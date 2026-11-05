@@ -5,6 +5,7 @@ AACT_ALI02,Agricultural labour input statistics - indices,ok,sdmx,5,97,0,"",2026
 AACT_ALI02_R,Agricultural labour input statistics by NUTS 2 region - indices,ok,sdmx,5,349,0,"",2026-07-16
 AACT_EAA01,Economic accounts for agriculture - values at current prices,ok,sdmx,6,255,0,"",2026-07-16
 AACT_EAA01_R,Economic accounts for agriculture by NUTS 2 region - values at current prices,ok,sdmx,6,534,0,"",2026-07-16
+AACT_EAA01_R_H,Economic accounts for agriculture by NUTS 2 region (1973-2012),ok,sdmx,6,529,0,"",2026-11-05
 AACT_EAA02,Economic accounts for agriculture - values at n-1 prices,ok,sdmx,6,244,0,"",2026-07-16
 AACT_EAA02_R,Economic accounts for agriculture by NUTS 2 region - values at n-1 prices,ok,sdmx,6,421,0,"",2026-07-16
 AACT_EAA03,Economic accounts for agriculture - values at reference year prices,ok,sdmx,6,261,0,"",2026-07-16
