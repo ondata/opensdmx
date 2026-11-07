@@ -1404,6 +1404,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 24_84_DF_DCIS_MATRIND_4,Numeri indice,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-17
 25_1242,Intenzioni di fecondità,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
 25_1242_DF_DCCV_FERTINT1_1,Persone 18-49 anni che hanno intenzione di avere un figlio,REF_AREA,nazionale,nazionale,1,2026-07-17
+25_1242_DF_DCCV_FERTINT1_1_YOUTH,Persone 18-49 anni che hanno intenzione di avere un figlio - giovani,REF_AREA,nazionale,nazionale,1,2026-11-07
 25_1242_DF_DCCV_FERTINT1_2,Intenzione di avere figli entro tre anni,REF_AREA,nazionale,nazionale,1,2026-07-17
 25_1242_DF_DCCV_FERTINT1_3,Intenzione di avere figli entro tre anni per numero di figli avuti,REF_AREA,nazionale,nazionale,1,2026-07-17
 25_1242_DF_DCCV_FERTINT1_4,Intenzione di avere figli entro tre anni delle persone con lo stesso territorio di residenza,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-17
@@ -1465,8 +1466,10 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 272_1164_DF_DCCV_RELAZ_PARENT_4,Persone per numero di nonni non conviventi per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_5,Prossimità abitativa per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_6,"Prossimità abitativa - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_6_YOUTH,"Prossimità abitativa - sesso, età - giovani",REF_AREA,nazionale,nazionale,1,2026-11-07
 272_1164_DF_DCCV_RELAZ_PARENT_7,Frequenza dei contatti per territorio,REF_AREA,ripartizione,nazionale|ripartizione,12,2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_8,"Tipo e frequenza dei contatti - sesso, età",REF_AREA,nazionale,nazionale,1,2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_8_YOUTH,"Tipo e frequenza dei contatti - sesso, età - giovani",REF_AREA,ripartizione,nazionale|ripartizione,12,2026-11-07
 27_349,Separazioni - Indicatori 2008-2014,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_349_DF_DCIS_SEPARAZIND_1,Procedimenti e separazioni,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
 27_349_DF_DCIS_SEPARAZIND_2,Caratteristiche del matrimonio e della coppia,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-07-18
@@ -2007,6 +2010,15 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-07
 3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-07
 3_48_DF_DCCN_VAAGSIPET_B19_2,Prodotti e voci di costo - edizioni maggio 2020 - giugno 2024,REF_AREA,regione,nazionale|ripartizione|regione,28,2026-08-15
+3_973,Personale sanitario,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_1,Medici di medicina generale e pediatri libera scelta per sesso e classi di età - regione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_2,"Professionisti attivi (inclusi medici specializzandi) per sesso, classe di età e professioni sanitarie - regione",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_3,"Professionisti attivi (esclusi medici specializzandi) per sesso, settore di lavoro e professioni sanitarie - regione",REF_AREA,regione,nazionale|ripartizione|regione,30,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_4,"Professionisti attivi (esclusi medici specializzandi) con rapporto di lavoro dipendente per settore di lavoro, carattere occupazione e professioni sanitarie - ripartizioni",REF_AREA,regione,nazionale|ripartizione|regione,8,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_5,"Professionisti attivi (esclusi medici specializzandi e farmacisti) per codice Ateco ""Assistenza sanitaria (86)"" e settore di lavoro - ripartizione",REF_AREA,regione,nazionale|ripartizione|regione,8,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_6,Farmacisti attivi per settore di lavoro e codice Ateco prevalente - ripartizione,REF_AREA,regione,nazionale|ripartizione|regione,8,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_7,"Medici specialisti attivi per sesso, età e specializzazione medica prevalente esercitata",REF_AREA,nazionale,nazionale,1,2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_8,Medici specialisti attivi per area e prime quattro specialità per numerosità - regione,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-11-07
 41_269_1,Incidenti stradali con lesioni alle persone (Lazio),REF_AREA,provincia,nazionale|ripartizione|regione|provincia,8,2026-08-15
 41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,11565,2026-08-07
 41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,REF_AREA,provincia,nazionale|ripartizione|regione|provincia,179,2026-08-07
@@ -3698,6 +3710,7 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 83_63_DF_DCCV_AVQ_PERSONE_114,Informazione politica (motivo) - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_119,Discussione politica - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_120,Giovani che vivono in famiglia,REF_AREA,regione,nazionale|ripartizione|regione,13,2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_120_YOUTH,Giovani che vivono in famiglia - Giovani,REF_AREA,nazionale,nazionale,1,2026-11-07
 83_63_DF_DCCV_AVQ_PERSONE_121,Giovani che vivono in famiglia - reg.,REF_AREA,regione,nazionale|ripartizione|regione,30,2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_122,Attività politica - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_127,Fiducia interpersonale - regioni e tipo di comune,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-07-29

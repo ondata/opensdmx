@@ -1549,6 +1549,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 24_84_DF_DCIS_MATRIND_4,Numeri indice,ok,hub,3,31,0,"",2026-07-17
 25_1242,Intenzioni di fecondità,ok,hub,9,53,0,"",2026-07-17
 25_1242_DF_DCCV_FERTINT1_1,Persone 18-49 anni che hanno intenzione di avere un figlio,ok,hub,6,18,0,"",2026-07-17
+25_1242_DF_DCCV_FERTINT1_1_YOUTH,Persone 18-49 anni che hanno intenzione di avere un figlio - giovani,ok,hub,6,18,0,"",2026-11-07
 25_1242_DF_DCCV_FERTINT1_2,Intenzione di avere figli entro tre anni,ok,hub,6,18,0,"",2026-07-17
 25_1242_DF_DCCV_FERTINT1_3,Intenzione di avere figli entro tre anni per numero di figli avuti,ok,hub,6,17,0,"",2026-07-17
 25_1242_DF_DCCV_FERTINT1_4,Intenzione di avere figli entro tre anni delle persone con lo stesso territorio di residenza,ok,hub,4,21,0,"",2026-07-17
@@ -1611,8 +1612,10 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 272_1164_DF_DCCV_RELAZ_PARENT_4,Persone per numero di nonni non conviventi per territorio,ok,hub,4,20,0,"",2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_5,Prossimità abitativa per territorio,ok,hub,4,31,0,"",2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_6,"Prossimità abitativa - sesso, età",ok,hub,6,30,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_6_YOUTH,"Prossimità abitativa - sesso, età - giovani",ok,hub,6,30,0,"",2026-11-07
 272_1164_DF_DCCV_RELAZ_PARENT_7,Frequenza dei contatti per territorio,ok,hub,5,33,0,"",2026-07-18
 272_1164_DF_DCCV_RELAZ_PARENT_8,"Tipo e frequenza dei contatti - sesso, età",ok,hub,7,32,0,"",2026-07-18
+272_1164_DF_DCCV_RELAZ_PARENT_8_YOUTH,"Tipo e frequenza dei contatti - sesso, età - giovani",ok,hub,7,43,0,"",2026-11-07
 27_349,Separazioni - Indicatori 2008-2014,ok,hub,3,65,0,"",2026-07-18
 27_349_DF_DCIS_SEPARAZIND_1,Procedimenti e separazioni,ok,hub,3,36,0,"",2026-07-18
 27_349_DF_DCIS_SEPARAZIND_2,Caratteristiche del matrimonio e della coppia,ok,hub,3,40,0,"",2026-07-18
@@ -2234,6 +2237,15 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 3_156_DF_DCCN_SQCQ_B19_3,Prodotto interno lordo e variazioni (stima preliminare) - edizioni ottobre 2019 - settembre 2024,ok,hub,6,29,0,"",2026-08-07
 3_48_DF_DCCN_VAAGSIPET_B19_1,Produzione e valore aggiunto ai prezzi base - edizioni maggio 2020 - giugno 2024,ok,hub,7,49,0,"",2026-08-07
 3_48_DF_DCCN_VAAGSIPET_B19_2,Prodotti e voci di costo - edizioni maggio 2020 - giugno 2024,ok,hub,8,123,0,"",2026-08-15
+3_973,Personale sanitario,ok,hub,11,128,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_1,Medici di medicina generale e pediatri libera scelta per sesso e classi di età - regione,ok,hub,5,49,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_2,"Professionisti attivi (inclusi medici specializzandi) per sesso, classe di età e professioni sanitarie - regione",ok,hub,5,48,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_3,"Professionisti attivi (esclusi medici specializzandi) per sesso, settore di lavoro e professioni sanitarie - regione",ok,hub,6,45,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_4,"Professionisti attivi (esclusi medici specializzandi) con rapporto di lavoro dipendente per settore di lavoro, carattere occupazione e professioni sanitarie - ripartizioni",ok,hub,7,22,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_5,"Professionisti attivi (esclusi medici specializzandi e farmacisti) per codice Ateco ""Assistenza sanitaria (86)"" e settore di lavoro - ripartizione",ok,hub,6,21,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_6,Farmacisti attivi per settore di lavoro e codice Ateco prevalente - ripartizione,ok,hub,6,21,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_7,"Medici specialisti attivi per sesso, età e specializzazione medica prevalente esercitata",ok,hub,6,69,0,"",2026-11-07
+3_973_DF_DCIS_HEALTH_CARE_WORKF_8,Medici specialisti attivi per area e prime quattro specialità per numerosità - regione,ok,hub,5,95,0,"",2026-11-07
 41_269_1,Incidenti stradali con lesioni alle persone (Lazio),ok,hub,10,32,0,"",2026-08-15
 41_269_DF_DCIS_INCIDENTISTR1_1,Incidenti stradali con lesioni alle persone,ok,hub,10,11633,0,"",2026-08-07
 41_270_DF_DCIS_MORTIFERITISTR1_1,Morti e feriti in incidenti stradali,ok,hub,11,234,0,"",2026-08-07
@@ -4007,10 +4019,12 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 82_87_DF_DCCV_AVQ_FAMIGLIE_2,Coppie con figli - reg.,ok,hub,4,43,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_3,Coppie senza figli - reg.,ok,hub,4,44,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_4,"Monogenitori - sesso, età, stato civile",ok,hub,3,32,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_4_YOUTH,"Monogenitori - sesso, età, stato civile - giovani",ok,hub,3,32,0,"",2026-11-07
 82_87_DF_DCCV_AVQ_FAMIGLIE_5,"Monogenitori - sesso, stato civile, ripartizioni",ok,hub,4,24,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_6,Monogenitori  - regioni e tipo di comune,ok,hub,4,42,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_7,Monogenitori - numero ed età dei figli,ok,hub,3,13,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_8,"Persone sole -  sesso, età, stato civile",ok,hub,3,56,0,"",2026-07-29
+82_87_DF_DCCV_AVQ_FAMIGLIE_8_YOUTH,"Persone sole -  sesso, età, stato civile - giovani",ok,hub,3,56,0,"",2026-11-07
 82_87_DF_DCCV_AVQ_FAMIGLIE_9,Persone sole - ripartizioni e tipo di comune,ok,hub,4,30,0,"",2026-07-29
 82_87_DF_DCCV_AVQ_FAMIGLIE_YOUTH,Coppie con figli - giovani,ok,hub,3,21,0,"",2026-10-30
 83_277,Imprese agricole e addetti,ok,hub,7,255,0,"",2026-07-29
@@ -4044,6 +4058,7 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 83_63_DF_DCCV_AVQ_PERSONE_118,Discussione e attività politica - posizione nella professione,ok,hub,6,25,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_119,Discussione politica - regioni e tipo di comune,ok,hub,5,47,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_120,Giovani che vivono in famiglia,ok,hub,6,31,0,"",2026-07-29
+83_63_DF_DCCV_AVQ_PERSONE_120_YOUTH,Giovani che vivono in famiglia - Giovani,ok,hub,6,19,0,"",2026-11-07
 83_63_DF_DCCV_AVQ_PERSONE_121,Giovani che vivono in famiglia - reg.,ok,hub,6,44,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_122,Attività politica - regioni e tipo di comune,ok,hub,5,46,0,"",2026-07-29
 83_63_DF_DCCV_AVQ_PERSONE_123,Fiducia negli altri - età dettaglio,ok,hub,5,36,0,"",2026-08-12
