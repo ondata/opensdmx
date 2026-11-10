@@ -55,6 +55,11 @@ semantic = [
     "ollama>=0.6.1",
 ]
 
+[project.urls]
+Homepage = "https://github.com/ondata/opensdmx"
+Repository = "https://github.com/ondata/opensdmx"
+Issues = "https://github.com/ondata/opensdmx/issues"
+
 [project.scripts]
 opensdmx = "opensdmx:main"
 
