@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import logging
+
 import polars as pl
 import pytest
 
@@ -407,6 +409,38 @@ def test_load_categories_does_not_fetch_dataflows_for_stale_check_without_cache(
     loaded_cats, loaded_cz = categories.load_categories()
     assert loaded_cats.equals(cats_df)
     assert loaded_cz.equals(cz_df)
+
+
+def _patch_fresh_build(monkeypatch):
+    """Make load_categories() take the rebuild path without any network call."""
+    cats_df = pl.DataFrame(schema=categories.CATEGORIES_SCHEMA)
+    cz_df = pl.DataFrame(schema=categories.CATEGORISATION_SCHEMA)
+    monkeypatch.setattr(
+        categories,
+        "get_provider",
+        lambda: {"agency_id": "TEST", "categories_supported": True},
+    )
+    monkeypatch.setattr(categories, "_load_cached", lambda: None)
+    monkeypatch.setattr(categories, "_fetch_categoryscheme", lambda: cats_df)
+    monkeypatch.setattr(categories, "_fetch_categorisation", lambda: cz_df)
+    monkeypatch.setattr(categories.pl.DataFrame, "write_parquet", lambda self, path: None)
+    monkeypatch.setattr("opensdmx.discovery._load_cached_dataflows", lambda: None)
+
+
+def test_load_categories_announces_rebuild_at_default_log_level(monkeypatch, caplog):
+    """The 1-2 minute rebuild must be announced at a level the CLI actually shows."""
+    _patch_fresh_build(monkeypatch)
+    with caplog.at_level(logging.WARNING, logger="opensdmx.categories"):
+        categories.load_categories()
+    assert any("Building thematic cache" in r.getMessage() for r in caplog.records)
+
+
+def test_load_categories_no_rebuild_notice_under_explain(monkeypatch, caplog):
+    _patch_fresh_build(monkeypatch)
+    monkeypatch.setattr(categories, "is_explain", lambda: True)
+    with caplog.at_level(logging.WARNING, logger="opensdmx.categories"):
+        categories.load_categories()
+    assert not any("Building thematic cache" in r.getMessage() for r in caplog.records)
 
 
 # ── provider_coverage ────────────────────────────────────────────────

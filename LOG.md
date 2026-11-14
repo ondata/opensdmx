@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-11-14 - fix: visible notice while the category tree is rebuilt
+
+- `siblings` and `tree` stayed silent for ~2 minutes when the category cache had expired (Eurostat `siblings NAMA_10_GDP`: 1:56, nothing printed in a pipe). The notice existed but was `logger.info`, and the CLI leaves logging at Python's WARNING default, so it never showed. Now `logger.warning` on stderr in every output mode (stdout stays clean JSON), skipped under `--explain`. Two tests in `tests/test_categories.py`; checked live with `OPENSDMX_CATEGORIES_CACHE_TTL=0 opensdmx -o json siblings EXR --provider ecb`.
+
 ## 2026-11-14 - docs: agent quickstart
 
 - Added a copy-and-paste `Agent quickstart` prompt to README.md: check availability, install only with permission, read CLI help and run a bounded Eurostat catalogue search before choosing filters or downloading observations. Skill remains optional; source dates, constraints and honest fallbacks are explicit.
