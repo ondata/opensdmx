@@ -14,6 +14,23 @@ Simple Python CLI and library for any SDMX 2.1 REST API. Default provider: **Eur
 
 > **Best used with AI.** opensdmx works well on its own, but **it shines when driven by an AI agent**: the CLI is designed to be composed, queried, and orchestrated step by step. For a guided, interactive experience — dataset discovery, schema exploration, filter selection, and data retrieval — pair it with the [`sdmx-explorer`](https://github.com/ondata/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md) Agent Skill included in this repo. See the [**installation guide**](https://github.com/ondata/opensdmx/blob/main/docs/skill/README.md) for step-by-step instructions. The design principles behind this choice are documented in [Architecture → Design philosophy](docs/architecture.md).
 
+## Agent quickstart
+
+Copy this prompt into an AI agent with command execution to try opensdmx without first installing a skill or configuring MCP.
+
+```text
+Help me use opensdmx (https://github.com/ondata/opensdmx), a Python CLI for discovering and retrieving official statistics from Eurostat, ISTAT, OECD, ECB and other SDMX providers.
+
+1. Check `opensdmx --version`. If it is available, use it without reinstalling. If missing, check for Python 3.12+ and uv, explain any missing prerequisites and ask for permission before installing or changing anything. The documented CLI installation is `uv tool install opensdmx`; then check the version again.
+2. Read `opensdmx --help` and `opensdmx search --help`. The help is designed for agents: use it as the main guide and read each command's own help before using it. For anything else, consult https://github.com/ondata/opensdmx/blob/main/README.md
+3. Run one bounded first search: `opensdmx search unemployment --provider eurostat --n 3`. Show the actual dataset IDs and titles. These are catalogue metadata, not unemployment figures; search uses a local cache, so report its freshness only if known. Do not download observations yet.
+4. In one message, ask which country, period and statistical topic I want to explore, suggest two or three relevant next steps, and offer the optional sdmx-explorer skill if not already installed: https://github.com/ondata/opensdmx/blob/main/skills/sdmx-explorer/SKILL.md. Do not install it without my approval.
+
+Before retrieving figures, inspect the selected dataset with `info` and discover valid filter codes with `constraints`, not just the general codelists from `values`. If constraints are unavailable, explain the limitation and follow the documented provider-specific route; never guess codes. Confirm the filters with me and keep the first download small. Check units, frequency, geography and seasonal adjustment; distinguish missing observations from zero and published figures from derived results.
+
+Show the commands used and their real results, provider, available dates and any limits or partial failures. If documentation, installation, network access, credentials or execution are unavailable, explain what is blocked and provide safe manual steps or documented commands where possible. Never invent results or claim to have run a command you did not run. Answer in my language.
+```
+
 ## Installation & First Steps
 
 This is a short video tutorial with Italian audio, showing how to install and use opensdmx.

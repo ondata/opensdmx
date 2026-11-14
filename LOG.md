@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-11-14 - docs: agent quickstart
+
+- Added a copy-and-paste `Agent quickstart` prompt to README.md: check availability, install only with permission, read CLI help and run a bounded Eurostat catalogue search before choosing filters or downloading observations. Skill remains optional; source dates, constraints and honest fallbacks are explicit.
+- Checked project, README, skill and PyPI URLs (HTTP 200). With installed opensdmx 0.30.2, `opensdmx search unemployment --provider eurostat --n 3` returned three catalogue entries out of 137 matches. No installation, observations download, fresh-session test or restricted-environment test performed.
+
 ## 2026-11-03 - skill: map recipe fixes from an end-to-end test
 
 - **Test**: three maps built by following the skill only, rendered with agent-browser and exported through the page button. NUTS 2 diverging choropleth of GDP per head in PPS (`nama_10r_2gdp`, 2024, nine overseas insets); German NUTS 3 size + colour symbols with dorling (`demo_r_gind3` JAN and GROWRT, 2024, two exact zeros); Comext import flows into Poland (`DS-045409`, 2024, top 10 European partners).
