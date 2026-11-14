@@ -11,7 +11,14 @@ import polars as pl
 
 import httpx
 
-from .base import _resolve_cache_base, explain_cached, get_cache_dir, get_provider, sdmx_request_xml
+from .base import (
+    _resolve_cache_base,
+    explain_cached,
+    get_cache_dir,
+    get_provider,
+    is_explain,
+    sdmx_request_xml,
+)
 from .cache_config import CATEGORIES_CACHE_TTL
 from .utils import xml_attr_safe, xml_parse
 
@@ -277,10 +284,14 @@ def load_categories() -> tuple[pl.DataFrame, pl.DataFrame]:
         _explain_cached_categories()
         return _visible(cached)
 
-    logger.info(
-        "Building thematic cache from categoryscheme + categorisation "
-        "(first run can take 1-2 minutes)..."
-    )
+    # Warning, not info: the CLI leaves logging at Python's WARNING default, and
+    # without a visible notice a 1-2 minute download looks like a hang (stderr,
+    # so stdout stays clean in json/csv mode). A plan has no wait to announce.
+    if not is_explain():
+        logger.warning(
+            "Building thematic cache from categoryscheme + categorisation "
+            "(can take 1-2 minutes)..."
+        )
 
     if provider.get("hub_only"):
         from . import inps
