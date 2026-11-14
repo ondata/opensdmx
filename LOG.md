@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-11-14 - v0.30.3 - release: category rebuild notice, package URLs, docs
+
+Patch release. Ships what landed on `main` after v0.30.2:
+
+- **Fix** (#106): `siblings` and `tree` now print "Building thematic cache ... (can take 1-2 minutes)" on stderr while the expired category tree is re-downloaded; before, the notice was `logger.info` and never shown, so the 1-2 minute wait looked like a hang (entry below).
+- **Packaging**: `[project.urls]` in `pyproject.toml` (Homepage, Repository, Issues), so PyPI links back to the repository.
+- **Docs**: `Agent quickstart` prompt in README.md.
+- **Skill** (#105): Eurostat map recipe fixes from an end-to-end test.
+
 ## 2026-11-14 - fix: visible notice while the category tree is rebuilt
 
 - `siblings` and `tree` stayed silent for ~2 minutes when the category cache had expired (Eurostat `siblings NAMA_10_GDP`: 1:56, nothing printed in a pipe). The notice existed but was `logger.info`, and the CLI leaves logging at Python's WARNING default, so it never showed. Now `logger.warning` on stderr in every output mode (stdout stays clean JSON), skipped under `--explain`. Two tests in `tests/test_categories.py`; checked live with `OPENSDMX_CATEGORIES_CACHE_TTL=0 opensdmx -o json siblings EXR --provider ecb`.
