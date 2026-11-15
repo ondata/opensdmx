@@ -1374,6 +1374,9 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_1,Sequenza dei conti - edizioni ottobre 2019 - luglio 2024,ok,hub,10,168,0,"",2026-08-05
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_2,Indicatori su famiglie e società non finanziarie - edizioni ottobre 2019 - luglio 2024,ok,hub,7,37,0,"",2026-08-05
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_3,Aggregati destagionalizzati - edizioni ottobre 2019 - luglio 2024,ok,hub,8,71,0,"",2026-08-05
+1_111,Indicatori permessi di costruire - dal 2000 al 2009,empty,hub,0,0,0,"",2026-11-15
+1_111_DF_DCSC_PERM_RAP1_SER_INT_1,Nuovi fabbricati residenziali - dal 2000 al 2009,ok,hub,5,8,0,"",2026-11-15
+1_111_DF_DCSC_PERM_RAP1_SER_INT_2,Nuova edilizia non residenziale - dal 2000 al 2009,ok,hub,5,7,0,"",2026-11-15
 1_184,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,ok,hub,6,47,0,"",2026-08-05
 1_184_DF_DCCN_PILQ_B19_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,ok,hub,6,47,0,"",2026-08-05
 1_88,Occupazione per branca di attività e popolazione - edizioni ottobre 2019 - settembre 2024,ok,hub,9,73,0,"",2026-08-05
@@ -2744,6 +2747,11 @@ df_id,df_description,status,source,n_dims,n_codes,error_count,last_error,checked
 60_41_DF_DCIS_BIBLIOT_1,Biblioteche pubbliche statali - Principali dati,ok,hub,5,33,0,"",2026-07-23
 60_41_DF_DCIS_BIBLIOT_2,Prestiti per tipo di richiedente,ok,hub,5,27,0,"",2026-07-23
 60_41_DF_DCIS_BIBLIOT_3,Personale impiegato,ok,hub,5,27,0,"",2026-07-23
+60_50,I Cittadini e il tempo libero - Persone,ok,hub,8,94,0,"",2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_1,Persone di 3 anni e più per pratica sportiva - sesso e classe di età,ok,hub,6,26,0,"",2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_2,Persone di 15 anni e più per pratica sportiva - sesso e condizione professionale,ok,hub,6,25,0,"",2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_3,"Persone di 25 anni e più per pratica sportiva - sesso, età e titolo di studio",ok,hub,7,21,0,"",2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_4,"Persone di 3 anni e più per pratica sportiva - regione, ripartizione geografica e tipo di comune",ok,hub,4,44,0,"",2026-11-15
 610_119_DF_DCCV_TRASPRIV_1,Trasporto privato,ok,hub,5,258,0,"",2026-07-23
 612_933,Laureati - caratteristiche socio-demografiche e curriculum,ok,hub,14,71,0,"",2026-07-23
 612_933_DF_DCCV_LAU_DEM_FORM_1,Tipo di diploma,ok,hub,6,12,0,"",2026-07-23

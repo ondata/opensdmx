@@ -1274,6 +1274,8 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_1,Sequenza dei conti - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_2,Indicatori su famiglie e società non finanziarie - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
 1_1064_DF_DCCN_ISTITUZ_QNA1_B19_3,Aggregati destagionalizzati - edizioni ottobre 2019 - luglio 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
+1_111_DF_DCSC_PERM_RAP1_SER_INT_1,Nuovi fabbricati residenziali - dal 2000 al 2009,REF_AREA,nazionale,nazionale,1,2026-11-15
+1_111_DF_DCSC_PERM_RAP1_SER_INT_2,Nuova edilizia non residenziale - dal 2000 al 2009,REF_AREA,nazionale,nazionale,1,2026-11-15
 1_184,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
 1_184_DF_DCCN_PILQ_B19_1,Prodotto interno lordo e principali componenti - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
 1_88,Occupazione per branca di attività e popolazione - edizioni ottobre 2019 - settembre 2024,REF_AREA,nazionale,nazionale,1,2026-08-05
@@ -2486,6 +2488,11 @@ df_id,df_description,dimension_id,max_level,levels,n_territories,checked_at
 60_41_DF_DCIS_BIBLIOT_1,Biblioteche pubbliche statali - Principali dati,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
 60_41_DF_DCIS_BIBLIOT_2,Prestiti per tipo di richiedente,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
 60_41_DF_DCIS_BIBLIOT_3,Personale impiegato,REF_AREA,regione,nazionale|ripartizione|regione,20,2026-07-23
+60_50,I Cittadini e il tempo libero - Persone,REF_AREA,regione,nazionale|ripartizione|regione,36,2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_1,Persone di 3 anni e più per pratica sportiva - sesso e classe di età,REF_AREA,nazionale,nazionale,1,2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_2,Persone di 15 anni e più per pratica sportiva - sesso e condizione professionale,REF_AREA,nazionale,nazionale,1,2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_3,"Persone di 25 anni e più per pratica sportiva - sesso, età e titolo di studio",REF_AREA,nazionale,nazionale,1,2026-11-15
+60_50_DF_DCCV_CTL_PERSONE_4,"Persone di 3 anni e più per pratica sportiva - regione, ripartizione geografica e tipo di comune",REF_AREA,regione,nazionale|ripartizione|regione,36,2026-11-15
 610_119_DF_DCCV_TRASPRIV_1,Trasporto privato,REF_AREA,comune,nazionale|ripartizione|regione|provincia|comune,253,2026-07-23
 612_933,Laureati - caratteristiche socio-demografiche e curriculum,REF_AREA,nazionale,nazionale,1,2026-07-23
 612_933_DF_DCCV_LAU_DEM_FORM_1,Tipo di diploma,REF_AREA,nazionale,nazionale,1,2026-07-23
