@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-11-18 - feat: TÜİK provider, token auth for providers
+## 2026-11-18 - v0.31.0 - feat: TÜİK provider, token auth for providers
 
 - New provider `tuik` (alias `turkstat`), Turkish Statistical Institute, `https://nsiws.tuik.gov.tr/rest`, agency `TR`, ~517 dataflows, tree CSA_REV1 (19 domains). Every request needs a Bearer token; credentials from TÜİK (free, `info@tuik.gov.tr` without a Turkish mobile) in `TUIK_CLIENT_ID` / `TUIK_CLIENT_SECRET`.
 - New generic `portals.json` field `auth` (OAuth2 client credentials, `auth.py`): token fetched lazily, kept in memory until 30 s before expiry, renewed once on 401 (401 stays non-retryable), sent only to `base_url`, never fetched under `--explain`, secrets never in errors. Works for user-declared providers too.
