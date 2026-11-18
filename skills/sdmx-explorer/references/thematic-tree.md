@@ -38,8 +38,8 @@ opensdmx providers
 
 The `categories` column tells you which providers support `tree`:
 
-- Supported: `eurostat`, `istat`, `istat_hvd`, `ecb`, `oecd`, `insee`, `abs`, `bis`
-- Not supported: `comext`, `bundesbank`, `worldbank`, `imf` — skip `tree` and go
+- Supported: `eurostat`, `istat`, `istat_hvd`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`, `tuik`
+- Not supported: `comext`, `bundesbank`, `worldbank`, `imf`, `unicef`, `derzhstat` — skip `tree` and go
   straight to `search`.
 
 A custom endpoint given as a URL (`--provider https://.../rest`) is not in the
@@ -212,7 +212,7 @@ opensdmx search "" --category t_prc_hicp
 
 ## When to skip the tree
 
-Provider does not support categories (`comext`, `bundesbank`, `worldbank`, `imf`):
+Provider does not support categories (`comext`, `bundesbank`, `worldbank`, `imf`, `unicef`, `derzhstat`):
 go straight to `search`. World Bank is a special case — it has a single dataflow
 `WDI` containing all 1400+ indicators; see SKILL.md "World Bank flow" for details.
 

@@ -1089,7 +1089,9 @@ def _fallback_serieskeysonly(dataset: dict[str, Any], provider: dict[str, Any]) 
 
     df_id = dataset["df_id"]
     n_dims = len(dataset.get("dimensions", {}))
-    key = "." * (n_dims - 1) if n_dims > 1 else ""
+    from .utils import escape_key_for_provider
+
+    key = escape_key_for_provider("." * (n_dims - 1) if n_dims > 1 else "", provider)
     path = f"data/{df_id}"
     if key:
         path = f"{path}/{key}"
@@ -1142,8 +1144,10 @@ def _fallback_availableconstraint(dataset: dict[str, Any], provider: dict[str, A
     agency_id = provider.get("agency_id", "")
     version = dataset.get("version") or "1.0"
     n_dims = len(dataset.get("dimensions", {}))
+    from .utils import escape_key_for_provider
+
     # SDMX key: N values separated by N-1 dots; all-wildcard = (N-1) dots
-    key = "." * (n_dims - 1) if n_dims > 1 else ""
+    key = escape_key_for_provider("." * (n_dims - 1) if n_dims > 1 else "", provider)
     path = f"availableconstraint/{agency_id},{df_id},{version}/{key}"
 
     # Shorter timeout to fail fast on unresponsive backends.
@@ -1407,9 +1411,8 @@ def _get_available_values_rest(dataset: dict[str, Any], provider: dict[str, Any]
             result = _parse_constraint_xml(content)
     except httpx.TimeoutException:
         provider_name = provider_label(provider)
-        # If no override was set, the module default applied — surface that to the user.
-        from .base import _timeout as _module_timeout
-        effective_timeout = constraint_timeout if constraint_timeout is not None else _module_timeout
+        from .base import effective_request_timeout
+        effective_timeout = effective_request_timeout(constraint_timeout)
         logger.warning(
             "availableconstraint timed out after %.1fs for %s on provider %s",
             effective_timeout, df_id, provider_name,

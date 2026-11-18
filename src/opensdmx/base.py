@@ -18,6 +18,8 @@ import httpx
 import portalocker
 from tenacity import Retrying, retry_if_exception, stop_after_attempt, wait_exponential
 
+from .auth import auth_headers
+
 if TYPE_CHECKING:
     import polars as pl
 
@@ -254,6 +256,8 @@ PROVIDER_ALIASES: dict[str, str] = {
 
 _active_provider: str | dict[str, Any] = "eurostat"
 _timeout: float = 300.0
+# True once set_timeout() is called: an explicit choice beats a provider's request_timeout.
+_timeout_explicit = False
 _extra_headers: dict[str, str] = {}
 
 # Fields `set_provider` accepts for a custom URL: the defaults, every field any portal
@@ -475,11 +479,12 @@ def get_cache_dir() -> Path:
 
 def set_timeout(seconds: float | None = None) -> float:
     """Get or set the API timeout in seconds (default: 300)."""
-    global _timeout
+    global _timeout, _timeout_explicit
     if seconds is None:
         return _timeout
     old = _timeout
     _timeout = float(seconds)
+    _timeout_explicit = True
     return old
 
 
@@ -704,6 +709,19 @@ def _is_retryable_exception(exc: BaseException) -> bool:
     return False
 
 
+def effective_request_timeout(override: float | None = None) -> float:
+    """Timeout a request to the active provider gets.
+
+    Precedence: per-call override > set_timeout() > provider `request_timeout` > 300 s.
+    """
+    if override is not None:
+        return override
+    provider_timeout = get_provider().get("request_timeout")
+    if _timeout_explicit or not provider_timeout:
+        return _timeout
+    return float(provider_timeout)
+
+
 def sdmx_request(
     path: str,
     accept: str = "application/xml",
@@ -736,8 +754,12 @@ def sdmx_request(
     # the URL is only rendered when it will be printed.
     if _explain:
         explain_would_fetch(_method, _explain_url(url, params), body=_json_body, probe=_explain_probe)
-    effective_timeout = _timeout if _timeout is not None else globals()["_timeout"]
+    provider = get_provider()
+    effective_timeout = effective_request_timeout(_timeout)
     effective_attempts = _max_retries if _max_retries is not None else 3
+    # The provider's credentials go only to the provider's own base URL, never to a
+    # separate host reached through `_base_url` (e.g. the StatKit hub).
+    needs_auth = _base_url is None and bool(provider.get("auth"))
 
     retryer = Retrying(
         retry=retry_if_exception(_is_retryable_exception),
@@ -764,27 +786,41 @@ def sdmx_request(
             with httpx.Client(timeout=effective_timeout, follow_redirects=True) as client:
                 user_agent = os.environ.get(
                     "OPENSDMX_USER_AGENT",
-                    get_provider().get("user_agent") or "opensdmx Python package",
+                    provider.get("user_agent") or "opensdmx Python package",
                 )
                 extra = {k: v for k, v in _extra_headers.items() if k.lower() != "user-agent"}
-                if _method == "POST":
-                    resp = client.post(
+
+                def _send(auth: dict[str, str]) -> httpx.Response:
+                    if _method == "POST":
+                        return client.post(
+                            url,
+                            params=params or None,
+                            json=_json_body,
+                            headers={
+                                "Accept": accept,
+                                "Content-Type": "application/json",
+                                "User-Agent": user_agent,
+                                **extra,
+                                **auth,
+                            },
+                        )
+                    return client.get(
                         url,
                         params=params or None,
-                        json=_json_body,
-                        headers={
-                            "Accept": accept,
-                            "Content-Type": "application/json",
-                            "User-Agent": user_agent,
-                            **extra,
-                        },
+                        headers={"Accept": accept, "User-Agent": user_agent, **extra, **auth},
                     )
-                else:
-                    resp = client.get(
-                        url,
-                        params=params or None,
-                        headers={"Accept": accept, "User-Agent": user_agent, **extra},
-                    )
+
+                resp = _send(auth_headers(provider) if needs_auth else {})
+                if needs_auth and resp.status_code == 401:
+                    # The token may have been revoked or expired early: renew it once.
+                    # 401 stays out of `_is_retryable_exception`, which retries no 4xx.
+                    new_auth = auth_headers(provider, refresh=True)
+                    _rate_limit_check(_is_data)
+                    try:
+                        _rate_limit_file(_is_data).write_text(str(time.time()))
+                    except OSError:
+                        pass
+                    resp = _send(new_auth)
                 resp.raise_for_status()
                 return resp
 

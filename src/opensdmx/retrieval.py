@@ -10,7 +10,7 @@ import polars as pl
 
 from .base import get_provider, sdmx_request_csv
 from .discovery import load_dataset, set_filters
-from .utils import make_url_key
+from .utils import escape_key_for_provider, make_url_key
 
 
 def parse_time_period(series: pl.Series) -> pl.Series:
@@ -103,7 +103,7 @@ def get_data(
     else:
         path = f"data/{dataset['df_id']}"
         if not empty_key:
-            url_key = make_url_key(dataset["filters"])
+            url_key = escape_key_for_provider(make_url_key(dataset["filters"]), provider)
             if url_key:
                 path = f"{path}/{url_key}"
 

@@ -182,7 +182,7 @@ of guessing keywords. This is the **default** discovery flow; fall back to
 keyword search only under the conditions listed in Step 1c.
 
 Supported providers (check with `opensdmx providers` — `categories` column):
-- ✓ `eurostat`, `istat`, `istat_hvd`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`
+- ✓ `eurostat`, `istat`, `istat_hvd`, `inps`, `ecb`, `oecd`, `insee`, `abs`, `bis`, `ilo`, `bfs`, `tuik`
 - ✗ `comext`, `bundesbank`, `worldbank`, `imf`, `derzhstat`, `unicef` — skip to Step 1c.
 - A provider passed as a URL (`--provider https://.../rest`) is not listed, so
   nothing is declared about it: `tree` probes `/categoryscheme` live and works
@@ -316,8 +316,8 @@ Search for dataflows:
   NAMEA emissions, retail and wholesale sales volume) and its own dataflow IDs: use it for those series, or when
   `istat` fails on data calls. It has no `constraints`: explore with `values`.
 - **Other providers**: `opensdmx search "<keyword>" --provider <name>`
-  (available: `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `bis`, `imf`,
-  `inps`, `ilo`, `unicef`, `derzhstat`, `bfs`, `istat_hvd`)
+  (available: `comext`, `oecd`, `ecb`, `worldbank`, `insee`, `bundesbank`, `abs`, `bis`, `imf`,
+  `inps`, `ilo`, `unicef`, `derzhstat`, `bfs`, `istat_hvd`, `tuik`)
 
 `search` matches the dataset **title, ID and category name**, by substring.
 
@@ -366,7 +366,8 @@ assuming either way.
 
 From the search results, pick **5–8 plausible candidates** by title relevance.
 Then run `opensdmx info <id>` on each one **in parallel** to check their dimension
-list. Keep only the candidates that contain **all expected dimensions**.
+list. On `tuik` (12.5 s between requests, a cold `info` takes about a minute and a
+half) take 2-3 candidates instead. Keep only the candidates that contain **all expected dimensions**.
 Discard candidates missing a required dimension — even if the title looks right.
 
 `info` may print one or more `Note:` lines (`notes` in JSON): these are the
@@ -1153,8 +1154,8 @@ Run `opensdmx providers` for a machine-readable overview — the `constraints` a
 `last_n` columns reflect verified test results and tell you which exploration flow
 fits the target provider.
 
-The full capability matrix (Eurostat, ISTAT, ISTAT HVD, ECB, OECD, INSEE, Bundesbank, World
-Bank, ABS, BIS, IMF, ILO, UNICEF, Derzhstat, BFS), dimension flag casing, territory code conventions, and what
+The full capability matrix (Eurostat, Comext, ISTAT, ISTAT HVD, INPS, ECB, OECD, INSEE, Bundesbank, World
+Bank, ABS, BIS, IMF, ILO, UNICEF, Derzhstat, BFS, TÜİK), dimension flag casing, territory code conventions, and what
 to do when `constraints` or `last_n` are unsupported, are documented in
 [references/providers.md](references/providers.md).
 

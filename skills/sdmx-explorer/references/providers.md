@@ -35,6 +35,7 @@ references:
 | UNICEF | ✓ | ✓ | Use `--provider unicef`; child and SDG indicators, country codes ISO alpha-3. One dataflow holds many indicators (`CME` = child mortality, 34 codes in `INDICATOR`): filter `--INDICATOR` after `constraints`. No `tree` (`categorisation` answers 404): use `search` |
 | Derzhstat | ✓ | ✓ | Use `--provider derzhstat`; State Statistics Service of Ukraine. No `tree`: use `search`. Territory codes are KATOTTG (`UA74000000000025378`); dimension filters are applied client-side after the download, so a filtered `get` still downloads every series; narrow it with `--start-period` or `--last-n`, which do reach the server |
 | BFS | ✓ | ✓ | Use `--provider bfs` (alias `fso`); Swiss Federal Statistical Office. Partial SDMX catalogue: population, mobility and transport, crime and criminal justice, then employment, housing, tourism, health, education. **No dataflows for prices or national accounts (GDP)**: look elsewhere for Swiss CPI or GDP. The `tree` misses some dataflows (`DF_VOTATION` exists, the Politics branch is empty), so run `search` too. Totals are `_T` |
+| TÜİK | ✗ | ✓ | Use `--provider tuik` (alias `turkstat`); Turkish Statistical Institute, about 500 dataflows, `tree` with 19 domains (CSA_REV1). **Needs credentials**: `TUIK_CLIENT_ID` and `TUIK_CLIENT_SECRET` in the environment; without them every command that contacts TÜİK stops with an error naming the missing variables, so ask the user to set them, never guess. **Slow on purpose**: 12.5 s between requests (the service stops answering otherwise), so a cold `info` takes about a minute and a half; plan few calls and rely on the cache. No `constraints`: use `values` and a probe `get` with `--last-n 1`. Partial keys work (opensdmx escapes the dots). Totals are `_T`, `REF_AREA` is `TR` for the whole country |
 
 ## Dimension flag case
 
@@ -60,8 +61,8 @@ and aggregate codes (`ITG12`, `SLL_*`, etc.).
 
 ## When `constraints` is not supported
 
-For providers marked ✗ in the `constraints` column (ECB, OECD, INSEE, Bundesbank, ILO,
-World Bank, ISTAT HVD), the standard Phase 2 flow does not apply. Use `opensdmx values
+For providers marked ✗ in the `constraints` column (Comext, ECB, OECD, INSEE, Bundesbank,
+ILO, World Bank, ISTAT HVD, TÜİK), the standard Phase 2 flow does not apply. Use `opensdmx values
 <dataflow_id> <DIM>` to explore codelists, and probe with a narrow `get`
 (small time window, one or two values per dimension) to verify the query works
 before downloading the full series.
@@ -71,6 +72,9 @@ before downloading the full series.
 World Bank does not accept `--last-n`. Use `--start-period` / `--end-period`
 with an explicit date range for previews — passing `--last-n N` causes a parse
 error.
+
+INPS does not take `--last-n`/`--first-n` either: it downloads the whole dataflow
+and applies `--start-period` / `--end-period` client-side, by year.
 
 ## User-declared providers
 

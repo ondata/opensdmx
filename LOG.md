@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-11-18 - feat: TÜİK provider, token auth for providers
+
+- New provider `tuik` (alias `turkstat`), Turkish Statistical Institute, `https://nsiws.tuik.gov.tr/rest`, agency `TR`, ~517 dataflows, tree CSA_REV1 (19 domains). Every request needs a Bearer token; credentials from TÜİK (free, `info@tuik.gov.tr` without a Turkish mobile) in `TUIK_CLIENT_ID` / `TUIK_CLIENT_SECRET`.
+- New generic `portals.json` field `auth` (OAuth2 client credentials, `auth.py`): token fetched lazily, kept in memory until 30 s before expiry, renewed once on 401 (401 stays non-retryable), sent only to `base_url`, never fetched under `--explain`, secrets never in errors. Works for user-declared providers too.
+- New generic fields `data_key_escape_dots` (key dots sent as `%2E`: TÜİK's IIS answers 404 to `..` in a path, the doc's own `.....3` example included) and `request_timeout` (per-provider request timeout).
+- Measured 2026-11-18: `?format=SDMX-CSV` ignored (CSV via `Accept`); no constraints (`contentconstraint` 404, `availableconstraint` 500 or no answer); unanswered requests when close together (3/6 at 0 s gap, 2/6 at 3 s, 1/6 at 6 s, 0/8 at 12 s) → `rate_limit: 12.5`, `request_timeout: 10`. Cold `info` 89 s, `tree` 28 s, partial-key `get` OK.
+- Review fixes: `guide`'s availability probe now goes through `sdmx_request` (it was a bare `httpx.get`: no auth, no user agent, so on TÜİK it blacklisted every dataflow it checked); the renewed-token request after a 401 waits the rate limit; an explicit `set_timeout()` beats `request_timeout` (`effective_request_timeout()`, also used in the constraint timeout warning); the `availableconstraint` fallback key and the URL `guide` prints are escaped too. Skill provider lists realigned with `portals.json` (Comext, INPS, ILO, BFS, UNICEF, Derzhstat were missing in places).
+- Tests: `tests/test_auth.py` (15). Docs: `docs/providers.md#tuik`, README, `.env.example`, skill provider matrix.
+
 ## 2026-11-14 - v0.30.3 - release: category rebuild notice, package URLs, docs
 
 Patch release. Ships what landed on `main` after v0.30.2:
