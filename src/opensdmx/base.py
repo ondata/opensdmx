@@ -776,6 +776,9 @@ def sdmx_request(
         # different providers and data/structure streams stay parallel.
         # If the process dies, the kernel releases the flock.
         with portalocker.Lock(str(_rate_limit_lock_file(_is_data)), flags=portalocker.LOCK_EX):
+            # Token first: a token fetch after the timestamp would eat into the
+            # pause before the next request.
+            auth = auth_headers(provider) if needs_auth else {}
             _rate_limit_check(_is_data)
             # Record timestamp at request START (before HTTP call) so the
             # interval is measured send-to-send, not receive-to-send.
@@ -810,7 +813,7 @@ def sdmx_request(
                         headers={"Accept": accept, "User-Agent": user_agent, **extra, **auth},
                     )
 
-                resp = _send(auth_headers(provider) if needs_auth else {})
+                resp = _send(auth)
                 if needs_auth and resp.status_code == 401:
                     # The token may have been revoked or expired early: renew it once.
                     # 401 stays out of `_is_retryable_exception`, which retries no 4xx.

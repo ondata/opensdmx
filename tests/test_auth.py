@@ -266,3 +266,19 @@ def test_token_renewal_is_rate_limited():
         sdmx_request("dataflow/X")
 
     assert check.call_count == 2  # the first request and the renewed one
+
+
+def test_token_fetched_before_rate_limit_timestamp():
+    order: list[str] = []
+    tokens = _TokenServer()
+
+    def fake_post(url, data, timeout):
+        order.append("token")
+        return tokens(url, data, timeout)
+
+    with patch("opensdmx.auth.httpx.post", side_effect=fake_post), _data_client(
+        lambda r: httpx.Response(200, content=b"ok")
+    ), patch("opensdmx.base._rate_limit_check", side_effect=lambda *a: order.append("pace")):
+        sdmx_request("dataflow/X")
+
+    assert order == ["token", "pace"]
