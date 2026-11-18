@@ -7,7 +7,8 @@
 - New generic fields `data_key_escape_dots` (key dots sent as `%2E`: TÜİK's IIS answers 404 to `..` in a path, the doc's own `.....3` example included) and `request_timeout` (per-provider request timeout).
 - Measured 2026-11-18: `?format=SDMX-CSV` ignored (CSV via `Accept`); no constraints (`contentconstraint` 404, `availableconstraint` 500 or no answer); unanswered requests when close together (3/6 at 0 s gap, 2/6 at 3 s, 1/6 at 6 s, 0/8 at 12 s) → `rate_limit: 12.5`, `request_timeout: 10`. Cold `info` 89 s, `tree` 28 s, partial-key `get` OK.
 - Review fixes: `guide`'s availability probe now goes through `sdmx_request` (it was a bare `httpx.get`: no auth, no user agent, so on TÜİK it blacklisted every dataflow it checked); the renewed-token request after a 401 waits the rate limit; an explicit `set_timeout()` beats `request_timeout` (`effective_request_timeout()`, also used in the constraint timeout warning); the `availableconstraint` fallback key and the URL `guide` prints are escaped too. Skill provider lists realigned with `portals.json` (Comext, INPS, ILO, BFS, UNICEF, Derzhstat were missing in places).
-- Tests: `tests/test_auth.py` (15). Docs: `docs/providers.md#tuik`, README, `.env.example`, skill provider matrix.
+- `constraints` on a provider declaring `constraints_supported: false` (TÜİK, ECB, OECD, ...) no longer says the dataflow is "hidden or not yet public" when the endpoint fails: it says the provider publishes no constraints and points to `values` and a `--last-n 1` probe. The token is now fetched before the rate-limit timestamp (Greptile).
+- Tests: `tests/test_auth.py` (16), `tests/test_cli.py` (+2). Docs: `docs/providers.md#tuik`, README, `.env.example`, skill provider matrix.
 
 ## 2026-11-14 - v0.30.3 - release: category rebuild notice, package URLs, docs
 

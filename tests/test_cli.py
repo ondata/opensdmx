@@ -1108,3 +1108,26 @@ def test_get_non_csv_error_with_brackets_is_escaped():
     assert result.exit_code == 1
     assert "[/docs]" in flat
     assert "[link=foo]" in flat
+
+
+@pytest.mark.parametrize(
+    ("provider", "expected", "absent"),
+    [
+        ("tuik", "does not publish constraints", "hidden or not yet public"),
+        ("istat", "hidden or not yet public", "does not publish constraints"),
+    ],
+)
+def test_constraints_unavailable_message_follows_provider_flag(provider, expected, absent):
+    """A provider declaring constraints_supported=false is not told its dataflow is hidden."""
+    from opensdmx.discovery import ConstraintsUnavailable
+
+    with patch("opensdmx.cli._check_api_reachable"), \
+         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+         patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
+         patch("opensdmx.discovery.get_available_values", side_effect=ConstraintsUnavailable("TEST_DF")):
+        result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", provider])
+
+    assert result.exit_code == 0, result.output
+    flat = re.sub(r"\s+", " ", result.output)
+    assert expected in flat
+    assert absent not in flat
