@@ -208,3 +208,12 @@ def make_url_key(filters: dict[str, Any]) -> str:
             parts.append(str(values))
 
     return ".".join(parts)
+
+
+def escape_key_for_provider(key: str, provider: dict[str, Any]) -> str:
+    """Write the key's dots as '%2E' when the provider declares `data_key_escape_dots`.
+
+    Some front-end servers (TÜİK's IIS) answer 404 to '..' in a path before the
+    SDMX service sees it; '%2E' is the same key to the service.
+    """
+    return key.replace(".", "%2E") if provider.get("data_key_escape_dots") else key

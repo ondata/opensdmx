@@ -865,11 +865,20 @@ def constraints(
         with _status_ctx("[dim]Fetching constraints...[/dim]"):
             avail = get_available_values(ds)
     except ConstraintsUnavailable:
-        err_console.print(
-            f"[yellow]⚠ Constraints not available for [bold]{dataset_id}[/bold] "
-            f"(dataflow is hidden or not yet public).[/yellow]\n"
-            f"Data is still accessible:  opensdmx get {dataset_id} ..."
-        )
+        if provider_cfg.get("constraints_supported") is False:
+            # The provider publishes no constraints at all: "hidden dataflow" would mislead.
+            err_console.print(
+                f"[yellow]⚠ {provider_label(provider_cfg)} does not publish constraints, "
+                f"so the codes present in [bold]{dataset_id}[/bold] cannot be listed.[/yellow]\n"
+                f"Codelists:  opensdmx values {dataset_id} <DIM>\n"
+                f"Probe the data:  opensdmx get {dataset_id} ... --last-n 1"
+            )
+        else:
+            err_console.print(
+                f"[yellow]⚠ Constraints not available for [bold]{dataset_id}[/bold] "
+                f"(dataflow is hidden or not yet public).[/yellow]\n"
+                f"Data is still accessible:  opensdmx get {dataset_id} ..."
+            )
         raise typer.Exit(0)
     except ConstraintsTimeout as e:
         err_console.print(

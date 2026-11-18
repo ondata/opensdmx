@@ -31,10 +31,10 @@ def run_guide(
         raise typer.Exit(1)
 
     from .ai import ChangeDataset, guide_session
-    from .base import get_agency_id, get_base_url
+    from .base import get_agency_id, get_base_url, get_provider
     from .discovery import load_dataset, set_filters
     from .embed import semantic_search
-    from .utils import make_url_key
+    from .utils import escape_key_for_provider, make_url_key
 
     # Step 1: get query
     if not query:
@@ -154,12 +154,16 @@ def run_guide(
 
             from .db_cache import save_invalid_dataset
 
-            _check_url = f"{get_base_url()}/dataflow/{get_agency_id()}/{ds['df_id']}"
+            from .base import sdmx_request
+
             _available = True
             try:
-                _resp = httpx.get(_check_url, timeout=10.0)
-                if _resp.status_code >= 400:
-                    _available = False
+                # Through the shared request path: auth, user agent and rate limit
+                # apply. A 4xx/5xx raises; AuthError (missing credentials) is left
+                # to propagate, so it never marks the dataflow as unavailable.
+                sdmx_request(
+                    f"dataflow/{get_agency_id()}/{ds['df_id']}", _timeout=10.0, _max_retries=1
+                )
             except (httpx.HTTPError, OSError):
                 _available = False
 
@@ -273,7 +277,7 @@ def run_guide(
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)
 
-        key = make_url_key(ds["filters"])
+        key = escape_key_for_provider(make_url_key(ds["filters"]), get_provider())
         base, agency, version = get_base_url(), get_agency_id(), ds["version"]
         url = f"{base}/data/{agency},{ds['df_id']},{version}/{key}?format=csv"
 

@@ -230,5 +230,29 @@
     "constraints_supported": true,
     "last_n_supported": true,
     "categories_supported": true
+  },
+  "tuik": {
+    "name": "Turkish Statistical Institute",
+    "aliases": ["turkstat"],
+    "description": "Turkish Statistical Institute (TÜİK/TURKSTAT). About 500 dataflows on Türkiye: agriculture, education, labour, energy, environment and emissions, health, income and poverty, trade, justice, national accounts, prices, population. Needs free credentials from TÜİK in TUIK_CLIENT_ID and TUIK_CLIENT_SECRET. Slow by design: 12.5 s between requests, or the service stops answering.",
+    "base_url": "https://nsiws.tuik.gov.tr/rest",
+    "agency_id": "TR",
+    "rate_limit": 12.5,
+    "language": "en",
+    "auth": {
+      "type": "oauth2_client_credentials",
+      "token_url": "https://giris.tuik.gov.tr/realms/web/protocol/openid-connect/token",
+      "client_id_env": "TUIK_CLIENT_ID",
+      "client_secret_env": "TUIK_CLIENT_SECRET",
+      "doc_url": "https://veriportali.tuik.gov.tr/en/sdmx-web-service-documentation"
+    },
+    "request_timeout": 10,
+    "data_csv_accept": "application/vnd.sdmx.data+csv;version=1.0.0",
+    "data_key_escape_dots": true,
+    "constraint_timeout": 15,
+    "constraint_max_retries": 1,
+    "constraints_supported": false,
+    "last_n_supported": true,
+    "categories_supported": true
   }
 }

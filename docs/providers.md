@@ -229,6 +229,35 @@ Quirks: INPS is **hub-only** — its classic SDMX-REST NSI endpoint is blocked b
 
 Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB). `availableconstraint` answers 500 to `references=none` and needs the `/all` key, hence `constraint_params: {}` and `constraint_path_suffix: "/all"`. The SDMX catalogue is partial: as of October 2026 the TOPICS tree has no dataflows under Prices or National economy.
 
+### tuik
+
+| Field | Value |
+|---|---|
+| Name | Turkish Statistical Institute |
+| Aliases | `turkstat` |
+| `base_url` | `https://nsiws.tuik.gov.tr/rest` |
+| `agency_id` | `TR` |
+| `rate_limit` | 12.5 s |
+| `language` | `en` |
+| `auth` | OAuth2 client credentials, `TUIK_CLIENT_ID` + `TUIK_CLIENT_SECRET` |
+| `request_timeout` | 10 s |
+| `data_csv_accept` | `application/vnd.sdmx.data+csv;version=1.0.0` |
+| `data_key_escape_dots` | `true` |
+| `constraint_timeout` / `constraint_max_retries` | 15 s / 1 |
+| `constraints_supported` | `false` |
+| `last_n_supported` | `true` |
+| `categories_supported` | `true` |
+
+Credentials: every request needs a Bearer token. TÜİK hands out free credentials: with a Turkish mobile number from the user page of the Data Portal (SMS check), without one by writing to `info@tuik.gov.tr` (section 4.2 of the [SDMX web service documentation](https://veriportali.tuik.gov.tr/en/sdmx-web-service-documentation)). Put them in `TUIK_CLIENT_ID` and `TUIK_CLIENT_SECRET`; opensdmx gets the token itself (`grant_type=client_credentials`, it lasts 300 s) and keeps it in memory.
+
+Quirks, measured on 2026-11-18:
+
+- `?format=SDMX-CSV` is ignored (Generic XML comes back), so CSV is asked through the `Accept` header.
+- The IIS server in front of the service answers 404 ("File or directory not found") to any path with two consecutive dots, so a key with two empty dimensions in a row never reaches the SDMX service - the documentation's own `.....3` example included. With `data_key_escape_dots` the key's dots go out as `%2E`, and every partial key works server-side.
+- With requests close together the service stops answering for a while: out of six requests, three got no answer within 12 s with no pause, two with 3 s, one with 6 s, none out of eight with 12 s. TÜİK documents no limit. Hence `rate_limit: 12.5` (send to send) and a short `request_timeout`, so an unanswered request fails into the retries instead of waiting minutes. A cold `info` makes about eight requests, so it takes about a minute and a half; the cache serves later calls.
+- No constraints are published: `contentconstraint` answers 404, `availableconstraint` 500 or nothing. `constraints` reports them unavailable; use `values` (the codelist) and the data.
+- The thematic tree is the CSA_REV1 category scheme (19 top-level domains).
+
 ---
 
 ## Provider configuration fields
@@ -263,6 +292,9 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `rate_limit_group` | string | provider key | Name of the rate-limit timestamp and lock files. Providers with the same group are paced on one timer, for endpoints behind one per-IP limit (`istat_hvd` declares `istat`); cache directories stay per provider. Letters, digits, `_`, `.`, `-`, no leading dot. Inside a group there is no `data_rate_limit` split: every member waits the strictest interval of the group (`rate_limit`, plus `data_rate_limit` for data calls) |
 | `user_agent` | string | absent | Provider-specific `User-Agent`; can be overridden with `OPENSDMX_USER_AGENT` |
 | `data_key_format` | string | `"dots"` | SDMX key path style; `"empty"` omits wildcard dot keys and filters client-side |
+| `data_key_escape_dots` | boolean | `false` | Send the data key's dots as `%2E`, for front-end servers that refuse `..` in a path (TÜİK) |
+| `request_timeout` | float | module timeout (300 s) | Per-request timeout for this provider; a per-call timeout (constraints, hub) still wins |
+| `auth` | dict | absent | Credentials for providers that need a token. Only `{"type": "oauth2_client_credentials", "token_url", "client_id_env", "client_secret_env", "doc_url"}` is supported: the id and secret are read from the two named environment variables, the token is kept in memory until 30 s before it expires and renewed once on a 401. It is sent only to `base_url`, never to `hub_base_url`, and never fetched under `--explain` |
 | `hub_base_url` | string | absent | StatKit Data Browser middleware base URL (ISTAT constraints fast path; INPS full backend) |
 | `hub_only` | boolean | `false` | When `true`, the provider has no SDMX-REST endpoint; catalog/structure/constraints are served entirely via `hub_base_url` (INPS) |
 | `hub_nodes` | dict | absent | `code→nodeId` map for hub-only providers whose middleware is split into nodes (INPS observatories) |

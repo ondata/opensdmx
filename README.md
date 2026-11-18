@@ -195,6 +195,7 @@ opensdmx.set_provider("oecd")
 opensdmx.set_provider("ecb")
 opensdmx.set_provider("worldbank")
 opensdmx.set_provider("bfs")      # Swiss Federal Statistical Office
+opensdmx.set_provider("tuik")     # Turkish Statistical Institute, needs credentials (below)
 
 # Custom provider (agency_id optional). Any field of portals.json can be passed,
 # not only agency_id and rate_limit.
@@ -215,6 +216,16 @@ opensdmx.get_provider()  # the active provider's fields: base_url, agency_id,
 Fields that a preset ignores, and fields that are not in `portals.json` (a typo, say), are
 reported with a `logging` warning instead of being dropped silently. `constraints_supported` is
 only a capability flag shown by `opensdmx providers`: it does not change the requests.
+
+**Providers that need credentials.** TÜİK (`tuik`) answers only with a token. Ask TÜİK for free credentials (see the [provider notes](docs/providers.md#tuik)), then export them; opensdmx gets and renews the token itself:
+
+```bash
+export TUIK_CLIENT_ID=...
+export TUIK_CLIENT_SECRET=...
+opensdmx search emission -p tuik
+```
+
+TÜİK is slow on purpose: opensdmx waits 12.5 s between requests, because the service stops answering when they come closer.
 
 > **Note on output columns:** Eurostat uses the compact `SDMX-CSV` format (dimensions + `TIME_PERIOD` + `OBS_VALUE`). Other providers (ECB, OECD, etc.) return the generic `text/csv` format, which includes additional series metadata columns (`TITLE`, `UNIT`, `DECIMALS`, etc.). This is expected behavior — filter columns with standard tools if needed.
 
