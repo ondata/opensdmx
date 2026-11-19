@@ -248,7 +248,12 @@ Quirks: Uses SDMX API v1 endpoint with agency-specific dataflows (e.g., CH1.AHBB
 | `last_n_supported` | `true` |
 | `categories_supported` | `true` |
 
-Credentials: every request needs a Bearer token. TÜİK hands out free credentials: with a Turkish mobile number from the user page of the Data Portal (SMS check), without one by writing to `info@tuik.gov.tr` (section 4.2 of the [SDMX web service documentation](https://veriportali.tuik.gov.tr/en/sdmx-web-service-documentation)). Put them in `TUIK_CLIENT_ID` and `TUIK_CLIENT_SECRET`; opensdmx gets the token itself (`grant_type=client_credentials`, it lasts 300 s) and keeps it in memory.
+Credentials: every request needs a Bearer token. TÜİK's documentation (sections 4.2-4.3 of the [SDMX web service documentation](https://veriportali.tuik.gov.tr/en/sdmx-web-service-documentation)) describes two kinds:
+
+- **client id and secret**, sent by TÜİK on request to `info@tuik.gov.tr` to users without a Turkish mobile number (section 4.3.2, `grant_type=client_credentials`). This is the kind opensdmx supports: put them in `TUIK_CLIENT_ID` and `TUIK_CLIENT_SECRET`.
+- **API Key**, generated on the Data Portal user page after an SMS check, for users with a Turkish mobile number (section 4.3.1, `grant_type=password` with `api_key`). opensdmx does not support it yet.
+
+opensdmx reads the two variables from the environment only (never from a `.env` file), gets the token itself (it lasts 300 s) and keeps it in memory. Set them once in the shell startup file (`~/.zshenv`, `~/.bashrc`).
 
 Quirks, measured on 2026-11-18:
 

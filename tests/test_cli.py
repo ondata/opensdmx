@@ -1149,3 +1149,10 @@ def test_missing_credentials_is_one_line_for_every_command(monkeypatch, capsys):
     err = capsys.readouterr().err
     assert "TUIK_CLIENT_ID" in err
     assert "Traceback" not in err
+
+
+def test_top_level_help_names_credential_env_vars():
+    result = runner.invoke(app, ["--help"])
+    flat = re.sub(r"\s+", " ", result.output)
+    assert "TUIK_CLIENT_ID" in flat and "TUIK_CLIENT_SECRET" in flat
+    assert ".env" in flat

@@ -41,7 +41,7 @@ def _credentials(cfg: dict[str, Any]) -> tuple[str, str]:
     client_secret = os.environ.get(secret_env, "")
     missing = [name for name, value in ((id_env, client_id), (secret_env, client_secret)) if not value]
     if missing:
-        msg = f"This provider needs credentials: set {' and '.join(missing)} in the environment."
+        msg = f"This provider needs credentials: set {' and '.join(missing)} in the environment (once, in ~/.zshenv or ~/.bashrc)."
         if cfg.get("doc_url"):
             msg += f" How to obtain them: {cfg['doc_url']}"
         raise AuthError(msg)

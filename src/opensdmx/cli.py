@@ -25,6 +25,7 @@ from rich.table import Table
 
 from .auth import AuthError
 from .base import (
+    PROVIDERS,
     ExplainStop,
     get_base_url,
     get_provider,
@@ -64,7 +65,23 @@ def _parse_header(value: str) -> tuple[str, str]:
     return name.strip(), val.strip()
 
 
-app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs), OPENSDMX_OUTPUT (default output format)")
+def _credentials_help() -> str:
+    """Help paragraph naming the env vars of every provider that declares `auth`."""
+    needs = [
+        f"{key} needs {cfg['auth']['client_id_env']} and {cfg['auth']['client_secret_env']}"
+        for key, cfg in PROVIDERS.items()
+        if cfg.get("auth")
+    ]
+    if not needs:
+        return ""
+    return (
+        "\n\nCredentials: " + "; ".join(needs) + ". They are read from the environment only, "
+        "never from a .env file: set them once in your shell startup file (~/.zshenv, ~/.bashrc). "
+        "Commands answered from the local cache (search on a cached catalog) work without them."
+    )
+
+
+app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs), OPENSDMX_OUTPUT (default output format)" + _credentials_help())
 
 # PowerShell and cmd on Windows default to cp1252; force UTF-8 so Rich tables
 # and Unicode labels (e.g. Cyrillic) don't raise UnicodeEncodeError.
@@ -1073,6 +1090,9 @@ def providers() -> None:
     dataflow and a `search` fallback is still worth running. It is read from
     the local cache only, never fetched — `?` means nothing is cached yet for
     that provider, `-` that the provider has no category tree at all.
+
+    Some providers need credentials (tuik: TUIK_CLIENT_ID and
+    TUIK_CLIENT_SECRET in the environment): see `opensdmx --help`.
 
     Examples:
 

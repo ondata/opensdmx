@@ -217,13 +217,21 @@ Fields that a preset ignores, and fields that are not in `portals.json` (a typo,
 reported with a `logging` warning instead of being dropped silently. `constraints_supported` is
 only a capability flag shown by `opensdmx providers`: it does not change the requests.
 
-**Providers that need credentials.** TÜİK (`tuik`) answers only with a token. Ask TÜİK for free credentials (see the [provider notes](docs/providers.md#tuik)), then export them; opensdmx gets and renews the token itself:
+**Providers that need credentials.** TÜİK (`tuik`) answers only with a token. Ask TÜİK for free credentials (see the [provider notes](docs/providers.md#tuik)), then set them once in your shell startup file, so every new shell has them; opensdmx gets and renews the token itself:
 
 ```bash
+# ~/.zshenv (zsh) or ~/.bashrc (bash)
 export TUIK_CLIENT_ID=...
 export TUIK_CLIENT_SECRET=...
+```
+
+```bash
 opensdmx search emission -p tuik
 ```
+
+- opensdmx reads credentials from the environment only: it never reads a `.env` file. A `.env` in a project folder works only if you load it yourself (`set -a; . ./.env; set +a`).
+- Commands answered from the local cache need no credentials: `search` on a catalog already cached works without them, `info` or `tree` on something not cached yet does not. Without them, a command that has to contact TÜİK stops with one line naming the missing variables.
+- `opensdmx --help` lists the providers that need credentials and their variables.
 
 TÜİK is slow on purpose: opensdmx waits 12.5 s between requests, because the service stops answering when they come closer.
 

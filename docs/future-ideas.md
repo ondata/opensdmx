@@ -107,6 +107,8 @@ When enriching a dataset with DSD labels, also return parent code labels (and gr
 
 Some providers (e.g. ABS Australia) require API key in the HTTP header, not the query string. rsdmx #162. opensdmx has no mechanism for this. A `--header "X-Api-Key: ..."` flag or a per-provider `headers:` key in `providers.yaml` would cover the gap.
 
+*TÜİK Data Portal API Key (2026-11-19):* the `auth` field supports only OAuth2 client credentials (TÜİK section 4.3.2, id and secret sent by email). Users with a Turkish mobile number get an API Key from the portal instead, exchanged with `grant_type=password`, `client_id=nsi-ws-consumer`, `api_key=<key>` (section 4.3.1). A second `auth` type (e.g. `oauth2_api_key` with an `api_key_env`) would cover them; it needs a real key to test.
+
 **14. Auto-coercion of TIME_PERIOD to ISO dates** *(implemented)*
 
 `parse_time_period()` is applied by default in `retrieval.py` on every `get` call and in `plot`. No action needed.
