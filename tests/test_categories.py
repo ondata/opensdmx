@@ -611,3 +611,27 @@ def test_load_categories_drops_hidden_entries(monkeypatch):
 
     # GBV_DV_AGE is a real dataflow: the `$` is what tells a bookmark apart.
     assert visible["df_id"].to_list() == ["LFST_HHEREDCH", "GBV_DV_AGE"]
+
+
+def test_categorisations_without_a_catalog_dataflow_are_dropped(monkeypatch):
+    """TÜİK keeps categorising withdrawn dataflows: they must not count in n_df or the tree."""
+    import polars as pl
+
+    from opensdmx import categories
+
+    cs = pl.DataFrame({"df_id": ["DF_A", "DF_B", "DF_GONE"], "category_id": ["1", "1", "1"]})
+    monkeypatch.setattr(
+        "opensdmx.discovery._load_cached_dataflows", lambda: pl.DataFrame({"df_id": ["DF_A", "DF_B"]})
+    )
+    assert categories._drop_stale(cs)["df_id"].to_list() == ["DF_A", "DF_B"]
+
+
+def test_without_a_cached_catalog_nothing_is_dropped(monkeypatch):
+    """Best-effort: no catalog in cache means no fetch and no filtering."""
+    import polars as pl
+
+    from opensdmx import categories
+
+    cs = pl.DataFrame({"df_id": ["DF_A", "DF_GONE"], "category_id": ["1", "1"]})
+    monkeypatch.setattr("opensdmx.discovery._load_cached_dataflows", lambda: None)
+    assert categories._drop_stale(cs)["df_id"].to_list() == ["DF_A", "DF_GONE"]

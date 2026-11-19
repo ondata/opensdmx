@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-11-19 - fix: tree counts only dataflows that exist
+
+- `tree` counted categorisations whose dataflow is no longer in the catalog: TÜİK `n_df` was 531 for 517 dataflows (14 withdrawn ids still categorised, e.g. `DF_UFE`, and an empty `DF_`). `categories._visible()` now drops them on read, next to the hidden-entry filter, so `n_df`, per-node counts, `siblings` and the category name in `search` all match what `info` can load. Best-effort: without a cached catalog nothing is dropped and nothing is fetched. Checked on every provider with a local cache: Eurostat 59 ids, ECB 15 (`ICPF`, `BP6`, ... which `info` cannot find either), TÜİK 14; `tree -p tuik` now shows 517.
+- Noted, not changed: `tree -p ecb` lists one scheme (`MOBILE_NAVI`, 2 df) for 131 categorisations, before and after this fix.
+
 ## 2026-11-19 - v0.31.1 - fix: credentials errors, spinner rate-limit wait, credentials docs
 
 - `tree` on `tuik` without `TUIK_CLIENT_ID`/`TUIK_CLIENT_SECRET` printed a full traceback: it catches only its own errors, so the `AuthError` reached Typer. `cli.main()` now turns any `AuthError` into one `Error:` line and exit 1. Checked live without credentials on search, info, values, constraints, get, tree, siblings, plot: exit 1, no traceback. Test in `tests/test_cli.py`.

@@ -328,7 +328,28 @@ def _visible(loaded: tuple[pl.DataFrame, pl.DataFrame]) -> tuple[pl.DataFrame, p
     from .discovery import _filter_hidden
 
     categories_df, categorisation_df = loaded
-    return categories_df, _filter_hidden(categorisation_df)
+    return categories_df, _drop_stale(_filter_hidden(categorisation_df))
+
+
+def _drop_stale(categorisation_df: pl.DataFrame) -> pl.DataFrame:
+    """Drop categorisations whose dataflow is not in the cached catalog.
+
+    A provider can keep categorising dataflows it has withdrawn (TÜİK: 14 of 531
+    in November 2026): counted, they inflate `n_df` and the per-node counts, and
+    `siblings` would list ids `info` cannot load. Best-effort like `_warn_stale`:
+    without a cached catalog nothing is dropped and nothing is fetched.
+    """
+    if categorisation_df.is_empty():
+        return categorisation_df
+    try:
+        from .discovery import _load_cached_dataflows
+
+        cached = _load_cached_dataflows()
+    except Exception:
+        return categorisation_df
+    if cached is None:
+        return categorisation_df
+    return categorisation_df.filter(pl.col("df_id").is_in(cached["df_id"].implode()))
 
 
 def _warn_stale(categorisation_df: pl.DataFrame) -> None:
