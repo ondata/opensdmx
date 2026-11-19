@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-11-19 - chore: TÜİK work closed
+
+- TÜİK provider complete across v0.31.0-v0.31.2 (PRs #107, #108, #109); `tasks/todo-tuik.md` closed. Open, external only: TÜİK's answer on a request rate limit (email sent 2026-11-18); until then `rate_limit` stays at the measured 12.5 s. Data Portal API Key support stays an idea in `docs/future-ideas.md`.
+
 ## 2026-11-19 - v0.31.2 - fix: tree counts only dataflows that exist, ECB thematic schemes
 
 - `tree` counted categorisations whose dataflow is no longer in the catalog: TÜİK `n_df` was 531 for 517 dataflows (14 withdrawn ids still categorised, e.g. `DF_UFE`, and an empty `DF_`). `categories._visible()` now drops them on read, next to the hidden-entry filter, so `n_df`, per-node counts, `siblings` and the category name in `search` all match what `info` can load. Best-effort: without a cached catalog nothing is dropped and nothing is fetched. Checked on every provider with a local cache: Eurostat 59 ids, ECB 15 (`ICPF`, `BP6`, ... which `info` cannot find either), TÜİK 14; `tree -p tuik` now shows 517.
