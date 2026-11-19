@@ -125,12 +125,12 @@ def _status_ctx(msg: str) -> Iterator[None]:
         with console.status(msg) as status:
             # The spinner redirects stderr, so the base "\r" countdown would print
             # one line per tick: show the rate-limit wait inside the spinner instead.
+            # No seconds: a command makes many requests and the count restarts at
+            # each one, so it would not say how long the command still takes.
+            waiting = f"{msg} [dim](pausing between requests, provider rate limit)[/dim]"
+
             def _report(remaining: float | None) -> None:
-                if remaining is None:
-                    status.update(msg)
-                else:
-                    left = "< 1s" if remaining < 1 else f"{remaining:.0f}s"
-                    status.update(f"{msg} [dim](rate limit, {left})[/dim]")
+                status.update(msg if remaining is None else waiting)
 
             previous = set_wait_reporter(_report)
             try:
