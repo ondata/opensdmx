@@ -217,7 +217,12 @@ def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") 
 
     # ── Step 4: Python validates each scenario ────────────────────────────────
     valid_scenarios: list[ScenarioFilter] = []
-    with console.status("[dim]Validating scenarios...[/dim]"):
+    # Validation downloads data, so it meets rate-limit pauses: show them inside
+    # the spinner, as the CLI does, instead of one stderr line per tick.
+    from .cli import _status_with_wait
+
+    _validating = "[dim]Validating scenarios...[/dim]"
+    with _status_with_wait(console.status(_validating), _validating):
         for s in proposal.scenarios:
             ok, _ = _validate(_to_dict(s.filters))
             if ok:

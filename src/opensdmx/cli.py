@@ -109,7 +109,32 @@ class _OutputConsole(Console):
         # --explain there is no wait to animate in the first place.
         if is_explain():
             return nullcontext()
-        return super().status(status, **kwargs)
+        return _status_with_wait(super().status(status, **kwargs), status)
+
+
+@contextmanager
+def _status_with_wait(live: Any, msg: Any) -> Iterator[Any]:
+    """Run a Rich status and show any rate-limit wait inside it.
+
+    The spinner redirects stderr, so the base "\r" countdown would print one line
+    per tick. No seconds: a command makes many requests and the count restarts at
+    each one, so it would not say how long the command still takes. Cycling dots
+    (the reporter ticks every 0.2 s) show the pause is live.
+    """
+    with live as status:
+
+        def _report(remaining: float | None) -> None:
+            if remaining is None:
+                status.update(msg)
+                return
+            dots = "." * (int(time.monotonic() * 2) % 3 + 1)
+            status.update(f"{msg} [dim](waiting: rate limit{dots:<3})[/dim]")
+
+        previous = set_wait_reporter(_report)
+        try:
+            yield status
+        finally:
+            set_wait_reporter(previous)
 
 
 console = _OutputConsole()
@@ -123,24 +148,8 @@ _output_mode: str = "table"
 def _status_ctx(msg: str) -> Iterator[None]:
     """Show a Rich spinner only in table mode; silent otherwise."""
     if _output_mode == "table":
-        with console.status(msg) as status:
-            # The spinner redirects stderr, so the base "\r" countdown would print
-            # one line per tick: show the rate-limit wait inside the spinner instead.
-            # No seconds: a command makes many requests and the count restarts at
-            # each one, so it would not say how long the command still takes.
-            # Cycling dots (the reporter ticks every 0.2 s) show the pause is live.
-            def _report(remaining: float | None) -> None:
-                if remaining is None:
-                    status.update(msg)
-                    return
-                dots = "." * (int(time.monotonic() * 2) % 3 + 1)
-                status.update(f"{msg} [dim](waiting: rate limit{dots:<3})[/dim]")
-
-            previous = set_wait_reporter(_report)
-            try:
-                yield
-            finally:
-                set_wait_reporter(previous)
+        with console.status(msg):
+            yield
     else:
         yield
 
