@@ -1,6 +1,6 @@
 # LOG
 
-## 2026-11-19 - fix: tree counts only dataflows that exist, ECB thematic schemes
+## 2026-11-19 - v0.31.2 - fix: tree counts only dataflows that exist, ECB thematic schemes
 
 - `tree` counted categorisations whose dataflow is no longer in the catalog: TÜİK `n_df` was 531 for 517 dataflows (14 withdrawn ids still categorised, e.g. `DF_UFE`, and an empty `DF_`). `categories._visible()` now drops them on read, next to the hidden-entry filter, so `n_df`, per-node counts, `siblings` and the category name in `search` all match what `info` can load. Best-effort: without a cached catalog nothing is dropped and nothing is fetched. Checked on every provider with a local cache: Eurostat 59 ids, ECB 15 (`ICPF`, `BP6`, ... which `info` cannot find either), TÜİK 14; `tree -p tuik` now shows 517.
 - `tree -p ecb` listed one scheme (`MOBILE_NAVI`, 2 df) although the categorisation points at `WDC_NAVI` and `WDC_NAVI_OLD`: those schemes are maintained by `ECB.DISS`, and opensdmx asked `categoryscheme/ECB/...` only. New generic field `categories_agency` (categoryscheme and categorisation only, not the catalog); ECB sets `all`: 6 schemes, `WDC_NAVI` 50 df, `WDC_NAVI_OLD` 54, coverage 61%. Checked every provider with a tree (Eurostat, ISTAT, ISTAT HVD, INPS, OECD, ILO, BFS, TÜİK, INSEE, ABS, BIS): no other categorisation points at a missing scheme.
