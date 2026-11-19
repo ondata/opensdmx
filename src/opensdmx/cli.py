@@ -23,6 +23,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+from .auth import AuthError
 from .base import (
     ExplainStop,
     get_base_url,
@@ -2124,6 +2125,11 @@ def main() -> None:
         # --explain: the request that stopped the run is already on stderr; not
         # making it is the point, so this is a clean exit, not an error.
         sys.exit(0)
+    except AuthError as e:
+        # Missing or refused credentials: one readable line for every command,
+        # whatever it catches itself, instead of a traceback.
+        err_console.print(f"[red]Error:[/red] {e}")
+        sys.exit(1)
     except SystemExit as e:
         # Click leaves through SystemExit even on success, so a plan that needed
         # no request at all can only be reported here. A run that failed keeps

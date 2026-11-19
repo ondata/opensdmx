@@ -1131,3 +1131,21 @@ def test_constraints_unavailable_message_follows_provider_flag(provider, expecte
     flat = re.sub(r"\s+", " ", result.output)
     assert expected in flat
     assert absent not in flat
+
+
+def test_missing_credentials_is_one_line_for_every_command(monkeypatch, capsys):
+    """AuthError reaches main() from commands that do not catch it (tree): no traceback."""
+    from opensdmx import cli
+    from opensdmx.auth import AuthError
+
+    def boom(*a, **k):
+        raise AuthError("This provider needs credentials: set TUIK_CLIENT_ID in the environment.")
+
+    monkeypatch.setattr("opensdmx.categories.load_categories", boom)
+    monkeypatch.setattr("sys.argv", ["opensdmx", "tree", "-p", "tuik", "--depth", "1"])
+    with pytest.raises(SystemExit) as exc:
+        cli.main()
+    assert exc.value.code == 1
+    err = capsys.readouterr().err
+    assert "TUIK_CLIENT_ID" in err
+    assert "Traceback" not in err
