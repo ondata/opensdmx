@@ -443,3 +443,30 @@ def test_run_query_prefers_a_provider_name_over_an_alias(tmp_path, monkeypatch):
             run_query(str(query))
 
     assert seen == ["https://stat.example.org/rest"]
+
+
+@pytest.mark.parametrize(
+    "auth",
+    [
+        {"type": "oauth2_client_credentials"},
+        {"type": "api_key", "token_url": "u", "client_id_env": "A", "client_secret_env": "B"},
+        "yes",
+    ],
+)
+def test_invalid_auth_is_ignored(monkeypatch, tmp_path, caplog, auth):
+    """A malformed `auth` used to raise KeyError while building `--help`, at CLI import."""
+    path = _write_portals(
+        tmp_path / "portals.json",
+        {
+            "mine": {"base_url": "https://a.example.org/rest", "auth": auth},
+            "tuik": {"auth": auth},
+        },
+    )
+    monkeypatch.setenv("OPENSDMX_PORTALS", str(path))
+
+    with caplog.at_level(logging.WARNING, logger="opensdmx.base"):
+        portals = _load_portals()
+
+    assert "auth" not in portals["mine"]
+    assert portals["tuik"]["auth"] == BUNDLED["tuik"]["auth"]  # the bundled block still applies
+    assert sum("auth" in record.message and "ignored" in record.message for record in caplog.records) == 2

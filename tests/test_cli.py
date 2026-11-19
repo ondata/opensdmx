@@ -1131,3 +1131,45 @@ def test_constraints_unavailable_message_follows_provider_flag(provider, expecte
     flat = re.sub(r"\s+", " ", result.output)
     assert expected in flat
     assert absent not in flat
+
+
+def test_missing_credentials_is_one_line_for_every_command(monkeypatch, capsys):
+    """AuthError reaches main() from commands that do not catch it (tree): no traceback."""
+    from opensdmx import cli
+    from opensdmx.auth import AuthError
+
+    def boom(*a, **k):
+        raise AuthError("This provider needs credentials: set TUIK_CLIENT_ID in the environment.")
+
+    monkeypatch.setattr("opensdmx.categories.load_categories", boom)
+    monkeypatch.setattr("sys.argv", ["opensdmx", "tree", "-p", "tuik", "--depth", "1"])
+    with pytest.raises(SystemExit) as exc:
+        cli.main()
+    assert exc.value.code == 1
+    err = capsys.readouterr().err
+    assert "TUIK_CLIENT_ID" in err
+    assert "Traceback" not in err
+
+
+def test_top_level_help_names_credential_env_vars():
+    result = runner.invoke(app, ["--help"])
+    flat = re.sub(r"\s+", " ", result.output)
+    assert "TUIK_CLIENT_ID" in flat and "TUIK_CLIENT_SECRET" in flat
+    assert ".env" in flat
+
+
+def test_every_cli_spinner_takes_over_the_rate_limit_countdown():
+    """Any console.status (not only _status_ctx) routes the wait inside the spinner."""
+    import opensdmx.base as base
+    from opensdmx.cli import _status_ctx, console
+
+    assert base._wait_reporter is None
+    with console.status("Fetching data..."):
+        reporter = base._wait_reporter
+        assert reporter is not None
+        reporter(3.0)  # must not raise or write to stderr
+        reporter(None)
+    assert base._wait_reporter is None
+    with _status_ctx("Loading..."):
+        assert base._wait_reporter is not None
+    assert base._wait_reporter is None

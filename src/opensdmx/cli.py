@@ -6,6 +6,7 @@ import json
 import math
 import re
 import sys
+import time
 from collections.abc import Iterator
 from contextlib import contextmanager, nullcontext
 from pathlib import Path
@@ -23,7 +24,9 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
+from .auth import AuthError, auth_config_problem
 from .base import (
+    PROVIDERS,
     ExplainStop,
     get_base_url,
     get_provider,
@@ -31,6 +34,7 @@ from .base import (
     provider_label,
     set_extra_headers,
     set_explain,
+    set_wait_reporter,
 )
 from .utils import compose_title
 
@@ -62,7 +66,24 @@ def _parse_header(value: str) -> tuple[str, str]:
     return name.strip(), val.strip()
 
 
-app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs), OPENSDMX_OUTPUT (default output format)")
+def _credentials_help() -> str:
+    """Help paragraph naming the env vars of every provider that declares `auth`."""
+    needs = [
+        f"{key} needs {cfg['auth']['client_id_env']} and {cfg['auth']['client_secret_env']}"
+        for key, cfg in PROVIDERS.items()
+        # A malformed block must not break --help (and every command) at import.
+        if cfg.get("auth") and auth_config_problem(cfg["auth"]) is None
+    ]
+    if not needs:
+        return ""
+    return (
+        "\n\nCredentials: " + "; ".join(needs) + ". They are read from the environment only, "
+        "never from a .env file: set them once in your shell startup file (~/.zshenv, ~/.bashrc). "
+        "Commands answered from the local cache (search on a cached catalog) work without them."
+    )
+
+
+app = typer.Typer(help="opensdmx — SDMX 2.1 REST API CLI\n\nEnv vars: OPENSDMX_PROVIDER (provider name or URL), OPENSDMX_AGENCY (agency ID for custom URLs), OPENSDMX_OUTPUT (default output format)" + _credentials_help())
 
 # PowerShell and cmd on Windows default to cp1252; force UTF-8 so Rich tables
 # and Unicode labels (e.g. Cyrillic) don't raise UnicodeEncodeError.
@@ -89,7 +110,32 @@ class _OutputConsole(Console):
         # --explain there is no wait to animate in the first place.
         if is_explain():
             return nullcontext()
-        return super().status(status, **kwargs)
+        return _status_with_wait(super().status(status, **kwargs), status)
+
+
+@contextmanager
+def _status_with_wait(live: Any, msg: Any) -> Iterator[Any]:
+    """Run a Rich status and show any rate-limit wait inside it.
+
+    The spinner redirects stderr, so the base "\r" countdown would print one line
+    per tick. No seconds: a command makes many requests and the count restarts at
+    each one, so it would not say how long the command still takes. Cycling dots
+    (the reporter ticks every 0.2 s) show the pause is live.
+    """
+    with live as status:
+
+        def _report(remaining: float | None) -> None:
+            if remaining is None:
+                status.update(msg)
+                return
+            dots = "." * (int(time.monotonic() * 2) % 3 + 1)
+            status.update(f"{msg} [dim](waiting: rate limit{dots:<3})[/dim]")
+
+        previous = set_wait_reporter(_report)
+        try:
+            yield status
+        finally:
+            set_wait_reporter(previous)
 
 
 console = _OutputConsole()
@@ -1058,6 +1104,9 @@ def providers() -> None:
     dataflow and a `search` fallback is still worth running. It is read from
     the local cache only, never fetched — `?` means nothing is cached yet for
     that provider, `-` that the provider has no category tree at all.
+
+    Some providers need credentials (tuik: TUIK_CLIENT_ID and
+    TUIK_CLIENT_SECRET in the environment): see `opensdmx --help`.
 
     Examples:
 
@@ -2124,6 +2173,11 @@ def main() -> None:
         # --explain: the request that stopped the run is already on stderr; not
         # making it is the point, so this is a clean exit, not an error.
         sys.exit(0)
+    except AuthError as e:
+        # Missing or refused credentials: one readable line for every command,
+        # whatever it catches itself, instead of a traceback.
+        err_console.print(f"[red]Error:[/red] {e}")
+        sys.exit(1)
     except SystemExit as e:
         # Click leaves through SystemExit even on success, so a plan that needed
         # no request at all can only be reported here. A run that failed keeps

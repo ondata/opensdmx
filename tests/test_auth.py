@@ -282,3 +282,41 @@ def test_token_fetched_before_rate_limit_timestamp():
         sdmx_request("dataflow/X")
 
     assert order == ["token", "pace"]
+
+
+def test_rate_limit_wait_goes_to_reporter_not_stderr(capsys):
+    """Under a CLI spinner the countdown must not be written as '\\r' lines on stderr."""
+    import time as _time
+
+    import opensdmx.base as base
+
+    set_provider("https://sdmx.example.org/rest", agency_id="X", rate_limit=0.5)
+    base._rate_limit_file(False).write_text(str(_time.time()))
+    seen: list[float | None] = []
+    previous = base.set_wait_reporter(seen.append)
+    try:
+        base._rate_limit_check(False)
+    finally:
+        base.set_wait_reporter(previous)
+
+    assert seen and seen[-1] is None
+    assert all(r > 0 for r in seen[:-1])
+    assert capsys.readouterr().err == ""
+
+
+def test_malformed_auth_on_custom_provider_is_a_clear_error():
+    """set_provider(url, auth=...) skips the portals-file check: the request must not KeyError."""
+    set_provider("https://sdmx.example.org/rest", agency_id="X", rate_limit=0.0, auth={"type": "oauth2_client_credentials"})
+    with _data_client(lambda r: httpx.Response(200)):
+        with pytest.raises(auth.AuthError) as exc:
+            sdmx_request("dataflow/X")
+    assert "token_url" in str(exc.value)
+
+
+def test_help_ignores_malformed_auth(monkeypatch):
+    from opensdmx import cli
+
+    monkeypatch.setitem(cli.PROVIDERS, "broken", {"base_url": "https://b.example.org", "auth": {"type": "x"}})
+    text = cli._credentials_help()
+    assert "broken" not in text
+    assert "TUIK_CLIENT_ID" in text
