@@ -6,6 +6,7 @@ import json
 import math
 import re
 import sys
+import time
 from collections.abc import Iterator
 from contextlib import contextmanager, nullcontext
 from pathlib import Path
@@ -127,10 +128,13 @@ def _status_ctx(msg: str) -> Iterator[None]:
             # one line per tick: show the rate-limit wait inside the spinner instead.
             # No seconds: a command makes many requests and the count restarts at
             # each one, so it would not say how long the command still takes.
-            waiting = f"{msg} [dim](pausing between requests, provider rate limit)[/dim]"
-
+            # Cycling dots (the reporter ticks every 0.2 s) show the pause is live.
             def _report(remaining: float | None) -> None:
-                status.update(msg if remaining is None else waiting)
+                if remaining is None:
+                    status.update(msg)
+                    return
+                dots = "." * (int(time.monotonic() * 2) % 3 + 1)
+                status.update(f"{msg} [dim](waiting: rate limit{dots:<3})[/dim]")
 
             previous = set_wait_reporter(_report)
             try:
