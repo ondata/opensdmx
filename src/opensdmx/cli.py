@@ -32,6 +32,7 @@ from .base import (
     provider_label,
     set_extra_headers,
     set_explain,
+    set_wait_reporter,
 )
 from .utils import compose_title
 
@@ -104,8 +105,21 @@ _output_mode: str = "table"
 def _status_ctx(msg: str) -> Iterator[None]:
     """Show a Rich spinner only in table mode; silent otherwise."""
     if _output_mode == "table":
-        with console.status(msg):
-            yield
+        with console.status(msg) as status:
+            # The spinner redirects stderr, so the base "\r" countdown would print
+            # one line per tick: show the rate-limit wait inside the spinner instead.
+            def _report(remaining: float | None) -> None:
+                if remaining is None:
+                    status.update(msg)
+                else:
+                    left = "< 1s" if remaining < 1 else f"{remaining:.0f}s"
+                    status.update(f"{msg} [dim](rate limit, {left})[/dim]")
+
+            previous = set_wait_reporter(_report)
+            try:
+                yield
+            finally:
+                set_wait_reporter(previous)
     else:
         yield
 

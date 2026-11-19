@@ -12,7 +12,7 @@ import tempfile
 import time
 from functools import lru_cache
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Callable
 
 import httpx
 import portalocker
@@ -282,6 +282,22 @@ def set_extra_headers(headers: dict[str, str]) -> None:
 def get_extra_headers() -> dict[str, str]:
     """Return the currently configured extra HTTP headers."""
     return _extra_headers
+
+
+# Called with the seconds left of a rate-limit wait, then with None when it ends.
+# The CLI points it at its spinner: a live display redirects stderr and would print
+# each "\r" countdown rewrite as a new line.
+_wait_reporter: Callable[[float | None], None] | None = None
+
+
+def set_wait_reporter(
+    reporter: Callable[[float | None], None] | None,
+) -> Callable[[float | None], None] | None:
+    """Route the rate-limit countdown to `reporter`; return the previous one."""
+    global _wait_reporter
+    previous = _wait_reporter
+    _wait_reporter = reporter
+    return previous
 
 
 def set_rate_limit_context(msg: str) -> None:
@@ -602,6 +618,13 @@ def _rate_limit_check(is_data: bool = False) -> None:
                 wait = min_interval - elapsed
                 end_time = time.time() + wait
                 label = _rate_limit_context or "Waiting"
+                reporter = _wait_reporter
+                if reporter is not None:
+                    while (remaining := end_time - time.time()) > 0:
+                        reporter(remaining)
+                        time.sleep(min(0.2, remaining))
+                    reporter(None)
+                    return
                 while True:
                     remaining = end_time - time.time()
                     if remaining <= 0:

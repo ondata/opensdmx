@@ -3,6 +3,7 @@
 ## 2026-11-19 - fix: missing credentials are one line in every command
 
 - `tree` on `tuik` without `TUIK_CLIENT_ID`/`TUIK_CLIENT_SECRET` printed a full traceback: it catches only its own errors, so the `AuthError` reached Typer. `cli.main()` now turns any `AuthError` into one `Error:` line and exit 1. Checked live without credentials on search, info, values, constraints, get, tree, siblings, plot: exit 1, no traceback. Test in `tests/test_cli.py`.
+- Rate-limit countdown under a CLI spinner printed one `Waiting (Ns)...` line per tick (Rich's live display redirects stderr, so each `\r` rewrite became a new line). `base.set_wait_reporter()` now lets the CLI show the wait inside the spinner (`... (rate limit, 9s)`); without a reporter the `\r` countdown is unchanged. Affects every provider with a wait (ISTAT 15 s, TÜİK 12.5 s). Test in `tests/test_auth.py`.
 
 ## 2026-11-18 - v0.31.0 - feat: TÜİK provider, token auth for providers
 
