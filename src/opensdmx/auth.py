@@ -34,6 +34,25 @@ class AuthError(RuntimeError):
     """Credentials missing, or the token endpoint refused them."""
 
 
+_REQUIRED_FIELDS = ("token_url", "client_id_env", "client_secret_env")
+
+
+def auth_config_problem(cfg: Any) -> str | None:
+    """What is wrong with an `auth` block, or None when it is usable.
+
+    A hand-written user portals file can hold any shape: callers check this
+    instead of indexing fields that may not be there.
+    """
+    if not isinstance(cfg, dict):
+        return "auth must be an object"
+    if cfg.get("type") != "oauth2_client_credentials":
+        return f"unsupported auth type {cfg.get('type')!r} (only 'oauth2_client_credentials')"
+    missing = [f for f in _REQUIRED_FIELDS if not isinstance(cfg.get(f), str) or not cfg.get(f)]
+    if missing:
+        return f"auth is missing {', '.join(missing)}"
+    return None
+
+
 def _credentials(cfg: dict[str, Any]) -> tuple[str, str]:
     id_env = cfg.get("client_id_env", "")
     secret_env = cfg.get("client_secret_env", "")
@@ -49,8 +68,6 @@ def _credentials(cfg: dict[str, Any]) -> tuple[str, str]:
 
 
 def _fetch_token(cfg: dict[str, Any], client_id: str, client_secret: str) -> tuple[str, float]:
-    if cfg.get("type") != "oauth2_client_credentials":
-        raise AuthError(f"Unsupported auth type: {cfg.get('type')!r}")
     try:
         resp = httpx.post(
             cfg["token_url"],
@@ -83,6 +100,9 @@ def auth_headers(provider: dict[str, Any], *, refresh: bool = False) -> dict[str
     cfg = provider.get("auth")
     if not cfg:
         return {}
+    problem = auth_config_problem(cfg)
+    if problem:
+        raise AuthError(f"Provider configuration error: {problem}.")
     client_id, client_secret = _credentials(cfg)
     key = (cfg["token_url"], client_id)
     cached = _tokens.get(key)

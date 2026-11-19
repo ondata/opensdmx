@@ -24,7 +24,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from .auth import AuthError
+from .auth import AuthError, auth_config_problem
 from .base import (
     PROVIDERS,
     ExplainStop,
@@ -71,7 +71,8 @@ def _credentials_help() -> str:
     needs = [
         f"{key} needs {cfg['auth']['client_id_env']} and {cfg['auth']['client_secret_env']}"
         for key, cfg in PROVIDERS.items()
-        if cfg.get("auth")
+        # A malformed block must not break --help (and every command) at import.
+        if cfg.get("auth") and auth_config_problem(cfg["auth"]) is None
     ]
     if not needs:
         return ""

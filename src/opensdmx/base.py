@@ -18,7 +18,7 @@ import httpx
 import portalocker
 from tenacity import Retrying, retry_if_exception, stop_after_attempt, wait_exponential
 
-from .auth import auth_headers
+from .auth import auth_config_problem, auth_headers
 
 if TYPE_CHECKING:
     import polars as pl
@@ -106,6 +106,12 @@ def _clean_user_entry(path: Path, key: str, entry: dict[str, Any]) -> dict[str, 
             logger.warning("portals: %s: provider '%s': %s must be a number, ignored", path, key, field)
 
             del fields[field]
+
+    if "auth" in fields:
+        problem = auth_config_problem(fields["auth"])
+        if problem:
+            logger.warning("portals: %s: provider '%s': %s, ignored", path, key, problem)
+            del fields["auth"]
 
     if "rate_limit_group" in fields and not _is_group_name(fields["rate_limit_group"]):
         logger.warning(
