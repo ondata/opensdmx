@@ -217,7 +217,7 @@ Fields that a preset ignores, and fields that are not in `portals.json` (a typo,
 reported with a `logging` warning instead of being dropped silently. `constraints_supported` is
 only a capability flag shown by `opensdmx providers`: it does not change the requests.
 
-**Providers that need credentials.** TÜİK (`tuik`) answers only with a token. Ask TÜİK for free credentials (see the [provider notes](docs/providers.md#tuik)), then set them once in your shell startup file, so every new shell has them; opensdmx gets and renews the token itself:
+**Providers that need credentials.** TÜİK (`tuik`) answers only with a token. To get free credentials, write to TÜİK at `info@tuik.gov.tr` asking for access credentials (client id and client secret) to the SDMX web service, and say you have no Turkish mobile number. TÜİK replies with a user ID and a password: they are the client id and the client secret (for opensdmx, a reply came in three days, November 2026). The API Key generated on the Data Portal, for users with a Turkish mobile number, does not work with opensdmx yet (see the [provider notes](docs/providers.md#tuik)). Then set them once in your shell startup file, so every new shell has them; opensdmx gets and renews the token itself:
 
 ```bash
 # ~/.zshenv (zsh) or ~/.bashrc (bash)
