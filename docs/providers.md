@@ -78,8 +78,11 @@ Quirks: Comext uses Eurostat's SDMX-CSV format but exposes a trade-specific cata
 | Name | European Central Bank |
 | `base_url` | `https://data-api.ecb.europa.eu/service` |
 | `agency_id` | `ECB` |
+| `categories_agency` | `all` |
 | `rate_limit` | 0.5 s |
 | `language` | `en` |
+
+The thematic schemes behind `tree` (`WDC_NAVI`, `WDC_NAVI_OLD`) are maintained by `ECB.DISS`, not `ECB`: `categoryscheme/ECB/...` returns only `MOBILE_NAVI` (2 dataflows), so `categories_agency: "all"` asks every agency (6 schemes, 256 categorisations, checked 2026-11-19).
 
 ### oecd
 
@@ -284,6 +287,7 @@ Quirks, measured on 2026-11-18:
 | `datastructure_agency` | string | `"ALL"` | Agency used in `datastructure/{agency}/...` requests |
 | `codelist_agency` | string | `"ALL"` | Agency used in `codelist/{agency}/...` requests, for providers that only answer for their own |
 | `catalog_agency` | string | absent | Agency used for catalog requests when different from `agency_id` |
+| `categories_agency` | string | absent | Agency used for `categoryscheme` and `categorisation` only, when the thematic schemes are maintained by another agency than the dataflows (ECB: `all`, because `WDC_NAVI` belongs to `ECB.DISS`). Falls back to `catalog_agency`, then `agency_id` |
 | `metadata_prefix` | string | absent | Prefix prepended to structure endpoints for providers that split metadata paths |
 | `data_format_param` | string | absent | If present, sent as `?format={value}` for data requests instead of `Accept: text/csv` |
 | `data_accept` | string | absent | If present, used as the data request `Accept` header |

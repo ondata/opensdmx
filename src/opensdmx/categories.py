@@ -176,7 +176,14 @@ def _catalog_agency() -> str:
     wildcard keeps the path valid instead of requesting `categoryscheme//ALL/latest`.
     """
     provider = get_provider()
-    return str(provider.get("catalog_agency") or provider.get("agency_id") or "ALL")
+    # `categories_agency` covers providers whose thematic schemes live under another
+    # agency than their dataflows (ECB: WDC_NAVI is maintained by ECB.DISS).
+    return str(
+        provider.get("categories_agency")
+        or provider.get("catalog_agency")
+        or provider.get("agency_id")
+        or "ALL"
+    )
 
 
 def _fetch_categoryscheme() -> pl.DataFrame:

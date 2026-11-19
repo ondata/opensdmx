@@ -103,6 +103,7 @@
     "description": "ECB Statistical Data Warehouse. Covers monetary policy, banking supervision, exchange rates, balance of payments and financial statistics for the euro area.",
     "base_url": "https://data-api.ecb.europa.eu/service",
     "agency_id": "ECB",
+    "categories_agency": "all",
     "constraints_supported": false,
     "last_n_supported": true,
     "categories_supported": true
