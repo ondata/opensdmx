@@ -1439,6 +1439,7 @@ EF_FSI_LFSEX,Farm labour force by work status and sex of worker,ok,sdmx,6,55,0,"
 EF_FSI_LSK,Livestock units by animal groups and size classes of livestock units,ok,sdmx,7,91,0,"",2026-07-20
 EF_FSI_LSKDS,Livestock density,ok,sdmx,6,49,0,"",2026-07-20
 EF_FSI_LUS,Main farm land use,ok,sdmx,6,64,0,"",2026-07-20
+EF_FSI_MS,Manure storage facilities,ok,sdmx,7,66,0,"",2026-11-20
 EF_FSI_NFM,New farm managers by sex,ok,sdmx,6,44,0,"",2026-07-20
 EF_FSI_ORG,"Average organic farm size by utilised agricultural area, economic size and farm type",ok,sdmx,8,92,0,"",2026-07-20
 EF_FSI_PHYSZ,Physical size of farms by utilised agricultural area and legal form,ok,sdmx,6,66,0,"",2026-07-20
@@ -7346,6 +7347,7 @@ TAI07,Ammonia emissions from agriculture - % of total emissions,ok,sdmx,5,55,0,"
 TAI08,Greenhouse gas emissions from agriculture,ok,sdmx,6,67,0,"",2026-08-06
 TAI10,Estimated soil loss by water erosion by land cover type,ok,sdmx,6,50,0,"",2026-08-06
 TAI11,Share of landcover types affected by severe erosion,ok,sdmx,6,50,0,"",2026-08-06
+TAI13,Share of agricultural holdings by type of manure storage facilities,ok,sdmx,7,61,0,"",2026-11-20
 TEC00001,Gross domestic product at market prices,ok,sdmx,5,62,0,"",2026-08-06
 TEC00009,Final consumption expenditure of households and non-profit institutions serving households,ok,sdmx,5,61,0,"",2026-08-06
 TEC00010,Final consumption expenditure of general government,ok,sdmx,5,61,0,"",2026-08-06
