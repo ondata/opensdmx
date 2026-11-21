@@ -1,8 +1,24 @@
 """XML parsing helpers and URL key builder."""
 
-from typing import Any
+import os
+import traceback
+from typing import TYPE_CHECKING, Any
 
 from lxml import etree
+
+if TYPE_CHECKING:
+    from rich.console import Console
+
+
+def print_debug_traceback(console: "Console") -> None:
+    """Print the traceback of the exception being handled, if `OPENSDMX_DEBUG` is set.
+
+    CLI handlers turn every failure into one readable `Error:` line, so a bug
+    (`TypeError`, `KeyError`) caught there leaves no trace of where it came
+    from. Called right after that line: unset, the output does not change.
+    """
+    if os.environ.get("OPENSDMX_DEBUG"):
+        console.print(traceback.format_exc(), markup=False)
 
 
 _NS_CANONICAL = {
