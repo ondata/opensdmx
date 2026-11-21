@@ -321,7 +321,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 with ThreadPoolExecutor() as pool:
     frames = list(pool.map(opensdmx.get_data, datasets))  # each on its own provider
-``` Headers set with `set_extra_headers()` and the timeout set with `set_timeout()` apply to every provider.
+```
+
+Headers set with `set_extra_headers()` and the timeout set with `set_timeout()` apply to every provider.
 
 ### `get_data` and `fetch` parameters
 

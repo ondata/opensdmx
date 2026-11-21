@@ -14,6 +14,7 @@ from collections.abc import Iterator
 from contextlib import AbstractContextManager, contextmanager
 from contextvars import ContextVar
 import functools
+import inspect
 from functools import lru_cache
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Callable, ParamSpec, TypeVar
@@ -466,15 +467,16 @@ _R = TypeVar("_R")
 def _bound_to_dataset(func: Callable[_P, _R]) -> Callable[_P, _R]:
     """Run `func` on the provider its `dataset` argument was loaded from.
 
-    The dataset is the first positional argument or the `dataset` keyword. A
-    dict carrying a `provider` key (set by `load_dataset`) wins over any scope
-    and over the `set_provider` default; a dict without it (built by hand) runs
-    on the provider in effect, as before.
+    The dataset is the function's first parameter, passed by position or by its
+    own name (`dataset=`, `ds=`). A dict carrying a `provider` key (set by
+    `load_dataset`) wins over any scope and over the `set_provider` default; a
+    dict without it (built by hand) runs on the provider in effect, as before.
     """
+    first = next(iter(inspect.signature(func).parameters))
 
     @functools.wraps(func)
     def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> _R:
-        dataset = args[0] if args else kwargs.get("dataset")
+        dataset = args[0] if args else kwargs.get(first)
         if not isinstance(dataset, dict) or "provider" not in dataset:
             return func(*args, **kwargs)
         value = dataset["provider"]

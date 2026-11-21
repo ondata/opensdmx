@@ -290,19 +290,51 @@ def _load(url: str, agency: str) -> dict:
         return opensdmx.load_dataset("DF")
 
 
-def _hosts_of(call) -> list[str]:
-    hosts: list[str] = []
+_CODELIST = b"""<?xml version="1.0" encoding="utf-8"?>
+<message:Structure
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures><structure:Codelists>
+    <structure:Codelist id="CL_FREQ" agencyID="A" version="1.0">
+      <common:Name xml:lang="en">Frequency</common:Name>
+      <structure:Code id="A"><common:Name xml:lang="en">Annual</common:Name></structure:Code>
+    </structure:Codelist>
+  </structure:Codelists></message:Structures>
+</message:Structure>
+"""
+
+_CONSTRAINT = b"""<?xml version="1.0" encoding="utf-8"?>
+<message:Structure
+  xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+  xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+  xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Structures><structure:Constraints>
+    <structure:ContentConstraint id="CC" type="Actual">
+      <structure:CubeRegion include="true">
+        <common:KeyValue id="FREQ"><common:Value>A</common:Value></common:KeyValue>
+      </structure:CubeRegion>
+    </structure:ContentConstraint>
+  </structure:Constraints></message:Structures>
+</message:Structure>
+"""
+
+
+def _serve(hosts: list[str]):
+    """Valid answers by path, recording each host."""
 
     def handler(request: httpx.Request) -> httpx.Response:
         hosts.append(request.url.host)
-        return httpx.Response(404, text="not found")
+        path = request.url.path
+        if "/codelist/" in path:
+            return httpx.Response(200, content=_CODELIST)
+        if "constraint" in path:
+            return httpx.Response(200, content=_CONSTRAINT)
+        if "/data/" in path:
+            return httpx.Response(200, text="FREQ,TIME_PERIOD,OBS_VALUE\nA,2020,1.5\n")
+        return httpx.Response(404, text=f"unexpected {path}")
 
-    with _data_client(handler):
-        try:
-            call()
-        except Exception:  # the 404 may surface as an error; only the host matters
-            pass
-    return hosts
+    return _data_client(handler)
 
 
 def test_load_dataset_records_its_provider():
@@ -317,24 +349,31 @@ def test_load_dataset_records_its_provider():
     assert ds["provider"] is not base._active_provider
 
 
+def _labels(ds):
+    return opensdmx.enrich_with_labels(ds, pl.DataFrame({"FREQ": ["A"], "OBS_VALUE": [1.0]}))
+
+
 @pytest.mark.parametrize(
-    "call",
+    "call, check",
     [
-        lambda ds: opensdmx.dimensions_info(ds),
-        lambda ds: opensdmx.get_dimension_values(ds, "FREQ"),
-        lambda ds: opensdmx.get_codelist_hierarchy(ds, "FREQ"),
-        lambda ds: opensdmx.get_available_values(ds),
-        lambda ds: opensdmx.get_data(ds),
-        lambda ds: opensdmx.enrich_with_labels(ds, pl.DataFrame({"FREQ": ["A"], "OBS_VALUE": [1.0]})),
+        (lambda ds: opensdmx.dimensions_info(ds), lambda r: r.height == 1),
+        (lambda ds: opensdmx.get_dimension_values(ds, "FREQ"), lambda r: r["id"].to_list() == ["A"]),
+        (lambda ds: opensdmx.get_codelist_hierarchy(ds, "FREQ"), lambda r: r["id"].to_list() == ["A"]),
+        (lambda ds: opensdmx.get_available_values(ds), lambda r: r["FREQ"]["id"].to_list() == ["A"]),
+        (lambda ds: opensdmx.get_data(ds), lambda r: r["OBS_VALUE"].to_list() == [1.5]),
+        (_labels, lambda r: r["FREQ_label"].to_list() == ["Annual"]),
     ],
     ids=["dimensions_info", "get_dimension_values", "get_codelist_hierarchy",
          "get_available_values", "get_data", "enrich_with_labels"],
 )
-def test_a1_bound_functions_request_the_dataset_provider(call):
+def test_a1_bound_functions_request_the_dataset_provider(call, check):
     ds = _load(A, "A")
     set_provider(B, agency_id="B", rate_limit=0.0)  # a different default
-    hosts = _hosts_of(lambda: call(ds))
+    hosts: list[str] = []
+    with _serve(hosts):
+        result = call(ds)
     assert hosts and set(hosts) == {"a.example"}
+    assert check(result)
 
 
 def test_a8_cache_dir_follows_the_dataset_inside_a_bound_call():
@@ -380,20 +419,10 @@ def test_a10_datasets_mapped_over_a_pool_request_their_own_host():
     ds_a, ds_b = _load(A, "A"), _load(B, "B")
     set_provider("eurostat")
     hosts: list[str] = []
-
-    def handler(request: httpx.Request) -> httpx.Response:
-        hosts.append(request.url.host)
-        return httpx.Response(404, text="not found")
-
-    def fetch(ds):
-        try:
-            opensdmx.get_data(ds)
-        except Exception:
-            pass
-
-    with _data_client(handler), ThreadPoolExecutor(2) as pool:
-        list(pool.map(fetch, [ds_a, ds_b]))
-    assert sorted(set(hosts)) == ["a.example", "b.example"]
+    with _serve(hosts), ThreadPoolExecutor(2) as pool:
+        frames = list(pool.map(opensdmx.get_data, [ds_a, ds_b]))
+    assert sorted(hosts) == ["a.example", "b.example"]
+    assert [f["OBS_VALUE"].to_list() for f in frames] == [[1.5], [1.5]]
 
 
 def test_a1_saved_query_records_the_dataset_provider():
@@ -402,5 +431,5 @@ def test_a1_saved_query_records_the_dataset_provider():
 
     ds = _load(A, "A")
     set_provider(B, agency_id="B")
-    query = build_query_dict(ds, {})
-    assert (query["provider_url"], query["agency_id"]) == (A, "A")
+    for query in (build_query_dict(ds, {}), build_query_dict(ds=ds, filters={})):
+        assert (query["provider_url"], query["agency_id"]) == (A, "A")
