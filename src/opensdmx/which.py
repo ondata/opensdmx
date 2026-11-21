@@ -11,6 +11,11 @@ WHICH_INDEX: list[dict[str, str]] = [
         "group": "Discovery",
     },
     {
+        "command": "embed",
+        "description": "Build the semantic embeddings index that search --semantic needs.",
+        "group": "Discovery",
+    },
+    {
         "command": "tree",
         "description": "Browse the thematic category tree of dataflows step-by-step.",
         "group": "Discovery",
@@ -54,6 +59,11 @@ WHICH_INDEX: list[dict[str, str]] = [
         "command": "providers",
         "description": "List all built-in SDMX providers (alias, name, URL).",
         "group": "Inspection",
+    },
+    {
+        "command": "blacklist",
+        "description": "List or remove datasets marked as unavailable, which search leaves out.",
+        "group": "Maintenance",
     },
 ]
 
