@@ -348,11 +348,12 @@ def _drop_stale(categorisation_df: pl.DataFrame) -> pl.DataFrame:
     """
     if categorisation_df.is_empty():
         return categorisation_df
-    try:
-        from .discovery import _load_cached_dataflows
+    from .discovery import RECOVERABLE_ERRORS, _load_cached_dataflows
 
+    try:
         cached = _load_cached_dataflows()
-    except Exception:
+    except RECOVERABLE_ERRORS as e:
+        logger.debug("Cached catalog unreadable, stale categorisations kept: %s", e)
         return categorisation_df
     if cached is None:
         return categorisation_df

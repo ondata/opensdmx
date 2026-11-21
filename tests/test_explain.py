@@ -10,6 +10,7 @@ from __future__ import annotations
 import sys
 from unittest.mock import patch
 
+import httpx
 import polars as pl
 import pytest
 from typer.testing import CliRunner
@@ -227,7 +228,7 @@ def test_siblings_catalog_outage_loads_once(capsys, monkeypatch):
     def _outage(*_args, **_kwargs):
         nonlocal calls
         calls += 1
-        raise RuntimeError("catalog unreachable")
+        raise httpx.ConnectError("catalog unreachable")
 
     monkeypatch.setattr(
         sys, "argv", ["opensdmx", "siblings", "nama_10_gdp", "-p", "eurostat"]
