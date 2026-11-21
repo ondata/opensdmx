@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-11-21 - test: coverage measured in CI; DSD parsing, World Bank JSON, run, which covered
+
+- `pytest-cov` in the dev group; CI prints coverage (`--cov=opensdmx`), no threshold. Measured: 72% before this change, 74% after. The evaluation's claim that `which.py` and `ranking.py` were untested came from an import grep: both were at 97% through `test_cli.py` and `test_discovery.py`.
+- Real gaps closed: `discovery._get_dimensions` (DSD XML parsing behind `info`/`get` on every REST provider, never run, only its cache), the SDMX-JSON data path used by World Bank (never run), the `run` command (no test).
+- World Bank fixture is a real reply fetched through opensdmx (`tests/data/worldbank_wdi_sp_pop_totl.json`). It confirms the parser's assumption at `base.py:900`: World Bank writes the series key in descending `keyPosition` order (`2:0:0` = REF_AREA DEU), against the SDMX-JSON default; a spec-shaped fixture failed on it.
+- `which` index listed 10 of 12 visible commands: added `embed` and `blacklist`; a test now compares the index with the registered non-hidden commands.
+
 ## 2026-11-21 - feat: OPENSDMX_DEBUG prints the traceback under a CLI error
 
 - The CLI boundary handlers turn every failure into one `Error:` line and exit 1, so a bug caught there left no trace of where it came from. With `OPENSDMX_DEBUG` set (any non-empty value) the 16 handlers in `cli.py` and `guide.py` also print the traceback on stderr, through `utils.print_debug_traceback`. Unset, output is unchanged.
