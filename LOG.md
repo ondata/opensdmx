@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-11-21 - feat: OPENSDMX_DEBUG prints the traceback under a CLI error
+
+- The CLI boundary handlers turn every failure into one `Error:` line and exit 1, so a bug caught there left no trace of where it came from. With `OPENSDMX_DEBUG` set (any non-empty value) the 16 handlers in `cli.py` and `guide.py` also print the traceback on stderr, through `utils.print_debug_traceback`. Unset, output is unchanged.
+- `guide`'s dataset-loop handler printed the traceback always; now only under `OPENSDMX_DEBUG`, like the rest. Logger debug messages stay off (not part of this flag).
+- `tests/test_debug_traceback.py`: one line without the flag, traceback and exception type with it, stdout empty; an AST scan fails on any `except Exception` handler that exits 1 without the call. 3 of 4 fail on the old code (the unset case passes by design). README env table and `.env.example` updated.
+
 ## 2026-11-21 - fix: error messages keep text in square brackets
 
 - Rich read `[...]` in an interpolated exception as markup: `install opensdmx[semantic]` printed as `install opensdmx`, and a message containing `[/x]` raised `MarkupError` inside the error handler. Exception text is now wrapped in `rich.markup.escape` in all 23 Rich prints that lacked it (cli.py 15, guide.py 6, ai.py 2), the pattern already used in 8 cli.py sites; the `guide` traceback prints with `markup=False`.

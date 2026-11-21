@@ -719,6 +719,7 @@ Environment variables:
 | `OPENSDMX_METADATA_CACHE_TTL` | Structure/codelist TTL in seconds (default: `2592000` — 30 days) |
 | `OPENSDMX_CONSTRAINTS_CACHE_TTL` | Constraints TTL in seconds (default: `604800` — 7 days) |
 | `OPENSDMX_AVAILCONSTRAINT_TIMEOUT` | Per-call timeout (seconds) for the `availableconstraint` endpoint, with no retry. Default: `30`. Useful when a provider's availability backend is slow or unresponsive (e.g. ISTAT) and you want `opensdmx constraints` / `values` to fail fast instead of blocking on the global request timeout. |
+| `OPENSDMX_DEBUG` | Any non-empty value: when a command fails with `Error: ...`, also print the traceback on stderr, to see where the error came from. Unset (default), errors stay one line. |
 
 See `.env.example` for a ready-to-use template.
 

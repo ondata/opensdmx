@@ -36,7 +36,7 @@ from .base import (
     set_explain,
     set_wait_reporter,
 )
-from .utils import compose_title
+from .utils import compose_title, print_debug_traceback
 
 def _category_of(df_id: str) -> str:
     """Primary category name for one dataflow, or '' when unavailable.
@@ -519,6 +519,7 @@ def search(
             # Escape the message: it names the `[semantic]` extra, and Rich would
             # otherwise read the brackets as markup and drop them from the output.
             err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+            print_debug_traceback(err_console)
             raise typer.Exit(1)
 
         if grep:
@@ -547,6 +548,7 @@ def search(
             df = search_dataset(keyword)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     if category:
@@ -661,6 +663,7 @@ def info(
             ds = load_dataset(dataset_id)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     try:
@@ -790,6 +793,7 @@ def values(
             val_df = get_dimension_values(ds, dim)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     if val_df.is_empty():
@@ -896,6 +900,7 @@ def constraints(
             ds = load_dataset(dataset_id)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     provider_cfg = get_provider()
@@ -941,6 +946,7 @@ def constraints(
         raise typer.Exit(0)
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     if not avail:
@@ -1091,6 +1097,7 @@ def embed(
         # Escape the message: it names the `[semantic]` extra, and Rich would
         # otherwise read the brackets as markup and drop them from the output.
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
 
@@ -1758,6 +1765,7 @@ def get(
         raise
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     _write_output(df, out)
@@ -1824,6 +1832,7 @@ def run(
         raise
     except Exception as e:
         err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+        print_debug_traceback(err_console)
         raise typer.Exit(1)
 
     _write_output(df, out)
@@ -1921,6 +1930,7 @@ def plot(
             ds_description = input_path.stem
         except Exception as e:
             err_console.print(f"[red]Error reading file:[/red] {rich.markup.escape(str(e))}")
+            print_debug_traceback(err_console)
             raise typer.Exit(1)
     else:
         _apply_provider(provider)
@@ -1943,6 +1953,7 @@ def plot(
             raise
         except Exception as e:
             err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
+            print_debug_traceback(err_console)
             raise typer.Exit(1)
 
     missing = [col for col in (x, y) if col not in df.columns]
