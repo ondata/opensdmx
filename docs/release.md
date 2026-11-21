@@ -21,9 +21,18 @@ uv lock
 
 # 3. Update LOG.md with the patch notes
 
-# 4. Run linter and full test suite — both must pass before any publish step
-uv run ruff check src/
+# 4. Lint, type-check, test, then build the wheel and install it alone —
+#    all must pass before any publish step. The tests run on the locked dev
+#    environment, so a module the code imports but never declares still
+#    passes them (v0.22.0 shipped broken that way): the isolated install,
+#    without the lock, is what catches it before anything reaches PyPI.
+uv run ruff check
+uv run mypy
 uv run pytest tests/ -v
+rm -rf dist && uv build
+WHEEL=$(ls dist/opensdmx-X.Y.Z-*.whl)
+uv run --isolated --no-project --with "$WHEEL" python -c "import importlib, pkgutil, opensdmx; [importlib.import_module(f'opensdmx.{m.name}') for m in pkgutil.iter_modules(opensdmx.__path__)]"
+uv run --isolated --no-project --with "$WHEEL" opensdmx providers
 
 # 5. Commit and tag the patch release
 git add -u
@@ -35,7 +44,6 @@ git push origin main --tags
 
 # 7. Publish the release artifacts
 gh release create vX.Y.Z --title "vX.Y.Z" --notes "patch release notes here"
-uv build
 twine upload dist/opensdmx-X.Y.Z*
 
 # 8. Verify the published artifact (see step 9 of the full procedure — a green
@@ -62,9 +70,18 @@ uv lock
 
 # 3. Update LOG.md with changes
 
-# 4. Run linter and full test suite — both must pass before any publish step
-uv run ruff check src/
+# 4. Lint, type-check, test, then build the wheel and install it alone —
+#    all must pass before any publish step. The tests run on the locked dev
+#    environment, so a module the code imports but never declares still
+#    passes them (v0.22.0 shipped broken that way): the isolated install,
+#    without the lock, is what catches it before anything reaches PyPI.
+uv run ruff check
+uv run mypy
 uv run pytest tests/ -v
+rm -rf dist && uv build
+WHEEL=$(ls dist/opensdmx-X.Y.Z-*.whl)
+uv run --isolated --no-project --with "$WHEEL" python -c "import importlib, pkgutil, opensdmx; [importlib.import_module(f'opensdmx.{m.name}') for m in pkgutil.iter_modules(opensdmx.__path__)]"
+uv run --isolated --no-project --with "$WHEEL" opensdmx providers
 
 # 5. Commit and tag
 git add -u
@@ -77,8 +94,7 @@ git push origin main --tags
 # 7. Create GitHub release
 gh release create vX.Y.Z --title "vX.Y.Z" --notes "release notes here"
 
-# 8. Build and publish to PyPI
-uv build
+# 8. Publish to PyPI the wheel and sdist built and checked at step 4
 twine upload dist/opensdmx-X.Y.Z*
 
 # 9. Verify the PUBLISHED artifact, not the local source. `uvx` resolves and
@@ -101,12 +117,14 @@ Every release MUST complete all steps in order:
 - [ ] Version bumped in `pyproject.toml`
 - [ ] `uv.lock` updated (`uv lock`)
 - [ ] `LOG.md` updated
-- [ ] Linter passes (`uv run ruff check src/`)
+- [ ] Linter passes (`uv run ruff check`)
+- [ ] Type-check passes (`uv run mypy`)
 - [ ] Tests pass (`uv run pytest`)
+- [ ] Built (`uv build`) and the wheel installed alone, without the lock: every module imports and `opensdmx providers` runs
 - [ ] Commit created
 - [ ] Git tag created (`git tag vX.Y.Z`)
 - [ ] Pushed to GitHub with tags (`git push origin main --tags`)
 - [ ] GitHub release created with notes (`gh release create`)
-- [ ] Built and published to PyPI (`uv build && twine upload`)
+- [ ] Published to PyPI (`twine upload`)
 - [ ] Published artifact resolved from PyPI and run (`uvx --refresh --from opensdmx==X.Y.Z opensdmx --version`, plus one real command)
 - [ ] Local CLI updated (`uv tool install --editable .`)

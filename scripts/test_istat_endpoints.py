@@ -29,7 +29,6 @@ import time
 import httpx
 from rich.console import Console
 from rich.table import Table
-from rich.panel import Panel
 
 console = Console()
 
@@ -248,7 +247,7 @@ def main():
     console.print(table)
     
     # Recommendations
-    console.print(f"\n[bold]💡 Recommendations[/bold]\n")
+    console.print("\n[bold]💡 Recommendations[/bold]\n")
     
     if working_endpoints:
         console.print("[green]✅ Found working endpoints with data:[/green]\n")
