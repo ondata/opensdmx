@@ -172,13 +172,14 @@ def build_query_dict(
     For each active filter, looks up the code label in SQLite cache.
     If not cached, description is left as an empty string.
     """
-    from .base import _active_provider, get_agency_id, get_base_url
+    from .base import _current_provider_value, get_agency_id, get_base_url
+    current = _current_provider_value()
     if provider:
         provider_name = provider
-    elif isinstance(_active_provider, str):
-        provider_name = _active_provider  # e.g. "eurostat"
+    elif isinstance(current, str):
+        provider_name = current  # e.g. "eurostat"
     else:
-        provider_name = _active_provider.get("agency_id", "")
+        provider_name = current.get("agency_id", "")
     provider_url = get_base_url()
     agency_id = get_agency_id()
 

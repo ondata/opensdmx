@@ -278,6 +278,7 @@ Entries are merged key by key, so `{"istat": {"rate_limit": 30.0}}` changes one 
 | Function | Description |
 |---|---|
 | `set_provider(name_or_url, ...)` | Set active provider (`'eurostat'`, `'istat'`, or custom URL) |
+| `use_provider(name, agency_id=None)` | Context manager: use a provider for a block, then restore the previous one (see below) |
 | `get_provider()` | Return active provider config dict |
 | `all_available()` | List all datasets → Polars DataFrame |
 | `search_dataset(keyword)` | Search by keyword in description |
@@ -291,11 +292,27 @@ Entries are merged key by key, so `{"istat": {"rate_limit": 30.0}}` changes one 
 | `reset_filters(ds)` | Reset all filters to `"."` (all) |
 | `get_data(ds, ...)` | Retrieve data → Polars DataFrame |
 | `fetch(id, ..., **filters)` | One-liner: load dataset + set filters + get data |
-| `run_query(query_file)` | Run a query from a YAML file saved with `--query-file` → Polars DataFrame |
+| `run_query(query_file)` | Run a query from a YAML file saved with `--query-file` → Polars DataFrame; runs on the file's provider and leaves yours unchanged |
 | `semantic_search(query, n)` | Semantic search via Ollama embeddings → Polars DataFrame (requires `build_embeddings` first) |
 | `build_embeddings(progress)` | Build and cache Ollama embeddings for all datasets (requires Ollama + `nomic-embed-text-v2-moe`) |
 | `set_timeout(seconds)` | Get/set API timeout (default: 300 s) |
 | `parse_time_period(series)` | Convert SDMX time strings to dates |
+
+### Using two providers in one program
+
+`set_provider()` sets the default for the whole process. `use_provider()` changes the provider for a block only, and restores the previous one on exit, also after an error:
+
+```python
+import opensdmx
+
+opensdmx.set_provider("eurostat")
+with opensdmx.use_provider("istat"):
+    ds = opensdmx.load_dataset("22_315_DF_DCIS_POPORESBIL1_24")
+    dims = opensdmx.dimensions_info(ds)
+# back to Eurostat here
+```
+
+Blocks nest. Inside a block, cache files and the rate limit are those of the block's provider. A thread does not inherit the block of the code that started it: it uses the `set_provider()` default, so open a `use_provider()` block inside the thread. Headers set with `set_extra_headers()` and the timeout set with `set_timeout()` apply to every provider.
 
 ### `get_data` and `fetch` parameters
 

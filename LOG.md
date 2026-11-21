@@ -1,5 +1,15 @@
 # LOG
 
+## 2026-11-21 - feat: use_provider, a scoped provider for library use (F2, phase 1)
+
+- Design: `docs/design-provider-context.md`, reviewed with EGM (stages 5-9, reports in `docs/egm/provider-context/`).
+- `base.py`: one accessor for the provider in effect, `_current_provider_value()` (scope, else the `set_provider` default), and one writer, `_set_default_provider()`. `get_provider()`, `_provider_cache_key()` and `utils.build_query_dict` read through it: before, the cache key read `_active_provider` directly, so a scope would have moved requests but not the cache directory, `cache.db` or the rate-limit lock.
+- New public `opensdmx.use_provider(name, agency_id=None)`: a context manager, resolved like `--provider` (aliases, `ValueError` on an unknown name before anything changes), nestable, restored on exit and on errors. A thread does not inherit it (verified on CPython 3.12.7): it sees the `set_provider` default. `set_provider` inside a block changes the default only.
+- `run_query` runs on the file's provider inside a scope (all four branches: argument, alias, `provider_url`, `OPENSDMX_PROVIDER`; `labels: true` included) and no longer changes the caller's provider. The CLI `run` command sets the file's provider as default before the call, so the HTTP 413 hint is still the file provider's.
+- `set_extra_headers` and `set_timeout` stay process-wide, documented. README: `use_provider` row and a "Using two providers in one program" section.
+- `tests/test_provider_scope.py` (19 tests) and a 413-hint test in `test_run_and_which.py`. Mutation checks: an accessor that ignores the scope fails 13 of 18; a cache key that reads `_active_provider` again fails both A8 tests.
+- Pre-existing race fixed (found by the multi-provider review): the cache base was resolved with a write probe of fixed name, so two threads starting cold could unlink each other's probe; the loser used another cache base and another rate-limit lock, and its first request was not paced. Reproduced in 130 of 300 cold starts; 0 after giving the probe a unique name. Regression test with a barrier: fails 5 of 5 on the old code.
+
 ## 2026-11-21 - test: coverage measured in CI; DSD parsing, World Bank JSON, run, which covered
 
 - `pytest-cov` in the dev group; CI prints coverage (`--cov=opensdmx`), no threshold. Measured: 72% before this change, 74% after. The evaluation's claim that `which.py` and `ranking.py` were untested came from an import grep: both were at 97% through `test_cli.py` and `test_discovery.py`.

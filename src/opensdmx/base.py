@@ -10,6 +10,9 @@ import re
 import sys
 import tempfile
 import time
+from collections.abc import Iterator
+from contextlib import AbstractContextManager, contextmanager
+from contextvars import ContextVar
 from functools import lru_cache
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Callable
@@ -260,7 +263,16 @@ PROVIDER_ALIASES: dict[str, str] = {
     for alias in entry.get("aliases", [])
 }
 
-_active_provider: str | dict[str, Any] = "eurostat"
+# A provider value selects a provider: a preset key, or a custom provider dict.
+ProviderValue = str | dict[str, Any]
+
+# Process default, set by `set_provider`. Written only by `_set_default_provider`
+# and read only through `_current_provider_value`, so a scope reaches every reader
+# (request URLs, cache directory, rate-limit key).
+_active_provider: ProviderValue = "eurostat"
+# Scoped override set by `use_provider` and `run_query`.
+# A thread does not inherit it: a thread with no scope sees the process default.
+_scoped_provider: ContextVar[ProviderValue | None] = ContextVar("opensdmx_provider", default=None)
 _timeout: float = 300.0
 # True once set_timeout() is called: an explicit choice beats a provider's request_timeout.
 _timeout_explicit = False
@@ -280,7 +292,13 @@ _rate_limit_context: str = ""
 
 
 def set_extra_headers(headers: dict[str, str]) -> None:
-    """Set extra HTTP headers to include in all subsequent SDMX requests."""
+    """Set extra HTTP headers to include in all subsequent SDMX requests.
+
+    Process-wide: the headers go to every provider a call resolves to, inside a
+    `use_provider` block too. Put
+    per-provider credentials in the provider's `auth` field instead, which reads
+    them from the environment and sends them only to that provider's URL.
+    """
     global _extra_headers
     _extra_headers = dict(headers)
 
@@ -312,6 +330,58 @@ def set_rate_limit_context(msg: str) -> None:
     _rate_limit_context = msg
 
 
+def _current_provider_value() -> ProviderValue:
+    """The provider value in effect: the innermost scope, else the process default."""
+    scoped = _scoped_provider.get()
+    return _active_provider if scoped is None else scoped
+
+
+def _set_default_provider(value: ProviderValue) -> None:
+    """Set the process default provider value (the only writer of `_active_provider`)."""
+    global _active_provider
+    _active_provider = value
+
+
+def _build_provider(
+    name_or_url: str,
+    agency_id: str | None = None,
+    rate_limit: float = 0.5,
+    language: str = "en",
+    **kwargs: Any,
+) -> ProviderValue:
+    """Turn `set_provider` arguments into a provider value, without validation.
+
+    A preset name is returned as is (extra fields dropped, with a warning); any
+    other string is taken as a base URL for a custom provider dict.
+    """
+    if name_or_url in PROVIDERS:
+        if kwargs:
+            # A preset is a fixed entry: the extra fields are accepted by the
+            # signature and dropped, so say it rather than ignore it silently.
+            logger.warning(
+                "set_provider: '%s' is a preset, so %s is ignored; "
+                "use a custom URL to set it.",
+                name_or_url,
+                ", ".join(sorted(kwargs)),
+            )
+        return name_or_url
+    unknown = sorted(set(kwargs) - _KNOWN_FIELDS)
+    if unknown:
+        logger.warning(
+            "set_provider: unknown field(s) %s for a custom provider; "
+            "they are stored and never read.",
+            ", ".join(unknown),
+        )
+    return {
+        **_DEFAULTS,
+        **kwargs,
+        "base_url": name_or_url.rstrip("/"),
+        "agency_id": agency_id or "",
+        "rate_limit": rate_limit,
+        "language": language,
+    }
+
+
 def set_provider(
     name_or_url: str,
     agency_id: str | None = None,
@@ -319,7 +389,10 @@ def set_provider(
     language: str = "en",
     **kwargs: Any,
 ) -> None:
-    """Set the active SDMX provider.
+    """Set the process default SDMX provider.
+
+    Inside a `use_provider` block this changes the default only: the block keeps
+    its own provider until it exits.
 
     Args:
         name_or_url: Preset name (e.g. 'eurostat', 'istat', 'ecb') or a custom base URL.
@@ -332,34 +405,7 @@ def set_provider(
                      warning names what was dropped or not recognized. Keys are
                      kept as given, so a typo is stored and never read.
     """
-    global _active_provider
-    if name_or_url in PROVIDERS:
-        if kwargs:
-            # A preset is a fixed entry: the extra fields are accepted by the
-            # signature and dropped, so say it rather than ignore it silently.
-            logger.warning(
-                "set_provider: '%s' is a preset, so %s is ignored; "
-                "use a custom URL to set it.",
-                name_or_url,
-                ", ".join(sorted(kwargs)),
-            )
-        _active_provider = name_or_url
-    else:
-        unknown = sorted(set(kwargs) - _KNOWN_FIELDS)
-        if unknown:
-            logger.warning(
-                "set_provider: unknown field(s) %s for a custom provider; "
-                "they are stored and never read.",
-                ", ".join(unknown),
-            )
-        _active_provider = {
-            **_DEFAULTS,
-            **kwargs,
-            "base_url": name_or_url.rstrip("/"),
-            "agency_id": agency_id or "",
-            "rate_limit": rate_limit,
-            "language": language,
-        }
+    _set_default_provider(_build_provider(name_or_url, agency_id, rate_limit, language, **kwargs))
 
 
 def _resolve_provider_name(name: str) -> str:
@@ -384,15 +430,51 @@ def resolve_provider(name: str, agency_id: str | None = None) -> None:
     Raises:
         ValueError: if `name` is neither a known preset/alias nor a URL.
     """
-    import os
+    _set_default_provider(_resolve_provider_value(name, agency_id))
 
+
+def _resolve_provider_value(name: str, agency_id: str | None = None) -> ProviderValue:
+    """Resolve a preset, an alias or a base URL into a provider value.
+
+    Raises:
+        ValueError: if `name` is neither a known preset/alias nor a URL.
+    """
     # A provider name wins over an alias of the same spelling: a user provider keyed
     # `estat` must reach that provider, not the Eurostat alias `estat` expands to.
     resolved = _resolve_provider_name(name)
     if resolved not in PROVIDERS and not resolved.startswith("http"):
         valid = ", ".join(sorted(PROVIDERS))
         raise ValueError(f"unknown provider '{name}'. Valid: {valid}")
-    set_provider(resolved, agency_id=agency_id or os.environ.get("OPENSDMX_AGENCY"))
+    return _build_provider(resolved, agency_id=agency_id or os.environ.get("OPENSDMX_AGENCY"))
+
+
+@contextmanager
+def _provider_scope(value: ProviderValue) -> Iterator[None]:
+    """Use `value` as the provider for the enclosed block, in this context only."""
+    token = _scoped_provider.set(value)
+    try:
+        yield
+    finally:
+        _scoped_provider.reset(token)
+
+
+def use_provider(name: str, agency_id: str | None = None) -> AbstractContextManager[None]:
+    """Use a provider for a block of code, then restore the previous one.
+
+    `name` is a preset, an alias or a base URL, resolved like `--provider`; an
+    unknown name raises `ValueError` here, before anything changes. Scopes nest
+    and are restored on exit, also on an exception.
+
+    `set_provider` inside the block changes the process default only: the block
+    keeps this provider until it exits. A thread started inside the block does
+    not see it (it uses the `set_provider` default): open a scope in the thread.
+
+    Example:
+
+        with opensdmx.use_provider("istat"):
+            ds = opensdmx.load_dataset("22_315_DF_DCIS_POPORESBIL1_24")
+    """
+    return _provider_scope(_resolve_provider_value(name, agency_id))
 
 
 def set_provider_from_env() -> bool:
@@ -415,10 +497,11 @@ def set_provider_from_env() -> bool:
 
 
 def get_provider() -> dict[str, Any]:
-    """Return the active provider configuration dict."""
-    if isinstance(_active_provider, dict):
-        return _active_provider
-    return PROVIDERS[_active_provider]
+    """Return the configuration dict of the provider in effect (scope, else default)."""
+    value = _current_provider_value()
+    if isinstance(value, dict):
+        return value
+    return PROVIDERS[value]
 
 
 def provider_label(provider: dict[str, Any]) -> str:
@@ -447,9 +530,11 @@ def _resolve_cache_base_cached(env_override: str | None) -> Path:
     for path in candidates:
         try:
             path.mkdir(parents=True, exist_ok=True)
-            probe = path / ".write_test"
-            probe.touch()
-            probe.unlink()
+            # A unique probe per call: with a fixed name, two threads resolving at
+            # once could unlink each other's probe, and the loser fell through to
+            # another base, with another rate-limit lock (requests not paced).
+            with tempfile.NamedTemporaryFile(dir=path, prefix=".write_test-"):
+                pass
             return path
         except OSError:
             continue
@@ -483,12 +568,13 @@ def _provider_cache_key() -> str:
     the base URL — so two custom providers with different URLs don't share
     the same cache/lock and get serialized together.
     """
-    if isinstance(_active_provider, str):
-        return _active_provider
+    value = _current_provider_value()
+    if isinstance(value, str):
+        return value
     agency = get_agency_id()
     if agency:
         return agency
-    base = _active_provider.get("base_url", "")
+    base = value.get("base_url", "")
     return "custom_" + hashlib.sha256(base.encode("utf-8")).hexdigest()[:8]
 
 
