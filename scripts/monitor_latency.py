@@ -54,12 +54,11 @@ def run_curl(provider, dataset_id, call_type, url, download_body):
                     "http_code": None, "n_rows": None, "error": f"unexpected output: {result.stdout!r}"}
 
         http_code = int(parts[0])
-        size_bytes = int(float(parts[2]))
         status = "ok" if 200 <= http_code < 300 else "error"
 
         n_rows = None
         if download_body and status == "ok":
-            body = [l for l in lines[:-1] if l]
+            body = [line for line in lines[:-1] if line]
             n_rows = max(0, len(body) - 1)
 
         return {"ts": ts, "provider": provider, "dataset": dataset_id, "call": call_type,

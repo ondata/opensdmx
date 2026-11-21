@@ -1,5 +1,11 @@
 # LOG
 
+## 2026-11-21 - ci: clean-install check of the built wheel before publish
+
+- CI now builds the wheel and installs it alone, without the lock (`uv run --isolated --no-project --with dist/*.whl`), imports every module and runs `opensdmx --version` and `opensdmx providers`. The tests run on the locked dev environment, so an imported but undeclared dependency passed them: that is how v0.22.0 reached PyPI broken. Checked both ways locally: green on the current package; with `tenacity` dropped from `pyproject.toml` the import step fails with `ModuleNotFoundError`. Lazy imports inside functions (e.g. pandas in `plot`) are not covered.
+- `docs/release.md`: step 4 of both procedures now runs `ruff check` on the whole repo, `mypy` (already in CI, missing from the doc) and the same wheel check before commit, tag and `twine upload`; the post-publish `uvx` check stays.
+- `ruff check` in CI covers the whole repo, not only `src/`; fixed the 4 errors in `scripts/` (unused variable and import, ambiguous name, needless f-string).
+
 ## 2026-11-19 - chore: TÜİK work closed
 
 - TÜİK provider complete across v0.31.0-v0.31.2 (PRs #107, #108, #109); `tasks/todo-tuik.md` closed. Open, external only: TÜİK's answer on a request rate limit (email sent 2026-11-18); until then `rate_limit` stays at the measured 12.5 s. Data Portal API Key support stays an idea in `docs/future-ideas.md`.

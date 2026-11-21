@@ -21,7 +21,19 @@ jobs:
         run: uv run pytest tests/ -v
 
       - name: Lint with ruff
-        run: uv run ruff check src/
+        run: uv run ruff check
 
       - name: Type-check with mypy
         run: uv run mypy
+
+      # The tests run against the locked dev environment, so a module the code
+      # imports but pyproject.toml never declares still passes them (v0.22.0
+      # shipped broken that way). Install the built wheel alone, without the
+      # lock, and import every module.
+      - name: Clean install of the built wheel
+        run: |
+          uv build --wheel
+          WHEEL=$(ls dist/*.whl)
+          uv run --isolated --no-project --with "$WHEEL" python -c "import importlib, pkgutil, opensdmx; [importlib.import_module(f'opensdmx.{m.name}') for m in pkgutil.iter_modules(opensdmx.__path__)]"
+          uv run --isolated --no-project --with "$WHEEL" opensdmx --version
+          uv run --isolated --no-project --with "$WHEEL" opensdmx providers
