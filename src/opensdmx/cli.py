@@ -166,7 +166,7 @@ def _filter_by_grep(df: pl.DataFrame, pattern: str, columns: list[str]) -> pl.Da
     try:
         rx = re.compile(pattern, re.IGNORECASE)
     except re.error as e:
-        err_console.print(f"[red]Error:[/red] invalid --grep pattern: {e}")
+        err_console.print(f"[red]Error:[/red] invalid --grep pattern: {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
     mask = [
         any(rx.search(str(row[c] or "")) for c in columns)
@@ -360,7 +360,7 @@ def _apply_provider(provider: str | None) -> None:
     try:
         resolve_provider(name)
     except ValueError as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
 
@@ -546,7 +546,7 @@ def search(
         with _status_ctx("[dim]Searching...[/dim]"):
             df = search_dataset(keyword)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     if category:
@@ -556,7 +556,7 @@ def search(
         try:
             cat_df = filter_by_category(category)
         except CategoriesNotSupported as e:
-            err_console.print(f"[red]Error:[/red] {e}")
+            err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
             raise typer.Exit(1)
         if cat_df.is_empty():
             err_console.print(f"[yellow]No dataflow found for category:[/yellow] {category}")
@@ -660,14 +660,14 @@ def info(
         with _status_ctx("[dim]Loading dataset...[/dim]"):
             ds = load_dataset(dataset_id)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     try:
         with _status_ctx("[dim]Loading dimensions...[/dim]"):
             dim_df = dimensions_info(ds)
     except Exception as e:
-        err_console.print(f"[yellow]Warning:[/yellow] could not fetch dimension info: {e}")
+        err_console.print(f"[yellow]Warning:[/yellow] could not fetch dimension info: {rich.markup.escape(str(e))}")
         dim_df = None
 
     from .base import get_provider as _get_provider
@@ -789,7 +789,7 @@ def values(
             ds = load_dataset(dataset_id)
             val_df = get_dimension_values(ds, dim)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     if val_df.is_empty():
@@ -895,7 +895,7 @@ def constraints(
         with _status_ctx("[dim]Loading dataset...[/dim]"):
             ds = load_dataset(dataset_id)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     provider_cfg = get_provider()
@@ -940,7 +940,7 @@ def constraints(
         )
         raise typer.Exit(0)
     except Exception as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     if not avail:
@@ -1355,7 +1355,7 @@ def tree(
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             categories_df, categorisation_df = load_categories()
     except CategoriesNotSupported as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     if categories_df.is_empty():
@@ -1636,13 +1636,13 @@ def siblings(
             canonical_id = dataset_id.upper()
         except ValueError as e:
             # Catalog loaded and the ID is genuinely absent: the standard error.
-            err_console.print(f"[red]Error:[/red] {e}")
+            err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
             raise typer.Exit(1)
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             groups = siblings_of(canonical_id, dataflows=dataflows)
     except CategoriesNotSupported as e:
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
 
     if not groups:
@@ -1813,7 +1813,7 @@ def run(
         err_console.print(f"[red]Error:[/red] file not found: {query_file}")
         raise typer.Exit(1)
     except yaml.YAMLError as e:
-        err_console.print(f"[red]Error reading YAML:[/red] {e}")
+        err_console.print(f"[red]Error reading YAML:[/red] {rich.markup.escape(str(e))}")
         raise typer.Exit(1)
     except httpx.HTTPStatusError as e:
         err_console.print(f"[red]HTTP {e.response.status_code}:[/red] {e.request.url}")
@@ -1920,7 +1920,7 @@ def plot(
                 df = pl.read_csv(input_path, separator=separator, infer_schema_length=10000, schema_overrides={str_col: pl.Utf8})
             ds_description = input_path.stem
         except Exception as e:
-            err_console.print(f"[red]Error reading file:[/red] {e}")
+            err_console.print(f"[red]Error reading file:[/red] {rich.markup.escape(str(e))}")
             raise typer.Exit(1)
     else:
         _apply_provider(provider)
@@ -2192,7 +2192,7 @@ def main() -> None:
     except AuthError as e:
         # Missing or refused credentials: one readable line for every command,
         # whatever it catches itself, instead of a traceback.
-        err_console.print(f"[red]Error:[/red] {e}")
+        err_console.print(f"[red]Error:[/red] {rich.markup.escape(str(e))}")
         sys.exit(1)
     except SystemExit as e:
         # Click leaves through SystemExit even on success, so a plan that needed

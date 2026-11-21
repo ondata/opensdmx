@@ -27,6 +27,7 @@ def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") 
     from chatlas import ChatGoogle
     from pydantic import BaseModel, Field
     from rich.console import Console
+    from rich.markup import escape
     from rich.markdown import Markdown
     from rich.table import Table as _Table
 
@@ -51,7 +52,7 @@ def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") 
         _avail = {dim_id: df["id"].to_list() for dim_id, df in get_available_values(ds).items()}
     except Exception as _e:
         _avail = {}
-        console.print(f"[yellow]⚠ Available values not loaded: {_e}[/yellow]")
+        console.print(f"[yellow]⚠ Available values not loaded: {escape(str(_e))}[/yellow]")
     set_rate_limit_context("")
 
     # ── Step 2: Build constraint context (codes + labels) for AI ─────────────
@@ -349,7 +350,7 @@ def guide_session(ds: dict[str, Any], objective: str, failed_context: str = "") 
             upd_dict = _to_dict(update.filters)
             ok, err = _validate(upd_dict)
             if not ok:
-                console.print(f"\n[yellow]⚠ Could not find a valid combination: {err}[/yellow]")
+                console.print(f"\n[yellow]⚠ Could not find a valid combination: {escape(str(err))}[/yellow]")
                 console.print(Markdown(update.message))
                 console.print()
                 continue
