@@ -1806,6 +1806,8 @@ def run(
     import yaml
 
     from . import run_query
+    from .base import _set_default_provider
+    from .retrieval import _query_provider_value_from_file
 
     _apply_explain(explain)
 
@@ -1815,6 +1817,12 @@ def run(
         _apply_provider(provider)
 
     try:
+        # run_query works inside a scope and leaves the provider unchanged, but
+        # the HTTP 413 hint below reads the provider after the call: make the
+        # file's provider the process default first (one command per process).
+        value = _query_provider_value_from_file(str(query_file), provider)
+        if value is not None:
+            _set_default_provider(value)
         with console.status("[dim]Running query...[/dim]"):
             df = run_query(str(query_file), provider=provider)
     except FileNotFoundError:

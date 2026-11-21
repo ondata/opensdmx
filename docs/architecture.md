@@ -113,15 +113,19 @@ See `docs/cache.md` for the full schema.
 
 ## Provider abstraction
 
-The active provider is stored as a module-level variable `_active_provider` in `base.py`. It can be either:
+A provider value selects a provider. It is either:
 
 - A **preset key** (string) referencing an entry in `PROVIDERS` (loaded from `portals.json`).
 - A **custom dict** with at minimum `base_url` and `agency_id`.
 
-`set_provider(name_or_url, ...)` switches the active provider. If `name_or_url` is in the `PROVIDERS` dict, it is used directly. Otherwise it is treated as a base URL and a custom dict is built from the provided parameters.
+Three layers decide which provider value is in effect, highest first:
 
-`get_provider()` always returns a dict with all fields (merged with `_DEFAULTS` at load time for preset providers). This dict is consumed by every HTTP helper (`sdmx_request`, `sdmx_request_csv`) and by the cache path resolver (`get_cache_dir`).
+1. the provider stored in a dataset dict (`ds["provider"]`, set by `load_dataset`), for the functions that take the dataset (`get_data`, `dimensions_info`, `get_dimension_values`, `get_codelist_hierarchy`, `get_available_values`, `enrich_with_labels`);
+2. a scope opened with `use_provider(...)` (a `ContextVar`, so per thread and per `asyncio` task; a new thread does not inherit it), also used by `run_query`;
+3. the process default, `_active_provider` in `base.py`, set by `set_provider()`.
 
-The cache directory is `~/.cache/opensdmx/{agency_id}/`, so each provider gets an isolated namespace for all its Parquet and SQLite files.
+`_current_provider_value()` returns the value in effect and is the only reader of `_active_provider`; `_set_default_provider()` is its only writer. `get_provider()` always returns a dict with all fields (merged with `_DEFAULTS` at load time for preset providers). This dict is consumed by every HTTP helper (`sdmx_request`, `sdmx_request_csv`) and, through `_provider_cache_key()`, by the cache path resolver (`get_cache_dir`) and the rate-limit lock, so cache files and pacing follow the provider in effect.
 
-All CLI commands accept a `--provider` / `-p` option that calls `set_provider()` before executing.
+The cache directory is `~/.cache/opensdmx/{key}/`, where the key is the preset name, or for a custom provider its `agency_id` (a hash of the base URL when there is none), so each provider gets an isolated namespace for all its Parquet and SQLite files.
+
+All CLI commands accept a `--provider` / `-p` option that sets the process default through `resolve_provider()` (aliases, unknown-name check, `OPENSDMX_AGENCY` fallback) before executing. The CLI runs one provider per process.

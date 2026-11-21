@@ -76,3 +76,23 @@ def test_which_index_lists_every_cli_command():
 def test_which_finds_embed_and_blacklist():
     assert rank_which("semantic embeddings", limit=1)[0]["entry"]["command"] == "embed"
     assert rank_which("unavailable datasets", limit=1)[0]["entry"]["command"] == "blacklist"
+
+
+def test_run_413_prints_the_hint_of_the_file_provider(tmp_path):
+    """The hint is read after run_query fails, which now leaves the provider alone:
+    the CLI makes the file's provider the process default before the call."""
+    from opensdmx.base import PROVIDERS, set_provider
+
+    query = tmp_path / "q.yaml"
+    query.write_text("dataset: BBK_X\nprovider: bundesbank\n")
+    request = httpx.Request("GET", "https://api.statistiken.bundesbank.de/rest/data/X")
+    error = httpx.HTTPStatusError("too large", request=request, response=httpx.Response(413, request=request))
+    set_provider("https://a.example/rest", agency_id="A")  # default without a too_large_hint
+    try:
+        with patch("opensdmx.run_query", side_effect=error):
+            result = runner.invoke(app, ["run", str(query)])
+    finally:
+        set_provider("eurostat")
+    assert result.exit_code == 1
+    hint = PROVIDERS["bundesbank"]["too_large_hint"]
+    assert hint in " ".join(result.stderr.split())

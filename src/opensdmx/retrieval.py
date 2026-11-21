@@ -8,7 +8,7 @@ from typing import Any
 
 import polars as pl
 
-from .base import get_provider, sdmx_request_csv
+from .base import ProviderValue, _bound_to_dataset, get_provider, sdmx_request_csv
 from .discovery import load_dataset, set_filters
 from .utils import escape_key_for_provider, make_url_key
 
@@ -63,6 +63,7 @@ def parse_time_period(series: pl.Series) -> pl.Series:
     return parsed.str.to_date(format="%Y-%m-%d", strict=False)
 
 
+@_bound_to_dataset
 def get_data(
     dataset: dict[str, Any],
     start_period: str | None = None,
@@ -147,6 +148,7 @@ def get_data(
     return data
 
 
+@_bound_to_dataset
 def enrich_with_labels(dataset: dict[str, Any], data: pl.DataFrame) -> pl.DataFrame:
     """Append human-readable label columns for each dimension in the data.
 
@@ -184,12 +186,54 @@ def enrich_with_labels(dataset: dict[str, Any], data: pl.DataFrame) -> pl.DataFr
     return data
 
 
+def _query_provider_value(q: dict[str, Any], provider: str | None) -> ProviderValue | None:
+    """The provider value a saved query runs on, or None to keep the current one.
+
+    Highest precedence first: the `provider` argument, the file's `provider`
+    alias (when it names a preset), its `provider_url`, then `OPENSDMX_PROVIDER`.
+    """
+    import os
+
+    from .base import PROVIDERS, _build_provider, _resolve_provider_name, _resolve_provider_value
+
+    alias = q.get("provider")
+    if provider:
+        # agency_id falls back to OPENSDMX_AGENCY inside _resolve_provider_value,
+        # so a custom --provider URL keeps the agency the CLI already resolved.
+        return _resolve_provider_value(provider, q.get("agency_id") or None)
+    if alias and _resolve_provider_name(alias) in PROVIDERS:
+        return _build_provider(_resolve_provider_name(alias))
+    if q.get("provider_url"):
+        return _build_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
+    if os.environ.get("OPENSDMX_PROVIDER"):
+        return _resolve_provider_value(os.environ["OPENSDMX_PROVIDER"], None)
+    return None
+
+
+def _read_query_file(query_file: str) -> dict[str, Any]:
+    import yaml
+    from pathlib import Path
+
+    path = Path(query_file)
+    if not path.exists():
+        raise FileNotFoundError(f"Query file not found: {path}")
+    with open(path) as fh:
+        q: dict[str, Any] = yaml.safe_load(fh)
+    return q
+
+
+def _query_provider_value_from_file(query_file: str, provider: str | None) -> ProviderValue | None:
+    """`_query_provider_value` for a query file; raises like `run_query` on a bad file."""
+    return _query_provider_value(_read_query_file(query_file), provider)
+
+
 def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
     """Run a query from a YAML file saved with `opensdmx get --query-file`.
 
     Provider resolution, highest precedence first: the `provider` argument, the
     file's `provider` alias, its `provider_url`, then the `OPENSDMX_PROVIDER`
-    environment variable. If none apply the active provider is left untouched.
+    environment variable. The query runs on that provider inside a scope, so the
+    caller's provider is never changed; if none apply, it runs on the current one.
 
     Args:
         query_file: path to the YAML query file
@@ -198,28 +242,12 @@ def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
     Returns:
         Polars DataFrame
     """
-    import yaml
-    from pathlib import Path
-    from .base import PROVIDERS, _resolve_provider_name, resolve_provider, set_provider, set_provider_from_env
+    from contextlib import nullcontext
 
-    path = Path(query_file)
-    if not path.exists():
-        raise FileNotFoundError(f"Query file not found: {path}")
+    from .base import _provider_scope
 
-    with open(path) as fh:
-        q = yaml.safe_load(fh)
-
-    alias = q.get("provider")
-    if provider:
-        # agency_id falls back to OPENSDMX_AGENCY inside resolve_provider, so a
-        # custom --provider URL keeps the agency the CLI already resolved.
-        resolve_provider(provider, agency_id=q.get("agency_id") or None)
-    elif alias and _resolve_provider_name(alias) in PROVIDERS:
-        set_provider(_resolve_provider_name(alias))
-    elif q.get("provider_url"):
-        set_provider(q["provider_url"], agency_id=q.get("agency_id") or None)
-    else:
-        set_provider_from_env()
+    q = _read_query_file(query_file)
+    value = _query_provider_value(q, provider)
 
     dataset_id = q.get("dataset")
     if not dataset_id:
@@ -227,19 +255,20 @@ def run_query(query_file: str, provider: str | None = None) -> pl.DataFrame:
 
     filters = {dim: info["value"] for dim, info in (q.get("filters") or {}).items()}
 
-    ds = load_dataset(dataset_id)
-    if filters:
-        ds = set_filters(ds, **filters)
+    with _provider_scope(value) if value is not None else nullcontext():
+        ds = load_dataset(dataset_id)
+        if filters:
+            ds = set_filters(ds, **filters)
 
-    data = get_data(
-        ds,
-        start_period=q.get("start_period"),
-        end_period=q.get("end_period"),
-        last_n_observations=q.get("last_n"),
-        first_n_observations=q.get("first_n"),
-    )
-    if q.get("labels"):
-        data = enrich_with_labels(ds, data)
+        data = get_data(
+            ds,
+            start_period=q.get("start_period"),
+            end_period=q.get("end_period"),
+            last_n_observations=q.get("last_n"),
+            first_n_observations=q.get("first_n"),
+        )
+        if q.get("labels"):
+            data = enrich_with_labels(ds, data)
     return data
 
 

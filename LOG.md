@@ -1,5 +1,23 @@
 # LOG
 
+## 2026-11-21 - feat: a dataset remembers its provider (F2, phase 2)
+
+- `load_dataset` stores `ds["provider"]`, a deep copy of the provider value in effect. `get_data`, `dimensions_info`, `get_dimension_values`, `get_codelist_hierarchy`, `get_available_values` and `enrich_with_labels` carry `_bound_to_dataset`: they run on the dataset's provider, whatever is active, also when the dataset is passed as `dataset=`. Fixes `ds = load_dataset(...)` under ISTAT, `set_provider("eurostat")`, then `get_data(ds)` asking Eurostat for ISTAT's id.
+- `utils.build_query_dict` (`get --query-file`) is bound too, so a saved query records the dataset's provider (found by the multi-provider review). CLI-only readers in `guide.py`, `ai.py` and `cli.py` stay on the provider in effect: the CLI runs one provider per process.
+- A dict without the key runs on the provider in effect, as before; a stored preset key that is not defined raises `ValueError`, a value of another type `TypeError`. `print_dataset`, `set_filters`, `reset_filters` are not bound (no request; the filters functions deep-copy the dict, so the key survives).
+- Datasets from different providers can be mapped over a thread pool with no scope. `docs/architecture.md` "Provider abstraction" rewritten (layers, accessor, cache key; the cache path was described as `{agency_id}`).
+- Tests: A1 for each of the six functions (default set to another provider, every request goes to the dataset's host), A8 (cache dir inside a bound call, keyword argument, dataset wins over a scope), A9, A10 (pool). Neutralising the decorator fails 9 of 32.
+
+## 2026-11-21 - feat: use_provider, a scoped provider for library use (F2, phase 1)
+
+- Design: `docs/design-provider-context.md`, reviewed with EGM (stages 5-9, reports in `docs/egm/provider-context/`).
+- `base.py`: one accessor for the provider in effect, `_current_provider_value()` (scope, else the `set_provider` default), and one writer, `_set_default_provider()`. `get_provider()`, `_provider_cache_key()` and `utils.build_query_dict` read through it: before, the cache key read `_active_provider` directly, so a scope would have moved requests but not the cache directory, `cache.db` or the rate-limit lock.
+- New public `opensdmx.use_provider(name, agency_id=None)`: a context manager, resolved like `--provider` (aliases, `ValueError` on an unknown name before anything changes), nestable, restored on exit and on errors. A thread does not inherit it (verified on CPython 3.12.7): it sees the `set_provider` default. `set_provider` inside a block changes the default only.
+- `run_query` runs on the file's provider inside a scope (all four branches: argument, alias, `provider_url`, `OPENSDMX_PROVIDER`; `labels: true` included) and no longer changes the caller's provider. The CLI `run` command sets the file's provider as default before the call, so the HTTP 413 hint is still the file provider's.
+- `set_extra_headers` and `set_timeout` stay process-wide, documented. README: `use_provider` row and a "Using two providers in one program" section.
+- `tests/test_provider_scope.py` (19 tests) and a 413-hint test in `test_run_and_which.py`. Mutation checks: an accessor that ignores the scope fails 13 of 18; a cache key that reads `_active_provider` again fails both A8 tests.
+- Pre-existing race condition fixed (found by the multi-provider review): the cache base was resolved with a write probe of fixed name, so two threads starting cold could unlink each other's probe; the loser used another cache base and another rate-limit lock, and its first request was not paced. Reproduced in 130 of 300 cold starts; 0 after giving the probe a unique name. Regression test with a barrier: fails 5 of 5 on the old code.
+
 ## 2026-11-21 - test: coverage measured in CI; DSD parsing, World Bank JSON, run, which covered
 
 - `pytest-cov` in the dev group; CI prints coverage (`--cov=opensdmx`), no threshold. Measured: 72% before this change, 74% after. The evaluation's claim that `which.py` and `ranking.py` were untested came from an import grep: both were at 97% through `test_cli.py` and `test_discovery.py`.

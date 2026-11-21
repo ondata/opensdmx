@@ -7,7 +7,7 @@ try:
 except PackageNotFoundError:
     __version__ = "0.0.0"
 
-from .base import NonCsvResponseError, get_provider, set_provider, set_timeout, set_extra_headers, get_extra_headers
+from .base import NonCsvResponseError, get_provider, set_provider, set_timeout, set_extra_headers, get_extra_headers, use_provider
 from .discovery import (
     ConstraintsTimeout,
     ConstraintsUnavailable,
@@ -31,6 +31,7 @@ __all__ = [
     "ConstraintsUnavailable",
     "NonCsvResponseError",
     "set_provider",
+    "use_provider",
     "get_provider",
     "all_available",
     "search_dataset",
