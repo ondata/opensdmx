@@ -15,8 +15,17 @@ from unittest.mock import patch
 import polars as pl
 import pytest
 
+from opensdmx import db_cache
 from opensdmx.base import sdmx_request_csv, set_provider
 from opensdmx.discovery import _get_dimensions
+
+
+@pytest.fixture(autouse=True)
+def _isolated_db(tmp_path, monkeypatch):
+    """A fresh cache.db per test, as in `test_db_cache.py`: the DSD tests check
+    call counts, which a structure cached by an earlier run would bypass."""
+    monkeypatch.setattr(db_cache, "_get_db_path", lambda: tmp_path / "cache.db")
+    monkeypatch.setattr(db_cache, "_INITIALIZED_DBS", set())
 
 
 @pytest.fixture
