@@ -1,5 +1,10 @@
 # LOG
 
+## 2026-11-21 - fix: error messages keep text in square brackets
+
+- Rich read `[...]` in an interpolated exception as markup: `install opensdmx[semantic]` printed as `install opensdmx`, and a message containing `[/x]` raised `MarkupError` inside the error handler. Exception text is now wrapped in `rich.markup.escape` in all 23 Rich prints that lacked it (cli.py 15, guide.py 6, ai.py 2), the pattern already used in 8 cli.py sites; the `guide` traceback prints with `markup=False`.
+- `tests/test_error_markup.py`: brackets survive in `search` and `info` errors, `[/x]` no longer crashes, and a source scan fails on any new Rich print that interpolates an exception unescaped. All 4 fail on the old code.
+
 ## 2026-11-21 - fix: best-effort fallbacks no longer swallow bugs
 
 - Seven fallbacks caught `Exception` and fell back in silence, so a network error, a damaged cache and a programming bug looked the same. They now catch only `RECOVERABLE_ERRORS` (new in `discovery.py`: httpx, OSError, portalocker lock, lxml and JSON parse errors, polars, sqlite3) and say why: `_resolve_codelist_from_concept` (was `except: pass` around a request; now a warning naming scheme and concept), `tree --show-dataflows` descriptions and `siblings` catalog load/reload (yellow warning on stderr, stdout JSON untouched), `_drop_stale` and search category context (debug), `_category_of` (no log). Any other exception propagates.

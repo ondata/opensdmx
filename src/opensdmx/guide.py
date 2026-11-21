@@ -8,6 +8,7 @@ from typing import Optional
 import httpx
 import typer
 from rich.console import Console
+from rich.markup import escape
 from rich.panel import Panel
 
 console = Console()
@@ -58,7 +59,7 @@ def run_guide(
         try:
             ds = load_dataset(dataset)
         except Exception as e:
-            err_console.print(f"[red]Error:[/red] {e}")
+            err_console.print(f"[red]Error:[/red] {escape(str(e))}")
             raise typer.Exit(1)
         _reuse_ds = True
 
@@ -125,7 +126,7 @@ def run_guide(
             try:
                 ds = load_dataset(selected_id)
             except Exception as e:
-                err_console.print(f"[red]Error:[/red] {e}")
+                err_console.print(f"[red]Error:[/red] {escape(str(e))}")
                 raise typer.Exit(1)
 
             console.print(Panel(
@@ -204,8 +205,8 @@ def run_guide(
             continue
         except Exception as e:
             import traceback
-            err_console.print(f"[red]Error:[/red] {e}")
-            err_console.print(traceback.format_exc())
+            err_console.print(f"[red]Error:[/red] {escape(str(e))}")
+            err_console.print(traceback.format_exc(), markup=False)
             raise typer.Exit(1)
 
         from .discovery import ConstraintsTimeout, ConstraintsUnavailable, get_available_values
@@ -274,7 +275,7 @@ def run_guide(
         try:
             ds = set_filters(ds, **active)
         except Exception as e:
-            err_console.print(f"[red]Error:[/red] {e}")
+            err_console.print(f"[red]Error:[/red] {escape(str(e))}")
             raise typer.Exit(1)
 
         key = escape_key_for_provider(make_url_key(ds["filters"]), get_provider())
@@ -347,7 +348,7 @@ def run_guide(
                 _df.write_csv(str(out))
                 console.print(f"[green]Saved:[/green] {out.resolve()}")
             except Exception as e:
-                err_console.print(f"[red]Download error:[/red] {e}")
+                err_console.print(f"[red]Download error:[/red] {escape(str(e))}")
                 raise typer.Exit(1)
             raise typer.Exit(0)
 
@@ -381,7 +382,7 @@ def run_guide(
                     _df.write_csv(str(out_file))
                     console.print(f"[green]Saved:[/green] {out_file.resolve()}")
                 except Exception as e:
-                    err_console.print(f"[red]Download error:[/red] {e}")
+                    err_console.print(f"[red]Download error:[/red] {escape(str(e))}")
 
             elif post_action == "modify":
                 mod_input = questionary.text(
