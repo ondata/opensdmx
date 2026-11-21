@@ -19,9 +19,11 @@ class ConstraintsTimeout(Exception):
         )
 
 
+import json
 import logging
 import os
 import re
+import sqlite3
 import time
 from pathlib import Path
 from typing import Any, NamedTuple, TypedDict, cast
@@ -57,6 +59,22 @@ from .base import (
 from .utils import get_description_by_lang, get_name_by_lang, xml_attr_safe, xml_parse
 
 from .cache_config import DATAFLOWS_CACHE_TTL
+
+# Failures a best-effort fallback exists for: the provider or the network
+# (httpx), the disk or the cache lock (OSError, portalocker), a malformed
+# response (lxml for XML, json for the INPS hub), a damaged or outdated cache
+# file (polars) or a locked or damaged cache.db (sqlite3, not an OSError).
+# Anything else is a bug and must reach the user instead of vanishing into the
+# fallback.
+RECOVERABLE_ERRORS: tuple[type[Exception], ...] = (
+    httpx.HTTPError,
+    OSError,
+    portalocker.exceptions.LockException,
+    etree.XMLSyntaxError,
+    json.JSONDecodeError,
+    pl.exceptions.PolarsError,
+    sqlite3.Error,
+)
 
 
 def _struct_path(endpoint: str) -> str:
@@ -394,7 +412,7 @@ def _with_category_context(datasets: pl.DataFrame) -> pl.DataFrame:
         from .categories import category_context
 
         context = category_context(include_scheme=False)
-    except Exception as e:  # pragma: no cover - defensive, search must never die here
+    except RECOVERABLE_ERRORS as e:
         logger.debug(f"Category context unavailable, searching titles only: {e}")
         return datasets
     if context.is_empty():
@@ -508,8 +526,11 @@ def _resolve_codelist_from_concept(scheme_id: str, scheme_agency: str, concept_i
                 if enum_ref is not None:
                     enum_id = enum_ref.get("id")
                     return str(enum_id) if enum_id is not None else None
-    except Exception:
-        pass
+    except RECOVERABLE_ERRORS as e:
+        logger.warning(
+            "Could not read concept scheme %s/%s for the codelist of %s: %s",
+            scheme_agency, scheme_id, concept_id, e,
+        )
     return None
 
 

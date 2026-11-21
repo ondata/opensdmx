@@ -44,17 +44,19 @@ def _category_of(df_id: str) -> str:
     Reads the local cache only, so it stays silent for providers without
     categories and for users who never ran `opensdmx tree`.
     """
+    import polars as pl
+
+    from .categories import category_context
+    from .discovery import RECOVERABLE_ERRORS
+
     try:
-        import polars as pl
-
-        from .categories import category_context
-
         context = category_context(include_scheme=False)
         if context.is_empty():
             return ""
         row = context.filter(pl.col("df_id") == df_id)
         return "" if row.is_empty() else (row.row(0, named=True)["cat_primary"] or "")
-    except Exception:
+    except RECOVERABLE_ERRORS:
+        # A damaged or outdated category cache: no label, as without a cache.
         return ""
 
 
@@ -1525,7 +1527,7 @@ def tree(
 
     df_by_path: dict[str, list[dict[str, Any]]] = {}
     if show_dataflows:
-        from .discovery import all_available
+        from .discovery import RECOVERABLE_ERRORS, all_available
 
         rendered_paths = set(scheme_rows["cat_path"].to_list())
         cz = categorisation_df.filter(
@@ -1535,7 +1537,11 @@ def tree(
         try:
             meta = all_available().select(["df_id", "df_description"])
             joined = cz.join(meta, on="df_id", how="left")
-        except Exception:
+        except RECOVERABLE_ERRORS as e:
+            err_console.print(
+                "[yellow]Warning:[/yellow] dataflow catalog unavailable, "
+                f"descriptions left blank: {rich.markup.escape(str(e))}"
+            )
             joined = cz.with_columns(pl.lit(None).alias("df_description"))
         for r in joined.iter_rows(named=True):
             df_by_path.setdefault(r["cat_path"], []).append(
@@ -1588,16 +1594,20 @@ def siblings(
     _apply_explain(explain)
 
     from .categories import CategoriesNotSupported, siblings_of
-    from .discovery import all_available, resolve_dataflow
+    from .discovery import RECOVERABLE_ERRORS, all_available, resolve_dataflow
 
     # Load the catalog once and share it between resolution and the description
     # table: `siblings_of` reads it again otherwise, and a plan would name the
     # same request twice.
     try:
         dataflows = all_available()
-    except Exception:
+    except RECOVERABLE_ERRORS as e:
         # Catalog outage: carry on with the raw ID and an empty descriptions
         # table, so neither resolution nor siblings_of retry the load.
+        err_console.print(
+            "[yellow]Warning:[/yellow] dataflow catalog unavailable, "
+            f"using the ID as given: {rich.markup.escape(str(e))}"
+        )
 
         import polars as pl
 
@@ -1615,13 +1625,19 @@ def siblings(
         # the cached category tree can answer into an error.
         try:
             canonical_id = resolve_dataflow(dataset_id, _dataflows=dataflows)["df_id"]
+        except RECOVERABLE_ERRORS as e:
+            # The hidden-id fallback reloaded and failed: same raw-ID path.
+            # Before `ValueError`: a malformed JSON reply is a ValueError too,
+            # and must not read as "ID not found".
+            err_console.print(
+                "[yellow]Warning:[/yellow] dataflow catalog reload failed, "
+                f"using the ID as given: {rich.markup.escape(str(e))}"
+            )
+            canonical_id = dataset_id.upper()
         except ValueError as e:
             # Catalog loaded and the ID is genuinely absent: the standard error.
             err_console.print(f"[red]Error:[/red] {e}")
             raise typer.Exit(1)
-        except Exception:
-            # The hidden-id fallback reloaded and failed: same raw-ID path.
-            canonical_id = dataset_id.upper()
     try:
         with _status_ctx("[dim]Loading category tree...[/dim]"):
             groups = siblings_of(canonical_id, dataflows=dataflows)

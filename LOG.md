@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-11-21 - fix: best-effort fallbacks no longer swallow bugs
+
+- Seven fallbacks caught `Exception` and fell back in silence, so a network error, a damaged cache and a programming bug looked the same. They now catch only `RECOVERABLE_ERRORS` (new in `discovery.py`: httpx, OSError, portalocker lock, lxml and JSON parse errors, polars, sqlite3) and say why: `_resolve_codelist_from_concept` (was `except: pass` around a request; now a warning naming scheme and concept), `tree --show-dataflows` descriptions and `siblings` catalog load/reload (yellow warning on stderr, stdout JSON untouched), `_drop_stale` and search category context (debug), `_category_of` (no log). Any other exception propagates.
+- `sqlite3.Error` and `json.JSONDecodeError` added after the multi-provider review: `all_available()` reads `cache.db` on every call (a locked or damaged db is not an `OSError`), and the INPS hub parses JSON. In `siblings` the recoverable clause now comes before `except ValueError`, so a malformed JSON reply no longer reads as "ID not found".
+- Accepted: a TÜİK token-endpoint outage on these display paths now ends with the clean `AuthError` line instead of blank descriptions; a non-dict INPS JSON body (`AttributeError`) is not covered.
+- `tests/test_recoverable_errors.py`, 15 tests: recoverable failure → fallback + message; `TypeError` → propagates. On the old code 10 of the first 13 fail. `except Exception` in `src/`: 46 → 39.
+
 ## 2026-11-21 - ci: clean-install check of the built wheel before publish
 
 - CI now builds the wheel and installs it alone, without the lock (`uv run --isolated --no-project --with dist/*.whl`), imports every module and runs `opensdmx --version` and `opensdmx providers`. The tests run on the locked dev environment, so an imported but undeclared dependency passed them: that is how v0.22.0 reached PyPI broken. Checked both ways locally: green on the current package; with `tenacity` dropped from `pyproject.toml` the import step fails with `ModuleNotFoundError`. Lazy imports inside functions (e.g. pandas in `plot`) are not covered.

@@ -694,7 +694,9 @@ def test_siblings_survives_a_dataflow_catalog_outage():
         result = runner.invoke(app, ["--output", "json", "siblings", "df_x", "--provider", "istat"])
 
     assert result.exit_code == 0, result.output
-    groups = json.loads(result.output)
+    # The warning goes to stderr: stdout stays parseable JSON.
+    assert "dataflow catalog unavailable" in result.stderr
+    groups = json.loads(result.stdout)
     target = next(s for g in groups for s in g["siblings"] if s["is_target"])
     assert target["df_id"] == "DF_X"
     assert target["df_description"] == ""
