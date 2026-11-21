@@ -8,7 +8,7 @@ from typing import Any
 
 import polars as pl
 
-from .base import ProviderValue, get_provider, sdmx_request_csv
+from .base import ProviderValue, _bound_to_dataset, get_provider, sdmx_request_csv
 from .discovery import load_dataset, set_filters
 from .utils import escape_key_for_provider, make_url_key
 
@@ -63,6 +63,7 @@ def parse_time_period(series: pl.Series) -> pl.Series:
     return parsed.str.to_date(format="%Y-%m-%d", strict=False)
 
 
+@_bound_to_dataset
 def get_data(
     dataset: dict[str, Any],
     start_period: str | None = None,
@@ -147,6 +148,7 @@ def get_data(
     return data
 
 
+@_bound_to_dataset
 def enrich_with_labels(dataset: dict[str, Any], data: pl.DataFrame) -> pl.DataFrame:
     """Append human-readable label columns for each dimension in the data.
 

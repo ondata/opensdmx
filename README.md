@@ -312,7 +312,16 @@ with opensdmx.use_provider("istat"):
 # back to Eurostat here
 ```
 
-Blocks nest. Inside a block, cache files and the rate limit are those of the block's provider. A thread does not inherit the block of the code that started it: it uses the `set_provider()` default, so open a `use_provider()` block inside the thread. Headers set with `set_extra_headers()` and the timeout set with `set_timeout()` apply to every provider.
+Blocks nest. Inside a block, cache files and the rate limit are those of the block's provider. A thread does not inherit the block of the code that started it: it uses the `set_provider()` default, so open a `use_provider()` block inside the thread.
+
+A dataset remembers the provider it was loaded from: `get_data(ds)`, `dimensions_info(ds)`, `get_dimension_values(ds, ...)`, `get_codelist_hierarchy(ds, ...)`, `get_available_values(ds)` and `enrich_with_labels(ds, ...)` send their requests there, whatever provider is active later. So threads can work on datasets from different providers without any block:
+
+```python
+from concurrent.futures import ThreadPoolExecutor
+
+with ThreadPoolExecutor() as pool:
+    frames = list(pool.map(opensdmx.get_data, datasets))  # each on its own provider
+``` Headers set with `set_extra_headers()` and the timeout set with `set_timeout()` apply to every provider.
 
 ### `get_data` and `fetch` parameters
 

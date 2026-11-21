@@ -13,9 +13,10 @@ import time
 from collections.abc import Iterator
 from contextlib import AbstractContextManager, contextmanager
 from contextvars import ContextVar
+import functools
 from functools import lru_cache
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Callable
+from typing import TYPE_CHECKING, Any, Callable, ParamSpec, TypeVar
 
 import httpx
 import portalocker
@@ -456,6 +457,38 @@ def _provider_scope(value: ProviderValue) -> Iterator[None]:
         yield
     finally:
         _scoped_provider.reset(token)
+
+
+_P = ParamSpec("_P")
+_R = TypeVar("_R")
+
+
+def _bound_to_dataset(func: Callable[_P, _R]) -> Callable[_P, _R]:
+    """Run `func` on the provider its `dataset` argument was loaded from.
+
+    The dataset is the first positional argument or the `dataset` keyword. A
+    dict carrying a `provider` key (set by `load_dataset`) wins over any scope
+    and over the `set_provider` default; a dict without it (built by hand) runs
+    on the provider in effect, as before.
+    """
+
+    @functools.wraps(func)
+    def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> _R:
+        dataset = args[0] if args else kwargs.get("dataset")
+        if not isinstance(dataset, dict) or "provider" not in dataset:
+            return func(*args, **kwargs)
+        value = dataset["provider"]
+        if isinstance(value, str):
+            if value not in PROVIDERS:
+                raise ValueError(f"unknown provider '{value}' stored in dataset")
+        elif not isinstance(value, dict):
+            raise TypeError(
+                f"dataset 'provider' must be a preset name or a provider dict, not {type(value).__name__}"
+            )
+        with _provider_scope(value):
+            return func(*args, **kwargs)
+
+    return wrapper
 
 
 def use_provider(name: str, agency_id: str | None = None) -> AbstractContextManager[None]:

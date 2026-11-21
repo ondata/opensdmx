@@ -178,7 +178,7 @@ Invariants for every phase: the full test suite passes (outside a scope behaviou
 
 ## Detailed Implementation Plan
 
-Two PRs. Phase 1 branches from `main`; Phase 2 branches from `main` after Phase 1 is merged, since it uses Phase 1 symbols. Each passes `uv run ruff check`, `uv run mypy` (strict) and `uv run pytest`, is reviewed with the `multiprovider-reviewer` agent, and adds an entry at the top of `LOG.md` (date heading, English bullets).
+One PR, one commit per phase (maintainer's decision, 2026-11-21; first planned as two PRs). Phase 2 builds on Phase 1 symbols. Each passes `uv run ruff check`, `uv run mypy` (strict) and `uv run pytest`, is reviewed with the `multiprovider-reviewer` agent, and adds an entry at the top of `LOG.md` (date heading, English bullets).
 
 ### Phase 1: one accessor, a scope, saved queries
 

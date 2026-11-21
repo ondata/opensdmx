@@ -8,6 +8,8 @@ from __future__ import annotations
 import asyncio
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
+from unittest.mock import patch
 
 import httpx
 import polars as pl
@@ -17,6 +19,7 @@ import yaml
 import opensdmx
 from opensdmx import base
 from opensdmx.base import (
+    _bound_to_dataset,
     _build_provider,
     _provider_scope,
     _rate_limit_lock_file,
@@ -271,3 +274,133 @@ def test_a6_cold_cache_threads_resolve_the_same_cache_base(tmp_path, monkeypatch
         [t.start() for t in threads]
         [t.join() for t in threads]
         assert bases == [str(cache), str(cache)]
+
+
+# ── Phase 2: a dataset carries its provider (A1, A8, A9, A10) ────────
+
+_DIMS = {"FREQ": {"id": "FREQ", "position": 1, "codelist_id": "CL_FREQ"}}
+
+
+def _load(url: str, agency: str) -> dict:
+    """A dataset loaded under a custom provider, with catalog and DSD stubbed."""
+    row = {"df_id": "DF", "version": "1.0", "df_description": "d", "df_structure_id": "DSD"}
+    set_provider(url, agency_id=agency, rate_limit=0.0)
+    with patch("opensdmx.discovery.resolve_dataflow", return_value=row), \
+         patch("opensdmx.discovery._get_dimensions", return_value=_DIMS):
+        return opensdmx.load_dataset("DF")
+
+
+def _hosts_of(call) -> list[str]:
+    hosts: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        hosts.append(request.url.host)
+        return httpx.Response(404, text="not found")
+
+    with _data_client(handler):
+        try:
+            call()
+        except Exception:  # the 404 may surface as an error; only the host matters
+            pass
+    return hosts
+
+
+def test_load_dataset_records_its_provider():
+    row = {"df_id": "DF", "version": "1.0", "df_description": "d", "df_structure_id": "DSD"}
+    with patch("opensdmx.discovery.resolve_dataflow", return_value=row), \
+         patch("opensdmx.discovery._get_dimensions", return_value=_DIMS):
+        set_provider("bundesbank")
+        assert opensdmx.load_dataset("DF")["provider"] == "bundesbank"
+        set_provider(A, agency_id="A")
+        ds = opensdmx.load_dataset("DF")
+    assert ds["provider"] == base._active_provider
+    assert ds["provider"] is not base._active_provider
+
+
+@pytest.mark.parametrize(
+    "call",
+    [
+        lambda ds: opensdmx.dimensions_info(ds),
+        lambda ds: opensdmx.get_dimension_values(ds, "FREQ"),
+        lambda ds: opensdmx.get_codelist_hierarchy(ds, "FREQ"),
+        lambda ds: opensdmx.get_available_values(ds),
+        lambda ds: opensdmx.get_data(ds),
+        lambda ds: opensdmx.enrich_with_labels(ds, pl.DataFrame({"FREQ": ["A"], "OBS_VALUE": [1.0]})),
+    ],
+    ids=["dimensions_info", "get_dimension_values", "get_codelist_hierarchy",
+         "get_available_values", "get_data", "enrich_with_labels"],
+)
+def test_a1_bound_functions_request_the_dataset_provider(call):
+    ds = _load(A, "A")
+    set_provider(B, agency_id="B", rate_limit=0.0)  # a different default
+    hosts = _hosts_of(lambda: call(ds))
+    assert hosts and set(hosts) == {"a.example"}
+
+
+def test_a8_cache_dir_follows_the_dataset_inside_a_bound_call():
+    @_bound_to_dataset
+    def cache_name(dataset):
+        return get_cache_dir().name
+
+    ds = _load(A, "A")
+    set_provider(B, agency_id="B")
+    with use_provider("eurostat"):
+        assert cache_name(ds) == "A"  # the dataset wins over the scope too
+        assert cache_name(dataset=ds) == "A"  # bound when passed by keyword
+    assert get_cache_dir().name == "B"
+
+
+def test_a9_dataset_without_provider_uses_the_current_one():
+    @_bound_to_dataset
+    def url(dataset):
+        return _url()
+
+    set_provider(B, agency_id="B")
+    assert url({"df_id": "DF"}) == B
+
+
+def test_a9_unknown_stored_preset_raises():
+    @_bound_to_dataset
+    def noop(dataset):
+        return None
+
+    with pytest.raises(ValueError, match="unknown provider 'gone' stored in dataset"):
+        noop({"provider": "gone"})
+    with pytest.raises(TypeError):
+        noop({"provider": 42})
+
+
+def test_a9_filters_keep_the_provider_key():
+    ds = _load(A, "A")
+    assert opensdmx.set_filters(ds, FREQ="A")["provider"] == ds["provider"]
+    assert opensdmx.reset_filters(ds)["provider"] == ds["provider"]
+
+
+def test_a10_datasets_mapped_over_a_pool_request_their_own_host():
+    ds_a, ds_b = _load(A, "A"), _load(B, "B")
+    set_provider("eurostat")
+    hosts: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        hosts.append(request.url.host)
+        return httpx.Response(404, text="not found")
+
+    def fetch(ds):
+        try:
+            opensdmx.get_data(ds)
+        except Exception:
+            pass
+
+    with _data_client(handler), ThreadPoolExecutor(2) as pool:
+        list(pool.map(fetch, [ds_a, ds_b]))
+    assert sorted(set(hosts)) == ["a.example", "b.example"]
+
+
+def test_a1_saved_query_records_the_dataset_provider():
+    """`get --query-file` writes the provider of the dataset, not the active one."""
+    from opensdmx.utils import build_query_dict
+
+    ds = _load(A, "A")
+    set_provider(B, agency_id="B")
+    query = build_query_dict(ds, {})
+    assert (query["provider_url"], query["agency_id"]) == (A, "A")

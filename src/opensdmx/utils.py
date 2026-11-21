@@ -6,6 +6,8 @@ from typing import TYPE_CHECKING, Any
 
 from lxml import etree
 
+from .base import _bound_to_dataset
+
 if TYPE_CHECKING:
     from rich.console import Console
 
@@ -157,6 +159,7 @@ def _get_code_label(codelist_id: str | None, code_value: str) -> str:
     return ""
 
 
+@_bound_to_dataset
 def build_query_dict(
     ds: dict[str, Any],
     filters: dict[str, Any],

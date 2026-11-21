@@ -19,6 +19,7 @@ class ConstraintsTimeout(Exception):
         )
 
 
+import copy
 import json
 import logging
 import os
@@ -49,6 +50,8 @@ import portalocker.exceptions
 from lxml import etree
 
 from .base import (
+    _bound_to_dataset,
+    _current_provider_value,
     explain_cached,
     get_agency_id,
     get_cache_dir,
@@ -709,7 +712,9 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
     Returns a dict with keys:
         df_id, version, df_description, df_structure_id, dimensions, filters,
         has_constraint, notes (provider notices: DATAFLOW_NOTES annotation and
-        the SDMX Description, in that order, only those present).
+        the SDMX Description, in that order, only those present), provider (the
+        provider value it was loaded from: functions that take the dataset send
+        their requests there, whatever provider is active later).
     """
     match_row = resolve_dataflow(dataflow_identifier)
 
@@ -728,6 +733,7 @@ def load_dataset(dataflow_identifier: str) -> dict[str, Any]:
         "notes": [
             n for n in (match_row.get("df_notes"), match_row.get("df_sdmx_description")) if n
         ],
+        "provider": copy.deepcopy(_current_provider_value()),
     }
 
 
@@ -793,6 +799,7 @@ def print_dataset(dataset: dict[str, Any]) -> None:
         print(f"  - {dim_id}: {fstr}")
 
 
+@_bound_to_dataset
 def dimensions_info(dataset: dict[str, Any], include_descriptions: bool = True) -> pl.DataFrame:
     """Return a DataFrame with dimension metadata."""
     records = [
@@ -1022,6 +1029,7 @@ def _load_codelist_records(dataset: dict[str, Any], dimension_id: str) -> list[d
     return records
 
 
+@_bound_to_dataset
 def get_dimension_values(dataset: dict[str, Any], dimension_id: str) -> pl.DataFrame:
     """Return available values (id, name) for a specific dimension."""
     records = _load_codelist_records(dataset, dimension_id)
@@ -1035,6 +1043,7 @@ def get_dimension_values(dataset: dict[str, Any], dimension_id: str) -> pl.DataF
     )
 
 
+@_bound_to_dataset
 def get_codelist_hierarchy(dataset: dict[str, Any], dimension_id: str) -> pl.DataFrame:
     """Return a dimension's codelist with hierarchy: (id, name, parent, order).
 
@@ -1282,6 +1291,7 @@ def _parse_bulk_constraint_xml(root: Any, ns: dict[str, str]) -> dict[str, dict[
 
 
 
+@_bound_to_dataset
 def get_available_values(dataset: dict[str, Any]) -> dict[str, pl.DataFrame]:
     """Get all available values for all dimensions via constraint endpoint.
 
