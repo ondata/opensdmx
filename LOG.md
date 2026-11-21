@@ -1,5 +1,14 @@
 # LOG
 
+## 2026-11-21 - v0.32.0 - release: use_provider, OPENSDMX_DEBUG, narrower fallbacks, coverage in CI
+
+Minor release. Ships what landed on `main` after v0.31.2 (entries below):
+
+- **Library** (#115): `opensdmx.use_provider(name, agency_id=None)`, a context manager that uses a provider for a block and restores the previous one; cache files and the rate limit follow it. A dataset dict from `load_dataset` now carries its provider (`ds["provider"]`), and the functions that take it (`get_data`, `dimensions_info`, `get_dimension_values`, `get_codelist_hierarchy`, `get_available_values`, `enrich_with_labels`) send their requests there, whatever provider is active later. Behaviour change: `run_query` no longer changes the caller's provider. Also fixes a race condition where two threads starting with a cold cache could pick different cache directories and skip the rate limit.
+- **CLI** (#113): `OPENSDMX_DEBUG` (any non-empty value) prints the traceback under a command's one-line `Error:`.
+- **Fixes**: best-effort fallbacks catch only the failures they exist for and say why (#111); error messages keep text in square brackets and no longer crash on `[/...]` (#112); `which` lists `embed` and `blacklist` (#114).
+- **CI and tests**: the built wheel is installed alone and imported before publish (#110); coverage is printed in CI, 72% → 74% (#114).
+
 ## 2026-11-21 - feat: a dataset remembers its provider (F2, phase 2)
 
 - `load_dataset` stores `ds["provider"]`, a deep copy of the provider value in effect. `get_data`, `dimensions_info`, `get_dimension_values`, `get_codelist_hierarchy`, `get_available_values` and `enrich_with_labels` carry `_bound_to_dataset`: they run on the dataset's provider, whatever is active, also when the dataset is passed as `dataset=`. Fixes `ds = load_dataset(...)` under ISTAT, `set_provider("eurostat")`, then `get_data(ds)` asking Eurostat for ISTAT's id.
