@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-11-25 - v0.33.0 - release: `opensdmx cache`, stale embedding index detection
+
+Minor release. Ships what landed on `main` after v0.32.0 (entries below):
+
+- **CLI** (#116): new `opensdmx cache [-p provider]` shows the local cache: size, per-table fresh (cache hit) vs expired rows, ages, files and TTLs; JSON gives the full payload, CSV one row per SQLite table. `cache` and `which` read local data only and now work offline (no startup reachability check).
+- **Semantic search** (#117): embedding indexes store model name, build time and indexed-text version; a stale but compatible index still answers and logs a rebuild hint, an incompatible one says how to rebuild.
+
 ## 2026-11-25 - Embedding index provenance (#57)
 
 - Store the model name, UTC build time and indexed-text version in the Parquet footer. Compatible stale indexes still return results and log one rebuild hint per index per process; incompatible vector dimensions report how to rebuild.
