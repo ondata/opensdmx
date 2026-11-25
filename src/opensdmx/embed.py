@@ -6,6 +6,8 @@ module imports it lazily so that a keyword-only install never needs it.
 
 from __future__ import annotations
 
+import logging
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +18,12 @@ import polars as pl
 from .base import get_cache_dir
 
 _EMBED_MODEL = "nomic-embed-text-v2-moe"
+# Bump when the indexed text composition or document prefix changes.
+_EMBED_TEXT_VERSION = "1"
+_MODEL_KEY = "opensdmx.embed.model"
+_TEXT_VERSION_KEY = "opensdmx.embed.text_version"
+_BUILT_AT_KEY = "opensdmx.embed.built_at"
+_warned_stale_indexes: set[Path] = set()
 
 
 def _require_ollama() -> Any:
@@ -185,7 +193,12 @@ def build_embeddings(progress: bool = True) -> None:
         for df_id, vec in zip(ids, vectors)
     ]
     df = pl.DataFrame(rows, schema={"df_id": pl.Utf8, "embedding": pl.List(pl.Float32)})
-    df.write_parquet(cache_path)
+    df.write_parquet(cache_path, metadata={
+        _MODEL_KEY: _EMBED_MODEL,
+        _TEXT_VERSION_KEY: _EMBED_TEXT_VERSION,
+        _BUILT_AT_KEY: datetime.now(UTC).isoformat(),
+    })
+    _warned_stale_indexes.discard(cache_path)
 
     if progress:
         dim = vectors.shape[1] if vectors.ndim > 1 else 0
@@ -205,7 +218,7 @@ def semantic_search(query: str, n: int = 10) -> pl.DataFrame:
         Polars DataFrame with columns ``df_id``, ``df_description``, ``score`` (cosine similarity).
 
     Raises:
-        RuntimeError: if Ollama is not reachable or the model is not available.
+        RuntimeError: if Ollama is unreachable, the model is unavailable, or the index dimensions differ.
         FileNotFoundError: if the embeddings cache does not exist (run :func:`build_embeddings` first).
     """
     from .discovery import all_available
@@ -226,6 +239,26 @@ def semantic_search(query: str, n: int = 10) -> pl.DataFrame:
     doc_vecs = np.array(embed_df["embedding"].to_list(), dtype=np.float32)
 
     query_vec = _embed([f"search_query: {query}"])[0]
+    if doc_vecs.shape[1] != query_vec.shape[0]:
+        raise RuntimeError(
+            "Embedding index dimensions do not match the current model. "
+            "Rebuild with `opensdmx embed` using the same provider options."
+        )
+
+    metadata = pl.read_parquet_metadata(cache_path)
+    is_current = (
+        metadata.get(_MODEL_KEY) == _EMBED_MODEL
+        and metadata.get(_TEXT_VERSION_KEY) == _EMBED_TEXT_VERSION
+        and bool(metadata.get(_BUILT_AT_KEY))
+    )
+    if is_current:
+        _warned_stale_indexes.discard(cache_path)
+    elif cache_path not in _warned_stale_indexes:
+        _warned_stale_indexes.add(cache_path)
+        logging.warning(
+            "Embedding index may be stale. "
+            "Rebuild with `opensdmx embed` using the same provider options."
+        )
 
     # Cosine similarity
     query_norm = query_vec / (np.linalg.norm(query_vec) + 1e-10)

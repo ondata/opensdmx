@@ -1,5 +1,9 @@
 # LOG
 
+## 2026-11-25 - Embedding index provenance (#57)
+
+- Store the model name, UTC build time and indexed-text version in the Parquet footer. Compatible stale indexes still return results and log one rebuild hint per index per process; incompatible vector dimensions report how to rebuild.
+
 ## 2026-11-25 - feat: `opensdmx cache` shows cache usage (#116)
 
 - New `opensdmx cache [-p provider]`: cache dir, total size, per-table rows split into fresh (a read would hit) and expired (past TTL), oldest/newest age, files in the cache dir, configured TTLs. `db_cache.cache_stats()` computes the per-table figures. Listed in `which`.

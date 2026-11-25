@@ -1088,7 +1088,7 @@ def test_hidden_id_still_resolves_when_typed_verbatim():
     assert row["df_id"] == "LFST_HHEREDCH$DV_1343"
 
 
-def test_semantic_search_returns_n_when_the_index_is_stale():
+def test_semantic_search_returns_n_when_the_index_is_stale(tmp_path):
     """A pre-filter index still holds hidden ids; they must not eat the result slots.
 
     The old fixed `n * 2` candidate window returned fewer than n results when more
@@ -1107,12 +1107,12 @@ def test_semantic_search_returns_n_when_the_index_is_stale():
     )
     catalog = pl.DataFrame({"df_id": ["A", "B", "C"], "df_description": ["a", "b", "c"]})
 
+    path = tmp_path / "embeddings.parquet"
+    index.write_parquet(path)
     with patch("opensdmx.embed._check_ollama"), \
-         patch("opensdmx.embed._embed_cache_path") as path, \
+         patch("opensdmx.embed._embed_cache_path", return_value=path), \
          patch("opensdmx.embed._embed", return_value=np.array([[1.0, 0.0]], dtype=np.float32)), \
-         patch("opensdmx.discovery.all_available", return_value=catalog), \
-         patch("polars.read_parquet", return_value=index):
-        path.return_value.exists.return_value = True
+         patch("opensdmx.discovery.all_available", return_value=catalog):
         res = embed.semantic_search("anything", n=3)
 
     # The three tie on score, so only membership and count are meaningful.
