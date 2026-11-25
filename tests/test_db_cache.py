@@ -158,3 +158,47 @@ def test_delete_invalid_nonexistent():
 def test_invalid_empty():
     assert db_cache.get_invalid_dataset_ids() == set()
     assert db_cache.list_invalid_datasets() == []
+
+
+# ── cache_stats (issue #26) ─────────────────────────────────────────
+
+def test_cache_stats_empty():
+    stats = db_cache.cache_stats()
+    assert stats["db_size_bytes"] > 0
+    tables = {t["table"]: t for t in stats["tables"]}
+    assert set(tables) == {
+        "structure_dims",
+        "codelist_info",
+        "codelist_values",
+        "available_constraints",
+        "invalid_datasets",
+    }
+    for t in tables.values():
+        assert t["rows"] == 0
+        assert t["fresh"] == 0
+        assert t["expired"] == 0
+        assert t["oldest_age_s"] is None
+
+
+def test_cache_stats_fresh_and_expired():
+    import time as _time
+
+    db_cache.save_codelist_values("CL_X", [{"id": "A", "name": "a"}])
+    db_cache.save_available_constraints("DF_X", {"FREQ": ["A"]})
+    db_cache.save_invalid_dataset("BAD_DF")
+    # Age the constraints rows past their TTL so they count as expired.
+    old = _time.time() - 8 * 86400
+    with db_cache._db_conn() as conn:
+        conn.execute("UPDATE available_constraints SET cached_at = ?", (old,))
+
+    tables = {t["table"]: t for t in db_cache.cache_stats()["tables"]}
+    assert tables["codelist_values"]["rows"] == 1
+    assert tables["codelist_values"]["fresh"] == 1
+    assert tables["codelist_values"]["expired"] == 0
+    assert tables["available_constraints"]["rows"] == 1
+    assert tables["available_constraints"]["fresh"] == 0
+    assert tables["available_constraints"]["expired"] == 1
+    # Blacklist entries never expire.
+    assert tables["invalid_datasets"]["ttl_s"] is None
+    assert tables["invalid_datasets"]["fresh"] == 1
+    assert tables["invalid_datasets"]["expired"] == 0

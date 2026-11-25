@@ -1,5 +1,12 @@
 # LOG
 
+## 2026-11-25 - feat: `opensdmx cache` shows cache usage (#116)
+
+- New `opensdmx cache [-p provider]`: cache dir, total size, per-table rows split into fresh (a read would hit) and expired (past TTL), oldest/newest age, files in the cache dir, configured TTLs. `db_cache.cache_stats()` computes the per-table figures. Listed in `which`.
+- JSON gives the full payload; CSV one row per SQLite table (`table,rows,fresh,expired,ttl_s,oldest_age_s,newest_age_s`).
+- `cache` and `which` read local data only, so they skip the startup reachability GET (`_LOCAL_ONLY_COMMANDS`) and work offline.
+- Skill `sdmx-explorer`: new "Cache inspection" section.
+
 ## 2026-11-21 - v0.32.0 - release: use_provider, OPENSDMX_DEBUG, narrower fallbacks, coverage in CI
 
 Minor release. Ships what landed on `main` after v0.31.2 (entries below):

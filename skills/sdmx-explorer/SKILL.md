@@ -121,6 +121,23 @@ opensdmx -o json which "download" | jq '.[0].command'
 # → "get"
 ```
 
+`which` reads a static index and needs no network.
+
+## Cache inspection — `opensdmx cache`
+
+To see what is cached locally for a provider (size, fresh vs expired rows per
+table, TTLs), without any network call:
+
+```bash
+opensdmx cache --provider istat            # tables, files, TTLs
+opensdmx -o json cache --provider istat    # full payload
+opensdmx -o csv cache                      # one row per SQLite table
+```
+
+`fresh` rows are what a read would serve as a cache hit right now; `expired` rows
+would trigger a re-fetch. Useful to explain why a command is slow (cold cache) or
+returns stale codes.
+
 This skill runs a four-phase interactive loop. Always follow the phases in order.
 The goal is to help the user understand the data landscape and make informed choices,
 not to fetch data immediately.
