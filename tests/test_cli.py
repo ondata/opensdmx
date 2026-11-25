@@ -1202,3 +1202,27 @@ def test_cache_command_json(tmp_path, monkeypatch):
     assert "available_constraints" in tables
     assert tables["available_constraints"]["ttl_s"] == 604800
     assert tables["codelist_values"]["ttl_s"] == 2592000
+
+
+def test_cache_command_csv_one_row_per_table(tmp_path, monkeypatch):
+    monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+    from opensdmx.base import _resolve_cache_base_cached
+    _resolve_cache_base_cached.cache_clear()
+    result = runner.invoke(app, ["--output", "csv", "cache", "--provider", "istat"])
+    assert result.exit_code == 0, result.output
+    lines = result.stdout.strip().splitlines()
+    assert lines[0].startswith("table,rows,fresh,expired,ttl_s")
+    assert any(line.startswith("available_constraints,") for line in lines[1:])
+    assert "{" not in result.stdout
+
+
+def test_cache_command_works_offline(tmp_path, monkeypatch):
+    """`cache` reads local files only: no reachability GET, even offline."""
+    monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+    from opensdmx.base import _resolve_cache_base_cached
+    _resolve_cache_base_cached.cache_clear()
+    with patch("opensdmx.cli._check_api_reachable") as check:
+        result = runner.invoke(app, ["cache", "--provider", "istat"])
+    assert result.exit_code == 0, result.output
+    check.assert_not_called()
+    assert "SQLite tables" in result.output

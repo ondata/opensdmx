@@ -384,6 +384,11 @@ def _apply_explain(explain: bool) -> None:
     set_explain(explain)
 
 
+# Commands that only read local files: the reachability GET would make them
+# fail offline for no reason.
+_LOCAL_ONLY_COMMANDS = {"cache"}
+
+
 def _check_api_reachable() -> None:
     """Do a lightweight GET check on the active provider's base URL."""
     from .base import _rate_limit_file
@@ -431,7 +436,11 @@ def _startup(
         console.print(f"opensdmx {_version('opensdmx')}\n")
         console.print(ctx.get_help())
         raise typer.Exit()
-    if not _HELP_FLAGS.intersection(sys.argv) and "--explain" not in sys.argv:
+    if (
+        not _HELP_FLAGS.intersection(sys.argv)
+        and "--explain" not in sys.argv
+        and ctx.invoked_subcommand not in _LOCAL_ONLY_COMMANDS
+    ):
         # The flag's value arrives with the command, but a plan has to be
         # printable without the provider being reachable — and must not spend
         # the reachability GET — so it is read off argv here, like --help above.
@@ -1232,7 +1241,8 @@ def cache(
     Examples:
 
       opensdmx cache
-      opensdmx cache --provider istat --output json
+      opensdmx --output json cache --provider istat
+      opensdmx --output csv cache    # one row per SQLite table
     """
     _apply_provider(provider)
     from .base import get_cache_dir, provider_label, get_provider
@@ -1247,14 +1257,14 @@ def cache(
     stats = cache_stats()
     cache_dir = get_cache_dir()
 
-    files = []
+    files: list[dict[str, Any]] = []
     if cache_dir.exists():
-        for f in sorted(cache_dir.iterdir()):
-            if f.is_file():
-                st = f.stat()
+        for p in sorted(cache_dir.iterdir()):
+            if p.is_file():
+                st = p.stat()
                 files.append(
                     {
-                        "file": f.name,
+                        "file": p.name,
                         "size_bytes": st.st_size,
                         "age_s": time.time() - st.st_mtime,
                     }
@@ -1277,7 +1287,9 @@ def cache(
     }
 
     if _output_mode != "table":
-        _emit(data)
+        # CSV has no form for the nested payload: one row per SQLite table.
+        import polars as pl
+        _emit(data, df=pl.DataFrame(stats["tables"]) if _output_mode == "csv" else None)
         return
 
     console.print(
