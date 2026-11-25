@@ -1198,6 +1198,132 @@ def providers() -> None:
     console.print(table)
 
 
+def _human_size(n: float) -> str:
+    for unit in ("B", "KB", "MB", "GB"):
+        if n < 1024 or unit == "GB":
+            return f"{n:.1f} {unit}" if unit != "B" else f"{int(n)} B"
+        n /= 1024
+    return f"{n:.1f} GB"
+
+
+def _human_age(seconds: float | None) -> str:
+    if seconds is None:
+        return "-"
+    if seconds < 60:
+        return f"{seconds:.0f}s"
+    if seconds < 3600:
+        return f"{seconds / 60:.0f}m"
+    if seconds < 86400:
+        return f"{seconds / 3600:.1f}h"
+    return f"{seconds / 86400:.1f}d"
+
+
+@app.command()
+def cache(
+    provider: Optional[str] = typer.Option(None, "--provider", "-p", help=_PROVIDER_HELP),
+) -> None:
+    """Show local cache usage: size, per-table freshness and TTLs.
+
+    Reads the local cache only, never the network. `fresh` rows are what a
+    read would serve as a cache hit right now (within the table's TTL);
+    `expired` rows are past it and would trigger a re-fetch. The cache is
+    namespaced per provider, so use --provider to inspect another one.
+
+    Examples:
+
+      opensdmx cache
+      opensdmx cache --provider istat --output json
+    """
+    _apply_provider(provider)
+    from .base import get_cache_dir, provider_label, get_provider
+    from .cache_config import (
+        CONSTRAINTS_CACHE_TTL,
+        DATAFLOWS_CACHE_TTL,
+        CATEGORIES_CACHE_TTL,
+        METADATA_CACHE_TTL,
+    )
+    from .db_cache import cache_stats
+
+    stats = cache_stats()
+    cache_dir = get_cache_dir()
+
+    files = []
+    if cache_dir.exists():
+        for f in sorted(cache_dir.iterdir()):
+            if f.is_file():
+                st = f.stat()
+                files.append(
+                    {
+                        "file": f.name,
+                        "size_bytes": st.st_size,
+                        "age_s": time.time() - st.st_mtime,
+                    }
+                )
+    total_size = sum(f["size_bytes"] for f in files)
+
+    data = {
+        "provider": provider_label(get_provider()),
+        "cache_dir": str(cache_dir),
+        "total_size_bytes": total_size,
+        "db_size_bytes": stats["db_size_bytes"],
+        "ttl": {
+            "dataflows_s": DATAFLOWS_CACHE_TTL,
+            "metadata_s": METADATA_CACHE_TTL,
+            "constraints_s": CONSTRAINTS_CACHE_TTL,
+            "categories_s": CATEGORIES_CACHE_TTL,
+        },
+        "tables": stats["tables"],
+        "files": files,
+    }
+
+    if _output_mode != "table":
+        _emit(data)
+        return
+
+    console.print(
+        f"\n[bold]Cache[/bold] for [cyan]{data['provider']}[/cyan] — "
+        f"[dim]{cache_dir}[/dim] ({_human_size(total_size)} total)\n"
+    )
+
+    table = Table(title="SQLite tables (cache.db)", show_lines=False)
+    table.add_column("table", style="cyan", no_wrap=True)
+    table.add_column("rows", justify="right")
+    table.add_column("fresh (hits)", justify="right", style="green")
+    table.add_column("expired", justify="right", style="red")
+    table.add_column("ttl", justify="right", style="dim")
+    table.add_column("oldest", justify="right", style="dim")
+    table.add_column("newest", justify="right", style="dim")
+    for t in stats["tables"]:
+        ttl = "never" if t["ttl_s"] is None else _human_age(t["ttl_s"])
+        table.add_row(
+            t["table"],
+            str(t["rows"]),
+            str(t["fresh"]),
+            str(t["expired"]),
+            ttl,
+            _human_age(t["oldest_age_s"]),
+            _human_age(t["newest_age_s"]),
+        )
+    console.print(table)
+
+    if files:
+        ftable = Table(title="Files in cache dir", show_lines=False)
+        ftable.add_column("file", style="cyan", no_wrap=True)
+        ftable.add_column("size", justify="right")
+        ftable.add_column("age", justify="right", style="dim")
+        for f in files:
+            ftable.add_row(f["file"], _human_size(f["size_bytes"]), _human_age(f["age_s"]))
+        console.print(ftable)
+
+    console.print(
+        f"\n[dim]TTLs — dataflows: {_human_age(DATAFLOWS_CACHE_TTL)}, "
+        f"metadata (dims/codelists): {_human_age(METADATA_CACHE_TTL)}, "
+        f"constraints: {_human_age(CONSTRAINTS_CACHE_TTL)}, "
+        f"categories: {_human_age(CATEGORIES_CACHE_TTL)} "
+        "(override with OPENSDMX_*_CACHE_TTL env vars)[/dim]"
+    )
+
+
 @app.command()
 def which(
     query: Optional[str] = typer.Argument(None, help="Capability to look up (omit to list all)."),

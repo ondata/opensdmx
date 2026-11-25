@@ -65,6 +65,11 @@ WHICH_INDEX: list[dict[str, str]] = [
         "description": "List or remove datasets marked as unavailable, which search leaves out.",
         "group": "Maintenance",
     },
+    {
+        "command": "cache",
+        "description": "Show local cache usage: size, per-table freshness (hits) and TTLs.",
+        "group": "Maintenance",
+    },
 ]
 
 

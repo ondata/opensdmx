@@ -265,3 +265,60 @@ def delete_invalid_dataset(df_id: str) -> bool:
 # get_df_ids_with_content_constraint(), which had no callers. The signal they
 # carried — whether a dataflow has a contentconstraint — travels in the
 # has_constraint column of dataflows.parquet, which is what discovery reads.
+
+
+# --- cache statistics (visibility, issue #26) ---
+
+# TTL that governs each cached table; None means the rows never expire.
+# `ts_col` is the timestamp column each table stores (invalid_datasets uses
+# marked_at, not cached_at).
+_TABLE_TTLS: dict[str, tuple[float | None, str]] = {
+    "structure_dims": (METADATA_CACHE_TTL, "cached_at"),
+    "codelist_info": (METADATA_CACHE_TTL, "cached_at"),
+    "codelist_values": (METADATA_CACHE_TTL, "cached_at"),
+    "available_constraints": (CONSTRAINTS_CACHE_TTL, "cached_at"),
+    "invalid_datasets": (None, "marked_at"),
+}
+
+
+def cache_stats() -> dict[str, Any]:
+    """Per-table cache statistics: sizes, freshness and age.
+
+    `fresh` counts the rows a read would serve as a cache hit right now
+    (within the table's TTL); `expired` the rows past it. `invalid_datasets`
+    has no TTL and is always fresh. Ages are seconds since `cached_at`.
+    """
+    now = time.time()
+    db_path = _get_db_path()
+    tables: list[dict[str, Any]] = []
+    with _db_conn() as conn:
+        for table, (ttl, ts_col) in _TABLE_TTLS.items():
+            rows = conn.execute(
+                f"SELECT COUNT(*) AS n, MIN({ts_col}) AS oldest, MAX({ts_col}) AS newest "
+                f"FROM {table}"
+            ).fetchone()
+            n = rows["n"] or 0
+            if ttl is None or n == 0:
+                fresh, expired = n, 0
+            else:
+                fresh = conn.execute(
+                    f"SELECT COUNT(*) AS n FROM {table} WHERE ? - {ts_col} <= ?",
+                    (now, ttl),
+                ).fetchone()["n"]
+                expired = n - fresh
+            tables.append(
+                {
+                    "table": table,
+                    "rows": n,
+                    "fresh": fresh,
+                    "expired": expired,
+                    "ttl_s": ttl,
+                    "oldest_age_s": (now - rows["oldest"]) if rows["oldest"] else None,
+                    "newest_age_s": (now - rows["newest"]) if rows["newest"] else None,
+                }
+            )
+    return {
+        "db_path": str(db_path),
+        "db_size_bytes": db_path.stat().st_size if db_path.exists() else 0,
+        "tables": tables,
+    }

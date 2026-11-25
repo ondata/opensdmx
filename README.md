@@ -380,6 +380,7 @@ All commands accept `--provider` (`-p`) to select the provider; the ones that re
 | `opensdmx run <query.yaml> [--out file] [-p provider]` | Re-run a query saved with `--query-file` |
 | `opensdmx plot <id\|file.csv> [--DIM VALUE] [--geom line\|bar\|barh\|point\|scatter] [--out file] [-p provider]` | Plot data as chart |
 | `opensdmx blacklist [-p provider]` | List and remove datasets from the unavailability blacklist |
+| `opensdmx cache [-p provider]` | Show local cache usage: size, per-table fresh rows (hits) vs expired, and TTLs |
 
 ### Dry runs: the plan before the request
 

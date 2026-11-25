@@ -1175,3 +1175,30 @@ def test_every_cli_spinner_takes_over_the_rate_limit_countdown():
     with _status_ctx("Loading..."):
         assert base._wait_reporter is not None
     assert base._wait_reporter is None
+
+
+# ── cache command (issue #26) ────────────────────────────────────────
+
+def test_cache_command_table(tmp_path, monkeypatch):
+    monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+    from opensdmx.base import _resolve_cache_base_cached
+    _resolve_cache_base_cached.cache_clear()
+    result = runner.invoke(app, ["cache", "--provider", "istat"])
+    assert result.exit_code == 0, result.output
+    assert "SQLite tables" in result.output
+    assert "available_constraints" in result.output
+    assert "codelist_values" in result.output
+
+
+def test_cache_command_json(tmp_path, monkeypatch):
+    monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+    from opensdmx.base import _resolve_cache_base_cached
+    _resolve_cache_base_cached.cache_clear()
+    result = runner.invoke(app, ["--output", "json", "cache", "--provider", "istat"])
+    assert result.exit_code == 0, result.output
+    data = json.loads(result.output)
+    assert "tables" in data and "files" in data and "ttl" in data
+    tables = {t["table"]: t for t in data["tables"]}
+    assert "available_constraints" in tables
+    assert tables["available_constraints"]["ttl_s"] == 604800
+    assert tables["codelist_values"]["ttl_s"] == 2592000
