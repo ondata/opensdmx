@@ -750,8 +750,8 @@ def test_parse_header_missing_colon_raises():
 
 @pytest.fixture
 def _no_api_check():
-    """`which` is a local-only command, but the CLI callback still pings the
-    provider; mock it so these tests don't depend on network reachability."""
+    """`which` is local-only and skips the reachability check; the mock stays
+    as a guard so these tests never depend on the network."""
     with patch("opensdmx.cli._check_api_reachable"):
         yield
 
@@ -1226,3 +1226,11 @@ def test_cache_command_works_offline(tmp_path, monkeypatch):
     assert result.exit_code == 0, result.output
     check.assert_not_called()
     assert "SQLite tables" in result.output
+
+
+def test_which_skips_reachability_check():
+    """`which` reads a static index: no reachability GET at startup."""
+    with patch("opensdmx.cli._check_api_reachable") as check:
+        result = runner.invoke(app, ["which", "download data"])
+    assert result.exit_code == 0, result.output
+    check.assert_not_called()

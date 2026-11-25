@@ -386,7 +386,7 @@ def _apply_explain(explain: bool) -> None:
 
 # Commands that only read local files: the reachability GET would make them
 # fail offline for no reason.
-_LOCAL_ONLY_COMMANDS = {"cache"}
+_LOCAL_ONLY_COMMANDS = {"cache", "which"}
 
 
 def _check_api_reachable() -> None:
