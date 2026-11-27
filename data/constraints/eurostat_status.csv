@@ -2420,6 +2420,8 @@ HLTH_CD_YRO,"Causes of death - deaths by NUTS 2 region of residence and occurren
 HLTH_CD_YSDR1,"Causes of death by NUTS 2 region - standardised death rate, 3 year average",ok,sdmx,7,424,0,"",2026-07-23
 HLTH_CD_YSDR2,"Causes of death - standardised death rate by NUTS 2 region of residence, 3 year average",ok,sdmx,7,603,0,"",2026-07-23
 HLTH_CO_BEDOC,Inpatient curative care bed occupancy rate by type of care,ok,sdmx,5,102,0,"",2026-07-23
+HLTH_CO_BRHYS,Breast and hysterectomy surgical procedures,ok,sdmx,6,83,0,"",2026-11-27
+HLTH_CO_CES,Caesarean section surgical procedures,ok,sdmx,5,77,0,"",2026-11-27
 HLTH_CO_DISCH1,"Hospital discharges by diagnosis, in-patients, total number - historical data (1995-2021)",ok,sdmx,8,249,0,"",2026-07-23
 HLTH_CO_DISCH1F,"Hospital discharges by diagnosis, NUTS 2 region, in-patients and total number - females - historical data (2000-2021)",ok,sdmx,8,460,0,"",2026-07-23
 HLTH_CO_DISCH1M,"Hospital discharges by diagnosis and NUTS 2 region, in-patients, total number - males - historical data (2000-2021)",ok,sdmx,8,448,0,"",2026-07-23
@@ -2451,6 +2453,7 @@ HLTH_CO_INPSTM,In-patient average length of stay (days) by NUTS 2 region - males
 HLTH_CO_INPSTT,In-patient average length of stay (days) by NUTS 2 region - total - historical data (1999-2021),ok,sdmx,8,464,0,"",2026-07-23
 HLTH_CO_PROC2,Surgical operations and procedures performed in hospitals by ICD-9-CM - historical data (1990-2016),ok,sdmx,6,110,0,"",2026-07-23
 HLTH_CO_PROC3,Surgical procedures,ok,sdmx,6,99,0,"",2026-07-23
+HLTH_CO_PROST,Prostatectomy surgical procedures,ok,sdmx,6,81,0,"",2026-11-27
 HLTH_CO_REN,End-stage renal failure (ESRF) patients - historical data (1980-2014),ok,sdmx,5,70,0,"",2026-07-23
 HLTH_DB_EMACAG,"Prevalence of disability by sex, age and labour status",ok,sdmx,6,42,0,"",2026-07-23
 HLTH_DB_EMACSE,"Percentage distribution of labour status by severity of disability, sex and age",ok,sdmx,7,49,0,"",2026-07-23
@@ -6498,6 +6501,8 @@ For more information check: https://developer",2026-08-26
 PRC_HICP_MMOR,HICP - monthly data (monthly rate of change) (1996-2025),ok,sdmx,5,873,0,"",2026-08-03
 PRC_HICP_MV12R,HICP - monthly data (12-month average rate of change) (1997-2025),ok,sdmx,5,851,0,"",2026-08-03
 PRC_HPI_A,House price index - annual data,ok,sdmx,5,66,0,"",2026-08-03
+PRC_HPI_CAP_A,House price index by capital city - annual data,ok,sdmx,5,31,0,"",2026-11-27
+PRC_HPI_CAP_Q,House price index by capital city - quarterly data,ok,sdmx,5,95,0,"",2026-11-27
 PRC_HPI_COW,House price index - country weights,ok,sdmx,6,69,0,"",2026-08-03
 PRC_HPI_HSNA,"House sales - number and index, annual data",ok,sdmx,5,54,0,"",2026-08-03
 PRC_HPI_HSNQ,"House sales - number and index, quarterly data",ok,sdmx,5,110,0,"",2026-08-03
@@ -6509,6 +6514,11 @@ PRC_HPI_OOCOW,Owner-occupied housing price index - country weights,ok,sdmx,6,71,
 PRC_HPI_OOINW,Owner-occupied housing price index - item weights,ok,sdmx,5,71,0,"",2026-08-03
 PRC_HPI_OOQ,Owner-occupied housing price index - quarterly data,ok,sdmx,5,137,0,"",2026-08-03
 PRC_HPI_Q,House price index - quarterly data,ok,sdmx,5,131,0,"",2026-08-03
+PRC_HPI_REG_A,House price index by NUTS 3 region - annual data,ok,sdmx,5,62,0,"",2026-11-27
+PRC_HPI_REG_Q,House price index by NUTS 3 region - quarterly data,ok,sdmx,5,120,0,"",2026-11-27
+PRC_HRI_CAP_M,Housing rental index by capital city - monthly data,ok,sdmx,4,136,0,"",2026-11-27
+PRC_HRI_DWE_M,Housing rental index by type of dwelling - monthly data,ok,sdmx,5,393,0,"",2026-11-27
+PRC_HRI_REG_M,Housing rental index by NUTS 3 region - monthly data,ok,sdmx,4,482,0,"",2026-11-27
 PRC_IPC_G20,G20 CPI all-items - Group of Twenty - Consumer price index,ok,sdmx,4,391,0,"",2026-08-03
 PRC_PPP_CONV,Convergence indicators,ok,sdmx,6,46,0,"",2026-08-03
 PRC_PPP_IND,"Purchasing power parities, price level indices, nominal and real expenditures by analytical categories - based on COICOP 1999",ok,sdmx,5,171,0,"",2026-08-03
