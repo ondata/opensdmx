@@ -24,8 +24,7 @@ runner = CliRunner()
     ["install opensdmx[semantic] first", "unexpected closing [/x] in reply"],
 )
 def test_search_error_keeps_square_brackets(message):
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.search_dataset", side_effect=ValueError(message)):
+    with patch("opensdmx.search_dataset", side_effect=ValueError(message)):
         result = runner.invoke(app, ["search", "gdp", "--provider", "eurostat"])
     assert result.exit_code == 1
     # A MarkupError would also exit 1, but without printing the message.
@@ -34,8 +33,7 @@ def test_search_error_keeps_square_brackets(message):
 
 def test_info_error_keeps_square_brackets():
     message = "dimension [freq] not in the structure"
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", side_effect=ValueError(message)):
+    with patch("opensdmx.load_dataset", side_effect=ValueError(message)):
         result = runner.invoke(app, ["info", "NAMA_10_GDP", "--provider", "eurostat"])
     assert result.exit_code == 1
     assert message in result.stderr

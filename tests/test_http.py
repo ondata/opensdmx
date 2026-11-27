@@ -547,6 +547,27 @@ class TestExtraHeaders:
             set_extra_headers({})
 
 
+    @pytest.mark.parametrize("method", ["GET", "POST"])
+    def test_mixed_case_headers_override_defaults_on_wire(self, tmp_path, monkeypatch, method):
+        from opensdmx.base import use_provider
+
+        client = httpx.Client
+        transport = httpx.MockTransport(lambda _: httpx.Response(200))
+        monkeypatch.setattr(httpx, "Client", lambda **kwargs: client(transport=transport, **kwargs))
+        monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
+        monkeypatch.setenv("OPENSDMX_USER_AGENT", "opensdmx-test")
+        monkeypatch.setattr("opensdmx.base._extra_headers", {
+            "accept": "application/json",
+            "user-agent": "ignored",
+        })
+
+        with use_provider("https://provider.test"):
+            response = sdmx_request("data/TEST", _method=method)
+
+        assert response.request.headers.get_list("Accept") == ["application/json"]
+        assert response.request.headers.get_list("User-Agent") == ["opensdmx-test"]
+
+
 # ---------------------------------------------------------------------------
 # Retry behavior — only retry transient failures, never 4xx
 # ---------------------------------------------------------------------------

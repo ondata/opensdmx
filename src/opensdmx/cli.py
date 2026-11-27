@@ -15,8 +15,6 @@ from typing import TYPE_CHECKING, Any, Optional
 if TYPE_CHECKING:
     import polars as pl
 
-_HELP_FLAGS = {"--help", "-h"}
-
 import httpx
 import rich
 import typer
@@ -28,7 +26,6 @@ from .auth import AuthError, auth_config_problem
 from .base import (
     PROVIDERS,
     ExplainStop,
-    get_base_url,
     get_provider,
     is_explain,
     provider_label,
@@ -211,6 +208,16 @@ def _emit(data: object, df: pl.DataFrame | None = None) -> None:
             sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 
+def _validate_output_suffix(out: Path) -> str:
+    suffix = out.suffix.lower()
+    if suffix not in (".csv", ".parquet", ".json"):
+        err_console.print(
+            f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json"
+        )
+        raise typer.Exit(1)
+    return suffix
+
+
 def _write_output(df: pl.DataFrame, out: Path | None) -> None:
     """Write a frame to stdout as CSV, or to a file chosen by its suffix."""
     if is_explain():
@@ -219,18 +226,13 @@ def _write_output(df: pl.DataFrame, out: Path | None) -> None:
     if out is None:
         sys.stdout.write(df.write_csv())
         return
-    suffix = out.suffix.lower()
+    suffix = _validate_output_suffix(out)
     if suffix == ".parquet":
         df.write_parquet(out)
     elif suffix == ".json":
         df.write_ndjson(out)
-    elif suffix == ".csv":
-        df.write_csv(out)
     else:
-        err_console.print(
-            f"[red]Error:[/red] unsupported output format '{suffix}'. Supported: .csv, .parquet, .json"
-        )
-        raise typer.Exit(1)
+        df.write_csv(out)
     err_console.print(f"[green]Saved:[/green] {out}")
 
 
@@ -329,10 +331,11 @@ _EXPLAIN_HELP = (
 def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
     """Parse extra --KEY VALUE args from context as dimension filters.
 
-    Supports multiple values per dimension:
-      --geo IT --geo FR  →  {"geo": "IT+FR"}
+    Supports multiple values per dimension, keeping the first spelling:
+      --geo IT --GEO FR  →  {"geo": "IT+FR"}
       --geo IT+FR        →  {"geo": "IT+FR"}
     """
+    spelling: dict[str, str] = {}
     accumulated: dict[str, list[str]] = {}
     extra = ctx.args
     i = 0
@@ -340,7 +343,8 @@ def _parse_extra_filters(ctx: typer.Context) -> dict[str, Any]:
         arg = extra[i]
         if arg.startswith("--") and i + 1 < len(extra):
             key = arg[2:]
-            accumulated.setdefault(key, []).append(extra[i + 1])
+            first_key = spelling.setdefault(key.upper(), key)
+            accumulated.setdefault(first_key, []).append(extra[i + 1])
             i += 2
         else:
             err_console.print(f"[red]Unexpected argument:[/red] {arg}")
@@ -384,28 +388,6 @@ def _apply_explain(explain: bool) -> None:
     set_explain(explain)
 
 
-# Commands that only read local files: the reachability GET would make them
-# fail offline for no reason.
-_LOCAL_ONLY_COMMANDS = {"cache", "which"}
-
-
-def _check_api_reachable() -> None:
-    """Do a lightweight GET check on the active provider's base URL."""
-    from .base import _rate_limit_file
-    if _rate_limit_file().exists():
-        return
-    try:
-        with httpx.Client(timeout=5.0) as client:
-            client.get(get_base_url())
-    except (httpx.HTTPError, OSError):
-        provider_name = get_provider().get("agency_id", "API")
-        err_console.print(
-            f"[red]⚠ {provider_name} API unreachable.[/red] "
-            "Check your network connection or provider URL."
-        )
-        raise typer.Exit(1)
-
-
 @app.callback(invoke_without_command=True)
 def _startup(
     ctx: typer.Context,
@@ -436,15 +418,6 @@ def _startup(
         console.print(f"opensdmx {_version('opensdmx')}\n")
         console.print(ctx.get_help())
         raise typer.Exit()
-    if (
-        not _HELP_FLAGS.intersection(sys.argv)
-        and "--explain" not in sys.argv
-        and ctx.invoked_subcommand not in _LOCAL_ONLY_COMMANDS
-    ):
-        # The flag's value arrives with the command, but a plan has to be
-        # printable without the provider being reachable — and must not spend
-        # the reachability GET — so it is read off argv here, like --help above.
-        _check_api_reachable()
 
 
 @app.command()
@@ -1852,6 +1825,8 @@ def get(
     from . import get_data
 
     filters = _parse_extra_filters(ctx)
+    if out is not None:
+        _validate_output_suffix(out)
 
     ds: dict[str, Any] | None = None
     try:
@@ -1869,7 +1844,13 @@ def get(
         if not last_n and not first_n and not yes and _probe_supported:
             try:
                 with console.status("[dim]Checking dataset size...[/dim]"):
-                    probe = get_data(ds, last_n_observations=1, _explain_probe=True)
+                    probe = get_data(
+                        ds,
+                        start_period=start_period,
+                        end_period=end_period,
+                        last_n_observations=1,
+                        _explain_probe=True,
+                    )
                 n_series = len(probe)
                 if n_series > _LARGE_DATASET_THRESHOLD:
                     _scope = "with the current filters" if filters else "no filters set"

@@ -45,18 +45,17 @@ User runs: opensdmx get une_rt_m --freq M --geo IT --out data.csv
          |
          v
 cli.py  get()
-  1. _apply_provider(provider)          → base.py  set_provider()
-  2. load_dataset(dataset_id)           → discovery.py
-       └─ all_available()               → dataflows.parquet cache (7d TTL)
-            └─ sdmx_request_xml()       → base.py  (HTTP, rate limit, retry)
-       └─ _get_dimensions(struct_id)    → db_cache.py  (SQLite, 30d TTL)
-            └─ sdmx_request_xml()
-  3. set_filters(ds, **filters)         → discovery.py  (case-insensitive)
-  4. get_data(ds, ...)                  → retrieval.py
+  1. _apply_provider(provider)          → base.py  resolve_provider()
+  2. Validate the output file extension, if supplied
+  3. load_dataset(dataset_id)           → discovery.py
+       ├─ all_available()               → dataflows.parquet (7d default TTL)
+       └─ _get_dimensions(struct_id)    → discovery.py, SQLite via db_cache.py (30d default TTL)
+  4. set_filters(ds, **filters)         → discovery.py  (case-insensitive)
+  5. get_data(ds, ...)                  → retrieval.py (size probe when applicable, then download)
        └─ make_url_key(filters)         → utils.py
        └─ sdmx_request_csv(path)        → base.py  (HTTP, rate limit, retry)
        └─ parse_time_period(series)     → retrieval.py
-  5. df.write_csv(out)                  → Polars
+  6. _write_output(df, out)             → CSV to stdout, or file by extension + confirmation on stderr
 ```
 
 ### Semantic search flow
@@ -84,30 +83,29 @@ opensdmx uses two cache layers, both stored under the provider cache directory. 
 
 ### Parquet files (file-based, TTL-based invalidation)
 
-| File | Content | TTL |
+| File | Content | Default TTL |
 |---|---|---|
 | `dataflows.parquet` | Full provider dataset catalog | 7 days |
 | `categories.parquet` | Category tree | 7 days |
 | `categorisation.parquet` | Dataflow-to-category links | 7 days |
 | `embeddings.parquet` | Ollama embedding vectors per dataset | No expiry (manual rebuild via `opensdmx embed`) |
+| `inps_df_index.parquet` | INPS dataflow-to-node/version index | Rebuilt with the INPS catalog |
 
-The dataflow cache is invalidated by comparing `os.path.getmtime` to the current time. The embeddings file has no automatic expiry; it must be rebuilt explicitly.
+The dataflow catalog expires based on its modification time and the configured TTL. Its `has_constraint` column records bulk constraint probe coverage, not a separate SQLite table.
 
 ### SQLite database (`cache.db`, TTL-based per row)
 
-All structured metadata is stored in a single SQLite database per provider. Each cache table has a `cached_at` column (Unix timestamp). Structure and codelist metadata use a 30-day TTL; available constraints use a 7-day TTL.
+Structure, codelist, and constraint metadata and the blacklist share one SQLite database per cache directory. Expiring rows use `cached_at`. The default TTL is 30 days for structure and codelists and 7 days for available constraints. The blacklist uses `marked_at` and does not expire.
 
 | Table | Content |
 |---|---|
 | `structure_dims` | Dimension definitions (id, position, codelist_id) per DSD |
 | `codelist_info` | Human-readable description of each codelist |
-| `codelist_values` | Individual code entries (id, name) for each codelist |
-| `available_constraints` | Codes actually present in a dataset (from constraint endpoint) |
-| `bulk_constraint_fetch` | Provider-level bulk constraint fetch timestamps |
-| `bulk_constraint_index` | Dataflows covered by a successful bulk constraint fetch |
-| `invalid_datasets` | Datasets that failed API availability checks (permanent) |
+| `codelist_values` | Code ID, name, and optional parent and order |
+| `available_constraints` | Codes present in a dataset, resolved via the provider's constraint sources |
+| `invalid_datasets` | Blacklist entries; no expiry, but removable |
 
-See `docs/cache.md` for the full schema.
+See the [cache reference](cache.md) for the full schema and TTL overrides, and the [constraints specification](../openspec/specs/constraints-command/spec.md) for source selection and fallbacks.
 
 ---
 
@@ -126,6 +124,6 @@ Three layers decide which provider value is in effect, highest first:
 
 `_current_provider_value()` returns the value in effect and is the only reader of `_active_provider`; `_set_default_provider()` is its only writer. `get_provider()` always returns a dict with all fields (merged with `_DEFAULTS` at load time for preset providers). This dict is consumed by every HTTP helper (`sdmx_request`, `sdmx_request_csv`) and, through `_provider_cache_key()`, by the cache path resolver (`get_cache_dir`) and the rate-limit lock, so cache files and pacing follow the provider in effect.
 
-The cache directory is `~/.cache/opensdmx/{key}/`, where the key is the preset name, or for a custom provider its `agency_id` (a hash of the base URL when there is none), so each provider gets an isolated namespace for all its Parquet and SQLite files.
+The cache directory is `<cache-base>/<key>/`. Presets use their canonical name; custom URL providers use `agency_id` if set or a short URL hash otherwise. Two custom URLs with the same explicit agency share the directory. See the [cache reference](cache.md) for base path resolution.
 
 All CLI commands accept a `--provider` / `-p` option that sets the process default through `resolve_provider()` (aliases, unknown-name check, `OPENSDMX_AGENCY` fallback) before executing. The CLI runs one provider per process.

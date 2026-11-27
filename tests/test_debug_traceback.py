@@ -19,8 +19,7 @@ runner = CliRunner()
 
 
 def _info_with_a_bug():
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", side_effect=TypeError("unexpected None")):
+    with patch("opensdmx.load_dataset", side_effect=TypeError("unexpected None")):
         return runner.invoke(app, ["info", "NAMA_10_GDP", "--provider", "eurostat"])
 
 

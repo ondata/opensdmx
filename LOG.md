@@ -1,5 +1,37 @@
 # LOG
 
+## 2026-11-27 - Allineata la documentazione dopo l'audit EGM
+
+- Aggiornati percorsi e schema della cache, fonti e fallback di `constraints` e conferma di `get --out` su stderr. Tutte le specifiche OpenSpec sono valide; nessun cambio al codice.
+
+## 2026-11-27 - Fallback linguistico dei nomi SDMX
+
+- I nomi XML dei dataflow e le etichette delle codelist preferiscono la lingua richiesta, poi l'inglese, poi il primo nome non vuoto. Le cache esistenti seguono la normale scadenza.
+
+## 2026-11-27 - Stima delle query grandi limitata al periodo richiesto
+
+- `get` applica `--start-period` e `--end-period` anche al probe che stima il numero di serie.
+
+## 2026-11-27 - Merge case-insensitive degli header HTTP
+
+- `accept` sostituisce `Accept` nelle GET e POST SDMX, senza inviare valori doppi. Lo User-Agent risolto non è sovrascrivibile tramite header aggiuntivi.
+
+## 2026-11-27 - Validazione anticipata di `get --out`
+
+- `get` rifiuta le estensioni non supportate prima di caricare il dataset o contattare il provider. La conferma di salvataggio resta su stderr.
+
+## 2026-11-27 - Filtri CLI ripetuti senza distinzione di maiuscole
+
+- `--geo IT --GEO DE` conserva entrambi i valori (`IT+DE`) nella richiesta e nello YAML; il parser mantiene la prima grafia del nome della dimensione.
+
+## 2026-11-27 - Rimossa la GET preventiva della CLI
+
+- Nessuna richiesta all'avvio: gli header malformati vengono rifiutati senza traffico; la prima richiesta effettiva usa provider e header risolti. Due test di regressione con trasporto simulato.
+
+## 2026-11-27 - Audit di coerenza EGM
+
+- [`2026-11-27_DRIFT_REPORT.md`](2026-11-27_DRIFT_REPORT.md): 10 specifiche OpenSpec e architettura confrontate con codice e test; 636 test passati. Nessuna modifica funzionale.
+
 ## 2026-11-25 - v0.33.0 - release: `opensdmx cache`, stale embedding index detection
 
 Minor release. Ships what landed on `main` after v0.32.0 (entries below):

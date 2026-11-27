@@ -440,12 +440,12 @@ _BILINGUAL_CODELIST_XML = b"""<?xml version="1.0" encoding="utf-8"?>
         <common:Name xml:lang="en">Accommodation type</common:Name>
         <common:Name xml:lang="it">Tipo di alloggio</common:Name>
         <structure:Code id="ALL">
-          <common:Name xml:lang="en">total collective accommodation establishments</common:Name>
           <common:Name xml:lang="it">totale esercizi ricettivi</common:Name>
+          <common:Name xml:lang="en">total collective accommodation establishments</common:Name>
         </structure:Code>
         <structure:Code id="HOTELLIKE">
-          <common:Name xml:lang="en">hotels and similar establishments</common:Name>
           <common:Name xml:lang="it">esercizi alberghieri</common:Name>
+          <common:Name xml:lang="en">hotels and similar establishments</common:Name>
         </structure:Code>
       </structure:Codelist>
     </structure:Codelists>
@@ -495,11 +495,13 @@ def test_get_dimension_values_returns_italian_labels():
     assert saved_keys == ["CL_TIPO_ALLOGGIO2:it"]
 
 
-def test_get_dimension_values_returns_english_labels():
-    """With provider language='en', labels must come from xml:lang='en'."""
+@pytest.mark.parametrize("language", ["en", "fr"])
+def test_get_dimension_values_returns_english_labels(language):
+    """English wins even when it is second and the requested language is absent."""
     from opensdmx.discovery import get_dimension_values
 
-    with patch("opensdmx.discovery.get_provider", return_value=_EUROSTAT_PROVIDER), \
+    provider = {**_EUROSTAT_PROVIDER, "language": language}
+    with patch("opensdmx.discovery.get_provider", return_value=provider), \
          patch("opensdmx.discovery.sdmx_request_xml", return_value=_BILINGUAL_CODELIST_XML), \
          patch("opensdmx.db_cache.get_cached_codelist_values", return_value=None), \
          patch("opensdmx.db_cache.save_codelist_values"):
@@ -1127,8 +1129,8 @@ _CATALOG_WITH_DESCRIPTION = b"""<?xml version="1.0" encoding="UTF-8"?>
   xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
 <message:Structures><structure:Dataflows>
 <structure:Dataflow id="122_54_DF_DCSC_TUR_1" agencyID="IT1" version="1.0">
-  <common:Name xml:lang="en">Capacity of collective accommodation - com.</common:Name>
   <common:Name xml:lang="it">Capacita degli esercizi ricettivi - com.</common:Name>
+  <common:Name xml:lang="en">Capacity of collective accommodation - com.</common:Name>
   <common:Description xml:lang="en">From January 2025, data include short-term rentals.</common:Description>
   <common:Description xml:lang="it">Da gennaio 2025 i dati includono le locazioni brevi.</common:Description>
   <structure:Structure><Ref id="DCSC_TUR" agencyID="IT1" version="1.0"/></structure:Structure>
@@ -1163,6 +1165,13 @@ def test_all_available_reads_dataflow_description_in_catalog_language(tmp_path):
     # Name is untouched by the new column
     assert by_id["122_54_DF_DCSC_TUR_1"]["df_description"].startswith("Capacit")
     assert by_id["22_289"]["df_sdmx_description"] is None
+
+
+def test_all_available_name_falls_back_to_english_then_first_language(tmp_path):
+    df = _catalog_from_xml(_CATALOG_WITH_DESCRIPTION, tmp_path, language="fr")
+    names = dict(zip(df["df_id"], df["df_description"]))
+    assert names["122_54_DF_DCSC_TUR_1"] == "Capacity of collective accommodation - com."
+    assert names["22_289"] == "Popolazione residente al 1 gennaio"
 
 
 def test_all_available_description_falls_back_to_first_language(tmp_path):

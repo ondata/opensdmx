@@ -97,8 +97,7 @@ def test_drop_stale_bug_propagates():
 
 
 def _invoke_tree(all_available_error):
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
          patch("opensdmx.discovery.all_available", side_effect=all_available_error):
         return runner.invoke(
             app, ["tree", "--scheme", "S1", "--show-dataflows", "--provider", "istat"]
@@ -122,7 +121,6 @@ def test_tree_dataflows_bug_propagates():
 
 def _invoke_siblings(*, all_available=None, resolve=None):
     with ExitStack() as stack:
-        stack.enter_context(patch("opensdmx.cli._check_api_reachable"))
         stack.enter_context(
             patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs())
         )

@@ -75,8 +75,7 @@ def test_emit_csv_stringifies_non_string_values(capsys):
 
 def test_which_csv_output_is_valid():
     """End-to-end: `which` descriptions contain commas."""
-    with patch("opensdmx.cli._check_api_reachable"):
-        result = runner.invoke(app, ["-o", "csv", "which", "plot"])
+    result = runner.invoke(app, ["-o", "csv", "which", "plot"])
     assert result.exit_code == 0
     rows = _parse_csv(result.stdout)
     assert len(rows) > 1
@@ -120,7 +119,6 @@ def test_get_large_dataset_guard_does_not_print_spurious_error():
     fake = pl.DataFrame({"TIME_PERIOD": ["2020"], "OBS_VALUE": [1.0]})
     with (
         patch.object(cli, "_LARGE_DATASET_THRESHOLD", 0),
-        patch("opensdmx.cli._check_api_reachable"),
         patch("opensdmx.load_dataset", return_value={"df_id": "X", "dimensions": {}}),
         patch("opensdmx.set_filters", side_effect=lambda ds, **k: ds),
         patch("opensdmx.get_data", return_value=fake),
@@ -139,7 +137,6 @@ def test_get_large_dataset_message_reflects_filter_state():
     fake = pl.DataFrame({"TIME_PERIOD": ["2020"], "OBS_VALUE": [1.0]})
     with (
         patch.object(cli, "_LARGE_DATASET_THRESHOLD", 0),
-        patch("opensdmx.cli._check_api_reachable"),
         patch("opensdmx.load_dataset", return_value={"df_id": "X", "dimensions": {}}),
         patch("opensdmx.set_filters", side_effect=lambda ds, **k: ds),
         patch("opensdmx.get_data", return_value=fake),
@@ -149,6 +146,28 @@ def test_get_large_dataset_message_reflects_filter_state():
     assert result.exit_code == 1
     assert "no filters set" not in result.stderr
     assert "with the current filters" in result.stderr
+
+
+def test_get_size_probe_uses_requested_period():
+    def fake_get_data(ds, *, start_period=None, end_period=None, **kwargs):
+        years = ["2020"] if (start_period, end_period) == ("2020", "2021") else ["2010", "2020"]
+        return pl.DataFrame({"TIME_PERIOD": years, "OBS_VALUE": [1.0] * len(years)})
+
+    with (
+        patch.object(cli, "_LARGE_DATASET_THRESHOLD", 1),
+        patch("opensdmx.load_dataset", return_value={"df_id": "X"}),
+        patch("opensdmx.get_data", side_effect=fake_get_data) as fetch,
+    ):
+        result = runner.invoke(
+            app, ["get", "X", "-p", "eurostat", "--start-period", "2020", "--end-period", "2021"]
+        )
+
+    assert result.exit_code == 0, result.output
+    probe, download = [call.kwargs for call in fetch.call_args_list]
+    assert probe["last_n_observations"] == 1
+    assert download["last_n_observations"] is None
+    assert (probe["start_period"], probe["end_period"]) == ("2020", "2021")
+    assert (download["start_period"], download["end_period"]) == ("2020", "2021")
 
 
 # ── Finding 3: codelist cache read with the wrong key ────────────────
