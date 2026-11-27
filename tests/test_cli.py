@@ -78,6 +78,27 @@ def test_apply_provider_none_no_env(monkeypatch):
 # ── CLI commands via CliRunner ────────────────────────────────────────
 
 
+def test_get_combines_repeated_filters_regardless_of_case(tmp_path):
+    import polars as pl
+    import yaml
+
+    ds = {"df_id": "X", "dimensions": {"GEO": {}}, "filters": {}}
+    query = tmp_path / "query.yaml"
+    with (
+        patch("opensdmx.load_dataset", return_value=ds),
+        patch("opensdmx.get_data", return_value=pl.DataFrame()) as fetch,
+    ):
+        result = runner.invoke(
+            app, ["get", "X", "--yes", "--geo", "IT", "--GEO", "DE", "--query-file", str(query)]
+        )
+
+    assert result.exit_code == 0, result.output
+    assert fetch.call_args.args[0]["filters"] == {"GEO": "IT+DE"}
+    assert yaml.safe_load(query.read_text())["filters"] == {
+        "geo": {"value": "IT+DE", "description": ""}
+    }
+
+
 def test_version_flag():
     result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
@@ -85,8 +106,7 @@ def test_version_flag():
 
 
 def test_search_unknown_provider():
-    with patch("opensdmx.cli._check_api_reachable"):
-        result = runner.invoke(app, ["search", "unemployment", "--provider", "not_a_real_provider_xyz"])
+    result = runner.invoke(app, ["search", "unemployment", "--provider", "not_a_real_provider_xyz"])
     assert result.exit_code != 0
 
 
@@ -123,8 +143,7 @@ def test_constraints_table_shows_missing_dim_hint():
     """Table mode: dim absent from constraint response gets a row with – and a hint."""
     import re
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
         result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", "istat"])
 
@@ -146,8 +165,7 @@ def test_constraints_json_marks_missing_dim_with_source_and_hint():
     """JSON mode: missing dim entry has source='missing' + hint field."""
     import json
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
         result = runner.invoke(app, ["--output", "json", "constraints", "TEST_DF", "--provider", "istat"])
 
@@ -164,8 +182,7 @@ def test_constraints_single_dim_missing_suggests_values():
     """Asking for a missing dim explicitly → suggest `opensdmx values` and exit 0."""
     import re
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
         result = runner.invoke(app, ["constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
 
@@ -180,8 +197,7 @@ def test_constraints_single_dim_missing_json_emits_hint():
     """JSON mode: a dim absent from the constraint endpoint still yields JSON on stdout."""
     import json
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
         result = runner.invoke(app, ["--output", "json", "constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
 
@@ -201,8 +217,7 @@ def test_constraints_single_dim_missing_csv_emits_hint():
     import csv
     import io
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value=_fake_avail_with_missing_dim()):
         result = runner.invoke(app, ["--output", "csv", "constraints", "TEST_DF", "REF_AREA", "--provider", "istat"])
 
@@ -217,8 +232,7 @@ def test_constraints_single_dim_missing_csv_emits_hint():
 
 
 def test_constraints_empty_result_does_not_guess_endpoint_unsupported():
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.discovery.get_available_values", return_value={}):
         result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", "istat"])
 
@@ -277,8 +291,7 @@ def test_values_annotates_from_cached_constraints():
     """Cache hit → in_dataflow column + coverage footer, with no extra fetch."""
     import re
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value={"SEX": ["1", "2"]}), \
          patch("opensdmx.discovery.get_available_values") as fetch:
@@ -296,8 +309,7 @@ def test_values_without_cached_constraints_hints_at_constraints():
     """No constraint knowledge → full codelist plus a pointer to `constraints`."""
     import re
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None):
         result = runner.invoke(app, ["values", "TEST_DF", "SEX"])
@@ -311,8 +323,7 @@ def test_values_without_cached_constraints_hints_at_constraints():
 
 def test_values_json_carries_in_dataflow_field():
     """The JSON consumer gets the flag as data, not as terminal prose."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value={"SEX": ["1", "2"]}):
         result = runner.invoke(app, ["--output", "json", "values", "TEST_DF", "SEX"])
@@ -323,8 +334,7 @@ def test_values_json_carries_in_dataflow_field():
 
 
 def test_values_json_in_dataflow_is_null_without_constraints():
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None):
         result = runner.invoke(app, ["--output", "json", "values", "TEST_DF", "SEX"])
@@ -336,8 +346,7 @@ def test_values_json_in_dataflow_is_null_without_constraints():
 @pytest.mark.parametrize("cached", [{"SEX": ["1", "2"]}, None])
 def test_values_csv_schema_is_stable_regardless_of_cache(cached):
     """The CSV header must not gain or lose a column depending on cache state."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.get_dimension_values", return_value=_fake_codelist_values()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value=cached):
         result = runner.invoke(app, ["--output", "csv", "values", "TEST_DF", "SEX"])
@@ -389,8 +398,7 @@ def _fake_categories_dfs():
 
 def test_tree_category_is_dataflow_hints_parent():
     """Passing a df_id to --category must yield a clear error with suggestions."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"],
@@ -403,8 +411,7 @@ def test_tree_category_is_dataflow_hints_parent():
 
 def test_tree_depth_is_relative_to_category():
     """--category X --depth 1 must show X plus its direct children (relative)."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "CAT_A1", "--depth", "1", "--provider", "istat"],
@@ -418,8 +425,7 @@ def test_tree_depth_is_relative_to_category():
 
 def test_tree_empty_subtree_does_not_crash():
     """--depth 0 with --category X should not crash; returns descriptive message."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "CAT_A", "--depth", "0", "--provider", "istat"],
@@ -431,8 +437,7 @@ def test_tree_empty_subtree_does_not_crash():
 
 def test_tree_renders_cat_description_when_present():
     """When Category.description is populated, ASCII renders it dimmed after the label."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     # CAT_A1 has description; CAT_A does not — only A1 shows "—"
@@ -452,8 +457,7 @@ def test_tree_show_dataflows_renders_df_leaves():
             "df_structure_id": ["S_X", "S_Y"],
         }
     )
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)), \
+    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)), \
          patch("opensdmx.discovery.all_available", return_value=meta_df):
         result = runner.invoke(
             app,
@@ -468,8 +472,7 @@ def test_tree_show_dataflows_renders_df_leaves():
 
 def test_tree_no_show_dataflows_is_regression_safe():
     """Without --show-dataflows, output must not contain df markers."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     assert "[df:" not in result.output
@@ -477,8 +480,7 @@ def test_tree_no_show_dataflows_is_regression_safe():
 
 def test_tree_renders_cat_prefix():
     """ASCII tree must render category IDs with the [cat:ID] prefix."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["tree", "--scheme", "S1", "--provider", "istat"])
     assert result.exit_code == 0
     assert "[cat:CAT_A]" in result.output
@@ -501,8 +503,7 @@ def test_tree_category_is_dataflow_cross_scheme():
         schema_overrides={"depth": pl.Int32},
     )
     cz_df = pl.DataFrame({"df_id": ["DF_X"], "scheme_id": ["S2"], "cat_path": ["CAT_B"]})
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)):
+    with patch("opensdmx.categories.load_categories", return_value=(cat_df, cz_df)):
         result = runner.invoke(
             app, ["tree", "--scheme", "S1", "--category", "DF_X", "--provider", "istat"]
         )
@@ -514,8 +515,7 @@ def test_tree_category_is_dataflow_cross_scheme():
 
 def test_tree_category_unknown_id():
     """Unknown --category (neither cat nor df) yields the generic 'not found' error."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(
             app,
             ["tree", "--scheme", "S1", "--category", "NOPE", "--provider", "istat"],
@@ -526,8 +526,7 @@ def test_tree_category_unknown_id():
 
 
 def _invoke_tree(*args):
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         return runner.invoke(app, ["tree", *args, "--provider", "istat"])
 
 
@@ -579,8 +578,7 @@ def _fake_two_scheme_dfs():
 
 def test_tree_no_scheme_depth_2_renders_one_tree_per_scheme():
     """Every scheme gets its own block, blank-line separated."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_two_scheme_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_two_scheme_dfs()):
         result = runner.invoke(app, ["tree", "--depth", "2", "--provider", "istat"])
     assert result.exit_code == 0
     out = result.output
@@ -593,8 +591,7 @@ def test_tree_no_scheme_depth_2_renders_one_tree_per_scheme():
 
 def test_tree_no_scheme_depth_json_emits_category_rows():
     """json at depth >= 2 must carry categories, not the three-column summary."""
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()):
         result = runner.invoke(app, ["-o", "json", "tree", "--depth", "2", "--provider", "istat"])
     assert result.exit_code == 0
     rows = json.loads(result.output)
@@ -633,8 +630,7 @@ def _invoke_siblings(*args):
     # Global options (-o, --output) must precede the command name.
     global_opts = [a for a in args if a in ("-o", "json", "--output")]
     cmd_args = [a for a in args if a not in global_opts]
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
          patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
          patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
         return runner.invoke(app, [*global_opts, "siblings", *cmd_args, "--provider", "istat"])
@@ -687,8 +683,7 @@ def test_siblings_survives_a_dataflow_catalog_outage():
     def _boom():
         raise ConnectionError("dataflow endpoint down")
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
          patch("opensdmx.discovery.all_available", side_effect=_boom), \
          patch("opensdmx.discovery._get_dimensions", side_effect=_no_dsd_fetch):
         result = runner.invoke(app, ["--output", "json", "siblings", "df_x", "--provider", "istat"])
@@ -715,8 +710,7 @@ def test_siblings_does_not_fetch_the_datastructure():
         calls.append(structure_id)
         return {}
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
+    with patch("opensdmx.categories.load_categories", return_value=_fake_categories_dfs()), \
          patch("opensdmx.discovery.all_available", return_value=_siblings_catalog_df()), \
          patch("opensdmx.discovery._get_dimensions", side_effect=_record):
         result = runner.invoke(app, ["siblings", "df_x", "--provider", "istat"])
@@ -748,39 +742,31 @@ def test_parse_header_missing_colon_raises():
 # ── which ─────────────────────────────────────────────────────────────
 
 
-@pytest.fixture
-def _no_api_check():
-    """`which` is local-only and skips the reachability check; the mock stays
-    as a guard so these tests never depend on the network."""
-    with patch("opensdmx.cli._check_api_reachable"):
-        yield
-
-
-def test_which_no_query_lists_all(_no_api_check):
+def test_which_no_query_lists_all():
     result = runner.invoke(app, ["which"])
     assert result.exit_code == 0
     assert "search" in result.output
     assert "plot" in result.output
 
 
-def test_which_match_visualize(_no_api_check):
+def test_which_match_visualize():
     result = runner.invoke(app, ["which", "visualize"])
     assert result.exit_code == 0
     assert "plot" in result.output
 
 
-def test_which_match_download(_no_api_check):
+def test_which_match_download():
     result = runner.invoke(app, ["which", "download"])
     assert result.exit_code == 0
     assert "get" in result.output
 
 
-def test_which_no_match_exits_2(_no_api_check):
+def test_which_no_match_exits_2():
     result = runner.invoke(app, ["which", "zzznomatch"])
     assert result.exit_code == 2
 
 
-def test_which_json_output(_no_api_check):
+def test_which_json_output():
     import json
     result = runner.invoke(app, ["-o", "json", "which", "download"])
     assert result.exit_code == 0
@@ -849,7 +835,7 @@ def test_guide_goes_on_when_constraints_are_unavailable(exc_name, args):
     set_filters.assert_called_once_with(ds, FREQ="A", SEX=["1", "2"])
 
 
-def test_which_limit(_no_api_check):
+def test_which_limit():
     result = runner.invoke(app, ["which", "data", "--limit", "1"])
     assert result.exit_code == 0
     commands_found = sum(1 for line in result.output.splitlines() if any(
@@ -876,7 +862,7 @@ def _fake_comun_results():
     })
 
 
-def test_search_grep_matches_whole_word_only(_no_api_check):
+def test_search_grep_matches_whole_word_only():
     """A whole-word pattern excludes longer words sharing the same prefix."""
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["-o", "csv", "search", "comun", "--grep", r"\bcomuni\b"])
@@ -886,7 +872,7 @@ def test_search_grep_matches_whole_word_only(_no_api_check):
     assert "BANK_3" not in result.output
 
 
-def test_search_grep_matches_id_as_well_as_title(_no_api_check):
+def test_search_grep_matches_id_as_well_as_title():
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["-o", "csv", "search", "comun", "--grep", "BANK"])
     assert result.exit_code == 0
@@ -894,7 +880,7 @@ def test_search_grep_matches_id_as_well_as_title(_no_api_check):
     assert "AGRI_1" not in result.output
 
 
-def test_search_grep_invalid_pattern_reports_error(_no_api_check):
+def test_search_grep_invalid_pattern_reports_error():
     """A malformed regex gets a readable message, not a traceback."""
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["search", "comun", "--grep", "["])
@@ -902,7 +888,7 @@ def test_search_grep_invalid_pattern_reports_error(_no_api_check):
     assert "invalid --grep pattern" in result.output
 
 
-def test_search_grep_no_match_exits_cleanly(_no_api_check):
+def test_search_grep_no_match_exits_cleanly():
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["search", "comun", "--grep", "zzznomatch"])
     assert result.exit_code == 0
@@ -912,7 +898,7 @@ def test_search_grep_no_match_exits_cleanly(_no_api_check):
 # ── --output / OPENSDMX_OUTPUT resolution order (issue #8) ────────────
 
 
-def test_output_env_var_sets_the_default(_no_api_check):
+def test_output_env_var_sets_the_default():
     """OPENSDMX_OUTPUT=json makes json the default without passing -o."""
     import json
 
@@ -923,7 +909,7 @@ def test_output_env_var_sets_the_default(_no_api_check):
     assert [r["df_id"] for r in json.loads(result.output)] == ["AGRI_1", "PERM_2", "BANK_3"]
 
 
-def test_output_flag_wins_over_env_var(_no_api_check):
+def test_output_flag_wins_over_env_var():
     """An explicit -o overrides OPENSDMX_OUTPUT."""
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["-o", "csv", "search", "comun"], env={"OPENSDMX_OUTPUT": "json"})
@@ -932,7 +918,7 @@ def test_output_flag_wins_over_env_var(_no_api_check):
     assert result.output.splitlines()[0].startswith("df_id,")
 
 
-def test_output_defaults_to_table_without_env_var(_no_api_check):
+def test_output_defaults_to_table_without_env_var():
     """No flag, no env var: still the Rich table."""
     with patch("opensdmx.search_dataset", return_value=_fake_comun_results()):
         result = runner.invoke(app, ["search", "comun"], env={"OPENSDMX_OUTPUT": ""})
@@ -941,7 +927,7 @@ def test_output_defaults_to_table_without_env_var(_no_api_check):
     assert "│" in result.output
 
 
-def test_invalid_env_var_names_the_env_var_not_the_flag(_no_api_check):
+def test_invalid_env_var_names_the_env_var_not_the_flag():
     """A bad OPENSDMX_OUTPUT must not blame --output, which the user never typed."""
     result = runner.invoke(app, ["search", "comun"], env={"OPENSDMX_OUTPUT": "jsn"})
 
@@ -950,7 +936,7 @@ def test_invalid_env_var_names_the_env_var_not_the_flag(_no_api_check):
     assert "--output" not in result.output
 
 
-def test_invalid_flag_still_names_the_flag(_no_api_check):
+def test_invalid_flag_still_names_the_flag():
     result = runner.invoke(app, ["-o", "jsn", "search", "comun"])
 
     assert result.exit_code == 1
@@ -960,7 +946,7 @@ def test_invalid_flag_still_names_the_flag(_no_api_check):
 # ── providers coverage column ────────────────────────────────────────
 
 
-def test_providers_json_includes_coverage(_no_api_check):
+def test_providers_json_includes_coverage():
     import json
 
     with patch("opensdmx.categories.provider_coverage", return_value=42.0):
@@ -974,7 +960,7 @@ def test_providers_json_includes_coverage(_no_api_check):
     assert rows["worldbank"]["coverage"] is None
 
 
-def test_providers_table_shows_coverage_percent_and_dash(_no_api_check):
+def test_providers_table_shows_coverage_percent_and_dash():
     with patch("opensdmx.categories.provider_coverage", return_value=50.0):
         result = runner.invoke(app, ["providers"])
 
@@ -986,7 +972,7 @@ def test_providers_table_shows_coverage_percent_and_dash(_no_api_check):
     assert lines and "%" not in lines[0]
 
 
-def test_providers_table_shows_unknown_when_uncached(_no_api_check):
+def test_providers_table_shows_unknown_when_uncached():
     with patch("opensdmx.categories.provider_coverage", return_value=None):
         result = runner.invoke(app, ["providers"])
 
@@ -995,7 +981,7 @@ def test_providers_table_shows_unknown_when_uncached(_no_api_check):
     assert lines and "?" in lines[0]
 
 
-def test_providers_table_rounds_coverage_down(_no_api_check):
+def test_providers_table_rounds_coverage_down():
     """99.9% must not render as 100%.
 
     A catalog one dataflow short of full categorisation is the case the column
@@ -1123,8 +1109,7 @@ def test_constraints_unavailable_message_follows_provider_flag(provider, expecte
     """A provider declaring constraints_supported=false is not told its dataflow is hidden."""
     from opensdmx.discovery import ConstraintsUnavailable
 
-    with patch("opensdmx.cli._check_api_reachable"), \
-         patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
+    with patch("opensdmx.load_dataset", return_value=_fake_constraints_dataset()), \
          patch("opensdmx.db_cache.get_cached_available_constraints", return_value=None), \
          patch("opensdmx.discovery.get_available_values", side_effect=ConstraintsUnavailable("TEST_DF")):
         result = runner.invoke(app, ["constraints", "TEST_DF", "--provider", provider])
@@ -1217,20 +1202,20 @@ def test_cache_command_csv_one_row_per_table(tmp_path, monkeypatch):
 
 
 def test_cache_command_works_offline(tmp_path, monkeypatch):
-    """`cache` reads local files only: no reachability GET, even offline."""
+    """`cache` reads local files only: works offline."""
     monkeypatch.setenv("OPENSDMX_CACHE_DIR", str(tmp_path))
     from opensdmx.base import _resolve_cache_base_cached
     _resolve_cache_base_cached.cache_clear()
-    with patch("opensdmx.cli._check_api_reachable") as check:
+    with patch("httpx.Client") as check:
         result = runner.invoke(app, ["cache", "--provider", "istat"])
     assert result.exit_code == 0, result.output
     check.assert_not_called()
     assert "SQLite tables" in result.output
 
 
-def test_which_skips_reachability_check():
-    """`which` reads a static index: no reachability GET at startup."""
-    with patch("opensdmx.cli._check_api_reachable") as check:
+def test_which_works_offline():
+    """`which` reads a static index: works offline."""
+    with patch("httpx.Client") as check:
         result = runner.invoke(app, ["which", "download data"])
     assert result.exit_code == 0, result.output
     check.assert_not_called()

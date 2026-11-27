@@ -266,7 +266,7 @@ def all_available(*, _include_hidden: bool = False) -> pl.DataFrame:
         else:
             df_id = df_id_raw or ""
         version = xml_attr_safe(df, "version")
-        df_description = get_name_by_lang(df, language, ns) or get_name_by_lang(df, "en", ns)
+        df_description = get_name_by_lang(df, language, ns)
         # The optional <common:Description>: standard SDMX 2.1, no extra call.
         # Where filled (ISTAT: 28 dataflows) it is a release or discontinuity
         # notice rather than a summary of the content.

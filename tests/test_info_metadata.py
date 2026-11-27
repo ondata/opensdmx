@@ -210,7 +210,6 @@ def _patch_info(
     monkeypatch.setattr(discovery, "sdmx_request_xml", request)
     monkeypatch.setattr(opensdmx, "load_dataset", lambda _id: dict(DATASET))
     monkeypatch.setattr(opensdmx, "dimensions_info", lambda _ds, **_kw: pl.DataFrame())
-    monkeypatch.setattr("opensdmx.cli._check_api_reachable", lambda: None)
 
 
 def test_info_table_shows_the_metadata_line(monkeypatch: pytest.MonkeyPatch) -> None:

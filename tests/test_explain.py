@@ -1,8 +1,7 @@
 """Tests for --explain: the execution plan, printed without executing.
 
 The contract: the plan goes to stderr, stdout stays empty, and no request is
-made — not even a reachability probe. Everything here runs with httpx mocked
-out, so any call that reaches it fails the test instead of the network.
+made.
 """
 
 from __future__ import annotations
@@ -36,19 +35,6 @@ def _isolated(tmp_path, monkeypatch):
     set_provider("eurostat")  # other test modules leave istat active
     yield
     set_explain(False)  # a plan mode left on would silence the next test
-
-
-@pytest.fixture(autouse=True)
-def _no_reachability_probe():
-    """The CLI callback pings the provider on the first run: stub it here.
-
-    `_startup` reads the flag off argv (a plan must work while the provider is
-    unreachable), and CliRunner's argv is pytest's, so the stub is what keeps
-    these tests hermetic; `test_startup_skips_the_reachability_probe` covers the
-    argv check itself.
-    """
-    with patch("opensdmx.cli._check_api_reachable"):
-        yield
 
 
 # ── the request funnel ───────────────────────────────────────────────
@@ -345,14 +331,6 @@ def test_main_reports_a_plan_that_needs_no_request(capsys, monkeypatch):
     err = capsys.readouterr().err
     assert "explain: no provider request would be made." in err
     assert "would fetch" not in err
-
-
-def test_startup_skips_the_reachability_probe_under_explain(monkeypatch):
-    """argv is checked, not the parsed option: the probe runs before the command."""
-    monkeypatch.setattr(sys, "argv", ["opensdmx", "providers", "--explain"])
-    with patch("opensdmx.cli._check_api_reachable") as probe:
-        runner.invoke(app, ["providers"])
-    probe.assert_not_called()
 
 
 def test_explain_mode_does_not_leak_into_the_next_command(monkeypatch):

@@ -94,9 +94,9 @@ def test_get_name_by_lang_it():
     assert get_name_by_lang(root, "it", ns) == "Italiano"
 
 
-def test_get_name_by_lang_fallback_first():
+def test_get_name_by_lang_fallback_english():
     root, ns = xml_parse(NAME_XML)
-    assert get_name_by_lang(root, "fr", ns) == "English"  # first element
+    assert get_name_by_lang(root, "fr", ns) == "English"
 
 
 def test_get_name_by_lang_no_names():

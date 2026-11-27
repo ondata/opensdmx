@@ -287,7 +287,7 @@ Entries are merged key by key, so `{"istat": {"rate_limit": 30.0}}` changes one 
 | `dimensions_info(ds)` | Dimension metadata → Polars DataFrame |
 | `get_dimension_values(ds, dim)` | Codelist values for a dimension |
 | `get_codelist_hierarchy(ds, dim)` | Codelist with hierarchy → `(id, name, parent, order)`; `parent`/`order` are null when the provider's codelist is flat/unordered |
-| `get_available_values(ds)` | Values actually present in the data (via `availableconstraint`) |
+| `get_available_values(ds)` | Values actually present in the data, resolved from cache or the provider's constraint sources |
 | `set_filters(ds, **kwargs)` | Set dimension filters |
 | `reset_filters(ds)` | Reset all filters to `"."` (all) |
 | `get_data(ds, ...)` | Retrieve data → Polars DataFrame |
@@ -372,7 +372,7 @@ All commands accept `--provider` (`-p`) to select the provider; the ones that re
 | `opensdmx embed [-p provider]` | Build semantic embeddings cache via Ollama |
 | `opensdmx info <id> [-p provider]` | Show dataset metadata and dimensions, plus Eurostat's ESMS metadata link |
 | `opensdmx values <id> <dim> [--grep pattern] [-p provider]` | Show codelist values for a dimension (case-insensitive); optionally filter by regex |
-| `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow (via `availableconstraint`); optionally filter by regex |
+| `opensdmx constraints <id> [dim] [--grep pattern] [-p provider]` | Show values actually present in the dataflow using the provider's [constraint sources](docs/providers.md); optionally filter by regex |
 | `opensdmx tree [--scheme ID] [--category CAT] [--depth N] [-p provider]` | Browse the thematic tree (SDMX `categoryscheme` + `categorisation`); use `--category` to zoom into a subtree; ASCII tree in table mode, flat rows in JSON/CSV |
 | `opensdmx siblings <id> [-p provider]` | Show dataflow siblings in each category — discover related variants that text search misses |
 | `opensdmx search <keyword> --category <CAT> [-p provider]` | Restrict search to a category (leaf id or dotted path); cuts false positives vs pure token match |

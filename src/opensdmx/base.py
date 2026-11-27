@@ -944,24 +944,17 @@ def sdmx_request(
                 extra = {k: v for k, v in _extra_headers.items() if k.lower() != "user-agent"}
 
                 def _send(auth: dict[str, str]) -> httpx.Response:
+                    headers = httpx.Headers({"Accept": accept, "User-Agent": user_agent})
                     if _method == "POST":
-                        return client.post(
-                            url,
-                            params=params or None,
-                            json=_json_body,
-                            headers={
-                                "Accept": accept,
-                                "Content-Type": "application/json",
-                                "User-Agent": user_agent,
-                                **extra,
-                                **auth,
-                            },
-                        )
-                    return client.get(
-                        url,
-                        params=params or None,
-                        headers={"Accept": accept, "User-Agent": user_agent, **extra, **auth},
-                    )
+                        headers["Content-Type"] = "application/json"
+                    # Header names are case-insensitive; assigning per field also
+                    # collapses extra headers that differ only in casing.
+                    for name, value in extra.items():
+                        headers[name] = value
+                    headers.update(auth)
+                    if _method == "POST":
+                        return client.post(url, params=params or None, json=_json_body, headers=headers)
+                    return client.get(url, params=params or None, headers=headers)
 
                 resp = _send(auth)
                 if needs_auth and resp.status_code == 401:

@@ -185,6 +185,6 @@ Dimensions are sorted by `position` ascending before being stored and returned. 
 
 ## Dataflow cache invalidation
 
-`all_available()` caches the provider's dataflow list as a Parquet file in the provider cache directory, for example `~/.cache/opensdmx/eurostat/dataflows.parquet`. The TTL is **7 days** (checked via file modification time). If the file is older than 7 days or does not exist, a fresh SDMX `dataflow/{agency_id}` request is made.
+`all_available()` caches the provider's dataflow list as `dataflows.parquet`, for example `~/.cache/opensdmx/eurostat/dataflows.parquet` on Linux. The TTL defaults to **7 days** and is compared with the file's modification time. A missing or expired file is rebuilt from the provider's catalog. See the [cache reference](cache.md) for paths, fields, and TTL overrides.
 
 Invalid datasets (blacklisted via `guide`) are filtered from every returned DataFrame, regardless of whether the data came from cache or a fresh request.

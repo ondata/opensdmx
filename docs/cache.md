@@ -8,18 +8,19 @@ Cache base resolution order:
 2. `platformdirs.user_cache_dir("opensdmx")`
 3. `/tmp/opensdmx-{username}` as fallback if neither location is writable
 
-Each provider has its own isolated cache namespace. Preset providers use their provider key (`eurostat`, `istat`, `oecd`, and so on). Custom providers use `agency_id` when provided, otherwise a short hash of the base URL.
+Presets use their canonical key (`eurostat`, `istat`, `oecd`, and so on), not their agency ID. Custom URL providers use `agency_id` when set, otherwise `custom_` followed by the first eight hexadecimal characters of the base URL's SHA-256 hash. Two custom URLs with the same `agency_id` share a cache directory.
 
 ---
 
 ## Files
 
-| File | Format | Content | TTL |
+| File | Format | Content | Default TTL |
 |---|---|---|---|
 | `dataflows.parquet` | Parquet | Provider dataset catalog | 7 days |
 | `categories.parquet` | Parquet | Provider category tree | 7 days |
 | `categorisation.parquet` | Parquet | Dataflow-to-category links | 7 days |
 | `embeddings.parquet` | Parquet | Semantic embeddings (per dataset) | No expiry |
+| `inps_df_index.parquet` | Parquet | INPS dataflow-to-node/version index | Rebuilt with the INPS catalog |
 | `cache.db` | SQLite | Dimensions, codelists, constraints, blacklist | Table-specific |
 
 Examples for Eurostat and ISTAT:
@@ -40,7 +41,7 @@ Examples for Eurostat and ISTAT:
 
 ### `dataflows.parquet`
 
-Downloaded from the SDMX `dataflow/{agency_id}` endpoint. Refreshed if older than 7 days.
+Built from the provider's catalog (SDMX `dataflow` for REST providers, middleware for INPS). Refreshed when older than the configured TTL, 7 days by default.
 
 Columns:
 
@@ -50,7 +51,15 @@ Columns:
 | `version` | String | Dataflow version |
 | `df_description` | String | Human-readable dataset name |
 | `df_structure_id` | String | Referenced Data Structure Definition ID |
-| `has_constraint` | Boolean/null | Whether a catalog-level constraint is known to exist for this dataflow |
+| `has_constraint` | Boolean/null | `true` if matched by the bulk constraint probe; `false` if the probe succeeded without a match; null when unknown |
+| `df_keywords` | String/null | Keywords from a configured dataflow annotation |
+| `df_last_update` | String/null | Update information from a configured dataflow annotation |
+| `df_notes` | String/null | Notes from a configured dataflow annotation |
+| `df_bulk_files` | String/null | Attached-file information from a configured dataflow annotation |
+| `df_geo_dim` | String/null | Territorial dimension from a configured dataflow annotation |
+| `df_sdmx_description` | String/null | Optional SDMX `Description` text |
+
+When the bulk probe also returns codes, they are saved in SQLite `available_constraints`. Older catalog files missing optional columns are read with those columns set to null.
 
 ### `categories.parquet` and `categorisation.parquet`
 
@@ -73,9 +82,9 @@ Columns:
 
 ## SQLite: `cache.db`
 
-All structured metadata is stored in a single SQLite database per provider. Each cache table has a `cached_at` column (Unix timestamp). Expiry depends on the type of metadata:
+Each provider cache directory has one SQLite database for structure, codelist and constraint metadata and the blacklist. Expiring rows use `cached_at` (a Unix timestamp); blacklist rows use `marked_at` and do not expire. Default TTLs for Parquet and SQLite caches:
 
-| Cache type | TTL | Environment override |
+| Cache type | Default TTL | Environment override |
 |---|---:|---|
 | Dataflow catalog | 7 days | `OPENSDMX_DATAFLOWS_CACHE_TTL` |
 | Category tree | 7 days | `OPENSDMX_CATEGORIES_CACHE_TTL` |
@@ -93,7 +102,7 @@ Dimension metadata for a Data Structure Definition (fetched from the `datastruct
 | `structure_id` | TEXT | SDMX structure ID — PK part |
 | `dimension_id` | TEXT | Dimension code (e.g. `FREQ`, `REF_AREA`) — PK part |
 | `position` | INTEGER | Position in the SDMX key (1-based) |
-| `codelist_id` | TEXT | References a codelist in `codelist_info` |
+| `codelist_id` | TEXT | Associated SDMX codelist ID, when known |
 | `cached_at` | REAL | Unix timestamp |
 
 #### `codelist_info`
@@ -103,7 +112,7 @@ Human-readable description of a codelist (e.g. "Frequency of collection").
 | Column | Type | Notes |
 |---|---|---|
 | `codelist_id` | TEXT | PK |
-| `description` | TEXT | Label in English |
+| `description` | TEXT | Codelist name, preferring English when available |
 | `cached_at` | REAL | Unix timestamp |
 
 #### `codelist_values`
@@ -112,14 +121,18 @@ Individual code entries within a codelist (e.g. `A = Annual`).
 
 | Column | Type | Notes |
 |---|---|---|
-| `codelist_id` | TEXT | FK → `codelist_info` — PK part |
+| `codelist_id` | TEXT | Cache key (`<codelist_id>:<language>` for REST codelists) — PK part |
 | `code_id` | TEXT | Code value (e.g. `A`, `IT`) — PK part |
 | `code_name` | TEXT | Human-readable label |
+| `code_parent` | TEXT | Parent code ID, if declared |
+| `code_order` | INTEGER | Numeric `ORDER` annotation, if available |
 | `cached_at` | REAL | Unix timestamp |
+
+Existing databases gain `code_parent` and `code_order` in place. Existing rows have null values until refreshed.
 
 #### `available_constraints`
 
-Codes actually present in a dataset, fetched from the `availableconstraint` (or `contentconstraint`) endpoint. More reliable than codelist values for filter selection because not all theoretically valid codes are present in every dataset.
+Codes actually present in a dataset. Depending on the provider, sources include the hub, SDMX constraint endpoints, and a `serieskeysonly` response. These are narrower than a full codelist, which can include codes not present in the dataset.
 
 | Column | Type | Notes |
 |---|---|---|
@@ -129,25 +142,6 @@ Codes actually present in a dataset, fetched from the `availableconstraint` (or 
 | `cached_at` | REAL | Unix timestamp |
 
 On write, the existing rows for `df_id` are deleted before re-inserting, so the table always reflects the latest constraint snapshot.
-
-#### `bulk_constraint_fetch`
-
-Tracks provider-level bulk constraint fetches, used by providers such as ISTAT that support catalog-level `contentconstraint` discovery.
-
-| Column | Type | Notes |
-|---|---|---|
-| `agency_id` | TEXT | Provider agency ID — PK |
-| `cached_at` | REAL | Unix timestamp |
-
-#### `bulk_constraint_index`
-
-Stores which dataflows were covered by a successful bulk constraint fetch.
-
-| Column | Type | Notes |
-|---|---|---|
-| `agency_id` | TEXT | Provider agency ID — PK part |
-| `df_id` | TEXT | Dataset ID — PK part |
-| `cached_at` | REAL | Unix timestamp |
 
 #### `invalid_datasets`
 
@@ -169,7 +163,7 @@ erDiagram
         TEXT structure_id PK
         TEXT dimension_id PK
         INTEGER position
-        TEXT codelist_id FK
+        TEXT codelist_id
         REAL cached_at
     }
     codelist_info {
@@ -181,6 +175,8 @@ erDiagram
         TEXT codelist_id PK
         TEXT code_id PK
         TEXT code_name
+        TEXT code_parent
+        INTEGER code_order
         REAL cached_at
     }
     available_constraints {
@@ -189,21 +185,10 @@ erDiagram
         TEXT code_id PK
         REAL cached_at
     }
-    bulk_constraint_fetch {
-        TEXT agency_id PK
-        REAL cached_at
-    }
-    bulk_constraint_index {
-        TEXT agency_id PK
-        TEXT df_id PK
-        REAL cached_at
-    }
     invalid_datasets {
         TEXT df_id PK
         TEXT description
         REAL marked_at
     }
 
-    structure_dims }o--|| codelist_info : "codelist_id"
-    codelist_info ||--|{ codelist_values : "codelist_id"
 ```

@@ -66,7 +66,7 @@ def xml_text_safe(node: Any, xpath: str, ns: dict[str, str], default: str | None
 
 
 def get_name_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = None) -> str | None:
-    """Return the Name element text for the given language, falling back to first Name."""
+    """Return a nonempty Name in the requested language, English, or the first available."""
     ns = ns or {}
     names = []
     if "common" in ns:
@@ -74,14 +74,20 @@ def get_name_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = No
     if not names:
         names = node.findall(".//Name")
 
+    first = english = None
     for name_node in names:
+        text = str(name_node.text or "").strip()
+        if not text:
+            continue
         node_lang = name_node.get("{http://www.w3.org/XML/1998/namespace}lang")
         if node_lang == lang:
-            return str(name_node.text).strip() if name_node.text else None
+            return text
+        if node_lang == "en" and english is None:
+            english = text
+        if first is None:
+            first = text
 
-    if names:
-        return str(names[0].text).strip() if names[0].text else None
-    return None
+    return english or first
 
 
 def get_description_by_lang(node: Any, lang: str = "en", ns: dict[str, str] | None = None) -> str | None:

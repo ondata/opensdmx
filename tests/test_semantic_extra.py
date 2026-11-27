@@ -8,7 +8,6 @@ for an embedding.
 from __future__ import annotations
 
 import sys
-from unittest.mock import patch
 
 import pytest
 from typer.testing import CliRunner
@@ -67,10 +66,7 @@ def test_pyproject_keeps_ollama_out_of_the_hard_dependencies(pyproject: dict) ->
 @pytest.mark.usefixtures("without_ollama")
 def test_search_semantic_cli_prints_the_install_hint() -> None:
     """The CLI output must name the extra: Rich would parse `[semantic]` as markup."""
-    # The app's startup callback pings the provider when no rate-limit file exists;
-    # the repo's other CLI tests patch it out so nothing here touches the network.
-    with patch("opensdmx.cli._check_api_reachable"):
-        result = runner.invoke(app, ["search", "--semantic", "unemployment"])
+    result = runner.invoke(app, ["search", "--semantic", "unemployment"])
 
     assert result.exit_code == 1
     assert 'opensdmx[semantic]' in result.output
@@ -80,8 +76,7 @@ def test_search_semantic_cli_prints_the_install_hint() -> None:
 @pytest.mark.usefixtures("without_ollama")
 def test_embed_cli_prints_the_install_hint() -> None:
     """Same contract for `opensdmx embed`: the hint names the extra unescaped."""
-    with patch("opensdmx.cli._check_api_reachable"):
-        result = runner.invoke(app, ["embed"])
+    result = runner.invoke(app, ["embed"])
 
     assert result.exit_code == 1
     assert 'opensdmx[semantic]' in result.output
