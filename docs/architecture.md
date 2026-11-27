@@ -105,7 +105,7 @@ Structure, codelist, and constraint metadata and the blacklist share one SQLite 
 | `available_constraints` | Codes present in a dataset, resolved via the provider's constraint sources |
 | `invalid_datasets` | Blacklist entries; no expiry, but removable |
 
-See the [cache reference](cache.md) for the full schema and TTL overrides, and the [constraints specification](../openspec/specs/constraints-command/spec.md) for source selection and fallbacks.
+See the [cache reference](cache.md) for the full schema and TTL overrides, and the [provider reference](providers.md) for each provider's constraint sources and fallbacks.
 
 ---
 
