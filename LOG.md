@@ -30,7 +30,7 @@
 
 ## 2026-11-27 - Audit di coerenza EGM
 
-- [`2026-11-27_DRIFT_REPORT.md`](2026-11-27_DRIFT_REPORT.md): 10 specifiche OpenSpec e architettura confrontate con codice e test; 636 test passati. Nessuna modifica funzionale.
+- [`docs/egm/2026-11-27_DRIFT_REPORT.md`](docs/egm/2026-11-27_DRIFT_REPORT.md): 10 specifiche OpenSpec e architettura confrontate con codice e test; 636 test passati. Nessuna modifica funzionale.
 
 ## 2026-11-25 - v0.33.0 - release: `opensdmx cache`, stale embedding index detection
 
